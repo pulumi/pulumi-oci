@@ -115,6 +115,7 @@ def get_fleet_blocklists(filters: Optional[Sequence[pulumi.InputType['GetFleetBl
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -123,6 +124,7 @@ def get_fleet_blocklists(filters: Optional[Sequence[pulumi.InputType['GetFleetBl
         managed_instance_id=oci_osmanagement_managed_instance["test_managed_instance"]["id"],
         operation=var["fleet_blocklist_operation"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
@@ -159,6 +161,7 @@ def get_fleet_blocklists_output(filters: Optional[pulumi.Input[Optional[Sequence
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -167,6 +170,7 @@ def get_fleet_blocklists_output(filters: Optional[pulumi.Input[Optional[Sequence
         managed_instance_id=oci_osmanagement_managed_instance["test_managed_instance"]["id"],
         operation=var["fleet_blocklist_operation"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.

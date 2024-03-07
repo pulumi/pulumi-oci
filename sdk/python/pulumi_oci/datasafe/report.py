@@ -318,7 +318,7 @@ class Report(pulumi.CustomResource):
         Reports can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataSafe/report:Report test_report "id"
+        $ pulumi import oci:DataSafe/report:Report test_report "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -348,7 +348,7 @@ class Report(pulumi.CustomResource):
         Reports can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataSafe/report:Report test_report "id"
+        $ pulumi import oci:DataSafe/report:Report test_report "id"
         ```
 
         :param str resource_name: The name of the resource.

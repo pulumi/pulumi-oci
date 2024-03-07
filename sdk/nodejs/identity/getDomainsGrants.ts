@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -28,6 +29,7 @@ import * as utilities from "../utilities";
  *     startIndex: _var.grant_start_index,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDomainsGrants(args: GetDomainsGrantsArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsGrantsResult> {
 
@@ -125,6 +127,7 @@ export interface GetDomainsGrantsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -140,6 +143,7 @@ export interface GetDomainsGrantsResult {
  *     startIndex: _var.grant_start_index,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDomainsGrantsOutput(args: GetDomainsGrantsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsGrantsResult> {
     return pulumi.output(args).apply((a: any) => getDomainsGrants(a, opts))

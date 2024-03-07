@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,6 +23,7 @@ import * as utilities from "../utilities";
  *     namespace: _var.bucket_namespace,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getBucket(args: GetBucketArgs, opts?: pulumi.InvokeOptions): Promise<GetBucketResult> {
 
@@ -147,6 +149,7 @@ export interface GetBucketResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -156,6 +159,7 @@ export interface GetBucketResult {
  *     namespace: _var.bucket_namespace,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getBucketOutput(args: GetBucketOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBucketResult> {
     return pulumi.output(args).apply((a: any) => getBucket(a, opts))

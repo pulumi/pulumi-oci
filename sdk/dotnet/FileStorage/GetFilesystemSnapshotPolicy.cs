@@ -16,10 +16,9 @@ namespace Pulumi.Oci.FileStorage
         /// 
         /// Gets the specified file system snapshot policy's information.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,8 +34,7 @@ namespace Pulumi.Oci.FileStorage
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetFilesystemSnapshotPolicyResult> InvokeAsync(GetFilesystemSnapshotPolicyArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetFilesystemSnapshotPolicyResult>("oci:FileStorage/getFilesystemSnapshotPolicy:getFilesystemSnapshotPolicy", args ?? new GetFilesystemSnapshotPolicyArgs(), options.WithDefaults());
@@ -46,10 +44,9 @@ namespace Pulumi.Oci.FileStorage
         /// 
         /// Gets the specified file system snapshot policy's information.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -65,8 +62,7 @@ namespace Pulumi.Oci.FileStorage
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetFilesystemSnapshotPolicyResult> Invoke(GetFilesystemSnapshotPolicyInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFilesystemSnapshotPolicyResult>("oci:FileStorage/getFilesystemSnapshotPolicy:getFilesystemSnapshotPolicy", args ?? new GetFilesystemSnapshotPolicyInvokeArgs(), options.WithDefaults());

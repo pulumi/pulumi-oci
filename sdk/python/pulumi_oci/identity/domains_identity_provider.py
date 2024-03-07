@@ -4147,7 +4147,7 @@ class DomainsIdentityProvider(pulumi.CustomResource):
         IdentityProviders can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/domainsIdentityProvider:DomainsIdentityProvider test_identity_provider "idcsEndpoint/{idcsEndpoint}/identityProviders/{identityProviderId}"
+        $ pulumi import oci:Identity/domainsIdentityProvider:DomainsIdentityProvider test_identity_provider "idcsEndpoint/{idcsEndpoint}/identityProviders/{identityProviderId}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -4720,7 +4720,7 @@ class DomainsIdentityProvider(pulumi.CustomResource):
         IdentityProviders can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/domainsIdentityProvider:DomainsIdentityProvider test_identity_provider "idcsEndpoint/{idcsEndpoint}/identityProviders/{identityProviderId}"
+        $ pulumi import oci:Identity/domainsIdentityProvider:DomainsIdentityProvider test_identity_provider "idcsEndpoint/{idcsEndpoint}/identityProviders/{identityProviderId}"
         ```
 
         :param str resource_name: The name of the resource.

@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,6 +22,7 @@ import * as utilities from "../utilities";
  *     queryId: oci_metering_computation_query.test_query.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getQuery(args: GetQueryArgs, opts?: pulumi.InvokeOptions): Promise<GetQueryResult> {
 
@@ -65,6 +67,7 @@ export interface GetQueryResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -73,6 +76,7 @@ export interface GetQueryResult {
  *     queryId: oci_metering_computation_query.test_query.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getQueryOutput(args: GetQueryOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetQueryResult> {
     return pulumi.output(args).apply((a: any) => getQuery(a, opts))

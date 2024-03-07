@@ -34,6 +34,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -64,15 +65,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Groups can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Identity/group:Group test_group "id"
-//
+// $ pulumi import oci:Identity/group:Group test_group "id"
 // ```
 type Group struct {
 	pulumi.CustomResourceState

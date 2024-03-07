@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -27,6 +28,7 @@ import * as utilities from "../utilities";
  *     state: _var.namespace_ingest_time_rule_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getNamespaceIngestTimeRules(args: GetNamespaceIngestTimeRulesArgs, opts?: pulumi.InvokeOptions): Promise<GetNamespaceIngestTimeRulesResult> {
 
@@ -124,6 +126,7 @@ export interface GetNamespaceIngestTimeRulesResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -138,6 +141,7 @@ export interface GetNamespaceIngestTimeRulesResult {
  *     state: _var.namespace_ingest_time_rule_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getNamespaceIngestTimeRulesOutput(args: GetNamespaceIngestTimeRulesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNamespaceIngestTimeRulesResult> {
     return pulumi.output(args).apply((a: any) => getNamespaceIngestTimeRules(a, opts))

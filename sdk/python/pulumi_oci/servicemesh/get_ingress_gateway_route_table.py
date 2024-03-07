@@ -219,12 +219,14 @@ def get_ingress_gateway_route_table(ingress_gateway_route_table_id: Optional[str
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_ingress_gateway_route_table = oci.ServiceMesh.get_ingress_gateway_route_table(ingress_gateway_route_table_id=oci_service_mesh_ingress_gateway_route_table["test_ingress_gateway_route_table"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str ingress_gateway_route_table_id: Unique IngressGatewayRouteTable identifier.
@@ -262,12 +264,14 @@ def get_ingress_gateway_route_table_output(ingress_gateway_route_table_id: Optio
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_ingress_gateway_route_table = oci.ServiceMesh.get_ingress_gateway_route_table(ingress_gateway_route_table_id=oci_service_mesh_ingress_gateway_route_table["test_ingress_gateway_route_table"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str ingress_gateway_route_table_id: Unique IngressGatewayRouteTable identifier.

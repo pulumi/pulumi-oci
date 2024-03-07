@@ -112,6 +112,7 @@ def get_compute_capacity_reservation_instances(availability_domain: Optional[str
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -120,6 +121,7 @@ def get_compute_capacity_reservation_instances(availability_domain: Optional[str
         availability_domain=var["compute_capacity_reservation_instance_availability_domain"],
         compartment_id=var["compartment_id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
@@ -156,6 +158,7 @@ def get_compute_capacity_reservation_instances_output(availability_domain: Optio
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -164,6 +167,7 @@ def get_compute_capacity_reservation_instances_output(availability_domain: Optio
         availability_domain=var["compute_capacity_reservation_instance_availability_domain"],
         compartment_id=var["compartment_id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`

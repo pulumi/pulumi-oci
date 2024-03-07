@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -40,6 +41,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupVtap(ctx *pulumi.Context, args *LookupVtapArgs, opts ...pulumi.InvokeOption) (*LookupVtapResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupVtapResult

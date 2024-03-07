@@ -169,6 +169,7 @@ class CatalogAssociation(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -178,13 +179,14 @@ class CatalogAssociation(pulumi.CustomResource):
             service_catalog_id=oci_service_catalog_service_catalog["test_service_catalog"]["id"],
             entity_type=var["service_catalog_association_entity_type"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ServiceCatalogAssociations can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:ServiceCatalog/catalogAssociation:CatalogAssociation test_service_catalog_association "id"
+        $ pulumi import oci:ServiceCatalog/catalogAssociation:CatalogAssociation test_service_catalog_association "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -210,6 +212,7 @@ class CatalogAssociation(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -219,13 +222,14 @@ class CatalogAssociation(pulumi.CustomResource):
             service_catalog_id=oci_service_catalog_service_catalog["test_service_catalog"]["id"],
             entity_type=var["service_catalog_association_entity_type"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ServiceCatalogAssociations can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:ServiceCatalog/catalogAssociation:CatalogAssociation test_service_catalog_association "id"
+        $ pulumi import oci:ServiceCatalog/catalogAssociation:CatalogAssociation test_service_catalog_association "id"
         ```
 
         :param str resource_name: The name of the resource.

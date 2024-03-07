@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -69,15 +70,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // UsagePlans can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:ApiGateway/usagePlan:UsagePlan test_usage_plan "id"
-//
+// $ pulumi import oci:ApiGateway/usagePlan:UsagePlan test_usage_plan "id"
 // ```
 type UsagePlan struct {
 	pulumi.CustomResourceState

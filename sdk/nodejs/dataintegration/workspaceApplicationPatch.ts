@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -36,13 +37,14 @@ import * as utilities from "../utilities";
  *     },
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * WorkspaceApplicationPatches can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:DataIntegration/workspaceApplicationPatch:WorkspaceApplicationPatch test_workspace_application_patch "workspaces/{workspaceId}/applications/{applicationKey}/patches/{patchKey}"
+ * $ pulumi import oci:DataIntegration/workspaceApplicationPatch:WorkspaceApplicationPatch test_workspace_application_patch "workspaces/{workspaceId}/applications/{applicationKey}/patches/{patchKey}"
  * ```
  */
 export class WorkspaceApplicationPatch extends pulumi.CustomResource {

@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -40,6 +41,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupDatabaseSoftwareImage(ctx *pulumi.Context, args *LookupDatabaseSoftwareImageArgs, opts ...pulumi.InvokeOption) (*LookupDatabaseSoftwareImageResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupDatabaseSoftwareImageResult

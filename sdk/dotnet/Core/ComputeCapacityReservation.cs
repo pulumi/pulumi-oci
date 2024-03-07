@@ -20,6 +20,7 @@ namespace Pulumi.Oci.Core
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -65,13 +66,14 @@ namespace Pulumi.Oci.Core
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// ComputeCapacityReservations can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Core/computeCapacityReservation:ComputeCapacityReservation test_compute_capacity_reservation "id"
+    /// $ pulumi import oci:Core/computeCapacityReservation:ComputeCapacityReservation test_compute_capacity_reservation "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Core/computeCapacityReservation:ComputeCapacityReservation")]

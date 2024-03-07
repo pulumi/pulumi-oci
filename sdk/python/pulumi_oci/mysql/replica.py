@@ -504,6 +504,7 @@ class Replica(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -525,13 +526,14 @@ class Replica(pulumi.CustomResource):
                 shape_name=oci_mysql_shape["test_shape"]["name"],
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Replicas can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Mysql/replica:Replica test_replica "id"
+        $ pulumi import oci:Mysql/replica:Replica test_replica "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -557,6 +559,7 @@ class Replica(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -578,13 +581,14 @@ class Replica(pulumi.CustomResource):
                 shape_name=oci_mysql_shape["test_shape"]["name"],
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Replicas can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Mysql/replica:Replica test_replica "id"
+        $ pulumi import oci:Mysql/replica:Replica test_replica "id"
         ```
 
         :param str resource_name: The name of the resource.

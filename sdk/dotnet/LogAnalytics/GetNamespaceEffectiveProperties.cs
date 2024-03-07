@@ -17,10 +17,9 @@ namespace Pulumi.Oci.LogAnalytics
         /// Returns a list of effective properties for the specified resource.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -42,8 +41,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetNamespaceEffectivePropertiesResult> InvokeAsync(GetNamespaceEffectivePropertiesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetNamespaceEffectivePropertiesResult>("oci:LogAnalytics/getNamespaceEffectiveProperties:getNamespaceEffectiveProperties", args ?? new GetNamespaceEffectivePropertiesArgs(), options.WithDefaults());
@@ -54,10 +52,9 @@ namespace Pulumi.Oci.LogAnalytics
         /// Returns a list of effective properties for the specified resource.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -79,8 +76,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetNamespaceEffectivePropertiesResult> Invoke(GetNamespaceEffectivePropertiesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNamespaceEffectivePropertiesResult>("oci:LogAnalytics/getNamespaceEffectiveProperties:getNamespaceEffectiveProperties", args ?? new GetNamespaceEffectivePropertiesInvokeArgs(), options.WithDefaults());

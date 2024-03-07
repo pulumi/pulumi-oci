@@ -14,6 +14,7 @@ import (
 
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -61,15 +62,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // VolumeGroups can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Core/volumeGroup:VolumeGroup test_volume_group "id"
-//
+// $ pulumi import oci:Core/volumeGroup:VolumeGroup test_volume_group "id"
 // ```
 type VolumeGroup struct {
 	pulumi.CustomResourceState

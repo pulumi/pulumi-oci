@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -67,13 +68,14 @@ import * as utilities from "../utilities";
  *     }],
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * NotebookSessions can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:DataScience/notebookSession:NotebookSession test_notebook_session "id"
+ * $ pulumi import oci:DataScience/notebookSession:NotebookSession test_notebook_session "id"
  * ```
  */
 export class NotebookSession extends pulumi.CustomResource {

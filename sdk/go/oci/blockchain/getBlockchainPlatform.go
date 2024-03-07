@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -40,6 +41,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupBlockchainPlatform(ctx *pulumi.Context, args *LookupBlockchainPlatformArgs, opts ...pulumi.InvokeOption) (*LookupBlockchainPlatformResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupBlockchainPlatformResult

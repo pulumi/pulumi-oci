@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -51,15 +52,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // MysqlBackups can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Mysql/mysqlBackup:MysqlBackup test_mysql_backup "id"
-//
+// $ pulumi import oci:Mysql/mysqlBackup:MysqlBackup test_mysql_backup "id"
 // ```
 type MysqlBackup struct {
 	pulumi.CustomResourceState

@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,6 +22,7 @@ import * as utilities from "../utilities";
  *     drPlanId: oci_disaster_recovery_dr_plan.test_dr_plan.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDrPlan(args: GetDrPlanArgs, opts?: pulumi.InvokeOptions): Promise<GetDrPlanResult> {
 
@@ -113,6 +115,7 @@ export interface GetDrPlanResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -121,6 +124,7 @@ export interface GetDrPlanResult {
  *     drPlanId: oci_disaster_recovery_dr_plan.test_dr_plan.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDrPlanOutput(args: GetDrPlanOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDrPlanResult> {
     return pulumi.output(args).apply((a: any) => getDrPlan(a, opts))

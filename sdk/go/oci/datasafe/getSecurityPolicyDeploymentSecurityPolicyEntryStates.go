@@ -19,6 +19,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -44,6 +45,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetSecurityPolicyDeploymentSecurityPolicyEntryStates(ctx *pulumi.Context, args *GetSecurityPolicyDeploymentSecurityPolicyEntryStatesArgs, opts ...pulumi.InvokeOption) (*GetSecurityPolicyDeploymentSecurityPolicyEntryStatesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetSecurityPolicyDeploymentSecurityPolicyEntryStatesResult

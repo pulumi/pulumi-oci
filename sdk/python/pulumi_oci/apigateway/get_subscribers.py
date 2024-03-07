@@ -115,6 +115,7 @@ def get_subscribers(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -123,6 +124,7 @@ def get_subscribers(compartment_id: Optional[str] = None,
         display_name=var["subscriber_display_name"],
         state=var["subscriber_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ocid of the compartment in which to list resources.
@@ -159,6 +161,7 @@ def get_subscribers_output(compartment_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -167,6 +170,7 @@ def get_subscribers_output(compartment_id: Optional[pulumi.Input[str]] = None,
         display_name=var["subscriber_display_name"],
         state=var["subscriber_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ocid of the compartment in which to list resources.

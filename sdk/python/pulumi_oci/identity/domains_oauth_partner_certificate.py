@@ -1302,6 +1302,7 @@ class DomainsOauthPartnerCertificate(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -1324,13 +1325,14 @@ class DomainsOauthPartnerCertificate(pulumi.CustomResource):
             )],
             x509base64certificate=var["oauth_partner_certificate_x509base64certificate"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         OAuthPartnerCertificates can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/domainsOauthPartnerCertificate:DomainsOauthPartnerCertificate test_oauth_partner_certificate "idcsEndpoint/{idcsEndpoint}/oAuthPartnerCertificates/{oAuthPartnerCertificateId}"
+        $ pulumi import oci:Identity/domainsOauthPartnerCertificate:DomainsOauthPartnerCertificate test_oauth_partner_certificate "idcsEndpoint/{idcsEndpoint}/oAuthPartnerCertificates/{oAuthPartnerCertificateId}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -1458,6 +1460,7 @@ class DomainsOauthPartnerCertificate(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -1480,13 +1483,14 @@ class DomainsOauthPartnerCertificate(pulumi.CustomResource):
             )],
             x509base64certificate=var["oauth_partner_certificate_x509base64certificate"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         OAuthPartnerCertificates can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/domainsOauthPartnerCertificate:DomainsOauthPartnerCertificate test_oauth_partner_certificate "idcsEndpoint/{idcsEndpoint}/oAuthPartnerCertificates/{oAuthPartnerCertificateId}"
+        $ pulumi import oci:Identity/domainsOauthPartnerCertificate:DomainsOauthPartnerCertificate test_oauth_partner_certificate "idcsEndpoint/{idcsEndpoint}/oAuthPartnerCertificates/{oAuthPartnerCertificateId}"
         ```
 
         :param str resource_name: The name of the resource.

@@ -870,7 +870,7 @@ class EsxiHost(pulumi.CustomResource):
         EsxiHosts can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Ocvp/esxiHost:EsxiHost test_esxi_host "id"
+        $ pulumi import oci:Ocvp/esxiHost:EsxiHost test_esxi_host "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -910,7 +910,7 @@ class EsxiHost(pulumi.CustomResource):
         EsxiHosts can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Ocvp/esxiHost:EsxiHost test_esxi_host "id"
+        $ pulumi import oci:Ocvp/esxiHost:EsxiHost test_esxi_host "id"
         ```
 
         :param str resource_name: The name of the resource.

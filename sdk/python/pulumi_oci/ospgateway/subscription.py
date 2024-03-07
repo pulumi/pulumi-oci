@@ -541,7 +541,7 @@ class Subscription(pulumi.CustomResource):
         Subscriptions can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:OspGateway/subscription:Subscription test_subscription "subscriptions/{subscriptionId}/compartmentId/{compartmentId}/ospHomeRegion/{ospHomeRegion}"
+        $ pulumi import oci:OspGateway/subscription:Subscription test_subscription "subscriptions/{subscriptionId}/compartmentId/{compartmentId}/ospHomeRegion/{ospHomeRegion}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -572,7 +572,7 @@ class Subscription(pulumi.CustomResource):
         Subscriptions can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:OspGateway/subscription:Subscription test_subscription "subscriptions/{subscriptionId}/compartmentId/{compartmentId}/ospHomeRegion/{ospHomeRegion}"
+        $ pulumi import oci:OspGateway/subscription:Subscription test_subscription "subscriptions/{subscriptionId}/compartmentId/{compartmentId}/ospHomeRegion/{ospHomeRegion}"
         ```
 
         :param str resource_name: The name of the resource.

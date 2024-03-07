@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -49,15 +50,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // WorkspaceExportRequests can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:DataIntegration/workspaceExportRequest:WorkspaceExportRequest test_workspace_export_request "workspaces/{workspaceId}/exportRequests/{exportRequestKey}"
-//
+// $ pulumi import oci:DataIntegration/workspaceExportRequest:WorkspaceExportRequest test_workspace_export_request "workspaces/{workspaceId}/exportRequests/{exportRequestKey}"
 // ```
 type WorkspaceExportRequest struct {
 	pulumi.CustomResourceState

@@ -482,6 +482,7 @@ class MaskingPoliciesMaskingColumn(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -526,13 +527,14 @@ class MaskingPoliciesMaskingColumn(pulumi.CustomResource):
             object_type=var["masking_policies_masking_column_object_type"],
             sensitive_type_id=oci_data_safe_sensitive_type["test_sensitive_type"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         MaskingPoliciesMaskingColumns can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataSafe/maskingPoliciesMaskingColumn:MaskingPoliciesMaskingColumn test_masking_policies_masking_column "maskingPolicies/{maskingPolicyId}/maskingColumns/{maskingColumnKey}"
+        $ pulumi import oci:DataSafe/maskingPoliciesMaskingColumn:MaskingPoliciesMaskingColumn test_masking_policies_masking_column "maskingPolicies/{maskingPolicyId}/maskingColumns/{maskingColumnKey}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -583,6 +585,7 @@ class MaskingPoliciesMaskingColumn(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -627,13 +630,14 @@ class MaskingPoliciesMaskingColumn(pulumi.CustomResource):
             object_type=var["masking_policies_masking_column_object_type"],
             sensitive_type_id=oci_data_safe_sensitive_type["test_sensitive_type"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         MaskingPoliciesMaskingColumns can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataSafe/maskingPoliciesMaskingColumn:MaskingPoliciesMaskingColumn test_masking_policies_masking_column "maskingPolicies/{maskingPolicyId}/maskingColumns/{maskingColumnKey}"
+        $ pulumi import oci:DataSafe/maskingPoliciesMaskingColumn:MaskingPoliciesMaskingColumn test_masking_policies_masking_column "maskingPolicies/{maskingPolicyId}/maskingColumns/{maskingColumnKey}"
         ```
 
         :param str resource_name: The name of the resource.

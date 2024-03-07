@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -42,6 +43,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetPreauthrequests(ctx *pulumi.Context, args *GetPreauthrequestsArgs, opts ...pulumi.InvokeOption) (*GetPreauthrequestsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetPreauthrequestsResult

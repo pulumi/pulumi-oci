@@ -564,6 +564,7 @@ class OdaInstance(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -582,13 +583,14 @@ class OdaInstance(pulumi.CustomResource):
             identity_domain=var["oda_instance_identity_domain"],
             is_role_based_access=var["oda_instance_is_role_based_access"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         OdaInstances can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Oda/odaInstance:OdaInstance test_oda_instance "id"
+        $ pulumi import oci:Oda/odaInstance:OdaInstance test_oda_instance "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -623,6 +625,7 @@ class OdaInstance(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -641,13 +644,14 @@ class OdaInstance(pulumi.CustomResource):
             identity_domain=var["oda_instance_identity_domain"],
             is_role_based_access=var["oda_instance_is_role_based_access"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         OdaInstances can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Oda/odaInstance:OdaInstance test_oda_instance "id"
+        $ pulumi import oci:Oda/odaInstance:OdaInstance test_oda_instance "id"
         ```
 
         :param str resource_name: The name of the resource.

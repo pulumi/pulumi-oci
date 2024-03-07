@@ -144,6 +144,7 @@ def get_managed_databases(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -155,6 +156,7 @@ def get_managed_databases(compartment_id: Optional[str] = None,
         management_option=var["managed_database_management_option"],
         name=var["managed_database_name"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -207,6 +209,7 @@ def get_managed_databases_output(compartment_id: Optional[pulumi.Input[str]] = N
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -218,6 +221,7 @@ def get_managed_databases_output(compartment_id: Optional[pulumi.Input[str]] = N
         management_option=var["managed_database_management_option"],
         name=var["managed_database_name"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

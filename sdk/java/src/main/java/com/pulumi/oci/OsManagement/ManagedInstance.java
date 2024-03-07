@@ -30,7 +30,7 @@ import javax.annotation.Nullable;
  * ManagedInstances can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:OsManagement/managedInstance:ManagedInstance test_managed_instance &#34;id&#34;
+ * $ pulumi import oci:OsManagement/managedInstance:ManagedInstance test_managed_instance &#34;id&#34;
  * ```
  * 
  */

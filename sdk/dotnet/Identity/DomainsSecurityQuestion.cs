@@ -19,7 +19,7 @@ namespace Pulumi.Oci.Identity
     /// SecurityQuestions can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Identity/domainsSecurityQuestion:DomainsSecurityQuestion test_security_question "idcsEndpoint/{idcsEndpoint}/securityQuestions/{securityQuestionId}"
+    /// $ pulumi import oci:Identity/domainsSecurityQuestion:DomainsSecurityQuestion test_security_question "idcsEndpoint/{idcsEndpoint}/securityQuestions/{securityQuestionId}"
     /// ```
     /// </summary>
     [OciResourceType("oci:Identity/domainsSecurityQuestion:DomainsSecurityQuestion")]

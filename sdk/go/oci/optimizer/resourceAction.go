@@ -26,9 +26,7 @@ import (
 // ResourceActions can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Optimizer/resourceAction:ResourceAction test_resource_action "id"
-//
+// $ pulumi import oci:Optimizer/resourceAction:ResourceAction test_resource_action "id"
 // ```
 type ResourceAction struct {
 	pulumi.CustomResourceState

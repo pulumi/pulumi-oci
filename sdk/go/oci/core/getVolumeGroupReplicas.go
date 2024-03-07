@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -44,6 +45,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetVolumeGroupReplicas(ctx *pulumi.Context, args *GetVolumeGroupReplicasArgs, opts ...pulumi.InvokeOption) (*GetVolumeGroupReplicasResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetVolumeGroupReplicasResult

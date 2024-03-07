@@ -26,6 +26,8 @@ import javax.annotation.Nullable;
  * confidential information in bucket names.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -74,13 +76,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * Buckets can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:ObjectStorage/bucket:Bucket test_bucket &#34;n/{namespaceName}/b/{bucketName}&#34;
+ * $ pulumi import oci:ObjectStorage/bucket:Bucket test_bucket &#34;n/{namespaceName}/b/{bucketName}&#34;
  * ```
  * 
  */

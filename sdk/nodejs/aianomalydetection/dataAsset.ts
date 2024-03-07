@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -59,13 +60,14 @@ import * as utilities from "../utilities";
  *     privateEndpointId: oci_dataflow_private_endpoint.test_private_endpoint.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * DataAssets can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:AiAnomalyDetection/dataAsset:DataAsset test_data_asset "id"
+ * $ pulumi import oci:AiAnomalyDetection/dataAsset:DataAsset test_data_asset "id"
  * ```
  */
 export class DataAsset extends pulumi.CustomResource {

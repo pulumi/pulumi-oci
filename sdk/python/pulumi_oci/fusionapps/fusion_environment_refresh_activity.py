@@ -294,6 +294,7 @@ class FusionEnvironmentRefreshActivity(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -302,13 +303,14 @@ class FusionEnvironmentRefreshActivity(pulumi.CustomResource):
             fusion_environment_id=oci_fusion_apps_fusion_environment["test_fusion_environment"]["id"],
             source_fusion_environment_id=oci_fusion_apps_fusion_environment["test_fusion_environment"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         FusionEnvironmentRefreshActivities can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:FusionApps/fusionEnvironmentRefreshActivity:FusionEnvironmentRefreshActivity test_fusion_environment_refresh_activity "fusionEnvironments/{fusionEnvironmentId}/refreshActivities/{refreshActivityId}"
+        $ pulumi import oci:FusionApps/fusionEnvironmentRefreshActivity:FusionEnvironmentRefreshActivity test_fusion_environment_refresh_activity "fusionEnvironments/{fusionEnvironmentId}/refreshActivities/{refreshActivityId}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -333,6 +335,7 @@ class FusionEnvironmentRefreshActivity(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -341,13 +344,14 @@ class FusionEnvironmentRefreshActivity(pulumi.CustomResource):
             fusion_environment_id=oci_fusion_apps_fusion_environment["test_fusion_environment"]["id"],
             source_fusion_environment_id=oci_fusion_apps_fusion_environment["test_fusion_environment"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         FusionEnvironmentRefreshActivities can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:FusionApps/fusionEnvironmentRefreshActivity:FusionEnvironmentRefreshActivity test_fusion_environment_refresh_activity "fusionEnvironments/{fusionEnvironmentId}/refreshActivities/{refreshActivityId}"
+        $ pulumi import oci:FusionApps/fusionEnvironmentRefreshActivity:FusionEnvironmentRefreshActivity test_fusion_environment_refresh_activity "fusionEnvironments/{fusionEnvironmentId}/refreshActivities/{refreshActivityId}"
         ```
 
         :param str resource_name: The name of the resource.

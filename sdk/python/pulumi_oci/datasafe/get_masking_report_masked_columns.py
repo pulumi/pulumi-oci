@@ -164,6 +164,7 @@ def get_masking_report_masked_columns(column_names: Optional[Sequence[str]] = No
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -176,6 +177,7 @@ def get_masking_report_masked_columns(column_names: Optional[Sequence[str]] = No
         schema_names=var["masking_reports_masked_column_schema_name"],
         sensitive_type_id=oci_data_safe_sensitive_type["test_sensitive_type"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param Sequence[str] column_names: A filter to return only a specific column based on column name.
@@ -228,6 +230,7 @@ def get_masking_report_masked_columns_output(column_names: Optional[pulumi.Input
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -240,6 +243,7 @@ def get_masking_report_masked_columns_output(column_names: Optional[pulumi.Input
         schema_names=var["masking_reports_masked_column_schema_name"],
         sensitive_type_id=oci_data_safe_sensitive_type["test_sensitive_type"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param Sequence[str] column_names: A filter to return only a specific column based on column name.

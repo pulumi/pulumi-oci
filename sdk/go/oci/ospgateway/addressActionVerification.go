@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -68,15 +69,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // AddressActionVerifications can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:OspGateway/addressActionVerification:AddressActionVerification test_address_action_verification "id"
-//
+// $ pulumi import oci:OspGateway/addressActionVerification:AddressActionVerification test_address_action_verification "id"
 // ```
 type AddressActionVerification struct {
 	pulumi.CustomResourceState

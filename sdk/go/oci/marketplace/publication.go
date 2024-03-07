@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -73,15 +74,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Publications can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Marketplace/publication:Publication test_publication "id"
-//
+// $ pulumi import oci:Marketplace/publication:Publication test_publication "id"
 // ```
 type Publication struct {
 	pulumi.CustomResourceState

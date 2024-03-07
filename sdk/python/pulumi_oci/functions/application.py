@@ -454,6 +454,7 @@ class Application(pulumi.CustomResource):
         """
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -483,13 +484,14 @@ class Application(pulumi.CustomResource):
                 is_enabled=var["application_trace_config_is_enabled"],
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Applications can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Functions/application:Application test_application "id"
+        $ pulumi import oci:Functions/application:Application test_application "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -517,6 +519,7 @@ class Application(pulumi.CustomResource):
         """
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -546,13 +549,14 @@ class Application(pulumi.CustomResource):
                 is_enabled=var["application_trace_config_is_enabled"],
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Applications can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Functions/application:Application test_application "id"
+        $ pulumi import oci:Functions/application:Application test_application "id"
         ```
 
         :param str resource_name: The name of the resource.

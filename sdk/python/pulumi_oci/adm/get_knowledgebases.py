@@ -117,6 +117,7 @@ def get_knowledgebases(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -126,6 +127,7 @@ def get_knowledgebases(compartment_id: Optional[str] = None,
         id=var["knowledge_base_id"],
         state=var["knowledge_base_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: A filter to return only resources that belong to the specified compartment identifier. Required only if the id query param is not specified.
@@ -166,6 +168,7 @@ def get_knowledgebases_output(compartment_id: Optional[pulumi.Input[Optional[str
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -175,6 +178,7 @@ def get_knowledgebases_output(compartment_id: Optional[pulumi.Input[Optional[str
         id=var["knowledge_base_id"],
         state=var["knowledge_base_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: A filter to return only resources that belong to the specified compartment identifier. Required only if the id query param is not specified.

@@ -116,6 +116,7 @@ def get_web_app_firewall_policies(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -125,6 +126,7 @@ def get_web_app_firewall_policies(compartment_id: Optional[str] = None,
         id=var["web_app_firewall_policy_id"],
         states=var["web_app_firewall_policy_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
@@ -164,6 +166,7 @@ def get_web_app_firewall_policies_output(compartment_id: Optional[pulumi.Input[s
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -173,6 +176,7 @@ def get_web_app_firewall_policies_output(compartment_id: Optional[pulumi.Input[s
         id=var["web_app_firewall_policy_id"],
         states=var["web_app_firewall_policy_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.

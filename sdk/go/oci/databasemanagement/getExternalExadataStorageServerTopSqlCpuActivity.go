@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -40,6 +41,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetExternalExadataStorageServerTopSqlCpuActivity(ctx *pulumi.Context, args *GetExternalExadataStorageServerTopSqlCpuActivityArgs, opts ...pulumi.InvokeOption) (*GetExternalExadataStorageServerTopSqlCpuActivityResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetExternalExadataStorageServerTopSqlCpuActivityResult

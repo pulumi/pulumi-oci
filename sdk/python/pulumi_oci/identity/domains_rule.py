@@ -1457,6 +1457,7 @@ class DomainsRule(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -1492,13 +1493,14 @@ class DomainsRule(pulumi.CustomResource):
                 value=var["rule_tags_value"],
             )])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Rules can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/domainsRule:DomainsRule test_rule "idcsEndpoint/{idcsEndpoint}/rules/{ruleId}"
+        $ pulumi import oci:Identity/domainsRule:DomainsRule test_rule "idcsEndpoint/{idcsEndpoint}/rules/{ruleId}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -1661,6 +1663,7 @@ class DomainsRule(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -1696,13 +1699,14 @@ class DomainsRule(pulumi.CustomResource):
                 value=var["rule_tags_value"],
             )])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Rules can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/domainsRule:DomainsRule test_rule "idcsEndpoint/{idcsEndpoint}/rules/{ruleId}"
+        $ pulumi import oci:Identity/domainsRule:DomainsRule test_rule "idcsEndpoint/{idcsEndpoint}/rules/{ruleId}"
         ```
 
         :param str resource_name: The name of the resource.

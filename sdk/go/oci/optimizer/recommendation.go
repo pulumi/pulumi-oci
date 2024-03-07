@@ -26,9 +26,7 @@ import (
 // Recommendations can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Optimizer/recommendation:Recommendation test_recommendation "id"
-//
+// $ pulumi import oci:Optimizer/recommendation:Recommendation test_recommendation "id"
 // ```
 type Recommendation struct {
 	pulumi.CustomResourceState

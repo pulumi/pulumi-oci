@@ -16,6 +16,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -39,15 +40,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // ManagementAgents can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:ManagementAgent/managementAgent:ManagementAgent test_management_agent "id"
-//
+// $ pulumi import oci:ManagementAgent/managementAgent:ManagementAgent test_management_agent "id"
 // ```
 type ManagementAgent struct {
 	pulumi.CustomResourceState

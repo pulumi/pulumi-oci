@@ -41,6 +41,8 @@ public final class LoggingFunctions {
      * Gets the log object configuration for the log object OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -70,6 +72,7 @@ public final class LoggingFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetLogResult> getLog(GetLogArgs args) {
@@ -81,6 +84,8 @@ public final class LoggingFunctions {
      * Gets the log object configuration for the log object OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -110,6 +115,7 @@ public final class LoggingFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetLogResult> getLogPlain(GetLogPlainArgs args) {
@@ -121,6 +127,8 @@ public final class LoggingFunctions {
      * Gets the log object configuration for the log object OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -150,6 +158,7 @@ public final class LoggingFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetLogResult> getLog(GetLogArgs args, InvokeOptions options) {
@@ -161,6 +170,8 @@ public final class LoggingFunctions {
      * Gets the log object configuration for the log object OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -190,6 +201,7 @@ public final class LoggingFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetLogResult> getLogPlain(GetLogPlainArgs args, InvokeOptions options) {
@@ -201,6 +213,8 @@ public final class LoggingFunctions {
      * Get the specified log group&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -229,6 +243,7 @@ public final class LoggingFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetLogGroupResult> getLogGroup(GetLogGroupArgs args) {
@@ -240,6 +255,8 @@ public final class LoggingFunctions {
      * Get the specified log group&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -268,6 +285,7 @@ public final class LoggingFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetLogGroupResult> getLogGroupPlain(GetLogGroupPlainArgs args) {
@@ -279,6 +297,8 @@ public final class LoggingFunctions {
      * Get the specified log group&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -307,6 +327,7 @@ public final class LoggingFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetLogGroupResult> getLogGroup(GetLogGroupArgs args, InvokeOptions options) {
@@ -318,6 +339,8 @@ public final class LoggingFunctions {
      * Get the specified log group&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -346,6 +369,7 @@ public final class LoggingFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetLogGroupResult> getLogGroupPlain(GetLogGroupPlainArgs args, InvokeOptions options) {
@@ -357,6 +381,8 @@ public final class LoggingFunctions {
      * Lists all log groups for the specified compartment or tenancy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -387,6 +413,7 @@ public final class LoggingFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetLogGroupsResult> getLogGroups(GetLogGroupsArgs args) {
@@ -398,6 +425,8 @@ public final class LoggingFunctions {
      * Lists all log groups for the specified compartment or tenancy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -428,6 +457,7 @@ public final class LoggingFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetLogGroupsResult> getLogGroupsPlain(GetLogGroupsPlainArgs args) {
@@ -439,6 +469,8 @@ public final class LoggingFunctions {
      * Lists all log groups for the specified compartment or tenancy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -469,6 +501,7 @@ public final class LoggingFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetLogGroupsResult> getLogGroups(GetLogGroupsArgs args, InvokeOptions options) {
@@ -480,6 +513,8 @@ public final class LoggingFunctions {
      * Lists all log groups for the specified compartment or tenancy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -510,6 +545,7 @@ public final class LoggingFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetLogGroupsResult> getLogGroupsPlain(GetLogGroupsPlainArgs args, InvokeOptions options) {
@@ -521,6 +557,8 @@ public final class LoggingFunctions {
      * Retrieves a LogSavedSearch.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -549,6 +587,7 @@ public final class LoggingFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetLogSavedSearchResult> getLogSavedSearch(GetLogSavedSearchArgs args) {
@@ -560,6 +599,8 @@ public final class LoggingFunctions {
      * Retrieves a LogSavedSearch.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -588,6 +629,7 @@ public final class LoggingFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetLogSavedSearchResult> getLogSavedSearchPlain(GetLogSavedSearchPlainArgs args) {
@@ -599,6 +641,8 @@ public final class LoggingFunctions {
      * Retrieves a LogSavedSearch.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -627,6 +671,7 @@ public final class LoggingFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetLogSavedSearchResult> getLogSavedSearch(GetLogSavedSearchArgs args, InvokeOptions options) {
@@ -638,6 +683,8 @@ public final class LoggingFunctions {
      * Retrieves a LogSavedSearch.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -666,6 +713,7 @@ public final class LoggingFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetLogSavedSearchResult> getLogSavedSearchPlain(GetLogSavedSearchPlainArgs args, InvokeOptions options) {
@@ -677,6 +725,8 @@ public final class LoggingFunctions {
      * Lists LogSavedSearches for this compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -707,6 +757,7 @@ public final class LoggingFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetLogSavedSearchesResult> getLogSavedSearches(GetLogSavedSearchesArgs args) {
@@ -718,6 +769,8 @@ public final class LoggingFunctions {
      * Lists LogSavedSearches for this compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -748,6 +801,7 @@ public final class LoggingFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetLogSavedSearchesResult> getLogSavedSearchesPlain(GetLogSavedSearchesPlainArgs args) {
@@ -759,6 +813,8 @@ public final class LoggingFunctions {
      * Lists LogSavedSearches for this compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -789,6 +845,7 @@ public final class LoggingFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetLogSavedSearchesResult> getLogSavedSearches(GetLogSavedSearchesArgs args, InvokeOptions options) {
@@ -800,6 +857,8 @@ public final class LoggingFunctions {
      * Lists LogSavedSearches for this compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -830,6 +889,7 @@ public final class LoggingFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetLogSavedSearchesResult> getLogSavedSearchesPlain(GetLogSavedSearchesPlainArgs args, InvokeOptions options) {
@@ -841,6 +901,8 @@ public final class LoggingFunctions {
      * Lists the specified log group&#39;s log objects.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -874,6 +936,7 @@ public final class LoggingFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetLogsResult> getLogs(GetLogsArgs args) {
@@ -885,6 +948,8 @@ public final class LoggingFunctions {
      * Lists the specified log group&#39;s log objects.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -918,6 +983,7 @@ public final class LoggingFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetLogsResult> getLogsPlain(GetLogsPlainArgs args) {
@@ -929,6 +995,8 @@ public final class LoggingFunctions {
      * Lists the specified log group&#39;s log objects.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -962,6 +1030,7 @@ public final class LoggingFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetLogsResult> getLogs(GetLogsArgs args, InvokeOptions options) {
@@ -973,6 +1042,8 @@ public final class LoggingFunctions {
      * Lists the specified log group&#39;s log objects.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1006,6 +1077,7 @@ public final class LoggingFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetLogsResult> getLogsPlain(GetLogsPlainArgs args, InvokeOptions options) {
@@ -1017,6 +1089,8 @@ public final class LoggingFunctions {
      * Get the unified agent configuration for an ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1045,6 +1119,7 @@ public final class LoggingFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetUnifiedAgentConfigurationResult> getUnifiedAgentConfiguration(GetUnifiedAgentConfigurationArgs args) {
@@ -1056,6 +1131,8 @@ public final class LoggingFunctions {
      * Get the unified agent configuration for an ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1084,6 +1161,7 @@ public final class LoggingFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetUnifiedAgentConfigurationResult> getUnifiedAgentConfigurationPlain(GetUnifiedAgentConfigurationPlainArgs args) {
@@ -1095,6 +1173,8 @@ public final class LoggingFunctions {
      * Get the unified agent configuration for an ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1123,6 +1203,7 @@ public final class LoggingFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetUnifiedAgentConfigurationResult> getUnifiedAgentConfiguration(GetUnifiedAgentConfigurationArgs args, InvokeOptions options) {
@@ -1134,6 +1215,8 @@ public final class LoggingFunctions {
      * Get the unified agent configuration for an ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1162,6 +1245,7 @@ public final class LoggingFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetUnifiedAgentConfigurationResult> getUnifiedAgentConfigurationPlain(GetUnifiedAgentConfigurationPlainArgs args, InvokeOptions options) {
@@ -1173,6 +1257,8 @@ public final class LoggingFunctions {
      * Lists all unified agent configurations in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1206,6 +1292,7 @@ public final class LoggingFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetUnifiedAgentConfigurationsResult> getUnifiedAgentConfigurations(GetUnifiedAgentConfigurationsArgs args) {
@@ -1217,6 +1304,8 @@ public final class LoggingFunctions {
      * Lists all unified agent configurations in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1250,6 +1339,7 @@ public final class LoggingFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetUnifiedAgentConfigurationsResult> getUnifiedAgentConfigurationsPlain(GetUnifiedAgentConfigurationsPlainArgs args) {
@@ -1261,6 +1351,8 @@ public final class LoggingFunctions {
      * Lists all unified agent configurations in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1294,6 +1386,7 @@ public final class LoggingFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetUnifiedAgentConfigurationsResult> getUnifiedAgentConfigurations(GetUnifiedAgentConfigurationsArgs args, InvokeOptions options) {
@@ -1305,6 +1398,8 @@ public final class LoggingFunctions {
      * Lists all unified agent configurations in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1338,6 +1433,7 @@ public final class LoggingFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetUnifiedAgentConfigurationsResult> getUnifiedAgentConfigurationsPlain(GetUnifiedAgentConfigurationsPlainArgs args, InvokeOptions options) {

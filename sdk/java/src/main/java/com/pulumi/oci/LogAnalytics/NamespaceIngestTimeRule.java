@@ -25,6 +25,8 @@ import javax.annotation.Nullable;
  * Creates a new ingest time rule in the specified compartment. You may also specify optional information such as description, defined tags, and free-form tags.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -79,13 +81,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * NamespaceIngestTimeRules can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:LogAnalytics/namespaceIngestTimeRule:NamespaceIngestTimeRule test_namespace_ingest_time_rule &#34;namespaces/{namespaceName}/ingestTimeRules/{ingestTimeRuleId}&#34;
+ * $ pulumi import oci:LogAnalytics/namespaceIngestTimeRule:NamespaceIngestTimeRule test_namespace_ingest_time_rule &#34;namespaces/{namespaceName}/ingestTimeRules/{ingestTimeRuleId}&#34;
  * ```
  * 
  */

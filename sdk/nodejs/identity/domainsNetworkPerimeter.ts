@@ -16,7 +16,7 @@ import * as utilities from "../utilities";
  * NetworkPerimeters can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Identity/domainsNetworkPerimeter:DomainsNetworkPerimeter test_network_perimeter "idcsEndpoint/{idcsEndpoint}/networkPerimeters/{networkPerimeterId}"
+ * $ pulumi import oci:Identity/domainsNetworkPerimeter:DomainsNetworkPerimeter test_network_perimeter "idcsEndpoint/{idcsEndpoint}/networkPerimeters/{networkPerimeterId}"
  * ```
  */
 export class DomainsNetworkPerimeter extends pulumi.CustomResource {

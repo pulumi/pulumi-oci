@@ -16,6 +16,7 @@ namespace Pulumi.Oci.CloudBridge
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -40,13 +41,14 @@ namespace Pulumi.Oci.CloudBridge
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// Inventories can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:CloudBridge/inventory:Inventory test_inventory "id"
+    /// $ pulumi import oci:CloudBridge/inventory:Inventory test_inventory "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:CloudBridge/inventory:Inventory")]

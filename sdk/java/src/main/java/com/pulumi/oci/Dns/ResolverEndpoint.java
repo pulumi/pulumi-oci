@@ -22,6 +22,8 @@ import javax.annotation.Nullable;
  * Creates a new resolver endpoint. Requires a `PRIVATE` scope query parameter.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -58,18 +60,19 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * For legacy ResolverEndpoints created without `scope`, these ResolverEndpoints can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Dns/resolverEndpoint:ResolverEndpoint test_resolver_endpoint &#34;resolverId/{resolverId}/name/{resolverEndpointName}&#34;
+ * $ pulumi import oci:Dns/resolverEndpoint:ResolverEndpoint test_resolver_endpoint &#34;resolverId/{resolverId}/name/{resolverEndpointName}&#34;
  * ```
- *  For ResolverEndpoints created using `scope`, these ResolverEndpoints can be imported using the `id`, e.g.
+ * For ResolverEndpoints created using `scope`, these ResolverEndpoints can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Dns/resolverEndpoint:ResolverEndpoint test_resolver_endpoint &#34;resolverId/{resolverId}/name/{name}/scope/{scope}&#34;
+ * $ pulumi import oci:Dns/resolverEndpoint:ResolverEndpoint test_resolver_endpoint &#34;resolverId/{resolverId}/name/{name}/scope/{scope}&#34;
  * ```
  * 
  */

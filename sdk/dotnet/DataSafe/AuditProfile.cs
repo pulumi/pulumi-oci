@@ -19,7 +19,7 @@ namespace Pulumi.Oci.DataSafe
     /// AuditProfiles can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:DataSafe/auditProfile:AuditProfile test_audit_profile "id"
+    /// $ pulumi import oci:DataSafe/auditProfile:AuditProfile test_audit_profile "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:DataSafe/auditProfile:AuditProfile")]

@@ -155,6 +155,7 @@ def get_at_customer_ccc_upgrade_schedules(access_level: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -167,6 +168,7 @@ def get_at_customer_ccc_upgrade_schedules(access_level: Optional[str] = None,
         display_name_contains=var["ccc_upgrade_schedule_display_name_contains"],
         state=var["ccc_upgrade_schedule_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
@@ -219,6 +221,7 @@ def get_at_customer_ccc_upgrade_schedules_output(access_level: Optional[pulumi.I
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -231,6 +234,7 @@ def get_at_customer_ccc_upgrade_schedules_output(access_level: Optional[pulumi.I
         display_name_contains=var["ccc_upgrade_schedule_display_name_contains"],
         state=var["ccc_upgrade_schedule_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.

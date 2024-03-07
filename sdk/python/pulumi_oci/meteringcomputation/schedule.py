@@ -481,6 +481,7 @@ class Schedule(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -524,13 +525,14 @@ class Schedule(pulumi.CustomResource):
             ),
             saved_report_id=oci_data_safe_report["test_report"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Schedules can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:MeteringComputation/schedule:Schedule test_schedule "id"
+        $ pulumi import oci:MeteringComputation/schedule:Schedule test_schedule "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -564,6 +566,7 @@ class Schedule(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -607,13 +610,14 @@ class Schedule(pulumi.CustomResource):
             ),
             saved_report_id=oci_data_safe_report["test_report"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Schedules can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:MeteringComputation/schedule:Schedule test_schedule "id"
+        $ pulumi import oci:MeteringComputation/schedule:Schedule test_schedule "id"
         ```
 
         :param str resource_name: The name of the resource.

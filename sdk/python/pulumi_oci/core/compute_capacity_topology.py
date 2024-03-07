@@ -306,6 +306,7 @@ class ComputeCapacityTopology(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -325,13 +326,14 @@ class ComputeCapacityTopology(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ComputeCapacityTopologies can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/computeCapacityTopology:ComputeCapacityTopology test_compute_capacity_topology "id"
+        $ pulumi import oci:Core/computeCapacityTopology:ComputeCapacityTopology test_compute_capacity_topology "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -365,6 +367,7 @@ class ComputeCapacityTopology(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -384,13 +387,14 @@ class ComputeCapacityTopology(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ComputeCapacityTopologies can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/computeCapacityTopology:ComputeCapacityTopology test_compute_capacity_topology "id"
+        $ pulumi import oci:Core/computeCapacityTopology:ComputeCapacityTopology test_compute_capacity_topology "id"
         ```
 
         :param str resource_name: The name of the resource.

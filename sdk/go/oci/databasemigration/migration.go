@@ -20,6 +20,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -194,15 +195,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Migrations can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:DatabaseMigration/migration:Migration test_migration "id"
-//
+// $ pulumi import oci:DatabaseMigration/migration:Migration test_migration "id"
 // ```
 type Migration struct {
 	pulumi.CustomResourceState

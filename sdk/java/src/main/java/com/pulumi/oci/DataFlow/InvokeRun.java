@@ -29,6 +29,8 @@ import javax.annotation.Nullable;
  * Creates a run for an application.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -96,6 +98,8 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
+ * 
  * ## Note
  * 
  * At a time service allows only one run to succeed if user is trying to invoke runs on multiple applications which have Private Endpoints and service will proceed invoking only one run and put the rest of them in failed state.
@@ -105,7 +109,7 @@ import javax.annotation.Nullable;
  * InvokeRuns can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:DataFlow/invokeRun:InvokeRun test_invoke_run &#34;id&#34;
+ * $ pulumi import oci:DataFlow/invokeRun:InvokeRun test_invoke_run &#34;id&#34;
  * ```
  * 
  */

@@ -53,6 +53,8 @@ public final class BigDataServiceFunctions {
      * Returns details of the autoscale configuration identified by the given ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -82,6 +84,7 @@ public final class BigDataServiceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAutoScalingConfigurationResult> getAutoScalingConfiguration(GetAutoScalingConfigurationArgs args) {
@@ -93,6 +96,8 @@ public final class BigDataServiceFunctions {
      * Returns details of the autoscale configuration identified by the given ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -122,6 +127,7 @@ public final class BigDataServiceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAutoScalingConfigurationResult> getAutoScalingConfigurationPlain(GetAutoScalingConfigurationPlainArgs args) {
@@ -133,6 +139,8 @@ public final class BigDataServiceFunctions {
      * Returns details of the autoscale configuration identified by the given ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -162,6 +170,7 @@ public final class BigDataServiceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAutoScalingConfigurationResult> getAutoScalingConfiguration(GetAutoScalingConfigurationArgs args, InvokeOptions options) {
@@ -173,6 +182,8 @@ public final class BigDataServiceFunctions {
      * Returns details of the autoscale configuration identified by the given ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -202,6 +213,7 @@ public final class BigDataServiceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAutoScalingConfigurationResult> getAutoScalingConfigurationPlain(GetAutoScalingConfigurationPlainArgs args, InvokeOptions options) {
@@ -225,6 +237,8 @@ public final class BigDataServiceFunctions {
      * Returns information about the Big Data Service cluster identified by the given ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -253,6 +267,7 @@ public final class BigDataServiceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBdsInstanceResult> getBdsInstance(GetBdsInstanceArgs args) {
@@ -264,6 +279,8 @@ public final class BigDataServiceFunctions {
      * Returns information about the Big Data Service cluster identified by the given ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -292,6 +309,7 @@ public final class BigDataServiceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBdsInstanceResult> getBdsInstancePlain(GetBdsInstancePlainArgs args) {
@@ -303,6 +321,8 @@ public final class BigDataServiceFunctions {
      * Returns information about the Big Data Service cluster identified by the given ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -331,6 +351,7 @@ public final class BigDataServiceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBdsInstanceResult> getBdsInstance(GetBdsInstanceArgs args, InvokeOptions options) {
@@ -342,6 +363,8 @@ public final class BigDataServiceFunctions {
      * Returns information about the Big Data Service cluster identified by the given ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -370,6 +393,7 @@ public final class BigDataServiceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBdsInstanceResult> getBdsInstancePlain(GetBdsInstancePlainArgs args, InvokeOptions options) {
@@ -381,6 +405,8 @@ public final class BigDataServiceFunctions {
      * Returns the user&#39;s API key information for the given ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -410,6 +436,7 @@ public final class BigDataServiceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBdsInstanceApiKeyResult> getBdsInstanceApiKey(GetBdsInstanceApiKeyArgs args) {
@@ -421,6 +448,8 @@ public final class BigDataServiceFunctions {
      * Returns the user&#39;s API key information for the given ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -450,6 +479,7 @@ public final class BigDataServiceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBdsInstanceApiKeyResult> getBdsInstanceApiKeyPlain(GetBdsInstanceApiKeyPlainArgs args) {
@@ -461,6 +491,8 @@ public final class BigDataServiceFunctions {
      * Returns the user&#39;s API key information for the given ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -490,6 +522,7 @@ public final class BigDataServiceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBdsInstanceApiKeyResult> getBdsInstanceApiKey(GetBdsInstanceApiKeyArgs args, InvokeOptions options) {
@@ -501,6 +534,8 @@ public final class BigDataServiceFunctions {
      * Returns the user&#39;s API key information for the given ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -530,6 +565,7 @@ public final class BigDataServiceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBdsInstanceApiKeyResult> getBdsInstanceApiKeyPlain(GetBdsInstanceApiKeyPlainArgs args, InvokeOptions options) {
@@ -541,6 +577,8 @@ public final class BigDataServiceFunctions {
      * Returns the user&#39;s API key information for the given ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -570,6 +608,7 @@ public final class BigDataServiceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBdsInstanceApiKeysResult> getBdsInstanceApiKeys(GetBdsInstanceApiKeysArgs args) {
@@ -581,6 +620,8 @@ public final class BigDataServiceFunctions {
      * Returns the user&#39;s API key information for the given ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -610,6 +651,7 @@ public final class BigDataServiceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBdsInstanceApiKeysResult> getBdsInstanceApiKeysPlain(GetBdsInstanceApiKeysPlainArgs args) {
@@ -621,6 +663,8 @@ public final class BigDataServiceFunctions {
      * Returns the user&#39;s API key information for the given ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -650,6 +694,7 @@ public final class BigDataServiceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBdsInstanceApiKeysResult> getBdsInstanceApiKeys(GetBdsInstanceApiKeysArgs args, InvokeOptions options) {
@@ -661,6 +706,8 @@ public final class BigDataServiceFunctions {
      * Returns the user&#39;s API key information for the given ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -690,6 +737,7 @@ public final class BigDataServiceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBdsInstanceApiKeysResult> getBdsInstanceApiKeysPlain(GetBdsInstanceApiKeysPlainArgs args, InvokeOptions options) {
@@ -701,6 +749,8 @@ public final class BigDataServiceFunctions {
      * Get the details of an os patch
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -730,6 +780,7 @@ public final class BigDataServiceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBdsInstanceGetOsPatchResult> getBdsInstanceGetOsPatch(GetBdsInstanceGetOsPatchArgs args) {
@@ -741,6 +792,8 @@ public final class BigDataServiceFunctions {
      * Get the details of an os patch
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -770,6 +823,7 @@ public final class BigDataServiceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBdsInstanceGetOsPatchResult> getBdsInstanceGetOsPatchPlain(GetBdsInstanceGetOsPatchPlainArgs args) {
@@ -781,6 +835,8 @@ public final class BigDataServiceFunctions {
      * Get the details of an os patch
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -810,6 +866,7 @@ public final class BigDataServiceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBdsInstanceGetOsPatchResult> getBdsInstanceGetOsPatch(GetBdsInstanceGetOsPatchArgs args, InvokeOptions options) {
@@ -821,6 +878,8 @@ public final class BigDataServiceFunctions {
      * Get the details of an os patch
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -850,6 +909,7 @@ public final class BigDataServiceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBdsInstanceGetOsPatchResult> getBdsInstanceGetOsPatchPlain(GetBdsInstanceGetOsPatchPlainArgs args, InvokeOptions options) {
@@ -861,6 +921,8 @@ public final class BigDataServiceFunctions {
      * List all available os patches for a given cluster
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -889,6 +951,7 @@ public final class BigDataServiceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBdsInstanceListOsPatchesResult> getBdsInstanceListOsPatches(GetBdsInstanceListOsPatchesArgs args) {
@@ -900,6 +963,8 @@ public final class BigDataServiceFunctions {
      * List all available os patches for a given cluster
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -928,6 +993,7 @@ public final class BigDataServiceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBdsInstanceListOsPatchesResult> getBdsInstanceListOsPatchesPlain(GetBdsInstanceListOsPatchesPlainArgs args) {
@@ -939,6 +1005,8 @@ public final class BigDataServiceFunctions {
      * List all available os patches for a given cluster
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -967,6 +1035,7 @@ public final class BigDataServiceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBdsInstanceListOsPatchesResult> getBdsInstanceListOsPatches(GetBdsInstanceListOsPatchesArgs args, InvokeOptions options) {
@@ -978,6 +1047,8 @@ public final class BigDataServiceFunctions {
      * List all available os patches for a given cluster
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1006,6 +1077,7 @@ public final class BigDataServiceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBdsInstanceListOsPatchesResult> getBdsInstanceListOsPatchesPlain(GetBdsInstanceListOsPatchesPlainArgs args, InvokeOptions options) {
@@ -1017,6 +1089,8 @@ public final class BigDataServiceFunctions {
      * Returns the BDS Metastore configuration information for the given ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1046,6 +1120,7 @@ public final class BigDataServiceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBdsInstanceMetastoreConfigResult> getBdsInstanceMetastoreConfig(GetBdsInstanceMetastoreConfigArgs args) {
@@ -1057,6 +1132,8 @@ public final class BigDataServiceFunctions {
      * Returns the BDS Metastore configuration information for the given ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1086,6 +1163,7 @@ public final class BigDataServiceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBdsInstanceMetastoreConfigResult> getBdsInstanceMetastoreConfigPlain(GetBdsInstanceMetastoreConfigPlainArgs args) {
@@ -1097,6 +1175,8 @@ public final class BigDataServiceFunctions {
      * Returns the BDS Metastore configuration information for the given ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1126,6 +1206,7 @@ public final class BigDataServiceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBdsInstanceMetastoreConfigResult> getBdsInstanceMetastoreConfig(GetBdsInstanceMetastoreConfigArgs args, InvokeOptions options) {
@@ -1137,6 +1218,8 @@ public final class BigDataServiceFunctions {
      * Returns the BDS Metastore configuration information for the given ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1166,6 +1249,7 @@ public final class BigDataServiceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBdsInstanceMetastoreConfigResult> getBdsInstanceMetastoreConfigPlain(GetBdsInstanceMetastoreConfigPlainArgs args, InvokeOptions options) {
@@ -1177,6 +1261,8 @@ public final class BigDataServiceFunctions {
      * Returns a list of metastore configurations ssociated with this Big Data Service cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1210,6 +1296,7 @@ public final class BigDataServiceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBdsInstanceMetastoreConfigsResult> getBdsInstanceMetastoreConfigs(GetBdsInstanceMetastoreConfigsArgs args) {
@@ -1221,6 +1308,8 @@ public final class BigDataServiceFunctions {
      * Returns a list of metastore configurations ssociated with this Big Data Service cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1254,6 +1343,7 @@ public final class BigDataServiceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBdsInstanceMetastoreConfigsResult> getBdsInstanceMetastoreConfigsPlain(GetBdsInstanceMetastoreConfigsPlainArgs args) {
@@ -1265,6 +1355,8 @@ public final class BigDataServiceFunctions {
      * Returns a list of metastore configurations ssociated with this Big Data Service cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1298,6 +1390,7 @@ public final class BigDataServiceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBdsInstanceMetastoreConfigsResult> getBdsInstanceMetastoreConfigs(GetBdsInstanceMetastoreConfigsArgs args, InvokeOptions options) {
@@ -1309,6 +1402,8 @@ public final class BigDataServiceFunctions {
      * Returns a list of metastore configurations ssociated with this Big Data Service cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1342,6 +1437,7 @@ public final class BigDataServiceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBdsInstanceMetastoreConfigsResult> getBdsInstanceMetastoreConfigsPlain(GetBdsInstanceMetastoreConfigsPlainArgs args, InvokeOptions options) {
@@ -1353,6 +1449,8 @@ public final class BigDataServiceFunctions {
      * List the patch history of this cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1384,6 +1482,7 @@ public final class BigDataServiceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBdsInstancePatchHistoriesResult> getBdsInstancePatchHistories(GetBdsInstancePatchHistoriesArgs args) {
@@ -1395,6 +1494,8 @@ public final class BigDataServiceFunctions {
      * List the patch history of this cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1426,6 +1527,7 @@ public final class BigDataServiceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBdsInstancePatchHistoriesResult> getBdsInstancePatchHistoriesPlain(GetBdsInstancePatchHistoriesPlainArgs args) {
@@ -1437,6 +1539,8 @@ public final class BigDataServiceFunctions {
      * List the patch history of this cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1468,6 +1572,7 @@ public final class BigDataServiceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBdsInstancePatchHistoriesResult> getBdsInstancePatchHistories(GetBdsInstancePatchHistoriesArgs args, InvokeOptions options) {
@@ -1479,6 +1584,8 @@ public final class BigDataServiceFunctions {
      * List the patch history of this cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1510,6 +1617,7 @@ public final class BigDataServiceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBdsInstancePatchHistoriesResult> getBdsInstancePatchHistoriesPlain(GetBdsInstancePatchHistoriesPlainArgs args, InvokeOptions options) {
@@ -1521,6 +1629,8 @@ public final class BigDataServiceFunctions {
      * List all the available patches for this cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1549,6 +1659,7 @@ public final class BigDataServiceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBdsInstancePatchesResult> getBdsInstancePatches(GetBdsInstancePatchesArgs args) {
@@ -1560,6 +1671,8 @@ public final class BigDataServiceFunctions {
      * List all the available patches for this cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1588,6 +1701,7 @@ public final class BigDataServiceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBdsInstancePatchesResult> getBdsInstancePatchesPlain(GetBdsInstancePatchesPlainArgs args) {
@@ -1599,6 +1713,8 @@ public final class BigDataServiceFunctions {
      * List all the available patches for this cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1627,6 +1743,7 @@ public final class BigDataServiceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBdsInstancePatchesResult> getBdsInstancePatches(GetBdsInstancePatchesArgs args, InvokeOptions options) {
@@ -1638,6 +1755,8 @@ public final class BigDataServiceFunctions {
      * List all the available patches for this cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1666,6 +1785,7 @@ public final class BigDataServiceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBdsInstancePatchesResult> getBdsInstancePatchesPlain(GetBdsInstancePatchesPlainArgs args, InvokeOptions options) {
@@ -1677,6 +1797,8 @@ public final class BigDataServiceFunctions {
      * Returns a list of all Big Data Service clusters in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1707,6 +1829,7 @@ public final class BigDataServiceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBdsInstancesResult> getBdsInstances(GetBdsInstancesArgs args) {
@@ -1718,6 +1841,8 @@ public final class BigDataServiceFunctions {
      * Returns a list of all Big Data Service clusters in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1748,6 +1873,7 @@ public final class BigDataServiceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBdsInstancesResult> getBdsInstancesPlain(GetBdsInstancesPlainArgs args) {
@@ -1759,6 +1885,8 @@ public final class BigDataServiceFunctions {
      * Returns a list of all Big Data Service clusters in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1789,6 +1917,7 @@ public final class BigDataServiceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBdsInstancesResult> getBdsInstances(GetBdsInstancesArgs args, InvokeOptions options) {
@@ -1800,6 +1929,8 @@ public final class BigDataServiceFunctions {
      * Returns a list of all Big Data Service clusters in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1830,6 +1961,7 @@ public final class BigDataServiceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBdsInstancesResult> getBdsInstancesPlain(GetBdsInstancesPlainArgs args, InvokeOptions options) {

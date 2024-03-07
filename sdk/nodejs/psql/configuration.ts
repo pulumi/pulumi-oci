@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -40,13 +41,14 @@ import * as utilities from "../utilities";
  *     systemTags: _var.configuration_system_tags,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * Configurations can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Psql/configuration:Configuration test_configuration "id"
+ * $ pulumi import oci:Psql/configuration:Configuration test_configuration "id"
  * ```
  */
 export class Configuration extends pulumi.CustomResource {

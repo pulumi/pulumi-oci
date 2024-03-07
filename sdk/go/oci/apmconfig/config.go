@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -81,15 +82,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Configs can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:ApmConfig/config:Config test_config "configs/{configId}/apmDomainId/{apmDomainId}"
-//
+// $ pulumi import oci:ApmConfig/config:Config test_config "configs/{configId}/apmDomainId/{apmDomainId}"
 // ```
 type Config struct {
 	pulumi.CustomResourceState

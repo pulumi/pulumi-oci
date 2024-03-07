@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -50,15 +51,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // ApmDomains can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Apm/apmDomain:ApmDomain test_apm_domain "id"
-//
+// $ pulumi import oci:Apm/apmDomain:ApmDomain test_apm_domain "id"
 // ```
 type ApmDomain struct {
 	pulumi.CustomResourceState

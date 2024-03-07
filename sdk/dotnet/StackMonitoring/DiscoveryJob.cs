@@ -16,6 +16,7 @@ namespace Pulumi.Oci.StackMonitoring
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -72,13 +73,14 @@ namespace Pulumi.Oci.StackMonitoring
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// DiscoveryJobs can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:StackMonitoring/discoveryJob:DiscoveryJob test_discovery_job "id"
+    /// $ pulumi import oci:StackMonitoring/discoveryJob:DiscoveryJob test_discovery_job "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:StackMonitoring/discoveryJob:DiscoveryJob")]

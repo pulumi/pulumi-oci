@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -20,6 +21,7 @@ import * as utilities from "../utilities";
  *     isMergeEnabled: _var.compute_image_capability_schema_is_merge_enabled,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getComputeImageCapabilitySchema(args: GetComputeImageCapabilitySchemaArgs, opts?: pulumi.InvokeOptions): Promise<GetComputeImageCapabilitySchemaResult> {
 
@@ -98,6 +100,7 @@ export interface GetComputeImageCapabilitySchemaResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -107,6 +110,7 @@ export interface GetComputeImageCapabilitySchemaResult {
  *     isMergeEnabled: _var.compute_image_capability_schema_is_merge_enabled,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getComputeImageCapabilitySchemaOutput(args: GetComputeImageCapabilitySchemaOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetComputeImageCapabilitySchemaResult> {
     return pulumi.output(args).apply((a: any) => getComputeImageCapabilitySchema(a, opts))

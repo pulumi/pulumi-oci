@@ -360,12 +360,14 @@ def get_cluster(cluster_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_cluster = oci.Ocvp.get_cluster(cluster_id=oci_ocvp_cluster["test_cluster"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster.
@@ -415,12 +417,14 @@ def get_cluster_output(cluster_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_cluster = oci.Ocvp.get_cluster(cluster_id=oci_ocvp_cluster["test_cluster"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster.

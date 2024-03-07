@@ -171,6 +171,7 @@ class Osn(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -182,13 +183,14 @@ class Osn(pulumi.CustomResource):
                 ocpu_allocation_number=var["osn_ocpu_allocation_param_ocpu_allocation_number"],
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Osns can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Blockchain/osn:Osn test_osn "blockchainPlatforms/{blockchainPlatformId}/osns/{osnId}"
+        $ pulumi import oci:Blockchain/osn:Osn test_osn "blockchainPlatforms/{blockchainPlatformId}/osns/{osnId}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -210,6 +212,7 @@ class Osn(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -221,13 +224,14 @@ class Osn(pulumi.CustomResource):
                 ocpu_allocation_number=var["osn_ocpu_allocation_param_ocpu_allocation_number"],
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Osns can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Blockchain/osn:Osn test_osn "blockchainPlatforms/{blockchainPlatformId}/osns/{osnId}"
+        $ pulumi import oci:Blockchain/osn:Osn test_osn "blockchainPlatforms/{blockchainPlatformId}/osns/{osnId}"
         ```
 
         :param str resource_name: The name of the resource.

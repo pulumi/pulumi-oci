@@ -12,6 +12,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -20,6 +21,7 @@ import * as utilities from "../utilities";
  *     instanceId: oci_core_instance.test_instance.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getInstanceMaintenanceReboot(args: GetInstanceMaintenanceRebootArgs, opts?: pulumi.InvokeOptions): Promise<GetInstanceMaintenanceRebootResult> {
 
@@ -61,6 +63,7 @@ export interface GetInstanceMaintenanceRebootResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -69,6 +72,7 @@ export interface GetInstanceMaintenanceRebootResult {
  *     instanceId: oci_core_instance.test_instance.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getInstanceMaintenanceRebootOutput(args: GetInstanceMaintenanceRebootOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInstanceMaintenanceRebootResult> {
     return pulumi.output(args).apply((a: any) => getInstanceMaintenanceReboot(a, opts))

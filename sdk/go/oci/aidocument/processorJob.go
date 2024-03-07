@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -73,15 +74,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // ProcessorJobs can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:AiDocument/processorJob:ProcessorJob test_processor_job "id"
-//
+// $ pulumi import oci:AiDocument/processorJob:ProcessorJob test_processor_job "id"
 // ```
 type ProcessorJob struct {
 	pulumi.CustomResourceState

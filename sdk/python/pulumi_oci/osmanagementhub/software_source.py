@@ -592,6 +592,7 @@ class SoftwareSource(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -632,13 +633,14 @@ class SoftwareSource(pulumi.CustomResource):
             is_automatically_updated=var["software_source_is_automatically_updated"],
             software_source_version=var["software_source_software_source_version"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         SoftwareSources can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:OsManagementHub/softwareSource:SoftwareSource test_software_source "id"
+        $ pulumi import oci:OsManagementHub/softwareSource:SoftwareSource test_software_source "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -667,6 +669,7 @@ class SoftwareSource(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -707,13 +710,14 @@ class SoftwareSource(pulumi.CustomResource):
             is_automatically_updated=var["software_source_is_automatically_updated"],
             software_source_version=var["software_source_software_source_version"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         SoftwareSources can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:OsManagementHub/softwareSource:SoftwareSource test_software_source "id"
+        $ pulumi import oci:OsManagementHub/softwareSource:SoftwareSource test_software_source "id"
         ```
 
         :param str resource_name: The name of the resource.

@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -28,6 +29,7 @@ import * as utilities from "../utilities";
  *     startIndex: _var.cloud_gate_start_index,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDomainsCloudGates(args: GetDomainsCloudGatesArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsCloudGatesResult> {
 
@@ -125,6 +127,7 @@ export interface GetDomainsCloudGatesResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -140,6 +143,7 @@ export interface GetDomainsCloudGatesResult {
  *     startIndex: _var.cloud_gate_start_index,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDomainsCloudGatesOutput(args: GetDomainsCloudGatesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsCloudGatesResult> {
     return pulumi.output(args).apply((a: any) => getDomainsCloudGates(a, opts))

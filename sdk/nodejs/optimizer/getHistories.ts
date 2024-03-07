@@ -14,6 +14,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -30,6 +31,7 @@ import * as utilities from "../utilities";
  *     status: _var.history_status,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getHistories(args: GetHistoriesArgs, opts?: pulumi.InvokeOptions): Promise<GetHistoriesResult> {
 
@@ -145,6 +147,7 @@ export interface GetHistoriesResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -161,6 +164,7 @@ export interface GetHistoriesResult {
  *     status: _var.history_status,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getHistoriesOutput(args: GetHistoriesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetHistoriesResult> {
     return pulumi.output(args).apply((a: any) => getHistories(a, opts))

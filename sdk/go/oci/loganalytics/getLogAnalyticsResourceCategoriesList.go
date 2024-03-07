@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -43,6 +44,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetLogAnalyticsResourceCategoriesList(ctx *pulumi.Context, args *GetLogAnalyticsResourceCategoriesListArgs, opts ...pulumi.InvokeOption) (*GetLogAnalyticsResourceCategoriesListResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetLogAnalyticsResourceCategoriesListResult

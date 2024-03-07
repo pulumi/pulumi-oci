@@ -14,7 +14,7 @@ import * as utilities from "../utilities";
  * SqlFirewallPolicies can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:DataSafe/sqlFirewallPolicy:SqlFirewallPolicy test_sql_firewall_policy "id"
+ * $ pulumi import oci:DataSafe/sqlFirewallPolicy:SqlFirewallPolicy test_sql_firewall_policy "id"
  * ```
  */
 export class SqlFirewallPolicy extends pulumi.CustomResource {

@@ -219,12 +219,14 @@ def get_endpoint(endpoint_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_endpoint = oci.GenerativeAi.get_endpoint(endpoint_id=oci_generative_ai_endpoint["test_endpoint"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the endpoint.
@@ -262,12 +264,14 @@ def get_endpoint_output(endpoint_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_endpoint = oci.GenerativeAi.get_endpoint(endpoint_id=oci_generative_ai_endpoint["test_endpoint"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the endpoint.

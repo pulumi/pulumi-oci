@@ -56,6 +56,8 @@ public final class WaasFunctions {
      * Gets the details of an address list.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -84,6 +86,7 @@ public final class WaasFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAddressListResult> getAddressList(GetAddressListArgs args) {
@@ -95,6 +98,8 @@ public final class WaasFunctions {
      * Gets the details of an address list.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -123,6 +128,7 @@ public final class WaasFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAddressListResult> getAddressListPlain(GetAddressListPlainArgs args) {
@@ -134,6 +140,8 @@ public final class WaasFunctions {
      * Gets the details of an address list.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -162,6 +170,7 @@ public final class WaasFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAddressListResult> getAddressList(GetAddressListArgs args, InvokeOptions options) {
@@ -173,6 +182,8 @@ public final class WaasFunctions {
      * Gets the details of an address list.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -201,6 +212,7 @@ public final class WaasFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAddressListResult> getAddressListPlain(GetAddressListPlainArgs args, InvokeOptions options) {
@@ -212,6 +224,8 @@ public final class WaasFunctions {
      * Gets a list of address lists that can be used in a WAAS policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -245,6 +259,7 @@ public final class WaasFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAddressListsResult> getAddressLists(GetAddressListsArgs args) {
@@ -256,6 +271,8 @@ public final class WaasFunctions {
      * Gets a list of address lists that can be used in a WAAS policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -289,6 +306,7 @@ public final class WaasFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAddressListsResult> getAddressListsPlain(GetAddressListsPlainArgs args) {
@@ -300,6 +318,8 @@ public final class WaasFunctions {
      * Gets a list of address lists that can be used in a WAAS policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -333,6 +353,7 @@ public final class WaasFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAddressListsResult> getAddressLists(GetAddressListsArgs args, InvokeOptions options) {
@@ -344,6 +365,8 @@ public final class WaasFunctions {
      * Gets a list of address lists that can be used in a WAAS policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -377,6 +400,7 @@ public final class WaasFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAddressListsResult> getAddressListsPlain(GetAddressListsPlainArgs args, InvokeOptions options) {
@@ -388,6 +412,8 @@ public final class WaasFunctions {
      * Gets the details of an SSL certificate.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -416,6 +442,7 @@ public final class WaasFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCertificateResult> getCertificate(GetCertificateArgs args) {
@@ -427,6 +454,8 @@ public final class WaasFunctions {
      * Gets the details of an SSL certificate.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -455,6 +484,7 @@ public final class WaasFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCertificateResult> getCertificatePlain(GetCertificatePlainArgs args) {
@@ -466,6 +496,8 @@ public final class WaasFunctions {
      * Gets the details of an SSL certificate.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -494,6 +526,7 @@ public final class WaasFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCertificateResult> getCertificate(GetCertificateArgs args, InvokeOptions options) {
@@ -505,6 +538,8 @@ public final class WaasFunctions {
      * Gets the details of an SSL certificate.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -533,6 +568,7 @@ public final class WaasFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCertificateResult> getCertificatePlain(GetCertificatePlainArgs args, InvokeOptions options) {
@@ -544,6 +580,8 @@ public final class WaasFunctions {
      * Gets a list of SSL certificates that can be used in a WAAS policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -577,6 +615,7 @@ public final class WaasFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCertificatesResult> getCertificates(GetCertificatesArgs args) {
@@ -588,6 +627,8 @@ public final class WaasFunctions {
      * Gets a list of SSL certificates that can be used in a WAAS policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -621,6 +662,7 @@ public final class WaasFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCertificatesResult> getCertificatesPlain(GetCertificatesPlainArgs args) {
@@ -632,6 +674,8 @@ public final class WaasFunctions {
      * Gets a list of SSL certificates that can be used in a WAAS policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -665,6 +709,7 @@ public final class WaasFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCertificatesResult> getCertificates(GetCertificatesArgs args, InvokeOptions options) {
@@ -676,6 +721,8 @@ public final class WaasFunctions {
      * Gets a list of SSL certificates that can be used in a WAAS policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -709,6 +756,7 @@ public final class WaasFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCertificatesResult> getCertificatesPlain(GetCertificatesPlainArgs args, InvokeOptions options) {
@@ -720,6 +768,8 @@ public final class WaasFunctions {
      * Gets the details of a custom protection rule.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -748,6 +798,7 @@ public final class WaasFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCustomProtectionRuleResult> getCustomProtectionRule(GetCustomProtectionRuleArgs args) {
@@ -759,6 +810,8 @@ public final class WaasFunctions {
      * Gets the details of a custom protection rule.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -787,6 +840,7 @@ public final class WaasFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCustomProtectionRuleResult> getCustomProtectionRulePlain(GetCustomProtectionRulePlainArgs args) {
@@ -798,6 +852,8 @@ public final class WaasFunctions {
      * Gets the details of a custom protection rule.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -826,6 +882,7 @@ public final class WaasFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCustomProtectionRuleResult> getCustomProtectionRule(GetCustomProtectionRuleArgs args, InvokeOptions options) {
@@ -837,6 +894,8 @@ public final class WaasFunctions {
      * Gets the details of a custom protection rule.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -865,6 +924,7 @@ public final class WaasFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCustomProtectionRuleResult> getCustomProtectionRulePlain(GetCustomProtectionRulePlainArgs args, InvokeOptions options) {
@@ -876,6 +936,8 @@ public final class WaasFunctions {
      * Gets a list of custom protection rules for the specified Web Application Firewall.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -909,6 +971,7 @@ public final class WaasFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCustomProtectionRulesResult> getCustomProtectionRules(GetCustomProtectionRulesArgs args) {
@@ -920,6 +983,8 @@ public final class WaasFunctions {
      * Gets a list of custom protection rules for the specified Web Application Firewall.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -953,6 +1018,7 @@ public final class WaasFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCustomProtectionRulesResult> getCustomProtectionRulesPlain(GetCustomProtectionRulesPlainArgs args) {
@@ -964,6 +1030,8 @@ public final class WaasFunctions {
      * Gets a list of custom protection rules for the specified Web Application Firewall.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -997,6 +1065,7 @@ public final class WaasFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCustomProtectionRulesResult> getCustomProtectionRules(GetCustomProtectionRulesArgs args, InvokeOptions options) {
@@ -1008,6 +1077,8 @@ public final class WaasFunctions {
      * Gets a list of custom protection rules for the specified Web Application Firewall.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1041,6 +1112,7 @@ public final class WaasFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCustomProtectionRulesResult> getCustomProtectionRulesPlain(GetCustomProtectionRulesPlainArgs args, InvokeOptions options) {
@@ -1052,6 +1124,8 @@ public final class WaasFunctions {
      * Return the list of the tenant&#39;s edge node subnets. Use these CIDR blocks to restrict incoming traffic to your origin. These subnets are owned by Oracle Cloud Infrastructure and forward traffic to customer origins. They are not associated with specific regions or compartments.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1078,6 +1152,7 @@ public final class WaasFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetEdgeSubnetsResult> getEdgeSubnets() {
@@ -1089,6 +1164,8 @@ public final class WaasFunctions {
      * Return the list of the tenant&#39;s edge node subnets. Use these CIDR blocks to restrict incoming traffic to your origin. These subnets are owned by Oracle Cloud Infrastructure and forward traffic to customer origins. They are not associated with specific regions or compartments.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1115,6 +1192,7 @@ public final class WaasFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetEdgeSubnetsResult> getEdgeSubnetsPlain() {
@@ -1126,6 +1204,8 @@ public final class WaasFunctions {
      * Return the list of the tenant&#39;s edge node subnets. Use these CIDR blocks to restrict incoming traffic to your origin. These subnets are owned by Oracle Cloud Infrastructure and forward traffic to customer origins. They are not associated with specific regions or compartments.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1152,6 +1232,7 @@ public final class WaasFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetEdgeSubnetsResult> getEdgeSubnets(GetEdgeSubnetsArgs args) {
@@ -1163,6 +1244,8 @@ public final class WaasFunctions {
      * Return the list of the tenant&#39;s edge node subnets. Use these CIDR blocks to restrict incoming traffic to your origin. These subnets are owned by Oracle Cloud Infrastructure and forward traffic to customer origins. They are not associated with specific regions or compartments.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1189,6 +1272,7 @@ public final class WaasFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetEdgeSubnetsResult> getEdgeSubnetsPlain(GetEdgeSubnetsPlainArgs args) {
@@ -1200,6 +1284,8 @@ public final class WaasFunctions {
      * Return the list of the tenant&#39;s edge node subnets. Use these CIDR blocks to restrict incoming traffic to your origin. These subnets are owned by Oracle Cloud Infrastructure and forward traffic to customer origins. They are not associated with specific regions or compartments.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1226,6 +1312,7 @@ public final class WaasFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetEdgeSubnetsResult> getEdgeSubnets(GetEdgeSubnetsArgs args, InvokeOptions options) {
@@ -1237,6 +1324,8 @@ public final class WaasFunctions {
      * Return the list of the tenant&#39;s edge node subnets. Use these CIDR blocks to restrict incoming traffic to your origin. These subnets are owned by Oracle Cloud Infrastructure and forward traffic to customer origins. They are not associated with specific regions or compartments.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1263,6 +1352,7 @@ public final class WaasFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetEdgeSubnetsResult> getEdgeSubnetsPlain(GetEdgeSubnetsPlainArgs args, InvokeOptions options) {
@@ -1274,6 +1364,8 @@ public final class WaasFunctions {
      * Gets the details of a HTTP Redirect.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1302,6 +1394,7 @@ public final class WaasFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetHttpRedirectResult> getHttpRedirect(GetHttpRedirectArgs args) {
@@ -1313,6 +1406,8 @@ public final class WaasFunctions {
      * Gets the details of a HTTP Redirect.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1341,6 +1436,7 @@ public final class WaasFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetHttpRedirectResult> getHttpRedirectPlain(GetHttpRedirectPlainArgs args) {
@@ -1352,6 +1448,8 @@ public final class WaasFunctions {
      * Gets the details of a HTTP Redirect.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1380,6 +1478,7 @@ public final class WaasFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetHttpRedirectResult> getHttpRedirect(GetHttpRedirectArgs args, InvokeOptions options) {
@@ -1391,6 +1490,8 @@ public final class WaasFunctions {
      * Gets the details of a HTTP Redirect.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1419,6 +1520,7 @@ public final class WaasFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetHttpRedirectResult> getHttpRedirectPlain(GetHttpRedirectPlainArgs args, InvokeOptions options) {
@@ -1430,6 +1532,8 @@ public final class WaasFunctions {
      * Gets a list of HTTP Redirects.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1463,6 +1567,7 @@ public final class WaasFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetHttpRedirectsResult> getHttpRedirects(GetHttpRedirectsArgs args) {
@@ -1474,6 +1579,8 @@ public final class WaasFunctions {
      * Gets a list of HTTP Redirects.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1507,6 +1614,7 @@ public final class WaasFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetHttpRedirectsResult> getHttpRedirectsPlain(GetHttpRedirectsPlainArgs args) {
@@ -1518,6 +1626,8 @@ public final class WaasFunctions {
      * Gets a list of HTTP Redirects.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1551,6 +1661,7 @@ public final class WaasFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetHttpRedirectsResult> getHttpRedirects(GetHttpRedirectsArgs args, InvokeOptions options) {
@@ -1562,6 +1673,8 @@ public final class WaasFunctions {
      * Gets a list of HTTP Redirects.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1595,6 +1708,7 @@ public final class WaasFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetHttpRedirectsResult> getHttpRedirectsPlain(GetHttpRedirectsPlainArgs args, InvokeOptions options) {
@@ -1606,6 +1720,8 @@ public final class WaasFunctions {
      * Gets the details of a protection rule in the Web Application Firewall configuration for a WAAS policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1635,6 +1751,7 @@ public final class WaasFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetProtectionRuleResult> getProtectionRule(GetProtectionRuleArgs args) {
@@ -1646,6 +1763,8 @@ public final class WaasFunctions {
      * Gets the details of a protection rule in the Web Application Firewall configuration for a WAAS policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1675,6 +1794,7 @@ public final class WaasFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetProtectionRuleResult> getProtectionRulePlain(GetProtectionRulePlainArgs args) {
@@ -1686,6 +1806,8 @@ public final class WaasFunctions {
      * Gets the details of a protection rule in the Web Application Firewall configuration for a WAAS policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1715,6 +1837,7 @@ public final class WaasFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetProtectionRuleResult> getProtectionRule(GetProtectionRuleArgs args, InvokeOptions options) {
@@ -1726,6 +1849,8 @@ public final class WaasFunctions {
      * Gets the details of a protection rule in the Web Application Firewall configuration for a WAAS policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1755,6 +1880,7 @@ public final class WaasFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetProtectionRuleResult> getProtectionRulePlain(GetProtectionRulePlainArgs args, InvokeOptions options) {
@@ -1767,6 +1893,8 @@ public final class WaasFunctions {
      * The list is sorted by `key`, in ascending order.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1797,6 +1925,7 @@ public final class WaasFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetProtectionRulesResult> getProtectionRules(GetProtectionRulesArgs args) {
@@ -1809,6 +1938,8 @@ public final class WaasFunctions {
      * The list is sorted by `key`, in ascending order.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1839,6 +1970,7 @@ public final class WaasFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetProtectionRulesResult> getProtectionRulesPlain(GetProtectionRulesPlainArgs args) {
@@ -1851,6 +1983,8 @@ public final class WaasFunctions {
      * The list is sorted by `key`, in ascending order.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1881,6 +2015,7 @@ public final class WaasFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetProtectionRulesResult> getProtectionRules(GetProtectionRulesArgs args, InvokeOptions options) {
@@ -1893,6 +2028,8 @@ public final class WaasFunctions {
      * The list is sorted by `key`, in ascending order.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1923,6 +2060,7 @@ public final class WaasFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetProtectionRulesResult> getProtectionRulesPlain(GetProtectionRulesPlainArgs args, InvokeOptions options) {
@@ -1934,6 +2072,8 @@ public final class WaasFunctions {
      * Gets a list of WAAS policies.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1967,6 +2107,7 @@ public final class WaasFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetWaasPoliciesResult> getWaasPolicies(GetWaasPoliciesArgs args) {
@@ -1978,6 +2119,8 @@ public final class WaasFunctions {
      * Gets a list of WAAS policies.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2011,6 +2154,7 @@ public final class WaasFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetWaasPoliciesResult> getWaasPoliciesPlain(GetWaasPoliciesPlainArgs args) {
@@ -2022,6 +2166,8 @@ public final class WaasFunctions {
      * Gets a list of WAAS policies.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2055,6 +2201,7 @@ public final class WaasFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetWaasPoliciesResult> getWaasPolicies(GetWaasPoliciesArgs args, InvokeOptions options) {
@@ -2066,6 +2213,8 @@ public final class WaasFunctions {
      * Gets a list of WAAS policies.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2099,6 +2248,7 @@ public final class WaasFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetWaasPoliciesResult> getWaasPoliciesPlain(GetWaasPoliciesPlainArgs args, InvokeOptions options) {
@@ -2110,6 +2260,8 @@ public final class WaasFunctions {
      * Gets the details of a WAAS policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2138,6 +2290,7 @@ public final class WaasFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetWaasPolicyResult> getWaasPolicy(GetWaasPolicyArgs args) {
@@ -2149,6 +2302,8 @@ public final class WaasFunctions {
      * Gets the details of a WAAS policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2177,6 +2332,7 @@ public final class WaasFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetWaasPolicyResult> getWaasPolicyPlain(GetWaasPolicyPlainArgs args) {
@@ -2188,6 +2344,8 @@ public final class WaasFunctions {
      * Gets the details of a WAAS policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2216,6 +2374,7 @@ public final class WaasFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetWaasPolicyResult> getWaasPolicy(GetWaasPolicyArgs args, InvokeOptions options) {
@@ -2227,6 +2386,8 @@ public final class WaasFunctions {
      * Gets the details of a WAAS policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2255,6 +2416,7 @@ public final class WaasFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetWaasPolicyResult> getWaasPolicyPlain(GetWaasPolicyPlainArgs args, InvokeOptions options) {

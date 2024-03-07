@@ -12,6 +12,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,6 +24,7 @@ import * as utilities from "../utilities";
  *     metadata: _var.external_db_system_stack_monitorings_management_metadata,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export class ExternalDbSystemStackMonitoringsManagement extends pulumi.CustomResource {
     /**

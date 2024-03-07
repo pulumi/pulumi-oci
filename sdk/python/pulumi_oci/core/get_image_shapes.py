@@ -89,12 +89,14 @@ def get_image_shapes(filters: Optional[Sequence[pulumi.InputType['GetImageShapes
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_image_shapes = oci.Core.get_image_shapes(image_id=oci_core_image["test_image"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str image_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image.
@@ -123,12 +125,14 @@ def get_image_shapes_output(filters: Optional[pulumi.Input[Optional[Sequence[pul
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_image_shapes = oci.Core.get_image_shapes(image_id=oci_core_image["test_image"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str image_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image.

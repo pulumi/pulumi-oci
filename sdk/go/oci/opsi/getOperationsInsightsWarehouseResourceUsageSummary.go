@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,6 +42,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetOperationsInsightsWarehouseResourceUsageSummary(ctx *pulumi.Context, args *GetOperationsInsightsWarehouseResourceUsageSummaryArgs, opts ...pulumi.InvokeOption) (*GetOperationsInsightsWarehouseResourceUsageSummaryResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetOperationsInsightsWarehouseResourceUsageSummaryResult

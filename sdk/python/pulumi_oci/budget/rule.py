@@ -446,6 +446,7 @@ class Rule(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -466,13 +467,14 @@ class Rule(pulumi.CustomResource):
             message=var["alert_rule_message"],
             recipients=var["alert_rule_recipients"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         AlertRules can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Budget/rule:Rule test_alert_rule "budgets/{budgetId}/alertRules/{alertRuleId}"
+        $ pulumi import oci:Budget/rule:Rule test_alert_rule "budgets/{budgetId}/alertRules/{alertRuleId}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -505,6 +507,7 @@ class Rule(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -525,13 +528,14 @@ class Rule(pulumi.CustomResource):
             message=var["alert_rule_message"],
             recipients=var["alert_rule_recipients"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         AlertRules can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Budget/rule:Rule test_alert_rule "budgets/{budgetId}/alertRules/{alertRuleId}"
+        $ pulumi import oci:Budget/rule:Rule test_alert_rule "budgets/{budgetId}/alertRules/{alertRuleId}"
         ```
 
         :param str resource_name: The name of the resource.

@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -60,15 +61,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // OAuthPartnerCertificates can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Identity/domainsOauthPartnerCertificate:DomainsOauthPartnerCertificate test_oauth_partner_certificate "idcsEndpoint/{idcsEndpoint}/oAuthPartnerCertificates/{oAuthPartnerCertificateId}"
-//
+// $ pulumi import oci:Identity/domainsOauthPartnerCertificate:DomainsOauthPartnerCertificate test_oauth_partner_certificate "idcsEndpoint/{idcsEndpoint}/oAuthPartnerCertificates/{oAuthPartnerCertificateId}"
 // ```
 type DomainsOauthPartnerCertificate struct {
 	pulumi.CustomResourceState

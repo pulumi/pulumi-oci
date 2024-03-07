@@ -27,6 +27,8 @@ import javax.annotation.Nullable;
  * Using this resource will impact the size of the instance pool, attach will increment the size of the pool
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -56,13 +58,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * InstancePoolInstances can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Core/instancePoolInstance:InstancePoolInstance test_instance_pool_instance &#34;instancePools/{instancePoolId}/instances/compartmentId/{compartmentId}&#34;
+ * $ pulumi import oci:Core/instancePoolInstance:InstancePoolInstance test_instance_pool_instance &#34;instancePools/{instancePoolId}/instances/compartmentId/{compartmentId}&#34;
  * ```
  * 
  */

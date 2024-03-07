@@ -16,10 +16,9 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// 
         /// Gets the Audit Log Report for the given access requestId.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,8 +35,7 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetAccessRequestAuditLogReportResult> InvokeAsync(GetAccessRequestAuditLogReportArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAccessRequestAuditLogReportResult>("oci:OperatorAccessControl/getAccessRequestAuditLogReport:getAccessRequestAuditLogReport", args ?? new GetAccessRequestAuditLogReportArgs(), options.WithDefaults());
@@ -47,10 +45,9 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// 
         /// Gets the Audit Log Report for the given access requestId.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -67,8 +64,7 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetAccessRequestAuditLogReportResult> Invoke(GetAccessRequestAuditLogReportInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAccessRequestAuditLogReportResult>("oci:OperatorAccessControl/getAccessRequestAuditLogReport:getAccessRequestAuditLogReport", args ?? new GetAccessRequestAuditLogReportInvokeArgs(), options.WithDefaults());

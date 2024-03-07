@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -45,6 +46,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetChannels(ctx *pulumi.Context, args *GetChannelsArgs, opts ...pulumi.InvokeOption) (*GetChannelsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetChannelsResult

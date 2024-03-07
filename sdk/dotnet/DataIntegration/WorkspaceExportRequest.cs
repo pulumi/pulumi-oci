@@ -16,6 +16,7 @@ namespace Pulumi.Oci.DataIntegration
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -39,13 +40,14 @@ namespace Pulumi.Oci.DataIntegration
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// WorkspaceExportRequests can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:DataIntegration/workspaceExportRequest:WorkspaceExportRequest test_workspace_export_request "workspaces/{workspaceId}/exportRequests/{exportRequestKey}"
+    /// $ pulumi import oci:DataIntegration/workspaceExportRequest:WorkspaceExportRequest test_workspace_export_request "workspaces/{workspaceId}/exportRequests/{exportRequestKey}"
     /// ```
     /// </summary>
     [OciResourceType("oci:DataIntegration/workspaceExportRequest:WorkspaceExportRequest")]

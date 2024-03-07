@@ -21,6 +21,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -52,15 +53,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // DrgRouteDistributions can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Core/drgRouteDistribution:DrgRouteDistribution test_drg_route_distribution "id"
-//
+// $ pulumi import oci:Core/drgRouteDistribution:DrgRouteDistribution test_drg_route_distribution "id"
 // ```
 type DrgRouteDistribution struct {
 	pulumi.CustomResourceState

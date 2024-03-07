@@ -29,6 +29,8 @@ public final class OsubSubscriptionFunctions {
      * This API returns the commitment details corresponding to the id provided
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -59,6 +61,7 @@ public final class OsubSubscriptionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCommitmentResult> getCommitment(GetCommitmentArgs args) {
@@ -70,6 +73,8 @@ public final class OsubSubscriptionFunctions {
      * This API returns the commitment details corresponding to the id provided
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -100,6 +105,7 @@ public final class OsubSubscriptionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCommitmentResult> getCommitmentPlain(GetCommitmentPlainArgs args) {
@@ -111,6 +117,8 @@ public final class OsubSubscriptionFunctions {
      * This API returns the commitment details corresponding to the id provided
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -141,6 +149,7 @@ public final class OsubSubscriptionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCommitmentResult> getCommitment(GetCommitmentArgs args, InvokeOptions options) {
@@ -152,6 +161,8 @@ public final class OsubSubscriptionFunctions {
      * This API returns the commitment details corresponding to the id provided
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -182,6 +193,7 @@ public final class OsubSubscriptionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCommitmentResult> getCommitmentPlain(GetCommitmentPlainArgs args, InvokeOptions options) {
@@ -193,6 +205,8 @@ public final class OsubSubscriptionFunctions {
      * This list API returns all commitments for a particular Subscribed Service
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -224,6 +238,7 @@ public final class OsubSubscriptionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCommitmentsResult> getCommitments(GetCommitmentsArgs args) {
@@ -235,6 +250,8 @@ public final class OsubSubscriptionFunctions {
      * This list API returns all commitments for a particular Subscribed Service
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -266,6 +283,7 @@ public final class OsubSubscriptionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCommitmentsResult> getCommitmentsPlain(GetCommitmentsPlainArgs args) {
@@ -277,6 +295,8 @@ public final class OsubSubscriptionFunctions {
      * This list API returns all commitments for a particular Subscribed Service
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -308,6 +328,7 @@ public final class OsubSubscriptionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCommitmentsResult> getCommitments(GetCommitmentsArgs args, InvokeOptions options) {
@@ -319,6 +340,8 @@ public final class OsubSubscriptionFunctions {
      * This list API returns all commitments for a particular Subscribed Service
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -350,6 +373,7 @@ public final class OsubSubscriptionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCommitmentsResult> getCommitmentsPlain(GetCommitmentsPlainArgs args, InvokeOptions options) {
@@ -362,6 +386,8 @@ public final class OsubSubscriptionFunctions {
      * for a particular date range
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -395,6 +421,7 @@ public final class OsubSubscriptionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRatecardsResult> getRatecards(GetRatecardsArgs args) {
@@ -407,6 +434,8 @@ public final class OsubSubscriptionFunctions {
      * for a particular date range
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -440,6 +469,7 @@ public final class OsubSubscriptionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRatecardsResult> getRatecardsPlain(GetRatecardsPlainArgs args) {
@@ -452,6 +482,8 @@ public final class OsubSubscriptionFunctions {
      * for a particular date range
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -485,6 +517,7 @@ public final class OsubSubscriptionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRatecardsResult> getRatecards(GetRatecardsArgs args, InvokeOptions options) {
@@ -497,6 +530,8 @@ public final class OsubSubscriptionFunctions {
      * for a particular date range
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -530,6 +565,7 @@ public final class OsubSubscriptionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRatecardsResult> getRatecardsPlain(GetRatecardsPlainArgs args, InvokeOptions options) {
@@ -544,6 +580,8 @@ public final class OsubSubscriptionFunctions {
      * a 400 - invalid parameters exception and if no parameters are provided it will throw a 400 - missing parameter exception
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -578,6 +616,7 @@ public final class OsubSubscriptionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSubscriptionsResult> getSubscriptions(GetSubscriptionsArgs args) {
@@ -592,6 +631,8 @@ public final class OsubSubscriptionFunctions {
      * a 400 - invalid parameters exception and if no parameters are provided it will throw a 400 - missing parameter exception
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -626,6 +667,7 @@ public final class OsubSubscriptionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSubscriptionsResult> getSubscriptionsPlain(GetSubscriptionsPlainArgs args) {
@@ -640,6 +682,8 @@ public final class OsubSubscriptionFunctions {
      * a 400 - invalid parameters exception and if no parameters are provided it will throw a 400 - missing parameter exception
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -674,6 +718,7 @@ public final class OsubSubscriptionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSubscriptionsResult> getSubscriptions(GetSubscriptionsArgs args, InvokeOptions options) {
@@ -688,6 +733,8 @@ public final class OsubSubscriptionFunctions {
      * a 400 - invalid parameters exception and if no parameters are provided it will throw a 400 - missing parameter exception
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -722,6 +769,7 @@ public final class OsubSubscriptionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSubscriptionsResult> getSubscriptionsPlain(GetSubscriptionsPlainArgs args, InvokeOptions options) {

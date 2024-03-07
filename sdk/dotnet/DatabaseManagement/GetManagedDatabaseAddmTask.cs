@@ -18,10 +18,9 @@ namespace Pulumi.Oci.DatabaseManagement
         /// the name of the ADDM task, description, user, status and creation date time.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -39,8 +38,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetManagedDatabaseAddmTaskResult> InvokeAsync(GetManagedDatabaseAddmTaskArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagedDatabaseAddmTaskResult>("oci:DatabaseManagement/getManagedDatabaseAddmTask:getManagedDatabaseAddmTask", args ?? new GetManagedDatabaseAddmTaskArgs(), options.WithDefaults());
@@ -52,10 +50,9 @@ namespace Pulumi.Oci.DatabaseManagement
         /// the name of the ADDM task, description, user, status and creation date time.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -73,8 +70,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetManagedDatabaseAddmTaskResult> Invoke(GetManagedDatabaseAddmTaskInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseAddmTaskResult>("oci:DatabaseManagement/getManagedDatabaseAddmTask:getManagedDatabaseAddmTask", args ?? new GetManagedDatabaseAddmTaskInvokeArgs(), options.WithDefaults());

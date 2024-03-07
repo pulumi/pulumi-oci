@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,15 +42,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // RepositoryMirror can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:DevOps/repositoryMirror:RepositoryMirror test_repository_mirror "id"
-//
+// $ pulumi import oci:DevOps/repositoryMirror:RepositoryMirror test_repository_mirror "id"
 // ```
 type RepositoryMirror struct {
 	pulumi.CustomResourceState

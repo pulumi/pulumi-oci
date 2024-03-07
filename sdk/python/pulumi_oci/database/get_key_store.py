@@ -171,12 +171,14 @@ def get_key_store(key_store_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_key_store = oci.Database.get_key_store(key_store_id=oci_database_key_store["test_key_store"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
@@ -210,12 +212,14 @@ def get_key_store_output(key_store_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_key_store = oci.Database.get_key_store(key_store_id=oci_database_key_store["test_key_store"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.

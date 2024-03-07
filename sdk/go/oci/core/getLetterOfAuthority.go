@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -40,6 +41,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetLetterOfAuthority(ctx *pulumi.Context, args *GetLetterOfAuthorityArgs, opts ...pulumi.InvokeOption) (*GetLetterOfAuthorityResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetLetterOfAuthorityResult

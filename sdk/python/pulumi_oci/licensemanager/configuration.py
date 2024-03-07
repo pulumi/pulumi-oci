@@ -152,6 +152,7 @@ class Configuration(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -160,13 +161,14 @@ class Configuration(pulumi.CustomResource):
             compartment_id=var["compartment_id"],
             email_ids=var["configuration_email_ids"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Configurations can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:LicenseManager/configuration:Configuration test_configuration "configuration/compartmentId/{compartmentId}"
+        $ pulumi import oci:LicenseManager/configuration:Configuration test_configuration "configuration/compartmentId/{compartmentId}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -191,6 +193,7 @@ class Configuration(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -199,13 +202,14 @@ class Configuration(pulumi.CustomResource):
             compartment_id=var["compartment_id"],
             email_ids=var["configuration_email_ids"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Configurations can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:LicenseManager/configuration:Configuration test_configuration "configuration/compartmentId/{compartmentId}"
+        $ pulumi import oci:LicenseManager/configuration:Configuration test_configuration "configuration/compartmentId/{compartmentId}"
         ```
 
         :param str resource_name: The name of the resource.

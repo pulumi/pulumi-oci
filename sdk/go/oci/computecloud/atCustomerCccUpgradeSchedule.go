@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -57,15 +58,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // CccUpgradeSchedules can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:ComputeCloud/atCustomerCccUpgradeSchedule:AtCustomerCccUpgradeSchedule test_ccc_upgrade_schedule "id"
-//
+// $ pulumi import oci:ComputeCloud/atCustomerCccUpgradeSchedule:AtCustomerCccUpgradeSchedule test_ccc_upgrade_schedule "id"
 // ```
 type AtCustomerCccUpgradeSchedule struct {
 	pulumi.CustomResourceState

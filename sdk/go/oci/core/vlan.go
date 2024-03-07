@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -54,15 +55,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Vlans can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Core/vlan:Vlan test_vlan "id"
-//
+// $ pulumi import oci:Core/vlan:Vlan test_vlan "id"
 // ```
 type Vlan struct {
 	pulumi.CustomResourceState

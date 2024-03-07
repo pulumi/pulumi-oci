@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,6 +42,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupBdsInstanceMetastoreConfig(ctx *pulumi.Context, args *LookupBdsInstanceMetastoreConfigArgs, opts ...pulumi.InvokeOption) (*LookupBdsInstanceMetastoreConfigResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupBdsInstanceMetastoreConfigResult

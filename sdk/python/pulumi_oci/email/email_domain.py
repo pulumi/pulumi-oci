@@ -300,6 +300,7 @@ class EmailDomain(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -314,13 +315,14 @@ class EmailDomain(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         EmailDomains can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Email/emailDomain:EmailDomain test_email_domain "id"
+        $ pulumi import oci:Email/emailDomain:EmailDomain test_email_domain "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -348,6 +350,7 @@ class EmailDomain(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -362,13 +365,14 @@ class EmailDomain(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         EmailDomains can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Email/emailDomain:EmailDomain test_email_domain "id"
+        $ pulumi import oci:Email/emailDomain:EmailDomain test_email_domain "id"
         ```
 
         :param str resource_name: The name of the resource.

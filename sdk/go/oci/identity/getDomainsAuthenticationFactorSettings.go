@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -44,6 +45,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetDomainsAuthenticationFactorSettings(ctx *pulumi.Context, args *GetDomainsAuthenticationFactorSettingsArgs, opts ...pulumi.InvokeOption) (*GetDomainsAuthenticationFactorSettingsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDomainsAuthenticationFactorSettingsResult

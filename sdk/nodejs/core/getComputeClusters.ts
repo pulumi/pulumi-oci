@@ -14,6 +14,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,6 +25,7 @@ import * as utilities from "../utilities";
  *     displayName: _var.compute_cluster_display_name,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getComputeClusters(args: GetComputeClustersArgs, opts?: pulumi.InvokeOptions): Promise<GetComputeClustersResult> {
 
@@ -89,6 +91,7 @@ export interface GetComputeClustersResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -99,6 +102,7 @@ export interface GetComputeClustersResult {
  *     displayName: _var.compute_cluster_display_name,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getComputeClustersOutput(args: GetComputeClustersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetComputeClustersResult> {
     return pulumi.output(args).apply((a: any) => getComputeClusters(a, opts))

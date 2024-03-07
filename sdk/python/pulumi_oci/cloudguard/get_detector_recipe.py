@@ -243,12 +243,14 @@ def get_detector_recipe(detector_recipe_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_detector_recipe = oci.CloudGuard.get_detector_recipe(detector_recipe_id=oci_cloud_guard_detector_recipe["test_detector_recipe"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str detector_recipe_id: DetectorRecipe OCID
@@ -288,12 +290,14 @@ def get_detector_recipe_output(detector_recipe_id: Optional[pulumi.Input[str]] =
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_detector_recipe = oci.CloudGuard.get_detector_recipe(detector_recipe_id=oci_cloud_guard_detector_recipe["test_detector_recipe"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str detector_recipe_id: DetectorRecipe OCID

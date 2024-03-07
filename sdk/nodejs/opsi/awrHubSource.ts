@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -29,13 +30,14 @@ import * as utilities from "../utilities";
  *     },
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * AwrHubSources can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Opsi/awrHubSource:AwrHubSource test_awr_hub_source "id"
+ * $ pulumi import oci:Opsi/awrHubSource:AwrHubSource test_awr_hub_source "id"
  * ```
  */
 export class AwrHubSource extends pulumi.CustomResource {

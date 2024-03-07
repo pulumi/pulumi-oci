@@ -20,6 +20,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -30,6 +31,7 @@ import * as utilities from "../utilities";
  *     vnicId: oci_core_vnic_attachment.test_vnic_attachment.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getIpv6s(args?: GetIpv6sArgs, opts?: pulumi.InvokeOptions): Promise<GetIpv6sResult> {
     args = args || {};
@@ -102,6 +104,7 @@ export interface GetIpv6sResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -112,6 +115,7 @@ export interface GetIpv6sResult {
  *     vnicId: oci_core_vnic_attachment.test_vnic_attachment.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getIpv6sOutput(args?: GetIpv6sOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIpv6sResult> {
     return pulumi.output(args).apply((a: any) => getIpv6s(a, opts))

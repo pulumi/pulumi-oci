@@ -112,6 +112,7 @@ def get_image_shape(image_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -119,6 +120,7 @@ def get_image_shape(image_id: Optional[str] = None,
     test_image_shape = oci.Core.get_image_shape(image_id=oci_core_image["test_image"]["id"],
         shape_name=oci_core_shape["test_shape"]["name"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str image_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image.
@@ -150,6 +152,7 @@ def get_image_shape_output(image_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -157,6 +160,7 @@ def get_image_shape_output(image_id: Optional[pulumi.Input[str]] = None,
     test_image_shape = oci.Core.get_image_shape(image_id=oci_core_image["test_image"]["id"],
         shape_name=oci_core_shape["test_shape"]["name"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str image_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image.

@@ -19,6 +19,7 @@ namespace Pulumi.Oci.Oda
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -46,13 +47,14 @@ namespace Pulumi.Oci.Oda
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// OdaPrivateEndpoints can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Oda/odaPrivateEndpoint:OdaPrivateEndpoint test_oda_private_endpoint "id"
+    /// $ pulumi import oci:Oda/odaPrivateEndpoint:OdaPrivateEndpoint test_oda_private_endpoint "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Oda/odaPrivateEndpoint:OdaPrivateEndpoint")]

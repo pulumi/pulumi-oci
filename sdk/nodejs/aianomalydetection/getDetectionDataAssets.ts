@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,6 +25,7 @@ import * as utilities from "../utilities";
  *     state: _var.data_asset_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDetectionDataAssets(args: GetDetectionDataAssetsArgs, opts?: pulumi.InvokeOptions): Promise<GetDetectionDataAssetsResult> {
 
@@ -97,6 +99,7 @@ export interface GetDetectionDataAssetsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -108,6 +111,7 @@ export interface GetDetectionDataAssetsResult {
  *     state: _var.data_asset_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDetectionDataAssetsOutput(args: GetDetectionDataAssetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDetectionDataAssetsResult> {
     return pulumi.output(args).apply((a: any) => getDetectionDataAssets(a, opts))

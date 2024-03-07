@@ -20,6 +20,8 @@ import javax.annotation.Nullable;
  * Add a replica for this table
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -52,13 +54,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * TableReplicas can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Nosql/tableReplica:TableReplica test_table_replica &#34;tables/{tableNameOrId}/replicas/{region}&#34;
+ * $ pulumi import oci:Nosql/tableReplica:TableReplica test_table_replica &#34;tables/{tableNameOrId}/replicas/{region}&#34;
  * ```
  * 
  */

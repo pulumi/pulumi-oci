@@ -16,6 +16,7 @@ namespace Pulumi.Oci.ApmConfig
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -79,13 +80,14 @@ namespace Pulumi.Oci.ApmConfig
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// Configs can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:ApmConfig/config:Config test_config "configs/{configId}/apmDomainId/{apmDomainId}"
+    /// $ pulumi import oci:ApmConfig/config:Config test_config "configs/{configId}/apmDomainId/{apmDomainId}"
     /// ```
     /// </summary>
     [OciResourceType("oci:ApmConfig/config:Config")]

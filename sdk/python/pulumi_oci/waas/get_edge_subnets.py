@@ -76,12 +76,14 @@ def get_edge_subnets(filters: Optional[Sequence[pulumi.InputType['GetEdgeSubnets
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_edge_subnets = oci.Waas.get_edge_subnets()
     ```
+    <!--End PulumiCodeChooser -->
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -104,11 +106,13 @@ def get_edge_subnets_output(filters: Optional[pulumi.Input[Optional[Sequence[pul
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_edge_subnets = oci.Waas.get_edge_subnets()
     ```
+    <!--End PulumiCodeChooser -->
     """
     ...

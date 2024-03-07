@@ -493,7 +493,7 @@ class DbNode(pulumi.CustomResource):
         DbNodes can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Database/dbNode:DbNode test_db_node "id"
+        $ pulumi import oci:Database/dbNode:DbNode test_db_node "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -522,7 +522,7 @@ class DbNode(pulumi.CustomResource):
         DbNodes can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Database/dbNode:DbNode test_db_node "id"
+        $ pulumi import oci:Database/dbNode:DbNode test_db_node "id"
         ```
 
         :param str resource_name: The name of the resource.

@@ -116,6 +116,7 @@ def get_tag_defaults(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -125,6 +126,7 @@ def get_tag_defaults(compartment_id: Optional[str] = None,
         state=var["tag_default_state"],
         tag_definition_id=oci_identity_tag_definition["test_tag_definition"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment (remember that the tenancy is simply the root compartment).
@@ -164,6 +166,7 @@ def get_tag_defaults_output(compartment_id: Optional[pulumi.Input[Optional[str]]
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -173,6 +176,7 @@ def get_tag_defaults_output(compartment_id: Optional[pulumi.Input[Optional[str]]
         state=var["tag_default_state"],
         tag_definition_id=oci_identity_tag_definition["test_tag_definition"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment (remember that the tenancy is simply the root compartment).

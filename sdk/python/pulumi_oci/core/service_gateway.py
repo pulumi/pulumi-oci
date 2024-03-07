@@ -366,6 +366,7 @@ class ServiceGateway(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -385,13 +386,14 @@ class ServiceGateway(pulumi.CustomResource):
             },
             route_table_id=oci_core_route_table["test_route_table"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ServiceGateways can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/serviceGateway:ServiceGateway test_service_gateway "id"
+        $ pulumi import oci:Core/serviceGateway:ServiceGateway test_service_gateway "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -435,6 +437,7 @@ class ServiceGateway(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -454,13 +457,14 @@ class ServiceGateway(pulumi.CustomResource):
             },
             route_table_id=oci_core_route_table["test_route_table"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ServiceGateways can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/serviceGateway:ServiceGateway test_service_gateway "id"
+        $ pulumi import oci:Core/serviceGateway:ServiceGateway test_service_gateway "id"
         ```
 
         :param str resource_name: The name of the resource.

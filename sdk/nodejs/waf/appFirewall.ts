@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -30,13 +31,14 @@ import * as utilities from "../utilities";
  *     systemTags: _var.web_app_firewall_system_tags,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * WebAppFirewalls can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Waf/appFirewall:AppFirewall test_web_app_firewall "id"
+ * $ pulumi import oci:Waf/appFirewall:AppFirewall test_web_app_firewall "id"
  * ```
  */
 export class AppFirewall extends pulumi.CustomResource {

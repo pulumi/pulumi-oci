@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -49,15 +50,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // ReplicationSchedules can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:CloudMigrations/replicationSchedule:ReplicationSchedule test_replication_schedule "id"
-//
+// $ pulumi import oci:CloudMigrations/replicationSchedule:ReplicationSchedule test_replication_schedule "id"
 // ```
 type ReplicationSchedule struct {
 	pulumi.CustomResourceState

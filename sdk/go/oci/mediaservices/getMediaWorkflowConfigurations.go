@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -43,6 +44,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetMediaWorkflowConfigurations(ctx *pulumi.Context, args *GetMediaWorkflowConfigurationsArgs, opts ...pulumi.InvokeOption) (*GetMediaWorkflowConfigurationsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetMediaWorkflowConfigurationsResult

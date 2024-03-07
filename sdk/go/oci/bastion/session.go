@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -55,15 +56,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Sessions can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Bastion/session:Session test_session "id"
-//
+// $ pulumi import oci:Bastion/session:Session test_session "id"
 // ```
 type Session struct {
 	pulumi.CustomResourceState

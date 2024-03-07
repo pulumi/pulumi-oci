@@ -141,6 +141,7 @@ def get_cloud_autonomous_vm_clusters(availability_domain: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -151,6 +152,7 @@ def get_cloud_autonomous_vm_clusters(availability_domain: Optional[str] = None,
         display_name=var["cloud_autonomous_vm_cluster_display_name"],
         state=var["cloud_autonomous_vm_cluster_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str availability_domain: A filter to return only resources that match the given availability domain exactly.
@@ -195,6 +197,7 @@ def get_cloud_autonomous_vm_clusters_output(availability_domain: Optional[pulumi
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -205,6 +208,7 @@ def get_cloud_autonomous_vm_clusters_output(availability_domain: Optional[pulumi
         display_name=var["cloud_autonomous_vm_cluster_display_name"],
         state=var["cloud_autonomous_vm_cluster_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str availability_domain: A filter to return only resources that match the given availability domain exactly.

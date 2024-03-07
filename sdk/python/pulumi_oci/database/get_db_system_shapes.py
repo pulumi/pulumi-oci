@@ -96,6 +96,7 @@ def get_db_system_shapes(availability_domain: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -103,6 +104,7 @@ def get_db_system_shapes(availability_domain: Optional[str] = None,
     test_db_system_shapes = oci.Database.get_db_system_shapes(compartment_id=var["compartment_id"],
         availability_domain=var["db_system_shape_availability_domain"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str availability_domain: The name of the Availability Domain.
@@ -135,6 +137,7 @@ def get_db_system_shapes_output(availability_domain: Optional[pulumi.Input[Optio
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -142,6 +145,7 @@ def get_db_system_shapes_output(availability_domain: Optional[pulumi.Input[Optio
     test_db_system_shapes = oci.Database.get_db_system_shapes(compartment_id=var["compartment_id"],
         availability_domain=var["db_system_shape_availability_domain"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str availability_domain: The name of the Availability Domain.

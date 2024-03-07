@@ -17,10 +17,9 @@ namespace Pulumi.Oci.Core
         /// Lists Compute Image Capability Schema in the specified compartment. You can also query by a specific imageId.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -38,8 +37,7 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetComputeImageCapabilitySchemasResult> InvokeAsync(GetComputeImageCapabilitySchemasArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetComputeImageCapabilitySchemasResult>("oci:Core/getComputeImageCapabilitySchemas:getComputeImageCapabilitySchemas", args ?? new GetComputeImageCapabilitySchemasArgs(), options.WithDefaults());
@@ -50,10 +48,9 @@ namespace Pulumi.Oci.Core
         /// Lists Compute Image Capability Schema in the specified compartment. You can also query by a specific imageId.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -71,8 +68,7 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetComputeImageCapabilitySchemasResult> Invoke(GetComputeImageCapabilitySchemasInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetComputeImageCapabilitySchemasResult>("oci:Core/getComputeImageCapabilitySchemas:getComputeImageCapabilitySchemas", args ?? new GetComputeImageCapabilitySchemasInvokeArgs(), options.WithDefaults());

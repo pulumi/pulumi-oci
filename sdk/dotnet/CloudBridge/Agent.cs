@@ -16,6 +16,7 @@ namespace Pulumi.Oci.CloudBridge
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -44,13 +45,14 @@ namespace Pulumi.Oci.CloudBridge
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// Agents can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:CloudBridge/agent:Agent test_agent "id"
+    /// $ pulumi import oci:CloudBridge/agent:Agent test_agent "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:CloudBridge/agent:Agent")]

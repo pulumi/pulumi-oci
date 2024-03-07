@@ -22,6 +22,7 @@ namespace Pulumi.Oci.Jms
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -58,13 +59,14 @@ namespace Pulumi.Oci.Jms
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// Fleets can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Jms/fleet:Fleet test_fleet "id"
+    /// $ pulumi import oci:Jms/fleet:Fleet test_fleet "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Jms/fleet:Fleet")]

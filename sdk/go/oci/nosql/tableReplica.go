@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -45,15 +46,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // TableReplicas can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Nosql/tableReplica:TableReplica test_table_replica "tables/{tableNameOrId}/replicas/{region}"
-//
+// $ pulumi import oci:Nosql/tableReplica:TableReplica test_table_replica "tables/{tableNameOrId}/replicas/{region}"
 // ```
 type TableReplica struct {
 	pulumi.CustomResourceState

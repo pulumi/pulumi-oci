@@ -24,6 +24,8 @@ import javax.annotation.Nullable;
  * Creates a new NetworkAddressList.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -63,13 +65,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * NetworkAddressLists can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Waf/networkAddressList:NetworkAddressList test_network_address_list &#34;id&#34;
+ * $ pulumi import oci:Waf/networkAddressList:NetworkAddressList test_network_address_list &#34;id&#34;
  * ```
  * 
  */

@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -30,13 +31,14 @@ import * as utilities from "../utilities";
  *     port: _var.ekms_private_endpoint_port,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * EkmsPrivateEndpoints can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Kms/ekmsPrivateEndpoint:EkmsPrivateEndpoint test_ekms_private_endpoint "id"
+ * $ pulumi import oci:Kms/ekmsPrivateEndpoint:EkmsPrivateEndpoint test_ekms_private_endpoint "id"
  * ```
  */
 export class EkmsPrivateEndpoint extends pulumi.CustomResource {

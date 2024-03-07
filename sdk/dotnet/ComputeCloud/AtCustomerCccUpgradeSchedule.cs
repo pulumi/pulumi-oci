@@ -16,6 +16,7 @@ namespace Pulumi.Oci.ComputeCloud
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -51,13 +52,14 @@ namespace Pulumi.Oci.ComputeCloud
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// CccUpgradeSchedules can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:ComputeCloud/atCustomerCccUpgradeSchedule:AtCustomerCccUpgradeSchedule test_ccc_upgrade_schedule "id"
+    /// $ pulumi import oci:ComputeCloud/atCustomerCccUpgradeSchedule:AtCustomerCccUpgradeSchedule test_ccc_upgrade_schedule "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:ComputeCloud/atCustomerCccUpgradeSchedule:AtCustomerCccUpgradeSchedule")]

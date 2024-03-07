@@ -219,6 +219,7 @@ class Suppression(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -227,13 +228,14 @@ class Suppression(pulumi.CustomResource):
             compartment_id=var["tenancy_ocid"],
             email_address=var["suppression_email_address"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Suppressions can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Email/suppression:Suppression test_suppression "id"
+        $ pulumi import oci:Email/suppression:Suppression test_suppression "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -261,6 +263,7 @@ class Suppression(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -269,13 +272,14 @@ class Suppression(pulumi.CustomResource):
             compartment_id=var["tenancy_ocid"],
             email_address=var["suppression_email_address"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Suppressions can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Email/suppression:Suppression test_suppression "id"
+        $ pulumi import oci:Email/suppression:Suppression test_suppression "id"
         ```
 
         :param str resource_name: The name of the resource.

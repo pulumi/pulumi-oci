@@ -852,6 +852,7 @@ class OperatorControlAssignment(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -876,13 +877,14 @@ class OperatorControlAssignment(pulumi.CustomResource):
             time_assignment_from=var["operator_control_assignment_time_assignment_from"],
             time_assignment_to=var["operator_control_assignment_time_assignment_to"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         OperatorControlAssignments can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:OperatorAccessControl/operatorControlAssignment:OperatorControlAssignment test_operator_control_assignment "id"
+        $ pulumi import oci:OperatorAccessControl/operatorControlAssignment:OperatorControlAssignment test_operator_control_assignment "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -924,6 +926,7 @@ class OperatorControlAssignment(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -948,13 +951,14 @@ class OperatorControlAssignment(pulumi.CustomResource):
             time_assignment_from=var["operator_control_assignment_time_assignment_from"],
             time_assignment_to=var["operator_control_assignment_time_assignment_to"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         OperatorControlAssignments can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:OperatorAccessControl/operatorControlAssignment:OperatorControlAssignment test_operator_control_assignment "id"
+        $ pulumi import oci:OperatorAccessControl/operatorControlAssignment:OperatorControlAssignment test_operator_control_assignment "id"
         ```
 
         :param str resource_name: The name of the resource.

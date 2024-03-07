@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -45,6 +46,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetPipelineRuns(ctx *pulumi.Context, args *GetPipelineRunsArgs, opts ...pulumi.InvokeOption) (*GetPipelineRunsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetPipelineRunsResult

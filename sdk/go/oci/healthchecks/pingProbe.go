@@ -21,6 +21,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -49,15 +50,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // PingProbes can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:HealthChecks/pingProbe:PingProbe test_ping_probe "id"
-//
+// $ pulumi import oci:HealthChecks/pingProbe:PingProbe test_ping_probe "id"
 // ```
 type PingProbe struct {
 	pulumi.CustomResourceState

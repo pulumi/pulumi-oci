@@ -428,6 +428,7 @@ class ExternalNonContainerDatabase(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -440,13 +441,14 @@ class ExternalNonContainerDatabase(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ExternalNonContainerDatabases can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Database/externalNonContainerDatabase:ExternalNonContainerDatabase test_external_non_container_database "id"
+        $ pulumi import oci:Database/externalNonContainerDatabase:ExternalNonContainerDatabase test_external_non_container_database "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -473,6 +475,7 @@ class ExternalNonContainerDatabase(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -485,13 +488,14 @@ class ExternalNonContainerDatabase(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ExternalNonContainerDatabases can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Database/externalNonContainerDatabase:ExternalNonContainerDatabase test_external_non_container_database "id"
+        $ pulumi import oci:Database/externalNonContainerDatabase:ExternalNonContainerDatabase test_external_non_container_database "id"
         ```
 
         :param str resource_name: The name of the resource.

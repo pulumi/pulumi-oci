@@ -17,6 +17,7 @@ namespace Pulumi.Oci.Analytics
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -68,13 +69,14 @@ namespace Pulumi.Oci.Analytics
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// AnalyticsInstances can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Analytics/analyticsInstance:AnalyticsInstance test_analytics_instance "id"
+    /// $ pulumi import oci:Analytics/analyticsInstance:AnalyticsInstance test_analytics_instance "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Analytics/analyticsInstance:AnalyticsInstance")]

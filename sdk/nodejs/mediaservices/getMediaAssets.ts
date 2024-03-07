@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -32,6 +33,7 @@ import * as utilities from "../utilities";
  *     type: _var.media_asset_type,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getMediaAssets(args?: GetMediaAssetsArgs, opts?: pulumi.InvokeOptions): Promise<GetMediaAssetsResult> {
     args = args || {};
@@ -175,6 +177,7 @@ export interface GetMediaAssetsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -194,6 +197,7 @@ export interface GetMediaAssetsResult {
  *     type: _var.media_asset_type,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getMediaAssetsOutput(args?: GetMediaAssetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMediaAssetsResult> {
     return pulumi.output(args).apply((a: any) => getMediaAssets(a, opts))

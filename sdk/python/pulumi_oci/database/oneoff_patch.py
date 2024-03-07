@@ -428,6 +428,7 @@ class OneoffPatch(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -443,13 +444,14 @@ class OneoffPatch(pulumi.CustomResource):
             },
             one_off_patches=var["oneoff_patch_one_off_patches"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         OneoffPatches can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Database/oneoffPatch:OneoffPatch test_oneoff_patch "id"
+        $ pulumi import oci:Database/oneoffPatch:OneoffPatch test_oneoff_patch "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -480,6 +482,7 @@ class OneoffPatch(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -495,13 +498,14 @@ class OneoffPatch(pulumi.CustomResource):
             },
             one_off_patches=var["oneoff_patch_one_off_patches"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         OneoffPatches can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Database/oneoffPatch:OneoffPatch test_oneoff_patch "id"
+        $ pulumi import oci:Database/oneoffPatch:OneoffPatch test_oneoff_patch "id"
         ```
 
         :param str resource_name: The name of the resource.

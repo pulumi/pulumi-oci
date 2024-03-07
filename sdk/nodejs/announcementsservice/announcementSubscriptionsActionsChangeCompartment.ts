@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,13 +23,14 @@ import * as utilities from "../utilities";
  *     compartmentId: _var.compartment_id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * AnnouncementSubscriptionsActionsChangeCompartment can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:AnnouncementsService/announcementSubscriptionsActionsChangeCompartment:AnnouncementSubscriptionsActionsChangeCompartment test_announcement_subscriptions_actions_change_compartment "id"
+ * $ pulumi import oci:AnnouncementsService/announcementSubscriptionsActionsChangeCompartment:AnnouncementSubscriptionsActionsChangeCompartment test_announcement_subscriptions_actions_change_compartment "id"
  * ```
  */
 export class AnnouncementSubscriptionsActionsChangeCompartment extends pulumi.CustomResource {

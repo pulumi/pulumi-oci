@@ -24,10 +24,9 @@ namespace Pulumi.Oci.Mysql
         ///   - displayName ascending
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -48,8 +47,7 @@ namespace Pulumi.Oci.Mysql
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetMysqlConfigurationsResult> InvokeAsync(GetMysqlConfigurationsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetMysqlConfigurationsResult>("oci:Mysql/getMysqlConfigurations:getMysqlConfigurations", args ?? new GetMysqlConfigurationsArgs(), options.WithDefaults());
@@ -67,10 +65,9 @@ namespace Pulumi.Oci.Mysql
         ///   - displayName ascending
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -91,8 +88,7 @@ namespace Pulumi.Oci.Mysql
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetMysqlConfigurationsResult> Invoke(GetMysqlConfigurationsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMysqlConfigurationsResult>("oci:Mysql/getMysqlConfigurations:getMysqlConfigurations", args ?? new GetMysqlConfigurationsInvokeArgs(), options.WithDefaults());

@@ -25,7 +25,7 @@ import javax.annotation.Nullable;
  * Reports can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:DataSafe/report:Report test_report &#34;id&#34;
+ * $ pulumi import oci:DataSafe/report:Report test_report &#34;id&#34;
  * ```
  * 
  */

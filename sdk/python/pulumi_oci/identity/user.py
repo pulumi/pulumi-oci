@@ -451,6 +451,7 @@ class User(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -466,13 +467,14 @@ class User(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Users can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/user:User test_user "id"
+        $ pulumi import oci:Identity/user:User test_user "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -531,6 +533,7 @@ class User(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -546,13 +549,14 @@ class User(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Users can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/user:User test_user "id"
+        $ pulumi import oci:Identity/user:User test_user "id"
         ```
 
         :param str resource_name: The name of the resource.

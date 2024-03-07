@@ -125,6 +125,7 @@ def get_target_assets(display_name: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -134,6 +135,7 @@ def get_target_assets(display_name: Optional[str] = None,
         state=var["target_asset_state"],
         target_asset_id=oci_cloud_migrations_target_asset["test_target_asset"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str display_name: A filter to return only resources that match the entire given display name.
@@ -174,6 +176,7 @@ def get_target_assets_output(display_name: Optional[pulumi.Input[Optional[str]]]
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -183,6 +186,7 @@ def get_target_assets_output(display_name: Optional[pulumi.Input[Optional[str]]]
         state=var["target_asset_state"],
         target_asset_id=oci_cloud_migrations_target_asset["test_target_asset"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str display_name: A filter to return only resources that match the entire given display name.

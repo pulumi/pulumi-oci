@@ -378,12 +378,14 @@ def get_blockchain_platform(blockchain_platform_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_blockchain_platform = oci.Blockchain.get_blockchain_platform(blockchain_platform_id=oci_blockchain_blockchain_platform["test_blockchain_platform"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str blockchain_platform_id: Unique service identifier.
@@ -435,12 +437,14 @@ def get_blockchain_platform_output(blockchain_platform_id: Optional[pulumi.Input
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_blockchain_platform = oci.Blockchain.get_blockchain_platform(blockchain_platform_id=oci_blockchain_blockchain_platform["test_blockchain_platform"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str blockchain_platform_id: Unique service identifier.

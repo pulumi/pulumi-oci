@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -19,6 +20,7 @@ import * as utilities from "../utilities";
  *     managedListId: oci_cloud_guard_managed_list.test_managed_list.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getManagedList(args: GetManagedListArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedListResult> {
 
@@ -115,6 +117,7 @@ export interface GetManagedListResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -123,6 +126,7 @@ export interface GetManagedListResult {
  *     managedListId: oci_cloud_guard_managed_list.test_managed_list.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getManagedListOutput(args: GetManagedListOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedListResult> {
     return pulumi.output(args).apply((a: any) => getManagedList(a, opts))

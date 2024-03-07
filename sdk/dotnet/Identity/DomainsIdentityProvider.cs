@@ -19,7 +19,7 @@ namespace Pulumi.Oci.Identity
     /// IdentityProviders can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Identity/domainsIdentityProvider:DomainsIdentityProvider test_identity_provider "idcsEndpoint/{idcsEndpoint}/identityProviders/{identityProviderId}"
+    /// $ pulumi import oci:Identity/domainsIdentityProvider:DomainsIdentityProvider test_identity_provider "idcsEndpoint/{idcsEndpoint}/identityProviders/{identityProviderId}"
     /// ```
     /// </summary>
     [OciResourceType("oci:Identity/domainsIdentityProvider:DomainsIdentityProvider")]

@@ -14,6 +14,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,6 +25,7 @@ import * as utilities from "../utilities";
  *     startTime: _var.audit_event_start_time,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getEvents(args: GetEventsArgs, opts?: pulumi.InvokeOptions): Promise<GetEventsResult> {
 
@@ -87,6 +89,7 @@ export interface GetEventsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -97,6 +100,7 @@ export interface GetEventsResult {
  *     startTime: _var.audit_event_start_time,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getEventsOutput(args: GetEventsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetEventsResult> {
     return pulumi.output(args).apply((a: any) => getEvents(a, opts))

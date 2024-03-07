@@ -153,6 +153,7 @@ def get_exadata_insights(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -165,6 +166,7 @@ def get_exadata_insights(compartment_id: Optional[str] = None,
         states=var["exadata_insight_state"],
         statuses=var["exadata_insight_status"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -217,6 +219,7 @@ def get_exadata_insights_output(compartment_id: Optional[pulumi.Input[Optional[s
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -229,6 +232,7 @@ def get_exadata_insights_output(compartment_id: Optional[pulumi.Input[Optional[s
         states=var["exadata_insight_state"],
         statuses=var["exadata_insight_status"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

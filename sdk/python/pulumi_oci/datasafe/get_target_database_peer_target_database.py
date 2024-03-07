@@ -202,6 +202,7 @@ def get_target_database_peer_target_database(peer_target_database_id: Optional[s
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -209,6 +210,7 @@ def get_target_database_peer_target_database(peer_target_database_id: Optional[s
     test_target_database_peer_target_database = oci.DataSafe.get_target_database_peer_target_database(peer_target_database_id=oci_data_safe_target_database["test_target_database"]["id"],
         target_database_id=oci_data_safe_target_database["test_target_database"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str peer_target_database_id: The unique id of the peer target database.
@@ -248,6 +250,7 @@ def get_target_database_peer_target_database_output(peer_target_database_id: Opt
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -255,6 +258,7 @@ def get_target_database_peer_target_database_output(peer_target_database_id: Opt
     test_target_database_peer_target_database = oci.DataSafe.get_target_database_peer_target_database(peer_target_database_id=oci_data_safe_target_database["test_target_database"]["id"],
         target_database_id=oci_data_safe_target_database["test_target_database"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str peer_target_database_id: The unique id of the peer target database.

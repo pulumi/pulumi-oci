@@ -395,6 +395,7 @@ class EkmsPrivateEndpoint(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -413,13 +414,14 @@ class EkmsPrivateEndpoint(pulumi.CustomResource):
             },
             port=var["ekms_private_endpoint_port"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         EkmsPrivateEndpoints can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Kms/ekmsPrivateEndpoint:EkmsPrivateEndpoint test_ekms_private_endpoint "id"
+        $ pulumi import oci:Kms/ekmsPrivateEndpoint:EkmsPrivateEndpoint test_ekms_private_endpoint "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -450,6 +452,7 @@ class EkmsPrivateEndpoint(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -468,13 +471,14 @@ class EkmsPrivateEndpoint(pulumi.CustomResource):
             },
             port=var["ekms_private_endpoint_port"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         EkmsPrivateEndpoints can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Kms/ekmsPrivateEndpoint:EkmsPrivateEndpoint test_ekms_private_endpoint "id"
+        $ pulumi import oci:Kms/ekmsPrivateEndpoint:EkmsPrivateEndpoint test_ekms_private_endpoint "id"
         ```
 
         :param str resource_name: The name of the resource.

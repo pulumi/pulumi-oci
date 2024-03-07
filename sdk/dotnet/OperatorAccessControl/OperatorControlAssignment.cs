@@ -16,6 +16,7 @@ namespace Pulumi.Oci.OperatorAccessControl
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -48,13 +49,14 @@ namespace Pulumi.Oci.OperatorAccessControl
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// OperatorControlAssignments can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:OperatorAccessControl/operatorControlAssignment:OperatorControlAssignment test_operator_control_assignment "id"
+    /// $ pulumi import oci:OperatorAccessControl/operatorControlAssignment:OperatorControlAssignment test_operator_control_assignment "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:OperatorAccessControl/operatorControlAssignment:OperatorControlAssignment")]

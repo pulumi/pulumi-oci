@@ -16,7 +16,7 @@ import * as utilities from "../utilities";
  * DeployStages can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:DevOps/deployStage:DeployStage test_deploy_stage "id"
+ * $ pulumi import oci:DevOps/deployStage:DeployStage test_deploy_stage "id"
  * ```
  */
 export class DeployStage extends pulumi.CustomResource {

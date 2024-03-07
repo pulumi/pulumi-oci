@@ -139,6 +139,7 @@ def get_db_versions(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -150,6 +151,7 @@ def get_db_versions(compartment_id: Optional[str] = None,
         is_upgrade_supported=var["db_version_is_upgrade_supported"],
         storage_management=var["db_version_storage_management"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -200,6 +202,7 @@ def get_db_versions_output(compartment_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -211,6 +214,7 @@ def get_db_versions_output(compartment_id: Optional[pulumi.Input[str]] = None,
         is_upgrade_supported=var["db_version_is_upgrade_supported"],
         storage_management=var["db_version_storage_management"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

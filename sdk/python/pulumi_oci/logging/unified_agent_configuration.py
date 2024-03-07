@@ -367,6 +367,7 @@ class UnifiedAgentConfiguration(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -450,13 +451,14 @@ class UnifiedAgentConfiguration(pulumi.CustomResource):
                 group_lists=var["unified_agent_configuration_group_association_group_list"],
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         UnifiedAgentConfigurations can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Logging/unifiedAgentConfiguration:UnifiedAgentConfiguration test_unified_agent_configuration "id"
+        $ pulumi import oci:Logging/unifiedAgentConfiguration:UnifiedAgentConfiguration test_unified_agent_configuration "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -483,6 +485,7 @@ class UnifiedAgentConfiguration(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -566,13 +569,14 @@ class UnifiedAgentConfiguration(pulumi.CustomResource):
                 group_lists=var["unified_agent_configuration_group_association_group_list"],
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         UnifiedAgentConfigurations can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Logging/unifiedAgentConfiguration:UnifiedAgentConfiguration test_unified_agent_configuration "id"
+        $ pulumi import oci:Logging/unifiedAgentConfiguration:UnifiedAgentConfiguration test_unified_agent_configuration "id"
         ```
 
         :param str resource_name: The name of the resource.

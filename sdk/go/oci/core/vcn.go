@@ -57,6 +57,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -99,15 +100,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Vcns can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Core/vcn:Vcn test_vcn "id"
-//
+// $ pulumi import oci:Core/vcn:Vcn test_vcn "id"
 // ```
 type Vcn struct {
 	pulumi.CustomResourceState

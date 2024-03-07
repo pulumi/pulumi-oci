@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -25,13 +26,14 @@ import * as utilities from "../utilities";
  *     },
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * Osns can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Blockchain/osn:Osn test_osn "blockchainPlatforms/{blockchainPlatformId}/osns/{osnId}"
+ * $ pulumi import oci:Blockchain/osn:Osn test_osn "blockchainPlatforms/{blockchainPlatformId}/osns/{osnId}"
  * ```
  */
 export class Osn extends pulumi.CustomResource {

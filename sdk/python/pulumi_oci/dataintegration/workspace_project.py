@@ -425,6 +425,7 @@ class WorkspaceProject(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -444,13 +445,14 @@ class WorkspaceProject(pulumi.CustomResource):
                 registry_version=var["workspace_project_registry_metadata_registry_version"],
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         WorkspaceProjects can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataIntegration/workspaceProject:WorkspaceProject test_workspace_project "workspaces/{workspaceId}/projects/{projectKey}"
+        $ pulumi import oci:DataIntegration/workspaceProject:WorkspaceProject test_workspace_project "workspaces/{workspaceId}/projects/{projectKey}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -481,6 +483,7 @@ class WorkspaceProject(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -500,13 +503,14 @@ class WorkspaceProject(pulumi.CustomResource):
                 registry_version=var["workspace_project_registry_metadata_registry_version"],
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         WorkspaceProjects can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataIntegration/workspaceProject:WorkspaceProject test_workspace_project "workspaces/{workspaceId}/projects/{projectKey}"
+        $ pulumi import oci:DataIntegration/workspaceProject:WorkspaceProject test_workspace_project "workspaces/{workspaceId}/projects/{projectKey}"
         ```
 
         :param str resource_name: The name of the resource.

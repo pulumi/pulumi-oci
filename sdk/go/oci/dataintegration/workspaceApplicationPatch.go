@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -56,15 +57,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // WorkspaceApplicationPatches can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:DataIntegration/workspaceApplicationPatch:WorkspaceApplicationPatch test_workspace_application_patch "workspaces/{workspaceId}/applications/{applicationKey}/patches/{patchKey}"
-//
+// $ pulumi import oci:DataIntegration/workspaceApplicationPatch:WorkspaceApplicationPatch test_workspace_application_patch "workspaces/{workspaceId}/applications/{applicationKey}/patches/{patchKey}"
 // ```
 type WorkspaceApplicationPatch struct {
 	pulumi.CustomResourceState

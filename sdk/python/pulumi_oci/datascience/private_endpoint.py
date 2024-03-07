@@ -462,6 +462,7 @@ class PrivateEndpoint(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -481,13 +482,14 @@ class PrivateEndpoint(pulumi.CustomResource):
             nsg_ids=var["data_science_private_endpoint_nsg_ids"],
             sub_domain=var["data_science_private_endpoint_sub_domain"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         DataSciencePrivateEndpoints can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataScience/privateEndpoint:PrivateEndpoint test_data_science_private_endpoint "id"
+        $ pulumi import oci:DataScience/privateEndpoint:PrivateEndpoint test_data_science_private_endpoint "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -519,6 +521,7 @@ class PrivateEndpoint(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -538,13 +541,14 @@ class PrivateEndpoint(pulumi.CustomResource):
             nsg_ids=var["data_science_private_endpoint_nsg_ids"],
             sub_domain=var["data_science_private_endpoint_sub_domain"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         DataSciencePrivateEndpoints can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataScience/privateEndpoint:PrivateEndpoint test_data_science_private_endpoint "id"
+        $ pulumi import oci:DataScience/privateEndpoint:PrivateEndpoint test_data_science_private_endpoint "id"
         ```
 
         :param str resource_name: The name of the resource.

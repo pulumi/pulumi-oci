@@ -21,6 +21,8 @@ import javax.annotation.Nullable;
  * Cancel automatic full/incremental create backup workrequests specified by the backup Id. This cannot be used on manual backups.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -50,6 +52,7 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 

@@ -19,6 +19,7 @@ namespace Pulumi.Oci.HealthChecks
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -39,13 +40,14 @@ namespace Pulumi.Oci.HealthChecks
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// PingProbes can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:HealthChecks/pingProbe:PingProbe test_ping_probe "id"
+    /// $ pulumi import oci:HealthChecks/pingProbe:PingProbe test_ping_probe "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:HealthChecks/pingProbe:PingProbe")]

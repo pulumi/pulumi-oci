@@ -101,6 +101,7 @@ def get_managed_instance_event_report(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -110,6 +111,7 @@ def get_managed_instance_event_report(compartment_id: Optional[str] = None,
         latest_timestamp_greater_than_or_equal_to=var["managed_instance_event_report_latest_timestamp_greater_than_or_equal_to"],
         latest_timestamp_less_than=var["managed_instance_event_report_latest_timestamp_less_than"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID of the compartment in which to list resources.
@@ -147,6 +149,7 @@ def get_managed_instance_event_report_output(compartment_id: Optional[pulumi.Inp
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -156,6 +159,7 @@ def get_managed_instance_event_report_output(compartment_id: Optional[pulumi.Inp
         latest_timestamp_greater_than_or_equal_to=var["managed_instance_event_report_latest_timestamp_greater_than_or_equal_to"],
         latest_timestamp_less_than=var["managed_instance_event_report_latest_timestamp_less_than"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID of the compartment in which to list resources.

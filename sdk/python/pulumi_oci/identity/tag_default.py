@@ -272,6 +272,7 @@ class TagDefault(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -282,13 +283,14 @@ class TagDefault(pulumi.CustomResource):
             value=var["tag_default_value"],
             is_required=var["tag_default_is_required"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         TagDefaults can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/tagDefault:TagDefault test_tag_default "id"
+        $ pulumi import oci:Identity/tagDefault:TagDefault test_tag_default "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -326,6 +328,7 @@ class TagDefault(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -336,13 +339,14 @@ class TagDefault(pulumi.CustomResource):
             value=var["tag_default_value"],
             is_required=var["tag_default_is_required"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         TagDefaults can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/tagDefault:TagDefault test_tag_default "id"
+        $ pulumi import oci:Identity/tagDefault:TagDefault test_tag_default "id"
         ```
 
         :param str resource_name: The name of the resource.

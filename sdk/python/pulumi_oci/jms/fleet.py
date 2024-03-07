@@ -453,6 +453,7 @@ class Fleet(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -477,13 +478,14 @@ class Fleet(pulumi.CustomResource):
                 log_id=oci_logging_log["test_log"]["id"],
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Fleets can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Jms/fleet:Fleet test_fleet "id"
+        $ pulumi import oci:Jms/fleet:Fleet test_fleet "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -516,6 +518,7 @@ class Fleet(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -540,13 +543,14 @@ class Fleet(pulumi.CustomResource):
                 log_id=oci_logging_log["test_log"]["id"],
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Fleets can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Jms/fleet:Fleet test_fleet "id"
+        $ pulumi import oci:Jms/fleet:Fleet test_fleet "id"
         ```
 
         :param str resource_name: The name of the resource.

@@ -367,6 +367,7 @@ class Catalog(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -381,13 +382,14 @@ class Catalog(pulumi.CustomResource):
                 "bar-key": "value",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Catalogs can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataCatalog/catalog:Catalog test_catalog "id"
+        $ pulumi import oci:DataCatalog/catalog:Catalog test_catalog "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -416,6 +418,7 @@ class Catalog(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -430,13 +433,14 @@ class Catalog(pulumi.CustomResource):
                 "bar-key": "value",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Catalogs can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataCatalog/catalog:Catalog test_catalog "id"
+        $ pulumi import oci:DataCatalog/catalog:Catalog test_catalog "id"
         ```
 
         :param str resource_name: The name of the resource.

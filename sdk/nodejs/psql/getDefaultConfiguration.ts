@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,6 +22,7 @@ import * as utilities from "../utilities";
  *     defaultConfigurationId: oci_psql_default_configuration.test_default_configuration.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDefaultConfiguration(args: GetDefaultConfigurationArgs, opts?: pulumi.InvokeOptions): Promise<GetDefaultConfigurationResult> {
 
@@ -97,6 +99,7 @@ export interface GetDefaultConfigurationResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -105,6 +108,7 @@ export interface GetDefaultConfigurationResult {
  *     defaultConfigurationId: oci_psql_default_configuration.test_default_configuration.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDefaultConfigurationOutput(args: GetDefaultConfigurationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDefaultConfigurationResult> {
     return pulumi.output(args).apply((a: any) => getDefaultConfiguration(a, opts))

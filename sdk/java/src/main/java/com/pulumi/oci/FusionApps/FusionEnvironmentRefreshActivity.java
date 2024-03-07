@@ -21,6 +21,8 @@ import javax.annotation.Nullable;
  * Creates a new RefreshActivity.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -50,13 +52,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * FusionEnvironmentRefreshActivities can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:FusionApps/fusionEnvironmentRefreshActivity:FusionEnvironmentRefreshActivity test_fusion_environment_refresh_activity &#34;fusionEnvironments/{fusionEnvironmentId}/refreshActivities/{refreshActivityId}&#34;
+ * $ pulumi import oci:FusionApps/fusionEnvironmentRefreshActivity:FusionEnvironmentRefreshActivity test_fusion_environment_refresh_activity &#34;fusionEnvironments/{fusionEnvironmentId}/refreshActivities/{refreshActivityId}&#34;
  * ```
  * 
  */

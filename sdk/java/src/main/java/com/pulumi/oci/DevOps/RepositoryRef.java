@@ -21,6 +21,8 @@ import javax.annotation.Nullable;
  * Creates a new reference or updates an existing one.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -53,13 +55,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * RepositoryRefs can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:DevOps/repositoryRef:RepositoryRef test_repository_ref &#34;repositories/{repositoryId}/refs/{refName}&#34;
+ * $ pulumi import oci:DevOps/repositoryRef:RepositoryRef test_repository_ref &#34;repositories/{repositoryId}/refs/{refName}&#34;
  * ```
  * 
  */

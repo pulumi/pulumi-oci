@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -40,6 +41,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupInventory(ctx *pulumi.Context, args *LookupInventoryArgs, opts ...pulumi.InvokeOption) (*LookupInventoryResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupInventoryResult

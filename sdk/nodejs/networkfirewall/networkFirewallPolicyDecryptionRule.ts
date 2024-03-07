@@ -16,7 +16,7 @@ import * as utilities from "../utilities";
  * NetworkFirewallPolicyDecryptionRules can be imported using the `name`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:NetworkFirewall/networkFirewallPolicyDecryptionRule:NetworkFirewallPolicyDecryptionRule test_network_firewall_policy_decryption_rule "networkFirewallPolicies/{networkFirewallPolicyId}/decryptionRules/{decryptionRuleName}"
+ * $ pulumi import oci:NetworkFirewall/networkFirewallPolicyDecryptionRule:NetworkFirewallPolicyDecryptionRule test_network_firewall_policy_decryption_rule "networkFirewallPolicies/{networkFirewallPolicyId}/decryptionRules/{decryptionRuleName}"
  * ```
  */
 export class NetworkFirewallPolicyDecryptionRule extends pulumi.CustomResource {

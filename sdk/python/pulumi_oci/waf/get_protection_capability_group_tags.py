@@ -109,6 +109,7 @@ def get_protection_capability_group_tags(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -117,6 +118,7 @@ def get_protection_capability_group_tags(compartment_id: Optional[str] = None,
         name=var["protection_capability_group_tag_name"],
         type=var["protection_capability_group_tag_type"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
@@ -153,6 +155,7 @@ def get_protection_capability_group_tags_output(compartment_id: Optional[pulumi.
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -161,6 +164,7 @@ def get_protection_capability_group_tags_output(compartment_id: Optional[pulumi.
         name=var["protection_capability_group_tag_name"],
         type=var["protection_capability_group_tag_type"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.

@@ -577,6 +577,7 @@ class VbInstance(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -603,13 +604,14 @@ class VbInstance(pulumi.CustomResource):
             idcs_open_id=oci_visual_builder_idcs_open["test_idcs_open"]["id"],
             is_visual_builder_enabled=var["vb_instance_is_visual_builder_enabled"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         VbInstances can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:VisualBuilder/vbInstance:VbInstance test_vb_instance "id"
+        $ pulumi import oci:VisualBuilder/vbInstance:VbInstance test_vb_instance "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -642,6 +644,7 @@ class VbInstance(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -668,13 +671,14 @@ class VbInstance(pulumi.CustomResource):
             idcs_open_id=oci_visual_builder_idcs_open["test_idcs_open"]["id"],
             is_visual_builder_enabled=var["vb_instance_is_visual_builder_enabled"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         VbInstances can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:VisualBuilder/vbInstance:VbInstance test_vb_instance "id"
+        $ pulumi import oci:VisualBuilder/vbInstance:VbInstance test_vb_instance "id"
         ```
 
         :param str resource_name: The name of the resource.

@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -40,6 +41,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupComputeCapacityReservation(ctx *pulumi.Context, args *LookupComputeCapacityReservationArgs, opts ...pulumi.InvokeOption) (*LookupComputeCapacityReservationResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupComputeCapacityReservationResult

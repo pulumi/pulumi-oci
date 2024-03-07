@@ -22,6 +22,8 @@ import javax.annotation.Nullable;
  * Create and activate external metastore configuration.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -55,13 +57,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * BdsInstanceMetastoreConfigs can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:BigDataService/bdsInstanceMetastoreConfig:BdsInstanceMetastoreConfig test_bds_instance_metastore_config &#34;bdsInstances/{bdsInstanceId}/metastoreConfigs/{metastoreConfigId}&#34;
+ * $ pulumi import oci:BigDataService/bdsInstanceMetastoreConfig:BdsInstanceMetastoreConfig test_bds_instance_metastore_config &#34;bdsInstances/{bdsInstanceId}/metastoreConfigs/{metastoreConfigId}&#34;
  * ```
  * 
  */

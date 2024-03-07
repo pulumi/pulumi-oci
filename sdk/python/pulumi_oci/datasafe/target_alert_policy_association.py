@@ -380,6 +380,7 @@ class TargetAlertPolicyAssociation(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -398,13 +399,14 @@ class TargetAlertPolicyAssociation(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         TargetAlertPolicyAssociations can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataSafe/targetAlertPolicyAssociation:TargetAlertPolicyAssociation test_target_alert_policy_association "id"
+        $ pulumi import oci:DataSafe/targetAlertPolicyAssociation:TargetAlertPolicyAssociation test_target_alert_policy_association "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -435,6 +437,7 @@ class TargetAlertPolicyAssociation(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -453,13 +456,14 @@ class TargetAlertPolicyAssociation(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         TargetAlertPolicyAssociations can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataSafe/targetAlertPolicyAssociation:TargetAlertPolicyAssociation test_target_alert_policy_association "id"
+        $ pulumi import oci:DataSafe/targetAlertPolicyAssociation:TargetAlertPolicyAssociation test_target_alert_policy_association "id"
         ```
 
         :param str resource_name: The name of the resource.

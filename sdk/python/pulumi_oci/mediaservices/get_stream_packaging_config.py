@@ -228,12 +228,14 @@ def get_stream_packaging_config(stream_packaging_config_id: Optional[str] = None
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_stream_packaging_config = oci.MediaServices.get_stream_packaging_config(stream_packaging_config_id=oci_media_services_stream_packaging_config["test_stream_packaging_config"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str stream_packaging_config_id: Unique Stream Packaging Configuration path identifier.
@@ -272,12 +274,14 @@ def get_stream_packaging_config_output(stream_packaging_config_id: Optional[pulu
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_stream_packaging_config = oci.MediaServices.get_stream_packaging_config(stream_packaging_config_id=oci_media_services_stream_packaging_config["test_stream_packaging_config"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str stream_packaging_config_id: Unique Stream Packaging Configuration path identifier.

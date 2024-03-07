@@ -446,6 +446,7 @@ class AuditArchiveRetrieval(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -464,13 +465,14 @@ class AuditArchiveRetrieval(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         AuditArchiveRetrievals can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataSafe/auditArchiveRetrieval:AuditArchiveRetrieval test_audit_archive_retrieval "id"
+        $ pulumi import oci:DataSafe/auditArchiveRetrieval:AuditArchiveRetrieval test_audit_archive_retrieval "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -503,6 +505,7 @@ class AuditArchiveRetrieval(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -521,13 +524,14 @@ class AuditArchiveRetrieval(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         AuditArchiveRetrievals can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataSafe/auditArchiveRetrieval:AuditArchiveRetrieval test_audit_archive_retrieval "id"
+        $ pulumi import oci:DataSafe/auditArchiveRetrieval:AuditArchiveRetrieval test_audit_archive_retrieval "id"
         ```
 
         :param str resource_name: The name of the resource.

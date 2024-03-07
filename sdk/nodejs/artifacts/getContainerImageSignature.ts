@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -19,6 +20,7 @@ import * as utilities from "../utilities";
  *     imageSignatureId: oci_artifacts_image_signature.test_image_signature.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getContainerImageSignature(args: GetContainerImageSignatureArgs, opts?: pulumi.InvokeOptions): Promise<GetContainerImageSignatureResult> {
 
@@ -111,6 +113,7 @@ export interface GetContainerImageSignatureResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -119,6 +122,7 @@ export interface GetContainerImageSignatureResult {
  *     imageSignatureId: oci_artifacts_image_signature.test_image_signature.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getContainerImageSignatureOutput(args: GetContainerImageSignatureOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetContainerImageSignatureResult> {
     return pulumi.output(args).apply((a: any) => getContainerImageSignature(a, opts))

@@ -24,6 +24,8 @@ import javax.annotation.Nullable;
  * [IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm).
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -58,13 +60,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * PrivateIps can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Core/privateIp:PrivateIp test_private_ip &#34;id&#34;
+ * $ pulumi import oci:Core/privateIp:PrivateIp test_private_ip &#34;id&#34;
  * ```
  * 
  */

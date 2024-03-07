@@ -26,6 +26,8 @@ import javax.annotation.Nullable;
  * Registers a new worker.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -63,13 +65,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * OnPremiseVantagePointWorkers can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:ApmSynthetics/onPremiseVantagePointWorker:OnPremiseVantagePointWorker test_on_premise_vantage_point_worker &#34;onPremiseVantagePoints/{onPremiseVantagePointId}/workers/{workerId}/apmDomainId/{apmDomainId}&#34;
+ * $ pulumi import oci:ApmSynthetics/onPremiseVantagePointWorker:OnPremiseVantagePointWorker test_on_premise_vantage_point_worker &#34;onPremiseVantagePoints/{onPremiseVantagePointId}/workers/{workerId}/apmDomainId/{apmDomainId}&#34;
  * ```
  * 
  */

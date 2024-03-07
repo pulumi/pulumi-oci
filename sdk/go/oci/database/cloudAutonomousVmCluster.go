@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -81,15 +82,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // CloudAutonomousVmClusters can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Database/cloudAutonomousVmCluster:CloudAutonomousVmCluster test_cloud_autonomous_vm_cluster "id"
-//
+// $ pulumi import oci:Database/cloudAutonomousVmCluster:CloudAutonomousVmCluster test_cloud_autonomous_vm_cluster "id"
 // ```
 type CloudAutonomousVmCluster struct {
 	pulumi.CustomResourceState

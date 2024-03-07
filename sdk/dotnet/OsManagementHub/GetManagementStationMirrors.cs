@@ -17,10 +17,9 @@ namespace Pulumi.Oci.OsManagementHub
         /// Lists all software source mirrors associated with a specified management station.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -39,8 +38,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetManagementStationMirrorsResult> InvokeAsync(GetManagementStationMirrorsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagementStationMirrorsResult>("oci:OsManagementHub/getManagementStationMirrors:getManagementStationMirrors", args ?? new GetManagementStationMirrorsArgs(), options.WithDefaults());
@@ -51,10 +49,9 @@ namespace Pulumi.Oci.OsManagementHub
         /// Lists all software source mirrors associated with a specified management station.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -73,8 +70,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetManagementStationMirrorsResult> Invoke(GetManagementStationMirrorsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagementStationMirrorsResult>("oci:OsManagementHub/getManagementStationMirrors:getManagementStationMirrors", args ?? new GetManagementStationMirrorsInvokeArgs(), options.WithDefaults());

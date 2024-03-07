@@ -16,10 +16,9 @@ namespace Pulumi.Oci.Identity
         /// 
         /// Get OAuth Client Certificates
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -38,8 +37,7 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDomainsOauthClientCertificateResult> InvokeAsync(GetDomainsOauthClientCertificateArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDomainsOauthClientCertificateResult>("oci:Identity/getDomainsOauthClientCertificate:getDomainsOauthClientCertificate", args ?? new GetDomainsOauthClientCertificateArgs(), options.WithDefaults());
@@ -49,10 +47,9 @@ namespace Pulumi.Oci.Identity
         /// 
         /// Get OAuth Client Certificates
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -71,8 +68,7 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDomainsOauthClientCertificateResult> Invoke(GetDomainsOauthClientCertificateInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsOauthClientCertificateResult>("oci:Identity/getDomainsOauthClientCertificate:getDomainsOauthClientCertificate", args ?? new GetDomainsOauthClientCertificateInvokeArgs(), options.WithDefaults());

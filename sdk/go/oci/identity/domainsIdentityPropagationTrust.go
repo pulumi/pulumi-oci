@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -87,15 +88,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // IdentityPropagationTrusts can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Identity/domainsIdentityPropagationTrust:DomainsIdentityPropagationTrust test_identity_propagation_trust "idcsEndpoint/{idcsEndpoint}/identityPropagationTrusts/{identityPropagationTrustId}"
-//
+// $ pulumi import oci:Identity/domainsIdentityPropagationTrust:DomainsIdentityPropagationTrust test_identity_propagation_trust "idcsEndpoint/{idcsEndpoint}/identityPropagationTrusts/{identityPropagationTrustId}"
 // ```
 type DomainsIdentityPropagationTrust struct {
 	pulumi.CustomResourceState

@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,6 +24,7 @@ import * as utilities from "../utilities";
  *     type: _var.protection_capability_group_tag_type,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getProtectionCapabilityGroupTags(args: GetProtectionCapabilityGroupTagsArgs, opts?: pulumi.InvokeOptions): Promise<GetProtectionCapabilityGroupTagsResult> {
 
@@ -81,6 +83,7 @@ export interface GetProtectionCapabilityGroupTagsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -91,6 +94,7 @@ export interface GetProtectionCapabilityGroupTagsResult {
  *     type: _var.protection_capability_group_tag_type,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getProtectionCapabilityGroupTagsOutput(args: GetProtectionCapabilityGroupTagsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetProtectionCapabilityGroupTagsResult> {
     return pulumi.output(args).apply((a: any) => getProtectionCapabilityGroupTags(a, opts))

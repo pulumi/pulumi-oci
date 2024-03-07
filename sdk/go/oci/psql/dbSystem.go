@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -106,15 +107,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // DbSystems can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Psql/dbSystem:DbSystem test_db_system "id"
-//
+// $ pulumi import oci:Psql/dbSystem:DbSystem test_db_system "id"
 // ```
 type DbSystem struct {
 	pulumi.CustomResourceState

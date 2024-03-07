@@ -152,6 +152,7 @@ class ExternalNonContainerDatabasesStackMonitoring(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -161,6 +162,7 @@ class ExternalNonContainerDatabasesStackMonitoring(pulumi.CustomResource):
             external_non_container_database_id=oci_database_external_non_container_database["test_external_non_container_database"]["id"],
             enable_stack_monitoring=True)
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -189,6 +191,7 @@ class ExternalNonContainerDatabasesStackMonitoring(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -198,6 +201,7 @@ class ExternalNonContainerDatabasesStackMonitoring(pulumi.CustomResource):
             external_non_container_database_id=oci_database_external_non_container_database["test_external_non_container_database"]["id"],
             enable_stack_monitoring=True)
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 

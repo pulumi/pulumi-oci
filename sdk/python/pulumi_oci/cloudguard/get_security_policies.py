@@ -116,6 +116,7 @@ def get_security_policies(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -125,6 +126,7 @@ def get_security_policies(compartment_id: Optional[str] = None,
         id=var["security_policy_id"],
         state=var["security_policy_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID of the compartment in which to list resources.
@@ -164,6 +166,7 @@ def get_security_policies_output(compartment_id: Optional[pulumi.Input[str]] = N
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -173,6 +176,7 @@ def get_security_policies_output(compartment_id: Optional[pulumi.Input[str]] = N
         id=var["security_policy_id"],
         state=var["security_policy_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID of the compartment in which to list resources.

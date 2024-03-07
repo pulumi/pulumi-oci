@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,6 +42,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetProcessSets(ctx *pulumi.Context, args *GetProcessSetsArgs, opts ...pulumi.InvokeOption) (*GetProcessSetsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetProcessSetsResult

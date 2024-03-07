@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,6 +23,7 @@ import * as utilities from "../utilities";
  *     displayName: _var.peer_display_name,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getPeers(args: GetPeersArgs, opts?: pulumi.InvokeOptions): Promise<GetPeersResult> {
 
@@ -71,6 +73,7 @@ export interface GetPeersResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -80,6 +83,7 @@ export interface GetPeersResult {
  *     displayName: _var.peer_display_name,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getPeersOutput(args: GetPeersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPeersResult> {
     return pulumi.output(args).apply((a: any) => getPeers(a, opts))

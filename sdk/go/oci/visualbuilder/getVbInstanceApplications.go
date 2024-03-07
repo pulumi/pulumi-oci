@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,6 +42,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetVbInstanceApplications(ctx *pulumi.Context, args *GetVbInstanceApplicationsArgs, opts ...pulumi.InvokeOption) (*GetVbInstanceApplicationsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetVbInstanceApplicationsResult

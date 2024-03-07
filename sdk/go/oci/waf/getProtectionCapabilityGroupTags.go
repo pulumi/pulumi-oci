@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -42,6 +43,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetProtectionCapabilityGroupTags(ctx *pulumi.Context, args *GetProtectionCapabilityGroupTagsArgs, opts ...pulumi.InvokeOption) (*GetProtectionCapabilityGroupTagsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetProtectionCapabilityGroupTagsResult

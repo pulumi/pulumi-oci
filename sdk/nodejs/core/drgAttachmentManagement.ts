@@ -23,6 +23,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -36,6 +37,7 @@ import * as utilities from "../utilities";
  *     drgRouteTableId: oci_core_drg_route_table.test_drg_route_table.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export class DrgAttachmentManagement extends pulumi.CustomResource {
     /**

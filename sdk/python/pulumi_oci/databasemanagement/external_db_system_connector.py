@@ -415,6 +415,7 @@ class ExternalDbSystemConnector(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -424,13 +425,14 @@ class ExternalDbSystemConnector(pulumi.CustomResource):
             external_db_system_id=oci_database_management_external_db_system["test_external_db_system"]["id"],
             display_name=var["external_db_system_connector_display_name"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ExternalDbSystemConnectors can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DatabaseManagement/externalDbSystemConnector:ExternalDbSystemConnector test_external_db_system_connector "id"
+        $ pulumi import oci:DatabaseManagement/externalDbSystemConnector:ExternalDbSystemConnector test_external_db_system_connector "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -460,6 +462,7 @@ class ExternalDbSystemConnector(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -469,13 +472,14 @@ class ExternalDbSystemConnector(pulumi.CustomResource):
             external_db_system_id=oci_database_management_external_db_system["test_external_db_system"]["id"],
             display_name=var["external_db_system_connector_display_name"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ExternalDbSystemConnectors can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DatabaseManagement/externalDbSystemConnector:ExternalDbSystemConnector test_external_db_system_connector "id"
+        $ pulumi import oci:DatabaseManagement/externalDbSystemConnector:ExternalDbSystemConnector test_external_db_system_connector "id"
         ```
 
         :param str resource_name: The name of the resource.

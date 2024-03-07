@@ -298,6 +298,7 @@ class ReplicationSchedule(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -313,13 +314,14 @@ class ReplicationSchedule(pulumi.CustomResource):
                 "bar-key": "value",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ReplicationSchedules can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:CloudMigrations/replicationSchedule:ReplicationSchedule test_replication_schedule "id"
+        $ pulumi import oci:CloudMigrations/replicationSchedule:ReplicationSchedule test_replication_schedule "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -347,6 +349,7 @@ class ReplicationSchedule(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -362,13 +365,14 @@ class ReplicationSchedule(pulumi.CustomResource):
                 "bar-key": "value",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ReplicationSchedules can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:CloudMigrations/replicationSchedule:ReplicationSchedule test_replication_schedule "id"
+        $ pulumi import oci:CloudMigrations/replicationSchedule:ReplicationSchedule test_replication_schedule "id"
         ```
 
         :param str resource_name: The name of the resource.

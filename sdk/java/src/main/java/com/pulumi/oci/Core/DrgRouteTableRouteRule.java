@@ -22,6 +22,8 @@ import javax.annotation.Nullable;
  * Adds one static route rule to the specified DRG route table.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -53,13 +55,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * DrgRouteTableRouteRule can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Core/drgRouteTableRouteRule:DrgRouteTableRouteRule test_drg_route_table_route_rule &#34;drgRouteTables/{drgRouteTableId}/routeRules/{id}&#34;
+ * $ pulumi import oci:Core/drgRouteTableRouteRule:DrgRouteTableRouteRule test_drg_route_table_route_rule &#34;drgRouteTables/{drgRouteTableId}/routeRules/{id}&#34;
  * ```
  * 
  */

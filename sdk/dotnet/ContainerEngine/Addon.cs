@@ -19,7 +19,7 @@ namespace Pulumi.Oci.ContainerEngine
     /// Addons can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:ContainerEngine/addon:Addon test_addon "clusters/{clusterId}/addons/{addonName}"
+    /// $ pulumi import oci:ContainerEngine/addon:Addon test_addon "clusters/{clusterId}/addons/{addonName}"
     /// ```
     /// </summary>
     [OciResourceType("oci:ContainerEngine/addon:Addon")]

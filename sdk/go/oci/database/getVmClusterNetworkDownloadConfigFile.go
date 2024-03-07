@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -42,6 +43,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetVmClusterNetworkDownloadConfigFile(ctx *pulumi.Context, args *GetVmClusterNetworkDownloadConfigFileArgs, opts ...pulumi.InvokeOption) (*GetVmClusterNetworkDownloadConfigFileResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetVmClusterNetworkDownloadConfigFileResult

@@ -96,6 +96,7 @@ def get_subscriptions(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -103,6 +104,7 @@ def get_subscriptions(compartment_id: Optional[str] = None,
     test_subscriptions = oci.OspGateway.get_subscriptions(compartment_id=var["compartment_id"],
         osp_home_region=var["subscription_osp_home_region"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -135,6 +137,7 @@ def get_subscriptions_output(compartment_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -142,6 +145,7 @@ def get_subscriptions_output(compartment_id: Optional[pulumi.Input[str]] = None,
     test_subscriptions = oci.OspGateway.get_subscriptions(compartment_id=var["compartment_id"],
         osp_home_region=var["subscription_osp_home_region"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

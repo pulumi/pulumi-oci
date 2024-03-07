@@ -16,6 +16,7 @@ namespace Pulumi.Oci.ContainerEngine
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -41,13 +42,14 @@ namespace Pulumi.Oci.ContainerEngine
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// ClusterWorkloadMappings can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:ContainerEngine/clusterWorkloadMapping:ClusterWorkloadMapping test_cluster_workload_mapping "clusters/{clusterId}/workloadMappings/{workloadMappingId}"
+    /// $ pulumi import oci:ContainerEngine/clusterWorkloadMapping:ClusterWorkloadMapping test_cluster_workload_mapping "clusters/{clusterId}/workloadMappings/{workloadMappingId}"
     /// ```
     /// </summary>
     [OciResourceType("oci:ContainerEngine/clusterWorkloadMapping:ClusterWorkloadMapping")]

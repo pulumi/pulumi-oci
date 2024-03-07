@@ -14,6 +14,7 @@ import (
 
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -44,15 +45,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Compartments can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Identity/compartment:Compartment test_compartment "id"
-//
+// $ pulumi import oci:Identity/compartment:Compartment test_compartment "id"
 // ```
 type Compartment struct {
 	pulumi.CustomResourceState

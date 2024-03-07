@@ -17,10 +17,9 @@ namespace Pulumi.Oci.Database
         /// Gets a list of possible expected storage performance parameters of a VMDB System based on Configuration.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -37,8 +36,7 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDbSystemStoragePerformancesResult> InvokeAsync(GetDbSystemStoragePerformancesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDbSystemStoragePerformancesResult>("oci:Database/getDbSystemStoragePerformances:getDbSystemStoragePerformances", args ?? new GetDbSystemStoragePerformancesArgs(), options.WithDefaults());
@@ -49,10 +47,9 @@ namespace Pulumi.Oci.Database
         /// Gets a list of possible expected storage performance parameters of a VMDB System based on Configuration.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -69,8 +66,7 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDbSystemStoragePerformancesResult> Invoke(GetDbSystemStoragePerformancesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDbSystemStoragePerformancesResult>("oci:Database/getDbSystemStoragePerformances:getDbSystemStoragePerformances", args ?? new GetDbSystemStoragePerformancesInvokeArgs(), options.WithDefaults());

@@ -22,7 +22,7 @@ namespace Pulumi.Oci.DataFlow
     /// SqlEndpoints can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:DataFlow/sqlEndpoint:SqlEndpoint test_sql_endpoint "id"
+    /// $ pulumi import oci:DataFlow/sqlEndpoint:SqlEndpoint test_sql_endpoint "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:DataFlow/sqlEndpoint:SqlEndpoint")]

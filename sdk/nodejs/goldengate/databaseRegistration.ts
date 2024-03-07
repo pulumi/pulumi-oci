@@ -12,6 +12,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -41,13 +42,14 @@ import * as utilities from "../utilities";
  *     wallet: _var.database_registration_wallet,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * DatabaseRegistrations can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:GoldenGate/databaseRegistration:DatabaseRegistration test_database_registration "id"
+ * $ pulumi import oci:GoldenGate/databaseRegistration:DatabaseRegistration test_database_registration "id"
  * ```
  */
 export class DatabaseRegistration extends pulumi.CustomResource {

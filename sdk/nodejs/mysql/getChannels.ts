@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -26,6 +27,7 @@ import * as utilities from "../utilities";
  *     state: _var.channel_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getChannels(args: GetChannelsArgs, opts?: pulumi.InvokeOptions): Promise<GetChannelsResult> {
 
@@ -114,6 +116,7 @@ export interface GetChannelsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -127,6 +130,7 @@ export interface GetChannelsResult {
  *     state: _var.channel_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getChannelsOutput(args: GetChannelsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetChannelsResult> {
     return pulumi.output(args).apply((a: any) => getChannels(a, opts))

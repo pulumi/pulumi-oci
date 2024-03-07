@@ -148,6 +148,7 @@ def get_logs(display_name: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -159,6 +160,7 @@ def get_logs(display_name: Optional[str] = None,
         source_service=var["log_source_service"],
         state=var["log_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str display_name: Resource name.
@@ -207,6 +209,7 @@ def get_logs_output(display_name: Optional[pulumi.Input[Optional[str]]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -218,6 +221,7 @@ def get_logs_output(display_name: Optional[pulumi.Input[Optional[str]]] = None,
         source_service=var["log_source_service"],
         state=var["log_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str display_name: Resource name.

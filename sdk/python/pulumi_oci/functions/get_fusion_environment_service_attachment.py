@@ -204,6 +204,7 @@ def get_fusion_environment_service_attachment(fusion_environment_id: Optional[st
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -211,6 +212,7 @@ def get_fusion_environment_service_attachment(fusion_environment_id: Optional[st
     test_fusion_environment_service_attachment = oci.Functions.get_fusion_environment_service_attachment(fusion_environment_id=oci_fusion_apps_fusion_environment["test_fusion_environment"]["id"],
         service_attachment_id=oci_fusion_apps_service_attachment["test_service_attachment"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str fusion_environment_id: unique FusionEnvironment identifier
@@ -250,6 +252,7 @@ def get_fusion_environment_service_attachment_output(fusion_environment_id: Opti
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -257,6 +260,7 @@ def get_fusion_environment_service_attachment_output(fusion_environment_id: Opti
     test_fusion_environment_service_attachment = oci.Functions.get_fusion_environment_service_attachment(fusion_environment_id=oci_fusion_apps_fusion_environment["test_fusion_environment"]["id"],
         service_attachment_id=oci_fusion_apps_service_attachment["test_service_attachment"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str fusion_environment_id: unique FusionEnvironment identifier

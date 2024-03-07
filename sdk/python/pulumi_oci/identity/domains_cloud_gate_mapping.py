@@ -1437,7 +1437,7 @@ class DomainsCloudGateMapping(pulumi.CustomResource):
         CloudGateMappings can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/domainsCloudGateMapping:DomainsCloudGateMapping test_cloud_gate_mapping "idcsEndpoint/{idcsEndpoint}/cloudGateMappings/{cloudGateMappingId}"
+        $ pulumi import oci:Identity/domainsCloudGateMapping:DomainsCloudGateMapping test_cloud_gate_mapping "idcsEndpoint/{idcsEndpoint}/cloudGateMappings/{cloudGateMappingId}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -1597,7 +1597,7 @@ class DomainsCloudGateMapping(pulumi.CustomResource):
         CloudGateMappings can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/domainsCloudGateMapping:DomainsCloudGateMapping test_cloud_gate_mapping "idcsEndpoint/{idcsEndpoint}/cloudGateMappings/{cloudGateMappingId}"
+        $ pulumi import oci:Identity/domainsCloudGateMapping:DomainsCloudGateMapping test_cloud_gate_mapping "idcsEndpoint/{idcsEndpoint}/cloudGateMappings/{cloudGateMappingId}"
         ```
 
         :param str resource_name: The name of the resource.

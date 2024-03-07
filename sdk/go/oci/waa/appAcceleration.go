@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -52,15 +53,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // WebAppAccelerations can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Waa/appAcceleration:AppAcceleration test_web_app_acceleration "id"
-//
+// $ pulumi import oci:Waa/appAcceleration:AppAcceleration test_web_app_acceleration "id"
 // ```
 type AppAcceleration struct {
 	pulumi.CustomResourceState

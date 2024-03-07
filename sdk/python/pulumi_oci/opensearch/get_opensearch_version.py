@@ -78,21 +78,25 @@ def get_opensearch_version(compartment_id: Optional[str] = None,
     The below policies must be created in compartment before creating OpensearchCluster
 
     ##### {Compartment-Name} - Name of  your compartment
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     ```
+    <!--End PulumiCodeChooser -->
 
     For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\\
     Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_opensearch_version = oci.Opensearch.get_opensearch_version(compartment_id=var["compartment_id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID of the compartment in which to list resources.
@@ -121,21 +125,25 @@ def get_opensearch_version_output(compartment_id: Optional[pulumi.Input[str]] = 
     The below policies must be created in compartment before creating OpensearchCluster
 
     ##### {Compartment-Name} - Name of  your compartment
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     ```
+    <!--End PulumiCodeChooser -->
 
     For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\\
     Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_opensearch_version = oci.Opensearch.get_opensearch_version(compartment_id=var["compartment_id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID of the compartment in which to list resources.

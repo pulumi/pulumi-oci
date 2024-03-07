@@ -185,6 +185,7 @@ def get_domains_my_oauth2client_credentials(authorization: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -196,6 +197,7 @@ def get_domains_my_oauth2client_credentials(authorization: Optional[str] = None,
         resource_type_schema_version=var["my_oauth2client_credential_resource_type_schema_version"],
         start_index=var["my_oauth2client_credential_start_index"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str authorization: The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
@@ -253,6 +255,7 @@ def get_domains_my_oauth2client_credentials_output(authorization: Optional[pulum
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -264,6 +267,7 @@ def get_domains_my_oauth2client_credentials_output(authorization: Optional[pulum
         resource_type_schema_version=var["my_oauth2client_credential_resource_type_schema_version"],
         start_index=var["my_oauth2client_credential_start_index"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str authorization: The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.

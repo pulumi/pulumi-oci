@@ -121,6 +121,7 @@ class SetUserAssessmentBaseline(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -129,13 +130,14 @@ class SetUserAssessmentBaseline(pulumi.CustomResource):
             user_assessment_id=oci_data_safe_user_assessment["test_user_assessment"]["id"],
             assessment_ids=var["set_user_assessment_baseline_assessment_ids"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         SetUserAssessmentBaseline can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataSafe/setUserAssessmentBaseline:SetUserAssessmentBaseline test_set_user_assessment_baseline "id"
+        $ pulumi import oci:DataSafe/setUserAssessmentBaseline:SetUserAssessmentBaseline test_set_user_assessment_baseline "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -160,6 +162,7 @@ class SetUserAssessmentBaseline(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -168,13 +171,14 @@ class SetUserAssessmentBaseline(pulumi.CustomResource):
             user_assessment_id=oci_data_safe_user_assessment["test_user_assessment"]["id"],
             assessment_ids=var["set_user_assessment_baseline_assessment_ids"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         SetUserAssessmentBaseline can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataSafe/setUserAssessmentBaseline:SetUserAssessmentBaseline test_set_user_assessment_baseline "id"
+        $ pulumi import oci:DataSafe/setUserAssessmentBaseline:SetUserAssessmentBaseline test_set_user_assessment_baseline "id"
         ```
 
         :param str resource_name: The name of the resource.

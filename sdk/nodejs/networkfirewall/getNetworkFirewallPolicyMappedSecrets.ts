@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,6 +23,7 @@ import * as utilities from "../utilities";
  *     displayName: _var.network_firewall_policy_mapped_secret_display_name,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getNetworkFirewallPolicyMappedSecrets(args: GetNetworkFirewallPolicyMappedSecretsArgs, opts?: pulumi.InvokeOptions): Promise<GetNetworkFirewallPolicyMappedSecretsResult> {
 
@@ -68,6 +70,7 @@ export interface GetNetworkFirewallPolicyMappedSecretsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -77,6 +80,7 @@ export interface GetNetworkFirewallPolicyMappedSecretsResult {
  *     displayName: _var.network_firewall_policy_mapped_secret_display_name,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getNetworkFirewallPolicyMappedSecretsOutput(args: GetNetworkFirewallPolicyMappedSecretsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNetworkFirewallPolicyMappedSecretsResult> {
     return pulumi.output(args).apply((a: any) => getNetworkFirewallPolicyMappedSecrets(a, opts))

@@ -183,6 +183,7 @@ def get_bds_instance_metastore_config(bds_instance_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -190,6 +191,7 @@ def get_bds_instance_metastore_config(bds_instance_id: Optional[str] = None,
     test_bds_instance_metastore_config = oci.BigDataService.get_bds_instance_metastore_config(bds_instance_id=oci_bds_bds_instance["test_bds_instance"]["id"],
         metastore_config_id=oci_apm_config_config["test_config"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str bds_instance_id: The OCID of the cluster.
@@ -228,6 +230,7 @@ def get_bds_instance_metastore_config_output(bds_instance_id: Optional[pulumi.In
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -235,6 +238,7 @@ def get_bds_instance_metastore_config_output(bds_instance_id: Optional[pulumi.In
     test_bds_instance_metastore_config = oci.BigDataService.get_bds_instance_metastore_config(bds_instance_id=oci_bds_bds_instance["test_bds_instance"]["id"],
         metastore_config_id=oci_apm_config_config["test_config"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str bds_instance_id: The OCID of the cluster.

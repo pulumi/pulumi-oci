@@ -182,6 +182,7 @@ def get_view(scope: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -189,6 +190,7 @@ def get_view(scope: Optional[str] = None,
     test_view = oci.Dns.get_view(view_id=oci_dns_view["test_view"]["id"],
         scope="PRIVATE")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str scope: Value must be `PRIVATE` when listing views for private zones.
@@ -228,6 +230,7 @@ def get_view_output(scope: Optional[pulumi.Input[Optional[str]]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -235,6 +238,7 @@ def get_view_output(scope: Optional[pulumi.Input[Optional[str]]] = None,
     test_view = oci.Dns.get_view(view_id=oci_dns_view["test_view"]["id"],
         scope="PRIVATE")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str scope: Value must be `PRIVATE` when listing views for private zones.

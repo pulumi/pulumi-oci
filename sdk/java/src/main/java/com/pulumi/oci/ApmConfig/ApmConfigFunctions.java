@@ -23,6 +23,8 @@ public final class ApmConfigFunctions {
      * Gets the configuration item identified by the OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -52,6 +54,7 @@ public final class ApmConfigFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetConfigResult> getConfig(GetConfigArgs args) {
@@ -63,6 +66,8 @@ public final class ApmConfigFunctions {
      * Gets the configuration item identified by the OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -92,6 +97,7 @@ public final class ApmConfigFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetConfigResult> getConfigPlain(GetConfigPlainArgs args) {
@@ -103,6 +109,8 @@ public final class ApmConfigFunctions {
      * Gets the configuration item identified by the OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -132,6 +140,7 @@ public final class ApmConfigFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetConfigResult> getConfig(GetConfigArgs args, InvokeOptions options) {
@@ -143,6 +152,8 @@ public final class ApmConfigFunctions {
      * Gets the configuration item identified by the OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -172,6 +183,7 @@ public final class ApmConfigFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetConfigResult> getConfigPlain(GetConfigPlainArgs args, InvokeOptions options) {
@@ -183,6 +195,8 @@ public final class ApmConfigFunctions {
      * Returns all configuration items, which can optionally be filtered by configuration type.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -218,6 +232,7 @@ public final class ApmConfigFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetConfigsResult> getConfigs(GetConfigsArgs args) {
@@ -229,6 +244,8 @@ public final class ApmConfigFunctions {
      * Returns all configuration items, which can optionally be filtered by configuration type.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -264,6 +281,7 @@ public final class ApmConfigFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetConfigsResult> getConfigsPlain(GetConfigsPlainArgs args) {
@@ -275,6 +293,8 @@ public final class ApmConfigFunctions {
      * Returns all configuration items, which can optionally be filtered by configuration type.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -310,6 +330,7 @@ public final class ApmConfigFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetConfigsResult> getConfigs(GetConfigsArgs args, InvokeOptions options) {
@@ -321,6 +342,8 @@ public final class ApmConfigFunctions {
      * Returns all configuration items, which can optionally be filtered by configuration type.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -356,6 +379,7 @@ public final class ApmConfigFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetConfigsResult> getConfigsPlain(GetConfigsPlainArgs args, InvokeOptions options) {

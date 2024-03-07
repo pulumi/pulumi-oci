@@ -31,6 +31,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -61,15 +62,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // NotificationTopics can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Ons/notificationTopic:NotificationTopic test_notification_topic "id"
-//
+// $ pulumi import oci:Ons/notificationTopic:NotificationTopic test_notification_topic "id"
 // ```
 type NotificationTopic struct {
 	pulumi.CustomResourceState

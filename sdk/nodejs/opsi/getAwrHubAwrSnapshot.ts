@@ -14,6 +14,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -25,6 +26,7 @@ import * as utilities from "../utilities";
  *     timeLessThanOrEqualTo: _var.awr_hub_awr_snapshot_time_less_than_or_equal_to,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAwrHubAwrSnapshot(args: GetAwrHubAwrSnapshotArgs, opts?: pulumi.InvokeOptions): Promise<GetAwrHubAwrSnapshotResult> {
 
@@ -84,6 +86,7 @@ export interface GetAwrHubAwrSnapshotResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -95,6 +98,7 @@ export interface GetAwrHubAwrSnapshotResult {
  *     timeLessThanOrEqualTo: _var.awr_hub_awr_snapshot_time_less_than_or_equal_to,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAwrHubAwrSnapshotOutput(args: GetAwrHubAwrSnapshotOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAwrHubAwrSnapshotResult> {
     return pulumi.output(args).apply((a: any) => getAwrHubAwrSnapshot(a, opts))

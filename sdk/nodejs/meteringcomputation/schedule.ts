@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -57,13 +58,14 @@ import * as utilities from "../utilities";
  *     savedReportId: oci_data_safe_report.test_report.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * Schedules can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:MeteringComputation/schedule:Schedule test_schedule "id"
+ * $ pulumi import oci:MeteringComputation/schedule:Schedule test_schedule "id"
  * ```
  */
 export class Schedule extends pulumi.CustomResource {

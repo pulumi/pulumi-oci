@@ -115,6 +115,7 @@ def get_oneoff_patches(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -123,6 +124,7 @@ def get_oneoff_patches(compartment_id: Optional[str] = None,
         display_name=var["oneoff_patch_display_name"],
         state=var["oneoff_patch_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -159,6 +161,7 @@ def get_oneoff_patches_output(compartment_id: Optional[pulumi.Input[str]] = None
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -167,6 +170,7 @@ def get_oneoff_patches_output(compartment_id: Optional[pulumi.Input[str]] = None
         display_name=var["oneoff_patch_display_name"],
         state=var["oneoff_patch_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

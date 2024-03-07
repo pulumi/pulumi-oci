@@ -22,6 +22,8 @@ import javax.annotation.Nullable;
  * for this host.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -56,13 +58,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * AnalyticsInstanceVanityUrls can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Analytics/analyticsInstanceVanityUrl:AnalyticsInstanceVanityUrl test_analytics_instance_vanity_url &#34;analyticsInstances/{analyticsInstanceId}/vanityUrls/{vanityUrlKey}&#34;
+ * $ pulumi import oci:Analytics/analyticsInstanceVanityUrl:AnalyticsInstanceVanityUrl test_analytics_instance_vanity_url &#34;analyticsInstances/{analyticsInstanceId}/vanityUrls/{vanityUrlKey}&#34;
  * ```
  * 
  */

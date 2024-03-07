@@ -23,6 +23,8 @@ import javax.annotation.Nullable;
  * Creates a new Security Rule for the Network Firewall Policy.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -66,13 +68,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * NetworkFirewallPolicySecurityRules can be imported using the `name`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:NetworkFirewall/networkFirewallPolicySecurityRule:NetworkFirewallPolicySecurityRule test_network_firewall_policy_security_rule &#34;networkFirewallPolicies/{networkFirewallPolicyId}/securityRules/{securityRuleName}&#34;
+ * $ pulumi import oci:NetworkFirewall/networkFirewallPolicySecurityRule:NetworkFirewallPolicySecurityRule test_network_firewall_policy_security_rule &#34;networkFirewallPolicies/{networkFirewallPolicyId}/securityRules/{securityRuleName}&#34;
  * ```
  * 
  */

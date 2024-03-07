@@ -16,10 +16,9 @@ namespace Pulumi.Oci.Waa
         /// 
         /// Gets a WebAppAccelerationPolicy with the given OCID.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,8 +34,7 @@ namespace Pulumi.Oci.Waa
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetAppAccelerationPolicyResult> InvokeAsync(GetAppAccelerationPolicyArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAppAccelerationPolicyResult>("oci:Waa/getAppAccelerationPolicy:getAppAccelerationPolicy", args ?? new GetAppAccelerationPolicyArgs(), options.WithDefaults());
@@ -46,10 +44,9 @@ namespace Pulumi.Oci.Waa
         /// 
         /// Gets a WebAppAccelerationPolicy with the given OCID.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -65,8 +62,7 @@ namespace Pulumi.Oci.Waa
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetAppAccelerationPolicyResult> Invoke(GetAppAccelerationPolicyInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAppAccelerationPolicyResult>("oci:Waa/getAppAccelerationPolicy:getAppAccelerationPolicy", args ?? new GetAppAccelerationPolicyInvokeArgs(), options.WithDefaults());

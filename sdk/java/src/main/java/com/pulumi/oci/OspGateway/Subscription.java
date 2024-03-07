@@ -30,7 +30,7 @@ import javax.annotation.Nullable;
  * Subscriptions can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:OspGateway/subscription:Subscription test_subscription &#34;subscriptions/{subscriptionId}/compartmentId/{compartmentId}/ospHomeRegion/{ospHomeRegion}&#34;
+ * $ pulumi import oci:OspGateway/subscription:Subscription test_subscription &#34;subscriptions/{subscriptionId}/compartmentId/{compartmentId}/ospHomeRegion/{ospHomeRegion}&#34;
  * ```
  * 
  */

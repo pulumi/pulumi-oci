@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,6 +42,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetDatabasePdbConversionHistoryEntry(ctx *pulumi.Context, args *GetDatabasePdbConversionHistoryEntryArgs, opts ...pulumi.InvokeOption) (*GetDatabasePdbConversionHistoryEntryResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDatabasePdbConversionHistoryEntryResult

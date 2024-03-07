@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -26,6 +27,7 @@ import * as utilities from "../utilities";
  *     timeStart: _var.list_jre_usage_time_start,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getListJreUsage(args?: GetListJreUsageArgs, opts?: pulumi.InvokeOptions): Promise<GetListJreUsageResult> {
     args = args || {};
@@ -103,6 +105,7 @@ export interface GetListJreUsageResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -116,6 +119,7 @@ export interface GetListJreUsageResult {
  *     timeStart: _var.list_jre_usage_time_start,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getListJreUsageOutput(args?: GetListJreUsageOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetListJreUsageResult> {
     return pulumi.output(args).apply((a: any) => getListJreUsage(a, opts))

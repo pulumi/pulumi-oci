@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -45,15 +46,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // RepositoryRefs can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:DevOps/repositoryRef:RepositoryRef test_repository_ref "repositories/{repositoryId}/refs/{refName}"
-//
+// $ pulumi import oci:DevOps/repositoryRef:RepositoryRef test_repository_ref "repositories/{repositoryId}/refs/{refName}"
 // ```
 type RepositoryRef struct {
 	pulumi.CustomResourceState

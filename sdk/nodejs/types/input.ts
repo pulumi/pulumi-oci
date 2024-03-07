@@ -10594,7 +10594,7 @@ export namespace ContainerEngine {
          *
          * CPU usage is defined in terms of logical CPUs. This means that the maximum possible value on an E3 ContainerInstance with 1 OCPU is 2.0.
          *
-         * A container with a 2.0 vcpusLimit could consume up to 100% of the CPU resources available on the container instance. Values can be fractional. A value of "1.5" means that the container can consume at most the equivalent of 1 and a half logical CPUs worth of CPU capacity.
+         * A container with a 2.0 vcpusLimit could consume up to 100%!o(MISSING)f the CPU resources available on the container instance. Values can be fractional. A value of "1.5" means that the container can consume at most the equivalent of 1 and a half logical CPUs worth of CPU capacity.
          */
         vcpusLimit?: pulumi.Input<number>;
     }
@@ -11143,11 +11143,13 @@ export namespace ContainerEngine {
          */
         isNodeCyclingEnabled?: pulumi.Input<boolean>;
         /**
-         * (Updatable) Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0% to 100%
+         * (Updatable) Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0%!t(MISSING)o 100%!
+         * (MISSING)
          */
         maximumSurge?: pulumi.Input<string>;
         /**
-         * (Updatable) Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0% to 100%
+         * (Updatable) Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0%!t(MISSING)o 100%!
+         * (MISSING)
          */
         maximumUnavailable?: pulumi.Input<string>;
     }
@@ -14147,7 +14149,7 @@ export namespace Core {
          */
         numaNodesPerSocket?: pulumi.Input<string>;
         /**
-         * The percentage of cores enabled. Value must be a multiple of 25%. If the requested percentage results in a fractional number of cores, the system rounds up the number of cores across processors and provisions an instance with a whole number of cores.
+         * The percentage of cores enabled. Value must be a multiple of 25%! (MISSING)If the requested percentage results in a fractional number of cores, the system rounds up the number of cores across processors and provisions an instance with a whole number of cores.
          *
          * If the applications that you run on the instance use a core-based licensing model and need fewer cores than the full size of the shape, you can disable cores to reduce your licensing costs. The instance itself is billed for the full shape, regardless of whether all cores are enabled.
          */
@@ -14748,7 +14750,7 @@ export namespace Core {
          */
         numaNodesPerSocket?: pulumi.Input<string>;
         /**
-         * The percentage of cores enabled. Value must be a multiple of 25%. If the requested percentage results in a fractional number of cores, the system rounds up the number of cores across processors and provisions an instance with a whole number of cores.
+         * The percentage of cores enabled. Value must be a multiple of 25%! (MISSING)If the requested percentage results in a fractional number of cores, the system rounds up the number of cores across processors and provisions an instance with a whole number of cores.
          *
          * If the applications that you run on the instance use a core-based licensing model and need fewer cores than the full size of the shape, you can disable cores to reduce your licensing costs. The instance itself is billed for the full shape, regardless of whether all cores are enabled.
          */
@@ -15239,7 +15241,7 @@ export namespace Core {
          */
         numaNodesPerSocket?: pulumi.Input<string>;
         /**
-         * The percentage of cores enabled. Value must be a multiple of 25%. If the requested percentage results in a fractional number of cores, the system rounds up the number of cores across processors and provisions an instance with a whole number of cores.
+         * The percentage of cores enabled. Value must be a multiple of 25%! (MISSING)If the requested percentage results in a fractional number of cores, the system rounds up the number of cores across processors and provisions an instance with a whole number of cores.
          *
          * If the applications that you run on the instance use a core-based licensing model and need fewer cores than the full size of the shape, you can disable cores to reduce your licensing costs. The instance itself is billed for the full shape, regardless of whether all cores are enabled.
          */
@@ -19320,7 +19322,7 @@ export namespace DataSafe {
          */
         schemaName?: pulumi.Input<string>;
         /**
-         * (Updatable) The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%)  symbols.
+         * (Updatable) The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%!)(MISSING)  symbols.
          */
         sqlExpression?: pulumi.Input<string>;
         /**
@@ -19438,7 +19440,7 @@ export namespace DataSafe {
          */
         schemaName?: pulumi.Input<string>;
         /**
-         * (Updatable) The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%)  symbols.
+         * (Updatable) The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%!)(MISSING)  symbols.
          */
         sqlExpression?: pulumi.Input<string>;
         /**

@@ -30,7 +30,7 @@ import javax.annotation.Nullable;
  * ExternalClusters can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:DatabaseManagement/externalCluster:ExternalCluster test_external_cluster &#34;id&#34;
+ * $ pulumi import oci:DatabaseManagement/externalCluster:ExternalCluster test_external_cluster &#34;id&#34;
  * ```
  * 
  */

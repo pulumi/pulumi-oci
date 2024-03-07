@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -25,13 +26,14 @@ import * as utilities from "../utilities";
  *     eulaLink: _var.app_catalog_subscription_eula_link,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * AppCatalogSubscriptions can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Core/appCatalogSubscription:AppCatalogSubscription test_app_catalog_subscription "compartmentId/{compartmentId}/listingId/{listingId}/listingResourceVersion/{listingResourceVersion}"
+ * $ pulumi import oci:Core/appCatalogSubscription:AppCatalogSubscription test_app_catalog_subscription "compartmentId/{compartmentId}/listingId/{listingId}/listingResourceVersion/{listingResourceVersion}"
  * ```
  */
 export class AppCatalogSubscription extends pulumi.CustomResource {

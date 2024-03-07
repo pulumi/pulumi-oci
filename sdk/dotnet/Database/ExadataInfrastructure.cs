@@ -17,6 +17,7 @@ namespace Pulumi.Oci.Database
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -97,13 +98,14 @@ namespace Pulumi.Oci.Database
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// ExadataInfrastructures can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Database/exadataInfrastructure:ExadataInfrastructure test_exadata_infrastructure "id"
+    /// $ pulumi import oci:Database/exadataInfrastructure:ExadataInfrastructure test_exadata_infrastructure "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Database/exadataInfrastructure:ExadataInfrastructure")]

@@ -398,6 +398,7 @@ class Policy(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -414,13 +415,14 @@ class Policy(pulumi.CustomResource):
             },
             version_date=var["policy_version_date"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Policies can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/policy:Policy test_policy "id"
+        $ pulumi import oci:Identity/policy:Policy test_policy "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -462,6 +464,7 @@ class Policy(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -478,13 +481,14 @@ class Policy(pulumi.CustomResource):
             },
             version_date=var["policy_version_date"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Policies can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/policy:Policy test_policy "id"
+        $ pulumi import oci:Identity/policy:Policy test_policy "id"
         ```
 
         :param str resource_name: The name of the resource.

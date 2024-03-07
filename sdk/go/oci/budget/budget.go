@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -58,15 +59,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Budgets can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Budget/budget:Budget test_budget "id"
-//
+// $ pulumi import oci:Budget/budget:Budget test_budget "id"
 // ```
 type Budget struct {
 	pulumi.CustomResourceState

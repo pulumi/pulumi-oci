@@ -23,10 +23,9 @@ namespace Pulumi.Oci.DataSafe
         /// All - Includes all the supported data types 
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -39,8 +38,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetCompatibleFormatsForDataTypeResult> InvokeAsync(InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetCompatibleFormatsForDataTypeResult>("oci:DataSafe/getCompatibleFormatsForDataType:getCompatibleFormatsForDataType", InvokeArgs.Empty, options.WithDefaults());
@@ -57,10 +55,9 @@ namespace Pulumi.Oci.DataSafe
         /// All - Includes all the supported data types 
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -73,8 +70,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetCompatibleFormatsForDataTypeResult> Invoke(InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCompatibleFormatsForDataTypeResult>("oci:DataSafe/getCompatibleFormatsForDataType:getCompatibleFormatsForDataType", InvokeArgs.Empty, options.WithDefaults());

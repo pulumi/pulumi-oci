@@ -216,12 +216,14 @@ def get_profile(profile_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_profile = oci.Optimizer.get_profile(profile_id=oci_optimizer_profile["test_profile"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str profile_id: The unique OCID of the profile.
@@ -259,12 +261,14 @@ def get_profile_output(profile_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_profile = oci.Optimizer.get_profile(profile_id=oci_optimizer_profile["test_profile"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str profile_id: The unique OCID of the profile.

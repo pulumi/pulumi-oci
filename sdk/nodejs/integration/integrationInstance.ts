@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -55,13 +56,14 @@ import * as utilities from "../utilities";
  *     state: _var.integration_instance_target_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * IntegrationInstances can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Integration/integrationInstance:IntegrationInstance test_integration_instance "id"
+ * $ pulumi import oci:Integration/integrationInstance:IntegrationInstance test_integration_instance "id"
  * ```
  */
 export class IntegrationInstance extends pulumi.CustomResource {

@@ -25,10 +25,9 @@ namespace Pulumi.Oci.Database
         /// new resource model.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -44,8 +43,7 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetExadataIormConfigResult> InvokeAsync(GetExadataIormConfigArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetExadataIormConfigResult>("oci:Database/getExadataIormConfig:getExadataIormConfig", args ?? new GetExadataIormConfigArgs(), options.WithDefaults());
@@ -64,10 +62,9 @@ namespace Pulumi.Oci.Database
         /// new resource model.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -83,8 +80,7 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetExadataIormConfigResult> Invoke(GetExadataIormConfigInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetExadataIormConfigResult>("oci:Database/getExadataIormConfig:getExadataIormConfig", args ?? new GetExadataIormConfigInvokeArgs(), options.WithDefaults());

@@ -16,6 +16,7 @@ namespace Pulumi.Oci.DataCatalog
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -38,13 +39,14 @@ namespace Pulumi.Oci.DataCatalog
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// Connections can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:DataCatalog/connection:Connection test_connection "catalogs/{catalogId}/dataAssets/{dataAssetKey}/connections/{connectionKey}"
+    /// $ pulumi import oci:DataCatalog/connection:Connection test_connection "catalogs/{catalogId}/dataAssets/{dataAssetKey}/connections/{connectionKey}"
     /// ```
     /// </summary>
     [OciResourceType("oci:DataCatalog/connection:Connection")]

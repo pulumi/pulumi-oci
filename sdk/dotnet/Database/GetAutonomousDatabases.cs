@@ -29,10 +29,9 @@ namespace Pulumi.Oci.Database
         /// Gets a list of Autonomous Databases based on the query parameters specified.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -59,8 +58,7 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetAutonomousDatabasesResult> InvokeAsync(GetAutonomousDatabasesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAutonomousDatabasesResult>("oci:Database/getAutonomousDatabases:getAutonomousDatabases", args ?? new GetAutonomousDatabasesArgs(), options.WithDefaults());
@@ -83,10 +81,9 @@ namespace Pulumi.Oci.Database
         /// Gets a list of Autonomous Databases based on the query parameters specified.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -113,8 +110,7 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetAutonomousDatabasesResult> Invoke(GetAutonomousDatabasesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousDatabasesResult>("oci:Database/getAutonomousDatabases:getAutonomousDatabases", args ?? new GetAutonomousDatabasesInvokeArgs(), options.WithDefaults());

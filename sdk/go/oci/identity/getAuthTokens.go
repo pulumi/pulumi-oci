@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,6 +42,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetAuthTokens(ctx *pulumi.Context, args *GetAuthTokensArgs, opts ...pulumi.InvokeOption) (*GetAuthTokensResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAuthTokensResult

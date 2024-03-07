@@ -19,7 +19,7 @@ namespace Pulumi.Oci.Identity
     /// MySmtpCredentials can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Identity/domainsMySmtpCredential:DomainsMySmtpCredential test_my_smtp_credential "idcsEndpoint/{idcsEndpoint}/mySmtpCredentials/{mySmtpCredentialId}"
+    /// $ pulumi import oci:Identity/domainsMySmtpCredential:DomainsMySmtpCredential test_my_smtp_credential "idcsEndpoint/{idcsEndpoint}/mySmtpCredentials/{mySmtpCredentialId}"
     /// ```
     /// </summary>
     [OciResourceType("oci:Identity/domainsMySmtpCredential:DomainsMySmtpCredential")]

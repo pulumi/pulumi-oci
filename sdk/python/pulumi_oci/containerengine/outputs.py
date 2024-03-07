@@ -1624,7 +1624,7 @@ class ContainerInstanceContainerResourceConfig(dict):
                
                CPU usage is defined in terms of logical CPUs. This means that the maximum possible value on an E3 ContainerInstance with 1 OCPU is 2.0.
                
-               A container with a 2.0 vcpusLimit could consume up to 100% of the CPU resources available on the container instance. Values can be fractional. A value of "1.5" means that the container can consume at most the equivalent of 1 and a half logical CPUs worth of CPU capacity.
+               A container with a 2.0 vcpusLimit could consume up to 100%!o(MISSING)f the CPU resources available on the container instance. Values can be fractional. A value of "1.5" means that the container can consume at most the equivalent of 1 and a half logical CPUs worth of CPU capacity.
         """
         if memory_limit_in_gbs is not None:
             pulumi.set(__self__, "memory_limit_in_gbs", memory_limit_in_gbs)
@@ -1651,7 +1651,7 @@ class ContainerInstanceContainerResourceConfig(dict):
 
         CPU usage is defined in terms of logical CPUs. This means that the maximum possible value on an E3 ContainerInstance with 1 OCPU is 2.0.
 
-        A container with a 2.0 vcpusLimit could consume up to 100% of the CPU resources available on the container instance. Values can be fractional. A value of "1.5" means that the container can consume at most the equivalent of 1 and a half logical CPUs worth of CPU capacity.
+        A container with a 2.0 vcpusLimit could consume up to 100%!o(MISSING)f the CPU resources available on the container instance. Values can be fractional. A value of "1.5" means that the container can consume at most the equivalent of 1 and a half logical CPUs worth of CPU capacity.
         """
         return pulumi.get(self, "vcpus_limit")
 
@@ -3141,8 +3141,10 @@ class NodePoolNodePoolCyclingDetails(dict):
                  maximum_unavailable: Optional[str] = None):
         """
         :param bool is_node_cycling_enabled: (Updatable) If nodes in the nodepool will be cycled to have new changes.
-        :param str maximum_surge: (Updatable) Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0% to 100%
-        :param str maximum_unavailable: (Updatable) Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0% to 100%
+        :param str maximum_surge: (Updatable) Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0%!t(MISSING)o 100%!
+               (MISSING)
+        :param str maximum_unavailable: (Updatable) Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0%!t(MISSING)o 100%!
+               (MISSING)
         """
         if is_node_cycling_enabled is not None:
             pulumi.set(__self__, "is_node_cycling_enabled", is_node_cycling_enabled)
@@ -3163,7 +3165,8 @@ class NodePoolNodePoolCyclingDetails(dict):
     @pulumi.getter(name="maximumSurge")
     def maximum_surge(self) -> Optional[str]:
         """
-        (Updatable) Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0% to 100%
+        (Updatable) Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0%!t(MISSING)o 100%!
+        (MISSING)
         """
         return pulumi.get(self, "maximum_surge")
 
@@ -3171,7 +3174,8 @@ class NodePoolNodePoolCyclingDetails(dict):
     @pulumi.getter(name="maximumUnavailable")
     def maximum_unavailable(self) -> Optional[str]:
         """
-        (Updatable) Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0% to 100%
+        (Updatable) Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0%!t(MISSING)o 100%!
+        (MISSING)
         """
         return pulumi.get(self, "maximum_unavailable")
 
@@ -5586,8 +5590,10 @@ class GetNodePoolNodePoolCyclingDetailResult(dict):
                  maximum_unavailable: str):
         """
         :param bool is_node_cycling_enabled: If nodes in the nodepool will be cycled to have new changes.
-        :param str maximum_surge: Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0% to 100%
-        :param str maximum_unavailable: Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0% to 100%
+        :param str maximum_surge: Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0%!t(MISSING)o 100%!
+               (MISSING)
+        :param str maximum_unavailable: Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0%!t(MISSING)o 100%!
+               (MISSING)
         """
         pulumi.set(__self__, "is_node_cycling_enabled", is_node_cycling_enabled)
         pulumi.set(__self__, "maximum_surge", maximum_surge)
@@ -5605,7 +5611,8 @@ class GetNodePoolNodePoolCyclingDetailResult(dict):
     @pulumi.getter(name="maximumSurge")
     def maximum_surge(self) -> str:
         """
-        Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0% to 100%
+        Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0%!t(MISSING)o 100%!
+        (MISSING)
         """
         return pulumi.get(self, "maximum_surge")
 
@@ -5613,7 +5620,8 @@ class GetNodePoolNodePoolCyclingDetailResult(dict):
     @pulumi.getter(name="maximumUnavailable")
     def maximum_unavailable(self) -> str:
         """
-        Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0% to 100%
+        Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0%!t(MISSING)o 100%!
+        (MISSING)
         """
         return pulumi.get(self, "maximum_unavailable")
 
@@ -6568,8 +6576,10 @@ class GetNodePoolsNodePoolNodePoolCyclingDetailResult(dict):
                  maximum_unavailable: str):
         """
         :param bool is_node_cycling_enabled: If nodes in the nodepool will be cycled to have new changes.
-        :param str maximum_surge: Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0% to 100%
-        :param str maximum_unavailable: Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0% to 100%
+        :param str maximum_surge: Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0%!t(MISSING)o 100%!
+               (MISSING)
+        :param str maximum_unavailable: Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0%!t(MISSING)o 100%!
+               (MISSING)
         """
         pulumi.set(__self__, "is_node_cycling_enabled", is_node_cycling_enabled)
         pulumi.set(__self__, "maximum_surge", maximum_surge)
@@ -6587,7 +6597,8 @@ class GetNodePoolsNodePoolNodePoolCyclingDetailResult(dict):
     @pulumi.getter(name="maximumSurge")
     def maximum_surge(self) -> str:
         """
-        Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0% to 100%
+        Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0%!t(MISSING)o 100%!
+        (MISSING)
         """
         return pulumi.get(self, "maximum_surge")
 
@@ -6595,7 +6606,8 @@ class GetNodePoolsNodePoolNodePoolCyclingDetailResult(dict):
     @pulumi.getter(name="maximumUnavailable")
     def maximum_unavailable(self) -> str:
         """
-        Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0% to 100%
+        Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0%!t(MISSING)o 100%!
+        (MISSING)
         """
         return pulumi.get(self, "maximum_unavailable")
 

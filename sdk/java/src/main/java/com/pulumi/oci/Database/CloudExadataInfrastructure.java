@@ -27,6 +27,8 @@ import javax.annotation.Nullable;
  * Creates a cloud Exadata infrastructure resource. This resource is used to create either an [Exadata Cloud Service](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm) instance or an Autonomous Database on dedicated Exadata infrastructure.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -84,13 +86,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * CloudExadataInfrastructures can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Database/cloudExadataInfrastructure:CloudExadataInfrastructure test_cloud_exadata_infrastructure &#34;id&#34;
+ * $ pulumi import oci:Database/cloudExadataInfrastructure:CloudExadataInfrastructure test_cloud_exadata_infrastructure &#34;id&#34;
  * ```
  * 
  */

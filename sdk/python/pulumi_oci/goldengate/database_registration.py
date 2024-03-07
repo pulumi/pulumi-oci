@@ -757,6 +757,7 @@ class DatabaseRegistration(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -785,13 +786,14 @@ class DatabaseRegistration(pulumi.CustomResource):
             vault_id=oci_kms_vault["test_vault"]["id"],
             wallet=var["database_registration_wallet"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         DatabaseRegistrations can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:GoldenGate/databaseRegistration:DatabaseRegistration test_database_registration "id"
+        $ pulumi import oci:GoldenGate/databaseRegistration:DatabaseRegistration test_database_registration "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -833,6 +835,7 @@ class DatabaseRegistration(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -861,13 +864,14 @@ class DatabaseRegistration(pulumi.CustomResource):
             vault_id=oci_kms_vault["test_vault"]["id"],
             wallet=var["database_registration_wallet"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         DatabaseRegistrations can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:GoldenGate/databaseRegistration:DatabaseRegistration test_database_registration "id"
+        $ pulumi import oci:GoldenGate/databaseRegistration:DatabaseRegistration test_database_registration "id"
         ```
 
         :param str resource_name: The name of the resource.

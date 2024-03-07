@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -50,15 +51,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // RecoveryServiceSubnets can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:RecoveryMod/recoveryServiceSubnet:RecoveryServiceSubnet test_recovery_service_subnet "id"
-//
+// $ pulumi import oci:RecoveryMod/recoveryServiceSubnet:RecoveryServiceSubnet test_recovery_service_subnet "id"
 // ```
 type RecoveryServiceSubnet struct {
 	pulumi.CustomResourceState

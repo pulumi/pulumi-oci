@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -19,6 +20,7 @@ import * as utilities from "../utilities";
  *     dkimId: oci_email_dkim.test_dkim.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDkim(args: GetDkimArgs, opts?: pulumi.InvokeOptions): Promise<GetDkimResult> {
 
@@ -111,6 +113,7 @@ export interface GetDkimResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -119,6 +122,7 @@ export interface GetDkimResult {
  *     dkimId: oci_email_dkim.test_dkim.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDkimOutput(args: GetDkimOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDkimResult> {
     return pulumi.output(args).apply((a: any) => getDkim(a, opts))

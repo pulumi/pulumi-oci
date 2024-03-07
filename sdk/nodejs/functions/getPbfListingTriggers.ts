@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,6 +22,7 @@ import * as utilities from "../utilities";
  *     name: _var.pbf_listing_trigger_name,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getPbfListingTriggers(args?: GetPbfListingTriggersArgs, opts?: pulumi.InvokeOptions): Promise<GetPbfListingTriggersResult> {
     args = args || {};
@@ -68,6 +70,7 @@ export interface GetPbfListingTriggersResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -76,6 +79,7 @@ export interface GetPbfListingTriggersResult {
  *     name: _var.pbf_listing_trigger_name,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getPbfListingTriggersOutput(args?: GetPbfListingTriggersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPbfListingTriggersResult> {
     return pulumi.output(args).apply((a: any) => getPbfListingTriggers(a, opts))

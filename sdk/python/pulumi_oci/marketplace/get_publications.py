@@ -135,6 +135,7 @@ def get_publications(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -145,6 +146,7 @@ def get_publications(compartment_id: Optional[str] = None,
         operating_systems=var["publication_operating_systems"],
         publication_id=oci_marketplace_publication["test_publication"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The unique identifier for the compartment.
@@ -189,6 +191,7 @@ def get_publications_output(compartment_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -199,6 +202,7 @@ def get_publications_output(compartment_id: Optional[pulumi.Input[str]] = None,
         operating_systems=var["publication_operating_systems"],
         publication_id=oci_marketplace_publication["test_publication"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The unique identifier for the compartment.

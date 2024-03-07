@@ -604,16 +604,11 @@ class DatabaseUpgrade(pulumi.CustomResource):
         Database upgrade requires source to be `DB_VERSION` or `DB_SOFTWARE_IMAGE`.
         	`db_home.0.db_version` is updated to target DB version specified in the upgrade request.
         	To avoid a force new create of the db_home on the next apply, add the following to the resource
-        	```	lifecycle {
-        	   	ignore_changes = [
-        	   		db_home.0.db_version,
-        	   	]
-        	}
-        	```
-
-        ## Import
-
-        Import is not supported for this resource.
+        	<!--Start PulumiCodeChooser -->
+        ```python
+        import pulumi
+        ```
+        <!--End PulumiCodeChooser -->
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -635,16 +630,11 @@ class DatabaseUpgrade(pulumi.CustomResource):
         Database upgrade requires source to be `DB_VERSION` or `DB_SOFTWARE_IMAGE`.
         	`db_home.0.db_version` is updated to target DB version specified in the upgrade request.
         	To avoid a force new create of the db_home on the next apply, add the following to the resource
-        	```	lifecycle {
-        	   	ignore_changes = [
-        	   		db_home.0.db_version,
-        	   	]
-        	}
-        	```
-
-        ## Import
-
-        Import is not supported for this resource.
+        	<!--Start PulumiCodeChooser -->
+        ```python
+        import pulumi
+        ```
+        <!--End PulumiCodeChooser -->
 
         :param str resource_name: The name of the resource.
         :param DatabaseUpgradeArgs args: The arguments to use to populate this resource's properties.

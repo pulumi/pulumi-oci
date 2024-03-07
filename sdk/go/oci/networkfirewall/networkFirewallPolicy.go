@@ -17,9 +17,7 @@ import (
 // NetworkFirewallPolicies can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:NetworkFirewall/networkFirewallPolicy:NetworkFirewallPolicy test_network_firewall_policy "id"
-//
+// $ pulumi import oci:NetworkFirewall/networkFirewallPolicy:NetworkFirewallPolicy test_network_firewall_policy "id"
 // ```
 type NetworkFirewallPolicy struct {
 	pulumi.CustomResourceState

@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -56,15 +57,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // CustomTables can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:MeteringComputation/customTable:CustomTable test_custom_table "id"
-//
+// $ pulumi import oci:MeteringComputation/customTable:CustomTable test_custom_table "id"
 // ```
 type CustomTable struct {
 	pulumi.CustomResourceState

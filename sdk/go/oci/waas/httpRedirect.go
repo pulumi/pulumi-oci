@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -57,15 +58,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // HttpRedirects can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Waas/httpRedirect:HttpRedirect test_http_redirect "id"
-//
+// $ pulumi import oci:Waas/httpRedirect:HttpRedirect test_http_redirect "id"
 // ```
 type HttpRedirect struct {
 	pulumi.CustomResourceState

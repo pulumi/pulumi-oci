@@ -208,12 +208,14 @@ def get_at_customer_ccc_upgrade_schedule(ccc_upgrade_schedule_id: Optional[str] 
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_ccc_upgrade_schedule = oci.ComputeCloud.get_at_customer_ccc_upgrade_schedule(ccc_upgrade_schedule_id=oci_compute_cloud_at_customer_ccc_upgrade_schedule["test_ccc_upgrade_schedule"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str ccc_upgrade_schedule_id: Compute Cloud@Customer upgrade schedule [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -251,12 +253,14 @@ def get_at_customer_ccc_upgrade_schedule_output(ccc_upgrade_schedule_id: Optiona
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_ccc_upgrade_schedule = oci.ComputeCloud.get_at_customer_ccc_upgrade_schedule(ccc_upgrade_schedule_id=oci_compute_cloud_at_customer_ccc_upgrade_schedule["test_ccc_upgrade_schedule"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str ccc_upgrade_schedule_id: Compute Cloud@Customer upgrade schedule [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

@@ -30,7 +30,7 @@ import javax.annotation.Nullable;
  * MediaAssets can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:MediaServices/mediaAsset:MediaAsset test_media_asset &#34;id&#34;
+ * $ pulumi import oci:MediaServices/mediaAsset:MediaAsset test_media_asset &#34;id&#34;
  * ```
  * 
  */

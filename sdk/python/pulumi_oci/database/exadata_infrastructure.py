@@ -1229,6 +1229,7 @@ class ExadataInfrastructure(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -1286,13 +1287,14 @@ class ExadataInfrastructure(pulumi.CustomResource):
             ),
             storage_count=var["exadata_infrastructure_storage_count"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ExadataInfrastructures can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Database/exadataInfrastructure:ExadataInfrastructure test_exadata_infrastructure "id"
+        $ pulumi import oci:Database/exadataInfrastructure:ExadataInfrastructure test_exadata_infrastructure "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -1340,6 +1342,7 @@ class ExadataInfrastructure(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -1397,13 +1400,14 @@ class ExadataInfrastructure(pulumi.CustomResource):
             ),
             storage_count=var["exadata_infrastructure_storage_count"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ExadataInfrastructures can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Database/exadataInfrastructure:ExadataInfrastructure test_exadata_infrastructure "id"
+        $ pulumi import oci:Database/exadataInfrastructure:ExadataInfrastructure test_exadata_infrastructure "id"
         ```
 
         :param str resource_name: The name of the resource.

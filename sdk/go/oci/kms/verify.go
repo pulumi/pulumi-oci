@@ -21,6 +21,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -50,15 +51,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Verify can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Kms/verify:Verify test_verify "id"
-//
+// $ pulumi import oci:Kms/verify:Verify test_verify "id"
 // ```
 type Verify struct {
 	pulumi.CustomResourceState

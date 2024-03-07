@@ -86,12 +86,14 @@ def get_db_system_compute_performances(db_system_shape: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_db_system_compute_performances = oci.Database.get_db_system_compute_performances(db_system_shape=var["db_system_compute_performance_db_system_shape"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str db_system_shape: If provided, filters the results to the set of database versions which are supported for the given shape.
@@ -120,12 +122,14 @@ def get_db_system_compute_performances_output(db_system_shape: Optional[pulumi.I
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_db_system_compute_performances = oci.Database.get_db_system_compute_performances(db_system_shape=var["db_system_compute_performance_db_system_shape"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str db_system_shape: If provided, filters the results to the set of database versions which are supported for the given shape.

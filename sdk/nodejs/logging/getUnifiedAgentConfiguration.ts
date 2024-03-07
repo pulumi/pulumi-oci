@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,6 +22,7 @@ import * as utilities from "../utilities";
  *     unifiedAgentConfigurationId: oci_logging_unified_agent_configuration.test_unified_agent_configuration.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getUnifiedAgentConfiguration(args: GetUnifiedAgentConfigurationArgs, opts?: pulumi.InvokeOptions): Promise<GetUnifiedAgentConfigurationResult> {
 
@@ -105,6 +107,7 @@ export interface GetUnifiedAgentConfigurationResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -113,6 +116,7 @@ export interface GetUnifiedAgentConfigurationResult {
  *     unifiedAgentConfigurationId: oci_logging_unified_agent_configuration.test_unified_agent_configuration.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getUnifiedAgentConfigurationOutput(args: GetUnifiedAgentConfigurationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetUnifiedAgentConfigurationResult> {
     return pulumi.output(args).apply((a: any) => getUnifiedAgentConfiguration(a, opts))

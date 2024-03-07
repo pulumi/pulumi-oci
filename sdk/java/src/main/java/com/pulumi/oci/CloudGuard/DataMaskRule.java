@@ -23,6 +23,8 @@ import javax.annotation.Nullable;
  * Creates a new Data Mask Rule Definition
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -64,13 +66,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * DataMaskRules can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:CloudGuard/dataMaskRule:DataMaskRule test_data_mask_rule &#34;id&#34;
+ * $ pulumi import oci:CloudGuard/dataMaskRule:DataMaskRule test_data_mask_rule &#34;id&#34;
  * ```
  * 
  */

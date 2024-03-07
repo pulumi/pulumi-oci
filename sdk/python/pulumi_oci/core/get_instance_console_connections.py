@@ -104,6 +104,7 @@ def get_instance_console_connections(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -111,6 +112,7 @@ def get_instance_console_connections(compartment_id: Optional[str] = None,
     test_instance_console_connections = oci.Core.get_instance_console_connections(compartment_id=var["compartment_id"],
         instance_id=oci_core_instance["test_instance"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -145,6 +147,7 @@ def get_instance_console_connections_output(compartment_id: Optional[pulumi.Inpu
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -152,6 +155,7 @@ def get_instance_console_connections_output(compartment_id: Optional[pulumi.Inpu
     test_instance_console_connections = oci.Core.get_instance_console_connections(compartment_id=var["compartment_id"],
         instance_id=oci_core_instance["test_instance"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

@@ -26,6 +26,8 @@ import javax.annotation.Nullable;
  * at the defined date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -60,13 +62,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * SecurityAssessments can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:DataSafe/securityAssessment:SecurityAssessment test_security_assessment &#34;id&#34;
+ * $ pulumi import oci:DataSafe/securityAssessment:SecurityAssessment test_security_assessment &#34;id&#34;
  * ```
  * 
  */

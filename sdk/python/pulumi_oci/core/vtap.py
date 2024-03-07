@@ -702,6 +702,7 @@ class Vtap(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -730,13 +731,14 @@ class Vtap(pulumi.CustomResource):
             traffic_mode=var["vtap_traffic_mode"],
             vxlan_network_identifier=var["vtap_vxlan_network_identifier"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Vtaps can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/vtap:Vtap test_vtap "id"
+        $ pulumi import oci:Core/vtap:Vtap test_vtap "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -785,6 +787,7 @@ class Vtap(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -813,13 +816,14 @@ class Vtap(pulumi.CustomResource):
             traffic_mode=var["vtap_traffic_mode"],
             vxlan_network_identifier=var["vtap_vxlan_network_identifier"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Vtaps can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/vtap:Vtap test_vtap "id"
+        $ pulumi import oci:Core/vtap:Vtap test_vtap "id"
         ```
 
         :param str resource_name: The name of the resource.

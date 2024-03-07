@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -84,15 +85,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // RemediationRecipes can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Adm/remediationRecipe:RemediationRecipe test_remediation_recipe "id"
-//
+// $ pulumi import oci:Adm/remediationRecipe:RemediationRecipe test_remediation_recipe "id"
 // ```
 type RemediationRecipe struct {
 	pulumi.CustomResourceState

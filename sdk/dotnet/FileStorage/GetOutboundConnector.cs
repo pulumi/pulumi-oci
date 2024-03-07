@@ -16,10 +16,9 @@ namespace Pulumi.Oci.FileStorage
         /// 
         /// Gets the specified outbound connector's information.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,8 +34,7 @@ namespace Pulumi.Oci.FileStorage
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetOutboundConnectorResult> InvokeAsync(GetOutboundConnectorArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetOutboundConnectorResult>("oci:FileStorage/getOutboundConnector:getOutboundConnector", args ?? new GetOutboundConnectorArgs(), options.WithDefaults());
@@ -46,10 +44,9 @@ namespace Pulumi.Oci.FileStorage
         /// 
         /// Gets the specified outbound connector's information.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -65,8 +62,7 @@ namespace Pulumi.Oci.FileStorage
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetOutboundConnectorResult> Invoke(GetOutboundConnectorInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetOutboundConnectorResult>("oci:FileStorage/getOutboundConnector:getOutboundConnector", args ?? new GetOutboundConnectorInvokeArgs(), options.WithDefaults());

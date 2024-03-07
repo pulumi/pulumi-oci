@@ -316,6 +316,7 @@ class ApmDomain(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -332,13 +333,14 @@ class ApmDomain(pulumi.CustomResource):
             },
             is_free_tier=var["apm_domain_is_free_tier"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ApmDomains can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Apm/apmDomain:ApmDomain test_apm_domain "id"
+        $ pulumi import oci:Apm/apmDomain:ApmDomain test_apm_domain "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -367,6 +369,7 @@ class ApmDomain(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -383,13 +386,14 @@ class ApmDomain(pulumi.CustomResource):
             },
             is_free_tier=var["apm_domain_is_free_tier"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ApmDomains can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Apm/apmDomain:ApmDomain test_apm_domain "id"
+        $ pulumi import oci:Apm/apmDomain:ApmDomain test_apm_domain "id"
         ```
 
         :param str resource_name: The name of the resource.

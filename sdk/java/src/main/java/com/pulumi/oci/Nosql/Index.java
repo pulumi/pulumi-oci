@@ -22,6 +22,8 @@ import javax.annotation.Nullable;
  * Create a new index on the table identified by tableNameOrId.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -58,13 +60,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * Indexes can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Nosql/index:Index test_index &#34;tables/{tableNameOrId}/indexes/{indexName}&#34;
+ * $ pulumi import oci:Nosql/index:Index test_index &#34;tables/{tableNameOrId}/indexes/{indexName}&#34;
  * ```
  * 
  */

@@ -732,6 +732,7 @@ class MonitoredResource(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -808,13 +809,14 @@ class MonitoredResource(pulumi.CustomResource):
             )],
             resource_time_zone=var["monitored_resource_resource_time_zone"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         MonitoredResources can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:StackMonitoring/monitoredResource:MonitoredResource test_monitored_resource "id"
+        $ pulumi import oci:StackMonitoring/monitoredResource:MonitoredResource test_monitored_resource "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -857,6 +859,7 @@ class MonitoredResource(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -933,13 +936,14 @@ class MonitoredResource(pulumi.CustomResource):
             )],
             resource_time_zone=var["monitored_resource_resource_time_zone"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         MonitoredResources can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:StackMonitoring/monitoredResource:MonitoredResource test_monitored_resource "id"
+        $ pulumi import oci:StackMonitoring/monitoredResource:MonitoredResource test_monitored_resource "id"
         ```
 
         :param str resource_name: The name of the resource.

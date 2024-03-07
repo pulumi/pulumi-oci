@@ -101,6 +101,7 @@ def get_managed_database_sql_tuning_set(managed_database_id: Optional[str] = Non
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -109,6 +110,7 @@ def get_managed_database_sql_tuning_set(managed_database_id: Optional[str] = Non
         name_contains=var["managed_database_sql_tuning_set_name_contains"],
         owner=var["managed_database_sql_tuning_set_owner"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
@@ -142,6 +144,7 @@ def get_managed_database_sql_tuning_set_output(managed_database_id: Optional[pul
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -150,6 +153,7 @@ def get_managed_database_sql_tuning_set_output(managed_database_id: Optional[pul
         name_contains=var["managed_database_sql_tuning_set_name_contains"],
         owner=var["managed_database_sql_tuning_set_owner"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.

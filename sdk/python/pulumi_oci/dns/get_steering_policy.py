@@ -207,12 +207,14 @@ def get_steering_policy(steering_policy_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_steering_policy = oci.Dns.get_steering_policy(steering_policy_id=oci_dns_steering_policy["test_steering_policy"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str steering_policy_id: The OCID of the target steering policy.
@@ -249,12 +251,14 @@ def get_steering_policy_output(steering_policy_id: Optional[pulumi.Input[str]] =
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_steering_policy = oci.Dns.get_steering_policy(steering_policy_id=oci_dns_steering_policy["test_steering_policy"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str steering_policy_id: The OCID of the target steering policy.

@@ -432,7 +432,7 @@ class DetectAnomalyJob(pulumi.CustomResource):
         DetectAnomalyJobs can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:AiAnomalyDetection/detectAnomalyJob:DetectAnomalyJob test_detect_anomaly_job "id"
+        $ pulumi import oci:AiAnomalyDetection/detectAnomalyJob:DetectAnomalyJob test_detect_anomaly_job "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -465,7 +465,7 @@ class DetectAnomalyJob(pulumi.CustomResource):
         DetectAnomalyJobs can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:AiAnomalyDetection/detectAnomalyJob:DetectAnomalyJob test_detect_anomaly_job "id"
+        $ pulumi import oci:AiAnomalyDetection/detectAnomalyJob:DetectAnomalyJob test_detect_anomaly_job "id"
         ```
 
         :param str resource_name: The name of the resource.

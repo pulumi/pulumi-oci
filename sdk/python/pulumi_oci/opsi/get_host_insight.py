@@ -374,12 +374,14 @@ def get_host_insight(host_insight_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_host_insight = oci.Opsi.get_host_insight(host_insight_id=oci_opsi_host_insight["test_host_insight"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str host_insight_id: Unique host insight identifier
@@ -430,12 +432,14 @@ def get_host_insight_output(host_insight_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_host_insight = oci.Opsi.get_host_insight(host_insight_id=oci_opsi_host_insight["test_host_insight"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str host_insight_id: Unique host insight identifier

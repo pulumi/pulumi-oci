@@ -23,6 +23,8 @@ public final class AppMgmtControlFunctions {
      * Gets a monitored instance by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -51,6 +53,7 @@ public final class AppMgmtControlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMonitoredInstanceResult> getMonitoredInstance(GetMonitoredInstanceArgs args) {
@@ -62,6 +65,8 @@ public final class AppMgmtControlFunctions {
      * Gets a monitored instance by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -90,6 +95,7 @@ public final class AppMgmtControlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMonitoredInstanceResult> getMonitoredInstancePlain(GetMonitoredInstancePlainArgs args) {
@@ -101,6 +107,8 @@ public final class AppMgmtControlFunctions {
      * Gets a monitored instance by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -129,6 +137,7 @@ public final class AppMgmtControlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMonitoredInstanceResult> getMonitoredInstance(GetMonitoredInstanceArgs args, InvokeOptions options) {
@@ -140,6 +149,8 @@ public final class AppMgmtControlFunctions {
      * Gets a monitored instance by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -168,6 +179,7 @@ public final class AppMgmtControlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMonitoredInstanceResult> getMonitoredInstancePlain(GetMonitoredInstancePlainArgs args, InvokeOptions options) {
@@ -179,6 +191,8 @@ public final class AppMgmtControlFunctions {
      * Returns a list of monitored instances.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -208,6 +222,7 @@ public final class AppMgmtControlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMonitoredInstancesResult> getMonitoredInstances(GetMonitoredInstancesArgs args) {
@@ -219,6 +234,8 @@ public final class AppMgmtControlFunctions {
      * Returns a list of monitored instances.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -248,6 +265,7 @@ public final class AppMgmtControlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMonitoredInstancesResult> getMonitoredInstancesPlain(GetMonitoredInstancesPlainArgs args) {
@@ -259,6 +277,8 @@ public final class AppMgmtControlFunctions {
      * Returns a list of monitored instances.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -288,6 +308,7 @@ public final class AppMgmtControlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMonitoredInstancesResult> getMonitoredInstances(GetMonitoredInstancesArgs args, InvokeOptions options) {
@@ -299,6 +320,8 @@ public final class AppMgmtControlFunctions {
      * Returns a list of monitored instances.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -328,6 +351,7 @@ public final class AppMgmtControlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMonitoredInstancesResult> getMonitoredInstancesPlain(GetMonitoredInstancesPlainArgs args, InvokeOptions options) {

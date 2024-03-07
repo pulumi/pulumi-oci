@@ -17,10 +17,9 @@ namespace Pulumi.Oci.Database
         /// Retrieves the specified database node console history contents upto a megabyte.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -37,8 +36,7 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDbNodeConsoleHistoryContentResult> InvokeAsync(GetDbNodeConsoleHistoryContentArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDbNodeConsoleHistoryContentResult>("oci:Database/getDbNodeConsoleHistoryContent:getDbNodeConsoleHistoryContent", args ?? new GetDbNodeConsoleHistoryContentArgs(), options.WithDefaults());
@@ -49,10 +47,9 @@ namespace Pulumi.Oci.Database
         /// Retrieves the specified database node console history contents upto a megabyte.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -69,8 +66,7 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDbNodeConsoleHistoryContentResult> Invoke(GetDbNodeConsoleHistoryContentInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDbNodeConsoleHistoryContentResult>("oci:Database/getDbNodeConsoleHistoryContent:getDbNodeConsoleHistoryContent", args ?? new GetDbNodeConsoleHistoryContentInvokeArgs(), options.WithDefaults());

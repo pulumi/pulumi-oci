@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -56,15 +57,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Quotas can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Limits/quota:Quota test_quota "id"
-//
+// $ pulumi import oci:Limits/quota:Quota test_quota "id"
 // ```
 type Quota struct {
 	pulumi.CustomResourceState

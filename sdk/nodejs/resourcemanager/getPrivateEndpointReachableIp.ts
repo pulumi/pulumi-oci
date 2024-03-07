@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -20,6 +21,7 @@ import * as utilities from "../utilities";
  *     privateIp: _var.private_endpoint_reachable_ip_private_ip,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getPrivateEndpointReachableIp(args: GetPrivateEndpointReachableIpArgs, opts?: pulumi.InvokeOptions): Promise<GetPrivateEndpointReachableIpResult> {
 
@@ -66,6 +68,7 @@ export interface GetPrivateEndpointReachableIpResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -75,6 +78,7 @@ export interface GetPrivateEndpointReachableIpResult {
  *     privateIp: _var.private_endpoint_reachable_ip_private_ip,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getPrivateEndpointReachableIpOutput(args: GetPrivateEndpointReachableIpOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPrivateEndpointReachableIpResult> {
     return pulumi.output(args).apply((a: any) => getPrivateEndpointReachableIp(a, opts))

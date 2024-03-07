@@ -268,14 +268,14 @@ public final class MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs exte
     }
 
     /**
-     * (Updatable) The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%)  symbols.
+     * (Updatable) The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%!)(MISSING)  symbols.
      * 
      */
     @Import(name="sqlExpression")
     private @Nullable Output<String> sqlExpression;
 
     /**
-     * @return (Updatable) The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%)  symbols.
+     * @return (Updatable) The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%!)(MISSING)  symbols.
      * 
      */
     public Optional<Output<String>> sqlExpression() {
@@ -799,7 +799,7 @@ public final class MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs exte
         }
 
         /**
-         * @param sqlExpression (Updatable) The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%)  symbols.
+         * @param sqlExpression (Updatable) The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%!)(MISSING)  symbols.
          * 
          * @return builder
          * 
@@ -810,7 +810,7 @@ public final class MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs exte
         }
 
         /**
-         * @param sqlExpression (Updatable) The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%)  symbols.
+         * @param sqlExpression (Updatable) The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%!)(MISSING)  symbols.
          * 
          * @return builder
          * 

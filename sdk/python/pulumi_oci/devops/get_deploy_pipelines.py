@@ -129,6 +129,7 @@ def get_deploy_pipelines(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -139,6 +140,7 @@ def get_deploy_pipelines(compartment_id: Optional[str] = None,
         project_id=oci_devops_project["test_project"]["id"],
         state=var["deploy_pipeline_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment in which to list resources.
@@ -182,6 +184,7 @@ def get_deploy_pipelines_output(compartment_id: Optional[pulumi.Input[Optional[s
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -192,6 +195,7 @@ def get_deploy_pipelines_output(compartment_id: Optional[pulumi.Input[Optional[s
         project_id=oci_devops_project["test_project"]["id"],
         state=var["deploy_pipeline_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment in which to list resources.

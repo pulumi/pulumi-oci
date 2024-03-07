@@ -580,6 +580,7 @@ class Model(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -610,13 +611,14 @@ class Model(pulumi.CustomResource):
             input_schema=var["model_input_schema"],
             output_schema=var["model_output_schema"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Models can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataScience/model:Model test_model "id"
+        $ pulumi import oci:DataScience/model:Model test_model "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -652,6 +654,7 @@ class Model(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -682,13 +685,14 @@ class Model(pulumi.CustomResource):
             input_schema=var["model_input_schema"],
             output_schema=var["model_output_schema"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Models can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataScience/model:Model test_model "id"
+        $ pulumi import oci:DataScience/model:Model test_model "id"
         ```
 
         :param str resource_name: The name of the resource.

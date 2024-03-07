@@ -172,6 +172,7 @@ class DrgAttachmentsList(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -181,6 +182,7 @@ class DrgAttachmentsList(pulumi.CustomResource):
             attachment_type=var["drg_attachments_list_attachment_type"],
             is_cross_tenancy=var["drg_attachments_list_is_cross_tenancy"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -209,6 +211,7 @@ class DrgAttachmentsList(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -218,6 +221,7 @@ class DrgAttachmentsList(pulumi.CustomResource):
             attachment_type=var["drg_attachments_list_attachment_type"],
             is_cross_tenancy=var["drg_attachments_list_is_cross_tenancy"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 

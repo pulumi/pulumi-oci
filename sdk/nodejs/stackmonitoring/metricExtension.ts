@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -64,13 +65,14 @@ import * as utilities from "../utilities";
  *     description: _var.metric_extension_description,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * MetricExtensions can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:StackMonitoring/metricExtension:MetricExtension test_metric_extension "id"
+ * $ pulumi import oci:StackMonitoring/metricExtension:MetricExtension test_metric_extension "id"
  * ```
  */
 export class MetricExtension extends pulumi.CustomResource {

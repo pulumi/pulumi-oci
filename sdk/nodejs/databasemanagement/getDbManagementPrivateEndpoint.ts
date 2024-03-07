@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -19,6 +20,7 @@ import * as utilities from "../utilities";
  *     dbManagementPrivateEndpointId: oci_database_management_db_management_private_endpoint.test_db_management_private_endpoint.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDbManagementPrivateEndpoint(args: GetDbManagementPrivateEndpointArgs, opts?: pulumi.InvokeOptions): Promise<GetDbManagementPrivateEndpointResult> {
 
@@ -103,6 +105,7 @@ export interface GetDbManagementPrivateEndpointResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -111,6 +114,7 @@ export interface GetDbManagementPrivateEndpointResult {
  *     dbManagementPrivateEndpointId: oci_database_management_db_management_private_endpoint.test_db_management_private_endpoint.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDbManagementPrivateEndpointOutput(args: GetDbManagementPrivateEndpointOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbManagementPrivateEndpointResult> {
     return pulumi.output(args).apply((a: any) => getDbManagementPrivateEndpoint(a, opts))

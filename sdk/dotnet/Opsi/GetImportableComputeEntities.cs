@@ -23,10 +23,9 @@ namespace Pulumi.Oci.Opsi
         ///       2.3 The agent lifecycleState = 'ACTIVE'
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -42,8 +41,7 @@ namespace Pulumi.Oci.Opsi
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetImportableComputeEntitiesResult> InvokeAsync(GetImportableComputeEntitiesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetImportableComputeEntitiesResult>("oci:Opsi/getImportableComputeEntities:getImportableComputeEntities", args ?? new GetImportableComputeEntitiesArgs(), options.WithDefaults());
@@ -60,10 +58,9 @@ namespace Pulumi.Oci.Opsi
         ///       2.3 The agent lifecycleState = 'ACTIVE'
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -79,8 +76,7 @@ namespace Pulumi.Oci.Opsi
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetImportableComputeEntitiesResult> Invoke(GetImportableComputeEntitiesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetImportableComputeEntitiesResult>("oci:Opsi/getImportableComputeEntities:getImportableComputeEntities", args ?? new GetImportableComputeEntitiesInvokeArgs(), options.WithDefaults());

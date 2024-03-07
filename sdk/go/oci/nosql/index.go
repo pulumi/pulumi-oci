@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -50,15 +51,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Indexes can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Nosql/index:Index test_index "tables/{tableNameOrId}/indexes/{indexName}"
-//
+// $ pulumi import oci:Nosql/index:Index test_index "tables/{tableNameOrId}/indexes/{indexName}"
 // ```
 type Index struct {
 	pulumi.CustomResourceState

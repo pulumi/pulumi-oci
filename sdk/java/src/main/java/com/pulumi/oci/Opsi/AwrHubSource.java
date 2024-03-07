@@ -23,6 +23,8 @@ import javax.annotation.Nullable;
  * Register Awr Hub source
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -57,13 +59,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * AwrHubSources can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Opsi/awrHubSource:AwrHubSource test_awr_hub_source &#34;id&#34;
+ * $ pulumi import oci:Opsi/awrHubSource:AwrHubSource test_awr_hub_source &#34;id&#34;
  * ```
  * 
  */

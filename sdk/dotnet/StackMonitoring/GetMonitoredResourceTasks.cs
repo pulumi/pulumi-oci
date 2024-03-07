@@ -17,10 +17,9 @@ namespace Pulumi.Oci.StackMonitoring
         /// Returns a list of stack monitoring resource tasks in the compartment.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -37,8 +36,7 @@ namespace Pulumi.Oci.StackMonitoring
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetMonitoredResourceTasksResult> InvokeAsync(GetMonitoredResourceTasksArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetMonitoredResourceTasksResult>("oci:StackMonitoring/getMonitoredResourceTasks:getMonitoredResourceTasks", args ?? new GetMonitoredResourceTasksArgs(), options.WithDefaults());
@@ -49,10 +47,9 @@ namespace Pulumi.Oci.StackMonitoring
         /// Returns a list of stack monitoring resource tasks in the compartment.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -69,8 +66,7 @@ namespace Pulumi.Oci.StackMonitoring
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetMonitoredResourceTasksResult> Invoke(GetMonitoredResourceTasksInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMonitoredResourceTasksResult>("oci:StackMonitoring/getMonitoredResourceTasks:getMonitoredResourceTasks", args ?? new GetMonitoredResourceTasksInvokeArgs(), options.WithDefaults());

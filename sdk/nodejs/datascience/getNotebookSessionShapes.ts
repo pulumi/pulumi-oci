@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,6 +22,7 @@ import * as utilities from "../utilities";
  *     compartmentId: _var.compartment_id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getNotebookSessionShapes(args: GetNotebookSessionShapesArgs, opts?: pulumi.InvokeOptions): Promise<GetNotebookSessionShapesResult> {
 
@@ -64,6 +66,7 @@ export interface GetNotebookSessionShapesResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -72,6 +75,7 @@ export interface GetNotebookSessionShapesResult {
  *     compartmentId: _var.compartment_id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getNotebookSessionShapesOutput(args: GetNotebookSessionShapesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNotebookSessionShapesResult> {
     return pulumi.output(args).apply((a: any) => getNotebookSessionShapes(a, opts))

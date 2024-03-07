@@ -21,6 +21,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -44,6 +45,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetImportableAgentEntities(ctx *pulumi.Context, args *GetImportableAgentEntitiesArgs, opts ...pulumi.InvokeOption) (*GetImportableAgentEntitiesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetImportableAgentEntitiesResult

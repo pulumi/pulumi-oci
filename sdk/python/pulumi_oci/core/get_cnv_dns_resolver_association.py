@@ -87,12 +87,14 @@ def get_cnv_dns_resolver_association(vcn_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_vcn_dns_resolver_association = oci.Core.get_cnv_dns_resolver_association(vcn_id=oci_core_vcn["test_vcn"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
@@ -119,12 +121,14 @@ def get_cnv_dns_resolver_association_output(vcn_id: Optional[pulumi.Input[str]] 
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_vcn_dns_resolver_association = oci.Core.get_cnv_dns_resolver_association(vcn_id=oci_core_vcn["test_vcn"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.

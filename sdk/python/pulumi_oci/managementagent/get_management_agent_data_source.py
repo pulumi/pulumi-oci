@@ -283,6 +283,7 @@ def get_management_agent_data_source(data_source_key: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -290,6 +291,7 @@ def get_management_agent_data_source(data_source_key: Optional[str] = None,
     test_management_agent_data_source = oci.ManagementAgent.get_management_agent_data_source(data_source_key=var["management_agent_data_source_data_source_key"],
         management_agent_id=oci_management_agent_management_agent["test_management_agent"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str data_source_key: Data source type and name identifier.
@@ -336,6 +338,7 @@ def get_management_agent_data_source_output(data_source_key: Optional[pulumi.Inp
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -343,6 +346,7 @@ def get_management_agent_data_source_output(data_source_key: Optional[pulumi.Inp
     test_management_agent_data_source = oci.ManagementAgent.get_management_agent_data_source(data_source_key=var["management_agent_data_source_data_source_key"],
         management_agent_id=oci_management_agent_management_agent["test_management_agent"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str data_source_key: Data source type and name identifier.

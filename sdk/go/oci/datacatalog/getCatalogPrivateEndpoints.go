@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -42,6 +43,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetCatalogPrivateEndpoints(ctx *pulumi.Context, args *GetCatalogPrivateEndpointsArgs, opts ...pulumi.InvokeOption) (*GetCatalogPrivateEndpointsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetCatalogPrivateEndpointsResult

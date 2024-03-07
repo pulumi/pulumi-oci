@@ -21,10 +21,9 @@ namespace Pulumi.Oci.Core
         /// 
         /// * `oci.Core.getVirtualNetworks`
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -42,8 +41,7 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetVcnsResult> InvokeAsync(GetVcnsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetVcnsResult>("oci:Core/getVcns:getVcns", args ?? new GetVcnsArgs(), options.WithDefaults());
@@ -58,10 +56,9 @@ namespace Pulumi.Oci.Core
         /// 
         /// * `oci.Core.getVirtualNetworks`
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -79,8 +76,7 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetVcnsResult> Invoke(GetVcnsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVcnsResult>("oci:Core/getVcns:getVcns", args ?? new GetVcnsInvokeArgs(), options.WithDefaults());

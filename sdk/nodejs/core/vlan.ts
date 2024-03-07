@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -32,13 +33,14 @@ import * as utilities from "../utilities";
  *     vlanTag: _var.vlan_vlan_tag,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * Vlans can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Core/vlan:Vlan test_vlan "id"
+ * $ pulumi import oci:Core/vlan:Vlan test_vlan "id"
  * ```
  */
 export class Vlan extends pulumi.CustomResource {

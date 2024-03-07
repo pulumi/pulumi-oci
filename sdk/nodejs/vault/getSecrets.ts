@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,6 +25,7 @@ import * as utilities from "../utilities";
  *     vaultId: oci_kms_vault.test_vault.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getSecrets(args: GetSecretsArgs, opts?: pulumi.InvokeOptions): Promise<GetSecretsResult> {
 
@@ -94,6 +96,7 @@ export interface GetSecretsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -105,6 +108,7 @@ export interface GetSecretsResult {
  *     vaultId: oci_kms_vault.test_vault.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getSecretsOutput(args: GetSecretsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecretsResult> {
     return pulumi.output(args).apply((a: any) => getSecrets(a, opts))

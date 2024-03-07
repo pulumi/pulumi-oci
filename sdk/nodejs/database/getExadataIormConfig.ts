@@ -21,6 +21,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -29,6 +30,7 @@ import * as utilities from "../utilities";
  *     dbSystemId: oci_database_db_system.test_db_system.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getExadataIormConfig(args: GetExadataIormConfigArgs, opts?: pulumi.InvokeOptions): Promise<GetExadataIormConfigResult> {
 
@@ -86,6 +88,7 @@ export interface GetExadataIormConfigResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -94,6 +97,7 @@ export interface GetExadataIormConfigResult {
  *     dbSystemId: oci_database_db_system.test_db_system.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getExadataIormConfigOutput(args: GetExadataIormConfigOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExadataIormConfigResult> {
     return pulumi.output(args).apply((a: any) => getExadataIormConfig(a, opts))

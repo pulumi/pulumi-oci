@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -45,6 +46,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetFusionEnvironmentScheduledActivities(ctx *pulumi.Context, args *GetFusionEnvironmentScheduledActivitiesArgs, opts ...pulumi.InvokeOption) (*GetFusionEnvironmentScheduledActivitiesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetFusionEnvironmentScheduledActivitiesResult

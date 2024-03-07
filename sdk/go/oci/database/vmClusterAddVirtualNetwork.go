@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -46,6 +47,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ##### Note: You may also need to add `dbServers` and `cpuCoreCount` to the ignoreChanges for the resource `Database.VmCluster` list if you see a diff on a subsequent apply
 //
@@ -54,9 +56,7 @@ import (
 // VmClusterAddVirtualMachine can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Database/vmClusterAddVirtualNetwork:VmClusterAddVirtualNetwork test_vm_cluster_add_virtual_machine "id"
-//
+// $ pulumi import oci:Database/vmClusterAddVirtualNetwork:VmClusterAddVirtualNetwork test_vm_cluster_add_virtual_machine "id"
 // ```
 type VmClusterAddVirtualNetwork struct {
 	pulumi.CustomResourceState

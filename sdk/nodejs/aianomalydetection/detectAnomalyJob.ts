@@ -16,7 +16,7 @@ import * as utilities from "../utilities";
  * DetectAnomalyJobs can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:AiAnomalyDetection/detectAnomalyJob:DetectAnomalyJob test_detect_anomaly_job "id"
+ * $ pulumi import oci:AiAnomalyDetection/detectAnomalyJob:DetectAnomalyJob test_detect_anomaly_job "id"
  * ```
  */
 export class DetectAnomalyJob extends pulumi.CustomResource {

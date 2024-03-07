@@ -15,6 +15,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -25,6 +26,7 @@ import * as utilities from "../utilities";
  *     securityPolicyReportId: oci_data_safe_security_policy_report.test_security_policy_report.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getSecurityPolicyReportRoleGrantPaths(args: GetSecurityPolicyReportRoleGrantPathsArgs, opts?: pulumi.InvokeOptions): Promise<GetSecurityPolicyReportRoleGrantPathsResult> {
 
@@ -88,6 +90,7 @@ export interface GetSecurityPolicyReportRoleGrantPathsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -98,6 +101,7 @@ export interface GetSecurityPolicyReportRoleGrantPathsResult {
  *     securityPolicyReportId: oci_data_safe_security_policy_report.test_security_policy_report.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getSecurityPolicyReportRoleGrantPathsOutput(args: GetSecurityPolicyReportRoleGrantPathsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecurityPolicyReportRoleGrantPathsResult> {
     return pulumi.output(args).apply((a: any) => getSecurityPolicyReportRoleGrantPaths(a, opts))

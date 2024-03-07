@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,6 +22,7 @@ import * as utilities from "../utilities";
  *     version: _var.artifact_by_path_version,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getArtifactByPath(args: GetArtifactByPathArgs, opts?: pulumi.InvokeOptions): Promise<GetArtifactByPathResult> {
 
@@ -77,6 +79,7 @@ export interface GetArtifactByPathResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -87,6 +90,7 @@ export interface GetArtifactByPathResult {
  *     version: _var.artifact_by_path_version,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getArtifactByPathOutput(args: GetArtifactByPathOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetArtifactByPathResult> {
     return pulumi.output(args).apply((a: any) => getArtifactByPath(a, opts))

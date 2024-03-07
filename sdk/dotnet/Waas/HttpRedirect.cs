@@ -16,6 +16,7 @@ namespace Pulumi.Oci.Waas
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -50,13 +51,14 @@ namespace Pulumi.Oci.Waas
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// HttpRedirects can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Waas/httpRedirect:HttpRedirect test_http_redirect "id"
+    /// $ pulumi import oci:Waas/httpRedirect:HttpRedirect test_http_redirect "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Waas/httpRedirect:HttpRedirect")]

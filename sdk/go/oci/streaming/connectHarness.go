@@ -20,6 +20,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -47,15 +48,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // ConnectHarnesses can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Streaming/connectHarness:ConnectHarness test_connect_harness "id"
-//
+// $ pulumi import oci:Streaming/connectHarness:ConnectHarness test_connect_harness "id"
 // ```
 type ConnectHarness struct {
 	pulumi.CustomResourceState

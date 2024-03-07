@@ -25,7 +25,7 @@ public final class ContainerInstanceContainerResourceConfig {
      * 
      * CPU usage is defined in terms of logical CPUs. This means that the maximum possible value on an E3 ContainerInstance with 1 OCPU is 2.0.
      * 
-     * A container with a 2.0 vcpusLimit could consume up to 100% of the CPU resources available on the container instance. Values can be fractional. A value of &#34;1.5&#34; means that the container can consume at most the equivalent of 1 and a half logical CPUs worth of CPU capacity.
+     * A container with a 2.0 vcpusLimit could consume up to 100%!o(MISSING)f the CPU resources available on the container instance. Values can be fractional. A value of &#34;1.5&#34; means that the container can consume at most the equivalent of 1 and a half logical CPUs worth of CPU capacity.
      * 
      */
     private @Nullable Double vcpusLimit;
@@ -47,7 +47,7 @@ public final class ContainerInstanceContainerResourceConfig {
      * 
      * CPU usage is defined in terms of logical CPUs. This means that the maximum possible value on an E3 ContainerInstance with 1 OCPU is 2.0.
      * 
-     * A container with a 2.0 vcpusLimit could consume up to 100% of the CPU resources available on the container instance. Values can be fractional. A value of &#34;1.5&#34; means that the container can consume at most the equivalent of 1 and a half logical CPUs worth of CPU capacity.
+     * A container with a 2.0 vcpusLimit could consume up to 100%!o(MISSING)f the CPU resources available on the container instance. Values can be fractional. A value of &#34;1.5&#34; means that the container can consume at most the equivalent of 1 and a half logical CPUs worth of CPU capacity.
      * 
      */
     public Optional<Double> vcpusLimit() {

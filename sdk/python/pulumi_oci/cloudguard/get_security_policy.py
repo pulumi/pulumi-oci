@@ -218,12 +218,14 @@ def get_security_policy(security_policy_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_security_policy = oci.CloudGuard.get_security_policy(security_policy_id=oci_cloud_guard_security_policy["test_security_policy"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str security_policy_id: The unique identifier of the security zone policy (`SecurityPolicy`)
@@ -261,12 +263,14 @@ def get_security_policy_output(security_policy_id: Optional[pulumi.Input[str]] =
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_security_policy = oci.CloudGuard.get_security_policy(security_policy_id=oci_cloud_guard_security_policy["test_security_policy"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str security_policy_id: The unique identifier of the security zone policy (`SecurityPolicy`)

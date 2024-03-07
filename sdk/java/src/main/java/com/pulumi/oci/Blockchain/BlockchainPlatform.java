@@ -28,6 +28,8 @@ import javax.annotation.Nullable;
  * Creates a new Blockchain Platform.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -67,13 +69,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * BlockchainPlatforms can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Blockchain/blockchainPlatform:BlockchainPlatform test_blockchain_platform &#34;id&#34;
+ * $ pulumi import oci:Blockchain/blockchainPlatform:BlockchainPlatform test_blockchain_platform &#34;id&#34;
  * ```
  * 
  */

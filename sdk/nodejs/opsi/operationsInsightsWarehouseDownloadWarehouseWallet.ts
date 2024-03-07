@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -20,13 +21,14 @@ import * as utilities from "../utilities";
  *     operationsInsightsWarehouseWalletPassword: _var.operations_insights_warehouse_download_warehouse_wallet_operations_insights_warehouse_wallet_password,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * OperationsInsightsWarehouseDownloadWarehouseWallet can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Opsi/operationsInsightsWarehouseDownloadWarehouseWallet:OperationsInsightsWarehouseDownloadWarehouseWallet test_operations_insights_warehouse_download_warehouse_wallet "id"
+ * $ pulumi import oci:Opsi/operationsInsightsWarehouseDownloadWarehouseWallet:OperationsInsightsWarehouseDownloadWarehouseWallet test_operations_insights_warehouse_download_warehouse_wallet "id"
  * ```
  */
 export class OperationsInsightsWarehouseDownloadWarehouseWallet extends pulumi.CustomResource {

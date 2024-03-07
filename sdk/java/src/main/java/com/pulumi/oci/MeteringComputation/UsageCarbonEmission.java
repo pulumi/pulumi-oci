@@ -24,6 +24,8 @@ import javax.annotation.Nullable;
  * Returns usage carbon emission for the given account.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -64,13 +66,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * UsageCarbonEmissions can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:MeteringComputation/usageCarbonEmission:UsageCarbonEmission test_usage_carbon_emission &#34;id&#34;
+ * $ pulumi import oci:MeteringComputation/usageCarbonEmission:UsageCarbonEmission test_usage_carbon_emission &#34;id&#34;
  * ```
  * 
  */

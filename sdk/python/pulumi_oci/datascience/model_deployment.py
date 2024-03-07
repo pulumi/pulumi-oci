@@ -416,6 +416,7 @@ class ModelDeployment(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -470,13 +471,14 @@ class ModelDeployment(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ModelDeployments can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataScience/modelDeployment:ModelDeployment test_model_deployment "id"
+        $ pulumi import oci:DataScience/modelDeployment:ModelDeployment test_model_deployment "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -508,6 +510,7 @@ class ModelDeployment(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -562,13 +565,14 @@ class ModelDeployment(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ModelDeployments can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataScience/modelDeployment:ModelDeployment test_model_deployment "id"
+        $ pulumi import oci:DataScience/modelDeployment:ModelDeployment test_model_deployment "id"
         ```
 
         :param str resource_name: The name of the resource.

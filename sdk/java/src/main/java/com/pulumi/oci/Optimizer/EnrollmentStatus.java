@@ -23,7 +23,7 @@ import javax.annotation.Nullable;
  * EnrollmentStatus can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Optimizer/enrollmentStatus:EnrollmentStatus test_enrollment_status &#34;id&#34;
+ * $ pulumi import oci:Optimizer/enrollmentStatus:EnrollmentStatus test_enrollment_status &#34;id&#34;
  * ```
  * 
  */

@@ -595,7 +595,7 @@ class OperatorControl(pulumi.CustomResource):
         OperatorControls can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:OperatorAccessControl/operatorControl:OperatorControl test_operator_control "id"
+        $ pulumi import oci:OperatorAccessControl/operatorControl:OperatorControl test_operator_control "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -634,7 +634,7 @@ class OperatorControl(pulumi.CustomResource):
         OperatorControls can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:OperatorAccessControl/operatorControl:OperatorControl test_operator_control "id"
+        $ pulumi import oci:OperatorAccessControl/operatorControl:OperatorControl test_operator_control "id"
         ```
 
         :param str resource_name: The name of the resource.

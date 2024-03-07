@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -97,15 +98,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // BuildPipelineStages can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:DevOps/buildPipelineStage:BuildPipelineStage test_build_pipeline_stage "id"
-//
+// $ pulumi import oci:DevOps/buildPipelineStage:BuildPipelineStage test_build_pipeline_stage "id"
 // ```
 type BuildPipelineStage struct {
 	pulumi.CustomResourceState

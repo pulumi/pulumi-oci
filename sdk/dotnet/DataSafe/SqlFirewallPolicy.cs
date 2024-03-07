@@ -19,7 +19,7 @@ namespace Pulumi.Oci.DataSafe
     /// SqlFirewallPolicies can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:DataSafe/sqlFirewallPolicy:SqlFirewallPolicy test_sql_firewall_policy "id"
+    /// $ pulumi import oci:DataSafe/sqlFirewallPolicy:SqlFirewallPolicy test_sql_firewall_policy "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:DataSafe/sqlFirewallPolicy:SqlFirewallPolicy")]

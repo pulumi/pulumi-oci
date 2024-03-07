@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -52,15 +53,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Agents can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:CloudBridge/agent:Agent test_agent "id"
-//
+// $ pulumi import oci:CloudBridge/agent:Agent test_agent "id"
 // ```
 type Agent struct {
 	pulumi.CustomResourceState

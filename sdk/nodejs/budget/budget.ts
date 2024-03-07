@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -36,13 +37,14 @@ import * as utilities from "../utilities";
  *     targets: _var.budget_targets,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * Budgets can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Budget/budget:Budget test_budget "id"
+ * $ pulumi import oci:Budget/budget:Budget test_budget "id"
  * ```
  */
 export class Budget extends pulumi.CustomResource {

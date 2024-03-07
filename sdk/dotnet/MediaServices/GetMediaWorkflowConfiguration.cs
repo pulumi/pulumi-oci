@@ -16,10 +16,9 @@ namespace Pulumi.Oci.MediaServices
         /// 
         /// Gets a MediaWorkflowConfiguration by identifier
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,8 +34,7 @@ namespace Pulumi.Oci.MediaServices
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetMediaWorkflowConfigurationResult> InvokeAsync(GetMediaWorkflowConfigurationArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetMediaWorkflowConfigurationResult>("oci:MediaServices/getMediaWorkflowConfiguration:getMediaWorkflowConfiguration", args ?? new GetMediaWorkflowConfigurationArgs(), options.WithDefaults());
@@ -46,10 +44,9 @@ namespace Pulumi.Oci.MediaServices
         /// 
         /// Gets a MediaWorkflowConfiguration by identifier
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -65,8 +62,7 @@ namespace Pulumi.Oci.MediaServices
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetMediaWorkflowConfigurationResult> Invoke(GetMediaWorkflowConfigurationInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMediaWorkflowConfigurationResult>("oci:MediaServices/getMediaWorkflowConfiguration:getMediaWorkflowConfiguration", args ?? new GetMediaWorkflowConfigurationInvokeArgs(), options.WithDefaults());

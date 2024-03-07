@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -51,13 +52,14 @@ import * as utilities from "../utilities";
  *     },
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * JobRuns can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:DataScience/jobRun:JobRun test_job_run "id"
+ * $ pulumi import oci:DataScience/jobRun:JobRun test_job_run "id"
  * ```
  */
 export class JobRun extends pulumi.CustomResource {

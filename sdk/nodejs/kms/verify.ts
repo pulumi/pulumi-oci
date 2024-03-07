@@ -14,6 +14,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -28,13 +29,14 @@ import * as utilities from "../utilities";
  *     messageType: _var.verify_message_type,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * Verify can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Kms/verify:Verify test_verify "id"
+ * $ pulumi import oci:Kms/verify:Verify test_verify "id"
  * ```
  */
 export class Verify extends pulumi.CustomResource {

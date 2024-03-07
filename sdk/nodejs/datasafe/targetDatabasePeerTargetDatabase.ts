@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -42,13 +43,14 @@ import * as utilities from "../utilities";
  *     },
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * TargetDatabasePeerTargetDatabases can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:DataSafe/targetDatabasePeerTargetDatabase:TargetDatabasePeerTargetDatabase test_target_database_peer_target_database "targetDatabases/{targetDatabaseId}/peerTargetDatabases/{peerTargetDatabaseId}"
+ * $ pulumi import oci:DataSafe/targetDatabasePeerTargetDatabase:TargetDatabasePeerTargetDatabase test_target_database_peer_target_database "targetDatabases/{targetDatabaseId}/peerTargetDatabases/{peerTargetDatabaseId}"
  * ```
  */
 export class TargetDatabasePeerTargetDatabase extends pulumi.CustomResource {

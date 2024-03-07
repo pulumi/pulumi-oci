@@ -21,6 +21,8 @@ import javax.annotation.Nullable;
  * Creates a new WebAppFirewall.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -56,13 +58,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * WebAppFirewalls can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Waf/appFirewall:AppFirewall test_web_app_firewall &#34;id&#34;
+ * $ pulumi import oci:Waf/appFirewall:AppFirewall test_web_app_firewall &#34;id&#34;
  * ```
  * 
  */

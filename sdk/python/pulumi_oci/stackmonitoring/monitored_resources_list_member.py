@@ -172,6 +172,7 @@ class MonitoredResourcesListMember(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -181,13 +182,14 @@ class MonitoredResourcesListMember(pulumi.CustomResource):
             destination_resource_id=oci_stack_monitoring_destination_resource["test_destination_resource"]["id"],
             limit_level=var["monitored_resources_list_member_limit_level"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         MonitoredResourcesListMembers can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:StackMonitoring/monitoredResourcesListMember:MonitoredResourcesListMember test_monitored_resources_list_member "id"
+        $ pulumi import oci:StackMonitoring/monitoredResourcesListMember:MonitoredResourcesListMember test_monitored_resources_list_member "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -213,6 +215,7 @@ class MonitoredResourcesListMember(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -222,13 +225,14 @@ class MonitoredResourcesListMember(pulumi.CustomResource):
             destination_resource_id=oci_stack_monitoring_destination_resource["test_destination_resource"]["id"],
             limit_level=var["monitored_resources_list_member_limit_level"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         MonitoredResourcesListMembers can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:StackMonitoring/monitoredResourcesListMember:MonitoredResourcesListMember test_monitored_resources_list_member "id"
+        $ pulumi import oci:StackMonitoring/monitoredResourcesListMember:MonitoredResourcesListMember test_monitored_resources_list_member "id"
         ```
 
         :param str resource_name: The name of the resource.

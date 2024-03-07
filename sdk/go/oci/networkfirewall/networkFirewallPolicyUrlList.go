@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -47,15 +48,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // NetworkFirewallPolicyUrlLists can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:NetworkFirewall/networkFirewallPolicyUrlList:NetworkFirewallPolicyUrlList test_network_firewall_policy_url_list "networkFirewallPolicies/{networkFirewallPolicyId}/urlLists/{urlListName}"
-//
+// $ pulumi import oci:NetworkFirewall/networkFirewallPolicyUrlList:NetworkFirewallPolicyUrlList test_network_firewall_policy_url_list "networkFirewallPolicies/{networkFirewallPolicyId}/urlLists/{urlListName}"
 // ```
 type NetworkFirewallPolicyUrlList struct {
 	pulumi.CustomResourceState

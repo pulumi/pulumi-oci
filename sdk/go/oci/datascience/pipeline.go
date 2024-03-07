@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -93,15 +94,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Pipelines can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:DataScience/pipeline:Pipeline test_pipeline "id"
-//
+// $ pulumi import oci:DataScience/pipeline:Pipeline test_pipeline "id"
 // ```
 type Pipeline struct {
 	pulumi.CustomResourceState

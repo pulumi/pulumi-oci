@@ -168,6 +168,7 @@ def get_managed_instance_stream_profile(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -179,6 +180,7 @@ def get_managed_instance_stream_profile(compartment_id: Optional[str] = None,
         profile_status=var["managed_instance_profile_status"],
         stream_name=var["managed_instance_module_stream_name"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID of the compartment in which to list resources. This parameter is optional and in some cases may have no effect.
@@ -254,6 +256,7 @@ def get_managed_instance_stream_profile_output(compartment_id: Optional[pulumi.I
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -265,6 +268,7 @@ def get_managed_instance_stream_profile_output(compartment_id: Optional[pulumi.I
         profile_status=var["managed_instance_profile_status"],
         stream_name=var["managed_instance_module_stream_name"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID of the compartment in which to list resources. This parameter is optional and in some cases may have no effect.

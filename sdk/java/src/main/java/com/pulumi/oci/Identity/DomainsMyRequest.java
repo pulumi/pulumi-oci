@@ -32,6 +32,8 @@ import javax.annotation.Nullable;
  * In our latest release, the property `status` is changed to readonly. It will now be automatically handled by the system. Please remove any manual assignment to this property to use the latest version.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -85,6 +87,7 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 

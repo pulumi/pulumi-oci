@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -36,13 +37,14 @@ import * as utilities from "../utilities";
  *     x509base64certificate: _var.oauth_partner_certificate_x509base64certificate,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * OAuthPartnerCertificates can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Identity/domainsOauthPartnerCertificate:DomainsOauthPartnerCertificate test_oauth_partner_certificate "idcsEndpoint/{idcsEndpoint}/oAuthPartnerCertificates/{oAuthPartnerCertificateId}"
+ * $ pulumi import oci:Identity/domainsOauthPartnerCertificate:DomainsOauthPartnerCertificate test_oauth_partner_certificate "idcsEndpoint/{idcsEndpoint}/oAuthPartnerCertificates/{oAuthPartnerCertificateId}"
  * ```
  */
 export class DomainsOauthPartnerCertificate extends pulumi.CustomResource {

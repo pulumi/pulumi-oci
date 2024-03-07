@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -40,6 +41,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupBuildPipelineStage(ctx *pulumi.Context, args *LookupBuildPipelineStageArgs, opts ...pulumi.InvokeOption) (*LookupBuildPipelineStageResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupBuildPipelineStageResult

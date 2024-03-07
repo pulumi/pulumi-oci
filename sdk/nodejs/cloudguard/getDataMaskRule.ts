@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,6 +22,7 @@ import * as utilities from "../utilities";
  *     dataMaskRuleId: oci_cloud_guard_data_mask_rule.test_data_mask_rule.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDataMaskRule(args: GetDataMaskRuleArgs, opts?: pulumi.InvokeOptions): Promise<GetDataMaskRuleResult> {
 
@@ -113,6 +115,7 @@ export interface GetDataMaskRuleResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -121,6 +124,7 @@ export interface GetDataMaskRuleResult {
  *     dataMaskRuleId: oci_cloud_guard_data_mask_rule.test_data_mask_rule.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDataMaskRuleOutput(args: GetDataMaskRuleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDataMaskRuleResult> {
     return pulumi.output(args).apply((a: any) => getDataMaskRule(a, opts))

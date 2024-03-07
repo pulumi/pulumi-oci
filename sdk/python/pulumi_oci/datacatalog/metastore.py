@@ -349,6 +349,7 @@ class Metastore(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -365,13 +366,14 @@ class Metastore(pulumi.CustomResource):
                 "bar-key": "value",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Metastores can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataCatalog/metastore:Metastore test_metastore "id"
+        $ pulumi import oci:DataCatalog/metastore:Metastore test_metastore "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -400,6 +402,7 @@ class Metastore(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -416,13 +419,14 @@ class Metastore(pulumi.CustomResource):
                 "bar-key": "value",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Metastores can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataCatalog/metastore:Metastore test_metastore "id"
+        $ pulumi import oci:DataCatalog/metastore:Metastore test_metastore "id"
         ```
 
         :param str resource_name: The name of the resource.

@@ -41,6 +41,8 @@ public final class OspGatewayFunctions {
      * Get the address by id for the compartment
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -71,6 +73,7 @@ public final class OspGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAddressResult> getAddress(GetAddressArgs args) {
@@ -82,6 +85,8 @@ public final class OspGatewayFunctions {
      * Get the address by id for the compartment
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -112,6 +117,7 @@ public final class OspGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAddressResult> getAddressPlain(GetAddressPlainArgs args) {
@@ -123,6 +129,8 @@ public final class OspGatewayFunctions {
      * Get the address by id for the compartment
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -153,6 +161,7 @@ public final class OspGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAddressResult> getAddress(GetAddressArgs args, InvokeOptions options) {
@@ -164,6 +173,8 @@ public final class OspGatewayFunctions {
      * Get the address by id for the compartment
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -194,6 +205,7 @@ public final class OspGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAddressResult> getAddressPlain(GetAddressPlainArgs args, InvokeOptions options) {
@@ -205,6 +217,8 @@ public final class OspGatewayFunctions {
      * Get the address rule for the compartment based on the country code
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -235,6 +249,7 @@ public final class OspGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAddressRuleResult> getAddressRule(GetAddressRuleArgs args) {
@@ -246,6 +261,8 @@ public final class OspGatewayFunctions {
      * Get the address rule for the compartment based on the country code
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -276,6 +293,7 @@ public final class OspGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAddressRuleResult> getAddressRulePlain(GetAddressRulePlainArgs args) {
@@ -287,6 +305,8 @@ public final class OspGatewayFunctions {
      * Get the address rule for the compartment based on the country code
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -317,6 +337,7 @@ public final class OspGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAddressRuleResult> getAddressRule(GetAddressRuleArgs args, InvokeOptions options) {
@@ -328,6 +349,8 @@ public final class OspGatewayFunctions {
      * Get the address rule for the compartment based on the country code
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -358,6 +381,7 @@ public final class OspGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAddressRuleResult> getAddressRulePlain(GetAddressRulePlainArgs args, InvokeOptions options) {
@@ -369,6 +393,8 @@ public final class OspGatewayFunctions {
      * Returns an invoice by invoice id
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -399,6 +425,7 @@ public final class OspGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetInvoiceResult> getInvoice(GetInvoiceArgs args) {
@@ -410,6 +437,8 @@ public final class OspGatewayFunctions {
      * Returns an invoice by invoice id
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -440,6 +469,7 @@ public final class OspGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetInvoiceResult> getInvoicePlain(GetInvoicePlainArgs args) {
@@ -451,6 +481,8 @@ public final class OspGatewayFunctions {
      * Returns an invoice by invoice id
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -481,6 +513,7 @@ public final class OspGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetInvoiceResult> getInvoice(GetInvoiceArgs args, InvokeOptions options) {
@@ -492,6 +525,8 @@ public final class OspGatewayFunctions {
      * Returns an invoice by invoice id
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -522,6 +557,7 @@ public final class OspGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetInvoiceResult> getInvoicePlain(GetInvoicePlainArgs args, InvokeOptions options) {
@@ -533,6 +569,8 @@ public final class OspGatewayFunctions {
      * Returns a list of invoices
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -570,6 +608,7 @@ public final class OspGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetInvoicesResult> getInvoices(GetInvoicesArgs args) {
@@ -581,6 +620,8 @@ public final class OspGatewayFunctions {
      * Returns a list of invoices
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -618,6 +659,7 @@ public final class OspGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetInvoicesResult> getInvoicesPlain(GetInvoicesPlainArgs args) {
@@ -629,6 +671,8 @@ public final class OspGatewayFunctions {
      * Returns a list of invoices
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -666,6 +710,7 @@ public final class OspGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetInvoicesResult> getInvoices(GetInvoicesArgs args, InvokeOptions options) {
@@ -677,6 +722,8 @@ public final class OspGatewayFunctions {
      * Returns a list of invoices
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -714,6 +761,7 @@ public final class OspGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetInvoicesResult> getInvoicesPlain(GetInvoicesPlainArgs args, InvokeOptions options) {
@@ -725,6 +773,8 @@ public final class OspGatewayFunctions {
      * Returns the invoice product list by invoice id
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -755,6 +805,7 @@ public final class OspGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetInvoicesInvoiceLineResult> getInvoicesInvoiceLine(GetInvoicesInvoiceLineArgs args) {
@@ -766,6 +817,8 @@ public final class OspGatewayFunctions {
      * Returns the invoice product list by invoice id
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -796,6 +849,7 @@ public final class OspGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetInvoicesInvoiceLineResult> getInvoicesInvoiceLinePlain(GetInvoicesInvoiceLinePlainArgs args) {
@@ -807,6 +861,8 @@ public final class OspGatewayFunctions {
      * Returns the invoice product list by invoice id
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -837,6 +893,7 @@ public final class OspGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetInvoicesInvoiceLineResult> getInvoicesInvoiceLine(GetInvoicesInvoiceLineArgs args, InvokeOptions options) {
@@ -848,6 +905,8 @@ public final class OspGatewayFunctions {
      * Returns the invoice product list by invoice id
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -878,6 +937,7 @@ public final class OspGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetInvoicesInvoiceLineResult> getInvoicesInvoiceLinePlain(GetInvoicesInvoiceLinePlainArgs args, InvokeOptions options) {
@@ -889,6 +949,8 @@ public final class OspGatewayFunctions {
      * Returns the invoice product list by invoice id
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -919,6 +981,7 @@ public final class OspGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetInvoicesInvoiceLinesResult> getInvoicesInvoiceLines(GetInvoicesInvoiceLinesArgs args) {
@@ -930,6 +993,8 @@ public final class OspGatewayFunctions {
      * Returns the invoice product list by invoice id
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -960,6 +1025,7 @@ public final class OspGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetInvoicesInvoiceLinesResult> getInvoicesInvoiceLinesPlain(GetInvoicesInvoiceLinesPlainArgs args) {
@@ -971,6 +1037,8 @@ public final class OspGatewayFunctions {
      * Returns the invoice product list by invoice id
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1001,6 +1069,7 @@ public final class OspGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetInvoicesInvoiceLinesResult> getInvoicesInvoiceLines(GetInvoicesInvoiceLinesArgs args, InvokeOptions options) {
@@ -1012,6 +1081,8 @@ public final class OspGatewayFunctions {
      * Returns the invoice product list by invoice id
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1042,6 +1113,7 @@ public final class OspGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetInvoicesInvoiceLinesResult> getInvoicesInvoiceLinesPlain(GetInvoicesInvoiceLinesPlainArgs args, InvokeOptions options) {
@@ -1053,6 +1125,8 @@ public final class OspGatewayFunctions {
      * Get the subscription plan.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1083,6 +1157,7 @@ public final class OspGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSubscriptionResult> getSubscription(GetSubscriptionArgs args) {
@@ -1094,6 +1169,8 @@ public final class OspGatewayFunctions {
      * Get the subscription plan.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1124,6 +1201,7 @@ public final class OspGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSubscriptionResult> getSubscriptionPlain(GetSubscriptionPlainArgs args) {
@@ -1135,6 +1213,8 @@ public final class OspGatewayFunctions {
      * Get the subscription plan.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1165,6 +1245,7 @@ public final class OspGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSubscriptionResult> getSubscription(GetSubscriptionArgs args, InvokeOptions options) {
@@ -1176,6 +1257,8 @@ public final class OspGatewayFunctions {
      * Get the subscription plan.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1206,6 +1289,7 @@ public final class OspGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSubscriptionResult> getSubscriptionPlain(GetSubscriptionPlainArgs args, InvokeOptions options) {
@@ -1217,6 +1301,8 @@ public final class OspGatewayFunctions {
      * Get the subscription data for the compartment
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1246,6 +1332,7 @@ public final class OspGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSubscriptionsResult> getSubscriptions(GetSubscriptionsArgs args) {
@@ -1257,6 +1344,8 @@ public final class OspGatewayFunctions {
      * Get the subscription data for the compartment
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1286,6 +1375,7 @@ public final class OspGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSubscriptionsResult> getSubscriptionsPlain(GetSubscriptionsPlainArgs args) {
@@ -1297,6 +1387,8 @@ public final class OspGatewayFunctions {
      * Get the subscription data for the compartment
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1326,6 +1418,7 @@ public final class OspGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSubscriptionsResult> getSubscriptions(GetSubscriptionsArgs args, InvokeOptions options) {
@@ -1337,6 +1430,8 @@ public final class OspGatewayFunctions {
      * Get the subscription data for the compartment
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1366,6 +1461,7 @@ public final class OspGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSubscriptionsResult> getSubscriptionsPlain(GetSubscriptionsPlainArgs args, InvokeOptions options) {

@@ -18,10 +18,9 @@ namespace Pulumi.Oci.OsManagementHub
         /// variety of criteria including but not limited to its name, status, architecture, and OS family.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -47,8 +46,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetSoftwareSourcesResult> InvokeAsync(GetSoftwareSourcesArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetSoftwareSourcesResult>("oci:OsManagementHub/getSoftwareSources:getSoftwareSources", args ?? new GetSoftwareSourcesArgs(), options.WithDefaults());
@@ -60,10 +58,9 @@ namespace Pulumi.Oci.OsManagementHub
         /// variety of criteria including but not limited to its name, status, architecture, and OS family.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -89,8 +86,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetSoftwareSourcesResult> Invoke(GetSoftwareSourcesInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSoftwareSourcesResult>("oci:OsManagementHub/getSoftwareSources:getSoftwareSources", args ?? new GetSoftwareSourcesInvokeArgs(), options.WithDefaults());

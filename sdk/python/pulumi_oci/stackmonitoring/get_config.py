@@ -206,12 +206,14 @@ def get_config(config_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_config = oci.StackMonitoring.get_config(config_id=oci_stack_monitoring_config["test_config"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str config_id: Unique Config identifier.
@@ -248,12 +250,14 @@ def get_config_output(config_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_config = oci.StackMonitoring.get_config(config_id=oci_stack_monitoring_config["test_config"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str config_id: Unique Config identifier.

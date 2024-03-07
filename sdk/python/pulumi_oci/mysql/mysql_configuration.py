@@ -401,6 +401,7 @@ class MysqlConfiguration(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -502,13 +503,14 @@ class MysqlConfiguration(pulumi.CustomResource):
                 wait_timeout=var["mysql_configuration_variables_wait_timeout"],
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         MysqlConfigurations can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Mysql/mysqlConfiguration:MysqlConfiguration test_mysql_configuration "configurations/{configurationId}"
+        $ pulumi import oci:Mysql/mysqlConfiguration:MysqlConfiguration test_mysql_configuration "configurations/{configurationId}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -536,6 +538,7 @@ class MysqlConfiguration(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -637,13 +640,14 @@ class MysqlConfiguration(pulumi.CustomResource):
                 wait_timeout=var["mysql_configuration_variables_wait_timeout"],
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         MysqlConfigurations can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Mysql/mysqlConfiguration:MysqlConfiguration test_mysql_configuration "configurations/{configurationId}"
+        $ pulumi import oci:Mysql/mysqlConfiguration:MysqlConfiguration test_mysql_configuration "configurations/{configurationId}"
         ```
 
         :param str resource_name: The name of the resource.

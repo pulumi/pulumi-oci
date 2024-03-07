@@ -18,6 +18,7 @@ namespace Pulumi.Oci.HealthChecks
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -52,13 +53,14 @@ namespace Pulumi.Oci.HealthChecks
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// HttpMonitors can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:HealthChecks/httpMonitor:HttpMonitor test_http_monitor "id"
+    /// $ pulumi import oci:HealthChecks/httpMonitor:HttpMonitor test_http_monitor "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:HealthChecks/httpMonitor:HttpMonitor")]

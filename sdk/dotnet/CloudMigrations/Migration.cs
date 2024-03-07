@@ -16,6 +16,7 @@ namespace Pulumi.Oci.CloudMigrations
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -42,13 +43,14 @@ namespace Pulumi.Oci.CloudMigrations
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// Migrations can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:CloudMigrations/migration:Migration test_migration "id"
+    /// $ pulumi import oci:CloudMigrations/migration:Migration test_migration "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:CloudMigrations/migration:Migration")]

@@ -40,10 +40,9 @@ namespace Pulumi.Oci.OsManagement
         /// module name, then by stream name, and finally by profile name.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -64,8 +63,7 @@ namespace Pulumi.Oci.OsManagement
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetManagedInstanceStreamProfileResult> InvokeAsync(GetManagedInstanceStreamProfileArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagedInstanceStreamProfileResult>("oci:OsManagement/getManagedInstanceStreamProfile:getManagedInstanceStreamProfile", args ?? new GetManagedInstanceStreamProfileArgs(), options.WithDefaults());
@@ -99,10 +97,9 @@ namespace Pulumi.Oci.OsManagement
         /// module name, then by stream name, and finally by profile name.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -123,8 +120,7 @@ namespace Pulumi.Oci.OsManagement
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetManagedInstanceStreamProfileResult> Invoke(GetManagedInstanceStreamProfileInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedInstanceStreamProfileResult>("oci:OsManagement/getManagedInstanceStreamProfile:getManagedInstanceStreamProfile", args ?? new GetManagedInstanceStreamProfileInvokeArgs(), options.WithDefaults());

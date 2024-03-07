@@ -17,10 +17,9 @@ namespace Pulumi.Oci.GoldenGate
         /// Lists the Trail Sequences for a TrailFile in a given deployment.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -39,8 +38,7 @@ namespace Pulumi.Oci.GoldenGate
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetTrailSequenceResult> InvokeAsync(GetTrailSequenceArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetTrailSequenceResult>("oci:GoldenGate/getTrailSequence:getTrailSequence", args ?? new GetTrailSequenceArgs(), options.WithDefaults());
@@ -51,10 +49,9 @@ namespace Pulumi.Oci.GoldenGate
         /// Lists the Trail Sequences for a TrailFile in a given deployment.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -73,8 +70,7 @@ namespace Pulumi.Oci.GoldenGate
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetTrailSequenceResult> Invoke(GetTrailSequenceInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetTrailSequenceResult>("oci:GoldenGate/getTrailSequence:getTrailSequence", args ?? new GetTrailSequenceInvokeArgs(), options.WithDefaults());

@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -45,6 +46,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetComputeCapacityTopologyComputeBareMetalHosts(ctx *pulumi.Context, args *GetComputeCapacityTopologyComputeBareMetalHostsArgs, opts ...pulumi.InvokeOption) (*GetComputeCapacityTopologyComputeBareMetalHostsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetComputeCapacityTopologyComputeBareMetalHostsResult

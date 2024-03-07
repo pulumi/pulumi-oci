@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -26,6 +27,7 @@ import * as utilities from "../utilities";
  *     resourceTypeSchemaVersion: _var.my_trusted_user_agent_resource_type_schema_version,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDomainsMyTrustedUserAgent(args: GetDomainsMyTrustedUserAgentArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsMyTrustedUserAgentResult> {
 
@@ -176,6 +178,7 @@ export interface GetDomainsMyTrustedUserAgentResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -189,6 +192,7 @@ export interface GetDomainsMyTrustedUserAgentResult {
  *     resourceTypeSchemaVersion: _var.my_trusted_user_agent_resource_type_schema_version,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDomainsMyTrustedUserAgentOutput(args: GetDomainsMyTrustedUserAgentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsMyTrustedUserAgentResult> {
     return pulumi.output(args).apply((a: any) => getDomainsMyTrustedUserAgent(a, opts))

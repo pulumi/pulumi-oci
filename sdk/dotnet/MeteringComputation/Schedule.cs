@@ -16,6 +16,7 @@ namespace Pulumi.Oci.MeteringComputation
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -76,13 +77,14 @@ namespace Pulumi.Oci.MeteringComputation
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// Schedules can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:MeteringComputation/schedule:Schedule test_schedule "id"
+    /// $ pulumi import oci:MeteringComputation/schedule:Schedule test_schedule "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:MeteringComputation/schedule:Schedule")]

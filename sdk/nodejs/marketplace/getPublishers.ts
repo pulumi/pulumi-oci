@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,6 +23,7 @@ import * as utilities from "../utilities";
  *     publisherId: oci_marketplace_publisher.test_publisher.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getPublishers(args?: GetPublishersArgs, opts?: pulumi.InvokeOptions): Promise<GetPublishersResult> {
     args = args || {};
@@ -72,6 +74,7 @@ export interface GetPublishersResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -81,6 +84,7 @@ export interface GetPublishersResult {
  *     publisherId: oci_marketplace_publisher.test_publisher.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getPublishersOutput(args?: GetPublishersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPublishersResult> {
     return pulumi.output(args).apply((a: any) => getPublishers(a, opts))

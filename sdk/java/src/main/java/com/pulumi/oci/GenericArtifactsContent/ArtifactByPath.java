@@ -25,6 +25,8 @@ import javax.annotation.Nullable;
  * In order to delete generic artifact, you can use `oci.Artifacts.GenericArtifact`
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -56,6 +58,7 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  */
 @ResourceType(type="oci:GenericArtifactsContent/artifactByPath:ArtifactByPath")

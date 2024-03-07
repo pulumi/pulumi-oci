@@ -318,6 +318,7 @@ class ReplicationPolicy(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -328,13 +329,14 @@ class ReplicationPolicy(pulumi.CustomResource):
             destination_region_name=oci_identity_region["test_region"]["name"],
             namespace=var["replication_policy_namespace"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ReplicationPolicies can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:ObjectStorage/replicationPolicy:ReplicationPolicy test_replication_policy "n/{namespaceName}/b/{bucketName}/replicationPolicies/{replicationId}"
+        $ pulumi import oci:ObjectStorage/replicationPolicy:ReplicationPolicy test_replication_policy "n/{namespaceName}/b/{bucketName}/replicationPolicies/{replicationId}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -362,6 +364,7 @@ class ReplicationPolicy(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -372,13 +375,14 @@ class ReplicationPolicy(pulumi.CustomResource):
             destination_region_name=oci_identity_region["test_region"]["name"],
             namespace=var["replication_policy_namespace"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ReplicationPolicies can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:ObjectStorage/replicationPolicy:ReplicationPolicy test_replication_policy "n/{namespaceName}/b/{bucketName}/replicationPolicies/{replicationId}"
+        $ pulumi import oci:ObjectStorage/replicationPolicy:ReplicationPolicy test_replication_policy "n/{namespaceName}/b/{bucketName}/replicationPolicies/{replicationId}"
         ```
 
         :param str resource_name: The name of the resource.

@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -48,6 +49,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetManagedInstanceGroups(ctx *pulumi.Context, args *GetManagedInstanceGroupsArgs, opts ...pulumi.InvokeOption) (*GetManagedInstanceGroupsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetManagedInstanceGroupsResult

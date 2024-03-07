@@ -231,12 +231,14 @@ def get_dedicated_ai_cluster(dedicated_ai_cluster_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_dedicated_ai_cluster = oci.GenerativeAi.get_dedicated_ai_cluster(dedicated_ai_cluster_id=oci_generative_ai_dedicated_ai_cluster["test_dedicated_ai_cluster"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str dedicated_ai_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated AI cluster.
@@ -275,12 +277,14 @@ def get_dedicated_ai_cluster_output(dedicated_ai_cluster_id: Optional[pulumi.Inp
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_dedicated_ai_cluster = oci.GenerativeAi.get_dedicated_ai_cluster(dedicated_ai_cluster_id=oci_generative_ai_dedicated_ai_cluster["test_dedicated_ai_cluster"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str dedicated_ai_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated AI cluster.

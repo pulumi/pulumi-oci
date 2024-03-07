@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -44,6 +45,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetEmWarehouses(ctx *pulumi.Context, args *GetEmWarehousesArgs, opts ...pulumi.InvokeOption) (*GetEmWarehousesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetEmWarehousesResult

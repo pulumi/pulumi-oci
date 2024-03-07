@@ -1252,6 +1252,7 @@ class DomainsPolicy(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -1280,13 +1281,14 @@ class DomainsPolicy(pulumi.CustomResource):
                 value=var["policy_tags_value"],
             )])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Policies can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/domainsPolicy:DomainsPolicy test_policy "idcsEndpoint/{idcsEndpoint}/policies/{policyId}"
+        $ pulumi import oci:Identity/domainsPolicy:DomainsPolicy test_policy "idcsEndpoint/{idcsEndpoint}/policies/{policyId}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -1419,6 +1421,7 @@ class DomainsPolicy(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -1447,13 +1450,14 @@ class DomainsPolicy(pulumi.CustomResource):
                 value=var["policy_tags_value"],
             )])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Policies can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/domainsPolicy:DomainsPolicy test_policy "idcsEndpoint/{idcsEndpoint}/policies/{policyId}"
+        $ pulumi import oci:Identity/domainsPolicy:DomainsPolicy test_policy "idcsEndpoint/{idcsEndpoint}/policies/{policyId}"
         ```
 
         :param str resource_name: The name of the resource.

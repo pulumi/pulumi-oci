@@ -477,7 +477,9 @@ class Image(pulumi.CustomResource):
         Avoid entering confidential information.
 
         ## Example Usage
+
         ### Create image from instance in tenancy
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -494,7 +496,10 @@ class Image(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
+
         ### Create image from exported image via direct access to object store
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -513,7 +518,10 @@ class Image(pulumi.CustomResource):
                 source_image_type=var["source_image_type"],
             ))
         ```
+        <!--End PulumiCodeChooser -->
+
         ### Create image from exported image at publicly accessible uri
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -530,13 +538,14 @@ class Image(pulumi.CustomResource):
                 source_image_type=var["source_image_type"],
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Images can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/image:Image test_image "id"
+        $ pulumi import oci:Core/image:Image test_image "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -586,7 +595,9 @@ class Image(pulumi.CustomResource):
         Avoid entering confidential information.
 
         ## Example Usage
+
         ### Create image from instance in tenancy
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -603,7 +614,10 @@ class Image(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
+
         ### Create image from exported image via direct access to object store
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -622,7 +636,10 @@ class Image(pulumi.CustomResource):
                 source_image_type=var["source_image_type"],
             ))
         ```
+        <!--End PulumiCodeChooser -->
+
         ### Create image from exported image at publicly accessible uri
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -639,13 +656,14 @@ class Image(pulumi.CustomResource):
                 source_image_type=var["source_image_type"],
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Images can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/image:Image test_image "id"
+        $ pulumi import oci:Core/image:Image test_image "id"
         ```
 
         :param str resource_name: The name of the resource.

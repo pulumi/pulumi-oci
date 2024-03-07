@@ -657,6 +657,7 @@ class HostInsight(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -678,13 +679,14 @@ class HostInsight(pulumi.CustomResource):
             management_agent_id=oci_management_agent_management_agent["test_management_agent"]["id"],
             status="DISABLED")
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         HostInsights can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Opsi/hostInsight:HostInsight test_host_insight "id"
+        $ pulumi import oci:Opsi/hostInsight:HostInsight test_host_insight "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -718,6 +720,7 @@ class HostInsight(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -739,13 +742,14 @@ class HostInsight(pulumi.CustomResource):
             management_agent_id=oci_management_agent_management_agent["test_management_agent"]["id"],
             status="DISABLED")
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         HostInsights can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Opsi/hostInsight:HostInsight test_host_insight "id"
+        $ pulumi import oci:Opsi/hostInsight:HostInsight test_host_insight "id"
         ```
 
         :param str resource_name: The name of the resource.

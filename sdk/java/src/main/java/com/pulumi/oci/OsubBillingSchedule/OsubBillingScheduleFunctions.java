@@ -21,6 +21,8 @@ public final class OsubBillingScheduleFunctions {
      * for a particular Subscribed Service if provided
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -52,6 +54,7 @@ public final class OsubBillingScheduleFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBillingScheduleResult> getBillingSchedule(GetBillingScheduleArgs args) {
@@ -64,6 +67,8 @@ public final class OsubBillingScheduleFunctions {
      * for a particular Subscribed Service if provided
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -95,6 +100,7 @@ public final class OsubBillingScheduleFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBillingScheduleResult> getBillingSchedulePlain(GetBillingSchedulePlainArgs args) {
@@ -107,6 +113,8 @@ public final class OsubBillingScheduleFunctions {
      * for a particular Subscribed Service if provided
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -138,6 +146,7 @@ public final class OsubBillingScheduleFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBillingScheduleResult> getBillingSchedule(GetBillingScheduleArgs args, InvokeOptions options) {
@@ -150,6 +159,8 @@ public final class OsubBillingScheduleFunctions {
      * for a particular Subscribed Service if provided
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -181,6 +192,7 @@ public final class OsubBillingScheduleFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBillingScheduleResult> getBillingSchedulePlain(GetBillingSchedulePlainArgs args, InvokeOptions options) {

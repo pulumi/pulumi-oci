@@ -240,6 +240,7 @@ class AutonomousDatabaseWallet(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -251,6 +252,7 @@ class AutonomousDatabaseWallet(pulumi.CustomResource):
             generate_type=var["autonomous_database_wallet_generate_type"],
             is_regional=var["autonomous_database_wallet_is_regional"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -287,6 +289,7 @@ class AutonomousDatabaseWallet(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -298,6 +301,7 @@ class AutonomousDatabaseWallet(pulumi.CustomResource):
             generate_type=var["autonomous_database_wallet_generate_type"],
             is_regional=var["autonomous_database_wallet_is_regional"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 

@@ -23,6 +23,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -83,15 +84,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Clusters can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Ocvp/cluster:Cluster test_cluster "id"
-//
+// $ pulumi import oci:Ocvp/cluster:Cluster test_cluster "id"
 // ```
 type Cluster struct {
 	pulumi.CustomResourceState

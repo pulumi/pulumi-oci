@@ -33,6 +33,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -68,15 +69,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // IdentityProviders can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Identity/identityProvider:IdentityProvider test_identity_provider "id"
-//
+// $ pulumi import oci:Identity/identityProvider:IdentityProvider test_identity_provider "id"
 // ```
 type IdentityProvider struct {
 	pulumi.CustomResourceState

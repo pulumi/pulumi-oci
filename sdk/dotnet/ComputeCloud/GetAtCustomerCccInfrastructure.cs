@@ -18,10 +18,9 @@ namespace Pulumi.Oci.ComputeCloud
         /// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -37,8 +36,7 @@ namespace Pulumi.Oci.ComputeCloud
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetAtCustomerCccInfrastructureResult> InvokeAsync(GetAtCustomerCccInfrastructureArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAtCustomerCccInfrastructureResult>("oci:ComputeCloud/getAtCustomerCccInfrastructure:getAtCustomerCccInfrastructure", args ?? new GetAtCustomerCccInfrastructureArgs(), options.WithDefaults());
@@ -50,10 +48,9 @@ namespace Pulumi.Oci.ComputeCloud
         /// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -69,8 +66,7 @@ namespace Pulumi.Oci.ComputeCloud
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetAtCustomerCccInfrastructureResult> Invoke(GetAtCustomerCccInfrastructureInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAtCustomerCccInfrastructureResult>("oci:ComputeCloud/getAtCustomerCccInfrastructure:getAtCustomerCccInfrastructure", args ?? new GetAtCustomerCccInfrastructureInvokeArgs(), options.WithDefaults());

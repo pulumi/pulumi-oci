@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -40,6 +41,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetImageShapes(ctx *pulumi.Context, args *GetImageShapesArgs, opts ...pulumi.InvokeOption) (*GetImageShapesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetImageShapesResult

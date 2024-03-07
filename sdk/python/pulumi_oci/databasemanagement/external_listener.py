@@ -560,7 +560,7 @@ class ExternalListener(pulumi.CustomResource):
         ExternalListeners can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DatabaseManagement/externalListener:ExternalListener test_external_listener "id"
+        $ pulumi import oci:DatabaseManagement/externalListener:ExternalListener test_external_listener "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -590,7 +590,7 @@ class ExternalListener(pulumi.CustomResource):
         ExternalListeners can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DatabaseManagement/externalListener:ExternalListener test_external_listener "id"
+        $ pulumi import oci:DatabaseManagement/externalListener:ExternalListener test_external_listener "id"
         ```
 
         :param str resource_name: The name of the resource.

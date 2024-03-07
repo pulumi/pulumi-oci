@@ -47,6 +47,8 @@ public final class AiAnomalyDetectionFunctions {
      * Gets a specific private reverse connection by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -75,6 +77,7 @@ public final class AiAnomalyDetectionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAiPrivateEndpointResult> getAiPrivateEndpoint(GetAiPrivateEndpointArgs args) {
@@ -86,6 +89,8 @@ public final class AiAnomalyDetectionFunctions {
      * Gets a specific private reverse connection by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -114,6 +119,7 @@ public final class AiAnomalyDetectionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAiPrivateEndpointResult> getAiPrivateEndpointPlain(GetAiPrivateEndpointPlainArgs args) {
@@ -125,6 +131,8 @@ public final class AiAnomalyDetectionFunctions {
      * Gets a specific private reverse connection by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -153,6 +161,7 @@ public final class AiAnomalyDetectionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAiPrivateEndpointResult> getAiPrivateEndpoint(GetAiPrivateEndpointArgs args, InvokeOptions options) {
@@ -164,6 +173,8 @@ public final class AiAnomalyDetectionFunctions {
      * Gets a specific private reverse connection by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -192,6 +203,7 @@ public final class AiAnomalyDetectionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAiPrivateEndpointResult> getAiPrivateEndpointPlain(GetAiPrivateEndpointPlainArgs args, InvokeOptions options) {
@@ -203,6 +215,8 @@ public final class AiAnomalyDetectionFunctions {
      * Returns a list of all the AI private endpoints in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -234,6 +248,7 @@ public final class AiAnomalyDetectionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAiPrivateEndpointsResult> getAiPrivateEndpoints(GetAiPrivateEndpointsArgs args) {
@@ -245,6 +260,8 @@ public final class AiAnomalyDetectionFunctions {
      * Returns a list of all the AI private endpoints in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -276,6 +293,7 @@ public final class AiAnomalyDetectionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAiPrivateEndpointsResult> getAiPrivateEndpointsPlain(GetAiPrivateEndpointsPlainArgs args) {
@@ -287,6 +305,8 @@ public final class AiAnomalyDetectionFunctions {
      * Returns a list of all the AI private endpoints in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -318,6 +338,7 @@ public final class AiAnomalyDetectionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAiPrivateEndpointsResult> getAiPrivateEndpoints(GetAiPrivateEndpointsArgs args, InvokeOptions options) {
@@ -329,6 +350,8 @@ public final class AiAnomalyDetectionFunctions {
      * Returns a list of all the AI private endpoints in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -360,6 +383,7 @@ public final class AiAnomalyDetectionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAiPrivateEndpointsResult> getAiPrivateEndpointsPlain(GetAiPrivateEndpointsPlainArgs args, InvokeOptions options) {
@@ -371,6 +395,8 @@ public final class AiAnomalyDetectionFunctions {
      * Gets a detect anomaly asynchronous job by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -399,6 +425,7 @@ public final class AiAnomalyDetectionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDetectAnomalyJobResult> getDetectAnomalyJob(GetDetectAnomalyJobArgs args) {
@@ -410,6 +437,8 @@ public final class AiAnomalyDetectionFunctions {
      * Gets a detect anomaly asynchronous job by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -438,6 +467,7 @@ public final class AiAnomalyDetectionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDetectAnomalyJobResult> getDetectAnomalyJobPlain(GetDetectAnomalyJobPlainArgs args) {
@@ -449,6 +479,8 @@ public final class AiAnomalyDetectionFunctions {
      * Gets a detect anomaly asynchronous job by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -477,6 +509,7 @@ public final class AiAnomalyDetectionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDetectAnomalyJobResult> getDetectAnomalyJob(GetDetectAnomalyJobArgs args, InvokeOptions options) {
@@ -488,6 +521,8 @@ public final class AiAnomalyDetectionFunctions {
      * Gets a detect anomaly asynchronous job by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -516,6 +551,7 @@ public final class AiAnomalyDetectionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDetectAnomalyJobResult> getDetectAnomalyJobPlain(GetDetectAnomalyJobPlainArgs args, InvokeOptions options) {
@@ -527,6 +563,8 @@ public final class AiAnomalyDetectionFunctions {
      * Returns a list of all the Anomaly Detection jobs in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -560,6 +598,7 @@ public final class AiAnomalyDetectionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDetectAnomalyJobsResult> getDetectAnomalyJobs(GetDetectAnomalyJobsArgs args) {
@@ -571,6 +610,8 @@ public final class AiAnomalyDetectionFunctions {
      * Returns a list of all the Anomaly Detection jobs in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -604,6 +645,7 @@ public final class AiAnomalyDetectionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDetectAnomalyJobsResult> getDetectAnomalyJobsPlain(GetDetectAnomalyJobsPlainArgs args) {
@@ -615,6 +657,8 @@ public final class AiAnomalyDetectionFunctions {
      * Returns a list of all the Anomaly Detection jobs in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -648,6 +692,7 @@ public final class AiAnomalyDetectionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDetectAnomalyJobsResult> getDetectAnomalyJobs(GetDetectAnomalyJobsArgs args, InvokeOptions options) {
@@ -659,6 +704,8 @@ public final class AiAnomalyDetectionFunctions {
      * Returns a list of all the Anomaly Detection jobs in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -692,6 +739,7 @@ public final class AiAnomalyDetectionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDetectAnomalyJobsResult> getDetectAnomalyJobsPlain(GetDetectAnomalyJobsPlainArgs args, InvokeOptions options) {
@@ -703,6 +751,8 @@ public final class AiAnomalyDetectionFunctions {
      * Gets a DataAsset by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -731,6 +781,7 @@ public final class AiAnomalyDetectionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDetectionDataAssetResult> getDetectionDataAsset(GetDetectionDataAssetArgs args) {
@@ -742,6 +793,8 @@ public final class AiAnomalyDetectionFunctions {
      * Gets a DataAsset by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -770,6 +823,7 @@ public final class AiAnomalyDetectionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDetectionDataAssetResult> getDetectionDataAssetPlain(GetDetectionDataAssetPlainArgs args) {
@@ -781,6 +835,8 @@ public final class AiAnomalyDetectionFunctions {
      * Gets a DataAsset by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -809,6 +865,7 @@ public final class AiAnomalyDetectionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDetectionDataAssetResult> getDetectionDataAsset(GetDetectionDataAssetArgs args, InvokeOptions options) {
@@ -820,6 +877,8 @@ public final class AiAnomalyDetectionFunctions {
      * Gets a DataAsset by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -848,6 +907,7 @@ public final class AiAnomalyDetectionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDetectionDataAssetResult> getDetectionDataAssetPlain(GetDetectionDataAssetPlainArgs args, InvokeOptions options) {
@@ -859,6 +919,8 @@ public final class AiAnomalyDetectionFunctions {
      * Returns a list of DataAssets.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -890,6 +952,7 @@ public final class AiAnomalyDetectionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDetectionDataAssetsResult> getDetectionDataAssets(GetDetectionDataAssetsArgs args) {
@@ -901,6 +964,8 @@ public final class AiAnomalyDetectionFunctions {
      * Returns a list of DataAssets.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -932,6 +997,7 @@ public final class AiAnomalyDetectionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDetectionDataAssetsResult> getDetectionDataAssetsPlain(GetDetectionDataAssetsPlainArgs args) {
@@ -943,6 +1009,8 @@ public final class AiAnomalyDetectionFunctions {
      * Returns a list of DataAssets.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -974,6 +1042,7 @@ public final class AiAnomalyDetectionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDetectionDataAssetsResult> getDetectionDataAssets(GetDetectionDataAssetsArgs args, InvokeOptions options) {
@@ -985,6 +1054,8 @@ public final class AiAnomalyDetectionFunctions {
      * Returns a list of DataAssets.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1016,6 +1087,7 @@ public final class AiAnomalyDetectionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDetectionDataAssetsResult> getDetectionDataAssetsPlain(GetDetectionDataAssetsPlainArgs args, InvokeOptions options) {
@@ -1027,6 +1099,8 @@ public final class AiAnomalyDetectionFunctions {
      * Gets a Model by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1055,6 +1129,7 @@ public final class AiAnomalyDetectionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDetectionModelResult> getDetectionModel(GetDetectionModelArgs args) {
@@ -1066,6 +1141,8 @@ public final class AiAnomalyDetectionFunctions {
      * Gets a Model by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1094,6 +1171,7 @@ public final class AiAnomalyDetectionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDetectionModelResult> getDetectionModelPlain(GetDetectionModelPlainArgs args) {
@@ -1105,6 +1183,8 @@ public final class AiAnomalyDetectionFunctions {
      * Gets a Model by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1133,6 +1213,7 @@ public final class AiAnomalyDetectionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDetectionModelResult> getDetectionModel(GetDetectionModelArgs args, InvokeOptions options) {
@@ -1144,6 +1225,8 @@ public final class AiAnomalyDetectionFunctions {
      * Gets a Model by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1172,6 +1255,7 @@ public final class AiAnomalyDetectionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDetectionModelResult> getDetectionModelPlain(GetDetectionModelPlainArgs args, InvokeOptions options) {
@@ -1183,6 +1267,8 @@ public final class AiAnomalyDetectionFunctions {
      * Returns a list of Models.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1214,6 +1300,7 @@ public final class AiAnomalyDetectionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDetectionModelsResult> getDetectionModels(GetDetectionModelsArgs args) {
@@ -1225,6 +1312,8 @@ public final class AiAnomalyDetectionFunctions {
      * Returns a list of Models.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1256,6 +1345,7 @@ public final class AiAnomalyDetectionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDetectionModelsResult> getDetectionModelsPlain(GetDetectionModelsPlainArgs args) {
@@ -1267,6 +1357,8 @@ public final class AiAnomalyDetectionFunctions {
      * Returns a list of Models.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1298,6 +1390,7 @@ public final class AiAnomalyDetectionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDetectionModelsResult> getDetectionModels(GetDetectionModelsArgs args, InvokeOptions options) {
@@ -1309,6 +1402,8 @@ public final class AiAnomalyDetectionFunctions {
      * Returns a list of Models.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1340,6 +1435,7 @@ public final class AiAnomalyDetectionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDetectionModelsResult> getDetectionModelsPlain(GetDetectionModelsPlainArgs args, InvokeOptions options) {
@@ -1351,6 +1447,8 @@ public final class AiAnomalyDetectionFunctions {
      * Gets a Project by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1379,6 +1477,7 @@ public final class AiAnomalyDetectionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDetectionProjectResult> getDetectionProject(GetDetectionProjectArgs args) {
@@ -1390,6 +1489,8 @@ public final class AiAnomalyDetectionFunctions {
      * Gets a Project by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1418,6 +1519,7 @@ public final class AiAnomalyDetectionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDetectionProjectResult> getDetectionProjectPlain(GetDetectionProjectPlainArgs args) {
@@ -1429,6 +1531,8 @@ public final class AiAnomalyDetectionFunctions {
      * Gets a Project by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1457,6 +1561,7 @@ public final class AiAnomalyDetectionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDetectionProjectResult> getDetectionProject(GetDetectionProjectArgs args, InvokeOptions options) {
@@ -1468,6 +1573,8 @@ public final class AiAnomalyDetectionFunctions {
      * Gets a Project by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1496,6 +1603,7 @@ public final class AiAnomalyDetectionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDetectionProjectResult> getDetectionProjectPlain(GetDetectionProjectPlainArgs args, InvokeOptions options) {
@@ -1507,6 +1615,8 @@ public final class AiAnomalyDetectionFunctions {
      * Returns a list of  Projects.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1537,6 +1647,7 @@ public final class AiAnomalyDetectionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDetectionProjectsResult> getDetectionProjects(GetDetectionProjectsArgs args) {
@@ -1548,6 +1659,8 @@ public final class AiAnomalyDetectionFunctions {
      * Returns a list of  Projects.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1578,6 +1691,7 @@ public final class AiAnomalyDetectionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDetectionProjectsResult> getDetectionProjectsPlain(GetDetectionProjectsPlainArgs args) {
@@ -1589,6 +1703,8 @@ public final class AiAnomalyDetectionFunctions {
      * Returns a list of  Projects.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1619,6 +1735,7 @@ public final class AiAnomalyDetectionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDetectionProjectsResult> getDetectionProjects(GetDetectionProjectsArgs args, InvokeOptions options) {
@@ -1630,6 +1747,8 @@ public final class AiAnomalyDetectionFunctions {
      * Returns a list of  Projects.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1660,6 +1779,7 @@ public final class AiAnomalyDetectionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDetectionProjectsResult> getDetectionProjectsPlain(GetDetectionProjectsPlainArgs args, InvokeOptions options) {

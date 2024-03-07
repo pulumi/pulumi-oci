@@ -26,6 +26,8 @@ public final class AnalyticsFunctions {
      * Info for a specific Analytics instance.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -54,6 +56,7 @@ public final class AnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAnalyticsInstanceResult> getAnalyticsInstance(GetAnalyticsInstanceArgs args) {
@@ -65,6 +68,8 @@ public final class AnalyticsFunctions {
      * Info for a specific Analytics instance.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -93,6 +98,7 @@ public final class AnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAnalyticsInstanceResult> getAnalyticsInstancePlain(GetAnalyticsInstancePlainArgs args) {
@@ -104,6 +110,8 @@ public final class AnalyticsFunctions {
      * Info for a specific Analytics instance.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -132,6 +140,7 @@ public final class AnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAnalyticsInstanceResult> getAnalyticsInstance(GetAnalyticsInstanceArgs args, InvokeOptions options) {
@@ -143,6 +152,8 @@ public final class AnalyticsFunctions {
      * Info for a specific Analytics instance.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -171,6 +182,7 @@ public final class AnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAnalyticsInstanceResult> getAnalyticsInstancePlain(GetAnalyticsInstancePlainArgs args, InvokeOptions options) {
@@ -182,6 +194,8 @@ public final class AnalyticsFunctions {
      * Retrieve private access channel in the specified Analytics Instance.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -211,6 +225,7 @@ public final class AnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAnalyticsInstancePrivateAccessChannelResult> getAnalyticsInstancePrivateAccessChannel(GetAnalyticsInstancePrivateAccessChannelArgs args) {
@@ -222,6 +237,8 @@ public final class AnalyticsFunctions {
      * Retrieve private access channel in the specified Analytics Instance.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -251,6 +268,7 @@ public final class AnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAnalyticsInstancePrivateAccessChannelResult> getAnalyticsInstancePrivateAccessChannelPlain(GetAnalyticsInstancePrivateAccessChannelPlainArgs args) {
@@ -262,6 +280,8 @@ public final class AnalyticsFunctions {
      * Retrieve private access channel in the specified Analytics Instance.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -291,6 +311,7 @@ public final class AnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAnalyticsInstancePrivateAccessChannelResult> getAnalyticsInstancePrivateAccessChannel(GetAnalyticsInstancePrivateAccessChannelArgs args, InvokeOptions options) {
@@ -302,6 +323,8 @@ public final class AnalyticsFunctions {
      * Retrieve private access channel in the specified Analytics Instance.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -331,6 +354,7 @@ public final class AnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAnalyticsInstancePrivateAccessChannelResult> getAnalyticsInstancePrivateAccessChannelPlain(GetAnalyticsInstancePrivateAccessChannelPlainArgs args, InvokeOptions options) {
@@ -342,6 +366,8 @@ public final class AnalyticsFunctions {
      * List Analytics instances.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -374,6 +400,7 @@ public final class AnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAnalyticsInstancesResult> getAnalyticsInstances(GetAnalyticsInstancesArgs args) {
@@ -385,6 +412,8 @@ public final class AnalyticsFunctions {
      * List Analytics instances.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -417,6 +446,7 @@ public final class AnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAnalyticsInstancesResult> getAnalyticsInstancesPlain(GetAnalyticsInstancesPlainArgs args) {
@@ -428,6 +458,8 @@ public final class AnalyticsFunctions {
      * List Analytics instances.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -460,6 +492,7 @@ public final class AnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAnalyticsInstancesResult> getAnalyticsInstances(GetAnalyticsInstancesArgs args, InvokeOptions options) {
@@ -471,6 +504,8 @@ public final class AnalyticsFunctions {
      * List Analytics instances.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -503,6 +538,7 @@ public final class AnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAnalyticsInstancesResult> getAnalyticsInstancesPlain(GetAnalyticsInstancesPlainArgs args, InvokeOptions options) {

@@ -26,6 +26,8 @@ import javax.annotation.Nullable;
  * specified by `intervalInSeconds`.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -67,13 +69,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * HttpMonitors can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:HealthChecks/httpMonitor:HttpMonitor test_http_monitor &#34;id&#34;
+ * $ pulumi import oci:HealthChecks/httpMonitor:HttpMonitor test_http_monitor &#34;id&#34;
  * ```
  * 
  */

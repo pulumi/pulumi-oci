@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -42,6 +43,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetOnPremiseVantagePoints(ctx *pulumi.Context, args *GetOnPremiseVantagePointsArgs, opts ...pulumi.InvokeOption) (*GetOnPremiseVantagePointsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetOnPremiseVantagePointsResult

@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,13 +24,14 @@ import * as utilities from "../utilities";
  *     objectId: oci_objectstorage_object.test_object.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * RepositoryRefs can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:DevOps/repositoryRef:RepositoryRef test_repository_ref "repositories/{repositoryId}/refs/{refName}"
+ * $ pulumi import oci:DevOps/repositoryRef:RepositoryRef test_repository_ref "repositories/{repositoryId}/refs/{refName}"
  * ```
  */
 export class RepositoryRef extends pulumi.CustomResource {

@@ -121,6 +121,7 @@ def get_node_pool_option(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -128,6 +129,7 @@ def get_node_pool_option(compartment_id: Optional[str] = None,
     test_node_pool_option = oci.ContainerEngine.get_node_pool_option(node_pool_option_id=oci_containerengine_node_pool_option["test_node_pool_option"]["id"],
         compartment_id=var["compartment_id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment.
@@ -160,6 +162,7 @@ def get_node_pool_option_output(compartment_id: Optional[pulumi.Input[Optional[s
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -167,6 +170,7 @@ def get_node_pool_option_output(compartment_id: Optional[pulumi.Input[Optional[s
     test_node_pool_option = oci.ContainerEngine.get_node_pool_option(node_pool_option_id=oci_containerengine_node_pool_option["test_node_pool_option"]["id"],
         compartment_id=var["compartment_id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment.

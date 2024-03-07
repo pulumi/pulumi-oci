@@ -96,6 +96,7 @@ def get_backends(backend_set_name: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -103,6 +104,7 @@ def get_backends(backend_set_name: Optional[str] = None,
     test_backends = oci.NetworkLoadBalancer.get_backends(backend_set_name=oci_network_load_balancer_backend_set["test_backend_set"]["name"],
         network_load_balancer_id=oci_network_load_balancer_network_load_balancer["test_network_load_balancer"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str backend_set_name: The name of the backend set associated with the backend servers.  Example: `example_backend_set`
@@ -135,6 +137,7 @@ def get_backends_output(backend_set_name: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -142,6 +145,7 @@ def get_backends_output(backend_set_name: Optional[pulumi.Input[str]] = None,
     test_backends = oci.NetworkLoadBalancer.get_backends(backend_set_name=oci_network_load_balancer_backend_set["test_backend_set"]["name"],
         network_load_balancer_id=oci_network_load_balancer_network_load_balancer["test_network_load_balancer"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str backend_set_name: The name of the backend set associated with the backend servers.  Example: `example_backend_set`

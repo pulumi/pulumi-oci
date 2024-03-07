@@ -56,6 +56,8 @@ public final class KmsFunctions {
      * Decrypts data using the given DecryptDataDetails resource.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -87,6 +89,7 @@ public final class KmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDecryptedDataResult> getDecryptedData(GetDecryptedDataArgs args) {
@@ -98,6 +101,8 @@ public final class KmsFunctions {
      * Decrypts data using the given DecryptDataDetails resource.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -129,6 +134,7 @@ public final class KmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDecryptedDataResult> getDecryptedDataPlain(GetDecryptedDataPlainArgs args) {
@@ -140,6 +146,8 @@ public final class KmsFunctions {
      * Decrypts data using the given DecryptDataDetails resource.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -171,6 +179,7 @@ public final class KmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDecryptedDataResult> getDecryptedData(GetDecryptedDataArgs args, InvokeOptions options) {
@@ -182,6 +191,8 @@ public final class KmsFunctions {
      * Decrypts data using the given DecryptDataDetails resource.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -213,6 +224,7 @@ public final class KmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDecryptedDataResult> getDecryptedDataPlain(GetDecryptedDataPlainArgs args, InvokeOptions options) {
@@ -224,6 +236,8 @@ public final class KmsFunctions {
      * Gets a specific EKMS private by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -252,6 +266,7 @@ public final class KmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetEkmsPrivateEndpointResult> getEkmsPrivateEndpoint(GetEkmsPrivateEndpointArgs args) {
@@ -263,6 +278,8 @@ public final class KmsFunctions {
      * Gets a specific EKMS private by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -291,6 +308,7 @@ public final class KmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetEkmsPrivateEndpointResult> getEkmsPrivateEndpointPlain(GetEkmsPrivateEndpointPlainArgs args) {
@@ -302,6 +320,8 @@ public final class KmsFunctions {
      * Gets a specific EKMS private by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -330,6 +350,7 @@ public final class KmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetEkmsPrivateEndpointResult> getEkmsPrivateEndpoint(GetEkmsPrivateEndpointArgs args, InvokeOptions options) {
@@ -341,6 +362,8 @@ public final class KmsFunctions {
      * Gets a specific EKMS private by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -369,6 +392,7 @@ public final class KmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetEkmsPrivateEndpointResult> getEkmsPrivateEndpointPlain(GetEkmsPrivateEndpointPlainArgs args, InvokeOptions options) {
@@ -380,6 +404,8 @@ public final class KmsFunctions {
      * Returns a list of all the EKMS private endpoints in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -408,6 +434,7 @@ public final class KmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetEkmsPrivateEndpointsResult> getEkmsPrivateEndpoints(GetEkmsPrivateEndpointsArgs args) {
@@ -419,6 +446,8 @@ public final class KmsFunctions {
      * Returns a list of all the EKMS private endpoints in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -447,6 +476,7 @@ public final class KmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetEkmsPrivateEndpointsResult> getEkmsPrivateEndpointsPlain(GetEkmsPrivateEndpointsPlainArgs args) {
@@ -458,6 +488,8 @@ public final class KmsFunctions {
      * Returns a list of all the EKMS private endpoints in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -486,6 +518,7 @@ public final class KmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetEkmsPrivateEndpointsResult> getEkmsPrivateEndpoints(GetEkmsPrivateEndpointsArgs args, InvokeOptions options) {
@@ -497,6 +530,8 @@ public final class KmsFunctions {
      * Returns a list of all the EKMS private endpoints in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -525,6 +560,7 @@ public final class KmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetEkmsPrivateEndpointsResult> getEkmsPrivateEndpointsPlain(GetEkmsPrivateEndpointsPlainArgs args, InvokeOptions options) {
@@ -538,6 +574,8 @@ public final class KmsFunctions {
      * of a UTF-8 string.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -569,6 +607,7 @@ public final class KmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetEncryptedDataResult> getEncryptedData(GetEncryptedDataArgs args) {
@@ -582,6 +621,8 @@ public final class KmsFunctions {
      * of a UTF-8 string.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -613,6 +654,7 @@ public final class KmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetEncryptedDataResult> getEncryptedDataPlain(GetEncryptedDataPlainArgs args) {
@@ -626,6 +668,8 @@ public final class KmsFunctions {
      * of a UTF-8 string.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -657,6 +701,7 @@ public final class KmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetEncryptedDataResult> getEncryptedData(GetEncryptedDataArgs args, InvokeOptions options) {
@@ -670,6 +715,8 @@ public final class KmsFunctions {
      * of a UTF-8 string.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -701,6 +748,7 @@ public final class KmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetEncryptedDataResult> getEncryptedDataPlain(GetEncryptedDataPlainArgs args, InvokeOptions options) {
@@ -717,6 +765,8 @@ public final class KmsFunctions {
      * a given tenancy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -746,6 +796,7 @@ public final class KmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetKeyResult> getKey(GetKeyArgs args) {
@@ -762,6 +813,8 @@ public final class KmsFunctions {
      * a given tenancy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -791,6 +844,7 @@ public final class KmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetKeyResult> getKeyPlain(GetKeyPlainArgs args) {
@@ -807,6 +861,8 @@ public final class KmsFunctions {
      * a given tenancy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -836,6 +892,7 @@ public final class KmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetKeyResult> getKey(GetKeyArgs args, InvokeOptions options) {
@@ -852,6 +909,8 @@ public final class KmsFunctions {
      * a given tenancy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -881,6 +940,7 @@ public final class KmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetKeyResult> getKeyPlain(GetKeyPlainArgs args, InvokeOptions options) {
@@ -897,6 +957,8 @@ public final class KmsFunctions {
      * for a given tenancy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -927,6 +989,7 @@ public final class KmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetKeyVersionResult> getKeyVersion(GetKeyVersionArgs args) {
@@ -943,6 +1006,8 @@ public final class KmsFunctions {
      * for a given tenancy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -973,6 +1038,7 @@ public final class KmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetKeyVersionResult> getKeyVersionPlain(GetKeyVersionPlainArgs args) {
@@ -989,6 +1055,8 @@ public final class KmsFunctions {
      * for a given tenancy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1019,6 +1087,7 @@ public final class KmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetKeyVersionResult> getKeyVersion(GetKeyVersionArgs args, InvokeOptions options) {
@@ -1035,6 +1104,8 @@ public final class KmsFunctions {
      * for a given tenancy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1065,6 +1136,7 @@ public final class KmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetKeyVersionResult> getKeyVersionPlain(GetKeyVersionPlainArgs args, InvokeOptions options) {
@@ -1082,6 +1154,8 @@ public final class KmsFunctions {
      * for a given tenancy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1111,6 +1185,7 @@ public final class KmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetKeyVersionsResult> getKeyVersions(GetKeyVersionsArgs args) {
@@ -1128,6 +1203,8 @@ public final class KmsFunctions {
      * for a given tenancy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1157,6 +1234,7 @@ public final class KmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetKeyVersionsResult> getKeyVersionsPlain(GetKeyVersionsPlainArgs args) {
@@ -1174,6 +1252,8 @@ public final class KmsFunctions {
      * for a given tenancy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1203,6 +1283,7 @@ public final class KmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetKeyVersionsResult> getKeyVersions(GetKeyVersionsArgs args, InvokeOptions options) {
@@ -1220,6 +1301,8 @@ public final class KmsFunctions {
      * for a given tenancy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1249,6 +1332,7 @@ public final class KmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetKeyVersionsResult> getKeyVersionsPlain(GetKeyVersionsPlainArgs args, InvokeOptions options) {
@@ -1265,6 +1349,8 @@ public final class KmsFunctions {
      * for a given tenancy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1298,6 +1384,7 @@ public final class KmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetKeysResult> getKeys(GetKeysArgs args) {
@@ -1314,6 +1401,8 @@ public final class KmsFunctions {
      * for a given tenancy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1347,6 +1436,7 @@ public final class KmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetKeysResult> getKeysPlain(GetKeysPlainArgs args) {
@@ -1363,6 +1453,8 @@ public final class KmsFunctions {
      * for a given tenancy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1396,6 +1488,7 @@ public final class KmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetKeysResult> getKeys(GetKeysArgs args, InvokeOptions options) {
@@ -1412,6 +1505,8 @@ public final class KmsFunctions {
      * for a given tenancy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1445,6 +1540,7 @@ public final class KmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetKeysResult> getKeysPlain(GetKeysPlainArgs args, InvokeOptions options) {
@@ -1459,6 +1555,8 @@ public final class KmsFunctions {
      * successfully applied across replicas.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1488,6 +1586,7 @@ public final class KmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetReplicationStatusResult> getReplicationStatus(GetReplicationStatusArgs args) {
@@ -1502,6 +1601,8 @@ public final class KmsFunctions {
      * successfully applied across replicas.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1531,6 +1632,7 @@ public final class KmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetReplicationStatusResult> getReplicationStatusPlain(GetReplicationStatusPlainArgs args) {
@@ -1545,6 +1647,8 @@ public final class KmsFunctions {
      * successfully applied across replicas.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1574,6 +1678,7 @@ public final class KmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetReplicationStatusResult> getReplicationStatus(GetReplicationStatusArgs args, InvokeOptions options) {
@@ -1588,6 +1693,8 @@ public final class KmsFunctions {
      * successfully applied across replicas.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1617,6 +1724,7 @@ public final class KmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetReplicationStatusResult> getReplicationStatusPlain(GetReplicationStatusPlainArgs args, InvokeOptions options) {
@@ -1633,6 +1741,8 @@ public final class KmsFunctions {
      * read operations exceeds 10 requests per second for a given tenancy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1661,6 +1771,7 @@ public final class KmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVaultResult> getVault(GetVaultArgs args) {
@@ -1677,6 +1788,8 @@ public final class KmsFunctions {
      * read operations exceeds 10 requests per second for a given tenancy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1705,6 +1818,7 @@ public final class KmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVaultResult> getVaultPlain(GetVaultPlainArgs args) {
@@ -1721,6 +1835,8 @@ public final class KmsFunctions {
      * read operations exceeds 10 requests per second for a given tenancy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1749,6 +1865,7 @@ public final class KmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVaultResult> getVault(GetVaultArgs args, InvokeOptions options) {
@@ -1765,6 +1882,8 @@ public final class KmsFunctions {
      * read operations exceeds 10 requests per second for a given tenancy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1793,6 +1912,7 @@ public final class KmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVaultResult> getVaultPlain(GetVaultPlainArgs args, InvokeOptions options) {
@@ -1809,6 +1929,8 @@ public final class KmsFunctions {
      * write operations exceeds 10 requests per second for a given tenancy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1837,6 +1959,7 @@ public final class KmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVaultReplicasResult> getVaultReplicas(GetVaultReplicasArgs args) {
@@ -1853,6 +1976,8 @@ public final class KmsFunctions {
      * write operations exceeds 10 requests per second for a given tenancy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1881,6 +2006,7 @@ public final class KmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVaultReplicasResult> getVaultReplicasPlain(GetVaultReplicasPlainArgs args) {
@@ -1897,6 +2023,8 @@ public final class KmsFunctions {
      * write operations exceeds 10 requests per second for a given tenancy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1925,6 +2053,7 @@ public final class KmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVaultReplicasResult> getVaultReplicas(GetVaultReplicasArgs args, InvokeOptions options) {
@@ -1941,6 +2070,8 @@ public final class KmsFunctions {
      * write operations exceeds 10 requests per second for a given tenancy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1969,6 +2100,7 @@ public final class KmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVaultReplicasResult> getVaultReplicasPlain(GetVaultReplicasPlainArgs args, InvokeOptions options) {
@@ -1980,6 +2112,8 @@ public final class KmsFunctions {
      * Gets the count of keys and key versions in the specified vault to calculate usage against service limits.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2008,6 +2142,7 @@ public final class KmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVaultUsageResult> getVaultUsage(GetVaultUsageArgs args) {
@@ -2019,6 +2154,8 @@ public final class KmsFunctions {
      * Gets the count of keys and key versions in the specified vault to calculate usage against service limits.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2047,6 +2184,7 @@ public final class KmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVaultUsageResult> getVaultUsagePlain(GetVaultUsagePlainArgs args) {
@@ -2058,6 +2196,8 @@ public final class KmsFunctions {
      * Gets the count of keys and key versions in the specified vault to calculate usage against service limits.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2086,6 +2226,7 @@ public final class KmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVaultUsageResult> getVaultUsage(GetVaultUsageArgs args, InvokeOptions options) {
@@ -2097,6 +2238,8 @@ public final class KmsFunctions {
      * Gets the count of keys and key versions in the specified vault to calculate usage against service limits.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2125,6 +2268,7 @@ public final class KmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVaultUsageResult> getVaultUsagePlain(GetVaultUsagePlainArgs args, InvokeOptions options) {
@@ -2141,6 +2285,8 @@ public final class KmsFunctions {
      * read operations exceeds 10 requests per second for a given tenancy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2169,6 +2315,7 @@ public final class KmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVaultsResult> getVaults(GetVaultsArgs args) {
@@ -2185,6 +2332,8 @@ public final class KmsFunctions {
      * read operations exceeds 10 requests per second for a given tenancy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2213,6 +2362,7 @@ public final class KmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVaultsResult> getVaultsPlain(GetVaultsPlainArgs args) {
@@ -2229,6 +2379,8 @@ public final class KmsFunctions {
      * read operations exceeds 10 requests per second for a given tenancy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2257,6 +2409,7 @@ public final class KmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVaultsResult> getVaults(GetVaultsArgs args, InvokeOptions options) {
@@ -2273,6 +2426,8 @@ public final class KmsFunctions {
      * read operations exceeds 10 requests per second for a given tenancy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2301,6 +2456,7 @@ public final class KmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVaultsResult> getVaultsPlain(GetVaultsPlainArgs args, InvokeOptions options) {

@@ -334,6 +334,7 @@ class Project(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -351,13 +352,14 @@ class Project(pulumi.CustomResource):
                 "bar-key": "value",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Projects can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DevOps/project:Project test_project "id"
+        $ pulumi import oci:DevOps/project:Project test_project "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -382,6 +384,7 @@ class Project(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -399,13 +402,14 @@ class Project(pulumi.CustomResource):
                 "bar-key": "value",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Projects can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DevOps/project:Project test_project "id"
+        $ pulumi import oci:DevOps/project:Project test_project "id"
         ```
 
         :param str resource_name: The name of the resource.

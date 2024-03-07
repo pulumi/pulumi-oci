@@ -49,6 +49,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -102,15 +103,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // MountTargets can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:FileStorage/mountTarget:MountTarget test_mount_target "id"
-//
+// $ pulumi import oci:FileStorage/mountTarget:MountTarget test_mount_target "id"
 // ```
 type MountTarget struct {
 	pulumi.CustomResourceState

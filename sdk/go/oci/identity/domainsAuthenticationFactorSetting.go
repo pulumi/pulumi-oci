@@ -21,9 +21,7 @@ import (
 // AuthenticationFactorSettings can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Identity/domainsAuthenticationFactorSetting:DomainsAuthenticationFactorSetting test_authentication_factor_setting "idcsEndpoint/{idcsEndpoint}/authenticationFactorSettings/{authenticationFactorSettingId}"
-//
+// $ pulumi import oci:Identity/domainsAuthenticationFactorSetting:DomainsAuthenticationFactorSetting test_authentication_factor_setting "idcsEndpoint/{idcsEndpoint}/authenticationFactorSettings/{authenticationFactorSettingId}"
 // ```
 type DomainsAuthenticationFactorSetting struct {
 	pulumi.CustomResourceState

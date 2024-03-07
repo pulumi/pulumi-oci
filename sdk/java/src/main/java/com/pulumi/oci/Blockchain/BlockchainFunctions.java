@@ -38,6 +38,8 @@ public final class BlockchainFunctions {
      * Gets information about a Blockchain Platform identified by the specific id
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -66,6 +68,7 @@ public final class BlockchainFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBlockchainPlatformResult> getBlockchainPlatform(GetBlockchainPlatformArgs args) {
@@ -77,6 +80,8 @@ public final class BlockchainFunctions {
      * Gets information about a Blockchain Platform identified by the specific id
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -105,6 +110,7 @@ public final class BlockchainFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBlockchainPlatformResult> getBlockchainPlatformPlain(GetBlockchainPlatformPlainArgs args) {
@@ -116,6 +122,8 @@ public final class BlockchainFunctions {
      * Gets information about a Blockchain Platform identified by the specific id
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -144,6 +152,7 @@ public final class BlockchainFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBlockchainPlatformResult> getBlockchainPlatform(GetBlockchainPlatformArgs args, InvokeOptions options) {
@@ -155,6 +164,8 @@ public final class BlockchainFunctions {
      * Gets information about a Blockchain Platform identified by the specific id
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -183,6 +194,7 @@ public final class BlockchainFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBlockchainPlatformResult> getBlockchainPlatformPlain(GetBlockchainPlatformPlainArgs args, InvokeOptions options) {
@@ -194,6 +206,8 @@ public final class BlockchainFunctions {
      * List Blockchain Platform Patches
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -222,6 +236,7 @@ public final class BlockchainFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBlockchainPlatformPatchesResult> getBlockchainPlatformPatches(GetBlockchainPlatformPatchesArgs args) {
@@ -233,6 +248,8 @@ public final class BlockchainFunctions {
      * List Blockchain Platform Patches
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -261,6 +278,7 @@ public final class BlockchainFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBlockchainPlatformPatchesResult> getBlockchainPlatformPatchesPlain(GetBlockchainPlatformPatchesPlainArgs args) {
@@ -272,6 +290,8 @@ public final class BlockchainFunctions {
      * List Blockchain Platform Patches
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -300,6 +320,7 @@ public final class BlockchainFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBlockchainPlatformPatchesResult> getBlockchainPlatformPatches(GetBlockchainPlatformPatchesArgs args, InvokeOptions options) {
@@ -311,6 +332,8 @@ public final class BlockchainFunctions {
      * List Blockchain Platform Patches
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -339,6 +362,7 @@ public final class BlockchainFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBlockchainPlatformPatchesResult> getBlockchainPlatformPatchesPlain(GetBlockchainPlatformPatchesPlainArgs args, InvokeOptions options) {
@@ -350,6 +374,8 @@ public final class BlockchainFunctions {
      * Returns a list Blockchain Platform Instances in a compartment
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -380,6 +406,7 @@ public final class BlockchainFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBlockchainPlatformsResult> getBlockchainPlatforms(GetBlockchainPlatformsArgs args) {
@@ -391,6 +418,8 @@ public final class BlockchainFunctions {
      * Returns a list Blockchain Platform Instances in a compartment
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -421,6 +450,7 @@ public final class BlockchainFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBlockchainPlatformsResult> getBlockchainPlatformsPlain(GetBlockchainPlatformsPlainArgs args) {
@@ -432,6 +462,8 @@ public final class BlockchainFunctions {
      * Returns a list Blockchain Platform Instances in a compartment
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -462,6 +494,7 @@ public final class BlockchainFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBlockchainPlatformsResult> getBlockchainPlatforms(GetBlockchainPlatformsArgs args, InvokeOptions options) {
@@ -473,6 +506,8 @@ public final class BlockchainFunctions {
      * Returns a list Blockchain Platform Instances in a compartment
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -503,6 +538,7 @@ public final class BlockchainFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBlockchainPlatformsResult> getBlockchainPlatformsPlain(GetBlockchainPlatformsPlainArgs args, InvokeOptions options) {
@@ -514,6 +550,8 @@ public final class BlockchainFunctions {
      * Gets information about an OSN identified by the specific id
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -543,6 +581,7 @@ public final class BlockchainFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOsnResult> getOsn(GetOsnArgs args) {
@@ -554,6 +593,8 @@ public final class BlockchainFunctions {
      * Gets information about an OSN identified by the specific id
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -583,6 +624,7 @@ public final class BlockchainFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOsnResult> getOsnPlain(GetOsnPlainArgs args) {
@@ -594,6 +636,8 @@ public final class BlockchainFunctions {
      * Gets information about an OSN identified by the specific id
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -623,6 +667,7 @@ public final class BlockchainFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOsnResult> getOsn(GetOsnArgs args, InvokeOptions options) {
@@ -634,6 +679,8 @@ public final class BlockchainFunctions {
      * Gets information about an OSN identified by the specific id
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -663,6 +710,7 @@ public final class BlockchainFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOsnResult> getOsnPlain(GetOsnPlainArgs args, InvokeOptions options) {
@@ -674,6 +722,8 @@ public final class BlockchainFunctions {
      * List Blockchain Platform OSNs
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -703,6 +753,7 @@ public final class BlockchainFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOsnsResult> getOsns(GetOsnsArgs args) {
@@ -714,6 +765,8 @@ public final class BlockchainFunctions {
      * List Blockchain Platform OSNs
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -743,6 +796,7 @@ public final class BlockchainFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOsnsResult> getOsnsPlain(GetOsnsPlainArgs args) {
@@ -754,6 +808,8 @@ public final class BlockchainFunctions {
      * List Blockchain Platform OSNs
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -783,6 +839,7 @@ public final class BlockchainFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOsnsResult> getOsns(GetOsnsArgs args, InvokeOptions options) {
@@ -794,6 +851,8 @@ public final class BlockchainFunctions {
      * List Blockchain Platform OSNs
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -823,6 +882,7 @@ public final class BlockchainFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOsnsResult> getOsnsPlain(GetOsnsPlainArgs args, InvokeOptions options) {
@@ -834,6 +894,8 @@ public final class BlockchainFunctions {
      * Gets information about a peer identified by the specific id
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -863,6 +925,7 @@ public final class BlockchainFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPeerResult> getPeer(GetPeerArgs args) {
@@ -874,6 +937,8 @@ public final class BlockchainFunctions {
      * Gets information about a peer identified by the specific id
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -903,6 +968,7 @@ public final class BlockchainFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPeerResult> getPeerPlain(GetPeerPlainArgs args) {
@@ -914,6 +980,8 @@ public final class BlockchainFunctions {
      * Gets information about a peer identified by the specific id
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -943,6 +1011,7 @@ public final class BlockchainFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPeerResult> getPeer(GetPeerArgs args, InvokeOptions options) {
@@ -954,6 +1023,8 @@ public final class BlockchainFunctions {
      * Gets information about a peer identified by the specific id
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -983,6 +1054,7 @@ public final class BlockchainFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPeerResult> getPeerPlain(GetPeerPlainArgs args, InvokeOptions options) {
@@ -994,6 +1066,8 @@ public final class BlockchainFunctions {
      * List Blockchain Platform Peers
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1023,6 +1097,7 @@ public final class BlockchainFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPeersResult> getPeers(GetPeersArgs args) {
@@ -1034,6 +1109,8 @@ public final class BlockchainFunctions {
      * List Blockchain Platform Peers
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1063,6 +1140,7 @@ public final class BlockchainFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPeersResult> getPeersPlain(GetPeersPlainArgs args) {
@@ -1074,6 +1152,8 @@ public final class BlockchainFunctions {
      * List Blockchain Platform Peers
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1103,6 +1183,7 @@ public final class BlockchainFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPeersResult> getPeers(GetPeersArgs args, InvokeOptions options) {
@@ -1114,6 +1195,8 @@ public final class BlockchainFunctions {
      * List Blockchain Platform Peers
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1143,6 +1226,7 @@ public final class BlockchainFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPeersResult> getPeersPlain(GetPeersPlainArgs args, InvokeOptions options) {

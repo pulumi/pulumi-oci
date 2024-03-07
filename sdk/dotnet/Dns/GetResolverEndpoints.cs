@@ -20,10 +20,9 @@ namespace Pulumi.Oci.Dns
         /// lifecycle state to be consistent with other operations of the API. Requires a `PRIVATE` scope query parameter.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -42,8 +41,7 @@ namespace Pulumi.Oci.Dns
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetResolverEndpointsResult> InvokeAsync(GetResolverEndpointsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetResolverEndpointsResult>("oci:Dns/getResolverEndpoints:getResolverEndpoints", args ?? new GetResolverEndpointsArgs(), options.WithDefaults());
@@ -57,10 +55,9 @@ namespace Pulumi.Oci.Dns
         /// lifecycle state to be consistent with other operations of the API. Requires a `PRIVATE` scope query parameter.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -79,8 +76,7 @@ namespace Pulumi.Oci.Dns
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetResolverEndpointsResult> Invoke(GetResolverEndpointsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetResolverEndpointsResult>("oci:Dns/getResolverEndpoints:getResolverEndpoints", args ?? new GetResolverEndpointsInvokeArgs(), options.WithDefaults());

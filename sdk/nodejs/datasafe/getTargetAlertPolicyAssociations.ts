@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -29,6 +30,7 @@ import * as utilities from "../utilities";
  *     timeCreatedLessThan: _var.target_alert_policy_association_time_created_less_than,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getTargetAlertPolicyAssociations(args: GetTargetAlertPolicyAssociationsArgs, opts?: pulumi.InvokeOptions): Promise<GetTargetAlertPolicyAssociationsResult> {
 
@@ -133,6 +135,7 @@ export interface GetTargetAlertPolicyAssociationsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -149,6 +152,7 @@ export interface GetTargetAlertPolicyAssociationsResult {
  *     timeCreatedLessThan: _var.target_alert_policy_association_time_created_less_than,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getTargetAlertPolicyAssociationsOutput(args: GetTargetAlertPolicyAssociationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTargetAlertPolicyAssociationsResult> {
     return pulumi.output(args).apply((a: any) => getTargetAlertPolicyAssociations(a, opts))

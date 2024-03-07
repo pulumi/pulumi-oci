@@ -267,12 +267,14 @@ def get_news_report(news_report_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_news_report = oci.Opsi.get_news_report(news_report_id=oci_opsi_news_report["test_news_report"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str news_report_id: Unique news report identifier.
@@ -314,12 +316,14 @@ def get_news_report_output(news_report_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_news_report = oci.Opsi.get_news_report(news_report_id=oci_opsi_news_report["test_news_report"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str news_report_id: Unique news report identifier.

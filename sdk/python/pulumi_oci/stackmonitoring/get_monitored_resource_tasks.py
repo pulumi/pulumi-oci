@@ -99,6 +99,7 @@ def get_monitored_resource_tasks(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -106,6 +107,7 @@ def get_monitored_resource_tasks(compartment_id: Optional[str] = None,
     test_monitored_resource_tasks = oci.StackMonitoring.get_monitored_resource_tasks(compartment_id=var["compartment_id"],
         status=var["monitored_resource_task_status"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for which  stack monitoring resource tasks should be listed.
@@ -138,6 +140,7 @@ def get_monitored_resource_tasks_output(compartment_id: Optional[pulumi.Input[st
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -145,6 +148,7 @@ def get_monitored_resource_tasks_output(compartment_id: Optional[pulumi.Input[st
     test_monitored_resource_tasks = oci.StackMonitoring.get_monitored_resource_tasks(compartment_id=var["compartment_id"],
         status=var["monitored_resource_task_status"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for which  stack monitoring resource tasks should be listed.

@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -27,6 +28,7 @@ import * as utilities from "../utilities";
  *     state: _var.replica_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getReplicas(args: GetReplicasArgs, opts?: pulumi.InvokeOptions): Promise<GetReplicasResult> {
 
@@ -121,6 +123,7 @@ export interface GetReplicasResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -135,6 +138,7 @@ export interface GetReplicasResult {
  *     state: _var.replica_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getReplicasOutput(args: GetReplicasOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetReplicasResult> {
     return pulumi.output(args).apply((a: any) => getReplicas(a, opts))

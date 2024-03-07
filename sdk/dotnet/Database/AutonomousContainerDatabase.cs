@@ -19,7 +19,7 @@ namespace Pulumi.Oci.Database
     /// AutonomousContainerDatabases can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Database/autonomousContainerDatabase:AutonomousContainerDatabase test_autonomous_container_database "id"
+    /// $ pulumi import oci:Database/autonomousContainerDatabase:AutonomousContainerDatabase test_autonomous_container_database "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Database/autonomousContainerDatabase:AutonomousContainerDatabase")]

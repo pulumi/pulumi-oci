@@ -149,6 +149,7 @@ def get_namespace_effective_properties(agent_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -161,6 +162,7 @@ def get_namespace_effective_properties(agent_id: Optional[str] = None,
         pattern_id=oci_log_analytics_pattern["test_pattern"]["id"],
         source_name=var["namespace_effective_property_source_name"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str agent_id: The agent ocid.
@@ -213,6 +215,7 @@ def get_namespace_effective_properties_output(agent_id: Optional[pulumi.Input[Op
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -225,6 +228,7 @@ def get_namespace_effective_properties_output(agent_id: Optional[pulumi.Input[Op
         pattern_id=oci_log_analytics_pattern["test_pattern"]["id"],
         source_name=var["namespace_effective_property_source_name"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str agent_id: The agent ocid.

@@ -14,6 +14,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,6 +25,7 @@ import * as utilities from "../utilities";
  *     serviceEntitlement: _var.resource_quota_service_entitlement,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getResourceQuotas(args: GetResourceQuotasArgs, opts?: pulumi.InvokeOptions): Promise<GetResourceQuotasResult> {
 
@@ -80,6 +82,7 @@ export interface GetResourceQuotasResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -90,6 +93,7 @@ export interface GetResourceQuotasResult {
  *     serviceEntitlement: _var.resource_quota_service_entitlement,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getResourceQuotasOutput(args: GetResourceQuotasOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetResourceQuotasResult> {
     return pulumi.output(args).apply((a: any) => getResourceQuotas(a, opts))

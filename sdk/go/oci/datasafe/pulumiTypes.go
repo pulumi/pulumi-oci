@@ -1836,7 +1836,7 @@ type LibraryMasingFormatFormatEntry struct {
 	ReplaceWith *string `pulumi:"replaceWith"`
 	// (Updatable) The name of the schema that contains the substitution column.
 	SchemaName *string `pulumi:"schemaName"`
-	// (Updatable) The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%)  symbols.
+	// (Updatable) The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%!)(MISSING)  symbols.
 	SqlExpression *string `pulumi:"sqlExpression"`
 	// (Updatable) The lower bound of the range within which all the original column values fall. The start date must be less than or equal to the end date.
 	StartDate *string `pulumi:"startDate"`
@@ -1902,7 +1902,7 @@ type LibraryMasingFormatFormatEntryArgs struct {
 	ReplaceWith pulumi.StringPtrInput `pulumi:"replaceWith"`
 	// (Updatable) The name of the schema that contains the substitution column.
 	SchemaName pulumi.StringPtrInput `pulumi:"schemaName"`
-	// (Updatable) The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%)  symbols.
+	// (Updatable) The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%!)(MISSING)  symbols.
 	SqlExpression pulumi.StringPtrInput `pulumi:"sqlExpression"`
 	// (Updatable) The lower bound of the range within which all the original column values fall. The start date must be less than or equal to the end date.
 	StartDate pulumi.StringPtrInput `pulumi:"startDate"`
@@ -2055,7 +2055,7 @@ func (o LibraryMasingFormatFormatEntryOutput) SchemaName() pulumi.StringPtrOutpu
 	return o.ApplyT(func(v LibraryMasingFormatFormatEntry) *string { return v.SchemaName }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%)  symbols.
+// (Updatable) The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%!)(MISSING)  symbols.
 func (o LibraryMasingFormatFormatEntryOutput) SqlExpression() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v LibraryMasingFormatFormatEntry) *string { return v.SqlExpression }).(pulumi.StringPtrOutput)
 }
@@ -2269,7 +2269,7 @@ type MaskingPoliciesMaskingColumnMaskingFormatFormatEntry struct {
 	ReplaceWith *string `pulumi:"replaceWith"`
 	// The name of the schema that contains the database column. This attribute cannot be updated for an existing masking column.
 	SchemaName *string `pulumi:"schemaName"`
-	// (Updatable) The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%)  symbols.
+	// (Updatable) The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%!)(MISSING)  symbols.
 	SqlExpression *string `pulumi:"sqlExpression"`
 	// (Updatable) The lower bound of the range within which all the original column values fall. The start date must be less than or equal to the end date.
 	StartDate *string `pulumi:"startDate"`
@@ -2335,7 +2335,7 @@ type MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs struct {
 	ReplaceWith pulumi.StringPtrInput `pulumi:"replaceWith"`
 	// The name of the schema that contains the database column. This attribute cannot be updated for an existing masking column.
 	SchemaName pulumi.StringPtrInput `pulumi:"schemaName"`
-	// (Updatable) The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%)  symbols.
+	// (Updatable) The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%!)(MISSING)  symbols.
 	SqlExpression pulumi.StringPtrInput `pulumi:"sqlExpression"`
 	// (Updatable) The lower bound of the range within which all the original column values fall. The start date must be less than or equal to the end date.
 	StartDate pulumi.StringPtrInput `pulumi:"startDate"`
@@ -2488,7 +2488,7 @@ func (o MaskingPoliciesMaskingColumnMaskingFormatFormatEntryOutput) SchemaName()
 	return o.ApplyT(func(v MaskingPoliciesMaskingColumnMaskingFormatFormatEntry) *string { return v.SchemaName }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%)  symbols.
+// (Updatable) The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%!)(MISSING)  symbols.
 func (o MaskingPoliciesMaskingColumnMaskingFormatFormatEntryOutput) SqlExpression() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MaskingPoliciesMaskingColumnMaskingFormatFormatEntry) *string { return v.SqlExpression }).(pulumi.StringPtrOutput)
 }
@@ -17071,7 +17071,7 @@ type GetLibraryMaskingFormatFormatEntry struct {
 	ReplaceWith string `pulumi:"replaceWith"`
 	// The name of the schema that contains the substitution column.
 	SchemaName string `pulumi:"schemaName"`
-	// The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%)  symbols.
+	// The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%!)(MISSING)  symbols.
 	SqlExpression string `pulumi:"sqlExpression"`
 	// The lower bound of the range within which all the original column values fall. The start date must be less than or equal to the end date.
 	StartDate string `pulumi:"startDate"`
@@ -17133,7 +17133,7 @@ type GetLibraryMaskingFormatFormatEntryArgs struct {
 	ReplaceWith pulumi.StringInput `pulumi:"replaceWith"`
 	// The name of the schema that contains the substitution column.
 	SchemaName pulumi.StringInput `pulumi:"schemaName"`
-	// The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%)  symbols.
+	// The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%!)(MISSING)  symbols.
 	SqlExpression pulumi.StringInput `pulumi:"sqlExpression"`
 	// The lower bound of the range within which all the original column values fall. The start date must be less than or equal to the end date.
 	StartDate pulumi.StringInput `pulumi:"startDate"`
@@ -17282,7 +17282,7 @@ func (o GetLibraryMaskingFormatFormatEntryOutput) SchemaName() pulumi.StringOutp
 	return o.ApplyT(func(v GetLibraryMaskingFormatFormatEntry) string { return v.SchemaName }).(pulumi.StringOutput)
 }
 
-// The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%)  symbols.
+// The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%!)(MISSING)  symbols.
 func (o GetLibraryMaskingFormatFormatEntryOutput) SqlExpression() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLibraryMaskingFormatFormatEntry) string { return v.SqlExpression }).(pulumi.StringOutput)
 }
@@ -17779,7 +17779,7 @@ type GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntry struc
 	ReplaceWith string `pulumi:"replaceWith"`
 	// The name of the schema that contains the substitution column.
 	SchemaName string `pulumi:"schemaName"`
-	// The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%)  symbols.
+	// The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%!)(MISSING)  symbols.
 	SqlExpression string `pulumi:"sqlExpression"`
 	// The lower bound of the range within which all the original column values fall. The start date must be less than or equal to the end date.
 	StartDate string `pulumi:"startDate"`
@@ -17841,7 +17841,7 @@ type GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntryArgs s
 	ReplaceWith pulumi.StringInput `pulumi:"replaceWith"`
 	// The name of the schema that contains the substitution column.
 	SchemaName pulumi.StringInput `pulumi:"schemaName"`
-	// The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%)  symbols.
+	// The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%!)(MISSING)  symbols.
 	SqlExpression pulumi.StringInput `pulumi:"sqlExpression"`
 	// The lower bound of the range within which all the original column values fall. The start date must be less than or equal to the end date.
 	StartDate pulumi.StringInput `pulumi:"startDate"`
@@ -18014,7 +18014,7 @@ func (o GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntryOut
 	}).(pulumi.StringOutput)
 }
 
-// The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%)  symbols.
+// The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%!)(MISSING)  symbols.
 func (o GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntryOutput) SqlExpression() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntry) string {
 		return v.SqlExpression
@@ -19232,7 +19232,7 @@ type GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntry struct {
 	ReplaceWith string `pulumi:"replaceWith"`
 	// The name of the schema that contains the database column.
 	SchemaName string `pulumi:"schemaName"`
-	// The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%)  symbols.
+	// The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%!)(MISSING)  symbols.
 	SqlExpression string `pulumi:"sqlExpression"`
 	// The lower bound of the range within which all the original column values fall. The start date must be less than or equal to the end date.
 	StartDate string `pulumi:"startDate"`
@@ -19294,7 +19294,7 @@ type GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs struct {
 	ReplaceWith pulumi.StringInput `pulumi:"replaceWith"`
 	// The name of the schema that contains the database column.
 	SchemaName pulumi.StringInput `pulumi:"schemaName"`
-	// The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%)  symbols.
+	// The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%!)(MISSING)  symbols.
 	SqlExpression pulumi.StringInput `pulumi:"sqlExpression"`
 	// The lower bound of the range within which all the original column values fall. The start date must be less than or equal to the end date.
 	StartDate pulumi.StringInput `pulumi:"startDate"`
@@ -19447,7 +19447,7 @@ func (o GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntryOutput) SchemaNam
 	return o.ApplyT(func(v GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntry) string { return v.SchemaName }).(pulumi.StringOutput)
 }
 
-// The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%)  symbols.
+// The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%!)(MISSING)  symbols.
 func (o GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntryOutput) SqlExpression() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntry) string { return v.SqlExpression }).(pulumi.StringOutput)
 }
@@ -20099,7 +20099,7 @@ type GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFor
 	ReplaceWith string `pulumi:"replaceWith"`
 	// A filter to return only items related to specific schema name.
 	SchemaName string `pulumi:"schemaName"`
-	// The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%)  symbols.
+	// The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%!)(MISSING)  symbols.
 	SqlExpression string `pulumi:"sqlExpression"`
 	// The lower bound of the range within which all the original column values fall. The start date must be less than or equal to the end date.
 	StartDate string `pulumi:"startDate"`
@@ -20161,7 +20161,7 @@ type GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFor
 	ReplaceWith pulumi.StringInput `pulumi:"replaceWith"`
 	// A filter to return only items related to specific schema name.
 	SchemaName pulumi.StringInput `pulumi:"schemaName"`
-	// The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%)  symbols.
+	// The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%!)(MISSING)  symbols.
 	SqlExpression pulumi.StringInput `pulumi:"sqlExpression"`
 	// The lower bound of the range within which all the original column values fall. The start date must be less than or equal to the end date.
 	StartDate pulumi.StringInput `pulumi:"startDate"`
@@ -20342,7 +20342,7 @@ func (o GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormat
 	}).(pulumi.StringOutput)
 }
 
-// The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%)  symbols.
+// The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%!)(MISSING)  symbols.
 func (o GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFormatEntryOutput) SqlExpression() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFormatEntry) string {
 		return v.SqlExpression

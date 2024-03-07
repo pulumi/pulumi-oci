@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -59,13 +60,14 @@ import * as utilities from "../utilities";
  *     }],
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * Targets can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:CloudGuard/target:Target test_target "id"
+ * $ pulumi import oci:CloudGuard/target:Target test_target "id"
  * ```
  */
 export class Target extends pulumi.CustomResource {

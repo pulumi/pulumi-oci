@@ -138,6 +138,7 @@ class VolumeBackupPolicyAssignment(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -146,13 +147,14 @@ class VolumeBackupPolicyAssignment(pulumi.CustomResource):
             asset_id=oci_core_volume["test_volume"]["id"],
             policy_id=oci_core_volume_backup_policy["test_volume_backup_policy"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         VolumeBackupPolicyAssignments can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/volumeBackupPolicyAssignment:VolumeBackupPolicyAssignment test_volume_backup_policy_assignment "id"
+        $ pulumi import oci:Core/volumeBackupPolicyAssignment:VolumeBackupPolicyAssignment test_volume_backup_policy_assignment "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -179,6 +181,7 @@ class VolumeBackupPolicyAssignment(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -187,13 +190,14 @@ class VolumeBackupPolicyAssignment(pulumi.CustomResource):
             asset_id=oci_core_volume["test_volume"]["id"],
             policy_id=oci_core_volume_backup_policy["test_volume_backup_policy"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         VolumeBackupPolicyAssignments can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/volumeBackupPolicyAssignment:VolumeBackupPolicyAssignment test_volume_backup_policy_assignment "id"
+        $ pulumi import oci:Core/volumeBackupPolicyAssignment:VolumeBackupPolicyAssignment test_volume_backup_policy_assignment "id"
         ```
 
         :param str resource_name: The name of the resource.

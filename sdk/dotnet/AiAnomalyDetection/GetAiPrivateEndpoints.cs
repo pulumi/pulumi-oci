@@ -17,10 +17,9 @@ namespace Pulumi.Oci.AiAnomalyDetection
         /// Returns a list of all the AI private endpoints in the specified compartment.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -39,8 +38,7 @@ namespace Pulumi.Oci.AiAnomalyDetection
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetAiPrivateEndpointsResult> InvokeAsync(GetAiPrivateEndpointsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAiPrivateEndpointsResult>("oci:AiAnomalyDetection/getAiPrivateEndpoints:getAiPrivateEndpoints", args ?? new GetAiPrivateEndpointsArgs(), options.WithDefaults());
@@ -51,10 +49,9 @@ namespace Pulumi.Oci.AiAnomalyDetection
         /// Returns a list of all the AI private endpoints in the specified compartment.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -73,8 +70,7 @@ namespace Pulumi.Oci.AiAnomalyDetection
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetAiPrivateEndpointsResult> Invoke(GetAiPrivateEndpointsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAiPrivateEndpointsResult>("oci:AiAnomalyDetection/getAiPrivateEndpoints:getAiPrivateEndpoints", args ?? new GetAiPrivateEndpointsInvokeArgs(), options.WithDefaults());

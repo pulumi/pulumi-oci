@@ -219,12 +219,14 @@ def get_catalog_private_endpoint(catalog_private_endpoint_id: Optional[str] = No
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_catalog_private_endpoint = oci.DataCatalog.get_catalog_private_endpoint(catalog_private_endpoint_id=oci_datacatalog_catalog_private_endpoint["test_catalog_private_endpoint"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str catalog_private_endpoint_id: Unique private reverse connection identifier.
@@ -262,12 +264,14 @@ def get_catalog_private_endpoint_output(catalog_private_endpoint_id: Optional[pu
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_catalog_private_endpoint = oci.DataCatalog.get_catalog_private_endpoint(catalog_private_endpoint_id=oci_datacatalog_catalog_private_endpoint["test_catalog_private_endpoint"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str catalog_private_endpoint_id: Unique private reverse connection identifier.

@@ -285,6 +285,7 @@ class BackendSet(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -307,13 +308,14 @@ class BackendSet(pulumi.CustomResource):
             ip_version=var["backend_set_ip_version"],
             is_preserve_source=var["backend_set_is_preserve_source"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         BackendSets can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:NetworkLoadBalancer/backendSet:BackendSet test_backend_set "networkLoadBalancers/{networkLoadBalancerId}/backendSets/{backendSetName}"
+        $ pulumi import oci:NetworkLoadBalancer/backendSet:BackendSet test_backend_set "networkLoadBalancers/{networkLoadBalancerId}/backendSets/{backendSetName}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -346,6 +348,7 @@ class BackendSet(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -368,13 +371,14 @@ class BackendSet(pulumi.CustomResource):
             ip_version=var["backend_set_ip_version"],
             is_preserve_source=var["backend_set_is_preserve_source"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         BackendSets can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:NetworkLoadBalancer/backendSet:BackendSet test_backend_set "networkLoadBalancers/{networkLoadBalancerId}/backendSets/{backendSetName}"
+        $ pulumi import oci:NetworkLoadBalancer/backendSet:BackendSet test_backend_set "networkLoadBalancers/{networkLoadBalancerId}/backendSets/{backendSetName}"
         ```
 
         :param str resource_name: The name of the resource.

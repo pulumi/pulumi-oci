@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -48,13 +49,14 @@ import * as utilities from "../utilities";
  *     priority: _var.ingress_gateway_route_table_priority,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * IngressGatewayRouteTables can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:ServiceMesh/ingressGatewayRouteTable:IngressGatewayRouteTable test_ingress_gateway_route_table "id"
+ * $ pulumi import oci:ServiceMesh/ingressGatewayRouteTable:IngressGatewayRouteTable test_ingress_gateway_route_table "id"
  * ```
  */
 export class IngressGatewayRouteTable extends pulumi.CustomResource {

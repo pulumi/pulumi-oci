@@ -37,6 +37,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -139,15 +140,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // ServiceConnectors can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Sch/connector:Connector test_service_connector "id"
-//
+// $ pulumi import oci:Sch/connector:Connector test_service_connector "id"
 // ```
 type Connector struct {
 	pulumi.CustomResourceState

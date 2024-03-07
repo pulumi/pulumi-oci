@@ -266,6 +266,7 @@ class RepositoryRef(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -277,13 +278,14 @@ class RepositoryRef(pulumi.CustomResource):
             commit_id=oci_devops_commit["test_commit"]["id"],
             object_id=oci_objectstorage_object["test_object"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         RepositoryRefs can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DevOps/repositoryRef:RepositoryRef test_repository_ref "repositories/{repositoryId}/refs/{refName}"
+        $ pulumi import oci:DevOps/repositoryRef:RepositoryRef test_repository_ref "repositories/{repositoryId}/refs/{refName}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -311,6 +313,7 @@ class RepositoryRef(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -322,13 +325,14 @@ class RepositoryRef(pulumi.CustomResource):
             commit_id=oci_devops_commit["test_commit"]["id"],
             object_id=oci_objectstorage_object["test_object"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         RepositoryRefs can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DevOps/repositoryRef:RepositoryRef test_repository_ref "repositories/{repositoryId}/refs/{refName}"
+        $ pulumi import oci:DevOps/repositoryRef:RepositoryRef test_repository_ref "repositories/{repositoryId}/refs/{refName}"
         ```
 
         :param str resource_name: The name of the resource.

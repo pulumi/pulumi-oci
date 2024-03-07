@@ -23,6 +23,8 @@ import javax.annotation.Nullable;
  * NAT gateway as the rule&#39;s target. See [Route Table](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/RouteTable/).
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -58,13 +60,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * NatGateways can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Core/natGateway:NatGateway test_nat_gateway &#34;id&#34;
+ * $ pulumi import oci:Core/natGateway:NatGateway test_nat_gateway &#34;id&#34;
  * ```
  * 
  */

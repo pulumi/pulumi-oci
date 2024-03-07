@@ -115,6 +115,7 @@ def get_connector_plugins(display_name: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -123,6 +124,7 @@ def get_connector_plugins(display_name: Optional[str] = None,
         name=var["connector_plugin_name"],
         state=var["connector_plugin_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str display_name: A filter to return only resources that match the given display name exactly.  Example: `example_service_connector`
@@ -159,6 +161,7 @@ def get_connector_plugins_output(display_name: Optional[pulumi.Input[Optional[st
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -167,6 +170,7 @@ def get_connector_plugins_output(display_name: Optional[pulumi.Input[Optional[st
         name=var["connector_plugin_name"],
         state=var["connector_plugin_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str display_name: A filter to return only resources that match the given display name exactly.  Example: `example_service_connector`

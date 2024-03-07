@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -30,13 +31,14 @@ import * as utilities from "../utilities";
  *     systemTags: _var.web_app_acceleration_system_tags,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * WebAppAccelerations can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Waa/appAcceleration:AppAcceleration test_web_app_acceleration "id"
+ * $ pulumi import oci:Waa/appAcceleration:AppAcceleration test_web_app_acceleration "id"
  * ```
  */
 export class AppAcceleration extends pulumi.CustomResource {

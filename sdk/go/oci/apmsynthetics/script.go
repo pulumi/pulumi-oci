@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -58,15 +59,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Scripts can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:ApmSynthetics/script:Script test_script "scripts/{scriptId}/apmDomainId/{apmDomainId}"
-//
+// $ pulumi import oci:ApmSynthetics/script:Script test_script "scripts/{scriptId}/apmDomainId/{apmDomainId}"
 // ```
 type Script struct {
 	pulumi.CustomResourceState

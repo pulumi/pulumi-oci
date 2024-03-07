@@ -16,6 +16,7 @@ namespace Pulumi.Oci.Opsi
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -93,13 +94,14 @@ namespace Pulumi.Oci.Opsi
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// ExadataInsights can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Opsi/exadataInsight:ExadataInsight test_exadata_insight "id"
+    /// $ pulumi import oci:Opsi/exadataInsight:ExadataInsight test_exadata_insight "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Opsi/exadataInsight:ExadataInsight")]

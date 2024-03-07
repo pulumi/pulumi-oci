@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -26,6 +27,7 @@ import * as utilities from "../utilities";
  *     resourceTypeSchemaVersion: _var.auth_token_resource_type_schema_version,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDomainsAuthToken(args: GetDomainsAuthTokenArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsAuthTokenResult> {
 
@@ -160,6 +162,7 @@ export interface GetDomainsAuthTokenResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -173,6 +176,7 @@ export interface GetDomainsAuthTokenResult {
  *     resourceTypeSchemaVersion: _var.auth_token_resource_type_schema_version,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDomainsAuthTokenOutput(args: GetDomainsAuthTokenOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsAuthTokenResult> {
     return pulumi.output(args).apply((a: any) => getDomainsAuthToken(a, opts))

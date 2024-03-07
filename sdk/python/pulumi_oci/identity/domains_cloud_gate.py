@@ -1370,6 +1370,7 @@ class DomainsCloudGate(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -1392,13 +1393,14 @@ class DomainsCloudGate(pulumi.CustomResource):
             )],
             type=var["cloud_gate_type"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         CloudGates can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/domainsCloudGate:DomainsCloudGate test_cloud_gate "idcsEndpoint/{idcsEndpoint}/cloudGates/{cloudGateId}"
+        $ pulumi import oci:Identity/domainsCloudGate:DomainsCloudGate test_cloud_gate "idcsEndpoint/{idcsEndpoint}/cloudGates/{cloudGateId}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -1518,6 +1520,7 @@ class DomainsCloudGate(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -1540,13 +1543,14 @@ class DomainsCloudGate(pulumi.CustomResource):
             )],
             type=var["cloud_gate_type"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         CloudGates can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/domainsCloudGate:DomainsCloudGate test_cloud_gate "idcsEndpoint/{idcsEndpoint}/cloudGates/{cloudGateId}"
+        $ pulumi import oci:Identity/domainsCloudGate:DomainsCloudGate test_cloud_gate "idcsEndpoint/{idcsEndpoint}/cloudGates/{cloudGateId}"
         ```
 
         :param str resource_name: The name of the resource.

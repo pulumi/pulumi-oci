@@ -333,6 +333,7 @@ class AnalyticsInstancePrivateAccessChannel(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -353,13 +354,14 @@ class AnalyticsInstancePrivateAccessChannel(pulumi.CustomResource):
                 description=var["analytics_instance_private_access_channel_private_source_scan_hosts_description"],
             )])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         AnalyticsInstancePrivateAccessChannels can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Analytics/analyticsInstancePrivateAccessChannel:AnalyticsInstancePrivateAccessChannel test_analytics_instance_private_access_channel "analyticsInstances/{analyticsInstanceId}/privateAccessChannels/{privateAccessChannelKey}"
+        $ pulumi import oci:Analytics/analyticsInstancePrivateAccessChannel:AnalyticsInstancePrivateAccessChannel test_analytics_instance_private_access_channel "analyticsInstances/{analyticsInstanceId}/privateAccessChannels/{privateAccessChannelKey}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -390,6 +392,7 @@ class AnalyticsInstancePrivateAccessChannel(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -410,13 +413,14 @@ class AnalyticsInstancePrivateAccessChannel(pulumi.CustomResource):
                 description=var["analytics_instance_private_access_channel_private_source_scan_hosts_description"],
             )])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         AnalyticsInstancePrivateAccessChannels can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Analytics/analyticsInstancePrivateAccessChannel:AnalyticsInstancePrivateAccessChannel test_analytics_instance_private_access_channel "analyticsInstances/{analyticsInstanceId}/privateAccessChannels/{privateAccessChannelKey}"
+        $ pulumi import oci:Analytics/analyticsInstancePrivateAccessChannel:AnalyticsInstancePrivateAccessChannel test_analytics_instance_private_access_channel "analyticsInstances/{analyticsInstanceId}/privateAccessChannels/{privateAccessChannelKey}"
         ```
 
         :param str resource_name: The name of the resource.

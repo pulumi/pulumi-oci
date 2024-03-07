@@ -482,6 +482,7 @@ class DeployEnvironment(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -513,13 +514,14 @@ class DeployEnvironment(pulumi.CustomResource):
                 nsg_ids=var["deploy_environment_network_channel_nsg_ids"],
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         DeployEnvironments can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DevOps/deployEnvironment:DeployEnvironment test_deploy_environment "id"
+        $ pulumi import oci:DevOps/deployEnvironment:DeployEnvironment test_deploy_environment "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -552,6 +554,7 @@ class DeployEnvironment(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -583,13 +586,14 @@ class DeployEnvironment(pulumi.CustomResource):
                 nsg_ids=var["deploy_environment_network_channel_nsg_ids"],
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         DeployEnvironments can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DevOps/deployEnvironment:DeployEnvironment test_deploy_environment "id"
+        $ pulumi import oci:DevOps/deployEnvironment:DeployEnvironment test_deploy_environment "id"
         ```
 
         :param str resource_name: The name of the resource.

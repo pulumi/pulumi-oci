@@ -28,6 +28,8 @@ import javax.annotation.Nullable;
  * Create a Policy
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -80,13 +82,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * Policies can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Identity/domainsPolicy:DomainsPolicy test_policy &#34;idcsEndpoint/{idcsEndpoint}/policies/{policyId}&#34;
+ * $ pulumi import oci:Identity/domainsPolicy:DomainsPolicy test_policy &#34;idcsEndpoint/{idcsEndpoint}/policies/{policyId}&#34;
  * ```
  * 
  */

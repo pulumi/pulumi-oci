@@ -339,12 +339,14 @@ def get_db_node(db_node_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_db_node = oci.Database.get_db_node(db_node_id=var["db_node_id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str db_node_id: The database node [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -392,12 +394,14 @@ def get_db_node_output(db_node_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_db_node = oci.Database.get_db_node(db_node_id=var["db_node_id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str db_node_id: The database node [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

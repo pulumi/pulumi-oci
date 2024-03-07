@@ -490,6 +490,7 @@ class DeploymentBackup(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -508,13 +509,14 @@ class DeploymentBackup(pulumi.CustomResource):
                 "bar-key": "value",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         DeploymentBackups can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:GoldenGate/deploymentBackup:DeploymentBackup test_deployment_backup "id"
+        $ pulumi import oci:GoldenGate/deploymentBackup:DeploymentBackup test_deployment_backup "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -545,6 +547,7 @@ class DeploymentBackup(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -563,13 +566,14 @@ class DeploymentBackup(pulumi.CustomResource):
                 "bar-key": "value",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         DeploymentBackups can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:GoldenGate/deploymentBackup:DeploymentBackup test_deployment_backup "id"
+        $ pulumi import oci:GoldenGate/deploymentBackup:DeploymentBackup test_deployment_backup "id"
         ```
 
         :param str resource_name: The name of the resource.

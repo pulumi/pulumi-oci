@@ -16,6 +16,7 @@ namespace Pulumi.Oci.AiLanguage
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -43,13 +44,14 @@ namespace Pulumi.Oci.AiLanguage
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// Endpoints can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:AiLanguage/endpoint:Endpoint test_endpoint "id"
+    /// $ pulumi import oci:AiLanguage/endpoint:Endpoint test_endpoint "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:AiLanguage/endpoint:Endpoint")]

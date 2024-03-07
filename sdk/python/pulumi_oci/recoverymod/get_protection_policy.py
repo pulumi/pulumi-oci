@@ -200,12 +200,14 @@ def get_protection_policy(protection_policy_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_protection_policy = oci.RecoveryMod.get_protection_policy(protection_policy_id=oci_recovery_protection_policy["test_protection_policy"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str protection_policy_id: The protection policy OCID.
@@ -241,12 +243,14 @@ def get_protection_policy_output(protection_policy_id: Optional[pulumi.Input[str
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_protection_policy = oci.RecoveryMod.get_protection_policy(protection_policy_id=oci_recovery_protection_policy["test_protection_policy"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str protection_policy_id: The protection policy OCID.

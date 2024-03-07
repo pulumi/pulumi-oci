@@ -31,7 +31,7 @@ import javax.annotation.Nullable;
  * KmsiSettings can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Identity/domainsKmsiSetting:DomainsKmsiSetting test_kmsi_setting &#34;idcsEndpoint/{idcsEndpoint}/kmsiSettings/{kmsiSettingId}&#34;
+ * $ pulumi import oci:Identity/domainsKmsiSetting:DomainsKmsiSetting test_kmsi_setting &#34;idcsEndpoint/{idcsEndpoint}/kmsiSettings/{kmsiSettingId}&#34;
  * ```
  * 
  */

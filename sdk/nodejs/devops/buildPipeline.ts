@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -36,13 +37,14 @@ import * as utilities from "../utilities";
  *     },
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * BuildPipelines can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:DevOps/buildPipeline:BuildPipeline test_build_pipeline "id"
+ * $ pulumi import oci:DevOps/buildPipeline:BuildPipeline test_build_pipeline "id"
  * ```
  */
 export class BuildPipeline extends pulumi.CustomResource {

@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -19,6 +20,7 @@ import * as utilities from "../utilities";
  *     acceptedAgreementId: oci_marketplace_accepted_agreement.test_accepted_agreement.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAcceptedAgreement(args: GetAcceptedAgreementArgs, opts?: pulumi.InvokeOptions): Promise<GetAcceptedAgreementResult> {
 
@@ -88,6 +90,7 @@ export interface GetAcceptedAgreementResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -96,6 +99,7 @@ export interface GetAcceptedAgreementResult {
  *     acceptedAgreementId: oci_marketplace_accepted_agreement.test_accepted_agreement.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAcceptedAgreementOutput(args: GetAcceptedAgreementOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAcceptedAgreementResult> {
     return pulumi.output(args).apply((a: any) => getAcceptedAgreement(a, opts))

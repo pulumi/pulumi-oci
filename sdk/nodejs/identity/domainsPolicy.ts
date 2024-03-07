@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -42,13 +43,14 @@ import * as utilities from "../utilities";
  *     }],
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * Policies can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Identity/domainsPolicy:DomainsPolicy test_policy "idcsEndpoint/{idcsEndpoint}/policies/{policyId}"
+ * $ pulumi import oci:Identity/domainsPolicy:DomainsPolicy test_policy "idcsEndpoint/{idcsEndpoint}/policies/{policyId}"
  * ```
  */
 export class DomainsPolicy extends pulumi.CustomResource {

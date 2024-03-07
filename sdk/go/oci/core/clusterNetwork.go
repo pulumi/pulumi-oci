@@ -32,6 +32,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -103,15 +104,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // ClusterNetworks can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Core/clusterNetwork:ClusterNetwork test_cluster_network "id"
-//
+// $ pulumi import oci:Core/clusterNetwork:ClusterNetwork test_cluster_network "id"
 // ```
 type ClusterNetwork struct {
 	pulumi.CustomResourceState

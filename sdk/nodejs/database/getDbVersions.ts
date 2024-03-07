@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -26,6 +27,7 @@ import * as utilities from "../utilities";
  *     storageManagement: _var.db_version_storage_management,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDbVersions(args: GetDbVersionsArgs, opts?: pulumi.InvokeOptions): Promise<GetDbVersionsResult> {
 
@@ -104,6 +106,7 @@ export interface GetDbVersionsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -117,6 +120,7 @@ export interface GetDbVersionsResult {
  *     storageManagement: _var.db_version_storage_management,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDbVersionsOutput(args: GetDbVersionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbVersionsResult> {
     return pulumi.output(args).apply((a: any) => getDbVersions(a, opts))

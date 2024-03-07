@@ -545,6 +545,7 @@ class NetworkLoadBalancer(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -567,13 +568,14 @@ class NetworkLoadBalancer(pulumi.CustomResource):
                 id=var["network_load_balancer_reserved_ips_id"],
             )])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         NetworkLoadBalancers can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:NetworkLoadBalancer/networkLoadBalancer:NetworkLoadBalancer test_network_load_balancer "id"
+        $ pulumi import oci:NetworkLoadBalancer/networkLoadBalancer:NetworkLoadBalancer test_network_load_balancer "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -622,6 +624,7 @@ class NetworkLoadBalancer(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -644,13 +647,14 @@ class NetworkLoadBalancer(pulumi.CustomResource):
                 id=var["network_load_balancer_reserved_ips_id"],
             )])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         NetworkLoadBalancers can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:NetworkLoadBalancer/networkLoadBalancer:NetworkLoadBalancer test_network_load_balancer "id"
+        $ pulumi import oci:NetworkLoadBalancer/networkLoadBalancer:NetworkLoadBalancer test_network_load_balancer "id"
         ```
 
         :param str resource_name: The name of the resource.

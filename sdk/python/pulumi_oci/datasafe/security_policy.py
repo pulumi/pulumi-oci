@@ -336,7 +336,7 @@ class SecurityPolicy(pulumi.CustomResource):
         SecurityPolicies can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataSafe/securityPolicy:SecurityPolicy test_security_policy "id"
+        $ pulumi import oci:DataSafe/securityPolicy:SecurityPolicy test_security_policy "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -368,7 +368,7 @@ class SecurityPolicy(pulumi.CustomResource):
         SecurityPolicies can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataSafe/securityPolicy:SecurityPolicy test_security_policy "id"
+        $ pulumi import oci:DataSafe/securityPolicy:SecurityPolicy test_security_policy "id"
         ```
 
         :param str resource_name: The name of the resource.

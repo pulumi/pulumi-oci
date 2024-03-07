@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -60,6 +61,8 @@ import * as utilities from "../utilities";
  *     warehouseBucketUri: _var.invoke_run_warehouse_bucket_uri,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
+ *
  * ## Note
  *
  * At a time service allows only one run to succeed if user is trying to invoke runs on multiple applications which have Private Endpoints and service will proceed invoking only one run and put the rest of them in failed state.
@@ -69,7 +72,7 @@ import * as utilities from "../utilities";
  * InvokeRuns can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:DataFlow/invokeRun:InvokeRun test_invoke_run "id"
+ * $ pulumi import oci:DataFlow/invokeRun:InvokeRun test_invoke_run "id"
  * ```
  */
 export class InvokeRun extends pulumi.CustomResource {

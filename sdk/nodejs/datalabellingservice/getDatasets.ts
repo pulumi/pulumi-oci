@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -25,6 +26,7 @@ import * as utilities from "../utilities";
  *     state: _var.dataset_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDatasets(args: GetDatasetsArgs, opts?: pulumi.InvokeOptions): Promise<GetDatasetsResult> {
 
@@ -103,6 +105,7 @@ export interface GetDatasetsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -115,6 +118,7 @@ export interface GetDatasetsResult {
  *     state: _var.dataset_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDatasetsOutput(args: GetDatasetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDatasetsResult> {
     return pulumi.output(args).apply((a: any) => getDatasets(a, opts))

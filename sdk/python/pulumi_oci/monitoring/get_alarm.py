@@ -335,12 +335,14 @@ def get_alarm(alarm_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_alarm = oci.Monitoring.get_alarm(alarm_id=oci_monitoring_alarm["test_alarm"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str alarm_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an alarm.
@@ -395,12 +397,14 @@ def get_alarm_output(alarm_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_alarm = oci.Monitoring.get_alarm(alarm_id=oci_monitoring_alarm["test_alarm"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str alarm_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an alarm.

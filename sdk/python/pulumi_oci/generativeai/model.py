@@ -517,7 +517,7 @@ class Model(pulumi.CustomResource):
         Models can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:GenerativeAi/model:Model test_model "id"
+        $ pulumi import oci:GenerativeAi/model:Model test_model "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -554,7 +554,7 @@ class Model(pulumi.CustomResource):
         Models can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:GenerativeAi/model:Model test_model "id"
+        $ pulumi import oci:GenerativeAi/model:Model test_model "id"
         ```
 
         :param str resource_name: The name of the resource.

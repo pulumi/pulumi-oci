@@ -20,6 +20,8 @@ import javax.annotation.Nullable;
  * As an example, it can be used to compare a user assessment saved or a latest assessment with a baseline.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -49,13 +51,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * CompareUserAssessment can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:DataSafe/compareUserAssessment:CompareUserAssessment test_compare_user_assessment &#34;id&#34;
+ * $ pulumi import oci:DataSafe/compareUserAssessment:CompareUserAssessment test_compare_user_assessment &#34;id&#34;
  * ```
  * 
  */

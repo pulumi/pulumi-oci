@@ -27,6 +27,8 @@ import javax.annotation.Nullable;
  * Add Virtual Machines to the VM cluster. Applies to Exadata Cloud@Customer instances only.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -59,6 +61,7 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ##### Note: You may also need to add `db_servers` and `cpu_core_count` to the ignore_changes for the resource `oci.Database.VmCluster` list if you see a diff on a subsequent apply
  * 
@@ -67,7 +70,7 @@ import javax.annotation.Nullable;
  * VmClusterAddVirtualMachine can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Database/vmClusterAddVirtualNetwork:VmClusterAddVirtualNetwork test_vm_cluster_add_virtual_machine &#34;id&#34;
+ * $ pulumi import oci:Database/vmClusterAddVirtualNetwork:VmClusterAddVirtualNetwork test_vm_cluster_add_virtual_machine &#34;id&#34;
  * ```
  * 
  */

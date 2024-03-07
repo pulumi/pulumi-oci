@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -32,13 +33,14 @@ import * as utilities from "../utilities";
  *     networkSecurityGroupIds: _var.network_firewall_network_security_group_ids,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * NetworkFirewalls can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:NetworkFirewall/networkFirewall:NetworkFirewall test_network_firewall "id"
+ * $ pulumi import oci:NetworkFirewall/networkFirewall:NetworkFirewall test_network_firewall "id"
  * ```
  */
 export class NetworkFirewall extends pulumi.CustomResource {

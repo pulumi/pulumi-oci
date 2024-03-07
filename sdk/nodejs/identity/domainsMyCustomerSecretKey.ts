@@ -16,7 +16,7 @@ import * as utilities from "../utilities";
  * MyCustomerSecretKeys can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Identity/domainsMyCustomerSecretKey:DomainsMyCustomerSecretKey test_my_customer_secret_key "idcsEndpoint/{idcsEndpoint}/myCustomerSecretKeys/{myCustomerSecretKeyId}"
+ * $ pulumi import oci:Identity/domainsMyCustomerSecretKey:DomainsMyCustomerSecretKey test_my_customer_secret_key "idcsEndpoint/{idcsEndpoint}/myCustomerSecretKeys/{myCustomerSecretKeyId}"
  * ```
  */
 export class DomainsMyCustomerSecretKey extends pulumi.CustomResource {

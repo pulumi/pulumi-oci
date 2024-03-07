@@ -32,6 +32,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -77,13 +78,14 @@ import * as utilities from "../utilities";
  *     sensitiveTypeId: oci_data_safe_sensitive_type.test_sensitive_type.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * MaskingPoliciesMaskingColumns can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:DataSafe/maskingPoliciesMaskingColumn:MaskingPoliciesMaskingColumn test_masking_policies_masking_column "maskingPolicies/{maskingPolicyId}/maskingColumns/{maskingColumnKey}"
+ * $ pulumi import oci:DataSafe/maskingPoliciesMaskingColumn:MaskingPoliciesMaskingColumn test_masking_policies_masking_column "maskingPolicies/{maskingPolicyId}/maskingColumns/{maskingColumnKey}"
  * ```
  */
 export class MaskingPoliciesMaskingColumn extends pulumi.CustomResource {

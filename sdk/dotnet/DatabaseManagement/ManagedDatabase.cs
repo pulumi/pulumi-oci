@@ -19,7 +19,7 @@ namespace Pulumi.Oci.DatabaseManagement
     /// ManagedDatabases can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:DatabaseManagement/managedDatabase:ManagedDatabase test_managed_database "id"
+    /// $ pulumi import oci:DatabaseManagement/managedDatabase:ManagedDatabase test_managed_database "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:DatabaseManagement/managedDatabase:ManagedDatabase")]

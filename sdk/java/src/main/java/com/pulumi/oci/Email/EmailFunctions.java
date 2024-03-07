@@ -41,6 +41,8 @@ public final class EmailFunctions {
      * Retrieves the specified DKIM.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -69,6 +71,7 @@ public final class EmailFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDkimResult> getDkim(GetDkimArgs args) {
@@ -80,6 +83,8 @@ public final class EmailFunctions {
      * Retrieves the specified DKIM.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -108,6 +113,7 @@ public final class EmailFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDkimResult> getDkimPlain(GetDkimPlainArgs args) {
@@ -119,6 +125,8 @@ public final class EmailFunctions {
      * Retrieves the specified DKIM.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -147,6 +155,7 @@ public final class EmailFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDkimResult> getDkim(GetDkimArgs args, InvokeOptions options) {
@@ -158,6 +167,8 @@ public final class EmailFunctions {
      * Retrieves the specified DKIM.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -186,6 +197,7 @@ public final class EmailFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDkimResult> getDkimPlain(GetDkimPlainArgs args, InvokeOptions options) {
@@ -197,6 +209,8 @@ public final class EmailFunctions {
      * Lists DKIMs for a email domain.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -228,6 +242,7 @@ public final class EmailFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDkimsResult> getDkims(GetDkimsArgs args) {
@@ -239,6 +254,8 @@ public final class EmailFunctions {
      * Lists DKIMs for a email domain.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -270,6 +287,7 @@ public final class EmailFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDkimsResult> getDkimsPlain(GetDkimsPlainArgs args) {
@@ -281,6 +299,8 @@ public final class EmailFunctions {
      * Lists DKIMs for a email domain.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -312,6 +332,7 @@ public final class EmailFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDkimsResult> getDkims(GetDkimsArgs args, InvokeOptions options) {
@@ -323,6 +344,8 @@ public final class EmailFunctions {
      * Lists DKIMs for a email domain.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -354,6 +377,7 @@ public final class EmailFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDkimsResult> getDkimsPlain(GetDkimsPlainArgs args, InvokeOptions options) {
@@ -365,6 +389,8 @@ public final class EmailFunctions {
      * Retrieves the specified email domain.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -393,6 +419,7 @@ public final class EmailFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetEmailDomainResult> getEmailDomain(GetEmailDomainArgs args) {
@@ -404,6 +431,8 @@ public final class EmailFunctions {
      * Retrieves the specified email domain.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -432,6 +461,7 @@ public final class EmailFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetEmailDomainResult> getEmailDomainPlain(GetEmailDomainPlainArgs args) {
@@ -443,6 +473,8 @@ public final class EmailFunctions {
      * Retrieves the specified email domain.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -471,6 +503,7 @@ public final class EmailFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetEmailDomainResult> getEmailDomain(GetEmailDomainArgs args, InvokeOptions options) {
@@ -482,6 +515,8 @@ public final class EmailFunctions {
      * Retrieves the specified email domain.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -510,6 +545,7 @@ public final class EmailFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetEmailDomainResult> getEmailDomainPlain(GetEmailDomainPlainArgs args, InvokeOptions options) {
@@ -521,6 +557,8 @@ public final class EmailFunctions {
      * Lists email domains in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -552,6 +590,7 @@ public final class EmailFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetEmailDomainsResult> getEmailDomains(GetEmailDomainsArgs args) {
@@ -563,6 +602,8 @@ public final class EmailFunctions {
      * Lists email domains in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -594,6 +635,7 @@ public final class EmailFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetEmailDomainsResult> getEmailDomainsPlain(GetEmailDomainsPlainArgs args) {
@@ -605,6 +647,8 @@ public final class EmailFunctions {
      * Lists email domains in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -636,6 +680,7 @@ public final class EmailFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetEmailDomainsResult> getEmailDomains(GetEmailDomainsArgs args, InvokeOptions options) {
@@ -647,6 +692,8 @@ public final class EmailFunctions {
      * Lists email domains in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -678,6 +725,7 @@ public final class EmailFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetEmailDomainsResult> getEmailDomainsPlain(GetEmailDomainsPlainArgs args, InvokeOptions options) {
@@ -689,6 +737,8 @@ public final class EmailFunctions {
      * Gets an approved sender for a given `senderId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -717,6 +767,7 @@ public final class EmailFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSenderResult> getSender(GetSenderArgs args) {
@@ -728,6 +779,8 @@ public final class EmailFunctions {
      * Gets an approved sender for a given `senderId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -756,6 +809,7 @@ public final class EmailFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSenderResult> getSenderPlain(GetSenderPlainArgs args) {
@@ -767,6 +821,8 @@ public final class EmailFunctions {
      * Gets an approved sender for a given `senderId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -795,6 +851,7 @@ public final class EmailFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSenderResult> getSender(GetSenderArgs args, InvokeOptions options) {
@@ -806,6 +863,8 @@ public final class EmailFunctions {
      * Gets an approved sender for a given `senderId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -834,6 +893,7 @@ public final class EmailFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSenderResult> getSenderPlain(GetSenderPlainArgs args, InvokeOptions options) {
@@ -845,6 +905,8 @@ public final class EmailFunctions {
      * Gets a collection of approved sender email addresses and sender IDs.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -876,6 +938,7 @@ public final class EmailFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSendersResult> getSenders(GetSendersArgs args) {
@@ -887,6 +950,8 @@ public final class EmailFunctions {
      * Gets a collection of approved sender email addresses and sender IDs.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -918,6 +983,7 @@ public final class EmailFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSendersResult> getSendersPlain(GetSendersPlainArgs args) {
@@ -929,6 +995,8 @@ public final class EmailFunctions {
      * Gets a collection of approved sender email addresses and sender IDs.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -960,6 +1028,7 @@ public final class EmailFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSendersResult> getSenders(GetSendersArgs args, InvokeOptions options) {
@@ -971,6 +1040,8 @@ public final class EmailFunctions {
      * Gets a collection of approved sender email addresses and sender IDs.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1002,6 +1073,7 @@ public final class EmailFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSendersResult> getSendersPlain(GetSendersPlainArgs args, InvokeOptions options) {
@@ -1014,6 +1086,8 @@ public final class EmailFunctions {
      * `suppressionId`. Each suppression is given a unique OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1042,6 +1116,7 @@ public final class EmailFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSuppressionResult> getSuppression(GetSuppressionArgs args) {
@@ -1054,6 +1129,8 @@ public final class EmailFunctions {
      * `suppressionId`. Each suppression is given a unique OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1082,6 +1159,7 @@ public final class EmailFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSuppressionResult> getSuppressionPlain(GetSuppressionPlainArgs args) {
@@ -1094,6 +1172,8 @@ public final class EmailFunctions {
      * `suppressionId`. Each suppression is given a unique OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1122,6 +1202,7 @@ public final class EmailFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSuppressionResult> getSuppression(GetSuppressionArgs args, InvokeOptions options) {
@@ -1134,6 +1215,8 @@ public final class EmailFunctions {
      * `suppressionId`. Each suppression is given a unique OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1162,6 +1245,7 @@ public final class EmailFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSuppressionResult> getSuppressionPlain(GetSuppressionPlainArgs args, InvokeOptions options) {
@@ -1175,6 +1259,8 @@ public final class EmailFunctions {
      * is sorted by creation time in descending order.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1206,6 +1292,7 @@ public final class EmailFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSuppressionsResult> getSuppressions(GetSuppressionsArgs args) {
@@ -1219,6 +1306,8 @@ public final class EmailFunctions {
      * is sorted by creation time in descending order.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1250,6 +1339,7 @@ public final class EmailFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSuppressionsResult> getSuppressionsPlain(GetSuppressionsPlainArgs args) {
@@ -1263,6 +1353,8 @@ public final class EmailFunctions {
      * is sorted by creation time in descending order.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1294,6 +1386,7 @@ public final class EmailFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSuppressionsResult> getSuppressions(GetSuppressionsArgs args, InvokeOptions options) {
@@ -1307,6 +1400,8 @@ public final class EmailFunctions {
      * is sorted by creation time in descending order.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1338,6 +1433,7 @@ public final class EmailFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSuppressionsResult> getSuppressionsPlain(GetSuppressionsPlainArgs args, InvokeOptions options) {

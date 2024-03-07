@@ -29,6 +29,8 @@ public final class OnsFunctions {
      * Gets the specified topic&#39;s configuration information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -57,6 +59,7 @@ public final class OnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNotificationTopicResult> getNotificationTopic(GetNotificationTopicArgs args) {
@@ -68,6 +71,8 @@ public final class OnsFunctions {
      * Gets the specified topic&#39;s configuration information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -96,6 +101,7 @@ public final class OnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNotificationTopicResult> getNotificationTopicPlain(GetNotificationTopicPlainArgs args) {
@@ -107,6 +113,8 @@ public final class OnsFunctions {
      * Gets the specified topic&#39;s configuration information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -135,6 +143,7 @@ public final class OnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNotificationTopicResult> getNotificationTopic(GetNotificationTopicArgs args, InvokeOptions options) {
@@ -146,6 +155,8 @@ public final class OnsFunctions {
      * Gets the specified topic&#39;s configuration information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -174,6 +185,7 @@ public final class OnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNotificationTopicResult> getNotificationTopicPlain(GetNotificationTopicPlainArgs args, InvokeOptions options) {
@@ -187,6 +199,8 @@ public final class OnsFunctions {
      * Transactions Per Minute (TPM) per-tenancy limit for this operation: 120.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -218,6 +232,7 @@ public final class OnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNotificationTopicsResult> getNotificationTopics(GetNotificationTopicsArgs args) {
@@ -231,6 +246,8 @@ public final class OnsFunctions {
      * Transactions Per Minute (TPM) per-tenancy limit for this operation: 120.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -262,6 +279,7 @@ public final class OnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNotificationTopicsResult> getNotificationTopicsPlain(GetNotificationTopicsPlainArgs args) {
@@ -275,6 +293,8 @@ public final class OnsFunctions {
      * Transactions Per Minute (TPM) per-tenancy limit for this operation: 120.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -306,6 +326,7 @@ public final class OnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNotificationTopicsResult> getNotificationTopics(GetNotificationTopicsArgs args, InvokeOptions options) {
@@ -319,6 +340,8 @@ public final class OnsFunctions {
      * Transactions Per Minute (TPM) per-tenancy limit for this operation: 120.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -350,6 +373,7 @@ public final class OnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNotificationTopicsResult> getNotificationTopicsPlain(GetNotificationTopicsPlainArgs args, InvokeOptions options) {
@@ -363,6 +387,8 @@ public final class OnsFunctions {
      * Transactions Per Minute (TPM) per-tenancy limit for this operation: 60.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -391,6 +417,7 @@ public final class OnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSubscriptionResult> getSubscription(GetSubscriptionArgs args) {
@@ -404,6 +431,8 @@ public final class OnsFunctions {
      * Transactions Per Minute (TPM) per-tenancy limit for this operation: 60.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -432,6 +461,7 @@ public final class OnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSubscriptionResult> getSubscriptionPlain(GetSubscriptionPlainArgs args) {
@@ -445,6 +475,8 @@ public final class OnsFunctions {
      * Transactions Per Minute (TPM) per-tenancy limit for this operation: 60.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -473,6 +505,7 @@ public final class OnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSubscriptionResult> getSubscription(GetSubscriptionArgs args, InvokeOptions options) {
@@ -486,6 +519,8 @@ public final class OnsFunctions {
      * Transactions Per Minute (TPM) per-tenancy limit for this operation: 60.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -514,6 +549,7 @@ public final class OnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSubscriptionResult> getSubscriptionPlain(GetSubscriptionPlainArgs args, InvokeOptions options) {
@@ -527,6 +563,8 @@ public final class OnsFunctions {
      * Transactions Per Minute (TPM) per-tenancy limit for this operation: 60.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -556,6 +594,7 @@ public final class OnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSubscriptionsResult> getSubscriptions(GetSubscriptionsArgs args) {
@@ -569,6 +608,8 @@ public final class OnsFunctions {
      * Transactions Per Minute (TPM) per-tenancy limit for this operation: 60.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -598,6 +639,7 @@ public final class OnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSubscriptionsResult> getSubscriptionsPlain(GetSubscriptionsPlainArgs args) {
@@ -611,6 +653,8 @@ public final class OnsFunctions {
      * Transactions Per Minute (TPM) per-tenancy limit for this operation: 60.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -640,6 +684,7 @@ public final class OnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSubscriptionsResult> getSubscriptions(GetSubscriptionsArgs args, InvokeOptions options) {
@@ -653,6 +698,8 @@ public final class OnsFunctions {
      * Transactions Per Minute (TPM) per-tenancy limit for this operation: 60.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -682,6 +729,7 @@ public final class OnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSubscriptionsResult> getSubscriptionsPlain(GetSubscriptionsPlainArgs args, InvokeOptions options) {

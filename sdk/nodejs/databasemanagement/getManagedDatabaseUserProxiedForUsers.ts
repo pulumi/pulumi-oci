@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,6 +25,7 @@ import * as utilities from "../utilities";
  *     opcNamedCredentialId: _var.managed_database_user_proxied_for_user_opc_named_credential_id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getManagedDatabaseUserProxiedForUsers(args: GetManagedDatabaseUserProxiedForUsersArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabaseUserProxiedForUsersResult> {
 
@@ -88,6 +90,7 @@ export interface GetManagedDatabaseUserProxiedForUsersResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -99,6 +102,7 @@ export interface GetManagedDatabaseUserProxiedForUsersResult {
  *     opcNamedCredentialId: _var.managed_database_user_proxied_for_user_opc_named_credential_id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getManagedDatabaseUserProxiedForUsersOutput(args: GetManagedDatabaseUserProxiedForUsersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseUserProxiedForUsersResult> {
     return pulumi.output(args).apply((a: any) => getManagedDatabaseUserProxiedForUsers(a, opts))

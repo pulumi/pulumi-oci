@@ -534,7 +534,7 @@ class Cluster(pulumi.CustomResource):
         Clusters can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:ContainerEngine/cluster:Cluster test_cluster "id"
+        $ pulumi import oci:ContainerEngine/cluster:Cluster test_cluster "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -572,7 +572,7 @@ class Cluster(pulumi.CustomResource):
         Clusters can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:ContainerEngine/cluster:Cluster test_cluster "id"
+        $ pulumi import oci:ContainerEngine/cluster:Cluster test_cluster "id"
         ```
 
         :param str resource_name: The name of the resource.

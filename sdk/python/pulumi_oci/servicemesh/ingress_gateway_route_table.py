@@ -383,6 +383,7 @@ class IngressGatewayRouteTable(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -417,13 +418,14 @@ class IngressGatewayRouteTable(pulumi.CustomResource):
             },
             priority=var["ingress_gateway_route_table_priority"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         IngressGatewayRouteTables can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:ServiceMesh/ingressGatewayRouteTable:IngressGatewayRouteTable test_ingress_gateway_route_table "id"
+        $ pulumi import oci:ServiceMesh/ingressGatewayRouteTable:IngressGatewayRouteTable test_ingress_gateway_route_table "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -450,6 +452,7 @@ class IngressGatewayRouteTable(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -484,13 +487,14 @@ class IngressGatewayRouteTable(pulumi.CustomResource):
             },
             priority=var["ingress_gateway_route_table_priority"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         IngressGatewayRouteTables can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:ServiceMesh/ingressGatewayRouteTable:IngressGatewayRouteTable test_ingress_gateway_route_table "id"
+        $ pulumi import oci:ServiceMesh/ingressGatewayRouteTable:IngressGatewayRouteTable test_ingress_gateway_route_table "id"
         ```
 
         :param str resource_name: The name of the resource.

@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * Resolvers can be imported using their OCID, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Dns/resolver:Resolver test_resolver "id"
+ * $ pulumi import oci:Dns/resolver:Resolver test_resolver "id"
  * ```
  */
 export class Resolver extends pulumi.CustomResource {

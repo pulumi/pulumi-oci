@@ -36,6 +36,8 @@ import javax.annotation.Nullable;
  * [UpdateIdentityProvider](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/IdentityProvider/UpdateIdentityProvider).
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -72,13 +74,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * IdentityProviders can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Identity/identityProvider:IdentityProvider test_identity_provider &#34;id&#34;
+ * $ pulumi import oci:Identity/identityProvider:IdentityProvider test_identity_provider &#34;id&#34;
  * ```
  * 
  */

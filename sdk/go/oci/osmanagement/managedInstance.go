@@ -21,9 +21,7 @@ import (
 // ManagedInstances can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:OsManagement/managedInstance:ManagedInstance test_managed_instance "id"
-//
+// $ pulumi import oci:OsManagement/managedInstance:ManagedInstance test_managed_instance "id"
 // ```
 type ManagedInstance struct {
 	pulumi.CustomResourceState

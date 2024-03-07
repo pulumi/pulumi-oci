@@ -302,6 +302,7 @@ class NetworkLoadBalancersBackendSetsUnified(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -334,13 +335,14 @@ class NetworkLoadBalancersBackendSetsUnified(pulumi.CustomResource):
             ip_version=var["network_load_balancers_backend_sets_unified_ip_version"],
             is_preserve_source=var["network_load_balancers_backend_sets_unified_is_preserve_source"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         NetworkLoadBalancersBackendSetsUnified can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:NetworkLoadBalancer/networkLoadBalancersBackendSetsUnified:NetworkLoadBalancersBackendSetsUnified test_network_load_balancers_backend_sets_unified "networkLoadBalancers/{networkLoadBalancerId}/backendSets/{backendSetName}"
+        $ pulumi import oci:NetworkLoadBalancer/networkLoadBalancersBackendSetsUnified:NetworkLoadBalancersBackendSetsUnified test_network_load_balancers_backend_sets_unified "networkLoadBalancers/{networkLoadBalancerId}/backendSets/{backendSetName}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -374,6 +376,7 @@ class NetworkLoadBalancersBackendSetsUnified(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -406,13 +409,14 @@ class NetworkLoadBalancersBackendSetsUnified(pulumi.CustomResource):
             ip_version=var["network_load_balancers_backend_sets_unified_ip_version"],
             is_preserve_source=var["network_load_balancers_backend_sets_unified_is_preserve_source"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         NetworkLoadBalancersBackendSetsUnified can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:NetworkLoadBalancer/networkLoadBalancersBackendSetsUnified:NetworkLoadBalancersBackendSetsUnified test_network_load_balancers_backend_sets_unified "networkLoadBalancers/{networkLoadBalancerId}/backendSets/{backendSetName}"
+        $ pulumi import oci:NetworkLoadBalancer/networkLoadBalancersBackendSetsUnified:NetworkLoadBalancersBackendSetsUnified test_network_load_balancers_backend_sets_unified "networkLoadBalancers/{networkLoadBalancerId}/backendSets/{backendSetName}"
         ```
 
         :param str resource_name: The name of the resource.

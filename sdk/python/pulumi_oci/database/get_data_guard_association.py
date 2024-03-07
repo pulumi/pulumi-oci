@@ -487,6 +487,7 @@ def get_data_guard_association(data_guard_association_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -494,6 +495,7 @@ def get_data_guard_association(data_guard_association_id: Optional[str] = None,
     test_data_guard_association = oci.Database.get_data_guard_association(data_guard_association_id=oci_database_data_guard_association["test_data_guard_association"]["id"],
         database_id=oci_database_database["test_database"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str data_guard_association_id: The Data Guard association's [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -563,6 +565,7 @@ def get_data_guard_association_output(data_guard_association_id: Optional[pulumi
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -570,6 +573,7 @@ def get_data_guard_association_output(data_guard_association_id: Optional[pulumi
     test_data_guard_association = oci.Database.get_data_guard_association(data_guard_association_id=oci_database_data_guard_association["test_data_guard_association"]["id"],
         database_id=oci_database_database["test_database"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str data_guard_association_id: The Data Guard association's [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

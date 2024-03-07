@@ -18,6 +18,7 @@ namespace Pulumi.Oci.HealthChecks
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -49,13 +50,14 @@ namespace Pulumi.Oci.HealthChecks
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// PingMonitors can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:HealthChecks/pingMonitor:PingMonitor test_ping_monitor "id"
+    /// $ pulumi import oci:HealthChecks/pingMonitor:PingMonitor test_ping_monitor "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:HealthChecks/pingMonitor:PingMonitor")]

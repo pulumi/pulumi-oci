@@ -21,6 +21,8 @@ import javax.annotation.Nullable;
  * Creates a brand new service catalog in a given compartment.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -52,13 +54,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * ServiceCatalogs can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:ServiceCatalog/catalog:Catalog test_service_catalog &#34;id&#34;
+ * $ pulumi import oci:ServiceCatalog/catalog:Catalog test_service_catalog &#34;id&#34;
  * ```
  * 
  */

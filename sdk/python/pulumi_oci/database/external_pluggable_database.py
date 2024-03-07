@@ -494,6 +494,7 @@ class ExternalPluggableDatabase(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -508,13 +509,14 @@ class ExternalPluggableDatabase(pulumi.CustomResource):
             },
             source_id=oci_database_source["test_source"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ExternalPluggableDatabases can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Database/externalPluggableDatabase:ExternalPluggableDatabase test_external_pluggable_database "id"
+        $ pulumi import oci:Database/externalPluggableDatabase:ExternalPluggableDatabase test_external_pluggable_database "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -544,6 +546,7 @@ class ExternalPluggableDatabase(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -558,13 +561,14 @@ class ExternalPluggableDatabase(pulumi.CustomResource):
             },
             source_id=oci_database_source["test_source"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ExternalPluggableDatabases can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Database/externalPluggableDatabase:ExternalPluggableDatabase test_external_pluggable_database "id"
+        $ pulumi import oci:Database/externalPluggableDatabase:ExternalPluggableDatabase test_external_pluggable_database "id"
         ```
 
         :param str resource_name: The name of the resource.

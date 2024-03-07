@@ -18,6 +18,7 @@ namespace Pulumi.Oci.Dns
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -36,13 +37,14 @@ namespace Pulumi.Oci.Dns
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// ActionCreateZoneFromZoneFile can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Dns/actionCreateZoneFromZoneFile:ActionCreateZoneFromZoneFile test_action_create_zone_from_zone_file "id"
+    /// $ pulumi import oci:Dns/actionCreateZoneFromZoneFile:ActionCreateZoneFromZoneFile test_action_create_zone_from_zone_file "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Dns/actionCreateZoneFromZoneFile:ActionCreateZoneFromZoneFile")]

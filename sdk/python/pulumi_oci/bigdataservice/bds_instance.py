@@ -981,7 +981,7 @@ class BdsInstance(pulumi.CustomResource):
         BdsInstances can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:BigDataService/bdsInstance:BdsInstance test_bds_instance "id"
+        $ pulumi import oci:BigDataService/bdsInstance:BdsInstance test_bds_instance "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -1026,7 +1026,7 @@ class BdsInstance(pulumi.CustomResource):
         BdsInstances can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:BigDataService/bdsInstance:BdsInstance test_bds_instance "id"
+        $ pulumi import oci:BigDataService/bdsInstance:BdsInstance test_bds_instance "id"
         ```
 
         :param str resource_name: The name of the resource.

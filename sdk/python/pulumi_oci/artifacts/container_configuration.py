@@ -110,19 +110,21 @@ class ContainerConfiguration(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
 
         test_container_configuration = oci.artifacts.ContainerConfiguration("testContainerConfiguration")
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ContainerConfiguration can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Artifacts/containerConfiguration:ContainerConfiguration test_container_configuration "container/configuration/compartmentId/{compartmentId}"
+        $ pulumi import oci:Artifacts/containerConfiguration:ContainerConfiguration test_container_configuration "container/configuration/compartmentId/{compartmentId}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -140,19 +142,21 @@ class ContainerConfiguration(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
 
         test_container_configuration = oci.artifacts.ContainerConfiguration("testContainerConfiguration")
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ContainerConfiguration can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Artifacts/containerConfiguration:ContainerConfiguration test_container_configuration "container/configuration/compartmentId/{compartmentId}"
+        $ pulumi import oci:Artifacts/containerConfiguration:ContainerConfiguration test_container_configuration "container/configuration/compartmentId/{compartmentId}"
         ```
 
         :param str resource_name: The name of the resource.

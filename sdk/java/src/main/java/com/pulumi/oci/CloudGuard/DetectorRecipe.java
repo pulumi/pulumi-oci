@@ -28,7 +28,7 @@ import javax.annotation.Nullable;
  * DetectorRecipes can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:CloudGuard/detectorRecipe:DetectorRecipe test_detector_recipe &#34;id&#34;
+ * $ pulumi import oci:CloudGuard/detectorRecipe:DetectorRecipe test_detector_recipe &#34;id&#34;
  * ```
  * 
  */

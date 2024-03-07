@@ -36,6 +36,8 @@ import javax.annotation.Nullable;
  * be unique, and you can change it. Avoid entering confidential information.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -70,13 +72,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * Cpes can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Core/cpe:Cpe test_cpe &#34;id&#34;
+ * $ pulumi import oci:Core/cpe:Cpe test_cpe &#34;id&#34;
  * ```
  * 
  */

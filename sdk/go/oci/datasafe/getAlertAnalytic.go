@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -48,6 +49,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetAlertAnalytic(ctx *pulumi.Context, args *GetAlertAnalyticArgs, opts ...pulumi.InvokeOption) (*GetAlertAnalyticResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAlertAnalyticResult

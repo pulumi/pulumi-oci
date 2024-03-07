@@ -330,6 +330,7 @@ class Quota(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -350,13 +351,14 @@ class Quota(pulumi.CustomResource):
                 related_resource_id=oci_limits_related_resource["test_related_resource"]["id"],
             )])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Quotas can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Limits/quota:Quota test_quota "id"
+        $ pulumi import oci:Limits/quota:Quota test_quota "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -385,6 +387,7 @@ class Quota(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -405,13 +408,14 @@ class Quota(pulumi.CustomResource):
                 related_resource_id=oci_limits_related_resource["test_related_resource"]["id"],
             )])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Quotas can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Limits/quota:Quota test_quota "id"
+        $ pulumi import oci:Limits/quota:Quota test_quota "id"
         ```
 
         :param str resource_name: The name of the resource.

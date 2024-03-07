@@ -16,10 +16,9 @@ namespace Pulumi.Oci.Jms
         /// 
         /// Retrieve a Java download report with the specified identifier.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,8 +34,7 @@ namespace Pulumi.Oci.Jms
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetJavaDownloadsJavaDownloadReportContentResult> InvokeAsync(GetJavaDownloadsJavaDownloadReportContentArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetJavaDownloadsJavaDownloadReportContentResult>("oci:Jms/getJavaDownloadsJavaDownloadReportContent:getJavaDownloadsJavaDownloadReportContent", args ?? new GetJavaDownloadsJavaDownloadReportContentArgs(), options.WithDefaults());
@@ -46,10 +44,9 @@ namespace Pulumi.Oci.Jms
         /// 
         /// Retrieve a Java download report with the specified identifier.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -65,8 +62,7 @@ namespace Pulumi.Oci.Jms
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetJavaDownloadsJavaDownloadReportContentResult> Invoke(GetJavaDownloadsJavaDownloadReportContentInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetJavaDownloadsJavaDownloadReportContentResult>("oci:Jms/getJavaDownloadsJavaDownloadReportContent:getJavaDownloadsJavaDownloadReportContent", args ?? new GetJavaDownloadsJavaDownloadReportContentInvokeArgs(), options.WithDefaults());

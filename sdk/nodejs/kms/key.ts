@@ -21,7 +21,7 @@ import * as utilities from "../utilities";
  * Keys can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Kms/key:Key test_key "managementEndpoint/{managementEndpoint}/keys/{keyId}"
+ * $ pulumi import oci:Kms/key:Key test_key "managementEndpoint/{managementEndpoint}/keys/{keyId}"
  * ```
  */
 export class Key extends pulumi.CustomResource {

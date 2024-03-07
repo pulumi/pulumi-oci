@@ -602,6 +602,7 @@ class MountTarget(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -639,13 +640,14 @@ class MountTarget(pulumi.CustomResource):
             ),
             nsg_ids=var["mount_target_nsg_ids"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         MountTargets can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:FileStorage/mountTarget:MountTarget test_mount_target "id"
+        $ pulumi import oci:FileStorage/mountTarget:MountTarget test_mount_target "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -721,6 +723,7 @@ class MountTarget(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -758,13 +761,14 @@ class MountTarget(pulumi.CustomResource):
             ),
             nsg_ids=var["mount_target_nsg_ids"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         MountTargets can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:FileStorage/mountTarget:MountTarget test_mount_target "id"
+        $ pulumi import oci:FileStorage/mountTarget:MountTarget test_mount_target "id"
         ```
 
         :param str resource_name: The name of the resource.

@@ -16,6 +16,7 @@ namespace Pulumi.Oci.AiVision
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -70,13 +71,14 @@ namespace Pulumi.Oci.AiVision
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// Models can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:AiVision/model:Model test_model "id"
+    /// $ pulumi import oci:AiVision/model:Model test_model "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:AiVision/model:Model")]

@@ -187,6 +187,7 @@ class LogAnalyticsUnprocessedDataBucketManagement(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -195,6 +196,7 @@ class LogAnalyticsUnprocessedDataBucketManagement(pulumi.CustomResource):
             bucket=var["log_analytics_unprocessed_data_bucket_management_bucket"],
             namespace=var["log_analytics_unprocessed_data_bucket_management_namespace"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -225,6 +227,7 @@ class LogAnalyticsUnprocessedDataBucketManagement(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -233,6 +236,7 @@ class LogAnalyticsUnprocessedDataBucketManagement(pulumi.CustomResource):
             bucket=var["log_analytics_unprocessed_data_bucket_management_bucket"],
             namespace=var["log_analytics_unprocessed_data_bucket_management_namespace"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 

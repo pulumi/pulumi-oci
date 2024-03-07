@@ -182,12 +182,14 @@ def get_email_domain(email_domain_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_email_domain = oci.Email.get_email_domain(email_domain_id=oci_email_email_domain["test_email_domain"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str email_domain_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this email domain.
@@ -222,12 +224,14 @@ def get_email_domain_output(email_domain_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_email_domain = oci.Email.get_email_domain(email_domain_id=oci_email_email_domain["test_email_domain"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str email_domain_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this email domain.

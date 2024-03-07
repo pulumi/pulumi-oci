@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -30,6 +31,7 @@ import * as utilities from "../utilities";
  *     signingAlgorithm: _var.container_image_signature_signing_algorithm,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getContainerSignatures(args: GetContainerSignaturesArgs, opts?: pulumi.InvokeOptions): Promise<GetContainerSignaturesResult> {
 
@@ -145,6 +147,7 @@ export interface GetContainerSignaturesResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -162,6 +165,7 @@ export interface GetContainerSignaturesResult {
  *     signingAlgorithm: _var.container_image_signature_signing_algorithm,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getContainerSignaturesOutput(args: GetContainerSignaturesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetContainerSignaturesResult> {
     return pulumi.output(args).apply((a: any) => getContainerSignatures(a, opts))

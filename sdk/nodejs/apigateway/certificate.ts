@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -29,13 +30,14 @@ import * as utilities from "../utilities";
  *     privateKey: _var.certificate_private_key,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * Certificates can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:ApiGateway/certificate:Certificate test_certificate "id"
+ * $ pulumi import oci:ApiGateway/certificate:Certificate test_certificate "id"
  * ```
  */
 export class Certificate extends pulumi.CustomResource {

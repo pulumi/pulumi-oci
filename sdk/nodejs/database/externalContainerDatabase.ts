@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -26,13 +27,14 @@ import * as utilities from "../utilities";
  *     },
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * ExternalContainerDatabases can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Database/externalContainerDatabase:ExternalContainerDatabase test_external_container_database "id"
+ * $ pulumi import oci:Database/externalContainerDatabase:ExternalContainerDatabase test_external_container_database "id"
  * ```
  */
 export class ExternalContainerDatabase extends pulumi.CustomResource {

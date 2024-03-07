@@ -25,6 +25,8 @@ import javax.annotation.Nullable;
  * Creates a new Redis cluster. A Redis cluster is a memory-based storage solution. For more information, see [OCI Caching Service with Redis](https://docs.cloud.oracle.com/iaas/Content/redis/home.htm).
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -60,13 +62,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * RedisClusters can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Redis/redisCluster:RedisCluster test_redis_cluster &#34;id&#34;
+ * $ pulumi import oci:Redis/redisCluster:RedisCluster test_redis_cluster &#34;id&#34;
  * ```
  * 
  */

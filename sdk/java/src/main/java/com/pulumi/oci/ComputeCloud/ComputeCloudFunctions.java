@@ -30,6 +30,8 @@ public final class ComputeCloudFunctions {
      * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -58,6 +60,7 @@ public final class ComputeCloudFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAtCustomerCccInfrastructureResult> getAtCustomerCccInfrastructure(GetAtCustomerCccInfrastructureArgs args) {
@@ -70,6 +73,8 @@ public final class ComputeCloudFunctions {
      * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -98,6 +103,7 @@ public final class ComputeCloudFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAtCustomerCccInfrastructureResult> getAtCustomerCccInfrastructurePlain(GetAtCustomerCccInfrastructurePlainArgs args) {
@@ -110,6 +116,8 @@ public final class ComputeCloudFunctions {
      * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -138,6 +146,7 @@ public final class ComputeCloudFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAtCustomerCccInfrastructureResult> getAtCustomerCccInfrastructure(GetAtCustomerCccInfrastructureArgs args, InvokeOptions options) {
@@ -150,6 +159,8 @@ public final class ComputeCloudFunctions {
      * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -178,6 +189,7 @@ public final class ComputeCloudFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAtCustomerCccInfrastructureResult> getAtCustomerCccInfrastructurePlain(GetAtCustomerCccInfrastructurePlainArgs args, InvokeOptions options) {
@@ -189,6 +201,8 @@ public final class ComputeCloudFunctions {
      * Returns a list of Compute Cloud@Customer infrastructures.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -223,6 +237,7 @@ public final class ComputeCloudFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAtCustomerCccInfrastructuresResult> getAtCustomerCccInfrastructures() {
@@ -234,6 +249,8 @@ public final class ComputeCloudFunctions {
      * Returns a list of Compute Cloud@Customer infrastructures.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -268,6 +285,7 @@ public final class ComputeCloudFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAtCustomerCccInfrastructuresResult> getAtCustomerCccInfrastructuresPlain() {
@@ -279,6 +297,8 @@ public final class ComputeCloudFunctions {
      * Returns a list of Compute Cloud@Customer infrastructures.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -313,6 +333,7 @@ public final class ComputeCloudFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAtCustomerCccInfrastructuresResult> getAtCustomerCccInfrastructures(GetAtCustomerCccInfrastructuresArgs args) {
@@ -324,6 +345,8 @@ public final class ComputeCloudFunctions {
      * Returns a list of Compute Cloud@Customer infrastructures.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -358,6 +381,7 @@ public final class ComputeCloudFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAtCustomerCccInfrastructuresResult> getAtCustomerCccInfrastructuresPlain(GetAtCustomerCccInfrastructuresPlainArgs args) {
@@ -369,6 +393,8 @@ public final class ComputeCloudFunctions {
      * Returns a list of Compute Cloud@Customer infrastructures.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -403,6 +429,7 @@ public final class ComputeCloudFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAtCustomerCccInfrastructuresResult> getAtCustomerCccInfrastructures(GetAtCustomerCccInfrastructuresArgs args, InvokeOptions options) {
@@ -414,6 +441,8 @@ public final class ComputeCloudFunctions {
      * Returns a list of Compute Cloud@Customer infrastructures.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -448,6 +477,7 @@ public final class ComputeCloudFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAtCustomerCccInfrastructuresResult> getAtCustomerCccInfrastructuresPlain(GetAtCustomerCccInfrastructuresPlainArgs args, InvokeOptions options) {
@@ -460,6 +490,8 @@ public final class ComputeCloudFunctions {
      * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -488,6 +520,7 @@ public final class ComputeCloudFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAtCustomerCccUpgradeScheduleResult> getAtCustomerCccUpgradeSchedule(GetAtCustomerCccUpgradeScheduleArgs args) {
@@ -500,6 +533,8 @@ public final class ComputeCloudFunctions {
      * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -528,6 +563,7 @@ public final class ComputeCloudFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAtCustomerCccUpgradeScheduleResult> getAtCustomerCccUpgradeSchedulePlain(GetAtCustomerCccUpgradeSchedulePlainArgs args) {
@@ -540,6 +576,8 @@ public final class ComputeCloudFunctions {
      * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -568,6 +606,7 @@ public final class ComputeCloudFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAtCustomerCccUpgradeScheduleResult> getAtCustomerCccUpgradeSchedule(GetAtCustomerCccUpgradeScheduleArgs args, InvokeOptions options) {
@@ -580,6 +619,8 @@ public final class ComputeCloudFunctions {
      * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -608,6 +649,7 @@ public final class ComputeCloudFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAtCustomerCccUpgradeScheduleResult> getAtCustomerCccUpgradeSchedulePlain(GetAtCustomerCccUpgradeSchedulePlainArgs args, InvokeOptions options) {
@@ -619,6 +661,8 @@ public final class ComputeCloudFunctions {
      * Returns a list of Compute Cloud@Customer upgrade schedules.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -653,6 +697,7 @@ public final class ComputeCloudFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAtCustomerCccUpgradeSchedulesResult> getAtCustomerCccUpgradeSchedules() {
@@ -664,6 +709,8 @@ public final class ComputeCloudFunctions {
      * Returns a list of Compute Cloud@Customer upgrade schedules.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -698,6 +745,7 @@ public final class ComputeCloudFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAtCustomerCccUpgradeSchedulesResult> getAtCustomerCccUpgradeSchedulesPlain() {
@@ -709,6 +757,8 @@ public final class ComputeCloudFunctions {
      * Returns a list of Compute Cloud@Customer upgrade schedules.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -743,6 +793,7 @@ public final class ComputeCloudFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAtCustomerCccUpgradeSchedulesResult> getAtCustomerCccUpgradeSchedules(GetAtCustomerCccUpgradeSchedulesArgs args) {
@@ -754,6 +805,8 @@ public final class ComputeCloudFunctions {
      * Returns a list of Compute Cloud@Customer upgrade schedules.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -788,6 +841,7 @@ public final class ComputeCloudFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAtCustomerCccUpgradeSchedulesResult> getAtCustomerCccUpgradeSchedulesPlain(GetAtCustomerCccUpgradeSchedulesPlainArgs args) {
@@ -799,6 +853,8 @@ public final class ComputeCloudFunctions {
      * Returns a list of Compute Cloud@Customer upgrade schedules.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -833,6 +889,7 @@ public final class ComputeCloudFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAtCustomerCccUpgradeSchedulesResult> getAtCustomerCccUpgradeSchedules(GetAtCustomerCccUpgradeSchedulesArgs args, InvokeOptions options) {
@@ -844,6 +901,8 @@ public final class ComputeCloudFunctions {
      * Returns a list of Compute Cloud@Customer upgrade schedules.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -878,6 +937,7 @@ public final class ComputeCloudFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAtCustomerCccUpgradeSchedulesResult> getAtCustomerCccUpgradeSchedulesPlain(GetAtCustomerCccUpgradeSchedulesPlainArgs args, InvokeOptions options) {

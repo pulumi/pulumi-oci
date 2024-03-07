@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -67,15 +68,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // DeployArtifacts can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:DevOps/deployArtifact:DeployArtifact test_deploy_artifact "id"
-//
+// $ pulumi import oci:DevOps/deployArtifact:DeployArtifact test_deploy_artifact "id"
 // ```
 type DeployArtifact struct {
 	pulumi.CustomResourceState

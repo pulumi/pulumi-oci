@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -43,15 +44,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Namespace can be imported using the `namespace`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:LogAnalytics/namespace:Namespace test_namespace "namespace"
-//
+// $ pulumi import oci:LogAnalytics/namespace:Namespace test_namespace "namespace"
 // ```
 type Namespace struct {
 	pulumi.CustomResourceState

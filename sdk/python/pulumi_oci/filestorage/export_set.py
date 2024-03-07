@@ -259,6 +259,7 @@ class ExportSet(pulumi.CustomResource):
         """
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -269,13 +270,14 @@ class ExportSet(pulumi.CustomResource):
             max_fs_stat_bytes="23843202333",
             max_fs_stat_files="223442")
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ExportSets can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:FileStorage/exportSet:ExportSet test_export_set "id"
+        $ pulumi import oci:FileStorage/exportSet:ExportSet test_export_set "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -297,6 +299,7 @@ class ExportSet(pulumi.CustomResource):
         """
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -307,13 +310,14 @@ class ExportSet(pulumi.CustomResource):
             max_fs_stat_bytes="23843202333",
             max_fs_stat_files="223442")
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ExportSets can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:FileStorage/exportSet:ExportSet test_export_set "id"
+        $ pulumi import oci:FileStorage/exportSet:ExportSet test_export_set "id"
         ```
 
         :param str resource_name: The name of the resource.

@@ -18,10 +18,9 @@ namespace Pulumi.Oci.Core
         /// public virtual circuit.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -38,8 +37,7 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetVirtualCircuitPublicPrefixesResult> InvokeAsync(GetVirtualCircuitPublicPrefixesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetVirtualCircuitPublicPrefixesResult>("oci:Core/getVirtualCircuitPublicPrefixes:getVirtualCircuitPublicPrefixes", args ?? new GetVirtualCircuitPublicPrefixesArgs(), options.WithDefaults());
@@ -51,10 +49,9 @@ namespace Pulumi.Oci.Core
         /// public virtual circuit.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -71,8 +68,7 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetVirtualCircuitPublicPrefixesResult> Invoke(GetVirtualCircuitPublicPrefixesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVirtualCircuitPublicPrefixesResult>("oci:Core/getVirtualCircuitPublicPrefixes:getVirtualCircuitPublicPrefixes", args ?? new GetVirtualCircuitPublicPrefixesInvokeArgs(), options.WithDefaults());

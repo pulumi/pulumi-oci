@@ -46,6 +46,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -81,15 +82,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // IpSecConnections can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Core/ipsec:Ipsec test_ip_sec_connection "id"
-//
+// $ pulumi import oci:Core/ipsec:Ipsec test_ip_sec_connection "id"
 // ```
 type Ipsec struct {
 	pulumi.CustomResourceState

@@ -18,10 +18,9 @@ namespace Pulumi.Oci.Core
         /// list by specifying an instance OCID, boot volume OCID, or both.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -40,9 +39,8 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// For more detailed implementation refer the instance example
-        /// {{% /example %}}
-        /// {{% /examples %}}
         /// </summary>
         public static Task<GetBootVolumeAttachmentsResult> InvokeAsync(GetBootVolumeAttachmentsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetBootVolumeAttachmentsResult>("oci:Core/getBootVolumeAttachments:getBootVolumeAttachments", args ?? new GetBootVolumeAttachmentsArgs(), options.WithDefaults());
@@ -54,10 +52,9 @@ namespace Pulumi.Oci.Core
         /// list by specifying an instance OCID, boot volume OCID, or both.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -76,9 +73,8 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// For more detailed implementation refer the instance example
-        /// {{% /example %}}
-        /// {{% /examples %}}
         /// </summary>
         public static Output<GetBootVolumeAttachmentsResult> Invoke(GetBootVolumeAttachmentsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetBootVolumeAttachmentsResult>("oci:Core/getBootVolumeAttachments:getBootVolumeAttachments", args ?? new GetBootVolumeAttachmentsInvokeArgs(), options.WithDefaults());

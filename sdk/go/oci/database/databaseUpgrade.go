@@ -20,16 +20,25 @@ import (
 //
 //	`db_home.0.db_version` is updated to target DB version specified in the upgrade request.
 //	To avoid a force new create of the dbHome on the next apply, add the following to the resource
-//	```	lifecycle {
-//	   	ignore_changes = [
-//	   		db_home.0.db_version,
-//	   	]
+//	<!--Start PulumiCodeChooser -->
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			return nil
+//		})
 //	}
-//	```
 //
-// ## Import
-//
-// Import is not supported for this resource.
+// ```
+// <!--End PulumiCodeChooser -->
 type DatabaseUpgrade struct {
 	pulumi.CustomResourceState
 

@@ -15,6 +15,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -33,13 +34,14 @@ import * as utilities from "../utilities";
  *     schedule: _var.user_assessment_schedule,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * UserAssessments can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:DataSafe/userAssessment:UserAssessment test_user_assessment "id"
+ * $ pulumi import oci:DataSafe/userAssessment:UserAssessment test_user_assessment "id"
  * ```
  */
 export class UserAssessment extends pulumi.CustomResource {

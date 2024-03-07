@@ -132,6 +132,7 @@ def get_fusion_environment_refresh_activities(display_name: Optional[str] = None
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -142,6 +143,7 @@ def get_fusion_environment_refresh_activities(display_name: Optional[str] = None
         time_expected_finish_less_than_or_equal_to=var["fusion_environment_refresh_activity_time_expected_finish_less_than_or_equal_to"],
         time_scheduled_start_greater_than_or_equal_to=var["fusion_environment_refresh_activity_time_scheduled_start_greater_than_or_equal_to"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str display_name: A filter to return only resources that match the entire display name given.
@@ -186,6 +188,7 @@ def get_fusion_environment_refresh_activities_output(display_name: Optional[pulu
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -196,6 +199,7 @@ def get_fusion_environment_refresh_activities_output(display_name: Optional[pulu
         time_expected_finish_less_than_or_equal_to=var["fusion_environment_refresh_activity_time_expected_finish_less_than_or_equal_to"],
         time_scheduled_start_greater_than_or_equal_to=var["fusion_environment_refresh_activity_time_scheduled_start_greater_than_or_equal_to"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str display_name: A filter to return only resources that match the entire display name given.

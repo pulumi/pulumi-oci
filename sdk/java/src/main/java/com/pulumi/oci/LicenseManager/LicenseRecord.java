@@ -23,6 +23,8 @@ import javax.annotation.Nullable;
  * Creates a new license record for the given product license ID.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -60,13 +62,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * LicenseRecords can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:LicenseManager/licenseRecord:LicenseRecord test_license_record &#34;id&#34;
+ * $ pulumi import oci:LicenseManager/licenseRecord:LicenseRecord test_license_record &#34;id&#34;
  * ```
  * 
  */

@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * SqlEndpoints can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:DataFlow/sqlEndpoint:SqlEndpoint test_sql_endpoint "id"
+ * $ pulumi import oci:DataFlow/sqlEndpoint:SqlEndpoint test_sql_endpoint "id"
  * ```
  */
 export class SqlEndpoint extends pulumi.CustomResource {

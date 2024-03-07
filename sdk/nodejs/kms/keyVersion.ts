@@ -22,7 +22,7 @@ import * as utilities from "../utilities";
  * KeyVersions can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Kms/keyVersion:KeyVersion test_key_version "managementEndpoint/{managementEndpoint}/keys/{keyId}/keyVersions/{keyVersionId}"
+ * $ pulumi import oci:Kms/keyVersion:KeyVersion test_key_version "managementEndpoint/{managementEndpoint}/keys/{keyId}/keyVersions/{keyVersionId}"
  * ```
  */
 export class KeyVersion extends pulumi.CustomResource {

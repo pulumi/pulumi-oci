@@ -532,6 +532,7 @@ class WorkspaceApplicationSchedule(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -569,13 +570,14 @@ class WorkspaceApplicationSchedule(pulumi.CustomResource):
             ),
             timezone=var["workspace_application_schedule_timezone"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         WorkspaceApplicationSchedules can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataIntegration/workspaceApplicationSchedule:WorkspaceApplicationSchedule test_workspace_application_schedule "workspaces/{workspaceId}/applications/{applicationKey}/schedules/{scheduleKey}"
+        $ pulumi import oci:DataIntegration/workspaceApplicationSchedule:WorkspaceApplicationSchedule test_workspace_application_schedule "workspaces/{workspaceId}/applications/{applicationKey}/schedules/{scheduleKey}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -611,6 +613,7 @@ class WorkspaceApplicationSchedule(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -648,13 +651,14 @@ class WorkspaceApplicationSchedule(pulumi.CustomResource):
             ),
             timezone=var["workspace_application_schedule_timezone"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         WorkspaceApplicationSchedules can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataIntegration/workspaceApplicationSchedule:WorkspaceApplicationSchedule test_workspace_application_schedule "workspaces/{workspaceId}/applications/{applicationKey}/schedules/{scheduleKey}"
+        $ pulumi import oci:DataIntegration/workspaceApplicationSchedule:WorkspaceApplicationSchedule test_workspace_application_schedule "workspaces/{workspaceId}/applications/{applicationKey}/schedules/{scheduleKey}"
         ```
 
         :param str resource_name: The name of the resource.

@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -101,15 +102,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // TargetDatabases can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:DataSafe/targetDatabase:TargetDatabase test_target_database "id"
-//
+// $ pulumi import oci:DataSafe/targetDatabase:TargetDatabase test_target_database "id"
 // ```
 type TargetDatabase struct {
 	pulumi.CustomResourceState

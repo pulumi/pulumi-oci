@@ -440,12 +440,14 @@ def get_exsi_host(esxi_host_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_esxi_host = oci.Ocvp.get_exsi_host(esxi_host_id=oci_ocvp_esxi_host["test_esxi_host"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str esxi_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host.
@@ -500,12 +502,14 @@ def get_exsi_host_output(esxi_host_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_esxi_host = oci.Ocvp.get_exsi_host(esxi_host_id=oci_ocvp_esxi_host["test_esxi_host"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str esxi_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host.

@@ -379,7 +379,7 @@ class Recommendation(pulumi.CustomResource):
         Recommendations can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Optimizer/recommendation:Recommendation test_recommendation "id"
+        $ pulumi import oci:Optimizer/recommendation:Recommendation test_recommendation "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -415,7 +415,7 @@ class Recommendation(pulumi.CustomResource):
         Recommendations can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Optimizer/recommendation:Recommendation test_recommendation "id"
+        $ pulumi import oci:Optimizer/recommendation:Recommendation test_recommendation "id"
         ```
 
         :param str resource_name: The name of the resource.

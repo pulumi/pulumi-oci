@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,6 +25,7 @@ import * as utilities from "../utilities";
  *     states: _var.web_app_acceleration_policy_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAppAccelerationPolicies(args: GetAppAccelerationPoliciesArgs, opts?: pulumi.InvokeOptions): Promise<GetAppAccelerationPoliciesResult> {
 
@@ -93,6 +95,7 @@ export interface GetAppAccelerationPoliciesResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -104,6 +107,7 @@ export interface GetAppAccelerationPoliciesResult {
  *     states: _var.web_app_acceleration_policy_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAppAccelerationPoliciesOutput(args: GetAppAccelerationPoliciesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppAccelerationPoliciesResult> {
     return pulumi.output(args).apply((a: any) => getAppAccelerationPolicies(a, opts))

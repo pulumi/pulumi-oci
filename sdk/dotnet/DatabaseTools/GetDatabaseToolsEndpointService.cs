@@ -16,10 +16,9 @@ namespace Pulumi.Oci.DatabaseTools
         /// 
         /// Gets details for the specified Database Tools endpoint service.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,8 +34,7 @@ namespace Pulumi.Oci.DatabaseTools
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDatabaseToolsEndpointServiceResult> InvokeAsync(GetDatabaseToolsEndpointServiceArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDatabaseToolsEndpointServiceResult>("oci:DatabaseTools/getDatabaseToolsEndpointService:getDatabaseToolsEndpointService", args ?? new GetDatabaseToolsEndpointServiceArgs(), options.WithDefaults());
@@ -46,10 +44,9 @@ namespace Pulumi.Oci.DatabaseTools
         /// 
         /// Gets details for the specified Database Tools endpoint service.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -65,8 +62,7 @@ namespace Pulumi.Oci.DatabaseTools
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDatabaseToolsEndpointServiceResult> Invoke(GetDatabaseToolsEndpointServiceInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDatabaseToolsEndpointServiceResult>("oci:DatabaseTools/getDatabaseToolsEndpointService:getDatabaseToolsEndpointService", args ?? new GetDatabaseToolsEndpointServiceInvokeArgs(), options.WithDefaults());

@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -58,15 +59,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // BuildPipelines can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:DevOps/buildPipeline:BuildPipeline test_build_pipeline "id"
-//
+// $ pulumi import oci:DevOps/buildPipeline:BuildPipeline test_build_pipeline "id"
 // ```
 type BuildPipeline struct {
 	pulumi.CustomResourceState

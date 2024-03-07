@@ -25,6 +25,8 @@ import javax.annotation.Nullable;
  * Export Metadata Object
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -61,13 +63,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * WorkspaceExportRequests can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:DataIntegration/workspaceExportRequest:WorkspaceExportRequest test_workspace_export_request &#34;workspaces/{workspaceId}/exportRequests/{exportRequestKey}&#34;
+ * $ pulumi import oci:DataIntegration/workspaceExportRequest:WorkspaceExportRequest test_workspace_export_request &#34;workspaces/{workspaceId}/exportRequests/{exportRequestKey}&#34;
  * ```
  * 
  */

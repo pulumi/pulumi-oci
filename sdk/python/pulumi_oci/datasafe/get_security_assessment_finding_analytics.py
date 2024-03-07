@@ -171,6 +171,7 @@ def get_security_assessment_finding_analytics(access_level: Optional[str] = None
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -184,6 +185,7 @@ def get_security_assessment_finding_analytics(access_level: Optional[str] = None
         severity=var["security_assessment_finding_analytic_severity"],
         top_finding_status=var["security_assessment_finding_analytic_top_finding_status"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
@@ -249,6 +251,7 @@ def get_security_assessment_finding_analytics_output(access_level: Optional[pulu
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -262,6 +265,7 @@ def get_security_assessment_finding_analytics_output(access_level: Optional[pulu
         severity=var["security_assessment_finding_analytic_severity"],
         top_finding_status=var["security_assessment_finding_analytic_top_finding_status"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.

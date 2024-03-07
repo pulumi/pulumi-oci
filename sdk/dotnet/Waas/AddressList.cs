@@ -16,6 +16,7 @@ namespace Pulumi.Oci.Waas
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -41,13 +42,14 @@ namespace Pulumi.Oci.Waas
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// AddressLists can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Waas/addressList:AddressList test_address_list "id"
+    /// $ pulumi import oci:Waas/addressList:AddressList test_address_list "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Waas/addressList:AddressList")]

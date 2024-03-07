@@ -16,6 +16,7 @@ namespace Pulumi.Oci.LogAnalytics
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -70,13 +71,14 @@ namespace Pulumi.Oci.LogAnalytics
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// NamespaceIngestTimeRules can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:LogAnalytics/namespaceIngestTimeRule:NamespaceIngestTimeRule test_namespace_ingest_time_rule "namespaces/{namespaceName}/ingestTimeRules/{ingestTimeRuleId}"
+    /// $ pulumi import oci:LogAnalytics/namespaceIngestTimeRule:NamespaceIngestTimeRule test_namespace_ingest_time_rule "namespaces/{namespaceName}/ingestTimeRules/{ingestTimeRuleId}"
     /// ```
     /// </summary>
     [OciResourceType("oci:LogAnalytics/namespaceIngestTimeRule:NamespaceIngestTimeRule")]

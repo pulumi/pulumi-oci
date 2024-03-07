@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -42,6 +43,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetRemediationRunStages(ctx *pulumi.Context, args *GetRemediationRunStagesArgs, opts ...pulumi.InvokeOption) (*GetRemediationRunStagesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetRemediationRunStagesResult

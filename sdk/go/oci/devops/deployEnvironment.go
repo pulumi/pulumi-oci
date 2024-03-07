@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -67,15 +68,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // DeployEnvironments can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:DevOps/deployEnvironment:DeployEnvironment test_deploy_environment "id"
-//
+// $ pulumi import oci:DevOps/deployEnvironment:DeployEnvironment test_deploy_environment "id"
 // ```
 type DeployEnvironment struct {
 	pulumi.CustomResourceState

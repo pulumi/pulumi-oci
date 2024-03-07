@@ -461,38 +461,6 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
      * 
      * **Metadata Example**
      * 
-     * **Getting Metadata on the Instance**
-     * 
-     * To get information about your instance, connect to the instance using SSH and issue any of the following GET requests:
-     * ```java
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *     }
-     * }
-     * ```
-     * 
-     * You&#39;ll get back a response that includes all the instance information; only the metadata information; or the metadata information for the specified key name, respectively.
-     * 
-     * The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
-     * 
-     * **Note:** Both the &#39;user_data&#39; and &#39;ssh_authorized_keys&#39; fields cannot be changed after an instance has launched. Any request which updates, removes, or adds either of these fields will be rejected. You must provide the same values for &#39;user_data&#39; and &#39;ssh_authorized_keys&#39; that already exist on the instance.
-     * 
      */
     @Import(name="metadata")
     private @Nullable Output<Map<String,Object>> metadata;
@@ -513,38 +481,6 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
      * **&#34;user_data&#34;** - Provide your own base64-encoded data to be used by Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For information about how to take advantage of user data, see the [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
      * 
      * **Metadata Example**
-     * 
-     * **Getting Metadata on the Instance**
-     * 
-     * To get information about your instance, connect to the instance using SSH and issue any of the following GET requests:
-     * ```java
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *     }
-     * }
-     * ```
-     * 
-     * You&#39;ll get back a response that includes all the instance information; only the metadata information; or the metadata information for the specified key name, respectively.
-     * 
-     * The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
-     * 
-     * **Note:** Both the &#39;user_data&#39; and &#39;ssh_authorized_keys&#39; fields cannot be changed after an instance has launched. Any request which updates, removes, or adds either of these fields will be rejected. You must provide the same values for &#39;user_data&#39; and &#39;ssh_authorized_keys&#39; that already exist on the instance.
      * 
      */
     public Optional<Output<Map<String,Object>>> metadata() {
@@ -1476,38 +1412,6 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
          * 
          * **Metadata Example**
          * 
-         * **Getting Metadata on the Instance**
-         * 
-         * To get information about your instance, connect to the instance using SSH and issue any of the following GET requests:
-         * ```java
-         * package generated_program;
-         * 
-         * import com.pulumi.Context;
-         * import com.pulumi.Pulumi;
-         * import com.pulumi.core.Output;
-         * import java.util.List;
-         * import java.util.ArrayList;
-         * import java.util.Map;
-         * import java.io.File;
-         * import java.nio.file.Files;
-         * import java.nio.file.Paths;
-         * 
-         * public class App {
-         *     public static void main(String[] args) {
-         *         Pulumi.run(App::stack);
-         *     }
-         * 
-         *     public static void stack(Context ctx) {
-         *     }
-         * }
-         * ```
-         * 
-         * You&#39;ll get back a response that includes all the instance information; only the metadata information; or the metadata information for the specified key name, respectively.
-         * 
-         * The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
-         * 
-         * **Note:** Both the &#39;user_data&#39; and &#39;ssh_authorized_keys&#39; fields cannot be changed after an instance has launched. Any request which updates, removes, or adds either of these fields will be rejected. You must provide the same values for &#39;user_data&#39; and &#39;ssh_authorized_keys&#39; that already exist on the instance.
-         * 
          * @return builder
          * 
          */
@@ -1532,38 +1436,6 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
          * **&#34;user_data&#34;** - Provide your own base64-encoded data to be used by Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For information about how to take advantage of user data, see the [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
          * 
          * **Metadata Example**
-         * 
-         * **Getting Metadata on the Instance**
-         * 
-         * To get information about your instance, connect to the instance using SSH and issue any of the following GET requests:
-         * ```java
-         * package generated_program;
-         * 
-         * import com.pulumi.Context;
-         * import com.pulumi.Pulumi;
-         * import com.pulumi.core.Output;
-         * import java.util.List;
-         * import java.util.ArrayList;
-         * import java.util.Map;
-         * import java.io.File;
-         * import java.nio.file.Files;
-         * import java.nio.file.Paths;
-         * 
-         * public class App {
-         *     public static void main(String[] args) {
-         *         Pulumi.run(App::stack);
-         *     }
-         * 
-         *     public static void stack(Context ctx) {
-         *     }
-         * }
-         * ```
-         * 
-         * You&#39;ll get back a response that includes all the instance information; only the metadata information; or the metadata information for the specified key name, respectively.
-         * 
-         * The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
-         * 
-         * **Note:** Both the &#39;user_data&#39; and &#39;ssh_authorized_keys&#39; fields cannot be changed after an instance has launched. Any request which updates, removes, or adds either of these fields will be rejected. You must provide the same values for &#39;user_data&#39; and &#39;ssh_authorized_keys&#39; that already exist on the instance.
          * 
          * @return builder
          * 

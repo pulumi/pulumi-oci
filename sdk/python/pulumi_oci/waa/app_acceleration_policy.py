@@ -368,6 +368,7 @@ class AppAccelerationPolicy(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -391,13 +392,14 @@ class AppAccelerationPolicy(pulumi.CustomResource):
             ),
             system_tags=var["web_app_acceleration_policy_system_tags"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         WebAppAccelerationPolicies can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Waa/appAccelerationPolicy:AppAccelerationPolicy test_web_app_acceleration_policy "id"
+        $ pulumi import oci:Waa/appAccelerationPolicy:AppAccelerationPolicy test_web_app_acceleration_policy "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -431,6 +433,7 @@ class AppAccelerationPolicy(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -454,13 +457,14 @@ class AppAccelerationPolicy(pulumi.CustomResource):
             ),
             system_tags=var["web_app_acceleration_policy_system_tags"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         WebAppAccelerationPolicies can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Waa/appAccelerationPolicy:AppAccelerationPolicy test_web_app_acceleration_policy "id"
+        $ pulumi import oci:Waa/appAccelerationPolicy:AppAccelerationPolicy test_web_app_acceleration_policy "id"
         ```
 
         :param str resource_name: The name of the resource.

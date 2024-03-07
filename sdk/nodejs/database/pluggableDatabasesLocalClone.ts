@@ -14,6 +14,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -26,6 +27,7 @@ import * as utilities from "../utilities";
  *     targetTdeWalletPassword: _var.pluggable_databases_local_clone_target_tde_wallet_password,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *

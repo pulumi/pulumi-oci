@@ -24,6 +24,7 @@ namespace Pulumi.Oci.Monitoring
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -71,13 +72,14 @@ namespace Pulumi.Oci.Monitoring
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// Alarms can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Monitoring/alarm:Alarm test_alarm "id"
+    /// $ pulumi import oci:Monitoring/alarm:Alarm test_alarm "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Monitoring/alarm:Alarm")]

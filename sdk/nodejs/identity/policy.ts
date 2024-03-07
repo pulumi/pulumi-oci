@@ -23,6 +23,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -40,13 +41,14 @@ import * as utilities from "../utilities";
  *     versionDate: _var.policy_version_date,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * Policies can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Identity/policy:Policy test_policy "id"
+ * $ pulumi import oci:Identity/policy:Policy test_policy "id"
  * ```
  */
 export class Policy extends pulumi.CustomResource {

@@ -16,6 +16,7 @@ namespace Pulumi.Oci.GenerativeAi
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -44,13 +45,14 @@ namespace Pulumi.Oci.GenerativeAi
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// DedicatedAiClusters can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:GenerativeAi/dedicatedAiCluster:DedicatedAiCluster test_dedicated_ai_cluster "id"
+    /// $ pulumi import oci:GenerativeAi/dedicatedAiCluster:DedicatedAiCluster test_dedicated_ai_cluster "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:GenerativeAi/dedicatedAiCluster:DedicatedAiCluster")]

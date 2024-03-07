@@ -25,6 +25,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -51,6 +52,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetAlarmHistoryCollection(ctx *pulumi.Context, args *GetAlarmHistoryCollectionArgs, opts ...pulumi.InvokeOption) (*GetAlarmHistoryCollectionResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAlarmHistoryCollectionResult

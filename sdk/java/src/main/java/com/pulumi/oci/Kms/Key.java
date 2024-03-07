@@ -40,7 +40,7 @@ import javax.annotation.Nullable;
  * Keys can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Kms/key:Key test_key &#34;managementEndpoint/{managementEndpoint}/keys/{keyId}&#34;
+ * $ pulumi import oci:Kms/key:Key test_key &#34;managementEndpoint/{managementEndpoint}/keys/{keyId}&#34;
  * ```
  * 
  */

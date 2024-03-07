@@ -398,7 +398,7 @@ class ExternalDbNode(pulumi.CustomResource):
         ExternalDbNodes can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DatabaseManagement/externalDbNode:ExternalDbNode test_external_db_node "id"
+        $ pulumi import oci:DatabaseManagement/externalDbNode:ExternalDbNode test_external_db_node "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -428,7 +428,7 @@ class ExternalDbNode(pulumi.CustomResource):
         ExternalDbNodes can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DatabaseManagement/externalDbNode:ExternalDbNode test_external_db_node "id"
+        $ pulumi import oci:DatabaseManagement/externalDbNode:ExternalDbNode test_external_db_node "id"
         ```
 
         :param str resource_name: The name of the resource.

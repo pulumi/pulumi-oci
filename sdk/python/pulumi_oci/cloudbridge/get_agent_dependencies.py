@@ -135,6 +135,7 @@ def get_agent_dependencies(agent_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -145,6 +146,7 @@ def get_agent_dependencies(agent_id: Optional[str] = None,
         environment_id=oci_cloud_bridge_environment["test_environment"]["id"],
         state=var["agent_dependency_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str agent_id: A filter to return only resources that match the given Agent ID.
@@ -189,6 +191,7 @@ def get_agent_dependencies_output(agent_id: Optional[pulumi.Input[Optional[str]]
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -199,6 +202,7 @@ def get_agent_dependencies_output(agent_id: Optional[pulumi.Input[Optional[str]]
         environment_id=oci_cloud_bridge_environment["test_environment"]["id"],
         state=var["agent_dependency_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str agent_id: A filter to return only resources that match the given Agent ID.

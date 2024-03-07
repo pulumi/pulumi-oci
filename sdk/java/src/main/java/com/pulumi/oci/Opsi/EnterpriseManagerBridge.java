@@ -21,6 +21,8 @@ import javax.annotation.Nullable;
  * Create a Enterprise Manager bridge in Operations Insights.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -54,13 +56,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * EnterpriseManagerBridges can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Opsi/enterpriseManagerBridge:EnterpriseManagerBridge test_enterprise_manager_bridge &#34;id&#34;
+ * $ pulumi import oci:Opsi/enterpriseManagerBridge:EnterpriseManagerBridge test_enterprise_manager_bridge &#34;id&#34;
  * ```
  * 
  */

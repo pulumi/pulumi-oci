@@ -266,6 +266,7 @@ class FusionEnvironmentAdminUser(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -278,13 +279,14 @@ class FusionEnvironmentAdminUser(pulumi.CustomResource):
             password=var["fusion_environment_admin_user_password"],
             username=var["fusion_environment_admin_user_username"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         FusionEnvironmentAdminUsers can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:FusionApps/fusionEnvironmentAdminUser:FusionEnvironmentAdminUser test_fusion_environment_admin_user "fusionEnvironments/{fusionEnvironmentId}/adminUsers/{adminUsername}"
+        $ pulumi import oci:FusionApps/fusionEnvironmentAdminUser:FusionEnvironmentAdminUser test_fusion_environment_admin_user "fusionEnvironments/{fusionEnvironmentId}/adminUsers/{adminUsername}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -313,6 +315,7 @@ class FusionEnvironmentAdminUser(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -325,13 +328,14 @@ class FusionEnvironmentAdminUser(pulumi.CustomResource):
             password=var["fusion_environment_admin_user_password"],
             username=var["fusion_environment_admin_user_username"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         FusionEnvironmentAdminUsers can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:FusionApps/fusionEnvironmentAdminUser:FusionEnvironmentAdminUser test_fusion_environment_admin_user "fusionEnvironments/{fusionEnvironmentId}/adminUsers/{adminUsername}"
+        $ pulumi import oci:FusionApps/fusionEnvironmentAdminUser:FusionEnvironmentAdminUser test_fusion_environment_admin_user "fusionEnvironments/{fusionEnvironmentId}/adminUsers/{adminUsername}"
         ```
 
         :param str resource_name: The name of the resource.

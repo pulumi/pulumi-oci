@@ -21,6 +21,8 @@ import javax.annotation.Nullable;
  * Creates an IPv6 for the specified VNIC.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -54,13 +56,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * Ipv6 can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Core/ipv6:Ipv6 test_ipv6 &#34;id&#34;
+ * $ pulumi import oci:Core/ipv6:Ipv6 test_ipv6 &#34;id&#34;
  * ```
  * 
  */

@@ -102,6 +102,7 @@ def get_vantage_points(display_name: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -109,6 +110,7 @@ def get_vantage_points(display_name: Optional[str] = None,
     test_vantage_points = oci.HealthChecks.get_vantage_points(display_name=var["vantage_point_display_name"],
         name=var["vantage_point_name"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str display_name: Filters results that exactly match the `displayName` field.
@@ -141,6 +143,7 @@ def get_vantage_points_output(display_name: Optional[pulumi.Input[Optional[str]]
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -148,6 +151,7 @@ def get_vantage_points_output(display_name: Optional[pulumi.Input[Optional[str]]
     test_vantage_points = oci.HealthChecks.get_vantage_points(display_name=var["vantage_point_display_name"],
         name=var["vantage_point_name"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str display_name: Filters results that exactly match the `displayName` field.

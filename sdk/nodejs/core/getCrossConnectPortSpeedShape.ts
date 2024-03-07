@@ -15,6 +15,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,6 +24,7 @@ import * as utilities from "../utilities";
  *     compartmentId: _var.compartment_id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getCrossConnectPortSpeedShape(args: GetCrossConnectPortSpeedShapeArgs, opts?: pulumi.InvokeOptions): Promise<GetCrossConnectPortSpeedShapeResult> {
 
@@ -68,6 +70,7 @@ export interface GetCrossConnectPortSpeedShapeResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -76,6 +79,7 @@ export interface GetCrossConnectPortSpeedShapeResult {
  *     compartmentId: _var.compartment_id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getCrossConnectPortSpeedShapeOutput(args: GetCrossConnectPortSpeedShapeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCrossConnectPortSpeedShapeResult> {
     return pulumi.output(args).apply((a: any) => getCrossConnectPortSpeedShape(a, opts))

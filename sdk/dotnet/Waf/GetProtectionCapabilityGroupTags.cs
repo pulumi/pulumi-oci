@@ -17,10 +17,9 @@ namespace Pulumi.Oci.Waf
         /// Lists of available group tags filtered by query parameters.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -38,8 +37,7 @@ namespace Pulumi.Oci.Waf
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetProtectionCapabilityGroupTagsResult> InvokeAsync(GetProtectionCapabilityGroupTagsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetProtectionCapabilityGroupTagsResult>("oci:Waf/getProtectionCapabilityGroupTags:getProtectionCapabilityGroupTags", args ?? new GetProtectionCapabilityGroupTagsArgs(), options.WithDefaults());
@@ -50,10 +48,9 @@ namespace Pulumi.Oci.Waf
         /// Lists of available group tags filtered by query parameters.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -71,8 +68,7 @@ namespace Pulumi.Oci.Waf
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetProtectionCapabilityGroupTagsResult> Invoke(GetProtectionCapabilityGroupTagsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetProtectionCapabilityGroupTagsResult>("oci:Waf/getProtectionCapabilityGroupTags:getProtectionCapabilityGroupTags", args ?? new GetProtectionCapabilityGroupTagsInvokeArgs(), options.WithDefaults());

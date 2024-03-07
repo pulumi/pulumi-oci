@@ -148,6 +148,7 @@ def get_access_requests(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -159,6 +160,7 @@ def get_access_requests(compartment_id: Optional[str] = None,
         time_end=var["access_request_time_end"],
         time_start=var["access_request_time_start"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID of the compartment in which to list resources.
@@ -207,6 +209,7 @@ def get_access_requests_output(compartment_id: Optional[pulumi.Input[str]] = Non
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -218,6 +221,7 @@ def get_access_requests_output(compartment_id: Optional[pulumi.Input[str]] = Non
         time_end=var["access_request_time_end"],
         time_start=var["access_request_time_start"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID of the compartment in which to list resources.

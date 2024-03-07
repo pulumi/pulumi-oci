@@ -41,6 +41,8 @@ public final class ServiceCatalogFunctions {
      * Gets the details of the specified private application.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -69,6 +71,7 @@ public final class ServiceCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPrivateApplicationResult> getPrivateApplication(GetPrivateApplicationArgs args) {
@@ -80,6 +83,8 @@ public final class ServiceCatalogFunctions {
      * Gets the details of the specified private application.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -108,6 +113,7 @@ public final class ServiceCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPrivateApplicationResult> getPrivateApplicationPlain(GetPrivateApplicationPlainArgs args) {
@@ -119,6 +125,8 @@ public final class ServiceCatalogFunctions {
      * Gets the details of the specified private application.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -147,6 +155,7 @@ public final class ServiceCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPrivateApplicationResult> getPrivateApplication(GetPrivateApplicationArgs args, InvokeOptions options) {
@@ -158,6 +167,8 @@ public final class ServiceCatalogFunctions {
      * Gets the details of the specified private application.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -186,6 +197,7 @@ public final class ServiceCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPrivateApplicationResult> getPrivateApplicationPlain(GetPrivateApplicationPlainArgs args, InvokeOptions options) {
@@ -197,6 +209,8 @@ public final class ServiceCatalogFunctions {
      * Gets the details of a specific package within a given private application.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -225,6 +239,7 @@ public final class ServiceCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPrivateApplicationPackageResult> getPrivateApplicationPackage(GetPrivateApplicationPackageArgs args) {
@@ -236,6 +251,8 @@ public final class ServiceCatalogFunctions {
      * Gets the details of a specific package within a given private application.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -264,6 +281,7 @@ public final class ServiceCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPrivateApplicationPackageResult> getPrivateApplicationPackagePlain(GetPrivateApplicationPackagePlainArgs args) {
@@ -275,6 +293,8 @@ public final class ServiceCatalogFunctions {
      * Gets the details of a specific package within a given private application.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -303,6 +323,7 @@ public final class ServiceCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPrivateApplicationPackageResult> getPrivateApplicationPackage(GetPrivateApplicationPackageArgs args, InvokeOptions options) {
@@ -314,6 +335,8 @@ public final class ServiceCatalogFunctions {
      * Gets the details of a specific package within a given private application.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -342,6 +365,7 @@ public final class ServiceCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPrivateApplicationPackageResult> getPrivateApplicationPackagePlain(GetPrivateApplicationPackagePlainArgs args, InvokeOptions options) {
@@ -353,6 +377,8 @@ public final class ServiceCatalogFunctions {
      * Lists the packages in the specified private application.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -384,6 +410,7 @@ public final class ServiceCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPrivateApplicationPackagesResult> getPrivateApplicationPackages(GetPrivateApplicationPackagesArgs args) {
@@ -395,6 +422,8 @@ public final class ServiceCatalogFunctions {
      * Lists the packages in the specified private application.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -426,6 +455,7 @@ public final class ServiceCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPrivateApplicationPackagesResult> getPrivateApplicationPackagesPlain(GetPrivateApplicationPackagesPlainArgs args) {
@@ -437,6 +467,8 @@ public final class ServiceCatalogFunctions {
      * Lists the packages in the specified private application.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -468,6 +500,7 @@ public final class ServiceCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPrivateApplicationPackagesResult> getPrivateApplicationPackages(GetPrivateApplicationPackagesArgs args, InvokeOptions options) {
@@ -479,6 +512,8 @@ public final class ServiceCatalogFunctions {
      * Lists the packages in the specified private application.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -510,6 +545,7 @@ public final class ServiceCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPrivateApplicationPackagesResult> getPrivateApplicationPackagesPlain(GetPrivateApplicationPackagesPlainArgs args, InvokeOptions options) {
@@ -521,6 +557,8 @@ public final class ServiceCatalogFunctions {
      * Lists all the private applications in a given compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -551,6 +589,7 @@ public final class ServiceCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPrivateApplicationsResult> getPrivateApplications(GetPrivateApplicationsArgs args) {
@@ -562,6 +601,8 @@ public final class ServiceCatalogFunctions {
      * Lists all the private applications in a given compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -592,6 +633,7 @@ public final class ServiceCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPrivateApplicationsResult> getPrivateApplicationsPlain(GetPrivateApplicationsPlainArgs args) {
@@ -603,6 +645,8 @@ public final class ServiceCatalogFunctions {
      * Lists all the private applications in a given compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -633,6 +677,7 @@ public final class ServiceCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPrivateApplicationsResult> getPrivateApplications(GetPrivateApplicationsArgs args, InvokeOptions options) {
@@ -644,6 +689,8 @@ public final class ServiceCatalogFunctions {
      * Lists all the private applications in a given compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -674,6 +721,7 @@ public final class ServiceCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPrivateApplicationsResult> getPrivateApplicationsPlain(GetPrivateApplicationsPlainArgs args, InvokeOptions options) {
@@ -685,6 +733,8 @@ public final class ServiceCatalogFunctions {
      * Gets detailed information about the service catalog including name, compartmentId
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -713,6 +763,7 @@ public final class ServiceCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetServiceCatalogResult> getServiceCatalog(GetServiceCatalogArgs args) {
@@ -724,6 +775,8 @@ public final class ServiceCatalogFunctions {
      * Gets detailed information about the service catalog including name, compartmentId
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -752,6 +805,7 @@ public final class ServiceCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetServiceCatalogResult> getServiceCatalogPlain(GetServiceCatalogPlainArgs args) {
@@ -763,6 +817,8 @@ public final class ServiceCatalogFunctions {
      * Gets detailed information about the service catalog including name, compartmentId
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -791,6 +847,7 @@ public final class ServiceCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetServiceCatalogResult> getServiceCatalog(GetServiceCatalogArgs args, InvokeOptions options) {
@@ -802,6 +859,8 @@ public final class ServiceCatalogFunctions {
      * Gets detailed information about the service catalog including name, compartmentId
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -830,6 +889,7 @@ public final class ServiceCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetServiceCatalogResult> getServiceCatalogPlain(GetServiceCatalogPlainArgs args, InvokeOptions options) {
@@ -841,6 +901,8 @@ public final class ServiceCatalogFunctions {
      * Gets detailed information about specific service catalog association.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -869,6 +931,7 @@ public final class ServiceCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetServiceCatalogAssociationResult> getServiceCatalogAssociation(GetServiceCatalogAssociationArgs args) {
@@ -880,6 +943,8 @@ public final class ServiceCatalogFunctions {
      * Gets detailed information about specific service catalog association.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -908,6 +973,7 @@ public final class ServiceCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetServiceCatalogAssociationResult> getServiceCatalogAssociationPlain(GetServiceCatalogAssociationPlainArgs args) {
@@ -919,6 +985,8 @@ public final class ServiceCatalogFunctions {
      * Gets detailed information about specific service catalog association.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -947,6 +1015,7 @@ public final class ServiceCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetServiceCatalogAssociationResult> getServiceCatalogAssociation(GetServiceCatalogAssociationArgs args, InvokeOptions options) {
@@ -958,6 +1027,8 @@ public final class ServiceCatalogFunctions {
      * Gets detailed information about specific service catalog association.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -986,6 +1057,7 @@ public final class ServiceCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetServiceCatalogAssociationResult> getServiceCatalogAssociationPlain(GetServiceCatalogAssociationPlainArgs args, InvokeOptions options) {
@@ -997,6 +1069,8 @@ public final class ServiceCatalogFunctions {
      * Lists all the resource associations for a specific service catalog.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1028,6 +1102,7 @@ public final class ServiceCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetServiceCatalogAssociationsResult> getServiceCatalogAssociations() {
@@ -1039,6 +1114,8 @@ public final class ServiceCatalogFunctions {
      * Lists all the resource associations for a specific service catalog.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1070,6 +1147,7 @@ public final class ServiceCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetServiceCatalogAssociationsResult> getServiceCatalogAssociationsPlain() {
@@ -1081,6 +1159,8 @@ public final class ServiceCatalogFunctions {
      * Lists all the resource associations for a specific service catalog.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1112,6 +1192,7 @@ public final class ServiceCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetServiceCatalogAssociationsResult> getServiceCatalogAssociations(GetServiceCatalogAssociationsArgs args) {
@@ -1123,6 +1204,8 @@ public final class ServiceCatalogFunctions {
      * Lists all the resource associations for a specific service catalog.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1154,6 +1237,7 @@ public final class ServiceCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetServiceCatalogAssociationsResult> getServiceCatalogAssociationsPlain(GetServiceCatalogAssociationsPlainArgs args) {
@@ -1165,6 +1249,8 @@ public final class ServiceCatalogFunctions {
      * Lists all the resource associations for a specific service catalog.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1196,6 +1282,7 @@ public final class ServiceCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetServiceCatalogAssociationsResult> getServiceCatalogAssociations(GetServiceCatalogAssociationsArgs args, InvokeOptions options) {
@@ -1207,6 +1294,8 @@ public final class ServiceCatalogFunctions {
      * Lists all the resource associations for a specific service catalog.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1238,6 +1327,7 @@ public final class ServiceCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetServiceCatalogAssociationsResult> getServiceCatalogAssociationsPlain(GetServiceCatalogAssociationsPlainArgs args, InvokeOptions options) {
@@ -1249,6 +1339,8 @@ public final class ServiceCatalogFunctions {
      * Lists all the service catalogs in the given compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1279,6 +1371,7 @@ public final class ServiceCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetServiceCatalogsResult> getServiceCatalogs(GetServiceCatalogsArgs args) {
@@ -1290,6 +1383,8 @@ public final class ServiceCatalogFunctions {
      * Lists all the service catalogs in the given compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1320,6 +1415,7 @@ public final class ServiceCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetServiceCatalogsResult> getServiceCatalogsPlain(GetServiceCatalogsPlainArgs args) {
@@ -1331,6 +1427,8 @@ public final class ServiceCatalogFunctions {
      * Lists all the service catalogs in the given compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1361,6 +1459,7 @@ public final class ServiceCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetServiceCatalogsResult> getServiceCatalogs(GetServiceCatalogsArgs args, InvokeOptions options) {
@@ -1372,6 +1471,8 @@ public final class ServiceCatalogFunctions {
      * Lists all the service catalogs in the given compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1402,6 +1503,7 @@ public final class ServiceCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetServiceCatalogsResult> getServiceCatalogsPlain(GetServiceCatalogsPlainArgs args, InvokeOptions options) {

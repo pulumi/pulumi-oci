@@ -300,6 +300,7 @@ class LogSavedSearch(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -315,13 +316,14 @@ class LogSavedSearch(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         LogSavedSearches can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Logging/logSavedSearch:LogSavedSearch test_log_saved_search "id"
+        $ pulumi import oci:Logging/logSavedSearch:LogSavedSearch test_log_saved_search "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -350,6 +352,7 @@ class LogSavedSearch(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -365,13 +368,14 @@ class LogSavedSearch(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         LogSavedSearches can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Logging/logSavedSearch:LogSavedSearch test_log_saved_search "id"
+        $ pulumi import oci:Logging/logSavedSearch:LogSavedSearch test_log_saved_search "id"
         ```
 
         :param str resource_name: The name of the resource.

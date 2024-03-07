@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -40,6 +41,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupNotebookSession(ctx *pulumi.Context, args *LookupNotebookSessionArgs, opts ...pulumi.InvokeOption) (*LookupNotebookSessionResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupNotebookSessionResult

@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,6 +42,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetIpsecConnectionTunnelError(ctx *pulumi.Context, args *GetIpsecConnectionTunnelErrorArgs, opts ...pulumi.InvokeOption) (*GetIpsecConnectionTunnelErrorResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetIpsecConnectionTunnelErrorResult

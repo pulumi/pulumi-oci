@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -20,6 +21,7 @@ import * as utilities from "../utilities";
  *     isCompartmentIdInSubtree: _var.license_metric_is_compartment_id_in_subtree,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getLicenseMetric(args: GetLicenseMetricArgs, opts?: pulumi.InvokeOptions): Promise<GetLicenseMetricResult> {
 
@@ -78,6 +80,7 @@ export interface GetLicenseMetricResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -87,6 +90,7 @@ export interface GetLicenseMetricResult {
  *     isCompartmentIdInSubtree: _var.license_metric_is_compartment_id_in_subtree,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getLicenseMetricOutput(args: GetLicenseMetricOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLicenseMetricResult> {
     return pulumi.output(args).apply((a: any) => getLicenseMetric(a, opts))

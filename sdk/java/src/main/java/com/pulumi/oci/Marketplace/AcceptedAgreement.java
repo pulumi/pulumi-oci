@@ -22,6 +22,8 @@ import javax.annotation.Nullable;
  * terms of use for a package before you can deploy the package.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -57,13 +59,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * AcceptedAgreements can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Marketplace/acceptedAgreement:AcceptedAgreement test_accepted_agreement &#34;id&#34;
+ * $ pulumi import oci:Marketplace/acceptedAgreement:AcceptedAgreement test_accepted_agreement &#34;id&#34;
  * ```
  * 
  */

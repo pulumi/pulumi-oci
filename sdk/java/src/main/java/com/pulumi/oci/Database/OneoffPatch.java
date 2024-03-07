@@ -25,6 +25,8 @@ import javax.annotation.Nullable;
  * Creates one-off patch for specified database version to download.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -59,13 +61,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * OneoffPatches can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Database/oneoffPatch:OneoffPatch test_oneoff_patch &#34;id&#34;
+ * $ pulumi import oci:Database/oneoffPatch:OneoffPatch test_oneoff_patch &#34;id&#34;
  * ```
  * 
  */

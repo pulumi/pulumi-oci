@@ -16,6 +16,7 @@ namespace Pulumi.Oci.CloudBridge
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -41,13 +42,14 @@ namespace Pulumi.Oci.CloudBridge
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// DiscoverySchedules can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:CloudBridge/discoverySchedule:DiscoverySchedule test_discovery_schedule "id"
+    /// $ pulumi import oci:CloudBridge/discoverySchedule:DiscoverySchedule test_discovery_schedule "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:CloudBridge/discoverySchedule:DiscoverySchedule")]

@@ -16,6 +16,7 @@ namespace Pulumi.Oci.Core
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -42,13 +43,14 @@ namespace Pulumi.Oci.Core
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// Ipv6 can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Core/ipv6:Ipv6 test_ipv6 "id"
+    /// $ pulumi import oci:Core/ipv6:Ipv6 test_ipv6 "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Core/ipv6:Ipv6")]

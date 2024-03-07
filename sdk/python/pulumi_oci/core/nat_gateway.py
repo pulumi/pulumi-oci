@@ -375,6 +375,7 @@ class NatGateway(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -393,13 +394,14 @@ class NatGateway(pulumi.CustomResource):
             public_ip_id=oci_core_public_ip["test_public_ip"]["id"],
             route_table_id=oci_core_route_table["test_route_table"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         NatGateways can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/natGateway:NatGateway test_nat_gateway "id"
+        $ pulumi import oci:Core/natGateway:NatGateway test_nat_gateway "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -433,6 +435,7 @@ class NatGateway(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -451,13 +454,14 @@ class NatGateway(pulumi.CustomResource):
             public_ip_id=oci_core_public_ip["test_public_ip"]["id"],
             route_table_id=oci_core_route_table["test_route_table"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         NatGateways can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/natGateway:NatGateway test_nat_gateway "id"
+        $ pulumi import oci:Core/natGateway:NatGateway test_nat_gateway "id"
         ```
 
         :param str resource_name: The name of the resource.

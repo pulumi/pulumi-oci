@@ -17,6 +17,7 @@ namespace Pulumi.Oci.Opsi
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -43,13 +44,14 @@ namespace Pulumi.Oci.Opsi
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// AwrHubs can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Opsi/awrHub:AwrHub test_awr_hub "id"
+    /// $ pulumi import oci:Opsi/awrHub:AwrHub test_awr_hub "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Opsi/awrHub:AwrHub")]

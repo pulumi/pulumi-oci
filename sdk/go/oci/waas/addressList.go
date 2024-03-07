@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -49,15 +50,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // AddressLists can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Waas/addressList:AddressList test_address_list "id"
-//
+// $ pulumi import oci:Waas/addressList:AddressList test_address_list "id"
 // ```
 type AddressList struct {
 	pulumi.CustomResourceState

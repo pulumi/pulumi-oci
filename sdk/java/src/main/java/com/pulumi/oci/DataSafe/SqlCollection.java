@@ -23,6 +23,8 @@ import javax.annotation.Nullable;
  * Creates a new SQL collection resource.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -59,13 +61,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * SqlCollections can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:DataSafe/sqlCollection:SqlCollection test_sql_collection &#34;id&#34;
+ * $ pulumi import oci:DataSafe/sqlCollection:SqlCollection test_sql_collection &#34;id&#34;
  * ```
  * 
  */

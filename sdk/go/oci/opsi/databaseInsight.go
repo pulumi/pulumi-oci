@@ -12,14 +12,14 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// ## Example Usage
+//
 // ## Import
 //
 // DatabaseInsights can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Opsi/databaseInsight:DatabaseInsight test_database_insight "id"
-//
+// $ pulumi import oci:Opsi/databaseInsight:DatabaseInsight test_database_insight "id"
 // ```
 type DatabaseInsight struct {
 	pulumi.CustomResourceState

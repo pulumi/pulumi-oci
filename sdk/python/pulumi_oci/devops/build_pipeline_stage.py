@@ -745,6 +745,7 @@ class BuildPipelineStage(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -802,13 +803,14 @@ class BuildPipelineStage(pulumi.CustomResource):
                 wait_type=var["build_pipeline_stage_wait_criteria_wait_type"],
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         BuildPipelineStages can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DevOps/buildPipelineStage:BuildPipelineStage test_build_pipeline_stage "id"
+        $ pulumi import oci:DevOps/buildPipelineStage:BuildPipelineStage test_build_pipeline_stage "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -845,6 +847,7 @@ class BuildPipelineStage(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -902,13 +905,14 @@ class BuildPipelineStage(pulumi.CustomResource):
                 wait_type=var["build_pipeline_stage_wait_criteria_wait_type"],
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         BuildPipelineStages can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DevOps/buildPipelineStage:BuildPipelineStage test_build_pipeline_stage "id"
+        $ pulumi import oci:DevOps/buildPipelineStage:BuildPipelineStage test_build_pipeline_stage "id"
         ```
 
         :param str resource_name: The name of the resource.

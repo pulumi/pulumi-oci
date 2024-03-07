@@ -278,7 +278,7 @@ class NetworkFirewallPolicy(pulumi.CustomResource):
         NetworkFirewallPolicies can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:NetworkFirewall/networkFirewallPolicy:NetworkFirewallPolicy test_network_firewall_policy "id"
+        $ pulumi import oci:NetworkFirewall/networkFirewallPolicy:NetworkFirewallPolicy test_network_firewall_policy "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -303,7 +303,7 @@ class NetworkFirewallPolicy(pulumi.CustomResource):
         NetworkFirewallPolicies can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:NetworkFirewall/networkFirewallPolicy:NetworkFirewallPolicy test_network_firewall_policy "id"
+        $ pulumi import oci:NetworkFirewall/networkFirewallPolicy:NetworkFirewallPolicy test_network_firewall_policy "id"
         ```
 
         :param str resource_name: The name of the resource.

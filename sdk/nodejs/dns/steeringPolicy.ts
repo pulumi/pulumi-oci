@@ -14,6 +14,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -54,13 +55,14 @@ import * as utilities from "../utilities";
  *     ttl: _var.steering_policy_ttl,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * SteeringPolicies can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Dns/steeringPolicy:SteeringPolicy test_steering_policy "id"
+ * $ pulumi import oci:Dns/steeringPolicy:SteeringPolicy test_steering_policy "id"
  * ```
  */
 export class SteeringPolicy extends pulumi.CustomResource {

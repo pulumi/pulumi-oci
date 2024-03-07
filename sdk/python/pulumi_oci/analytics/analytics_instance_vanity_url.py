@@ -283,6 +283,7 @@ class AnalyticsInstanceVanityUrl(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -296,13 +297,14 @@ class AnalyticsInstanceVanityUrl(pulumi.CustomResource):
             description=var["analytics_instance_vanity_url_description"],
             passphrase=var["analytics_instance_vanity_url_passphrase"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         AnalyticsInstanceVanityUrls can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Analytics/analyticsInstanceVanityUrl:AnalyticsInstanceVanityUrl test_analytics_instance_vanity_url "analyticsInstances/{analyticsInstanceId}/vanityUrls/{vanityUrlKey}"
+        $ pulumi import oci:Analytics/analyticsInstanceVanityUrl:AnalyticsInstanceVanityUrl test_analytics_instance_vanity_url "analyticsInstances/{analyticsInstanceId}/vanityUrls/{vanityUrlKey}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -333,6 +335,7 @@ class AnalyticsInstanceVanityUrl(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -346,13 +349,14 @@ class AnalyticsInstanceVanityUrl(pulumi.CustomResource):
             description=var["analytics_instance_vanity_url_description"],
             passphrase=var["analytics_instance_vanity_url_passphrase"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         AnalyticsInstanceVanityUrls can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Analytics/analyticsInstanceVanityUrl:AnalyticsInstanceVanityUrl test_analytics_instance_vanity_url "analyticsInstances/{analyticsInstanceId}/vanityUrls/{vanityUrlKey}"
+        $ pulumi import oci:Analytics/analyticsInstanceVanityUrl:AnalyticsInstanceVanityUrl test_analytics_instance_vanity_url "analyticsInstances/{analyticsInstanceId}/vanityUrls/{vanityUrlKey}"
         ```
 
         :param str resource_name: The name of the resource.

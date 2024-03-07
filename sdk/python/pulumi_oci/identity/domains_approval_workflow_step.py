@@ -1136,7 +1136,7 @@ class DomainsApprovalWorkflowStep(pulumi.CustomResource):
         ApprovalWorkflowSteps can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/domainsApprovalWorkflowStep:DomainsApprovalWorkflowStep test_approval_workflow_step "idcsEndpoint/{idcsEndpoint}/approvalWorkflowSteps/{approvalWorkflowStepId}"
+        $ pulumi import oci:Identity/domainsApprovalWorkflowStep:DomainsApprovalWorkflowStep test_approval_workflow_step "idcsEndpoint/{idcsEndpoint}/approvalWorkflowSteps/{approvalWorkflowStepId}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -1259,7 +1259,7 @@ class DomainsApprovalWorkflowStep(pulumi.CustomResource):
         ApprovalWorkflowSteps can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/domainsApprovalWorkflowStep:DomainsApprovalWorkflowStep test_approval_workflow_step "idcsEndpoint/{idcsEndpoint}/approvalWorkflowSteps/{approvalWorkflowStepId}"
+        $ pulumi import oci:Identity/domainsApprovalWorkflowStep:DomainsApprovalWorkflowStep test_approval_workflow_step "idcsEndpoint/{idcsEndpoint}/approvalWorkflowSteps/{approvalWorkflowStepId}"
         ```
 
         :param str resource_name: The name of the resource.

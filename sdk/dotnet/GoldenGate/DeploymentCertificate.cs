@@ -16,6 +16,7 @@ namespace Pulumi.Oci.GoldenGate
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -33,13 +34,14 @@ namespace Pulumi.Oci.GoldenGate
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// DeploymentCertificates can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:GoldenGate/deploymentCertificate:DeploymentCertificate test_deployment_certificate "deployments/{deploymentId}/certificates/{certificateKey}"
+    /// $ pulumi import oci:GoldenGate/deploymentCertificate:DeploymentCertificate test_deployment_certificate "deployments/{deploymentId}/certificates/{certificateKey}"
     /// ```
     /// </summary>
     [OciResourceType("oci:GoldenGate/deploymentCertificate:DeploymentCertificate")]

@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -19,6 +20,7 @@ import * as utilities from "../utilities";
  *     addressListId: oci_waas_address_list.test_address_list.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAddressList(args: GetAddressListArgs, opts?: pulumi.InvokeOptions): Promise<GetAddressListResult> {
 
@@ -87,6 +89,7 @@ export interface GetAddressListResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -95,6 +98,7 @@ export interface GetAddressListResult {
  *     addressListId: oci_waas_address_list.test_address_list.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAddressListOutput(args: GetAddressListOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAddressListResult> {
     return pulumi.output(args).apply((a: any) => getAddressList(a, opts))

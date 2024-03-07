@@ -19,6 +19,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -46,6 +47,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetDiscoveryAnalytic(ctx *pulumi.Context, args *GetDiscoveryAnalyticArgs, opts ...pulumi.InvokeOption) (*GetDiscoveryAnalyticResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDiscoveryAnalyticResult

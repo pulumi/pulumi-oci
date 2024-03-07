@@ -112,6 +112,7 @@ def get_security_policy_deployment_security_policy_entry_state(security_policy_d
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -119,6 +120,7 @@ def get_security_policy_deployment_security_policy_entry_state(security_policy_d
     test_security_policy_deployment_security_policy_entry_state = oci.DataSafe.get_security_policy_deployment_security_policy_entry_state(security_policy_deployment_id=oci_data_safe_security_policy_deployment["test_security_policy_deployment"]["id"],
         security_policy_entry_state_id=oci_data_safe_security_policy_entry_state["test_security_policy_entry_state"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str security_policy_deployment_id: The OCID of the security policy deployment resource.
@@ -150,6 +152,7 @@ def get_security_policy_deployment_security_policy_entry_state_output(security_p
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -157,6 +160,7 @@ def get_security_policy_deployment_security_policy_entry_state_output(security_p
     test_security_policy_deployment_security_policy_entry_state = oci.DataSafe.get_security_policy_deployment_security_policy_entry_state(security_policy_deployment_id=oci_data_safe_security_policy_deployment["test_security_policy_deployment"]["id"],
         security_policy_entry_state_id=oci_data_safe_security_policy_entry_state["test_security_policy_entry_state"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str security_policy_deployment_id: The OCID of the security policy deployment resource.

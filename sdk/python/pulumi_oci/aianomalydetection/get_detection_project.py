@@ -170,12 +170,14 @@ def get_detection_project(project_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_project = oci.AiAnomalyDetection.get_detection_project(project_id=oci_ai_anomaly_detection_project["test_project"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str project_id: The OCID of the Project.
@@ -209,12 +211,14 @@ def get_detection_project_output(project_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_project = oci.AiAnomalyDetection.get_detection_project(project_id=oci_ai_anomaly_detection_project["test_project"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str project_id: The OCID of the Project.

@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -40,6 +41,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupModelProvenance(ctx *pulumi.Context, args *LookupModelProvenanceArgs, opts ...pulumi.InvokeOption) (*LookupModelProvenanceResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupModelProvenanceResult

@@ -22,6 +22,8 @@ import javax.annotation.Nullable;
  * Creates a new remote peering connection (RPC) for the specified DRG.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -56,13 +58,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * RemotePeeringConnections can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Core/remotePeeringConnection:RemotePeeringConnection test_remote_peering_connection &#34;id&#34;
+ * $ pulumi import oci:Core/remotePeeringConnection:RemotePeeringConnection test_remote_peering_connection &#34;id&#34;
  * ```
  * 
  */

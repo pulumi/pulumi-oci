@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -45,6 +46,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetCustomProtectionRules(ctx *pulumi.Context, args *GetCustomProtectionRulesArgs, opts ...pulumi.InvokeOption) (*GetCustomProtectionRulesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetCustomProtectionRulesResult

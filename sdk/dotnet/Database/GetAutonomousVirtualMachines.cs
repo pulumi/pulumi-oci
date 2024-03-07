@@ -17,10 +17,9 @@ namespace Pulumi.Oci.Database
         /// Lists the Autonomous Virtual Machines in the specified Autonomous VM Cluster and Compartment.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -38,8 +37,7 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetAutonomousVirtualMachinesResult> InvokeAsync(GetAutonomousVirtualMachinesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAutonomousVirtualMachinesResult>("oci:Database/getAutonomousVirtualMachines:getAutonomousVirtualMachines", args ?? new GetAutonomousVirtualMachinesArgs(), options.WithDefaults());
@@ -50,10 +48,9 @@ namespace Pulumi.Oci.Database
         /// Lists the Autonomous Virtual Machines in the specified Autonomous VM Cluster and Compartment.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -71,8 +68,7 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetAutonomousVirtualMachinesResult> Invoke(GetAutonomousVirtualMachinesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousVirtualMachinesResult>("oci:Database/getAutonomousVirtualMachines:getAutonomousVirtualMachines", args ?? new GetAutonomousVirtualMachinesInvokeArgs(), options.WithDefaults());

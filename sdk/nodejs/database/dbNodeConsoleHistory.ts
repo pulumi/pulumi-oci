@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,13 +25,14 @@ import * as utilities from "../utilities";
  *     },
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * DbNodeConsoleHistories can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Database/dbNodeConsoleHistory:DbNodeConsoleHistory test_db_node_console_history "dbNodes/{dbNodeId}/consoleHistories/{consoleHistoryId}"
+ * $ pulumi import oci:Database/dbNodeConsoleHistory:DbNodeConsoleHistory test_db_node_console_history "dbNodes/{dbNodeId}/consoleHistories/{consoleHistoryId}"
  * ```
  */
 export class DbNodeConsoleHistory extends pulumi.CustomResource {

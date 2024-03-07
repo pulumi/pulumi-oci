@@ -16,6 +16,7 @@ namespace Pulumi.Oci.ServiceMesh
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -52,13 +53,14 @@ namespace Pulumi.Oci.ServiceMesh
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// Meshes can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:ServiceMesh/mesh:Mesh test_mesh "id"
+    /// $ pulumi import oci:ServiceMesh/mesh:Mesh test_mesh "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:ServiceMesh/mesh:Mesh")]

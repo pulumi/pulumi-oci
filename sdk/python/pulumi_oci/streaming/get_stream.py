@@ -194,12 +194,14 @@ def get_stream(stream_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_stream = oci.Streaming.get_stream(stream_id=oci_streaming_stream["test_stream"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str stream_id: The OCID of the stream.
@@ -235,12 +237,14 @@ def get_stream_output(stream_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_stream = oci.Streaming.get_stream(stream_id=oci_streaming_stream["test_stream"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str stream_id: The OCID of the stream.

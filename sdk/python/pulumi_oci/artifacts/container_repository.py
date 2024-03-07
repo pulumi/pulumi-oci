@@ -431,6 +431,7 @@ class ContainerRepository(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -451,13 +452,14 @@ class ContainerRepository(pulumi.CustomResource):
                 format=var["container_repository_readme_format"],
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ContainerRepositories can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Artifacts/containerRepository:ContainerRepository test_container_repository "container/repositories/{repositoryId}"
+        $ pulumi import oci:Artifacts/containerRepository:ContainerRepository test_container_repository "container/repositories/{repositoryId}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -483,6 +485,7 @@ class ContainerRepository(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -503,13 +506,14 @@ class ContainerRepository(pulumi.CustomResource):
                 format=var["container_repository_readme_format"],
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ContainerRepositories can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Artifacts/containerRepository:ContainerRepository test_container_repository "container/repositories/{repositoryId}"
+        $ pulumi import oci:Artifacts/containerRepository:ContainerRepository test_container_repository "container/repositories/{repositoryId}"
         ```
 
         :param str resource_name: The name of the resource.

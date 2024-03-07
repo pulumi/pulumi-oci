@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,6 +42,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetManagedDatabaseTableStatistics(ctx *pulumi.Context, args *GetManagedDatabaseTableStatisticsArgs, opts ...pulumi.InvokeOption) (*GetManagedDatabaseTableStatisticsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetManagedDatabaseTableStatisticsResult

@@ -15,6 +15,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,6 +25,7 @@ import * as utilities from "../utilities";
  *     scimQuery: _var.security_policy_report_database_table_access_entry_scim_query,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getSecurityPolicyReportDatabaseTableAccessEntries(args: GetSecurityPolicyReportDatabaseTableAccessEntriesArgs, opts?: pulumi.InvokeOptions): Promise<GetSecurityPolicyReportDatabaseTableAccessEntriesResult> {
 
@@ -77,6 +79,7 @@ export interface GetSecurityPolicyReportDatabaseTableAccessEntriesResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -86,6 +89,7 @@ export interface GetSecurityPolicyReportDatabaseTableAccessEntriesResult {
  *     scimQuery: _var.security_policy_report_database_table_access_entry_scim_query,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getSecurityPolicyReportDatabaseTableAccessEntriesOutput(args: GetSecurityPolicyReportDatabaseTableAccessEntriesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecurityPolicyReportDatabaseTableAccessEntriesResult> {
     return pulumi.output(args).apply((a: any) => getSecurityPolicyReportDatabaseTableAccessEntries(a, opts))

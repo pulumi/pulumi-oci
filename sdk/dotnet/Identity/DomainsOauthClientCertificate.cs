@@ -16,6 +16,7 @@ namespace Pulumi.Oci.Identity
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -40,13 +41,14 @@ namespace Pulumi.Oci.Identity
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// OAuthClientCertificates can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Identity/domainsOauthClientCertificate:DomainsOauthClientCertificate test_oauth_client_certificate "idcsEndpoint/{idcsEndpoint}/oAuthClientCertificates/{oAuthClientCertificateId}"
+    /// $ pulumi import oci:Identity/domainsOauthClientCertificate:DomainsOauthClientCertificate test_oauth_client_certificate "idcsEndpoint/{idcsEndpoint}/oAuthClientCertificates/{oAuthClientCertificateId}"
     /// ```
     /// </summary>
     [OciResourceType("oci:Identity/domainsOauthClientCertificate:DomainsOauthClientCertificate")]

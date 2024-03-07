@@ -18,6 +18,8 @@ import javax.annotation.Nullable;
  * This resource provides the Container Configuration resource in Oracle Cloud Infrastructure Artifacts service.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -43,13 +45,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * ContainerConfiguration can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Artifacts/containerConfiguration:ContainerConfiguration test_container_configuration &#34;container/configuration/compartmentId/{compartmentId}&#34;
+ * $ pulumi import oci:Artifacts/containerConfiguration:ContainerConfiguration test_container_configuration &#34;container/configuration/compartmentId/{compartmentId}&#34;
  * ```
  * 
  */

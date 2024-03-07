@@ -37,6 +37,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -70,15 +71,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // InternetGateways can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Core/internetGateway:InternetGateway test_internet_gateway "id"
-//
+// $ pulumi import oci:Core/internetGateway:InternetGateway test_internet_gateway "id"
 // ```
 type InternetGateway struct {
 	pulumi.CustomResourceState

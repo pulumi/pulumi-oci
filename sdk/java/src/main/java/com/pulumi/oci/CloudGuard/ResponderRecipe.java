@@ -28,7 +28,7 @@ import javax.annotation.Nullable;
  * ResponderRecipes can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:CloudGuard/responderRecipe:ResponderRecipe test_responder_recipe &#34;id&#34;
+ * $ pulumi import oci:CloudGuard/responderRecipe:ResponderRecipe test_responder_recipe &#34;id&#34;
  * ```
  * 
  */

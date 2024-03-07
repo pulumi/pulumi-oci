@@ -157,6 +157,7 @@ class AnnouncementSubscriptionsFilterGroup(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -168,13 +169,14 @@ class AnnouncementSubscriptionsFilterGroup(pulumi.CustomResource):
                 value=var["announcement_subscriptions_filter_group_filters_value"],
             )])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         AnnouncementSubscriptionsFilterGroups can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:AnnouncementsService/announcementSubscriptionsFilterGroup:AnnouncementSubscriptionsFilterGroup test_announcement_subscriptions_filter_group "id"
+        $ pulumi import oci:AnnouncementsService/announcementSubscriptionsFilterGroup:AnnouncementSubscriptionsFilterGroup test_announcement_subscriptions_filter_group "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -202,6 +204,7 @@ class AnnouncementSubscriptionsFilterGroup(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -213,13 +216,14 @@ class AnnouncementSubscriptionsFilterGroup(pulumi.CustomResource):
                 value=var["announcement_subscriptions_filter_group_filters_value"],
             )])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         AnnouncementSubscriptionsFilterGroups can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:AnnouncementsService/announcementSubscriptionsFilterGroup:AnnouncementSubscriptionsFilterGroup test_announcement_subscriptions_filter_group "id"
+        $ pulumi import oci:AnnouncementsService/announcementSubscriptionsFilterGroup:AnnouncementSubscriptionsFilterGroup test_announcement_subscriptions_filter_group "id"
         ```
 
         :param str resource_name: The name of the resource.

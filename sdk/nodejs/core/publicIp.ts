@@ -31,6 +31,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -49,13 +50,14 @@ import * as utilities from "../utilities";
  *     publicIpPoolId: oci_core_public_ip_pool.test_public_ip_pool.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * PublicIps can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Core/publicIp:PublicIp test_public_ip "id"
+ * $ pulumi import oci:Core/publicIp:PublicIp test_public_ip "id"
  * ```
  */
 export class PublicIp extends pulumi.CustomResource {

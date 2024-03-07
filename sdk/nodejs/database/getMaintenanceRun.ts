@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,6 +22,7 @@ import * as utilities from "../utilities";
  *     maintenanceRunId: oci_database_maintenance_run.test_maintenance_run.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getMaintenanceRun(args: GetMaintenanceRunArgs, opts?: pulumi.InvokeOptions): Promise<GetMaintenanceRunResult> {
 
@@ -170,6 +172,7 @@ export interface GetMaintenanceRunResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -178,6 +181,7 @@ export interface GetMaintenanceRunResult {
  *     maintenanceRunId: oci_database_maintenance_run.test_maintenance_run.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getMaintenanceRunOutput(args: GetMaintenanceRunOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMaintenanceRunResult> {
     return pulumi.output(args).apply((a: any) => getMaintenanceRun(a, opts))

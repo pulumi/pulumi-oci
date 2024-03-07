@@ -16,10 +16,9 @@ namespace Pulumi.Oci.Identity
         /// 
         /// Search NetworkPerimeters
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -45,8 +44,7 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDomainsNetworkPerimetersResult> InvokeAsync(GetDomainsNetworkPerimetersArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDomainsNetworkPerimetersResult>("oci:Identity/getDomainsNetworkPerimeters:getDomainsNetworkPerimeters", args ?? new GetDomainsNetworkPerimetersArgs(), options.WithDefaults());
@@ -56,10 +54,9 @@ namespace Pulumi.Oci.Identity
         /// 
         /// Search NetworkPerimeters
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -85,8 +82,7 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDomainsNetworkPerimetersResult> Invoke(GetDomainsNetworkPerimetersInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsNetworkPerimetersResult>("oci:Identity/getDomainsNetworkPerimeters:getDomainsNetworkPerimeters", args ?? new GetDomainsNetworkPerimetersInvokeArgs(), options.WithDefaults());

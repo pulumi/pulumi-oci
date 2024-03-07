@@ -16,6 +16,7 @@ namespace Pulumi.Oci.DataSafe
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -85,13 +86,14 @@ namespace Pulumi.Oci.DataSafe
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// ReportDefinitions can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:DataSafe/reportDefinition:ReportDefinition test_report_definition "id"
+    /// $ pulumi import oci:DataSafe/reportDefinition:ReportDefinition test_report_definition "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:DataSafe/reportDefinition:ReportDefinition")]

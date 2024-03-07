@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,6 +23,7 @@ import * as utilities from "../utilities";
  *     opcNamedCredentialId: _var.external_asm_disk_group_opc_named_credential_id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getExternalAsmDiskGroups(args: GetExternalAsmDiskGroupsArgs, opts?: pulumi.InvokeOptions): Promise<GetExternalAsmDiskGroupsResult> {
 
@@ -71,6 +73,7 @@ export interface GetExternalAsmDiskGroupsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -80,6 +83,7 @@ export interface GetExternalAsmDiskGroupsResult {
  *     opcNamedCredentialId: _var.external_asm_disk_group_opc_named_credential_id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getExternalAsmDiskGroupsOutput(args: GetExternalAsmDiskGroupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalAsmDiskGroupsResult> {
     return pulumi.output(args).apply((a: any) => getExternalAsmDiskGroups(a, opts))

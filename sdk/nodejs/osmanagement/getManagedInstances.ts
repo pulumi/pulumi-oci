@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,6 +24,7 @@ import * as utilities from "../utilities";
  *     osFamily: _var.managed_instance_os_family,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getManagedInstances(args: GetManagedInstancesArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedInstancesResult> {
 
@@ -87,6 +89,7 @@ export interface GetManagedInstancesResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -97,6 +100,7 @@ export interface GetManagedInstancesResult {
  *     osFamily: _var.managed_instance_os_family,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getManagedInstancesOutput(args: GetManagedInstancesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedInstancesResult> {
     return pulumi.output(args).apply((a: any) => getManagedInstances(a, opts))

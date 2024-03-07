@@ -22,6 +22,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -64,15 +65,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Zones can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Dns/zone:Zone test_zone "id"
-//
+// $ pulumi import oci:Dns/zone:Zone test_zone "id"
 // ```
 type Zone struct {
 	pulumi.CustomResourceState

@@ -23,6 +23,8 @@ import javax.annotation.Nullable;
  * Create a new log analytics entity.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -70,13 +72,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * LogAnalyticsEntities can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:LogAnalytics/logAnalyticsEntity:LogAnalyticsEntity test_log_analytics_entity &#34;namespaces/{namespaceName}/logAnalyticsEntities/{logAnalyticsEntityId}&#34;
+ * $ pulumi import oci:LogAnalytics/logAnalyticsEntity:LogAnalyticsEntity test_log_analytics_entity &#34;namespaces/{namespaceName}/logAnalyticsEntities/{logAnalyticsEntityId}&#34;
  * ```
  * 
  */

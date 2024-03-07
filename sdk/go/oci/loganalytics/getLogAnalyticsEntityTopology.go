@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -43,6 +44,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetLogAnalyticsEntityTopology(ctx *pulumi.Context, args *GetLogAnalyticsEntityTopologyArgs, opts ...pulumi.InvokeOption) (*GetLogAnalyticsEntityTopologyResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetLogAnalyticsEntityTopologyResult

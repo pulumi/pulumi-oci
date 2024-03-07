@@ -16,6 +16,7 @@ namespace Pulumi.Oci.AiDocument
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -35,13 +36,14 @@ namespace Pulumi.Oci.AiDocument
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// Projects can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:AiDocument/project:Project test_project "id"
+    /// $ pulumi import oci:AiDocument/project:Project test_project "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:AiDocument/project:Project")]

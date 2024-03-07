@@ -20,6 +20,8 @@ public final class OsubOrganizationSubscriptionFunctions {
      * API that returns data for the list of subscription ids returned from Organizations API
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -50,6 +52,7 @@ public final class OsubOrganizationSubscriptionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOrganizationSubscriptionsResult> getOrganizationSubscriptions(GetOrganizationSubscriptionsArgs args) {
@@ -61,6 +64,8 @@ public final class OsubOrganizationSubscriptionFunctions {
      * API that returns data for the list of subscription ids returned from Organizations API
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -91,6 +96,7 @@ public final class OsubOrganizationSubscriptionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOrganizationSubscriptionsResult> getOrganizationSubscriptionsPlain(GetOrganizationSubscriptionsPlainArgs args) {
@@ -102,6 +108,8 @@ public final class OsubOrganizationSubscriptionFunctions {
      * API that returns data for the list of subscription ids returned from Organizations API
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -132,6 +140,7 @@ public final class OsubOrganizationSubscriptionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOrganizationSubscriptionsResult> getOrganizationSubscriptions(GetOrganizationSubscriptionsArgs args, InvokeOptions options) {
@@ -143,6 +152,8 @@ public final class OsubOrganizationSubscriptionFunctions {
      * API that returns data for the list of subscription ids returned from Organizations API
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -173,6 +184,7 @@ public final class OsubOrganizationSubscriptionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOrganizationSubscriptionsResult> getOrganizationSubscriptionsPlain(GetOrganizationSubscriptionsPlainArgs args, InvokeOptions options) {

@@ -24,6 +24,8 @@ import javax.annotation.Nullable;
  * Registers a new dedicated vantage point.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -64,13 +66,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * DedicatedVantagePoints can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:ApmSynthetics/dedicatedVantagePoint:DedicatedVantagePoint test_dedicated_vantage_point &#34;dedicatedVantagePoints/{dedicatedVantagePointId}/apmDomainId/{apmDomainId}&#34;
+ * $ pulumi import oci:ApmSynthetics/dedicatedVantagePoint:DedicatedVantagePoint test_dedicated_vantage_point &#34;dedicatedVantagePoints/{dedicatedVantagePointId}/apmDomainId/{apmDomainId}&#34;
  * ```
  * 
  */

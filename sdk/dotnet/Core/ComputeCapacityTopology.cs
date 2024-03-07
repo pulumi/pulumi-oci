@@ -21,6 +21,7 @@ namespace Pulumi.Oci.Core
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -51,13 +52,14 @@ namespace Pulumi.Oci.Core
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// ComputeCapacityTopologies can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Core/computeCapacityTopology:ComputeCapacityTopology test_compute_capacity_topology "id"
+    /// $ pulumi import oci:Core/computeCapacityTopology:ComputeCapacityTopology test_compute_capacity_topology "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Core/computeCapacityTopology:ComputeCapacityTopology")]

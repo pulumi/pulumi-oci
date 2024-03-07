@@ -206,12 +206,14 @@ def get_channel(channel_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_channel = oci.Mysql.get_channel(channel_id=oci_mysql_channel["test_channel"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str channel_id: The Channel [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -250,12 +252,14 @@ def get_channel_output(channel_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_channel = oci.Mysql.get_channel(channel_id=oci_mysql_channel["test_channel"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str channel_id: The Channel [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

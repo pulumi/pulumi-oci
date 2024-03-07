@@ -16,6 +16,7 @@ namespace Pulumi.Oci.Limits
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -50,13 +51,14 @@ namespace Pulumi.Oci.Limits
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// Quotas can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Limits/quota:Quota test_quota "id"
+    /// $ pulumi import oci:Limits/quota:Quota test_quota "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Limits/quota:Quota")]

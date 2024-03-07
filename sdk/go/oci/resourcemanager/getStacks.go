@@ -19,6 +19,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -45,6 +46,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetStacks(ctx *pulumi.Context, args *GetStacksArgs, opts ...pulumi.InvokeOption) (*GetStacksResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetStacksResult

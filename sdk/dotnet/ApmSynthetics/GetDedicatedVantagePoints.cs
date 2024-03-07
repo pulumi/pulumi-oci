@@ -17,10 +17,9 @@ namespace Pulumi.Oci.ApmSynthetics
         /// Returns a list of dedicated vantage points.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -39,8 +38,7 @@ namespace Pulumi.Oci.ApmSynthetics
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDedicatedVantagePointsResult> InvokeAsync(GetDedicatedVantagePointsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDedicatedVantagePointsResult>("oci:ApmSynthetics/getDedicatedVantagePoints:getDedicatedVantagePoints", args ?? new GetDedicatedVantagePointsArgs(), options.WithDefaults());
@@ -51,10 +49,9 @@ namespace Pulumi.Oci.ApmSynthetics
         /// Returns a list of dedicated vantage points.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -73,8 +70,7 @@ namespace Pulumi.Oci.ApmSynthetics
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDedicatedVantagePointsResult> Invoke(GetDedicatedVantagePointsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDedicatedVantagePointsResult>("oci:ApmSynthetics/getDedicatedVantagePoints:getDedicatedVantagePoints", args ?? new GetDedicatedVantagePointsInvokeArgs(), options.WithDefaults());

@@ -22,10 +22,9 @@ namespace Pulumi.Oci.Kms
         /// write operations exceeds 10 requests per second for a given tenancy.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -41,8 +40,7 @@ namespace Pulumi.Oci.Kms
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetVaultReplicasResult> InvokeAsync(GetVaultReplicasArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetVaultReplicasResult>("oci:Kms/getVaultReplicas:getVaultReplicas", args ?? new GetVaultReplicasArgs(), options.WithDefaults());
@@ -58,10 +56,9 @@ namespace Pulumi.Oci.Kms
         /// write operations exceeds 10 requests per second for a given tenancy.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -77,8 +74,7 @@ namespace Pulumi.Oci.Kms
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetVaultReplicasResult> Invoke(GetVaultReplicasInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVaultReplicasResult>("oci:Kms/getVaultReplicas:getVaultReplicas", args ?? new GetVaultReplicasInvokeArgs(), options.WithDefaults());

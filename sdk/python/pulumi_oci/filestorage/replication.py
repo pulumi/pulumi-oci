@@ -454,6 +454,7 @@ class Replication(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -471,13 +472,14 @@ class Replication(pulumi.CustomResource):
             },
             replication_interval=var["replication_replication_interval"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Replications can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:FileStorage/replication:Replication test_replication "id"
+        $ pulumi import oci:FileStorage/replication:Replication test_replication "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -533,6 +535,7 @@ class Replication(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -550,13 +553,14 @@ class Replication(pulumi.CustomResource):
             },
             replication_interval=var["replication_replication_interval"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Replications can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:FileStorage/replication:Replication test_replication "id"
+        $ pulumi import oci:FileStorage/replication:Replication test_replication "id"
         ```
 
         :param str resource_name: The name of the resource.

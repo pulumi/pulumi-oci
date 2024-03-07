@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,6 +22,7 @@ import * as utilities from "../utilities";
  *     repositoryId: oci_artifacts_repository.test_repository.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getContainerRepository(args: GetContainerRepositoryArgs, opts?: pulumi.InvokeOptions): Promise<GetContainerRepositoryResult> {
 
@@ -125,6 +127,7 @@ export interface GetContainerRepositoryResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -133,6 +136,7 @@ export interface GetContainerRepositoryResult {
  *     repositoryId: oci_artifacts_repository.test_repository.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getContainerRepositoryOutput(args: GetContainerRepositoryOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetContainerRepositoryResult> {
     return pulumi.output(args).apply((a: any) => getContainerRepository(a, opts))

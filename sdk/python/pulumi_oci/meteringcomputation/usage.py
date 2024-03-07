@@ -433,6 +433,7 @@ class Usage(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -458,6 +459,7 @@ class Usage(pulumi.CustomResource):
             is_aggregate_by_time=var["usage_is_aggregate_by_time"],
             query_type=var["usage_query_type"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -494,6 +496,7 @@ class Usage(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -519,6 +522,7 @@ class Usage(pulumi.CustomResource):
             is_aggregate_by_time=var["usage_is_aggregate_by_time"],
             query_type=var["usage_query_type"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 

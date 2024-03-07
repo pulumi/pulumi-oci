@@ -16,6 +16,7 @@ namespace Pulumi.Oci.EmWarehouse
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -42,13 +43,14 @@ namespace Pulumi.Oci.EmWarehouse
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// EmWarehouses can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:EmWarehouse/emWarehouse:EmWarehouse test_em_warehouse "id"
+    /// $ pulumi import oci:EmWarehouse/emWarehouse:EmWarehouse test_em_warehouse "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:EmWarehouse/emWarehouse:EmWarehouse")]

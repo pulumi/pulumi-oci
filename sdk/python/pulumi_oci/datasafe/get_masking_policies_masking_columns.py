@@ -253,6 +253,7 @@ def get_masking_policies_masking_columns(column_names: Optional[Sequence[str]] =
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -273,6 +274,7 @@ def get_masking_policies_masking_columns(column_names: Optional[Sequence[str]] =
         time_updated_greater_than_or_equal_to=var["masking_policies_masking_column_time_updated_greater_than_or_equal_to"],
         time_updated_less_than=var["masking_policies_masking_column_time_updated_less_than"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param Sequence[str] column_names: A filter to return only a specific column based on column name.
@@ -361,6 +363,7 @@ def get_masking_policies_masking_columns_output(column_names: Optional[pulumi.In
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -381,6 +384,7 @@ def get_masking_policies_masking_columns_output(column_names: Optional[pulumi.In
         time_updated_greater_than_or_equal_to=var["masking_policies_masking_column_time_updated_greater_than_or_equal_to"],
         time_updated_less_than=var["masking_policies_masking_column_time_updated_less_than"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param Sequence[str] column_names: A filter to return only a specific column based on column name.

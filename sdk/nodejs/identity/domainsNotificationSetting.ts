@@ -16,7 +16,7 @@ import * as utilities from "../utilities";
  * NotificationSettings can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Identity/domainsNotificationSetting:DomainsNotificationSetting test_notification_setting "idcsEndpoint/{idcsEndpoint}/notificationSettings/{notificationSettingId}"
+ * $ pulumi import oci:Identity/domainsNotificationSetting:DomainsNotificationSetting test_notification_setting "idcsEndpoint/{idcsEndpoint}/notificationSettings/{notificationSettingId}"
  * ```
  */
 export class DomainsNotificationSetting extends pulumi.CustomResource {

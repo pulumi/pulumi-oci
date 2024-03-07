@@ -139,6 +139,7 @@ def get_software_source_module_streams(filters: Optional[Sequence[pulumi.InputTy
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -149,6 +150,7 @@ def get_software_source_module_streams(filters: Optional[Sequence[pulumi.InputTy
         module_name_contains=var["software_source_module_stream_module_name_contains"],
         name=var["software_source_module_stream_name"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param bool is_latest: A boolean variable that is used to list only the latest versions of packages, module streams, and stream profiles when set to true. All packages, module streams, and stream profiles are returned when set to false.
@@ -194,6 +196,7 @@ def get_software_source_module_streams_output(filters: Optional[pulumi.Input[Opt
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -204,6 +207,7 @@ def get_software_source_module_streams_output(filters: Optional[pulumi.Input[Opt
         module_name_contains=var["software_source_module_stream_module_name_contains"],
         name=var["software_source_module_stream_name"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param bool is_latest: A boolean variable that is used to list only the latest versions of packages, module streams, and stream profiles when set to true. All packages, module streams, and stream profiles are returned when set to false.

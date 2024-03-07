@@ -19,7 +19,7 @@ namespace Pulumi.Oci.DatabaseManagement
     /// ExternalListeners can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:DatabaseManagement/externalListener:ExternalListener test_external_listener "id"
+    /// $ pulumi import oci:DatabaseManagement/externalListener:ExternalListener test_external_listener "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:DatabaseManagement/externalListener:ExternalListener")]

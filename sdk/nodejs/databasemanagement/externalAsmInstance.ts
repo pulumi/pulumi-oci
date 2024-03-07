@@ -14,7 +14,7 @@ import * as utilities from "../utilities";
  * ExternalAsmInstances can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:DatabaseManagement/externalAsmInstance:ExternalAsmInstance test_external_asm_instance "id"
+ * $ pulumi import oci:DatabaseManagement/externalAsmInstance:ExternalAsmInstance test_external_asm_instance "id"
  * ```
  */
 export class ExternalAsmInstance extends pulumi.CustomResource {

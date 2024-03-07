@@ -254,12 +254,14 @@ def get_audit_archive_retrieval(audit_archive_retrieval_id: Optional[str] = None
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_audit_archive_retrieval = oci.DataSafe.get_audit_archive_retrieval(audit_archive_retrieval_id=oci_data_safe_audit_archive_retrieval["test_audit_archive_retrieval"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str audit_archive_retrieval_id: OCID of the archive retrieval.
@@ -300,12 +302,14 @@ def get_audit_archive_retrieval_output(audit_archive_retrieval_id: Optional[pulu
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_audit_archive_retrieval = oci.DataSafe.get_audit_archive_retrieval(audit_archive_retrieval_id=oci_data_safe_audit_archive_retrieval["test_audit_archive_retrieval"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str audit_archive_retrieval_id: OCID of the archive retrieval.

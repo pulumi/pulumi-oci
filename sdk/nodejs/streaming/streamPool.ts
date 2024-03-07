@@ -15,6 +15,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -41,13 +42,14 @@ import * as utilities from "../utilities";
  *     },
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * StreamPools can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Streaming/streamPool:StreamPool test_stream_pool "id"
+ * $ pulumi import oci:Streaming/streamPool:StreamPool test_stream_pool "id"
  * ```
  */
 export class StreamPool extends pulumi.CustomResource {

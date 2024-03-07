@@ -351,6 +351,7 @@ class Subscription(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -367,13 +368,14 @@ class Subscription(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Subscriptions can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Ons/subscription:Subscription test_subscription "id"
+        $ pulumi import oci:Ons/subscription:Subscription test_subscription "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -411,6 +413,7 @@ class Subscription(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -427,13 +430,14 @@ class Subscription(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Subscriptions can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Ons/subscription:Subscription test_subscription "id"
+        $ pulumi import oci:Ons/subscription:Subscription test_subscription "id"
         ```
 
         :param str resource_name: The name of the resource.

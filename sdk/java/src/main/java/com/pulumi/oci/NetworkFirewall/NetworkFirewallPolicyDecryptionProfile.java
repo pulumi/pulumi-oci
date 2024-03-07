@@ -20,6 +20,8 @@ import javax.annotation.Nullable;
  * Creates a new Decryption Profile for the Network Firewall Policy.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -58,13 +60,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * NetworkFirewallPolicyDecryptionProfiles can be imported using the `name`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:NetworkFirewall/networkFirewallPolicyDecryptionProfile:NetworkFirewallPolicyDecryptionProfile test_network_firewall_policy_decryption_profile &#34;networkFirewallPolicies/{networkFirewallPolicyId}/decryptionProfiles/{decryptionProfileName}&#34;
+ * $ pulumi import oci:NetworkFirewall/networkFirewallPolicyDecryptionProfile:NetworkFirewallPolicyDecryptionProfile test_network_firewall_policy_decryption_profile &#34;networkFirewallPolicies/{networkFirewallPolicyId}/decryptionProfiles/{decryptionProfileName}&#34;
  * ```
  * 
  */

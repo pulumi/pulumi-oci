@@ -98,12 +98,14 @@ def get_cluster_credential_rotation_status(cluster_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_cluster_credential_rotation_status = oci.ContainerEngine.get_cluster_credential_rotation_status(cluster_id=oci_containerengine_cluster["test_cluster"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str cluster_id: The OCID of the cluster.
@@ -131,12 +133,14 @@ def get_cluster_credential_rotation_status_output(cluster_id: Optional[pulumi.In
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_cluster_credential_rotation_status = oci.ContainerEngine.get_cluster_credential_rotation_status(cluster_id=oci_containerengine_cluster["test_cluster"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str cluster_id: The OCID of the cluster.

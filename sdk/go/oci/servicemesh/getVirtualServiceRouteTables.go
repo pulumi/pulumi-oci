@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -44,6 +45,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetVirtualServiceRouteTables(ctx *pulumi.Context, args *GetVirtualServiceRouteTablesArgs, opts ...pulumi.InvokeOption) (*GetVirtualServiceRouteTablesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetVirtualServiceRouteTablesResult

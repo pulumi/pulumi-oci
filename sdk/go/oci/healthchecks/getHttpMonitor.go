@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -40,6 +41,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupHttpMonitor(ctx *pulumi.Context, args *LookupHttpMonitorArgs, opts ...pulumi.InvokeOption) (*LookupHttpMonitorResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupHttpMonitorResult

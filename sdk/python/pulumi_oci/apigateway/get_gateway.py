@@ -255,12 +255,14 @@ def get_gateway(gateway_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_gateway = oci.ApiGateway.get_gateway(gateway_id=oci_apigateway_gateway["test_gateway"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str gateway_id: The ocid of the gateway.
@@ -301,12 +303,14 @@ def get_gateway_output(gateway_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_gateway = oci.ApiGateway.get_gateway(gateway_id=oci_apigateway_gateway["test_gateway"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str gateway_id: The ocid of the gateway.

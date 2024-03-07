@@ -151,6 +151,7 @@ def get_detect_anomaly_jobs(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -162,6 +163,7 @@ def get_detect_anomaly_jobs(compartment_id: Optional[str] = None,
         project_id=oci_ai_anomaly_detection_project["test_project"]["id"],
         state=var["detect_anomaly_job_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID of the compartment in which to list resources.
@@ -210,6 +212,7 @@ def get_detect_anomaly_jobs_output(compartment_id: Optional[pulumi.Input[str]] =
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -221,6 +224,7 @@ def get_detect_anomaly_jobs_output(compartment_id: Optional[pulumi.Input[str]] =
         project_id=oci_ai_anomaly_detection_project["test_project"]["id"],
         state=var["detect_anomaly_job_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID of the compartment in which to list resources.

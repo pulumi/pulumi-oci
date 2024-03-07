@@ -34,7 +34,7 @@ import javax.annotation.Nullable;
  * Recommendations can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Optimizer/recommendation:Recommendation test_recommendation &#34;id&#34;
+ * $ pulumi import oci:Optimizer/recommendation:Recommendation test_recommendation &#34;id&#34;
  * ```
  * 
  */

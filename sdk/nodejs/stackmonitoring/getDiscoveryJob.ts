@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,6 +22,7 @@ import * as utilities from "../utilities";
  *     discoveryJobId: oci_stack_monitoring_discovery_job.test_discovery_job.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDiscoveryJob(args: GetDiscoveryJobArgs, opts?: pulumi.InvokeOptions): Promise<GetDiscoveryJobResult> {
 
@@ -110,6 +112,7 @@ export interface GetDiscoveryJobResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -118,6 +121,7 @@ export interface GetDiscoveryJobResult {
  *     discoveryJobId: oci_stack_monitoring_discovery_job.test_discovery_job.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDiscoveryJobOutput(args: GetDiscoveryJobOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDiscoveryJobResult> {
     return pulumi.output(args).apply((a: any) => getDiscoveryJob(a, opts))

@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -25,6 +26,7 @@ import * as utilities from "../utilities";
  *     opcNamedCredentialId: _var.managed_database_sql_tuning_advisor_tasks_sql_execution_plan_opc_named_credential_id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan(args: GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResult> {
 
@@ -92,6 +94,7 @@ export interface GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -104,6 +107,7 @@ export interface GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResult {
  *     opcNamedCredentialId: _var.managed_database_sql_tuning_advisor_tasks_sql_execution_plan_opc_named_credential_id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanOutput(args: GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResult> {
     return pulumi.output(args).apply((a: any) => getManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan(a, opts))

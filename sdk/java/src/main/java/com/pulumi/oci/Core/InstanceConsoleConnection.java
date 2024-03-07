@@ -25,6 +25,8 @@ import javax.annotation.Nullable;
  * For more information about instance console connections, see [Troubleshooting Instances Using Instance Console Connections](https://docs.cloud.oracle.com/iaas/Content/Compute/References/serialconsole.htm).
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -56,13 +58,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * InstanceConsoleConnections can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Core/instanceConsoleConnection:InstanceConsoleConnection test_instance_console_connection &#34;id&#34;
+ * $ pulumi import oci:Core/instanceConsoleConnection:InstanceConsoleConnection test_instance_console_connection &#34;id&#34;
  * ```
  * 
  */

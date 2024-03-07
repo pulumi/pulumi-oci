@@ -16,6 +16,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -29,13 +30,14 @@ import * as utilities from "../utilities";
  *     patchingMode: _var.maintenance_run_patching_mode,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * MaintenanceRuns can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Database/maintenanceRun:MaintenanceRun test_maintenance_run "id"
+ * $ pulumi import oci:Database/maintenanceRun:MaintenanceRun test_maintenance_run "id"
  * ```
  */
 export class MaintenanceRun extends pulumi.CustomResource {

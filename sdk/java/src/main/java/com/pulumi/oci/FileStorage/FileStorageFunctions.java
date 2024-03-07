@@ -59,6 +59,8 @@ public final class FileStorageFunctions {
      * Lists the export set resources in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -91,6 +93,7 @@ public final class FileStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExportSetsResult> getExportSets(GetExportSetsArgs args) {
@@ -102,6 +105,8 @@ public final class FileStorageFunctions {
      * Lists the export set resources in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -134,6 +139,7 @@ public final class FileStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExportSetsResult> getExportSetsPlain(GetExportSetsPlainArgs args) {
@@ -145,6 +151,8 @@ public final class FileStorageFunctions {
      * Lists the export set resources in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -177,6 +185,7 @@ public final class FileStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExportSetsResult> getExportSets(GetExportSetsArgs args, InvokeOptions options) {
@@ -188,6 +197,8 @@ public final class FileStorageFunctions {
      * Lists the export set resources in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -220,6 +231,7 @@ public final class FileStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExportSetsResult> getExportSetsPlain(GetExportSetsPlainArgs args, InvokeOptions options) {
@@ -233,6 +245,8 @@ public final class FileStorageFunctions {
      * / or a compartment ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -265,6 +279,7 @@ public final class FileStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExportsResult> getExports() {
@@ -278,6 +293,8 @@ public final class FileStorageFunctions {
      * / or a compartment ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -310,6 +327,7 @@ public final class FileStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExportsResult> getExportsPlain() {
@@ -323,6 +341,8 @@ public final class FileStorageFunctions {
      * / or a compartment ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -355,6 +375,7 @@ public final class FileStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExportsResult> getExports(GetExportsArgs args) {
@@ -368,6 +389,8 @@ public final class FileStorageFunctions {
      * / or a compartment ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -400,6 +423,7 @@ public final class FileStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExportsResult> getExportsPlain(GetExportsPlainArgs args) {
@@ -413,6 +437,8 @@ public final class FileStorageFunctions {
      * / or a compartment ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -445,6 +471,7 @@ public final class FileStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExportsResult> getExports(GetExportsArgs args, InvokeOptions options) {
@@ -458,6 +485,8 @@ public final class FileStorageFunctions {
      * / or a compartment ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -490,6 +519,7 @@ public final class FileStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExportsResult> getExportsPlain(GetExportsPlainArgs args, InvokeOptions options) {
@@ -502,6 +532,8 @@ public final class FileStorageFunctions {
      * file system snapshot policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -537,6 +569,7 @@ public final class FileStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFileSystemsResult> getFileSystems(GetFileSystemsArgs args) {
@@ -549,6 +582,8 @@ public final class FileStorageFunctions {
      * file system snapshot policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -584,6 +619,7 @@ public final class FileStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFileSystemsResult> getFileSystemsPlain(GetFileSystemsPlainArgs args) {
@@ -596,6 +632,8 @@ public final class FileStorageFunctions {
      * file system snapshot policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -631,6 +669,7 @@ public final class FileStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFileSystemsResult> getFileSystems(GetFileSystemsArgs args, InvokeOptions options) {
@@ -643,6 +682,8 @@ public final class FileStorageFunctions {
      * file system snapshot policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -678,6 +719,7 @@ public final class FileStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFileSystemsResult> getFileSystemsPlain(GetFileSystemsPlainArgs args, InvokeOptions options) {
@@ -689,6 +731,8 @@ public final class FileStorageFunctions {
      * Lists file system snapshot policies in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -721,6 +765,7 @@ public final class FileStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFilesystemSnapshotPoliciesResult> getFilesystemSnapshotPolicies(GetFilesystemSnapshotPoliciesArgs args) {
@@ -732,6 +777,8 @@ public final class FileStorageFunctions {
      * Lists file system snapshot policies in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -764,6 +811,7 @@ public final class FileStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFilesystemSnapshotPoliciesResult> getFilesystemSnapshotPoliciesPlain(GetFilesystemSnapshotPoliciesPlainArgs args) {
@@ -775,6 +823,8 @@ public final class FileStorageFunctions {
      * Lists file system snapshot policies in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -807,6 +857,7 @@ public final class FileStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFilesystemSnapshotPoliciesResult> getFilesystemSnapshotPolicies(GetFilesystemSnapshotPoliciesArgs args, InvokeOptions options) {
@@ -818,6 +869,8 @@ public final class FileStorageFunctions {
      * Lists file system snapshot policies in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -850,6 +903,7 @@ public final class FileStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFilesystemSnapshotPoliciesResult> getFilesystemSnapshotPoliciesPlain(GetFilesystemSnapshotPoliciesPlainArgs args, InvokeOptions options) {
@@ -861,6 +915,8 @@ public final class FileStorageFunctions {
      * Gets the specified file system snapshot policy&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -889,6 +945,7 @@ public final class FileStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFilesystemSnapshotPolicyResult> getFilesystemSnapshotPolicy(GetFilesystemSnapshotPolicyArgs args) {
@@ -900,6 +957,8 @@ public final class FileStorageFunctions {
      * Gets the specified file system snapshot policy&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -928,6 +987,7 @@ public final class FileStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFilesystemSnapshotPolicyResult> getFilesystemSnapshotPolicyPlain(GetFilesystemSnapshotPolicyPlainArgs args) {
@@ -939,6 +999,8 @@ public final class FileStorageFunctions {
      * Gets the specified file system snapshot policy&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -967,6 +1029,7 @@ public final class FileStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFilesystemSnapshotPolicyResult> getFilesystemSnapshotPolicy(GetFilesystemSnapshotPolicyArgs args, InvokeOptions options) {
@@ -978,6 +1041,8 @@ public final class FileStorageFunctions {
      * Gets the specified file system snapshot policy&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1006,6 +1071,7 @@ public final class FileStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFilesystemSnapshotPolicyResult> getFilesystemSnapshotPolicyPlain(GetFilesystemSnapshotPolicyPlainArgs args, InvokeOptions options) {
@@ -1017,6 +1083,8 @@ public final class FileStorageFunctions {
      * Lists the mount target resources in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1050,6 +1118,7 @@ public final class FileStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMountTargetsResult> getMountTargets(GetMountTargetsArgs args) {
@@ -1061,6 +1130,8 @@ public final class FileStorageFunctions {
      * Lists the mount target resources in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1094,6 +1165,7 @@ public final class FileStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMountTargetsResult> getMountTargetsPlain(GetMountTargetsPlainArgs args) {
@@ -1105,6 +1177,8 @@ public final class FileStorageFunctions {
      * Lists the mount target resources in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1138,6 +1212,7 @@ public final class FileStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMountTargetsResult> getMountTargets(GetMountTargetsArgs args, InvokeOptions options) {
@@ -1149,6 +1224,8 @@ public final class FileStorageFunctions {
      * Lists the mount target resources in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1182,6 +1259,7 @@ public final class FileStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMountTargetsResult> getMountTargetsPlain(GetMountTargetsPlainArgs args, InvokeOptions options) {
@@ -1193,6 +1271,8 @@ public final class FileStorageFunctions {
      * Gets the specified outbound connector&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1221,6 +1301,7 @@ public final class FileStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOutboundConnectorResult> getOutboundConnector(GetOutboundConnectorArgs args) {
@@ -1232,6 +1313,8 @@ public final class FileStorageFunctions {
      * Gets the specified outbound connector&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1260,6 +1343,7 @@ public final class FileStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOutboundConnectorResult> getOutboundConnectorPlain(GetOutboundConnectorPlainArgs args) {
@@ -1271,6 +1355,8 @@ public final class FileStorageFunctions {
      * Gets the specified outbound connector&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1299,6 +1385,7 @@ public final class FileStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOutboundConnectorResult> getOutboundConnector(GetOutboundConnectorArgs args, InvokeOptions options) {
@@ -1310,6 +1397,8 @@ public final class FileStorageFunctions {
      * Gets the specified outbound connector&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1338,6 +1427,7 @@ public final class FileStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOutboundConnectorResult> getOutboundConnectorPlain(GetOutboundConnectorPlainArgs args, InvokeOptions options) {
@@ -1349,6 +1439,8 @@ public final class FileStorageFunctions {
      * Lists the outbound connector resources in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1381,6 +1473,7 @@ public final class FileStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOutboundConnectorsResult> getOutboundConnectors(GetOutboundConnectorsArgs args) {
@@ -1392,6 +1485,8 @@ public final class FileStorageFunctions {
      * Lists the outbound connector resources in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1424,6 +1519,7 @@ public final class FileStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOutboundConnectorsResult> getOutboundConnectorsPlain(GetOutboundConnectorsPlainArgs args) {
@@ -1435,6 +1531,8 @@ public final class FileStorageFunctions {
      * Lists the outbound connector resources in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1467,6 +1565,7 @@ public final class FileStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOutboundConnectorsResult> getOutboundConnectors(GetOutboundConnectorsArgs args, InvokeOptions options) {
@@ -1478,6 +1577,8 @@ public final class FileStorageFunctions {
      * Lists the outbound connector resources in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1510,6 +1611,7 @@ public final class FileStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOutboundConnectorsResult> getOutboundConnectorsPlain(GetOutboundConnectorsPlainArgs args, InvokeOptions options) {
@@ -1521,6 +1623,8 @@ public final class FileStorageFunctions {
      * Gets the specified replication&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1549,6 +1653,7 @@ public final class FileStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetReplicationResult> getReplication(GetReplicationArgs args) {
@@ -1560,6 +1665,8 @@ public final class FileStorageFunctions {
      * Gets the specified replication&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1588,6 +1695,7 @@ public final class FileStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetReplicationResult> getReplicationPlain(GetReplicationPlainArgs args) {
@@ -1599,6 +1707,8 @@ public final class FileStorageFunctions {
      * Gets the specified replication&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1627,6 +1737,7 @@ public final class FileStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetReplicationResult> getReplication(GetReplicationArgs args, InvokeOptions options) {
@@ -1638,6 +1749,8 @@ public final class FileStorageFunctions {
      * Gets the specified replication&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1666,6 +1779,7 @@ public final class FileStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetReplicationResult> getReplicationPlain(GetReplicationPlainArgs args, InvokeOptions options) {
@@ -1677,6 +1791,8 @@ public final class FileStorageFunctions {
      * Gets the specified replication target&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1705,6 +1821,7 @@ public final class FileStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetReplicationTargetResult> getReplicationTarget(GetReplicationTargetArgs args) {
@@ -1716,6 +1833,8 @@ public final class FileStorageFunctions {
      * Gets the specified replication target&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1744,6 +1863,7 @@ public final class FileStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetReplicationTargetResult> getReplicationTargetPlain(GetReplicationTargetPlainArgs args) {
@@ -1755,6 +1875,8 @@ public final class FileStorageFunctions {
      * Gets the specified replication target&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1783,6 +1905,7 @@ public final class FileStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetReplicationTargetResult> getReplicationTarget(GetReplicationTargetArgs args, InvokeOptions options) {
@@ -1794,6 +1917,8 @@ public final class FileStorageFunctions {
      * Gets the specified replication target&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1822,6 +1947,7 @@ public final class FileStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetReplicationTargetResult> getReplicationTargetPlain(GetReplicationTargetPlainArgs args, InvokeOptions options) {
@@ -1833,6 +1959,8 @@ public final class FileStorageFunctions {
      * Lists the replication target resources in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1865,6 +1993,7 @@ public final class FileStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetReplicationTargetsResult> getReplicationTargets(GetReplicationTargetsArgs args) {
@@ -1876,6 +2005,8 @@ public final class FileStorageFunctions {
      * Lists the replication target resources in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1908,6 +2039,7 @@ public final class FileStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetReplicationTargetsResult> getReplicationTargetsPlain(GetReplicationTargetsPlainArgs args) {
@@ -1919,6 +2051,8 @@ public final class FileStorageFunctions {
      * Lists the replication target resources in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1951,6 +2085,7 @@ public final class FileStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetReplicationTargetsResult> getReplicationTargets(GetReplicationTargetsArgs args, InvokeOptions options) {
@@ -1962,6 +2097,8 @@ public final class FileStorageFunctions {
      * Lists the replication target resources in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1994,6 +2131,7 @@ public final class FileStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetReplicationTargetsResult> getReplicationTargetsPlain(GetReplicationTargetsPlainArgs args, InvokeOptions options) {
@@ -2005,6 +2143,8 @@ public final class FileStorageFunctions {
      * Lists the replication resources in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2038,6 +2178,7 @@ public final class FileStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetReplicationsResult> getReplications(GetReplicationsArgs args) {
@@ -2049,6 +2190,8 @@ public final class FileStorageFunctions {
      * Lists the replication resources in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2082,6 +2225,7 @@ public final class FileStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetReplicationsResult> getReplicationsPlain(GetReplicationsPlainArgs args) {
@@ -2093,6 +2237,8 @@ public final class FileStorageFunctions {
      * Lists the replication resources in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2126,6 +2272,7 @@ public final class FileStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetReplicationsResult> getReplications(GetReplicationsArgs args, InvokeOptions options) {
@@ -2137,6 +2284,8 @@ public final class FileStorageFunctions {
      * Lists the replication resources in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2170,6 +2319,7 @@ public final class FileStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetReplicationsResult> getReplicationsPlain(GetReplicationsPlainArgs args, InvokeOptions options) {
@@ -2181,6 +2331,8 @@ public final class FileStorageFunctions {
      * Gets the specified snapshot&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2209,6 +2361,7 @@ public final class FileStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSnapshotResult> getSnapshot(GetSnapshotArgs args) {
@@ -2220,6 +2373,8 @@ public final class FileStorageFunctions {
      * Gets the specified snapshot&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2248,6 +2403,7 @@ public final class FileStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSnapshotResult> getSnapshotPlain(GetSnapshotPlainArgs args) {
@@ -2259,6 +2415,8 @@ public final class FileStorageFunctions {
      * Gets the specified snapshot&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2287,6 +2445,7 @@ public final class FileStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSnapshotResult> getSnapshot(GetSnapshotArgs args, InvokeOptions options) {
@@ -2298,6 +2457,8 @@ public final class FileStorageFunctions {
      * Gets the specified snapshot&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2326,6 +2487,7 @@ public final class FileStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSnapshotResult> getSnapshotPlain(GetSnapshotPlainArgs args, InvokeOptions options) {
@@ -2343,6 +2505,8 @@ public final class FileStorageFunctions {
      * (sort by name is NOT supported for listing snapshots by policy and compartment).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2375,6 +2539,7 @@ public final class FileStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSnapshotsResult> getSnapshots() {
@@ -2392,6 +2557,8 @@ public final class FileStorageFunctions {
      * (sort by name is NOT supported for listing snapshots by policy and compartment).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2424,6 +2591,7 @@ public final class FileStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSnapshotsResult> getSnapshotsPlain() {
@@ -2441,6 +2609,8 @@ public final class FileStorageFunctions {
      * (sort by name is NOT supported for listing snapshots by policy and compartment).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2473,6 +2643,7 @@ public final class FileStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSnapshotsResult> getSnapshots(GetSnapshotsArgs args) {
@@ -2490,6 +2661,8 @@ public final class FileStorageFunctions {
      * (sort by name is NOT supported for listing snapshots by policy and compartment).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2522,6 +2695,7 @@ public final class FileStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSnapshotsResult> getSnapshotsPlain(GetSnapshotsPlainArgs args) {
@@ -2539,6 +2713,8 @@ public final class FileStorageFunctions {
      * (sort by name is NOT supported for listing snapshots by policy and compartment).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2571,6 +2747,7 @@ public final class FileStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSnapshotsResult> getSnapshots(GetSnapshotsArgs args, InvokeOptions options) {
@@ -2588,6 +2765,8 @@ public final class FileStorageFunctions {
      * (sort by name is NOT supported for listing snapshots by policy and compartment).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2620,6 +2799,7 @@ public final class FileStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSnapshotsResult> getSnapshotsPlain(GetSnapshotsPlainArgs args, InvokeOptions options) {

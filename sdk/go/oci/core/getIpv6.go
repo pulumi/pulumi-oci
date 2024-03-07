@@ -20,6 +20,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -43,6 +44,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupIpv6(ctx *pulumi.Context, args *LookupIpv6Args, opts ...pulumi.InvokeOption) (*LookupIpv6Result, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupIpv6Result

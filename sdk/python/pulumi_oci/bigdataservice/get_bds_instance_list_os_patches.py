@@ -86,12 +86,14 @@ def get_bds_instance_list_os_patches(bds_instance_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_bds_instance_list_os_patches = oci.BigDataService.get_bds_instance_list_os_patches(bds_instance_id=oci_bds_bds_instance["test_bds_instance"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str bds_instance_id: The OCID of the cluster.
@@ -120,12 +122,14 @@ def get_bds_instance_list_os_patches_output(bds_instance_id: Optional[pulumi.Inp
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_bds_instance_list_os_patches = oci.BigDataService.get_bds_instance_list_os_patches(bds_instance_id=oci_bds_bds_instance["test_bds_instance"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str bds_instance_id: The OCID of the cluster.

@@ -218,12 +218,14 @@ def get_private_endpoint(private_endpoint_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_private_endpoint = oci.ResourceManager.get_private_endpoint(private_endpoint_id=oci_resourcemanager_private_endpoint["test_private_endpoint"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
@@ -261,12 +263,14 @@ def get_private_endpoint_output(private_endpoint_id: Optional[pulumi.Input[str]]
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_private_endpoint = oci.ResourceManager.get_private_endpoint(private_endpoint_id=oci_resourcemanager_private_endpoint["test_private_endpoint"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.

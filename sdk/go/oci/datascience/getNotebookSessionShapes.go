@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -40,6 +41,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetNotebookSessionShapes(ctx *pulumi.Context, args *GetNotebookSessionShapesArgs, opts ...pulumi.InvokeOption) (*GetNotebookSessionShapesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetNotebookSessionShapesResult

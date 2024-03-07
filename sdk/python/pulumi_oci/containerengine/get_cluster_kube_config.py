@@ -104,6 +104,7 @@ def get_cluster_kube_config(cluster_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -113,6 +114,7 @@ def get_cluster_kube_config(cluster_id: Optional[str] = None,
         expiration=var["cluster_kube_config_expiration"],
         token_version=var["cluster_kube_config_token_version"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str cluster_id: The OCID of the cluster.
@@ -150,6 +152,7 @@ def get_cluster_kube_config_output(cluster_id: Optional[pulumi.Input[str]] = Non
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -159,6 +162,7 @@ def get_cluster_kube_config_output(cluster_id: Optional[pulumi.Input[str]] = Non
         expiration=var["cluster_kube_config_expiration"],
         token_version=var["cluster_kube_config_token_version"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str cluster_id: The OCID of the cluster.

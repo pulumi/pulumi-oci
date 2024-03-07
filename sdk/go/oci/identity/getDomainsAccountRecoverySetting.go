@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -47,6 +48,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupDomainsAccountRecoverySetting(ctx *pulumi.Context, args *LookupDomainsAccountRecoverySettingArgs, opts ...pulumi.InvokeOption) (*LookupDomainsAccountRecoverySettingResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupDomainsAccountRecoverySettingResult

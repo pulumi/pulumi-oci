@@ -22,7 +22,7 @@ namespace Pulumi.Oci.Dns
     /// Resolvers can be imported using their OCID, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Dns/resolver:Resolver test_resolver "id"
+    /// $ pulumi import oci:Dns/resolver:Resolver test_resolver "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Dns/resolver:Resolver")]

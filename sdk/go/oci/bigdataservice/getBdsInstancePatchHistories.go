@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -43,6 +44,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetBdsInstancePatchHistories(ctx *pulumi.Context, args *GetBdsInstancePatchHistoriesArgs, opts ...pulumi.InvokeOption) (*GetBdsInstancePatchHistoriesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetBdsInstancePatchHistoriesResult

@@ -14,6 +14,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -30,13 +31,14 @@ import * as utilities from "../utilities";
  *     },
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * DrgRouteDistributions can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Core/drgRouteDistribution:DrgRouteDistribution test_drg_route_distribution "id"
+ * $ pulumi import oci:Core/drgRouteDistribution:DrgRouteDistribution test_drg_route_distribution "id"
  * ```
  */
 export class DrgRouteDistribution extends pulumi.CustomResource {

@@ -21,9 +21,7 @@ import (
 // DeployStages can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:DevOps/deployStage:DeployStage test_deploy_stage "id"
-//
+// $ pulumi import oci:DevOps/deployStage:DeployStage test_deploy_stage "id"
 // ```
 type DeployStage struct {
 	pulumi.CustomResourceState

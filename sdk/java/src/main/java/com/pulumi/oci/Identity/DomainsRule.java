@@ -29,6 +29,8 @@ import javax.annotation.Nullable;
  * Create a Rule
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -89,13 +91,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * Rules can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Identity/domainsRule:DomainsRule test_rule &#34;idcsEndpoint/{idcsEndpoint}/rules/{ruleId}&#34;
+ * $ pulumi import oci:Identity/domainsRule:DomainsRule test_rule &#34;idcsEndpoint/{idcsEndpoint}/rules/{ruleId}&#34;
  * ```
  * 
  */

@@ -88,12 +88,14 @@ def get_authentication_policy(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_authentication_policy = oci.Identity.get_authentication_policy(compartment_id=var["tenancy_ocid"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment.
@@ -121,12 +123,14 @@ def get_authentication_policy_output(compartment_id: Optional[pulumi.Input[str]]
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_authentication_policy = oci.Identity.get_authentication_policy(compartment_id=var["tenancy_ocid"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment.

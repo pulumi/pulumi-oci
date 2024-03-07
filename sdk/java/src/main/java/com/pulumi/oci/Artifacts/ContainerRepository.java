@@ -24,6 +24,8 @@ import javax.annotation.Nullable;
  * Create a new empty container repository. Avoid entering confidential information.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -62,13 +64,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * ContainerRepositories can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Artifacts/containerRepository:ContainerRepository test_container_repository &#34;container/repositories/{repositoryId}&#34;
+ * $ pulumi import oci:Artifacts/containerRepository:ContainerRepository test_container_repository &#34;container/repositories/{repositoryId}&#34;
  * ```
  * 
  */

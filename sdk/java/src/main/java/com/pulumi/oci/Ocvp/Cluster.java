@@ -34,6 +34,8 @@ import javax.annotation.Nullable;
  * **Important:** You must configure the Cluster&#39;s networking resources with the security rules detailed in [Security Rules for Oracle Cloud VMware Solution SDDCs](https://docs.cloud.oracle.com/iaas/Content/VMware/Reference/ocvssecurityrules.htm). Otherwise, provisioning the SDDC will fail. The rules are based on the requirements set by VMware.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -95,13 +97,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * Clusters can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Ocvp/cluster:Cluster test_cluster &#34;id&#34;
+ * $ pulumi import oci:Ocvp/cluster:Cluster test_cluster &#34;id&#34;
  * ```
  * 
  */

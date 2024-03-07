@@ -16,7 +16,7 @@ import * as utilities from "../utilities";
  * DetectorRecipes can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:CloudGuard/detectorRecipe:DetectorRecipe test_detector_recipe "id"
+ * $ pulumi import oci:CloudGuard/detectorRecipe:DetectorRecipe test_detector_recipe "id"
  * ```
  */
 export class DetectorRecipe extends pulumi.CustomResource {

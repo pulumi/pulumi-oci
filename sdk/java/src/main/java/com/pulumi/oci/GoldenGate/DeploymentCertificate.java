@@ -20,6 +20,8 @@ import javax.annotation.Nullable;
  * Creates a new certificate to truststore.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -50,13 +52,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * DeploymentCertificates can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:GoldenGate/deploymentCertificate:DeploymentCertificate test_deployment_certificate &#34;deployments/{deploymentId}/certificates/{certificateKey}&#34;
+ * $ pulumi import oci:GoldenGate/deploymentCertificate:DeploymentCertificate test_deployment_certificate &#34;deployments/{deploymentId}/certificates/{certificateKey}&#34;
  * ```
  * 
  */

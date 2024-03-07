@@ -17,10 +17,9 @@ namespace Pulumi.Oci.Functions
         /// Returns a list of ScheduledActivities.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -41,8 +40,7 @@ namespace Pulumi.Oci.Functions
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetFusionEnvironmentScheduledActivitiesResult> InvokeAsync(GetFusionEnvironmentScheduledActivitiesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetFusionEnvironmentScheduledActivitiesResult>("oci:Functions/getFusionEnvironmentScheduledActivities:getFusionEnvironmentScheduledActivities", args ?? new GetFusionEnvironmentScheduledActivitiesArgs(), options.WithDefaults());
@@ -53,10 +51,9 @@ namespace Pulumi.Oci.Functions
         /// Returns a list of ScheduledActivities.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -77,8 +74,7 @@ namespace Pulumi.Oci.Functions
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetFusionEnvironmentScheduledActivitiesResult> Invoke(GetFusionEnvironmentScheduledActivitiesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFusionEnvironmentScheduledActivitiesResult>("oci:Functions/getFusionEnvironmentScheduledActivities:getFusionEnvironmentScheduledActivities", args ?? new GetFusionEnvironmentScheduledActivitiesInvokeArgs(), options.WithDefaults());

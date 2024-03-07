@@ -16,7 +16,7 @@ import * as utilities from "../utilities";
  * DatabaseToolsConnections can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:DatabaseTools/databaseToolsConnection:DatabaseToolsConnection test_database_tools_connection "id"
+ * $ pulumi import oci:DatabaseTools/databaseToolsConnection:DatabaseToolsConnection test_database_tools_connection "id"
  * ```
  */
 export class DatabaseToolsConnection extends pulumi.CustomResource {

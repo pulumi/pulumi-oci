@@ -25,6 +25,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -62,15 +63,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // AlarmSuppressions can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Monitoring/alarmSuppression:AlarmSuppression test_alarm_suppression "id"
-//
+// $ pulumi import oci:Monitoring/alarmSuppression:AlarmSuppression test_alarm_suppression "id"
 // ```
 type AlarmSuppression struct {
 	pulumi.CustomResourceState

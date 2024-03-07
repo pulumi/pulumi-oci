@@ -16,10 +16,9 @@ namespace Pulumi.Oci.Adm
         /// 
         /// Returns a list of application dependency with their associated recommendations.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -37,8 +36,7 @@ namespace Pulumi.Oci.Adm
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetRemediationRunApplicationDependencyRecommendationsResult> InvokeAsync(GetRemediationRunApplicationDependencyRecommendationsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetRemediationRunApplicationDependencyRecommendationsResult>("oci:Adm/getRemediationRunApplicationDependencyRecommendations:getRemediationRunApplicationDependencyRecommendations", args ?? new GetRemediationRunApplicationDependencyRecommendationsArgs(), options.WithDefaults());
@@ -48,10 +46,9 @@ namespace Pulumi.Oci.Adm
         /// 
         /// Returns a list of application dependency with their associated recommendations.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -69,8 +66,7 @@ namespace Pulumi.Oci.Adm
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetRemediationRunApplicationDependencyRecommendationsResult> Invoke(GetRemediationRunApplicationDependencyRecommendationsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetRemediationRunApplicationDependencyRecommendationsResult>("oci:Adm/getRemediationRunApplicationDependencyRecommendations:getRemediationRunApplicationDependencyRecommendations", args ?? new GetRemediationRunApplicationDependencyRecommendationsInvokeArgs(), options.WithDefaults());

@@ -219,6 +219,7 @@ class IdpGroupMapping(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -228,13 +229,14 @@ class IdpGroupMapping(pulumi.CustomResource):
             identity_provider_id=oci_identity_identity_provider["test_identity_provider"]["id"],
             idp_group_name=var["idp_group_mapping_idp_group_name"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         IdpGroupMappings can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/idpGroupMapping:IdpGroupMapping test_idp_group_mapping "identityProviders/{identityProviderId}/groupMappings/{mappingId}"
+        $ pulumi import oci:Identity/idpGroupMapping:IdpGroupMapping test_idp_group_mapping "identityProviders/{identityProviderId}/groupMappings/{mappingId}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -263,6 +265,7 @@ class IdpGroupMapping(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -272,13 +275,14 @@ class IdpGroupMapping(pulumi.CustomResource):
             identity_provider_id=oci_identity_identity_provider["test_identity_provider"]["id"],
             idp_group_name=var["idp_group_mapping_idp_group_name"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         IdpGroupMappings can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/idpGroupMapping:IdpGroupMapping test_idp_group_mapping "identityProviders/{identityProviderId}/groupMappings/{mappingId}"
+        $ pulumi import oci:Identity/idpGroupMapping:IdpGroupMapping test_idp_group_mapping "identityProviders/{identityProviderId}/groupMappings/{mappingId}"
         ```
 
         :param str resource_name: The name of the resource.

@@ -14,6 +14,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,6 +23,7 @@ import * as utilities from "../utilities";
  *     compartmentId: _var.compartment_id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getCostTrackingTags(args: GetCostTrackingTagsArgs, opts?: pulumi.InvokeOptions): Promise<GetCostTrackingTagsResult> {
 
@@ -69,6 +71,7 @@ export interface GetCostTrackingTagsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -77,6 +80,7 @@ export interface GetCostTrackingTagsResult {
  *     compartmentId: _var.compartment_id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getCostTrackingTagsOutput(args: GetCostTrackingTagsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCostTrackingTagsResult> {
     return pulumi.output(args).apply((a: any) => getCostTrackingTags(a, opts))

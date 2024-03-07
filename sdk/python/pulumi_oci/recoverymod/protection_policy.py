@@ -326,6 +326,7 @@ class ProtectionPolicy(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -341,13 +342,14 @@ class ProtectionPolicy(pulumi.CustomResource):
                 "bar-key": "value",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ProtectionPolicies can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:RecoveryMod/protectionPolicy:ProtectionPolicy test_protection_policy "id"
+        $ pulumi import oci:RecoveryMod/protectionPolicy:ProtectionPolicy test_protection_policy "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -375,6 +377,7 @@ class ProtectionPolicy(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -390,13 +393,14 @@ class ProtectionPolicy(pulumi.CustomResource):
                 "bar-key": "value",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ProtectionPolicies can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:RecoveryMod/protectionPolicy:ProtectionPolicy test_protection_policy "id"
+        $ pulumi import oci:RecoveryMod/protectionPolicy:ProtectionPolicy test_protection_policy "id"
         ```
 
         :param str resource_name: The name of the resource.

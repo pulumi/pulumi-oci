@@ -19,6 +19,7 @@ namespace Pulumi.Oci.Kms
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -40,13 +41,14 @@ namespace Pulumi.Oci.Kms
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// Verify can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Kms/verify:Verify test_verify "id"
+    /// $ pulumi import oci:Kms/verify:Verify test_verify "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Kms/verify:Verify")]

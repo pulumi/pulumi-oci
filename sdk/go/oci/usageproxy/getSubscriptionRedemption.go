@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -43,6 +44,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetSubscriptionRedemption(ctx *pulumi.Context, args *GetSubscriptionRedemptionArgs, opts ...pulumi.InvokeOption) (*GetSubscriptionRedemptionResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetSubscriptionRedemptionResult

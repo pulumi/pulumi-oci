@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,6 +23,7 @@ import * as utilities from "../utilities";
  *     opcNamedCredentialId: _var.external_asm_configuration_opc_named_credential_id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getExternalAsmConfiguration(args: GetExternalAsmConfigurationArgs, opts?: pulumi.InvokeOptions): Promise<GetExternalAsmConfigurationResult> {
 
@@ -68,6 +70,7 @@ export interface GetExternalAsmConfigurationResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -77,6 +80,7 @@ export interface GetExternalAsmConfigurationResult {
  *     opcNamedCredentialId: _var.external_asm_configuration_opc_named_credential_id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getExternalAsmConfigurationOutput(args: GetExternalAsmConfigurationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalAsmConfigurationResult> {
     return pulumi.output(args).apply((a: any) => getExternalAsmConfiguration(a, opts))

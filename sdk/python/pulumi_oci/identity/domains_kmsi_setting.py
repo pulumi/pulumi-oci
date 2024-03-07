@@ -1377,7 +1377,7 @@ class DomainsKmsiSetting(pulumi.CustomResource):
         KmsiSettings can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/domainsKmsiSetting:DomainsKmsiSetting test_kmsi_setting "idcsEndpoint/{idcsEndpoint}/kmsiSettings/{kmsiSettingId}"
+        $ pulumi import oci:Identity/domainsKmsiSetting:DomainsKmsiSetting test_kmsi_setting "idcsEndpoint/{idcsEndpoint}/kmsiSettings/{kmsiSettingId}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -1531,7 +1531,7 @@ class DomainsKmsiSetting(pulumi.CustomResource):
         KmsiSettings can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/domainsKmsiSetting:DomainsKmsiSetting test_kmsi_setting "idcsEndpoint/{idcsEndpoint}/kmsiSettings/{kmsiSettingId}"
+        $ pulumi import oci:Identity/domainsKmsiSetting:DomainsKmsiSetting test_kmsi_setting "idcsEndpoint/{idcsEndpoint}/kmsiSettings/{kmsiSettingId}"
         ```
 
         :param str resource_name: The name of the resource.

@@ -16,6 +16,7 @@ namespace Pulumi.Oci.Opsi
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -56,13 +57,14 @@ namespace Pulumi.Oci.Opsi
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// OpsiConfigurations can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Opsi/opsiConfiguration:OpsiConfiguration test_opsi_configuration "id"
+    /// $ pulumi import oci:Opsi/opsiConfiguration:OpsiConfiguration test_opsi_configuration "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Opsi/opsiConfiguration:OpsiConfiguration")]

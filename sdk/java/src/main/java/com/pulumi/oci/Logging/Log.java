@@ -25,6 +25,8 @@ import javax.annotation.Nullable;
  * with the same displayName or (service, resource, category) triplet.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -71,13 +73,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * Logs can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Logging/log:Log test_log &#34;logGroupId/{logGroupId}/logId/{logId}&#34;
+ * $ pulumi import oci:Logging/log:Log test_log &#34;logGroupId/{logGroupId}/logId/{logId}&#34;
  * ```
  * 
  */

@@ -71,6 +71,8 @@ public final class StackMonitoringFunctions {
      * Get the Baseline-able metric for the given id
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -99,6 +101,7 @@ public final class StackMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBaselineableMetricResult> getBaselineableMetric(GetBaselineableMetricArgs args) {
@@ -110,6 +113,8 @@ public final class StackMonitoringFunctions {
      * Get the Baseline-able metric for the given id
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -138,6 +143,7 @@ public final class StackMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBaselineableMetricResult> getBaselineableMetricPlain(GetBaselineableMetricPlainArgs args) {
@@ -149,6 +155,8 @@ public final class StackMonitoringFunctions {
      * Get the Baseline-able metric for the given id
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -177,6 +185,7 @@ public final class StackMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBaselineableMetricResult> getBaselineableMetric(GetBaselineableMetricArgs args, InvokeOptions options) {
@@ -188,6 +197,8 @@ public final class StackMonitoringFunctions {
      * Get the Baseline-able metric for the given id
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -216,6 +227,7 @@ public final class StackMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBaselineableMetricResult> getBaselineableMetricPlain(GetBaselineableMetricPlainArgs args, InvokeOptions options) {
@@ -227,6 +239,8 @@ public final class StackMonitoringFunctions {
      * List of summary of baseline-able metrics for a given resource group if specified.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -259,6 +273,7 @@ public final class StackMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBaselineableMetricsResult> getBaselineableMetrics() {
@@ -270,6 +285,8 @@ public final class StackMonitoringFunctions {
      * List of summary of baseline-able metrics for a given resource group if specified.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -302,6 +319,7 @@ public final class StackMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBaselineableMetricsResult> getBaselineableMetricsPlain() {
@@ -313,6 +331,8 @@ public final class StackMonitoringFunctions {
      * List of summary of baseline-able metrics for a given resource group if specified.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -345,6 +365,7 @@ public final class StackMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBaselineableMetricsResult> getBaselineableMetrics(GetBaselineableMetricsArgs args) {
@@ -356,6 +377,8 @@ public final class StackMonitoringFunctions {
      * List of summary of baseline-able metrics for a given resource group if specified.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -388,6 +411,7 @@ public final class StackMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBaselineableMetricsResult> getBaselineableMetricsPlain(GetBaselineableMetricsPlainArgs args) {
@@ -399,6 +423,8 @@ public final class StackMonitoringFunctions {
      * List of summary of baseline-able metrics for a given resource group if specified.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -431,6 +457,7 @@ public final class StackMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBaselineableMetricsResult> getBaselineableMetrics(GetBaselineableMetricsArgs args, InvokeOptions options) {
@@ -442,6 +469,8 @@ public final class StackMonitoringFunctions {
      * List of summary of baseline-able metrics for a given resource group if specified.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -474,6 +503,7 @@ public final class StackMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBaselineableMetricsResult> getBaselineableMetricsPlain(GetBaselineableMetricsPlainArgs args, InvokeOptions options) {
@@ -485,6 +515,8 @@ public final class StackMonitoringFunctions {
      * Evaluates metric for anomalies for the given data points
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -525,6 +557,7 @@ public final class StackMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBaselineableMetricsEvaluateResult> getBaselineableMetricsEvaluate(GetBaselineableMetricsEvaluateArgs args) {
@@ -536,6 +569,8 @@ public final class StackMonitoringFunctions {
      * Evaluates metric for anomalies for the given data points
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -576,6 +611,7 @@ public final class StackMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBaselineableMetricsEvaluateResult> getBaselineableMetricsEvaluatePlain(GetBaselineableMetricsEvaluatePlainArgs args) {
@@ -587,6 +623,8 @@ public final class StackMonitoringFunctions {
      * Evaluates metric for anomalies for the given data points
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -627,6 +665,7 @@ public final class StackMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBaselineableMetricsEvaluateResult> getBaselineableMetricsEvaluate(GetBaselineableMetricsEvaluateArgs args, InvokeOptions options) {
@@ -638,6 +677,8 @@ public final class StackMonitoringFunctions {
      * Evaluates metric for anomalies for the given data points
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -678,6 +719,7 @@ public final class StackMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBaselineableMetricsEvaluateResult> getBaselineableMetricsEvaluatePlain(GetBaselineableMetricsEvaluatePlainArgs args, InvokeOptions options) {
@@ -689,6 +731,8 @@ public final class StackMonitoringFunctions {
      * Gets the details of a configuration.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -717,6 +761,7 @@ public final class StackMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetConfigResult> getConfig(GetConfigArgs args) {
@@ -728,6 +773,8 @@ public final class StackMonitoringFunctions {
      * Gets the details of a configuration.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -756,6 +803,7 @@ public final class StackMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetConfigResult> getConfigPlain(GetConfigPlainArgs args) {
@@ -767,6 +815,8 @@ public final class StackMonitoringFunctions {
      * Gets the details of a configuration.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -795,6 +845,7 @@ public final class StackMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetConfigResult> getConfig(GetConfigArgs args, InvokeOptions options) {
@@ -806,6 +857,8 @@ public final class StackMonitoringFunctions {
      * Gets the details of a configuration.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -834,6 +887,7 @@ public final class StackMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetConfigResult> getConfigPlain(GetConfigPlainArgs args, InvokeOptions options) {
@@ -845,6 +899,8 @@ public final class StackMonitoringFunctions {
      * Get a list of configurations in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -876,6 +932,7 @@ public final class StackMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetConfigsResult> getConfigs(GetConfigsArgs args) {
@@ -887,6 +944,8 @@ public final class StackMonitoringFunctions {
      * Get a list of configurations in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -918,6 +977,7 @@ public final class StackMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetConfigsResult> getConfigsPlain(GetConfigsPlainArgs args) {
@@ -929,6 +989,8 @@ public final class StackMonitoringFunctions {
      * Get a list of configurations in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -960,6 +1022,7 @@ public final class StackMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetConfigsResult> getConfigs(GetConfigsArgs args, InvokeOptions options) {
@@ -971,6 +1034,8 @@ public final class StackMonitoringFunctions {
      * Get a list of configurations in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1002,6 +1067,7 @@ public final class StackMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetConfigsResult> getConfigsPlain(GetConfigsPlainArgs args, InvokeOptions options) {
@@ -1013,6 +1079,8 @@ public final class StackMonitoringFunctions {
      * API to get the details of discovery Job by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1041,6 +1109,7 @@ public final class StackMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDiscoveryJobResult> getDiscoveryJob(GetDiscoveryJobArgs args) {
@@ -1052,6 +1121,8 @@ public final class StackMonitoringFunctions {
      * API to get the details of discovery Job by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1080,6 +1151,7 @@ public final class StackMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDiscoveryJobResult> getDiscoveryJobPlain(GetDiscoveryJobPlainArgs args) {
@@ -1091,6 +1163,8 @@ public final class StackMonitoringFunctions {
      * API to get the details of discovery Job by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1119,6 +1193,7 @@ public final class StackMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDiscoveryJobResult> getDiscoveryJob(GetDiscoveryJobArgs args, InvokeOptions options) {
@@ -1130,6 +1205,8 @@ public final class StackMonitoringFunctions {
      * API to get the details of discovery Job by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1158,6 +1235,7 @@ public final class StackMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDiscoveryJobResult> getDiscoveryJobPlain(GetDiscoveryJobPlainArgs args, InvokeOptions options) {
@@ -1169,6 +1247,8 @@ public final class StackMonitoringFunctions {
      * API to get all the logs of a Discovery Job.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1198,6 +1278,7 @@ public final class StackMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDiscoveryJobLogsResult> getDiscoveryJobLogs(GetDiscoveryJobLogsArgs args) {
@@ -1209,6 +1290,8 @@ public final class StackMonitoringFunctions {
      * API to get all the logs of a Discovery Job.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1238,6 +1321,7 @@ public final class StackMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDiscoveryJobLogsResult> getDiscoveryJobLogsPlain(GetDiscoveryJobLogsPlainArgs args) {
@@ -1249,6 +1333,8 @@ public final class StackMonitoringFunctions {
      * API to get all the logs of a Discovery Job.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1278,6 +1364,7 @@ public final class StackMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDiscoveryJobLogsResult> getDiscoveryJobLogs(GetDiscoveryJobLogsArgs args, InvokeOptions options) {
@@ -1289,6 +1376,8 @@ public final class StackMonitoringFunctions {
      * API to get all the logs of a Discovery Job.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1318,6 +1407,7 @@ public final class StackMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDiscoveryJobLogsResult> getDiscoveryJobLogsPlain(GetDiscoveryJobLogsPlainArgs args, InvokeOptions options) {
@@ -1329,6 +1419,8 @@ public final class StackMonitoringFunctions {
      * API to get the details of all Discovery Jobs.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1358,6 +1450,7 @@ public final class StackMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDiscoveryJobsResult> getDiscoveryJobs(GetDiscoveryJobsArgs args) {
@@ -1369,6 +1462,8 @@ public final class StackMonitoringFunctions {
      * API to get the details of all Discovery Jobs.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1398,6 +1493,7 @@ public final class StackMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDiscoveryJobsResult> getDiscoveryJobsPlain(GetDiscoveryJobsPlainArgs args) {
@@ -1409,6 +1505,8 @@ public final class StackMonitoringFunctions {
      * API to get the details of all Discovery Jobs.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1438,6 +1536,7 @@ public final class StackMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDiscoveryJobsResult> getDiscoveryJobs(GetDiscoveryJobsArgs args, InvokeOptions options) {
@@ -1449,6 +1548,8 @@ public final class StackMonitoringFunctions {
      * API to get the details of all Discovery Jobs.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1478,6 +1579,7 @@ public final class StackMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDiscoveryJobsResult> getDiscoveryJobsPlain(GetDiscoveryJobsPlainArgs args, InvokeOptions options) {
@@ -1489,6 +1591,8 @@ public final class StackMonitoringFunctions {
      * Gets a Metric Extension by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1517,6 +1621,7 @@ public final class StackMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMetricExtensionResult> getMetricExtension(GetMetricExtensionArgs args) {
@@ -1528,6 +1633,8 @@ public final class StackMonitoringFunctions {
      * Gets a Metric Extension by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1556,6 +1663,7 @@ public final class StackMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMetricExtensionResult> getMetricExtensionPlain(GetMetricExtensionPlainArgs args) {
@@ -1567,6 +1675,8 @@ public final class StackMonitoringFunctions {
      * Gets a Metric Extension by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1595,6 +1705,7 @@ public final class StackMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMetricExtensionResult> getMetricExtension(GetMetricExtensionArgs args, InvokeOptions options) {
@@ -1606,6 +1717,8 @@ public final class StackMonitoringFunctions {
      * Gets a Metric Extension by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1634,6 +1747,7 @@ public final class StackMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMetricExtensionResult> getMetricExtensionPlain(GetMetricExtensionPlainArgs args, InvokeOptions options) {
@@ -1645,6 +1759,8 @@ public final class StackMonitoringFunctions {
      * Returns a list of metric extensions
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1678,6 +1794,7 @@ public final class StackMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMetricExtensionsResult> getMetricExtensions(GetMetricExtensionsArgs args) {
@@ -1689,6 +1806,8 @@ public final class StackMonitoringFunctions {
      * Returns a list of metric extensions
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1722,6 +1841,7 @@ public final class StackMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMetricExtensionsResult> getMetricExtensionsPlain(GetMetricExtensionsPlainArgs args) {
@@ -1733,6 +1853,8 @@ public final class StackMonitoringFunctions {
      * Returns a list of metric extensions
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1766,6 +1888,7 @@ public final class StackMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMetricExtensionsResult> getMetricExtensions(GetMetricExtensionsArgs args, InvokeOptions options) {
@@ -1777,6 +1900,8 @@ public final class StackMonitoringFunctions {
      * Returns a list of metric extensions
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1810,6 +1935,7 @@ public final class StackMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMetricExtensionsResult> getMetricExtensionsPlain(GetMetricExtensionsPlainArgs args, InvokeOptions options) {
@@ -1821,6 +1947,8 @@ public final class StackMonitoringFunctions {
      * Get monitored resource for the given identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1849,6 +1977,7 @@ public final class StackMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMonitoredResourceResult> getMonitoredResource(GetMonitoredResourceArgs args) {
@@ -1860,6 +1989,8 @@ public final class StackMonitoringFunctions {
      * Get monitored resource for the given identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1888,6 +2019,7 @@ public final class StackMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMonitoredResourceResult> getMonitoredResourcePlain(GetMonitoredResourcePlainArgs args) {
@@ -1899,6 +2031,8 @@ public final class StackMonitoringFunctions {
      * Get monitored resource for the given identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1927,6 +2061,7 @@ public final class StackMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMonitoredResourceResult> getMonitoredResource(GetMonitoredResourceArgs args, InvokeOptions options) {
@@ -1938,6 +2073,8 @@ public final class StackMonitoringFunctions {
      * Get monitored resource for the given identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1966,6 +2103,7 @@ public final class StackMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMonitoredResourceResult> getMonitoredResourcePlain(GetMonitoredResourcePlainArgs args, InvokeOptions options) {
@@ -1977,6 +2115,8 @@ public final class StackMonitoringFunctions {
      * Gets stack monitoring resource task details by identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2005,6 +2145,7 @@ public final class StackMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMonitoredResourceTaskResult> getMonitoredResourceTask(GetMonitoredResourceTaskArgs args) {
@@ -2016,6 +2157,8 @@ public final class StackMonitoringFunctions {
      * Gets stack monitoring resource task details by identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2044,6 +2187,7 @@ public final class StackMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMonitoredResourceTaskResult> getMonitoredResourceTaskPlain(GetMonitoredResourceTaskPlainArgs args) {
@@ -2055,6 +2199,8 @@ public final class StackMonitoringFunctions {
      * Gets stack monitoring resource task details by identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2083,6 +2229,7 @@ public final class StackMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMonitoredResourceTaskResult> getMonitoredResourceTask(GetMonitoredResourceTaskArgs args, InvokeOptions options) {
@@ -2094,6 +2241,8 @@ public final class StackMonitoringFunctions {
      * Gets stack monitoring resource task details by identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2122,6 +2271,7 @@ public final class StackMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMonitoredResourceTaskResult> getMonitoredResourceTaskPlain(GetMonitoredResourceTaskPlainArgs args, InvokeOptions options) {
@@ -2133,6 +2283,8 @@ public final class StackMonitoringFunctions {
      * Returns a list of stack monitoring resource tasks in the compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2162,6 +2314,7 @@ public final class StackMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMonitoredResourceTasksResult> getMonitoredResourceTasks(GetMonitoredResourceTasksArgs args) {
@@ -2173,6 +2326,8 @@ public final class StackMonitoringFunctions {
      * Returns a list of stack monitoring resource tasks in the compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2202,6 +2357,7 @@ public final class StackMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMonitoredResourceTasksResult> getMonitoredResourceTasksPlain(GetMonitoredResourceTasksPlainArgs args) {
@@ -2213,6 +2369,8 @@ public final class StackMonitoringFunctions {
      * Returns a list of stack monitoring resource tasks in the compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2242,6 +2400,7 @@ public final class StackMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMonitoredResourceTasksResult> getMonitoredResourceTasks(GetMonitoredResourceTasksArgs args, InvokeOptions options) {
@@ -2253,6 +2412,8 @@ public final class StackMonitoringFunctions {
      * Returns a list of stack monitoring resource tasks in the compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2282,6 +2443,7 @@ public final class StackMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMonitoredResourceTasksResult> getMonitoredResourceTasksPlain(GetMonitoredResourceTasksPlainArgs args, InvokeOptions options) {
@@ -2293,6 +2455,8 @@ public final class StackMonitoringFunctions {
      * Gets a monitored resource type by identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2321,6 +2485,7 @@ public final class StackMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMonitoredResourceTypeResult> getMonitoredResourceType(GetMonitoredResourceTypeArgs args) {
@@ -2332,6 +2497,8 @@ public final class StackMonitoringFunctions {
      * Gets a monitored resource type by identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2360,6 +2527,7 @@ public final class StackMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMonitoredResourceTypeResult> getMonitoredResourceTypePlain(GetMonitoredResourceTypePlainArgs args) {
@@ -2371,6 +2539,8 @@ public final class StackMonitoringFunctions {
      * Gets a monitored resource type by identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2399,6 +2569,7 @@ public final class StackMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMonitoredResourceTypeResult> getMonitoredResourceType(GetMonitoredResourceTypeArgs args, InvokeOptions options) {
@@ -2410,6 +2581,8 @@ public final class StackMonitoringFunctions {
      * Gets a monitored resource type by identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2438,6 +2611,7 @@ public final class StackMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMonitoredResourceTypeResult> getMonitoredResourceTypePlain(GetMonitoredResourceTypePlainArgs args, InvokeOptions options) {
@@ -2454,6 +2628,8 @@ public final class StackMonitoringFunctions {
      * and User resource types are returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2488,6 +2664,7 @@ public final class StackMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMonitoredResourceTypesResult> getMonitoredResourceTypes(GetMonitoredResourceTypesArgs args) {
@@ -2504,6 +2681,8 @@ public final class StackMonitoringFunctions {
      * and User resource types are returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2538,6 +2717,7 @@ public final class StackMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMonitoredResourceTypesResult> getMonitoredResourceTypesPlain(GetMonitoredResourceTypesPlainArgs args) {
@@ -2554,6 +2734,8 @@ public final class StackMonitoringFunctions {
      * and User resource types are returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2588,6 +2770,7 @@ public final class StackMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMonitoredResourceTypesResult> getMonitoredResourceTypes(GetMonitoredResourceTypesArgs args, InvokeOptions options) {
@@ -2604,6 +2787,8 @@ public final class StackMonitoringFunctions {
      * and User resource types are returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2638,6 +2823,7 @@ public final class StackMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMonitoredResourceTypesResult> getMonitoredResourceTypesPlain(GetMonitoredResourceTypesPlainArgs args, InvokeOptions options) {
@@ -2649,6 +2835,8 @@ public final class StackMonitoringFunctions {
      * Returns a list of monitored resources.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2679,6 +2867,7 @@ public final class StackMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMonitoredResourcesResult> getMonitoredResources(GetMonitoredResourcesArgs args) {
@@ -2690,6 +2879,8 @@ public final class StackMonitoringFunctions {
      * Returns a list of monitored resources.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2720,6 +2911,7 @@ public final class StackMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMonitoredResourcesResult> getMonitoredResourcesPlain(GetMonitoredResourcesPlainArgs args) {
@@ -2731,6 +2923,8 @@ public final class StackMonitoringFunctions {
      * Returns a list of monitored resources.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2761,6 +2955,7 @@ public final class StackMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMonitoredResourcesResult> getMonitoredResources(GetMonitoredResourcesArgs args, InvokeOptions options) {
@@ -2772,6 +2967,8 @@ public final class StackMonitoringFunctions {
      * Returns a list of monitored resources.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2802,6 +2999,7 @@ public final class StackMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMonitoredResourcesResult> getMonitoredResourcesPlain(GetMonitoredResourcesPlainArgs args, InvokeOptions options) {
@@ -2813,6 +3011,8 @@ public final class StackMonitoringFunctions {
      * API to get the details of a Process Set by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2841,6 +3041,7 @@ public final class StackMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetProcessSetResult> getProcessSet(GetProcessSetArgs args) {
@@ -2852,6 +3053,8 @@ public final class StackMonitoringFunctions {
      * API to get the details of a Process Set by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2880,6 +3083,7 @@ public final class StackMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetProcessSetResult> getProcessSetPlain(GetProcessSetPlainArgs args) {
@@ -2891,6 +3095,8 @@ public final class StackMonitoringFunctions {
      * API to get the details of a Process Set by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2919,6 +3125,7 @@ public final class StackMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetProcessSetResult> getProcessSet(GetProcessSetArgs args, InvokeOptions options) {
@@ -2930,6 +3137,8 @@ public final class StackMonitoringFunctions {
      * API to get the details of a Process Set by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2958,6 +3167,7 @@ public final class StackMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetProcessSetResult> getProcessSetPlain(GetProcessSetPlainArgs args, InvokeOptions options) {
@@ -2969,6 +3179,8 @@ public final class StackMonitoringFunctions {
      * API to get the details of all Process Sets.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2998,6 +3210,7 @@ public final class StackMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetProcessSetsResult> getProcessSets(GetProcessSetsArgs args) {
@@ -3009,6 +3222,8 @@ public final class StackMonitoringFunctions {
      * API to get the details of all Process Sets.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3038,6 +3253,7 @@ public final class StackMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetProcessSetsResult> getProcessSetsPlain(GetProcessSetsPlainArgs args) {
@@ -3049,6 +3265,8 @@ public final class StackMonitoringFunctions {
      * API to get the details of all Process Sets.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3078,6 +3296,7 @@ public final class StackMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetProcessSetsResult> getProcessSets(GetProcessSetsArgs args, InvokeOptions options) {
@@ -3089,6 +3308,8 @@ public final class StackMonitoringFunctions {
      * API to get the details of all Process Sets.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3118,6 +3339,7 @@ public final class StackMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetProcessSetsResult> getProcessSetsPlain(GetProcessSetsPlainArgs args, InvokeOptions options) {

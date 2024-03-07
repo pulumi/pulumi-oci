@@ -125,6 +125,7 @@ def get_secrets(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -134,6 +135,7 @@ def get_secrets(compartment_id: Optional[str] = None,
         state=var["secret_state"],
         vault_id=oci_kms_vault["test_vault"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment.
@@ -174,6 +176,7 @@ def get_secrets_output(compartment_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -183,6 +186,7 @@ def get_secrets_output(compartment_id: Optional[pulumi.Input[str]] = None,
         state=var["secret_state"],
         vault_id=oci_kms_vault["test_vault"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment.

@@ -17,10 +17,9 @@ namespace Pulumi.Oci.MediaServices
         /// Returns a list of MediaAssetSummary.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -47,8 +46,7 @@ namespace Pulumi.Oci.MediaServices
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetMediaAssetsResult> InvokeAsync(GetMediaAssetsArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetMediaAssetsResult>("oci:MediaServices/getMediaAssets:getMediaAssets", args ?? new GetMediaAssetsArgs(), options.WithDefaults());
@@ -59,10 +57,9 @@ namespace Pulumi.Oci.MediaServices
         /// Returns a list of MediaAssetSummary.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -89,8 +86,7 @@ namespace Pulumi.Oci.MediaServices
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetMediaAssetsResult> Invoke(GetMediaAssetsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMediaAssetsResult>("oci:MediaServices/getMediaAssets:getMediaAssets", args ?? new GetMediaAssetsInvokeArgs(), options.WithDefaults());

@@ -237,6 +237,7 @@ class ConnectHarness(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -248,13 +249,14 @@ class ConnectHarness(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ConnectHarnesses can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Streaming/connectHarness:ConnectHarness test_connect_harness "id"
+        $ pulumi import oci:Streaming/connectHarness:ConnectHarness test_connect_harness "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -283,6 +285,7 @@ class ConnectHarness(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -294,13 +297,14 @@ class ConnectHarness(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ConnectHarnesses can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Streaming/connectHarness:ConnectHarness test_connect_harness "id"
+        $ pulumi import oci:Streaming/connectHarness:ConnectHarness test_connect_harness "id"
         ```
 
         :param str resource_name: The name of the resource.

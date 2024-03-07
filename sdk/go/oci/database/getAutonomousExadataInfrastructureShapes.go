@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,6 +42,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetAutonomousExadataInfrastructureShapes(ctx *pulumi.Context, args *GetAutonomousExadataInfrastructureShapesArgs, opts ...pulumi.InvokeOption) (*GetAutonomousExadataInfrastructureShapesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAutonomousExadataInfrastructureShapesResult

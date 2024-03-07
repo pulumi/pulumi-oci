@@ -38,6 +38,8 @@ public final class RecoveryModFunctions {
      * Gets information about a specified protected database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -66,6 +68,7 @@ public final class RecoveryModFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetProtectedDatabaseResult> getProtectedDatabase(GetProtectedDatabaseArgs args) {
@@ -77,6 +80,8 @@ public final class RecoveryModFunctions {
      * Gets information about a specified protected database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -105,6 +110,7 @@ public final class RecoveryModFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetProtectedDatabaseResult> getProtectedDatabasePlain(GetProtectedDatabasePlainArgs args) {
@@ -116,6 +122,8 @@ public final class RecoveryModFunctions {
      * Gets information about a specified protected database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -144,6 +152,7 @@ public final class RecoveryModFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetProtectedDatabaseResult> getProtectedDatabase(GetProtectedDatabaseArgs args, InvokeOptions options) {
@@ -155,6 +164,8 @@ public final class RecoveryModFunctions {
      * Gets information about a specified protected database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -183,6 +194,7 @@ public final class RecoveryModFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetProtectedDatabaseResult> getProtectedDatabasePlain(GetProtectedDatabasePlainArgs args, InvokeOptions options) {
@@ -194,6 +206,8 @@ public final class RecoveryModFunctions {
      * Downloads the network service configuration file &#39;tnsnames.ora&#39; for a specified protected database. Applies to user-defined recovery systems only.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -224,6 +238,7 @@ public final class RecoveryModFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetProtectedDatabaseFetchConfigurationResult> getProtectedDatabaseFetchConfiguration(GetProtectedDatabaseFetchConfigurationArgs args) {
@@ -235,6 +250,8 @@ public final class RecoveryModFunctions {
      * Downloads the network service configuration file &#39;tnsnames.ora&#39; for a specified protected database. Applies to user-defined recovery systems only.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -265,6 +282,7 @@ public final class RecoveryModFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetProtectedDatabaseFetchConfigurationResult> getProtectedDatabaseFetchConfigurationPlain(GetProtectedDatabaseFetchConfigurationPlainArgs args) {
@@ -276,6 +294,8 @@ public final class RecoveryModFunctions {
      * Downloads the network service configuration file &#39;tnsnames.ora&#39; for a specified protected database. Applies to user-defined recovery systems only.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -306,6 +326,7 @@ public final class RecoveryModFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetProtectedDatabaseFetchConfigurationResult> getProtectedDatabaseFetchConfiguration(GetProtectedDatabaseFetchConfigurationArgs args, InvokeOptions options) {
@@ -317,6 +338,8 @@ public final class RecoveryModFunctions {
      * Downloads the network service configuration file &#39;tnsnames.ora&#39; for a specified protected database. Applies to user-defined recovery systems only.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -347,6 +370,7 @@ public final class RecoveryModFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetProtectedDatabaseFetchConfigurationResult> getProtectedDatabaseFetchConfigurationPlain(GetProtectedDatabaseFetchConfigurationPlainArgs args, InvokeOptions options) {
@@ -358,6 +382,8 @@ public final class RecoveryModFunctions {
      * Lists the protected databases based on the specified parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -391,6 +417,7 @@ public final class RecoveryModFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetProtectedDatabasesResult> getProtectedDatabases(GetProtectedDatabasesArgs args) {
@@ -402,6 +429,8 @@ public final class RecoveryModFunctions {
      * Lists the protected databases based on the specified parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -435,6 +464,7 @@ public final class RecoveryModFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetProtectedDatabasesResult> getProtectedDatabasesPlain(GetProtectedDatabasesPlainArgs args) {
@@ -446,6 +476,8 @@ public final class RecoveryModFunctions {
      * Lists the protected databases based on the specified parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -479,6 +511,7 @@ public final class RecoveryModFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetProtectedDatabasesResult> getProtectedDatabases(GetProtectedDatabasesArgs args, InvokeOptions options) {
@@ -490,6 +523,8 @@ public final class RecoveryModFunctions {
      * Lists the protected databases based on the specified parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -523,6 +558,7 @@ public final class RecoveryModFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetProtectedDatabasesResult> getProtectedDatabasesPlain(GetProtectedDatabasesPlainArgs args, InvokeOptions options) {
@@ -534,6 +570,8 @@ public final class RecoveryModFunctions {
      * Gets a list of protection policies based on the specified parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -566,6 +604,7 @@ public final class RecoveryModFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetProtectionPoliciesResult> getProtectionPolicies(GetProtectionPoliciesArgs args) {
@@ -577,6 +616,8 @@ public final class RecoveryModFunctions {
      * Gets a list of protection policies based on the specified parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -609,6 +650,7 @@ public final class RecoveryModFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetProtectionPoliciesResult> getProtectionPoliciesPlain(GetProtectionPoliciesPlainArgs args) {
@@ -620,6 +662,8 @@ public final class RecoveryModFunctions {
      * Gets a list of protection policies based on the specified parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -652,6 +696,7 @@ public final class RecoveryModFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetProtectionPoliciesResult> getProtectionPolicies(GetProtectionPoliciesArgs args, InvokeOptions options) {
@@ -663,6 +708,8 @@ public final class RecoveryModFunctions {
      * Gets a list of protection policies based on the specified parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -695,6 +742,7 @@ public final class RecoveryModFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetProtectionPoliciesResult> getProtectionPoliciesPlain(GetProtectionPoliciesPlainArgs args, InvokeOptions options) {
@@ -706,6 +754,8 @@ public final class RecoveryModFunctions {
      * Gets information about a specified protection policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -734,6 +784,7 @@ public final class RecoveryModFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetProtectionPolicyResult> getProtectionPolicy(GetProtectionPolicyArgs args) {
@@ -745,6 +796,8 @@ public final class RecoveryModFunctions {
      * Gets information about a specified protection policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -773,6 +826,7 @@ public final class RecoveryModFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetProtectionPolicyResult> getProtectionPolicyPlain(GetProtectionPolicyPlainArgs args) {
@@ -784,6 +838,8 @@ public final class RecoveryModFunctions {
      * Gets information about a specified protection policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -812,6 +868,7 @@ public final class RecoveryModFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetProtectionPolicyResult> getProtectionPolicy(GetProtectionPolicyArgs args, InvokeOptions options) {
@@ -823,6 +880,8 @@ public final class RecoveryModFunctions {
      * Gets information about a specified protection policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -851,6 +910,7 @@ public final class RecoveryModFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetProtectionPolicyResult> getProtectionPolicyPlain(GetProtectionPolicyPlainArgs args, InvokeOptions options) {
@@ -862,6 +922,8 @@ public final class RecoveryModFunctions {
      * Gets information about a specified recovery service subnet.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -890,6 +952,7 @@ public final class RecoveryModFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRecoveryServiceSubnetResult> getRecoveryServiceSubnet(GetRecoveryServiceSubnetArgs args) {
@@ -901,6 +964,8 @@ public final class RecoveryModFunctions {
      * Gets information about a specified recovery service subnet.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -929,6 +994,7 @@ public final class RecoveryModFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRecoveryServiceSubnetResult> getRecoveryServiceSubnetPlain(GetRecoveryServiceSubnetPlainArgs args) {
@@ -940,6 +1006,8 @@ public final class RecoveryModFunctions {
      * Gets information about a specified recovery service subnet.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -968,6 +1036,7 @@ public final class RecoveryModFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRecoveryServiceSubnetResult> getRecoveryServiceSubnet(GetRecoveryServiceSubnetArgs args, InvokeOptions options) {
@@ -979,6 +1048,8 @@ public final class RecoveryModFunctions {
      * Gets information about a specified recovery service subnet.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1007,6 +1078,7 @@ public final class RecoveryModFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRecoveryServiceSubnetResult> getRecoveryServiceSubnetPlain(GetRecoveryServiceSubnetPlainArgs args, InvokeOptions options) {
@@ -1018,6 +1090,8 @@ public final class RecoveryModFunctions {
      * Returns a list of Recovery Service Subnets.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1050,6 +1124,7 @@ public final class RecoveryModFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRecoveryServiceSubnetsResult> getRecoveryServiceSubnets(GetRecoveryServiceSubnetsArgs args) {
@@ -1061,6 +1136,8 @@ public final class RecoveryModFunctions {
      * Returns a list of Recovery Service Subnets.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1093,6 +1170,7 @@ public final class RecoveryModFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRecoveryServiceSubnetsResult> getRecoveryServiceSubnetsPlain(GetRecoveryServiceSubnetsPlainArgs args) {
@@ -1104,6 +1182,8 @@ public final class RecoveryModFunctions {
      * Returns a list of Recovery Service Subnets.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1136,6 +1216,7 @@ public final class RecoveryModFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRecoveryServiceSubnetsResult> getRecoveryServiceSubnets(GetRecoveryServiceSubnetsArgs args, InvokeOptions options) {
@@ -1147,6 +1228,8 @@ public final class RecoveryModFunctions {
      * Returns a list of Recovery Service Subnets.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1179,6 +1262,7 @@ public final class RecoveryModFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRecoveryServiceSubnetsResult> getRecoveryServiceSubnetsPlain(GetRecoveryServiceSubnetsPlainArgs args, InvokeOptions options) {

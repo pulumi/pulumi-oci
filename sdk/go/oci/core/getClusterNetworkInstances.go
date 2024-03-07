@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -42,6 +43,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetClusterNetworkInstances(ctx *pulumi.Context, args *GetClusterNetworkInstancesArgs, opts ...pulumi.InvokeOption) (*GetClusterNetworkInstancesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetClusterNetworkInstancesResult

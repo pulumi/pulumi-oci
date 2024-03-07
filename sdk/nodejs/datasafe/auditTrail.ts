@@ -14,7 +14,7 @@ import * as utilities from "../utilities";
  * AuditTrails can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:DataSafe/auditTrail:AuditTrail test_audit_trail "id"
+ * $ pulumi import oci:DataSafe/auditTrail:AuditTrail test_audit_trail "id"
  * ```
  */
 export class AuditTrail extends pulumi.CustomResource {

@@ -88,19 +88,21 @@ class RepositoryMirror(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
 
         test_repository_mirror = oci.dev_ops.RepositoryMirror("testRepositoryMirror", repository_id=oci_devops_repository["test_repository"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         RepositoryMirror can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DevOps/repositoryMirror:RepositoryMirror test_repository_mirror "id"
+        $ pulumi import oci:DevOps/repositoryMirror:RepositoryMirror test_repository_mirror "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -124,19 +126,21 @@ class RepositoryMirror(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
 
         test_repository_mirror = oci.dev_ops.RepositoryMirror("testRepositoryMirror", repository_id=oci_devops_repository["test_repository"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         RepositoryMirror can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DevOps/repositoryMirror:RepositoryMirror test_repository_mirror "id"
+        $ pulumi import oci:DevOps/repositoryMirror:RepositoryMirror test_repository_mirror "id"
         ```
 
         :param str resource_name: The name of the resource.

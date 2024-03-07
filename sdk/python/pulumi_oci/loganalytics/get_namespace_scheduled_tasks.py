@@ -135,6 +135,7 @@ def get_namespace_scheduled_tasks(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -145,6 +146,7 @@ def get_namespace_scheduled_tasks(compartment_id: Optional[str] = None,
         target_service=var["namespace_scheduled_task_target_service"],
         task_type=var["namespace_scheduled_task_task_type"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID of the compartment in which to list resources.
@@ -189,6 +191,7 @@ def get_namespace_scheduled_tasks_output(compartment_id: Optional[pulumi.Input[s
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -199,6 +202,7 @@ def get_namespace_scheduled_tasks_output(compartment_id: Optional[pulumi.Input[s
         target_service=var["namespace_scheduled_task_target_service"],
         task_type=var["namespace_scheduled_task_task_type"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID of the compartment in which to list resources.

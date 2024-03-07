@@ -113,6 +113,7 @@ def get_trail_file(deployment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -121,6 +122,7 @@ def get_trail_file(deployment_id: Optional[str] = None,
         trail_file_id=oci_golden_gate_trail_file["test_trail_file"]["id"],
         display_name=var["trail_file_display_name"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str deployment_id: A unique Deployment identifier.
@@ -155,6 +157,7 @@ def get_trail_file_output(deployment_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -163,6 +166,7 @@ def get_trail_file_output(deployment_id: Optional[pulumi.Input[str]] = None,
         trail_file_id=oci_golden_gate_trail_file["test_trail_file"]["id"],
         display_name=var["trail_file_display_name"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str deployment_id: A unique Deployment identifier.

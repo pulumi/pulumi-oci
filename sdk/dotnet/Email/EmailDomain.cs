@@ -16,6 +16,7 @@ namespace Pulumi.Oci.Email
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -40,13 +41,14 @@ namespace Pulumi.Oci.Email
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// EmailDomains can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Email/emailDomain:EmailDomain test_email_domain "id"
+    /// $ pulumi import oci:Email/emailDomain:EmailDomain test_email_domain "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Email/emailDomain:EmailDomain")]

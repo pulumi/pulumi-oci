@@ -14,6 +14,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,6 +23,7 @@ import * as utilities from "../utilities";
  *     compartmentId: _var.compartment_id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getCategories(args?: GetCategoriesArgs, opts?: pulumi.InvokeOptions): Promise<GetCategoriesResult> {
     args = args || {};
@@ -67,6 +69,7 @@ export interface GetCategoriesResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -75,6 +78,7 @@ export interface GetCategoriesResult {
  *     compartmentId: _var.compartment_id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getCategoriesOutput(args?: GetCategoriesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCategoriesResult> {
     return pulumi.output(args).apply((a: any) => getCategories(a, opts))

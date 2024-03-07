@@ -21,6 +21,8 @@ import javax.annotation.Nullable;
  * Updates authentication policy for the specified tenancy
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -62,13 +64,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * AuthenticationPolicies can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Identity/authenticationPolicy:AuthenticationPolicy test_authentication_policy &#34;authenticationPolicies/{compartmentId}&#34;
+ * $ pulumi import oci:Identity/authenticationPolicy:AuthenticationPolicy test_authentication_policy &#34;authenticationPolicies/{compartmentId}&#34;
  * ```
  * 
  */

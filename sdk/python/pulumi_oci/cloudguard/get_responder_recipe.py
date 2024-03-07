@@ -231,12 +231,14 @@ def get_responder_recipe(responder_recipe_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_responder_recipe = oci.CloudGuard.get_responder_recipe(responder_recipe_id=oci_cloud_guard_responder_recipe["test_responder_recipe"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str responder_recipe_id: OCID of ResponderRecipe
@@ -275,12 +277,14 @@ def get_responder_recipe_output(responder_recipe_id: Optional[pulumi.Input[str]]
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_responder_recipe = oci.CloudGuard.get_responder_recipe(responder_recipe_id=oci_cloud_guard_responder_recipe["test_responder_recipe"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str responder_recipe_id: OCID of ResponderRecipe

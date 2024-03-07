@@ -365,6 +365,7 @@ class Session(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -386,13 +387,14 @@ class Session(pulumi.CustomResource):
             key_type=var["session_key_type"],
             session_ttl_in_seconds=var["session_session_ttl_in_seconds"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Sessions can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Bastion/session:Session test_session "id"
+        $ pulumi import oci:Bastion/session:Session test_session "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -417,6 +419,7 @@ class Session(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -438,13 +441,14 @@ class Session(pulumi.CustomResource):
             key_type=var["session_key_type"],
             session_ttl_in_seconds=var["session_session_ttl_in_seconds"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Sessions can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Bastion/session:Session test_session "id"
+        $ pulumi import oci:Bastion/session:Session test_session "id"
         ```
 
         :param str resource_name: The name of the resource.

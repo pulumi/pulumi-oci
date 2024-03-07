@@ -143,6 +143,8 @@ public final class DevOpsFunctions {
      * Retrieves a build pipeline by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -171,6 +173,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBuildPipelineResult> getBuildPipeline(GetBuildPipelineArgs args) {
@@ -182,6 +185,8 @@ public final class DevOpsFunctions {
      * Retrieves a build pipeline by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -210,6 +215,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBuildPipelineResult> getBuildPipelinePlain(GetBuildPipelinePlainArgs args) {
@@ -221,6 +227,8 @@ public final class DevOpsFunctions {
      * Retrieves a build pipeline by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -249,6 +257,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBuildPipelineResult> getBuildPipeline(GetBuildPipelineArgs args, InvokeOptions options) {
@@ -260,6 +269,8 @@ public final class DevOpsFunctions {
      * Retrieves a build pipeline by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -288,6 +299,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBuildPipelineResult> getBuildPipelinePlain(GetBuildPipelinePlainArgs args, InvokeOptions options) {
@@ -299,6 +311,8 @@ public final class DevOpsFunctions {
      * Retrieves a stage based on the stage ID provided in the request.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -327,6 +341,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBuildPipelineStageResult> getBuildPipelineStage(GetBuildPipelineStageArgs args) {
@@ -338,6 +353,8 @@ public final class DevOpsFunctions {
      * Retrieves a stage based on the stage ID provided in the request.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -366,6 +383,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBuildPipelineStageResult> getBuildPipelineStagePlain(GetBuildPipelineStagePlainArgs args) {
@@ -377,6 +395,8 @@ public final class DevOpsFunctions {
      * Retrieves a stage based on the stage ID provided in the request.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -405,6 +425,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBuildPipelineStageResult> getBuildPipelineStage(GetBuildPipelineStageArgs args, InvokeOptions options) {
@@ -416,6 +437,8 @@ public final class DevOpsFunctions {
      * Retrieves a stage based on the stage ID provided in the request.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -444,6 +467,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBuildPipelineStageResult> getBuildPipelineStagePlain(GetBuildPipelineStagePlainArgs args, InvokeOptions options) {
@@ -455,6 +479,8 @@ public final class DevOpsFunctions {
      * Returns a list of all stages in a compartment or build pipeline.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -487,6 +513,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBuildPipelineStagesResult> getBuildPipelineStages() {
@@ -498,6 +525,8 @@ public final class DevOpsFunctions {
      * Returns a list of all stages in a compartment or build pipeline.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -530,6 +559,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBuildPipelineStagesResult> getBuildPipelineStagesPlain() {
@@ -541,6 +571,8 @@ public final class DevOpsFunctions {
      * Returns a list of all stages in a compartment or build pipeline.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -573,6 +605,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBuildPipelineStagesResult> getBuildPipelineStages(GetBuildPipelineStagesArgs args) {
@@ -584,6 +617,8 @@ public final class DevOpsFunctions {
      * Returns a list of all stages in a compartment or build pipeline.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -616,6 +651,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBuildPipelineStagesResult> getBuildPipelineStagesPlain(GetBuildPipelineStagesPlainArgs args) {
@@ -627,6 +663,8 @@ public final class DevOpsFunctions {
      * Returns a list of all stages in a compartment or build pipeline.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -659,6 +697,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBuildPipelineStagesResult> getBuildPipelineStages(GetBuildPipelineStagesArgs args, InvokeOptions options) {
@@ -670,6 +709,8 @@ public final class DevOpsFunctions {
      * Returns a list of all stages in a compartment or build pipeline.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -702,6 +743,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBuildPipelineStagesResult> getBuildPipelineStagesPlain(GetBuildPipelineStagesPlainArgs args, InvokeOptions options) {
@@ -713,6 +755,8 @@ public final class DevOpsFunctions {
      * Returns a list of build pipelines.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -745,6 +789,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBuildPipelinesResult> getBuildPipelines() {
@@ -756,6 +801,8 @@ public final class DevOpsFunctions {
      * Returns a list of build pipelines.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -788,6 +835,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBuildPipelinesResult> getBuildPipelinesPlain() {
@@ -799,6 +847,8 @@ public final class DevOpsFunctions {
      * Returns a list of build pipelines.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -831,6 +881,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBuildPipelinesResult> getBuildPipelines(GetBuildPipelinesArgs args) {
@@ -842,6 +893,8 @@ public final class DevOpsFunctions {
      * Returns a list of build pipelines.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -874,6 +927,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBuildPipelinesResult> getBuildPipelinesPlain(GetBuildPipelinesPlainArgs args) {
@@ -885,6 +939,8 @@ public final class DevOpsFunctions {
      * Returns a list of build pipelines.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -917,6 +973,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBuildPipelinesResult> getBuildPipelines(GetBuildPipelinesArgs args, InvokeOptions options) {
@@ -928,6 +985,8 @@ public final class DevOpsFunctions {
      * Returns a list of build pipelines.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -960,6 +1019,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBuildPipelinesResult> getBuildPipelinesPlain(GetBuildPipelinesPlainArgs args, InvokeOptions options) {
@@ -971,6 +1031,8 @@ public final class DevOpsFunctions {
      * Returns the details of a build run for a given build run ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -999,6 +1061,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBuildRunResult> getBuildRun(GetBuildRunArgs args) {
@@ -1010,6 +1073,8 @@ public final class DevOpsFunctions {
      * Returns the details of a build run for a given build run ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1038,6 +1103,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBuildRunResult> getBuildRunPlain(GetBuildRunPlainArgs args) {
@@ -1049,6 +1115,8 @@ public final class DevOpsFunctions {
      * Returns the details of a build run for a given build run ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1077,6 +1145,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBuildRunResult> getBuildRun(GetBuildRunArgs args, InvokeOptions options) {
@@ -1088,6 +1157,8 @@ public final class DevOpsFunctions {
      * Returns the details of a build run for a given build run ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1116,6 +1187,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBuildRunResult> getBuildRunPlain(GetBuildRunPlainArgs args, InvokeOptions options) {
@@ -1127,6 +1199,8 @@ public final class DevOpsFunctions {
      * Returns a list of build run summary.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1160,6 +1234,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBuildRunsResult> getBuildRuns() {
@@ -1171,6 +1246,8 @@ public final class DevOpsFunctions {
      * Returns a list of build run summary.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1204,6 +1281,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBuildRunsResult> getBuildRunsPlain() {
@@ -1215,6 +1293,8 @@ public final class DevOpsFunctions {
      * Returns a list of build run summary.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1248,6 +1328,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBuildRunsResult> getBuildRuns(GetBuildRunsArgs args) {
@@ -1259,6 +1340,8 @@ public final class DevOpsFunctions {
      * Returns a list of build run summary.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1292,6 +1375,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBuildRunsResult> getBuildRunsPlain(GetBuildRunsPlainArgs args) {
@@ -1303,6 +1387,8 @@ public final class DevOpsFunctions {
      * Returns a list of build run summary.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1336,6 +1422,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBuildRunsResult> getBuildRuns(GetBuildRunsArgs args, InvokeOptions options) {
@@ -1347,6 +1434,8 @@ public final class DevOpsFunctions {
      * Returns a list of build run summary.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1380,6 +1469,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBuildRunsResult> getBuildRunsPlain(GetBuildRunsPlainArgs args, InvokeOptions options) {
@@ -1391,6 +1481,8 @@ public final class DevOpsFunctions {
      * Retrieves a connection by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1419,6 +1511,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetConnectionResult> getConnection(GetConnectionArgs args) {
@@ -1430,6 +1523,8 @@ public final class DevOpsFunctions {
      * Retrieves a connection by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1458,6 +1553,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetConnectionResult> getConnectionPlain(GetConnectionPlainArgs args) {
@@ -1469,6 +1565,8 @@ public final class DevOpsFunctions {
      * Retrieves a connection by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1497,6 +1595,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetConnectionResult> getConnection(GetConnectionArgs args, InvokeOptions options) {
@@ -1508,6 +1607,8 @@ public final class DevOpsFunctions {
      * Retrieves a connection by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1536,6 +1637,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetConnectionResult> getConnectionPlain(GetConnectionPlainArgs args, InvokeOptions options) {
@@ -1547,6 +1649,8 @@ public final class DevOpsFunctions {
      * Returns a list of connections.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1580,6 +1684,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetConnectionsResult> getConnections() {
@@ -1591,6 +1696,8 @@ public final class DevOpsFunctions {
      * Returns a list of connections.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1624,6 +1731,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetConnectionsResult> getConnectionsPlain() {
@@ -1635,6 +1743,8 @@ public final class DevOpsFunctions {
      * Returns a list of connections.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1668,6 +1778,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetConnectionsResult> getConnections(GetConnectionsArgs args) {
@@ -1679,6 +1790,8 @@ public final class DevOpsFunctions {
      * Returns a list of connections.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1712,6 +1825,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetConnectionsResult> getConnectionsPlain(GetConnectionsPlainArgs args) {
@@ -1723,6 +1837,8 @@ public final class DevOpsFunctions {
      * Returns a list of connections.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1756,6 +1872,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetConnectionsResult> getConnections(GetConnectionsArgs args, InvokeOptions options) {
@@ -1767,6 +1884,8 @@ public final class DevOpsFunctions {
      * Returns a list of connections.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1800,6 +1919,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetConnectionsResult> getConnectionsPlain(GetConnectionsPlainArgs args, InvokeOptions options) {
@@ -1811,6 +1931,8 @@ public final class DevOpsFunctions {
      * Retrieves a deployment artifact by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1839,6 +1961,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDeployArtifactResult> getDeployArtifact(GetDeployArtifactArgs args) {
@@ -1850,6 +1973,8 @@ public final class DevOpsFunctions {
      * Retrieves a deployment artifact by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1878,6 +2003,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDeployArtifactResult> getDeployArtifactPlain(GetDeployArtifactPlainArgs args) {
@@ -1889,6 +2015,8 @@ public final class DevOpsFunctions {
      * Retrieves a deployment artifact by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1917,6 +2045,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDeployArtifactResult> getDeployArtifact(GetDeployArtifactArgs args, InvokeOptions options) {
@@ -1928,6 +2057,8 @@ public final class DevOpsFunctions {
      * Retrieves a deployment artifact by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1956,6 +2087,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDeployArtifactResult> getDeployArtifactPlain(GetDeployArtifactPlainArgs args, InvokeOptions options) {
@@ -1967,6 +2099,8 @@ public final class DevOpsFunctions {
      * Returns a list of deployment artifacts.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1999,6 +2133,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDeployArtifactsResult> getDeployArtifacts() {
@@ -2010,6 +2145,8 @@ public final class DevOpsFunctions {
      * Returns a list of deployment artifacts.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2042,6 +2179,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDeployArtifactsResult> getDeployArtifactsPlain() {
@@ -2053,6 +2191,8 @@ public final class DevOpsFunctions {
      * Returns a list of deployment artifacts.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2085,6 +2225,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDeployArtifactsResult> getDeployArtifacts(GetDeployArtifactsArgs args) {
@@ -2096,6 +2237,8 @@ public final class DevOpsFunctions {
      * Returns a list of deployment artifacts.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2128,6 +2271,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDeployArtifactsResult> getDeployArtifactsPlain(GetDeployArtifactsPlainArgs args) {
@@ -2139,6 +2283,8 @@ public final class DevOpsFunctions {
      * Returns a list of deployment artifacts.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2171,6 +2317,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDeployArtifactsResult> getDeployArtifacts(GetDeployArtifactsArgs args, InvokeOptions options) {
@@ -2182,6 +2329,8 @@ public final class DevOpsFunctions {
      * Returns a list of deployment artifacts.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2214,6 +2363,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDeployArtifactsResult> getDeployArtifactsPlain(GetDeployArtifactsPlainArgs args, InvokeOptions options) {
@@ -2225,6 +2375,8 @@ public final class DevOpsFunctions {
      * Retrieves a deployment environment by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2253,6 +2405,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDeployEnvironmentResult> getDeployEnvironment(GetDeployEnvironmentArgs args) {
@@ -2264,6 +2417,8 @@ public final class DevOpsFunctions {
      * Retrieves a deployment environment by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2292,6 +2447,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDeployEnvironmentResult> getDeployEnvironmentPlain(GetDeployEnvironmentPlainArgs args) {
@@ -2303,6 +2459,8 @@ public final class DevOpsFunctions {
      * Retrieves a deployment environment by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2331,6 +2489,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDeployEnvironmentResult> getDeployEnvironment(GetDeployEnvironmentArgs args, InvokeOptions options) {
@@ -2342,6 +2501,8 @@ public final class DevOpsFunctions {
      * Retrieves a deployment environment by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2370,6 +2531,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDeployEnvironmentResult> getDeployEnvironmentPlain(GetDeployEnvironmentPlainArgs args, InvokeOptions options) {
@@ -2381,6 +2543,8 @@ public final class DevOpsFunctions {
      * Returns a list of deployment environments.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2413,6 +2577,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDeployEnvironmentsResult> getDeployEnvironments() {
@@ -2424,6 +2589,8 @@ public final class DevOpsFunctions {
      * Returns a list of deployment environments.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2456,6 +2623,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDeployEnvironmentsResult> getDeployEnvironmentsPlain() {
@@ -2467,6 +2635,8 @@ public final class DevOpsFunctions {
      * Returns a list of deployment environments.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2499,6 +2669,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDeployEnvironmentsResult> getDeployEnvironments(GetDeployEnvironmentsArgs args) {
@@ -2510,6 +2681,8 @@ public final class DevOpsFunctions {
      * Returns a list of deployment environments.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2542,6 +2715,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDeployEnvironmentsResult> getDeployEnvironmentsPlain(GetDeployEnvironmentsPlainArgs args) {
@@ -2553,6 +2727,8 @@ public final class DevOpsFunctions {
      * Returns a list of deployment environments.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2585,6 +2761,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDeployEnvironmentsResult> getDeployEnvironments(GetDeployEnvironmentsArgs args, InvokeOptions options) {
@@ -2596,6 +2773,8 @@ public final class DevOpsFunctions {
      * Returns a list of deployment environments.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2628,6 +2807,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDeployEnvironmentsResult> getDeployEnvironmentsPlain(GetDeployEnvironmentsPlainArgs args, InvokeOptions options) {
@@ -2639,6 +2819,8 @@ public final class DevOpsFunctions {
      * Retrieves a deployment pipeline by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2667,6 +2849,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDeployPipelineResult> getDeployPipeline(GetDeployPipelineArgs args) {
@@ -2678,6 +2861,8 @@ public final class DevOpsFunctions {
      * Retrieves a deployment pipeline by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2706,6 +2891,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDeployPipelineResult> getDeployPipelinePlain(GetDeployPipelinePlainArgs args) {
@@ -2717,6 +2903,8 @@ public final class DevOpsFunctions {
      * Retrieves a deployment pipeline by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2745,6 +2933,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDeployPipelineResult> getDeployPipeline(GetDeployPipelineArgs args, InvokeOptions options) {
@@ -2756,6 +2945,8 @@ public final class DevOpsFunctions {
      * Retrieves a deployment pipeline by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2784,6 +2975,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDeployPipelineResult> getDeployPipelinePlain(GetDeployPipelinePlainArgs args, InvokeOptions options) {
@@ -2795,6 +2987,8 @@ public final class DevOpsFunctions {
      * Returns a list of deployment pipelines.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2827,6 +3021,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDeployPipelinesResult> getDeployPipelines() {
@@ -2838,6 +3033,8 @@ public final class DevOpsFunctions {
      * Returns a list of deployment pipelines.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2870,6 +3067,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDeployPipelinesResult> getDeployPipelinesPlain() {
@@ -2881,6 +3079,8 @@ public final class DevOpsFunctions {
      * Returns a list of deployment pipelines.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2913,6 +3113,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDeployPipelinesResult> getDeployPipelines(GetDeployPipelinesArgs args) {
@@ -2924,6 +3125,8 @@ public final class DevOpsFunctions {
      * Returns a list of deployment pipelines.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2956,6 +3159,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDeployPipelinesResult> getDeployPipelinesPlain(GetDeployPipelinesPlainArgs args) {
@@ -2967,6 +3171,8 @@ public final class DevOpsFunctions {
      * Returns a list of deployment pipelines.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2999,6 +3205,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDeployPipelinesResult> getDeployPipelines(GetDeployPipelinesArgs args, InvokeOptions options) {
@@ -3010,6 +3217,8 @@ public final class DevOpsFunctions {
      * Returns a list of deployment pipelines.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3042,6 +3251,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDeployPipelinesResult> getDeployPipelinesPlain(GetDeployPipelinesPlainArgs args, InvokeOptions options) {
@@ -3053,6 +3263,8 @@ public final class DevOpsFunctions {
      * Retrieves a deployment stage by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3081,6 +3293,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDeployStageResult> getDeployStage(GetDeployStageArgs args) {
@@ -3092,6 +3305,8 @@ public final class DevOpsFunctions {
      * Retrieves a deployment stage by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3120,6 +3335,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDeployStageResult> getDeployStagePlain(GetDeployStagePlainArgs args) {
@@ -3131,6 +3347,8 @@ public final class DevOpsFunctions {
      * Retrieves a deployment stage by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3159,6 +3377,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDeployStageResult> getDeployStage(GetDeployStageArgs args, InvokeOptions options) {
@@ -3170,6 +3389,8 @@ public final class DevOpsFunctions {
      * Retrieves a deployment stage by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3198,6 +3419,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDeployStageResult> getDeployStagePlain(GetDeployStagePlainArgs args, InvokeOptions options) {
@@ -3209,6 +3431,8 @@ public final class DevOpsFunctions {
      * Retrieves a list of deployment stages.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3241,6 +3465,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDeployStagesResult> getDeployStages() {
@@ -3252,6 +3477,8 @@ public final class DevOpsFunctions {
      * Retrieves a list of deployment stages.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3284,6 +3511,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDeployStagesResult> getDeployStagesPlain() {
@@ -3295,6 +3523,8 @@ public final class DevOpsFunctions {
      * Retrieves a list of deployment stages.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3327,6 +3557,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDeployStagesResult> getDeployStages(GetDeployStagesArgs args) {
@@ -3338,6 +3569,8 @@ public final class DevOpsFunctions {
      * Retrieves a list of deployment stages.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3370,6 +3603,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDeployStagesResult> getDeployStagesPlain(GetDeployStagesPlainArgs args) {
@@ -3381,6 +3615,8 @@ public final class DevOpsFunctions {
      * Retrieves a list of deployment stages.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3413,6 +3649,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDeployStagesResult> getDeployStages(GetDeployStagesArgs args, InvokeOptions options) {
@@ -3424,6 +3661,8 @@ public final class DevOpsFunctions {
      * Retrieves a list of deployment stages.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3456,6 +3695,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDeployStagesResult> getDeployStagesPlain(GetDeployStagesPlainArgs args, InvokeOptions options) {
@@ -3467,6 +3707,8 @@ public final class DevOpsFunctions {
      * Retrieves a deployment by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3495,6 +3737,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDeploymentResult> getDeployment(GetDeploymentArgs args) {
@@ -3506,6 +3749,8 @@ public final class DevOpsFunctions {
      * Retrieves a deployment by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3534,6 +3779,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDeploymentResult> getDeploymentPlain(GetDeploymentPlainArgs args) {
@@ -3545,6 +3791,8 @@ public final class DevOpsFunctions {
      * Retrieves a deployment by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3573,6 +3821,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDeploymentResult> getDeployment(GetDeploymentArgs args, InvokeOptions options) {
@@ -3584,6 +3833,8 @@ public final class DevOpsFunctions {
      * Retrieves a deployment by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3612,6 +3863,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDeploymentResult> getDeploymentPlain(GetDeploymentPlainArgs args, InvokeOptions options) {
@@ -3623,6 +3875,8 @@ public final class DevOpsFunctions {
      * Returns a list of deployments.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3658,6 +3912,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDeploymentsResult> getDeployments() {
@@ -3669,6 +3924,8 @@ public final class DevOpsFunctions {
      * Returns a list of deployments.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3704,6 +3961,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDeploymentsResult> getDeploymentsPlain() {
@@ -3715,6 +3973,8 @@ public final class DevOpsFunctions {
      * Returns a list of deployments.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3750,6 +4010,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDeploymentsResult> getDeployments(GetDeploymentsArgs args) {
@@ -3761,6 +4022,8 @@ public final class DevOpsFunctions {
      * Returns a list of deployments.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3796,6 +4059,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDeploymentsResult> getDeploymentsPlain(GetDeploymentsPlainArgs args) {
@@ -3807,6 +4071,8 @@ public final class DevOpsFunctions {
      * Returns a list of deployments.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3842,6 +4108,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDeploymentsResult> getDeployments(GetDeploymentsArgs args, InvokeOptions options) {
@@ -3853,6 +4120,8 @@ public final class DevOpsFunctions {
      * Returns a list of deployments.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3888,6 +4157,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDeploymentsResult> getDeploymentsPlain(GetDeploymentsPlainArgs args, InvokeOptions options) {
@@ -3899,6 +4169,8 @@ public final class DevOpsFunctions {
      * Retrieves a project by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3927,6 +4199,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetProjectResult> getProject(GetProjectArgs args) {
@@ -3938,6 +4211,8 @@ public final class DevOpsFunctions {
      * Retrieves a project by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3966,6 +4241,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetProjectResult> getProjectPlain(GetProjectPlainArgs args) {
@@ -3977,6 +4253,8 @@ public final class DevOpsFunctions {
      * Retrieves a project by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4005,6 +4283,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetProjectResult> getProject(GetProjectArgs args, InvokeOptions options) {
@@ -4016,6 +4295,8 @@ public final class DevOpsFunctions {
      * Retrieves a project by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4044,6 +4325,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetProjectResult> getProjectPlain(GetProjectPlainArgs args, InvokeOptions options) {
@@ -4055,6 +4337,8 @@ public final class DevOpsFunctions {
      * Returns a list of projects.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4086,6 +4370,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetProjectsResult> getProjects(GetProjectsArgs args) {
@@ -4097,6 +4382,8 @@ public final class DevOpsFunctions {
      * Returns a list of projects.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4128,6 +4415,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetProjectsResult> getProjectsPlain(GetProjectsPlainArgs args) {
@@ -4139,6 +4427,8 @@ public final class DevOpsFunctions {
      * Returns a list of projects.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4170,6 +4460,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetProjectsResult> getProjects(GetProjectsArgs args, InvokeOptions options) {
@@ -4181,6 +4472,8 @@ public final class DevOpsFunctions {
      * Returns a list of projects.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4212,6 +4505,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetProjectsResult> getProjectsPlain(GetProjectsPlainArgs args, InvokeOptions options) {
@@ -4223,6 +4517,8 @@ public final class DevOpsFunctions {
      * Retrieve lines of a specified file. Supports starting line number and limit.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4254,6 +4550,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRepoFileLineResult> getRepoFileLine(GetRepoFileLineArgs args) {
@@ -4265,6 +4562,8 @@ public final class DevOpsFunctions {
      * Retrieve lines of a specified file. Supports starting line number and limit.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4296,6 +4595,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRepoFileLineResult> getRepoFileLinePlain(GetRepoFileLinePlainArgs args) {
@@ -4307,6 +4607,8 @@ public final class DevOpsFunctions {
      * Retrieve lines of a specified file. Supports starting line number and limit.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4338,6 +4640,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRepoFileLineResult> getRepoFileLine(GetRepoFileLineArgs args, InvokeOptions options) {
@@ -4349,6 +4652,8 @@ public final class DevOpsFunctions {
      * Retrieve lines of a specified file. Supports starting line number and limit.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4380,6 +4685,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRepoFileLineResult> getRepoFileLinePlain(GetRepoFileLinePlainArgs args, InvokeOptions options) {
@@ -4391,6 +4697,8 @@ public final class DevOpsFunctions {
      * Returns a list of repositories given a compartment ID or a project ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4423,6 +4731,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRepositoriesResult> getRepositories() {
@@ -4434,6 +4743,8 @@ public final class DevOpsFunctions {
      * Returns a list of repositories given a compartment ID or a project ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4466,6 +4777,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRepositoriesResult> getRepositoriesPlain() {
@@ -4477,6 +4789,8 @@ public final class DevOpsFunctions {
      * Returns a list of repositories given a compartment ID or a project ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4509,6 +4823,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRepositoriesResult> getRepositories(GetRepositoriesArgs args) {
@@ -4520,6 +4835,8 @@ public final class DevOpsFunctions {
      * Returns a list of repositories given a compartment ID or a project ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4552,6 +4869,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRepositoriesResult> getRepositoriesPlain(GetRepositoriesPlainArgs args) {
@@ -4563,6 +4881,8 @@ public final class DevOpsFunctions {
      * Returns a list of repositories given a compartment ID or a project ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4595,6 +4915,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRepositoriesResult> getRepositories(GetRepositoriesArgs args, InvokeOptions options) {
@@ -4606,6 +4927,8 @@ public final class DevOpsFunctions {
      * Returns a list of repositories given a compartment ID or a project ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4638,6 +4961,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRepositoriesResult> getRepositoriesPlain(GetRepositoriesPlainArgs args, InvokeOptions options) {
@@ -4649,6 +4973,8 @@ public final class DevOpsFunctions {
      * Retrieves a repository by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4678,6 +5004,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRepositoryResult> getRepository(GetRepositoryArgs args) {
@@ -4689,6 +5016,8 @@ public final class DevOpsFunctions {
      * Retrieves a repository by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4718,6 +5047,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRepositoryResult> getRepositoryPlain(GetRepositoryPlainArgs args) {
@@ -4729,6 +5059,8 @@ public final class DevOpsFunctions {
      * Retrieves a repository by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4758,6 +5090,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRepositoryResult> getRepository(GetRepositoryArgs args, InvokeOptions options) {
@@ -4769,6 +5102,8 @@ public final class DevOpsFunctions {
      * Retrieves a repository by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4798,6 +5133,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRepositoryResult> getRepositoryPlain(GetRepositoryPlainArgs args, InvokeOptions options) {
@@ -4809,6 +5145,8 @@ public final class DevOpsFunctions {
      * Returns the archived repository information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4839,6 +5177,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRepositoryArchiveContentResult> getRepositoryArchiveContent(GetRepositoryArchiveContentArgs args) {
@@ -4850,6 +5189,8 @@ public final class DevOpsFunctions {
      * Returns the archived repository information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4880,6 +5221,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRepositoryArchiveContentResult> getRepositoryArchiveContentPlain(GetRepositoryArchiveContentPlainArgs args) {
@@ -4891,6 +5233,8 @@ public final class DevOpsFunctions {
      * Returns the archived repository information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4921,6 +5265,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRepositoryArchiveContentResult> getRepositoryArchiveContent(GetRepositoryArchiveContentArgs args, InvokeOptions options) {
@@ -4932,6 +5277,8 @@ public final class DevOpsFunctions {
      * Returns the archived repository information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4962,6 +5309,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRepositoryArchiveContentResult> getRepositoryArchiveContentPlain(GetRepositoryArchiveContentPlainArgs args, InvokeOptions options) {
@@ -4973,6 +5321,8 @@ public final class DevOpsFunctions {
      * Retrieve a list of all the authors.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5002,6 +5352,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRepositoryAuthorResult> getRepositoryAuthor(GetRepositoryAuthorArgs args) {
@@ -5013,6 +5364,8 @@ public final class DevOpsFunctions {
      * Retrieve a list of all the authors.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5042,6 +5395,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRepositoryAuthorResult> getRepositoryAuthorPlain(GetRepositoryAuthorPlainArgs args) {
@@ -5053,6 +5407,8 @@ public final class DevOpsFunctions {
      * Retrieve a list of all the authors.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5082,6 +5438,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRepositoryAuthorResult> getRepositoryAuthor(GetRepositoryAuthorArgs args, InvokeOptions options) {
@@ -5093,6 +5450,8 @@ public final class DevOpsFunctions {
      * Retrieve a list of all the authors.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5122,6 +5481,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRepositoryAuthorResult> getRepositoryAuthorPlain(GetRepositoryAuthorPlainArgs args, InvokeOptions options) {
@@ -5133,6 +5493,8 @@ public final class DevOpsFunctions {
      * Retrieve a list of all the authors.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5162,6 +5524,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRepositoryAuthorsResult> getRepositoryAuthors(GetRepositoryAuthorsArgs args) {
@@ -5173,6 +5536,8 @@ public final class DevOpsFunctions {
      * Retrieve a list of all the authors.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5202,6 +5567,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRepositoryAuthorsResult> getRepositoryAuthorsPlain(GetRepositoryAuthorsPlainArgs args) {
@@ -5213,6 +5579,8 @@ public final class DevOpsFunctions {
      * Retrieve a list of all the authors.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5242,6 +5610,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRepositoryAuthorsResult> getRepositoryAuthors(GetRepositoryAuthorsArgs args, InvokeOptions options) {
@@ -5253,6 +5622,8 @@ public final class DevOpsFunctions {
      * Retrieve a list of all the authors.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5282,6 +5653,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRepositoryAuthorsResult> getRepositoryAuthorsPlain(GetRepositoryAuthorsPlainArgs args, InvokeOptions options) {
@@ -5293,6 +5665,8 @@ public final class DevOpsFunctions {
      * Retrieves a repository&#39;s commit by commit ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5322,6 +5696,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRepositoryCommitResult> getRepositoryCommit(GetRepositoryCommitArgs args) {
@@ -5333,6 +5708,8 @@ public final class DevOpsFunctions {
      * Retrieves a repository&#39;s commit by commit ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5362,6 +5739,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRepositoryCommitResult> getRepositoryCommitPlain(GetRepositoryCommitPlainArgs args) {
@@ -5373,6 +5751,8 @@ public final class DevOpsFunctions {
      * Retrieves a repository&#39;s commit by commit ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5402,6 +5782,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRepositoryCommitResult> getRepositoryCommit(GetRepositoryCommitArgs args, InvokeOptions options) {
@@ -5413,6 +5794,8 @@ public final class DevOpsFunctions {
      * Retrieves a repository&#39;s commit by commit ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5442,6 +5825,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRepositoryCommitResult> getRepositoryCommitPlain(GetRepositoryCommitPlainArgs args, InvokeOptions options) {
@@ -5453,6 +5837,8 @@ public final class DevOpsFunctions {
      * Returns a list of commits.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5488,6 +5874,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRepositoryCommitsResult> getRepositoryCommits(GetRepositoryCommitsArgs args) {
@@ -5499,6 +5886,8 @@ public final class DevOpsFunctions {
      * Returns a list of commits.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5534,6 +5923,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRepositoryCommitsResult> getRepositoryCommitsPlain(GetRepositoryCommitsPlainArgs args) {
@@ -5545,6 +5935,8 @@ public final class DevOpsFunctions {
      * Returns a list of commits.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5580,6 +5972,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRepositoryCommitsResult> getRepositoryCommits(GetRepositoryCommitsArgs args, InvokeOptions options) {
@@ -5591,6 +5984,8 @@ public final class DevOpsFunctions {
      * Returns a list of commits.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5626,6 +6021,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRepositoryCommitsResult> getRepositoryCommitsPlain(GetRepositoryCommitsPlainArgs args, InvokeOptions options) {
@@ -5637,6 +6033,8 @@ public final class DevOpsFunctions {
      * Gets the line-by-line difference between file on different commits. This API will be deprecated on Wed, 29 Mar 2023 01:00:00 GMT as it does not get recognized when filePath has &#39;/&#39;. This will be replaced by &#34;/repositories/{repositoryId}/file/diffs&#34;
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5669,6 +6067,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRepositoryDiffResult> getRepositoryDiff(GetRepositoryDiffArgs args) {
@@ -5680,6 +6079,8 @@ public final class DevOpsFunctions {
      * Gets the line-by-line difference between file on different commits. This API will be deprecated on Wed, 29 Mar 2023 01:00:00 GMT as it does not get recognized when filePath has &#39;/&#39;. This will be replaced by &#34;/repositories/{repositoryId}/file/diffs&#34;
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5712,6 +6113,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRepositoryDiffResult> getRepositoryDiffPlain(GetRepositoryDiffPlainArgs args) {
@@ -5723,6 +6125,8 @@ public final class DevOpsFunctions {
      * Gets the line-by-line difference between file on different commits. This API will be deprecated on Wed, 29 Mar 2023 01:00:00 GMT as it does not get recognized when filePath has &#39;/&#39;. This will be replaced by &#34;/repositories/{repositoryId}/file/diffs&#34;
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5755,6 +6159,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRepositoryDiffResult> getRepositoryDiff(GetRepositoryDiffArgs args, InvokeOptions options) {
@@ -5766,6 +6171,8 @@ public final class DevOpsFunctions {
      * Gets the line-by-line difference between file on different commits. This API will be deprecated on Wed, 29 Mar 2023 01:00:00 GMT as it does not get recognized when filePath has &#39;/&#39;. This will be replaced by &#34;/repositories/{repositoryId}/file/diffs&#34;
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5798,6 +6205,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRepositoryDiffResult> getRepositoryDiffPlain(GetRepositoryDiffPlainArgs args, InvokeOptions options) {
@@ -5809,6 +6217,8 @@ public final class DevOpsFunctions {
      * Compares two revisions and lists the differences. Supports comparison between two references or commits.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5840,6 +6250,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRepositoryDiffsResult> getRepositoryDiffs(GetRepositoryDiffsArgs args) {
@@ -5851,6 +6262,8 @@ public final class DevOpsFunctions {
      * Compares two revisions and lists the differences. Supports comparison between two references or commits.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5882,6 +6295,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRepositoryDiffsResult> getRepositoryDiffsPlain(GetRepositoryDiffsPlainArgs args) {
@@ -5893,6 +6307,8 @@ public final class DevOpsFunctions {
      * Compares two revisions and lists the differences. Supports comparison between two references or commits.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5924,6 +6340,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRepositoryDiffsResult> getRepositoryDiffs(GetRepositoryDiffsArgs args, InvokeOptions options) {
@@ -5935,6 +6352,8 @@ public final class DevOpsFunctions {
      * Compares two revisions and lists the differences. Supports comparison between two references or commits.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5966,6 +6385,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRepositoryDiffsResult> getRepositoryDiffsPlain(GetRepositoryDiffsPlainArgs args, InvokeOptions options) {
@@ -5977,6 +6397,8 @@ public final class DevOpsFunctions {
      * Gets the line-by-line difference between file on different commits.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6009,6 +6431,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRepositoryFileDiffResult> getRepositoryFileDiff(GetRepositoryFileDiffArgs args) {
@@ -6020,6 +6443,8 @@ public final class DevOpsFunctions {
      * Gets the line-by-line difference between file on different commits.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6052,6 +6477,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRepositoryFileDiffResult> getRepositoryFileDiffPlain(GetRepositoryFileDiffPlainArgs args) {
@@ -6063,6 +6489,8 @@ public final class DevOpsFunctions {
      * Gets the line-by-line difference between file on different commits.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6095,6 +6523,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRepositoryFileDiffResult> getRepositoryFileDiff(GetRepositoryFileDiffArgs args, InvokeOptions options) {
@@ -6106,6 +6535,8 @@ public final class DevOpsFunctions {
      * Gets the line-by-line difference between file on different commits.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6138,6 +6569,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRepositoryFileDiffResult> getRepositoryFileDiffPlain(GetRepositoryFileDiffPlainArgs args, InvokeOptions options) {
@@ -6149,6 +6581,8 @@ public final class DevOpsFunctions {
      * Retrieve lines of a specified file. Supports starting line number and limit. This API will be deprecated on Wed, 29 Mar 2023 01:00:00 GMT as it does not get recognized when filePath has &#39;/&#39;. This will be replaced by &#34;/repositories/{repositoryId}/file/lines&#34;
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6180,6 +6614,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRepositoryFileLineResult> getRepositoryFileLine(GetRepositoryFileLineArgs args) {
@@ -6191,6 +6626,8 @@ public final class DevOpsFunctions {
      * Retrieve lines of a specified file. Supports starting line number and limit. This API will be deprecated on Wed, 29 Mar 2023 01:00:00 GMT as it does not get recognized when filePath has &#39;/&#39;. This will be replaced by &#34;/repositories/{repositoryId}/file/lines&#34;
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6222,6 +6659,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRepositoryFileLineResult> getRepositoryFileLinePlain(GetRepositoryFileLinePlainArgs args) {
@@ -6233,6 +6671,8 @@ public final class DevOpsFunctions {
      * Retrieve lines of a specified file. Supports starting line number and limit. This API will be deprecated on Wed, 29 Mar 2023 01:00:00 GMT as it does not get recognized when filePath has &#39;/&#39;. This will be replaced by &#34;/repositories/{repositoryId}/file/lines&#34;
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6264,6 +6704,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRepositoryFileLineResult> getRepositoryFileLine(GetRepositoryFileLineArgs args, InvokeOptions options) {
@@ -6275,6 +6716,8 @@ public final class DevOpsFunctions {
      * Retrieve lines of a specified file. Supports starting line number and limit. This API will be deprecated on Wed, 29 Mar 2023 01:00:00 GMT as it does not get recognized when filePath has &#39;/&#39;. This will be replaced by &#34;/repositories/{repositoryId}/file/lines&#34;
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6306,6 +6749,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRepositoryFileLineResult> getRepositoryFileLinePlain(GetRepositoryFileLinePlainArgs args, InvokeOptions options) {
@@ -6317,6 +6761,8 @@ public final class DevOpsFunctions {
      * Returns either current mirror record or last successful mirror record for a specific mirror repository.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6346,6 +6792,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRepositoryMirrorRecordResult> getRepositoryMirrorRecord(GetRepositoryMirrorRecordArgs args) {
@@ -6357,6 +6804,8 @@ public final class DevOpsFunctions {
      * Returns either current mirror record or last successful mirror record for a specific mirror repository.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6386,6 +6835,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRepositoryMirrorRecordResult> getRepositoryMirrorRecordPlain(GetRepositoryMirrorRecordPlainArgs args) {
@@ -6397,6 +6847,8 @@ public final class DevOpsFunctions {
      * Returns either current mirror record or last successful mirror record for a specific mirror repository.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6426,6 +6878,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRepositoryMirrorRecordResult> getRepositoryMirrorRecord(GetRepositoryMirrorRecordArgs args, InvokeOptions options) {
@@ -6437,6 +6890,8 @@ public final class DevOpsFunctions {
      * Returns either current mirror record or last successful mirror record for a specific mirror repository.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6466,6 +6921,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRepositoryMirrorRecordResult> getRepositoryMirrorRecordPlain(GetRepositoryMirrorRecordPlainArgs args, InvokeOptions options) {
@@ -6477,6 +6933,8 @@ public final class DevOpsFunctions {
      * Returns a list of mirror entry in history within 30 days.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6505,6 +6963,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRepositoryMirrorRecordsResult> getRepositoryMirrorRecords(GetRepositoryMirrorRecordsArgs args) {
@@ -6516,6 +6975,8 @@ public final class DevOpsFunctions {
      * Returns a list of mirror entry in history within 30 days.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6544,6 +7005,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRepositoryMirrorRecordsResult> getRepositoryMirrorRecordsPlain(GetRepositoryMirrorRecordsPlainArgs args) {
@@ -6555,6 +7017,8 @@ public final class DevOpsFunctions {
      * Returns a list of mirror entry in history within 30 days.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6583,6 +7047,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRepositoryMirrorRecordsResult> getRepositoryMirrorRecords(GetRepositoryMirrorRecordsArgs args, InvokeOptions options) {
@@ -6594,6 +7059,8 @@ public final class DevOpsFunctions {
      * Returns a list of mirror entry in history within 30 days.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6622,6 +7089,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRepositoryMirrorRecordsResult> getRepositoryMirrorRecordsPlain(GetRepositoryMirrorRecordsPlainArgs args, InvokeOptions options) {
@@ -6633,6 +7101,8 @@ public final class DevOpsFunctions {
      * Retrieves blob of specific branch name/commit ID and file path.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6663,6 +7133,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRepositoryObjectResult> getRepositoryObject(GetRepositoryObjectArgs args) {
@@ -6674,6 +7145,8 @@ public final class DevOpsFunctions {
      * Retrieves blob of specific branch name/commit ID and file path.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6704,6 +7177,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRepositoryObjectResult> getRepositoryObjectPlain(GetRepositoryObjectPlainArgs args) {
@@ -6715,6 +7189,8 @@ public final class DevOpsFunctions {
      * Retrieves blob of specific branch name/commit ID and file path.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6745,6 +7221,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRepositoryObjectResult> getRepositoryObject(GetRepositoryObjectArgs args, InvokeOptions options) {
@@ -6756,6 +7233,8 @@ public final class DevOpsFunctions {
      * Retrieves blob of specific branch name/commit ID and file path.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6786,6 +7265,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRepositoryObjectResult> getRepositoryObjectPlain(GetRepositoryObjectPlainArgs args, InvokeOptions options) {
@@ -6797,6 +7277,8 @@ public final class DevOpsFunctions {
      * Retrieve contents of a specified object.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6827,6 +7309,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRepositoryObjectContentResult> getRepositoryObjectContent(GetRepositoryObjectContentArgs args) {
@@ -6838,6 +7321,8 @@ public final class DevOpsFunctions {
      * Retrieve contents of a specified object.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6868,6 +7353,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRepositoryObjectContentResult> getRepositoryObjectContentPlain(GetRepositoryObjectContentPlainArgs args) {
@@ -6879,6 +7365,8 @@ public final class DevOpsFunctions {
      * Retrieve contents of a specified object.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6909,6 +7397,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRepositoryObjectContentResult> getRepositoryObjectContent(GetRepositoryObjectContentArgs args, InvokeOptions options) {
@@ -6920,6 +7409,8 @@ public final class DevOpsFunctions {
      * Retrieve contents of a specified object.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6950,6 +7441,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRepositoryObjectContentResult> getRepositoryObjectContentPlain(GetRepositoryObjectContentPlainArgs args, InvokeOptions options) {
@@ -6961,6 +7453,8 @@ public final class DevOpsFunctions {
      * Retrieves a list of files and directories in a repository.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6993,6 +7487,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRepositoryPathResult> getRepositoryPath(GetRepositoryPathArgs args) {
@@ -7004,6 +7499,8 @@ public final class DevOpsFunctions {
      * Retrieves a list of files and directories in a repository.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7036,6 +7533,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRepositoryPathResult> getRepositoryPathPlain(GetRepositoryPathPlainArgs args) {
@@ -7047,6 +7545,8 @@ public final class DevOpsFunctions {
      * Retrieves a list of files and directories in a repository.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7079,6 +7579,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRepositoryPathResult> getRepositoryPath(GetRepositoryPathArgs args, InvokeOptions options) {
@@ -7090,6 +7591,8 @@ public final class DevOpsFunctions {
      * Retrieves a list of files and directories in a repository.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7122,6 +7625,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRepositoryPathResult> getRepositoryPathPlain(GetRepositoryPathPlainArgs args, InvokeOptions options) {
@@ -7133,6 +7637,8 @@ public final class DevOpsFunctions {
      * Retrieves a list of files and directories in a repository.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7165,6 +7671,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRepositoryPathsResult> getRepositoryPaths(GetRepositoryPathsArgs args) {
@@ -7176,6 +7683,8 @@ public final class DevOpsFunctions {
      * Retrieves a list of files and directories in a repository.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7208,6 +7717,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRepositoryPathsResult> getRepositoryPathsPlain(GetRepositoryPathsPlainArgs args) {
@@ -7219,6 +7729,8 @@ public final class DevOpsFunctions {
      * Retrieves a list of files and directories in a repository.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7251,6 +7763,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRepositoryPathsResult> getRepositoryPaths(GetRepositoryPathsArgs args, InvokeOptions options) {
@@ -7262,6 +7775,8 @@ public final class DevOpsFunctions {
      * Retrieves a list of files and directories in a repository.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7294,6 +7809,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRepositoryPathsResult> getRepositoryPathsPlain(GetRepositoryPathsPlainArgs args, InvokeOptions options) {
@@ -7305,6 +7821,8 @@ public final class DevOpsFunctions {
      * Retrieves a repository&#39;s reference by its name with preference for branches over tags if the name is ambiguous. This can be disambiguated by using full names like &#34;heads/&lt;name&gt;&#34; or &#34;tags/&lt;name&gt;&#34;.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7334,6 +7852,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRepositoryRefResult> getRepositoryRef(GetRepositoryRefArgs args) {
@@ -7345,6 +7864,8 @@ public final class DevOpsFunctions {
      * Retrieves a repository&#39;s reference by its name with preference for branches over tags if the name is ambiguous. This can be disambiguated by using full names like &#34;heads/&lt;name&gt;&#34; or &#34;tags/&lt;name&gt;&#34;.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7374,6 +7895,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRepositoryRefResult> getRepositoryRefPlain(GetRepositoryRefPlainArgs args) {
@@ -7385,6 +7907,8 @@ public final class DevOpsFunctions {
      * Retrieves a repository&#39;s reference by its name with preference for branches over tags if the name is ambiguous. This can be disambiguated by using full names like &#34;heads/&lt;name&gt;&#34; or &#34;tags/&lt;name&gt;&#34;.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7414,6 +7938,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRepositoryRefResult> getRepositoryRef(GetRepositoryRefArgs args, InvokeOptions options) {
@@ -7425,6 +7950,8 @@ public final class DevOpsFunctions {
      * Retrieves a repository&#39;s reference by its name with preference for branches over tags if the name is ambiguous. This can be disambiguated by using full names like &#34;heads/&lt;name&gt;&#34; or &#34;tags/&lt;name&gt;&#34;.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7454,6 +7981,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRepositoryRefResult> getRepositoryRefPlain(GetRepositoryRefPlainArgs args, InvokeOptions options) {
@@ -7465,6 +7993,8 @@ public final class DevOpsFunctions {
      * Returns a list of references.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7496,6 +8026,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRepositoryRefsResult> getRepositoryRefs(GetRepositoryRefsArgs args) {
@@ -7507,6 +8038,8 @@ public final class DevOpsFunctions {
      * Returns a list of references.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7538,6 +8071,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRepositoryRefsResult> getRepositoryRefsPlain(GetRepositoryRefsPlainArgs args) {
@@ -7549,6 +8083,8 @@ public final class DevOpsFunctions {
      * Returns a list of references.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7580,6 +8116,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRepositoryRefsResult> getRepositoryRefs(GetRepositoryRefsArgs args, InvokeOptions options) {
@@ -7591,6 +8128,8 @@ public final class DevOpsFunctions {
      * Returns a list of references.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7622,6 +8161,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRepositoryRefsResult> getRepositoryRefsPlain(GetRepositoryRefsPlainArgs args, InvokeOptions options) {
@@ -7633,6 +8173,8 @@ public final class DevOpsFunctions {
      * Retrieves a trigger by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7661,6 +8203,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetTriggerResult> getTrigger(GetTriggerArgs args) {
@@ -7672,6 +8215,8 @@ public final class DevOpsFunctions {
      * Retrieves a trigger by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7700,6 +8245,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetTriggerResult> getTriggerPlain(GetTriggerPlainArgs args) {
@@ -7711,6 +8257,8 @@ public final class DevOpsFunctions {
      * Retrieves a trigger by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7739,6 +8287,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetTriggerResult> getTrigger(GetTriggerArgs args, InvokeOptions options) {
@@ -7750,6 +8299,8 @@ public final class DevOpsFunctions {
      * Retrieves a trigger by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7778,6 +8329,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetTriggerResult> getTriggerPlain(GetTriggerPlainArgs args, InvokeOptions options) {
@@ -7789,6 +8341,8 @@ public final class DevOpsFunctions {
      * Returns a list of triggers.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7821,6 +8375,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetTriggersResult> getTriggers() {
@@ -7832,6 +8387,8 @@ public final class DevOpsFunctions {
      * Returns a list of triggers.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7864,6 +8421,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetTriggersResult> getTriggersPlain() {
@@ -7875,6 +8433,8 @@ public final class DevOpsFunctions {
      * Returns a list of triggers.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7907,6 +8467,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetTriggersResult> getTriggers(GetTriggersArgs args) {
@@ -7918,6 +8479,8 @@ public final class DevOpsFunctions {
      * Returns a list of triggers.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7950,6 +8513,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetTriggersResult> getTriggersPlain(GetTriggersPlainArgs args) {
@@ -7961,6 +8525,8 @@ public final class DevOpsFunctions {
      * Returns a list of triggers.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7993,6 +8559,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetTriggersResult> getTriggers(GetTriggersArgs args, InvokeOptions options) {
@@ -8004,6 +8571,8 @@ public final class DevOpsFunctions {
      * Returns a list of triggers.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8036,6 +8605,7 @@ public final class DevOpsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetTriggersResult> getTriggersPlain(GetTriggersPlainArgs args, InvokeOptions options) {

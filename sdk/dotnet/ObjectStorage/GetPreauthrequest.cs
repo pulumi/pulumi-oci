@@ -16,10 +16,9 @@ namespace Pulumi.Oci.ObjectStorage
         /// 
         /// Gets the pre-authenticated request for the bucket.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -37,8 +36,7 @@ namespace Pulumi.Oci.ObjectStorage
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetPreauthrequestResult> InvokeAsync(GetPreauthrequestArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetPreauthrequestResult>("oci:ObjectStorage/getPreauthrequest:getPreauthrequest", args ?? new GetPreauthrequestArgs(), options.WithDefaults());
@@ -48,10 +46,9 @@ namespace Pulumi.Oci.ObjectStorage
         /// 
         /// Gets the pre-authenticated request for the bucket.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -69,8 +66,7 @@ namespace Pulumi.Oci.ObjectStorage
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetPreauthrequestResult> Invoke(GetPreauthrequestInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPreauthrequestResult>("oci:ObjectStorage/getPreauthrequest:getPreauthrequest", args ?? new GetPreauthrequestInvokeArgs(), options.WithDefaults());

@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -48,6 +49,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetHostInsights(ctx *pulumi.Context, args *GetHostInsightsArgs, opts ...pulumi.InvokeOption) (*GetHostInsightsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetHostInsightsResult

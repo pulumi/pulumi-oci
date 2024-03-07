@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,6 +42,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetAccessRequestAuditLogReport(ctx *pulumi.Context, args *GetAccessRequestAuditLogReportArgs, opts ...pulumi.InvokeOption) (*GetAccessRequestAuditLogReportResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAccessRequestAuditLogReportResult

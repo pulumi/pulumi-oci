@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -20,6 +21,7 @@ import * as utilities from "../utilities";
  *     name: _var.ssl_cipher_suite_name,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getSslCipherSuite(args: GetSslCipherSuiteArgs, opts?: pulumi.InvokeOptions): Promise<GetSslCipherSuiteResult> {
 
@@ -69,6 +71,7 @@ export interface GetSslCipherSuiteResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -78,6 +81,7 @@ export interface GetSslCipherSuiteResult {
  *     name: _var.ssl_cipher_suite_name,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getSslCipherSuiteOutput(args: GetSslCipherSuiteOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSslCipherSuiteResult> {
     return pulumi.output(args).apply((a: any) => getSslCipherSuite(a, opts))

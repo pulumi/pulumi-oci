@@ -86,12 +86,14 @@ def get_user_assessment_user_access_analytics(filters: Optional[Sequence[pulumi.
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_user_assessment_user_access_analytics = oci.DataSafe.get_user_assessment_user_access_analytics(user_assessment_id=oci_data_safe_user_assessment["test_user_assessment"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str user_assessment_id: The OCID of the user assessment.
@@ -120,12 +122,14 @@ def get_user_assessment_user_access_analytics_output(filters: Optional[pulumi.In
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_user_assessment_user_access_analytics = oci.DataSafe.get_user_assessment_user_access_analytics(user_assessment_id=oci_data_safe_user_assessment["test_user_assessment"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str user_assessment_id: The OCID of the user assessment.

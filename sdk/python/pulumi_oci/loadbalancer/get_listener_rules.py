@@ -102,6 +102,7 @@ def get_listener_rules(filters: Optional[Sequence[pulumi.InputType['GetListenerR
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -109,6 +110,7 @@ def get_listener_rules(filters: Optional[Sequence[pulumi.InputType['GetListenerR
     test_listener_rules = oci.LoadBalancer.get_listener_rules(listener_name=oci_load_balancer_listener["test_listener"]["name"],
         load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str listener_name: The name of the listener the rules are associated with.
@@ -147,6 +149,7 @@ def get_listener_rules_output(filters: Optional[pulumi.Input[Optional[Sequence[p
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -154,6 +157,7 @@ def get_listener_rules_output(filters: Optional[pulumi.Input[Optional[Sequence[p
     test_listener_rules = oci.LoadBalancer.get_listener_rules(listener_name=oci_load_balancer_listener["test_listener"]["name"],
         load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str listener_name: The name of the listener the rules are associated with.

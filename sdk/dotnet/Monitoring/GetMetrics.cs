@@ -25,10 +25,9 @@ namespace Pulumi.Oci.Monitoring
         /// Transactions Per Second (TPS) per-tenancy limit for this operation: 10.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -50,8 +49,7 @@ namespace Pulumi.Oci.Monitoring
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetMetricsResult> InvokeAsync(GetMetricsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetMetricsResult>("oci:Monitoring/getMetrics:getMetrics", args ?? new GetMetricsArgs(), options.WithDefaults());
@@ -70,10 +68,9 @@ namespace Pulumi.Oci.Monitoring
         /// Transactions Per Second (TPS) per-tenancy limit for this operation: 10.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -95,8 +92,7 @@ namespace Pulumi.Oci.Monitoring
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetMetricsResult> Invoke(GetMetricsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMetricsResult>("oci:Monitoring/getMetrics:getMetrics", args ?? new GetMetricsInvokeArgs(), options.WithDefaults());

@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -40,6 +41,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetBootVolumeReplica(ctx *pulumi.Context, args *GetBootVolumeReplicaArgs, opts ...pulumi.InvokeOption) (*GetBootVolumeReplicaResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetBootVolumeReplicaResult

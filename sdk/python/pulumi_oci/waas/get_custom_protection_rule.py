@@ -170,12 +170,14 @@ def get_custom_protection_rule(custom_protection_rule_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_custom_protection_rule = oci.Waas.get_custom_protection_rule(custom_protection_rule_id=oci_waas_custom_protection_rule["test_custom_protection_rule"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str custom_protection_rule_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom protection rule. This number is generated when the custom protection rule is added to the compartment.
@@ -209,12 +211,14 @@ def get_custom_protection_rule_output(custom_protection_rule_id: Optional[pulumi
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_custom_protection_rule = oci.Waas.get_custom_protection_rule(custom_protection_rule_id=oci_waas_custom_protection_rule["test_custom_protection_rule"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str custom_protection_rule_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom protection rule. This number is generated when the custom protection rule is added to the compartment.

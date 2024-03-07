@@ -659,6 +659,7 @@ class Domain(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -683,13 +684,14 @@ class Domain(pulumi.CustomResource):
             is_notification_bypassed=var["domain_is_notification_bypassed"],
             is_primary_email_required=var["domain_is_primary_email_required"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Domains can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/domain:Domain test_domain "id"
+        $ pulumi import oci:Identity/domain:Domain test_domain "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -742,6 +744,7 @@ class Domain(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -766,13 +769,14 @@ class Domain(pulumi.CustomResource):
             is_notification_bypassed=var["domain_is_notification_bypassed"],
             is_primary_email_required=var["domain_is_primary_email_required"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Domains can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/domain:Domain test_domain "id"
+        $ pulumi import oci:Identity/domain:Domain test_domain "id"
         ```
 
         :param str resource_name: The name of the resource.

@@ -865,6 +865,7 @@ class VirtualCircuit(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -904,13 +905,14 @@ class VirtualCircuit(pulumi.CustomResource):
             region=var["virtual_circuit_region"],
             routing_policies=var["virtual_circuit_routing_policy"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         VirtualCircuits can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/virtualCircuit:VirtualCircuit test_virtual_circuit "id"
+        $ pulumi import oci:Core/virtualCircuit:VirtualCircuit test_virtual_circuit "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -972,6 +974,7 @@ class VirtualCircuit(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -1011,13 +1014,14 @@ class VirtualCircuit(pulumi.CustomResource):
             region=var["virtual_circuit_region"],
             routing_policies=var["virtual_circuit_routing_policy"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         VirtualCircuits can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/virtualCircuit:VirtualCircuit test_virtual_circuit "id"
+        $ pulumi import oci:Core/virtualCircuit:VirtualCircuit test_virtual_circuit "id"
         ```
 
         :param str resource_name: The name of the resource.

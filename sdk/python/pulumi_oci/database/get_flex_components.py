@@ -99,6 +99,7 @@ def get_flex_components(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -106,6 +107,7 @@ def get_flex_components(compartment_id: Optional[str] = None,
     test_flex_components = oci.Database.get_flex_components(compartment_id=var["compartment_id"],
         name=var["flex_component_name"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -138,6 +140,7 @@ def get_flex_components_output(compartment_id: Optional[pulumi.Input[str]] = Non
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -145,6 +148,7 @@ def get_flex_components_output(compartment_id: Optional[pulumi.Input[str]] = Non
     test_flex_components = oci.Database.get_flex_components(compartment_id=var["compartment_id"],
         name=var["flex_component_name"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

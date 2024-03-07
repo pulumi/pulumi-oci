@@ -32,6 +32,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -72,15 +73,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // CrossConnectGroups can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Core/crossConnectGroup:CrossConnectGroup test_cross_connect_group "id"
-//
+// $ pulumi import oci:Core/crossConnectGroup:CrossConnectGroup test_cross_connect_group "id"
 // ```
 type CrossConnectGroup struct {
 	pulumi.CustomResourceState

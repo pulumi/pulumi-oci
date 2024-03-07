@@ -16,6 +16,7 @@ namespace Pulumi.Oci.ApiGateway
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -43,13 +44,14 @@ namespace Pulumi.Oci.ApiGateway
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// Certificates can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:ApiGateway/certificate:Certificate test_certificate "id"
+    /// $ pulumi import oci:ApiGateway/certificate:Certificate test_certificate "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:ApiGateway/certificate:Certificate")]

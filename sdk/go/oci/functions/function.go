@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -64,15 +65,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Functions can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Functions/function:Function test_function "id"
-//
+// $ pulumi import oci:Functions/function:Function test_function "id"
 // ```
 type Function struct {
 	pulumi.CustomResourceState

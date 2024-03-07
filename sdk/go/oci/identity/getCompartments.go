@@ -34,6 +34,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -61,6 +62,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetCompartments(ctx *pulumi.Context, args *GetCompartmentsArgs, opts ...pulumi.InvokeOption) (*GetCompartmentsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetCompartmentsResult

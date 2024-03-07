@@ -21,6 +21,7 @@ namespace Pulumi.Oci.Dns
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -39,13 +40,14 @@ namespace Pulumi.Oci.Dns
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// SteeringPolicyAttachments can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Dns/steeringPolicyAttachment:SteeringPolicyAttachment test_steering_policy_attachment "id"
+    /// $ pulumi import oci:Dns/steeringPolicyAttachment:SteeringPolicyAttachment test_steering_policy_attachment "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Dns/steeringPolicyAttachment:SteeringPolicyAttachment")]

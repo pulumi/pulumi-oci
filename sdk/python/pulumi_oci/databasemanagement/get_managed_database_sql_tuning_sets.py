@@ -122,6 +122,7 @@ def get_managed_database_sql_tuning_sets(filters: Optional[Sequence[pulumi.Input
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -131,6 +132,7 @@ def get_managed_database_sql_tuning_sets(filters: Optional[Sequence[pulumi.Input
         opc_named_credential_id=var["managed_database_sql_tuning_set_opc_named_credential_id"],
         owner=var["managed_database_sql_tuning_set_owner"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
@@ -171,6 +173,7 @@ def get_managed_database_sql_tuning_sets_output(filters: Optional[pulumi.Input[O
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -180,6 +183,7 @@ def get_managed_database_sql_tuning_sets_output(filters: Optional[pulumi.Input[O
         opc_named_credential_id=var["managed_database_sql_tuning_set_opc_named_credential_id"],
         owner=var["managed_database_sql_tuning_set_owner"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.

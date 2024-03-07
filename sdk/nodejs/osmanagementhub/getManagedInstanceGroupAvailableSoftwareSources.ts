@@ -14,6 +14,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -25,6 +26,7 @@ import * as utilities from "../utilities";
  *     displayNameContains: _var.managed_instance_group_available_software_source_display_name_contains,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getManagedInstanceGroupAvailableSoftwareSources(args: GetManagedInstanceGroupAvailableSoftwareSourcesArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedInstanceGroupAvailableSoftwareSourcesResult> {
 
@@ -93,6 +95,7 @@ export interface GetManagedInstanceGroupAvailableSoftwareSourcesResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -104,6 +107,7 @@ export interface GetManagedInstanceGroupAvailableSoftwareSourcesResult {
  *     displayNameContains: _var.managed_instance_group_available_software_source_display_name_contains,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getManagedInstanceGroupAvailableSoftwareSourcesOutput(args: GetManagedInstanceGroupAvailableSoftwareSourcesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedInstanceGroupAvailableSoftwareSourcesResult> {
     return pulumi.output(args).apply((a: any) => getManagedInstanceGroupAvailableSoftwareSources(a, opts))

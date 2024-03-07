@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -33,13 +34,14 @@ import * as utilities from "../utilities";
  *     status: "DISABLED",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * HostInsights can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Opsi/hostInsight:HostInsight test_host_insight "id"
+ * $ pulumi import oci:Opsi/hostInsight:HostInsight test_host_insight "id"
  * ```
  */
 export class HostInsight extends pulumi.CustomResource {

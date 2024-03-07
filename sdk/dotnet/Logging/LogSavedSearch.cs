@@ -16,6 +16,7 @@ namespace Pulumi.Oci.Logging
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -41,13 +42,14 @@ namespace Pulumi.Oci.Logging
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// LogSavedSearches can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Logging/logSavedSearch:LogSavedSearch test_log_saved_search "id"
+    /// $ pulumi import oci:Logging/logSavedSearch:LogSavedSearch test_log_saved_search "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Logging/logSavedSearch:LogSavedSearch")]

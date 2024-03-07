@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -25,6 +26,7 @@ import * as utilities from "../utilities";
  *     subnetId: oci_core_subnet.test_subnet.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDatabaseToolsPrivateEndpoints(args: GetDatabaseToolsPrivateEndpointsArgs, opts?: pulumi.InvokeOptions): Promise<GetDatabaseToolsPrivateEndpointsResult> {
 
@@ -107,6 +109,7 @@ export interface GetDatabaseToolsPrivateEndpointsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -119,6 +122,7 @@ export interface GetDatabaseToolsPrivateEndpointsResult {
  *     subnetId: oci_core_subnet.test_subnet.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDatabaseToolsPrivateEndpointsOutput(args: GetDatabaseToolsPrivateEndpointsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDatabaseToolsPrivateEndpointsResult> {
     return pulumi.output(args).apply((a: any) => getDatabaseToolsPrivateEndpoints(a, opts))

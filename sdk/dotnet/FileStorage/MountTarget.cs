@@ -47,6 +47,7 @@ namespace Pulumi.Oci.FileStorage
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -96,13 +97,14 @@ namespace Pulumi.Oci.FileStorage
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// MountTargets can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:FileStorage/mountTarget:MountTarget test_mount_target "id"
+    /// $ pulumi import oci:FileStorage/mountTarget:MountTarget test_mount_target "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:FileStorage/mountTarget:MountTarget")]

@@ -14,7 +14,7 @@ import * as utilities from "../utilities";
  * ExternalDbNodes can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:DatabaseManagement/externalDbNode:ExternalDbNode test_external_db_node "id"
+ * $ pulumi import oci:DatabaseManagement/externalDbNode:ExternalDbNode test_external_db_node "id"
  * ```
  */
 export class ExternalDbNode extends pulumi.CustomResource {

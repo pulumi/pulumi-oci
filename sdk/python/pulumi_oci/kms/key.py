@@ -681,7 +681,7 @@ class Key(pulumi.CustomResource):
         Keys can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Kms/key:Key test_key "managementEndpoint/{managementEndpoint}/keys/{keyId}"
+        $ pulumi import oci:Kms/key:Key test_key "managementEndpoint/{managementEndpoint}/keys/{keyId}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -726,7 +726,7 @@ class Key(pulumi.CustomResource):
         Keys can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Kms/key:Key test_key "managementEndpoint/{managementEndpoint}/keys/{keyId}"
+        $ pulumi import oci:Kms/key:Key test_key "managementEndpoint/{managementEndpoint}/keys/{keyId}"
         ```
 
         :param str resource_name: The name of the resource.

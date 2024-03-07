@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,6 +22,7 @@ import * as utilities from "../utilities";
  *     fusionEnvironmentId: oci_fusion_apps_fusion_environment.test_fusion_environment.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getFusionEnvironmentTimeAvailableForRefreshs(args: GetFusionEnvironmentTimeAvailableForRefreshsArgs, opts?: pulumi.InvokeOptions): Promise<GetFusionEnvironmentTimeAvailableForRefreshsResult> {
 
@@ -64,6 +66,7 @@ export interface GetFusionEnvironmentTimeAvailableForRefreshsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -72,6 +75,7 @@ export interface GetFusionEnvironmentTimeAvailableForRefreshsResult {
  *     fusionEnvironmentId: oci_fusion_apps_fusion_environment.test_fusion_environment.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getFusionEnvironmentTimeAvailableForRefreshsOutput(args: GetFusionEnvironmentTimeAvailableForRefreshsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFusionEnvironmentTimeAvailableForRefreshsResult> {
     return pulumi.output(args).apply((a: any) => getFusionEnvironmentTimeAvailableForRefreshs(a, opts))

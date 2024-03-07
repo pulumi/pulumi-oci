@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,6 +24,7 @@ import * as utilities from "../utilities";
  *     type: _var.remediation_run_stage_type,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getRemediationRunStages(args: GetRemediationRunStagesArgs, opts?: pulumi.InvokeOptions): Promise<GetRemediationRunStagesResult> {
 
@@ -87,6 +89,7 @@ export interface GetRemediationRunStagesResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -97,6 +100,7 @@ export interface GetRemediationRunStagesResult {
  *     type: _var.remediation_run_stage_type,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getRemediationRunStagesOutput(args: GetRemediationRunStagesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRemediationRunStagesResult> {
     return pulumi.output(args).apply((a: any) => getRemediationRunStages(a, opts))

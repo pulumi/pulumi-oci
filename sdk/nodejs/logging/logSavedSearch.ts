@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -27,13 +28,14 @@ import * as utilities from "../utilities";
  *     },
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * LogSavedSearches can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Logging/logSavedSearch:LogSavedSearch test_log_saved_search "id"
+ * $ pulumi import oci:Logging/logSavedSearch:LogSavedSearch test_log_saved_search "id"
  * ```
  */
 export class LogSavedSearch extends pulumi.CustomResource {

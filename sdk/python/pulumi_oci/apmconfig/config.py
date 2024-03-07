@@ -647,6 +647,7 @@ class Config(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -688,13 +689,14 @@ class Config(pulumi.CustomResource):
                 tolerating_response_time=var["config_rules_tolerating_response_time"],
             )])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Configs can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:ApmConfig/config:Config test_config "configs/{configId}/apmDomainId/{apmDomainId}"
+        $ pulumi import oci:ApmConfig/config:Config test_config "configs/{configId}/apmDomainId/{apmDomainId}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -729,6 +731,7 @@ class Config(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -770,13 +773,14 @@ class Config(pulumi.CustomResource):
                 tolerating_response_time=var["config_rules_tolerating_response_time"],
             )])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Configs can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:ApmConfig/config:Config test_config "configs/{configId}/apmDomainId/{apmDomainId}"
+        $ pulumi import oci:ApmConfig/config:Config test_config "configs/{configId}/apmDomainId/{apmDomainId}"
         ```
 
         :param str resource_name: The name of the resource.

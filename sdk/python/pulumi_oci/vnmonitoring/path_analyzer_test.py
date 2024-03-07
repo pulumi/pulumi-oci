@@ -399,6 +399,7 @@ class PathAnalyzerTest(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -446,13 +447,14 @@ class PathAnalyzerTest(pulumi.CustomResource):
                 is_bi_directional_analysis=var["path_analyzer_test_query_options_is_bi_directional_analysis"],
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         PathAnalyzerTests can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:VnMonitoring/pathAnalyzerTest:PathAnalyzerTest test_path_analyzer_test "id"
+        $ pulumi import oci:VnMonitoring/pathAnalyzerTest:PathAnalyzerTest test_path_analyzer_test "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -480,6 +482,7 @@ class PathAnalyzerTest(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -527,13 +530,14 @@ class PathAnalyzerTest(pulumi.CustomResource):
                 is_bi_directional_analysis=var["path_analyzer_test_query_options_is_bi_directional_analysis"],
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         PathAnalyzerTests can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:VnMonitoring/pathAnalyzerTest:PathAnalyzerTest test_path_analyzer_test "id"
+        $ pulumi import oci:VnMonitoring/pathAnalyzerTest:PathAnalyzerTest test_path_analyzer_test "id"
         ```
 
         :param str resource_name: The name of the resource.

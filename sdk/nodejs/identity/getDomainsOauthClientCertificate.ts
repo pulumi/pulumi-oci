@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,6 +25,7 @@ import * as utilities from "../utilities";
  *     resourceTypeSchemaVersion: _var.oauth_client_certificate_resource_type_schema_version,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDomainsOauthClientCertificate(args: GetDomainsOauthClientCertificateArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsOauthClientCertificateResult> {
 
@@ -170,6 +172,7 @@ export interface GetDomainsOauthClientCertificateResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -181,6 +184,7 @@ export interface GetDomainsOauthClientCertificateResult {
  *     resourceTypeSchemaVersion: _var.oauth_client_certificate_resource_type_schema_version,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDomainsOauthClientCertificateOutput(args: GetDomainsOauthClientCertificateOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsOauthClientCertificateResult> {
     return pulumi.output(args).apply((a: any) => getDomainsOauthClientCertificate(a, opts))

@@ -21,6 +21,8 @@ import javax.annotation.Nullable;
  * Creates a new ServiceList for the Network Firewall Policy.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -50,13 +52,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * NetworkFirewallPolicyServiceLists can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:NetworkFirewall/networkFirewallPolicyServiceList:NetworkFirewallPolicyServiceList test_network_firewall_policy_service_list &#34;networkFirewallPolicies/{networkFirewallPolicyId}/serviceLists/{serviceListName}&#34;
+ * $ pulumi import oci:NetworkFirewall/networkFirewallPolicyServiceList:NetworkFirewallPolicyServiceList test_network_firewall_policy_service_list &#34;networkFirewallPolicies/{networkFirewallPolicyId}/serviceLists/{serviceListName}&#34;
  * ```
  * 
  */

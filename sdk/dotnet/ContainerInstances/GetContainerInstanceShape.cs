@@ -16,10 +16,9 @@ namespace Pulumi.Oci.ContainerInstances
         /// 
         /// Get a list of shapes for creating Container Instances and their details.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,8 +35,7 @@ namespace Pulumi.Oci.ContainerInstances
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetContainerInstanceShapeResult> InvokeAsync(GetContainerInstanceShapeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetContainerInstanceShapeResult>("oci:ContainerInstances/getContainerInstanceShape:getContainerInstanceShape", args ?? new GetContainerInstanceShapeArgs(), options.WithDefaults());
@@ -47,10 +45,9 @@ namespace Pulumi.Oci.ContainerInstances
         /// 
         /// Get a list of shapes for creating Container Instances and their details.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -67,8 +64,7 @@ namespace Pulumi.Oci.ContainerInstances
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetContainerInstanceShapeResult> Invoke(GetContainerInstanceShapeInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetContainerInstanceShapeResult>("oci:ContainerInstances/getContainerInstanceShape:getContainerInstanceShape", args ?? new GetContainerInstanceShapeInvokeArgs(), options.WithDefaults());

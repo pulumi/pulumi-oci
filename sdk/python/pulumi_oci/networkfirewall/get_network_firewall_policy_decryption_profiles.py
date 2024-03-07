@@ -96,6 +96,7 @@ def get_network_firewall_policy_decryption_profiles(display_name: Optional[str] 
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -103,6 +104,7 @@ def get_network_firewall_policy_decryption_profiles(display_name: Optional[str] 
     test_network_firewall_policy_decryption_profiles = oci.NetworkFirewall.get_network_firewall_policy_decryption_profiles(network_firewall_policy_id=oci_network_firewall_network_firewall_policy["test_network_firewall_policy"]["id"],
         display_name=var["network_firewall_policy_decryption_profile_display_name"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str display_name: A filter to return only resources that match the entire display name given.
@@ -135,6 +137,7 @@ def get_network_firewall_policy_decryption_profiles_output(display_name: Optiona
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -142,6 +145,7 @@ def get_network_firewall_policy_decryption_profiles_output(display_name: Optiona
     test_network_firewall_policy_decryption_profiles = oci.NetworkFirewall.get_network_firewall_policy_decryption_profiles(network_firewall_policy_id=oci_network_firewall_network_firewall_policy["test_network_firewall_policy"]["id"],
         display_name=var["network_firewall_policy_decryption_profile_display_name"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str display_name: A filter to return only resources that match the entire display name given.

@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,6 +25,7 @@ import * as utilities from "../utilities";
  *     state: _var.tsig_key_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getTsigKeys(args: GetTsigKeysArgs, opts?: pulumi.InvokeOptions): Promise<GetTsigKeysResult> {
 
@@ -93,6 +95,7 @@ export interface GetTsigKeysResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -104,6 +107,7 @@ export interface GetTsigKeysResult {
  *     state: _var.tsig_key_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getTsigKeysOutput(args: GetTsigKeysOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTsigKeysResult> {
     return pulumi.output(args).apply((a: any) => getTsigKeys(a, opts))

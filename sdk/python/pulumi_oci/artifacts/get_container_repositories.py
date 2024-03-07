@@ -148,6 +148,7 @@ def get_container_repositories(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -159,6 +160,7 @@ def get_container_repositories(compartment_id: Optional[str] = None,
         repository_id=oci_artifacts_repository["test_repository"]["id"],
         state=var["container_repository_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -207,6 +209,7 @@ def get_container_repositories_output(compartment_id: Optional[pulumi.Input[str]
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -218,6 +221,7 @@ def get_container_repositories_output(compartment_id: Optional[pulumi.Input[str]
         repository_id=oci_artifacts_repository["test_repository"]["id"],
         state=var["container_repository_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

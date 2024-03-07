@@ -17,6 +17,7 @@ namespace Pulumi.Oci.ComputeCloud
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -46,13 +47,14 @@ namespace Pulumi.Oci.ComputeCloud
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// CccInfrastructures can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:ComputeCloud/atCustomerCccInfrastructure:AtCustomerCccInfrastructure test_ccc_infrastructure "id"
+    /// $ pulumi import oci:ComputeCloud/atCustomerCccInfrastructure:AtCustomerCccInfrastructure test_ccc_infrastructure "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:ComputeCloud/atCustomerCccInfrastructure:AtCustomerCccInfrastructure")]

@@ -45,6 +45,8 @@ import javax.annotation.Nullable;
  *   of values that you supply with [EnumTagDefinitionValidator](https://docs.cloud.oracle.com/iaas/api/#/en/identity/latest/datatypes/EnumTagDefinitionValidator).
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -83,13 +85,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * Tags can be imported using the `tagNamespaceId` and `tagName`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Identity/tag:Tag test_tag &#34;tagNamespaces/{tagNamespaceId}/tags/{tagName}&#34;
+ * $ pulumi import oci:Identity/tag:Tag test_tag &#34;tagNamespaces/{tagNamespaceId}/tags/{tagName}&#34;
  * ```
  * 
  */

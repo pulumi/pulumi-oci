@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -20,6 +21,7 @@ import * as utilities from "../utilities";
  *     pdbConversionHistoryEntryId: oci_database_pdb_conversion_history_entry.test_pdb_conversion_history_entry.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDatabasePdbConversionHistoryEntry(args: GetDatabasePdbConversionHistoryEntryArgs, opts?: pulumi.InvokeOptions): Promise<GetDatabasePdbConversionHistoryEntryResult> {
 
@@ -107,6 +109,7 @@ export interface GetDatabasePdbConversionHistoryEntryResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -116,6 +119,7 @@ export interface GetDatabasePdbConversionHistoryEntryResult {
  *     pdbConversionHistoryEntryId: oci_database_pdb_conversion_history_entry.test_pdb_conversion_history_entry.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDatabasePdbConversionHistoryEntryOutput(args: GetDatabasePdbConversionHistoryEntryOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDatabasePdbConversionHistoryEntryResult> {
     return pulumi.output(args).apply((a: any) => getDatabasePdbConversionHistoryEntry(a, opts))

@@ -14,6 +14,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,6 +23,7 @@ import * as utilities from "../utilities";
  *     userId: oci_identity_user.test_user.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAuthTokens(args: GetAuthTokensArgs, opts?: pulumi.InvokeOptions): Promise<GetAuthTokensResult> {
 
@@ -69,6 +71,7 @@ export interface GetAuthTokensResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -77,6 +80,7 @@ export interface GetAuthTokensResult {
  *     userId: oci_identity_user.test_user.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAuthTokensOutput(args: GetAuthTokensOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAuthTokensResult> {
     return pulumi.output(args).apply((a: any) => getAuthTokens(a, opts))

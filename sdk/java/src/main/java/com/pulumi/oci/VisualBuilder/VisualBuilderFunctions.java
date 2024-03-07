@@ -26,6 +26,8 @@ public final class VisualBuilderFunctions {
      * Gets a VbInstance by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -54,6 +56,7 @@ public final class VisualBuilderFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVbInstanceResult> getVbInstance(GetVbInstanceArgs args) {
@@ -65,6 +68,8 @@ public final class VisualBuilderFunctions {
      * Gets a VbInstance by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -93,6 +98,7 @@ public final class VisualBuilderFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVbInstanceResult> getVbInstancePlain(GetVbInstancePlainArgs args) {
@@ -104,6 +110,8 @@ public final class VisualBuilderFunctions {
      * Gets a VbInstance by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -132,6 +140,7 @@ public final class VisualBuilderFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVbInstanceResult> getVbInstance(GetVbInstanceArgs args, InvokeOptions options) {
@@ -143,6 +152,8 @@ public final class VisualBuilderFunctions {
      * Gets a VbInstance by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -171,6 +182,7 @@ public final class VisualBuilderFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVbInstanceResult> getVbInstancePlain(GetVbInstancePlainArgs args, InvokeOptions options) {
@@ -182,6 +194,8 @@ public final class VisualBuilderFunctions {
      * Returns a list of published and staged applications of a Visual Builder instance.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -211,6 +225,7 @@ public final class VisualBuilderFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVbInstanceApplicationsResult> getVbInstanceApplications(GetVbInstanceApplicationsArgs args) {
@@ -222,6 +237,8 @@ public final class VisualBuilderFunctions {
      * Returns a list of published and staged applications of a Visual Builder instance.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -251,6 +268,7 @@ public final class VisualBuilderFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVbInstanceApplicationsResult> getVbInstanceApplicationsPlain(GetVbInstanceApplicationsPlainArgs args) {
@@ -262,6 +280,8 @@ public final class VisualBuilderFunctions {
      * Returns a list of published and staged applications of a Visual Builder instance.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -291,6 +311,7 @@ public final class VisualBuilderFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVbInstanceApplicationsResult> getVbInstanceApplications(GetVbInstanceApplicationsArgs args, InvokeOptions options) {
@@ -302,6 +323,8 @@ public final class VisualBuilderFunctions {
      * Returns a list of published and staged applications of a Visual Builder instance.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -331,6 +354,7 @@ public final class VisualBuilderFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVbInstanceApplicationsResult> getVbInstanceApplicationsPlain(GetVbInstanceApplicationsPlainArgs args, InvokeOptions options) {
@@ -342,6 +366,8 @@ public final class VisualBuilderFunctions {
      * Returns a list of Vb Instances.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -372,6 +398,7 @@ public final class VisualBuilderFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVbInstancesResult> getVbInstances(GetVbInstancesArgs args) {
@@ -383,6 +410,8 @@ public final class VisualBuilderFunctions {
      * Returns a list of Vb Instances.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -413,6 +442,7 @@ public final class VisualBuilderFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVbInstancesResult> getVbInstancesPlain(GetVbInstancesPlainArgs args) {
@@ -424,6 +454,8 @@ public final class VisualBuilderFunctions {
      * Returns a list of Vb Instances.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -454,6 +486,7 @@ public final class VisualBuilderFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVbInstancesResult> getVbInstances(GetVbInstancesArgs args, InvokeOptions options) {
@@ -465,6 +498,8 @@ public final class VisualBuilderFunctions {
      * Returns a list of Vb Instances.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -495,6 +530,7 @@ public final class VisualBuilderFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVbInstancesResult> getVbInstancesPlain(GetVbInstancesPlainArgs args, InvokeOptions options) {

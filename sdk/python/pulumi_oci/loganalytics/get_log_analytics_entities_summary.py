@@ -111,6 +111,7 @@ def get_log_analytics_entities_summary(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -118,6 +119,7 @@ def get_log_analytics_entities_summary(compartment_id: Optional[str] = None,
     test_log_analytics_entities_summary = oci.LogAnalytics.get_log_analytics_entities_summary(compartment_id=var["compartment_id"],
         namespace=var["log_analytics_entities_summary_namespace"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID of the compartment in which to list resources.
@@ -149,6 +151,7 @@ def get_log_analytics_entities_summary_output(compartment_id: Optional[pulumi.In
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -156,6 +159,7 @@ def get_log_analytics_entities_summary_output(compartment_id: Optional[pulumi.In
     test_log_analytics_entities_summary = oci.LogAnalytics.get_log_analytics_entities_summary(compartment_id=var["compartment_id"],
         namespace=var["log_analytics_entities_summary_namespace"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID of the compartment in which to list resources.

@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -45,6 +46,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetModelVersionSets(ctx *pulumi.Context, args *GetModelVersionSetsArgs, opts ...pulumi.InvokeOption) (*GetModelVersionSetsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetModelVersionSetsResult

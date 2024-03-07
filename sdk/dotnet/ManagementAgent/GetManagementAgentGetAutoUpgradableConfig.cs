@@ -18,10 +18,9 @@ namespace Pulumi.Oci.ManagementAgent
         /// The supplied compartmentId must be a tenancy root.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -37,8 +36,7 @@ namespace Pulumi.Oci.ManagementAgent
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetManagementAgentGetAutoUpgradableConfigResult> InvokeAsync(GetManagementAgentGetAutoUpgradableConfigArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagementAgentGetAutoUpgradableConfigResult>("oci:ManagementAgent/getManagementAgentGetAutoUpgradableConfig:getManagementAgentGetAutoUpgradableConfig", args ?? new GetManagementAgentGetAutoUpgradableConfigArgs(), options.WithDefaults());
@@ -50,10 +48,9 @@ namespace Pulumi.Oci.ManagementAgent
         /// The supplied compartmentId must be a tenancy root.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -69,8 +66,7 @@ namespace Pulumi.Oci.ManagementAgent
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetManagementAgentGetAutoUpgradableConfigResult> Invoke(GetManagementAgentGetAutoUpgradableConfigInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagementAgentGetAutoUpgradableConfigResult>("oci:ManagementAgent/getManagementAgentGetAutoUpgradableConfig:getManagementAgentGetAutoUpgradableConfig", args ?? new GetManagementAgentGetAutoUpgradableConfigInvokeArgs(), options.WithDefaults());

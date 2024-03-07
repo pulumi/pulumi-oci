@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -34,13 +35,14 @@ import * as utilities from "../utilities";
  *     savedReportId: oci_metering_computation_saved_report.test_saved_report.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * CustomTables can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:MeteringComputation/customTable:CustomTable test_custom_table "id"
+ * $ pulumi import oci:MeteringComputation/customTable:CustomTable test_custom_table "id"
  * ```
  */
 export class CustomTable extends pulumi.CustomResource {

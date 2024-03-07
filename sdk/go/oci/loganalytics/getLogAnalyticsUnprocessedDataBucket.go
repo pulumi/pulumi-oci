@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -40,6 +41,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetLogAnalyticsUnprocessedDataBucket(ctx *pulumi.Context, args *GetLogAnalyticsUnprocessedDataBucketArgs, opts ...pulumi.InvokeOption) (*GetLogAnalyticsUnprocessedDataBucketResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetLogAnalyticsUnprocessedDataBucketResult

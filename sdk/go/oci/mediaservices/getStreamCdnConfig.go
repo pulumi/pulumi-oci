@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -40,6 +41,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupStreamCdnConfig(ctx *pulumi.Context, args *LookupStreamCdnConfigArgs, opts ...pulumi.InvokeOption) (*LookupStreamCdnConfigResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupStreamCdnConfigResult

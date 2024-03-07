@@ -148,6 +148,7 @@ def get_workspace_application_schedules(application_key: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -159,6 +160,7 @@ def get_workspace_application_schedules(application_key: Optional[str] = None,
         name=var["workspace_application_schedule_name"],
         types=var["workspace_application_schedule_type"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str application_key: The application key.
@@ -207,6 +209,7 @@ def get_workspace_application_schedules_output(application_key: Optional[pulumi.
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -218,6 +221,7 @@ def get_workspace_application_schedules_output(application_key: Optional[pulumi.
         name=var["workspace_application_schedule_name"],
         types=var["workspace_application_schedule_type"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str application_key: The application key.

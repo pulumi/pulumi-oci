@@ -266,6 +266,7 @@ class ClusterWorkloadMapping(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -281,13 +282,14 @@ class ClusterWorkloadMapping(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ClusterWorkloadMappings can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:ContainerEngine/clusterWorkloadMapping:ClusterWorkloadMapping test_cluster_workload_mapping "clusters/{clusterId}/workloadMappings/{workloadMappingId}"
+        $ pulumi import oci:ContainerEngine/clusterWorkloadMapping:ClusterWorkloadMapping test_cluster_workload_mapping "clusters/{clusterId}/workloadMappings/{workloadMappingId}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -315,6 +317,7 @@ class ClusterWorkloadMapping(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -330,13 +333,14 @@ class ClusterWorkloadMapping(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ClusterWorkloadMappings can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:ContainerEngine/clusterWorkloadMapping:ClusterWorkloadMapping test_cluster_workload_mapping "clusters/{clusterId}/workloadMappings/{workloadMappingId}"
+        $ pulumi import oci:ContainerEngine/clusterWorkloadMapping:ClusterWorkloadMapping test_cluster_workload_mapping "clusters/{clusterId}/workloadMappings/{workloadMappingId}"
         ```
 
         :param str resource_name: The name of the resource.

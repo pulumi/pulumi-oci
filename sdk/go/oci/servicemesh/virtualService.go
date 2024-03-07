@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -57,15 +58,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // VirtualServices can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:ServiceMesh/virtualService:VirtualService test_virtual_service "id"
-//
+// $ pulumi import oci:ServiceMesh/virtualService:VirtualService test_virtual_service "id"
 // ```
 type VirtualService struct {
 	pulumi.CustomResourceState

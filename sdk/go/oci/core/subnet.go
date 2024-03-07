@@ -48,6 +48,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -89,15 +90,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Subnets can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Core/subnet:Subnet test_subnet "id"
-//
+// $ pulumi import oci:Core/subnet:Subnet test_subnet "id"
 // ```
 type Subnet struct {
 	pulumi.CustomResourceState

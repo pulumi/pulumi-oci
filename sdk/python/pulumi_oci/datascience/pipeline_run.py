@@ -570,6 +570,7 @@ class PipelineRun(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -607,13 +608,14 @@ class PipelineRun(pulumi.CustomResource):
             )],
             system_tags=var["pipeline_run_system_tags"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         PipelineRuns can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataScience/pipelineRun:PipelineRun test_pipeline_run "id"
+        $ pulumi import oci:DataScience/pipelineRun:PipelineRun test_pipeline_run "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -646,6 +648,7 @@ class PipelineRun(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -683,13 +686,14 @@ class PipelineRun(pulumi.CustomResource):
             )],
             system_tags=var["pipeline_run_system_tags"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         PipelineRuns can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataScience/pipelineRun:PipelineRun test_pipeline_run "id"
+        $ pulumi import oci:DataScience/pipelineRun:PipelineRun test_pipeline_run "id"
         ```
 
         :param str resource_name: The name of the resource.

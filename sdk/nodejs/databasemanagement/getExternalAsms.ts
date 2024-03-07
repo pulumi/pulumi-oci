@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,6 +24,7 @@ import * as utilities from "../utilities";
  *     externalDbSystemId: oci_database_management_external_db_system.test_external_db_system.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getExternalAsms(args?: GetExternalAsmsArgs, opts?: pulumi.InvokeOptions): Promise<GetExternalAsmsResult> {
     args = args || {};
@@ -88,6 +90,7 @@ export interface GetExternalAsmsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -98,6 +101,7 @@ export interface GetExternalAsmsResult {
  *     externalDbSystemId: oci_database_management_external_db_system.test_external_db_system.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getExternalAsmsOutput(args?: GetExternalAsmsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalAsmsResult> {
     return pulumi.output(args).apply((a: any) => getExternalAsms(a, opts))

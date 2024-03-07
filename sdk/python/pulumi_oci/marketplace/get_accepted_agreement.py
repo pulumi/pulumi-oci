@@ -167,12 +167,14 @@ def get_accepted_agreement(accepted_agreement_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_accepted_agreement = oci.Marketplace.get_accepted_agreement(accepted_agreement_id=oci_marketplace_accepted_agreement["test_accepted_agreement"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str accepted_agreement_id: The unique identifier for the accepted terms of use agreement.
@@ -206,12 +208,14 @@ def get_accepted_agreement_output(accepted_agreement_id: Optional[pulumi.Input[s
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_accepted_agreement = oci.Marketplace.get_accepted_agreement(accepted_agreement_id=oci_marketplace_accepted_agreement["test_accepted_agreement"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str accepted_agreement_id: The unique identifier for the accepted terms of use agreement.

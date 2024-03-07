@@ -9,6 +9,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -18,6 +19,7 @@ import * as utilities from "../utilities";
  *     retentionPeriodDays: _var.configuration_retention_period_days,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *

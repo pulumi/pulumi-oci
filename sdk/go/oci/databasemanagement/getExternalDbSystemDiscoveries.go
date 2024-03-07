@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,6 +42,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetExternalDbSystemDiscoveries(ctx *pulumi.Context, args *GetExternalDbSystemDiscoveriesArgs, opts ...pulumi.InvokeOption) (*GetExternalDbSystemDiscoveriesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetExternalDbSystemDiscoveriesResult

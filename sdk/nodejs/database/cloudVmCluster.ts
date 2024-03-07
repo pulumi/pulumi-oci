@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -56,13 +57,14 @@ import * as utilities from "../utilities";
  *     timeZone: _var.cloud_vm_cluster_time_zone,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * CloudVmClusters can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Database/cloudVmCluster:CloudVmCluster test_cloud_vm_cluster "id"
+ * $ pulumi import oci:Database/cloudVmCluster:CloudVmCluster test_cloud_vm_cluster "id"
  * ```
  */
 export class CloudVmCluster extends pulumi.CustomResource {

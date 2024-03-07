@@ -16,7 +16,7 @@ import * as utilities from "../utilities";
  * Deployments can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:DevOps/deployment:Deployment test_deployment "id"
+ * $ pulumi import oci:DevOps/deployment:Deployment test_deployment "id"
  * ```
  */
 export class Deployment extends pulumi.CustomResource {

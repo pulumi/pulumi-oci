@@ -29,6 +29,8 @@ import javax.annotation.Nullable;
  * Creates an application.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -81,13 +83,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * WorkspaceApplications can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:DataIntegration/workspaceApplication:WorkspaceApplication test_workspace_application &#34;workspaces/{workspaceId}/applications/{applicationKey}&#34;
+ * $ pulumi import oci:DataIntegration/workspaceApplication:WorkspaceApplication test_workspace_application &#34;workspaces/{workspaceId}/applications/{applicationKey}&#34;
  * ```
  * 
  */

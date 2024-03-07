@@ -25,10 +25,9 @@ namespace Pulumi.Oci.Monitoring
         /// or transactions, per second (TPS) for a given tenancy.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -46,8 +45,7 @@ namespace Pulumi.Oci.Monitoring
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetAlarmSuppressionsResult> InvokeAsync(GetAlarmSuppressionsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAlarmSuppressionsResult>("oci:Monitoring/getAlarmSuppressions:getAlarmSuppressions", args ?? new GetAlarmSuppressionsArgs(), options.WithDefaults());
@@ -66,10 +64,9 @@ namespace Pulumi.Oci.Monitoring
         /// or transactions, per second (TPS) for a given tenancy.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -87,8 +84,7 @@ namespace Pulumi.Oci.Monitoring
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetAlarmSuppressionsResult> Invoke(GetAlarmSuppressionsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAlarmSuppressionsResult>("oci:Monitoring/getAlarmSuppressions:getAlarmSuppressions", args ?? new GetAlarmSuppressionsInvokeArgs(), options.WithDefaults());

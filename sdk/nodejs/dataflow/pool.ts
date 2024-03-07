@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -44,13 +45,14 @@ import * as utilities from "../utilities";
  *     }],
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * Pools can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:DataFlow/pool:Pool test_pool "id"
+ * $ pulumi import oci:DataFlow/pool:Pool test_pool "id"
  * ```
  */
 export class Pool extends pulumi.CustomResource {

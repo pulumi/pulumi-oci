@@ -24,7 +24,7 @@ namespace Pulumi.Oci.Optimizer
     /// Recommendations can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Optimizer/recommendation:Recommendation test_recommendation "id"
+    /// $ pulumi import oci:Optimizer/recommendation:Recommendation test_recommendation "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Optimizer/recommendation:Recommendation")]

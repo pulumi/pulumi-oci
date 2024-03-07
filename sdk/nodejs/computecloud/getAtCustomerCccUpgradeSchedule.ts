@@ -14,6 +14,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,6 +23,7 @@ import * as utilities from "../utilities";
  *     cccUpgradeScheduleId: oci_compute_cloud_at_customer_ccc_upgrade_schedule.test_ccc_upgrade_schedule.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAtCustomerCccUpgradeSchedule(args: GetAtCustomerCccUpgradeScheduleArgs, opts?: pulumi.InvokeOptions): Promise<GetAtCustomerCccUpgradeScheduleResult> {
 
@@ -107,6 +109,7 @@ export interface GetAtCustomerCccUpgradeScheduleResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -115,6 +118,7 @@ export interface GetAtCustomerCccUpgradeScheduleResult {
  *     cccUpgradeScheduleId: oci_compute_cloud_at_customer_ccc_upgrade_schedule.test_ccc_upgrade_schedule.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAtCustomerCccUpgradeScheduleOutput(args: GetAtCustomerCccUpgradeScheduleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAtCustomerCccUpgradeScheduleResult> {
     return pulumi.output(args).apply((a: any) => getAtCustomerCccUpgradeSchedule(a, opts))

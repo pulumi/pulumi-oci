@@ -26,6 +26,8 @@ import javax.annotation.Nullable;
  * Creates a new `PathAnalyzerTest` resource.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -94,13 +96,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * PathAnalyzerTests can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:VnMonitoring/pathAnalyzerTest:PathAnalyzerTest test_path_analyzer_test &#34;id&#34;
+ * $ pulumi import oci:VnMonitoring/pathAnalyzerTest:PathAnalyzerTest test_path_analyzer_test &#34;id&#34;
  * ```
  * 
  */

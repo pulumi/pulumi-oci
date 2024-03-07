@@ -14,6 +14,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,6 +25,7 @@ import * as utilities from "../utilities";
  *     isSupportedVersion: _var.java_family_is_supported_version,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getJavaFamilies(args?: GetJavaFamiliesArgs, opts?: pulumi.InvokeOptions): Promise<GetJavaFamiliesResult> {
     args = args || {};
@@ -90,6 +92,7 @@ export interface GetJavaFamiliesResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -100,6 +103,7 @@ export interface GetJavaFamiliesResult {
  *     isSupportedVersion: _var.java_family_is_supported_version,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getJavaFamiliesOutput(args?: GetJavaFamiliesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetJavaFamiliesResult> {
     return pulumi.output(args).apply((a: any) => getJavaFamilies(a, opts))

@@ -20,6 +20,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -44,15 +45,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // AnnouncementSubscriptionsActionsChangeCompartment can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:AnnouncementsService/announcementSubscriptionsActionsChangeCompartment:AnnouncementSubscriptionsActionsChangeCompartment test_announcement_subscriptions_actions_change_compartment "id"
-//
+// $ pulumi import oci:AnnouncementsService/announcementSubscriptionsActionsChangeCompartment:AnnouncementSubscriptionsActionsChangeCompartment test_announcement_subscriptions_actions_change_compartment "id"
 // ```
 type AnnouncementSubscriptionsActionsChangeCompartment struct {
 	pulumi.CustomResourceState

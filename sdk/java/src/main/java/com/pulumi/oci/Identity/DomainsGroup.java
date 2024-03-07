@@ -34,6 +34,7 @@ import javax.annotation.Nullable;
  * 
  * ## Example Usage
  * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -117,13 +118,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * Groups can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Identity/domainsGroup:DomainsGroup test_group &#34;idcsEndpoint/{idcsEndpoint}/groups/{groupId}&#34;
+ * $ pulumi import oci:Identity/domainsGroup:DomainsGroup test_group &#34;idcsEndpoint/{idcsEndpoint}/groups/{groupId}&#34;
  * ```
  * 
  */
@@ -486,7 +488,7 @@ public class DomainsGroup extends com.pulumi.resources.CustomResource {
         return this.idcsPreventedOperations;
     }
     /**
-     * (Updatable) The group members. &lt;b&gt;Important:&lt;/b&gt; When requesting group members, a maximum of 10,000 members can be returned in a single request. If the response contains more than 10,000 members, the request will fail. Use &#39;startIndex&#39; and &#39;count&#39; to return members in pages instead of in a single response, for example: #attributes=members[startIndex=1%26count=10]. This REST API is SCIM compliant.
+     * (Updatable) The group members. &lt;b&gt;Important:&lt;/b&gt; When requesting group members, a maximum of 10,000 members can be returned in a single request. If the response contains more than 10,000 members, the request will fail. Use &#39;startIndex&#39; and &#39;count&#39; to return members in pages instead of in a single response, for example: #attributes=members[startIndex=1%!c(MISSING)ount=10]. This REST API is SCIM compliant.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -506,7 +508,7 @@ public class DomainsGroup extends com.pulumi.resources.CustomResource {
     private Output<List<DomainsGroupMember>> members;
 
     /**
-     * @return (Updatable) The group members. &lt;b&gt;Important:&lt;/b&gt; When requesting group members, a maximum of 10,000 members can be returned in a single request. If the response contains more than 10,000 members, the request will fail. Use &#39;startIndex&#39; and &#39;count&#39; to return members in pages instead of in a single response, for example: #attributes=members[startIndex=1%26count=10]. This REST API is SCIM compliant.
+     * @return (Updatable) The group members. &lt;b&gt;Important:&lt;/b&gt; When requesting group members, a maximum of 10,000 members can be returned in a single request. If the response contains more than 10,000 members, the request will fail. Use &#39;startIndex&#39; and &#39;count&#39; to return members in pages instead of in a single response, for example: #attributes=members[startIndex=1%!c(MISSING)ount=10]. This REST API is SCIM compliant.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false

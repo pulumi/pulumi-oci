@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -58,15 +59,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // ManagementAgentDataSources can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:ManagementAgent/managementAgentDataSource:ManagementAgentDataSource test_management_agent_data_source "managementAgents/{managementAgentId}/dataSources/{key}"
-//
+// $ pulumi import oci:ManagementAgent/managementAgentDataSource:ManagementAgentDataSource test_management_agent_data_source "managementAgents/{managementAgentId}/dataSources/{key}"
 // ```
 type ManagementAgentDataSource struct {
 	pulumi.CustomResourceState

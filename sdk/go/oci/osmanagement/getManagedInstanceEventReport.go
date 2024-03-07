@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -43,6 +44,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetManagedInstanceEventReport(ctx *pulumi.Context, args *GetManagedInstanceEventReportArgs, opts ...pulumi.InvokeOption) (*GetManagedInstanceEventReportResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetManagedInstanceEventReportResult

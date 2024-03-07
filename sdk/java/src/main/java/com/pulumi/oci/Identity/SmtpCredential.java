@@ -22,6 +22,8 @@ import javax.annotation.Nullable;
  * [UpdateSmtpCredential](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/SmtpCredentialSummary/UpdateSmtpCredential).
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -51,13 +53,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * SmtpCredentials can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Identity/smtpCredential:SmtpCredential test_smtp_credential &#34;users/{userId}/smtpCredentials/{smtpCredentialId}&#34;
+ * $ pulumi import oci:Identity/smtpCredential:SmtpCredential test_smtp_credential &#34;users/{userId}/smtpCredentials/{smtpCredentialId}&#34;
  * ```
  * 
  */

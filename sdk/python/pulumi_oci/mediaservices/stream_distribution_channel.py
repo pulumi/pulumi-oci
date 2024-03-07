@@ -310,6 +310,7 @@ class StreamDistributionChannel(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -331,13 +332,14 @@ class StreamDistributionChannel(pulumi.CustomResource):
                 time_created=var["stream_distribution_channel_locks_time_created"],
             )])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         StreamDistributionChannels can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:MediaServices/streamDistributionChannel:StreamDistributionChannel test_stream_distribution_channel "id"
+        $ pulumi import oci:MediaServices/streamDistributionChannel:StreamDistributionChannel test_stream_distribution_channel "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -361,6 +363,7 @@ class StreamDistributionChannel(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -382,13 +385,14 @@ class StreamDistributionChannel(pulumi.CustomResource):
                 time_created=var["stream_distribution_channel_locks_time_created"],
             )])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         StreamDistributionChannels can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:MediaServices/streamDistributionChannel:StreamDistributionChannel test_stream_distribution_channel "id"
+        $ pulumi import oci:MediaServices/streamDistributionChannel:StreamDistributionChannel test_stream_distribution_channel "id"
         ```
 
         :param str resource_name: The name of the resource.

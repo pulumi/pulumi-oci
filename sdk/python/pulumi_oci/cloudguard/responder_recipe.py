@@ -425,7 +425,7 @@ class ResponderRecipe(pulumi.CustomResource):
         ResponderRecipes can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:CloudGuard/responderRecipe:ResponderRecipe test_responder_recipe "id"
+        $ pulumi import oci:CloudGuard/responderRecipe:ResponderRecipe test_responder_recipe "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -464,7 +464,7 @@ class ResponderRecipe(pulumi.CustomResource):
         ResponderRecipes can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:CloudGuard/responderRecipe:ResponderRecipe test_responder_recipe "id"
+        $ pulumi import oci:CloudGuard/responderRecipe:ResponderRecipe test_responder_recipe "id"
         ```
 
         :param str resource_name: The name of the resource.

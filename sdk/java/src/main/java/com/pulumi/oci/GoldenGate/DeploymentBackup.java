@@ -23,6 +23,8 @@ import javax.annotation.Nullable;
  * Creates a new DeploymentBackup.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -58,13 +60,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * DeploymentBackups can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:GoldenGate/deploymentBackup:DeploymentBackup test_deployment_backup &#34;id&#34;
+ * $ pulumi import oci:GoldenGate/deploymentBackup:DeploymentBackup test_deployment_backup &#34;id&#34;
  * ```
  * 
  */

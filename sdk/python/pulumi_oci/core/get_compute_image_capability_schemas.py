@@ -115,6 +115,7 @@ def get_compute_image_capability_schemas(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -123,6 +124,7 @@ def get_compute_image_capability_schemas(compartment_id: Optional[str] = None,
         display_name=var["compute_image_capability_schema_display_name"],
         image_id=oci_core_image["test_image"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: A filter to return only resources that match the given compartment OCID exactly.
@@ -159,6 +161,7 @@ def get_compute_image_capability_schemas_output(compartment_id: Optional[pulumi.
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -167,6 +170,7 @@ def get_compute_image_capability_schemas_output(compartment_id: Optional[pulumi.
         display_name=var["compute_image_capability_schema_display_name"],
         image_id=oci_core_image["test_image"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: A filter to return only resources that match the given compartment OCID exactly.

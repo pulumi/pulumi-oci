@@ -104,6 +104,7 @@ def get_fault_domains(availability_domain: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -111,6 +112,7 @@ def get_fault_domains(availability_domain: Optional[str] = None,
     test_fault_domains = oci.Identity.get_fault_domains(availability_domain=var["fault_domain_availability_domain"],
         compartment_id=var["compartment_id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str availability_domain: The name of the availibilityDomain.
@@ -145,6 +147,7 @@ def get_fault_domains_output(availability_domain: Optional[pulumi.Input[str]] = 
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -152,6 +155,7 @@ def get_fault_domains_output(availability_domain: Optional[pulumi.Input[str]] = 
     test_fault_domains = oci.Identity.get_fault_domains(availability_domain=var["fault_domain_availability_domain"],
         compartment_id=var["compartment_id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str availability_domain: The name of the availibilityDomain.

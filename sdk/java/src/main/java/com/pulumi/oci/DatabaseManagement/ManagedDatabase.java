@@ -28,7 +28,7 @@ import javax.annotation.Nullable;
  * ManagedDatabases can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:DatabaseManagement/managedDatabase:ManagedDatabase test_managed_database &#34;id&#34;
+ * $ pulumi import oci:DatabaseManagement/managedDatabase:ManagedDatabase test_managed_database &#34;id&#34;
  * ```
  * 
  */

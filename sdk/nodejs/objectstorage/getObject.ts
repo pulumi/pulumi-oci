@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -28,6 +29,7 @@ import * as utilities from "../utilities";
  *     versionId: oci_objectstorage_version.test_version.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getObject(args: GetObjectArgs, opts?: pulumi.InvokeOptions): Promise<GetObjectResult> {
 
@@ -170,6 +172,7 @@ export interface GetObjectResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -187,6 +190,7 @@ export interface GetObjectResult {
  *     versionId: oci_objectstorage_version.test_version.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getObjectOutput(args: GetObjectOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetObjectResult> {
     return pulumi.output(args).apply((a: any) => getObject(a, opts))

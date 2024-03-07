@@ -463,6 +463,7 @@ class NetworkFirewall(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -483,13 +484,14 @@ class NetworkFirewall(pulumi.CustomResource):
             ipv6address=var["network_firewall_ipv6address"],
             network_security_group_ids=var["network_firewall_network_security_group_ids"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         NetworkFirewalls can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:NetworkFirewall/networkFirewall:NetworkFirewall test_network_firewall "id"
+        $ pulumi import oci:NetworkFirewall/networkFirewall:NetworkFirewall test_network_firewall "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -522,6 +524,7 @@ class NetworkFirewall(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -542,13 +545,14 @@ class NetworkFirewall(pulumi.CustomResource):
             ipv6address=var["network_firewall_ipv6address"],
             network_security_group_ids=var["network_firewall_network_security_group_ids"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         NetworkFirewalls can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:NetworkFirewall/networkFirewall:NetworkFirewall test_network_firewall "id"
+        $ pulumi import oci:NetworkFirewall/networkFirewall:NetworkFirewall test_network_firewall "id"
         ```
 
         :param str resource_name: The name of the resource.

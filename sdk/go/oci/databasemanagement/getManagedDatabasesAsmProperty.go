@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,6 +42,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetManagedDatabasesAsmProperty(ctx *pulumi.Context, args *GetManagedDatabasesAsmPropertyArgs, opts ...pulumi.InvokeOption) (*GetManagedDatabasesAsmPropertyResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetManagedDatabasesAsmPropertyResult

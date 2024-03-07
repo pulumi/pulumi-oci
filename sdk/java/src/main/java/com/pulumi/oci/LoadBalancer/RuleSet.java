@@ -22,6 +22,8 @@ import javax.annotation.Nullable;
  * [Managing Rule Sets](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrulesets.htm).
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -77,13 +79,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * RuleSets can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:LoadBalancer/ruleSet:RuleSet test_rule_set &#34;loadBalancers/{loadBalancerId}/ruleSets/{ruleSetName}&#34;
+ * $ pulumi import oci:LoadBalancer/ruleSet:RuleSet test_rule_set &#34;loadBalancers/{loadBalancerId}/ruleSets/{ruleSetName}&#34;
  * ```
  * 
  */

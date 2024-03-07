@@ -96,6 +96,7 @@ def get_listing_taxes(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -103,6 +104,7 @@ def get_listing_taxes(compartment_id: Optional[str] = None,
     test_listing_taxes = oci.Marketplace.get_listing_taxes(listing_id=oci_marketplace_listing["test_listing"]["id"],
         compartment_id=var["compartment_id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The unique identifier for the compartment.
@@ -135,6 +137,7 @@ def get_listing_taxes_output(compartment_id: Optional[pulumi.Input[Optional[str]
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -142,6 +145,7 @@ def get_listing_taxes_output(compartment_id: Optional[pulumi.Input[Optional[str]
     test_listing_taxes = oci.Marketplace.get_listing_taxes(listing_id=oci_marketplace_listing["test_listing"]["id"],
         compartment_id=var["compartment_id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The unique identifier for the compartment.

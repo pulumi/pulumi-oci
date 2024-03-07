@@ -21,6 +21,8 @@ import javax.annotation.Nullable;
  * has a different backup policy assigned, the prior backup policy will be silently unassigned.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -50,13 +52,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * VolumeBackupPolicyAssignments can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Core/volumeBackupPolicyAssignment:VolumeBackupPolicyAssignment test_volume_backup_policy_assignment &#34;id&#34;
+ * $ pulumi import oci:Core/volumeBackupPolicyAssignment:VolumeBackupPolicyAssignment test_volume_backup_policy_assignment &#34;id&#34;
  * ```
  * 
  */

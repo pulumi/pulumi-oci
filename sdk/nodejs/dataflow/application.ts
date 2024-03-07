@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -64,13 +65,14 @@ import * as utilities from "../utilities";
  *     warehouseBucketUri: _var.application_warehouse_bucket_uri,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * Applications can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:DataFlow/application:Application test_application "id"
+ * $ pulumi import oci:DataFlow/application:Application test_application "id"
  * ```
  */
 export class Application extends pulumi.CustomResource {

@@ -23,6 +23,8 @@ public final class VnMonitoringFunctions {
      * Gets a `PathAnalyzerTest` using its identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -51,6 +53,7 @@ public final class VnMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPathAnalyzerTestResult> getPathAnalyzerTest(GetPathAnalyzerTestArgs args) {
@@ -62,6 +65,8 @@ public final class VnMonitoringFunctions {
      * Gets a `PathAnalyzerTest` using its identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -90,6 +95,7 @@ public final class VnMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPathAnalyzerTestResult> getPathAnalyzerTestPlain(GetPathAnalyzerTestPlainArgs args) {
@@ -101,6 +107,8 @@ public final class VnMonitoringFunctions {
      * Gets a `PathAnalyzerTest` using its identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -129,6 +137,7 @@ public final class VnMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPathAnalyzerTestResult> getPathAnalyzerTest(GetPathAnalyzerTestArgs args, InvokeOptions options) {
@@ -140,6 +149,8 @@ public final class VnMonitoringFunctions {
      * Gets a `PathAnalyzerTest` using its identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -168,6 +179,7 @@ public final class VnMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPathAnalyzerTestResult> getPathAnalyzerTestPlain(GetPathAnalyzerTestPlainArgs args, InvokeOptions options) {
@@ -179,6 +191,8 @@ public final class VnMonitoringFunctions {
      * Returns a list of all `PathAnalyzerTests` in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -209,6 +223,7 @@ public final class VnMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPathAnalyzerTestsResult> getPathAnalyzerTests(GetPathAnalyzerTestsArgs args) {
@@ -220,6 +235,8 @@ public final class VnMonitoringFunctions {
      * Returns a list of all `PathAnalyzerTests` in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -250,6 +267,7 @@ public final class VnMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPathAnalyzerTestsResult> getPathAnalyzerTestsPlain(GetPathAnalyzerTestsPlainArgs args) {
@@ -261,6 +279,8 @@ public final class VnMonitoringFunctions {
      * Returns a list of all `PathAnalyzerTests` in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -291,6 +311,7 @@ public final class VnMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPathAnalyzerTestsResult> getPathAnalyzerTests(GetPathAnalyzerTestsArgs args, InvokeOptions options) {
@@ -302,6 +323,8 @@ public final class VnMonitoringFunctions {
      * Returns a list of all `PathAnalyzerTests` in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -332,6 +355,7 @@ public final class VnMonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPathAnalyzerTestsResult> getPathAnalyzerTestsPlain(GetPathAnalyzerTestsPlainArgs args, InvokeOptions options) {

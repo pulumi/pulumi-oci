@@ -18,6 +18,7 @@ namespace Pulumi.Oci.Core
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -45,13 +46,14 @@ namespace Pulumi.Oci.Core
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// PrivateIps can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Core/privateIp:PrivateIp test_private_ip "id"
+    /// $ pulumi import oci:Core/privateIp:PrivateIp test_private_ip "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Core/privateIp:PrivateIp")]

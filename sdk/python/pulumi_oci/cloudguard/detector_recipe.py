@@ -451,7 +451,7 @@ class DetectorRecipe(pulumi.CustomResource):
         DetectorRecipes can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:CloudGuard/detectorRecipe:DetectorRecipe test_detector_recipe "id"
+        $ pulumi import oci:CloudGuard/detectorRecipe:DetectorRecipe test_detector_recipe "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -489,7 +489,7 @@ class DetectorRecipe(pulumi.CustomResource):
         DetectorRecipes can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:CloudGuard/detectorRecipe:DetectorRecipe test_detector_recipe "id"
+        $ pulumi import oci:CloudGuard/detectorRecipe:DetectorRecipe test_detector_recipe "id"
         ```
 
         :param str resource_name: The name of the resource.

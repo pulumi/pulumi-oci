@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,6 +24,7 @@ import * as utilities from "../utilities";
  *     sqlText: _var.managed_database_cursor_cache_statement_sql_text,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getManagedDatabaseCursorCacheStatements(args: GetManagedDatabaseCursorCacheStatementsArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabaseCursorCacheStatementsResult> {
 
@@ -51,7 +53,7 @@ export interface GetManagedDatabaseCursorCacheStatementsArgs {
      */
     opcNamedCredentialId?: string;
     /**
-     * A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the '%' symbol as a wildcard.
+     * A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the '%!'(MISSING) symbol as a wildcard.
      */
     sqlText?: string;
 }
@@ -84,6 +86,7 @@ export interface GetManagedDatabaseCursorCacheStatementsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -94,6 +97,7 @@ export interface GetManagedDatabaseCursorCacheStatementsResult {
  *     sqlText: _var.managed_database_cursor_cache_statement_sql_text,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getManagedDatabaseCursorCacheStatementsOutput(args: GetManagedDatabaseCursorCacheStatementsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseCursorCacheStatementsResult> {
     return pulumi.output(args).apply((a: any) => getManagedDatabaseCursorCacheStatements(a, opts))
@@ -114,7 +118,7 @@ export interface GetManagedDatabaseCursorCacheStatementsOutputArgs {
      */
     opcNamedCredentialId?: pulumi.Input<string>;
     /**
-     * A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the '%' symbol as a wildcard.
+     * A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the '%!'(MISSING) symbol as a wildcard.
      */
     sqlText?: pulumi.Input<string>;
 }

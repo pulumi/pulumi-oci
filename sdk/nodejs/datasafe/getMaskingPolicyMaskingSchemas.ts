@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,6 +23,7 @@ import * as utilities from "../utilities";
  *     schemaNames: _var.masking_policy_masking_schema_schema_name,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getMaskingPolicyMaskingSchemas(args: GetMaskingPolicyMaskingSchemasArgs, opts?: pulumi.InvokeOptions): Promise<GetMaskingPolicyMaskingSchemasResult> {
 
@@ -74,6 +76,7 @@ export interface GetMaskingPolicyMaskingSchemasResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -83,6 +86,7 @@ export interface GetMaskingPolicyMaskingSchemasResult {
  *     schemaNames: _var.masking_policy_masking_schema_schema_name,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getMaskingPolicyMaskingSchemasOutput(args: GetMaskingPolicyMaskingSchemasOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMaskingPolicyMaskingSchemasResult> {
     return pulumi.output(args).apply((a: any) => getMaskingPolicyMaskingSchemas(a, opts))

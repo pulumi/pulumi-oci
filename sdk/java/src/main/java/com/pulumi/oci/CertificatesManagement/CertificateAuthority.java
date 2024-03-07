@@ -32,7 +32,7 @@ import javax.annotation.Nullable;
  * CertificateAuthorities can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:CertificatesManagement/certificateAuthority:CertificateAuthority test_certificate_authority &#34;id&#34;
+ * $ pulumi import oci:CertificatesManagement/certificateAuthority:CertificateAuthority test_certificate_authority &#34;id&#34;
  * ```
  * 
  */

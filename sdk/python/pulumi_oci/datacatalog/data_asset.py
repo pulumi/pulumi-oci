@@ -370,6 +370,7 @@ class DataAsset(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -381,13 +382,14 @@ class DataAsset(pulumi.CustomResource):
             description=var["data_asset_description"],
             properties=var["data_asset_properties"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         DataAssets can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataCatalog/dataAsset:DataAsset test_data_asset "catalogs/{catalogId}/dataAssets/{dataAssetKey}"
+        $ pulumi import oci:DataCatalog/dataAsset:DataAsset test_data_asset "catalogs/{catalogId}/dataAssets/{dataAssetKey}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -414,6 +416,7 @@ class DataAsset(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -425,13 +428,14 @@ class DataAsset(pulumi.CustomResource):
             description=var["data_asset_description"],
             properties=var["data_asset_properties"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         DataAssets can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataCatalog/dataAsset:DataAsset test_data_asset "catalogs/{catalogId}/dataAssets/{dataAssetKey}"
+        $ pulumi import oci:DataCatalog/dataAsset:DataAsset test_data_asset "catalogs/{catalogId}/dataAssets/{dataAssetKey}"
         ```
 
         :param str resource_name: The name of the resource.

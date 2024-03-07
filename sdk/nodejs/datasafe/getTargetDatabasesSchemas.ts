@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,6 +25,7 @@ import * as utilities from "../utilities";
  *     schemaNameContains: _var.target_databases_schema_schema_name_contains,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getTargetDatabasesSchemas(args: GetTargetDatabasesSchemasArgs, opts?: pulumi.InvokeOptions): Promise<GetTargetDatabasesSchemasResult> {
 
@@ -91,6 +93,7 @@ export interface GetTargetDatabasesSchemasResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -102,6 +105,7 @@ export interface GetTargetDatabasesSchemasResult {
  *     schemaNameContains: _var.target_databases_schema_schema_name_contains,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getTargetDatabasesSchemasOutput(args: GetTargetDatabasesSchemasOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTargetDatabasesSchemasResult> {
     return pulumi.output(args).apply((a: any) => getTargetDatabasesSchemas(a, opts))

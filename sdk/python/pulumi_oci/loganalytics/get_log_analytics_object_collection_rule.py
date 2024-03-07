@@ -397,6 +397,7 @@ def get_log_analytics_object_collection_rule(log_analytics_object_collection_rul
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -404,6 +405,7 @@ def get_log_analytics_object_collection_rule(log_analytics_object_collection_rul
     test_log_analytics_object_collection_rule = oci.LogAnalytics.get_log_analytics_object_collection_rule(log_analytics_object_collection_rule_id=oci_log_analytics_log_analytics_object_collection_rule["test_log_analytics_object_collection_rule"]["id"],
         namespace=var["log_analytics_object_collection_rule_namespace"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str log_analytics_object_collection_rule_id: The Logging Analytics Object Collection Rule [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
@@ -459,6 +461,7 @@ def get_log_analytics_object_collection_rule_output(log_analytics_object_collect
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -466,6 +469,7 @@ def get_log_analytics_object_collection_rule_output(log_analytics_object_collect
     test_log_analytics_object_collection_rule = oci.LogAnalytics.get_log_analytics_object_collection_rule(log_analytics_object_collection_rule_id=oci_log_analytics_log_analytics_object_collection_rule["test_log_analytics_object_collection_rule"]["id"],
         namespace=var["log_analytics_object_collection_rule_namespace"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str log_analytics_object_collection_rule_id: The Logging Analytics Object Collection Rule [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)

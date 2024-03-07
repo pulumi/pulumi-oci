@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,6 +42,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetExternalAsmConfiguration(ctx *pulumi.Context, args *GetExternalAsmConfigurationArgs, opts ...pulumi.InvokeOption) (*GetExternalAsmConfigurationResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetExternalAsmConfigurationResult

@@ -1303,7 +1303,7 @@ class DomainsCloudGateServer(pulumi.CustomResource):
         CloudGateServers can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/domainsCloudGateServer:DomainsCloudGateServer test_cloud_gate_server "idcsEndpoint/{idcsEndpoint}/cloudGateServers/{cloudGateServerId}"
+        $ pulumi import oci:Identity/domainsCloudGateServer:DomainsCloudGateServer test_cloud_gate_server "idcsEndpoint/{idcsEndpoint}/cloudGateServers/{cloudGateServerId}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -1442,7 +1442,7 @@ class DomainsCloudGateServer(pulumi.CustomResource):
         CloudGateServers can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/domainsCloudGateServer:DomainsCloudGateServer test_cloud_gate_server "idcsEndpoint/{idcsEndpoint}/cloudGateServers/{cloudGateServerId}"
+        $ pulumi import oci:Identity/domainsCloudGateServer:DomainsCloudGateServer test_cloud_gate_server "idcsEndpoint/{idcsEndpoint}/cloudGateServers/{cloudGateServerId}"
         ```
 
         :param str resource_name: The name of the resource.

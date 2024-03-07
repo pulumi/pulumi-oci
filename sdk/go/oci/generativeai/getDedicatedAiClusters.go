@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -43,6 +44,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetDedicatedAiClusters(ctx *pulumi.Context, args *GetDedicatedAiClustersArgs, opts ...pulumi.InvokeOption) (*GetDedicatedAiClustersResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDedicatedAiClustersResult

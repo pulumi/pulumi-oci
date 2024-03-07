@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -44,6 +45,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetDomainsKmsiSettings(ctx *pulumi.Context, args *GetDomainsKmsiSettingsArgs, opts ...pulumi.InvokeOption) (*GetDomainsKmsiSettingsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDomainsKmsiSettingsResult

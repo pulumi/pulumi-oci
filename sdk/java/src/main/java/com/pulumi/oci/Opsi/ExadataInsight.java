@@ -24,6 +24,8 @@ import javax.annotation.Nullable;
  * Create an Exadata insight resource for an Exadata system in Operations Insights. The Exadata system will be enabled in Operations Insights. Exadata-related metric collection and analysis will be started.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -95,13 +97,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * ExadataInsights can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Opsi/exadataInsight:ExadataInsight test_exadata_insight &#34;id&#34;
+ * $ pulumi import oci:Opsi/exadataInsight:ExadataInsight test_exadata_insight &#34;id&#34;
  * ```
  * 
  */

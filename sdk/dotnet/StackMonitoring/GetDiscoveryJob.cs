@@ -17,10 +17,9 @@ namespace Pulumi.Oci.StackMonitoring
         /// API to get the details of discovery Job by identifier.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,8 +35,7 @@ namespace Pulumi.Oci.StackMonitoring
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDiscoveryJobResult> InvokeAsync(GetDiscoveryJobArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDiscoveryJobResult>("oci:StackMonitoring/getDiscoveryJob:getDiscoveryJob", args ?? new GetDiscoveryJobArgs(), options.WithDefaults());
@@ -48,10 +46,9 @@ namespace Pulumi.Oci.StackMonitoring
         /// API to get the details of discovery Job by identifier.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -67,8 +64,7 @@ namespace Pulumi.Oci.StackMonitoring
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDiscoveryJobResult> Invoke(GetDiscoveryJobInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDiscoveryJobResult>("oci:StackMonitoring/getDiscoveryJob:getDiscoveryJob", args ?? new GetDiscoveryJobInvokeArgs(), options.WithDefaults());

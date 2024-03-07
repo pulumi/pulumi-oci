@@ -122,6 +122,7 @@ def get_compute_capacity_topology_compute_network_blocks(availability_domain: Op
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -131,6 +132,7 @@ def get_compute_capacity_topology_compute_network_blocks(availability_domain: Op
         compartment_id=var["compartment_id"],
         compute_hpc_island_id=oci_core_compute_hpc_island["test_compute_hpc_island"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
@@ -171,6 +173,7 @@ def get_compute_capacity_topology_compute_network_blocks_output(availability_dom
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -180,6 +183,7 @@ def get_compute_capacity_topology_compute_network_blocks_output(availability_dom
         compartment_id=var["compartment_id"],
         compute_hpc_island_id=oci_core_compute_hpc_island["test_compute_hpc_island"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`

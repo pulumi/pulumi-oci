@@ -159,6 +159,7 @@ class ComputeCapacityReport(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -176,13 +177,14 @@ class ComputeCapacityReport(pulumi.CustomResource):
                 ),
             )])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ComputeCapacityReports can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/computeCapacityReport:ComputeCapacityReport test_compute_capacity_report "id"
+        $ pulumi import oci:Core/computeCapacityReport:ComputeCapacityReport test_compute_capacity_report "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -209,6 +211,7 @@ class ComputeCapacityReport(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -226,13 +229,14 @@ class ComputeCapacityReport(pulumi.CustomResource):
                 ),
             )])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ComputeCapacityReports can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/computeCapacityReport:ComputeCapacityReport test_compute_capacity_report "id"
+        $ pulumi import oci:Core/computeCapacityReport:ComputeCapacityReport test_compute_capacity_report "id"
         ```
 
         :param str resource_name: The name of the resource.

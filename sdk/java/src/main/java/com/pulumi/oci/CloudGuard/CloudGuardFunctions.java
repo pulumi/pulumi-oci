@@ -86,6 +86,8 @@ public final class CloudGuardFunctions {
      * GET Cloud Guard Configuration Details for a Tenancy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -114,6 +116,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCloudGuardConfigurationResult> getCloudGuardConfiguration(GetCloudGuardConfigurationArgs args) {
@@ -125,6 +128,8 @@ public final class CloudGuardFunctions {
      * GET Cloud Guard Configuration Details for a Tenancy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -153,6 +158,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCloudGuardConfigurationResult> getCloudGuardConfigurationPlain(GetCloudGuardConfigurationPlainArgs args) {
@@ -164,6 +170,8 @@ public final class CloudGuardFunctions {
      * GET Cloud Guard Configuration Details for a Tenancy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -192,6 +200,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCloudGuardConfigurationResult> getCloudGuardConfiguration(GetCloudGuardConfigurationArgs args, InvokeOptions options) {
@@ -203,6 +212,8 @@ public final class CloudGuardFunctions {
      * GET Cloud Guard Configuration Details for a Tenancy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -231,6 +242,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCloudGuardConfigurationResult> getCloudGuardConfigurationPlain(GetCloudGuardConfigurationPlainArgs args, InvokeOptions options) {
@@ -242,6 +254,8 @@ public final class CloudGuardFunctions {
      * Returns a DataMaskRule identified by DataMaskRuleId
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -270,6 +284,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDataMaskRuleResult> getDataMaskRule(GetDataMaskRuleArgs args) {
@@ -281,6 +296,8 @@ public final class CloudGuardFunctions {
      * Returns a DataMaskRule identified by DataMaskRuleId
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -309,6 +326,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDataMaskRuleResult> getDataMaskRulePlain(GetDataMaskRulePlainArgs args) {
@@ -320,6 +338,8 @@ public final class CloudGuardFunctions {
      * Returns a DataMaskRule identified by DataMaskRuleId
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -348,6 +368,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDataMaskRuleResult> getDataMaskRule(GetDataMaskRuleArgs args, InvokeOptions options) {
@@ -359,6 +380,8 @@ public final class CloudGuardFunctions {
      * Returns a DataMaskRule identified by DataMaskRuleId
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -387,6 +410,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDataMaskRuleResult> getDataMaskRulePlain(GetDataMaskRulePlainArgs args, InvokeOptions options) {
@@ -398,6 +422,8 @@ public final class CloudGuardFunctions {
      * Returns a list of all Data Mask Rules in the root &#39;compartmentId&#39; passed.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -433,6 +459,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDataMaskRulesResult> getDataMaskRules(GetDataMaskRulesArgs args) {
@@ -444,6 +471,8 @@ public final class CloudGuardFunctions {
      * Returns a list of all Data Mask Rules in the root &#39;compartmentId&#39; passed.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -479,6 +508,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDataMaskRulesResult> getDataMaskRulesPlain(GetDataMaskRulesPlainArgs args) {
@@ -490,6 +520,8 @@ public final class CloudGuardFunctions {
      * Returns a list of all Data Mask Rules in the root &#39;compartmentId&#39; passed.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -525,6 +557,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDataMaskRulesResult> getDataMaskRules(GetDataMaskRulesArgs args, InvokeOptions options) {
@@ -536,6 +569,8 @@ public final class CloudGuardFunctions {
      * Returns a list of all Data Mask Rules in the root &#39;compartmentId&#39; passed.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -571,6 +606,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDataMaskRulesResult> getDataMaskRulesPlain(GetDataMaskRulesPlainArgs args, InvokeOptions options) {
@@ -582,6 +618,8 @@ public final class CloudGuardFunctions {
      * Returns a DataSource identified by dataSourceId
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -610,6 +648,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDataSourceResult> getDataSource(GetDataSourceArgs args) {
@@ -621,6 +660,8 @@ public final class CloudGuardFunctions {
      * Returns a DataSource identified by dataSourceId
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -649,6 +690,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDataSourceResult> getDataSourcePlain(GetDataSourcePlainArgs args) {
@@ -660,6 +702,8 @@ public final class CloudGuardFunctions {
      * Returns a DataSource identified by dataSourceId
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -688,6 +732,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDataSourceResult> getDataSource(GetDataSourceArgs args, InvokeOptions options) {
@@ -699,6 +744,8 @@ public final class CloudGuardFunctions {
      * Returns a DataSource identified by dataSourceId
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -727,6 +774,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDataSourceResult> getDataSourcePlain(GetDataSourcePlainArgs args, InvokeOptions options) {
@@ -738,6 +786,8 @@ public final class CloudGuardFunctions {
      * Returns a list of events from CloudGuard DataSource
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -767,6 +817,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDataSourceEventResult> getDataSourceEvent(GetDataSourceEventArgs args) {
@@ -778,6 +829,8 @@ public final class CloudGuardFunctions {
      * Returns a list of events from CloudGuard DataSource
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -807,6 +860,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDataSourceEventResult> getDataSourceEventPlain(GetDataSourceEventPlainArgs args) {
@@ -818,6 +872,8 @@ public final class CloudGuardFunctions {
      * Returns a list of events from CloudGuard DataSource
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -847,6 +903,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDataSourceEventResult> getDataSourceEvent(GetDataSourceEventArgs args, InvokeOptions options) {
@@ -858,6 +915,8 @@ public final class CloudGuardFunctions {
      * Returns a list of events from CloudGuard DataSource
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -887,6 +946,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDataSourceEventResult> getDataSourceEventPlain(GetDataSourceEventPlainArgs args, InvokeOptions options) {
@@ -898,6 +958,8 @@ public final class CloudGuardFunctions {
      * Returns a list of events from CloudGuard DataSource
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -927,6 +989,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDataSourceEventsResult> getDataSourceEvents(GetDataSourceEventsArgs args) {
@@ -938,6 +1001,8 @@ public final class CloudGuardFunctions {
      * Returns a list of events from CloudGuard DataSource
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -967,6 +1032,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDataSourceEventsResult> getDataSourceEventsPlain(GetDataSourceEventsPlainArgs args) {
@@ -978,6 +1044,8 @@ public final class CloudGuardFunctions {
      * Returns a list of events from CloudGuard DataSource
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1007,6 +1075,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDataSourceEventsResult> getDataSourceEvents(GetDataSourceEventsArgs args, InvokeOptions options) {
@@ -1018,6 +1087,8 @@ public final class CloudGuardFunctions {
      * Returns a list of events from CloudGuard DataSource
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1047,6 +1118,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDataSourceEventsResult> getDataSourceEventsPlain(GetDataSourceEventsPlainArgs args, InvokeOptions options) {
@@ -1072,6 +1144,8 @@ public final class CloudGuardFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1106,6 +1180,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDataSourcesResult> getDataSources(GetDataSourcesArgs args) {
@@ -1131,6 +1206,8 @@ public final class CloudGuardFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1165,6 +1242,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDataSourcesResult> getDataSourcesPlain(GetDataSourcesPlainArgs args) {
@@ -1190,6 +1268,8 @@ public final class CloudGuardFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1224,6 +1304,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDataSourcesResult> getDataSources(GetDataSourcesArgs args, InvokeOptions options) {
@@ -1249,6 +1330,8 @@ public final class CloudGuardFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1283,6 +1366,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDataSourcesResult> getDataSourcesPlain(GetDataSourcesPlainArgs args, InvokeOptions options) {
@@ -1294,6 +1378,8 @@ public final class CloudGuardFunctions {
      * Returns a DetectorRecipe identified by detectorRecipeId
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1322,6 +1408,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDetectorRecipeResult> getDetectorRecipe(GetDetectorRecipeArgs args) {
@@ -1333,6 +1420,8 @@ public final class CloudGuardFunctions {
      * Returns a DetectorRecipe identified by detectorRecipeId
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1361,6 +1450,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDetectorRecipeResult> getDetectorRecipePlain(GetDetectorRecipePlainArgs args) {
@@ -1372,6 +1462,8 @@ public final class CloudGuardFunctions {
      * Returns a DetectorRecipe identified by detectorRecipeId
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1400,6 +1492,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDetectorRecipeResult> getDetectorRecipe(GetDetectorRecipeArgs args, InvokeOptions options) {
@@ -1411,6 +1504,8 @@ public final class CloudGuardFunctions {
      * Returns a DetectorRecipe identified by detectorRecipeId
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1439,6 +1534,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDetectorRecipeResult> getDetectorRecipePlain(GetDetectorRecipePlainArgs args, InvokeOptions options) {
@@ -1464,6 +1560,8 @@ public final class CloudGuardFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1497,6 +1595,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDetectorRecipesResult> getDetectorRecipes(GetDetectorRecipesArgs args) {
@@ -1522,6 +1621,8 @@ public final class CloudGuardFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1555,6 +1656,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDetectorRecipesResult> getDetectorRecipesPlain(GetDetectorRecipesPlainArgs args) {
@@ -1580,6 +1682,8 @@ public final class CloudGuardFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1613,6 +1717,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDetectorRecipesResult> getDetectorRecipes(GetDetectorRecipesArgs args, InvokeOptions options) {
@@ -1638,6 +1743,8 @@ public final class CloudGuardFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1671,6 +1778,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDetectorRecipesResult> getDetectorRecipesPlain(GetDetectorRecipesPlainArgs args, InvokeOptions options) {
@@ -1682,6 +1790,8 @@ public final class CloudGuardFunctions {
      * Returns a Target identified by targetId
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1710,6 +1820,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetGuardTargetResult> getGuardTarget(GetGuardTargetArgs args) {
@@ -1721,6 +1832,8 @@ public final class CloudGuardFunctions {
      * Returns a Target identified by targetId
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1749,6 +1862,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetGuardTargetResult> getGuardTargetPlain(GetGuardTargetPlainArgs args) {
@@ -1760,6 +1874,8 @@ public final class CloudGuardFunctions {
      * Returns a Target identified by targetId
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1788,6 +1904,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetGuardTargetResult> getGuardTarget(GetGuardTargetArgs args, InvokeOptions options) {
@@ -1799,6 +1916,8 @@ public final class CloudGuardFunctions {
      * Returns a Target identified by targetId
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1827,6 +1946,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetGuardTargetResult> getGuardTargetPlain(GetGuardTargetPlainArgs args, InvokeOptions options) {
@@ -1851,6 +1971,8 @@ public final class CloudGuardFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1884,6 +2006,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetGuardTargetsResult> getGuardTargets(GetGuardTargetsArgs args) {
@@ -1908,6 +2031,8 @@ public final class CloudGuardFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1941,6 +2066,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetGuardTargetsResult> getGuardTargetsPlain(GetGuardTargetsPlainArgs args) {
@@ -1965,6 +2091,8 @@ public final class CloudGuardFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1998,6 +2126,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetGuardTargetsResult> getGuardTargets(GetGuardTargetsArgs args, InvokeOptions options) {
@@ -2022,6 +2151,8 @@ public final class CloudGuardFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2055,6 +2186,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetGuardTargetsResult> getGuardTargetsPlain(GetGuardTargetsPlainArgs args, InvokeOptions options) {
@@ -2066,6 +2198,8 @@ public final class CloudGuardFunctions {
      * Returns a managed list identified by managedListId
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2094,6 +2228,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedListResult> getManagedList(GetManagedListArgs args) {
@@ -2105,6 +2240,8 @@ public final class CloudGuardFunctions {
      * Returns a managed list identified by managedListId
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2133,6 +2270,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedListResult> getManagedListPlain(GetManagedListPlainArgs args) {
@@ -2144,6 +2282,8 @@ public final class CloudGuardFunctions {
      * Returns a managed list identified by managedListId
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2172,6 +2312,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedListResult> getManagedList(GetManagedListArgs args, InvokeOptions options) {
@@ -2183,6 +2324,8 @@ public final class CloudGuardFunctions {
      * Returns a managed list identified by managedListId
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2211,6 +2354,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedListResult> getManagedListPlain(GetManagedListPlainArgs args, InvokeOptions options) {
@@ -2235,6 +2379,8 @@ public final class CloudGuardFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2269,6 +2415,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedListsResult> getManagedLists(GetManagedListsArgs args) {
@@ -2293,6 +2440,8 @@ public final class CloudGuardFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2327,6 +2476,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedListsResult> getManagedListsPlain(GetManagedListsPlainArgs args) {
@@ -2351,6 +2501,8 @@ public final class CloudGuardFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2385,6 +2537,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedListsResult> getManagedLists(GetManagedListsArgs args, InvokeOptions options) {
@@ -2409,6 +2562,8 @@ public final class CloudGuardFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2443,6 +2598,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedListsResult> getManagedListsPlain(GetManagedListsPlainArgs args, InvokeOptions options) {
@@ -2454,6 +2610,8 @@ public final class CloudGuardFunctions {
      * Returns a list of entities for a CloudGuard Problem
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2482,6 +2640,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetProblemEntitiesResult> getProblemEntities(GetProblemEntitiesArgs args) {
@@ -2493,6 +2652,8 @@ public final class CloudGuardFunctions {
      * Returns a list of entities for a CloudGuard Problem
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2521,6 +2682,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetProblemEntitiesResult> getProblemEntitiesPlain(GetProblemEntitiesPlainArgs args) {
@@ -2532,6 +2694,8 @@ public final class CloudGuardFunctions {
      * Returns a list of entities for a CloudGuard Problem
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2560,6 +2724,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetProblemEntitiesResult> getProblemEntities(GetProblemEntitiesArgs args, InvokeOptions options) {
@@ -2571,6 +2736,8 @@ public final class CloudGuardFunctions {
      * Returns a list of entities for a CloudGuard Problem
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2599,6 +2766,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetProblemEntitiesResult> getProblemEntitiesPlain(GetProblemEntitiesPlainArgs args, InvokeOptions options) {
@@ -2610,6 +2778,8 @@ public final class CloudGuardFunctions {
      * Returns a list of entities for a CloudGuard Problem
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2638,6 +2808,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetProblemEntityResult> getProblemEntity(GetProblemEntityArgs args) {
@@ -2649,6 +2820,8 @@ public final class CloudGuardFunctions {
      * Returns a list of entities for a CloudGuard Problem
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2677,6 +2850,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetProblemEntityResult> getProblemEntityPlain(GetProblemEntityPlainArgs args) {
@@ -2688,6 +2862,8 @@ public final class CloudGuardFunctions {
      * Returns a list of entities for a CloudGuard Problem
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2716,6 +2892,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetProblemEntityResult> getProblemEntity(GetProblemEntityArgs args, InvokeOptions options) {
@@ -2727,6 +2904,8 @@ public final class CloudGuardFunctions {
      * Returns a list of entities for a CloudGuard Problem
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2755,6 +2934,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetProblemEntityResult> getProblemEntityPlain(GetProblemEntityPlainArgs args, InvokeOptions options) {
@@ -2766,6 +2946,8 @@ public final class CloudGuardFunctions {
      * Get a ResponderRecipe by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2794,6 +2976,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetResponderRecipeResult> getResponderRecipe(GetResponderRecipeArgs args) {
@@ -2805,6 +2988,8 @@ public final class CloudGuardFunctions {
      * Get a ResponderRecipe by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2833,6 +3018,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetResponderRecipeResult> getResponderRecipePlain(GetResponderRecipePlainArgs args) {
@@ -2844,6 +3030,8 @@ public final class CloudGuardFunctions {
      * Get a ResponderRecipe by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2872,6 +3060,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetResponderRecipeResult> getResponderRecipe(GetResponderRecipeArgs args, InvokeOptions options) {
@@ -2883,6 +3072,8 @@ public final class CloudGuardFunctions {
      * Get a ResponderRecipe by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2911,6 +3102,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetResponderRecipeResult> getResponderRecipePlain(GetResponderRecipePlainArgs args, InvokeOptions options) {
@@ -2935,6 +3127,8 @@ public final class CloudGuardFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2968,6 +3162,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetResponderRecipesResult> getResponderRecipes(GetResponderRecipesArgs args) {
@@ -2992,6 +3187,8 @@ public final class CloudGuardFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3025,6 +3222,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetResponderRecipesResult> getResponderRecipesPlain(GetResponderRecipesPlainArgs args) {
@@ -3049,6 +3247,8 @@ public final class CloudGuardFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3082,6 +3282,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetResponderRecipesResult> getResponderRecipes(GetResponderRecipesArgs args, InvokeOptions options) {
@@ -3106,6 +3307,8 @@ public final class CloudGuardFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3139,6 +3342,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetResponderRecipesResult> getResponderRecipesPlain(GetResponderRecipesPlainArgs args, InvokeOptions options) {
@@ -3150,6 +3354,8 @@ public final class CloudGuardFunctions {
      * Returns a list of security zone policies. Specify any compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3181,6 +3387,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSecurityPoliciesResult> getSecurityPolicies(GetSecurityPoliciesArgs args) {
@@ -3192,6 +3399,8 @@ public final class CloudGuardFunctions {
      * Returns a list of security zone policies. Specify any compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3223,6 +3432,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSecurityPoliciesResult> getSecurityPoliciesPlain(GetSecurityPoliciesPlainArgs args) {
@@ -3234,6 +3444,8 @@ public final class CloudGuardFunctions {
      * Returns a list of security zone policies. Specify any compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3265,6 +3477,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSecurityPoliciesResult> getSecurityPolicies(GetSecurityPoliciesArgs args, InvokeOptions options) {
@@ -3276,6 +3489,8 @@ public final class CloudGuardFunctions {
      * Returns a list of security zone policies. Specify any compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3307,6 +3522,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSecurityPoliciesResult> getSecurityPoliciesPlain(GetSecurityPoliciesPlainArgs args, InvokeOptions options) {
@@ -3318,6 +3534,8 @@ public final class CloudGuardFunctions {
      * Gets a security zone policy using its identifier. When a policy is enabled in a security zone, then any action in the zone that attempts to violate that policy is denied.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3346,6 +3564,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSecurityPolicyResult> getSecurityPolicy(GetSecurityPolicyArgs args) {
@@ -3357,6 +3576,8 @@ public final class CloudGuardFunctions {
      * Gets a security zone policy using its identifier. When a policy is enabled in a security zone, then any action in the zone that attempts to violate that policy is denied.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3385,6 +3606,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSecurityPolicyResult> getSecurityPolicyPlain(GetSecurityPolicyPlainArgs args) {
@@ -3396,6 +3618,8 @@ public final class CloudGuardFunctions {
      * Gets a security zone policy using its identifier. When a policy is enabled in a security zone, then any action in the zone that attempts to violate that policy is denied.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3424,6 +3648,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSecurityPolicyResult> getSecurityPolicy(GetSecurityPolicyArgs args, InvokeOptions options) {
@@ -3435,6 +3660,8 @@ public final class CloudGuardFunctions {
      * Gets a security zone policy using its identifier. When a policy is enabled in a security zone, then any action in the zone that attempts to violate that policy is denied.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3463,6 +3690,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSecurityPolicyResult> getSecurityPolicyPlain(GetSecurityPolicyPlainArgs args, InvokeOptions options) {
@@ -3474,6 +3702,8 @@ public final class CloudGuardFunctions {
      * Gets a security zone recipe by identifier. A security zone recipe is a collection of security zone policies.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3502,6 +3732,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSecurityRecipeResult> getSecurityRecipe(GetSecurityRecipeArgs args) {
@@ -3513,6 +3744,8 @@ public final class CloudGuardFunctions {
      * Gets a security zone recipe by identifier. A security zone recipe is a collection of security zone policies.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3541,6 +3774,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSecurityRecipeResult> getSecurityRecipePlain(GetSecurityRecipePlainArgs args) {
@@ -3552,6 +3786,8 @@ public final class CloudGuardFunctions {
      * Gets a security zone recipe by identifier. A security zone recipe is a collection of security zone policies.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3580,6 +3816,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSecurityRecipeResult> getSecurityRecipe(GetSecurityRecipeArgs args, InvokeOptions options) {
@@ -3591,6 +3828,8 @@ public final class CloudGuardFunctions {
      * Gets a security zone recipe by identifier. A security zone recipe is a collection of security zone policies.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3619,6 +3858,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSecurityRecipeResult> getSecurityRecipePlain(GetSecurityRecipePlainArgs args, InvokeOptions options) {
@@ -3630,6 +3870,8 @@ public final class CloudGuardFunctions {
      * Gets a list of all security zone recipes in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3661,6 +3903,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSecurityRecipesResult> getSecurityRecipes(GetSecurityRecipesArgs args) {
@@ -3672,6 +3915,8 @@ public final class CloudGuardFunctions {
      * Gets a list of all security zone recipes in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3703,6 +3948,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSecurityRecipesResult> getSecurityRecipesPlain(GetSecurityRecipesPlainArgs args) {
@@ -3714,6 +3960,8 @@ public final class CloudGuardFunctions {
      * Gets a list of all security zone recipes in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3745,6 +3993,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSecurityRecipesResult> getSecurityRecipes(GetSecurityRecipesArgs args, InvokeOptions options) {
@@ -3756,6 +4005,8 @@ public final class CloudGuardFunctions {
      * Gets a list of all security zone recipes in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3787,6 +4038,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSecurityRecipesResult> getSecurityRecipesPlain(GetSecurityRecipesPlainArgs args, InvokeOptions options) {
@@ -3798,6 +4050,8 @@ public final class CloudGuardFunctions {
      * Gets a security zone by its identifier. A security zone is associated with a security zone recipe and enforces all security zone policies in the recipe. Any actions in the zone&#39;s compartments that violate a policy are denied.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3826,6 +4080,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSecurityZoneResult> getSecurityZone(GetSecurityZoneArgs args) {
@@ -3837,6 +4092,8 @@ public final class CloudGuardFunctions {
      * Gets a security zone by its identifier. A security zone is associated with a security zone recipe and enforces all security zone policies in the recipe. Any actions in the zone&#39;s compartments that violate a policy are denied.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3865,6 +4122,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSecurityZoneResult> getSecurityZonePlain(GetSecurityZonePlainArgs args) {
@@ -3876,6 +4134,8 @@ public final class CloudGuardFunctions {
      * Gets a security zone by its identifier. A security zone is associated with a security zone recipe and enforces all security zone policies in the recipe. Any actions in the zone&#39;s compartments that violate a policy are denied.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3904,6 +4164,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSecurityZoneResult> getSecurityZone(GetSecurityZoneArgs args, InvokeOptions options) {
@@ -3915,6 +4176,8 @@ public final class CloudGuardFunctions {
      * Gets a security zone by its identifier. A security zone is associated with a security zone recipe and enforces all security zone policies in the recipe. Any actions in the zone&#39;s compartments that violate a policy are denied.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3943,6 +4206,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSecurityZoneResult> getSecurityZonePlain(GetSecurityZonePlainArgs args, InvokeOptions options) {
@@ -3954,6 +4218,8 @@ public final class CloudGuardFunctions {
      * Gets a list of all security zones in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3987,6 +4253,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSecurityZonesResult> getSecurityZones(GetSecurityZonesArgs args) {
@@ -3998,6 +4265,8 @@ public final class CloudGuardFunctions {
      * Gets a list of all security zones in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4031,6 +4300,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSecurityZonesResult> getSecurityZonesPlain(GetSecurityZonesPlainArgs args) {
@@ -4042,6 +4312,8 @@ public final class CloudGuardFunctions {
      * Gets a list of all security zones in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4075,6 +4347,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSecurityZonesResult> getSecurityZones(GetSecurityZonesArgs args, InvokeOptions options) {
@@ -4086,6 +4359,8 @@ public final class CloudGuardFunctions {
      * Gets a list of all security zones in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4119,6 +4394,7 @@ public final class CloudGuardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSecurityZonesResult> getSecurityZonesPlain(GetSecurityZonesPlainArgs args, InvokeOptions options) {

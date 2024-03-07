@@ -33,7 +33,7 @@ import javax.annotation.Nullable;
  * KeyVersions can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Kms/keyVersion:KeyVersion test_key_version &#34;managementEndpoint/{managementEndpoint}/keys/{keyId}/keyVersions/{keyVersionId}&#34;
+ * $ pulumi import oci:Kms/keyVersion:KeyVersion test_key_version &#34;managementEndpoint/{managementEndpoint}/keys/{keyId}/keyVersions/{keyVersionId}&#34;
  * ```
  * 
  */

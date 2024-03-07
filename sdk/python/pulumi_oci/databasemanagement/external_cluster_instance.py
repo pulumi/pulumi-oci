@@ -414,7 +414,7 @@ class ExternalClusterInstance(pulumi.CustomResource):
         ExternalClusterInstances can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DatabaseManagement/externalClusterInstance:ExternalClusterInstance test_external_cluster_instance "id"
+        $ pulumi import oci:DatabaseManagement/externalClusterInstance:ExternalClusterInstance test_external_cluster_instance "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -444,7 +444,7 @@ class ExternalClusterInstance(pulumi.CustomResource):
         ExternalClusterInstances can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DatabaseManagement/externalClusterInstance:ExternalClusterInstance test_external_cluster_instance "id"
+        $ pulumi import oci:DatabaseManagement/externalClusterInstance:ExternalClusterInstance test_external_cluster_instance "id"
         ```
 
         :param str resource_name: The name of the resource.

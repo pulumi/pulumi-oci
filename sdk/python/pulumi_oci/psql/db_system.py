@@ -824,6 +824,7 @@ class DbSystem(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -892,13 +893,14 @@ class DbSystem(pulumi.CustomResource):
                 value=var["db_system_patch_operations_value"],
             )])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         DbSystems can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Psql/dbSystem:DbSystem test_db_system "id"
+        $ pulumi import oci:Psql/dbSystem:DbSystem test_db_system "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -941,6 +943,7 @@ class DbSystem(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -1009,13 +1012,14 @@ class DbSystem(pulumi.CustomResource):
                 value=var["db_system_patch_operations_value"],
             )])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         DbSystems can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Psql/dbSystem:DbSystem test_db_system "id"
+        $ pulumi import oci:Psql/dbSystem:DbSystem test_db_system "id"
         ```
 
         :param str resource_name: The name of the resource.

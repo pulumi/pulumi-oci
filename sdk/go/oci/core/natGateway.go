@@ -19,6 +19,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -53,15 +54,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // NatGateways can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Core/natGateway:NatGateway test_nat_gateway "id"
-//
+// $ pulumi import oci:Core/natGateway:NatGateway test_nat_gateway "id"
 // ```
 type NatGateway struct {
 	pulumi.CustomResourceState

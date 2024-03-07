@@ -17,10 +17,9 @@ namespace Pulumi.Oci.DataIntegration
         /// This endpoint can be used to get the list of import object requests.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -41,8 +40,7 @@ namespace Pulumi.Oci.DataIntegration
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetWorkspaceImportRequestsResult> InvokeAsync(GetWorkspaceImportRequestsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetWorkspaceImportRequestsResult>("oci:DataIntegration/getWorkspaceImportRequests:getWorkspaceImportRequests", args ?? new GetWorkspaceImportRequestsArgs(), options.WithDefaults());
@@ -53,10 +51,9 @@ namespace Pulumi.Oci.DataIntegration
         /// This endpoint can be used to get the list of import object requests.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -77,8 +74,7 @@ namespace Pulumi.Oci.DataIntegration
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetWorkspaceImportRequestsResult> Invoke(GetWorkspaceImportRequestsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetWorkspaceImportRequestsResult>("oci:DataIntegration/getWorkspaceImportRequests:getWorkspaceImportRequests", args ?? new GetWorkspaceImportRequestsInvokeArgs(), options.WithDefaults());

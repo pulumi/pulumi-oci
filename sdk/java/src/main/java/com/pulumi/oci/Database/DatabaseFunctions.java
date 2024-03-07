@@ -382,6 +382,8 @@ public final class DatabaseFunctions {
      * Gets information about a specified application virtual IP (VIP) address.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -410,6 +412,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetApplicationVipResult> getApplicationVip(GetApplicationVipArgs args) {
@@ -421,6 +424,8 @@ public final class DatabaseFunctions {
      * Gets information about a specified application virtual IP (VIP) address.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -449,6 +454,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetApplicationVipResult> getApplicationVipPlain(GetApplicationVipPlainArgs args) {
@@ -460,6 +466,8 @@ public final class DatabaseFunctions {
      * Gets information about a specified application virtual IP (VIP) address.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -488,6 +496,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetApplicationVipResult> getApplicationVip(GetApplicationVipArgs args, InvokeOptions options) {
@@ -499,6 +508,8 @@ public final class DatabaseFunctions {
      * Gets information about a specified application virtual IP (VIP) address.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -527,6 +538,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetApplicationVipResult> getApplicationVipPlain(GetApplicationVipPlainArgs args, InvokeOptions options) {
@@ -538,6 +550,8 @@ public final class DatabaseFunctions {
      * Gets a list of application virtual IP (VIP) addresses on a cloud VM cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -568,6 +582,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetApplicationVipsResult> getApplicationVips(GetApplicationVipsArgs args) {
@@ -579,6 +594,8 @@ public final class DatabaseFunctions {
      * Gets a list of application virtual IP (VIP) addresses on a cloud VM cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -609,6 +626,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetApplicationVipsResult> getApplicationVipsPlain(GetApplicationVipsPlainArgs args) {
@@ -620,6 +638,8 @@ public final class DatabaseFunctions {
      * Gets a list of application virtual IP (VIP) addresses on a cloud VM cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -650,6 +670,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetApplicationVipsResult> getApplicationVips(GetApplicationVipsArgs args, InvokeOptions options) {
@@ -661,6 +682,8 @@ public final class DatabaseFunctions {
      * Gets a list of application virtual IP (VIP) addresses on a cloud VM cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -691,6 +714,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetApplicationVipsResult> getApplicationVipsPlain(GetApplicationVipsPlainArgs args, InvokeOptions options) {
@@ -702,6 +726,8 @@ public final class DatabaseFunctions {
      * Gets a list of supported character sets.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -732,6 +758,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAutonomousCharacterSetsResult> getAutonomousCharacterSets() {
@@ -743,6 +770,8 @@ public final class DatabaseFunctions {
      * Gets a list of supported character sets.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -773,6 +802,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAutonomousCharacterSetsResult> getAutonomousCharacterSetsPlain() {
@@ -784,6 +814,8 @@ public final class DatabaseFunctions {
      * Gets a list of supported character sets.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -814,6 +846,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAutonomousCharacterSetsResult> getAutonomousCharacterSets(GetAutonomousCharacterSetsArgs args) {
@@ -825,6 +858,8 @@ public final class DatabaseFunctions {
      * Gets a list of supported character sets.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -855,6 +890,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAutonomousCharacterSetsResult> getAutonomousCharacterSetsPlain(GetAutonomousCharacterSetsPlainArgs args) {
@@ -866,6 +902,8 @@ public final class DatabaseFunctions {
      * Gets a list of supported character sets.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -896,6 +934,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAutonomousCharacterSetsResult> getAutonomousCharacterSets(GetAutonomousCharacterSetsArgs args, InvokeOptions options) {
@@ -907,6 +946,8 @@ public final class DatabaseFunctions {
      * Gets a list of supported character sets.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -937,6 +978,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAutonomousCharacterSetsResult> getAutonomousCharacterSetsPlain(GetAutonomousCharacterSetsPlainArgs args, InvokeOptions options) {
@@ -948,6 +990,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified Autonomous Container Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -976,6 +1020,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAutonomousContainerDatabaseResult> getAutonomousContainerDatabase(GetAutonomousContainerDatabaseArgs args) {
@@ -987,6 +1032,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified Autonomous Container Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1015,6 +1062,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAutonomousContainerDatabaseResult> getAutonomousContainerDatabasePlain(GetAutonomousContainerDatabasePlainArgs args) {
@@ -1026,6 +1074,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified Autonomous Container Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1054,6 +1104,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAutonomousContainerDatabaseResult> getAutonomousContainerDatabase(GetAutonomousContainerDatabaseArgs args, InvokeOptions options) {
@@ -1065,6 +1116,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified Autonomous Container Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1093,6 +1146,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAutonomousContainerDatabaseResult> getAutonomousContainerDatabasePlain(GetAutonomousContainerDatabasePlainArgs args, InvokeOptions options) {
@@ -1104,6 +1158,8 @@ public final class DatabaseFunctions {
      * Gets an Autonomous Container Database enabled with Autonomous Data Guard associated with the specified Autonomous Container Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1133,6 +1189,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAutonomousContainerDatabaseDataguardAssociationResult> getAutonomousContainerDatabaseDataguardAssociation(GetAutonomousContainerDatabaseDataguardAssociationArgs args) {
@@ -1144,6 +1201,8 @@ public final class DatabaseFunctions {
      * Gets an Autonomous Container Database enabled with Autonomous Data Guard associated with the specified Autonomous Container Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1173,6 +1232,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAutonomousContainerDatabaseDataguardAssociationResult> getAutonomousContainerDatabaseDataguardAssociationPlain(GetAutonomousContainerDatabaseDataguardAssociationPlainArgs args) {
@@ -1184,6 +1244,8 @@ public final class DatabaseFunctions {
      * Gets an Autonomous Container Database enabled with Autonomous Data Guard associated with the specified Autonomous Container Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1213,6 +1275,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAutonomousContainerDatabaseDataguardAssociationResult> getAutonomousContainerDatabaseDataguardAssociation(GetAutonomousContainerDatabaseDataguardAssociationArgs args, InvokeOptions options) {
@@ -1224,6 +1287,8 @@ public final class DatabaseFunctions {
      * Gets an Autonomous Container Database enabled with Autonomous Data Guard associated with the specified Autonomous Container Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1253,6 +1318,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAutonomousContainerDatabaseDataguardAssociationResult> getAutonomousContainerDatabaseDataguardAssociationPlain(GetAutonomousContainerDatabaseDataguardAssociationPlainArgs args, InvokeOptions options) {
@@ -1264,6 +1330,8 @@ public final class DatabaseFunctions {
      * Gets a list of the Autonomous Container Databases with Autonomous Data Guard-enabled associated with the specified Autonomous Container Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1292,6 +1360,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAutonomousContainerDatabaseDataguardAssociationsResult> getAutonomousContainerDatabaseDataguardAssociations(GetAutonomousContainerDatabaseDataguardAssociationsArgs args) {
@@ -1303,6 +1372,8 @@ public final class DatabaseFunctions {
      * Gets a list of the Autonomous Container Databases with Autonomous Data Guard-enabled associated with the specified Autonomous Container Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1331,6 +1402,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAutonomousContainerDatabaseDataguardAssociationsResult> getAutonomousContainerDatabaseDataguardAssociationsPlain(GetAutonomousContainerDatabaseDataguardAssociationsPlainArgs args) {
@@ -1342,6 +1414,8 @@ public final class DatabaseFunctions {
      * Gets a list of the Autonomous Container Databases with Autonomous Data Guard-enabled associated with the specified Autonomous Container Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1370,6 +1444,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAutonomousContainerDatabaseDataguardAssociationsResult> getAutonomousContainerDatabaseDataguardAssociations(GetAutonomousContainerDatabaseDataguardAssociationsArgs args, InvokeOptions options) {
@@ -1381,6 +1456,8 @@ public final class DatabaseFunctions {
      * Gets a list of the Autonomous Container Databases with Autonomous Data Guard-enabled associated with the specified Autonomous Container Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1409,6 +1486,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAutonomousContainerDatabaseDataguardAssociationsResult> getAutonomousContainerDatabaseDataguardAssociationsPlain(GetAutonomousContainerDatabaseDataguardAssociationsPlainArgs args, InvokeOptions options) {
@@ -1420,6 +1498,8 @@ public final class DatabaseFunctions {
      * Get resource usage details for the specified Autonomous Container Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1448,6 +1528,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAutonomousContainerDatabaseResourceUsageResult> getAutonomousContainerDatabaseResourceUsage(GetAutonomousContainerDatabaseResourceUsageArgs args) {
@@ -1459,6 +1540,8 @@ public final class DatabaseFunctions {
      * Get resource usage details for the specified Autonomous Container Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1487,6 +1570,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAutonomousContainerDatabaseResourceUsageResult> getAutonomousContainerDatabaseResourceUsagePlain(GetAutonomousContainerDatabaseResourceUsagePlainArgs args) {
@@ -1498,6 +1582,8 @@ public final class DatabaseFunctions {
      * Get resource usage details for the specified Autonomous Container Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1526,6 +1612,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAutonomousContainerDatabaseResourceUsageResult> getAutonomousContainerDatabaseResourceUsage(GetAutonomousContainerDatabaseResourceUsageArgs args, InvokeOptions options) {
@@ -1537,6 +1624,8 @@ public final class DatabaseFunctions {
      * Get resource usage details for the specified Autonomous Container Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1565,6 +1654,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAutonomousContainerDatabaseResourceUsageResult> getAutonomousContainerDatabaseResourceUsagePlain(GetAutonomousContainerDatabaseResourceUsagePlainArgs args, InvokeOptions options) {
@@ -1576,6 +1666,8 @@ public final class DatabaseFunctions {
      * Gets a list of supported Autonomous Container Database versions.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1605,6 +1697,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAutonomousContainerDatabaseVersionsResult> getAutonomousContainerDatabaseVersions(GetAutonomousContainerDatabaseVersionsArgs args) {
@@ -1616,6 +1709,8 @@ public final class DatabaseFunctions {
      * Gets a list of supported Autonomous Container Database versions.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1645,6 +1740,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAutonomousContainerDatabaseVersionsResult> getAutonomousContainerDatabaseVersionsPlain(GetAutonomousContainerDatabaseVersionsPlainArgs args) {
@@ -1656,6 +1752,8 @@ public final class DatabaseFunctions {
      * Gets a list of supported Autonomous Container Database versions.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1685,6 +1783,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAutonomousContainerDatabaseVersionsResult> getAutonomousContainerDatabaseVersions(GetAutonomousContainerDatabaseVersionsArgs args, InvokeOptions options) {
@@ -1696,6 +1795,8 @@ public final class DatabaseFunctions {
      * Gets a list of supported Autonomous Container Database versions.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1725,6 +1826,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAutonomousContainerDatabaseVersionsResult> getAutonomousContainerDatabaseVersionsPlain(GetAutonomousContainerDatabaseVersionsPlainArgs args, InvokeOptions options) {
@@ -1736,6 +1838,8 @@ public final class DatabaseFunctions {
      * Gets a list of the Autonomous Container Databases in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1772,6 +1876,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAutonomousContainerDatabasesResult> getAutonomousContainerDatabases(GetAutonomousContainerDatabasesArgs args) {
@@ -1783,6 +1888,8 @@ public final class DatabaseFunctions {
      * Gets a list of the Autonomous Container Databases in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1819,6 +1926,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAutonomousContainerDatabasesResult> getAutonomousContainerDatabasesPlain(GetAutonomousContainerDatabasesPlainArgs args) {
@@ -1830,6 +1938,8 @@ public final class DatabaseFunctions {
      * Gets a list of the Autonomous Container Databases in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1866,6 +1976,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAutonomousContainerDatabasesResult> getAutonomousContainerDatabases(GetAutonomousContainerDatabasesArgs args, InvokeOptions options) {
@@ -1877,6 +1988,8 @@ public final class DatabaseFunctions {
      * Gets a list of the Autonomous Container Databases in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1913,6 +2026,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAutonomousContainerDatabasesResult> getAutonomousContainerDatabasesPlain(GetAutonomousContainerDatabasesPlainArgs args, InvokeOptions options) {
@@ -1924,6 +2038,8 @@ public final class DatabaseFunctions {
      * Lists the patches applicable to the requested container database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1954,6 +2070,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAutonomousContainerPatchesResult> getAutonomousContainerPatches(GetAutonomousContainerPatchesArgs args) {
@@ -1965,6 +2082,8 @@ public final class DatabaseFunctions {
      * Lists the patches applicable to the requested container database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1995,6 +2114,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAutonomousContainerPatchesResult> getAutonomousContainerPatchesPlain(GetAutonomousContainerPatchesPlainArgs args) {
@@ -2006,6 +2126,8 @@ public final class DatabaseFunctions {
      * Lists the patches applicable to the requested container database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2036,6 +2158,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAutonomousContainerPatchesResult> getAutonomousContainerPatches(GetAutonomousContainerPatchesArgs args, InvokeOptions options) {
@@ -2047,6 +2170,8 @@ public final class DatabaseFunctions {
      * Lists the patches applicable to the requested container database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2077,6 +2202,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAutonomousContainerPatchesResult> getAutonomousContainerPatchesPlain(GetAutonomousContainerPatchesPlainArgs args, InvokeOptions options) {
@@ -2088,6 +2214,8 @@ public final class DatabaseFunctions {
      * Gets the details of the specified Autonomous Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2116,6 +2244,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAutonomousDatabaseResult> getAutonomousDatabase(GetAutonomousDatabaseArgs args) {
@@ -2127,6 +2256,8 @@ public final class DatabaseFunctions {
      * Gets the details of the specified Autonomous Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2155,6 +2286,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAutonomousDatabaseResult> getAutonomousDatabasePlain(GetAutonomousDatabasePlainArgs args) {
@@ -2166,6 +2298,8 @@ public final class DatabaseFunctions {
      * Gets the details of the specified Autonomous Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2194,6 +2328,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAutonomousDatabaseResult> getAutonomousDatabase(GetAutonomousDatabaseArgs args, InvokeOptions options) {
@@ -2205,6 +2340,8 @@ public final class DatabaseFunctions {
      * Gets the details of the specified Autonomous Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2233,6 +2370,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAutonomousDatabaseResult> getAutonomousDatabasePlain(GetAutonomousDatabasePlainArgs args, InvokeOptions options) {
@@ -2244,6 +2382,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified Autonomous Database backup.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2272,6 +2412,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAutonomousDatabaseBackupResult> getAutonomousDatabaseBackup(GetAutonomousDatabaseBackupArgs args) {
@@ -2283,6 +2424,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified Autonomous Database backup.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2311,6 +2454,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAutonomousDatabaseBackupResult> getAutonomousDatabaseBackupPlain(GetAutonomousDatabaseBackupPlainArgs args) {
@@ -2322,6 +2466,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified Autonomous Database backup.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2350,6 +2496,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAutonomousDatabaseBackupResult> getAutonomousDatabaseBackup(GetAutonomousDatabaseBackupArgs args, InvokeOptions options) {
@@ -2361,6 +2508,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified Autonomous Database backup.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2389,6 +2538,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAutonomousDatabaseBackupResult> getAutonomousDatabaseBackupPlain(GetAutonomousDatabaseBackupPlainArgs args, InvokeOptions options) {
@@ -2400,6 +2550,8 @@ public final class DatabaseFunctions {
      * Gets a list of Autonomous Database backups based on either the `autonomousDatabaseId` or `compartmentId` specified as a query parameter.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2432,6 +2584,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAutonomousDatabaseBackupsResult> getAutonomousDatabaseBackups() {
@@ -2443,6 +2596,8 @@ public final class DatabaseFunctions {
      * Gets a list of Autonomous Database backups based on either the `autonomousDatabaseId` or `compartmentId` specified as a query parameter.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2475,6 +2630,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAutonomousDatabaseBackupsResult> getAutonomousDatabaseBackupsPlain() {
@@ -2486,6 +2642,8 @@ public final class DatabaseFunctions {
      * Gets a list of Autonomous Database backups based on either the `autonomousDatabaseId` or `compartmentId` specified as a query parameter.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2518,6 +2676,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAutonomousDatabaseBackupsResult> getAutonomousDatabaseBackups(GetAutonomousDatabaseBackupsArgs args) {
@@ -2529,6 +2688,8 @@ public final class DatabaseFunctions {
      * Gets a list of Autonomous Database backups based on either the `autonomousDatabaseId` or `compartmentId` specified as a query parameter.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2561,6 +2722,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAutonomousDatabaseBackupsResult> getAutonomousDatabaseBackupsPlain(GetAutonomousDatabaseBackupsPlainArgs args) {
@@ -2572,6 +2734,8 @@ public final class DatabaseFunctions {
      * Gets a list of Autonomous Database backups based on either the `autonomousDatabaseId` or `compartmentId` specified as a query parameter.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2604,6 +2768,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAutonomousDatabaseBackupsResult> getAutonomousDatabaseBackups(GetAutonomousDatabaseBackupsArgs args, InvokeOptions options) {
@@ -2615,6 +2780,8 @@ public final class DatabaseFunctions {
      * Gets a list of Autonomous Database backups based on either the `autonomousDatabaseId` or `compartmentId` specified as a query parameter.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2647,6 +2814,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAutonomousDatabaseBackupsResult> getAutonomousDatabaseBackupsPlain(GetAutonomousDatabaseBackupsPlainArgs args, InvokeOptions options) {
@@ -2658,6 +2826,8 @@ public final class DatabaseFunctions {
      * Gets an Autonomous Database dataguard assocation for the specified Autonomous Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2687,6 +2857,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAutonomousDatabaseDataguardAssociationResult> getAutonomousDatabaseDataguardAssociation(GetAutonomousDatabaseDataguardAssociationArgs args) {
@@ -2698,6 +2869,8 @@ public final class DatabaseFunctions {
      * Gets an Autonomous Database dataguard assocation for the specified Autonomous Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2727,6 +2900,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAutonomousDatabaseDataguardAssociationResult> getAutonomousDatabaseDataguardAssociationPlain(GetAutonomousDatabaseDataguardAssociationPlainArgs args) {
@@ -2738,6 +2912,8 @@ public final class DatabaseFunctions {
      * Gets an Autonomous Database dataguard assocation for the specified Autonomous Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2767,6 +2943,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAutonomousDatabaseDataguardAssociationResult> getAutonomousDatabaseDataguardAssociation(GetAutonomousDatabaseDataguardAssociationArgs args, InvokeOptions options) {
@@ -2778,6 +2955,8 @@ public final class DatabaseFunctions {
      * Gets an Autonomous Database dataguard assocation for the specified Autonomous Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2807,6 +2986,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAutonomousDatabaseDataguardAssociationResult> getAutonomousDatabaseDataguardAssociationPlain(GetAutonomousDatabaseDataguardAssociationPlainArgs args, InvokeOptions options) {
@@ -2818,6 +2998,8 @@ public final class DatabaseFunctions {
      * Gets a list of the Autonomous Data Guard-enabled databases associated with the specified Autonomous Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2846,6 +3028,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAutonomousDatabaseDataguardAssociationsResult> getAutonomousDatabaseDataguardAssociations(GetAutonomousDatabaseDataguardAssociationsArgs args) {
@@ -2857,6 +3040,8 @@ public final class DatabaseFunctions {
      * Gets a list of the Autonomous Data Guard-enabled databases associated with the specified Autonomous Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2885,6 +3070,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAutonomousDatabaseDataguardAssociationsResult> getAutonomousDatabaseDataguardAssociationsPlain(GetAutonomousDatabaseDataguardAssociationsPlainArgs args) {
@@ -2896,6 +3082,8 @@ public final class DatabaseFunctions {
      * Gets a list of the Autonomous Data Guard-enabled databases associated with the specified Autonomous Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2924,6 +3112,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAutonomousDatabaseDataguardAssociationsResult> getAutonomousDatabaseDataguardAssociations(GetAutonomousDatabaseDataguardAssociationsArgs args, InvokeOptions options) {
@@ -2935,6 +3124,8 @@ public final class DatabaseFunctions {
      * Gets a list of the Autonomous Data Guard-enabled databases associated with the specified Autonomous Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2963,6 +3154,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAutonomousDatabaseDataguardAssociationsResult> getAutonomousDatabaseDataguardAssociationsPlain(GetAutonomousDatabaseDataguardAssociationsPlainArgs args, InvokeOptions options) {
@@ -2974,6 +3166,8 @@ public final class DatabaseFunctions {
      * Gets the wallet details for the specified Autonomous Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3002,6 +3196,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAutonomousDatabaseInstanceWalletManagementResult> getAutonomousDatabaseInstanceWalletManagement(GetAutonomousDatabaseInstanceWalletManagementArgs args) {
@@ -3013,6 +3208,8 @@ public final class DatabaseFunctions {
      * Gets the wallet details for the specified Autonomous Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3041,6 +3238,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAutonomousDatabaseInstanceWalletManagementResult> getAutonomousDatabaseInstanceWalletManagementPlain(GetAutonomousDatabaseInstanceWalletManagementPlainArgs args) {
@@ -3052,6 +3250,8 @@ public final class DatabaseFunctions {
      * Gets the wallet details for the specified Autonomous Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3080,6 +3280,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAutonomousDatabaseInstanceWalletManagementResult> getAutonomousDatabaseInstanceWalletManagement(GetAutonomousDatabaseInstanceWalletManagementArgs args, InvokeOptions options) {
@@ -3091,6 +3292,8 @@ public final class DatabaseFunctions {
      * Gets the wallet details for the specified Autonomous Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3119,6 +3322,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAutonomousDatabaseInstanceWalletManagementResult> getAutonomousDatabaseInstanceWalletManagementPlain(GetAutonomousDatabaseInstanceWalletManagementPlainArgs args, InvokeOptions options) {
@@ -3130,6 +3334,8 @@ public final class DatabaseFunctions {
      * Lists the OCIDs of the Autonomous Database local and connected remote refreshable clones with the region where they exist for the specified source database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3158,6 +3364,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAutonomousDatabaseRefreshableClonesResult> getAutonomousDatabaseRefreshableClones(GetAutonomousDatabaseRefreshableClonesArgs args) {
@@ -3169,6 +3376,8 @@ public final class DatabaseFunctions {
      * Lists the OCIDs of the Autonomous Database local and connected remote refreshable clones with the region where they exist for the specified source database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3197,6 +3406,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAutonomousDatabaseRefreshableClonesResult> getAutonomousDatabaseRefreshableClonesPlain(GetAutonomousDatabaseRefreshableClonesPlainArgs args) {
@@ -3208,6 +3418,8 @@ public final class DatabaseFunctions {
      * Lists the OCIDs of the Autonomous Database local and connected remote refreshable clones with the region where they exist for the specified source database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3236,6 +3448,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAutonomousDatabaseRefreshableClonesResult> getAutonomousDatabaseRefreshableClones(GetAutonomousDatabaseRefreshableClonesArgs args, InvokeOptions options) {
@@ -3247,6 +3460,8 @@ public final class DatabaseFunctions {
      * Lists the OCIDs of the Autonomous Database local and connected remote refreshable clones with the region where they exist for the specified source database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3275,6 +3490,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAutonomousDatabaseRefreshableClonesResult> getAutonomousDatabaseRefreshableClonesPlain(GetAutonomousDatabaseRefreshableClonesPlainArgs args, InvokeOptions options) {
@@ -3286,6 +3502,8 @@ public final class DatabaseFunctions {
      * Gets the Autonomous Database regional wallet details.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3311,6 +3529,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAutonomousDatabaseRegionalWalletManagementResult> getAutonomousDatabaseRegionalWalletManagement() {
@@ -3322,6 +3541,8 @@ public final class DatabaseFunctions {
      * Gets the Autonomous Database regional wallet details.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3347,6 +3568,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAutonomousDatabaseRegionalWalletManagementResult> getAutonomousDatabaseRegionalWalletManagementPlain() {
@@ -3358,6 +3580,8 @@ public final class DatabaseFunctions {
      * Gets the Autonomous Database regional wallet details.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3383,6 +3607,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAutonomousDatabaseRegionalWalletManagementResult> getAutonomousDatabaseRegionalWalletManagement(InvokeArgs args) {
@@ -3394,6 +3619,8 @@ public final class DatabaseFunctions {
      * Gets the Autonomous Database regional wallet details.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3419,6 +3646,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAutonomousDatabaseRegionalWalletManagementResult> getAutonomousDatabaseRegionalWalletManagementPlain(InvokeArgs args) {
@@ -3430,6 +3658,8 @@ public final class DatabaseFunctions {
      * Gets the Autonomous Database regional wallet details.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3455,6 +3685,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAutonomousDatabaseRegionalWalletManagementResult> getAutonomousDatabaseRegionalWalletManagement(InvokeArgs args, InvokeOptions options) {
@@ -3466,6 +3697,8 @@ public final class DatabaseFunctions {
      * Gets the Autonomous Database regional wallet details.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3491,6 +3724,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAutonomousDatabaseRegionalWalletManagementResult> getAutonomousDatabaseRegionalWalletManagementPlain(InvokeArgs args, InvokeOptions options) {
@@ -3505,6 +3739,7 @@ public final class DatabaseFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3537,6 +3772,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAutonomousDatabaseWalletResult> getAutonomousDatabaseWallet(GetAutonomousDatabaseWalletArgs args) {
@@ -3551,6 +3787,7 @@ public final class DatabaseFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3583,6 +3820,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAutonomousDatabaseWalletResult> getAutonomousDatabaseWalletPlain(GetAutonomousDatabaseWalletPlainArgs args) {
@@ -3597,6 +3835,7 @@ public final class DatabaseFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3629,6 +3868,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAutonomousDatabaseWalletResult> getAutonomousDatabaseWallet(GetAutonomousDatabaseWalletArgs args, InvokeOptions options) {
@@ -3643,6 +3883,7 @@ public final class DatabaseFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3675,6 +3916,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAutonomousDatabaseWalletResult> getAutonomousDatabaseWalletPlain(GetAutonomousDatabaseWalletPlainArgs args, InvokeOptions options) {
@@ -3698,6 +3940,8 @@ public final class DatabaseFunctions {
      * Gets a list of Autonomous Databases based on the query parameters specified.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3737,6 +3981,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAutonomousDatabasesResult> getAutonomousDatabases(GetAutonomousDatabasesArgs args) {
@@ -3760,6 +4005,8 @@ public final class DatabaseFunctions {
      * Gets a list of Autonomous Databases based on the query parameters specified.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3799,6 +4046,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAutonomousDatabasesResult> getAutonomousDatabasesPlain(GetAutonomousDatabasesPlainArgs args) {
@@ -3822,6 +4070,8 @@ public final class DatabaseFunctions {
      * Gets a list of Autonomous Databases based on the query parameters specified.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3861,6 +4111,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAutonomousDatabasesResult> getAutonomousDatabases(GetAutonomousDatabasesArgs args, InvokeOptions options) {
@@ -3884,6 +4135,8 @@ public final class DatabaseFunctions {
      * Gets a list of Autonomous Databases based on the query parameters specified.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3923,6 +4176,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAutonomousDatabasesResult> getAutonomousDatabasesPlain(GetAutonomousDatabasesPlainArgs args, InvokeOptions options) {
@@ -3934,6 +4188,8 @@ public final class DatabaseFunctions {
      * Lists the Autonomous Database clones for the specified Autonomous Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3966,6 +4222,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAutonomousDatabasesClonesResult> getAutonomousDatabasesClones(GetAutonomousDatabasesClonesArgs args) {
@@ -3977,6 +4234,8 @@ public final class DatabaseFunctions {
      * Lists the Autonomous Database clones for the specified Autonomous Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4009,6 +4268,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAutonomousDatabasesClonesResult> getAutonomousDatabasesClonesPlain(GetAutonomousDatabasesClonesPlainArgs args) {
@@ -4020,6 +4280,8 @@ public final class DatabaseFunctions {
      * Lists the Autonomous Database clones for the specified Autonomous Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4052,6 +4314,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAutonomousDatabasesClonesResult> getAutonomousDatabasesClones(GetAutonomousDatabasesClonesArgs args, InvokeOptions options) {
@@ -4063,6 +4326,8 @@ public final class DatabaseFunctions {
      * Lists the Autonomous Database clones for the specified Autonomous Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4095,6 +4360,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAutonomousDatabasesClonesResult> getAutonomousDatabasesClonesPlain(GetAutonomousDatabasesClonesPlainArgs args, InvokeOptions options) {
@@ -4107,6 +4373,8 @@ public final class DatabaseFunctions {
      * Autonomous Database Serverless (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) databases.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4135,6 +4403,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAutonomousDbPreviewVersionsResult> getAutonomousDbPreviewVersions(GetAutonomousDbPreviewVersionsArgs args) {
@@ -4147,6 +4416,8 @@ public final class DatabaseFunctions {
      * Autonomous Database Serverless (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) databases.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4175,6 +4446,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAutonomousDbPreviewVersionsResult> getAutonomousDbPreviewVersionsPlain(GetAutonomousDbPreviewVersionsPlainArgs args) {
@@ -4187,6 +4459,8 @@ public final class DatabaseFunctions {
      * Autonomous Database Serverless (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) databases.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4215,6 +4489,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAutonomousDbPreviewVersionsResult> getAutonomousDbPreviewVersions(GetAutonomousDbPreviewVersionsArgs args, InvokeOptions options) {
@@ -4227,6 +4502,8 @@ public final class DatabaseFunctions {
      * Autonomous Database Serverless (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) databases.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4255,6 +4532,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAutonomousDbPreviewVersionsResult> getAutonomousDbPreviewVersionsPlain(GetAutonomousDbPreviewVersionsPlainArgs args, InvokeOptions options) {
@@ -4266,6 +4544,8 @@ public final class DatabaseFunctions {
      * Gets a list of supported Autonomous Database versions.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4295,6 +4575,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAutonomousDbVersionsResult> getAutonomousDbVersions(GetAutonomousDbVersionsArgs args) {
@@ -4306,6 +4587,8 @@ public final class DatabaseFunctions {
      * Gets a list of supported Autonomous Database versions.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4335,6 +4618,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAutonomousDbVersionsResult> getAutonomousDbVersionsPlain(GetAutonomousDbVersionsPlainArgs args) {
@@ -4346,6 +4630,8 @@ public final class DatabaseFunctions {
      * Gets a list of supported Autonomous Database versions.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4375,6 +4661,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAutonomousDbVersionsResult> getAutonomousDbVersions(GetAutonomousDbVersionsArgs args, InvokeOptions options) {
@@ -4386,6 +4673,8 @@ public final class DatabaseFunctions {
      * Gets a list of supported Autonomous Database versions.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4415,6 +4704,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAutonomousDbVersionsResult> getAutonomousDbVersionsPlain(GetAutonomousDbVersionsPlainArgs args, InvokeOptions options) {
@@ -4426,6 +4716,8 @@ public final class DatabaseFunctions {
      * **Deprecated.** Use the [GetCloudExadataInfrastructure](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/GetCloudExadataInfrastructure) operation to get details of an Exadata Infrastructure resource and the [GetCloudAutonomousVmCluster](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudAutonomousVmCluster/GetCloudAutonomousVmCluster) operation to get details of an Autonomous Exadata VM cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4454,6 +4746,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAutonomousExadataInfrastructureResult> getAutonomousExadataInfrastructure(GetAutonomousExadataInfrastructureArgs args) {
@@ -4465,6 +4758,8 @@ public final class DatabaseFunctions {
      * **Deprecated.** Use the [GetCloudExadataInfrastructure](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/GetCloudExadataInfrastructure) operation to get details of an Exadata Infrastructure resource and the [GetCloudAutonomousVmCluster](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudAutonomousVmCluster/GetCloudAutonomousVmCluster) operation to get details of an Autonomous Exadata VM cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4493,6 +4788,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAutonomousExadataInfrastructureResult> getAutonomousExadataInfrastructurePlain(GetAutonomousExadataInfrastructurePlainArgs args) {
@@ -4504,6 +4800,8 @@ public final class DatabaseFunctions {
      * **Deprecated.** Use the [GetCloudExadataInfrastructure](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/GetCloudExadataInfrastructure) operation to get details of an Exadata Infrastructure resource and the [GetCloudAutonomousVmCluster](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudAutonomousVmCluster/GetCloudAutonomousVmCluster) operation to get details of an Autonomous Exadata VM cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4532,6 +4830,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAutonomousExadataInfrastructureResult> getAutonomousExadataInfrastructure(GetAutonomousExadataInfrastructureArgs args, InvokeOptions options) {
@@ -4543,6 +4842,8 @@ public final class DatabaseFunctions {
      * **Deprecated.** Use the [GetCloudExadataInfrastructure](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/GetCloudExadataInfrastructure) operation to get details of an Exadata Infrastructure resource and the [GetCloudAutonomousVmCluster](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudAutonomousVmCluster/GetCloudAutonomousVmCluster) operation to get details of an Autonomous Exadata VM cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4571,6 +4872,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAutonomousExadataInfrastructureResult> getAutonomousExadataInfrastructurePlain(GetAutonomousExadataInfrastructurePlainArgs args, InvokeOptions options) {
@@ -4582,6 +4884,8 @@ public final class DatabaseFunctions {
      * Gets details of the available and consumed OCPUs for the specified Autonomous Exadata Infrastructure resource.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4610,6 +4914,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAutonomousExadataInfrastructureOcpuResult> getAutonomousExadataInfrastructureOcpu(GetAutonomousExadataInfrastructureOcpuArgs args) {
@@ -4621,6 +4926,8 @@ public final class DatabaseFunctions {
      * Gets details of the available and consumed OCPUs for the specified Autonomous Exadata Infrastructure resource.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4649,6 +4956,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAutonomousExadataInfrastructureOcpuResult> getAutonomousExadataInfrastructureOcpuPlain(GetAutonomousExadataInfrastructureOcpuPlainArgs args) {
@@ -4660,6 +4968,8 @@ public final class DatabaseFunctions {
      * Gets details of the available and consumed OCPUs for the specified Autonomous Exadata Infrastructure resource.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4688,6 +4998,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAutonomousExadataInfrastructureOcpuResult> getAutonomousExadataInfrastructureOcpu(GetAutonomousExadataInfrastructureOcpuArgs args, InvokeOptions options) {
@@ -4699,6 +5010,8 @@ public final class DatabaseFunctions {
      * Gets details of the available and consumed OCPUs for the specified Autonomous Exadata Infrastructure resource.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4727,6 +5040,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAutonomousExadataInfrastructureOcpuResult> getAutonomousExadataInfrastructureOcpuPlain(GetAutonomousExadataInfrastructureOcpuPlainArgs args, InvokeOptions options) {
@@ -4738,6 +5052,8 @@ public final class DatabaseFunctions {
      * **Deprecated.**
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4767,6 +5083,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAutonomousExadataInfrastructureShapesResult> getAutonomousExadataInfrastructureShapes(GetAutonomousExadataInfrastructureShapesArgs args) {
@@ -4778,6 +5095,8 @@ public final class DatabaseFunctions {
      * **Deprecated.**
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4807,6 +5126,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAutonomousExadataInfrastructureShapesResult> getAutonomousExadataInfrastructureShapesPlain(GetAutonomousExadataInfrastructureShapesPlainArgs args) {
@@ -4818,6 +5138,8 @@ public final class DatabaseFunctions {
      * **Deprecated.**
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4847,6 +5169,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAutonomousExadataInfrastructureShapesResult> getAutonomousExadataInfrastructureShapes(GetAutonomousExadataInfrastructureShapesArgs args, InvokeOptions options) {
@@ -4858,6 +5181,8 @@ public final class DatabaseFunctions {
      * **Deprecated.**
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4887,6 +5212,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAutonomousExadataInfrastructureShapesResult> getAutonomousExadataInfrastructureShapesPlain(GetAutonomousExadataInfrastructureShapesPlainArgs args, InvokeOptions options) {
@@ -4898,6 +5224,8 @@ public final class DatabaseFunctions {
      * **Deprecated.** Use the [ListCloudExadataInfrastructures](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/ListCloudExadataInfrastructures) operation to list Exadata Infrastructures in the Oracle cloud and the  [ListCloudAutonomousVmClusters](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudAutonomousVmCluster/ListCloudAutonomousVmClusters) operation to list Autonomous Exadata VM clusters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4929,6 +5257,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAutonomousExadataInfrastructuresResult> getAutonomousExadataInfrastructures(GetAutonomousExadataInfrastructuresArgs args) {
@@ -4940,6 +5269,8 @@ public final class DatabaseFunctions {
      * **Deprecated.** Use the [ListCloudExadataInfrastructures](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/ListCloudExadataInfrastructures) operation to list Exadata Infrastructures in the Oracle cloud and the  [ListCloudAutonomousVmClusters](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudAutonomousVmCluster/ListCloudAutonomousVmClusters) operation to list Autonomous Exadata VM clusters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4971,6 +5302,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAutonomousExadataInfrastructuresResult> getAutonomousExadataInfrastructuresPlain(GetAutonomousExadataInfrastructuresPlainArgs args) {
@@ -4982,6 +5314,8 @@ public final class DatabaseFunctions {
      * **Deprecated.** Use the [ListCloudExadataInfrastructures](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/ListCloudExadataInfrastructures) operation to list Exadata Infrastructures in the Oracle cloud and the  [ListCloudAutonomousVmClusters](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudAutonomousVmCluster/ListCloudAutonomousVmClusters) operation to list Autonomous Exadata VM clusters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5013,6 +5347,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAutonomousExadataInfrastructuresResult> getAutonomousExadataInfrastructures(GetAutonomousExadataInfrastructuresArgs args, InvokeOptions options) {
@@ -5024,6 +5359,8 @@ public final class DatabaseFunctions {
      * **Deprecated.** Use the [ListCloudExadataInfrastructures](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/ListCloudExadataInfrastructures) operation to list Exadata Infrastructures in the Oracle cloud and the  [ListCloudAutonomousVmClusters](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudAutonomousVmCluster/ListCloudAutonomousVmClusters) operation to list Autonomous Exadata VM clusters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5055,6 +5392,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAutonomousExadataInfrastructuresResult> getAutonomousExadataInfrastructuresPlain(GetAutonomousExadataInfrastructuresPlainArgs args, InvokeOptions options) {
@@ -5066,6 +5404,8 @@ public final class DatabaseFunctions {
      * Gets information about a specific autonomous patch.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5094,6 +5434,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAutonomousPatchResult> getAutonomousPatch(GetAutonomousPatchArgs args) {
@@ -5105,6 +5446,8 @@ public final class DatabaseFunctions {
      * Gets information about a specific autonomous patch.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5133,6 +5476,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAutonomousPatchResult> getAutonomousPatchPlain(GetAutonomousPatchPlainArgs args) {
@@ -5144,6 +5488,8 @@ public final class DatabaseFunctions {
      * Gets information about a specific autonomous patch.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5172,6 +5518,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAutonomousPatchResult> getAutonomousPatch(GetAutonomousPatchArgs args, InvokeOptions options) {
@@ -5183,6 +5530,8 @@ public final class DatabaseFunctions {
      * Gets information about a specific autonomous patch.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5211,6 +5560,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAutonomousPatchResult> getAutonomousPatchPlain(GetAutonomousPatchPlainArgs args, InvokeOptions options) {
@@ -5222,6 +5572,8 @@ public final class DatabaseFunctions {
      * Gets the details of specific Autonomous Virtual Machine.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5250,6 +5602,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAutonomousVirtualMachineResult> getAutonomousVirtualMachine(GetAutonomousVirtualMachineArgs args) {
@@ -5261,6 +5614,8 @@ public final class DatabaseFunctions {
      * Gets the details of specific Autonomous Virtual Machine.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5289,6 +5644,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAutonomousVirtualMachineResult> getAutonomousVirtualMachinePlain(GetAutonomousVirtualMachinePlainArgs args) {
@@ -5300,6 +5656,8 @@ public final class DatabaseFunctions {
      * Gets the details of specific Autonomous Virtual Machine.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5328,6 +5686,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAutonomousVirtualMachineResult> getAutonomousVirtualMachine(GetAutonomousVirtualMachineArgs args, InvokeOptions options) {
@@ -5339,6 +5698,8 @@ public final class DatabaseFunctions {
      * Gets the details of specific Autonomous Virtual Machine.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5367,6 +5728,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAutonomousVirtualMachineResult> getAutonomousVirtualMachinePlain(GetAutonomousVirtualMachinePlainArgs args, InvokeOptions options) {
@@ -5378,6 +5740,8 @@ public final class DatabaseFunctions {
      * Lists the Autonomous Virtual Machines in the specified Autonomous VM Cluster and Compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5408,6 +5772,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAutonomousVirtualMachinesResult> getAutonomousVirtualMachines(GetAutonomousVirtualMachinesArgs args) {
@@ -5419,6 +5784,8 @@ public final class DatabaseFunctions {
      * Lists the Autonomous Virtual Machines in the specified Autonomous VM Cluster and Compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5449,6 +5816,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAutonomousVirtualMachinesResult> getAutonomousVirtualMachinesPlain(GetAutonomousVirtualMachinesPlainArgs args) {
@@ -5460,6 +5828,8 @@ public final class DatabaseFunctions {
      * Lists the Autonomous Virtual Machines in the specified Autonomous VM Cluster and Compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5490,6 +5860,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAutonomousVirtualMachinesResult> getAutonomousVirtualMachines(GetAutonomousVirtualMachinesArgs args, InvokeOptions options) {
@@ -5501,6 +5872,8 @@ public final class DatabaseFunctions {
      * Lists the Autonomous Virtual Machines in the specified Autonomous VM Cluster and Compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5531,6 +5904,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAutonomousVirtualMachinesResult> getAutonomousVirtualMachinesPlain(GetAutonomousVirtualMachinesPlainArgs args, InvokeOptions options) {
@@ -5542,6 +5916,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified Autonomous VM cluster for an Exadata Cloud@Customer system. To get information about an Autonomous VM Cluster in the Oracle cloud, see [GetCloudAutonomousVmCluster](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudAutonomousVmCluster/GetCloudAutonomousVmCluster).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5570,6 +5946,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAutonomousVmClusterResult> getAutonomousVmCluster(GetAutonomousVmClusterArgs args) {
@@ -5581,6 +5958,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified Autonomous VM cluster for an Exadata Cloud@Customer system. To get information about an Autonomous VM Cluster in the Oracle cloud, see [GetCloudAutonomousVmCluster](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudAutonomousVmCluster/GetCloudAutonomousVmCluster).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5609,6 +5988,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAutonomousVmClusterResult> getAutonomousVmClusterPlain(GetAutonomousVmClusterPlainArgs args) {
@@ -5620,6 +6000,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified Autonomous VM cluster for an Exadata Cloud@Customer system. To get information about an Autonomous VM Cluster in the Oracle cloud, see [GetCloudAutonomousVmCluster](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudAutonomousVmCluster/GetCloudAutonomousVmCluster).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5648,6 +6030,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAutonomousVmClusterResult> getAutonomousVmCluster(GetAutonomousVmClusterArgs args, InvokeOptions options) {
@@ -5659,6 +6042,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified Autonomous VM cluster for an Exadata Cloud@Customer system. To get information about an Autonomous VM Cluster in the Oracle cloud, see [GetCloudAutonomousVmCluster](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudAutonomousVmCluster/GetCloudAutonomousVmCluster).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5687,6 +6072,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAutonomousVmClusterResult> getAutonomousVmClusterPlain(GetAutonomousVmClusterPlainArgs args, InvokeOptions options) {
@@ -5698,6 +6084,8 @@ public final class DatabaseFunctions {
      * Gets the list of resource usage details for all the Autonomous Container Database in the specified Autonomous Exadata VM cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5727,6 +6115,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAutonomousVmClusterAcdResourceUsagesResult> getAutonomousVmClusterAcdResourceUsages(GetAutonomousVmClusterAcdResourceUsagesArgs args) {
@@ -5738,6 +6127,8 @@ public final class DatabaseFunctions {
      * Gets the list of resource usage details for all the Autonomous Container Database in the specified Autonomous Exadata VM cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5767,6 +6158,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAutonomousVmClusterAcdResourceUsagesResult> getAutonomousVmClusterAcdResourceUsagesPlain(GetAutonomousVmClusterAcdResourceUsagesPlainArgs args) {
@@ -5778,6 +6170,8 @@ public final class DatabaseFunctions {
      * Gets the list of resource usage details for all the Autonomous Container Database in the specified Autonomous Exadata VM cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5807,6 +6201,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAutonomousVmClusterAcdResourceUsagesResult> getAutonomousVmClusterAcdResourceUsages(GetAutonomousVmClusterAcdResourceUsagesArgs args, InvokeOptions options) {
@@ -5818,6 +6213,8 @@ public final class DatabaseFunctions {
      * Gets the list of resource usage details for all the Autonomous Container Database in the specified Autonomous Exadata VM cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5847,6 +6244,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAutonomousVmClusterAcdResourceUsagesResult> getAutonomousVmClusterAcdResourceUsagesPlain(GetAutonomousVmClusterAcdResourceUsagesPlainArgs args, InvokeOptions options) {
@@ -5858,6 +6256,8 @@ public final class DatabaseFunctions {
      * Get the resource usage details for the specified Autonomous Exadata VM cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5886,6 +6286,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAutonomousVmClusterResourceUsageResult> getAutonomousVmClusterResourceUsage(GetAutonomousVmClusterResourceUsageArgs args) {
@@ -5897,6 +6298,8 @@ public final class DatabaseFunctions {
      * Get the resource usage details for the specified Autonomous Exadata VM cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5925,6 +6328,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAutonomousVmClusterResourceUsageResult> getAutonomousVmClusterResourceUsagePlain(GetAutonomousVmClusterResourceUsagePlainArgs args) {
@@ -5936,6 +6340,8 @@ public final class DatabaseFunctions {
      * Get the resource usage details for the specified Autonomous Exadata VM cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5964,6 +6370,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAutonomousVmClusterResourceUsageResult> getAutonomousVmClusterResourceUsage(GetAutonomousVmClusterResourceUsageArgs args, InvokeOptions options) {
@@ -5975,6 +6382,8 @@ public final class DatabaseFunctions {
      * Get the resource usage details for the specified Autonomous Exadata VM cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6003,6 +6412,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAutonomousVmClusterResourceUsageResult> getAutonomousVmClusterResourceUsagePlain(GetAutonomousVmClusterResourceUsagePlainArgs args, InvokeOptions options) {
@@ -6014,6 +6424,8 @@ public final class DatabaseFunctions {
      * Gets a list of Exadata Cloud@Customer Autonomous VM clusters in the specified compartment. To list Autonomous VM Clusters in the Oracle Cloud, see [ListCloudAutonomousVmClusters](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudAutonomousVmCluster/ListCloudAutonomousVmClusters).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6045,6 +6457,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAutonomousVmClustersResult> getAutonomousVmClusters(GetAutonomousVmClustersArgs args) {
@@ -6056,6 +6469,8 @@ public final class DatabaseFunctions {
      * Gets a list of Exadata Cloud@Customer Autonomous VM clusters in the specified compartment. To list Autonomous VM Clusters in the Oracle Cloud, see [ListCloudAutonomousVmClusters](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudAutonomousVmCluster/ListCloudAutonomousVmClusters).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6087,6 +6502,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAutonomousVmClustersResult> getAutonomousVmClustersPlain(GetAutonomousVmClustersPlainArgs args) {
@@ -6098,6 +6514,8 @@ public final class DatabaseFunctions {
      * Gets a list of Exadata Cloud@Customer Autonomous VM clusters in the specified compartment. To list Autonomous VM Clusters in the Oracle Cloud, see [ListCloudAutonomousVmClusters](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudAutonomousVmCluster/ListCloudAutonomousVmClusters).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6129,6 +6547,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAutonomousVmClustersResult> getAutonomousVmClusters(GetAutonomousVmClustersArgs args, InvokeOptions options) {
@@ -6140,6 +6559,8 @@ public final class DatabaseFunctions {
      * Gets a list of Exadata Cloud@Customer Autonomous VM clusters in the specified compartment. To list Autonomous VM Clusters in the Oracle Cloud, see [ListCloudAutonomousVmClusters](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudAutonomousVmCluster/ListCloudAutonomousVmClusters).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6171,6 +6592,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAutonomousVmClustersResult> getAutonomousVmClustersPlain(GetAutonomousVmClustersPlainArgs args, InvokeOptions options) {
@@ -6182,6 +6604,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified backup destination in an Exadata Cloud@Customer system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6210,6 +6634,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBackupDestinationResult> getBackupDestination(GetBackupDestinationArgs args) {
@@ -6221,6 +6646,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified backup destination in an Exadata Cloud@Customer system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6249,6 +6676,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBackupDestinationResult> getBackupDestinationPlain(GetBackupDestinationPlainArgs args) {
@@ -6260,6 +6688,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified backup destination in an Exadata Cloud@Customer system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6288,6 +6718,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBackupDestinationResult> getBackupDestination(GetBackupDestinationArgs args, InvokeOptions options) {
@@ -6299,6 +6730,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified backup destination in an Exadata Cloud@Customer system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6327,6 +6760,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBackupDestinationResult> getBackupDestinationPlain(GetBackupDestinationPlainArgs args, InvokeOptions options) {
@@ -6338,6 +6772,8 @@ public final class DatabaseFunctions {
      * Gets a list of backup destinations in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6367,6 +6803,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBackupDestinationsResult> getBackupDestinations(GetBackupDestinationsArgs args) {
@@ -6378,6 +6815,8 @@ public final class DatabaseFunctions {
      * Gets a list of backup destinations in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6407,6 +6846,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBackupDestinationsResult> getBackupDestinationsPlain(GetBackupDestinationsPlainArgs args) {
@@ -6418,6 +6858,8 @@ public final class DatabaseFunctions {
      * Gets a list of backup destinations in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6447,6 +6889,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBackupDestinationsResult> getBackupDestinations(GetBackupDestinationsArgs args, InvokeOptions options) {
@@ -6458,6 +6901,8 @@ public final class DatabaseFunctions {
      * Gets a list of backup destinations in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6487,6 +6932,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBackupDestinationsResult> getBackupDestinationsPlain(GetBackupDestinationsPlainArgs args, InvokeOptions options) {
@@ -6498,6 +6944,8 @@ public final class DatabaseFunctions {
      * Gets a list of backups based on the `databaseId` or `compartmentId` specified. Either one of these query parameters must be provided.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6527,6 +6975,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBackupsResult> getBackups() {
@@ -6538,6 +6987,8 @@ public final class DatabaseFunctions {
      * Gets a list of backups based on the `databaseId` or `compartmentId` specified. Either one of these query parameters must be provided.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6567,6 +7018,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBackupsResult> getBackupsPlain() {
@@ -6578,6 +7030,8 @@ public final class DatabaseFunctions {
      * Gets a list of backups based on the `databaseId` or `compartmentId` specified. Either one of these query parameters must be provided.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6607,6 +7061,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBackupsResult> getBackups(GetBackupsArgs args) {
@@ -6618,6 +7073,8 @@ public final class DatabaseFunctions {
      * Gets a list of backups based on the `databaseId` or `compartmentId` specified. Either one of these query parameters must be provided.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6647,6 +7104,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBackupsResult> getBackupsPlain(GetBackupsPlainArgs args) {
@@ -6658,6 +7116,8 @@ public final class DatabaseFunctions {
      * Gets a list of backups based on the `databaseId` or `compartmentId` specified. Either one of these query parameters must be provided.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6687,6 +7147,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBackupsResult> getBackups(GetBackupsArgs args, InvokeOptions options) {
@@ -6698,6 +7159,8 @@ public final class DatabaseFunctions {
      * Gets a list of backups based on the `databaseId` or `compartmentId` specified. Either one of these query parameters must be provided.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6727,6 +7190,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBackupsResult> getBackupsPlain(GetBackupsPlainArgs args, InvokeOptions options) {
@@ -6738,6 +7202,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified Autonomous Exadata VM cluster in the Oracle cloud. For Exadata Cloud@Custustomer systems, see [GetAutonomousVmCluster ](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousVmCluster/GetAutonomousVmCluster).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6766,6 +7232,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCloudAutonomousVmClusterResult> getCloudAutonomousVmCluster(GetCloudAutonomousVmClusterArgs args) {
@@ -6777,6 +7244,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified Autonomous Exadata VM cluster in the Oracle cloud. For Exadata Cloud@Custustomer systems, see [GetAutonomousVmCluster ](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousVmCluster/GetAutonomousVmCluster).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6805,6 +7274,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCloudAutonomousVmClusterResult> getCloudAutonomousVmClusterPlain(GetCloudAutonomousVmClusterPlainArgs args) {
@@ -6816,6 +7286,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified Autonomous Exadata VM cluster in the Oracle cloud. For Exadata Cloud@Custustomer systems, see [GetAutonomousVmCluster ](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousVmCluster/GetAutonomousVmCluster).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6844,6 +7316,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCloudAutonomousVmClusterResult> getCloudAutonomousVmCluster(GetCloudAutonomousVmClusterArgs args, InvokeOptions options) {
@@ -6855,6 +7328,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified Autonomous Exadata VM cluster in the Oracle cloud. For Exadata Cloud@Custustomer systems, see [GetAutonomousVmCluster ](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousVmCluster/GetAutonomousVmCluster).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6883,6 +7358,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCloudAutonomousVmClusterResult> getCloudAutonomousVmClusterPlain(GetCloudAutonomousVmClusterPlainArgs args, InvokeOptions options) {
@@ -6895,6 +7371,8 @@ public final class DatabaseFunctions {
      * in the specified Cloud Autonomous Exadata VM cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6924,6 +7402,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCloudAutonomousVmClusterAcdResourceUsagesResult> getCloudAutonomousVmClusterAcdResourceUsages(GetCloudAutonomousVmClusterAcdResourceUsagesArgs args) {
@@ -6936,6 +7415,8 @@ public final class DatabaseFunctions {
      * in the specified Cloud Autonomous Exadata VM cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6965,6 +7446,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCloudAutonomousVmClusterAcdResourceUsagesResult> getCloudAutonomousVmClusterAcdResourceUsagesPlain(GetCloudAutonomousVmClusterAcdResourceUsagesPlainArgs args) {
@@ -6977,6 +7459,8 @@ public final class DatabaseFunctions {
      * in the specified Cloud Autonomous Exadata VM cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7006,6 +7490,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCloudAutonomousVmClusterAcdResourceUsagesResult> getCloudAutonomousVmClusterAcdResourceUsages(GetCloudAutonomousVmClusterAcdResourceUsagesArgs args, InvokeOptions options) {
@@ -7018,6 +7503,8 @@ public final class DatabaseFunctions {
      * in the specified Cloud Autonomous Exadata VM cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7047,6 +7534,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCloudAutonomousVmClusterAcdResourceUsagesResult> getCloudAutonomousVmClusterAcdResourceUsagesPlain(GetCloudAutonomousVmClusterAcdResourceUsagesPlainArgs args, InvokeOptions options) {
@@ -7058,6 +7546,8 @@ public final class DatabaseFunctions {
      * Get the resource usage details for the specified Cloud Autonomous Exadata VM cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7086,6 +7576,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCloudAutonomousVmClusterResourceUsageResult> getCloudAutonomousVmClusterResourceUsage(GetCloudAutonomousVmClusterResourceUsageArgs args) {
@@ -7097,6 +7588,8 @@ public final class DatabaseFunctions {
      * Get the resource usage details for the specified Cloud Autonomous Exadata VM cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7125,6 +7618,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCloudAutonomousVmClusterResourceUsageResult> getCloudAutonomousVmClusterResourceUsagePlain(GetCloudAutonomousVmClusterResourceUsagePlainArgs args) {
@@ -7136,6 +7630,8 @@ public final class DatabaseFunctions {
      * Get the resource usage details for the specified Cloud Autonomous Exadata VM cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7164,6 +7660,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCloudAutonomousVmClusterResourceUsageResult> getCloudAutonomousVmClusterResourceUsage(GetCloudAutonomousVmClusterResourceUsageArgs args, InvokeOptions options) {
@@ -7175,6 +7672,8 @@ public final class DatabaseFunctions {
      * Get the resource usage details for the specified Cloud Autonomous Exadata VM cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7203,6 +7702,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCloudAutonomousVmClusterResourceUsageResult> getCloudAutonomousVmClusterResourceUsagePlain(GetCloudAutonomousVmClusterResourceUsagePlainArgs args, InvokeOptions options) {
@@ -7214,6 +7714,8 @@ public final class DatabaseFunctions {
      * Lists Autonomous Exadata VM clusters in the Oracle cloud. For Exadata Cloud@Customer systems, see [ListAutonomousVmClusters](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousVmCluster/ListAutonomousVmClusters).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7246,6 +7748,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCloudAutonomousVmClustersResult> getCloudAutonomousVmClusters(GetCloudAutonomousVmClustersArgs args) {
@@ -7257,6 +7760,8 @@ public final class DatabaseFunctions {
      * Lists Autonomous Exadata VM clusters in the Oracle cloud. For Exadata Cloud@Customer systems, see [ListAutonomousVmClusters](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousVmCluster/ListAutonomousVmClusters).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7289,6 +7794,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCloudAutonomousVmClustersResult> getCloudAutonomousVmClustersPlain(GetCloudAutonomousVmClustersPlainArgs args) {
@@ -7300,6 +7806,8 @@ public final class DatabaseFunctions {
      * Lists Autonomous Exadata VM clusters in the Oracle cloud. For Exadata Cloud@Customer systems, see [ListAutonomousVmClusters](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousVmCluster/ListAutonomousVmClusters).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7332,6 +7840,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCloudAutonomousVmClustersResult> getCloudAutonomousVmClusters(GetCloudAutonomousVmClustersArgs args, InvokeOptions options) {
@@ -7343,6 +7852,8 @@ public final class DatabaseFunctions {
      * Lists Autonomous Exadata VM clusters in the Oracle cloud. For Exadata Cloud@Customer systems, see [ListAutonomousVmClusters](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousVmCluster/ListAutonomousVmClusters).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7375,6 +7886,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCloudAutonomousVmClustersResult> getCloudAutonomousVmClustersPlain(GetCloudAutonomousVmClustersPlainArgs args, InvokeOptions options) {
@@ -7386,6 +7898,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified cloud Exadata infrastructure resource. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7414,6 +7928,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCloudExadataInfrastructureResult> getCloudExadataInfrastructure(GetCloudExadataInfrastructureArgs args) {
@@ -7425,6 +7940,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified cloud Exadata infrastructure resource. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7453,6 +7970,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCloudExadataInfrastructureResult> getCloudExadataInfrastructurePlain(GetCloudExadataInfrastructurePlainArgs args) {
@@ -7464,6 +7982,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified cloud Exadata infrastructure resource. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7492,6 +8012,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCloudExadataInfrastructureResult> getCloudExadataInfrastructure(GetCloudExadataInfrastructureArgs args, InvokeOptions options) {
@@ -7503,6 +8024,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified cloud Exadata infrastructure resource. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7531,6 +8054,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCloudExadataInfrastructureResult> getCloudExadataInfrastructurePlain(GetCloudExadataInfrastructurePlainArgs args, InvokeOptions options) {
@@ -7542,6 +8066,8 @@ public final class DatabaseFunctions {
      * Gets unallocated resources information for the specified Cloud Exadata infrastructure.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7571,6 +8097,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCloudExadataInfrastructureUnAllocatedResourceResult> getCloudExadataInfrastructureUnAllocatedResource(GetCloudExadataInfrastructureUnAllocatedResourceArgs args) {
@@ -7582,6 +8109,8 @@ public final class DatabaseFunctions {
      * Gets unallocated resources information for the specified Cloud Exadata infrastructure.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7611,6 +8140,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCloudExadataInfrastructureUnAllocatedResourceResult> getCloudExadataInfrastructureUnAllocatedResourcePlain(GetCloudExadataInfrastructureUnAllocatedResourcePlainArgs args) {
@@ -7622,6 +8152,8 @@ public final class DatabaseFunctions {
      * Gets unallocated resources information for the specified Cloud Exadata infrastructure.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7651,6 +8183,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCloudExadataInfrastructureUnAllocatedResourceResult> getCloudExadataInfrastructureUnAllocatedResource(GetCloudExadataInfrastructureUnAllocatedResourceArgs args, InvokeOptions options) {
@@ -7662,6 +8195,8 @@ public final class DatabaseFunctions {
      * Gets unallocated resources information for the specified Cloud Exadata infrastructure.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7691,6 +8226,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCloudExadataInfrastructureUnAllocatedResourceResult> getCloudExadataInfrastructureUnAllocatedResourcePlain(GetCloudExadataInfrastructureUnAllocatedResourcePlainArgs args, InvokeOptions options) {
@@ -7702,6 +8238,8 @@ public final class DatabaseFunctions {
      * Gets a list of the cloud Exadata infrastructure resources in the specified compartment. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7733,6 +8271,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCloudExadataInfrastructuresResult> getCloudExadataInfrastructures(GetCloudExadataInfrastructuresArgs args) {
@@ -7744,6 +8283,8 @@ public final class DatabaseFunctions {
      * Gets a list of the cloud Exadata infrastructure resources in the specified compartment. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7775,6 +8316,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCloudExadataInfrastructuresResult> getCloudExadataInfrastructuresPlain(GetCloudExadataInfrastructuresPlainArgs args) {
@@ -7786,6 +8328,8 @@ public final class DatabaseFunctions {
      * Gets a list of the cloud Exadata infrastructure resources in the specified compartment. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7817,6 +8361,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCloudExadataInfrastructuresResult> getCloudExadataInfrastructures(GetCloudExadataInfrastructuresArgs args, InvokeOptions options) {
@@ -7828,6 +8373,8 @@ public final class DatabaseFunctions {
      * Gets a list of the cloud Exadata infrastructure resources in the specified compartment. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7859,6 +8406,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCloudExadataInfrastructuresResult> getCloudExadataInfrastructuresPlain(GetCloudExadataInfrastructuresPlainArgs args, InvokeOptions options) {
@@ -7870,6 +8418,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified cloud VM cluster. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7898,6 +8448,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCloudVmClusterResult> getCloudVmCluster(GetCloudVmClusterArgs args) {
@@ -7909,6 +8460,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified cloud VM cluster. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7937,6 +8490,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCloudVmClusterResult> getCloudVmClusterPlain(GetCloudVmClusterPlainArgs args) {
@@ -7948,6 +8502,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified cloud VM cluster. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7976,6 +8532,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCloudVmClusterResult> getCloudVmCluster(GetCloudVmClusterArgs args, InvokeOptions options) {
@@ -7987,6 +8544,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified cloud VM cluster. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8015,6 +8574,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCloudVmClusterResult> getCloudVmClusterPlain(GetCloudVmClusterPlainArgs args, InvokeOptions options) {
@@ -8029,6 +8589,8 @@ public final class DatabaseFunctions {
      * The [GetCloudVmClusterIormConfig](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudVmCluster/GetCloudVmClusterIormConfig/) API is used for this operation with Cloud Vm Cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8057,6 +8619,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCloudVmClusterIormConfigResult> getCloudVmClusterIormConfig(GetCloudVmClusterIormConfigArgs args) {
@@ -8071,6 +8634,8 @@ public final class DatabaseFunctions {
      * The [GetCloudVmClusterIormConfig](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudVmCluster/GetCloudVmClusterIormConfig/) API is used for this operation with Cloud Vm Cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8099,6 +8664,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCloudVmClusterIormConfigResult> getCloudVmClusterIormConfigPlain(GetCloudVmClusterIormConfigPlainArgs args) {
@@ -8113,6 +8679,8 @@ public final class DatabaseFunctions {
      * The [GetCloudVmClusterIormConfig](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudVmCluster/GetCloudVmClusterIormConfig/) API is used for this operation with Cloud Vm Cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8141,6 +8709,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCloudVmClusterIormConfigResult> getCloudVmClusterIormConfig(GetCloudVmClusterIormConfigArgs args, InvokeOptions options) {
@@ -8155,6 +8724,8 @@ public final class DatabaseFunctions {
      * The [GetCloudVmClusterIormConfig](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudVmCluster/GetCloudVmClusterIormConfig/) API is used for this operation with Cloud Vm Cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8183,6 +8754,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCloudVmClusterIormConfigResult> getCloudVmClusterIormConfigPlain(GetCloudVmClusterIormConfigPlainArgs args, InvokeOptions options) {
@@ -8194,6 +8766,8 @@ public final class DatabaseFunctions {
      * Gets a list of the cloud VM clusters in the specified compartment. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8225,6 +8799,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCloudVmClustersResult> getCloudVmClusters(GetCloudVmClustersArgs args) {
@@ -8236,6 +8811,8 @@ public final class DatabaseFunctions {
      * Gets a list of the cloud VM clusters in the specified compartment. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8267,6 +8844,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCloudVmClustersResult> getCloudVmClustersPlain(GetCloudVmClustersPlainArgs args) {
@@ -8278,6 +8856,8 @@ public final class DatabaseFunctions {
      * Gets a list of the cloud VM clusters in the specified compartment. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8309,6 +8889,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCloudVmClustersResult> getCloudVmClusters(GetCloudVmClustersArgs args, InvokeOptions options) {
@@ -8320,6 +8901,8 @@ public final class DatabaseFunctions {
      * Gets a list of the cloud VM clusters in the specified compartment. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8351,6 +8934,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCloudVmClustersResult> getCloudVmClustersPlain(GetCloudVmClustersPlainArgs args, InvokeOptions options) {
@@ -8362,6 +8946,8 @@ public final class DatabaseFunctions {
      * Gets the specified Data Guard association&#39;s configuration information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8391,6 +8977,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDataGuardAssociationResult> getDataGuardAssociation(GetDataGuardAssociationArgs args) {
@@ -8402,6 +8989,8 @@ public final class DatabaseFunctions {
      * Gets the specified Data Guard association&#39;s configuration information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8431,6 +9020,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDataGuardAssociationResult> getDataGuardAssociationPlain(GetDataGuardAssociationPlainArgs args) {
@@ -8442,6 +9032,8 @@ public final class DatabaseFunctions {
      * Gets the specified Data Guard association&#39;s configuration information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8471,6 +9063,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDataGuardAssociationResult> getDataGuardAssociation(GetDataGuardAssociationArgs args, InvokeOptions options) {
@@ -8482,6 +9075,8 @@ public final class DatabaseFunctions {
      * Gets the specified Data Guard association&#39;s configuration information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8511,6 +9106,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDataGuardAssociationResult> getDataGuardAssociationPlain(GetDataGuardAssociationPlainArgs args, InvokeOptions options) {
@@ -8522,6 +9118,8 @@ public final class DatabaseFunctions {
      * Lists all Data Guard associations for the specified database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8550,6 +9148,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDataGuardAssociationsResult> getDataGuardAssociations(GetDataGuardAssociationsArgs args) {
@@ -8561,6 +9160,8 @@ public final class DatabaseFunctions {
      * Lists all Data Guard associations for the specified database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8589,6 +9190,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDataGuardAssociationsResult> getDataGuardAssociationsPlain(GetDataGuardAssociationsPlainArgs args) {
@@ -8600,6 +9202,8 @@ public final class DatabaseFunctions {
      * Lists all Data Guard associations for the specified database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8628,6 +9232,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDataGuardAssociationsResult> getDataGuardAssociations(GetDataGuardAssociationsArgs args, InvokeOptions options) {
@@ -8639,6 +9244,8 @@ public final class DatabaseFunctions {
      * Lists all Data Guard associations for the specified database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8667,6 +9274,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDataGuardAssociationsResult> getDataGuardAssociationsPlain(GetDataGuardAssociationsPlainArgs args, InvokeOptions options) {
@@ -8678,6 +9286,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8706,6 +9316,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDatabaseResult> getDatabase(GetDatabaseArgs args) {
@@ -8717,6 +9328,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8745,6 +9358,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDatabaseResult> getDatabasePlain(GetDatabasePlainArgs args) {
@@ -8756,6 +9370,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8784,6 +9400,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDatabaseResult> getDatabase(GetDatabaseArgs args, InvokeOptions options) {
@@ -8795,6 +9412,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8823,6 +9442,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDatabaseResult> getDatabasePlain(GetDatabasePlainArgs args, InvokeOptions options) {
@@ -8834,6 +9454,8 @@ public final class DatabaseFunctions {
      * Gets a list of the maintenance run histories in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8867,6 +9489,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDatabaseMaintenanceRunHistoriesResult> getDatabaseMaintenanceRunHistories(GetDatabaseMaintenanceRunHistoriesArgs args) {
@@ -8878,6 +9501,8 @@ public final class DatabaseFunctions {
      * Gets a list of the maintenance run histories in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8911,6 +9536,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDatabaseMaintenanceRunHistoriesResult> getDatabaseMaintenanceRunHistoriesPlain(GetDatabaseMaintenanceRunHistoriesPlainArgs args) {
@@ -8922,6 +9548,8 @@ public final class DatabaseFunctions {
      * Gets a list of the maintenance run histories in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8955,6 +9583,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDatabaseMaintenanceRunHistoriesResult> getDatabaseMaintenanceRunHistories(GetDatabaseMaintenanceRunHistoriesArgs args, InvokeOptions options) {
@@ -8966,6 +9595,8 @@ public final class DatabaseFunctions {
      * Gets a list of the maintenance run histories in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8999,6 +9630,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDatabaseMaintenanceRunHistoriesResult> getDatabaseMaintenanceRunHistoriesPlain(GetDatabaseMaintenanceRunHistoriesPlainArgs args, InvokeOptions options) {
@@ -9010,6 +9642,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified maintenance run history.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9038,6 +9672,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDatabaseMaintenanceRunHistoryResult> getDatabaseMaintenanceRunHistory(GetDatabaseMaintenanceRunHistoryArgs args) {
@@ -9049,6 +9684,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified maintenance run history.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9077,6 +9714,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDatabaseMaintenanceRunHistoryResult> getDatabaseMaintenanceRunHistoryPlain(GetDatabaseMaintenanceRunHistoryPlainArgs args) {
@@ -9088,6 +9726,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified maintenance run history.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9116,6 +9756,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDatabaseMaintenanceRunHistoryResult> getDatabaseMaintenanceRunHistory(GetDatabaseMaintenanceRunHistoryArgs args, InvokeOptions options) {
@@ -9127,6 +9768,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified maintenance run history.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9155,6 +9798,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDatabaseMaintenanceRunHistoryResult> getDatabaseMaintenanceRunHistoryPlain(GetDatabaseMaintenanceRunHistoryPlainArgs args, InvokeOptions options) {
@@ -9166,6 +9810,8 @@ public final class DatabaseFunctions {
      * Gets the pluggable database conversion history for a specified database in a bare metal or virtual machine DB system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9196,6 +9842,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDatabasePdbConversionHistoryEntriesResult> getDatabasePdbConversionHistoryEntries(GetDatabasePdbConversionHistoryEntriesArgs args) {
@@ -9207,6 +9854,8 @@ public final class DatabaseFunctions {
      * Gets the pluggable database conversion history for a specified database in a bare metal or virtual machine DB system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9237,6 +9886,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDatabasePdbConversionHistoryEntriesResult> getDatabasePdbConversionHistoryEntriesPlain(GetDatabasePdbConversionHistoryEntriesPlainArgs args) {
@@ -9248,6 +9898,8 @@ public final class DatabaseFunctions {
      * Gets the pluggable database conversion history for a specified database in a bare metal or virtual machine DB system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9278,6 +9930,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDatabasePdbConversionHistoryEntriesResult> getDatabasePdbConversionHistoryEntries(GetDatabasePdbConversionHistoryEntriesArgs args, InvokeOptions options) {
@@ -9289,6 +9942,8 @@ public final class DatabaseFunctions {
      * Gets the pluggable database conversion history for a specified database in a bare metal or virtual machine DB system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9319,6 +9974,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDatabasePdbConversionHistoryEntriesResult> getDatabasePdbConversionHistoryEntriesPlain(GetDatabasePdbConversionHistoryEntriesPlainArgs args, InvokeOptions options) {
@@ -9330,6 +9986,8 @@ public final class DatabaseFunctions {
      * Gets the details of operations performed to convert the specified database from non-container (non-CDB) to pluggable (PDB).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9359,6 +10017,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDatabasePdbConversionHistoryEntryResult> getDatabasePdbConversionHistoryEntry(GetDatabasePdbConversionHistoryEntryArgs args) {
@@ -9370,6 +10029,8 @@ public final class DatabaseFunctions {
      * Gets the details of operations performed to convert the specified database from non-container (non-CDB) to pluggable (PDB).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9399,6 +10060,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDatabasePdbConversionHistoryEntryResult> getDatabasePdbConversionHistoryEntryPlain(GetDatabasePdbConversionHistoryEntryPlainArgs args) {
@@ -9410,6 +10072,8 @@ public final class DatabaseFunctions {
      * Gets the details of operations performed to convert the specified database from non-container (non-CDB) to pluggable (PDB).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9439,6 +10103,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDatabasePdbConversionHistoryEntryResult> getDatabasePdbConversionHistoryEntry(GetDatabasePdbConversionHistoryEntryArgs args, InvokeOptions options) {
@@ -9450,6 +10115,8 @@ public final class DatabaseFunctions {
      * Gets the details of operations performed to convert the specified database from non-container (non-CDB) to pluggable (PDB).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9479,6 +10146,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDatabasePdbConversionHistoryEntryResult> getDatabasePdbConversionHistoryEntryPlain(GetDatabasePdbConversionHistoryEntryPlainArgs args, InvokeOptions options) {
@@ -9490,6 +10158,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified database software image.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9518,6 +10188,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDatabaseSoftwareImageResult> getDatabaseSoftwareImage(GetDatabaseSoftwareImageArgs args) {
@@ -9529,6 +10200,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified database software image.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9557,6 +10230,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDatabaseSoftwareImageResult> getDatabaseSoftwareImagePlain(GetDatabaseSoftwareImagePlainArgs args) {
@@ -9568,6 +10242,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified database software image.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9596,6 +10272,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDatabaseSoftwareImageResult> getDatabaseSoftwareImage(GetDatabaseSoftwareImageArgs args, InvokeOptions options) {
@@ -9607,6 +10284,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified database software image.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9635,6 +10314,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDatabaseSoftwareImageResult> getDatabaseSoftwareImagePlain(GetDatabaseSoftwareImagePlainArgs args, InvokeOptions options) {
@@ -9646,6 +10326,8 @@ public final class DatabaseFunctions {
      * Gets a list of the database software images in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9679,6 +10361,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDatabaseSoftwareImagesResult> getDatabaseSoftwareImages(GetDatabaseSoftwareImagesArgs args) {
@@ -9690,6 +10373,8 @@ public final class DatabaseFunctions {
      * Gets a list of the database software images in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9723,6 +10408,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDatabaseSoftwareImagesResult> getDatabaseSoftwareImagesPlain(GetDatabaseSoftwareImagesPlainArgs args) {
@@ -9734,6 +10420,8 @@ public final class DatabaseFunctions {
      * Gets a list of the database software images in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9767,6 +10455,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDatabaseSoftwareImagesResult> getDatabaseSoftwareImages(GetDatabaseSoftwareImagesArgs args, InvokeOptions options) {
@@ -9778,6 +10467,8 @@ public final class DatabaseFunctions {
      * Gets a list of the database software images in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9811,6 +10502,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDatabaseSoftwareImagesResult> getDatabaseSoftwareImagesPlain(GetDatabaseSoftwareImagesPlainArgs args, InvokeOptions options) {
@@ -9822,6 +10514,8 @@ public final class DatabaseFunctions {
      * Gets the upgrade history for a specified database in a bare metal or virtual machine DB system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9852,6 +10546,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDatabaseUpgradeHistoryEntriesResult> getDatabaseUpgradeHistoryEntries(GetDatabaseUpgradeHistoryEntriesArgs args) {
@@ -9863,6 +10558,8 @@ public final class DatabaseFunctions {
      * Gets the upgrade history for a specified database in a bare metal or virtual machine DB system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9893,6 +10590,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDatabaseUpgradeHistoryEntriesResult> getDatabaseUpgradeHistoryEntriesPlain(GetDatabaseUpgradeHistoryEntriesPlainArgs args) {
@@ -9904,6 +10602,8 @@ public final class DatabaseFunctions {
      * Gets the upgrade history for a specified database in a bare metal or virtual machine DB system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9934,6 +10634,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDatabaseUpgradeHistoryEntriesResult> getDatabaseUpgradeHistoryEntries(GetDatabaseUpgradeHistoryEntriesArgs args, InvokeOptions options) {
@@ -9945,6 +10646,8 @@ public final class DatabaseFunctions {
      * Gets the upgrade history for a specified database in a bare metal or virtual machine DB system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9975,6 +10678,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDatabaseUpgradeHistoryEntriesResult> getDatabaseUpgradeHistoryEntriesPlain(GetDatabaseUpgradeHistoryEntriesPlainArgs args, InvokeOptions options) {
@@ -9986,6 +10690,8 @@ public final class DatabaseFunctions {
      * gets the upgrade history for a specified database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10015,6 +10721,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDatabaseUpgradeHistoryEntryResult> getDatabaseUpgradeHistoryEntry(GetDatabaseUpgradeHistoryEntryArgs args) {
@@ -10026,6 +10733,8 @@ public final class DatabaseFunctions {
      * gets the upgrade history for a specified database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10055,6 +10764,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDatabaseUpgradeHistoryEntryResult> getDatabaseUpgradeHistoryEntryPlain(GetDatabaseUpgradeHistoryEntryPlainArgs args) {
@@ -10066,6 +10776,8 @@ public final class DatabaseFunctions {
      * gets the upgrade history for a specified database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10095,6 +10807,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDatabaseUpgradeHistoryEntryResult> getDatabaseUpgradeHistoryEntry(GetDatabaseUpgradeHistoryEntryArgs args, InvokeOptions options) {
@@ -10106,6 +10819,8 @@ public final class DatabaseFunctions {
      * gets the upgrade history for a specified database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10135,6 +10850,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDatabaseUpgradeHistoryEntryResult> getDatabaseUpgradeHistoryEntryPlain(GetDatabaseUpgradeHistoryEntryPlainArgs args, InvokeOptions options) {
@@ -10146,6 +10862,8 @@ public final class DatabaseFunctions {
      * Gets a list of the databases in the specified Database Home.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10178,6 +10896,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDatabasesResult> getDatabases(GetDatabasesArgs args) {
@@ -10189,6 +10908,8 @@ public final class DatabaseFunctions {
      * Gets a list of the databases in the specified Database Home.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10221,6 +10942,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDatabasesResult> getDatabasesPlain(GetDatabasesPlainArgs args) {
@@ -10232,6 +10954,8 @@ public final class DatabaseFunctions {
      * Gets a list of the databases in the specified Database Home.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10264,6 +10988,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDatabasesResult> getDatabases(GetDatabasesArgs args, InvokeOptions options) {
@@ -10275,6 +11000,8 @@ public final class DatabaseFunctions {
      * Gets a list of the databases in the specified Database Home.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10307,6 +11034,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDatabasesResult> getDatabasesPlain(GetDatabasesPlainArgs args, InvokeOptions options) {
@@ -10318,6 +11046,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified Database Home.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10346,6 +11076,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDbHomeResult> getDbHome(GetDbHomeArgs args) {
@@ -10357,6 +11088,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified Database Home.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10385,6 +11118,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDbHomeResult> getDbHomePlain(GetDbHomePlainArgs args) {
@@ -10396,6 +11130,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified Database Home.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10424,6 +11160,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDbHomeResult> getDbHome(GetDbHomeArgs args, InvokeOptions options) {
@@ -10435,6 +11172,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified Database Home.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10463,6 +11202,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDbHomeResult> getDbHomePlain(GetDbHomePlainArgs args, InvokeOptions options) {
@@ -10474,6 +11214,8 @@ public final class DatabaseFunctions {
      * Lists the history of patch operations on the specified Database Home.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10502,6 +11244,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDbHomePatchHistoryEntriesResult> getDbHomePatchHistoryEntries(GetDbHomePatchHistoryEntriesArgs args) {
@@ -10513,6 +11256,8 @@ public final class DatabaseFunctions {
      * Lists the history of patch operations on the specified Database Home.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10541,6 +11286,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDbHomePatchHistoryEntriesResult> getDbHomePatchHistoryEntriesPlain(GetDbHomePatchHistoryEntriesPlainArgs args) {
@@ -10552,6 +11298,8 @@ public final class DatabaseFunctions {
      * Lists the history of patch operations on the specified Database Home.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10580,6 +11328,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDbHomePatchHistoryEntriesResult> getDbHomePatchHistoryEntries(GetDbHomePatchHistoryEntriesArgs args, InvokeOptions options) {
@@ -10591,6 +11340,8 @@ public final class DatabaseFunctions {
      * Lists the history of patch operations on the specified Database Home.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10619,6 +11370,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDbHomePatchHistoryEntriesResult> getDbHomePatchHistoryEntriesPlain(GetDbHomePatchHistoryEntriesPlainArgs args, InvokeOptions options) {
@@ -10630,6 +11382,8 @@ public final class DatabaseFunctions {
      * Lists patches applicable to the requested Database Home.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10658,6 +11412,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDbHomePatchesResult> getDbHomePatches(GetDbHomePatchesArgs args) {
@@ -10669,6 +11424,8 @@ public final class DatabaseFunctions {
      * Lists patches applicable to the requested Database Home.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10697,6 +11454,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDbHomePatchesResult> getDbHomePatchesPlain(GetDbHomePatchesPlainArgs args) {
@@ -10708,6 +11466,8 @@ public final class DatabaseFunctions {
      * Lists patches applicable to the requested Database Home.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10736,6 +11496,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDbHomePatchesResult> getDbHomePatches(GetDbHomePatchesArgs args, InvokeOptions options) {
@@ -10747,6 +11508,8 @@ public final class DatabaseFunctions {
      * Lists patches applicable to the requested Database Home.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10775,6 +11538,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDbHomePatchesResult> getDbHomePatchesPlain(GetDbHomePatchesPlainArgs args, InvokeOptions options) {
@@ -10822,6 +11586,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified database node.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10850,6 +11616,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDbNodeResult> getDbNode(GetDbNodeArgs args) {
@@ -10861,6 +11628,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified database node.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10889,6 +11658,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDbNodeResult> getDbNodePlain(GetDbNodePlainArgs args) {
@@ -10900,6 +11670,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified database node.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10928,6 +11700,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDbNodeResult> getDbNode(GetDbNodeArgs args, InvokeOptions options) {
@@ -10939,6 +11712,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified database node.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10967,6 +11742,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDbNodeResult> getDbNodePlain(GetDbNodePlainArgs args, InvokeOptions options) {
@@ -10978,6 +11754,8 @@ public final class DatabaseFunctions {
      * Gets the specified database node console connection&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11007,6 +11785,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDbNodeConsoleConnectionResult> getDbNodeConsoleConnection(GetDbNodeConsoleConnectionArgs args) {
@@ -11018,6 +11797,8 @@ public final class DatabaseFunctions {
      * Gets the specified database node console connection&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11047,6 +11828,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDbNodeConsoleConnectionResult> getDbNodeConsoleConnectionPlain(GetDbNodeConsoleConnectionPlainArgs args) {
@@ -11058,6 +11840,8 @@ public final class DatabaseFunctions {
      * Gets the specified database node console connection&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11087,6 +11871,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDbNodeConsoleConnectionResult> getDbNodeConsoleConnection(GetDbNodeConsoleConnectionArgs args, InvokeOptions options) {
@@ -11098,6 +11883,8 @@ public final class DatabaseFunctions {
      * Gets the specified database node console connection&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11127,6 +11914,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDbNodeConsoleConnectionResult> getDbNodeConsoleConnectionPlain(GetDbNodeConsoleConnectionPlainArgs args, InvokeOptions options) {
@@ -11138,6 +11926,8 @@ public final class DatabaseFunctions {
      * Lists the console connections for the specified database node.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11166,6 +11956,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDbNodeConsoleConnectionsResult> getDbNodeConsoleConnections(GetDbNodeConsoleConnectionsArgs args) {
@@ -11177,6 +11968,8 @@ public final class DatabaseFunctions {
      * Lists the console connections for the specified database node.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11205,6 +11998,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDbNodeConsoleConnectionsResult> getDbNodeConsoleConnectionsPlain(GetDbNodeConsoleConnectionsPlainArgs args) {
@@ -11216,6 +12010,8 @@ public final class DatabaseFunctions {
      * Lists the console connections for the specified database node.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11244,6 +12040,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDbNodeConsoleConnectionsResult> getDbNodeConsoleConnections(GetDbNodeConsoleConnectionsArgs args, InvokeOptions options) {
@@ -11255,6 +12052,8 @@ public final class DatabaseFunctions {
      * Lists the console connections for the specified database node.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11283,6 +12082,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDbNodeConsoleConnectionsResult> getDbNodeConsoleConnectionsPlain(GetDbNodeConsoleConnectionsPlainArgs args, InvokeOptions options) {
@@ -11294,6 +12094,8 @@ public final class DatabaseFunctions {
      * Lists the console histories for the specified database node.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11324,6 +12126,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDbNodeConsoleHistoriesResult> getDbNodeConsoleHistories(GetDbNodeConsoleHistoriesArgs args) {
@@ -11335,6 +12138,8 @@ public final class DatabaseFunctions {
      * Lists the console histories for the specified database node.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11365,6 +12170,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDbNodeConsoleHistoriesResult> getDbNodeConsoleHistoriesPlain(GetDbNodeConsoleHistoriesPlainArgs args) {
@@ -11376,6 +12182,8 @@ public final class DatabaseFunctions {
      * Lists the console histories for the specified database node.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11406,6 +12214,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDbNodeConsoleHistoriesResult> getDbNodeConsoleHistories(GetDbNodeConsoleHistoriesArgs args, InvokeOptions options) {
@@ -11417,6 +12226,8 @@ public final class DatabaseFunctions {
      * Lists the console histories for the specified database node.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11447,6 +12258,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDbNodeConsoleHistoriesResult> getDbNodeConsoleHistoriesPlain(GetDbNodeConsoleHistoriesPlainArgs args, InvokeOptions options) {
@@ -11458,6 +12270,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified database node console history.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11487,6 +12301,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDbNodeConsoleHistoryResult> getDbNodeConsoleHistory(GetDbNodeConsoleHistoryArgs args) {
@@ -11498,6 +12313,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified database node console history.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11527,6 +12344,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDbNodeConsoleHistoryResult> getDbNodeConsoleHistoryPlain(GetDbNodeConsoleHistoryPlainArgs args) {
@@ -11538,6 +12356,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified database node console history.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11567,6 +12387,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDbNodeConsoleHistoryResult> getDbNodeConsoleHistory(GetDbNodeConsoleHistoryArgs args, InvokeOptions options) {
@@ -11578,6 +12399,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified database node console history.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11607,6 +12430,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDbNodeConsoleHistoryResult> getDbNodeConsoleHistoryPlain(GetDbNodeConsoleHistoryPlainArgs args, InvokeOptions options) {
@@ -11618,6 +12442,8 @@ public final class DatabaseFunctions {
      * Retrieves the specified database node console history contents upto a megabyte.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11647,6 +12473,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDbNodeConsoleHistoryContentResult> getDbNodeConsoleHistoryContent(GetDbNodeConsoleHistoryContentArgs args) {
@@ -11658,6 +12485,8 @@ public final class DatabaseFunctions {
      * Retrieves the specified database node console history contents upto a megabyte.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11687,6 +12516,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDbNodeConsoleHistoryContentResult> getDbNodeConsoleHistoryContentPlain(GetDbNodeConsoleHistoryContentPlainArgs args) {
@@ -11698,6 +12528,8 @@ public final class DatabaseFunctions {
      * Retrieves the specified database node console history contents upto a megabyte.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11727,6 +12559,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDbNodeConsoleHistoryContentResult> getDbNodeConsoleHistoryContent(GetDbNodeConsoleHistoryContentArgs args, InvokeOptions options) {
@@ -11738,6 +12571,8 @@ public final class DatabaseFunctions {
      * Retrieves the specified database node console history contents upto a megabyte.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11767,6 +12602,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDbNodeConsoleHistoryContentResult> getDbNodeConsoleHistoryContentPlain(GetDbNodeConsoleHistoryContentPlainArgs args, InvokeOptions options) {
@@ -11778,6 +12614,8 @@ public final class DatabaseFunctions {
      * Lists the database nodes in the specified DB system and compartment. A database node is a server running database software.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11810,6 +12648,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDbNodesResult> getDbNodes(GetDbNodesArgs args) {
@@ -11821,6 +12660,8 @@ public final class DatabaseFunctions {
      * Lists the database nodes in the specified DB system and compartment. A database node is a server running database software.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11853,6 +12694,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDbNodesResult> getDbNodesPlain(GetDbNodesPlainArgs args) {
@@ -11864,6 +12706,8 @@ public final class DatabaseFunctions {
      * Lists the database nodes in the specified DB system and compartment. A database node is a server running database software.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11896,6 +12740,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDbNodesResult> getDbNodes(GetDbNodesArgs args, InvokeOptions options) {
@@ -11907,6 +12752,8 @@ public final class DatabaseFunctions {
      * Lists the database nodes in the specified DB system and compartment. A database node is a server running database software.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11939,6 +12786,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDbNodesResult> getDbNodesPlain(GetDbNodesPlainArgs args, InvokeOptions options) {
@@ -11950,6 +12798,8 @@ public final class DatabaseFunctions {
      * Gets information about the Exadata Db server.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11979,6 +12829,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDbServerResult> getDbServer(GetDbServerArgs args) {
@@ -11990,6 +12841,8 @@ public final class DatabaseFunctions {
      * Gets information about the Exadata Db server.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12019,6 +12872,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDbServerResult> getDbServerPlain(GetDbServerPlainArgs args) {
@@ -12030,6 +12884,8 @@ public final class DatabaseFunctions {
      * Gets information about the Exadata Db server.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12059,6 +12915,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDbServerResult> getDbServer(GetDbServerArgs args, InvokeOptions options) {
@@ -12070,6 +12927,8 @@ public final class DatabaseFunctions {
      * Gets information about the Exadata Db server.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12099,6 +12958,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDbServerResult> getDbServerPlain(GetDbServerPlainArgs args, InvokeOptions options) {
@@ -12110,6 +12970,8 @@ public final class DatabaseFunctions {
      * Lists the Exadata DB servers in the ExadataInfrastructureId and specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12141,6 +13003,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDbServersResult> getDbServers(GetDbServersArgs args) {
@@ -12152,6 +13015,8 @@ public final class DatabaseFunctions {
      * Lists the Exadata DB servers in the ExadataInfrastructureId and specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12183,6 +13048,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDbServersResult> getDbServersPlain(GetDbServersPlainArgs args) {
@@ -12194,6 +13060,8 @@ public final class DatabaseFunctions {
      * Lists the Exadata DB servers in the ExadataInfrastructureId and specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12225,6 +13093,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDbServersResult> getDbServers(GetDbServersArgs args, InvokeOptions options) {
@@ -12236,6 +13105,8 @@ public final class DatabaseFunctions {
      * Lists the Exadata DB servers in the ExadataInfrastructureId and specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12267,6 +13138,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDbServersResult> getDbServersPlain(GetDbServersPlainArgs args, InvokeOptions options) {
@@ -12278,6 +13150,8 @@ public final class DatabaseFunctions {
      * Gets a list of expected compute performance parameters for a virtual machine DB system based on system configuration.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12306,6 +13180,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDbSystemComputePerformancesResult> getDbSystemComputePerformances() {
@@ -12317,6 +13192,8 @@ public final class DatabaseFunctions {
      * Gets a list of expected compute performance parameters for a virtual machine DB system based on system configuration.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12345,6 +13222,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDbSystemComputePerformancesResult> getDbSystemComputePerformancesPlain() {
@@ -12356,6 +13234,8 @@ public final class DatabaseFunctions {
      * Gets a list of expected compute performance parameters for a virtual machine DB system based on system configuration.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12384,6 +13264,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDbSystemComputePerformancesResult> getDbSystemComputePerformances(GetDbSystemComputePerformancesArgs args) {
@@ -12395,6 +13276,8 @@ public final class DatabaseFunctions {
      * Gets a list of expected compute performance parameters for a virtual machine DB system based on system configuration.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12423,6 +13306,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDbSystemComputePerformancesResult> getDbSystemComputePerformancesPlain(GetDbSystemComputePerformancesPlainArgs args) {
@@ -12434,6 +13318,8 @@ public final class DatabaseFunctions {
      * Gets a list of expected compute performance parameters for a virtual machine DB system based on system configuration.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12462,6 +13348,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDbSystemComputePerformancesResult> getDbSystemComputePerformances(GetDbSystemComputePerformancesArgs args, InvokeOptions options) {
@@ -12473,6 +13360,8 @@ public final class DatabaseFunctions {
      * Gets a list of expected compute performance parameters for a virtual machine DB system based on system configuration.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12501,6 +13390,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDbSystemComputePerformancesResult> getDbSystemComputePerformancesPlain(GetDbSystemComputePerformancesPlainArgs args, InvokeOptions options) {
@@ -12512,6 +13402,8 @@ public final class DatabaseFunctions {
      * Gets the history of the patch actions performed on the specified DB system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12540,6 +13432,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDbSystemHistoryEntriesResult> getDbSystemHistoryEntries(GetDbSystemHistoryEntriesArgs args) {
@@ -12551,6 +13444,8 @@ public final class DatabaseFunctions {
      * Gets the history of the patch actions performed on the specified DB system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12579,6 +13474,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDbSystemHistoryEntriesResult> getDbSystemHistoryEntriesPlain(GetDbSystemHistoryEntriesPlainArgs args) {
@@ -12590,6 +13486,8 @@ public final class DatabaseFunctions {
      * Gets the history of the patch actions performed on the specified DB system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12618,6 +13516,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDbSystemHistoryEntriesResult> getDbSystemHistoryEntries(GetDbSystemHistoryEntriesArgs args, InvokeOptions options) {
@@ -12629,6 +13528,8 @@ public final class DatabaseFunctions {
      * Gets the history of the patch actions performed on the specified DB system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12657,6 +13558,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDbSystemHistoryEntriesResult> getDbSystemHistoryEntriesPlain(GetDbSystemHistoryEntriesPlainArgs args, InvokeOptions options) {
@@ -12668,6 +13570,8 @@ public final class DatabaseFunctions {
      * Lists the patches applicable to the specified DB system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12696,6 +13600,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDbSystemPatchesResult> getDbSystemPatches(GetDbSystemPatchesArgs args) {
@@ -12707,6 +13612,8 @@ public final class DatabaseFunctions {
      * Lists the patches applicable to the specified DB system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12735,6 +13642,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDbSystemPatchesResult> getDbSystemPatchesPlain(GetDbSystemPatchesPlainArgs args) {
@@ -12746,6 +13654,8 @@ public final class DatabaseFunctions {
      * Lists the patches applicable to the specified DB system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12774,6 +13684,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDbSystemPatchesResult> getDbSystemPatches(GetDbSystemPatchesArgs args, InvokeOptions options) {
@@ -12785,6 +13696,8 @@ public final class DatabaseFunctions {
      * Lists the patches applicable to the specified DB system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12813,6 +13726,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDbSystemPatchesResult> getDbSystemPatchesPlain(GetDbSystemPatchesPlainArgs args, InvokeOptions options) {
@@ -12824,6 +13738,8 @@ public final class DatabaseFunctions {
      * Gets a list of the shapes that can be used to launch a new DB system. The shape determines resources to allocate to the DB system - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12853,6 +13769,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDbSystemShapesResult> getDbSystemShapes(GetDbSystemShapesArgs args) {
@@ -12864,6 +13781,8 @@ public final class DatabaseFunctions {
      * Gets a list of the shapes that can be used to launch a new DB system. The shape determines resources to allocate to the DB system - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12893,6 +13812,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDbSystemShapesResult> getDbSystemShapesPlain(GetDbSystemShapesPlainArgs args) {
@@ -12904,6 +13824,8 @@ public final class DatabaseFunctions {
      * Gets a list of the shapes that can be used to launch a new DB system. The shape determines resources to allocate to the DB system - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12933,6 +13855,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDbSystemShapesResult> getDbSystemShapes(GetDbSystemShapesArgs args, InvokeOptions options) {
@@ -12944,6 +13867,8 @@ public final class DatabaseFunctions {
      * Gets a list of the shapes that can be used to launch a new DB system. The shape determines resources to allocate to the DB system - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12973,6 +13898,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDbSystemShapesResult> getDbSystemShapesPlain(GetDbSystemShapesPlainArgs args, InvokeOptions options) {
@@ -12984,6 +13910,8 @@ public final class DatabaseFunctions {
      * Gets a list of possible expected storage performance parameters of a VMDB System based on Configuration.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13013,6 +13941,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDbSystemStoragePerformancesResult> getDbSystemStoragePerformances(GetDbSystemStoragePerformancesArgs args) {
@@ -13024,6 +13953,8 @@ public final class DatabaseFunctions {
      * Gets a list of possible expected storage performance parameters of a VMDB System based on Configuration.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13053,6 +13984,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDbSystemStoragePerformancesResult> getDbSystemStoragePerformancesPlain(GetDbSystemStoragePerformancesPlainArgs args) {
@@ -13064,6 +13996,8 @@ public final class DatabaseFunctions {
      * Gets a list of possible expected storage performance parameters of a VMDB System based on Configuration.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13093,6 +14027,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDbSystemStoragePerformancesResult> getDbSystemStoragePerformances(GetDbSystemStoragePerformancesArgs args, InvokeOptions options) {
@@ -13104,6 +14039,8 @@ public final class DatabaseFunctions {
      * Gets a list of possible expected storage performance parameters of a VMDB System based on Configuration.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13133,6 +14070,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDbSystemStoragePerformancesResult> getDbSystemStoragePerformancesPlain(GetDbSystemStoragePerformancesPlainArgs args, InvokeOptions options) {
@@ -13148,6 +14086,8 @@ public final class DatabaseFunctions {
      * For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See [Switching an Exadata DB System to the New Resource Model and APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm) for details on converting existing Exadata DB systems to the new resource model.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13180,6 +14120,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDbSystemsResult> getDbSystems(GetDbSystemsArgs args) {
@@ -13195,6 +14136,8 @@ public final class DatabaseFunctions {
      * For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See [Switching an Exadata DB System to the New Resource Model and APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm) for details on converting existing Exadata DB systems to the new resource model.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13227,6 +14170,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDbSystemsResult> getDbSystemsPlain(GetDbSystemsPlainArgs args) {
@@ -13242,6 +14186,8 @@ public final class DatabaseFunctions {
      * For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See [Switching an Exadata DB System to the New Resource Model and APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm) for details on converting existing Exadata DB systems to the new resource model.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13274,6 +14220,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDbSystemsResult> getDbSystems(GetDbSystemsArgs args, InvokeOptions options) {
@@ -13289,6 +14236,8 @@ public final class DatabaseFunctions {
      * For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See [Switching an Exadata DB System to the New Resource Model and APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm) for details on converting existing Exadata DB systems to the new resource model.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13321,6 +14270,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDbSystemsResult> getDbSystemsPlain(GetDbSystemsPlainArgs args, InvokeOptions options) {
@@ -13332,6 +14282,8 @@ public final class DatabaseFunctions {
      * Gets the history of the upgrade actions performed on the specified DB system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13362,6 +14314,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDbSystemsUpgradeHistoryEntriesResult> getDbSystemsUpgradeHistoryEntries(GetDbSystemsUpgradeHistoryEntriesArgs args) {
@@ -13373,6 +14326,8 @@ public final class DatabaseFunctions {
      * Gets the history of the upgrade actions performed on the specified DB system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13403,6 +14358,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDbSystemsUpgradeHistoryEntriesResult> getDbSystemsUpgradeHistoryEntriesPlain(GetDbSystemsUpgradeHistoryEntriesPlainArgs args) {
@@ -13414,6 +14370,8 @@ public final class DatabaseFunctions {
      * Gets the history of the upgrade actions performed on the specified DB system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13444,6 +14402,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDbSystemsUpgradeHistoryEntriesResult> getDbSystemsUpgradeHistoryEntries(GetDbSystemsUpgradeHistoryEntriesArgs args, InvokeOptions options) {
@@ -13455,6 +14414,8 @@ public final class DatabaseFunctions {
      * Gets the history of the upgrade actions performed on the specified DB system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13485,6 +14446,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDbSystemsUpgradeHistoryEntriesResult> getDbSystemsUpgradeHistoryEntriesPlain(GetDbSystemsUpgradeHistoryEntriesPlainArgs args, InvokeOptions options) {
@@ -13496,6 +14458,8 @@ public final class DatabaseFunctions {
      * Gets the details of the specified operating system upgrade operation for the specified DB system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13525,6 +14489,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDbSystemsUpgradeHistoryEntryResult> getDbSystemsUpgradeHistoryEntry(GetDbSystemsUpgradeHistoryEntryArgs args) {
@@ -13536,6 +14501,8 @@ public final class DatabaseFunctions {
      * Gets the details of the specified operating system upgrade operation for the specified DB system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13565,6 +14532,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDbSystemsUpgradeHistoryEntryResult> getDbSystemsUpgradeHistoryEntryPlain(GetDbSystemsUpgradeHistoryEntryPlainArgs args) {
@@ -13576,6 +14544,8 @@ public final class DatabaseFunctions {
      * Gets the details of the specified operating system upgrade operation for the specified DB system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13605,6 +14575,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDbSystemsUpgradeHistoryEntryResult> getDbSystemsUpgradeHistoryEntry(GetDbSystemsUpgradeHistoryEntryArgs args, InvokeOptions options) {
@@ -13616,6 +14587,8 @@ public final class DatabaseFunctions {
      * Gets the details of the specified operating system upgrade operation for the specified DB system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13645,6 +14618,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDbSystemsUpgradeHistoryEntryResult> getDbSystemsUpgradeHistoryEntryPlain(GetDbSystemsUpgradeHistoryEntryPlainArgs args, InvokeOptions options) {
@@ -13656,6 +14630,8 @@ public final class DatabaseFunctions {
      * Gets a list of supported Oracle Database versions.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13689,6 +14665,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDbVersionsResult> getDbVersions(GetDbVersionsArgs args) {
@@ -13700,6 +14677,8 @@ public final class DatabaseFunctions {
      * Gets a list of supported Oracle Database versions.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13733,6 +14712,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDbVersionsResult> getDbVersionsPlain(GetDbVersionsPlainArgs args) {
@@ -13744,6 +14724,8 @@ public final class DatabaseFunctions {
      * Gets a list of supported Oracle Database versions.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13777,6 +14759,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDbVersionsResult> getDbVersions(GetDbVersionsArgs args, InvokeOptions options) {
@@ -13788,6 +14771,8 @@ public final class DatabaseFunctions {
      * Gets a list of supported Oracle Database versions.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13821,6 +14806,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDbVersionsResult> getDbVersionsPlain(GetDbVersionsPlainArgs args, InvokeOptions options) {
@@ -13834,6 +14820,7 @@ public final class DatabaseFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13863,6 +14850,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExadataInfrastructureResult> getExadataInfrastructure(GetExadataInfrastructureArgs args) {
@@ -13876,6 +14864,7 @@ public final class DatabaseFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13905,6 +14894,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExadataInfrastructureResult> getExadataInfrastructurePlain(GetExadataInfrastructurePlainArgs args) {
@@ -13918,6 +14908,7 @@ public final class DatabaseFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13947,6 +14938,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExadataInfrastructureResult> getExadataInfrastructure(GetExadataInfrastructureArgs args, InvokeOptions options) {
@@ -13960,6 +14952,7 @@ public final class DatabaseFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13989,6 +14982,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExadataInfrastructureResult> getExadataInfrastructurePlain(GetExadataInfrastructurePlainArgs args, InvokeOptions options) {
@@ -14000,6 +14994,8 @@ public final class DatabaseFunctions {
      * Downloads the configuration file for the specified Exadata Cloud@Customer infrastructure.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14029,6 +15025,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExadataInfrastructureDownloadConfigFileResult> getExadataInfrastructureDownloadConfigFile(GetExadataInfrastructureDownloadConfigFileArgs args) {
@@ -14040,6 +15037,8 @@ public final class DatabaseFunctions {
      * Downloads the configuration file for the specified Exadata Cloud@Customer infrastructure.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14069,6 +15068,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExadataInfrastructureDownloadConfigFileResult> getExadataInfrastructureDownloadConfigFilePlain(GetExadataInfrastructureDownloadConfigFilePlainArgs args) {
@@ -14080,6 +15080,8 @@ public final class DatabaseFunctions {
      * Downloads the configuration file for the specified Exadata Cloud@Customer infrastructure.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14109,6 +15111,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExadataInfrastructureDownloadConfigFileResult> getExadataInfrastructureDownloadConfigFile(GetExadataInfrastructureDownloadConfigFileArgs args, InvokeOptions options) {
@@ -14120,6 +15123,8 @@ public final class DatabaseFunctions {
      * Downloads the configuration file for the specified Exadata Cloud@Customer infrastructure.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14149,6 +15154,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExadataInfrastructureDownloadConfigFileResult> getExadataInfrastructureDownloadConfigFilePlain(GetExadataInfrastructureDownloadConfigFilePlainArgs args, InvokeOptions options) {
@@ -14160,6 +15166,8 @@ public final class DatabaseFunctions {
      * Gets un allocated resources information for the specified Exadata infrastructure. Applies to Exadata Cloud@Customer instances only.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14189,6 +15197,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExadataInfrastructureUnAllocatedResourceResult> getExadataInfrastructureUnAllocatedResource(GetExadataInfrastructureUnAllocatedResourceArgs args) {
@@ -14200,6 +15209,8 @@ public final class DatabaseFunctions {
      * Gets un allocated resources information for the specified Exadata infrastructure. Applies to Exadata Cloud@Customer instances only.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14229,6 +15240,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExadataInfrastructureUnAllocatedResourceResult> getExadataInfrastructureUnAllocatedResourcePlain(GetExadataInfrastructureUnAllocatedResourcePlainArgs args) {
@@ -14240,6 +15252,8 @@ public final class DatabaseFunctions {
      * Gets un allocated resources information for the specified Exadata infrastructure. Applies to Exadata Cloud@Customer instances only.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14269,6 +15283,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExadataInfrastructureUnAllocatedResourceResult> getExadataInfrastructureUnAllocatedResource(GetExadataInfrastructureUnAllocatedResourceArgs args, InvokeOptions options) {
@@ -14280,6 +15295,8 @@ public final class DatabaseFunctions {
      * Gets un allocated resources information for the specified Exadata infrastructure. Applies to Exadata Cloud@Customer instances only.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14309,6 +15326,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExadataInfrastructureUnAllocatedResourceResult> getExadataInfrastructureUnAllocatedResourcePlain(GetExadataInfrastructureUnAllocatedResourcePlainArgs args, InvokeOptions options) {
@@ -14322,6 +15340,7 @@ public final class DatabaseFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14353,6 +15372,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExadataInfrastructuresResult> getExadataInfrastructures(GetExadataInfrastructuresArgs args) {
@@ -14366,6 +15386,7 @@ public final class DatabaseFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14397,6 +15418,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExadataInfrastructuresResult> getExadataInfrastructuresPlain(GetExadataInfrastructuresPlainArgs args) {
@@ -14410,6 +15432,7 @@ public final class DatabaseFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14441,6 +15464,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExadataInfrastructuresResult> getExadataInfrastructures(GetExadataInfrastructuresArgs args, InvokeOptions options) {
@@ -14454,6 +15478,7 @@ public final class DatabaseFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14485,6 +15510,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExadataInfrastructuresResult> getExadataInfrastructuresPlain(GetExadataInfrastructuresPlainArgs args, InvokeOptions options) {
@@ -14504,6 +15530,8 @@ public final class DatabaseFunctions {
      * new resource model.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14532,6 +15560,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExadataIormConfigResult> getExadataIormConfig(GetExadataIormConfigArgs args) {
@@ -14551,6 +15580,8 @@ public final class DatabaseFunctions {
      * new resource model.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14579,6 +15610,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExadataIormConfigResult> getExadataIormConfigPlain(GetExadataIormConfigPlainArgs args) {
@@ -14598,6 +15630,8 @@ public final class DatabaseFunctions {
      * new resource model.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14626,6 +15660,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExadataIormConfigResult> getExadataIormConfig(GetExadataIormConfigArgs args, InvokeOptions options) {
@@ -14645,6 +15680,8 @@ public final class DatabaseFunctions {
      * new resource model.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14673,6 +15710,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExadataIormConfigResult> getExadataIormConfigPlain(GetExadataIormConfigPlainArgs args, InvokeOptions options) {
@@ -14684,6 +15722,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified external container database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14712,6 +15752,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalContainerDatabaseResult> getExternalContainerDatabase(GetExternalContainerDatabaseArgs args) {
@@ -14723,6 +15764,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified external container database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14751,6 +15794,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalContainerDatabaseResult> getExternalContainerDatabasePlain(GetExternalContainerDatabasePlainArgs args) {
@@ -14762,6 +15806,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified external container database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14790,6 +15836,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalContainerDatabaseResult> getExternalContainerDatabase(GetExternalContainerDatabaseArgs args, InvokeOptions options) {
@@ -14801,6 +15848,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified external container database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14829,6 +15878,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalContainerDatabaseResult> getExternalContainerDatabasePlain(GetExternalContainerDatabasePlainArgs args, InvokeOptions options) {
@@ -14840,6 +15890,8 @@ public final class DatabaseFunctions {
      * Gets a list of the external container databases in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14870,6 +15922,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalContainerDatabasesResult> getExternalContainerDatabases(GetExternalContainerDatabasesArgs args) {
@@ -14881,6 +15934,8 @@ public final class DatabaseFunctions {
      * Gets a list of the external container databases in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14911,6 +15966,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalContainerDatabasesResult> getExternalContainerDatabasesPlain(GetExternalContainerDatabasesPlainArgs args) {
@@ -14922,6 +15978,8 @@ public final class DatabaseFunctions {
      * Gets a list of the external container databases in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14952,6 +16010,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalContainerDatabasesResult> getExternalContainerDatabases(GetExternalContainerDatabasesArgs args, InvokeOptions options) {
@@ -14963,6 +16022,8 @@ public final class DatabaseFunctions {
      * Gets a list of the external container databases in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14993,6 +16054,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalContainerDatabasesResult> getExternalContainerDatabasesPlain(GetExternalContainerDatabasesPlainArgs args, InvokeOptions options) {
@@ -15004,6 +16066,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified external database connector.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15032,6 +16096,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalDatabaseConnectorResult> getExternalDatabaseConnector(GetExternalDatabaseConnectorArgs args) {
@@ -15043,6 +16108,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified external database connector.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15071,6 +16138,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalDatabaseConnectorResult> getExternalDatabaseConnectorPlain(GetExternalDatabaseConnectorPlainArgs args) {
@@ -15082,6 +16150,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified external database connector.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15110,6 +16180,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalDatabaseConnectorResult> getExternalDatabaseConnector(GetExternalDatabaseConnectorArgs args, InvokeOptions options) {
@@ -15121,6 +16192,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified external database connector.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15149,6 +16222,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalDatabaseConnectorResult> getExternalDatabaseConnectorPlain(GetExternalDatabaseConnectorPlainArgs args, InvokeOptions options) {
@@ -15160,6 +16234,8 @@ public final class DatabaseFunctions {
      * Gets a list of the external database connectors in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15191,6 +16267,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalDatabaseConnectorsResult> getExternalDatabaseConnectors(GetExternalDatabaseConnectorsArgs args) {
@@ -15202,6 +16279,8 @@ public final class DatabaseFunctions {
      * Gets a list of the external database connectors in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15233,6 +16312,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalDatabaseConnectorsResult> getExternalDatabaseConnectorsPlain(GetExternalDatabaseConnectorsPlainArgs args) {
@@ -15244,6 +16324,8 @@ public final class DatabaseFunctions {
      * Gets a list of the external database connectors in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15275,6 +16357,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalDatabaseConnectorsResult> getExternalDatabaseConnectors(GetExternalDatabaseConnectorsArgs args, InvokeOptions options) {
@@ -15286,6 +16369,8 @@ public final class DatabaseFunctions {
      * Gets a list of the external database connectors in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15317,6 +16402,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalDatabaseConnectorsResult> getExternalDatabaseConnectorsPlain(GetExternalDatabaseConnectorsPlainArgs args, InvokeOptions options) {
@@ -15328,6 +16414,8 @@ public final class DatabaseFunctions {
      * Gets information about a specific external non-container database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15356,6 +16444,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalNonContainerDatabaseResult> getExternalNonContainerDatabase(GetExternalNonContainerDatabaseArgs args) {
@@ -15367,6 +16456,8 @@ public final class DatabaseFunctions {
      * Gets information about a specific external non-container database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15395,6 +16486,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalNonContainerDatabaseResult> getExternalNonContainerDatabasePlain(GetExternalNonContainerDatabasePlainArgs args) {
@@ -15406,6 +16498,8 @@ public final class DatabaseFunctions {
      * Gets information about a specific external non-container database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15434,6 +16528,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalNonContainerDatabaseResult> getExternalNonContainerDatabase(GetExternalNonContainerDatabaseArgs args, InvokeOptions options) {
@@ -15445,6 +16540,8 @@ public final class DatabaseFunctions {
      * Gets information about a specific external non-container database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15473,6 +16570,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalNonContainerDatabaseResult> getExternalNonContainerDatabasePlain(GetExternalNonContainerDatabasePlainArgs args, InvokeOptions options) {
@@ -15484,6 +16582,8 @@ public final class DatabaseFunctions {
      * Gets a list of the ExternalNonContainerDatabases in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15514,6 +16614,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalNonContainerDatabasesResult> getExternalNonContainerDatabases(GetExternalNonContainerDatabasesArgs args) {
@@ -15525,6 +16626,8 @@ public final class DatabaseFunctions {
      * Gets a list of the ExternalNonContainerDatabases in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15555,6 +16658,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalNonContainerDatabasesResult> getExternalNonContainerDatabasesPlain(GetExternalNonContainerDatabasesPlainArgs args) {
@@ -15566,6 +16670,8 @@ public final class DatabaseFunctions {
      * Gets a list of the ExternalNonContainerDatabases in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15596,6 +16702,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalNonContainerDatabasesResult> getExternalNonContainerDatabases(GetExternalNonContainerDatabasesArgs args, InvokeOptions options) {
@@ -15607,6 +16714,8 @@ public final class DatabaseFunctions {
      * Gets a list of the ExternalNonContainerDatabases in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15637,6 +16746,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalNonContainerDatabasesResult> getExternalNonContainerDatabasesPlain(GetExternalNonContainerDatabasesPlainArgs args, InvokeOptions options) {
@@ -15649,6 +16759,8 @@ public final class DatabaseFunctions {
      * [external pluggable database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalPluggableDatabaseDetails) resource.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15677,6 +16789,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalPluggableDatabaseResult> getExternalPluggableDatabase(GetExternalPluggableDatabaseArgs args) {
@@ -15689,6 +16802,8 @@ public final class DatabaseFunctions {
      * [external pluggable database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalPluggableDatabaseDetails) resource.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15717,6 +16832,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalPluggableDatabaseResult> getExternalPluggableDatabasePlain(GetExternalPluggableDatabasePlainArgs args) {
@@ -15729,6 +16845,8 @@ public final class DatabaseFunctions {
      * [external pluggable database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalPluggableDatabaseDetails) resource.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15757,6 +16875,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalPluggableDatabaseResult> getExternalPluggableDatabase(GetExternalPluggableDatabaseArgs args, InvokeOptions options) {
@@ -15769,6 +16888,8 @@ public final class DatabaseFunctions {
      * [external pluggable database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalPluggableDatabaseDetails) resource.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15797,6 +16918,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalPluggableDatabaseResult> getExternalPluggableDatabasePlain(GetExternalPluggableDatabasePlainArgs args, InvokeOptions options) {
@@ -15809,6 +16931,8 @@ public final class DatabaseFunctions {
      * resources in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15840,6 +16964,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalPluggableDatabasesResult> getExternalPluggableDatabases(GetExternalPluggableDatabasesArgs args) {
@@ -15852,6 +16977,8 @@ public final class DatabaseFunctions {
      * resources in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15883,6 +17010,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalPluggableDatabasesResult> getExternalPluggableDatabasesPlain(GetExternalPluggableDatabasesPlainArgs args) {
@@ -15895,6 +17023,8 @@ public final class DatabaseFunctions {
      * resources in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15926,6 +17056,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalPluggableDatabasesResult> getExternalPluggableDatabases(GetExternalPluggableDatabasesArgs args, InvokeOptions options) {
@@ -15938,6 +17069,8 @@ public final class DatabaseFunctions {
      * resources in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15969,6 +17102,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalPluggableDatabasesResult> getExternalPluggableDatabasesPlain(GetExternalPluggableDatabasesPlainArgs args, InvokeOptions options) {
@@ -15980,6 +17114,8 @@ public final class DatabaseFunctions {
      * Gets a list of the flex components that can be used to launch a new DB system. The flex component determines resources to allocate to the DB system - Database Servers and Storage Servers.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16009,6 +17145,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFlexComponentsResult> getFlexComponents(GetFlexComponentsArgs args) {
@@ -16020,6 +17157,8 @@ public final class DatabaseFunctions {
      * Gets a list of the flex components that can be used to launch a new DB system. The flex component determines resources to allocate to the DB system - Database Servers and Storage Servers.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16049,6 +17188,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFlexComponentsResult> getFlexComponentsPlain(GetFlexComponentsPlainArgs args) {
@@ -16060,6 +17200,8 @@ public final class DatabaseFunctions {
      * Gets a list of the flex components that can be used to launch a new DB system. The flex component determines resources to allocate to the DB system - Database Servers and Storage Servers.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16089,6 +17231,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFlexComponentsResult> getFlexComponents(GetFlexComponentsArgs args, InvokeOptions options) {
@@ -16100,6 +17243,8 @@ public final class DatabaseFunctions {
      * Gets a list of the flex components that can be used to launch a new DB system. The flex component determines resources to allocate to the DB system - Database Servers and Storage Servers.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16129,6 +17274,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFlexComponentsResult> getFlexComponentsPlain(GetFlexComponentsPlainArgs args, InvokeOptions options) {
@@ -16140,6 +17286,8 @@ public final class DatabaseFunctions {
      * Gets a list of supported GI versions for the Exadata Cloud@Customer VM cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16169,6 +17317,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetGiVersionsResult> getGiVersions(GetGiVersionsArgs args) {
@@ -16180,6 +17329,8 @@ public final class DatabaseFunctions {
      * Gets a list of supported GI versions for the Exadata Cloud@Customer VM cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16209,6 +17360,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetGiVersionsResult> getGiVersionsPlain(GetGiVersionsPlainArgs args) {
@@ -16220,6 +17372,8 @@ public final class DatabaseFunctions {
      * Gets a list of supported GI versions for the Exadata Cloud@Customer VM cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16249,6 +17403,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetGiVersionsResult> getGiVersions(GetGiVersionsArgs args, InvokeOptions options) {
@@ -16260,6 +17415,8 @@ public final class DatabaseFunctions {
      * Gets a list of supported GI versions for the Exadata Cloud@Customer VM cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16289,6 +17446,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetGiVersionsResult> getGiVersionsPlain(GetGiVersionsPlainArgs args, InvokeOptions options) {
@@ -16301,6 +17459,8 @@ public final class DatabaseFunctions {
      * Applies to Exadata Cloud@Customer and Exadata Cloud instances only.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16331,6 +17491,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetInfrastructureTargetVersionResult> getInfrastructureTargetVersion(GetInfrastructureTargetVersionArgs args) {
@@ -16343,6 +17504,8 @@ public final class DatabaseFunctions {
      * Applies to Exadata Cloud@Customer and Exadata Cloud instances only.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16373,6 +17536,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetInfrastructureTargetVersionResult> getInfrastructureTargetVersionPlain(GetInfrastructureTargetVersionPlainArgs args) {
@@ -16385,6 +17549,8 @@ public final class DatabaseFunctions {
      * Applies to Exadata Cloud@Customer and Exadata Cloud instances only.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16415,6 +17581,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetInfrastructureTargetVersionResult> getInfrastructureTargetVersion(GetInfrastructureTargetVersionArgs args, InvokeOptions options) {
@@ -16427,6 +17594,8 @@ public final class DatabaseFunctions {
      * Applies to Exadata Cloud@Customer and Exadata Cloud instances only.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16457,6 +17626,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetInfrastructureTargetVersionResult> getInfrastructureTargetVersionPlain(GetInfrastructureTargetVersionPlainArgs args, InvokeOptions options) {
@@ -16468,6 +17638,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified key store.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16496,6 +17668,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetKeyStoreResult> getKeyStore(GetKeyStoreArgs args) {
@@ -16507,6 +17680,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified key store.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16535,6 +17710,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetKeyStoreResult> getKeyStorePlain(GetKeyStorePlainArgs args) {
@@ -16546,6 +17722,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified key store.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16574,6 +17752,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetKeyStoreResult> getKeyStore(GetKeyStoreArgs args, InvokeOptions options) {
@@ -16585,6 +17764,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified key store.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16613,6 +17794,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetKeyStoreResult> getKeyStorePlain(GetKeyStorePlainArgs args, InvokeOptions options) {
@@ -16624,6 +17806,8 @@ public final class DatabaseFunctions {
      * Gets a list of key stores in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16652,6 +17836,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetKeyStoresResult> getKeyStores(GetKeyStoresArgs args) {
@@ -16663,6 +17848,8 @@ public final class DatabaseFunctions {
      * Gets a list of key stores in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16691,6 +17878,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetKeyStoresResult> getKeyStoresPlain(GetKeyStoresPlainArgs args) {
@@ -16702,6 +17890,8 @@ public final class DatabaseFunctions {
      * Gets a list of key stores in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16730,6 +17920,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetKeyStoresResult> getKeyStores(GetKeyStoresArgs args, InvokeOptions options) {
@@ -16741,6 +17932,8 @@ public final class DatabaseFunctions {
      * Gets a list of key stores in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16769,6 +17962,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetKeyStoresResult> getKeyStoresPlain(GetKeyStoresPlainArgs args, InvokeOptions options) {
@@ -16780,6 +17974,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified maintenance run.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16808,6 +18004,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMaintenanceRunResult> getMaintenanceRun(GetMaintenanceRunArgs args) {
@@ -16819,6 +18016,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified maintenance run.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16847,6 +18046,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMaintenanceRunResult> getMaintenanceRunPlain(GetMaintenanceRunPlainArgs args) {
@@ -16858,6 +18058,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified maintenance run.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16886,6 +18088,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMaintenanceRunResult> getMaintenanceRun(GetMaintenanceRunArgs args, InvokeOptions options) {
@@ -16897,6 +18100,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified maintenance run.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16925,6 +18130,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMaintenanceRunResult> getMaintenanceRunPlain(GetMaintenanceRunPlainArgs args, InvokeOptions options) {
@@ -16936,6 +18142,8 @@ public final class DatabaseFunctions {
      * Gets a list of the maintenance runs in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16970,6 +18178,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMaintenanceRunsResult> getMaintenanceRuns(GetMaintenanceRunsArgs args) {
@@ -16981,6 +18190,8 @@ public final class DatabaseFunctions {
      * Gets a list of the maintenance runs in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17015,6 +18226,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMaintenanceRunsResult> getMaintenanceRunsPlain(GetMaintenanceRunsPlainArgs args) {
@@ -17026,6 +18238,8 @@ public final class DatabaseFunctions {
      * Gets a list of the maintenance runs in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17060,6 +18274,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMaintenanceRunsResult> getMaintenanceRuns(GetMaintenanceRunsArgs args, InvokeOptions options) {
@@ -17071,6 +18286,8 @@ public final class DatabaseFunctions {
      * Gets a list of the maintenance runs in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17105,6 +18322,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMaintenanceRunsResult> getMaintenanceRunsPlain(GetMaintenanceRunsPlainArgs args, InvokeOptions options) {
@@ -17116,6 +18334,8 @@ public final class DatabaseFunctions {
      * Gets the preferred credential details for a Managed Database based on credentialName.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17145,6 +18365,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedPreferredCredentialResult> getManagedPreferredCredential(GetManagedPreferredCredentialArgs args) {
@@ -17156,6 +18377,8 @@ public final class DatabaseFunctions {
      * Gets the preferred credential details for a Managed Database based on credentialName.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17185,6 +18408,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedPreferredCredentialResult> getManagedPreferredCredentialPlain(GetManagedPreferredCredentialPlainArgs args) {
@@ -17196,6 +18420,8 @@ public final class DatabaseFunctions {
      * Gets the preferred credential details for a Managed Database based on credentialName.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17225,6 +18451,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedPreferredCredentialResult> getManagedPreferredCredential(GetManagedPreferredCredentialArgs args, InvokeOptions options) {
@@ -17236,6 +18463,8 @@ public final class DatabaseFunctions {
      * Gets the preferred credential details for a Managed Database based on credentialName.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17265,6 +18494,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedPreferredCredentialResult> getManagedPreferredCredentialPlain(GetManagedPreferredCredentialPlainArgs args, InvokeOptions options) {
@@ -17276,6 +18506,8 @@ public final class DatabaseFunctions {
      * Gets the list of preferred credentials for a given Managed Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17304,6 +18536,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedPreferredCredentialsResult> getManagedPreferredCredentials(GetManagedPreferredCredentialsArgs args) {
@@ -17315,6 +18548,8 @@ public final class DatabaseFunctions {
      * Gets the list of preferred credentials for a given Managed Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17343,6 +18578,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedPreferredCredentialsResult> getManagedPreferredCredentialsPlain(GetManagedPreferredCredentialsPlainArgs args) {
@@ -17354,6 +18590,8 @@ public final class DatabaseFunctions {
      * Gets the list of preferred credentials for a given Managed Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17382,6 +18620,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedPreferredCredentialsResult> getManagedPreferredCredentials(GetManagedPreferredCredentialsArgs args, InvokeOptions options) {
@@ -17393,6 +18632,8 @@ public final class DatabaseFunctions {
      * Gets the list of preferred credentials for a given Managed Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17421,6 +18662,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedPreferredCredentialsResult> getManagedPreferredCredentialsPlain(GetManagedPreferredCredentialsPlainArgs args, InvokeOptions options) {
@@ -17432,6 +18674,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified one-off patch.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17460,6 +18704,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOneoffPatchResult> getOneoffPatch(GetOneoffPatchArgs args) {
@@ -17471,6 +18716,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified one-off patch.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17499,6 +18746,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOneoffPatchResult> getOneoffPatchPlain(GetOneoffPatchPlainArgs args) {
@@ -17510,6 +18758,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified one-off patch.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17538,6 +18788,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOneoffPatchResult> getOneoffPatch(GetOneoffPatchArgs args, InvokeOptions options) {
@@ -17549,6 +18800,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified one-off patch.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17577,6 +18830,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOneoffPatchResult> getOneoffPatchPlain(GetOneoffPatchPlainArgs args, InvokeOptions options) {
@@ -17588,6 +18842,8 @@ public final class DatabaseFunctions {
      * Lists one-off patches in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17618,6 +18874,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOneoffPatchesResult> getOneoffPatches(GetOneoffPatchesArgs args) {
@@ -17629,6 +18886,8 @@ public final class DatabaseFunctions {
      * Lists one-off patches in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17659,6 +18918,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOneoffPatchesResult> getOneoffPatchesPlain(GetOneoffPatchesPlainArgs args) {
@@ -17670,6 +18930,8 @@ public final class DatabaseFunctions {
      * Lists one-off patches in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17700,6 +18962,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOneoffPatchesResult> getOneoffPatches(GetOneoffPatchesArgs args, InvokeOptions options) {
@@ -17711,6 +18974,8 @@ public final class DatabaseFunctions {
      * Lists one-off patches in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17741,6 +19006,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOneoffPatchesResult> getOneoffPatchesPlain(GetOneoffPatchesPlainArgs args, InvokeOptions options) {
@@ -17752,6 +19018,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified pluggable database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17780,6 +19048,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPluggableDatabaseResult> getPluggableDatabase(GetPluggableDatabaseArgs args) {
@@ -17791,6 +19060,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified pluggable database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17819,6 +19090,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPluggableDatabaseResult> getPluggableDatabasePlain(GetPluggableDatabasePlainArgs args) {
@@ -17830,6 +19102,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified pluggable database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17858,6 +19132,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPluggableDatabaseResult> getPluggableDatabase(GetPluggableDatabaseArgs args, InvokeOptions options) {
@@ -17869,6 +19144,8 @@ public final class DatabaseFunctions {
      * Gets information about the specified pluggable database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17897,6 +19174,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPluggableDatabaseResult> getPluggableDatabasePlain(GetPluggableDatabasePlainArgs args, InvokeOptions options) {
@@ -17908,6 +19186,8 @@ public final class DatabaseFunctions {
      * Gets a list of the pluggable databases in a database or compartment. You must provide either a `databaseId` or `compartmentId` value.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17939,6 +19219,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPluggableDatabasesResult> getPluggableDatabases() {
@@ -17950,6 +19231,8 @@ public final class DatabaseFunctions {
      * Gets a list of the pluggable databases in a database or compartment. You must provide either a `databaseId` or `compartmentId` value.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17981,6 +19264,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPluggableDatabasesResult> getPluggableDatabasesPlain() {
@@ -17992,6 +19276,8 @@ public final class DatabaseFunctions {
      * Gets a list of the pluggable databases in a database or compartment. You must provide either a `databaseId` or `compartmentId` value.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18023,6 +19309,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPluggableDatabasesResult> getPluggableDatabases(GetPluggableDatabasesArgs args) {
@@ -18034,6 +19321,8 @@ public final class DatabaseFunctions {
      * Gets a list of the pluggable databases in a database or compartment. You must provide either a `databaseId` or `compartmentId` value.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18065,6 +19354,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPluggableDatabasesResult> getPluggableDatabasesPlain(GetPluggableDatabasesPlainArgs args) {
@@ -18076,6 +19366,8 @@ public final class DatabaseFunctions {
      * Gets a list of the pluggable databases in a database or compartment. You must provide either a `databaseId` or `compartmentId` value.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18107,6 +19399,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPluggableDatabasesResult> getPluggableDatabases(GetPluggableDatabasesArgs args, InvokeOptions options) {
@@ -18118,6 +19411,8 @@ public final class DatabaseFunctions {
      * Gets a list of the pluggable databases in a database or compartment. You must provide either a `databaseId` or `compartmentId` value.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18149,6 +19444,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPluggableDatabasesResult> getPluggableDatabasesPlain(GetPluggableDatabasesPlainArgs args, InvokeOptions options) {
@@ -18160,6 +19456,8 @@ public final class DatabaseFunctions {
      * Gets a list of supported Exadata system versions for a given shape and GI version.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18190,6 +19488,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSystemVersionsResult> getSystemVersions(GetSystemVersionsArgs args) {
@@ -18201,6 +19500,8 @@ public final class DatabaseFunctions {
      * Gets a list of supported Exadata system versions for a given shape and GI version.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18231,6 +19532,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSystemVersionsResult> getSystemVersionsPlain(GetSystemVersionsPlainArgs args) {
@@ -18242,6 +19544,8 @@ public final class DatabaseFunctions {
      * Gets a list of supported Exadata system versions for a given shape and GI version.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18272,6 +19576,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSystemVersionsResult> getSystemVersions(GetSystemVersionsArgs args, InvokeOptions options) {
@@ -18283,6 +19588,8 @@ public final class DatabaseFunctions {
      * Gets a list of supported Exadata system versions for a given shape and GI version.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18313,6 +19620,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSystemVersionsResult> getSystemVersionsPlain(GetSystemVersionsPlainArgs args, InvokeOptions options) {
@@ -18324,6 +19632,8 @@ public final class DatabaseFunctions {
      * Gets information about the VM cluster. Applies to Exadata Cloud@Customer instances only.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18352,6 +19662,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVmClusterResult> getVmCluster(GetVmClusterArgs args) {
@@ -18363,6 +19674,8 @@ public final class DatabaseFunctions {
      * Gets information about the VM cluster. Applies to Exadata Cloud@Customer instances only.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18391,6 +19704,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVmClusterResult> getVmClusterPlain(GetVmClusterPlainArgs args) {
@@ -18402,6 +19716,8 @@ public final class DatabaseFunctions {
      * Gets information about the VM cluster. Applies to Exadata Cloud@Customer instances only.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18430,6 +19746,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVmClusterResult> getVmCluster(GetVmClusterArgs args, InvokeOptions options) {
@@ -18441,6 +19758,8 @@ public final class DatabaseFunctions {
      * Gets information about the VM cluster. Applies to Exadata Cloud@Customer instances only.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18469,6 +19788,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVmClusterResult> getVmClusterPlain(GetVmClusterPlainArgs args, InvokeOptions options) {
@@ -18481,6 +19801,8 @@ public final class DatabaseFunctions {
      * To get information about a cloud VM cluster in an Exadata Cloud Service instance, use the [GetCloudVmCluster ](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudVmCluster/GetCloudVmCluster) operation.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18510,6 +19832,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVmClusterNetworkResult> getVmClusterNetwork(GetVmClusterNetworkArgs args) {
@@ -18522,6 +19845,8 @@ public final class DatabaseFunctions {
      * To get information about a cloud VM cluster in an Exadata Cloud Service instance, use the [GetCloudVmCluster ](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudVmCluster/GetCloudVmCluster) operation.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18551,6 +19876,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVmClusterNetworkResult> getVmClusterNetworkPlain(GetVmClusterNetworkPlainArgs args) {
@@ -18563,6 +19889,8 @@ public final class DatabaseFunctions {
      * To get information about a cloud VM cluster in an Exadata Cloud Service instance, use the [GetCloudVmCluster ](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudVmCluster/GetCloudVmCluster) operation.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18592,6 +19920,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVmClusterNetworkResult> getVmClusterNetwork(GetVmClusterNetworkArgs args, InvokeOptions options) {
@@ -18604,6 +19933,8 @@ public final class DatabaseFunctions {
      * To get information about a cloud VM cluster in an Exadata Cloud Service instance, use the [GetCloudVmCluster ](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudVmCluster/GetCloudVmCluster) operation.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18633,6 +19964,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVmClusterNetworkResult> getVmClusterNetworkPlain(GetVmClusterNetworkPlainArgs args, InvokeOptions options) {
@@ -18644,6 +19976,8 @@ public final class DatabaseFunctions {
      * Downloads the configuration file for the specified VM cluster network. Applies to Exadata Cloud@Customer instances only.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18674,6 +20008,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVmClusterNetworkDownloadConfigFileResult> getVmClusterNetworkDownloadConfigFile(GetVmClusterNetworkDownloadConfigFileArgs args) {
@@ -18685,6 +20020,8 @@ public final class DatabaseFunctions {
      * Downloads the configuration file for the specified VM cluster network. Applies to Exadata Cloud@Customer instances only.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18715,6 +20052,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVmClusterNetworkDownloadConfigFileResult> getVmClusterNetworkDownloadConfigFilePlain(GetVmClusterNetworkDownloadConfigFilePlainArgs args) {
@@ -18726,6 +20064,8 @@ public final class DatabaseFunctions {
      * Downloads the configuration file for the specified VM cluster network. Applies to Exadata Cloud@Customer instances only.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18756,6 +20096,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVmClusterNetworkDownloadConfigFileResult> getVmClusterNetworkDownloadConfigFile(GetVmClusterNetworkDownloadConfigFileArgs args, InvokeOptions options) {
@@ -18767,6 +20108,8 @@ public final class DatabaseFunctions {
      * Downloads the configuration file for the specified VM cluster network. Applies to Exadata Cloud@Customer instances only.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18797,6 +20140,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVmClusterNetworkDownloadConfigFileResult> getVmClusterNetworkDownloadConfigFilePlain(GetVmClusterNetworkDownloadConfigFilePlainArgs args, InvokeOptions options) {
@@ -18808,6 +20152,8 @@ public final class DatabaseFunctions {
      * Gets a list of the VM cluster networks in the specified compartment. Applies to Exadata Cloud@Customer instances only.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18839,6 +20185,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVmClusterNetworksResult> getVmClusterNetworks(GetVmClusterNetworksArgs args) {
@@ -18850,6 +20197,8 @@ public final class DatabaseFunctions {
      * Gets a list of the VM cluster networks in the specified compartment. Applies to Exadata Cloud@Customer instances only.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18881,6 +20230,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVmClusterNetworksResult> getVmClusterNetworksPlain(GetVmClusterNetworksPlainArgs args) {
@@ -18892,6 +20242,8 @@ public final class DatabaseFunctions {
      * Gets a list of the VM cluster networks in the specified compartment. Applies to Exadata Cloud@Customer instances only.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18923,6 +20275,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVmClusterNetworksResult> getVmClusterNetworks(GetVmClusterNetworksArgs args, InvokeOptions options) {
@@ -18934,6 +20287,8 @@ public final class DatabaseFunctions {
      * Gets a list of the VM cluster networks in the specified compartment. Applies to Exadata Cloud@Customer instances only.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18965,6 +20320,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVmClusterNetworksResult> getVmClusterNetworksPlain(GetVmClusterNetworksPlainArgs args, InvokeOptions options) {
@@ -18976,6 +20332,8 @@ public final class DatabaseFunctions {
      * Gets information about a specified patch package.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19005,6 +20363,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVmClusterPatchResult> getVmClusterPatch(GetVmClusterPatchArgs args) {
@@ -19016,6 +20375,8 @@ public final class DatabaseFunctions {
      * Gets information about a specified patch package.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19045,6 +20406,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVmClusterPatchResult> getVmClusterPatchPlain(GetVmClusterPatchPlainArgs args) {
@@ -19056,6 +20418,8 @@ public final class DatabaseFunctions {
      * Gets information about a specified patch package.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19085,6 +20449,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVmClusterPatchResult> getVmClusterPatch(GetVmClusterPatchArgs args, InvokeOptions options) {
@@ -19096,6 +20461,8 @@ public final class DatabaseFunctions {
      * Gets information about a specified patch package.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19125,6 +20492,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVmClusterPatchResult> getVmClusterPatchPlain(GetVmClusterPatchPlainArgs args, InvokeOptions options) {
@@ -19136,6 +20504,8 @@ public final class DatabaseFunctions {
      * Gets the history of the patch actions performed on the specified VM cluster in an Exadata Cloud@Customer system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19164,6 +20534,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVmClusterPatchHistoryEntriesResult> getVmClusterPatchHistoryEntries(GetVmClusterPatchHistoryEntriesArgs args) {
@@ -19175,6 +20546,8 @@ public final class DatabaseFunctions {
      * Gets the history of the patch actions performed on the specified VM cluster in an Exadata Cloud@Customer system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19203,6 +20576,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVmClusterPatchHistoryEntriesResult> getVmClusterPatchHistoryEntriesPlain(GetVmClusterPatchHistoryEntriesPlainArgs args) {
@@ -19214,6 +20588,8 @@ public final class DatabaseFunctions {
      * Gets the history of the patch actions performed on the specified VM cluster in an Exadata Cloud@Customer system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19242,6 +20618,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVmClusterPatchHistoryEntriesResult> getVmClusterPatchHistoryEntries(GetVmClusterPatchHistoryEntriesArgs args, InvokeOptions options) {
@@ -19253,6 +20630,8 @@ public final class DatabaseFunctions {
      * Gets the history of the patch actions performed on the specified VM cluster in an Exadata Cloud@Customer system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19281,6 +20660,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVmClusterPatchHistoryEntriesResult> getVmClusterPatchHistoryEntriesPlain(GetVmClusterPatchHistoryEntriesPlainArgs args, InvokeOptions options) {
@@ -19292,6 +20672,8 @@ public final class DatabaseFunctions {
      * Gets the patch history details for the specified patch history entry.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19321,6 +20703,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVmClusterPatchHistoryEntryResult> getVmClusterPatchHistoryEntry(GetVmClusterPatchHistoryEntryArgs args) {
@@ -19332,6 +20715,8 @@ public final class DatabaseFunctions {
      * Gets the patch history details for the specified patch history entry.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19361,6 +20746,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVmClusterPatchHistoryEntryResult> getVmClusterPatchHistoryEntryPlain(GetVmClusterPatchHistoryEntryPlainArgs args) {
@@ -19372,6 +20758,8 @@ public final class DatabaseFunctions {
      * Gets the patch history details for the specified patch history entry.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19401,6 +20789,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVmClusterPatchHistoryEntryResult> getVmClusterPatchHistoryEntry(GetVmClusterPatchHistoryEntryArgs args, InvokeOptions options) {
@@ -19412,6 +20801,8 @@ public final class DatabaseFunctions {
      * Gets the patch history details for the specified patch history entry.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19441,6 +20832,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVmClusterPatchHistoryEntryResult> getVmClusterPatchHistoryEntryPlain(GetVmClusterPatchHistoryEntryPlainArgs args, InvokeOptions options) {
@@ -19452,6 +20844,8 @@ public final class DatabaseFunctions {
      * Lists the patches applicable to the specified VM cluster in an Exadata Cloud@Customer system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19480,6 +20874,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVmClusterPatchesResult> getVmClusterPatches(GetVmClusterPatchesArgs args) {
@@ -19491,6 +20886,8 @@ public final class DatabaseFunctions {
      * Lists the patches applicable to the specified VM cluster in an Exadata Cloud@Customer system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19519,6 +20916,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVmClusterPatchesResult> getVmClusterPatchesPlain(GetVmClusterPatchesPlainArgs args) {
@@ -19530,6 +20928,8 @@ public final class DatabaseFunctions {
      * Lists the patches applicable to the specified VM cluster in an Exadata Cloud@Customer system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19558,6 +20958,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVmClusterPatchesResult> getVmClusterPatches(GetVmClusterPatchesArgs args, InvokeOptions options) {
@@ -19569,6 +20970,8 @@ public final class DatabaseFunctions {
      * Lists the patches applicable to the specified VM cluster in an Exadata Cloud@Customer system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19597,6 +21000,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVmClusterPatchesResult> getVmClusterPatchesPlain(GetVmClusterPatchesPlainArgs args, InvokeOptions options) {
@@ -19644,6 +21048,8 @@ public final class DatabaseFunctions {
      * Gets information about a specified maintenance update package for a VM cluster. Applies to Exadata Cloud@Customer instances only.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19673,6 +21079,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVmClusterUpdateResult> getVmClusterUpdate(GetVmClusterUpdateArgs args) {
@@ -19684,6 +21091,8 @@ public final class DatabaseFunctions {
      * Gets information about a specified maintenance update package for a VM cluster. Applies to Exadata Cloud@Customer instances only.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19713,6 +21122,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVmClusterUpdateResult> getVmClusterUpdatePlain(GetVmClusterUpdatePlainArgs args) {
@@ -19724,6 +21134,8 @@ public final class DatabaseFunctions {
      * Gets information about a specified maintenance update package for a VM cluster. Applies to Exadata Cloud@Customer instances only.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19753,6 +21165,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVmClusterUpdateResult> getVmClusterUpdate(GetVmClusterUpdateArgs args, InvokeOptions options) {
@@ -19764,6 +21177,8 @@ public final class DatabaseFunctions {
      * Gets information about a specified maintenance update package for a VM cluster. Applies to Exadata Cloud@Customer instances only.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19793,6 +21208,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVmClusterUpdateResult> getVmClusterUpdatePlain(GetVmClusterUpdatePlainArgs args, InvokeOptions options) {
@@ -19804,6 +21220,8 @@ public final class DatabaseFunctions {
      * Gets the history of the maintenance update actions performed on the specified VM cluster. Applies to Exadata Cloud@Customer instances only.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19834,6 +21252,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVmClusterUpdateHistoryEntriesResult> getVmClusterUpdateHistoryEntries(GetVmClusterUpdateHistoryEntriesArgs args) {
@@ -19845,6 +21264,8 @@ public final class DatabaseFunctions {
      * Gets the history of the maintenance update actions performed on the specified VM cluster. Applies to Exadata Cloud@Customer instances only.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19875,6 +21296,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVmClusterUpdateHistoryEntriesResult> getVmClusterUpdateHistoryEntriesPlain(GetVmClusterUpdateHistoryEntriesPlainArgs args) {
@@ -19886,6 +21308,8 @@ public final class DatabaseFunctions {
      * Gets the history of the maintenance update actions performed on the specified VM cluster. Applies to Exadata Cloud@Customer instances only.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19916,6 +21340,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVmClusterUpdateHistoryEntriesResult> getVmClusterUpdateHistoryEntries(GetVmClusterUpdateHistoryEntriesArgs args, InvokeOptions options) {
@@ -19927,6 +21352,8 @@ public final class DatabaseFunctions {
      * Gets the history of the maintenance update actions performed on the specified VM cluster. Applies to Exadata Cloud@Customer instances only.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19957,6 +21384,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVmClusterUpdateHistoryEntriesResult> getVmClusterUpdateHistoryEntriesPlain(GetVmClusterUpdateHistoryEntriesPlainArgs args, InvokeOptions options) {
@@ -19968,6 +21396,8 @@ public final class DatabaseFunctions {
      * Gets the maintenance update history details for the specified update history entry. Applies to Exadata Cloud@Customer instances only.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19997,6 +21427,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVmClusterUpdateHistoryEntryResult> getVmClusterUpdateHistoryEntry(GetVmClusterUpdateHistoryEntryArgs args) {
@@ -20008,6 +21439,8 @@ public final class DatabaseFunctions {
      * Gets the maintenance update history details for the specified update history entry. Applies to Exadata Cloud@Customer instances only.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -20037,6 +21470,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVmClusterUpdateHistoryEntryResult> getVmClusterUpdateHistoryEntryPlain(GetVmClusterUpdateHistoryEntryPlainArgs args) {
@@ -20048,6 +21482,8 @@ public final class DatabaseFunctions {
      * Gets the maintenance update history details for the specified update history entry. Applies to Exadata Cloud@Customer instances only.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -20077,6 +21513,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVmClusterUpdateHistoryEntryResult> getVmClusterUpdateHistoryEntry(GetVmClusterUpdateHistoryEntryArgs args, InvokeOptions options) {
@@ -20088,6 +21525,8 @@ public final class DatabaseFunctions {
      * Gets the maintenance update history details for the specified update history entry. Applies to Exadata Cloud@Customer instances only.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -20117,6 +21556,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVmClusterUpdateHistoryEntryResult> getVmClusterUpdateHistoryEntryPlain(GetVmClusterUpdateHistoryEntryPlainArgs args, InvokeOptions options) {
@@ -20128,6 +21568,8 @@ public final class DatabaseFunctions {
      * Lists the maintenance updates that can be applied to the specified VM cluster. Applies to Exadata Cloud@Customer instances only.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -20158,6 +21600,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVmClusterUpdatesResult> getVmClusterUpdates(GetVmClusterUpdatesArgs args) {
@@ -20169,6 +21612,8 @@ public final class DatabaseFunctions {
      * Lists the maintenance updates that can be applied to the specified VM cluster. Applies to Exadata Cloud@Customer instances only.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -20199,6 +21644,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVmClusterUpdatesResult> getVmClusterUpdatesPlain(GetVmClusterUpdatesPlainArgs args) {
@@ -20210,6 +21656,8 @@ public final class DatabaseFunctions {
      * Lists the maintenance updates that can be applied to the specified VM cluster. Applies to Exadata Cloud@Customer instances only.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -20240,6 +21688,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVmClusterUpdatesResult> getVmClusterUpdates(GetVmClusterUpdatesArgs args, InvokeOptions options) {
@@ -20251,6 +21700,8 @@ public final class DatabaseFunctions {
      * Lists the maintenance updates that can be applied to the specified VM cluster. Applies to Exadata Cloud@Customer instances only.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -20281,6 +21732,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVmClusterUpdatesResult> getVmClusterUpdatesPlain(GetVmClusterUpdatesPlainArgs args, InvokeOptions options) {
@@ -20293,6 +21745,8 @@ public final class DatabaseFunctions {
      * To list the cloud VM clusters in an Exadata Cloud Service instance, use the [ListCloudVmClusters ](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudVmCluster/ListCloudVmClusters) operation.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -20324,6 +21778,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVmClustersResult> getVmClusters(GetVmClustersArgs args) {
@@ -20336,6 +21791,8 @@ public final class DatabaseFunctions {
      * To list the cloud VM clusters in an Exadata Cloud Service instance, use the [ListCloudVmClusters ](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudVmCluster/ListCloudVmClusters) operation.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -20367,6 +21824,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVmClustersResult> getVmClustersPlain(GetVmClustersPlainArgs args) {
@@ -20379,6 +21837,8 @@ public final class DatabaseFunctions {
      * To list the cloud VM clusters in an Exadata Cloud Service instance, use the [ListCloudVmClusters ](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudVmCluster/ListCloudVmClusters) operation.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -20410,6 +21870,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVmClustersResult> getVmClusters(GetVmClustersArgs args, InvokeOptions options) {
@@ -20422,6 +21883,8 @@ public final class DatabaseFunctions {
      * To list the cloud VM clusters in an Exadata Cloud Service instance, use the [ListCloudVmClusters ](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudVmCluster/ListCloudVmClusters) operation.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -20453,6 +21916,7 @@ public final class DatabaseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVmClustersResult> getVmClustersPlain(GetVmClustersPlainArgs args, InvokeOptions options) {

@@ -16,7 +16,7 @@ import * as utilities from "../utilities";
  * CloudGateServers can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Identity/domainsCloudGateServer:DomainsCloudGateServer test_cloud_gate_server "idcsEndpoint/{idcsEndpoint}/cloudGateServers/{cloudGateServerId}"
+ * $ pulumi import oci:Identity/domainsCloudGateServer:DomainsCloudGateServer test_cloud_gate_server "idcsEndpoint/{idcsEndpoint}/cloudGateServers/{cloudGateServerId}"
  * ```
  */
 export class DomainsCloudGateServer extends pulumi.CustomResource {

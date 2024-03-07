@@ -19,6 +19,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -49,15 +50,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Snapshots can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:FileStorage/snapshot:Snapshot test_snapshot "id"
-//
+// $ pulumi import oci:FileStorage/snapshot:Snapshot test_snapshot "id"
 // ```
 type Snapshot struct {
 	pulumi.CustomResourceState

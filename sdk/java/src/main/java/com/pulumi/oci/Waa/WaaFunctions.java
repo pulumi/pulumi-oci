@@ -29,6 +29,8 @@ public final class WaaFunctions {
      * Gets a WebAppAcceleration by OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -57,6 +59,7 @@ public final class WaaFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAppAccelerationResult> getAppAcceleration(GetAppAccelerationArgs args) {
@@ -68,6 +71,8 @@ public final class WaaFunctions {
      * Gets a WebAppAcceleration by OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -96,6 +101,7 @@ public final class WaaFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAppAccelerationResult> getAppAccelerationPlain(GetAppAccelerationPlainArgs args) {
@@ -107,6 +113,8 @@ public final class WaaFunctions {
      * Gets a WebAppAcceleration by OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -135,6 +143,7 @@ public final class WaaFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAppAccelerationResult> getAppAcceleration(GetAppAccelerationArgs args, InvokeOptions options) {
@@ -146,6 +155,8 @@ public final class WaaFunctions {
      * Gets a WebAppAcceleration by OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -174,6 +185,7 @@ public final class WaaFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAppAccelerationResult> getAppAccelerationPlain(GetAppAccelerationPlainArgs args, InvokeOptions options) {
@@ -185,6 +197,8 @@ public final class WaaFunctions {
      * Gets a list of all WebAppAccelerationPolicies in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -216,6 +230,7 @@ public final class WaaFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAppAccelerationPoliciesResult> getAppAccelerationPolicies(GetAppAccelerationPoliciesArgs args) {
@@ -227,6 +242,8 @@ public final class WaaFunctions {
      * Gets a list of all WebAppAccelerationPolicies in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -258,6 +275,7 @@ public final class WaaFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAppAccelerationPoliciesResult> getAppAccelerationPoliciesPlain(GetAppAccelerationPoliciesPlainArgs args) {
@@ -269,6 +287,8 @@ public final class WaaFunctions {
      * Gets a list of all WebAppAccelerationPolicies in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -300,6 +320,7 @@ public final class WaaFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAppAccelerationPoliciesResult> getAppAccelerationPolicies(GetAppAccelerationPoliciesArgs args, InvokeOptions options) {
@@ -311,6 +332,8 @@ public final class WaaFunctions {
      * Gets a list of all WebAppAccelerationPolicies in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -342,6 +365,7 @@ public final class WaaFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAppAccelerationPoliciesResult> getAppAccelerationPoliciesPlain(GetAppAccelerationPoliciesPlainArgs args, InvokeOptions options) {
@@ -353,6 +377,8 @@ public final class WaaFunctions {
      * Gets a WebAppAccelerationPolicy with the given OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -381,6 +407,7 @@ public final class WaaFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAppAccelerationPolicyResult> getAppAccelerationPolicy(GetAppAccelerationPolicyArgs args) {
@@ -392,6 +419,8 @@ public final class WaaFunctions {
      * Gets a WebAppAccelerationPolicy with the given OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -420,6 +449,7 @@ public final class WaaFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAppAccelerationPolicyResult> getAppAccelerationPolicyPlain(GetAppAccelerationPolicyPlainArgs args) {
@@ -431,6 +461,8 @@ public final class WaaFunctions {
      * Gets a WebAppAccelerationPolicy with the given OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -459,6 +491,7 @@ public final class WaaFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAppAccelerationPolicyResult> getAppAccelerationPolicy(GetAppAccelerationPolicyArgs args, InvokeOptions options) {
@@ -470,6 +503,8 @@ public final class WaaFunctions {
      * Gets a WebAppAccelerationPolicy with the given OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -498,6 +533,7 @@ public final class WaaFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAppAccelerationPolicyResult> getAppAccelerationPolicyPlain(GetAppAccelerationPolicyPlainArgs args, InvokeOptions options) {
@@ -509,6 +545,8 @@ public final class WaaFunctions {
      * Gets a list of all WebAppAccelerations in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -541,6 +579,7 @@ public final class WaaFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAppAccelerationsResult> getAppAccelerations(GetAppAccelerationsArgs args) {
@@ -552,6 +591,8 @@ public final class WaaFunctions {
      * Gets a list of all WebAppAccelerations in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -584,6 +625,7 @@ public final class WaaFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAppAccelerationsResult> getAppAccelerationsPlain(GetAppAccelerationsPlainArgs args) {
@@ -595,6 +637,8 @@ public final class WaaFunctions {
      * Gets a list of all WebAppAccelerations in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -627,6 +671,7 @@ public final class WaaFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAppAccelerationsResult> getAppAccelerations(GetAppAccelerationsArgs args, InvokeOptions options) {
@@ -638,6 +683,8 @@ public final class WaaFunctions {
      * Gets a list of all WebAppAccelerations in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -670,6 +717,7 @@ public final class WaaFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAppAccelerationsResult> getAppAccelerationsPlain(GetAppAccelerationsPlainArgs args, InvokeOptions options) {

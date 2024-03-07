@@ -252,12 +252,14 @@ def get_analytics_instance(analytics_instance_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_analytics_instance = oci.Analytics.get_analytics_instance(analytics_instance_id=oci_analytics_analytics_instance["test_analytics_instance"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str analytics_instance_id: The OCID of the AnalyticsInstance.
@@ -298,12 +300,14 @@ def get_analytics_instance_output(analytics_instance_id: Optional[pulumi.Input[s
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_analytics_instance = oci.Analytics.get_analytics_instance(analytics_instance_id=oci_analytics_analytics_instance["test_analytics_instance"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str analytics_instance_id: The OCID of the AnalyticsInstance.

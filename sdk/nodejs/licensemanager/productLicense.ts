@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -35,13 +36,14 @@ import * as utilities from "../utilities";
  *     vendorName: _var.product_license_vendor_name,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * ProductLicenses can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:LicenseManager/productLicense:ProductLicense test_product_license "id"
+ * $ pulumi import oci:LicenseManager/productLicense:ProductLicense test_product_license "id"
  * ```
  */
 export class ProductLicense extends pulumi.CustomResource {

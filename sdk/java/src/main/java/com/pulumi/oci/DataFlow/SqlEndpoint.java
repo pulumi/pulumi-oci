@@ -29,6 +29,7 @@ import javax.annotation.Nullable;
  * 
  * ## Example Usage
  * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -95,13 +96,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * SqlEndpoints can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:DataFlow/sqlEndpoint:SqlEndpoint test_sql_endpoint &#34;id&#34;
+ * $ pulumi import oci:DataFlow/sqlEndpoint:SqlEndpoint test_sql_endpoint &#34;id&#34;
  * ```
  * 
  */

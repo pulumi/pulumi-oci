@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,6 +23,7 @@ import * as utilities from "../utilities";
  *     compartmentId: _var.compartment_id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getListingTaxes(args: GetListingTaxesArgs, opts?: pulumi.InvokeOptions): Promise<GetListingTaxesResult> {
 
@@ -71,6 +73,7 @@ export interface GetListingTaxesResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -80,6 +83,7 @@ export interface GetListingTaxesResult {
  *     compartmentId: _var.compartment_id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getListingTaxesOutput(args: GetListingTaxesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetListingTaxesResult> {
     return pulumi.output(args).apply((a: any) => getListingTaxes(a, opts))

@@ -17,10 +17,9 @@ namespace Pulumi.Oci.DataSafe
         /// Returns a list of column metadata objects.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -43,8 +42,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetTargetDatabasesColumnsResult> InvokeAsync(GetTargetDatabasesColumnsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetTargetDatabasesColumnsResult>("oci:DataSafe/getTargetDatabasesColumns:getTargetDatabasesColumns", args ?? new GetTargetDatabasesColumnsArgs(), options.WithDefaults());
@@ -55,10 +53,9 @@ namespace Pulumi.Oci.DataSafe
         /// Returns a list of column metadata objects.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -81,8 +78,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetTargetDatabasesColumnsResult> Invoke(GetTargetDatabasesColumnsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetTargetDatabasesColumnsResult>("oci:DataSafe/getTargetDatabasesColumns:getTargetDatabasesColumns", args ?? new GetTargetDatabasesColumnsInvokeArgs(), options.WithDefaults());

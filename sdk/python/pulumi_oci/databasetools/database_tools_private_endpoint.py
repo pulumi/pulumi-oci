@@ -544,6 +544,7 @@ class DatabaseToolsPrivateEndpoint(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -569,13 +570,14 @@ class DatabaseToolsPrivateEndpoint(pulumi.CustomResource):
             nsg_ids=var["database_tools_private_endpoint_nsg_ids"],
             private_endpoint_ip=var["database_tools_private_endpoint_private_endpoint_ip"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         DatabaseToolsPrivateEndpoints can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DatabaseTools/databaseToolsPrivateEndpoint:DatabaseToolsPrivateEndpoint test_database_tools_private_endpoint "id"
+        $ pulumi import oci:DatabaseTools/databaseToolsPrivateEndpoint:DatabaseToolsPrivateEndpoint test_database_tools_private_endpoint "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -608,6 +610,7 @@ class DatabaseToolsPrivateEndpoint(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -633,13 +636,14 @@ class DatabaseToolsPrivateEndpoint(pulumi.CustomResource):
             nsg_ids=var["database_tools_private_endpoint_nsg_ids"],
             private_endpoint_ip=var["database_tools_private_endpoint_private_endpoint_ip"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         DatabaseToolsPrivateEndpoints can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DatabaseTools/databaseToolsPrivateEndpoint:DatabaseToolsPrivateEndpoint test_database_tools_private_endpoint "id"
+        $ pulumi import oci:DatabaseTools/databaseToolsPrivateEndpoint:DatabaseToolsPrivateEndpoint test_database_tools_private_endpoint "id"
         ```
 
         :param str resource_name: The name of the resource.

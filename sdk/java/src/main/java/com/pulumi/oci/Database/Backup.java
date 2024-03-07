@@ -20,6 +20,8 @@ import javax.annotation.Nullable;
  * Creates a new backup in the specified database based on the request parameters you provide. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -49,13 +51,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * Backups can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Database/backup:Backup test_backup &#34;id&#34;
+ * $ pulumi import oci:Database/backup:Backup test_backup &#34;id&#34;
  * ```
  * 
  */

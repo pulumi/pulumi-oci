@@ -26,6 +26,8 @@ import javax.annotation.Nullable;
  * Creates a new metric extension resource for a given compartment
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -102,13 +104,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * MetricExtensions can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:StackMonitoring/metricExtension:MetricExtension test_metric_extension &#34;id&#34;
+ * $ pulumi import oci:StackMonitoring/metricExtension:MetricExtension test_metric_extension &#34;id&#34;
  * ```
  * 
  */

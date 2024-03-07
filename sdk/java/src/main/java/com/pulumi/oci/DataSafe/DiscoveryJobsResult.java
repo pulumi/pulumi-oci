@@ -22,6 +22,8 @@ import javax.annotation.Nullable;
  * This resource provides the Discovery Jobs Result resource in Oracle Cloud Infrastructure Data Safe service.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -47,13 +49,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * DiscoveryJobsResults can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:DataSafe/discoveryJobsResult:DiscoveryJobsResult test_discovery_jobs_result &#34;discoveryJobs/{discoveryJobId}/results/{resultKey}&#34;
+ * $ pulumi import oci:DataSafe/discoveryJobsResult:DiscoveryJobsResult test_discovery_jobs_result &#34;discoveryJobs/{discoveryJobId}/results/{resultKey}&#34;
  * ```
  * 
  */

@@ -17,10 +17,9 @@ namespace Pulumi.Oci.ManagementAgent
         /// Returns a list of Management Agent installed Keys.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -40,8 +39,7 @@ namespace Pulumi.Oci.ManagementAgent
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetManagementAgentInstallKeysResult> InvokeAsync(GetManagementAgentInstallKeysArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagementAgentInstallKeysResult>("oci:ManagementAgent/getManagementAgentInstallKeys:getManagementAgentInstallKeys", args ?? new GetManagementAgentInstallKeysArgs(), options.WithDefaults());
@@ -52,10 +50,9 @@ namespace Pulumi.Oci.ManagementAgent
         /// Returns a list of Management Agent installed Keys.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -75,8 +72,7 @@ namespace Pulumi.Oci.ManagementAgent
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetManagementAgentInstallKeysResult> Invoke(GetManagementAgentInstallKeysInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagementAgentInstallKeysResult>("oci:ManagementAgent/getManagementAgentInstallKeys:getManagementAgentInstallKeys", args ?? new GetManagementAgentInstallKeysInvokeArgs(), options.WithDefaults());

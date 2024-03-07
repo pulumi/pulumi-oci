@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -47,6 +48,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetDataMaskRules(ctx *pulumi.Context, args *GetDataMaskRulesArgs, opts ...pulumi.InvokeOption) (*GetDataMaskRulesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDataMaskRulesResult

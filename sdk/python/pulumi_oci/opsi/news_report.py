@@ -528,6 +528,7 @@ class NewsReport(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -557,13 +558,14 @@ class NewsReport(pulumi.CustomResource):
             },
             status=var["news_report_status"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         NewsReports can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Opsi/newsReport:NewsReport test_news_report "id"
+        $ pulumi import oci:Opsi/newsReport:NewsReport test_news_report "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -598,6 +600,7 @@ class NewsReport(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -627,13 +630,14 @@ class NewsReport(pulumi.CustomResource):
             },
             status=var["news_report_status"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         NewsReports can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Opsi/newsReport:NewsReport test_news_report "id"
+        $ pulumi import oci:Opsi/newsReport:NewsReport test_news_report "id"
         ```
 
         :param str resource_name: The name of the resource.

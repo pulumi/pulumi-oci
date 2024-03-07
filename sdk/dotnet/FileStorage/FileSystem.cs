@@ -44,6 +44,7 @@ namespace Pulumi.Oci.FileStorage
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -72,13 +73,14 @@ namespace Pulumi.Oci.FileStorage
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// FileSystems can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:FileStorage/fileSystem:FileSystem test_file_system "id"
+    /// $ pulumi import oci:FileStorage/fileSystem:FileSystem test_file_system "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:FileStorage/fileSystem:FileSystem")]

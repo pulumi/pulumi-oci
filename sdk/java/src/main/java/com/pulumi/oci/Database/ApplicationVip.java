@@ -21,6 +21,8 @@ import javax.annotation.Nullable;
  * Creates a new application virtual IP (VIP) address in the specified cloud VM cluster based on the request parameters you provide.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -53,13 +55,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * ApplicationVips can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Database/applicationVip:ApplicationVip test_application_vip &#34;id&#34;
+ * $ pulumi import oci:Database/applicationVip:ApplicationVip test_application_vip &#34;id&#34;
  * ```
  * 
  */

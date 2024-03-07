@@ -16,10 +16,9 @@ namespace Pulumi.Oci.Identity
         /// 
         /// Get My MyCompletedApproval
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -38,8 +37,7 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDomainsMyCompletedApprovalResult> InvokeAsync(GetDomainsMyCompletedApprovalArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDomainsMyCompletedApprovalResult>("oci:Identity/getDomainsMyCompletedApproval:getDomainsMyCompletedApproval", args ?? new GetDomainsMyCompletedApprovalArgs(), options.WithDefaults());
@@ -49,10 +47,9 @@ namespace Pulumi.Oci.Identity
         /// 
         /// Get My MyCompletedApproval
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -71,8 +68,7 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDomainsMyCompletedApprovalResult> Invoke(GetDomainsMyCompletedApprovalInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsMyCompletedApprovalResult>("oci:Identity/getDomainsMyCompletedApproval:getDomainsMyCompletedApproval", args ?? new GetDomainsMyCompletedApprovalInvokeArgs(), options.WithDefaults());

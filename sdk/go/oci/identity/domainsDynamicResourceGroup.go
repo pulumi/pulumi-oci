@@ -21,9 +21,7 @@ import (
 // DynamicResourceGroups can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Identity/domainsDynamicResourceGroup:DomainsDynamicResourceGroup test_dynamic_resource_group "idcsEndpoint/{idcsEndpoint}/dynamicResourceGroups/{dynamicResourceGroupId}"
-//
+// $ pulumi import oci:Identity/domainsDynamicResourceGroup:DomainsDynamicResourceGroup test_dynamic_resource_group "idcsEndpoint/{idcsEndpoint}/dynamicResourceGroups/{dynamicResourceGroupId}"
 // ```
 type DomainsDynamicResourceGroup struct {
 	pulumi.CustomResourceState

@@ -326,12 +326,14 @@ def get_awr_hub_source(awr_hub_source_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_awr_hub_source = oci.Opsi.get_awr_hub_source(awr_hub_source_id=oci_opsi_awr_hub_source["test_awr_hub_source"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str awr_hub_source_id: Unique Awr Hub Source identifier
@@ -378,12 +380,14 @@ def get_awr_hub_source_output(awr_hub_source_id: Optional[pulumi.Input[str]] = N
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_awr_hub_source = oci.Opsi.get_awr_hub_source(awr_hub_source_id=oci_opsi_awr_hub_source["test_awr_hub_source"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str awr_hub_source_id: Unique Awr Hub Source identifier

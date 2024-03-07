@@ -14,6 +14,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,6 +25,7 @@ import * as utilities from "../utilities";
  *     drgId: oci_core_drg.test_drg.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getIpsecConnections(args: GetIpsecConnectionsArgs, opts?: pulumi.InvokeOptions): Promise<GetIpsecConnectionsResult> {
 
@@ -89,6 +91,7 @@ export interface GetIpsecConnectionsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -99,6 +102,7 @@ export interface GetIpsecConnectionsResult {
  *     drgId: oci_core_drg.test_drg.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getIpsecConnectionsOutput(args: GetIpsecConnectionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIpsecConnectionsResult> {
     return pulumi.output(args).apply((a: any) => getIpsecConnections(a, opts))

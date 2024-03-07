@@ -313,6 +313,7 @@ class FusionEnvironmentServiceAttachment(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -322,13 +323,14 @@ class FusionEnvironmentServiceAttachment(pulumi.CustomResource):
             service_instance_id=oci_core_instance["test_instance"]["id"],
             service_instance_type=var["fusion_environment_service_attachment_service_instance_type"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         FusionEnvironmentServiceAttachments can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:FusionApps/fusionEnvironmentServiceAttachment:FusionEnvironmentServiceAttachment test_fusion_environment_service_attachment "fusionEnvironments/{fusionEnvironmentId}/serviceAttachments/{serviceAttachmentId}"
+        $ pulumi import oci:FusionApps/fusionEnvironmentServiceAttachment:FusionEnvironmentServiceAttachment test_fusion_environment_service_attachment "fusionEnvironments/{fusionEnvironmentId}/serviceAttachments/{serviceAttachmentId}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -355,6 +357,7 @@ class FusionEnvironmentServiceAttachment(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -364,13 +367,14 @@ class FusionEnvironmentServiceAttachment(pulumi.CustomResource):
             service_instance_id=oci_core_instance["test_instance"]["id"],
             service_instance_type=var["fusion_environment_service_attachment_service_instance_type"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         FusionEnvironmentServiceAttachments can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:FusionApps/fusionEnvironmentServiceAttachment:FusionEnvironmentServiceAttachment test_fusion_environment_service_attachment "fusionEnvironments/{fusionEnvironmentId}/serviceAttachments/{serviceAttachmentId}"
+        $ pulumi import oci:FusionApps/fusionEnvironmentServiceAttachment:FusionEnvironmentServiceAttachment test_fusion_environment_service_attachment "fusionEnvironments/{fusionEnvironmentId}/serviceAttachments/{serviceAttachmentId}"
         ```
 
         :param str resource_name: The name of the resource.

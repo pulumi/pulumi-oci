@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -32,13 +33,14 @@ import * as utilities from "../utilities";
  *     staticJumpHostIpAddresses: _var.bastion_static_jump_host_ip_addresses,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * Bastions can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Bastion/bastion:Bastion test_bastion "id"
+ * $ pulumi import oci:Bastion/bastion:Bastion test_bastion "id"
  * ```
  */
 export class Bastion extends pulumi.CustomResource {

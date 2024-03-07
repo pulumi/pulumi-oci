@@ -35,6 +35,8 @@ public final class DisasterRecoveryFunctions {
      * Get details for the DR plan identified by *drPlanId*.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -63,6 +65,7 @@ public final class DisasterRecoveryFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDrPlanResult> getDrPlan(GetDrPlanArgs args) {
@@ -74,6 +77,8 @@ public final class DisasterRecoveryFunctions {
      * Get details for the DR plan identified by *drPlanId*.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -102,6 +107,7 @@ public final class DisasterRecoveryFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDrPlanResult> getDrPlanPlain(GetDrPlanPlainArgs args) {
@@ -113,6 +119,8 @@ public final class DisasterRecoveryFunctions {
      * Get details for the DR plan identified by *drPlanId*.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -141,6 +149,7 @@ public final class DisasterRecoveryFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDrPlanResult> getDrPlan(GetDrPlanArgs args, InvokeOptions options) {
@@ -152,6 +161,8 @@ public final class DisasterRecoveryFunctions {
      * Get details for the DR plan identified by *drPlanId*.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -180,6 +191,7 @@ public final class DisasterRecoveryFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDrPlanResult> getDrPlanPlain(GetDrPlanPlainArgs args, InvokeOptions options) {
@@ -191,6 +203,8 @@ public final class DisasterRecoveryFunctions {
      * Get details for the DR plan execution identified by *drPlanExecutionId*.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -219,6 +233,7 @@ public final class DisasterRecoveryFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDrPlanExecutionResult> getDrPlanExecution(GetDrPlanExecutionArgs args) {
@@ -230,6 +245,8 @@ public final class DisasterRecoveryFunctions {
      * Get details for the DR plan execution identified by *drPlanExecutionId*.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -258,6 +275,7 @@ public final class DisasterRecoveryFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDrPlanExecutionResult> getDrPlanExecutionPlain(GetDrPlanExecutionPlainArgs args) {
@@ -269,6 +287,8 @@ public final class DisasterRecoveryFunctions {
      * Get details for the DR plan execution identified by *drPlanExecutionId*.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -297,6 +317,7 @@ public final class DisasterRecoveryFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDrPlanExecutionResult> getDrPlanExecution(GetDrPlanExecutionArgs args, InvokeOptions options) {
@@ -308,6 +329,8 @@ public final class DisasterRecoveryFunctions {
      * Get details for the DR plan execution identified by *drPlanExecutionId*.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -336,6 +359,7 @@ public final class DisasterRecoveryFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDrPlanExecutionResult> getDrPlanExecutionPlain(GetDrPlanExecutionPlainArgs args, InvokeOptions options) {
@@ -347,6 +371,8 @@ public final class DisasterRecoveryFunctions {
      * Get a summary list of all DR plan executions for a DR protection group.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -379,6 +405,7 @@ public final class DisasterRecoveryFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDrPlanExecutionsResult> getDrPlanExecutions(GetDrPlanExecutionsArgs args) {
@@ -390,6 +417,8 @@ public final class DisasterRecoveryFunctions {
      * Get a summary list of all DR plan executions for a DR protection group.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -422,6 +451,7 @@ public final class DisasterRecoveryFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDrPlanExecutionsResult> getDrPlanExecutionsPlain(GetDrPlanExecutionsPlainArgs args) {
@@ -433,6 +463,8 @@ public final class DisasterRecoveryFunctions {
      * Get a summary list of all DR plan executions for a DR protection group.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -465,6 +497,7 @@ public final class DisasterRecoveryFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDrPlanExecutionsResult> getDrPlanExecutions(GetDrPlanExecutionsArgs args, InvokeOptions options) {
@@ -476,6 +509,8 @@ public final class DisasterRecoveryFunctions {
      * Get a summary list of all DR plan executions for a DR protection group.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -508,6 +543,7 @@ public final class DisasterRecoveryFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDrPlanExecutionsResult> getDrPlanExecutionsPlain(GetDrPlanExecutionsPlainArgs args, InvokeOptions options) {
@@ -519,6 +555,8 @@ public final class DisasterRecoveryFunctions {
      * Get a summary list of all DR plans for a DR protection group.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -551,6 +589,7 @@ public final class DisasterRecoveryFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDrPlansResult> getDrPlans(GetDrPlansArgs args) {
@@ -562,6 +601,8 @@ public final class DisasterRecoveryFunctions {
      * Get a summary list of all DR plans for a DR protection group.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -594,6 +635,7 @@ public final class DisasterRecoveryFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDrPlansResult> getDrPlansPlain(GetDrPlansPlainArgs args) {
@@ -605,6 +647,8 @@ public final class DisasterRecoveryFunctions {
      * Get a summary list of all DR plans for a DR protection group.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -637,6 +681,7 @@ public final class DisasterRecoveryFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDrPlansResult> getDrPlans(GetDrPlansArgs args, InvokeOptions options) {
@@ -648,6 +693,8 @@ public final class DisasterRecoveryFunctions {
      * Get a summary list of all DR plans for a DR protection group.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -680,6 +727,7 @@ public final class DisasterRecoveryFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDrPlansResult> getDrPlansPlain(GetDrPlansPlainArgs args, InvokeOptions options) {
@@ -691,6 +739,8 @@ public final class DisasterRecoveryFunctions {
      * Get the DR protection group identified by *drProtectionGroupId*.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -719,6 +769,7 @@ public final class DisasterRecoveryFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDrProtectionGroupResult> getDrProtectionGroup(GetDrProtectionGroupArgs args) {
@@ -730,6 +781,8 @@ public final class DisasterRecoveryFunctions {
      * Get the DR protection group identified by *drProtectionGroupId*.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -758,6 +811,7 @@ public final class DisasterRecoveryFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDrProtectionGroupResult> getDrProtectionGroupPlain(GetDrProtectionGroupPlainArgs args) {
@@ -769,6 +823,8 @@ public final class DisasterRecoveryFunctions {
      * Get the DR protection group identified by *drProtectionGroupId*.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -797,6 +853,7 @@ public final class DisasterRecoveryFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDrProtectionGroupResult> getDrProtectionGroup(GetDrProtectionGroupArgs args, InvokeOptions options) {
@@ -808,6 +865,8 @@ public final class DisasterRecoveryFunctions {
      * Get the DR protection group identified by *drProtectionGroupId*.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -836,6 +895,7 @@ public final class DisasterRecoveryFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDrProtectionGroupResult> getDrProtectionGroupPlain(GetDrProtectionGroupPlainArgs args, InvokeOptions options) {
@@ -847,6 +907,8 @@ public final class DisasterRecoveryFunctions {
      * Get a summary list of all DR protection groups in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -880,6 +942,7 @@ public final class DisasterRecoveryFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDrProtectionGroupsResult> getDrProtectionGroups(GetDrProtectionGroupsArgs args) {
@@ -891,6 +954,8 @@ public final class DisasterRecoveryFunctions {
      * Get a summary list of all DR protection groups in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -924,6 +989,7 @@ public final class DisasterRecoveryFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDrProtectionGroupsResult> getDrProtectionGroupsPlain(GetDrProtectionGroupsPlainArgs args) {
@@ -935,6 +1001,8 @@ public final class DisasterRecoveryFunctions {
      * Get a summary list of all DR protection groups in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -968,6 +1036,7 @@ public final class DisasterRecoveryFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDrProtectionGroupsResult> getDrProtectionGroups(GetDrProtectionGroupsArgs args, InvokeOptions options) {
@@ -979,6 +1048,8 @@ public final class DisasterRecoveryFunctions {
      * Get a summary list of all DR protection groups in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1012,6 +1083,7 @@ public final class DisasterRecoveryFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDrProtectionGroupsResult> getDrProtectionGroupsPlain(GetDrProtectionGroupsPlainArgs args, InvokeOptions options) {

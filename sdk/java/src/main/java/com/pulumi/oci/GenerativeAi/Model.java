@@ -31,7 +31,7 @@ import javax.annotation.Nullable;
  * Models can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:GenerativeAi/model:Model test_model &#34;id&#34;
+ * $ pulumi import oci:GenerativeAi/model:Model test_model &#34;id&#34;
  * ```
  * 
  */

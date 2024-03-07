@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -40,6 +41,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetInstanceMeasuredBootReport(ctx *pulumi.Context, args *GetInstanceMeasuredBootReportArgs, opts ...pulumi.InvokeOption) (*GetInstanceMeasuredBootReportResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetInstanceMeasuredBootReportResult

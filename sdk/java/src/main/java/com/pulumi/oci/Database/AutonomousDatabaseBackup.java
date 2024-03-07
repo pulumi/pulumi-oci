@@ -23,6 +23,8 @@ import javax.annotation.Nullable;
  * Creates a new Autonomous Database backup for the specified database based on the provided request parameters.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -54,13 +56,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * AutonomousDatabaseBackups can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Database/autonomousDatabaseBackup:AutonomousDatabaseBackup test_autonomous_database_backup &#34;id&#34;
+ * $ pulumi import oci:Database/autonomousDatabaseBackup:AutonomousDatabaseBackup test_autonomous_database_backup &#34;id&#34;
  * ```
  * 
  */

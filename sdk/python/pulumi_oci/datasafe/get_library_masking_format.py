@@ -198,12 +198,14 @@ def get_library_masking_format(library_masking_format_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_library_masking_format = oci.DataSafe.get_library_masking_format(library_masking_format_id=oci_data_safe_library_masking_format["test_library_masking_format"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str library_masking_format_id: The OCID of the library masking format.
@@ -239,12 +241,14 @@ def get_library_masking_format_output(library_masking_format_id: Optional[pulumi
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_library_masking_format = oci.DataSafe.get_library_masking_format(library_masking_format_id=oci_data_safe_library_masking_format["test_library_masking_format"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str library_masking_format_id: The OCID of the library masking format.

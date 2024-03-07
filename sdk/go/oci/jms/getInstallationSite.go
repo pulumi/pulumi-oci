@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -51,6 +52,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetInstallationSite(ctx *pulumi.Context, args *GetInstallationSiteArgs, opts ...pulumi.InvokeOption) (*GetInstallationSiteResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetInstallationSiteResult

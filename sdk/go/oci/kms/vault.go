@@ -26,6 +26,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -66,15 +67,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Vaults can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Kms/vault:Vault test_vault "id"
-//
+// $ pulumi import oci:Kms/vault:Vault test_vault "id"
 // ```
 type Vault struct {
 	pulumi.CustomResourceState

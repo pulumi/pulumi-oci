@@ -16,6 +16,7 @@ namespace Pulumi.Oci.Autoscaling
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -94,13 +95,14 @@ namespace Pulumi.Oci.Autoscaling
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// AutoScalingConfigurations can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Autoscaling/autoScalingConfiguration:AutoScalingConfiguration test_auto_scaling_configuration "id"
+    /// $ pulumi import oci:Autoscaling/autoScalingConfiguration:AutoScalingConfiguration test_auto_scaling_configuration "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Autoscaling/autoScalingConfiguration:AutoScalingConfiguration")]

@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -40,6 +41,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupMetricExtension(ctx *pulumi.Context, args *LookupMetricExtensionArgs, opts ...pulumi.InvokeOption) (*LookupMetricExtensionResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupMetricExtensionResult

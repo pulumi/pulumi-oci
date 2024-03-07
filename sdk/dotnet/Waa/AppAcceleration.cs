@@ -16,6 +16,7 @@ namespace Pulumi.Oci.Waa
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -44,13 +45,14 @@ namespace Pulumi.Oci.Waa
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// WebAppAccelerations can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Waa/appAcceleration:AppAcceleration test_web_app_acceleration "id"
+    /// $ pulumi import oci:Waa/appAcceleration:AppAcceleration test_web_app_acceleration "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Waa/appAcceleration:AppAcceleration")]

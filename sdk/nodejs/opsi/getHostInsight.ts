@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -19,6 +20,7 @@ import * as utilities from "../utilities";
  *     hostInsightId: oci_opsi_host_insight.test_host_insight.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getHostInsight(args: GetHostInsightArgs, opts?: pulumi.InvokeOptions): Promise<GetHostInsightResult> {
 
@@ -159,6 +161,7 @@ export interface GetHostInsightResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -167,6 +170,7 @@ export interface GetHostInsightResult {
  *     hostInsightId: oci_opsi_host_insight.test_host_insight.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getHostInsightOutput(args: GetHostInsightOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetHostInsightResult> {
     return pulumi.output(args).apply((a: any) => getHostInsight(a, opts))

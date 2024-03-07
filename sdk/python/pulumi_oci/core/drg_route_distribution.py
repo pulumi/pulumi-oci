@@ -270,6 +270,7 @@ class DrgRouteDistribution(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -285,13 +286,14 @@ class DrgRouteDistribution(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         DrgRouteDistributions can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/drgRouteDistribution:DrgRouteDistribution test_drg_route_distribution "id"
+        $ pulumi import oci:Core/drgRouteDistribution:DrgRouteDistribution test_drg_route_distribution "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -322,6 +324,7 @@ class DrgRouteDistribution(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -337,13 +340,14 @@ class DrgRouteDistribution(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         DrgRouteDistributions can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/drgRouteDistribution:DrgRouteDistribution test_drg_route_distribution "id"
+        $ pulumi import oci:Core/drgRouteDistribution:DrgRouteDistribution test_drg_route_distribution "id"
         ```
 
         :param str resource_name: The name of the resource.

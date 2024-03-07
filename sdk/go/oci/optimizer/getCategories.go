@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -45,6 +46,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetCategories(ctx *pulumi.Context, args *GetCategoriesArgs, opts ...pulumi.InvokeOption) (*GetCategoriesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetCategoriesResult

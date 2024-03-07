@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,6 +23,7 @@ import * as utilities from "../utilities";
  *     traceKey: _var.trace_aggregated_snapshot_data_trace_key,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getTraceAggregatedSnapshotData(args: GetTraceAggregatedSnapshotDataArgs, opts?: pulumi.InvokeOptions): Promise<GetTraceAggregatedSnapshotDataResult> {
 
@@ -68,6 +70,7 @@ export interface GetTraceAggregatedSnapshotDataResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -77,6 +80,7 @@ export interface GetTraceAggregatedSnapshotDataResult {
  *     traceKey: _var.trace_aggregated_snapshot_data_trace_key,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getTraceAggregatedSnapshotDataOutput(args: GetTraceAggregatedSnapshotDataOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTraceAggregatedSnapshotDataResult> {
     return pulumi.output(args).apply((a: any) => getTraceAggregatedSnapshotData(a, opts))

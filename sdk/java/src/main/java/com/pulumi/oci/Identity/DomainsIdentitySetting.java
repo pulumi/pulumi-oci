@@ -34,7 +34,7 @@ import javax.annotation.Nullable;
  * IdentitySettings can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Identity/domainsIdentitySetting:DomainsIdentitySetting test_identity_setting &#34;idcsEndpoint/{idcsEndpoint}/identitySettings/{identitySettingId}&#34;
+ * $ pulumi import oci:Identity/domainsIdentitySetting:DomainsIdentitySetting test_identity_setting &#34;idcsEndpoint/{idcsEndpoint}/identitySettings/{identitySettingId}&#34;
  * ```
  * 
  */

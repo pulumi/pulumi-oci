@@ -17,10 +17,9 @@ namespace Pulumi.Oci.Marketplace
         /// Returns the terms of use agreements that must be accepted before you can deploy the specified version of a package.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -38,8 +37,7 @@ namespace Pulumi.Oci.Marketplace
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetListingPackageAgreementsResult> InvokeAsync(GetListingPackageAgreementsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetListingPackageAgreementsResult>("oci:Marketplace/getListingPackageAgreements:getListingPackageAgreements", args ?? new GetListingPackageAgreementsArgs(), options.WithDefaults());
@@ -50,10 +48,9 @@ namespace Pulumi.Oci.Marketplace
         /// Returns the terms of use agreements that must be accepted before you can deploy the specified version of a package.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -71,8 +68,7 @@ namespace Pulumi.Oci.Marketplace
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetListingPackageAgreementsResult> Invoke(GetListingPackageAgreementsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetListingPackageAgreementsResult>("oci:Marketplace/getListingPackageAgreements:getListingPackageAgreements", args ?? new GetListingPackageAgreementsInvokeArgs(), options.WithDefaults());

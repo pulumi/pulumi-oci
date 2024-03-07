@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -19,6 +20,7 @@ import * as utilities from "../utilities";
  *     dbNodeId: _var.db_node_id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDbNode(args: GetDbNodeArgs, opts?: pulumi.InvokeOptions): Promise<GetDbNodeResult> {
 
@@ -148,6 +150,7 @@ export interface GetDbNodeResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -156,6 +159,7 @@ export interface GetDbNodeResult {
  *     dbNodeId: _var.db_node_id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDbNodeOutput(args: GetDbNodeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbNodeResult> {
     return pulumi.output(args).apply((a: any) => getDbNode(a, opts))

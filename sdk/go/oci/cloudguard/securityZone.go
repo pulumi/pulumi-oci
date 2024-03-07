@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -50,15 +51,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // SecurityZones can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:CloudGuard/securityZone:SecurityZone test_security_zone "id"
-//
+// $ pulumi import oci:CloudGuard/securityZone:SecurityZone test_security_zone "id"
 // ```
 type SecurityZone struct {
 	pulumi.CustomResourceState

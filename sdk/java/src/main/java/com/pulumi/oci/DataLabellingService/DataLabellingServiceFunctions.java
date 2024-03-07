@@ -29,6 +29,8 @@ public final class DataLabellingServiceFunctions {
      * These are a static list in a given region.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -57,6 +59,7 @@ public final class DataLabellingServiceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAnnotationFormatResult> getAnnotationFormat(GetAnnotationFormatArgs args) {
@@ -68,6 +71,8 @@ public final class DataLabellingServiceFunctions {
      * These are a static list in a given region.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -96,6 +101,7 @@ public final class DataLabellingServiceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAnnotationFormatResult> getAnnotationFormatPlain(GetAnnotationFormatPlainArgs args) {
@@ -107,6 +113,8 @@ public final class DataLabellingServiceFunctions {
      * These are a static list in a given region.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -135,6 +143,7 @@ public final class DataLabellingServiceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAnnotationFormatResult> getAnnotationFormat(GetAnnotationFormatArgs args, InvokeOptions options) {
@@ -146,6 +155,8 @@ public final class DataLabellingServiceFunctions {
      * These are a static list in a given region.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -174,6 +185,7 @@ public final class DataLabellingServiceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAnnotationFormatResult> getAnnotationFormatPlain(GetAnnotationFormatPlainArgs args, InvokeOptions options) {
@@ -185,6 +197,8 @@ public final class DataLabellingServiceFunctions {
      * These are a static list in a given region.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -213,6 +227,7 @@ public final class DataLabellingServiceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAnnotationFormatsResult> getAnnotationFormats(GetAnnotationFormatsArgs args) {
@@ -224,6 +239,8 @@ public final class DataLabellingServiceFunctions {
      * These are a static list in a given region.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -252,6 +269,7 @@ public final class DataLabellingServiceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAnnotationFormatsResult> getAnnotationFormatsPlain(GetAnnotationFormatsPlainArgs args) {
@@ -263,6 +281,8 @@ public final class DataLabellingServiceFunctions {
      * These are a static list in a given region.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -291,6 +311,7 @@ public final class DataLabellingServiceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAnnotationFormatsResult> getAnnotationFormats(GetAnnotationFormatsArgs args, InvokeOptions options) {
@@ -302,6 +323,8 @@ public final class DataLabellingServiceFunctions {
      * These are a static list in a given region.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -330,6 +353,7 @@ public final class DataLabellingServiceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAnnotationFormatsResult> getAnnotationFormatsPlain(GetAnnotationFormatsPlainArgs args, InvokeOptions options) {
@@ -341,6 +365,8 @@ public final class DataLabellingServiceFunctions {
      * Gets a Dataset by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -369,6 +395,7 @@ public final class DataLabellingServiceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDatasetResult> getDataset(GetDatasetArgs args) {
@@ -380,6 +407,8 @@ public final class DataLabellingServiceFunctions {
      * Gets a Dataset by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -408,6 +437,7 @@ public final class DataLabellingServiceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDatasetResult> getDatasetPlain(GetDatasetPlainArgs args) {
@@ -419,6 +449,8 @@ public final class DataLabellingServiceFunctions {
      * Gets a Dataset by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -447,6 +479,7 @@ public final class DataLabellingServiceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDatasetResult> getDataset(GetDatasetArgs args, InvokeOptions options) {
@@ -458,6 +491,8 @@ public final class DataLabellingServiceFunctions {
      * Gets a Dataset by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -486,6 +521,7 @@ public final class DataLabellingServiceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDatasetResult> getDatasetPlain(GetDatasetPlainArgs args, InvokeOptions options) {
@@ -497,6 +533,8 @@ public final class DataLabellingServiceFunctions {
      * Returns a list of Datasets.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -529,6 +567,7 @@ public final class DataLabellingServiceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDatasetsResult> getDatasets(GetDatasetsArgs args) {
@@ -540,6 +579,8 @@ public final class DataLabellingServiceFunctions {
      * Returns a list of Datasets.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -572,6 +613,7 @@ public final class DataLabellingServiceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDatasetsResult> getDatasetsPlain(GetDatasetsPlainArgs args) {
@@ -583,6 +625,8 @@ public final class DataLabellingServiceFunctions {
      * Returns a list of Datasets.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -615,6 +659,7 @@ public final class DataLabellingServiceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDatasetsResult> getDatasets(GetDatasetsArgs args, InvokeOptions options) {
@@ -626,6 +671,8 @@ public final class DataLabellingServiceFunctions {
      * Returns a list of Datasets.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -658,6 +705,7 @@ public final class DataLabellingServiceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDatasetsResult> getDatasetsPlain(GetDatasetsPlainArgs args, InvokeOptions options) {

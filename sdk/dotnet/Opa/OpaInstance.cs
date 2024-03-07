@@ -16,6 +16,7 @@ namespace Pulumi.Oci.Opa
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -46,13 +47,14 @@ namespace Pulumi.Oci.Opa
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// OpaInstances can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Opa/opaInstance:OpaInstance test_opa_instance "id"
+    /// $ pulumi import oci:Opa/opaInstance:OpaInstance test_opa_instance "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Opa/opaInstance:OpaInstance")]

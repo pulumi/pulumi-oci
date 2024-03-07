@@ -16,7 +16,7 @@ import * as utilities from "../utilities";
  * Addons can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:ContainerEngine/addon:Addon test_addon "clusters/{clusterId}/addons/{addonName}"
+ * $ pulumi import oci:ContainerEngine/addon:Addon test_addon "clusters/{clusterId}/addons/{addonName}"
  * ```
  */
 export class Addon extends pulumi.CustomResource {

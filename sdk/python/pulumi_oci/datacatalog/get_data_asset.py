@@ -250,6 +250,7 @@ def get_data_asset(catalog_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -258,6 +259,7 @@ def get_data_asset(catalog_id: Optional[str] = None,
         data_asset_key=var["data_asset_data_asset_key"],
         fields=var["data_asset_fields"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str catalog_id: Unique catalog identifier.
@@ -304,6 +306,7 @@ def get_data_asset_output(catalog_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -312,6 +315,7 @@ def get_data_asset_output(catalog_id: Optional[pulumi.Input[str]] = None,
         data_asset_key=var["data_asset_data_asset_key"],
         fields=var["data_asset_fields"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str catalog_id: Unique catalog identifier.

@@ -433,6 +433,7 @@ class MediaWorkflow(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -465,13 +466,14 @@ class MediaWorkflow(pulumi.CustomResource):
                 prerequisites=var["media_workflow_tasks_prerequisites"],
             )])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         MediaWorkflows can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:MediaServices/mediaWorkflow:MediaWorkflow test_media_workflow "id"
+        $ pulumi import oci:MediaServices/mediaWorkflow:MediaWorkflow test_media_workflow "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -498,6 +500,7 @@ class MediaWorkflow(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -530,13 +533,14 @@ class MediaWorkflow(pulumi.CustomResource):
                 prerequisites=var["media_workflow_tasks_prerequisites"],
             )])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         MediaWorkflows can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:MediaServices/mediaWorkflow:MediaWorkflow test_media_workflow "id"
+        $ pulumi import oci:MediaServices/mediaWorkflow:MediaWorkflow test_media_workflow "id"
         ```
 
         :param str resource_name: The name of the resource.

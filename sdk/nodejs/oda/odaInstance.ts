@@ -16,6 +16,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -35,13 +36,14 @@ import * as utilities from "../utilities";
  *     isRoleBasedAccess: _var.oda_instance_is_role_based_access,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * OdaInstances can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Oda/odaInstance:OdaInstance test_oda_instance "id"
+ * $ pulumi import oci:Oda/odaInstance:OdaInstance test_oda_instance "id"
  * ```
  */
 export class OdaInstance extends pulumi.CustomResource {

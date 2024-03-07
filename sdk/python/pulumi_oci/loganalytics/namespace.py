@@ -136,6 +136,7 @@ class Namespace(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -145,13 +146,14 @@ class Namespace(pulumi.CustomResource):
             is_onboarded=var["is_onboarded"],
             namespace=var["namespace_namespace"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Namespace can be imported using the `namespace`, e.g.
 
         ```sh
-         $ pulumi import oci:LogAnalytics/namespace:Namespace test_namespace "namespace"
+        $ pulumi import oci:LogAnalytics/namespace:Namespace test_namespace "namespace"
         ```
 
         :param str resource_name: The name of the resource.
@@ -173,6 +175,7 @@ class Namespace(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -182,13 +185,14 @@ class Namespace(pulumi.CustomResource):
             is_onboarded=var["is_onboarded"],
             namespace=var["namespace_namespace"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Namespace can be imported using the `namespace`, e.g.
 
         ```sh
-         $ pulumi import oci:LogAnalytics/namespace:Namespace test_namespace "namespace"
+        $ pulumi import oci:LogAnalytics/namespace:Namespace test_namespace "namespace"
         ```
 
         :param str resource_name: The name of the resource.

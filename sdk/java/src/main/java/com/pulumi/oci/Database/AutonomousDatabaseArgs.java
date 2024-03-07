@@ -28,14 +28,14 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
     public static final AutonomousDatabaseArgs Empty = new AutonomousDatabaseArgs();
 
     /**
-     * (Updatable) The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (&#34;) or the username &#34;admin&#34;, regardless of casing. The password is mandatory if source value is &#34;BACKUP_FROM_ID&#34;, &#34;BACKUP_FROM_TIMESTAMP&#34;, &#34;DATABASE&#34; or &#34;NONE&#34;.
+     * (Updatable) The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (&#34;) or the username &#34;admin&#34;, regardless of casing. The password is mandatory if source value is &#34;BACKUP_FROM_ID&#34;, &#34;BACKUP_FROM_TIMESTAMP&#34;, &#34;DATABASE&#34; or &#34;NONE&#34; and for new, full and metadata clone databases. This parameter is optional only if you are cloning or using a secret for the password. Not allowed for ADG and refreshable clones.
      * 
      */
     @Import(name="adminPassword")
     private @Nullable Output<String> adminPassword;
 
     /**
-     * @return (Updatable) The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (&#34;) or the username &#34;admin&#34;, regardless of casing. The password is mandatory if source value is &#34;BACKUP_FROM_ID&#34;, &#34;BACKUP_FROM_TIMESTAMP&#34;, &#34;DATABASE&#34; or &#34;NONE&#34;.
+     * @return (Updatable) The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (&#34;) or the username &#34;admin&#34;, regardless of casing. The password is mandatory if source value is &#34;BACKUP_FROM_ID&#34;, &#34;BACKUP_FROM_TIMESTAMP&#34;, &#34;DATABASE&#34; or &#34;NONE&#34; and for new, full and metadata clone databases. This parameter is optional only if you are cloning or using a secret for the password. Not allowed for ADG and refreshable clones.
      * 
      */
     public Optional<Output<String>> adminPassword() {
@@ -575,14 +575,14 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * (Updatable) Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+     * (Updatable) Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. It takes boolean values. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
      * 
      */
     @Import(name="isLocalDataGuardEnabled")
     private @Nullable Output<Boolean> isLocalDataGuardEnabled;
 
     /**
-     * @return (Updatable) Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+     * @return (Updatable) Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. It takes boolean values. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
      * 
      */
     public Optional<Output<Boolean>> isLocalDataGuardEnabled() {
@@ -907,14 +907,14 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * Indicates the cross-region disaster recovery (DR) type of the standby Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+     * Indicates the cross-region disaster recovery (DR) type of the standby Shared Autonomous Database. Autonomous Data Guard (`ADG`) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based (`BACKUP_BASED`) DR type provides lower cost DR with a slower RTO during failover or switchover.
      * 
      */
     @Import(name="remoteDisasterRecoveryType")
     private @Nullable Output<String> remoteDisasterRecoveryType;
 
     /**
-     * @return Indicates the cross-region disaster recovery (DR) type of the standby Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+     * @return Indicates the cross-region disaster recovery (DR) type of the standby Shared Autonomous Database. Autonomous Data Guard (`ADG`) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based (`BACKUP_BASED`) DR type provides lower cost DR with a slower RTO during failover or switchover.
      * 
      */
     public Optional<Output<String>> remoteDisasterRecoveryType() {
@@ -1131,14 +1131,14 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * (Updatable) It is applicable only when `dataguard_region_type` and `role` are set, and `is_dedicated` is false. It takes the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the remote peer to switchover to.
+     * (Updatable) It is applicable only when `role` is set, and `is_dedicated` is false. It takes the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the remote peer to switchover to.
      * 
      */
     @Import(name="switchoverToRemotePeerId")
     private @Nullable Output<String> switchoverToRemotePeerId;
 
     /**
-     * @return (Updatable) It is applicable only when `dataguard_region_type` and `role` are set, and `is_dedicated` is false. It takes the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the remote peer to switchover to.
+     * @return (Updatable) It is applicable only when `role` is set, and `is_dedicated` is false. It takes the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the remote peer to switchover to.
      * 
      */
     public Optional<Output<String>> switchoverToRemotePeerId() {
@@ -1317,7 +1317,7 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param adminPassword (Updatable) The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (&#34;) or the username &#34;admin&#34;, regardless of casing. The password is mandatory if source value is &#34;BACKUP_FROM_ID&#34;, &#34;BACKUP_FROM_TIMESTAMP&#34;, &#34;DATABASE&#34; or &#34;NONE&#34;.
+         * @param adminPassword (Updatable) The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (&#34;) or the username &#34;admin&#34;, regardless of casing. The password is mandatory if source value is &#34;BACKUP_FROM_ID&#34;, &#34;BACKUP_FROM_TIMESTAMP&#34;, &#34;DATABASE&#34; or &#34;NONE&#34; and for new, full and metadata clone databases. This parameter is optional only if you are cloning or using a secret for the password. Not allowed for ADG and refreshable clones.
          * 
          * @return builder
          * 
@@ -1328,7 +1328,7 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param adminPassword (Updatable) The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (&#34;) or the username &#34;admin&#34;, regardless of casing. The password is mandatory if source value is &#34;BACKUP_FROM_ID&#34;, &#34;BACKUP_FROM_TIMESTAMP&#34;, &#34;DATABASE&#34; or &#34;NONE&#34;.
+         * @param adminPassword (Updatable) The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (&#34;) or the username &#34;admin&#34;, regardless of casing. The password is mandatory if source value is &#34;BACKUP_FROM_ID&#34;, &#34;BACKUP_FROM_TIMESTAMP&#34;, &#34;DATABASE&#34; or &#34;NONE&#34; and for new, full and metadata clone databases. This parameter is optional only if you are cloning or using a secret for the password. Not allowed for ADG and refreshable clones.
          * 
          * @return builder
          * 
@@ -2084,7 +2084,7 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param isLocalDataGuardEnabled (Updatable) Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+         * @param isLocalDataGuardEnabled (Updatable) Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. It takes boolean values. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
          * 
          * @return builder
          * 
@@ -2095,7 +2095,7 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param isLocalDataGuardEnabled (Updatable) Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+         * @param isLocalDataGuardEnabled (Updatable) Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. It takes boolean values. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
          * 
          * @return builder
          * 
@@ -2557,7 +2557,7 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param remoteDisasterRecoveryType Indicates the cross-region disaster recovery (DR) type of the standby Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+         * @param remoteDisasterRecoveryType Indicates the cross-region disaster recovery (DR) type of the standby Shared Autonomous Database. Autonomous Data Guard (`ADG`) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based (`BACKUP_BASED`) DR type provides lower cost DR with a slower RTO during failover or switchover.
          * 
          * @return builder
          * 
@@ -2568,7 +2568,7 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param remoteDisasterRecoveryType Indicates the cross-region disaster recovery (DR) type of the standby Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+         * @param remoteDisasterRecoveryType Indicates the cross-region disaster recovery (DR) type of the standby Shared Autonomous Database. Autonomous Data Guard (`ADG`) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based (`BACKUP_BASED`) DR type provides lower cost DR with a slower RTO during failover or switchover.
          * 
          * @return builder
          * 
@@ -2881,7 +2881,7 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param switchoverToRemotePeerId (Updatable) It is applicable only when `dataguard_region_type` and `role` are set, and `is_dedicated` is false. It takes the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the remote peer to switchover to.
+         * @param switchoverToRemotePeerId (Updatable) It is applicable only when `role` is set, and `is_dedicated` is false. It takes the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the remote peer to switchover to.
          * 
          * @return builder
          * 
@@ -2892,7 +2892,7 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param switchoverToRemotePeerId (Updatable) It is applicable only when `dataguard_region_type` and `role` are set, and `is_dedicated` is false. It takes the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the remote peer to switchover to.
+         * @param switchoverToRemotePeerId (Updatable) It is applicable only when `role` is set, and `is_dedicated` is false. It takes the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the remote peer to switchover to.
          * 
          * @return builder
          * 

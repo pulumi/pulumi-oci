@@ -10601,6 +10601,10 @@ export namespace ContainerEngine {
 
     export interface ContainerInstanceContainerSecurityContext {
         /**
+         * Linux Container capabilities to configure capabilities of container.
+         */
+        capabilities?: pulumi.Input<inputs.ContainerEngine.ContainerInstanceContainerSecurityContextCapabilities>;
+        /**
          * Indicates if the container must run as a non-root user. If true, the service validates the container image at runtime to ensure that it is not going to run with UID 0 (root) and fails the container instance creation if the validation fails.
          */
         isNonRootUserCheckEnabled?: pulumi.Input<boolean>;
@@ -10620,6 +10624,17 @@ export namespace ContainerEngine {
          * The type of security context
          */
         securityContextType?: pulumi.Input<string>;
+    }
+
+    export interface ContainerInstanceContainerSecurityContextCapabilities {
+        /**
+         * A list of additional configurable container capabilities.
+         */
+        addCapabilities?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * A list of container capabilities that can be dropped.
+         */
+        dropCapabilities?: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface ContainerInstanceContainerVolumeMount {
@@ -15020,7 +15035,7 @@ export namespace Core {
          */
         definedTags?: pulumi.Input<{[key: string]: any}>;
         /**
-         * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
          */
         displayName?: pulumi.Input<string>;
         /**
@@ -15106,6 +15121,78 @@ export namespace Core {
          * Emulation type for volume.
          */
         remoteDataVolumeType?: pulumi.Input<string>;
+    }
+
+    export interface InstanceLaunchVolumeAttachment {
+        /**
+         * The device name. To retrieve a list of devices for a given instance, see [ListInstanceDevices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Device/ListInstanceDevices).
+         */
+        device?: pulumi.Input<string>;
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         */
+        displayName?: pulumi.Input<string>;
+        /**
+         * Refer the top-level definition of encryptionInTransitType. The default value is NONE.
+         */
+        encryptionInTransitType?: pulumi.Input<string>;
+        /**
+         * Whether to enable Oracle Cloud Agent to perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
+         */
+        isAgentAutoIscsiLoginEnabled?: pulumi.Input<boolean>;
+        /**
+         * Whether the attachment was created in read-only mode.
+         */
+        isReadOnly?: pulumi.Input<boolean>;
+        /**
+         * Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
+         */
+        isShareable?: pulumi.Input<boolean>;
+        /**
+         * Define a volume that will be created and attached or attached to an instance on creation.
+         */
+        launchCreateVolumeDetails?: pulumi.Input<inputs.Core.InstanceLaunchVolumeAttachmentLaunchCreateVolumeDetails>;
+        /**
+         * The type of action to run when the instance is interrupted for eviction.
+         */
+        type: pulumi.Input<string>;
+        /**
+         * Whether to use CHAP authentication for the volume attachment. Defaults to false.
+         */
+        useChap?: pulumi.Input<boolean>;
+        /**
+         * The OCID of the volume. If CreateVolumeDetails is specified, this field must be omitted from the request.
+         */
+        volumeId?: pulumi.Input<string>;
+    }
+
+    export interface InstanceLaunchVolumeAttachmentLaunchCreateVolumeDetails {
+        /**
+         * (Updatable) The OCID of the compartment containing images to search
+         */
+        compartmentId?: pulumi.Input<string>;
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         */
+        displayName?: pulumi.Input<string>;
+        /**
+         * The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+         */
+        kmsKeyId?: pulumi.Input<string>;
+        /**
+         * The size of the volume in GBs.
+         */
+        sizeInGbs: pulumi.Input<string>;
+        /**
+         * Specifies the method for volume creation.
+         */
+        volumeCreationType: pulumi.Input<string>;
+        /**
+         * The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+         *
+         * Allowed values:
+         */
+        vpusPerGb?: pulumi.Input<string>;
     }
 
     export interface InstancePlatformConfig {
@@ -67594,7 +67681,31 @@ export namespace Opsi {
         /**
          * (Updatable) Supported resources for capacity planning content type.
          */
-        capacityPlanningResources: pulumi.Input<pulumi.Input<string>[]>;
+        capacityPlanningResources?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) Supported resources for SQL insights - fleet analysis content type.
+         */
+        sqlInsightsFleetAnalysisResources?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) Supported resources for SQL insights - performance degradation content type.
+         */
+        sqlInsightsPerformanceDegradationResources?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) Supported resources for SQL insights - plan changes content type.
+         */
+        sqlInsightsPlanChangesResources?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) Supported resources for SQL insights - top databases content type.
+         */
+        sqlInsightsTopDatabasesResources?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) Supported resources for SQL insights - top SQL by insights content type.
+         */
+        sqlInsightsTopSqlByInsightsResources?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) Supported resources for SQL insights - top SQL content type.
+         */
+        sqlInsightsTopSqlResources?: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface OpsiConfigurationConfigItem {

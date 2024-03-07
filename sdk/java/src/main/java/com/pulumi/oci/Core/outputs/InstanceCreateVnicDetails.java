@@ -46,7 +46,7 @@ public final class InstanceCreateVnicDetails {
      */
     private @Nullable Map<String,Object> definedTags;
     /**
-     * @return (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
     private @Nullable String displayName;
@@ -142,7 +142,7 @@ public final class InstanceCreateVnicDetails {
         return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
-     * @return (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
     public Optional<String> displayName() {

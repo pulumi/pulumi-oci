@@ -30,6 +30,7 @@ __all__ = [
     'ContainerInstanceContainerHealthCheckHeader',
     'ContainerInstanceContainerResourceConfig',
     'ContainerInstanceContainerSecurityContext',
+    'ContainerInstanceContainerSecurityContextCapabilities',
     'ContainerInstanceContainerVolumeMount',
     'ContainerInstanceDnsConfig',
     'ContainerInstanceImagePullSecret',
@@ -1683,18 +1684,22 @@ class ContainerInstanceContainerSecurityContext(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
+                 capabilities: Optional['outputs.ContainerInstanceContainerSecurityContextCapabilities'] = None,
                  is_non_root_user_check_enabled: Optional[bool] = None,
                  is_root_file_system_readonly: Optional[bool] = None,
                  run_as_group: Optional[int] = None,
                  run_as_user: Optional[int] = None,
                  security_context_type: Optional[str] = None):
         """
+        :param 'ContainerInstanceContainerSecurityContextCapabilitiesArgs' capabilities: Linux Container capabilities to configure capabilities of container.
         :param bool is_non_root_user_check_enabled: Indicates if the container must run as a non-root user. If true, the service validates the container image at runtime to ensure that it is not going to run with UID 0 (root) and fails the container instance creation if the validation fails.
         :param bool is_root_file_system_readonly: Determines if the container will have a read-only root file system. Default value is false.
         :param int run_as_group: The group ID (GID) to run the entrypoint process of the container. Uses runtime default if not provided.
         :param int run_as_user: The user ID (UID) to run the entrypoint process of the container. Defaults to user specified UID in container image metadata if not provided. This must be provided if runAsGroup is provided.
         :param str security_context_type: The type of security context
         """
+        if capabilities is not None:
+            pulumi.set(__self__, "capabilities", capabilities)
         if is_non_root_user_check_enabled is not None:
             pulumi.set(__self__, "is_non_root_user_check_enabled", is_non_root_user_check_enabled)
         if is_root_file_system_readonly is not None:
@@ -1705,6 +1710,14 @@ class ContainerInstanceContainerSecurityContext(dict):
             pulumi.set(__self__, "run_as_user", run_as_user)
         if security_context_type is not None:
             pulumi.set(__self__, "security_context_type", security_context_type)
+
+    @property
+    @pulumi.getter
+    def capabilities(self) -> Optional['outputs.ContainerInstanceContainerSecurityContextCapabilities']:
+        """
+        Linux Container capabilities to configure capabilities of container.
+        """
+        return pulumi.get(self, "capabilities")
 
     @property
     @pulumi.getter(name="isNonRootUserCheckEnabled")
@@ -1745,6 +1758,56 @@ class ContainerInstanceContainerSecurityContext(dict):
         The type of security context
         """
         return pulumi.get(self, "security_context_type")
+
+
+@pulumi.output_type
+class ContainerInstanceContainerSecurityContextCapabilities(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "addCapabilities":
+            suggest = "add_capabilities"
+        elif key == "dropCapabilities":
+            suggest = "drop_capabilities"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ContainerInstanceContainerSecurityContextCapabilities. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ContainerInstanceContainerSecurityContextCapabilities.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ContainerInstanceContainerSecurityContextCapabilities.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 add_capabilities: Optional[Sequence[str]] = None,
+                 drop_capabilities: Optional[Sequence[str]] = None):
+        """
+        :param Sequence[str] add_capabilities: A list of additional configurable container capabilities.
+        :param Sequence[str] drop_capabilities: A list of container capabilities that can be dropped.
+        """
+        if add_capabilities is not None:
+            pulumi.set(__self__, "add_capabilities", add_capabilities)
+        if drop_capabilities is not None:
+            pulumi.set(__self__, "drop_capabilities", drop_capabilities)
+
+    @property
+    @pulumi.getter(name="addCapabilities")
+    def add_capabilities(self) -> Optional[Sequence[str]]:
+        """
+        A list of additional configurable container capabilities.
+        """
+        return pulumi.get(self, "add_capabilities")
+
+    @property
+    @pulumi.getter(name="dropCapabilities")
+    def drop_capabilities(self) -> Optional[Sequence[str]]:
+        """
+        A list of container capabilities that can be dropped.
+        """
+        return pulumi.get(self, "drop_capabilities")
 
 
 @pulumi.output_type

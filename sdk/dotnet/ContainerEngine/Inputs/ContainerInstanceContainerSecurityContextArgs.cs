@@ -13,6 +13,12 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
     public sealed class ContainerInstanceContainerSecurityContextArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// Linux Container capabilities to configure capabilities of container.
+        /// </summary>
+        [Input("capabilities")]
+        public Input<Inputs.ContainerInstanceContainerSecurityContextCapabilitiesArgs>? Capabilities { get; set; }
+
+        /// <summary>
         /// Indicates if the container must run as a non-root user. If true, the service validates the container image at runtime to ensure that it is not going to run with UID 0 (root) and fails the container instance creation if the validation fails.
         /// </summary>
         [Input("isNonRootUserCheckEnabled")]

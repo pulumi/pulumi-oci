@@ -2910,6 +2910,8 @@ func (o ContainerInstanceContainerResourceConfigPtrOutput) VcpusLimit() pulumi.F
 }
 
 type ContainerInstanceContainerSecurityContext struct {
+	// Linux Container capabilities to configure capabilities of container.
+	Capabilities *ContainerInstanceContainerSecurityContextCapabilities `pulumi:"capabilities"`
 	// Indicates if the container must run as a non-root user. If true, the service validates the container image at runtime to ensure that it is not going to run with UID 0 (root) and fails the container instance creation if the validation fails.
 	IsNonRootUserCheckEnabled *bool `pulumi:"isNonRootUserCheckEnabled"`
 	// Determines if the container will have a read-only root file system. Default value is false.
@@ -2934,6 +2936,8 @@ type ContainerInstanceContainerSecurityContextInput interface {
 }
 
 type ContainerInstanceContainerSecurityContextArgs struct {
+	// Linux Container capabilities to configure capabilities of container.
+	Capabilities ContainerInstanceContainerSecurityContextCapabilitiesPtrInput `pulumi:"capabilities"`
 	// Indicates if the container must run as a non-root user. If true, the service validates the container image at runtime to ensure that it is not going to run with UID 0 (root) and fails the container instance creation if the validation fails.
 	IsNonRootUserCheckEnabled pulumi.BoolPtrInput `pulumi:"isNonRootUserCheckEnabled"`
 	// Determines if the container will have a read-only root file system. Default value is false.
@@ -3023,6 +3027,13 @@ func (o ContainerInstanceContainerSecurityContextOutput) ToContainerInstanceCont
 	}).(ContainerInstanceContainerSecurityContextPtrOutput)
 }
 
+// Linux Container capabilities to configure capabilities of container.
+func (o ContainerInstanceContainerSecurityContextOutput) Capabilities() ContainerInstanceContainerSecurityContextCapabilitiesPtrOutput {
+	return o.ApplyT(func(v ContainerInstanceContainerSecurityContext) *ContainerInstanceContainerSecurityContextCapabilities {
+		return v.Capabilities
+	}).(ContainerInstanceContainerSecurityContextCapabilitiesPtrOutput)
+}
+
 // Indicates if the container must run as a non-root user. If true, the service validates the container image at runtime to ensure that it is not going to run with UID 0 (root) and fails the container instance creation if the validation fails.
 func (o ContainerInstanceContainerSecurityContextOutput) IsNonRootUserCheckEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v ContainerInstanceContainerSecurityContext) *bool { return v.IsNonRootUserCheckEnabled }).(pulumi.BoolPtrOutput)
@@ -3070,6 +3081,16 @@ func (o ContainerInstanceContainerSecurityContextPtrOutput) Elem() ContainerInst
 		var ret ContainerInstanceContainerSecurityContext
 		return ret
 	}).(ContainerInstanceContainerSecurityContextOutput)
+}
+
+// Linux Container capabilities to configure capabilities of container.
+func (o ContainerInstanceContainerSecurityContextPtrOutput) Capabilities() ContainerInstanceContainerSecurityContextCapabilitiesPtrOutput {
+	return o.ApplyT(func(v *ContainerInstanceContainerSecurityContext) *ContainerInstanceContainerSecurityContextCapabilities {
+		if v == nil {
+			return nil
+		}
+		return v.Capabilities
+	}).(ContainerInstanceContainerSecurityContextCapabilitiesPtrOutput)
 }
 
 // Indicates if the container must run as a non-root user. If true, the service validates the container image at runtime to ensure that it is not going to run with UID 0 (root) and fails the container instance creation if the validation fails.
@@ -3120,6 +3141,162 @@ func (o ContainerInstanceContainerSecurityContextPtrOutput) SecurityContextType(
 		}
 		return v.SecurityContextType
 	}).(pulumi.StringPtrOutput)
+}
+
+type ContainerInstanceContainerSecurityContextCapabilities struct {
+	// A list of additional configurable container capabilities.
+	AddCapabilities []string `pulumi:"addCapabilities"`
+	// A list of container capabilities that can be dropped.
+	DropCapabilities []string `pulumi:"dropCapabilities"`
+}
+
+// ContainerInstanceContainerSecurityContextCapabilitiesInput is an input type that accepts ContainerInstanceContainerSecurityContextCapabilitiesArgs and ContainerInstanceContainerSecurityContextCapabilitiesOutput values.
+// You can construct a concrete instance of `ContainerInstanceContainerSecurityContextCapabilitiesInput` via:
+//
+//	ContainerInstanceContainerSecurityContextCapabilitiesArgs{...}
+type ContainerInstanceContainerSecurityContextCapabilitiesInput interface {
+	pulumi.Input
+
+	ToContainerInstanceContainerSecurityContextCapabilitiesOutput() ContainerInstanceContainerSecurityContextCapabilitiesOutput
+	ToContainerInstanceContainerSecurityContextCapabilitiesOutputWithContext(context.Context) ContainerInstanceContainerSecurityContextCapabilitiesOutput
+}
+
+type ContainerInstanceContainerSecurityContextCapabilitiesArgs struct {
+	// A list of additional configurable container capabilities.
+	AddCapabilities pulumi.StringArrayInput `pulumi:"addCapabilities"`
+	// A list of container capabilities that can be dropped.
+	DropCapabilities pulumi.StringArrayInput `pulumi:"dropCapabilities"`
+}
+
+func (ContainerInstanceContainerSecurityContextCapabilitiesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ContainerInstanceContainerSecurityContextCapabilities)(nil)).Elem()
+}
+
+func (i ContainerInstanceContainerSecurityContextCapabilitiesArgs) ToContainerInstanceContainerSecurityContextCapabilitiesOutput() ContainerInstanceContainerSecurityContextCapabilitiesOutput {
+	return i.ToContainerInstanceContainerSecurityContextCapabilitiesOutputWithContext(context.Background())
+}
+
+func (i ContainerInstanceContainerSecurityContextCapabilitiesArgs) ToContainerInstanceContainerSecurityContextCapabilitiesOutputWithContext(ctx context.Context) ContainerInstanceContainerSecurityContextCapabilitiesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceContainerSecurityContextCapabilitiesOutput)
+}
+
+func (i ContainerInstanceContainerSecurityContextCapabilitiesArgs) ToContainerInstanceContainerSecurityContextCapabilitiesPtrOutput() ContainerInstanceContainerSecurityContextCapabilitiesPtrOutput {
+	return i.ToContainerInstanceContainerSecurityContextCapabilitiesPtrOutputWithContext(context.Background())
+}
+
+func (i ContainerInstanceContainerSecurityContextCapabilitiesArgs) ToContainerInstanceContainerSecurityContextCapabilitiesPtrOutputWithContext(ctx context.Context) ContainerInstanceContainerSecurityContextCapabilitiesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceContainerSecurityContextCapabilitiesOutput).ToContainerInstanceContainerSecurityContextCapabilitiesPtrOutputWithContext(ctx)
+}
+
+// ContainerInstanceContainerSecurityContextCapabilitiesPtrInput is an input type that accepts ContainerInstanceContainerSecurityContextCapabilitiesArgs, ContainerInstanceContainerSecurityContextCapabilitiesPtr and ContainerInstanceContainerSecurityContextCapabilitiesPtrOutput values.
+// You can construct a concrete instance of `ContainerInstanceContainerSecurityContextCapabilitiesPtrInput` via:
+//
+//	        ContainerInstanceContainerSecurityContextCapabilitiesArgs{...}
+//
+//	or:
+//
+//	        nil
+type ContainerInstanceContainerSecurityContextCapabilitiesPtrInput interface {
+	pulumi.Input
+
+	ToContainerInstanceContainerSecurityContextCapabilitiesPtrOutput() ContainerInstanceContainerSecurityContextCapabilitiesPtrOutput
+	ToContainerInstanceContainerSecurityContextCapabilitiesPtrOutputWithContext(context.Context) ContainerInstanceContainerSecurityContextCapabilitiesPtrOutput
+}
+
+type containerInstanceContainerSecurityContextCapabilitiesPtrType ContainerInstanceContainerSecurityContextCapabilitiesArgs
+
+func ContainerInstanceContainerSecurityContextCapabilitiesPtr(v *ContainerInstanceContainerSecurityContextCapabilitiesArgs) ContainerInstanceContainerSecurityContextCapabilitiesPtrInput {
+	return (*containerInstanceContainerSecurityContextCapabilitiesPtrType)(v)
+}
+
+func (*containerInstanceContainerSecurityContextCapabilitiesPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ContainerInstanceContainerSecurityContextCapabilities)(nil)).Elem()
+}
+
+func (i *containerInstanceContainerSecurityContextCapabilitiesPtrType) ToContainerInstanceContainerSecurityContextCapabilitiesPtrOutput() ContainerInstanceContainerSecurityContextCapabilitiesPtrOutput {
+	return i.ToContainerInstanceContainerSecurityContextCapabilitiesPtrOutputWithContext(context.Background())
+}
+
+func (i *containerInstanceContainerSecurityContextCapabilitiesPtrType) ToContainerInstanceContainerSecurityContextCapabilitiesPtrOutputWithContext(ctx context.Context) ContainerInstanceContainerSecurityContextCapabilitiesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceContainerSecurityContextCapabilitiesPtrOutput)
+}
+
+type ContainerInstanceContainerSecurityContextCapabilitiesOutput struct{ *pulumi.OutputState }
+
+func (ContainerInstanceContainerSecurityContextCapabilitiesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ContainerInstanceContainerSecurityContextCapabilities)(nil)).Elem()
+}
+
+func (o ContainerInstanceContainerSecurityContextCapabilitiesOutput) ToContainerInstanceContainerSecurityContextCapabilitiesOutput() ContainerInstanceContainerSecurityContextCapabilitiesOutput {
+	return o
+}
+
+func (o ContainerInstanceContainerSecurityContextCapabilitiesOutput) ToContainerInstanceContainerSecurityContextCapabilitiesOutputWithContext(ctx context.Context) ContainerInstanceContainerSecurityContextCapabilitiesOutput {
+	return o
+}
+
+func (o ContainerInstanceContainerSecurityContextCapabilitiesOutput) ToContainerInstanceContainerSecurityContextCapabilitiesPtrOutput() ContainerInstanceContainerSecurityContextCapabilitiesPtrOutput {
+	return o.ToContainerInstanceContainerSecurityContextCapabilitiesPtrOutputWithContext(context.Background())
+}
+
+func (o ContainerInstanceContainerSecurityContextCapabilitiesOutput) ToContainerInstanceContainerSecurityContextCapabilitiesPtrOutputWithContext(ctx context.Context) ContainerInstanceContainerSecurityContextCapabilitiesPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ContainerInstanceContainerSecurityContextCapabilities) *ContainerInstanceContainerSecurityContextCapabilities {
+		return &v
+	}).(ContainerInstanceContainerSecurityContextCapabilitiesPtrOutput)
+}
+
+// A list of additional configurable container capabilities.
+func (o ContainerInstanceContainerSecurityContextCapabilitiesOutput) AddCapabilities() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v ContainerInstanceContainerSecurityContextCapabilities) []string { return v.AddCapabilities }).(pulumi.StringArrayOutput)
+}
+
+// A list of container capabilities that can be dropped.
+func (o ContainerInstanceContainerSecurityContextCapabilitiesOutput) DropCapabilities() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v ContainerInstanceContainerSecurityContextCapabilities) []string { return v.DropCapabilities }).(pulumi.StringArrayOutput)
+}
+
+type ContainerInstanceContainerSecurityContextCapabilitiesPtrOutput struct{ *pulumi.OutputState }
+
+func (ContainerInstanceContainerSecurityContextCapabilitiesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ContainerInstanceContainerSecurityContextCapabilities)(nil)).Elem()
+}
+
+func (o ContainerInstanceContainerSecurityContextCapabilitiesPtrOutput) ToContainerInstanceContainerSecurityContextCapabilitiesPtrOutput() ContainerInstanceContainerSecurityContextCapabilitiesPtrOutput {
+	return o
+}
+
+func (o ContainerInstanceContainerSecurityContextCapabilitiesPtrOutput) ToContainerInstanceContainerSecurityContextCapabilitiesPtrOutputWithContext(ctx context.Context) ContainerInstanceContainerSecurityContextCapabilitiesPtrOutput {
+	return o
+}
+
+func (o ContainerInstanceContainerSecurityContextCapabilitiesPtrOutput) Elem() ContainerInstanceContainerSecurityContextCapabilitiesOutput {
+	return o.ApplyT(func(v *ContainerInstanceContainerSecurityContextCapabilities) ContainerInstanceContainerSecurityContextCapabilities {
+		if v != nil {
+			return *v
+		}
+		var ret ContainerInstanceContainerSecurityContextCapabilities
+		return ret
+	}).(ContainerInstanceContainerSecurityContextCapabilitiesOutput)
+}
+
+// A list of additional configurable container capabilities.
+func (o ContainerInstanceContainerSecurityContextCapabilitiesPtrOutput) AddCapabilities() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *ContainerInstanceContainerSecurityContextCapabilities) []string {
+		if v == nil {
+			return nil
+		}
+		return v.AddCapabilities
+	}).(pulumi.StringArrayOutput)
+}
+
+// A list of container capabilities that can be dropped.
+func (o ContainerInstanceContainerSecurityContextCapabilitiesPtrOutput) DropCapabilities() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *ContainerInstanceContainerSecurityContextCapabilities) []string {
+		if v == nil {
+			return nil
+		}
+		return v.DropCapabilities
+	}).(pulumi.StringArrayOutput)
 }
 
 type ContainerInstanceContainerVolumeMount struct {
@@ -17226,6 +17403,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ContainerInstanceContainerResourceConfigPtrInput)(nil)).Elem(), ContainerInstanceContainerResourceConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ContainerInstanceContainerSecurityContextInput)(nil)).Elem(), ContainerInstanceContainerSecurityContextArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ContainerInstanceContainerSecurityContextPtrInput)(nil)).Elem(), ContainerInstanceContainerSecurityContextArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ContainerInstanceContainerSecurityContextCapabilitiesInput)(nil)).Elem(), ContainerInstanceContainerSecurityContextCapabilitiesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ContainerInstanceContainerSecurityContextCapabilitiesPtrInput)(nil)).Elem(), ContainerInstanceContainerSecurityContextCapabilitiesArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ContainerInstanceContainerVolumeMountInput)(nil)).Elem(), ContainerInstanceContainerVolumeMountArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ContainerInstanceContainerVolumeMountArrayInput)(nil)).Elem(), ContainerInstanceContainerVolumeMountArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ContainerInstanceDnsConfigInput)(nil)).Elem(), ContainerInstanceDnsConfigArgs{})
@@ -17476,6 +17655,8 @@ func init() {
 	pulumi.RegisterOutputType(ContainerInstanceContainerResourceConfigPtrOutput{})
 	pulumi.RegisterOutputType(ContainerInstanceContainerSecurityContextOutput{})
 	pulumi.RegisterOutputType(ContainerInstanceContainerSecurityContextPtrOutput{})
+	pulumi.RegisterOutputType(ContainerInstanceContainerSecurityContextCapabilitiesOutput{})
+	pulumi.RegisterOutputType(ContainerInstanceContainerSecurityContextCapabilitiesPtrOutput{})
 	pulumi.RegisterOutputType(ContainerInstanceContainerVolumeMountOutput{})
 	pulumi.RegisterOutputType(ContainerInstanceContainerVolumeMountArrayOutput{})
 	pulumi.RegisterOutputType(ContainerInstanceDnsConfigOutput{})

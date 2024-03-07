@@ -2096,10 +2096,10 @@ github.com/openzipkin-contrib/zipkin-go-opentracing v0.4.5/go.mod h1:/wsWhb9smxS
 github.com/openzipkin/zipkin-go v0.1.6/go.mod h1:QgAqvLzwWbR/WpD4A3cGpPtJrZXNIiJc5AZX7/PBEpw=
 github.com/openzipkin/zipkin-go v0.2.1/go.mod h1:NaW6tEwdmWMaCDZzg8sh+IBNOxHMPnhQw8ySjnjRyN4=
 github.com/openzipkin/zipkin-go v0.2.2/go.mod h1:NaW6tEwdmWMaCDZzg8sh+IBNOxHMPnhQw8ySjnjRyN4=
-github.com/oracle/oci-go-sdk/v65 v65.60.0 h1:r0fFFGc7PFbj9MAAJkUY/SU+IWS7HVx7NiiPj9gKzCU=
-github.com/oracle/oci-go-sdk/v65 v65.60.0/go.mod h1:IBEV9l1qBzUpo7zgGaRUhbB05BVfcDGYRFBCPlTcPp0=
-github.com/oracle/terraform-provider-oci v1.0.19-0.20240228161817-93d8fb36c36c h1:ZHpjfRVfW/HV6ByRUnM1+ObMYW+hk0SbvM+lcpIgV2Q=
-github.com/oracle/terraform-provider-oci v1.0.19-0.20240228161817-93d8fb36c36c/go.mod h1:5eI+3RwL2LKU2UD4fC2Gn7T1Lj27GFrvdxi+5B56AGM=
+github.com/oracle/oci-go-sdk/v65 v65.61.0 h1:zASJu3G3PVTAqOkHyVoSU3Sfeoir4M0WCLr12+rtCkg=
+github.com/oracle/oci-go-sdk/v65 v65.61.0/go.mod h1:IBEV9l1qBzUpo7zgGaRUhbB05BVfcDGYRFBCPlTcPp0=
+github.com/oracle/terraform-provider-oci v1.0.19-0.20240306095804-6e4c19e92b39 h1:RSeymAOTzYziYXA+xSN8yl5uNTJJ9VfB/1b7wtY/rBU=
+github.com/oracle/terraform-provider-oci v1.0.19-0.20240306095804-6e4c19e92b39/go.mod h1:tfoLFfkNBk+DGmAYv7wtjF3TJD1JrQoubSMLw36TEyc=
 github.com/pact-foundation/pact-go v1.0.4/go.mod h1:uExwJY4kCzNPcHRj+hCR/HBbOOIwwtUjcrb0b5/5kLM=
 github.com/pascaldekloe/goe v0.0.0-20180627143212-57f6aae5913c/go.mod h1:lzWF7FIEvWOWxwDKqyGYQf6ZUaNfKdP144TG7ZOy1lc=
 github.com/pascaldekloe/goe v0.1.0 h1:cBOtyMzM9HTpWjXfbbunk26uA6nG3a8n06Wieeh0MwY=

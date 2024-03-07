@@ -10,6 +10,7 @@ import com.pulumi.oci.Core.inputs.InstanceAvailabilityConfigArgs;
 import com.pulumi.oci.Core.inputs.InstanceCreateVnicDetailsArgs;
 import com.pulumi.oci.Core.inputs.InstanceInstanceOptionsArgs;
 import com.pulumi.oci.Core.inputs.InstanceLaunchOptionsArgs;
+import com.pulumi.oci.Core.inputs.InstanceLaunchVolumeAttachmentArgs;
 import com.pulumi.oci.Core.inputs.InstancePlatformConfigArgs;
 import com.pulumi.oci.Core.inputs.InstancePreemptibleInstanceConfigArgs;
 import com.pulumi.oci.Core.inputs.InstanceShapeConfigArgs;
@@ -17,6 +18,7 @@ import com.pulumi.oci.Core.inputs.InstanceSourceDetailsArgs;
 import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -185,14 +187,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+     * A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -424,6 +426,25 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Volume attachments to create as part of the launch instance operation.
+     * 
+     * **Note:** This property is used for initial instance provisioning only. Updates to this property will not be supported. To update volume attachments, user should use `oci.Core.VolumeAttachment`. To update volume details, user should use `oci.Core.Volume`
+     * 
+     */
+    @Import(name="launchVolumeAttachments")
+    private @Nullable Output<List<InstanceLaunchVolumeAttachmentArgs>> launchVolumeAttachments;
+
+    /**
+     * @return Volume attachments to create as part of the launch instance operation.
+     * 
+     * **Note:** This property is used for initial instance provisioning only. Updates to this property will not be supported. To update volume attachments, user should use `oci.Core.VolumeAttachment`. To update volume details, user should use `oci.Core.Volume`
+     * 
+     */
+    public Optional<Output<List<InstanceLaunchVolumeAttachmentArgs>>> launchVolumeAttachments() {
+        return Optional.ofNullable(this.launchVolumeAttachments);
+    }
+
+    /**
      * (Updatable) Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
      * 
      * A metadata service runs on every launched instance. The service is an HTTP endpoint listening on 169.254.169.254. You can use the service to:
@@ -589,6 +610,13 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<Boolean>> preserveBootVolume() {
         return Optional.ofNullable(this.preserveBootVolume);
+    }
+
+    @Import(name="preserveDataVolumesCreatedAtLaunch")
+    private @Nullable Output<Boolean> preserveDataVolumesCreatedAtLaunch;
+
+    public Optional<Output<Boolean>> preserveDataVolumesCreatedAtLaunch() {
+        return Optional.ofNullable(this.preserveDataVolumesCreatedAtLaunch);
     }
 
     /**
@@ -824,10 +852,12 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         this.isPvEncryptionInTransitEnabled = $.isPvEncryptionInTransitEnabled;
         this.launchMode = $.launchMode;
         this.launchOptions = $.launchOptions;
+        this.launchVolumeAttachments = $.launchVolumeAttachments;
         this.metadata = $.metadata;
         this.platformConfig = $.platformConfig;
         this.preemptibleInstanceConfig = $.preemptibleInstanceConfig;
         this.preserveBootVolume = $.preserveBootVolume;
+        this.preserveDataVolumesCreatedAtLaunch = $.preserveDataVolumesCreatedAtLaunch;
         this.privateIp = $.privateIp;
         this.publicIp = $.publicIp;
         this.region = $.region;
@@ -1080,7 +1110,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+         * @param displayName A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -1091,7 +1121,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+         * @param displayName A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -1393,6 +1423,43 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param launchVolumeAttachments Volume attachments to create as part of the launch instance operation.
+         * 
+         * **Note:** This property is used for initial instance provisioning only. Updates to this property will not be supported. To update volume attachments, user should use `oci.Core.VolumeAttachment`. To update volume details, user should use `oci.Core.Volume`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder launchVolumeAttachments(@Nullable Output<List<InstanceLaunchVolumeAttachmentArgs>> launchVolumeAttachments) {
+            $.launchVolumeAttachments = launchVolumeAttachments;
+            return this;
+        }
+
+        /**
+         * @param launchVolumeAttachments Volume attachments to create as part of the launch instance operation.
+         * 
+         * **Note:** This property is used for initial instance provisioning only. Updates to this property will not be supported. To update volume attachments, user should use `oci.Core.VolumeAttachment`. To update volume details, user should use `oci.Core.Volume`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder launchVolumeAttachments(List<InstanceLaunchVolumeAttachmentArgs> launchVolumeAttachments) {
+            return launchVolumeAttachments(Output.of(launchVolumeAttachments));
+        }
+
+        /**
+         * @param launchVolumeAttachments Volume attachments to create as part of the launch instance operation.
+         * 
+         * **Note:** This property is used for initial instance provisioning only. Updates to this property will not be supported. To update volume attachments, user should use `oci.Core.VolumeAttachment`. To update volume details, user should use `oci.Core.Volume`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder launchVolumeAttachments(InstanceLaunchVolumeAttachmentArgs... launchVolumeAttachments) {
+            return launchVolumeAttachments(List.of(launchVolumeAttachments));
+        }
+
+        /**
          * @param metadata (Updatable) Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
          * 
          * A metadata service runs on every launched instance. The service is an HTTP endpoint listening on 169.254.169.254. You can use the service to:
@@ -1582,6 +1649,15 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder preserveBootVolume(Boolean preserveBootVolume) {
             return preserveBootVolume(Output.of(preserveBootVolume));
+        }
+
+        public Builder preserveDataVolumesCreatedAtLaunch(@Nullable Output<Boolean> preserveDataVolumesCreatedAtLaunch) {
+            $.preserveDataVolumesCreatedAtLaunch = preserveDataVolumesCreatedAtLaunch;
+            return this;
+        }
+
+        public Builder preserveDataVolumesCreatedAtLaunch(Boolean preserveDataVolumesCreatedAtLaunch) {
+            return preserveDataVolumesCreatedAtLaunch(Output.of(preserveDataVolumesCreatedAtLaunch));
         }
 
         /**

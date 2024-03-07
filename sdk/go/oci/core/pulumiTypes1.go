@@ -13,6 +13,577 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail struct {
+	// Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
+	Ipv6subnetCidr string `pulumi:"ipv6subnetCidr"`
+}
+
+// GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailInput is an input type that accepts GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs and GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput values.
+// You can construct a concrete instance of `GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailInput` via:
+//
+//	GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs{...}
+type GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailInput interface {
+	pulumi.Input
+
+	ToGetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput() GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput
+	ToGetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutputWithContext(context.Context) GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput
+}
+
+type GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs struct {
+	// Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
+	Ipv6subnetCidr pulumi.StringInput `pulumi:"ipv6subnetCidr"`
+}
+
+func (GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail)(nil)).Elem()
+}
+
+func (i GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs) ToGetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput() GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput {
+	return i.ToGetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutputWithContext(context.Background())
+}
+
+func (i GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs) ToGetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutputWithContext(ctx context.Context) GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput)
+}
+
+// GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayInput is an input type that accepts GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArray and GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutput values.
+// You can construct a concrete instance of `GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayInput` via:
+//
+//	GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArray{ GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs{...} }
+type GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutput() GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutput
+	ToGetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutputWithContext(context.Context) GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutput
+}
+
+type GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArray []GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailInput
+
+func (GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail)(nil)).Elem()
+}
+
+func (i GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArray) ToGetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutput() GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return i.ToGetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArray) ToGetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutputWithContext(ctx context.Context) GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutput)
+}
+
+type GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput struct{ *pulumi.OutputState }
+
+func (GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail)(nil)).Elem()
+}
+
+func (o GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput) ToGetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput() GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput {
+	return o
+}
+
+func (o GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput) ToGetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutputWithContext(ctx context.Context) GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput {
+	return o
+}
+
+// Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
+func (o GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput) Ipv6subnetCidr() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail) string {
+		return v.Ipv6subnetCidr
+	}).(pulumi.StringOutput)
+}
+
+type GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail)(nil)).Elem()
+}
+
+func (o GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutput) ToGetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutput() GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return o
+}
+
+func (o GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutput) ToGetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutputWithContext(ctx context.Context) GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return o
+}
+
+func (o GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutput) Index(i pulumi.IntInput) GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail {
+		return vs[0].([]GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail)[vs[1].(int)]
+	}).(GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput)
+}
+
+type GetInstancePoolsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetInstancePoolsFilterInput is an input type that accepts GetInstancePoolsFilterArgs and GetInstancePoolsFilterOutput values.
+// You can construct a concrete instance of `GetInstancePoolsFilterInput` via:
+//
+//	GetInstancePoolsFilterArgs{...}
+type GetInstancePoolsFilterInput interface {
+	pulumi.Input
+
+	ToGetInstancePoolsFilterOutput() GetInstancePoolsFilterOutput
+	ToGetInstancePoolsFilterOutputWithContext(context.Context) GetInstancePoolsFilterOutput
+}
+
+type GetInstancePoolsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetInstancePoolsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstancePoolsFilter)(nil)).Elem()
+}
+
+func (i GetInstancePoolsFilterArgs) ToGetInstancePoolsFilterOutput() GetInstancePoolsFilterOutput {
+	return i.ToGetInstancePoolsFilterOutputWithContext(context.Background())
+}
+
+func (i GetInstancePoolsFilterArgs) ToGetInstancePoolsFilterOutputWithContext(ctx context.Context) GetInstancePoolsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstancePoolsFilterOutput)
+}
+
+// GetInstancePoolsFilterArrayInput is an input type that accepts GetInstancePoolsFilterArray and GetInstancePoolsFilterArrayOutput values.
+// You can construct a concrete instance of `GetInstancePoolsFilterArrayInput` via:
+//
+//	GetInstancePoolsFilterArray{ GetInstancePoolsFilterArgs{...} }
+type GetInstancePoolsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetInstancePoolsFilterArrayOutput() GetInstancePoolsFilterArrayOutput
+	ToGetInstancePoolsFilterArrayOutputWithContext(context.Context) GetInstancePoolsFilterArrayOutput
+}
+
+type GetInstancePoolsFilterArray []GetInstancePoolsFilterInput
+
+func (GetInstancePoolsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstancePoolsFilter)(nil)).Elem()
+}
+
+func (i GetInstancePoolsFilterArray) ToGetInstancePoolsFilterArrayOutput() GetInstancePoolsFilterArrayOutput {
+	return i.ToGetInstancePoolsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstancePoolsFilterArray) ToGetInstancePoolsFilterArrayOutputWithContext(ctx context.Context) GetInstancePoolsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstancePoolsFilterArrayOutput)
+}
+
+type GetInstancePoolsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetInstancePoolsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstancePoolsFilter)(nil)).Elem()
+}
+
+func (o GetInstancePoolsFilterOutput) ToGetInstancePoolsFilterOutput() GetInstancePoolsFilterOutput {
+	return o
+}
+
+func (o GetInstancePoolsFilterOutput) ToGetInstancePoolsFilterOutputWithContext(ctx context.Context) GetInstancePoolsFilterOutput {
+	return o
+}
+
+func (o GetInstancePoolsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancePoolsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetInstancePoolsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetInstancePoolsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetInstancePoolsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetInstancePoolsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetInstancePoolsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstancePoolsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstancePoolsFilter)(nil)).Elem()
+}
+
+func (o GetInstancePoolsFilterArrayOutput) ToGetInstancePoolsFilterArrayOutput() GetInstancePoolsFilterArrayOutput {
+	return o
+}
+
+func (o GetInstancePoolsFilterArrayOutput) ToGetInstancePoolsFilterArrayOutputWithContext(ctx context.Context) GetInstancePoolsFilterArrayOutput {
+	return o
+}
+
+func (o GetInstancePoolsFilterArrayOutput) Index(i pulumi.IntInput) GetInstancePoolsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstancePoolsFilter {
+		return vs[0].([]GetInstancePoolsFilter)[vs[1].(int)]
+	}).(GetInstancePoolsFilterOutput)
+}
+
+type GetInstancePoolsInstancePool struct {
+	ActualSize int `pulumi:"actualSize"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attachment.
+	Id string `pulumi:"id"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration associated with the instance pool.
+	InstanceConfigurationId string `pulumi:"instanceConfigurationId"`
+	// A user-friendly formatter for the instance pool's instances. Instance displaynames follow the format. The formatter does not retroactively change instance's displaynames, only instance displaynames in the future follow the format
+	InstanceDisplayNameFormatter string `pulumi:"instanceDisplayNameFormatter"`
+	// A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
+	InstanceHostnameFormatter string `pulumi:"instanceHostnameFormatter"`
+	// The load balancers attached to the instance pool.
+	LoadBalancers []GetInstancePoolsInstancePoolLoadBalancer `pulumi:"loadBalancers"`
+	// The placement configurations for the instance pool.
+	PlacementConfigurations []GetInstancePoolsInstancePoolPlacementConfiguration `pulumi:"placementConfigurations"`
+	// The number of actual instances in the instance pool on the cloud. This attribute will be different when instance pool is used along with autoScaling Configuration.
+	Size int `pulumi:"size"`
+	// A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
+	State string `pulumi:"state"`
+	// The date and time the instance pool was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+}
+
+// GetInstancePoolsInstancePoolInput is an input type that accepts GetInstancePoolsInstancePoolArgs and GetInstancePoolsInstancePoolOutput values.
+// You can construct a concrete instance of `GetInstancePoolsInstancePoolInput` via:
+//
+//	GetInstancePoolsInstancePoolArgs{...}
+type GetInstancePoolsInstancePoolInput interface {
+	pulumi.Input
+
+	ToGetInstancePoolsInstancePoolOutput() GetInstancePoolsInstancePoolOutput
+	ToGetInstancePoolsInstancePoolOutputWithContext(context.Context) GetInstancePoolsInstancePoolOutput
+}
+
+type GetInstancePoolsInstancePoolArgs struct {
+	ActualSize pulumi.IntInput `pulumi:"actualSize"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attachment.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration associated with the instance pool.
+	InstanceConfigurationId pulumi.StringInput `pulumi:"instanceConfigurationId"`
+	// A user-friendly formatter for the instance pool's instances. Instance displaynames follow the format. The formatter does not retroactively change instance's displaynames, only instance displaynames in the future follow the format
+	InstanceDisplayNameFormatter pulumi.StringInput `pulumi:"instanceDisplayNameFormatter"`
+	// A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
+	InstanceHostnameFormatter pulumi.StringInput `pulumi:"instanceHostnameFormatter"`
+	// The load balancers attached to the instance pool.
+	LoadBalancers GetInstancePoolsInstancePoolLoadBalancerArrayInput `pulumi:"loadBalancers"`
+	// The placement configurations for the instance pool.
+	PlacementConfigurations GetInstancePoolsInstancePoolPlacementConfigurationArrayInput `pulumi:"placementConfigurations"`
+	// The number of actual instances in the instance pool on the cloud. This attribute will be different when instance pool is used along with autoScaling Configuration.
+	Size pulumi.IntInput `pulumi:"size"`
+	// A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
+	State pulumi.StringInput `pulumi:"state"`
+	// The date and time the instance pool was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+}
+
+func (GetInstancePoolsInstancePoolArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstancePoolsInstancePool)(nil)).Elem()
+}
+
+func (i GetInstancePoolsInstancePoolArgs) ToGetInstancePoolsInstancePoolOutput() GetInstancePoolsInstancePoolOutput {
+	return i.ToGetInstancePoolsInstancePoolOutputWithContext(context.Background())
+}
+
+func (i GetInstancePoolsInstancePoolArgs) ToGetInstancePoolsInstancePoolOutputWithContext(ctx context.Context) GetInstancePoolsInstancePoolOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstancePoolsInstancePoolOutput)
+}
+
+// GetInstancePoolsInstancePoolArrayInput is an input type that accepts GetInstancePoolsInstancePoolArray and GetInstancePoolsInstancePoolArrayOutput values.
+// You can construct a concrete instance of `GetInstancePoolsInstancePoolArrayInput` via:
+//
+//	GetInstancePoolsInstancePoolArray{ GetInstancePoolsInstancePoolArgs{...} }
+type GetInstancePoolsInstancePoolArrayInput interface {
+	pulumi.Input
+
+	ToGetInstancePoolsInstancePoolArrayOutput() GetInstancePoolsInstancePoolArrayOutput
+	ToGetInstancePoolsInstancePoolArrayOutputWithContext(context.Context) GetInstancePoolsInstancePoolArrayOutput
+}
+
+type GetInstancePoolsInstancePoolArray []GetInstancePoolsInstancePoolInput
+
+func (GetInstancePoolsInstancePoolArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstancePoolsInstancePool)(nil)).Elem()
+}
+
+func (i GetInstancePoolsInstancePoolArray) ToGetInstancePoolsInstancePoolArrayOutput() GetInstancePoolsInstancePoolArrayOutput {
+	return i.ToGetInstancePoolsInstancePoolArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstancePoolsInstancePoolArray) ToGetInstancePoolsInstancePoolArrayOutputWithContext(ctx context.Context) GetInstancePoolsInstancePoolArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstancePoolsInstancePoolArrayOutput)
+}
+
+type GetInstancePoolsInstancePoolOutput struct{ *pulumi.OutputState }
+
+func (GetInstancePoolsInstancePoolOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstancePoolsInstancePool)(nil)).Elem()
+}
+
+func (o GetInstancePoolsInstancePoolOutput) ToGetInstancePoolsInstancePoolOutput() GetInstancePoolsInstancePoolOutput {
+	return o
+}
+
+func (o GetInstancePoolsInstancePoolOutput) ToGetInstancePoolsInstancePoolOutputWithContext(ctx context.Context) GetInstancePoolsInstancePoolOutput {
+	return o
+}
+
+func (o GetInstancePoolsInstancePoolOutput) ActualSize() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstancePoolsInstancePool) int { return v.ActualSize }).(pulumi.IntOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+func (o GetInstancePoolsInstancePoolOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancePoolsInstancePool) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetInstancePoolsInstancePoolOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetInstancePoolsInstancePool) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// A filter to return only resources that match the given display name exactly.
+func (o GetInstancePoolsInstancePoolOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancePoolsInstancePool) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetInstancePoolsInstancePoolOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetInstancePoolsInstancePool) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attachment.
+func (o GetInstancePoolsInstancePoolOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancePoolsInstancePool) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration associated with the instance pool.
+func (o GetInstancePoolsInstancePoolOutput) InstanceConfigurationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancePoolsInstancePool) string { return v.InstanceConfigurationId }).(pulumi.StringOutput)
+}
+
+// A user-friendly formatter for the instance pool's instances. Instance displaynames follow the format. The formatter does not retroactively change instance's displaynames, only instance displaynames in the future follow the format
+func (o GetInstancePoolsInstancePoolOutput) InstanceDisplayNameFormatter() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancePoolsInstancePool) string { return v.InstanceDisplayNameFormatter }).(pulumi.StringOutput)
+}
+
+// A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
+func (o GetInstancePoolsInstancePoolOutput) InstanceHostnameFormatter() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancePoolsInstancePool) string { return v.InstanceHostnameFormatter }).(pulumi.StringOutput)
+}
+
+// The load balancers attached to the instance pool.
+func (o GetInstancePoolsInstancePoolOutput) LoadBalancers() GetInstancePoolsInstancePoolLoadBalancerArrayOutput {
+	return o.ApplyT(func(v GetInstancePoolsInstancePool) []GetInstancePoolsInstancePoolLoadBalancer {
+		return v.LoadBalancers
+	}).(GetInstancePoolsInstancePoolLoadBalancerArrayOutput)
+}
+
+// The placement configurations for the instance pool.
+func (o GetInstancePoolsInstancePoolOutput) PlacementConfigurations() GetInstancePoolsInstancePoolPlacementConfigurationArrayOutput {
+	return o.ApplyT(func(v GetInstancePoolsInstancePool) []GetInstancePoolsInstancePoolPlacementConfiguration {
+		return v.PlacementConfigurations
+	}).(GetInstancePoolsInstancePoolPlacementConfigurationArrayOutput)
+}
+
+// The number of actual instances in the instance pool on the cloud. This attribute will be different when instance pool is used along with autoScaling Configuration.
+func (o GetInstancePoolsInstancePoolOutput) Size() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstancePoolsInstancePool) int { return v.Size }).(pulumi.IntOutput)
+}
+
+// A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
+func (o GetInstancePoolsInstancePoolOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancePoolsInstancePool) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The date and time the instance pool was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+func (o GetInstancePoolsInstancePoolOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancePoolsInstancePool) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+type GetInstancePoolsInstancePoolArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstancePoolsInstancePoolArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstancePoolsInstancePool)(nil)).Elem()
+}
+
+func (o GetInstancePoolsInstancePoolArrayOutput) ToGetInstancePoolsInstancePoolArrayOutput() GetInstancePoolsInstancePoolArrayOutput {
+	return o
+}
+
+func (o GetInstancePoolsInstancePoolArrayOutput) ToGetInstancePoolsInstancePoolArrayOutputWithContext(ctx context.Context) GetInstancePoolsInstancePoolArrayOutput {
+	return o
+}
+
+func (o GetInstancePoolsInstancePoolArrayOutput) Index(i pulumi.IntInput) GetInstancePoolsInstancePoolOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstancePoolsInstancePool {
+		return vs[0].([]GetInstancePoolsInstancePool)[vs[1].(int)]
+	}).(GetInstancePoolsInstancePoolOutput)
+}
+
+type GetInstancePoolsInstancePoolLoadBalancer struct {
+	// The name of the backend set on the load balancer.
+	BackendSetName string `pulumi:"backendSetName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attachment.
+	Id string `pulumi:"id"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool of the load balancer attachment.
+	InstancePoolId string `pulumi:"instancePoolId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attached to the instance pool.
+	LoadBalancerId string `pulumi:"loadBalancerId"`
+	// The port value used for the backends.
+	Port int `pulumi:"port"`
+	// A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
+	State string `pulumi:"state"`
+	// Indicates which VNIC on each instance in the instance pool should be used to associate with the load balancer. Possible values are "PrimaryVnic" or the displayName of one of the secondary VNICs on the instance configuration that is associated with the instance pool.
+	VnicSelection string `pulumi:"vnicSelection"`
+}
+
+// GetInstancePoolsInstancePoolLoadBalancerInput is an input type that accepts GetInstancePoolsInstancePoolLoadBalancerArgs and GetInstancePoolsInstancePoolLoadBalancerOutput values.
+// You can construct a concrete instance of `GetInstancePoolsInstancePoolLoadBalancerInput` via:
+//
+//	GetInstancePoolsInstancePoolLoadBalancerArgs{...}
+type GetInstancePoolsInstancePoolLoadBalancerInput interface {
+	pulumi.Input
+
+	ToGetInstancePoolsInstancePoolLoadBalancerOutput() GetInstancePoolsInstancePoolLoadBalancerOutput
+	ToGetInstancePoolsInstancePoolLoadBalancerOutputWithContext(context.Context) GetInstancePoolsInstancePoolLoadBalancerOutput
+}
+
+type GetInstancePoolsInstancePoolLoadBalancerArgs struct {
+	// The name of the backend set on the load balancer.
+	BackendSetName pulumi.StringInput `pulumi:"backendSetName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attachment.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool of the load balancer attachment.
+	InstancePoolId pulumi.StringInput `pulumi:"instancePoolId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attached to the instance pool.
+	LoadBalancerId pulumi.StringInput `pulumi:"loadBalancerId"`
+	// The port value used for the backends.
+	Port pulumi.IntInput `pulumi:"port"`
+	// A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
+	State pulumi.StringInput `pulumi:"state"`
+	// Indicates which VNIC on each instance in the instance pool should be used to associate with the load balancer. Possible values are "PrimaryVnic" or the displayName of one of the secondary VNICs on the instance configuration that is associated with the instance pool.
+	VnicSelection pulumi.StringInput `pulumi:"vnicSelection"`
+}
+
+func (GetInstancePoolsInstancePoolLoadBalancerArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstancePoolsInstancePoolLoadBalancer)(nil)).Elem()
+}
+
+func (i GetInstancePoolsInstancePoolLoadBalancerArgs) ToGetInstancePoolsInstancePoolLoadBalancerOutput() GetInstancePoolsInstancePoolLoadBalancerOutput {
+	return i.ToGetInstancePoolsInstancePoolLoadBalancerOutputWithContext(context.Background())
+}
+
+func (i GetInstancePoolsInstancePoolLoadBalancerArgs) ToGetInstancePoolsInstancePoolLoadBalancerOutputWithContext(ctx context.Context) GetInstancePoolsInstancePoolLoadBalancerOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstancePoolsInstancePoolLoadBalancerOutput)
+}
+
+// GetInstancePoolsInstancePoolLoadBalancerArrayInput is an input type that accepts GetInstancePoolsInstancePoolLoadBalancerArray and GetInstancePoolsInstancePoolLoadBalancerArrayOutput values.
+// You can construct a concrete instance of `GetInstancePoolsInstancePoolLoadBalancerArrayInput` via:
+//
+//	GetInstancePoolsInstancePoolLoadBalancerArray{ GetInstancePoolsInstancePoolLoadBalancerArgs{...} }
+type GetInstancePoolsInstancePoolLoadBalancerArrayInput interface {
+	pulumi.Input
+
+	ToGetInstancePoolsInstancePoolLoadBalancerArrayOutput() GetInstancePoolsInstancePoolLoadBalancerArrayOutput
+	ToGetInstancePoolsInstancePoolLoadBalancerArrayOutputWithContext(context.Context) GetInstancePoolsInstancePoolLoadBalancerArrayOutput
+}
+
+type GetInstancePoolsInstancePoolLoadBalancerArray []GetInstancePoolsInstancePoolLoadBalancerInput
+
+func (GetInstancePoolsInstancePoolLoadBalancerArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstancePoolsInstancePoolLoadBalancer)(nil)).Elem()
+}
+
+func (i GetInstancePoolsInstancePoolLoadBalancerArray) ToGetInstancePoolsInstancePoolLoadBalancerArrayOutput() GetInstancePoolsInstancePoolLoadBalancerArrayOutput {
+	return i.ToGetInstancePoolsInstancePoolLoadBalancerArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstancePoolsInstancePoolLoadBalancerArray) ToGetInstancePoolsInstancePoolLoadBalancerArrayOutputWithContext(ctx context.Context) GetInstancePoolsInstancePoolLoadBalancerArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstancePoolsInstancePoolLoadBalancerArrayOutput)
+}
+
+type GetInstancePoolsInstancePoolLoadBalancerOutput struct{ *pulumi.OutputState }
+
+func (GetInstancePoolsInstancePoolLoadBalancerOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstancePoolsInstancePoolLoadBalancer)(nil)).Elem()
+}
+
+func (o GetInstancePoolsInstancePoolLoadBalancerOutput) ToGetInstancePoolsInstancePoolLoadBalancerOutput() GetInstancePoolsInstancePoolLoadBalancerOutput {
+	return o
+}
+
+func (o GetInstancePoolsInstancePoolLoadBalancerOutput) ToGetInstancePoolsInstancePoolLoadBalancerOutputWithContext(ctx context.Context) GetInstancePoolsInstancePoolLoadBalancerOutput {
+	return o
+}
+
+// The name of the backend set on the load balancer.
+func (o GetInstancePoolsInstancePoolLoadBalancerOutput) BackendSetName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancePoolsInstancePoolLoadBalancer) string { return v.BackendSetName }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attachment.
+func (o GetInstancePoolsInstancePoolLoadBalancerOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancePoolsInstancePoolLoadBalancer) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool of the load balancer attachment.
+func (o GetInstancePoolsInstancePoolLoadBalancerOutput) InstancePoolId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancePoolsInstancePoolLoadBalancer) string { return v.InstancePoolId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attached to the instance pool.
+func (o GetInstancePoolsInstancePoolLoadBalancerOutput) LoadBalancerId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancePoolsInstancePoolLoadBalancer) string { return v.LoadBalancerId }).(pulumi.StringOutput)
+}
+
+// The port value used for the backends.
+func (o GetInstancePoolsInstancePoolLoadBalancerOutput) Port() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstancePoolsInstancePoolLoadBalancer) int { return v.Port }).(pulumi.IntOutput)
+}
+
+// A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
+func (o GetInstancePoolsInstancePoolLoadBalancerOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancePoolsInstancePoolLoadBalancer) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Indicates which VNIC on each instance in the instance pool should be used to associate with the load balancer. Possible values are "PrimaryVnic" or the displayName of one of the secondary VNICs on the instance configuration that is associated with the instance pool.
+func (o GetInstancePoolsInstancePoolLoadBalancerOutput) VnicSelection() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancePoolsInstancePoolLoadBalancer) string { return v.VnicSelection }).(pulumi.StringOutput)
+}
+
+type GetInstancePoolsInstancePoolLoadBalancerArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstancePoolsInstancePoolLoadBalancerArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstancePoolsInstancePoolLoadBalancer)(nil)).Elem()
+}
+
+func (o GetInstancePoolsInstancePoolLoadBalancerArrayOutput) ToGetInstancePoolsInstancePoolLoadBalancerArrayOutput() GetInstancePoolsInstancePoolLoadBalancerArrayOutput {
+	return o
+}
+
+func (o GetInstancePoolsInstancePoolLoadBalancerArrayOutput) ToGetInstancePoolsInstancePoolLoadBalancerArrayOutputWithContext(ctx context.Context) GetInstancePoolsInstancePoolLoadBalancerArrayOutput {
+	return o
+}
+
+func (o GetInstancePoolsInstancePoolLoadBalancerArrayOutput) Index(i pulumi.IntInput) GetInstancePoolsInstancePoolLoadBalancerOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstancePoolsInstancePoolLoadBalancer {
+		return vs[0].([]GetInstancePoolsInstancePoolLoadBalancer)[vs[1].(int)]
+	}).(GetInstancePoolsInstancePoolLoadBalancerOutput)
+}
+
 type GetInstancePoolsInstancePoolPlacementConfiguration struct {
 	// The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
@@ -1435,7 +2006,8 @@ type GetInstancesInstance struct {
 	// Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
 	LaunchMode string `pulumi:"launchMode"`
 	// Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
-	LaunchOptions []GetInstancesInstanceLaunchOption `pulumi:"launchOptions"`
+	LaunchOptions           []GetInstancesInstanceLaunchOption           `pulumi:"launchOptions"`
+	LaunchVolumeAttachments []GetInstancesInstanceLaunchVolumeAttachment `pulumi:"launchVolumeAttachments"`
 	// Custom metadata that you provide.
 	Metadata map[string]interface{} `pulumi:"metadata"`
 	// The platform configuration for the instance.
@@ -1443,9 +2015,10 @@ type GetInstancesInstance struct {
 	// (Optional) Configuration options for preemptible instances.
 	PreemptibleInstanceConfigs []GetInstancesInstancePreemptibleInstanceConfig `pulumi:"preemptibleInstanceConfigs"`
 	// (Optional) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
-	PreserveBootVolume bool   `pulumi:"preserveBootVolume"`
-	PrivateIp          string `pulumi:"privateIp"`
-	PublicIp           string `pulumi:"publicIp"`
+	PreserveBootVolume                 bool   `pulumi:"preserveBootVolume"`
+	PreserveDataVolumesCreatedAtLaunch bool   `pulumi:"preserveDataVolumesCreatedAtLaunch"`
+	PrivateIp                          string `pulumi:"privateIp"`
+	PublicIp                           string `pulumi:"publicIp"`
 	// The region that contains the availability domain the instance is running in.
 	Region string `pulumi:"region"`
 	// The shape of the instance. The shape determines the number of CPUs and the amount of memory allocated to the instance. You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
@@ -1527,7 +2100,8 @@ type GetInstancesInstanceArgs struct {
 	// Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
 	LaunchMode pulumi.StringInput `pulumi:"launchMode"`
 	// Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
-	LaunchOptions GetInstancesInstanceLaunchOptionArrayInput `pulumi:"launchOptions"`
+	LaunchOptions           GetInstancesInstanceLaunchOptionArrayInput           `pulumi:"launchOptions"`
+	LaunchVolumeAttachments GetInstancesInstanceLaunchVolumeAttachmentArrayInput `pulumi:"launchVolumeAttachments"`
 	// Custom metadata that you provide.
 	Metadata pulumi.MapInput `pulumi:"metadata"`
 	// The platform configuration for the instance.
@@ -1535,9 +2109,10 @@ type GetInstancesInstanceArgs struct {
 	// (Optional) Configuration options for preemptible instances.
 	PreemptibleInstanceConfigs GetInstancesInstancePreemptibleInstanceConfigArrayInput `pulumi:"preemptibleInstanceConfigs"`
 	// (Optional) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
-	PreserveBootVolume pulumi.BoolInput   `pulumi:"preserveBootVolume"`
-	PrivateIp          pulumi.StringInput `pulumi:"privateIp"`
-	PublicIp           pulumi.StringInput `pulumi:"publicIp"`
+	PreserveBootVolume                 pulumi.BoolInput   `pulumi:"preserveBootVolume"`
+	PreserveDataVolumesCreatedAtLaunch pulumi.BoolInput   `pulumi:"preserveDataVolumesCreatedAtLaunch"`
+	PrivateIp                          pulumi.StringInput `pulumi:"privateIp"`
+	PublicIp                           pulumi.StringInput `pulumi:"publicIp"`
 	// The region that contains the availability domain the instance is running in.
 	Region pulumi.StringInput `pulumi:"region"`
 	// The shape of the instance. The shape determines the number of CPUs and the amount of memory allocated to the instance. You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
@@ -1734,6 +2309,12 @@ func (o GetInstancesInstanceOutput) LaunchOptions() GetInstancesInstanceLaunchOp
 	return o.ApplyT(func(v GetInstancesInstance) []GetInstancesInstanceLaunchOption { return v.LaunchOptions }).(GetInstancesInstanceLaunchOptionArrayOutput)
 }
 
+func (o GetInstancesInstanceOutput) LaunchVolumeAttachments() GetInstancesInstanceLaunchVolumeAttachmentArrayOutput {
+	return o.ApplyT(func(v GetInstancesInstance) []GetInstancesInstanceLaunchVolumeAttachment {
+		return v.LaunchVolumeAttachments
+	}).(GetInstancesInstanceLaunchVolumeAttachmentArrayOutput)
+}
+
 // Custom metadata that you provide.
 func (o GetInstancesInstanceOutput) Metadata() pulumi.MapOutput {
 	return o.ApplyT(func(v GetInstancesInstance) map[string]interface{} { return v.Metadata }).(pulumi.MapOutput)
@@ -1754,6 +2335,10 @@ func (o GetInstancesInstanceOutput) PreemptibleInstanceConfigs() GetInstancesIns
 // (Optional) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
 func (o GetInstancesInstanceOutput) PreserveBootVolume() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetInstancesInstance) bool { return v.PreserveBootVolume }).(pulumi.BoolOutput)
+}
+
+func (o GetInstancesInstanceOutput) PreserveDataVolumesCreatedAtLaunch() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstancesInstance) bool { return v.PreserveDataVolumesCreatedAtLaunch }).(pulumi.BoolOutput)
 }
 
 func (o GetInstancesInstanceOutput) PrivateIp() pulumi.StringOutput {
@@ -2688,6 +3273,301 @@ func (o GetInstancesInstanceLaunchOptionArrayOutput) Index(i pulumi.IntInput) Ge
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstancesInstanceLaunchOption {
 		return vs[0].([]GetInstancesInstanceLaunchOption)[vs[1].(int)]
 	}).(GetInstancesInstanceLaunchOptionOutput)
+}
+
+type GetInstancesInstanceLaunchVolumeAttachment struct {
+	Device string `pulumi:"device"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName                  string                                                               `pulumi:"displayName"`
+	EncryptionInTransitType      string                                                               `pulumi:"encryptionInTransitType"`
+	IsAgentAutoIscsiLoginEnabled bool                                                                 `pulumi:"isAgentAutoIscsiLoginEnabled"`
+	IsReadOnly                   bool                                                                 `pulumi:"isReadOnly"`
+	IsShareable                  bool                                                                 `pulumi:"isShareable"`
+	LaunchCreateVolumeDetails    []GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetail `pulumi:"launchCreateVolumeDetails"`
+	// (Required) The type of action to run when the instance is interrupted for eviction.
+	Type     string `pulumi:"type"`
+	UseChap  bool   `pulumi:"useChap"`
+	VolumeId string `pulumi:"volumeId"`
+}
+
+// GetInstancesInstanceLaunchVolumeAttachmentInput is an input type that accepts GetInstancesInstanceLaunchVolumeAttachmentArgs and GetInstancesInstanceLaunchVolumeAttachmentOutput values.
+// You can construct a concrete instance of `GetInstancesInstanceLaunchVolumeAttachmentInput` via:
+//
+//	GetInstancesInstanceLaunchVolumeAttachmentArgs{...}
+type GetInstancesInstanceLaunchVolumeAttachmentInput interface {
+	pulumi.Input
+
+	ToGetInstancesInstanceLaunchVolumeAttachmentOutput() GetInstancesInstanceLaunchVolumeAttachmentOutput
+	ToGetInstancesInstanceLaunchVolumeAttachmentOutputWithContext(context.Context) GetInstancesInstanceLaunchVolumeAttachmentOutput
+}
+
+type GetInstancesInstanceLaunchVolumeAttachmentArgs struct {
+	Device pulumi.StringInput `pulumi:"device"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName                  pulumi.StringInput                                                           `pulumi:"displayName"`
+	EncryptionInTransitType      pulumi.StringInput                                                           `pulumi:"encryptionInTransitType"`
+	IsAgentAutoIscsiLoginEnabled pulumi.BoolInput                                                             `pulumi:"isAgentAutoIscsiLoginEnabled"`
+	IsReadOnly                   pulumi.BoolInput                                                             `pulumi:"isReadOnly"`
+	IsShareable                  pulumi.BoolInput                                                             `pulumi:"isShareable"`
+	LaunchCreateVolumeDetails    GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArrayInput `pulumi:"launchCreateVolumeDetails"`
+	// (Required) The type of action to run when the instance is interrupted for eviction.
+	Type     pulumi.StringInput `pulumi:"type"`
+	UseChap  pulumi.BoolInput   `pulumi:"useChap"`
+	VolumeId pulumi.StringInput `pulumi:"volumeId"`
+}
+
+func (GetInstancesInstanceLaunchVolumeAttachmentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstancesInstanceLaunchVolumeAttachment)(nil)).Elem()
+}
+
+func (i GetInstancesInstanceLaunchVolumeAttachmentArgs) ToGetInstancesInstanceLaunchVolumeAttachmentOutput() GetInstancesInstanceLaunchVolumeAttachmentOutput {
+	return i.ToGetInstancesInstanceLaunchVolumeAttachmentOutputWithContext(context.Background())
+}
+
+func (i GetInstancesInstanceLaunchVolumeAttachmentArgs) ToGetInstancesInstanceLaunchVolumeAttachmentOutputWithContext(ctx context.Context) GetInstancesInstanceLaunchVolumeAttachmentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstancesInstanceLaunchVolumeAttachmentOutput)
+}
+
+// GetInstancesInstanceLaunchVolumeAttachmentArrayInput is an input type that accepts GetInstancesInstanceLaunchVolumeAttachmentArray and GetInstancesInstanceLaunchVolumeAttachmentArrayOutput values.
+// You can construct a concrete instance of `GetInstancesInstanceLaunchVolumeAttachmentArrayInput` via:
+//
+//	GetInstancesInstanceLaunchVolumeAttachmentArray{ GetInstancesInstanceLaunchVolumeAttachmentArgs{...} }
+type GetInstancesInstanceLaunchVolumeAttachmentArrayInput interface {
+	pulumi.Input
+
+	ToGetInstancesInstanceLaunchVolumeAttachmentArrayOutput() GetInstancesInstanceLaunchVolumeAttachmentArrayOutput
+	ToGetInstancesInstanceLaunchVolumeAttachmentArrayOutputWithContext(context.Context) GetInstancesInstanceLaunchVolumeAttachmentArrayOutput
+}
+
+type GetInstancesInstanceLaunchVolumeAttachmentArray []GetInstancesInstanceLaunchVolumeAttachmentInput
+
+func (GetInstancesInstanceLaunchVolumeAttachmentArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstancesInstanceLaunchVolumeAttachment)(nil)).Elem()
+}
+
+func (i GetInstancesInstanceLaunchVolumeAttachmentArray) ToGetInstancesInstanceLaunchVolumeAttachmentArrayOutput() GetInstancesInstanceLaunchVolumeAttachmentArrayOutput {
+	return i.ToGetInstancesInstanceLaunchVolumeAttachmentArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstancesInstanceLaunchVolumeAttachmentArray) ToGetInstancesInstanceLaunchVolumeAttachmentArrayOutputWithContext(ctx context.Context) GetInstancesInstanceLaunchVolumeAttachmentArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstancesInstanceLaunchVolumeAttachmentArrayOutput)
+}
+
+type GetInstancesInstanceLaunchVolumeAttachmentOutput struct{ *pulumi.OutputState }
+
+func (GetInstancesInstanceLaunchVolumeAttachmentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstancesInstanceLaunchVolumeAttachment)(nil)).Elem()
+}
+
+func (o GetInstancesInstanceLaunchVolumeAttachmentOutput) ToGetInstancesInstanceLaunchVolumeAttachmentOutput() GetInstancesInstanceLaunchVolumeAttachmentOutput {
+	return o
+}
+
+func (o GetInstancesInstanceLaunchVolumeAttachmentOutput) ToGetInstancesInstanceLaunchVolumeAttachmentOutputWithContext(ctx context.Context) GetInstancesInstanceLaunchVolumeAttachmentOutput {
+	return o
+}
+
+func (o GetInstancesInstanceLaunchVolumeAttachmentOutput) Device() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancesInstanceLaunchVolumeAttachment) string { return v.Device }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given display name exactly.
+func (o GetInstancesInstanceLaunchVolumeAttachmentOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancesInstanceLaunchVolumeAttachment) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+func (o GetInstancesInstanceLaunchVolumeAttachmentOutput) EncryptionInTransitType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancesInstanceLaunchVolumeAttachment) string { return v.EncryptionInTransitType }).(pulumi.StringOutput)
+}
+
+func (o GetInstancesInstanceLaunchVolumeAttachmentOutput) IsAgentAutoIscsiLoginEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstancesInstanceLaunchVolumeAttachment) bool { return v.IsAgentAutoIscsiLoginEnabled }).(pulumi.BoolOutput)
+}
+
+func (o GetInstancesInstanceLaunchVolumeAttachmentOutput) IsReadOnly() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstancesInstanceLaunchVolumeAttachment) bool { return v.IsReadOnly }).(pulumi.BoolOutput)
+}
+
+func (o GetInstancesInstanceLaunchVolumeAttachmentOutput) IsShareable() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstancesInstanceLaunchVolumeAttachment) bool { return v.IsShareable }).(pulumi.BoolOutput)
+}
+
+func (o GetInstancesInstanceLaunchVolumeAttachmentOutput) LaunchCreateVolumeDetails() GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArrayOutput {
+	return o.ApplyT(func(v GetInstancesInstanceLaunchVolumeAttachment) []GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetail {
+		return v.LaunchCreateVolumeDetails
+	}).(GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArrayOutput)
+}
+
+// (Required) The type of action to run when the instance is interrupted for eviction.
+func (o GetInstancesInstanceLaunchVolumeAttachmentOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancesInstanceLaunchVolumeAttachment) string { return v.Type }).(pulumi.StringOutput)
+}
+
+func (o GetInstancesInstanceLaunchVolumeAttachmentOutput) UseChap() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstancesInstanceLaunchVolumeAttachment) bool { return v.UseChap }).(pulumi.BoolOutput)
+}
+
+func (o GetInstancesInstanceLaunchVolumeAttachmentOutput) VolumeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancesInstanceLaunchVolumeAttachment) string { return v.VolumeId }).(pulumi.StringOutput)
+}
+
+type GetInstancesInstanceLaunchVolumeAttachmentArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstancesInstanceLaunchVolumeAttachmentArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstancesInstanceLaunchVolumeAttachment)(nil)).Elem()
+}
+
+func (o GetInstancesInstanceLaunchVolumeAttachmentArrayOutput) ToGetInstancesInstanceLaunchVolumeAttachmentArrayOutput() GetInstancesInstanceLaunchVolumeAttachmentArrayOutput {
+	return o
+}
+
+func (o GetInstancesInstanceLaunchVolumeAttachmentArrayOutput) ToGetInstancesInstanceLaunchVolumeAttachmentArrayOutputWithContext(ctx context.Context) GetInstancesInstanceLaunchVolumeAttachmentArrayOutput {
+	return o
+}
+
+func (o GetInstancesInstanceLaunchVolumeAttachmentArrayOutput) Index(i pulumi.IntInput) GetInstancesInstanceLaunchVolumeAttachmentOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstancesInstanceLaunchVolumeAttachment {
+		return vs[0].([]GetInstancesInstanceLaunchVolumeAttachment)[vs[1].(int)]
+	}).(GetInstancesInstanceLaunchVolumeAttachmentOutput)
+}
+
+type GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetail struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName string `pulumi:"displayName"`
+	// The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+	KmsKeyId           string `pulumi:"kmsKeyId"`
+	SizeInGbs          string `pulumi:"sizeInGbs"`
+	VolumeCreationType string `pulumi:"volumeCreationType"`
+	VpusPerGb          string `pulumi:"vpusPerGb"`
+}
+
+// GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailInput is an input type that accepts GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArgs and GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailOutput values.
+// You can construct a concrete instance of `GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailInput` via:
+//
+//	GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArgs{...}
+type GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailInput interface {
+	pulumi.Input
+
+	ToGetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailOutput() GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailOutput
+	ToGetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailOutputWithContext(context.Context) GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailOutput
+}
+
+type GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+	KmsKeyId           pulumi.StringInput `pulumi:"kmsKeyId"`
+	SizeInGbs          pulumi.StringInput `pulumi:"sizeInGbs"`
+	VolumeCreationType pulumi.StringInput `pulumi:"volumeCreationType"`
+	VpusPerGb          pulumi.StringInput `pulumi:"vpusPerGb"`
+}
+
+func (GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetail)(nil)).Elem()
+}
+
+func (i GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArgs) ToGetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailOutput() GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailOutput {
+	return i.ToGetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailOutputWithContext(context.Background())
+}
+
+func (i GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArgs) ToGetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailOutputWithContext(ctx context.Context) GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailOutput)
+}
+
+// GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArrayInput is an input type that accepts GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArray and GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArrayOutput values.
+// You can construct a concrete instance of `GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArrayInput` via:
+//
+//	GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArray{ GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArgs{...} }
+type GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArrayOutput() GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArrayOutput
+	ToGetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArrayOutputWithContext(context.Context) GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArrayOutput
+}
+
+type GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArray []GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailInput
+
+func (GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetail)(nil)).Elem()
+}
+
+func (i GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArray) ToGetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArrayOutput() GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArrayOutput {
+	return i.ToGetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArray) ToGetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArrayOutputWithContext(ctx context.Context) GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArrayOutput)
+}
+
+type GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailOutput struct{ *pulumi.OutputState }
+
+func (GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetail)(nil)).Elem()
+}
+
+func (o GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailOutput) ToGetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailOutput() GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailOutput {
+	return o
+}
+
+func (o GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailOutput) ToGetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailOutputWithContext(ctx context.Context) GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+func (o GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetail) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given display name exactly.
+func (o GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetail) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+func (o GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailOutput) KmsKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetail) string { return v.KmsKeyId }).(pulumi.StringOutput)
+}
+
+func (o GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailOutput) SizeInGbs() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetail) string { return v.SizeInGbs }).(pulumi.StringOutput)
+}
+
+func (o GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailOutput) VolumeCreationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetail) string {
+		return v.VolumeCreationType
+	}).(pulumi.StringOutput)
+}
+
+func (o GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailOutput) VpusPerGb() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetail) string { return v.VpusPerGb }).(pulumi.StringOutput)
+}
+
+type GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetail)(nil)).Elem()
+}
+
+func (o GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArrayOutput) ToGetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArrayOutput() GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArrayOutput {
+	return o
+}
+
+func (o GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArrayOutput) ToGetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArrayOutputWithContext(ctx context.Context) GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArrayOutput {
+	return o
+}
+
+func (o GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArrayOutput) Index(i pulumi.IntInput) GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetail {
+		return vs[0].([]GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetail)[vs[1].(int)]
+	}).(GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailOutput)
 }
 
 type GetInstancesInstancePlatformConfig struct {
@@ -27678,6 +28558,14 @@ func (o GetVtapsVtapArrayOutput) Index(i pulumi.IntInput) GetVtapsVtapOutput {
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailInput)(nil)).Elem(), GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayInput)(nil)).Elem(), GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancePoolsFilterInput)(nil)).Elem(), GetInstancePoolsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancePoolsFilterArrayInput)(nil)).Elem(), GetInstancePoolsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancePoolsInstancePoolInput)(nil)).Elem(), GetInstancePoolsInstancePoolArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancePoolsInstancePoolArrayInput)(nil)).Elem(), GetInstancePoolsInstancePoolArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancePoolsInstancePoolLoadBalancerInput)(nil)).Elem(), GetInstancePoolsInstancePoolLoadBalancerArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancePoolsInstancePoolLoadBalancerArrayInput)(nil)).Elem(), GetInstancePoolsInstancePoolLoadBalancerArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancePoolsInstancePoolPlacementConfigurationInput)(nil)).Elem(), GetInstancePoolsInstancePoolPlacementConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancePoolsInstancePoolPlacementConfigurationArrayInput)(nil)).Elem(), GetInstancePoolsInstancePoolPlacementConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetInput)(nil)).Elem(), GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetArgs{})
@@ -27716,6 +28604,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancesInstanceInstanceOptionArrayInput)(nil)).Elem(), GetInstancesInstanceInstanceOptionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancesInstanceLaunchOptionInput)(nil)).Elem(), GetInstancesInstanceLaunchOptionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancesInstanceLaunchOptionArrayInput)(nil)).Elem(), GetInstancesInstanceLaunchOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancesInstanceLaunchVolumeAttachmentInput)(nil)).Elem(), GetInstancesInstanceLaunchVolumeAttachmentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancesInstanceLaunchVolumeAttachmentArrayInput)(nil)).Elem(), GetInstancesInstanceLaunchVolumeAttachmentArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailInput)(nil)).Elem(), GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArrayInput)(nil)).Elem(), GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancesInstancePlatformConfigInput)(nil)).Elem(), GetInstancesInstancePlatformConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancesInstancePlatformConfigArrayInput)(nil)).Elem(), GetInstancesInstancePlatformConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancesInstancePreemptibleInstanceConfigInput)(nil)).Elem(), GetInstancesInstancePreemptibleInstanceConfigArgs{})
@@ -28082,6 +28974,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVtapsFilterArrayInput)(nil)).Elem(), GetVtapsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVtapsVtapInput)(nil)).Elem(), GetVtapsVtapArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVtapsVtapArrayInput)(nil)).Elem(), GetVtapsVtapArray{})
+	pulumi.RegisterOutputType(GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput{})
+	pulumi.RegisterOutputType(GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetInstancePoolsFilterOutput{})
+	pulumi.RegisterOutputType(GetInstancePoolsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetInstancePoolsInstancePoolOutput{})
+	pulumi.RegisterOutputType(GetInstancePoolsInstancePoolArrayOutput{})
+	pulumi.RegisterOutputType(GetInstancePoolsInstancePoolLoadBalancerOutput{})
+	pulumi.RegisterOutputType(GetInstancePoolsInstancePoolLoadBalancerArrayOutput{})
 	pulumi.RegisterOutputType(GetInstancePoolsInstancePoolPlacementConfigurationOutput{})
 	pulumi.RegisterOutputType(GetInstancePoolsInstancePoolPlacementConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetOutput{})
@@ -28120,6 +29020,10 @@ func init() {
 	pulumi.RegisterOutputType(GetInstancesInstanceInstanceOptionArrayOutput{})
 	pulumi.RegisterOutputType(GetInstancesInstanceLaunchOptionOutput{})
 	pulumi.RegisterOutputType(GetInstancesInstanceLaunchOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetInstancesInstanceLaunchVolumeAttachmentOutput{})
+	pulumi.RegisterOutputType(GetInstancesInstanceLaunchVolumeAttachmentArrayOutput{})
+	pulumi.RegisterOutputType(GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailOutput{})
+	pulumi.RegisterOutputType(GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetInstancesInstancePlatformConfigOutput{})
 	pulumi.RegisterOutputType(GetInstancesInstancePlatformConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetInstancesInstancePreemptibleInstanceConfigOutput{})

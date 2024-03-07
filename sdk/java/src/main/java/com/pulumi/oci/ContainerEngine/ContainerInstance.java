@@ -40,6 +40,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.ContainerEngine.inputs.ContainerInstanceContainerArgs;
  * import com.pulumi.oci.ContainerEngine.inputs.ContainerInstanceContainerResourceConfigArgs;
  * import com.pulumi.oci.ContainerEngine.inputs.ContainerInstanceContainerSecurityContextArgs;
+ * import com.pulumi.oci.ContainerEngine.inputs.ContainerInstanceContainerSecurityContextCapabilitiesArgs;
  * import com.pulumi.oci.ContainerEngine.inputs.ContainerInstanceShapeConfigArgs;
  * import com.pulumi.oci.ContainerEngine.inputs.ContainerInstanceVnicArgs;
  * import com.pulumi.oci.ContainerEngine.inputs.ContainerInstanceDnsConfigArgs;
@@ -92,6 +93,10 @@ import javax.annotation.Nullable;
  *                     .vcpusLimit(var_.container_instance_containers_resource_config_vcpus_limit())
  *                     .build())
  *                 .securityContext(ContainerInstanceContainerSecurityContextArgs.builder()
+ *                     .capabilities(ContainerInstanceContainerSecurityContextCapabilitiesArgs.builder()
+ *                         .addCapabilities(var_.container_instance_containers_security_context_capabilities_add_capabilities())
+ *                         .dropCapabilities(var_.container_instance_containers_security_context_capabilities_drop_capabilities())
+ *                         .build())
  *                     .isNonRootUserCheckEnabled(var_.container_instance_containers_security_context_is_non_root_user_check_enabled())
  *                     .isRootFileSystemReadonly(var_.container_instance_containers_security_context_is_root_file_system_readonly())
  *                     .runAsGroup(var_.container_instance_containers_security_context_run_as_group())

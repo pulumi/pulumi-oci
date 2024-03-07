@@ -870,23 +870,120 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsAr
 @pulumi.input_type
 class NewsReportContentTypesArgs:
     def __init__(__self__, *,
-                 capacity_planning_resources: pulumi.Input[Sequence[pulumi.Input[str]]]):
+                 capacity_planning_resources: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 sql_insights_fleet_analysis_resources: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 sql_insights_performance_degradation_resources: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 sql_insights_plan_changes_resources: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 sql_insights_top_databases_resources: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 sql_insights_top_sql_by_insights_resources: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 sql_insights_top_sql_resources: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input[str]]] capacity_planning_resources: (Updatable) Supported resources for capacity planning content type.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] sql_insights_fleet_analysis_resources: (Updatable) Supported resources for SQL insights - fleet analysis content type.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] sql_insights_performance_degradation_resources: (Updatable) Supported resources for SQL insights - performance degradation content type.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] sql_insights_plan_changes_resources: (Updatable) Supported resources for SQL insights - plan changes content type.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] sql_insights_top_databases_resources: (Updatable) Supported resources for SQL insights - top databases content type.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] sql_insights_top_sql_by_insights_resources: (Updatable) Supported resources for SQL insights - top SQL by insights content type.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] sql_insights_top_sql_resources: (Updatable) Supported resources for SQL insights - top SQL content type.
         """
-        pulumi.set(__self__, "capacity_planning_resources", capacity_planning_resources)
+        if capacity_planning_resources is not None:
+            pulumi.set(__self__, "capacity_planning_resources", capacity_planning_resources)
+        if sql_insights_fleet_analysis_resources is not None:
+            pulumi.set(__self__, "sql_insights_fleet_analysis_resources", sql_insights_fleet_analysis_resources)
+        if sql_insights_performance_degradation_resources is not None:
+            pulumi.set(__self__, "sql_insights_performance_degradation_resources", sql_insights_performance_degradation_resources)
+        if sql_insights_plan_changes_resources is not None:
+            pulumi.set(__self__, "sql_insights_plan_changes_resources", sql_insights_plan_changes_resources)
+        if sql_insights_top_databases_resources is not None:
+            pulumi.set(__self__, "sql_insights_top_databases_resources", sql_insights_top_databases_resources)
+        if sql_insights_top_sql_by_insights_resources is not None:
+            pulumi.set(__self__, "sql_insights_top_sql_by_insights_resources", sql_insights_top_sql_by_insights_resources)
+        if sql_insights_top_sql_resources is not None:
+            pulumi.set(__self__, "sql_insights_top_sql_resources", sql_insights_top_sql_resources)
 
     @property
     @pulumi.getter(name="capacityPlanningResources")
-    def capacity_planning_resources(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
+    def capacity_planning_resources(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
         (Updatable) Supported resources for capacity planning content type.
         """
         return pulumi.get(self, "capacity_planning_resources")
 
     @capacity_planning_resources.setter
-    def capacity_planning_resources(self, value: pulumi.Input[Sequence[pulumi.Input[str]]]):
+    def capacity_planning_resources(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "capacity_planning_resources", value)
+
+    @property
+    @pulumi.getter(name="sqlInsightsFleetAnalysisResources")
+    def sql_insights_fleet_analysis_resources(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (Updatable) Supported resources for SQL insights - fleet analysis content type.
+        """
+        return pulumi.get(self, "sql_insights_fleet_analysis_resources")
+
+    @sql_insights_fleet_analysis_resources.setter
+    def sql_insights_fleet_analysis_resources(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "sql_insights_fleet_analysis_resources", value)
+
+    @property
+    @pulumi.getter(name="sqlInsightsPerformanceDegradationResources")
+    def sql_insights_performance_degradation_resources(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (Updatable) Supported resources for SQL insights - performance degradation content type.
+        """
+        return pulumi.get(self, "sql_insights_performance_degradation_resources")
+
+    @sql_insights_performance_degradation_resources.setter
+    def sql_insights_performance_degradation_resources(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "sql_insights_performance_degradation_resources", value)
+
+    @property
+    @pulumi.getter(name="sqlInsightsPlanChangesResources")
+    def sql_insights_plan_changes_resources(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (Updatable) Supported resources for SQL insights - plan changes content type.
+        """
+        return pulumi.get(self, "sql_insights_plan_changes_resources")
+
+    @sql_insights_plan_changes_resources.setter
+    def sql_insights_plan_changes_resources(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "sql_insights_plan_changes_resources", value)
+
+    @property
+    @pulumi.getter(name="sqlInsightsTopDatabasesResources")
+    def sql_insights_top_databases_resources(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (Updatable) Supported resources for SQL insights - top databases content type.
+        """
+        return pulumi.get(self, "sql_insights_top_databases_resources")
+
+    @sql_insights_top_databases_resources.setter
+    def sql_insights_top_databases_resources(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "sql_insights_top_databases_resources", value)
+
+    @property
+    @pulumi.getter(name="sqlInsightsTopSqlByInsightsResources")
+    def sql_insights_top_sql_by_insights_resources(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (Updatable) Supported resources for SQL insights - top SQL by insights content type.
+        """
+        return pulumi.get(self, "sql_insights_top_sql_by_insights_resources")
+
+    @sql_insights_top_sql_by_insights_resources.setter
+    def sql_insights_top_sql_by_insights_resources(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "sql_insights_top_sql_by_insights_resources", value)
+
+    @property
+    @pulumi.getter(name="sqlInsightsTopSqlResources")
+    def sql_insights_top_sql_resources(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (Updatable) Supported resources for SQL insights - top SQL content type.
+        """
+        return pulumi.get(self, "sql_insights_top_sql_resources")
+
+    @sql_insights_top_sql_resources.setter
+    def sql_insights_top_sql_resources(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "sql_insights_top_sql_resources", value)
 
 
 @pulumi.input_type

@@ -21,11 +21,19 @@ import * as utilities from "../utilities";
  *     compartmentId: _var.compartment_id,
  *     contentTypes: {
  *         capacityPlanningResources: _var.news_report_content_types_capacity_planning_resources,
+ *         sqlInsightsFleetAnalysisResources: _var.news_report_content_types_sql_insights_fleet_analysis_resources,
+ *         sqlInsightsPerformanceDegradationResources: _var.news_report_content_types_sql_insights_performance_degradation_resources,
+ *         sqlInsightsPlanChangesResources: _var.news_report_content_types_sql_insights_plan_changes_resources,
+ *         sqlInsightsTopDatabasesResources: _var.news_report_content_types_sql_insights_top_databases_resources,
+ *         sqlInsightsTopSqlByInsightsResources: _var.news_report_content_types_sql_insights_top_sql_by_insights_resources,
+ *         sqlInsightsTopSqlResources: _var.news_report_content_types_sql_insights_top_sql_resources,
  *     },
  *     description: _var.news_report_description,
  *     locale: _var.news_report_locale,
  *     newsFrequency: _var.news_report_news_frequency,
  *     onsTopicId: oci_opsi_ons_topic.test_ons_topic.id,
+ *     areChildCompartmentsIncluded: _var.news_report_are_child_compartments_included,
+ *     dayOfWeek: _var.news_report_day_of_week,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
@@ -73,6 +81,10 @@ export class NewsReport extends pulumi.CustomResource {
     }
 
     /**
+     * (Updatable) A flag to consider the resources within a given compartment and all sub-compartments.
+     */
+    public readonly areChildCompartmentsIncluded!: pulumi.Output<boolean>;
+    /**
      * (Updatable) Compartment Identifier where the news report will be created.
      */
     public readonly compartmentId!: pulumi.Output<string>;
@@ -81,11 +93,15 @@ export class NewsReport extends pulumi.CustomResource {
      */
     public readonly contentTypes!: pulumi.Output<outputs.Opsi.NewsReportContentTypes>;
     /**
+     * (Updatable) Day of the week in which the news report will be sent if the frequency is set to WEEKLY.
+     */
+    public readonly dayOfWeek!: pulumi.Output<string>;
+    /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
     public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * The description of the news report.
+     * (Updatable) The description of the news report.
      */
     public readonly description!: pulumi.Output<string>;
     /**
@@ -101,7 +117,7 @@ export class NewsReport extends pulumi.CustomResource {
      */
     public readonly locale!: pulumi.Output<string>;
     /**
-     * The news report name.
+     * (Updatable) The news report name.
      */
     public readonly name!: pulumi.Output<string>;
     /**
@@ -150,8 +166,10 @@ export class NewsReport extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NewsReportState | undefined;
+            resourceInputs["areChildCompartmentsIncluded"] = state ? state.areChildCompartmentsIncluded : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["contentTypes"] = state ? state.contentTypes : undefined;
+            resourceInputs["dayOfWeek"] = state ? state.dayOfWeek : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["description"] = state ? state.description : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
@@ -185,8 +203,10 @@ export class NewsReport extends pulumi.CustomResource {
             if ((!args || args.onsTopicId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'onsTopicId'");
             }
+            resourceInputs["areChildCompartmentsIncluded"] = args ? args.areChildCompartmentsIncluded : undefined;
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["contentTypes"] = args ? args.contentTypes : undefined;
+            resourceInputs["dayOfWeek"] = args ? args.dayOfWeek : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["description"] = args ? args.description : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
@@ -211,6 +231,10 @@ export class NewsReport extends pulumi.CustomResource {
  */
 export interface NewsReportState {
     /**
+     * (Updatable) A flag to consider the resources within a given compartment and all sub-compartments.
+     */
+    areChildCompartmentsIncluded?: pulumi.Input<boolean>;
+    /**
      * (Updatable) Compartment Identifier where the news report will be created.
      */
     compartmentId?: pulumi.Input<string>;
@@ -219,11 +243,15 @@ export interface NewsReportState {
      */
     contentTypes?: pulumi.Input<inputs.Opsi.NewsReportContentTypes>;
     /**
+     * (Updatable) Day of the week in which the news report will be sent if the frequency is set to WEEKLY.
+     */
+    dayOfWeek?: pulumi.Input<string>;
+    /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * The description of the news report.
+     * (Updatable) The description of the news report.
      */
     description?: pulumi.Input<string>;
     /**
@@ -239,7 +267,7 @@ export interface NewsReportState {
      */
     locale?: pulumi.Input<string>;
     /**
-     * The news report name.
+     * (Updatable) The news report name.
      */
     name?: pulumi.Input<string>;
     /**
@@ -281,6 +309,10 @@ export interface NewsReportState {
  */
 export interface NewsReportArgs {
     /**
+     * (Updatable) A flag to consider the resources within a given compartment and all sub-compartments.
+     */
+    areChildCompartmentsIncluded?: pulumi.Input<boolean>;
+    /**
      * (Updatable) Compartment Identifier where the news report will be created.
      */
     compartmentId: pulumi.Input<string>;
@@ -289,11 +321,15 @@ export interface NewsReportArgs {
      */
     contentTypes: pulumi.Input<inputs.Opsi.NewsReportContentTypes>;
     /**
+     * (Updatable) Day of the week in which the news report will be sent if the frequency is set to WEEKLY.
+     */
+    dayOfWeek?: pulumi.Input<string>;
+    /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * The description of the news report.
+     * (Updatable) The description of the news report.
      */
     description: pulumi.Input<string>;
     /**
@@ -305,7 +341,7 @@ export interface NewsReportArgs {
      */
     locale: pulumi.Input<string>;
     /**
-     * The news report name.
+     * (Updatable) The news report name.
      */
     name?: pulumi.Input<string>;
     /**

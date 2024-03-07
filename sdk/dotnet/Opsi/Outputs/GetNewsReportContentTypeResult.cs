@@ -17,11 +17,54 @@ namespace Pulumi.Oci.Opsi.Outputs
         /// Supported resources for capacity planning content type.
         /// </summary>
         public readonly ImmutableArray<string> CapacityPlanningResources;
+        /// <summary>
+        /// Supported resources for SQL insights - fleet analysis content type.
+        /// </summary>
+        public readonly ImmutableArray<string> SqlInsightsFleetAnalysisResources;
+        /// <summary>
+        /// Supported resources for SQL insights - performance degradation content type.
+        /// </summary>
+        public readonly ImmutableArray<string> SqlInsightsPerformanceDegradationResources;
+        /// <summary>
+        /// Supported resources for SQL insights - plan changes content type.
+        /// </summary>
+        public readonly ImmutableArray<string> SqlInsightsPlanChangesResources;
+        /// <summary>
+        /// Supported resources for SQL insights - top databases content type.
+        /// </summary>
+        public readonly ImmutableArray<string> SqlInsightsTopDatabasesResources;
+        /// <summary>
+        /// Supported resources for SQL insights - top SQL by insights content type.
+        /// </summary>
+        public readonly ImmutableArray<string> SqlInsightsTopSqlByInsightsResources;
+        /// <summary>
+        /// Supported resources for SQL insights - top SQL content type.
+        /// </summary>
+        public readonly ImmutableArray<string> SqlInsightsTopSqlResources;
 
         [OutputConstructor]
-        private GetNewsReportContentTypeResult(ImmutableArray<string> capacityPlanningResources)
+        private GetNewsReportContentTypeResult(
+            ImmutableArray<string> capacityPlanningResources,
+
+            ImmutableArray<string> sqlInsightsFleetAnalysisResources,
+
+            ImmutableArray<string> sqlInsightsPerformanceDegradationResources,
+
+            ImmutableArray<string> sqlInsightsPlanChangesResources,
+
+            ImmutableArray<string> sqlInsightsTopDatabasesResources,
+
+            ImmutableArray<string> sqlInsightsTopSqlByInsightsResources,
+
+            ImmutableArray<string> sqlInsightsTopSqlResources)
         {
             CapacityPlanningResources = capacityPlanningResources;
+            SqlInsightsFleetAnalysisResources = sqlInsightsFleetAnalysisResources;
+            SqlInsightsPerformanceDegradationResources = sqlInsightsPerformanceDegradationResources;
+            SqlInsightsPlanChangesResources = sqlInsightsPlanChangesResources;
+            SqlInsightsTopDatabasesResources = sqlInsightsTopDatabasesResources;
+            SqlInsightsTopSqlByInsightsResources = sqlInsightsTopSqlByInsightsResources;
+            SqlInsightsTopSqlResources = sqlInsightsTopSqlResources;
         }
     }
 }

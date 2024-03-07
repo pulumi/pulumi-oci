@@ -132,6 +132,8 @@ __all__ = [
     'InstanceCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail',
     'InstanceInstanceOptions',
     'InstanceLaunchOptions',
+    'InstanceLaunchVolumeAttachment',
+    'InstanceLaunchVolumeAttachmentLaunchCreateVolumeDetails',
     'InstancePlatformConfig',
     'InstancePoolInstanceLoadBalancerBackend',
     'InstancePoolLoadBalancer',
@@ -495,6 +497,8 @@ __all__ = [
     'GetInstanceDevicesFilterResult',
     'GetInstanceInstanceOptionResult',
     'GetInstanceLaunchOptionResult',
+    'GetInstanceLaunchVolumeAttachmentResult',
+    'GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailResult',
     'GetInstanceMeasuredBootReportMeasurementResult',
     'GetInstanceMeasuredBootReportMeasurementActualResult',
     'GetInstanceMeasuredBootReportMeasurementPolicyResult',
@@ -530,6 +534,8 @@ __all__ = [
     'GetInstancesInstanceCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailResult',
     'GetInstancesInstanceInstanceOptionResult',
     'GetInstancesInstanceLaunchOptionResult',
+    'GetInstancesInstanceLaunchVolumeAttachmentResult',
+    'GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailResult',
     'GetInstancesInstancePlatformConfigResult',
     'GetInstancesInstancePreemptibleInstanceConfigResult',
     'GetInstancesInstancePreemptibleInstanceConfigPreemptionActionResult',
@@ -10201,7 +10207,7 @@ class InstanceCreateVnicDetails(dict):
                
                If you specify a `vlanId`, then `assignPublicIp` must be set to false. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
         :param Mapping[str, Any] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param Mapping[str, Any] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str hostname_label: Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
         :param Sequence['InstanceCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs'] ipv6address_ipv6subnet_cidr_pair_details: A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges from which Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
@@ -10295,7 +10301,7 @@ class InstanceCreateVnicDetails(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
         """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -10552,6 +10558,271 @@ class InstanceLaunchOptions(dict):
         Emulation type for volume.
         """
         return pulumi.get(self, "remote_data_volume_type")
+
+
+@pulumi.output_type
+class InstanceLaunchVolumeAttachment(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "displayName":
+            suggest = "display_name"
+        elif key == "encryptionInTransitType":
+            suggest = "encryption_in_transit_type"
+        elif key == "isAgentAutoIscsiLoginEnabled":
+            suggest = "is_agent_auto_iscsi_login_enabled"
+        elif key == "isReadOnly":
+            suggest = "is_read_only"
+        elif key == "isShareable":
+            suggest = "is_shareable"
+        elif key == "launchCreateVolumeDetails":
+            suggest = "launch_create_volume_details"
+        elif key == "useChap":
+            suggest = "use_chap"
+        elif key == "volumeId":
+            suggest = "volume_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in InstanceLaunchVolumeAttachment. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        InstanceLaunchVolumeAttachment.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        InstanceLaunchVolumeAttachment.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 type: str,
+                 device: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 encryption_in_transit_type: Optional[str] = None,
+                 is_agent_auto_iscsi_login_enabled: Optional[bool] = None,
+                 is_read_only: Optional[bool] = None,
+                 is_shareable: Optional[bool] = None,
+                 launch_create_volume_details: Optional['outputs.InstanceLaunchVolumeAttachmentLaunchCreateVolumeDetails'] = None,
+                 use_chap: Optional[bool] = None,
+                 volume_id: Optional[str] = None):
+        """
+        :param str type: The type of action to run when the instance is interrupted for eviction.
+        :param str device: The device name. To retrieve a list of devices for a given instance, see [ListInstanceDevices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Device/ListInstanceDevices).
+        :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param str encryption_in_transit_type: Refer the top-level definition of encryptionInTransitType. The default value is NONE.
+        :param bool is_agent_auto_iscsi_login_enabled: Whether to enable Oracle Cloud Agent to perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
+        :param bool is_read_only: Whether the attachment was created in read-only mode.
+        :param bool is_shareable: Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
+        :param 'InstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailsArgs' launch_create_volume_details: Define a volume that will be created and attached or attached to an instance on creation.
+        :param bool use_chap: Whether to use CHAP authentication for the volume attachment. Defaults to false.
+        :param str volume_id: The OCID of the volume. If CreateVolumeDetails is specified, this field must be omitted from the request.
+        """
+        pulumi.set(__self__, "type", type)
+        if device is not None:
+            pulumi.set(__self__, "device", device)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if encryption_in_transit_type is not None:
+            pulumi.set(__self__, "encryption_in_transit_type", encryption_in_transit_type)
+        if is_agent_auto_iscsi_login_enabled is not None:
+            pulumi.set(__self__, "is_agent_auto_iscsi_login_enabled", is_agent_auto_iscsi_login_enabled)
+        if is_read_only is not None:
+            pulumi.set(__self__, "is_read_only", is_read_only)
+        if is_shareable is not None:
+            pulumi.set(__self__, "is_shareable", is_shareable)
+        if launch_create_volume_details is not None:
+            pulumi.set(__self__, "launch_create_volume_details", launch_create_volume_details)
+        if use_chap is not None:
+            pulumi.set(__self__, "use_chap", use_chap)
+        if volume_id is not None:
+            pulumi.set(__self__, "volume_id", volume_id)
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        The type of action to run when the instance is interrupted for eviction.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def device(self) -> Optional[str]:
+        """
+        The device name. To retrieve a list of devices for a given instance, see [ListInstanceDevices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Device/ListInstanceDevices).
+        """
+        return pulumi.get(self, "device")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[str]:
+        """
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="encryptionInTransitType")
+    def encryption_in_transit_type(self) -> Optional[str]:
+        """
+        Refer the top-level definition of encryptionInTransitType. The default value is NONE.
+        """
+        return pulumi.get(self, "encryption_in_transit_type")
+
+    @property
+    @pulumi.getter(name="isAgentAutoIscsiLoginEnabled")
+    def is_agent_auto_iscsi_login_enabled(self) -> Optional[bool]:
+        """
+        Whether to enable Oracle Cloud Agent to perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
+        """
+        return pulumi.get(self, "is_agent_auto_iscsi_login_enabled")
+
+    @property
+    @pulumi.getter(name="isReadOnly")
+    def is_read_only(self) -> Optional[bool]:
+        """
+        Whether the attachment was created in read-only mode.
+        """
+        return pulumi.get(self, "is_read_only")
+
+    @property
+    @pulumi.getter(name="isShareable")
+    def is_shareable(self) -> Optional[bool]:
+        """
+        Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
+        """
+        return pulumi.get(self, "is_shareable")
+
+    @property
+    @pulumi.getter(name="launchCreateVolumeDetails")
+    def launch_create_volume_details(self) -> Optional['outputs.InstanceLaunchVolumeAttachmentLaunchCreateVolumeDetails']:
+        """
+        Define a volume that will be created and attached or attached to an instance on creation.
+        """
+        return pulumi.get(self, "launch_create_volume_details")
+
+    @property
+    @pulumi.getter(name="useChap")
+    def use_chap(self) -> Optional[bool]:
+        """
+        Whether to use CHAP authentication for the volume attachment. Defaults to false.
+        """
+        return pulumi.get(self, "use_chap")
+
+    @property
+    @pulumi.getter(name="volumeId")
+    def volume_id(self) -> Optional[str]:
+        """
+        The OCID of the volume. If CreateVolumeDetails is specified, this field must be omitted from the request.
+        """
+        return pulumi.get(self, "volume_id")
+
+
+@pulumi.output_type
+class InstanceLaunchVolumeAttachmentLaunchCreateVolumeDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "sizeInGbs":
+            suggest = "size_in_gbs"
+        elif key == "volumeCreationType":
+            suggest = "volume_creation_type"
+        elif key == "compartmentId":
+            suggest = "compartment_id"
+        elif key == "displayName":
+            suggest = "display_name"
+        elif key == "kmsKeyId":
+            suggest = "kms_key_id"
+        elif key == "vpusPerGb":
+            suggest = "vpus_per_gb"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in InstanceLaunchVolumeAttachmentLaunchCreateVolumeDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        InstanceLaunchVolumeAttachmentLaunchCreateVolumeDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        InstanceLaunchVolumeAttachmentLaunchCreateVolumeDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 size_in_gbs: str,
+                 volume_creation_type: str,
+                 compartment_id: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 kms_key_id: Optional[str] = None,
+                 vpus_per_gb: Optional[str] = None):
+        """
+        :param str size_in_gbs: The size of the volume in GBs.
+        :param str volume_creation_type: Specifies the method for volume creation.
+        :param str compartment_id: (Updatable) The OCID of the compartment containing images to search
+        :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param str kms_key_id: The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+        :param str vpus_per_gb: The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+               
+               Allowed values:
+        """
+        pulumi.set(__self__, "size_in_gbs", size_in_gbs)
+        pulumi.set(__self__, "volume_creation_type", volume_creation_type)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if kms_key_id is not None:
+            pulumi.set(__self__, "kms_key_id", kms_key_id)
+        if vpus_per_gb is not None:
+            pulumi.set(__self__, "vpus_per_gb", vpus_per_gb)
+
+    @property
+    @pulumi.getter(name="sizeInGbs")
+    def size_in_gbs(self) -> str:
+        """
+        The size of the volume in GBs.
+        """
+        return pulumi.get(self, "size_in_gbs")
+
+    @property
+    @pulumi.getter(name="volumeCreationType")
+    def volume_creation_type(self) -> str:
+        """
+        Specifies the method for volume creation.
+        """
+        return pulumi.get(self, "volume_creation_type")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> Optional[str]:
+        """
+        (Updatable) The OCID of the compartment containing images to search
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[str]:
+        """
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="kmsKeyId")
+    def kms_key_id(self) -> Optional[str]:
+        """
+        The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+        """
+        return pulumi.get(self, "kms_key_id")
+
+    @property
+    @pulumi.getter(name="vpusPerGb")
+    def vpus_per_gb(self) -> Optional[str]:
+        """
+        The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+
+        Allowed values:
+        """
+        return pulumi.get(self, "vpus_per_gb")
 
 
 @pulumi.output_type
@@ -32736,6 +33007,152 @@ class GetInstanceLaunchOptionResult(dict):
 
 
 @pulumi.output_type
+class GetInstanceLaunchVolumeAttachmentResult(dict):
+    def __init__(__self__, *,
+                 device: str,
+                 display_name: str,
+                 encryption_in_transit_type: str,
+                 is_agent_auto_iscsi_login_enabled: bool,
+                 is_read_only: bool,
+                 is_shareable: bool,
+                 launch_create_volume_details: Sequence['outputs.GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailResult'],
+                 type: str,
+                 use_chap: bool,
+                 volume_id: str):
+        """
+        :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param str type: (Required) The type of action to run when the instance is interrupted for eviction.
+        """
+        pulumi.set(__self__, "device", device)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "encryption_in_transit_type", encryption_in_transit_type)
+        pulumi.set(__self__, "is_agent_auto_iscsi_login_enabled", is_agent_auto_iscsi_login_enabled)
+        pulumi.set(__self__, "is_read_only", is_read_only)
+        pulumi.set(__self__, "is_shareable", is_shareable)
+        pulumi.set(__self__, "launch_create_volume_details", launch_create_volume_details)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "use_chap", use_chap)
+        pulumi.set(__self__, "volume_id", volume_id)
+
+    @property
+    @pulumi.getter
+    def device(self) -> str:
+        return pulumi.get(self, "device")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="encryptionInTransitType")
+    def encryption_in_transit_type(self) -> str:
+        return pulumi.get(self, "encryption_in_transit_type")
+
+    @property
+    @pulumi.getter(name="isAgentAutoIscsiLoginEnabled")
+    def is_agent_auto_iscsi_login_enabled(self) -> bool:
+        return pulumi.get(self, "is_agent_auto_iscsi_login_enabled")
+
+    @property
+    @pulumi.getter(name="isReadOnly")
+    def is_read_only(self) -> bool:
+        return pulumi.get(self, "is_read_only")
+
+    @property
+    @pulumi.getter(name="isShareable")
+    def is_shareable(self) -> bool:
+        return pulumi.get(self, "is_shareable")
+
+    @property
+    @pulumi.getter(name="launchCreateVolumeDetails")
+    def launch_create_volume_details(self) -> Sequence['outputs.GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailResult']:
+        return pulumi.get(self, "launch_create_volume_details")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        (Required) The type of action to run when the instance is interrupted for eviction.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter(name="useChap")
+    def use_chap(self) -> bool:
+        return pulumi.get(self, "use_chap")
+
+    @property
+    @pulumi.getter(name="volumeId")
+    def volume_id(self) -> str:
+        return pulumi.get(self, "volume_id")
+
+
+@pulumi.output_type
+class GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 display_name: str,
+                 kms_key_id: str,
+                 size_in_gbs: str,
+                 volume_creation_type: str,
+                 vpus_per_gb: str):
+        """
+        :param str compartment_id: The OCID of the compartment containing images to search
+        :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param str kms_key_id: The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "kms_key_id", kms_key_id)
+        pulumi.set(__self__, "size_in_gbs", size_in_gbs)
+        pulumi.set(__self__, "volume_creation_type", volume_creation_type)
+        pulumi.set(__self__, "vpus_per_gb", vpus_per_gb)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The OCID of the compartment containing images to search
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="kmsKeyId")
+    def kms_key_id(self) -> str:
+        """
+        The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+        """
+        return pulumi.get(self, "kms_key_id")
+
+    @property
+    @pulumi.getter(name="sizeInGbs")
+    def size_in_gbs(self) -> str:
+        return pulumi.get(self, "size_in_gbs")
+
+    @property
+    @pulumi.getter(name="volumeCreationType")
+    def volume_creation_type(self) -> str:
+        return pulumi.get(self, "volume_creation_type")
+
+    @property
+    @pulumi.getter(name="vpusPerGb")
+    def vpus_per_gb(self) -> str:
+        return pulumi.get(self, "vpus_per_gb")
+
+
+@pulumi.output_type
 class GetInstanceMeasuredBootReportMeasurementResult(dict):
     def __init__(__self__, *,
                  actuals: Sequence['outputs.GetInstanceMeasuredBootReportMeasurementActualResult'],
@@ -34340,10 +34757,12 @@ class GetInstancesInstanceResult(dict):
                  is_pv_encryption_in_transit_enabled: bool,
                  launch_mode: str,
                  launch_options: Sequence['outputs.GetInstancesInstanceLaunchOptionResult'],
+                 launch_volume_attachments: Sequence['outputs.GetInstancesInstanceLaunchVolumeAttachmentResult'],
                  metadata: Mapping[str, Any],
                  platform_configs: Sequence['outputs.GetInstancesInstancePlatformConfigResult'],
                  preemptible_instance_configs: Sequence['outputs.GetInstancesInstancePreemptibleInstanceConfigResult'],
                  preserve_boot_volume: bool,
+                 preserve_data_volumes_created_at_launch: bool,
                  private_ip: str,
                  public_ip: str,
                  region: str,
@@ -34416,10 +34835,12 @@ class GetInstancesInstanceResult(dict):
         pulumi.set(__self__, "is_pv_encryption_in_transit_enabled", is_pv_encryption_in_transit_enabled)
         pulumi.set(__self__, "launch_mode", launch_mode)
         pulumi.set(__self__, "launch_options", launch_options)
+        pulumi.set(__self__, "launch_volume_attachments", launch_volume_attachments)
         pulumi.set(__self__, "metadata", metadata)
         pulumi.set(__self__, "platform_configs", platform_configs)
         pulumi.set(__self__, "preemptible_instance_configs", preemptible_instance_configs)
         pulumi.set(__self__, "preserve_boot_volume", preserve_boot_volume)
+        pulumi.set(__self__, "preserve_data_volumes_created_at_launch", preserve_data_volumes_created_at_launch)
         pulumi.set(__self__, "private_ip", private_ip)
         pulumi.set(__self__, "public_ip", public_ip)
         pulumi.set(__self__, "region", region)
@@ -34631,6 +35052,11 @@ class GetInstancesInstanceResult(dict):
         return pulumi.get(self, "launch_options")
 
     @property
+    @pulumi.getter(name="launchVolumeAttachments")
+    def launch_volume_attachments(self) -> Sequence['outputs.GetInstancesInstanceLaunchVolumeAttachmentResult']:
+        return pulumi.get(self, "launch_volume_attachments")
+
+    @property
     @pulumi.getter
     def metadata(self) -> Mapping[str, Any]:
         """
@@ -34661,6 +35087,11 @@ class GetInstancesInstanceResult(dict):
         (Optional) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
         """
         return pulumi.get(self, "preserve_boot_volume")
+
+    @property
+    @pulumi.getter(name="preserveDataVolumesCreatedAtLaunch")
+    def preserve_data_volumes_created_at_launch(self) -> bool:
+        return pulumi.get(self, "preserve_data_volumes_created_at_launch")
 
     @property
     @pulumi.getter(name="privateIp")
@@ -35074,6 +35505,152 @@ class GetInstancesInstanceLaunchOptionResult(dict):
         Emulation type for volume.
         """
         return pulumi.get(self, "remote_data_volume_type")
+
+
+@pulumi.output_type
+class GetInstancesInstanceLaunchVolumeAttachmentResult(dict):
+    def __init__(__self__, *,
+                 device: str,
+                 display_name: str,
+                 encryption_in_transit_type: str,
+                 is_agent_auto_iscsi_login_enabled: bool,
+                 is_read_only: bool,
+                 is_shareable: bool,
+                 launch_create_volume_details: Sequence['outputs.GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailResult'],
+                 type: str,
+                 use_chap: bool,
+                 volume_id: str):
+        """
+        :param str display_name: A filter to return only resources that match the given display name exactly.
+        :param str type: (Required) The type of action to run when the instance is interrupted for eviction.
+        """
+        pulumi.set(__self__, "device", device)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "encryption_in_transit_type", encryption_in_transit_type)
+        pulumi.set(__self__, "is_agent_auto_iscsi_login_enabled", is_agent_auto_iscsi_login_enabled)
+        pulumi.set(__self__, "is_read_only", is_read_only)
+        pulumi.set(__self__, "is_shareable", is_shareable)
+        pulumi.set(__self__, "launch_create_volume_details", launch_create_volume_details)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "use_chap", use_chap)
+        pulumi.set(__self__, "volume_id", volume_id)
+
+    @property
+    @pulumi.getter
+    def device(self) -> str:
+        return pulumi.get(self, "device")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only resources that match the given display name exactly.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="encryptionInTransitType")
+    def encryption_in_transit_type(self) -> str:
+        return pulumi.get(self, "encryption_in_transit_type")
+
+    @property
+    @pulumi.getter(name="isAgentAutoIscsiLoginEnabled")
+    def is_agent_auto_iscsi_login_enabled(self) -> bool:
+        return pulumi.get(self, "is_agent_auto_iscsi_login_enabled")
+
+    @property
+    @pulumi.getter(name="isReadOnly")
+    def is_read_only(self) -> bool:
+        return pulumi.get(self, "is_read_only")
+
+    @property
+    @pulumi.getter(name="isShareable")
+    def is_shareable(self) -> bool:
+        return pulumi.get(self, "is_shareable")
+
+    @property
+    @pulumi.getter(name="launchCreateVolumeDetails")
+    def launch_create_volume_details(self) -> Sequence['outputs.GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailResult']:
+        return pulumi.get(self, "launch_create_volume_details")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        (Required) The type of action to run when the instance is interrupted for eviction.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter(name="useChap")
+    def use_chap(self) -> bool:
+        return pulumi.get(self, "use_chap")
+
+    @property
+    @pulumi.getter(name="volumeId")
+    def volume_id(self) -> str:
+        return pulumi.get(self, "volume_id")
+
+
+@pulumi.output_type
+class GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 display_name: str,
+                 kms_key_id: str,
+                 size_in_gbs: str,
+                 volume_creation_type: str,
+                 vpus_per_gb: str):
+        """
+        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param str display_name: A filter to return only resources that match the given display name exactly.
+        :param str kms_key_id: The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "kms_key_id", kms_key_id)
+        pulumi.set(__self__, "size_in_gbs", size_in_gbs)
+        pulumi.set(__self__, "volume_creation_type", volume_creation_type)
+        pulumi.set(__self__, "vpus_per_gb", vpus_per_gb)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only resources that match the given display name exactly.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="kmsKeyId")
+    def kms_key_id(self) -> str:
+        """
+        The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+        """
+        return pulumi.get(self, "kms_key_id")
+
+    @property
+    @pulumi.getter(name="sizeInGbs")
+    def size_in_gbs(self) -> str:
+        return pulumi.get(self, "size_in_gbs")
+
+    @property
+    @pulumi.getter(name="volumeCreationType")
+    def volume_creation_type(self) -> str:
+        return pulumi.get(self, "volume_creation_type")
+
+    @property
+    @pulumi.getter(name="vpusPerGb")
+    def vpus_per_gb(self) -> str:
+        return pulumi.get(self, "vpus_per_gb")
 
 
 @pulumi.output_type

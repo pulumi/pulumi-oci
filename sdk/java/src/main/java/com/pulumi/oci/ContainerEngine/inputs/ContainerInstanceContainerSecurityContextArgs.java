@@ -5,6 +5,7 @@ package com.pulumi.oci.ContainerEngine.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.ContainerEngine.inputs.ContainerInstanceContainerSecurityContextCapabilitiesArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -16,6 +17,21 @@ import javax.annotation.Nullable;
 public final class ContainerInstanceContainerSecurityContextArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final ContainerInstanceContainerSecurityContextArgs Empty = new ContainerInstanceContainerSecurityContextArgs();
+
+    /**
+     * Linux Container capabilities to configure capabilities of container.
+     * 
+     */
+    @Import(name="capabilities")
+    private @Nullable Output<ContainerInstanceContainerSecurityContextCapabilitiesArgs> capabilities;
+
+    /**
+     * @return Linux Container capabilities to configure capabilities of container.
+     * 
+     */
+    public Optional<Output<ContainerInstanceContainerSecurityContextCapabilitiesArgs>> capabilities() {
+        return Optional.ofNullable(this.capabilities);
+    }
 
     /**
      * Indicates if the container must run as a non-root user. If true, the service validates the container image at runtime to ensure that it is not going to run with UID 0 (root) and fails the container instance creation if the validation fails.
@@ -95,6 +111,7 @@ public final class ContainerInstanceContainerSecurityContextArgs extends com.pul
     private ContainerInstanceContainerSecurityContextArgs() {}
 
     private ContainerInstanceContainerSecurityContextArgs(ContainerInstanceContainerSecurityContextArgs $) {
+        this.capabilities = $.capabilities;
         this.isNonRootUserCheckEnabled = $.isNonRootUserCheckEnabled;
         this.isRootFileSystemReadonly = $.isRootFileSystemReadonly;
         this.runAsGroup = $.runAsGroup;
@@ -118,6 +135,27 @@ public final class ContainerInstanceContainerSecurityContextArgs extends com.pul
 
         public Builder(ContainerInstanceContainerSecurityContextArgs defaults) {
             $ = new ContainerInstanceContainerSecurityContextArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param capabilities Linux Container capabilities to configure capabilities of container.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder capabilities(@Nullable Output<ContainerInstanceContainerSecurityContextCapabilitiesArgs> capabilities) {
+            $.capabilities = capabilities;
+            return this;
+        }
+
+        /**
+         * @param capabilities Linux Container capabilities to configure capabilities of container.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder capabilities(ContainerInstanceContainerSecurityContextCapabilitiesArgs capabilities) {
+            return capabilities(Output.of(capabilities));
         }
 
         /**

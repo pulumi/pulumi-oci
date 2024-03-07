@@ -10,6 +10,7 @@ import com.pulumi.oci.Core.outputs.GetInstancesInstanceAvailabilityConfig;
 import com.pulumi.oci.Core.outputs.GetInstancesInstanceCreateVnicDetail;
 import com.pulumi.oci.Core.outputs.GetInstancesInstanceInstanceOption;
 import com.pulumi.oci.Core.outputs.GetInstancesInstanceLaunchOption;
+import com.pulumi.oci.Core.outputs.GetInstancesInstanceLaunchVolumeAttachment;
 import com.pulumi.oci.Core.outputs.GetInstancesInstancePlatformConfig;
 import com.pulumi.oci.Core.outputs.GetInstancesInstancePreemptibleInstanceConfig;
 import com.pulumi.oci.Core.outputs.GetInstancesInstanceShapeConfig;
@@ -146,6 +147,7 @@ public final class GetInstancesInstance {
      * 
      */
     private List<GetInstancesInstanceLaunchOption> launchOptions;
+    private List<GetInstancesInstanceLaunchVolumeAttachment> launchVolumeAttachments;
     /**
      * @return Custom metadata that you provide.
      * 
@@ -166,6 +168,7 @@ public final class GetInstancesInstance {
      * 
      */
     private Boolean preserveBootVolume;
+    private Boolean preserveDataVolumesCreatedAtLaunch;
     private String privateIp;
     private String publicIp;
     /**
@@ -387,6 +390,9 @@ public final class GetInstancesInstance {
     public List<GetInstancesInstanceLaunchOption> launchOptions() {
         return this.launchOptions;
     }
+    public List<GetInstancesInstanceLaunchVolumeAttachment> launchVolumeAttachments() {
+        return this.launchVolumeAttachments;
+    }
     /**
      * @return Custom metadata that you provide.
      * 
@@ -414,6 +420,9 @@ public final class GetInstancesInstance {
      */
     public Boolean preserveBootVolume() {
         return this.preserveBootVolume;
+    }
+    public Boolean preserveDataVolumesCreatedAtLaunch() {
+        return this.preserveDataVolumesCreatedAtLaunch;
     }
     public String privateIp() {
         return this.privateIp;
@@ -520,10 +529,12 @@ public final class GetInstancesInstance {
         private Boolean isPvEncryptionInTransitEnabled;
         private String launchMode;
         private List<GetInstancesInstanceLaunchOption> launchOptions;
+        private List<GetInstancesInstanceLaunchVolumeAttachment> launchVolumeAttachments;
         private Map<String,Object> metadata;
         private List<GetInstancesInstancePlatformConfig> platformConfigs;
         private List<GetInstancesInstancePreemptibleInstanceConfig> preemptibleInstanceConfigs;
         private Boolean preserveBootVolume;
+        private Boolean preserveDataVolumesCreatedAtLaunch;
         private String privateIp;
         private String publicIp;
         private String region;
@@ -564,10 +575,12 @@ public final class GetInstancesInstance {
     	      this.isPvEncryptionInTransitEnabled = defaults.isPvEncryptionInTransitEnabled;
     	      this.launchMode = defaults.launchMode;
     	      this.launchOptions = defaults.launchOptions;
+    	      this.launchVolumeAttachments = defaults.launchVolumeAttachments;
     	      this.metadata = defaults.metadata;
     	      this.platformConfigs = defaults.platformConfigs;
     	      this.preemptibleInstanceConfigs = defaults.preemptibleInstanceConfigs;
     	      this.preserveBootVolume = defaults.preserveBootVolume;
+    	      this.preserveDataVolumesCreatedAtLaunch = defaults.preserveDataVolumesCreatedAtLaunch;
     	      this.privateIp = defaults.privateIp;
     	      this.publicIp = defaults.publicIp;
     	      this.region = defaults.region;
@@ -798,6 +811,17 @@ public final class GetInstancesInstance {
             return launchOptions(List.of(launchOptions));
         }
         @CustomType.Setter
+        public Builder launchVolumeAttachments(List<GetInstancesInstanceLaunchVolumeAttachment> launchVolumeAttachments) {
+            if (launchVolumeAttachments == null) {
+              throw new MissingRequiredPropertyException("GetInstancesInstance", "launchVolumeAttachments");
+            }
+            this.launchVolumeAttachments = launchVolumeAttachments;
+            return this;
+        }
+        public Builder launchVolumeAttachments(GetInstancesInstanceLaunchVolumeAttachment... launchVolumeAttachments) {
+            return launchVolumeAttachments(List.of(launchVolumeAttachments));
+        }
+        @CustomType.Setter
         public Builder metadata(Map<String,Object> metadata) {
             if (metadata == null) {
               throw new MissingRequiredPropertyException("GetInstancesInstance", "metadata");
@@ -833,6 +857,14 @@ public final class GetInstancesInstance {
               throw new MissingRequiredPropertyException("GetInstancesInstance", "preserveBootVolume");
             }
             this.preserveBootVolume = preserveBootVolume;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder preserveDataVolumesCreatedAtLaunch(Boolean preserveDataVolumesCreatedAtLaunch) {
+            if (preserveDataVolumesCreatedAtLaunch == null) {
+              throw new MissingRequiredPropertyException("GetInstancesInstance", "preserveDataVolumesCreatedAtLaunch");
+            }
+            this.preserveDataVolumesCreatedAtLaunch = preserveDataVolumesCreatedAtLaunch;
             return this;
         }
         @CustomType.Setter
@@ -964,10 +996,12 @@ public final class GetInstancesInstance {
             _resultValue.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
             _resultValue.launchMode = launchMode;
             _resultValue.launchOptions = launchOptions;
+            _resultValue.launchVolumeAttachments = launchVolumeAttachments;
             _resultValue.metadata = metadata;
             _resultValue.platformConfigs = platformConfigs;
             _resultValue.preemptibleInstanceConfigs = preemptibleInstanceConfigs;
             _resultValue.preserveBootVolume = preserveBootVolume;
+            _resultValue.preserveDataVolumesCreatedAtLaunch = preserveDataVolumesCreatedAtLaunch;
             _resultValue.privateIp = privateIp;
             _resultValue.publicIp = publicIp;
             _resultValue.region = region;

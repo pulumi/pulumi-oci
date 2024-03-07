@@ -104,6 +104,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetInstancesInstanceLaunchOptionResult> LaunchOptions;
+        public readonly ImmutableArray<Outputs.GetInstancesInstanceLaunchVolumeAttachmentResult> LaunchVolumeAttachments;
         /// <summary>
         /// Custom metadata that you provide.
         /// </summary>
@@ -120,6 +121,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// (Optional) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
         /// </summary>
         public readonly bool PreserveBootVolume;
+        public readonly bool PreserveDataVolumesCreatedAtLaunch;
         public readonly string PrivateIp;
         public readonly string PublicIp;
         /// <summary>
@@ -206,6 +208,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             ImmutableArray<Outputs.GetInstancesInstanceLaunchOptionResult> launchOptions,
 
+            ImmutableArray<Outputs.GetInstancesInstanceLaunchVolumeAttachmentResult> launchVolumeAttachments,
+
             ImmutableDictionary<string, object> metadata,
 
             ImmutableArray<Outputs.GetInstancesInstancePlatformConfigResult> platformConfigs,
@@ -213,6 +217,8 @@ namespace Pulumi.Oci.Core.Outputs
             ImmutableArray<Outputs.GetInstancesInstancePreemptibleInstanceConfigResult> preemptibleInstanceConfigs,
 
             bool preserveBootVolume,
+
+            bool preserveDataVolumesCreatedAtLaunch,
 
             string privateIp,
 
@@ -263,10 +269,12 @@ namespace Pulumi.Oci.Core.Outputs
             IsPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
             LaunchMode = launchMode;
             LaunchOptions = launchOptions;
+            LaunchVolumeAttachments = launchVolumeAttachments;
             Metadata = metadata;
             PlatformConfigs = platformConfigs;
             PreemptibleInstanceConfigs = preemptibleInstanceConfigs;
             PreserveBootVolume = preserveBootVolume;
+            PreserveDataVolumesCreatedAtLaunch = preserveDataVolumesCreatedAtLaunch;
             PrivateIp = privateIp;
             PublicIp = publicIp;
             Region = region;

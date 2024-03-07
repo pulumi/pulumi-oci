@@ -11,6 +11,7 @@ import com.pulumi.oci.Opsi.NewsReportArgs;
 import com.pulumi.oci.Opsi.inputs.NewsReportState;
 import com.pulumi.oci.Opsi.outputs.NewsReportContentTypes;
 import com.pulumi.oci.Utilities;
+import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -48,11 +49,19 @@ import javax.annotation.Nullable;
  *             .compartmentId(var_.compartment_id())
  *             .contentTypes(NewsReportContentTypesArgs.builder()
  *                 .capacityPlanningResources(var_.news_report_content_types_capacity_planning_resources())
+ *                 .sqlInsightsFleetAnalysisResources(var_.news_report_content_types_sql_insights_fleet_analysis_resources())
+ *                 .sqlInsightsPerformanceDegradationResources(var_.news_report_content_types_sql_insights_performance_degradation_resources())
+ *                 .sqlInsightsPlanChangesResources(var_.news_report_content_types_sql_insights_plan_changes_resources())
+ *                 .sqlInsightsTopDatabasesResources(var_.news_report_content_types_sql_insights_top_databases_resources())
+ *                 .sqlInsightsTopSqlByInsightsResources(var_.news_report_content_types_sql_insights_top_sql_by_insights_resources())
+ *                 .sqlInsightsTopSqlResources(var_.news_report_content_types_sql_insights_top_sql_resources())
  *                 .build())
  *             .description(var_.news_report_description())
  *             .locale(var_.news_report_locale())
  *             .newsFrequency(var_.news_report_news_frequency())
  *             .onsTopicId(oci_opsi_ons_topic.test_ons_topic().id())
+ *             .areChildCompartmentsIncluded(var_.news_report_are_child_compartments_included())
+ *             .dayOfWeek(var_.news_report_day_of_week())
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
  *             .status(var_.news_report_status())
@@ -73,6 +82,20 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="oci:Opsi/newsReport:NewsReport")
 public class NewsReport extends com.pulumi.resources.CustomResource {
+    /**
+     * (Updatable) A flag to consider the resources within a given compartment and all sub-compartments.
+     * 
+     */
+    @Export(name="areChildCompartmentsIncluded", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> areChildCompartmentsIncluded;
+
+    /**
+     * @return (Updatable) A flag to consider the resources within a given compartment and all sub-compartments.
+     * 
+     */
+    public Output<Boolean> areChildCompartmentsIncluded() {
+        return this.areChildCompartmentsIncluded;
+    }
     /**
      * (Updatable) Compartment Identifier where the news report will be created.
      * 
@@ -102,6 +125,20 @@ public class NewsReport extends com.pulumi.resources.CustomResource {
         return this.contentTypes;
     }
     /**
+     * (Updatable) Day of the week in which the news report will be sent if the frequency is set to WEEKLY.
+     * 
+     */
+    @Export(name="dayOfWeek", refs={String.class}, tree="[0]")
+    private Output<String> dayOfWeek;
+
+    /**
+     * @return (Updatable) Day of the week in which the news report will be sent if the frequency is set to WEEKLY.
+     * 
+     */
+    public Output<String> dayOfWeek() {
+        return this.dayOfWeek;
+    }
+    /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
@@ -116,14 +153,14 @@ public class NewsReport extends com.pulumi.resources.CustomResource {
         return this.definedTags;
     }
     /**
-     * The description of the news report.
+     * (Updatable) The description of the news report.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return The description of the news report.
+     * @return (Updatable) The description of the news report.
      * 
      */
     public Output<String> description() {
@@ -172,14 +209,14 @@ public class NewsReport extends com.pulumi.resources.CustomResource {
         return this.locale;
     }
     /**
-     * The news report name.
+     * (Updatable) The news report name.
      * 
      */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
-     * @return The news report name.
+     * @return (Updatable) The news report name.
      * 
      */
     public Output<String> name() {

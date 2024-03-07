@@ -6,6 +6,7 @@ package com.pulumi.oci.Opsi.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Opsi.outputs.GetNewsReportContentType;
+import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -14,6 +15,11 @@ import java.util.Objects;
 
 @CustomType
 public final class GetNewsReportResult {
+    /**
+     * @return A flag to consider the resources within a given compartment and all sub-compartments.
+     * 
+     */
+    private Boolean areChildCompartmentsIncluded;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
@@ -24,6 +30,11 @@ public final class GetNewsReportResult {
      * 
      */
     private List<GetNewsReportContentType> contentTypes;
+    /**
+     * @return Day of the week in which the news report will be sent if the frequency is set to WEEKLY.
+     * 
+     */
+    private String dayOfWeek;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
@@ -98,6 +109,13 @@ public final class GetNewsReportResult {
 
     private GetNewsReportResult() {}
     /**
+     * @return A flag to consider the resources within a given compartment and all sub-compartments.
+     * 
+     */
+    public Boolean areChildCompartmentsIncluded() {
+        return this.areChildCompartmentsIncluded;
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
@@ -110,6 +128,13 @@ public final class GetNewsReportResult {
      */
     public List<GetNewsReportContentType> contentTypes() {
         return this.contentTypes;
+    }
+    /**
+     * @return Day of the week in which the news report will be sent if the frequency is set to WEEKLY.
+     * 
+     */
+    public String dayOfWeek() {
+        return this.dayOfWeek;
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
@@ -222,8 +247,10 @@ public final class GetNewsReportResult {
     }
     @CustomType.Builder
     public static final class Builder {
+        private Boolean areChildCompartmentsIncluded;
         private String compartmentId;
         private List<GetNewsReportContentType> contentTypes;
+        private String dayOfWeek;
         private Map<String,Object> definedTags;
         private String description;
         private Map<String,Object> freeformTags;
@@ -242,8 +269,10 @@ public final class GetNewsReportResult {
         public Builder() {}
         public Builder(GetNewsReportResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.areChildCompartmentsIncluded = defaults.areChildCompartmentsIncluded;
     	      this.compartmentId = defaults.compartmentId;
     	      this.contentTypes = defaults.contentTypes;
+    	      this.dayOfWeek = defaults.dayOfWeek;
     	      this.definedTags = defaults.definedTags;
     	      this.description = defaults.description;
     	      this.freeformTags = defaults.freeformTags;
@@ -262,6 +291,14 @@ public final class GetNewsReportResult {
         }
 
         @CustomType.Setter
+        public Builder areChildCompartmentsIncluded(Boolean areChildCompartmentsIncluded) {
+            if (areChildCompartmentsIncluded == null) {
+              throw new MissingRequiredPropertyException("GetNewsReportResult", "areChildCompartmentsIncluded");
+            }
+            this.areChildCompartmentsIncluded = areChildCompartmentsIncluded;
+            return this;
+        }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             if (compartmentId == null) {
               throw new MissingRequiredPropertyException("GetNewsReportResult", "compartmentId");
@@ -279,6 +316,14 @@ public final class GetNewsReportResult {
         }
         public Builder contentTypes(GetNewsReportContentType... contentTypes) {
             return contentTypes(List.of(contentTypes));
+        }
+        @CustomType.Setter
+        public Builder dayOfWeek(String dayOfWeek) {
+            if (dayOfWeek == null) {
+              throw new MissingRequiredPropertyException("GetNewsReportResult", "dayOfWeek");
+            }
+            this.dayOfWeek = dayOfWeek;
+            return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
@@ -402,8 +447,10 @@ public final class GetNewsReportResult {
         }
         public GetNewsReportResult build() {
             final var _resultValue = new GetNewsReportResult();
+            _resultValue.areChildCompartmentsIncluded = areChildCompartmentsIncluded;
             _resultValue.compartmentId = compartmentId;
             _resultValue.contentTypes = contentTypes;
+            _resultValue.dayOfWeek = dayOfWeek;
             _resultValue.definedTags = definedTags;
             _resultValue.description = description;
             _resultValue.freeformTags = freeformTags;

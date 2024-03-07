@@ -30,11 +30,19 @@ namespace Pulumi.Oci.Opsi
     ///         ContentTypes = new Oci.Opsi.Inputs.NewsReportContentTypesArgs
     ///         {
     ///             CapacityPlanningResources = @var.News_report_content_types_capacity_planning_resources,
+    ///             SqlInsightsFleetAnalysisResources = @var.News_report_content_types_sql_insights_fleet_analysis_resources,
+    ///             SqlInsightsPerformanceDegradationResources = @var.News_report_content_types_sql_insights_performance_degradation_resources,
+    ///             SqlInsightsPlanChangesResources = @var.News_report_content_types_sql_insights_plan_changes_resources,
+    ///             SqlInsightsTopDatabasesResources = @var.News_report_content_types_sql_insights_top_databases_resources,
+    ///             SqlInsightsTopSqlByInsightsResources = @var.News_report_content_types_sql_insights_top_sql_by_insights_resources,
+    ///             SqlInsightsTopSqlResources = @var.News_report_content_types_sql_insights_top_sql_resources,
     ///         },
     ///         Description = @var.News_report_description,
     ///         Locale = @var.News_report_locale,
     ///         NewsFrequency = @var.News_report_news_frequency,
     ///         OnsTopicId = oci_opsi_ons_topic.Test_ons_topic.Id,
+    ///         AreChildCompartmentsIncluded = @var.News_report_are_child_compartments_included,
+    ///         DayOfWeek = @var.News_report_day_of_week,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
@@ -61,6 +69,12 @@ namespace Pulumi.Oci.Opsi
     public partial class NewsReport : global::Pulumi.CustomResource
     {
         /// <summary>
+        /// (Updatable) A flag to consider the resources within a given compartment and all sub-compartments.
+        /// </summary>
+        [Output("areChildCompartmentsIncluded")]
+        public Output<bool> AreChildCompartmentsIncluded { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Compartment Identifier where the news report will be created.
         /// </summary>
         [Output("compartmentId")]
@@ -73,13 +87,19 @@ namespace Pulumi.Oci.Opsi
         public Output<Outputs.NewsReportContentTypes> ContentTypes { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) Day of the week in which the news report will be sent if the frequency is set to WEEKLY.
+        /// </summary>
+        [Output("dayOfWeek")]
+        public Output<string> DayOfWeek { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
         public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
 
         /// <summary>
-        /// The description of the news report.
+        /// (Updatable) The description of the news report.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
@@ -103,7 +123,7 @@ namespace Pulumi.Oci.Opsi
         public Output<string> Locale { get; private set; } = null!;
 
         /// <summary>
-        /// The news report name.
+        /// (Updatable) The news report name.
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
@@ -201,6 +221,12 @@ namespace Pulumi.Oci.Opsi
     public sealed class NewsReportArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// (Updatable) A flag to consider the resources within a given compartment and all sub-compartments.
+        /// </summary>
+        [Input("areChildCompartmentsIncluded")]
+        public Input<bool>? AreChildCompartmentsIncluded { get; set; }
+
+        /// <summary>
         /// (Updatable) Compartment Identifier where the news report will be created.
         /// </summary>
         [Input("compartmentId", required: true)]
@@ -211,6 +237,12 @@ namespace Pulumi.Oci.Opsi
         /// </summary>
         [Input("contentTypes", required: true)]
         public Input<Inputs.NewsReportContentTypesArgs> ContentTypes { get; set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Day of the week in which the news report will be sent if the frequency is set to WEEKLY.
+        /// </summary>
+        [Input("dayOfWeek")]
+        public Input<string>? DayOfWeek { get; set; }
 
         [Input("definedTags")]
         private InputMap<object>? _definedTags;
@@ -225,7 +257,7 @@ namespace Pulumi.Oci.Opsi
         }
 
         /// <summary>
-        /// The description of the news report.
+        /// (Updatable) The description of the news report.
         /// </summary>
         [Input("description", required: true)]
         public Input<string> Description { get; set; } = null!;
@@ -249,7 +281,7 @@ namespace Pulumi.Oci.Opsi
         public Input<string> Locale { get; set; } = null!;
 
         /// <summary>
-        /// The news report name.
+        /// (Updatable) The news report name.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -285,6 +317,12 @@ namespace Pulumi.Oci.Opsi
     public sealed class NewsReportState : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// (Updatable) A flag to consider the resources within a given compartment and all sub-compartments.
+        /// </summary>
+        [Input("areChildCompartmentsIncluded")]
+        public Input<bool>? AreChildCompartmentsIncluded { get; set; }
+
+        /// <summary>
         /// (Updatable) Compartment Identifier where the news report will be created.
         /// </summary>
         [Input("compartmentId")]
@@ -295,6 +333,12 @@ namespace Pulumi.Oci.Opsi
         /// </summary>
         [Input("contentTypes")]
         public Input<Inputs.NewsReportContentTypesGetArgs>? ContentTypes { get; set; }
+
+        /// <summary>
+        /// (Updatable) Day of the week in which the news report will be sent if the frequency is set to WEEKLY.
+        /// </summary>
+        [Input("dayOfWeek")]
+        public Input<string>? DayOfWeek { get; set; }
 
         [Input("definedTags")]
         private InputMap<object>? _definedTags;
@@ -309,7 +353,7 @@ namespace Pulumi.Oci.Opsi
         }
 
         /// <summary>
-        /// The description of the news report.
+        /// (Updatable) The description of the news report.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
@@ -339,7 +383,7 @@ namespace Pulumi.Oci.Opsi
         public Input<string>? Locale { get; set; }
 
         /// <summary>
-        /// The news report name.
+        /// (Updatable) The news report name.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }

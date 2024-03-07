@@ -131,7 +131,7 @@ namespace Pulumi.Oci.Core
         public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
@@ -224,6 +224,14 @@ namespace Pulumi.Oci.Core
         public Output<Outputs.InstanceLaunchOptions> LaunchOptions { get; private set; } = null!;
 
         /// <summary>
+        /// Volume attachments to create as part of the launch instance operation.
+        /// 
+        /// **Note:** This property is used for initial instance provisioning only. Updates to this property will not be supported. To update volume attachments, user should use `oci.Core.VolumeAttachment`. To update volume details, user should use `oci.Core.Volume`
+        /// </summary>
+        [Output("launchVolumeAttachments")]
+        public Output<ImmutableArray<Outputs.InstanceLaunchVolumeAttachment>> LaunchVolumeAttachments { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
         /// 
         /// A metadata service runs on every launched instance. The service is an HTTP endpoint listening on 169.254.169.254. You can use the service to:
@@ -289,6 +297,9 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Output("preserveBootVolume")]
         public Output<bool?> PreserveBootVolume { get; private set; } = null!;
+
+        [Output("preserveDataVolumesCreatedAtLaunch")]
+        public Output<bool?> PreserveDataVolumesCreatedAtLaunch { get; private set; } = null!;
 
         /// <summary>
         /// A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC's *primary* private IP address. The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).
@@ -482,7 +493,7 @@ namespace Pulumi.Oci.Core
         }
 
         /// <summary>
-        /// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -573,6 +584,20 @@ namespace Pulumi.Oci.Core
         [Input("launchOptions")]
         public Input<Inputs.InstanceLaunchOptionsArgs>? LaunchOptions { get; set; }
 
+        [Input("launchVolumeAttachments")]
+        private InputList<Inputs.InstanceLaunchVolumeAttachmentArgs>? _launchVolumeAttachments;
+
+        /// <summary>
+        /// Volume attachments to create as part of the launch instance operation.
+        /// 
+        /// **Note:** This property is used for initial instance provisioning only. Updates to this property will not be supported. To update volume attachments, user should use `oci.Core.VolumeAttachment`. To update volume details, user should use `oci.Core.Volume`
+        /// </summary>
+        public InputList<Inputs.InstanceLaunchVolumeAttachmentArgs> LaunchVolumeAttachments
+        {
+            get => _launchVolumeAttachments ?? (_launchVolumeAttachments = new InputList<Inputs.InstanceLaunchVolumeAttachmentArgs>());
+            set => _launchVolumeAttachments = value;
+        }
+
         [Input("metadata")]
         private InputMap<object>? _metadata;
 
@@ -645,6 +670,9 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Input("preserveBootVolume")]
         public Input<bool>? PreserveBootVolume { get; set; }
+
+        [Input("preserveDataVolumesCreatedAtLaunch")]
+        public Input<bool>? PreserveDataVolumesCreatedAtLaunch { get; set; }
 
         /// <summary>
         /// (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
@@ -766,7 +794,7 @@ namespace Pulumi.Oci.Core
         }
 
         /// <summary>
-        /// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -869,6 +897,20 @@ namespace Pulumi.Oci.Core
         [Input("launchOptions")]
         public Input<Inputs.InstanceLaunchOptionsGetArgs>? LaunchOptions { get; set; }
 
+        [Input("launchVolumeAttachments")]
+        private InputList<Inputs.InstanceLaunchVolumeAttachmentGetArgs>? _launchVolumeAttachments;
+
+        /// <summary>
+        /// Volume attachments to create as part of the launch instance operation.
+        /// 
+        /// **Note:** This property is used for initial instance provisioning only. Updates to this property will not be supported. To update volume attachments, user should use `oci.Core.VolumeAttachment`. To update volume details, user should use `oci.Core.Volume`
+        /// </summary>
+        public InputList<Inputs.InstanceLaunchVolumeAttachmentGetArgs> LaunchVolumeAttachments
+        {
+            get => _launchVolumeAttachments ?? (_launchVolumeAttachments = new InputList<Inputs.InstanceLaunchVolumeAttachmentGetArgs>());
+            set => _launchVolumeAttachments = value;
+        }
+
         [Input("metadata")]
         private InputMap<object>? _metadata;
 
@@ -941,6 +983,9 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Input("preserveBootVolume")]
         public Input<bool>? PreserveBootVolume { get; set; }
+
+        [Input("preserveDataVolumesCreatedAtLaunch")]
+        public Input<bool>? PreserveDataVolumesCreatedAtLaunch { get; set; }
 
         /// <summary>
         /// A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC's *primary* private IP address. The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).

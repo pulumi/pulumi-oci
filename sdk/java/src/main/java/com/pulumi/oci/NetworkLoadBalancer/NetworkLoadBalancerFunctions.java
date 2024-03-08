@@ -53,6 +53,8 @@ public final class NetworkLoadBalancerFunctions {
      * Retrieves the current health status of the specified backend server.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -83,6 +85,7 @@ public final class NetworkLoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBackendHealthResult> getBackendHealth(GetBackendHealthArgs args) {
@@ -94,6 +97,8 @@ public final class NetworkLoadBalancerFunctions {
      * Retrieves the current health status of the specified backend server.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -124,6 +129,7 @@ public final class NetworkLoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBackendHealthResult> getBackendHealthPlain(GetBackendHealthPlainArgs args) {
@@ -135,6 +141,8 @@ public final class NetworkLoadBalancerFunctions {
      * Retrieves the current health status of the specified backend server.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -165,6 +173,7 @@ public final class NetworkLoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBackendHealthResult> getBackendHealth(GetBackendHealthArgs args, InvokeOptions options) {
@@ -176,6 +185,8 @@ public final class NetworkLoadBalancerFunctions {
      * Retrieves the current health status of the specified backend server.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -206,6 +217,7 @@ public final class NetworkLoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBackendHealthResult> getBackendHealthPlain(GetBackendHealthPlainArgs args, InvokeOptions options) {
@@ -218,6 +230,7 @@ public final class NetworkLoadBalancerFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -248,6 +261,7 @@ public final class NetworkLoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBackendSetResult> getBackendSet(GetBackendSetArgs args) {
@@ -260,6 +274,7 @@ public final class NetworkLoadBalancerFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -290,6 +305,7 @@ public final class NetworkLoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBackendSetResult> getBackendSetPlain(GetBackendSetPlainArgs args) {
@@ -302,6 +318,7 @@ public final class NetworkLoadBalancerFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -332,6 +349,7 @@ public final class NetworkLoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBackendSetResult> getBackendSet(GetBackendSetArgs args, InvokeOptions options) {
@@ -344,6 +362,7 @@ public final class NetworkLoadBalancerFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -374,6 +393,7 @@ public final class NetworkLoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBackendSetResult> getBackendSetPlain(GetBackendSetPlainArgs args, InvokeOptions options) {
@@ -397,6 +417,8 @@ public final class NetworkLoadBalancerFunctions {
      * Lists all backend sets associated with a given network load balancer.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -425,6 +447,7 @@ public final class NetworkLoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBackendSetsResult> getBackendSets(GetBackendSetsArgs args) {
@@ -436,6 +459,8 @@ public final class NetworkLoadBalancerFunctions {
      * Lists all backend sets associated with a given network load balancer.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -464,6 +489,7 @@ public final class NetworkLoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBackendSetsResult> getBackendSetsPlain(GetBackendSetsPlainArgs args) {
@@ -475,6 +501,8 @@ public final class NetworkLoadBalancerFunctions {
      * Lists all backend sets associated with a given network load balancer.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -503,6 +531,7 @@ public final class NetworkLoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBackendSetsResult> getBackendSets(GetBackendSetsArgs args, InvokeOptions options) {
@@ -514,6 +543,8 @@ public final class NetworkLoadBalancerFunctions {
      * Lists all backend sets associated with a given network load balancer.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -542,6 +573,7 @@ public final class NetworkLoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBackendSetsResult> getBackendSetsPlain(GetBackendSetsPlainArgs args, InvokeOptions options) {
@@ -553,6 +585,8 @@ public final class NetworkLoadBalancerFunctions {
      * Lists the backend servers for a given network load balancer and backend set.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -582,6 +616,7 @@ public final class NetworkLoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBackendsResult> getBackends(GetBackendsArgs args) {
@@ -593,6 +628,8 @@ public final class NetworkLoadBalancerFunctions {
      * Lists the backend servers for a given network load balancer and backend set.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -622,6 +659,7 @@ public final class NetworkLoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBackendsResult> getBackendsPlain(GetBackendsPlainArgs args) {
@@ -633,6 +671,8 @@ public final class NetworkLoadBalancerFunctions {
      * Lists the backend servers for a given network load balancer and backend set.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -662,6 +702,7 @@ public final class NetworkLoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBackendsResult> getBackends(GetBackendsArgs args, InvokeOptions options) {
@@ -673,6 +714,8 @@ public final class NetworkLoadBalancerFunctions {
      * Lists the backend servers for a given network load balancer and backend set.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -702,6 +745,7 @@ public final class NetworkLoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBackendsResult> getBackendsPlain(GetBackendsPlainArgs args, InvokeOptions options) {
@@ -713,6 +757,8 @@ public final class NetworkLoadBalancerFunctions {
      * Retrieves listener properties associated with a given network load balancer and listener name.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -742,6 +788,7 @@ public final class NetworkLoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetListenerResult> getListener(GetListenerArgs args) {
@@ -753,6 +800,8 @@ public final class NetworkLoadBalancerFunctions {
      * Retrieves listener properties associated with a given network load balancer and listener name.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -782,6 +831,7 @@ public final class NetworkLoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetListenerResult> getListenerPlain(GetListenerPlainArgs args) {
@@ -793,6 +843,8 @@ public final class NetworkLoadBalancerFunctions {
      * Retrieves listener properties associated with a given network load balancer and listener name.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -822,6 +874,7 @@ public final class NetworkLoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetListenerResult> getListener(GetListenerArgs args, InvokeOptions options) {
@@ -833,6 +886,8 @@ public final class NetworkLoadBalancerFunctions {
      * Retrieves listener properties associated with a given network load balancer and listener name.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -862,6 +917,7 @@ public final class NetworkLoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetListenerResult> getListenerPlain(GetListenerPlainArgs args, InvokeOptions options) {
@@ -873,6 +929,8 @@ public final class NetworkLoadBalancerFunctions {
      * Lists all listeners associated with a given network load balancer.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -901,6 +959,7 @@ public final class NetworkLoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetListenersResult> getListeners(GetListenersArgs args) {
@@ -912,6 +971,8 @@ public final class NetworkLoadBalancerFunctions {
      * Lists all listeners associated with a given network load balancer.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -940,6 +1001,7 @@ public final class NetworkLoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetListenersResult> getListenersPlain(GetListenersPlainArgs args) {
@@ -951,6 +1013,8 @@ public final class NetworkLoadBalancerFunctions {
      * Lists all listeners associated with a given network load balancer.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -979,6 +1043,7 @@ public final class NetworkLoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetListenersResult> getListeners(GetListenersArgs args, InvokeOptions options) {
@@ -990,6 +1055,8 @@ public final class NetworkLoadBalancerFunctions {
      * Lists all listeners associated with a given network load balancer.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1018,6 +1085,7 @@ public final class NetworkLoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetListenersResult> getListenersPlain(GetListenersPlainArgs args, InvokeOptions options) {
@@ -1029,6 +1097,8 @@ public final class NetworkLoadBalancerFunctions {
      * Retrieves network load balancer configuration information by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1057,6 +1127,7 @@ public final class NetworkLoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkLoadBalancerResult> getNetworkLoadBalancer(GetNetworkLoadBalancerArgs args) {
@@ -1068,6 +1139,8 @@ public final class NetworkLoadBalancerFunctions {
      * Retrieves network load balancer configuration information by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1096,6 +1169,7 @@ public final class NetworkLoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkLoadBalancerResult> getNetworkLoadBalancerPlain(GetNetworkLoadBalancerPlainArgs args) {
@@ -1107,6 +1181,8 @@ public final class NetworkLoadBalancerFunctions {
      * Retrieves network load balancer configuration information by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1135,6 +1211,7 @@ public final class NetworkLoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkLoadBalancerResult> getNetworkLoadBalancer(GetNetworkLoadBalancerArgs args, InvokeOptions options) {
@@ -1146,6 +1223,8 @@ public final class NetworkLoadBalancerFunctions {
      * Retrieves network load balancer configuration information by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1174,6 +1253,7 @@ public final class NetworkLoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkLoadBalancerResult> getNetworkLoadBalancerPlain(GetNetworkLoadBalancerPlainArgs args, InvokeOptions options) {
@@ -1185,6 +1265,8 @@ public final class NetworkLoadBalancerFunctions {
      * Retrieves the health status for the specified network load balancer.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1213,6 +1295,7 @@ public final class NetworkLoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkLoadBalancerHealthResult> getNetworkLoadBalancerHealth(GetNetworkLoadBalancerHealthArgs args) {
@@ -1224,6 +1307,8 @@ public final class NetworkLoadBalancerFunctions {
      * Retrieves the health status for the specified network load balancer.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1252,6 +1337,7 @@ public final class NetworkLoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkLoadBalancerHealthResult> getNetworkLoadBalancerHealthPlain(GetNetworkLoadBalancerHealthPlainArgs args) {
@@ -1263,6 +1349,8 @@ public final class NetworkLoadBalancerFunctions {
      * Retrieves the health status for the specified network load balancer.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1291,6 +1379,7 @@ public final class NetworkLoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkLoadBalancerHealthResult> getNetworkLoadBalancerHealth(GetNetworkLoadBalancerHealthArgs args, InvokeOptions options) {
@@ -1302,6 +1391,8 @@ public final class NetworkLoadBalancerFunctions {
      * Retrieves the health status for the specified network load balancer.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1330,6 +1421,7 @@ public final class NetworkLoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkLoadBalancerHealthResult> getNetworkLoadBalancerHealthPlain(GetNetworkLoadBalancerHealthPlainArgs args, InvokeOptions options) {
@@ -1341,6 +1433,8 @@ public final class NetworkLoadBalancerFunctions {
      * Returns a list of network load balancers.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1371,6 +1465,7 @@ public final class NetworkLoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkLoadBalancersResult> getNetworkLoadBalancers(GetNetworkLoadBalancersArgs args) {
@@ -1382,6 +1477,8 @@ public final class NetworkLoadBalancerFunctions {
      * Returns a list of network load balancers.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1412,6 +1509,7 @@ public final class NetworkLoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkLoadBalancersResult> getNetworkLoadBalancersPlain(GetNetworkLoadBalancersPlainArgs args) {
@@ -1423,6 +1521,8 @@ public final class NetworkLoadBalancerFunctions {
      * Returns a list of network load balancers.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1453,6 +1553,7 @@ public final class NetworkLoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkLoadBalancersResult> getNetworkLoadBalancers(GetNetworkLoadBalancersArgs args, InvokeOptions options) {
@@ -1464,6 +1565,8 @@ public final class NetworkLoadBalancerFunctions {
      * Returns a list of network load balancers.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1494,6 +1597,7 @@ public final class NetworkLoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkLoadBalancersResult> getNetworkLoadBalancersPlain(GetNetworkLoadBalancersPlainArgs args, InvokeOptions options) {
@@ -1505,6 +1609,8 @@ public final class NetworkLoadBalancerFunctions {
      * Lists the available network load balancer policies.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1531,6 +1637,7 @@ public final class NetworkLoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkLoadBalancersPoliciesResult> getNetworkLoadBalancersPolicies() {
@@ -1542,6 +1649,8 @@ public final class NetworkLoadBalancerFunctions {
      * Lists the available network load balancer policies.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1568,6 +1677,7 @@ public final class NetworkLoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkLoadBalancersPoliciesResult> getNetworkLoadBalancersPoliciesPlain() {
@@ -1579,6 +1689,8 @@ public final class NetworkLoadBalancerFunctions {
      * Lists the available network load balancer policies.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1605,6 +1717,7 @@ public final class NetworkLoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkLoadBalancersPoliciesResult> getNetworkLoadBalancersPolicies(GetNetworkLoadBalancersPoliciesArgs args) {
@@ -1616,6 +1729,8 @@ public final class NetworkLoadBalancerFunctions {
      * Lists the available network load balancer policies.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1642,6 +1757,7 @@ public final class NetworkLoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkLoadBalancersPoliciesResult> getNetworkLoadBalancersPoliciesPlain(GetNetworkLoadBalancersPoliciesPlainArgs args) {
@@ -1653,6 +1769,8 @@ public final class NetworkLoadBalancerFunctions {
      * Lists the available network load balancer policies.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1679,6 +1797,7 @@ public final class NetworkLoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkLoadBalancersPoliciesResult> getNetworkLoadBalancersPolicies(GetNetworkLoadBalancersPoliciesArgs args, InvokeOptions options) {
@@ -1690,6 +1809,8 @@ public final class NetworkLoadBalancerFunctions {
      * Lists the available network load balancer policies.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1716,6 +1837,7 @@ public final class NetworkLoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkLoadBalancersPoliciesResult> getNetworkLoadBalancersPoliciesPlain(GetNetworkLoadBalancersPoliciesPlainArgs args, InvokeOptions options) {
@@ -1728,6 +1850,8 @@ public final class NetworkLoadBalancerFunctions {
      * Lists all supported traffic protocols.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1754,6 +1878,7 @@ public final class NetworkLoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkLoadBalancersProtocolsResult> getNetworkLoadBalancersProtocols() {
@@ -1766,6 +1891,8 @@ public final class NetworkLoadBalancerFunctions {
      * Lists all supported traffic protocols.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1792,6 +1919,7 @@ public final class NetworkLoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkLoadBalancersProtocolsResult> getNetworkLoadBalancersProtocolsPlain() {
@@ -1804,6 +1932,8 @@ public final class NetworkLoadBalancerFunctions {
      * Lists all supported traffic protocols.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1830,6 +1960,7 @@ public final class NetworkLoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkLoadBalancersProtocolsResult> getNetworkLoadBalancersProtocols(GetNetworkLoadBalancersProtocolsArgs args) {
@@ -1842,6 +1973,8 @@ public final class NetworkLoadBalancerFunctions {
      * Lists all supported traffic protocols.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1868,6 +2001,7 @@ public final class NetworkLoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkLoadBalancersProtocolsResult> getNetworkLoadBalancersProtocolsPlain(GetNetworkLoadBalancersProtocolsPlainArgs args) {
@@ -1880,6 +2014,8 @@ public final class NetworkLoadBalancerFunctions {
      * Lists all supported traffic protocols.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1906,6 +2042,7 @@ public final class NetworkLoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkLoadBalancersProtocolsResult> getNetworkLoadBalancersProtocols(GetNetworkLoadBalancersProtocolsArgs args, InvokeOptions options) {
@@ -1918,6 +2055,8 @@ public final class NetworkLoadBalancerFunctions {
      * Lists all supported traffic protocols.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1944,6 +2083,7 @@ public final class NetworkLoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkLoadBalancersProtocolsResult> getNetworkLoadBalancersProtocolsPlain(GetNetworkLoadBalancersProtocolsPlainArgs args, InvokeOptions options) {

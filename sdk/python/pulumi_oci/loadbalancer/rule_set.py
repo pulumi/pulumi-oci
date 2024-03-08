@@ -168,6 +168,7 @@ class RuleSet(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -200,13 +201,14 @@ class RuleSet(pulumi.CustomResource):
             )],
             load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         RuleSets can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:LoadBalancer/ruleSet:RuleSet test_rule_set "loadBalancers/{loadBalancerId}/ruleSets/{ruleSetName}"
+        $ pulumi import oci:LoadBalancer/ruleSet:RuleSet test_rule_set "loadBalancers/{loadBalancerId}/ruleSets/{ruleSetName}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -233,6 +235,7 @@ class RuleSet(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -265,13 +268,14 @@ class RuleSet(pulumi.CustomResource):
             )],
             load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         RuleSets can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:LoadBalancer/ruleSet:RuleSet test_rule_set "loadBalancers/{loadBalancerId}/ruleSets/{ruleSetName}"
+        $ pulumi import oci:LoadBalancer/ruleSet:RuleSet test_rule_set "loadBalancers/{loadBalancerId}/ruleSets/{ruleSetName}"
         ```
 
         :param str resource_name: The name of the resource.

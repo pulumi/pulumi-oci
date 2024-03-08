@@ -94,6 +94,7 @@ def get_rule_set(load_balancer_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -101,6 +102,7 @@ def get_rule_set(load_balancer_id: Optional[str] = None,
     test_rule_set = oci.LoadBalancer.get_rule_set(load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"],
         name=var["rule_set_name"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the specified load balancer.
@@ -131,6 +133,7 @@ def get_rule_set_output(load_balancer_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -138,6 +141,7 @@ def get_rule_set_output(load_balancer_id: Optional[pulumi.Input[str]] = None,
     test_rule_set = oci.LoadBalancer.get_rule_set(load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"],
         name=var["rule_set_name"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the specified load balancer.

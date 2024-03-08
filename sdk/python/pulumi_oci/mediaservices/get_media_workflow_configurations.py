@@ -116,6 +116,7 @@ def get_media_workflow_configurations(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -125,6 +126,7 @@ def get_media_workflow_configurations(compartment_id: Optional[str] = None,
         id=var["media_workflow_configuration_id"],
         state=var["media_workflow_configuration_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID of the compartment in which to list resources.
@@ -164,6 +166,7 @@ def get_media_workflow_configurations_output(compartment_id: Optional[pulumi.Inp
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -173,6 +176,7 @@ def get_media_workflow_configurations_output(compartment_id: Optional[pulumi.Inp
         id=var["media_workflow_configuration_id"],
         state=var["media_workflow_configuration_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID of the compartment in which to list resources.

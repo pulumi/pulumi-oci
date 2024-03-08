@@ -2499,7 +2499,7 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
         AuthenticationFactorSettings can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/domainsAuthenticationFactorSetting:DomainsAuthenticationFactorSetting test_authentication_factor_setting "idcsEndpoint/{idcsEndpoint}/authenticationFactorSettings/{authenticationFactorSettingId}"
+        $ pulumi import oci:Identity/domainsAuthenticationFactorSetting:DomainsAuthenticationFactorSetting test_authentication_factor_setting "idcsEndpoint/{idcsEndpoint}/authenticationFactorSettings/{authenticationFactorSettingId}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -2811,7 +2811,7 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
         AuthenticationFactorSettings can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/domainsAuthenticationFactorSetting:DomainsAuthenticationFactorSetting test_authentication_factor_setting "idcsEndpoint/{idcsEndpoint}/authenticationFactorSettings/{authenticationFactorSettingId}"
+        $ pulumi import oci:Identity/domainsAuthenticationFactorSetting:DomainsAuthenticationFactorSetting test_authentication_factor_setting "idcsEndpoint/{idcsEndpoint}/authenticationFactorSettings/{authenticationFactorSettingId}"
         ```
 
         :param str resource_name: The name of the resource.

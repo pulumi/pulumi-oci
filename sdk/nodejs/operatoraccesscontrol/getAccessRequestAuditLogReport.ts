@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -20,6 +21,7 @@ import * as utilities from "../utilities";
  *     enableProcessTree: _var.access_request_audit_log_report_enable_process_tree,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAccessRequestAuditLogReport(args: GetAccessRequestAuditLogReportArgs, opts?: pulumi.InvokeOptions): Promise<GetAccessRequestAuditLogReportResult> {
 
@@ -78,6 +80,7 @@ export interface GetAccessRequestAuditLogReportResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -87,6 +90,7 @@ export interface GetAccessRequestAuditLogReportResult {
  *     enableProcessTree: _var.access_request_audit_log_report_enable_process_tree,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAccessRequestAuditLogReportOutput(args: GetAccessRequestAuditLogReportOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAccessRequestAuditLogReportResult> {
     return pulumi.output(args).apply((a: any) => getAccessRequestAuditLogReport(a, opts))

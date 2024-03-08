@@ -195,6 +195,7 @@ def get_managed_database_sql_plan_baseline_configuration(managed_database_id: Op
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -202,6 +203,7 @@ def get_managed_database_sql_plan_baseline_configuration(managed_database_id: Op
     test_managed_database_sql_plan_baseline_configuration = oci.DatabaseManagement.get_managed_database_sql_plan_baseline_configuration(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
         opc_named_credential_id=var["managed_database_sql_plan_baseline_configuration_opc_named_credential_id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
@@ -242,6 +244,7 @@ def get_managed_database_sql_plan_baseline_configuration_output(managed_database
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -249,6 +252,7 @@ def get_managed_database_sql_plan_baseline_configuration_output(managed_database
     test_managed_database_sql_plan_baseline_configuration = oci.DatabaseManagement.get_managed_database_sql_plan_baseline_configuration(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
         opc_named_credential_id=var["managed_database_sql_plan_baseline_configuration_opc_named_credential_id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.

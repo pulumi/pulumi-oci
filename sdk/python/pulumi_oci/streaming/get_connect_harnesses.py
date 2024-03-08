@@ -116,6 +116,7 @@ def get_connect_harnesses(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -125,6 +126,7 @@ def get_connect_harnesses(compartment_id: Optional[str] = None,
         name=var["connect_harness_name"],
         state=var["connect_harness_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment.
@@ -164,6 +166,7 @@ def get_connect_harnesses_output(compartment_id: Optional[pulumi.Input[str]] = N
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -173,6 +176,7 @@ def get_connect_harnesses_output(compartment_id: Optional[pulumi.Input[str]] = N
         name=var["connect_harness_name"],
         state=var["connect_harness_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment.

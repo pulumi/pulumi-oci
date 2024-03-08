@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -42,6 +43,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetNamespaceStorageOverlappingRecalls(ctx *pulumi.Context, args *GetNamespaceStorageOverlappingRecallsArgs, opts ...pulumi.InvokeOption) (*GetNamespaceStorageOverlappingRecallsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetNamespaceStorageOverlappingRecallsResult

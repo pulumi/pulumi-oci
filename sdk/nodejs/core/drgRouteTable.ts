@@ -12,6 +12,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -29,13 +30,14 @@ import * as utilities from "../utilities";
  *     isEcmpEnabled: _var.drg_route_table_is_ecmp_enabled,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * DrgRouteTables can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Core/drgRouteTable:DrgRouteTable test_drg_route_table "id"
+ * $ pulumi import oci:Core/drgRouteTable:DrgRouteTable test_drg_route_table "id"
  * ```
  */
 export class DrgRouteTable extends pulumi.CustomResource {

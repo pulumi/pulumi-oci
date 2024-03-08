@@ -383,6 +383,7 @@ class ExternalDbSystem(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -405,13 +406,14 @@ class ExternalDbSystem(pulumi.CustomResource):
                 metadata=var["external_db_system_stack_monitoring_config_metadata"],
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ExternalDbSystems can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DatabaseManagement/externalDbSystem:ExternalDbSystem test_external_db_system "id"
+        $ pulumi import oci:DatabaseManagement/externalDbSystem:ExternalDbSystem test_external_db_system "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -437,6 +439,7 @@ class ExternalDbSystem(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -459,13 +462,14 @@ class ExternalDbSystem(pulumi.CustomResource):
                 metadata=var["external_db_system_stack_monitoring_config_metadata"],
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ExternalDbSystems can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DatabaseManagement/externalDbSystem:ExternalDbSystem test_external_db_system "id"
+        $ pulumi import oci:DatabaseManagement/externalDbSystem:ExternalDbSystem test_external_db_system "id"
         ```
 
         :param str resource_name: The name of the resource.

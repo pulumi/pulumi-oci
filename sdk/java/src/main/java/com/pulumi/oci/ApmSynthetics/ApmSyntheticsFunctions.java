@@ -56,6 +56,8 @@ public final class ApmSyntheticsFunctions {
      * Gets the details of the dedicated vantage point identified by the OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -85,6 +87,7 @@ public final class ApmSyntheticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDedicatedVantagePointResult> getDedicatedVantagePoint(GetDedicatedVantagePointArgs args) {
@@ -96,6 +99,8 @@ public final class ApmSyntheticsFunctions {
      * Gets the details of the dedicated vantage point identified by the OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -125,6 +130,7 @@ public final class ApmSyntheticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDedicatedVantagePointResult> getDedicatedVantagePointPlain(GetDedicatedVantagePointPlainArgs args) {
@@ -136,6 +142,8 @@ public final class ApmSyntheticsFunctions {
      * Gets the details of the dedicated vantage point identified by the OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -165,6 +173,7 @@ public final class ApmSyntheticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDedicatedVantagePointResult> getDedicatedVantagePoint(GetDedicatedVantagePointArgs args, InvokeOptions options) {
@@ -176,6 +185,8 @@ public final class ApmSyntheticsFunctions {
      * Gets the details of the dedicated vantage point identified by the OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -205,6 +216,7 @@ public final class ApmSyntheticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDedicatedVantagePointResult> getDedicatedVantagePointPlain(GetDedicatedVantagePointPlainArgs args, InvokeOptions options) {
@@ -216,6 +228,8 @@ public final class ApmSyntheticsFunctions {
      * Returns a list of dedicated vantage points.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -247,6 +261,7 @@ public final class ApmSyntheticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDedicatedVantagePointsResult> getDedicatedVantagePoints(GetDedicatedVantagePointsArgs args) {
@@ -258,6 +273,8 @@ public final class ApmSyntheticsFunctions {
      * Returns a list of dedicated vantage points.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -289,6 +306,7 @@ public final class ApmSyntheticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDedicatedVantagePointsResult> getDedicatedVantagePointsPlain(GetDedicatedVantagePointsPlainArgs args) {
@@ -300,6 +318,8 @@ public final class ApmSyntheticsFunctions {
      * Returns a list of dedicated vantage points.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -331,6 +351,7 @@ public final class ApmSyntheticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDedicatedVantagePointsResult> getDedicatedVantagePoints(GetDedicatedVantagePointsArgs args, InvokeOptions options) {
@@ -342,6 +363,8 @@ public final class ApmSyntheticsFunctions {
      * Returns a list of dedicated vantage points.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -373,6 +396,7 @@ public final class ApmSyntheticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDedicatedVantagePointsResult> getDedicatedVantagePointsPlain(GetDedicatedVantagePointsPlainArgs args, InvokeOptions options) {
@@ -384,6 +408,8 @@ public final class ApmSyntheticsFunctions {
      * Gets the configuration of the monitor identified by the OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -413,6 +439,7 @@ public final class ApmSyntheticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMonitorResult> getMonitor(GetMonitorArgs args) {
@@ -424,6 +451,8 @@ public final class ApmSyntheticsFunctions {
      * Gets the configuration of the monitor identified by the OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -453,6 +482,7 @@ public final class ApmSyntheticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMonitorResult> getMonitorPlain(GetMonitorPlainArgs args) {
@@ -464,6 +494,8 @@ public final class ApmSyntheticsFunctions {
      * Gets the configuration of the monitor identified by the OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -493,6 +525,7 @@ public final class ApmSyntheticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMonitorResult> getMonitor(GetMonitorArgs args, InvokeOptions options) {
@@ -504,6 +537,8 @@ public final class ApmSyntheticsFunctions {
      * Gets the configuration of the monitor identified by the OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -533,6 +568,7 @@ public final class ApmSyntheticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMonitorResult> getMonitorPlain(GetMonitorPlainArgs args, InvokeOptions options) {
@@ -544,6 +580,8 @@ public final class ApmSyntheticsFunctions {
      * Returns a list of monitors.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -579,6 +617,7 @@ public final class ApmSyntheticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMonitorsResult> getMonitors(GetMonitorsArgs args) {
@@ -590,6 +629,8 @@ public final class ApmSyntheticsFunctions {
      * Returns a list of monitors.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -625,6 +666,7 @@ public final class ApmSyntheticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMonitorsResult> getMonitorsPlain(GetMonitorsPlainArgs args) {
@@ -636,6 +678,8 @@ public final class ApmSyntheticsFunctions {
      * Returns a list of monitors.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -671,6 +715,7 @@ public final class ApmSyntheticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMonitorsResult> getMonitors(GetMonitorsArgs args, InvokeOptions options) {
@@ -682,6 +727,8 @@ public final class ApmSyntheticsFunctions {
      * Returns a list of monitors.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -717,6 +764,7 @@ public final class ApmSyntheticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMonitorsResult> getMonitorsPlain(GetMonitorsPlainArgs args, InvokeOptions options) {
@@ -728,6 +776,8 @@ public final class ApmSyntheticsFunctions {
      * Gets the details of the On-premise vantage point identified by the OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -757,6 +807,7 @@ public final class ApmSyntheticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOnPremiseVantagePointResult> getOnPremiseVantagePoint(GetOnPremiseVantagePointArgs args) {
@@ -768,6 +819,8 @@ public final class ApmSyntheticsFunctions {
      * Gets the details of the On-premise vantage point identified by the OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -797,6 +850,7 @@ public final class ApmSyntheticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOnPremiseVantagePointResult> getOnPremiseVantagePointPlain(GetOnPremiseVantagePointPlainArgs args) {
@@ -808,6 +862,8 @@ public final class ApmSyntheticsFunctions {
      * Gets the details of the On-premise vantage point identified by the OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -837,6 +893,7 @@ public final class ApmSyntheticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOnPremiseVantagePointResult> getOnPremiseVantagePoint(GetOnPremiseVantagePointArgs args, InvokeOptions options) {
@@ -848,6 +905,8 @@ public final class ApmSyntheticsFunctions {
      * Gets the details of the On-premise vantage point identified by the OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -877,6 +936,7 @@ public final class ApmSyntheticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOnPremiseVantagePointResult> getOnPremiseVantagePointPlain(GetOnPremiseVantagePointPlainArgs args, InvokeOptions options) {
@@ -888,6 +948,8 @@ public final class ApmSyntheticsFunctions {
      * Gets the details of the worker identified by the OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -918,6 +980,7 @@ public final class ApmSyntheticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOnPremiseVantagePointWorkerResult> getOnPremiseVantagePointWorker(GetOnPremiseVantagePointWorkerArgs args) {
@@ -929,6 +992,8 @@ public final class ApmSyntheticsFunctions {
      * Gets the details of the worker identified by the OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -959,6 +1024,7 @@ public final class ApmSyntheticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOnPremiseVantagePointWorkerResult> getOnPremiseVantagePointWorkerPlain(GetOnPremiseVantagePointWorkerPlainArgs args) {
@@ -970,6 +1036,8 @@ public final class ApmSyntheticsFunctions {
      * Gets the details of the worker identified by the OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1000,6 +1068,7 @@ public final class ApmSyntheticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOnPremiseVantagePointWorkerResult> getOnPremiseVantagePointWorker(GetOnPremiseVantagePointWorkerArgs args, InvokeOptions options) {
@@ -1011,6 +1080,8 @@ public final class ApmSyntheticsFunctions {
      * Gets the details of the worker identified by the OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1041,6 +1112,7 @@ public final class ApmSyntheticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOnPremiseVantagePointWorkerResult> getOnPremiseVantagePointWorkerPlain(GetOnPremiseVantagePointWorkerPlainArgs args, InvokeOptions options) {
@@ -1052,6 +1124,8 @@ public final class ApmSyntheticsFunctions {
      * Returns a list of workers.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1085,6 +1159,7 @@ public final class ApmSyntheticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOnPremiseVantagePointWorkersResult> getOnPremiseVantagePointWorkers(GetOnPremiseVantagePointWorkersArgs args) {
@@ -1096,6 +1171,8 @@ public final class ApmSyntheticsFunctions {
      * Returns a list of workers.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1129,6 +1206,7 @@ public final class ApmSyntheticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOnPremiseVantagePointWorkersResult> getOnPremiseVantagePointWorkersPlain(GetOnPremiseVantagePointWorkersPlainArgs args) {
@@ -1140,6 +1218,8 @@ public final class ApmSyntheticsFunctions {
      * Returns a list of workers.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1173,6 +1253,7 @@ public final class ApmSyntheticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOnPremiseVantagePointWorkersResult> getOnPremiseVantagePointWorkers(GetOnPremiseVantagePointWorkersArgs args, InvokeOptions options) {
@@ -1184,6 +1265,8 @@ public final class ApmSyntheticsFunctions {
      * Returns a list of workers.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1217,6 +1300,7 @@ public final class ApmSyntheticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOnPremiseVantagePointWorkersResult> getOnPremiseVantagePointWorkersPlain(GetOnPremiseVantagePointWorkersPlainArgs args, InvokeOptions options) {
@@ -1228,6 +1312,8 @@ public final class ApmSyntheticsFunctions {
      * Returns a list of On-premise vantage points.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1258,6 +1344,7 @@ public final class ApmSyntheticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOnPremiseVantagePointsResult> getOnPremiseVantagePoints(GetOnPremiseVantagePointsArgs args) {
@@ -1269,6 +1356,8 @@ public final class ApmSyntheticsFunctions {
      * Returns a list of On-premise vantage points.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1299,6 +1388,7 @@ public final class ApmSyntheticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOnPremiseVantagePointsResult> getOnPremiseVantagePointsPlain(GetOnPremiseVantagePointsPlainArgs args) {
@@ -1310,6 +1400,8 @@ public final class ApmSyntheticsFunctions {
      * Returns a list of On-premise vantage points.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1340,6 +1432,7 @@ public final class ApmSyntheticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOnPremiseVantagePointsResult> getOnPremiseVantagePoints(GetOnPremiseVantagePointsArgs args, InvokeOptions options) {
@@ -1351,6 +1444,8 @@ public final class ApmSyntheticsFunctions {
      * Returns a list of On-premise vantage points.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1381,6 +1476,7 @@ public final class ApmSyntheticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOnPremiseVantagePointsResult> getOnPremiseVantagePointsPlain(GetOnPremiseVantagePointsPlainArgs args, InvokeOptions options) {
@@ -1392,6 +1488,8 @@ public final class ApmSyntheticsFunctions {
      * Gets the results for a specific execution of a monitor identified by OCID. The results are in a HAR file, Screenshot, Console Log or Network details.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1425,6 +1523,7 @@ public final class ApmSyntheticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetResultResult> getResult(GetResultArgs args) {
@@ -1436,6 +1535,8 @@ public final class ApmSyntheticsFunctions {
      * Gets the results for a specific execution of a monitor identified by OCID. The results are in a HAR file, Screenshot, Console Log or Network details.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1469,6 +1570,7 @@ public final class ApmSyntheticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetResultResult> getResultPlain(GetResultPlainArgs args) {
@@ -1480,6 +1582,8 @@ public final class ApmSyntheticsFunctions {
      * Gets the results for a specific execution of a monitor identified by OCID. The results are in a HAR file, Screenshot, Console Log or Network details.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1513,6 +1617,7 @@ public final class ApmSyntheticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetResultResult> getResult(GetResultArgs args, InvokeOptions options) {
@@ -1524,6 +1629,8 @@ public final class ApmSyntheticsFunctions {
      * Gets the results for a specific execution of a monitor identified by OCID. The results are in a HAR file, Screenshot, Console Log or Network details.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1557,6 +1664,7 @@ public final class ApmSyntheticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetResultResult> getResultPlain(GetResultPlainArgs args, InvokeOptions options) {
@@ -1568,6 +1676,8 @@ public final class ApmSyntheticsFunctions {
      * Gets the configuration of the script identified by the OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1597,6 +1707,7 @@ public final class ApmSyntheticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetScriptResult> getScript(GetScriptArgs args) {
@@ -1608,6 +1719,8 @@ public final class ApmSyntheticsFunctions {
      * Gets the configuration of the script identified by the OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1637,6 +1750,7 @@ public final class ApmSyntheticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetScriptResult> getScriptPlain(GetScriptPlainArgs args) {
@@ -1648,6 +1762,8 @@ public final class ApmSyntheticsFunctions {
      * Gets the configuration of the script identified by the OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1677,6 +1793,7 @@ public final class ApmSyntheticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetScriptResult> getScript(GetScriptArgs args, InvokeOptions options) {
@@ -1688,6 +1805,8 @@ public final class ApmSyntheticsFunctions {
      * Gets the configuration of the script identified by the OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1717,6 +1836,7 @@ public final class ApmSyntheticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetScriptResult> getScriptPlain(GetScriptPlainArgs args, InvokeOptions options) {
@@ -1728,6 +1848,8 @@ public final class ApmSyntheticsFunctions {
      * Returns a list of scripts.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1758,6 +1880,7 @@ public final class ApmSyntheticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetScriptsResult> getScripts(GetScriptsArgs args) {
@@ -1769,6 +1892,8 @@ public final class ApmSyntheticsFunctions {
      * Returns a list of scripts.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1799,6 +1924,7 @@ public final class ApmSyntheticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetScriptsResult> getScriptsPlain(GetScriptsPlainArgs args) {
@@ -1810,6 +1936,8 @@ public final class ApmSyntheticsFunctions {
      * Returns a list of scripts.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1840,6 +1968,7 @@ public final class ApmSyntheticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetScriptsResult> getScripts(GetScriptsArgs args, InvokeOptions options) {
@@ -1851,6 +1980,8 @@ public final class ApmSyntheticsFunctions {
      * Returns a list of scripts.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1881,6 +2012,7 @@ public final class ApmSyntheticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetScriptsResult> getScriptsPlain(GetScriptsPlainArgs args, InvokeOptions options) {
@@ -1892,6 +2024,8 @@ public final class ApmSyntheticsFunctions {
      * Returns a list of public vantage points.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1922,6 +2056,7 @@ public final class ApmSyntheticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVantagePointResult> getVantagePoint(GetVantagePointArgs args) {
@@ -1933,6 +2068,8 @@ public final class ApmSyntheticsFunctions {
      * Returns a list of public vantage points.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1963,6 +2100,7 @@ public final class ApmSyntheticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVantagePointResult> getVantagePointPlain(GetVantagePointPlainArgs args) {
@@ -1974,6 +2112,8 @@ public final class ApmSyntheticsFunctions {
      * Returns a list of public vantage points.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2004,6 +2144,7 @@ public final class ApmSyntheticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVantagePointResult> getVantagePoint(GetVantagePointArgs args, InvokeOptions options) {
@@ -2015,6 +2156,8 @@ public final class ApmSyntheticsFunctions {
      * Returns a list of public vantage points.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2045,6 +2188,7 @@ public final class ApmSyntheticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVantagePointResult> getVantagePointPlain(GetVantagePointPlainArgs args, InvokeOptions options) {
@@ -2056,6 +2200,8 @@ public final class ApmSyntheticsFunctions {
      * Returns a list of public vantage points.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2086,6 +2232,7 @@ public final class ApmSyntheticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVantagePointsResult> getVantagePoints(GetVantagePointsArgs args) {
@@ -2097,6 +2244,8 @@ public final class ApmSyntheticsFunctions {
      * Returns a list of public vantage points.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2127,6 +2276,7 @@ public final class ApmSyntheticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVantagePointsResult> getVantagePointsPlain(GetVantagePointsPlainArgs args) {
@@ -2138,6 +2288,8 @@ public final class ApmSyntheticsFunctions {
      * Returns a list of public vantage points.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2168,6 +2320,7 @@ public final class ApmSyntheticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVantagePointsResult> getVantagePoints(GetVantagePointsArgs args, InvokeOptions options) {
@@ -2179,6 +2332,8 @@ public final class ApmSyntheticsFunctions {
      * Returns a list of public vantage points.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2209,6 +2364,7 @@ public final class ApmSyntheticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVantagePointsResult> getVantagePointsPlain(GetVantagePointsPlainArgs args, InvokeOptions options) {

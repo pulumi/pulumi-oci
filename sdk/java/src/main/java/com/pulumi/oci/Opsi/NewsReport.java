@@ -23,6 +23,8 @@ import javax.annotation.Nullable;
  * Create a news report in Operations Insights. The report will be enabled in Operations Insights. Insights will be emailed as per selected frequency.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -70,13 +72,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * NewsReports can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Opsi/newsReport:NewsReport test_news_report &#34;id&#34;
+ * $ pulumi import oci:Opsi/newsReport:NewsReport test_news_report &#34;id&#34;
  * ```
  * 
  */

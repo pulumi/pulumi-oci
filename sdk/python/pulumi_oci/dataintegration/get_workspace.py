@@ -311,12 +311,14 @@ def get_workspace(workspace_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_workspace = oci.DataIntegration.get_workspace(workspace_id=oci_dataintegration_workspace["test_workspace"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str workspace_id: The workspace ID.
@@ -363,12 +365,14 @@ def get_workspace_output(workspace_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_workspace = oci.DataIntegration.get_workspace(workspace_id=oci_dataintegration_workspace["test_workspace"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str workspace_id: The workspace ID.

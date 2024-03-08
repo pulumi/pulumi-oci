@@ -117,6 +117,7 @@ def get_log_analytics_resource_categories_list(namespace: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -126,6 +127,7 @@ def get_log_analytics_resource_categories_list(namespace: Optional[str] = None,
         resource_types=var["log_analytics_resource_categories_list_resource_types"],
         resource_categories=var["log_analytics_resource_categories_list_resource_categories"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str namespace: The Logging Analytics namespace used for the request.
@@ -164,6 +166,7 @@ def get_log_analytics_resource_categories_list_output(namespace: Optional[pulumi
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -173,6 +176,7 @@ def get_log_analytics_resource_categories_list_output(namespace: Optional[pulumi
         resource_types=var["log_analytics_resource_categories_list_resource_types"],
         resource_categories=var["log_analytics_resource_categories_list_resource_categories"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str namespace: The Logging Analytics namespace used for the request.

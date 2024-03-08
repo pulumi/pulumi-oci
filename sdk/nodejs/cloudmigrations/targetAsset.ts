@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -92,13 +93,14 @@ import * as utilities from "../utilities";
  *     msLicense: _var.target_asset_ms_license,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * TargetAssets can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:CloudMigrations/targetAsset:TargetAsset test_target_asset "id"
+ * $ pulumi import oci:CloudMigrations/targetAsset:TargetAsset test_target_asset "id"
  * ```
  */
 export class TargetAsset extends pulumi.CustomResource {

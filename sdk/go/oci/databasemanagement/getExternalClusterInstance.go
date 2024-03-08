@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -40,6 +41,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupExternalClusterInstance(ctx *pulumi.Context, args *LookupExternalClusterInstanceArgs, opts ...pulumi.InvokeOption) (*LookupExternalClusterInstanceResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupExternalClusterInstanceResult

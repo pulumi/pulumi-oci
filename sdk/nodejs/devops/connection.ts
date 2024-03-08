@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -38,13 +39,14 @@ import * as utilities from "../utilities";
  *     username: _var.connection_username,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * Connections can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:DevOps/connection:Connection test_connection "id"
+ * $ pulumi import oci:DevOps/connection:Connection test_connection "id"
  * ```
  */
 export class Connection extends pulumi.CustomResource {

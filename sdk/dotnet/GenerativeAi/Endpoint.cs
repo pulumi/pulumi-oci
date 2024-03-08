@@ -18,6 +18,7 @@ namespace Pulumi.Oci.GenerativeAi
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -49,13 +50,14 @@ namespace Pulumi.Oci.GenerativeAi
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// Endpoints can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:GenerativeAi/endpoint:Endpoint test_endpoint "id"
+    /// $ pulumi import oci:GenerativeAi/endpoint:Endpoint test_endpoint "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:GenerativeAi/endpoint:Endpoint")]

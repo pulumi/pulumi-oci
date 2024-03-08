@@ -195,12 +195,14 @@ def get_java_downloads_java_license_acceptance_record(java_license_acceptance_re
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_java_license_acceptance_record = oci.Jms.get_java_downloads_java_license_acceptance_record(java_license_acceptance_record_id=oci_jms_java_downloads_java_license_acceptance_record["test_java_license_acceptance_record"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str java_license_acceptance_record_id: Unique Java license acceptance record identifier.
@@ -236,12 +238,14 @@ def get_java_downloads_java_license_acceptance_record_output(java_license_accept
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_java_license_acceptance_record = oci.Jms.get_java_downloads_java_license_acceptance_record(java_license_acceptance_record_id=oci_jms_java_downloads_java_license_acceptance_record["test_java_license_acceptance_record"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str java_license_acceptance_record_id: Unique Java license acceptance record identifier.

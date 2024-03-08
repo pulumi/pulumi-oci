@@ -28,6 +28,8 @@ import javax.annotation.Nullable;
  * discovered automatically.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -63,13 +65,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * Configs can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:StackMonitoring/config:Config test_config &#34;id&#34;
+ * $ pulumi import oci:StackMonitoring/config:Config test_config &#34;id&#34;
  * ```
  * 
  */

@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -31,13 +32,14 @@ import * as utilities from "../utilities";
  *     sourceDbHomeId: oci_database_db_home.test_db_home.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * DatabaseSoftwareImages can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Database/databaseSoftwareImage:DatabaseSoftwareImage test_database_software_image "id"
+ * $ pulumi import oci:Database/databaseSoftwareImage:DatabaseSoftwareImage test_database_software_image "id"
  * ```
  */
 export class DatabaseSoftwareImage extends pulumi.CustomResource {

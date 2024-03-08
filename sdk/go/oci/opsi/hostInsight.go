@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -55,15 +56,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // HostInsights can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Opsi/hostInsight:HostInsight test_host_insight "id"
-//
+// $ pulumi import oci:Opsi/hostInsight:HostInsight test_host_insight "id"
 // ```
 type HostInsight struct {
 	pulumi.CustomResourceState

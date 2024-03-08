@@ -191,12 +191,14 @@ def get_application_vip(application_vip_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_application_vip = oci.Database.get_application_vip(application_vip_id=oci_database_application_vip["test_application_vip"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str application_vip_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application virtual IP (VIP) address.
@@ -232,12 +234,14 @@ def get_application_vip_output(application_vip_id: Optional[pulumi.Input[str]] =
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_application_vip = oci.Database.get_application_vip(application_vip_id=oci_database_application_vip["test_application_vip"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str application_vip_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application virtual IP (VIP) address.

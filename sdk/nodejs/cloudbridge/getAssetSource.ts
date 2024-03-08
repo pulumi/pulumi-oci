@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,6 +22,7 @@ import * as utilities from "../utilities";
  *     assetSourceId: oci_cloud_bridge_asset_source.test_asset_source.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAssetSource(args: GetAssetSourceArgs, opts?: pulumi.InvokeOptions): Promise<GetAssetSourceResult> {
 
@@ -133,6 +135,7 @@ export interface GetAssetSourceResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -141,6 +144,7 @@ export interface GetAssetSourceResult {
  *     assetSourceId: oci_cloud_bridge_asset_source.test_asset_source.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAssetSourceOutput(args: GetAssetSourceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAssetSourceResult> {
     return pulumi.output(args).apply((a: any) => getAssetSource(a, opts))

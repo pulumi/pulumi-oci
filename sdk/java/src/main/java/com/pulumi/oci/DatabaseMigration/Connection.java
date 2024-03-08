@@ -29,6 +29,8 @@ import javax.annotation.Nullable;
  * in the migration.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -102,13 +104,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * Connections can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:DatabaseMigration/connection:Connection test_connection &#34;id&#34;
+ * $ pulumi import oci:DatabaseMigration/connection:Connection test_connection &#34;id&#34;
  * ```
  * 
  */

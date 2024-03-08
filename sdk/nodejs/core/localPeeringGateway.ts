@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -29,13 +30,14 @@ import * as utilities from "../utilities";
  *     routeTableId: oci_core_route_table.test_route_table.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * LocalPeeringGateways can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Core/localPeeringGateway:LocalPeeringGateway test_local_peering_gateway "id"
+ * $ pulumi import oci:Core/localPeeringGateway:LocalPeeringGateway test_local_peering_gateway "id"
  * ```
  */
 export class LocalPeeringGateway extends pulumi.CustomResource {

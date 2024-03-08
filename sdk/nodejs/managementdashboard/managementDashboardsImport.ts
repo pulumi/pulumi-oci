@@ -16,6 +16,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -25,13 +26,14 @@ import * as utilities from "../utilities";
  *     importDetailsFile: _var.sample_import_details_file_path,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * ManagementDashboardsImport can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:ManagementDashboard/managementDashboardsImport:ManagementDashboardsImport test_management_dashboards_import "id"
+ * $ pulumi import oci:ManagementDashboard/managementDashboardsImport:ManagementDashboardsImport test_management_dashboards_import "id"
  * ```
  */
 export class ManagementDashboardsImport extends pulumi.CustomResource {

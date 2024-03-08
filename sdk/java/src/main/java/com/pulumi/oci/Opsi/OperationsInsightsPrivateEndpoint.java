@@ -24,6 +24,8 @@ import javax.annotation.Nullable;
  * This resource will be created in customer compartment.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -60,13 +62,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * OperationsInsightsPrivateEndpoints can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Opsi/operationsInsightsPrivateEndpoint:OperationsInsightsPrivateEndpoint test_operations_insights_private_endpoint &#34;id&#34;
+ * $ pulumi import oci:Opsi/operationsInsightsPrivateEndpoint:OperationsInsightsPrivateEndpoint test_operations_insights_private_endpoint &#34;id&#34;
  * ```
  * 
  */

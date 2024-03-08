@@ -112,6 +112,7 @@ def get_namespace_storage_overlapping_recalls(filters: Optional[Sequence[pulumi.
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -120,6 +121,7 @@ def get_namespace_storage_overlapping_recalls(filters: Optional[Sequence[pulumi.
         time_data_ended=var["namespace_storage_overlapping_recall_time_data_ended"],
         time_data_started=var["namespace_storage_overlapping_recall_time_data_started"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str namespace: The Logging Analytics namespace used for the request.
@@ -156,6 +158,7 @@ def get_namespace_storage_overlapping_recalls_output(filters: Optional[pulumi.In
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -164,6 +167,7 @@ def get_namespace_storage_overlapping_recalls_output(filters: Optional[pulumi.In
         time_data_ended=var["namespace_storage_overlapping_recall_time_data_ended"],
         time_data_started=var["namespace_storage_overlapping_recall_time_data_started"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str namespace: The Logging Analytics namespace used for the request.

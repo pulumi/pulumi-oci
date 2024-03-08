@@ -16,10 +16,9 @@ namespace Pulumi.Oci.CertificatesManagement
         /// 
         /// Gets details about the specified version of a certificate.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,8 +35,7 @@ namespace Pulumi.Oci.CertificatesManagement
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetCertificateVersionResult> InvokeAsync(GetCertificateVersionArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetCertificateVersionResult>("oci:CertificatesManagement/getCertificateVersion:getCertificateVersion", args ?? new GetCertificateVersionArgs(), options.WithDefaults());
@@ -47,10 +45,9 @@ namespace Pulumi.Oci.CertificatesManagement
         /// 
         /// Gets details about the specified version of a certificate.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -67,8 +64,7 @@ namespace Pulumi.Oci.CertificatesManagement
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetCertificateVersionResult> Invoke(GetCertificateVersionInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCertificateVersionResult>("oci:CertificatesManagement/getCertificateVersion:getCertificateVersion", args ?? new GetCertificateVersionInvokeArgs(), options.WithDefaults());

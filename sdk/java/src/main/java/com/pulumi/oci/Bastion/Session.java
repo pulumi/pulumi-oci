@@ -24,6 +24,8 @@ import javax.annotation.Nullable;
  * Creates a new session in a bastion. A bastion session lets authorized users connect to a target resource for a predetermined amount of time. The Bastion service recognizes two types of sessions, managed SSH sessions and SSH port forwarding sessions. Managed SSH sessions require that the target resource has an OpenSSH server and the Oracle Cloud Agent both running.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -68,13 +70,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * Sessions can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Bastion/session:Session test_session &#34;id&#34;
+ * $ pulumi import oci:Bastion/session:Session test_session &#34;id&#34;
  * ```
  * 
  */

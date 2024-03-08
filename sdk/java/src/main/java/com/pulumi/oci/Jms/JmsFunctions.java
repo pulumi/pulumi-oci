@@ -119,6 +119,8 @@ public final class JmsFunctions {
      * Return a list of AnnouncementSummary items
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -149,6 +151,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAnnouncementsResult> getAnnouncements() {
@@ -160,6 +163,8 @@ public final class JmsFunctions {
      * Return a list of AnnouncementSummary items
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -190,6 +195,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAnnouncementsResult> getAnnouncementsPlain() {
@@ -201,6 +207,8 @@ public final class JmsFunctions {
      * Return a list of AnnouncementSummary items
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -231,6 +239,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAnnouncementsResult> getAnnouncements(GetAnnouncementsArgs args) {
@@ -242,6 +251,8 @@ public final class JmsFunctions {
      * Return a list of AnnouncementSummary items
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -272,6 +283,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAnnouncementsResult> getAnnouncementsPlain(GetAnnouncementsPlainArgs args) {
@@ -283,6 +295,8 @@ public final class JmsFunctions {
      * Return a list of AnnouncementSummary items
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -313,6 +327,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAnnouncementsResult> getAnnouncements(GetAnnouncementsArgs args, InvokeOptions options) {
@@ -324,6 +339,8 @@ public final class JmsFunctions {
      * Return a list of AnnouncementSummary items
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -354,6 +371,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAnnouncementsResult> getAnnouncementsPlain(GetAnnouncementsPlainArgs args, InvokeOptions options) {
@@ -365,6 +383,8 @@ public final class JmsFunctions {
      * Retrieve a Fleet with the specified identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -393,6 +413,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFleetResult> getFleet(GetFleetArgs args) {
@@ -404,6 +425,8 @@ public final class JmsFunctions {
      * Retrieve a Fleet with the specified identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -432,6 +455,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFleetResult> getFleetPlain(GetFleetPlainArgs args) {
@@ -443,6 +467,8 @@ public final class JmsFunctions {
      * Retrieve a Fleet with the specified identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -471,6 +497,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFleetResult> getFleet(GetFleetArgs args, InvokeOptions options) {
@@ -482,6 +509,8 @@ public final class JmsFunctions {
      * Retrieve a Fleet with the specified identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -510,6 +539,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFleetResult> getFleetPlain(GetFleetPlainArgs args, InvokeOptions options) {
@@ -521,6 +551,8 @@ public final class JmsFunctions {
      * Returns Fleet level advanced feature configuration.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -549,6 +581,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFleetAdvancedFeatureConfigurationResult> getFleetAdvancedFeatureConfiguration(GetFleetAdvancedFeatureConfigurationArgs args) {
@@ -560,6 +593,8 @@ public final class JmsFunctions {
      * Returns Fleet level advanced feature configuration.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -588,6 +623,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFleetAdvancedFeatureConfigurationResult> getFleetAdvancedFeatureConfigurationPlain(GetFleetAdvancedFeatureConfigurationPlainArgs args) {
@@ -599,6 +635,8 @@ public final class JmsFunctions {
      * Returns Fleet level advanced feature configuration.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -627,6 +665,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFleetAdvancedFeatureConfigurationResult> getFleetAdvancedFeatureConfiguration(GetFleetAdvancedFeatureConfigurationArgs args, InvokeOptions options) {
@@ -638,6 +677,8 @@ public final class JmsFunctions {
      * Returns Fleet level advanced feature configuration.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -666,6 +707,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFleetAdvancedFeatureConfigurationResult> getFleetAdvancedFeatureConfigurationPlain(GetFleetAdvancedFeatureConfigurationPlainArgs args, InvokeOptions options) {
@@ -677,6 +719,8 @@ public final class JmsFunctions {
      * Returns a list of blocklist entities contained by a fleet.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -707,6 +751,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFleetBlocklistsResult> getFleetBlocklists(GetFleetBlocklistsArgs args) {
@@ -718,6 +763,8 @@ public final class JmsFunctions {
      * Returns a list of blocklist entities contained by a fleet.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -748,6 +795,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFleetBlocklistsResult> getFleetBlocklistsPlain(GetFleetBlocklistsPlainArgs args) {
@@ -759,6 +807,8 @@ public final class JmsFunctions {
      * Returns a list of blocklist entities contained by a fleet.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -789,6 +839,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFleetBlocklistsResult> getFleetBlocklists(GetFleetBlocklistsArgs args, InvokeOptions options) {
@@ -800,6 +851,8 @@ public final class JmsFunctions {
      * Returns a list of blocklist entities contained by a fleet.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -830,6 +883,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFleetBlocklistsResult> getFleetBlocklistsPlain(GetFleetBlocklistsPlainArgs args, InvokeOptions options) {
@@ -841,6 +895,8 @@ public final class JmsFunctions {
      * Retrieve the metadata for the result of a Crypto event analysis.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -870,6 +926,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFleetCryptoAnalysisResultResult> getFleetCryptoAnalysisResult(GetFleetCryptoAnalysisResultArgs args) {
@@ -881,6 +938,8 @@ public final class JmsFunctions {
      * Retrieve the metadata for the result of a Crypto event analysis.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -910,6 +969,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFleetCryptoAnalysisResultResult> getFleetCryptoAnalysisResultPlain(GetFleetCryptoAnalysisResultPlainArgs args) {
@@ -921,6 +981,8 @@ public final class JmsFunctions {
      * Retrieve the metadata for the result of a Crypto event analysis.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -950,6 +1012,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFleetCryptoAnalysisResultResult> getFleetCryptoAnalysisResult(GetFleetCryptoAnalysisResultArgs args, InvokeOptions options) {
@@ -961,6 +1024,8 @@ public final class JmsFunctions {
      * Retrieve the metadata for the result of a Crypto event analysis.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -990,6 +1055,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFleetCryptoAnalysisResultResult> getFleetCryptoAnalysisResultPlain(GetFleetCryptoAnalysisResultPlainArgs args, InvokeOptions options) {
@@ -1001,6 +1067,8 @@ public final class JmsFunctions {
      * Lists the results of a Crypto event analysis.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1033,6 +1101,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFleetCryptoAnalysisResultsResult> getFleetCryptoAnalysisResults(GetFleetCryptoAnalysisResultsArgs args) {
@@ -1044,6 +1113,8 @@ public final class JmsFunctions {
      * Lists the results of a Crypto event analysis.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1076,6 +1147,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFleetCryptoAnalysisResultsResult> getFleetCryptoAnalysisResultsPlain(GetFleetCryptoAnalysisResultsPlainArgs args) {
@@ -1087,6 +1159,8 @@ public final class JmsFunctions {
      * Lists the results of a Crypto event analysis.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1119,6 +1193,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFleetCryptoAnalysisResultsResult> getFleetCryptoAnalysisResults(GetFleetCryptoAnalysisResultsArgs args, InvokeOptions options) {
@@ -1130,6 +1205,8 @@ public final class JmsFunctions {
      * Lists the results of a Crypto event analysis.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1162,6 +1239,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFleetCryptoAnalysisResultsResult> getFleetCryptoAnalysisResultsPlain(GetFleetCryptoAnalysisResultsPlainArgs args, InvokeOptions options) {
@@ -1173,6 +1251,8 @@ public final class JmsFunctions {
      * List potential diagnoses that would put a fleet into FAILED or NEEDS_ATTENTION lifecycle state.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1201,6 +1281,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFleetDiagnosesResult> getFleetDiagnoses(GetFleetDiagnosesArgs args) {
@@ -1212,6 +1293,8 @@ public final class JmsFunctions {
      * List potential diagnoses that would put a fleet into FAILED or NEEDS_ATTENTION lifecycle state.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1240,6 +1323,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFleetDiagnosesResult> getFleetDiagnosesPlain(GetFleetDiagnosesPlainArgs args) {
@@ -1251,6 +1335,8 @@ public final class JmsFunctions {
      * List potential diagnoses that would put a fleet into FAILED or NEEDS_ATTENTION lifecycle state.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1279,6 +1365,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFleetDiagnosesResult> getFleetDiagnoses(GetFleetDiagnosesArgs args, InvokeOptions options) {
@@ -1290,6 +1377,8 @@ public final class JmsFunctions {
      * List potential diagnoses that would put a fleet into FAILED or NEEDS_ATTENTION lifecycle state.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1318,6 +1407,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFleetDiagnosesResult> getFleetDiagnosesPlain(GetFleetDiagnosesPlainArgs args, InvokeOptions options) {
@@ -1329,6 +1419,8 @@ public final class JmsFunctions {
      * Get the detail about the created DRS file in the Fleet.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1358,6 +1450,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFleetDrsFileResult> getFleetDrsFile(GetFleetDrsFileArgs args) {
@@ -1369,6 +1462,8 @@ public final class JmsFunctions {
      * Get the detail about the created DRS file in the Fleet.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1398,6 +1493,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFleetDrsFileResult> getFleetDrsFilePlain(GetFleetDrsFilePlainArgs args) {
@@ -1409,6 +1505,8 @@ public final class JmsFunctions {
      * Get the detail about the created DRS file in the Fleet.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1438,6 +1536,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFleetDrsFileResult> getFleetDrsFile(GetFleetDrsFileArgs args, InvokeOptions options) {
@@ -1449,6 +1548,8 @@ public final class JmsFunctions {
      * Get the detail about the created DRS file in the Fleet.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1478,6 +1579,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFleetDrsFileResult> getFleetDrsFilePlain(GetFleetDrsFilePlainArgs args, InvokeOptions options) {
@@ -1489,6 +1591,8 @@ public final class JmsFunctions {
      * List the details about the created DRS files in the Fleet.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1517,6 +1621,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFleetDrsFilesResult> getFleetDrsFiles(GetFleetDrsFilesArgs args) {
@@ -1528,6 +1633,8 @@ public final class JmsFunctions {
      * List the details about the created DRS files in the Fleet.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1556,6 +1663,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFleetDrsFilesResult> getFleetDrsFilesPlain(GetFleetDrsFilesPlainArgs args) {
@@ -1567,6 +1675,8 @@ public final class JmsFunctions {
      * List the details about the created DRS files in the Fleet.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1595,6 +1705,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFleetDrsFilesResult> getFleetDrsFiles(GetFleetDrsFilesArgs args, InvokeOptions options) {
@@ -1606,6 +1717,8 @@ public final class JmsFunctions {
      * List the details about the created DRS files in the Fleet.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1634,6 +1747,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFleetDrsFilesResult> getFleetDrsFilesPlain(GetFleetDrsFilesPlainArgs args, InvokeOptions options) {
@@ -1645,6 +1759,8 @@ public final class JmsFunctions {
      * Returns export setting for the specified Fleet.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1673,6 +1789,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFleetExportSettingResult> getFleetExportSetting(GetFleetExportSettingArgs args) {
@@ -1684,6 +1801,8 @@ public final class JmsFunctions {
      * Returns export setting for the specified Fleet.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1712,6 +1831,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFleetExportSettingResult> getFleetExportSettingPlain(GetFleetExportSettingPlainArgs args) {
@@ -1723,6 +1843,8 @@ public final class JmsFunctions {
      * Returns export setting for the specified Fleet.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1751,6 +1873,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFleetExportSettingResult> getFleetExportSetting(GetFleetExportSettingArgs args, InvokeOptions options) {
@@ -1762,6 +1885,8 @@ public final class JmsFunctions {
      * Returns export setting for the specified Fleet.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1790,6 +1915,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFleetExportSettingResult> getFleetExportSettingPlain(GetFleetExportSettingPlainArgs args, InvokeOptions options) {
@@ -1801,6 +1927,8 @@ public final class JmsFunctions {
      * Returns last export status for the specified Fleet.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1829,6 +1957,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFleetExportStatusResult> getFleetExportStatus(GetFleetExportStatusArgs args) {
@@ -1840,6 +1969,8 @@ public final class JmsFunctions {
      * Returns last export status for the specified Fleet.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1868,6 +1999,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFleetExportStatusResult> getFleetExportStatusPlain(GetFleetExportStatusPlainArgs args) {
@@ -1879,6 +2011,8 @@ public final class JmsFunctions {
      * Returns last export status for the specified Fleet.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1907,6 +2041,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFleetExportStatusResult> getFleetExportStatus(GetFleetExportStatusArgs args, InvokeOptions options) {
@@ -1918,6 +2053,8 @@ public final class JmsFunctions {
      * Returns last export status for the specified Fleet.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1946,6 +2083,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFleetExportStatusResult> getFleetExportStatusPlain(GetFleetExportStatusPlainArgs args, InvokeOptions options) {
@@ -1957,6 +2095,8 @@ public final class JmsFunctions {
      * Retrieve Java Migration Analysis result.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1986,6 +2126,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFleetJavaMigrationAnalysisResultResult> getFleetJavaMigrationAnalysisResult(GetFleetJavaMigrationAnalysisResultArgs args) {
@@ -1997,6 +2138,8 @@ public final class JmsFunctions {
      * Retrieve Java Migration Analysis result.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2026,6 +2169,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFleetJavaMigrationAnalysisResultResult> getFleetJavaMigrationAnalysisResultPlain(GetFleetJavaMigrationAnalysisResultPlainArgs args) {
@@ -2037,6 +2181,8 @@ public final class JmsFunctions {
      * Retrieve Java Migration Analysis result.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2066,6 +2212,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFleetJavaMigrationAnalysisResultResult> getFleetJavaMigrationAnalysisResult(GetFleetJavaMigrationAnalysisResultArgs args, InvokeOptions options) {
@@ -2077,6 +2224,8 @@ public final class JmsFunctions {
      * Retrieve Java Migration Analysis result.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2106,6 +2255,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFleetJavaMigrationAnalysisResultResult> getFleetJavaMigrationAnalysisResultPlain(GetFleetJavaMigrationAnalysisResultPlainArgs args, InvokeOptions options) {
@@ -2117,6 +2267,8 @@ public final class JmsFunctions {
      * Lists the results of a Java migration analysis.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2148,6 +2300,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFleetJavaMigrationAnalysisResultsResult> getFleetJavaMigrationAnalysisResults(GetFleetJavaMigrationAnalysisResultsArgs args) {
@@ -2159,6 +2312,8 @@ public final class JmsFunctions {
      * Lists the results of a Java migration analysis.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2190,6 +2345,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFleetJavaMigrationAnalysisResultsResult> getFleetJavaMigrationAnalysisResultsPlain(GetFleetJavaMigrationAnalysisResultsPlainArgs args) {
@@ -2201,6 +2357,8 @@ public final class JmsFunctions {
      * Lists the results of a Java migration analysis.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2232,6 +2390,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFleetJavaMigrationAnalysisResultsResult> getFleetJavaMigrationAnalysisResults(GetFleetJavaMigrationAnalysisResultsArgs args, InvokeOptions options) {
@@ -2243,6 +2402,8 @@ public final class JmsFunctions {
      * Lists the results of a Java migration analysis.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2274,6 +2435,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFleetJavaMigrationAnalysisResultsResult> getFleetJavaMigrationAnalysisResultsPlain(GetFleetJavaMigrationAnalysisResultsPlainArgs args, InvokeOptions options) {
@@ -2285,6 +2447,8 @@ public final class JmsFunctions {
      * Retrieve metadata of the Performance Tuning Analysis result.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2314,6 +2478,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFleetPerformanceTuningAnalysisResultResult> getFleetPerformanceTuningAnalysisResult(GetFleetPerformanceTuningAnalysisResultArgs args) {
@@ -2325,6 +2490,8 @@ public final class JmsFunctions {
      * Retrieve metadata of the Performance Tuning Analysis result.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2354,6 +2521,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFleetPerformanceTuningAnalysisResultResult> getFleetPerformanceTuningAnalysisResultPlain(GetFleetPerformanceTuningAnalysisResultPlainArgs args) {
@@ -2365,6 +2533,8 @@ public final class JmsFunctions {
      * Retrieve metadata of the Performance Tuning Analysis result.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2394,6 +2564,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFleetPerformanceTuningAnalysisResultResult> getFleetPerformanceTuningAnalysisResult(GetFleetPerformanceTuningAnalysisResultArgs args, InvokeOptions options) {
@@ -2405,6 +2576,8 @@ public final class JmsFunctions {
      * Retrieve metadata of the Performance Tuning Analysis result.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2434,6 +2607,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFleetPerformanceTuningAnalysisResultResult> getFleetPerformanceTuningAnalysisResultPlain(GetFleetPerformanceTuningAnalysisResultPlainArgs args, InvokeOptions options) {
@@ -2445,6 +2619,8 @@ public final class JmsFunctions {
      * List Performance Tuning Analysis results.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2477,6 +2653,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFleetPerformanceTuningAnalysisResultsResult> getFleetPerformanceTuningAnalysisResults(GetFleetPerformanceTuningAnalysisResultsArgs args) {
@@ -2488,6 +2665,8 @@ public final class JmsFunctions {
      * List Performance Tuning Analysis results.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2520,6 +2699,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFleetPerformanceTuningAnalysisResultsResult> getFleetPerformanceTuningAnalysisResultsPlain(GetFleetPerformanceTuningAnalysisResultsPlainArgs args) {
@@ -2531,6 +2711,8 @@ public final class JmsFunctions {
      * List Performance Tuning Analysis results.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2563,6 +2745,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFleetPerformanceTuningAnalysisResultsResult> getFleetPerformanceTuningAnalysisResults(GetFleetPerformanceTuningAnalysisResultsArgs args, InvokeOptions options) {
@@ -2574,6 +2757,8 @@ public final class JmsFunctions {
      * List Performance Tuning Analysis results.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2606,6 +2791,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFleetPerformanceTuningAnalysisResultsResult> getFleetPerformanceTuningAnalysisResultsPlain(GetFleetPerformanceTuningAnalysisResultsPlainArgs args, InvokeOptions options) {
@@ -2618,6 +2804,8 @@ public final class JmsFunctions {
      * is required unless the query parameter `id` is specified.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2650,6 +2838,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFleetsResult> getFleets() {
@@ -2662,6 +2851,8 @@ public final class JmsFunctions {
      * is required unless the query parameter `id` is specified.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2694,6 +2885,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFleetsResult> getFleetsPlain() {
@@ -2706,6 +2898,8 @@ public final class JmsFunctions {
      * is required unless the query parameter `id` is specified.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2738,6 +2932,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFleetsResult> getFleets(GetFleetsArgs args) {
@@ -2750,6 +2945,8 @@ public final class JmsFunctions {
      * is required unless the query parameter `id` is specified.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2782,6 +2979,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFleetsResult> getFleetsPlain(GetFleetsPlainArgs args) {
@@ -2794,6 +2992,8 @@ public final class JmsFunctions {
      * is required unless the query parameter `id` is specified.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2826,6 +3026,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFleetsResult> getFleets(GetFleetsArgs args, InvokeOptions options) {
@@ -2838,6 +3039,8 @@ public final class JmsFunctions {
      * is required unless the query parameter `id` is specified.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2870,6 +3073,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFleetsResult> getFleetsPlain(GetFleetsPlainArgs args, InvokeOptions options) {
@@ -2881,6 +3085,8 @@ public final class JmsFunctions {
      * List Java installation sites in a Fleet filtered by query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2920,6 +3126,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetInstallationSiteResult> getInstallationSite(GetInstallationSiteArgs args) {
@@ -2931,6 +3138,8 @@ public final class JmsFunctions {
      * List Java installation sites in a Fleet filtered by query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2970,6 +3179,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetInstallationSiteResult> getInstallationSitePlain(GetInstallationSitePlainArgs args) {
@@ -2981,6 +3191,8 @@ public final class JmsFunctions {
      * List Java installation sites in a Fleet filtered by query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3020,6 +3232,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetInstallationSiteResult> getInstallationSite(GetInstallationSiteArgs args, InvokeOptions options) {
@@ -3031,6 +3244,8 @@ public final class JmsFunctions {
      * List Java installation sites in a Fleet filtered by query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3070,6 +3285,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetInstallationSiteResult> getInstallationSitePlain(GetInstallationSitePlainArgs args, InvokeOptions options) {
@@ -3081,6 +3297,8 @@ public final class JmsFunctions {
      * List Java installation sites in a Fleet filtered by query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3120,6 +3338,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetInstallationSitesResult> getInstallationSites(GetInstallationSitesArgs args) {
@@ -3131,6 +3350,8 @@ public final class JmsFunctions {
      * List Java installation sites in a Fleet filtered by query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3170,6 +3391,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetInstallationSitesResult> getInstallationSitesPlain(GetInstallationSitesPlainArgs args) {
@@ -3181,6 +3403,8 @@ public final class JmsFunctions {
      * List Java installation sites in a Fleet filtered by query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3220,6 +3444,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetInstallationSitesResult> getInstallationSites(GetInstallationSitesArgs args, InvokeOptions options) {
@@ -3231,6 +3456,8 @@ public final class JmsFunctions {
      * List Java installation sites in a Fleet filtered by query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3270,6 +3497,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetInstallationSitesResult> getInstallationSitesPlain(GetInstallationSitesPlainArgs args, InvokeOptions options) {
@@ -3283,6 +3511,8 @@ public final class JmsFunctions {
      * for possible values of `javaFamilyVersion` and `javaReleaseVersion` parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3318,6 +3548,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetJavaDownloadsJavaDownloadRecordsResult> getJavaDownloadsJavaDownloadRecords(GetJavaDownloadsJavaDownloadRecordsArgs args) {
@@ -3331,6 +3562,8 @@ public final class JmsFunctions {
      * for possible values of `javaFamilyVersion` and `javaReleaseVersion` parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3366,6 +3599,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetJavaDownloadsJavaDownloadRecordsResult> getJavaDownloadsJavaDownloadRecordsPlain(GetJavaDownloadsJavaDownloadRecordsPlainArgs args) {
@@ -3379,6 +3613,8 @@ public final class JmsFunctions {
      * for possible values of `javaFamilyVersion` and `javaReleaseVersion` parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3414,6 +3650,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetJavaDownloadsJavaDownloadRecordsResult> getJavaDownloadsJavaDownloadRecords(GetJavaDownloadsJavaDownloadRecordsArgs args, InvokeOptions options) {
@@ -3427,6 +3664,8 @@ public final class JmsFunctions {
      * for possible values of `javaFamilyVersion` and `javaReleaseVersion` parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3462,6 +3701,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetJavaDownloadsJavaDownloadRecordsResult> getJavaDownloadsJavaDownloadRecordsPlain(GetJavaDownloadsJavaDownloadRecordsPlainArgs args, InvokeOptions options) {
@@ -3473,6 +3713,8 @@ public final class JmsFunctions {
      * Gets a JavaDownloadReport by the specified identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3501,6 +3743,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetJavaDownloadsJavaDownloadReportResult> getJavaDownloadsJavaDownloadReport(GetJavaDownloadsJavaDownloadReportArgs args) {
@@ -3512,6 +3755,8 @@ public final class JmsFunctions {
      * Gets a JavaDownloadReport by the specified identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3540,6 +3785,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetJavaDownloadsJavaDownloadReportResult> getJavaDownloadsJavaDownloadReportPlain(GetJavaDownloadsJavaDownloadReportPlainArgs args) {
@@ -3551,6 +3797,8 @@ public final class JmsFunctions {
      * Gets a JavaDownloadReport by the specified identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3579,6 +3827,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetJavaDownloadsJavaDownloadReportResult> getJavaDownloadsJavaDownloadReport(GetJavaDownloadsJavaDownloadReportArgs args, InvokeOptions options) {
@@ -3590,6 +3839,8 @@ public final class JmsFunctions {
      * Gets a JavaDownloadReport by the specified identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3618,6 +3869,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetJavaDownloadsJavaDownloadReportResult> getJavaDownloadsJavaDownloadReportPlain(GetJavaDownloadsJavaDownloadReportPlainArgs args, InvokeOptions options) {
@@ -3629,6 +3881,8 @@ public final class JmsFunctions {
      * Retrieve a Java download report with the specified identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3657,6 +3911,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetJavaDownloadsJavaDownloadReportContentResult> getJavaDownloadsJavaDownloadReportContent(GetJavaDownloadsJavaDownloadReportContentArgs args) {
@@ -3668,6 +3923,8 @@ public final class JmsFunctions {
      * Retrieve a Java download report with the specified identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3696,6 +3953,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetJavaDownloadsJavaDownloadReportContentResult> getJavaDownloadsJavaDownloadReportContentPlain(GetJavaDownloadsJavaDownloadReportContentPlainArgs args) {
@@ -3707,6 +3965,8 @@ public final class JmsFunctions {
      * Retrieve a Java download report with the specified identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3735,6 +3995,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetJavaDownloadsJavaDownloadReportContentResult> getJavaDownloadsJavaDownloadReportContent(GetJavaDownloadsJavaDownloadReportContentArgs args, InvokeOptions options) {
@@ -3746,6 +4007,8 @@ public final class JmsFunctions {
      * Retrieve a Java download report with the specified identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3774,6 +4037,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetJavaDownloadsJavaDownloadReportContentResult> getJavaDownloadsJavaDownloadReportContentPlain(GetJavaDownloadsJavaDownloadReportContentPlainArgs args, InvokeOptions options) {
@@ -3785,6 +4049,8 @@ public final class JmsFunctions {
      * Returns a list of JavaDownloadReports.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3816,6 +4082,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetJavaDownloadsJavaDownloadReportsResult> getJavaDownloadsJavaDownloadReports(GetJavaDownloadsJavaDownloadReportsArgs args) {
@@ -3827,6 +4094,8 @@ public final class JmsFunctions {
      * Returns a list of JavaDownloadReports.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3858,6 +4127,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetJavaDownloadsJavaDownloadReportsResult> getJavaDownloadsJavaDownloadReportsPlain(GetJavaDownloadsJavaDownloadReportsPlainArgs args) {
@@ -3869,6 +4139,8 @@ public final class JmsFunctions {
      * Returns a list of JavaDownloadReports.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3900,6 +4172,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetJavaDownloadsJavaDownloadReportsResult> getJavaDownloadsJavaDownloadReports(GetJavaDownloadsJavaDownloadReportsArgs args, InvokeOptions options) {
@@ -3911,6 +4184,8 @@ public final class JmsFunctions {
      * Returns a list of JavaDownloadReports.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3942,6 +4217,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetJavaDownloadsJavaDownloadReportsResult> getJavaDownloadsJavaDownloadReportsPlain(GetJavaDownloadsJavaDownloadReportsPlainArgs args, InvokeOptions options) {
@@ -3953,6 +4229,8 @@ public final class JmsFunctions {
      * Gets a JavaDownloadToken by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3981,6 +4259,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetJavaDownloadsJavaDownloadTokenResult> getJavaDownloadsJavaDownloadToken(GetJavaDownloadsJavaDownloadTokenArgs args) {
@@ -3992,6 +4271,8 @@ public final class JmsFunctions {
      * Gets a JavaDownloadToken by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4020,6 +4301,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetJavaDownloadsJavaDownloadTokenResult> getJavaDownloadsJavaDownloadTokenPlain(GetJavaDownloadsJavaDownloadTokenPlainArgs args) {
@@ -4031,6 +4313,8 @@ public final class JmsFunctions {
      * Gets a JavaDownloadToken by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4059,6 +4343,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetJavaDownloadsJavaDownloadTokenResult> getJavaDownloadsJavaDownloadToken(GetJavaDownloadsJavaDownloadTokenArgs args, InvokeOptions options) {
@@ -4070,6 +4355,8 @@ public final class JmsFunctions {
      * Gets a JavaDownloadToken by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4098,6 +4385,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetJavaDownloadsJavaDownloadTokenResult> getJavaDownloadsJavaDownloadTokenPlain(GetJavaDownloadsJavaDownloadTokenPlainArgs args, InvokeOptions options) {
@@ -4109,6 +4397,8 @@ public final class JmsFunctions {
      * Returns a list of JavaDownloadTokens.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4143,6 +4433,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetJavaDownloadsJavaDownloadTokensResult> getJavaDownloadsJavaDownloadTokens(GetJavaDownloadsJavaDownloadTokensArgs args) {
@@ -4154,6 +4445,8 @@ public final class JmsFunctions {
      * Returns a list of JavaDownloadTokens.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4188,6 +4481,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetJavaDownloadsJavaDownloadTokensResult> getJavaDownloadsJavaDownloadTokensPlain(GetJavaDownloadsJavaDownloadTokensPlainArgs args) {
@@ -4199,6 +4493,8 @@ public final class JmsFunctions {
      * Returns a list of JavaDownloadTokens.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4233,6 +4529,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetJavaDownloadsJavaDownloadTokensResult> getJavaDownloadsJavaDownloadTokens(GetJavaDownloadsJavaDownloadTokensArgs args, InvokeOptions options) {
@@ -4244,6 +4541,8 @@ public final class JmsFunctions {
      * Returns a list of JavaDownloadTokens.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4278,6 +4577,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetJavaDownloadsJavaDownloadTokensResult> getJavaDownloadsJavaDownloadTokensPlain(GetJavaDownloadsJavaDownloadTokensPlainArgs args, InvokeOptions options) {
@@ -4289,6 +4589,8 @@ public final class JmsFunctions {
      * Return details of the specified Java license type.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4317,6 +4619,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetJavaDownloadsJavaLicenseResult> getJavaDownloadsJavaLicense(GetJavaDownloadsJavaLicenseArgs args) {
@@ -4328,6 +4631,8 @@ public final class JmsFunctions {
      * Return details of the specified Java license type.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4356,6 +4661,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetJavaDownloadsJavaLicenseResult> getJavaDownloadsJavaLicensePlain(GetJavaDownloadsJavaLicensePlainArgs args) {
@@ -4367,6 +4673,8 @@ public final class JmsFunctions {
      * Return details of the specified Java license type.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4395,6 +4703,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetJavaDownloadsJavaLicenseResult> getJavaDownloadsJavaLicense(GetJavaDownloadsJavaLicenseArgs args, InvokeOptions options) {
@@ -4406,6 +4715,8 @@ public final class JmsFunctions {
      * Return details of the specified Java license type.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4434,6 +4745,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetJavaDownloadsJavaLicenseResult> getJavaDownloadsJavaLicensePlain(GetJavaDownloadsJavaLicensePlainArgs args, InvokeOptions options) {
@@ -4445,6 +4757,8 @@ public final class JmsFunctions {
      * Returns a specific Java license acceptance record in a tenancy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4473,6 +4787,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetJavaDownloadsJavaLicenseAcceptanceRecordResult> getJavaDownloadsJavaLicenseAcceptanceRecord(GetJavaDownloadsJavaLicenseAcceptanceRecordArgs args) {
@@ -4484,6 +4799,8 @@ public final class JmsFunctions {
      * Returns a specific Java license acceptance record in a tenancy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4512,6 +4829,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetJavaDownloadsJavaLicenseAcceptanceRecordResult> getJavaDownloadsJavaLicenseAcceptanceRecordPlain(GetJavaDownloadsJavaLicenseAcceptanceRecordPlainArgs args) {
@@ -4523,6 +4841,8 @@ public final class JmsFunctions {
      * Returns a specific Java license acceptance record in a tenancy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4551,6 +4871,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetJavaDownloadsJavaLicenseAcceptanceRecordResult> getJavaDownloadsJavaLicenseAcceptanceRecord(GetJavaDownloadsJavaLicenseAcceptanceRecordArgs args, InvokeOptions options) {
@@ -4562,6 +4883,8 @@ public final class JmsFunctions {
      * Returns a specific Java license acceptance record in a tenancy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4590,6 +4913,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetJavaDownloadsJavaLicenseAcceptanceRecordResult> getJavaDownloadsJavaLicenseAcceptanceRecordPlain(GetJavaDownloadsJavaLicenseAcceptanceRecordPlainArgs args, InvokeOptions options) {
@@ -4601,6 +4925,8 @@ public final class JmsFunctions {
      * Returns a list of all the Java license acceptance records in a tenancy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4633,6 +4959,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetJavaDownloadsJavaLicenseAcceptanceRecordsResult> getJavaDownloadsJavaLicenseAcceptanceRecords(GetJavaDownloadsJavaLicenseAcceptanceRecordsArgs args) {
@@ -4644,6 +4971,8 @@ public final class JmsFunctions {
      * Returns a list of all the Java license acceptance records in a tenancy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4676,6 +5005,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetJavaDownloadsJavaLicenseAcceptanceRecordsResult> getJavaDownloadsJavaLicenseAcceptanceRecordsPlain(GetJavaDownloadsJavaLicenseAcceptanceRecordsPlainArgs args) {
@@ -4687,6 +5017,8 @@ public final class JmsFunctions {
      * Returns a list of all the Java license acceptance records in a tenancy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4719,6 +5051,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetJavaDownloadsJavaLicenseAcceptanceRecordsResult> getJavaDownloadsJavaLicenseAcceptanceRecords(GetJavaDownloadsJavaLicenseAcceptanceRecordsArgs args, InvokeOptions options) {
@@ -4730,6 +5063,8 @@ public final class JmsFunctions {
      * Returns a list of all the Java license acceptance records in a tenancy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4762,6 +5097,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetJavaDownloadsJavaLicenseAcceptanceRecordsResult> getJavaDownloadsJavaLicenseAcceptanceRecordsPlain(GetJavaDownloadsJavaLicenseAcceptanceRecordsPlainArgs args, InvokeOptions options) {
@@ -4773,6 +5109,8 @@ public final class JmsFunctions {
      * Return a list with details of all Java licenses.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4802,6 +5140,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetJavaDownloadsJavaLicensesResult> getJavaDownloadsJavaLicenses() {
@@ -4813,6 +5152,8 @@ public final class JmsFunctions {
      * Return a list with details of all Java licenses.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4842,6 +5183,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetJavaDownloadsJavaLicensesResult> getJavaDownloadsJavaLicensesPlain() {
@@ -4853,6 +5195,8 @@ public final class JmsFunctions {
      * Return a list with details of all Java licenses.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4882,6 +5226,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetJavaDownloadsJavaLicensesResult> getJavaDownloadsJavaLicenses(GetJavaDownloadsJavaLicensesArgs args) {
@@ -4893,6 +5238,8 @@ public final class JmsFunctions {
      * Return a list with details of all Java licenses.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4922,6 +5269,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetJavaDownloadsJavaLicensesResult> getJavaDownloadsJavaLicensesPlain(GetJavaDownloadsJavaLicensesPlainArgs args) {
@@ -4933,6 +5281,8 @@ public final class JmsFunctions {
      * Return a list with details of all Java licenses.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4962,6 +5312,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetJavaDownloadsJavaLicensesResult> getJavaDownloadsJavaLicenses(GetJavaDownloadsJavaLicensesArgs args, InvokeOptions options) {
@@ -4973,6 +5324,8 @@ public final class JmsFunctions {
      * Return a list with details of all Java licenses.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5002,6 +5355,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetJavaDownloadsJavaLicensesResult> getJavaDownloadsJavaLicensesPlain(GetJavaDownloadsJavaLicensesPlainArgs args, InvokeOptions options) {
@@ -5014,6 +5368,8 @@ public final class JmsFunctions {
      * A Java release family is typically a major version in the Java version identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5044,6 +5400,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetJavaFamiliesResult> getJavaFamilies() {
@@ -5056,6 +5413,8 @@ public final class JmsFunctions {
      * A Java release family is typically a major version in the Java version identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5086,6 +5445,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetJavaFamiliesResult> getJavaFamiliesPlain() {
@@ -5098,6 +5458,8 @@ public final class JmsFunctions {
      * A Java release family is typically a major version in the Java version identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5128,6 +5490,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetJavaFamiliesResult> getJavaFamilies(GetJavaFamiliesArgs args) {
@@ -5140,6 +5503,8 @@ public final class JmsFunctions {
      * A Java release family is typically a major version in the Java version identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5170,6 +5535,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetJavaFamiliesResult> getJavaFamiliesPlain(GetJavaFamiliesPlainArgs args) {
@@ -5182,6 +5548,8 @@ public final class JmsFunctions {
      * A Java release family is typically a major version in the Java version identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5212,6 +5580,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetJavaFamiliesResult> getJavaFamilies(GetJavaFamiliesArgs args, InvokeOptions options) {
@@ -5224,6 +5593,8 @@ public final class JmsFunctions {
      * A Java release family is typically a major version in the Java version identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5254,6 +5625,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetJavaFamiliesResult> getJavaFamiliesPlain(GetJavaFamiliesPlainArgs args, InvokeOptions options) {
@@ -5265,6 +5637,8 @@ public final class JmsFunctions {
      * Returns metadata associated with a specific Java release family.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5293,6 +5667,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetJavaFamilyResult> getJavaFamily(GetJavaFamilyArgs args) {
@@ -5304,6 +5679,8 @@ public final class JmsFunctions {
      * Returns metadata associated with a specific Java release family.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5332,6 +5709,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetJavaFamilyResult> getJavaFamilyPlain(GetJavaFamilyPlainArgs args) {
@@ -5343,6 +5721,8 @@ public final class JmsFunctions {
      * Returns metadata associated with a specific Java release family.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5371,6 +5751,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetJavaFamilyResult> getJavaFamily(GetJavaFamilyArgs args, InvokeOptions options) {
@@ -5382,6 +5763,8 @@ public final class JmsFunctions {
      * Returns metadata associated with a specific Java release family.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5410,6 +5793,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetJavaFamilyResult> getJavaFamilyPlain(GetJavaFamilyPlainArgs args, InvokeOptions options) {
@@ -5421,6 +5805,8 @@ public final class JmsFunctions {
      * Returns detail of a Java release.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5449,6 +5835,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetJavaReleaseResult> getJavaRelease(GetJavaReleaseArgs args) {
@@ -5460,6 +5847,8 @@ public final class JmsFunctions {
      * Returns detail of a Java release.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5488,6 +5877,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetJavaReleaseResult> getJavaReleasePlain(GetJavaReleasePlainArgs args) {
@@ -5499,6 +5889,8 @@ public final class JmsFunctions {
      * Returns detail of a Java release.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5527,6 +5919,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetJavaReleaseResult> getJavaRelease(GetJavaReleaseArgs args, InvokeOptions options) {
@@ -5538,6 +5931,8 @@ public final class JmsFunctions {
      * Returns detail of a Java release.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5566,6 +5961,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetJavaReleaseResult> getJavaReleasePlain(GetJavaReleasePlainArgs args, InvokeOptions options) {
@@ -5577,6 +5973,8 @@ public final class JmsFunctions {
      * Returns a list of Java releases.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5609,6 +6007,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetJavaReleasesResult> getJavaReleases() {
@@ -5620,6 +6019,8 @@ public final class JmsFunctions {
      * Returns a list of Java releases.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5652,6 +6053,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetJavaReleasesResult> getJavaReleasesPlain() {
@@ -5663,6 +6065,8 @@ public final class JmsFunctions {
      * Returns a list of Java releases.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5695,6 +6099,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetJavaReleasesResult> getJavaReleases(GetJavaReleasesArgs args) {
@@ -5706,6 +6111,8 @@ public final class JmsFunctions {
      * Returns a list of Java releases.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5738,6 +6145,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetJavaReleasesResult> getJavaReleasesPlain(GetJavaReleasesPlainArgs args) {
@@ -5749,6 +6157,8 @@ public final class JmsFunctions {
      * Returns a list of Java releases.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5781,6 +6191,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetJavaReleasesResult> getJavaReleases(GetJavaReleasesArgs args, InvokeOptions options) {
@@ -5792,6 +6203,8 @@ public final class JmsFunctions {
      * Returns a list of Java releases.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5824,6 +6237,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetJavaReleasesResult> getJavaReleasesPlain(GetJavaReleasesPlainArgs args, InvokeOptions options) {
@@ -5835,6 +6249,8 @@ public final class JmsFunctions {
      * List Java Runtime usage in a specified host filtered by query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5868,6 +6284,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetListJreUsageResult> getListJreUsage() {
@@ -5879,6 +6296,8 @@ public final class JmsFunctions {
      * List Java Runtime usage in a specified host filtered by query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5912,6 +6331,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetListJreUsageResult> getListJreUsagePlain() {
@@ -5923,6 +6343,8 @@ public final class JmsFunctions {
      * List Java Runtime usage in a specified host filtered by query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5956,6 +6378,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetListJreUsageResult> getListJreUsage(GetListJreUsageArgs args) {
@@ -5967,6 +6390,8 @@ public final class JmsFunctions {
      * List Java Runtime usage in a specified host filtered by query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6000,6 +6425,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetListJreUsageResult> getListJreUsagePlain(GetListJreUsagePlainArgs args) {
@@ -6011,6 +6437,8 @@ public final class JmsFunctions {
      * List Java Runtime usage in a specified host filtered by query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6044,6 +6472,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetListJreUsageResult> getListJreUsage(GetListJreUsageArgs args, InvokeOptions options) {
@@ -6055,6 +6484,8 @@ public final class JmsFunctions {
      * List Java Runtime usage in a specified host filtered by query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6088,6 +6519,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetListJreUsageResult> getListJreUsagePlain(GetListJreUsagePlainArgs args, InvokeOptions options) {
@@ -6099,6 +6531,8 @@ public final class JmsFunctions {
      * Retrieve the inventory of JMS resources in the specified compartment: a list of the number of _active_ fleets, managed instances, Java Runtimes, Java installations, and applications.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6129,6 +6563,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSummarizeResourceInventoryResult> getSummarizeResourceInventory() {
@@ -6140,6 +6575,8 @@ public final class JmsFunctions {
      * Retrieve the inventory of JMS resources in the specified compartment: a list of the number of _active_ fleets, managed instances, Java Runtimes, Java installations, and applications.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6170,6 +6607,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSummarizeResourceInventoryResult> getSummarizeResourceInventoryPlain() {
@@ -6181,6 +6619,8 @@ public final class JmsFunctions {
      * Retrieve the inventory of JMS resources in the specified compartment: a list of the number of _active_ fleets, managed instances, Java Runtimes, Java installations, and applications.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6211,6 +6651,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSummarizeResourceInventoryResult> getSummarizeResourceInventory(GetSummarizeResourceInventoryArgs args) {
@@ -6222,6 +6663,8 @@ public final class JmsFunctions {
      * Retrieve the inventory of JMS resources in the specified compartment: a list of the number of _active_ fleets, managed instances, Java Runtimes, Java installations, and applications.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6252,6 +6695,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSummarizeResourceInventoryResult> getSummarizeResourceInventoryPlain(GetSummarizeResourceInventoryPlainArgs args) {
@@ -6263,6 +6707,8 @@ public final class JmsFunctions {
      * Retrieve the inventory of JMS resources in the specified compartment: a list of the number of _active_ fleets, managed instances, Java Runtimes, Java installations, and applications.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6293,6 +6739,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSummarizeResourceInventoryResult> getSummarizeResourceInventory(GetSummarizeResourceInventoryArgs args, InvokeOptions options) {
@@ -6304,6 +6751,8 @@ public final class JmsFunctions {
      * Retrieve the inventory of JMS resources in the specified compartment: a list of the number of _active_ fleets, managed instances, Java Runtimes, Java installations, and applications.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6334,6 +6783,7 @@ public final class JmsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSummarizeResourceInventoryResult> getSummarizeResourceInventoryPlain(GetSummarizeResourceInventoryPlainArgs args, InvokeOptions options) {

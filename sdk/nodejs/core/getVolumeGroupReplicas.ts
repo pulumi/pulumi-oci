@@ -14,6 +14,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -25,6 +26,7 @@ import * as utilities from "../utilities";
  *     state: _var.volume_group_replica_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getVolumeGroupReplicas(args: GetVolumeGroupReplicasArgs, opts?: pulumi.InvokeOptions): Promise<GetVolumeGroupReplicasResult> {
 
@@ -99,6 +101,7 @@ export interface GetVolumeGroupReplicasResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -110,6 +113,7 @@ export interface GetVolumeGroupReplicasResult {
  *     state: _var.volume_group_replica_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getVolumeGroupReplicasOutput(args: GetVolumeGroupReplicasOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVolumeGroupReplicasResult> {
     return pulumi.output(args).apply((a: any) => getVolumeGroupReplicas(a, opts))

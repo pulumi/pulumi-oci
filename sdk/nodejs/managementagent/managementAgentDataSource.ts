@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -36,13 +37,14 @@ import * as utilities from "../utilities";
  *     scheduleMins: _var.management_agent_data_source_schedule_mins,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * ManagementAgentDataSources can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:ManagementAgent/managementAgentDataSource:ManagementAgentDataSource test_management_agent_data_source "managementAgents/{managementAgentId}/dataSources/{key}"
+ * $ pulumi import oci:ManagementAgent/managementAgentDataSource:ManagementAgentDataSource test_management_agent_data_source "managementAgents/{managementAgentId}/dataSources/{key}"
  * ```
  */
 export class ManagementAgentDataSource extends pulumi.CustomResource {

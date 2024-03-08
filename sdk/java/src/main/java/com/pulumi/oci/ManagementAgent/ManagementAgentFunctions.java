@@ -53,6 +53,8 @@ public final class ManagementAgentFunctions {
      * Gets complete details of the inventory of a given agent id
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -81,6 +83,7 @@ public final class ManagementAgentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagementAgentResult> getManagementAgent(GetManagementAgentArgs args) {
@@ -92,6 +95,8 @@ public final class ManagementAgentFunctions {
      * Gets complete details of the inventory of a given agent id
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -120,6 +125,7 @@ public final class ManagementAgentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagementAgentResult> getManagementAgentPlain(GetManagementAgentPlainArgs args) {
@@ -131,6 +137,8 @@ public final class ManagementAgentFunctions {
      * Gets complete details of the inventory of a given agent id
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -159,6 +167,7 @@ public final class ManagementAgentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagementAgentResult> getManagementAgent(GetManagementAgentArgs args, InvokeOptions options) {
@@ -170,6 +179,8 @@ public final class ManagementAgentFunctions {
      * Gets complete details of the inventory of a given agent id
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -198,6 +209,7 @@ public final class ManagementAgentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagementAgentResult> getManagementAgentPlain(GetManagementAgentPlainArgs args, InvokeOptions options) {
@@ -209,6 +221,8 @@ public final class ManagementAgentFunctions {
      * Lists the availability history records of Management Agent
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -239,6 +253,7 @@ public final class ManagementAgentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagementAgentAvailableHistoriesResult> getManagementAgentAvailableHistories(GetManagementAgentAvailableHistoriesArgs args) {
@@ -250,6 +265,8 @@ public final class ManagementAgentFunctions {
      * Lists the availability history records of Management Agent
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -280,6 +297,7 @@ public final class ManagementAgentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagementAgentAvailableHistoriesResult> getManagementAgentAvailableHistoriesPlain(GetManagementAgentAvailableHistoriesPlainArgs args) {
@@ -291,6 +309,8 @@ public final class ManagementAgentFunctions {
      * Lists the availability history records of Management Agent
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -321,6 +341,7 @@ public final class ManagementAgentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagementAgentAvailableHistoriesResult> getManagementAgentAvailableHistories(GetManagementAgentAvailableHistoriesArgs args, InvokeOptions options) {
@@ -332,6 +353,8 @@ public final class ManagementAgentFunctions {
      * Lists the availability history records of Management Agent
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -362,6 +385,7 @@ public final class ManagementAgentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagementAgentAvailableHistoriesResult> getManagementAgentAvailableHistoriesPlain(GetManagementAgentAvailableHistoriesPlainArgs args, InvokeOptions options) {
@@ -374,6 +398,8 @@ public final class ManagementAgentFunctions {
      * Supported groupBy parameters: availabilityStatus, platformType, version
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -405,6 +431,7 @@ public final class ManagementAgentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagementAgentCountResult> getManagementAgentCount(GetManagementAgentCountArgs args) {
@@ -417,6 +444,8 @@ public final class ManagementAgentFunctions {
      * Supported groupBy parameters: availabilityStatus, platformType, version
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -448,6 +477,7 @@ public final class ManagementAgentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagementAgentCountResult> getManagementAgentCountPlain(GetManagementAgentCountPlainArgs args) {
@@ -460,6 +490,8 @@ public final class ManagementAgentFunctions {
      * Supported groupBy parameters: availabilityStatus, platformType, version
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -491,6 +523,7 @@ public final class ManagementAgentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagementAgentCountResult> getManagementAgentCount(GetManagementAgentCountArgs args, InvokeOptions options) {
@@ -503,6 +536,8 @@ public final class ManagementAgentFunctions {
      * Supported groupBy parameters: availabilityStatus, platformType, version
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -534,6 +569,7 @@ public final class ManagementAgentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagementAgentCountResult> getManagementAgentCountPlain(GetManagementAgentCountPlainArgs args, InvokeOptions options) {
@@ -545,6 +581,8 @@ public final class ManagementAgentFunctions {
      * Get Datasource details for given Id and given Management Agent.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -574,6 +612,7 @@ public final class ManagementAgentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagementAgentDataSourceResult> getManagementAgentDataSource(GetManagementAgentDataSourceArgs args) {
@@ -585,6 +624,8 @@ public final class ManagementAgentFunctions {
      * Get Datasource details for given Id and given Management Agent.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -614,6 +655,7 @@ public final class ManagementAgentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagementAgentDataSourceResult> getManagementAgentDataSourcePlain(GetManagementAgentDataSourcePlainArgs args) {
@@ -625,6 +667,8 @@ public final class ManagementAgentFunctions {
      * Get Datasource details for given Id and given Management Agent.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -654,6 +698,7 @@ public final class ManagementAgentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagementAgentDataSourceResult> getManagementAgentDataSource(GetManagementAgentDataSourceArgs args, InvokeOptions options) {
@@ -665,6 +710,8 @@ public final class ManagementAgentFunctions {
      * Get Datasource details for given Id and given Management Agent.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -694,6 +741,7 @@ public final class ManagementAgentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagementAgentDataSourceResult> getManagementAgentDataSourcePlain(GetManagementAgentDataSourcePlainArgs args, InvokeOptions options) {
@@ -705,6 +753,8 @@ public final class ManagementAgentFunctions {
      * A list of Management Agent Data Sources for the given Management Agent Id.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -734,6 +784,7 @@ public final class ManagementAgentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagementAgentDataSourcesResult> getManagementAgentDataSources(GetManagementAgentDataSourcesArgs args) {
@@ -745,6 +796,8 @@ public final class ManagementAgentFunctions {
      * A list of Management Agent Data Sources for the given Management Agent Id.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -774,6 +827,7 @@ public final class ManagementAgentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagementAgentDataSourcesResult> getManagementAgentDataSourcesPlain(GetManagementAgentDataSourcesPlainArgs args) {
@@ -785,6 +839,8 @@ public final class ManagementAgentFunctions {
      * A list of Management Agent Data Sources for the given Management Agent Id.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -814,6 +870,7 @@ public final class ManagementAgentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagementAgentDataSourcesResult> getManagementAgentDataSources(GetManagementAgentDataSourcesArgs args, InvokeOptions options) {
@@ -825,6 +882,8 @@ public final class ManagementAgentFunctions {
      * A list of Management Agent Data Sources for the given Management Agent Id.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -854,6 +913,7 @@ public final class ManagementAgentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagementAgentDataSourcesResult> getManagementAgentDataSourcesPlain(GetManagementAgentDataSourcesPlainArgs args, InvokeOptions options) {
@@ -866,6 +926,8 @@ public final class ManagementAgentFunctions {
      * The supplied compartmentId must be a tenancy root.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -894,6 +956,7 @@ public final class ManagementAgentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagementAgentGetAutoUpgradableConfigResult> getManagementAgentGetAutoUpgradableConfig(GetManagementAgentGetAutoUpgradableConfigArgs args) {
@@ -906,6 +969,8 @@ public final class ManagementAgentFunctions {
      * The supplied compartmentId must be a tenancy root.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -934,6 +999,7 @@ public final class ManagementAgentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagementAgentGetAutoUpgradableConfigResult> getManagementAgentGetAutoUpgradableConfigPlain(GetManagementAgentGetAutoUpgradableConfigPlainArgs args) {
@@ -946,6 +1012,8 @@ public final class ManagementAgentFunctions {
      * The supplied compartmentId must be a tenancy root.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -974,6 +1042,7 @@ public final class ManagementAgentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagementAgentGetAutoUpgradableConfigResult> getManagementAgentGetAutoUpgradableConfig(GetManagementAgentGetAutoUpgradableConfigArgs args, InvokeOptions options) {
@@ -986,6 +1055,8 @@ public final class ManagementAgentFunctions {
      * The supplied compartmentId must be a tenancy root.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1014,6 +1085,7 @@ public final class ManagementAgentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagementAgentGetAutoUpgradableConfigResult> getManagementAgentGetAutoUpgradableConfigPlain(GetManagementAgentGetAutoUpgradableConfigPlainArgs args, InvokeOptions options) {
@@ -1025,6 +1097,8 @@ public final class ManagementAgentFunctions {
      * Get supported agent image information
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1056,6 +1130,7 @@ public final class ManagementAgentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagementAgentImagesResult> getManagementAgentImages(GetManagementAgentImagesArgs args) {
@@ -1067,6 +1142,8 @@ public final class ManagementAgentFunctions {
      * Get supported agent image information
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1098,6 +1175,7 @@ public final class ManagementAgentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagementAgentImagesResult> getManagementAgentImagesPlain(GetManagementAgentImagesPlainArgs args) {
@@ -1109,6 +1187,8 @@ public final class ManagementAgentFunctions {
      * Get supported agent image information
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1140,6 +1220,7 @@ public final class ManagementAgentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagementAgentImagesResult> getManagementAgentImages(GetManagementAgentImagesArgs args, InvokeOptions options) {
@@ -1151,6 +1232,8 @@ public final class ManagementAgentFunctions {
      * Get supported agent image information
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1182,6 +1265,7 @@ public final class ManagementAgentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagementAgentImagesResult> getManagementAgentImagesPlain(GetManagementAgentImagesPlainArgs args, InvokeOptions options) {
@@ -1193,6 +1277,8 @@ public final class ManagementAgentFunctions {
      * Gets complete details of the Agent install Key for a given key id
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1221,6 +1307,7 @@ public final class ManagementAgentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagementAgentInstallKeyResult> getManagementAgentInstallKey(GetManagementAgentInstallKeyArgs args) {
@@ -1232,6 +1319,8 @@ public final class ManagementAgentFunctions {
      * Gets complete details of the Agent install Key for a given key id
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1260,6 +1349,7 @@ public final class ManagementAgentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagementAgentInstallKeyResult> getManagementAgentInstallKeyPlain(GetManagementAgentInstallKeyPlainArgs args) {
@@ -1271,6 +1361,8 @@ public final class ManagementAgentFunctions {
      * Gets complete details of the Agent install Key for a given key id
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1299,6 +1391,7 @@ public final class ManagementAgentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagementAgentInstallKeyResult> getManagementAgentInstallKey(GetManagementAgentInstallKeyArgs args, InvokeOptions options) {
@@ -1310,6 +1403,8 @@ public final class ManagementAgentFunctions {
      * Gets complete details of the Agent install Key for a given key id
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1338,6 +1433,7 @@ public final class ManagementAgentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagementAgentInstallKeyResult> getManagementAgentInstallKeyPlain(GetManagementAgentInstallKeyPlainArgs args, InvokeOptions options) {
@@ -1349,6 +1445,8 @@ public final class ManagementAgentFunctions {
      * Returns a list of Management Agent installed Keys.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1381,6 +1479,7 @@ public final class ManagementAgentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagementAgentInstallKeysResult> getManagementAgentInstallKeys(GetManagementAgentInstallKeysArgs args) {
@@ -1392,6 +1491,8 @@ public final class ManagementAgentFunctions {
      * Returns a list of Management Agent installed Keys.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1424,6 +1525,7 @@ public final class ManagementAgentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagementAgentInstallKeysResult> getManagementAgentInstallKeysPlain(GetManagementAgentInstallKeysPlainArgs args) {
@@ -1435,6 +1537,8 @@ public final class ManagementAgentFunctions {
      * Returns a list of Management Agent installed Keys.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1467,6 +1571,7 @@ public final class ManagementAgentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagementAgentInstallKeysResult> getManagementAgentInstallKeys(GetManagementAgentInstallKeysArgs args, InvokeOptions options) {
@@ -1478,6 +1583,8 @@ public final class ManagementAgentFunctions {
      * Returns a list of Management Agent installed Keys.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1510,6 +1617,7 @@ public final class ManagementAgentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagementAgentInstallKeysResult> getManagementAgentInstallKeysPlain(GetManagementAgentInstallKeysPlainArgs args, InvokeOptions options) {
@@ -1522,6 +1630,8 @@ public final class ManagementAgentFunctions {
      * Supported groupBy parameter: pluginName
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1551,6 +1661,7 @@ public final class ManagementAgentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagementAgentPluginCountResult> getManagementAgentPluginCount(GetManagementAgentPluginCountArgs args) {
@@ -1563,6 +1674,8 @@ public final class ManagementAgentFunctions {
      * Supported groupBy parameter: pluginName
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1592,6 +1705,7 @@ public final class ManagementAgentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagementAgentPluginCountResult> getManagementAgentPluginCountPlain(GetManagementAgentPluginCountPlainArgs args) {
@@ -1604,6 +1718,8 @@ public final class ManagementAgentFunctions {
      * Supported groupBy parameter: pluginName
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1633,6 +1749,7 @@ public final class ManagementAgentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagementAgentPluginCountResult> getManagementAgentPluginCount(GetManagementAgentPluginCountArgs args, InvokeOptions options) {
@@ -1645,6 +1762,8 @@ public final class ManagementAgentFunctions {
      * Supported groupBy parameter: pluginName
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1674,6 +1793,7 @@ public final class ManagementAgentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagementAgentPluginCountResult> getManagementAgentPluginCountPlain(GetManagementAgentPluginCountPlainArgs args, InvokeOptions options) {
@@ -1685,6 +1805,8 @@ public final class ManagementAgentFunctions {
      * Returns a list of managementAgentPlugins.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1717,6 +1839,7 @@ public final class ManagementAgentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagementAgentPluginsResult> getManagementAgentPlugins(GetManagementAgentPluginsArgs args) {
@@ -1728,6 +1851,8 @@ public final class ManagementAgentFunctions {
      * Returns a list of managementAgentPlugins.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1760,6 +1885,7 @@ public final class ManagementAgentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagementAgentPluginsResult> getManagementAgentPluginsPlain(GetManagementAgentPluginsPlainArgs args) {
@@ -1771,6 +1897,8 @@ public final class ManagementAgentFunctions {
      * Returns a list of managementAgentPlugins.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1803,6 +1931,7 @@ public final class ManagementAgentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagementAgentPluginsResult> getManagementAgentPlugins(GetManagementAgentPluginsArgs args, InvokeOptions options) {
@@ -1814,6 +1943,8 @@ public final class ManagementAgentFunctions {
      * Returns a list of managementAgentPlugins.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1846,6 +1977,7 @@ public final class ManagementAgentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagementAgentPluginsResult> getManagementAgentPluginsPlain(GetManagementAgentPluginsPlainArgs args, InvokeOptions options) {
@@ -1859,6 +1991,8 @@ public final class ManagementAgentFunctions {
      * The response is limited to maximum 1000 records when compartmentIdInSubtree is true.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1901,6 +2035,7 @@ public final class ManagementAgentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagementAgentsResult> getManagementAgents(GetManagementAgentsArgs args) {
@@ -1914,6 +2049,8 @@ public final class ManagementAgentFunctions {
      * The response is limited to maximum 1000 records when compartmentIdInSubtree is true.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1956,6 +2093,7 @@ public final class ManagementAgentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagementAgentsResult> getManagementAgentsPlain(GetManagementAgentsPlainArgs args) {
@@ -1969,6 +2107,8 @@ public final class ManagementAgentFunctions {
      * The response is limited to maximum 1000 records when compartmentIdInSubtree is true.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2011,6 +2151,7 @@ public final class ManagementAgentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagementAgentsResult> getManagementAgents(GetManagementAgentsArgs args, InvokeOptions options) {
@@ -2024,6 +2165,8 @@ public final class ManagementAgentFunctions {
      * The response is limited to maximum 1000 records when compartmentIdInSubtree is true.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2066,6 +2209,7 @@ public final class ManagementAgentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagementAgentsResult> getManagementAgentsPlain(GetManagementAgentsPlainArgs args, InvokeOptions options) {

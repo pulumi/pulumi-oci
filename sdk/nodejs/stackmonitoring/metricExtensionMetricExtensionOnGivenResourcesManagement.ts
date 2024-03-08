@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,6 +22,7 @@ import * as utilities from "../utilities";
  *     enableMetricExtensionOnGivenResources: _var.enable_metric_extension_on_given_resources,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export class MetricExtensionMetricExtensionOnGivenResourcesManagement extends pulumi.CustomResource {
     /**

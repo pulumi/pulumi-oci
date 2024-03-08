@@ -495,7 +495,7 @@ class ExternalExadataStorageServer(pulumi.CustomResource):
         ExternalExadataStorageServers can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DatabaseManagement/externalExadataStorageServer:ExternalExadataStorageServer test_external_exadata_storage_server "id"
+        $ pulumi import oci:DatabaseManagement/externalExadataStorageServer:ExternalExadataStorageServer test_external_exadata_storage_server "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -524,7 +524,7 @@ class ExternalExadataStorageServer(pulumi.CustomResource):
         ExternalExadataStorageServers can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DatabaseManagement/externalExadataStorageServer:ExternalExadataStorageServer test_external_exadata_storage_server "id"
+        $ pulumi import oci:DatabaseManagement/externalExadataStorageServer:ExternalExadataStorageServer test_external_exadata_storage_server "id"
         ```
 
         :param str resource_name: The name of the resource.

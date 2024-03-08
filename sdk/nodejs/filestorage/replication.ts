@@ -37,6 +37,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -55,13 +56,14 @@ import * as utilities from "../utilities";
  *     replicationInterval: _var.replication_replication_interval,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * Replications can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:FileStorage/replication:Replication test_replication "id"
+ * $ pulumi import oci:FileStorage/replication:Replication test_replication "id"
  * ```
  */
 export class Replication extends pulumi.CustomResource {

@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -40,6 +41,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetProblemEntities(ctx *pulumi.Context, args *GetProblemEntitiesArgs, opts ...pulumi.InvokeOption) (*GetProblemEntitiesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetProblemEntitiesResult

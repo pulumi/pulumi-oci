@@ -19,10 +19,9 @@ namespace Pulumi.Oci.ManagementAgent
         /// The response is limited to maximum 1000 records when compartmentIdInSubtree is true.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -52,8 +51,7 @@ namespace Pulumi.Oci.ManagementAgent
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetManagementAgentsResult> InvokeAsync(GetManagementAgentsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagementAgentsResult>("oci:ManagementAgent/getManagementAgents:getManagementAgents", args ?? new GetManagementAgentsArgs(), options.WithDefaults());
@@ -66,10 +64,9 @@ namespace Pulumi.Oci.ManagementAgent
         /// The response is limited to maximum 1000 records when compartmentIdInSubtree is true.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -99,8 +96,7 @@ namespace Pulumi.Oci.ManagementAgent
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetManagementAgentsResult> Invoke(GetManagementAgentsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagementAgentsResult>("oci:ManagementAgent/getManagementAgents:getManagementAgents", args ?? new GetManagementAgentsInvokeArgs(), options.WithDefaults());

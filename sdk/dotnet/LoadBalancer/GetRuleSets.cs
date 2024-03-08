@@ -16,10 +16,9 @@ namespace Pulumi.Oci.LoadBalancer
         /// 
         /// Lists all rule sets associated with the specified load balancer.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,8 +34,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetRuleSetsResult> InvokeAsync(GetRuleSetsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetRuleSetsResult>("oci:LoadBalancer/getRuleSets:getRuleSets", args ?? new GetRuleSetsArgs(), options.WithDefaults());
@@ -46,10 +44,9 @@ namespace Pulumi.Oci.LoadBalancer
         /// 
         /// Lists all rule sets associated with the specified load balancer.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -65,8 +62,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetRuleSetsResult> Invoke(GetRuleSetsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetRuleSetsResult>("oci:LoadBalancer/getRuleSets:getRuleSets", args ?? new GetRuleSetsInvokeArgs(), options.WithDefaults());

@@ -65,6 +65,8 @@ public final class DataIntegrationFunctions {
      * Retrieves a Data Integration workspace using the specified identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -93,6 +95,7 @@ public final class DataIntegrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetWorkspaceResult> getWorkspace(GetWorkspaceArgs args) {
@@ -104,6 +107,8 @@ public final class DataIntegrationFunctions {
      * Retrieves a Data Integration workspace using the specified identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -132,6 +137,7 @@ public final class DataIntegrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetWorkspaceResult> getWorkspacePlain(GetWorkspacePlainArgs args) {
@@ -143,6 +149,8 @@ public final class DataIntegrationFunctions {
      * Retrieves a Data Integration workspace using the specified identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -171,6 +179,7 @@ public final class DataIntegrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetWorkspaceResult> getWorkspace(GetWorkspaceArgs args, InvokeOptions options) {
@@ -182,6 +191,8 @@ public final class DataIntegrationFunctions {
      * Retrieves a Data Integration workspace using the specified identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -210,6 +221,7 @@ public final class DataIntegrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetWorkspaceResult> getWorkspacePlain(GetWorkspacePlainArgs args, InvokeOptions options) {
@@ -221,6 +233,8 @@ public final class DataIntegrationFunctions {
      * Retrieves an application using the specified identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -250,6 +264,7 @@ public final class DataIntegrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetWorkspaceApplicationResult> getWorkspaceApplication(GetWorkspaceApplicationArgs args) {
@@ -261,6 +276,8 @@ public final class DataIntegrationFunctions {
      * Retrieves an application using the specified identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -290,6 +307,7 @@ public final class DataIntegrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetWorkspaceApplicationResult> getWorkspaceApplicationPlain(GetWorkspaceApplicationPlainArgs args) {
@@ -301,6 +319,8 @@ public final class DataIntegrationFunctions {
      * Retrieves an application using the specified identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -330,6 +350,7 @@ public final class DataIntegrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetWorkspaceApplicationResult> getWorkspaceApplication(GetWorkspaceApplicationArgs args, InvokeOptions options) {
@@ -341,6 +362,8 @@ public final class DataIntegrationFunctions {
      * Retrieves an application using the specified identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -370,6 +393,7 @@ public final class DataIntegrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetWorkspaceApplicationResult> getWorkspaceApplicationPlain(GetWorkspaceApplicationPlainArgs args, InvokeOptions options) {
@@ -381,6 +405,8 @@ public final class DataIntegrationFunctions {
      * Retrieves a patch in an application using the specified identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -411,6 +437,7 @@ public final class DataIntegrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetWorkspaceApplicationPatchResult> getWorkspaceApplicationPatch(GetWorkspaceApplicationPatchArgs args) {
@@ -422,6 +449,8 @@ public final class DataIntegrationFunctions {
      * Retrieves a patch in an application using the specified identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -452,6 +481,7 @@ public final class DataIntegrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetWorkspaceApplicationPatchResult> getWorkspaceApplicationPatchPlain(GetWorkspaceApplicationPatchPlainArgs args) {
@@ -463,6 +493,8 @@ public final class DataIntegrationFunctions {
      * Retrieves a patch in an application using the specified identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -493,6 +525,7 @@ public final class DataIntegrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetWorkspaceApplicationPatchResult> getWorkspaceApplicationPatch(GetWorkspaceApplicationPatchArgs args, InvokeOptions options) {
@@ -504,6 +537,8 @@ public final class DataIntegrationFunctions {
      * Retrieves a patch in an application using the specified identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -534,6 +569,7 @@ public final class DataIntegrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetWorkspaceApplicationPatchResult> getWorkspaceApplicationPatchPlain(GetWorkspaceApplicationPatchPlainArgs args, InvokeOptions options) {
@@ -545,6 +581,8 @@ public final class DataIntegrationFunctions {
      * Retrieves a list of patches in an application and provides options to filter the list. For listing changes based on a period and logical objects changed, see ListPatchChanges API.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -577,6 +615,7 @@ public final class DataIntegrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetWorkspaceApplicationPatchesResult> getWorkspaceApplicationPatches(GetWorkspaceApplicationPatchesArgs args) {
@@ -588,6 +627,8 @@ public final class DataIntegrationFunctions {
      * Retrieves a list of patches in an application and provides options to filter the list. For listing changes based on a period and logical objects changed, see ListPatchChanges API.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -620,6 +661,7 @@ public final class DataIntegrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetWorkspaceApplicationPatchesResult> getWorkspaceApplicationPatchesPlain(GetWorkspaceApplicationPatchesPlainArgs args) {
@@ -631,6 +673,8 @@ public final class DataIntegrationFunctions {
      * Retrieves a list of patches in an application and provides options to filter the list. For listing changes based on a period and logical objects changed, see ListPatchChanges API.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -663,6 +707,7 @@ public final class DataIntegrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetWorkspaceApplicationPatchesResult> getWorkspaceApplicationPatches(GetWorkspaceApplicationPatchesArgs args, InvokeOptions options) {
@@ -674,6 +719,8 @@ public final class DataIntegrationFunctions {
      * Retrieves a list of patches in an application and provides options to filter the list. For listing changes based on a period and logical objects changed, see ListPatchChanges API.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -706,6 +753,7 @@ public final class DataIntegrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetWorkspaceApplicationPatchesResult> getWorkspaceApplicationPatchesPlain(GetWorkspaceApplicationPatchesPlainArgs args, InvokeOptions options) {
@@ -717,6 +765,8 @@ public final class DataIntegrationFunctions {
      * Retrieves schedule by schedule key
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -747,6 +797,7 @@ public final class DataIntegrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetWorkspaceApplicationScheduleResult> getWorkspaceApplicationSchedule(GetWorkspaceApplicationScheduleArgs args) {
@@ -758,6 +809,8 @@ public final class DataIntegrationFunctions {
      * Retrieves schedule by schedule key
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -788,6 +841,7 @@ public final class DataIntegrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetWorkspaceApplicationScheduleResult> getWorkspaceApplicationSchedulePlain(GetWorkspaceApplicationSchedulePlainArgs args) {
@@ -799,6 +853,8 @@ public final class DataIntegrationFunctions {
      * Retrieves schedule by schedule key
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -829,6 +885,7 @@ public final class DataIntegrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetWorkspaceApplicationScheduleResult> getWorkspaceApplicationSchedule(GetWorkspaceApplicationScheduleArgs args, InvokeOptions options) {
@@ -840,6 +897,8 @@ public final class DataIntegrationFunctions {
      * Retrieves schedule by schedule key
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -870,6 +929,7 @@ public final class DataIntegrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetWorkspaceApplicationScheduleResult> getWorkspaceApplicationSchedulePlain(GetWorkspaceApplicationSchedulePlainArgs args, InvokeOptions options) {
@@ -881,6 +941,8 @@ public final class DataIntegrationFunctions {
      * Use this endpoint to list schedules.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -914,6 +976,7 @@ public final class DataIntegrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetWorkspaceApplicationSchedulesResult> getWorkspaceApplicationSchedules(GetWorkspaceApplicationSchedulesArgs args) {
@@ -925,6 +988,8 @@ public final class DataIntegrationFunctions {
      * Use this endpoint to list schedules.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -958,6 +1023,7 @@ public final class DataIntegrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetWorkspaceApplicationSchedulesResult> getWorkspaceApplicationSchedulesPlain(GetWorkspaceApplicationSchedulesPlainArgs args) {
@@ -969,6 +1035,8 @@ public final class DataIntegrationFunctions {
      * Use this endpoint to list schedules.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1002,6 +1070,7 @@ public final class DataIntegrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetWorkspaceApplicationSchedulesResult> getWorkspaceApplicationSchedules(GetWorkspaceApplicationSchedulesArgs args, InvokeOptions options) {
@@ -1013,6 +1082,8 @@ public final class DataIntegrationFunctions {
      * Use this endpoint to list schedules.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1046,6 +1117,7 @@ public final class DataIntegrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetWorkspaceApplicationSchedulesResult> getWorkspaceApplicationSchedulesPlain(GetWorkspaceApplicationSchedulesPlainArgs args, InvokeOptions options) {
@@ -1057,6 +1129,8 @@ public final class DataIntegrationFunctions {
      * Retrieves a list of applications and provides options to filter the list.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1089,6 +1163,7 @@ public final class DataIntegrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetWorkspaceApplicationsResult> getWorkspaceApplications(GetWorkspaceApplicationsArgs args) {
@@ -1100,6 +1175,8 @@ public final class DataIntegrationFunctions {
      * Retrieves a list of applications and provides options to filter the list.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1132,6 +1209,7 @@ public final class DataIntegrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetWorkspaceApplicationsResult> getWorkspaceApplicationsPlain(GetWorkspaceApplicationsPlainArgs args) {
@@ -1143,6 +1221,8 @@ public final class DataIntegrationFunctions {
      * Retrieves a list of applications and provides options to filter the list.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1175,6 +1255,7 @@ public final class DataIntegrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetWorkspaceApplicationsResult> getWorkspaceApplications(GetWorkspaceApplicationsArgs args, InvokeOptions options) {
@@ -1186,6 +1267,8 @@ public final class DataIntegrationFunctions {
      * Retrieves a list of applications and provides options to filter the list.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1218,6 +1301,7 @@ public final class DataIntegrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetWorkspaceApplicationsResult> getWorkspaceApplicationsPlain(GetWorkspaceApplicationsPlainArgs args, InvokeOptions options) {
@@ -1229,6 +1313,8 @@ public final class DataIntegrationFunctions {
      * This endpoint can be used to get the summary/details of object being exported.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1258,6 +1344,7 @@ public final class DataIntegrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetWorkspaceExportRequestResult> getWorkspaceExportRequest(GetWorkspaceExportRequestArgs args) {
@@ -1269,6 +1356,8 @@ public final class DataIntegrationFunctions {
      * This endpoint can be used to get the summary/details of object being exported.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1298,6 +1387,7 @@ public final class DataIntegrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetWorkspaceExportRequestResult> getWorkspaceExportRequestPlain(GetWorkspaceExportRequestPlainArgs args) {
@@ -1309,6 +1399,8 @@ public final class DataIntegrationFunctions {
      * This endpoint can be used to get the summary/details of object being exported.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1338,6 +1430,7 @@ public final class DataIntegrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetWorkspaceExportRequestResult> getWorkspaceExportRequest(GetWorkspaceExportRequestArgs args, InvokeOptions options) {
@@ -1349,6 +1442,8 @@ public final class DataIntegrationFunctions {
      * This endpoint can be used to get the summary/details of object being exported.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1378,6 +1473,7 @@ public final class DataIntegrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetWorkspaceExportRequestResult> getWorkspaceExportRequestPlain(GetWorkspaceExportRequestPlainArgs args, InvokeOptions options) {
@@ -1389,6 +1485,8 @@ public final class DataIntegrationFunctions {
      * This endpoint can be used to get the list of export object requests.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1422,6 +1520,7 @@ public final class DataIntegrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetWorkspaceExportRequestsResult> getWorkspaceExportRequests(GetWorkspaceExportRequestsArgs args) {
@@ -1433,6 +1532,8 @@ public final class DataIntegrationFunctions {
      * This endpoint can be used to get the list of export object requests.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1466,6 +1567,7 @@ public final class DataIntegrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetWorkspaceExportRequestsResult> getWorkspaceExportRequestsPlain(GetWorkspaceExportRequestsPlainArgs args) {
@@ -1477,6 +1579,8 @@ public final class DataIntegrationFunctions {
      * This endpoint can be used to get the list of export object requests.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1510,6 +1614,7 @@ public final class DataIntegrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetWorkspaceExportRequestsResult> getWorkspaceExportRequests(GetWorkspaceExportRequestsArgs args, InvokeOptions options) {
@@ -1521,6 +1626,8 @@ public final class DataIntegrationFunctions {
      * This endpoint can be used to get the list of export object requests.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1554,6 +1661,7 @@ public final class DataIntegrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetWorkspaceExportRequestsResult> getWorkspaceExportRequestsPlain(GetWorkspaceExportRequestsPlainArgs args, InvokeOptions options) {
@@ -1565,6 +1673,8 @@ public final class DataIntegrationFunctions {
      * Retrieves a folder using the specified identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1594,6 +1704,7 @@ public final class DataIntegrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetWorkspaceFolderResult> getWorkspaceFolder(GetWorkspaceFolderArgs args) {
@@ -1605,6 +1716,8 @@ public final class DataIntegrationFunctions {
      * Retrieves a folder using the specified identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1634,6 +1747,7 @@ public final class DataIntegrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetWorkspaceFolderResult> getWorkspaceFolderPlain(GetWorkspaceFolderPlainArgs args) {
@@ -1645,6 +1759,8 @@ public final class DataIntegrationFunctions {
      * Retrieves a folder using the specified identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1674,6 +1790,7 @@ public final class DataIntegrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetWorkspaceFolderResult> getWorkspaceFolder(GetWorkspaceFolderArgs args, InvokeOptions options) {
@@ -1685,6 +1802,8 @@ public final class DataIntegrationFunctions {
      * Retrieves a folder using the specified identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1714,6 +1833,7 @@ public final class DataIntegrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetWorkspaceFolderResult> getWorkspaceFolderPlain(GetWorkspaceFolderPlainArgs args, InvokeOptions options) {
@@ -1725,6 +1845,8 @@ public final class DataIntegrationFunctions {
      * Retrieves a list of folders in a project and provides options to filter the list.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1758,6 +1880,7 @@ public final class DataIntegrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetWorkspaceFoldersResult> getWorkspaceFolders(GetWorkspaceFoldersArgs args) {
@@ -1769,6 +1892,8 @@ public final class DataIntegrationFunctions {
      * Retrieves a list of folders in a project and provides options to filter the list.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1802,6 +1927,7 @@ public final class DataIntegrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetWorkspaceFoldersResult> getWorkspaceFoldersPlain(GetWorkspaceFoldersPlainArgs args) {
@@ -1813,6 +1939,8 @@ public final class DataIntegrationFunctions {
      * Retrieves a list of folders in a project and provides options to filter the list.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1846,6 +1974,7 @@ public final class DataIntegrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetWorkspaceFoldersResult> getWorkspaceFolders(GetWorkspaceFoldersArgs args, InvokeOptions options) {
@@ -1857,6 +1986,8 @@ public final class DataIntegrationFunctions {
      * Retrieves a list of folders in a project and provides options to filter the list.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1890,6 +2021,7 @@ public final class DataIntegrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetWorkspaceFoldersResult> getWorkspaceFoldersPlain(GetWorkspaceFoldersPlainArgs args, InvokeOptions options) {
@@ -1901,6 +2033,8 @@ public final class DataIntegrationFunctions {
      * This endpoint can be used to get the summary/details of object being imported.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1930,6 +2064,7 @@ public final class DataIntegrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetWorkspaceImportRequestResult> getWorkspaceImportRequest(GetWorkspaceImportRequestArgs args) {
@@ -1941,6 +2076,8 @@ public final class DataIntegrationFunctions {
      * This endpoint can be used to get the summary/details of object being imported.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1970,6 +2107,7 @@ public final class DataIntegrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetWorkspaceImportRequestResult> getWorkspaceImportRequestPlain(GetWorkspaceImportRequestPlainArgs args) {
@@ -1981,6 +2119,8 @@ public final class DataIntegrationFunctions {
      * This endpoint can be used to get the summary/details of object being imported.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2010,6 +2150,7 @@ public final class DataIntegrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetWorkspaceImportRequestResult> getWorkspaceImportRequest(GetWorkspaceImportRequestArgs args, InvokeOptions options) {
@@ -2021,6 +2162,8 @@ public final class DataIntegrationFunctions {
      * This endpoint can be used to get the summary/details of object being imported.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2050,6 +2193,7 @@ public final class DataIntegrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetWorkspaceImportRequestResult> getWorkspaceImportRequestPlain(GetWorkspaceImportRequestPlainArgs args, InvokeOptions options) {
@@ -2061,6 +2205,8 @@ public final class DataIntegrationFunctions {
      * This endpoint can be used to get the list of import object requests.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2094,6 +2240,7 @@ public final class DataIntegrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetWorkspaceImportRequestsResult> getWorkspaceImportRequests(GetWorkspaceImportRequestsArgs args) {
@@ -2105,6 +2252,8 @@ public final class DataIntegrationFunctions {
      * This endpoint can be used to get the list of import object requests.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2138,6 +2287,7 @@ public final class DataIntegrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetWorkspaceImportRequestsResult> getWorkspaceImportRequestsPlain(GetWorkspaceImportRequestsPlainArgs args) {
@@ -2149,6 +2299,8 @@ public final class DataIntegrationFunctions {
      * This endpoint can be used to get the list of import object requests.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2182,6 +2334,7 @@ public final class DataIntegrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetWorkspaceImportRequestsResult> getWorkspaceImportRequests(GetWorkspaceImportRequestsArgs args, InvokeOptions options) {
@@ -2193,6 +2346,8 @@ public final class DataIntegrationFunctions {
      * This endpoint can be used to get the list of import object requests.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2226,6 +2381,7 @@ public final class DataIntegrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetWorkspaceImportRequestsResult> getWorkspaceImportRequestsPlain(GetWorkspaceImportRequestsPlainArgs args, InvokeOptions options) {
@@ -2237,6 +2393,8 @@ public final class DataIntegrationFunctions {
      * Retrieves a project using the specified identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2266,6 +2424,7 @@ public final class DataIntegrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetWorkspaceProjectResult> getWorkspaceProject(GetWorkspaceProjectArgs args) {
@@ -2277,6 +2436,8 @@ public final class DataIntegrationFunctions {
      * Retrieves a project using the specified identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2306,6 +2467,7 @@ public final class DataIntegrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetWorkspaceProjectResult> getWorkspaceProjectPlain(GetWorkspaceProjectPlainArgs args) {
@@ -2317,6 +2479,8 @@ public final class DataIntegrationFunctions {
      * Retrieves a project using the specified identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2346,6 +2510,7 @@ public final class DataIntegrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetWorkspaceProjectResult> getWorkspaceProject(GetWorkspaceProjectArgs args, InvokeOptions options) {
@@ -2357,6 +2522,8 @@ public final class DataIntegrationFunctions {
      * Retrieves a project using the specified identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2386,6 +2553,7 @@ public final class DataIntegrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetWorkspaceProjectResult> getWorkspaceProjectPlain(GetWorkspaceProjectPlainArgs args, InvokeOptions options) {
@@ -2397,6 +2565,8 @@ public final class DataIntegrationFunctions {
      * Retrieves a lists of projects in a workspace and provides options to filter the list.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2429,6 +2599,7 @@ public final class DataIntegrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetWorkspaceProjectsResult> getWorkspaceProjects(GetWorkspaceProjectsArgs args) {
@@ -2440,6 +2611,8 @@ public final class DataIntegrationFunctions {
      * Retrieves a lists of projects in a workspace and provides options to filter the list.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2472,6 +2645,7 @@ public final class DataIntegrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetWorkspaceProjectsResult> getWorkspaceProjectsPlain(GetWorkspaceProjectsPlainArgs args) {
@@ -2483,6 +2657,8 @@ public final class DataIntegrationFunctions {
      * Retrieves a lists of projects in a workspace and provides options to filter the list.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2515,6 +2691,7 @@ public final class DataIntegrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetWorkspaceProjectsResult> getWorkspaceProjects(GetWorkspaceProjectsArgs args, InvokeOptions options) {
@@ -2526,6 +2703,8 @@ public final class DataIntegrationFunctions {
      * Retrieves a lists of projects in a workspace and provides options to filter the list.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2558,6 +2737,7 @@ public final class DataIntegrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetWorkspaceProjectsResult> getWorkspaceProjectsPlain(GetWorkspaceProjectsPlainArgs args, InvokeOptions options) {
@@ -2569,6 +2749,8 @@ public final class DataIntegrationFunctions {
      * Retrieves a list of Data Integration workspaces.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2599,6 +2781,7 @@ public final class DataIntegrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetWorkspacesResult> getWorkspaces(GetWorkspacesArgs args) {
@@ -2610,6 +2793,8 @@ public final class DataIntegrationFunctions {
      * Retrieves a list of Data Integration workspaces.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2640,6 +2825,7 @@ public final class DataIntegrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetWorkspacesResult> getWorkspacesPlain(GetWorkspacesPlainArgs args) {
@@ -2651,6 +2837,8 @@ public final class DataIntegrationFunctions {
      * Retrieves a list of Data Integration workspaces.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2681,6 +2869,7 @@ public final class DataIntegrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetWorkspacesResult> getWorkspaces(GetWorkspacesArgs args, InvokeOptions options) {
@@ -2692,6 +2881,8 @@ public final class DataIntegrationFunctions {
      * Retrieves a list of Data Integration workspaces.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2722,6 +2913,7 @@ public final class DataIntegrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetWorkspacesResult> getWorkspacesPlain(GetWorkspacesPlainArgs args, InvokeOptions options) {

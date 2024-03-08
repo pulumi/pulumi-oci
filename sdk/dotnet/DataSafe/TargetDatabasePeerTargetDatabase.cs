@@ -16,6 +16,7 @@ namespace Pulumi.Oci.DataSafe
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -54,13 +55,14 @@ namespace Pulumi.Oci.DataSafe
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// TargetDatabasePeerTargetDatabases can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:DataSafe/targetDatabasePeerTargetDatabase:TargetDatabasePeerTargetDatabase test_target_database_peer_target_database "targetDatabases/{targetDatabaseId}/peerTargetDatabases/{peerTargetDatabaseId}"
+    /// $ pulumi import oci:DataSafe/targetDatabasePeerTargetDatabase:TargetDatabasePeerTargetDatabase test_target_database_peer_target_database "targetDatabases/{targetDatabaseId}/peerTargetDatabases/{peerTargetDatabaseId}"
     /// ```
     /// </summary>
     [OciResourceType("oci:DataSafe/targetDatabasePeerTargetDatabase:TargetDatabasePeerTargetDatabase")]

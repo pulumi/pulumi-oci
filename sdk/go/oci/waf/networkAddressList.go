@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -57,15 +58,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // NetworkAddressLists can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Waf/networkAddressList:NetworkAddressList test_network_address_list "id"
-//
+// $ pulumi import oci:Waf/networkAddressList:NetworkAddressList test_network_address_list "id"
 // ```
 type NetworkAddressList struct {
 	pulumi.CustomResourceState

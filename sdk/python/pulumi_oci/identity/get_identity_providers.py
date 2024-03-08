@@ -133,6 +133,7 @@ def get_identity_providers(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -142,6 +143,7 @@ def get_identity_providers(compartment_id: Optional[str] = None,
         name=var["identity_provider_name"],
         state=var["identity_provider_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment (remember that the tenancy is simply the root compartment).
@@ -187,6 +189,7 @@ def get_identity_providers_output(compartment_id: Optional[pulumi.Input[str]] = 
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -196,6 +199,7 @@ def get_identity_providers_output(compartment_id: Optional[pulumi.Input[str]] = 
         name=var["identity_provider_name"],
         state=var["identity_provider_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment (remember that the tenancy is simply the root compartment).

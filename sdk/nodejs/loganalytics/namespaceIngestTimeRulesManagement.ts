@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,6 +22,7 @@ import * as utilities from "../utilities";
  *     enableIngestTimeRule: _var.enable_ingest_time_rule,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export class NamespaceIngestTimeRulesManagement extends pulumi.CustomResource {
     /**

@@ -234,6 +234,7 @@ class ListingPackageAgreement(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -244,6 +245,7 @@ class ListingPackageAgreement(pulumi.CustomResource):
             package_version=var["listing_package_agreement_package_version"],
             compartment_id=var["compartment_id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -270,6 +272,7 @@ class ListingPackageAgreement(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -280,6 +283,7 @@ class ListingPackageAgreement(pulumi.CustomResource):
             package_version=var["listing_package_agreement_package_version"],
             compartment_id=var["compartment_id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 

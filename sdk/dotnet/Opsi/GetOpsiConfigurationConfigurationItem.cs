@@ -18,10 +18,9 @@ namespace Pulumi.Oci.Opsi
         /// Values specified in configItemField param will determine what fields for each configuration items have to be returned.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -41,8 +40,7 @@ namespace Pulumi.Oci.Opsi
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetOpsiConfigurationConfigurationItemResult> InvokeAsync(GetOpsiConfigurationConfigurationItemArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetOpsiConfigurationConfigurationItemResult>("oci:Opsi/getOpsiConfigurationConfigurationItem:getOpsiConfigurationConfigurationItem", args ?? new GetOpsiConfigurationConfigurationItemArgs(), options.WithDefaults());
@@ -54,10 +52,9 @@ namespace Pulumi.Oci.Opsi
         /// Values specified in configItemField param will determine what fields for each configuration items have to be returned.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -77,8 +74,7 @@ namespace Pulumi.Oci.Opsi
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetOpsiConfigurationConfigurationItemResult> Invoke(GetOpsiConfigurationConfigurationItemInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetOpsiConfigurationConfigurationItemResult>("oci:Opsi/getOpsiConfigurationConfigurationItem:getOpsiConfigurationConfigurationItem", args ?? new GetOpsiConfigurationConfigurationItemInvokeArgs(), options.WithDefaults());

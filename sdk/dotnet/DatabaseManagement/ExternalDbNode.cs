@@ -19,7 +19,7 @@ namespace Pulumi.Oci.DatabaseManagement
     /// ExternalDbNodes can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:DatabaseManagement/externalDbNode:ExternalDbNode test_external_db_node "id"
+    /// $ pulumi import oci:DatabaseManagement/externalDbNode:ExternalDbNode test_external_db_node "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:DatabaseManagement/externalDbNode:ExternalDbNode")]

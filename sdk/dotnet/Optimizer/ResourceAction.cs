@@ -24,7 +24,7 @@ namespace Pulumi.Oci.Optimizer
     /// ResourceActions can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Optimizer/resourceAction:ResourceAction test_resource_action "id"
+    /// $ pulumi import oci:Optimizer/resourceAction:ResourceAction test_resource_action "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Optimizer/resourceAction:ResourceAction")]

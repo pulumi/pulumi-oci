@@ -20,6 +20,8 @@ import javax.annotation.Nullable;
  * Creates a new DataMaskingActivity.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -49,13 +51,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * FusionEnvironmentDataMaskingActivities can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:FusionApps/fusionEnvironmentDataMaskingActivity:FusionEnvironmentDataMaskingActivity test_fusion_environment_data_masking_activity &#34;fusionEnvironments/{fusionEnvironmentId}/dataMaskingActivities/{dataMaskingActivityId}&#34;
+ * $ pulumi import oci:FusionApps/fusionEnvironmentDataMaskingActivity:FusionEnvironmentDataMaskingActivity test_fusion_environment_data_masking_activity &#34;fusionEnvironments/{fusionEnvironmentId}/dataMaskingActivities/{dataMaskingActivityId}&#34;
  * ```
  * 
  */

@@ -414,6 +414,7 @@ class InstVbsInstance(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -431,13 +432,14 @@ class InstVbsInstance(pulumi.CustomResource):
             is_resource_usage_agreement_granted=var["vbs_instance_is_resource_usage_agreement_granted"],
             resource_compartment_id=var["resource_compartment_id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         VbsInstances can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Vbs/instVbsInstance:InstVbsInstance test_vbs_instance "id"
+        $ pulumi import oci:Vbs/instVbsInstance:InstVbsInstance test_vbs_instance "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -468,6 +470,7 @@ class InstVbsInstance(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -485,13 +488,14 @@ class InstVbsInstance(pulumi.CustomResource):
             is_resource_usage_agreement_granted=var["vbs_instance_is_resource_usage_agreement_granted"],
             resource_compartment_id=var["resource_compartment_id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         VbsInstances can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Vbs/instVbsInstance:InstVbsInstance test_vbs_instance "id"
+        $ pulumi import oci:Vbs/instVbsInstance:InstVbsInstance test_vbs_instance "id"
         ```
 
         :param str resource_name: The name of the resource.

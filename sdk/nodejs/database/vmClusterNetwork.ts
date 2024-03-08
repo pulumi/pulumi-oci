@@ -14,6 +14,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -58,13 +59,14 @@ import * as utilities from "../utilities";
  *     validateVmClusterNetwork: _var.vm_cluster_network_validate_vm_cluster_network,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * VmClusterNetworks can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Database/vmClusterNetwork:VmClusterNetwork test_vm_cluster_network "exadataInfrastructures/{exadataInfrastructureId}/vmClusterNetworks/{vmClusterNetworkId}"
+ * $ pulumi import oci:Database/vmClusterNetwork:VmClusterNetwork test_vm_cluster_network "exadataInfrastructures/{exadataInfrastructureId}/vmClusterNetworks/{vmClusterNetworkId}"
  * ```
  */
 export class VmClusterNetwork extends pulumi.CustomResource {

@@ -89,12 +89,14 @@ def get_data_guard_associations(database_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_data_guard_associations = oci.Database.get_data_guard_associations(database_id=oci_database_database["test_database"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -123,12 +125,14 @@ def get_data_guard_associations_output(database_id: Optional[pulumi.Input[str]] 
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_data_guard_associations = oci.Database.get_data_guard_associations(database_id=oci_database_database["test_database"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

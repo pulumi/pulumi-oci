@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,6 +25,7 @@ import * as utilities from "../utilities";
  *     state: _var.model_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDetectionModels(args: GetDetectionModelsArgs, opts?: pulumi.InvokeOptions): Promise<GetDetectionModelsResult> {
 
@@ -97,6 +99,7 @@ export interface GetDetectionModelsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -108,6 +111,7 @@ export interface GetDetectionModelsResult {
  *     state: _var.model_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDetectionModelsOutput(args: GetDetectionModelsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDetectionModelsResult> {
     return pulumi.output(args).apply((a: any) => getDetectionModels(a, opts))

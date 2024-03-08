@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -19,6 +20,7 @@ import * as utilities from "../utilities";
  *     replicationScheduleId: oci_cloud_migrations_replication_schedule.test_replication_schedule.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getReplicationSchedule(args: GetReplicationScheduleArgs, opts?: pulumi.InvokeOptions): Promise<GetReplicationScheduleResult> {
 
@@ -95,6 +97,7 @@ export interface GetReplicationScheduleResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -103,6 +106,7 @@ export interface GetReplicationScheduleResult {
  *     replicationScheduleId: oci_cloud_migrations_replication_schedule.test_replication_schedule.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getReplicationScheduleOutput(args: GetReplicationScheduleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetReplicationScheduleResult> {
     return pulumi.output(args).apply((a: any) => getReplicationSchedule(a, opts))

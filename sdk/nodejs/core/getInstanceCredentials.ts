@@ -12,6 +12,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -20,6 +21,7 @@ import * as utilities from "../utilities";
  *     instanceId: oci_core_instance.test_instance.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getInstanceCredentials(args: GetInstanceCredentialsArgs, opts?: pulumi.InvokeOptions): Promise<GetInstanceCredentialsResult> {
 
@@ -65,6 +67,7 @@ export interface GetInstanceCredentialsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -73,6 +76,7 @@ export interface GetInstanceCredentialsResult {
  *     instanceId: oci_core_instance.test_instance.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getInstanceCredentialsOutput(args: GetInstanceCredentialsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInstanceCredentialsResult> {
     return pulumi.output(args).apply((a: any) => getInstanceCredentials(a, opts))

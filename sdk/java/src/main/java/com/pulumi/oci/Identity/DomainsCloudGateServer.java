@@ -29,6 +29,7 @@ import javax.annotation.Nullable;
  * 
  * ## Example Usage
  * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -79,13 +80,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * CloudGateServers can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Identity/domainsCloudGateServer:DomainsCloudGateServer test_cloud_gate_server &#34;idcsEndpoint/{idcsEndpoint}/cloudGateServers/{cloudGateServerId}&#34;
+ * $ pulumi import oci:Identity/domainsCloudGateServer:DomainsCloudGateServer test_cloud_gate_server &#34;idcsEndpoint/{idcsEndpoint}/cloudGateServers/{cloudGateServerId}&#34;
  * ```
  * 
  */

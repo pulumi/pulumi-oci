@@ -86,12 +86,14 @@ def get_vm_cluster_patch_history_entries(filters: Optional[Sequence[pulumi.Input
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_vm_cluster_patch_history_entries = oci.Database.get_vm_cluster_patch_history_entries(vm_cluster_id=oci_database_vm_cluster["test_vm_cluster"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str vm_cluster_id: The VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -120,12 +122,14 @@ def get_vm_cluster_patch_history_entries_output(filters: Optional[pulumi.Input[O
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_vm_cluster_patch_history_entries = oci.Database.get_vm_cluster_patch_history_entries(vm_cluster_id=oci_database_vm_cluster["test_vm_cluster"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str vm_cluster_id: The VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

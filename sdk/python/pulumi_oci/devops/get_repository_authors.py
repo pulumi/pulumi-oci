@@ -96,6 +96,7 @@ def get_repository_authors(filters: Optional[Sequence[pulumi.InputType['GetRepos
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -103,6 +104,7 @@ def get_repository_authors(filters: Optional[Sequence[pulumi.InputType['GetRepos
     test_repository_authors = oci.DevOps.get_repository_authors(repository_id=oci_devops_repository["test_repository"]["id"],
         ref_name=var["repository_author_ref_name"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str ref_name: A filter to return only resources that match the given reference name.
@@ -135,6 +137,7 @@ def get_repository_authors_output(filters: Optional[pulumi.Input[Optional[Sequen
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -142,6 +145,7 @@ def get_repository_authors_output(filters: Optional[pulumi.Input[Optional[Sequen
     test_repository_authors = oci.DevOps.get_repository_authors(repository_id=oci_devops_repository["test_repository"]["id"],
         ref_name=var["repository_author_ref_name"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str ref_name: A filter to return only resources that match the given reference name.

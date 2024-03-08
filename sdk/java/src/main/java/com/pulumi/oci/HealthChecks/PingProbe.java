@@ -24,6 +24,8 @@ import javax.annotation.Nullable;
  * *Note:* The on-demand probe configuration is not saved.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -57,13 +59,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * PingProbes can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:HealthChecks/pingProbe:PingProbe test_ping_probe &#34;id&#34;
+ * $ pulumi import oci:HealthChecks/pingProbe:PingProbe test_ping_probe &#34;id&#34;
  * ```
  * 
  */

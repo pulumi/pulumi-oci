@@ -16,10 +16,9 @@ namespace Pulumi.Oci.DataScience
         /// 
         /// Lists the valid model deployment shapes.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,8 +34,7 @@ namespace Pulumi.Oci.DataScience
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetModelDeploymentShapesResult> InvokeAsync(GetModelDeploymentShapesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetModelDeploymentShapesResult>("oci:DataScience/getModelDeploymentShapes:getModelDeploymentShapes", args ?? new GetModelDeploymentShapesArgs(), options.WithDefaults());
@@ -46,10 +44,9 @@ namespace Pulumi.Oci.DataScience
         /// 
         /// Lists the valid model deployment shapes.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -65,8 +62,7 @@ namespace Pulumi.Oci.DataScience
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetModelDeploymentShapesResult> Invoke(GetModelDeploymentShapesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetModelDeploymentShapesResult>("oci:DataScience/getModelDeploymentShapes:getModelDeploymentShapes", args ?? new GetModelDeploymentShapesInvokeArgs(), options.WithDefaults());

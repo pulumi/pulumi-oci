@@ -17,10 +17,9 @@ namespace Pulumi.Oci.DatabaseManagement
         /// Lists the Exadata infrastructure resources in the specified compartment.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -37,8 +36,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetExternalExadataInfrastructuresResult> InvokeAsync(GetExternalExadataInfrastructuresArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetExternalExadataInfrastructuresResult>("oci:DatabaseManagement/getExternalExadataInfrastructures:getExternalExadataInfrastructures", args ?? new GetExternalExadataInfrastructuresArgs(), options.WithDefaults());
@@ -49,10 +47,9 @@ namespace Pulumi.Oci.DatabaseManagement
         /// Lists the Exadata infrastructure resources in the specified compartment.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -69,8 +66,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetExternalExadataInfrastructuresResult> Invoke(GetExternalExadataInfrastructuresInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetExternalExadataInfrastructuresResult>("oci:DatabaseManagement/getExternalExadataInfrastructures:getExternalExadataInfrastructures", args ?? new GetExternalExadataInfrastructuresInvokeArgs(), options.WithDefaults());

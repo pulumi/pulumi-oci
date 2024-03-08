@@ -20,6 +20,8 @@ import javax.annotation.Nullable;
  * Onboards a tenancy with Log Analytics or Offboards a tenancy from Log Analytics functionality.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -50,13 +52,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * Namespace can be imported using the `namespace`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:LogAnalytics/namespace:Namespace test_namespace &#34;namespace&#34;
+ * $ pulumi import oci:LogAnalytics/namespace:Namespace test_namespace &#34;namespace&#34;
  * ```
  * 
  */

@@ -17,10 +17,9 @@ namespace Pulumi.Oci.Database
         /// Gets a list of the external database connectors in the specified compartment.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -39,8 +38,7 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetExternalDatabaseConnectorsResult> InvokeAsync(GetExternalDatabaseConnectorsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetExternalDatabaseConnectorsResult>("oci:Database/getExternalDatabaseConnectors:getExternalDatabaseConnectors", args ?? new GetExternalDatabaseConnectorsArgs(), options.WithDefaults());
@@ -51,10 +49,9 @@ namespace Pulumi.Oci.Database
         /// Gets a list of the external database connectors in the specified compartment.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -73,8 +70,7 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetExternalDatabaseConnectorsResult> Invoke(GetExternalDatabaseConnectorsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetExternalDatabaseConnectorsResult>("oci:Database/getExternalDatabaseConnectors:getExternalDatabaseConnectors", args ?? new GetExternalDatabaseConnectorsInvokeArgs(), options.WithDefaults());

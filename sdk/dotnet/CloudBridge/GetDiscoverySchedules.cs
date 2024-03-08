@@ -16,10 +16,9 @@ namespace Pulumi.Oci.CloudBridge
         /// 
         /// Lists discovery schedules.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -38,8 +37,7 @@ namespace Pulumi.Oci.CloudBridge
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDiscoverySchedulesResult> InvokeAsync(GetDiscoverySchedulesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDiscoverySchedulesResult>("oci:CloudBridge/getDiscoverySchedules:getDiscoverySchedules", args ?? new GetDiscoverySchedulesArgs(), options.WithDefaults());
@@ -49,10 +47,9 @@ namespace Pulumi.Oci.CloudBridge
         /// 
         /// Lists discovery schedules.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -71,8 +68,7 @@ namespace Pulumi.Oci.CloudBridge
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDiscoverySchedulesResult> Invoke(GetDiscoverySchedulesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDiscoverySchedulesResult>("oci:CloudBridge/getDiscoverySchedules:getDiscoverySchedules", args ?? new GetDiscoverySchedulesInvokeArgs(), options.WithDefaults());

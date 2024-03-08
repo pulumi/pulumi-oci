@@ -220,6 +220,7 @@ def get_zones(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -235,6 +236,7 @@ def get_zones(compartment_id: Optional[str] = None,
         view_id=oci_dns_view["test_view"]["id"],
         zone_type=var["zone_zone_type"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment the resource belongs to.
@@ -311,6 +313,7 @@ def get_zones_output(compartment_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -326,6 +329,7 @@ def get_zones_output(compartment_id: Optional[pulumi.Input[str]] = None,
         view_id=oci_dns_view["test_view"]["id"],
         zone_type=var["zone_zone_type"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment the resource belongs to.

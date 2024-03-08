@@ -918,12 +918,14 @@ def get_connection(connection_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_connection = oci.GoldenGate.get_connection(connection_id=oci_golden_gate_connection["test_connection"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Connection.
@@ -1024,12 +1026,14 @@ def get_connection_output(connection_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_connection = oci.GoldenGate.get_connection(connection_id=oci_golden_gate_connection["test_connection"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Connection.

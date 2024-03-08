@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -38,13 +39,14 @@ import * as utilities from "../utilities";
  *     wafPrimaryDomain: _var.oce_instance_waf_primary_domain,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * OceInstances can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Oce/instance:Instance test_oce_instance "id"
+ * $ pulumi import oci:Oce/instance:Instance test_oce_instance "id"
  * ```
  */
 export class Instance extends pulumi.CustomResource {

@@ -112,6 +112,7 @@ def get_system_versions(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -120,6 +121,7 @@ def get_system_versions(compartment_id: Optional[str] = None,
         gi_version=var["system_version_gi_version"],
         shape=var["system_version_shape"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -156,6 +158,7 @@ def get_system_versions_output(compartment_id: Optional[pulumi.Input[str]] = Non
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -164,6 +167,7 @@ def get_system_versions_output(compartment_id: Optional[pulumi.Input[str]] = Non
         gi_version=var["system_version_gi_version"],
         shape=var["system_version_shape"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

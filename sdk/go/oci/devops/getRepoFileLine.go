@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -43,6 +44,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetRepoFileLine(ctx *pulumi.Context, args *GetRepoFileLineArgs, opts ...pulumi.InvokeOption) (*GetRepoFileLineResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetRepoFileLineResult

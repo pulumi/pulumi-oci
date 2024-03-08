@@ -494,6 +494,7 @@ class ManagedInstanceGroup(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -514,13 +515,14 @@ class ManagedInstanceGroup(pulumi.CustomResource):
             },
             managed_instance_ids=var["managed_instance_group_managed_instance_ids"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ManagedInstanceGroups can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:OsManagementHub/managedInstanceGroup:ManagedInstanceGroup test_managed_instance_group "id"
+        $ pulumi import oci:OsManagementHub/managedInstanceGroup:ManagedInstanceGroup test_managed_instance_group "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -553,6 +555,7 @@ class ManagedInstanceGroup(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -573,13 +576,14 @@ class ManagedInstanceGroup(pulumi.CustomResource):
             },
             managed_instance_ids=var["managed_instance_group_managed_instance_ids"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ManagedInstanceGroups can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:OsManagementHub/managedInstanceGroup:ManagedInstanceGroup test_managed_instance_group "id"
+        $ pulumi import oci:OsManagementHub/managedInstanceGroup:ManagedInstanceGroup test_managed_instance_group "id"
         ```
 
         :param str resource_name: The name of the resource.

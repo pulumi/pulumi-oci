@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,13 +23,14 @@ import * as utilities from "../utilities";
  *     resourceGroup: _var.baselineable_metric_resource_group,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * BaselineableMetrics can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:StackMonitoring/baselineableMetric:BaselineableMetric test_baselineable_metric "id"
+ * $ pulumi import oci:StackMonitoring/baselineableMetric:BaselineableMetric test_baselineable_metric "id"
  * ```
  */
 export class BaselineableMetric extends pulumi.CustomResource {

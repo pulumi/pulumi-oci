@@ -696,6 +696,7 @@ class Workspace(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -722,13 +723,14 @@ class Workspace(pulumi.CustomResource):
             subnet_id=oci_core_subnet["test_subnet"]["id"],
             vcn_id=oci_core_vcn["test_vcn"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Workspaces can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataIntegration/workspace:Workspace test_workspace "id"
+        $ pulumi import oci:DataIntegration/workspace:Workspace test_workspace "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -767,6 +769,7 @@ class Workspace(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -793,13 +796,14 @@ class Workspace(pulumi.CustomResource):
             subnet_id=oci_core_subnet["test_subnet"]["id"],
             vcn_id=oci_core_vcn["test_vcn"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Workspaces can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataIntegration/workspace:Workspace test_workspace "id"
+        $ pulumi import oci:DataIntegration/workspace:Workspace test_workspace "id"
         ```
 
         :param str resource_name: The name of the resource.

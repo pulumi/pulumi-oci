@@ -434,6 +434,7 @@ class OutboundConnector(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -457,13 +458,14 @@ class OutboundConnector(pulumi.CustomResource):
             password_secret_id=oci_vault_secret["test_secret"]["id"],
             password_secret_version=var["outbound_connector_password_secret_version"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         OutboundConnectors can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:FileStorage/outboundConnector:OutboundConnector test_outbound_connector "id"
+        $ pulumi import oci:FileStorage/outboundConnector:OutboundConnector test_outbound_connector "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -515,6 +517,7 @@ class OutboundConnector(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -538,13 +541,14 @@ class OutboundConnector(pulumi.CustomResource):
             password_secret_id=oci_vault_secret["test_secret"]["id"],
             password_secret_version=var["outbound_connector_password_secret_version"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         OutboundConnectors can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:FileStorage/outboundConnector:OutboundConnector test_outbound_connector "id"
+        $ pulumi import oci:FileStorage/outboundConnector:OutboundConnector test_outbound_connector "id"
         ```
 
         :param str resource_name: The name of the resource.

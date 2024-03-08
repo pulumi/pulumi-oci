@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -62,15 +63,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // ExternalDatabaseConnectors can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Database/externalDatabaseConnector:ExternalDatabaseConnector test_external_database_connector "id"
-//
+// $ pulumi import oci:Database/externalDatabaseConnector:ExternalDatabaseConnector test_external_database_connector "id"
 // ```
 type ExternalDatabaseConnector struct {
 	pulumi.CustomResourceState

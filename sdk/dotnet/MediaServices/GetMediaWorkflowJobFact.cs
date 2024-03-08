@@ -17,10 +17,9 @@ namespace Pulumi.Oci.MediaServices
         /// 
         /// Get the MediaWorkflowJobFact identified by the mediaWorkflowJobId and Fact ID.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -37,8 +36,7 @@ namespace Pulumi.Oci.MediaServices
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetMediaWorkflowJobFactResult> InvokeAsync(GetMediaWorkflowJobFactArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetMediaWorkflowJobFactResult>("oci:MediaServices/getMediaWorkflowJobFact:getMediaWorkflowJobFact", args ?? new GetMediaWorkflowJobFactArgs(), options.WithDefaults());
@@ -49,10 +47,9 @@ namespace Pulumi.Oci.MediaServices
         /// 
         /// Get the MediaWorkflowJobFact identified by the mediaWorkflowJobId and Fact ID.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -69,8 +66,7 @@ namespace Pulumi.Oci.MediaServices
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetMediaWorkflowJobFactResult> Invoke(GetMediaWorkflowJobFactInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMediaWorkflowJobFactResult>("oci:MediaServices/getMediaWorkflowJobFact:getMediaWorkflowJobFact", args ?? new GetMediaWorkflowJobFactInvokeArgs(), options.WithDefaults());

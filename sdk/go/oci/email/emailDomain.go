@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -48,15 +49,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // EmailDomains can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Email/emailDomain:EmailDomain test_email_domain "id"
-//
+// $ pulumi import oci:Email/emailDomain:EmailDomain test_email_domain "id"
 // ```
 type EmailDomain struct {
 	pulumi.CustomResourceState

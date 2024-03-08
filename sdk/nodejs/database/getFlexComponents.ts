@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,6 +23,7 @@ import * as utilities from "../utilities";
  *     name: _var.flex_component_name,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getFlexComponents(args: GetFlexComponentsArgs, opts?: pulumi.InvokeOptions): Promise<GetFlexComponentsResult> {
 
@@ -74,6 +76,7 @@ export interface GetFlexComponentsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -83,6 +86,7 @@ export interface GetFlexComponentsResult {
  *     name: _var.flex_component_name,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getFlexComponentsOutput(args: GetFlexComponentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFlexComponentsResult> {
     return pulumi.output(args).apply((a: any) => getFlexComponents(a, opts))

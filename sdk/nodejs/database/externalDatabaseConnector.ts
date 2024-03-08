@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -42,13 +43,14 @@ import * as utilities from "../utilities";
  *     },
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * ExternalDatabaseConnectors can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Database/externalDatabaseConnector:ExternalDatabaseConnector test_external_database_connector "id"
+ * $ pulumi import oci:Database/externalDatabaseConnector:ExternalDatabaseConnector test_external_database_connector "id"
  * ```
  */
 export class ExternalDatabaseConnector extends pulumi.CustomResource {

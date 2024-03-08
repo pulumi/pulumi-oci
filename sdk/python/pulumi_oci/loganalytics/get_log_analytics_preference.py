@@ -75,12 +75,14 @@ def get_log_analytics_preference(namespace: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_log_analytics_preference = oci.LogAnalytics.get_log_analytics_preference(namespace=var["log_analytics_preference_namespace"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str namespace: The Logging Analytics namespace used for the request.
@@ -106,12 +108,14 @@ def get_log_analytics_preference_output(namespace: Optional[pulumi.Input[str]] =
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_log_analytics_preference = oci.LogAnalytics.get_log_analytics_preference(namespace=var["log_analytics_preference_namespace"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str namespace: The Logging Analytics namespace used for the request.

@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,6 +42,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupSslCipherSuite(ctx *pulumi.Context, args *LookupSslCipherSuiteArgs, opts ...pulumi.InvokeOption) (*LookupSslCipherSuiteResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupSslCipherSuiteResult

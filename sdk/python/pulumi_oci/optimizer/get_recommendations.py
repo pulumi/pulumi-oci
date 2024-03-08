@@ -181,6 +181,7 @@ def get_recommendations(category_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -195,6 +196,7 @@ def get_recommendations(category_id: Optional[str] = None,
         state=var["recommendation_state"],
         status=var["recommendation_status"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str category_id: The unique OCID associated with the category.
@@ -267,6 +269,7 @@ def get_recommendations_output(category_id: Optional[pulumi.Input[Optional[str]]
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -281,6 +284,7 @@ def get_recommendations_output(category_id: Optional[pulumi.Input[Optional[str]]
         state=var["recommendation_state"],
         status=var["recommendation_status"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str category_id: The unique OCID associated with the category.

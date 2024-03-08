@@ -28,7 +28,7 @@ import javax.annotation.Nullable;
  * ExternalExadataStorageGrids can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:DatabaseManagement/externalExadataStorageGrid:ExternalExadataStorageGrid test_external_exadata_storage_grid &#34;id&#34;
+ * $ pulumi import oci:DatabaseManagement/externalExadataStorageGrid:ExternalExadataStorageGrid test_external_exadata_storage_grid &#34;id&#34;
  * ```
  * 
  */

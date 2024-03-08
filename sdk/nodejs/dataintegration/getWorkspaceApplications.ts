@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -25,6 +26,7 @@ import * as utilities from "../utilities";
  *     nameContains: _var.workspace_application_name_contains,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getWorkspaceApplications(args: GetWorkspaceApplicationsArgs, opts?: pulumi.InvokeOptions): Promise<GetWorkspaceApplicationsResult> {
 
@@ -101,6 +103,7 @@ export interface GetWorkspaceApplicationsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -113,6 +116,7 @@ export interface GetWorkspaceApplicationsResult {
  *     nameContains: _var.workspace_application_name_contains,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getWorkspaceApplicationsOutput(args: GetWorkspaceApplicationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetWorkspaceApplicationsResult> {
     return pulumi.output(args).apply((a: any) => getWorkspaceApplications(a, opts))

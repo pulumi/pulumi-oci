@@ -17,10 +17,9 @@ namespace Pulumi.Oci.Database
         /// Gets information about the specified Autonomous Exadata VM cluster in the Oracle cloud. For Exadata Cloud@Custustomer systems, see [GetAutonomousVmCluster ](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousVmCluster/GetAutonomousVmCluster).
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,8 +35,7 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetCloudAutonomousVmClusterResult> InvokeAsync(GetCloudAutonomousVmClusterArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetCloudAutonomousVmClusterResult>("oci:Database/getCloudAutonomousVmCluster:getCloudAutonomousVmCluster", args ?? new GetCloudAutonomousVmClusterArgs(), options.WithDefaults());
@@ -48,10 +46,9 @@ namespace Pulumi.Oci.Database
         /// Gets information about the specified Autonomous Exadata VM cluster in the Oracle cloud. For Exadata Cloud@Custustomer systems, see [GetAutonomousVmCluster ](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousVmCluster/GetAutonomousVmCluster).
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -67,8 +64,7 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetCloudAutonomousVmClusterResult> Invoke(GetCloudAutonomousVmClusterInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCloudAutonomousVmClusterResult>("oci:Database/getCloudAutonomousVmCluster:getCloudAutonomousVmCluster", args ?? new GetCloudAutonomousVmClusterInvokeArgs(), options.WithDefaults());

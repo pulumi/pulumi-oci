@@ -159,6 +159,7 @@ def get_secret_version(secret_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -166,6 +167,7 @@ def get_secret_version(secret_id: Optional[str] = None,
     test_secret_version = oci.Vault.get_secret_version(secret_id=oci_vault_secret["test_secret"]["id"],
         secret_version_number=var["secret_version_secret_version_number"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str secret_id: The OCID of the secret.
@@ -201,6 +203,7 @@ def get_secret_version_output(secret_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -208,6 +211,7 @@ def get_secret_version_output(secret_id: Optional[pulumi.Input[str]] = None,
     test_secret_version = oci.Vault.get_secret_version(secret_id=oci_vault_secret["test_secret"]["id"],
         secret_version_number=var["secret_version_secret_version_number"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str secret_id: The OCID of the secret.

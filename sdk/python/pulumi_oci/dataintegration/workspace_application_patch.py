@@ -594,6 +594,7 @@ class WorkspaceApplicationPatch(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -616,13 +617,14 @@ class WorkspaceApplicationPatch(pulumi.CustomResource):
                 registry_version=var["workspace_application_patch_registry_metadata_registry_version"],
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         WorkspaceApplicationPatches can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataIntegration/workspaceApplicationPatch:WorkspaceApplicationPatch test_workspace_application_patch "workspaces/{workspaceId}/applications/{applicationKey}/patches/{patchKey}"
+        $ pulumi import oci:DataIntegration/workspaceApplicationPatch:WorkspaceApplicationPatch test_workspace_application_patch "workspaces/{workspaceId}/applications/{applicationKey}/patches/{patchKey}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -656,6 +658,7 @@ class WorkspaceApplicationPatch(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -678,13 +681,14 @@ class WorkspaceApplicationPatch(pulumi.CustomResource):
                 registry_version=var["workspace_application_patch_registry_metadata_registry_version"],
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         WorkspaceApplicationPatches can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataIntegration/workspaceApplicationPatch:WorkspaceApplicationPatch test_workspace_application_patch "workspaces/{workspaceId}/applications/{applicationKey}/patches/{patchKey}"
+        $ pulumi import oci:DataIntegration/workspaceApplicationPatch:WorkspaceApplicationPatch test_workspace_application_patch "workspaces/{workspaceId}/applications/{applicationKey}/patches/{patchKey}"
         ```
 
         :param str resource_name: The name of the resource.

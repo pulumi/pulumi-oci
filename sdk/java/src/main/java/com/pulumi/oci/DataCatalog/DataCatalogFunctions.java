@@ -53,6 +53,8 @@ public final class DataCatalogFunctions {
      * Gets a data catalog by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -81,6 +83,7 @@ public final class DataCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCatalogResult> getCatalog(GetCatalogArgs args) {
@@ -92,6 +95,8 @@ public final class DataCatalogFunctions {
      * Gets a data catalog by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -120,6 +125,7 @@ public final class DataCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCatalogResult> getCatalogPlain(GetCatalogPlainArgs args) {
@@ -131,6 +137,8 @@ public final class DataCatalogFunctions {
      * Gets a data catalog by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -159,6 +167,7 @@ public final class DataCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCatalogResult> getCatalog(GetCatalogArgs args, InvokeOptions options) {
@@ -170,6 +179,8 @@ public final class DataCatalogFunctions {
      * Gets a data catalog by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -198,6 +209,7 @@ public final class DataCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCatalogResult> getCatalogPlain(GetCatalogPlainArgs args, InvokeOptions options) {
@@ -209,6 +221,8 @@ public final class DataCatalogFunctions {
      * Gets a specific private reverse connection by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -237,6 +251,7 @@ public final class DataCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCatalogPrivateEndpointResult> getCatalogPrivateEndpoint(GetCatalogPrivateEndpointArgs args) {
@@ -248,6 +263,8 @@ public final class DataCatalogFunctions {
      * Gets a specific private reverse connection by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -276,6 +293,7 @@ public final class DataCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCatalogPrivateEndpointResult> getCatalogPrivateEndpointPlain(GetCatalogPrivateEndpointPlainArgs args) {
@@ -287,6 +305,8 @@ public final class DataCatalogFunctions {
      * Gets a specific private reverse connection by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -315,6 +335,7 @@ public final class DataCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCatalogPrivateEndpointResult> getCatalogPrivateEndpoint(GetCatalogPrivateEndpointArgs args, InvokeOptions options) {
@@ -326,6 +347,8 @@ public final class DataCatalogFunctions {
      * Gets a specific private reverse connection by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -354,6 +377,7 @@ public final class DataCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCatalogPrivateEndpointResult> getCatalogPrivateEndpointPlain(GetCatalogPrivateEndpointPlainArgs args, InvokeOptions options) {
@@ -365,6 +389,8 @@ public final class DataCatalogFunctions {
      * Returns a list of all the catalog private endpoints in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -395,6 +421,7 @@ public final class DataCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCatalogPrivateEndpointsResult> getCatalogPrivateEndpoints(GetCatalogPrivateEndpointsArgs args) {
@@ -406,6 +433,8 @@ public final class DataCatalogFunctions {
      * Returns a list of all the catalog private endpoints in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -436,6 +465,7 @@ public final class DataCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCatalogPrivateEndpointsResult> getCatalogPrivateEndpointsPlain(GetCatalogPrivateEndpointsPlainArgs args) {
@@ -447,6 +477,8 @@ public final class DataCatalogFunctions {
      * Returns a list of all the catalog private endpoints in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -477,6 +509,7 @@ public final class DataCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCatalogPrivateEndpointsResult> getCatalogPrivateEndpoints(GetCatalogPrivateEndpointsArgs args, InvokeOptions options) {
@@ -488,6 +521,8 @@ public final class DataCatalogFunctions {
      * Returns a list of all the catalog private endpoints in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -518,6 +553,7 @@ public final class DataCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCatalogPrivateEndpointsResult> getCatalogPrivateEndpointsPlain(GetCatalogPrivateEndpointsPlainArgs args, InvokeOptions options) {
@@ -529,6 +565,8 @@ public final class DataCatalogFunctions {
      * Gets a specific type by key within a data catalog.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -559,6 +597,7 @@ public final class DataCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCatalogTypeResult> getCatalogType(GetCatalogTypeArgs args) {
@@ -570,6 +609,8 @@ public final class DataCatalogFunctions {
      * Gets a specific type by key within a data catalog.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -600,6 +641,7 @@ public final class DataCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCatalogTypeResult> getCatalogTypePlain(GetCatalogTypePlainArgs args) {
@@ -611,6 +653,8 @@ public final class DataCatalogFunctions {
      * Gets a specific type by key within a data catalog.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -641,6 +685,7 @@ public final class DataCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCatalogTypeResult> getCatalogType(GetCatalogTypeArgs args, InvokeOptions options) {
@@ -652,6 +697,8 @@ public final class DataCatalogFunctions {
      * Gets a specific type by key within a data catalog.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -682,6 +729,7 @@ public final class DataCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCatalogTypeResult> getCatalogTypePlain(GetCatalogTypePlainArgs args, InvokeOptions options) {
@@ -693,6 +741,8 @@ public final class DataCatalogFunctions {
      * Returns a list of all types within a data catalog.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -729,6 +779,7 @@ public final class DataCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCatalogTypesResult> getCatalogTypes(GetCatalogTypesArgs args) {
@@ -740,6 +791,8 @@ public final class DataCatalogFunctions {
      * Returns a list of all types within a data catalog.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -776,6 +829,7 @@ public final class DataCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCatalogTypesResult> getCatalogTypesPlain(GetCatalogTypesPlainArgs args) {
@@ -787,6 +841,8 @@ public final class DataCatalogFunctions {
      * Returns a list of all types within a data catalog.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -823,6 +879,7 @@ public final class DataCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCatalogTypesResult> getCatalogTypes(GetCatalogTypesArgs args, InvokeOptions options) {
@@ -834,6 +891,8 @@ public final class DataCatalogFunctions {
      * Returns a list of all types within a data catalog.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -870,6 +929,7 @@ public final class DataCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCatalogTypesResult> getCatalogTypesPlain(GetCatalogTypesPlainArgs args, InvokeOptions options) {
@@ -881,6 +941,8 @@ public final class DataCatalogFunctions {
      * Returns a list of all the data catalogs in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -911,6 +973,7 @@ public final class DataCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCatalogsResult> getCatalogs(GetCatalogsArgs args) {
@@ -922,6 +985,8 @@ public final class DataCatalogFunctions {
      * Returns a list of all the data catalogs in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -952,6 +1017,7 @@ public final class DataCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCatalogsResult> getCatalogsPlain(GetCatalogsPlainArgs args) {
@@ -963,6 +1029,8 @@ public final class DataCatalogFunctions {
      * Returns a list of all the data catalogs in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -993,6 +1061,7 @@ public final class DataCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCatalogsResult> getCatalogs(GetCatalogsArgs args, InvokeOptions options) {
@@ -1004,6 +1073,8 @@ public final class DataCatalogFunctions {
      * Returns a list of all the data catalogs in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1034,6 +1105,7 @@ public final class DataCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCatalogsResult> getCatalogsPlain(GetCatalogsPlainArgs args, InvokeOptions options) {
@@ -1045,6 +1117,8 @@ public final class DataCatalogFunctions {
      * Gets a specific data asset connection by key.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1076,6 +1150,7 @@ public final class DataCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetConnectionResult> getConnection(GetConnectionArgs args) {
@@ -1087,6 +1162,8 @@ public final class DataCatalogFunctions {
      * Gets a specific data asset connection by key.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1118,6 +1195,7 @@ public final class DataCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetConnectionResult> getConnectionPlain(GetConnectionPlainArgs args) {
@@ -1129,6 +1207,8 @@ public final class DataCatalogFunctions {
      * Gets a specific data asset connection by key.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1160,6 +1240,7 @@ public final class DataCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetConnectionResult> getConnection(GetConnectionArgs args, InvokeOptions options) {
@@ -1171,6 +1252,8 @@ public final class DataCatalogFunctions {
      * Gets a specific data asset connection by key.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1202,6 +1285,7 @@ public final class DataCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetConnectionResult> getConnectionPlain(GetConnectionPlainArgs args, InvokeOptions options) {
@@ -1213,6 +1297,8 @@ public final class DataCatalogFunctions {
      * Returns a list of all Connections for a data asset.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1253,6 +1339,7 @@ public final class DataCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetConnectionsResult> getConnections(GetConnectionsArgs args) {
@@ -1264,6 +1351,8 @@ public final class DataCatalogFunctions {
      * Returns a list of all Connections for a data asset.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1304,6 +1393,7 @@ public final class DataCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetConnectionsResult> getConnectionsPlain(GetConnectionsPlainArgs args) {
@@ -1315,6 +1405,8 @@ public final class DataCatalogFunctions {
      * Returns a list of all Connections for a data asset.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1355,6 +1447,7 @@ public final class DataCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetConnectionsResult> getConnections(GetConnectionsArgs args, InvokeOptions options) {
@@ -1366,6 +1459,8 @@ public final class DataCatalogFunctions {
      * Returns a list of all Connections for a data asset.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1406,6 +1501,7 @@ public final class DataCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetConnectionsResult> getConnectionsPlain(GetConnectionsPlainArgs args, InvokeOptions options) {
@@ -1417,6 +1513,8 @@ public final class DataCatalogFunctions {
      * Gets a specific data asset for the given key within a data catalog.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1447,6 +1545,7 @@ public final class DataCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDataAssetResult> getDataAsset(GetDataAssetArgs args) {
@@ -1458,6 +1557,8 @@ public final class DataCatalogFunctions {
      * Gets a specific data asset for the given key within a data catalog.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1488,6 +1589,7 @@ public final class DataCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDataAssetResult> getDataAssetPlain(GetDataAssetPlainArgs args) {
@@ -1499,6 +1601,8 @@ public final class DataCatalogFunctions {
      * Gets a specific data asset for the given key within a data catalog.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1529,6 +1633,7 @@ public final class DataCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDataAssetResult> getDataAsset(GetDataAssetArgs args, InvokeOptions options) {
@@ -1540,6 +1645,8 @@ public final class DataCatalogFunctions {
      * Gets a specific data asset for the given key within a data catalog.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1570,6 +1677,7 @@ public final class DataCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDataAssetResult> getDataAssetPlain(GetDataAssetPlainArgs args, InvokeOptions options) {
@@ -1582,6 +1690,7 @@ public final class DataCatalogFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1620,6 +1729,7 @@ public final class DataCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDataAssetsResult> getDataAssets(GetDataAssetsArgs args) {
@@ -1632,6 +1742,7 @@ public final class DataCatalogFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1670,6 +1781,7 @@ public final class DataCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDataAssetsResult> getDataAssetsPlain(GetDataAssetsPlainArgs args) {
@@ -1682,6 +1794,7 @@ public final class DataCatalogFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1720,6 +1833,7 @@ public final class DataCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDataAssetsResult> getDataAssets(GetDataAssetsArgs args, InvokeOptions options) {
@@ -1732,6 +1846,7 @@ public final class DataCatalogFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1770,6 +1885,7 @@ public final class DataCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDataAssetsResult> getDataAssetsPlain(GetDataAssetsPlainArgs args, InvokeOptions options) {
@@ -1781,6 +1897,8 @@ public final class DataCatalogFunctions {
      * Gets a metastore by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1809,6 +1927,7 @@ public final class DataCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMetastoreResult> getMetastore(GetMetastoreArgs args) {
@@ -1820,6 +1939,8 @@ public final class DataCatalogFunctions {
      * Gets a metastore by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1848,6 +1969,7 @@ public final class DataCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMetastoreResult> getMetastorePlain(GetMetastorePlainArgs args) {
@@ -1859,6 +1981,8 @@ public final class DataCatalogFunctions {
      * Gets a metastore by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1887,6 +2011,7 @@ public final class DataCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMetastoreResult> getMetastore(GetMetastoreArgs args, InvokeOptions options) {
@@ -1898,6 +2023,8 @@ public final class DataCatalogFunctions {
      * Gets a metastore by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1926,6 +2053,7 @@ public final class DataCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMetastoreResult> getMetastorePlain(GetMetastorePlainArgs args, InvokeOptions options) {
@@ -1937,6 +2065,8 @@ public final class DataCatalogFunctions {
      * Returns a list of all metastores in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1967,6 +2097,7 @@ public final class DataCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMetastoresResult> getMetastores(GetMetastoresArgs args) {
@@ -1978,6 +2109,8 @@ public final class DataCatalogFunctions {
      * Returns a list of all metastores in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2008,6 +2141,7 @@ public final class DataCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMetastoresResult> getMetastoresPlain(GetMetastoresPlainArgs args) {
@@ -2019,6 +2153,8 @@ public final class DataCatalogFunctions {
      * Returns a list of all metastores in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2049,6 +2185,7 @@ public final class DataCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMetastoresResult> getMetastores(GetMetastoresArgs args, InvokeOptions options) {
@@ -2060,6 +2197,8 @@ public final class DataCatalogFunctions {
      * Returns a list of all metastores in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2090,6 +2229,7 @@ public final class DataCatalogFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMetastoresResult> getMetastoresPlain(GetMetastoresPlainArgs args, InvokeOptions options) {

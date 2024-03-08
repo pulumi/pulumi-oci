@@ -19,6 +19,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -27,6 +28,7 @@ import * as utilities from "../utilities";
  *     compartmentId: _var.compartment_id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getImportableComputeEntities(args: GetImportableComputeEntitiesArgs, opts?: pulumi.InvokeOptions): Promise<GetImportableComputeEntitiesResult> {
 
@@ -76,6 +78,7 @@ export interface GetImportableComputeEntitiesResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -84,6 +87,7 @@ export interface GetImportableComputeEntitiesResult {
  *     compartmentId: _var.compartment_id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getImportableComputeEntitiesOutput(args: GetImportableComputeEntitiesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetImportableComputeEntitiesResult> {
     return pulumi.output(args).apply((a: any) => getImportableComputeEntities(a, opts))

@@ -207,12 +207,14 @@ def get_compute_capacity_reservation(capacity_reservation_id: Optional[str] = No
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_compute_capacity_reservation = oci.Core.get_compute_capacity_reservation(capacity_reservation_id=oci_core_capacity_reservation["test_capacity_reservation"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str capacity_reservation_id: The OCID of the compute capacity reservation.
@@ -249,12 +251,14 @@ def get_compute_capacity_reservation_output(capacity_reservation_id: Optional[pu
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_compute_capacity_reservation = oci.Core.get_compute_capacity_reservation(capacity_reservation_id=oci_core_capacity_reservation["test_capacity_reservation"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str capacity_reservation_id: The OCID of the compute capacity reservation.

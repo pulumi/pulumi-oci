@@ -24,6 +24,8 @@ import javax.annotation.Nullable;
  * Custom protection rules allow you to create rules in addition to the rulesets provided by the Web Application Firewall service, including rules from [ModSecurity](https://modsecurity.org/). The syntax for custom rules is based on the ModSecurity syntax. For more information about custom protection rules, see [Custom Protection Rules](https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/customprotectionrules.htm).
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -57,13 +59,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * CustomProtectionRules can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Waas/customProtectionRule:CustomProtectionRule test_custom_protection_rule &#34;id&#34;
+ * $ pulumi import oci:Waas/customProtectionRule:CustomProtectionRule test_custom_protection_rule &#34;id&#34;
  * ```
  * 
  */

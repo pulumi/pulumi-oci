@@ -436,7 +436,7 @@ class DatabaseSecurityConfig(pulumi.CustomResource):
         DatabaseSecurityConfigs can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataSafe/databaseSecurityConfig:DatabaseSecurityConfig test_database_security_config "id"
+        $ pulumi import oci:DataSafe/databaseSecurityConfig:DatabaseSecurityConfig test_database_security_config "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -470,7 +470,7 @@ class DatabaseSecurityConfig(pulumi.CustomResource):
         DatabaseSecurityConfigs can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataSafe/databaseSecurityConfig:DatabaseSecurityConfig test_database_security_config "id"
+        $ pulumi import oci:DataSafe/databaseSecurityConfig:DatabaseSecurityConfig test_database_security_config "id"
         ```
 
         :param str resource_name: The name of the resource.

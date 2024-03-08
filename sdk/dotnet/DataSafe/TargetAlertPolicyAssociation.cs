@@ -16,6 +16,7 @@ namespace Pulumi.Oci.DataSafe
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -44,13 +45,14 @@ namespace Pulumi.Oci.DataSafe
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// TargetAlertPolicyAssociations can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:DataSafe/targetAlertPolicyAssociation:TargetAlertPolicyAssociation test_target_alert_policy_association "id"
+    /// $ pulumi import oci:DataSafe/targetAlertPolicyAssociation:TargetAlertPolicyAssociation test_target_alert_policy_association "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:DataSafe/targetAlertPolicyAssociation:TargetAlertPolicyAssociation")]

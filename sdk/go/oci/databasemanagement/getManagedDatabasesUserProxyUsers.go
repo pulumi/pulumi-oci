@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -43,6 +44,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetManagedDatabasesUserProxyUsers(ctx *pulumi.Context, args *GetManagedDatabasesUserProxyUsersArgs, opts ...pulumi.InvokeOption) (*GetManagedDatabasesUserProxyUsersResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetManagedDatabasesUserProxyUsersResult

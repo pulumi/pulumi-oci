@@ -16,6 +16,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,6 +25,7 @@ import * as utilities from "../utilities";
  *     userId: oci_identity_user.test_user.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getApiKeys(args: GetApiKeysArgs, opts?: pulumi.InvokeOptions): Promise<GetApiKeysResult> {
 
@@ -73,6 +75,7 @@ export interface GetApiKeysResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -81,6 +84,7 @@ export interface GetApiKeysResult {
  *     userId: oci_identity_user.test_user.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getApiKeysOutput(args: GetApiKeysOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetApiKeysResult> {
     return pulumi.output(args).apply((a: any) => getApiKeys(a, opts))

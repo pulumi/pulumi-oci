@@ -51,6 +51,8 @@ public final class UsageProxyFunctions {
      * &gt; **Important**: Calls to this API will only succeed against the endpoint in the home region.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -81,6 +83,7 @@ public final class UsageProxyFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetResourceQuotasResult> getResourceQuotas(GetResourceQuotasArgs args) {
@@ -93,6 +96,8 @@ public final class UsageProxyFunctions {
      * &gt; **Important**: Calls to this API will only succeed against the endpoint in the home region.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -123,6 +128,7 @@ public final class UsageProxyFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetResourceQuotasResult> getResourceQuotasPlain(GetResourceQuotasPlainArgs args) {
@@ -135,6 +141,8 @@ public final class UsageProxyFunctions {
      * &gt; **Important**: Calls to this API will only succeed against the endpoint in the home region.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -165,6 +173,7 @@ public final class UsageProxyFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetResourceQuotasResult> getResourceQuotas(GetResourceQuotasArgs args, InvokeOptions options) {
@@ -177,6 +186,8 @@ public final class UsageProxyFunctions {
      * &gt; **Important**: Calls to this API will only succeed against the endpoint in the home region.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -207,6 +218,7 @@ public final class UsageProxyFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetResourceQuotasResult> getResourceQuotasPlain(GetResourceQuotasPlainArgs args, InvokeOptions options) {
@@ -219,6 +231,8 @@ public final class UsageProxyFunctions {
      * &gt; **Important**: Calls to this API will only succeed against the endpoint in the home region.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -249,6 +263,7 @@ public final class UsageProxyFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetResourcesResult> getResources(GetResourcesArgs args) {
@@ -261,6 +276,8 @@ public final class UsageProxyFunctions {
      * &gt; **Important**: Calls to this API will only succeed against the endpoint in the home region.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -291,6 +308,7 @@ public final class UsageProxyFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetResourcesResult> getResourcesPlain(GetResourcesPlainArgs args) {
@@ -303,6 +321,8 @@ public final class UsageProxyFunctions {
      * &gt; **Important**: Calls to this API will only succeed against the endpoint in the home region.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -333,6 +353,7 @@ public final class UsageProxyFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetResourcesResult> getResources(GetResourcesArgs args, InvokeOptions options) {
@@ -345,6 +366,8 @@ public final class UsageProxyFunctions {
      * &gt; **Important**: Calls to this API will only succeed against the endpoint in the home region.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -375,6 +398,7 @@ public final class UsageProxyFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetResourcesResult> getResourcesPlain(GetResourcesPlainArgs args, InvokeOptions options) {
@@ -386,6 +410,8 @@ public final class UsageProxyFunctions {
      * Provides product information that is specific to a reward usage period and its usage details.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -417,6 +443,7 @@ public final class UsageProxyFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSubscriptionProductResult> getSubscriptionProduct(GetSubscriptionProductArgs args) {
@@ -428,6 +455,8 @@ public final class UsageProxyFunctions {
      * Provides product information that is specific to a reward usage period and its usage details.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -459,6 +488,7 @@ public final class UsageProxyFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSubscriptionProductResult> getSubscriptionProductPlain(GetSubscriptionProductPlainArgs args) {
@@ -470,6 +500,8 @@ public final class UsageProxyFunctions {
      * Provides product information that is specific to a reward usage period and its usage details.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -501,6 +533,7 @@ public final class UsageProxyFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSubscriptionProductResult> getSubscriptionProduct(GetSubscriptionProductArgs args, InvokeOptions options) {
@@ -512,6 +545,8 @@ public final class UsageProxyFunctions {
      * Provides product information that is specific to a reward usage period and its usage details.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -543,6 +578,7 @@ public final class UsageProxyFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSubscriptionProductResult> getSubscriptionProductPlain(GetSubscriptionProductPlainArgs args, InvokeOptions options) {
@@ -554,6 +590,8 @@ public final class UsageProxyFunctions {
      * Provides product information that is specific to a reward usage period and its usage details.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -585,6 +623,7 @@ public final class UsageProxyFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSubscriptionProductsResult> getSubscriptionProducts(GetSubscriptionProductsArgs args) {
@@ -596,6 +635,8 @@ public final class UsageProxyFunctions {
      * Provides product information that is specific to a reward usage period and its usage details.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -627,6 +668,7 @@ public final class UsageProxyFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSubscriptionProductsResult> getSubscriptionProductsPlain(GetSubscriptionProductsPlainArgs args) {
@@ -638,6 +680,8 @@ public final class UsageProxyFunctions {
      * Provides product information that is specific to a reward usage period and its usage details.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -669,6 +713,7 @@ public final class UsageProxyFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSubscriptionProductsResult> getSubscriptionProducts(GetSubscriptionProductsArgs args, InvokeOptions options) {
@@ -680,6 +725,8 @@ public final class UsageProxyFunctions {
      * Provides product information that is specific to a reward usage period and its usage details.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -711,6 +758,7 @@ public final class UsageProxyFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSubscriptionProductsResult> getSubscriptionProductsPlain(GetSubscriptionProductsPlainArgs args, InvokeOptions options) {
@@ -722,6 +770,8 @@ public final class UsageProxyFunctions {
      * Provides the list of user summary that can redeem rewards for the given subscription ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -751,6 +801,7 @@ public final class UsageProxyFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSubscriptionRedeemableUserResult> getSubscriptionRedeemableUser(GetSubscriptionRedeemableUserArgs args) {
@@ -762,6 +813,8 @@ public final class UsageProxyFunctions {
      * Provides the list of user summary that can redeem rewards for the given subscription ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -791,6 +844,7 @@ public final class UsageProxyFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSubscriptionRedeemableUserResult> getSubscriptionRedeemableUserPlain(GetSubscriptionRedeemableUserPlainArgs args) {
@@ -802,6 +856,8 @@ public final class UsageProxyFunctions {
      * Provides the list of user summary that can redeem rewards for the given subscription ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -831,6 +887,7 @@ public final class UsageProxyFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSubscriptionRedeemableUserResult> getSubscriptionRedeemableUser(GetSubscriptionRedeemableUserArgs args, InvokeOptions options) {
@@ -842,6 +899,8 @@ public final class UsageProxyFunctions {
      * Provides the list of user summary that can redeem rewards for the given subscription ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -871,6 +930,7 @@ public final class UsageProxyFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSubscriptionRedeemableUserResult> getSubscriptionRedeemableUserPlain(GetSubscriptionRedeemableUserPlainArgs args, InvokeOptions options) {
@@ -882,6 +942,8 @@ public final class UsageProxyFunctions {
      * Provides the list of user summary that can redeem rewards for the given subscription ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -911,6 +973,7 @@ public final class UsageProxyFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSubscriptionRedeemableUsersResult> getSubscriptionRedeemableUsers(GetSubscriptionRedeemableUsersArgs args) {
@@ -922,6 +985,8 @@ public final class UsageProxyFunctions {
      * Provides the list of user summary that can redeem rewards for the given subscription ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -951,6 +1016,7 @@ public final class UsageProxyFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSubscriptionRedeemableUsersResult> getSubscriptionRedeemableUsersPlain(GetSubscriptionRedeemableUsersPlainArgs args) {
@@ -962,6 +1028,8 @@ public final class UsageProxyFunctions {
      * Provides the list of user summary that can redeem rewards for the given subscription ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -991,6 +1059,7 @@ public final class UsageProxyFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSubscriptionRedeemableUsersResult> getSubscriptionRedeemableUsers(GetSubscriptionRedeemableUsersArgs args, InvokeOptions options) {
@@ -1002,6 +1071,8 @@ public final class UsageProxyFunctions {
      * Provides the list of user summary that can redeem rewards for the given subscription ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1031,6 +1102,7 @@ public final class UsageProxyFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSubscriptionRedeemableUsersResult> getSubscriptionRedeemableUsersPlain(GetSubscriptionRedeemableUsersPlainArgs args, InvokeOptions options) {
@@ -1042,6 +1114,8 @@ public final class UsageProxyFunctions {
      * Returns the list of redemption for the subscription ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1073,6 +1147,7 @@ public final class UsageProxyFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSubscriptionRedemptionResult> getSubscriptionRedemption(GetSubscriptionRedemptionArgs args) {
@@ -1084,6 +1159,8 @@ public final class UsageProxyFunctions {
      * Returns the list of redemption for the subscription ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1115,6 +1192,7 @@ public final class UsageProxyFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSubscriptionRedemptionResult> getSubscriptionRedemptionPlain(GetSubscriptionRedemptionPlainArgs args) {
@@ -1126,6 +1204,8 @@ public final class UsageProxyFunctions {
      * Returns the list of redemption for the subscription ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1157,6 +1237,7 @@ public final class UsageProxyFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSubscriptionRedemptionResult> getSubscriptionRedemption(GetSubscriptionRedemptionArgs args, InvokeOptions options) {
@@ -1168,6 +1249,8 @@ public final class UsageProxyFunctions {
      * Returns the list of redemption for the subscription ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1199,6 +1282,7 @@ public final class UsageProxyFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSubscriptionRedemptionResult> getSubscriptionRedemptionPlain(GetSubscriptionRedemptionPlainArgs args, InvokeOptions options) {
@@ -1210,6 +1294,8 @@ public final class UsageProxyFunctions {
      * Returns the list of redemption for the subscription ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1241,6 +1327,7 @@ public final class UsageProxyFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSubscriptionRedemptionsResult> getSubscriptionRedemptions(GetSubscriptionRedemptionsArgs args) {
@@ -1252,6 +1339,8 @@ public final class UsageProxyFunctions {
      * Returns the list of redemption for the subscription ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1283,6 +1372,7 @@ public final class UsageProxyFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSubscriptionRedemptionsResult> getSubscriptionRedemptionsPlain(GetSubscriptionRedemptionsPlainArgs args) {
@@ -1294,6 +1384,8 @@ public final class UsageProxyFunctions {
      * Returns the list of redemption for the subscription ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1325,6 +1417,7 @@ public final class UsageProxyFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSubscriptionRedemptionsResult> getSubscriptionRedemptions(GetSubscriptionRedemptionsArgs args, InvokeOptions options) {
@@ -1336,6 +1429,8 @@ public final class UsageProxyFunctions {
      * Returns the list of redemption for the subscription ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1367,6 +1462,7 @@ public final class UsageProxyFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSubscriptionRedemptionsResult> getSubscriptionRedemptionsPlain(GetSubscriptionRedemptionsPlainArgs args, InvokeOptions options) {
@@ -1378,6 +1474,8 @@ public final class UsageProxyFunctions {
      * Returns the list of rewards for a subscription ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1407,6 +1505,7 @@ public final class UsageProxyFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSubscriptionRewardResult> getSubscriptionReward(GetSubscriptionRewardArgs args) {
@@ -1418,6 +1517,8 @@ public final class UsageProxyFunctions {
      * Returns the list of rewards for a subscription ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1447,6 +1548,7 @@ public final class UsageProxyFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSubscriptionRewardResult> getSubscriptionRewardPlain(GetSubscriptionRewardPlainArgs args) {
@@ -1458,6 +1560,8 @@ public final class UsageProxyFunctions {
      * Returns the list of rewards for a subscription ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1487,6 +1591,7 @@ public final class UsageProxyFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSubscriptionRewardResult> getSubscriptionReward(GetSubscriptionRewardArgs args, InvokeOptions options) {
@@ -1498,6 +1603,8 @@ public final class UsageProxyFunctions {
      * Returns the list of rewards for a subscription ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1527,6 +1634,7 @@ public final class UsageProxyFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSubscriptionRewardResult> getSubscriptionRewardPlain(GetSubscriptionRewardPlainArgs args, InvokeOptions options) {
@@ -1538,6 +1646,8 @@ public final class UsageProxyFunctions {
      * Returns the list of rewards for a subscription ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1567,6 +1677,7 @@ public final class UsageProxyFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSubscriptionRewardsResult> getSubscriptionRewards(GetSubscriptionRewardsArgs args) {
@@ -1578,6 +1689,8 @@ public final class UsageProxyFunctions {
      * Returns the list of rewards for a subscription ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1607,6 +1720,7 @@ public final class UsageProxyFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSubscriptionRewardsResult> getSubscriptionRewardsPlain(GetSubscriptionRewardsPlainArgs args) {
@@ -1618,6 +1732,8 @@ public final class UsageProxyFunctions {
      * Returns the list of rewards for a subscription ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1647,6 +1763,7 @@ public final class UsageProxyFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSubscriptionRewardsResult> getSubscriptionRewards(GetSubscriptionRewardsArgs args, InvokeOptions options) {
@@ -1658,6 +1775,8 @@ public final class UsageProxyFunctions {
      * Returns the list of rewards for a subscription ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1687,6 +1806,7 @@ public final class UsageProxyFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSubscriptionRewardsResult> getSubscriptionRewardsPlain(GetSubscriptionRewardsPlainArgs args, InvokeOptions options) {
@@ -1698,6 +1818,8 @@ public final class UsageProxyFunctions {
      * Returns the list of usage limit for the subscription ID and tenant ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1730,6 +1852,7 @@ public final class UsageProxyFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetUsagelimitsResult> getUsagelimits(GetUsagelimitsArgs args) {
@@ -1741,6 +1864,8 @@ public final class UsageProxyFunctions {
      * Returns the list of usage limit for the subscription ID and tenant ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1773,6 +1898,7 @@ public final class UsageProxyFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetUsagelimitsResult> getUsagelimitsPlain(GetUsagelimitsPlainArgs args) {
@@ -1784,6 +1910,8 @@ public final class UsageProxyFunctions {
      * Returns the list of usage limit for the subscription ID and tenant ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1816,6 +1944,7 @@ public final class UsageProxyFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetUsagelimitsResult> getUsagelimits(GetUsagelimitsArgs args, InvokeOptions options) {
@@ -1827,6 +1956,8 @@ public final class UsageProxyFunctions {
      * Returns the list of usage limit for the subscription ID and tenant ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1859,6 +1990,7 @@ public final class UsageProxyFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetUsagelimitsResult> getUsagelimitsPlain(GetUsagelimitsPlainArgs args, InvokeOptions options) {

@@ -527,7 +527,7 @@ class ManagedInstance(pulumi.CustomResource):
         ManagedInstances can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:OsManagement/managedInstance:ManagedInstance test_managed_instance "id"
+        $ pulumi import oci:OsManagement/managedInstance:ManagedInstance test_managed_instance "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -556,7 +556,7 @@ class ManagedInstance(pulumi.CustomResource):
         ManagedInstances can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:OsManagement/managedInstance:ManagedInstance test_managed_instance "id"
+        $ pulumi import oci:OsManagement/managedInstance:ManagedInstance test_managed_instance "id"
         ```
 
         :param str resource_name: The name of the resource.

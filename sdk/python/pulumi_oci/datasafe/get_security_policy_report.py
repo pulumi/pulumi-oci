@@ -194,12 +194,14 @@ def get_security_policy_report(security_policy_report_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_security_policy_report = oci.DataSafe.get_security_policy_report(security_policy_report_id=oci_data_safe_security_policy_report["test_security_policy_report"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str security_policy_report_id: The OCID of the security policy report resource.
@@ -235,12 +237,14 @@ def get_security_policy_report_output(security_policy_report_id: Optional[pulumi
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_security_policy_report = oci.DataSafe.get_security_policy_report(security_policy_report_id=oci_data_safe_security_policy_report["test_security_policy_report"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str security_policy_report_id: The OCID of the security policy report resource.

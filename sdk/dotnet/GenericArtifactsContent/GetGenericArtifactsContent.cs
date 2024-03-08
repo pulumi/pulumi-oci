@@ -16,10 +16,9 @@ namespace Pulumi.Oci.GenericArtifactsContent
         /// 
         /// Gets the specified artifact's content.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,8 +34,7 @@ namespace Pulumi.Oci.GenericArtifactsContent
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetGenericArtifactsContentResult> InvokeAsync(GetGenericArtifactsContentArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetGenericArtifactsContentResult>("oci:GenericArtifactsContent/getGenericArtifactsContent:getGenericArtifactsContent", args ?? new GetGenericArtifactsContentArgs(), options.WithDefaults());
@@ -46,10 +44,9 @@ namespace Pulumi.Oci.GenericArtifactsContent
         /// 
         /// Gets the specified artifact's content.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -65,8 +62,7 @@ namespace Pulumi.Oci.GenericArtifactsContent
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetGenericArtifactsContentResult> Invoke(GetGenericArtifactsContentInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetGenericArtifactsContentResult>("oci:GenericArtifactsContent/getGenericArtifactsContent:getGenericArtifactsContent", args ?? new GetGenericArtifactsContentInvokeArgs(), options.WithDefaults());

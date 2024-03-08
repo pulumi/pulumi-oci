@@ -639,6 +639,7 @@ class VolumeAttachment(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -656,13 +657,14 @@ class VolumeAttachment(pulumi.CustomResource):
             is_shareable=var["volume_attachment_is_shareable"],
             use_chap=var["volume_attachment_use_chap"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         VolumeAttachments can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/volumeAttachment:VolumeAttachment test_volume_attachment "id"
+        $ pulumi import oci:Core/volumeAttachment:VolumeAttachment test_volume_attachment "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -697,6 +699,7 @@ class VolumeAttachment(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -714,13 +717,14 @@ class VolumeAttachment(pulumi.CustomResource):
             is_shareable=var["volume_attachment_is_shareable"],
             use_chap=var["volume_attachment_use_chap"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         VolumeAttachments can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/volumeAttachment:VolumeAttachment test_volume_attachment "id"
+        $ pulumi import oci:Core/volumeAttachment:VolumeAttachment test_volume_attachment "id"
         ```
 
         :param str resource_name: The name of the resource.

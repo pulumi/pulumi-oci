@@ -135,6 +135,7 @@ def get_instance_pool_load_balancer_attachment(instance_pool_id: Optional[str] =
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -142,6 +143,7 @@ def get_instance_pool_load_balancer_attachment(instance_pool_id: Optional[str] =
     test_instance_pool_load_balancer_attachment = oci.Core.get_instance_pool_load_balancer_attachment(instance_pool_id=oci_core_instance_pool["test_instance_pool"]["id"],
         instance_pool_load_balancer_attachment_id=oci_core_instance_pool_load_balancer_attachment["test_instance_pool_load_balancer_attachment"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str instance_pool_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool.
@@ -175,6 +177,7 @@ def get_instance_pool_load_balancer_attachment_output(instance_pool_id: Optional
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -182,6 +185,7 @@ def get_instance_pool_load_balancer_attachment_output(instance_pool_id: Optional
     test_instance_pool_load_balancer_attachment = oci.Core.get_instance_pool_load_balancer_attachment(instance_pool_id=oci_core_instance_pool["test_instance_pool"]["id"],
         instance_pool_load_balancer_attachment_id=oci_core_instance_pool_load_balancer_attachment["test_instance_pool_load_balancer_attachment"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str instance_pool_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool.

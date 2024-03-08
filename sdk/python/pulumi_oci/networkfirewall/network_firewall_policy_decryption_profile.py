@@ -466,6 +466,7 @@ class NetworkFirewallPolicyDecryptionProfile(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -483,13 +484,14 @@ class NetworkFirewallPolicyDecryptionProfile(pulumi.CustomResource):
             is_unsupported_version_blocked=var["network_firewall_policy_decryption_profile_is_unsupported_version_blocked"],
             is_untrusted_issuer_blocked=var["network_firewall_policy_decryption_profile_is_untrusted_issuer_blocked"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         NetworkFirewallPolicyDecryptionProfiles can be imported using the `name`, e.g.
 
         ```sh
-         $ pulumi import oci:NetworkFirewall/networkFirewallPolicyDecryptionProfile:NetworkFirewallPolicyDecryptionProfile test_network_firewall_policy_decryption_profile "networkFirewallPolicies/{networkFirewallPolicyId}/decryptionProfiles/{decryptionProfileName}"
+        $ pulumi import oci:NetworkFirewall/networkFirewallPolicyDecryptionProfile:NetworkFirewallPolicyDecryptionProfile test_network_firewall_policy_decryption_profile "networkFirewallPolicies/{networkFirewallPolicyId}/decryptionProfiles/{decryptionProfileName}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -524,6 +526,7 @@ class NetworkFirewallPolicyDecryptionProfile(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -541,13 +544,14 @@ class NetworkFirewallPolicyDecryptionProfile(pulumi.CustomResource):
             is_unsupported_version_blocked=var["network_firewall_policy_decryption_profile_is_unsupported_version_blocked"],
             is_untrusted_issuer_blocked=var["network_firewall_policy_decryption_profile_is_untrusted_issuer_blocked"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         NetworkFirewallPolicyDecryptionProfiles can be imported using the `name`, e.g.
 
         ```sh
-         $ pulumi import oci:NetworkFirewall/networkFirewallPolicyDecryptionProfile:NetworkFirewallPolicyDecryptionProfile test_network_firewall_policy_decryption_profile "networkFirewallPolicies/{networkFirewallPolicyId}/decryptionProfiles/{decryptionProfileName}"
+        $ pulumi import oci:NetworkFirewall/networkFirewallPolicyDecryptionProfile:NetworkFirewallPolicyDecryptionProfile test_network_firewall_policy_decryption_profile "networkFirewallPolicies/{networkFirewallPolicyId}/decryptionProfiles/{decryptionProfileName}"
         ```
 
         :param str resource_name: The name of the resource.

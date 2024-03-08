@@ -22,7 +22,7 @@ import javax.annotation.Nullable;
  * NetworkFirewallPolicies can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:NetworkFirewall/networkFirewallPolicy:NetworkFirewallPolicy test_network_firewall_policy &#34;id&#34;
+ * $ pulumi import oci:NetworkFirewall/networkFirewallPolicy:NetworkFirewallPolicy test_network_firewall_policy &#34;id&#34;
  * ```
  * 
  */

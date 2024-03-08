@@ -17,10 +17,9 @@ namespace Pulumi.Oci.Core
         /// Gets the identified error for the specified IPSec tunnel ID.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -37,8 +36,7 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetIpsecConnectionTunnelErrorResult> InvokeAsync(GetIpsecConnectionTunnelErrorArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetIpsecConnectionTunnelErrorResult>("oci:Core/getIpsecConnectionTunnelError:getIpsecConnectionTunnelError", args ?? new GetIpsecConnectionTunnelErrorArgs(), options.WithDefaults());
@@ -49,10 +47,9 @@ namespace Pulumi.Oci.Core
         /// Gets the identified error for the specified IPSec tunnel ID.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -69,8 +66,7 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetIpsecConnectionTunnelErrorResult> Invoke(GetIpsecConnectionTunnelErrorInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetIpsecConnectionTunnelErrorResult>("oci:Core/getIpsecConnectionTunnelError:getIpsecConnectionTunnelError", args ?? new GetIpsecConnectionTunnelErrorInvokeArgs(), options.WithDefaults());

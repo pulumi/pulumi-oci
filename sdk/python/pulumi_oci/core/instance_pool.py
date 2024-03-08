@@ -461,6 +461,7 @@ class InstancePool(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -505,13 +506,14 @@ class InstancePool(pulumi.CustomResource):
                 vnic_selection=var["instance_pool_load_balancers_vnic_selection"],
             )])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         InstancePools can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/instancePool:InstancePool test_instance_pool "id"
+        $ pulumi import oci:Core/instancePool:InstancePool test_instance_pool "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -551,6 +553,7 @@ class InstancePool(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -595,13 +598,14 @@ class InstancePool(pulumi.CustomResource):
                 vnic_selection=var["instance_pool_load_balancers_vnic_selection"],
             )])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         InstancePools can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/instancePool:InstancePool test_instance_pool "id"
+        $ pulumi import oci:Core/instancePool:InstancePool test_instance_pool "id"
         ```
 
         :param str resource_name: The name of the resource.

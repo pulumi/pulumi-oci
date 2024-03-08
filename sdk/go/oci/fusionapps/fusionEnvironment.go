@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -76,15 +77,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // FusionEnvironments can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:FusionApps/fusionEnvironment:FusionEnvironment test_fusion_environment "id"
-//
+// $ pulumi import oci:FusionApps/fusionEnvironment:FusionEnvironment test_fusion_environment "id"
 // ```
 type FusionEnvironment struct {
 	pulumi.CustomResourceState

@@ -19,7 +19,7 @@ namespace Pulumi.Oci.AiAnomalyDetection
     /// DetectAnomalyJobs can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:AiAnomalyDetection/detectAnomalyJob:DetectAnomalyJob test_detect_anomaly_job "id"
+    /// $ pulumi import oci:AiAnomalyDetection/detectAnomalyJob:DetectAnomalyJob test_detect_anomaly_job "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:AiAnomalyDetection/detectAnomalyJob:DetectAnomalyJob")]

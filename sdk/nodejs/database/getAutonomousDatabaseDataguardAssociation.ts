@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -20,6 +21,7 @@ import * as utilities from "../utilities";
  *     autonomousDatabaseId: oci_database_autonomous_database.test_autonomous_database.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAutonomousDatabaseDataguardAssociation(args: GetAutonomousDatabaseDataguardAssociationArgs, opts?: pulumi.InvokeOptions): Promise<GetAutonomousDatabaseDataguardAssociationResult> {
 
@@ -109,6 +111,7 @@ export interface GetAutonomousDatabaseDataguardAssociationResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -118,6 +121,7 @@ export interface GetAutonomousDatabaseDataguardAssociationResult {
  *     autonomousDatabaseId: oci_database_autonomous_database.test_autonomous_database.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAutonomousDatabaseDataguardAssociationOutput(args: GetAutonomousDatabaseDataguardAssociationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousDatabaseDataguardAssociationResult> {
     return pulumi.output(args).apply((a: any) => getAutonomousDatabaseDataguardAssociation(a, opts))

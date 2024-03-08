@@ -22,6 +22,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -67,15 +68,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // FilesystemSnapshotPolicies can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:FileStorage/filesystemSnapshotPolicy:FilesystemSnapshotPolicy test_filesystem_snapshot_policy "id"
-//
+// $ pulumi import oci:FileStorage/filesystemSnapshotPolicy:FilesystemSnapshotPolicy test_filesystem_snapshot_policy "id"
 // ```
 type FilesystemSnapshotPolicy struct {
 	pulumi.CustomResourceState

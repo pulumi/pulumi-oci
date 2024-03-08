@@ -16,6 +16,7 @@ namespace Pulumi.Oci.Mysql
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -97,13 +98,14 @@ namespace Pulumi.Oci.Mysql
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// MysqlDbSystems can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Mysql/mysqlDbSystem:MysqlDbSystem test_mysql_db_system "id"
+    /// $ pulumi import oci:Mysql/mysqlDbSystem:MysqlDbSystem test_mysql_db_system "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Mysql/mysqlDbSystem:MysqlDbSystem")]

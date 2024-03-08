@@ -457,7 +457,7 @@ class ManagedList(pulumi.CustomResource):
         ManagedLists can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:CloudGuard/managedList:ManagedList test_managed_list "id"
+        $ pulumi import oci:CloudGuard/managedList:ManagedList test_managed_list "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -497,7 +497,7 @@ class ManagedList(pulumi.CustomResource):
         ManagedLists can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:CloudGuard/managedList:ManagedList test_managed_list "id"
+        $ pulumi import oci:CloudGuard/managedList:ManagedList test_managed_list "id"
         ```
 
         :param str resource_name: The name of the resource.

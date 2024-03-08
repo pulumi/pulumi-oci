@@ -122,6 +122,7 @@ class AnnouncementSubscriptionsActionsChangeCompartment(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -130,13 +131,14 @@ class AnnouncementSubscriptionsActionsChangeCompartment(pulumi.CustomResource):
             announcement_subscription_id=oci_announcements_service_announcement_subscription["test_announcement_subscription"]["id"],
             compartment_id=var["compartment_id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         AnnouncementSubscriptionsActionsChangeCompartment can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:AnnouncementsService/announcementSubscriptionsActionsChangeCompartment:AnnouncementSubscriptionsActionsChangeCompartment test_announcement_subscriptions_actions_change_compartment "id"
+        $ pulumi import oci:AnnouncementsService/announcementSubscriptionsActionsChangeCompartment:AnnouncementSubscriptionsActionsChangeCompartment test_announcement_subscriptions_actions_change_compartment "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -163,6 +165,7 @@ class AnnouncementSubscriptionsActionsChangeCompartment(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -171,13 +174,14 @@ class AnnouncementSubscriptionsActionsChangeCompartment(pulumi.CustomResource):
             announcement_subscription_id=oci_announcements_service_announcement_subscription["test_announcement_subscription"]["id"],
             compartment_id=var["compartment_id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         AnnouncementSubscriptionsActionsChangeCompartment can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:AnnouncementsService/announcementSubscriptionsActionsChangeCompartment:AnnouncementSubscriptionsActionsChangeCompartment test_announcement_subscriptions_actions_change_compartment "id"
+        $ pulumi import oci:AnnouncementsService/announcementSubscriptionsActionsChangeCompartment:AnnouncementSubscriptionsActionsChangeCompartment test_announcement_subscriptions_actions_change_compartment "id"
         ```
 
         :param str resource_name: The name of the resource.

@@ -44,6 +44,7 @@ namespace Pulumi.Oci.Core
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -73,13 +74,14 @@ namespace Pulumi.Oci.Core
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// IpSecConnections can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Core/ipsec:Ipsec test_ip_sec_connection "id"
+    /// $ pulumi import oci:Core/ipsec:Ipsec test_ip_sec_connection "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Core/ipsec:Ipsec")]

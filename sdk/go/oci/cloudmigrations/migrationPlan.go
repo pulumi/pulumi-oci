@@ -21,9 +21,7 @@ import (
 // MigrationPlans can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:CloudMigrations/migrationPlan:MigrationPlan test_migration_plan "id"
-//
+// $ pulumi import oci:CloudMigrations/migrationPlan:MigrationPlan test_migration_plan "id"
 // ```
 type MigrationPlan struct {
 	pulumi.CustomResourceState

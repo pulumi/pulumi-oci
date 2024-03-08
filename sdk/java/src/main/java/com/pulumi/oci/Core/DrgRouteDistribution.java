@@ -24,6 +24,8 @@ import javax.annotation.Nullable;
  * using the `UpdateDrgAttachment` or `CreateDrgAttachment` operations.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -56,13 +58,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * DrgRouteDistributions can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Core/drgRouteDistribution:DrgRouteDistribution test_drg_route_distribution &#34;id&#34;
+ * $ pulumi import oci:Core/drgRouteDistribution:DrgRouteDistribution test_drg_route_distribution &#34;id&#34;
  * ```
  * 
  */

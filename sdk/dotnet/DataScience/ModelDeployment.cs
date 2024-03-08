@@ -16,6 +16,7 @@ namespace Pulumi.Oci.DataScience
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -89,13 +90,14 @@ namespace Pulumi.Oci.DataScience
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// ModelDeployments can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:DataScience/modelDeployment:ModelDeployment test_model_deployment "id"
+    /// $ pulumi import oci:DataScience/modelDeployment:ModelDeployment test_model_deployment "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:DataScience/modelDeployment:ModelDeployment")]

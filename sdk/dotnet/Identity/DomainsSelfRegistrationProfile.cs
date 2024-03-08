@@ -19,7 +19,7 @@ namespace Pulumi.Oci.Identity
     /// SelfRegistrationProfiles can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Identity/domainsSelfRegistrationProfile:DomainsSelfRegistrationProfile test_self_registration_profile "idcsEndpoint/{idcsEndpoint}/selfRegistrationProfiles/{selfRegistrationProfileId}"
+    /// $ pulumi import oci:Identity/domainsSelfRegistrationProfile:DomainsSelfRegistrationProfile test_self_registration_profile "idcsEndpoint/{idcsEndpoint}/selfRegistrationProfiles/{selfRegistrationProfileId}"
     /// ```
     /// </summary>
     [OciResourceType("oci:Identity/domainsSelfRegistrationProfile:DomainsSelfRegistrationProfile")]

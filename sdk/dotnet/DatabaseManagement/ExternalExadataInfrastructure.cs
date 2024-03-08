@@ -21,6 +21,7 @@ namespace Pulumi.Oci.DatabaseManagement
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -49,13 +50,14 @@ namespace Pulumi.Oci.DatabaseManagement
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// ExternalExadataInfrastructures can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:DatabaseManagement/externalExadataInfrastructure:ExternalExadataInfrastructure test_external_exadata_infrastructure "id"
+    /// $ pulumi import oci:DatabaseManagement/externalExadataInfrastructure:ExternalExadataInfrastructure test_external_exadata_infrastructure "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:DatabaseManagement/externalExadataInfrastructure:ExternalExadataInfrastructure")]

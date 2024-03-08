@@ -33,7 +33,7 @@ import javax.annotation.Nullable;
  * Clusters can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:ContainerEngine/cluster:Cluster test_cluster &#34;id&#34;
+ * $ pulumi import oci:ContainerEngine/cluster:Cluster test_cluster &#34;id&#34;
  * ```
  * 
  */

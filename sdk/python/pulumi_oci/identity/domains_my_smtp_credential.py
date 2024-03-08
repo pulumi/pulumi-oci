@@ -1009,7 +1009,7 @@ class DomainsMySmtpCredential(pulumi.CustomResource):
         MySmtpCredentials can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/domainsMySmtpCredential:DomainsMySmtpCredential test_my_smtp_credential "idcsEndpoint/{idcsEndpoint}/mySmtpCredentials/{mySmtpCredentialId}"
+        $ pulumi import oci:Identity/domainsMySmtpCredential:DomainsMySmtpCredential test_my_smtp_credential "idcsEndpoint/{idcsEndpoint}/mySmtpCredentials/{mySmtpCredentialId}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -1112,7 +1112,7 @@ class DomainsMySmtpCredential(pulumi.CustomResource):
         MySmtpCredentials can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/domainsMySmtpCredential:DomainsMySmtpCredential test_my_smtp_credential "idcsEndpoint/{idcsEndpoint}/mySmtpCredentials/{mySmtpCredentialId}"
+        $ pulumi import oci:Identity/domainsMySmtpCredential:DomainsMySmtpCredential test_my_smtp_credential "idcsEndpoint/{idcsEndpoint}/mySmtpCredentials/{mySmtpCredentialId}"
         ```
 
         :param str resource_name: The name of the resource.

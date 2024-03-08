@@ -104,6 +104,7 @@ class RouteTableAttachment(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -112,13 +113,14 @@ class RouteTableAttachment(pulumi.CustomResource):
             subnet_id=oci_core_subnet["test_subnet"]["id"],
             route_table_id=oci_core_route_table["test_route_table"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Route Table Attachment can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/routeTableAttachment:RouteTableAttachment test_route_table_attachment "{subnetId}/{routeTableId}"
+        $ pulumi import oci:Core/routeTableAttachment:RouteTableAttachment test_route_table_attachment "{subnetId}/{routeTableId}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -139,6 +141,7 @@ class RouteTableAttachment(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -147,13 +150,14 @@ class RouteTableAttachment(pulumi.CustomResource):
             subnet_id=oci_core_subnet["test_subnet"]["id"],
             route_table_id=oci_core_route_table["test_route_table"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Route Table Attachment can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/routeTableAttachment:RouteTableAttachment test_route_table_attachment "{subnetId}/{routeTableId}"
+        $ pulumi import oci:Core/routeTableAttachment:RouteTableAttachment test_route_table_attachment "{subnetId}/{routeTableId}"
         ```
 
         :param str resource_name: The name of the resource.

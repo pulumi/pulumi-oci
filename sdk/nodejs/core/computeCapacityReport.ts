@@ -18,6 +18,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -36,13 +37,14 @@ import * as utilities from "../utilities";
  *     }],
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * ComputeCapacityReports can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Core/computeCapacityReport:ComputeCapacityReport test_compute_capacity_report "id"
+ * $ pulumi import oci:Core/computeCapacityReport:ComputeCapacityReport test_compute_capacity_report "id"
  * ```
  */
 export class ComputeCapacityReport extends pulumi.CustomResource {

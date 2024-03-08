@@ -22,6 +22,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -54,15 +55,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // SdmMaskingPolicyDifferences can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:DataSafe/sdmMaskingPolicyDifference:SdmMaskingPolicyDifference test_sdm_masking_policy_difference "id"
-//
+// $ pulumi import oci:DataSafe/sdmMaskingPolicyDifference:SdmMaskingPolicyDifference test_sdm_masking_policy_difference "id"
 // ```
 type SdmMaskingPolicyDifference struct {
 	pulumi.CustomResourceState

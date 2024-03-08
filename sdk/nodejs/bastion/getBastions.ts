@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,6 +25,7 @@ import * as utilities from "../utilities";
  *     name: _var.bastion_name,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getBastions(args: GetBastionsArgs, opts?: pulumi.InvokeOptions): Promise<GetBastionsResult> {
 
@@ -91,6 +93,7 @@ export interface GetBastionsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -102,6 +105,7 @@ export interface GetBastionsResult {
  *     name: _var.bastion_name,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getBastionsOutput(args: GetBastionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBastionsResult> {
     return pulumi.output(args).apply((a: any) => getBastions(a, opts))

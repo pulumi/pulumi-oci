@@ -18,10 +18,9 @@ namespace Pulumi.Oci.ServiceManagerProxy
         /// Information includes the service instance endpoints and service definition details.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -40,8 +39,7 @@ namespace Pulumi.Oci.ServiceManagerProxy
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetServiceEnvironmentsResult> InvokeAsync(GetServiceEnvironmentsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetServiceEnvironmentsResult>("oci:ServiceManagerProxy/getServiceEnvironments:getServiceEnvironments", args ?? new GetServiceEnvironmentsArgs(), options.WithDefaults());
@@ -53,10 +51,9 @@ namespace Pulumi.Oci.ServiceManagerProxy
         /// Information includes the service instance endpoints and service definition details.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -75,8 +72,7 @@ namespace Pulumi.Oci.ServiceManagerProxy
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetServiceEnvironmentsResult> Invoke(GetServiceEnvironmentsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetServiceEnvironmentsResult>("oci:ServiceManagerProxy/getServiceEnvironments:getServiceEnvironments", args ?? new GetServiceEnvironmentsInvokeArgs(), options.WithDefaults());

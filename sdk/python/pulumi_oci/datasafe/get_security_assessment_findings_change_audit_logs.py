@@ -191,6 +191,7 @@ def get_security_assessment_findings_change_audit_logs(filters: Optional[Sequenc
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -206,6 +207,7 @@ def get_security_assessment_findings_change_audit_logs(filters: Optional[Sequenc
         time_valid_until_greater_than_or_equal_to=var["security_assessment_findings_change_audit_log_time_valid_until_greater_than_or_equal_to"],
         time_valid_until_less_than=var["security_assessment_findings_change_audit_log_time_valid_until_less_than"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str finding_key: The unique key that identifies the finding. It is a string and unique within a security assessment.
@@ -274,6 +276,7 @@ def get_security_assessment_findings_change_audit_logs_output(filters: Optional[
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -289,6 +292,7 @@ def get_security_assessment_findings_change_audit_logs_output(filters: Optional[
         time_valid_until_greater_than_or_equal_to=var["security_assessment_findings_change_audit_log_time_valid_until_greater_than_or_equal_to"],
         time_valid_until_less_than=var["security_assessment_findings_change_audit_log_time_valid_until_less_than"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str finding_key: The unique key that identifies the finding. It is a string and unique within a security assessment.

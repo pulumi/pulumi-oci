@@ -74,6 +74,8 @@ public final class ContainerEngineFunctions {
      * Get the specified addon for a cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -103,6 +105,7 @@ public final class ContainerEngineFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAddonResult> getAddon(GetAddonArgs args) {
@@ -114,6 +117,8 @@ public final class ContainerEngineFunctions {
      * Get the specified addon for a cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -143,6 +148,7 @@ public final class ContainerEngineFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAddonResult> getAddonPlain(GetAddonPlainArgs args) {
@@ -154,6 +160,8 @@ public final class ContainerEngineFunctions {
      * Get the specified addon for a cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -183,6 +191,7 @@ public final class ContainerEngineFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAddonResult> getAddon(GetAddonArgs args, InvokeOptions options) {
@@ -194,6 +203,8 @@ public final class ContainerEngineFunctions {
      * Get the specified addon for a cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -223,6 +234,7 @@ public final class ContainerEngineFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAddonResult> getAddonPlain(GetAddonPlainArgs args, InvokeOptions options) {
@@ -234,6 +246,8 @@ public final class ContainerEngineFunctions {
      * Get list of supported addons for a specific kubernetes version.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -263,6 +277,7 @@ public final class ContainerEngineFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAddonOptionsResult> getAddonOptions(GetAddonOptionsArgs args) {
@@ -274,6 +289,8 @@ public final class ContainerEngineFunctions {
      * Get list of supported addons for a specific kubernetes version.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -303,6 +320,7 @@ public final class ContainerEngineFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAddonOptionsResult> getAddonOptionsPlain(GetAddonOptionsPlainArgs args) {
@@ -314,6 +332,8 @@ public final class ContainerEngineFunctions {
      * Get list of supported addons for a specific kubernetes version.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -343,6 +363,7 @@ public final class ContainerEngineFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAddonOptionsResult> getAddonOptions(GetAddonOptionsArgs args, InvokeOptions options) {
@@ -354,6 +375,8 @@ public final class ContainerEngineFunctions {
      * Get list of supported addons for a specific kubernetes version.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -383,6 +406,7 @@ public final class ContainerEngineFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAddonOptionsResult> getAddonOptionsPlain(GetAddonOptionsPlainArgs args, InvokeOptions options) {
@@ -394,6 +418,8 @@ public final class ContainerEngineFunctions {
      * List addon for a provisioned cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -422,6 +448,7 @@ public final class ContainerEngineFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAddonsResult> getAddons(GetAddonsArgs args) {
@@ -433,6 +460,8 @@ public final class ContainerEngineFunctions {
      * List addon for a provisioned cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -461,6 +490,7 @@ public final class ContainerEngineFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAddonsResult> getAddonsPlain(GetAddonsPlainArgs args) {
@@ -472,6 +502,8 @@ public final class ContainerEngineFunctions {
      * List addon for a provisioned cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -500,6 +532,7 @@ public final class ContainerEngineFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAddonsResult> getAddons(GetAddonsArgs args, InvokeOptions options) {
@@ -511,6 +544,8 @@ public final class ContainerEngineFunctions {
      * List addon for a provisioned cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -539,6 +574,7 @@ public final class ContainerEngineFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAddonsResult> getAddonsPlain(GetAddonsPlainArgs args, InvokeOptions options) {
@@ -550,6 +586,8 @@ public final class ContainerEngineFunctions {
      * Get cluster credential rotation status.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -578,6 +616,7 @@ public final class ContainerEngineFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetClusterCredentialRotationStatusResult> getClusterCredentialRotationStatus(GetClusterCredentialRotationStatusArgs args) {
@@ -589,6 +628,8 @@ public final class ContainerEngineFunctions {
      * Get cluster credential rotation status.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -617,6 +658,7 @@ public final class ContainerEngineFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetClusterCredentialRotationStatusResult> getClusterCredentialRotationStatusPlain(GetClusterCredentialRotationStatusPlainArgs args) {
@@ -628,6 +670,8 @@ public final class ContainerEngineFunctions {
      * Get cluster credential rotation status.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -656,6 +700,7 @@ public final class ContainerEngineFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetClusterCredentialRotationStatusResult> getClusterCredentialRotationStatus(GetClusterCredentialRotationStatusArgs args, InvokeOptions options) {
@@ -667,6 +712,8 @@ public final class ContainerEngineFunctions {
      * Get cluster credential rotation status.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -695,6 +742,7 @@ public final class ContainerEngineFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetClusterCredentialRotationStatusResult> getClusterCredentialRotationStatusPlain(GetClusterCredentialRotationStatusPlainArgs args, InvokeOptions options) {
@@ -706,6 +754,8 @@ public final class ContainerEngineFunctions {
      * Create the Kubeconfig YAML for a cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -737,6 +787,7 @@ public final class ContainerEngineFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetClusterKubeConfigResult> getClusterKubeConfig(GetClusterKubeConfigArgs args) {
@@ -748,6 +799,8 @@ public final class ContainerEngineFunctions {
      * Create the Kubeconfig YAML for a cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -779,6 +832,7 @@ public final class ContainerEngineFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetClusterKubeConfigResult> getClusterKubeConfigPlain(GetClusterKubeConfigPlainArgs args) {
@@ -790,6 +844,8 @@ public final class ContainerEngineFunctions {
      * Create the Kubeconfig YAML for a cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -821,6 +877,7 @@ public final class ContainerEngineFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetClusterKubeConfigResult> getClusterKubeConfig(GetClusterKubeConfigArgs args, InvokeOptions options) {
@@ -832,6 +889,8 @@ public final class ContainerEngineFunctions {
      * Create the Kubeconfig YAML for a cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -863,6 +922,7 @@ public final class ContainerEngineFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetClusterKubeConfigResult> getClusterKubeConfigPlain(GetClusterKubeConfigPlainArgs args, InvokeOptions options) {
@@ -874,6 +934,8 @@ public final class ContainerEngineFunctions {
      * Get options available for clusters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -903,6 +965,7 @@ public final class ContainerEngineFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetClusterOptionResult> getClusterOption(GetClusterOptionArgs args) {
@@ -914,6 +977,8 @@ public final class ContainerEngineFunctions {
      * Get options available for clusters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -943,6 +1008,7 @@ public final class ContainerEngineFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetClusterOptionResult> getClusterOptionPlain(GetClusterOptionPlainArgs args) {
@@ -954,6 +1020,8 @@ public final class ContainerEngineFunctions {
      * Get options available for clusters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -983,6 +1051,7 @@ public final class ContainerEngineFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetClusterOptionResult> getClusterOption(GetClusterOptionArgs args, InvokeOptions options) {
@@ -994,6 +1063,8 @@ public final class ContainerEngineFunctions {
      * Get options available for clusters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1023,6 +1094,7 @@ public final class ContainerEngineFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetClusterOptionResult> getClusterOptionPlain(GetClusterOptionPlainArgs args, InvokeOptions options) {
@@ -1034,6 +1106,8 @@ public final class ContainerEngineFunctions {
      * Get the specified workloadMapping for a cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1063,6 +1137,7 @@ public final class ContainerEngineFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetClusterWorkloadMappingResult> getClusterWorkloadMapping(GetClusterWorkloadMappingArgs args) {
@@ -1074,6 +1149,8 @@ public final class ContainerEngineFunctions {
      * Get the specified workloadMapping for a cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1103,6 +1180,7 @@ public final class ContainerEngineFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetClusterWorkloadMappingResult> getClusterWorkloadMappingPlain(GetClusterWorkloadMappingPlainArgs args) {
@@ -1114,6 +1192,8 @@ public final class ContainerEngineFunctions {
      * Get the specified workloadMapping for a cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1143,6 +1223,7 @@ public final class ContainerEngineFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetClusterWorkloadMappingResult> getClusterWorkloadMapping(GetClusterWorkloadMappingArgs args, InvokeOptions options) {
@@ -1154,6 +1235,8 @@ public final class ContainerEngineFunctions {
      * Get the specified workloadMapping for a cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1183,6 +1266,7 @@ public final class ContainerEngineFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetClusterWorkloadMappingResult> getClusterWorkloadMappingPlain(GetClusterWorkloadMappingPlainArgs args, InvokeOptions options) {
@@ -1194,6 +1278,8 @@ public final class ContainerEngineFunctions {
      * List workloadMappings for a provisioned cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1222,6 +1308,7 @@ public final class ContainerEngineFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetClusterWorkloadMappingsResult> getClusterWorkloadMappings(GetClusterWorkloadMappingsArgs args) {
@@ -1233,6 +1320,8 @@ public final class ContainerEngineFunctions {
      * List workloadMappings for a provisioned cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1261,6 +1350,7 @@ public final class ContainerEngineFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetClusterWorkloadMappingsResult> getClusterWorkloadMappingsPlain(GetClusterWorkloadMappingsPlainArgs args) {
@@ -1272,6 +1362,8 @@ public final class ContainerEngineFunctions {
      * List workloadMappings for a provisioned cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1300,6 +1392,7 @@ public final class ContainerEngineFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetClusterWorkloadMappingsResult> getClusterWorkloadMappings(GetClusterWorkloadMappingsArgs args, InvokeOptions options) {
@@ -1311,6 +1404,8 @@ public final class ContainerEngineFunctions {
      * List workloadMappings for a provisioned cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1339,6 +1434,7 @@ public final class ContainerEngineFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetClusterWorkloadMappingsResult> getClusterWorkloadMappingsPlain(GetClusterWorkloadMappingsPlainArgs args, InvokeOptions options) {
@@ -1350,6 +1446,8 @@ public final class ContainerEngineFunctions {
      * List all the cluster objects in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1380,6 +1478,7 @@ public final class ContainerEngineFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetClustersResult> getClusters(GetClustersArgs args) {
@@ -1391,6 +1490,8 @@ public final class ContainerEngineFunctions {
      * List all the cluster objects in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1421,6 +1522,7 @@ public final class ContainerEngineFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetClustersResult> getClustersPlain(GetClustersPlainArgs args) {
@@ -1432,6 +1534,8 @@ public final class ContainerEngineFunctions {
      * List all the cluster objects in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1462,6 +1566,7 @@ public final class ContainerEngineFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetClustersResult> getClusters(GetClustersArgs args, InvokeOptions options) {
@@ -1473,6 +1578,8 @@ public final class ContainerEngineFunctions {
      * List all the cluster objects in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1503,6 +1610,7 @@ public final class ContainerEngineFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetClustersResult> getClustersPlain(GetClustersPlainArgs args, InvokeOptions options) {
@@ -1526,6 +1634,8 @@ public final class ContainerEngineFunctions {
      * Get the details of a node pool.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1554,6 +1664,7 @@ public final class ContainerEngineFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNodePoolResult> getNodePool(GetNodePoolArgs args) {
@@ -1565,6 +1676,8 @@ public final class ContainerEngineFunctions {
      * Get the details of a node pool.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1593,6 +1706,7 @@ public final class ContainerEngineFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNodePoolResult> getNodePoolPlain(GetNodePoolPlainArgs args) {
@@ -1604,6 +1718,8 @@ public final class ContainerEngineFunctions {
      * Get the details of a node pool.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1632,6 +1748,7 @@ public final class ContainerEngineFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNodePoolResult> getNodePool(GetNodePoolArgs args, InvokeOptions options) {
@@ -1643,6 +1760,8 @@ public final class ContainerEngineFunctions {
      * Get the details of a node pool.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1671,6 +1790,7 @@ public final class ContainerEngineFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNodePoolResult> getNodePoolPlain(GetNodePoolPlainArgs args, InvokeOptions options) {
@@ -1682,6 +1802,8 @@ public final class ContainerEngineFunctions {
      * Get options available for node pools.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1711,6 +1833,7 @@ public final class ContainerEngineFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNodePoolOptionResult> getNodePoolOption(GetNodePoolOptionArgs args) {
@@ -1722,6 +1845,8 @@ public final class ContainerEngineFunctions {
      * Get options available for node pools.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1751,6 +1876,7 @@ public final class ContainerEngineFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNodePoolOptionResult> getNodePoolOptionPlain(GetNodePoolOptionPlainArgs args) {
@@ -1762,6 +1888,8 @@ public final class ContainerEngineFunctions {
      * Get options available for node pools.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1791,6 +1919,7 @@ public final class ContainerEngineFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNodePoolOptionResult> getNodePoolOption(GetNodePoolOptionArgs args, InvokeOptions options) {
@@ -1802,6 +1931,8 @@ public final class ContainerEngineFunctions {
      * Get options available for node pools.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1831,6 +1962,7 @@ public final class ContainerEngineFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNodePoolOptionResult> getNodePoolOptionPlain(GetNodePoolOptionPlainArgs args, InvokeOptions options) {
@@ -1842,6 +1974,8 @@ public final class ContainerEngineFunctions {
      * List all the node pools in a compartment, and optionally filter by cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1873,6 +2007,7 @@ public final class ContainerEngineFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNodePoolsResult> getNodePools(GetNodePoolsArgs args) {
@@ -1884,6 +2019,8 @@ public final class ContainerEngineFunctions {
      * List all the node pools in a compartment, and optionally filter by cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1915,6 +2052,7 @@ public final class ContainerEngineFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNodePoolsResult> getNodePoolsPlain(GetNodePoolsPlainArgs args) {
@@ -1926,6 +2064,8 @@ public final class ContainerEngineFunctions {
      * List all the node pools in a compartment, and optionally filter by cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1957,6 +2097,7 @@ public final class ContainerEngineFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNodePoolsResult> getNodePools(GetNodePoolsArgs args, InvokeOptions options) {
@@ -1968,6 +2109,8 @@ public final class ContainerEngineFunctions {
      * List all the node pools in a compartment, and optionally filter by cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1999,6 +2142,7 @@ public final class ContainerEngineFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNodePoolsResult> getNodePoolsPlain(GetNodePoolsPlainArgs args, InvokeOptions options) {
@@ -2010,6 +2154,8 @@ public final class ContainerEngineFunctions {
      * List all the Pod Shapes in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2040,6 +2186,7 @@ public final class ContainerEngineFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPodShapesResult> getPodShapes(GetPodShapesArgs args) {
@@ -2051,6 +2198,8 @@ public final class ContainerEngineFunctions {
      * List all the Pod Shapes in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2081,6 +2230,7 @@ public final class ContainerEngineFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPodShapesResult> getPodShapesPlain(GetPodShapesPlainArgs args) {
@@ -2092,6 +2242,8 @@ public final class ContainerEngineFunctions {
      * List all the Pod Shapes in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2122,6 +2274,7 @@ public final class ContainerEngineFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPodShapesResult> getPodShapes(GetPodShapesArgs args, InvokeOptions options) {
@@ -2133,6 +2286,8 @@ public final class ContainerEngineFunctions {
      * List all the Pod Shapes in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2163,6 +2318,7 @@ public final class ContainerEngineFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPodShapesResult> getPodShapesPlain(GetPodShapesPlainArgs args, InvokeOptions options) {
@@ -2174,6 +2330,8 @@ public final class ContainerEngineFunctions {
      * Get the details of a virtual node pool.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2202,6 +2360,7 @@ public final class ContainerEngineFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVirtualNodePoolResult> getVirtualNodePool(GetVirtualNodePoolArgs args) {
@@ -2213,6 +2372,8 @@ public final class ContainerEngineFunctions {
      * Get the details of a virtual node pool.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2241,6 +2402,7 @@ public final class ContainerEngineFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVirtualNodePoolResult> getVirtualNodePoolPlain(GetVirtualNodePoolPlainArgs args) {
@@ -2252,6 +2414,8 @@ public final class ContainerEngineFunctions {
      * Get the details of a virtual node pool.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2280,6 +2444,7 @@ public final class ContainerEngineFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVirtualNodePoolResult> getVirtualNodePool(GetVirtualNodePoolArgs args, InvokeOptions options) {
@@ -2291,6 +2456,8 @@ public final class ContainerEngineFunctions {
      * Get the details of a virtual node pool.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2319,6 +2486,7 @@ public final class ContainerEngineFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVirtualNodePoolResult> getVirtualNodePoolPlain(GetVirtualNodePoolPlainArgs args, InvokeOptions options) {
@@ -2331,6 +2499,7 @@ public final class ContainerEngineFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2362,6 +2531,7 @@ public final class ContainerEngineFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVirtualNodePoolsResult> getVirtualNodePools(GetVirtualNodePoolsArgs args) {
@@ -2374,6 +2544,7 @@ public final class ContainerEngineFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2405,6 +2576,7 @@ public final class ContainerEngineFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVirtualNodePoolsResult> getVirtualNodePoolsPlain(GetVirtualNodePoolsPlainArgs args) {
@@ -2417,6 +2589,7 @@ public final class ContainerEngineFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2448,6 +2621,7 @@ public final class ContainerEngineFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVirtualNodePoolsResult> getVirtualNodePools(GetVirtualNodePoolsArgs args, InvokeOptions options) {
@@ -2460,6 +2634,7 @@ public final class ContainerEngineFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2491,6 +2666,7 @@ public final class ContainerEngineFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVirtualNodePoolsResult> getVirtualNodePoolsPlain(GetVirtualNodePoolsPlainArgs args, InvokeOptions options) {
@@ -2502,6 +2678,8 @@ public final class ContainerEngineFunctions {
      * Get the errors of a work request.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2531,6 +2709,7 @@ public final class ContainerEngineFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetWorkRequestErrorsResult> getWorkRequestErrors(GetWorkRequestErrorsArgs args) {
@@ -2542,6 +2721,8 @@ public final class ContainerEngineFunctions {
      * Get the errors of a work request.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2571,6 +2752,7 @@ public final class ContainerEngineFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetWorkRequestErrorsResult> getWorkRequestErrorsPlain(GetWorkRequestErrorsPlainArgs args) {
@@ -2582,6 +2764,8 @@ public final class ContainerEngineFunctions {
      * Get the errors of a work request.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2611,6 +2795,7 @@ public final class ContainerEngineFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetWorkRequestErrorsResult> getWorkRequestErrors(GetWorkRequestErrorsArgs args, InvokeOptions options) {
@@ -2622,6 +2807,8 @@ public final class ContainerEngineFunctions {
      * Get the errors of a work request.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2651,6 +2838,7 @@ public final class ContainerEngineFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetWorkRequestErrorsResult> getWorkRequestErrorsPlain(GetWorkRequestErrorsPlainArgs args, InvokeOptions options) {
@@ -2662,6 +2850,8 @@ public final class ContainerEngineFunctions {
      * Get the logs of a work request.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2691,6 +2881,7 @@ public final class ContainerEngineFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetWorkRequestLogEntriesResult> getWorkRequestLogEntries(GetWorkRequestLogEntriesArgs args) {
@@ -2702,6 +2893,8 @@ public final class ContainerEngineFunctions {
      * Get the logs of a work request.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2731,6 +2924,7 @@ public final class ContainerEngineFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetWorkRequestLogEntriesResult> getWorkRequestLogEntriesPlain(GetWorkRequestLogEntriesPlainArgs args) {
@@ -2742,6 +2936,8 @@ public final class ContainerEngineFunctions {
      * Get the logs of a work request.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2771,6 +2967,7 @@ public final class ContainerEngineFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetWorkRequestLogEntriesResult> getWorkRequestLogEntries(GetWorkRequestLogEntriesArgs args, InvokeOptions options) {
@@ -2782,6 +2979,8 @@ public final class ContainerEngineFunctions {
      * Get the logs of a work request.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2811,6 +3010,7 @@ public final class ContainerEngineFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetWorkRequestLogEntriesResult> getWorkRequestLogEntriesPlain(GetWorkRequestLogEntriesPlainArgs args, InvokeOptions options) {
@@ -2822,6 +3022,8 @@ public final class ContainerEngineFunctions {
      * List all work requests in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2854,6 +3056,7 @@ public final class ContainerEngineFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetWorkRequestsResult> getWorkRequests(GetWorkRequestsArgs args) {
@@ -2865,6 +3068,8 @@ public final class ContainerEngineFunctions {
      * List all work requests in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2897,6 +3102,7 @@ public final class ContainerEngineFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetWorkRequestsResult> getWorkRequestsPlain(GetWorkRequestsPlainArgs args) {
@@ -2908,6 +3114,8 @@ public final class ContainerEngineFunctions {
      * List all work requests in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2940,6 +3148,7 @@ public final class ContainerEngineFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetWorkRequestsResult> getWorkRequests(GetWorkRequestsArgs args, InvokeOptions options) {
@@ -2951,6 +3160,8 @@ public final class ContainerEngineFunctions {
      * List all work requests in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2983,6 +3194,7 @@ public final class ContainerEngineFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetWorkRequestsResult> getWorkRequestsPlain(GetWorkRequestsPlainArgs args, InvokeOptions options) {

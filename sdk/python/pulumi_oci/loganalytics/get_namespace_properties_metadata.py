@@ -132,6 +132,7 @@ def get_namespace_properties_metadata(constraints: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -142,6 +143,7 @@ def get_namespace_properties_metadata(constraints: Optional[str] = None,
         level=var["namespace_properties_metadata_level"],
         name=var["namespace_properties_metadata_name"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str constraints: The constraints that apply to the properties at a certain level.
@@ -186,6 +188,7 @@ def get_namespace_properties_metadata_output(constraints: Optional[pulumi.Input[
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -196,6 +199,7 @@ def get_namespace_properties_metadata_output(constraints: Optional[pulumi.Input[
         level=var["namespace_properties_metadata_level"],
         name=var["namespace_properties_metadata_name"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str constraints: The constraints that apply to the properties at a certain level.

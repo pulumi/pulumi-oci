@@ -16,10 +16,9 @@ namespace Pulumi.Oci.Jms
         /// 
         /// Retrieve Java Migration Analysis result.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,8 +35,7 @@ namespace Pulumi.Oci.Jms
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetFleetJavaMigrationAnalysisResultResult> InvokeAsync(GetFleetJavaMigrationAnalysisResultArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetFleetJavaMigrationAnalysisResultResult>("oci:Jms/getFleetJavaMigrationAnalysisResult:getFleetJavaMigrationAnalysisResult", args ?? new GetFleetJavaMigrationAnalysisResultArgs(), options.WithDefaults());
@@ -47,10 +45,9 @@ namespace Pulumi.Oci.Jms
         /// 
         /// Retrieve Java Migration Analysis result.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -67,8 +64,7 @@ namespace Pulumi.Oci.Jms
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetFleetJavaMigrationAnalysisResultResult> Invoke(GetFleetJavaMigrationAnalysisResultInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFleetJavaMigrationAnalysisResultResult>("oci:Jms/getFleetJavaMigrationAnalysisResult:getFleetJavaMigrationAnalysisResult", args ?? new GetFleetJavaMigrationAnalysisResultInvokeArgs(), options.WithDefaults());

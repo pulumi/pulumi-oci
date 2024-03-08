@@ -382,6 +382,7 @@ class Model(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -405,13 +406,14 @@ class Model(pulumi.CustomResource):
                 "bar-key": "value",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Models can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:AiAnomalyDetection/model:Model test_model "id"
+        $ pulumi import oci:AiAnomalyDetection/model:Model test_model "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -441,6 +443,7 @@ class Model(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -464,13 +467,14 @@ class Model(pulumi.CustomResource):
                 "bar-key": "value",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Models can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:AiAnomalyDetection/model:Model test_model "id"
+        $ pulumi import oci:AiAnomalyDetection/model:Model test_model "id"
         ```
 
         :param str resource_name: The name of the resource.

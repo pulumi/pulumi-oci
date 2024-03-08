@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -43,6 +44,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetExternalListenerServices(ctx *pulumi.Context, args *GetExternalListenerServicesArgs, opts ...pulumi.InvokeOption) (*GetExternalListenerServicesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetExternalListenerServicesResult

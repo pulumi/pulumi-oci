@@ -130,6 +130,7 @@ def get_ratecards(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -140,6 +141,7 @@ def get_ratecards(compartment_id: Optional[str] = None,
         time_from=var["ratecard_time_from"],
         time_to=var["ratecard_time_to"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the root compartment.
@@ -185,6 +187,7 @@ def get_ratecards_output(compartment_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -195,6 +198,7 @@ def get_ratecards_output(compartment_id: Optional[pulumi.Input[str]] = None,
         time_from=var["ratecard_time_from"],
         time_to=var["ratecard_time_to"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the root compartment.

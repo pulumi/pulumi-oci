@@ -105,12 +105,14 @@ def get_ui_password(user_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_ui_password = oci.Identity.get_ui_password(user_id=oci_identity_user["test_user"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str user_id: The OCID of the user.
@@ -140,12 +142,14 @@ def get_ui_password_output(user_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_ui_password = oci.Identity.get_ui_password(user_id=oci_identity_user["test_user"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str user_id: The OCID of the user.

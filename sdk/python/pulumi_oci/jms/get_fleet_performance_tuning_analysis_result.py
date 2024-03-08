@@ -255,6 +255,7 @@ def get_fleet_performance_tuning_analysis_result(fleet_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -262,6 +263,7 @@ def get_fleet_performance_tuning_analysis_result(fleet_id: Optional[str] = None,
     test_fleet_performance_tuning_analysis_result = oci.Jms.get_fleet_performance_tuning_analysis_result(fleet_id=oci_jms_fleet["test_fleet"]["id"],
         performance_tuning_analysis_result_id=oci_apm_synthetics_result["test_result"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
@@ -305,6 +307,7 @@ def get_fleet_performance_tuning_analysis_result_output(fleet_id: Optional[pulum
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -312,6 +315,7 @@ def get_fleet_performance_tuning_analysis_result_output(fleet_id: Optional[pulum
     test_fleet_performance_tuning_analysis_result = oci.Jms.get_fleet_performance_tuning_analysis_result(fleet_id=oci_jms_fleet["test_fleet"]["id"],
         performance_tuning_analysis_result_id=oci_apm_synthetics_result["test_result"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.

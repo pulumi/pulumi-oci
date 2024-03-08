@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -40,6 +41,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupAcceptedAgreement(ctx *pulumi.Context, args *LookupAcceptedAgreementArgs, opts ...pulumi.InvokeOption) (*LookupAcceptedAgreementResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupAcceptedAgreementResult

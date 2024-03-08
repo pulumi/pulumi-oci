@@ -107,6 +107,7 @@ def get_shapes(availability_domain: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -115,6 +116,7 @@ def get_shapes(availability_domain: Optional[str] = None,
         availability_domain=var["shape_availability_domain"],
         image_id=oci_core_image["test_image"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
@@ -152,6 +154,7 @@ def get_shapes_output(availability_domain: Optional[pulumi.Input[Optional[str]]]
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -160,6 +163,7 @@ def get_shapes_output(availability_domain: Optional[pulumi.Input[Optional[str]]]
         availability_domain=var["shape_availability_domain"],
         image_id=oci_core_image["test_image"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`

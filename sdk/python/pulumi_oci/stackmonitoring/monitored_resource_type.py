@@ -385,6 +385,7 @@ class MonitoredResourceType(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -412,13 +413,14 @@ class MonitoredResourceType(pulumi.CustomResource):
             ),
             metric_namespace=var["monitored_resource_type_metric_namespace"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         MonitoredResourceTypes can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:StackMonitoring/monitoredResourceType:MonitoredResourceType test_monitored_resource_type "id"
+        $ pulumi import oci:StackMonitoring/monitoredResourceType:MonitoredResourceType test_monitored_resource_type "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -449,6 +451,7 @@ class MonitoredResourceType(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -476,13 +479,14 @@ class MonitoredResourceType(pulumi.CustomResource):
             ),
             metric_namespace=var["monitored_resource_type_metric_namespace"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         MonitoredResourceTypes can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:StackMonitoring/monitoredResourceType:MonitoredResourceType test_monitored_resource_type "id"
+        $ pulumi import oci:StackMonitoring/monitoredResourceType:MonitoredResourceType test_monitored_resource_type "id"
         ```
 
         :param str resource_name: The name of the resource.

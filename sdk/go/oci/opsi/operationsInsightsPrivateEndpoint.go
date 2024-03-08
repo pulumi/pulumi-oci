@@ -19,6 +19,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -54,15 +55,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // OperationsInsightsPrivateEndpoints can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Opsi/operationsInsightsPrivateEndpoint:OperationsInsightsPrivateEndpoint test_operations_insights_private_endpoint "id"
-//
+// $ pulumi import oci:Opsi/operationsInsightsPrivateEndpoint:OperationsInsightsPrivateEndpoint test_operations_insights_private_endpoint "id"
 // ```
 type OperationsInsightsPrivateEndpoint struct {
 	pulumi.CustomResourceState

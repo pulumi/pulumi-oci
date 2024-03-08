@@ -358,7 +358,7 @@ class LibraryMasingFormat(pulumi.CustomResource):
         LibraryMaskingFormats can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataSafe/libraryMasingFormat:LibraryMasingFormat test_library_masking_format "id"
+        $ pulumi import oci:DataSafe/libraryMasingFormat:LibraryMasingFormat test_library_masking_format "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -395,7 +395,7 @@ class LibraryMasingFormat(pulumi.CustomResource):
         LibraryMaskingFormats can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataSafe/libraryMasingFormat:LibraryMasingFormat test_library_masking_format "id"
+        $ pulumi import oci:DataSafe/libraryMasingFormat:LibraryMasingFormat test_library_masking_format "id"
         ```
 
         :param str resource_name: The name of the resource.

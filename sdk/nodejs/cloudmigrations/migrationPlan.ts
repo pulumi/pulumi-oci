@@ -16,7 +16,7 @@ import * as utilities from "../utilities";
  * MigrationPlans can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:CloudMigrations/migrationPlan:MigrationPlan test_migration_plan "id"
+ * $ pulumi import oci:CloudMigrations/migrationPlan:MigrationPlan test_migration_plan "id"
  * ```
  */
 export class MigrationPlan extends pulumi.CustomResource {

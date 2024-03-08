@@ -299,6 +299,7 @@ class ComputeImageCapabilitySchema(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -321,13 +322,14 @@ class ComputeImageCapabilitySchema(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ComputeImageCapabilitySchemas can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/computeImageCapabilitySchema:ComputeImageCapabilitySchema test_compute_image_capability_schema "id"
+        $ pulumi import oci:Core/computeImageCapabilitySchema:ComputeImageCapabilitySchema test_compute_image_capability_schema "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -353,6 +355,7 @@ class ComputeImageCapabilitySchema(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -375,13 +378,14 @@ class ComputeImageCapabilitySchema(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ComputeImageCapabilitySchemas can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/computeImageCapabilitySchema:ComputeImageCapabilitySchema test_compute_image_capability_schema "id"
+        $ pulumi import oci:Core/computeImageCapabilitySchema:ComputeImageCapabilitySchema test_compute_image_capability_schema "id"
         ```
 
         :param str resource_name: The name of the resource.

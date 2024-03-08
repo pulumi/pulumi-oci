@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -41,13 +42,14 @@ import * as utilities from "../utilities";
  *     metricNamespace: _var.monitored_resource_type_metric_namespace,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * MonitoredResourceTypes can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:StackMonitoring/monitoredResourceType:MonitoredResourceType test_monitored_resource_type "id"
+ * $ pulumi import oci:StackMonitoring/monitoredResourceType:MonitoredResourceType test_monitored_resource_type "id"
  * ```
  */
 export class MonitoredResourceType extends pulumi.CustomResource {

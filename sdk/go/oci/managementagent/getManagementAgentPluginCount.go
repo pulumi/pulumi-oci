@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -42,6 +43,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetManagementAgentPluginCount(ctx *pulumi.Context, args *GetManagementAgentPluginCountArgs, opts ...pulumi.InvokeOption) (*GetManagementAgentPluginCountResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetManagementAgentPluginCountResult

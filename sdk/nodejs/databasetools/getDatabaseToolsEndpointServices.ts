@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,6 +25,7 @@ import * as utilities from "../utilities";
  *     state: _var.database_tools_endpoint_service_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDatabaseToolsEndpointServices(args: GetDatabaseToolsEndpointServicesArgs, opts?: pulumi.InvokeOptions): Promise<GetDatabaseToolsEndpointServicesResult> {
 
@@ -97,6 +99,7 @@ export interface GetDatabaseToolsEndpointServicesResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -108,6 +111,7 @@ export interface GetDatabaseToolsEndpointServicesResult {
  *     state: _var.database_tools_endpoint_service_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDatabaseToolsEndpointServicesOutput(args: GetDatabaseToolsEndpointServicesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDatabaseToolsEndpointServicesResult> {
     return pulumi.output(args).apply((a: any) => getDatabaseToolsEndpointServices(a, opts))

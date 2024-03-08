@@ -112,6 +112,7 @@ def get_etl_runs(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -120,6 +121,7 @@ def get_etl_runs(compartment_id: Optional[str] = None,
         compartment_id=var["compartment_id"],
         display_name=var["em_warehouse_etl_run_display_name"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID of the compartment in which to list resources.
@@ -156,6 +158,7 @@ def get_etl_runs_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = 
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -164,6 +167,7 @@ def get_etl_runs_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = 
         compartment_id=var["compartment_id"],
         display_name=var["em_warehouse_etl_run_display_name"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID of the compartment in which to list resources.

@@ -478,6 +478,7 @@ class Configuration(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -504,13 +505,14 @@ class Configuration(pulumi.CustomResource):
             },
             system_tags=var["configuration_system_tags"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Configurations can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Psql/configuration:Configuration test_configuration "id"
+        $ pulumi import oci:Psql/configuration:Configuration test_configuration "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -544,6 +546,7 @@ class Configuration(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -570,13 +573,14 @@ class Configuration(pulumi.CustomResource):
             },
             system_tags=var["configuration_system_tags"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Configurations can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Psql/configuration:Configuration test_configuration "id"
+        $ pulumi import oci:Psql/configuration:Configuration test_configuration "id"
         ```
 
         :param str resource_name: The name of the resource.

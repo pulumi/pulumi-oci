@@ -564,7 +564,7 @@ class Secret(pulumi.CustomResource):
         Secrets can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Vault/secret:Secret test_secret "id"
+        $ pulumi import oci:Vault/secret:Secret test_secret "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -601,7 +601,7 @@ class Secret(pulumi.CustomResource):
         Secrets can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Vault/secret:Secret test_secret "id"
+        $ pulumi import oci:Vault/secret:Secret test_secret "id"
         ```
 
         :param str resource_name: The name of the resource.

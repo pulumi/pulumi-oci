@@ -121,6 +121,7 @@ class CompareUserAssessment(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -129,13 +130,14 @@ class CompareUserAssessment(pulumi.CustomResource):
             comparison_user_assessment_id=oci_data_safe_user_assessment["test_user_assessment"]["id"],
             user_assessment_id=oci_data_safe_user_assessment["test_user_assessment"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         CompareUserAssessment can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataSafe/compareUserAssessment:CompareUserAssessment test_compare_user_assessment "id"
+        $ pulumi import oci:DataSafe/compareUserAssessment:CompareUserAssessment test_compare_user_assessment "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -161,6 +163,7 @@ class CompareUserAssessment(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -169,13 +172,14 @@ class CompareUserAssessment(pulumi.CustomResource):
             comparison_user_assessment_id=oci_data_safe_user_assessment["test_user_assessment"]["id"],
             user_assessment_id=oci_data_safe_user_assessment["test_user_assessment"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         CompareUserAssessment can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataSafe/compareUserAssessment:CompareUserAssessment test_compare_user_assessment "id"
+        $ pulumi import oci:DataSafe/compareUserAssessment:CompareUserAssessment test_compare_user_assessment "id"
         ```
 
         :param str resource_name: The name of the resource.

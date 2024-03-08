@@ -565,6 +565,7 @@ class ProtectedDatabase(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -588,13 +589,14 @@ class ProtectedDatabase(pulumi.CustomResource):
             },
             is_redo_logs_shipped=var["protected_database_is_redo_logs_shipped"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ProtectedDatabases can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:RecoveryMod/protectedDatabase:ProtectedDatabase test_protected_database "id"
+        $ pulumi import oci:RecoveryMod/protectedDatabase:ProtectedDatabase test_protected_database "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -624,6 +626,7 @@ class ProtectedDatabase(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -647,13 +650,14 @@ class ProtectedDatabase(pulumi.CustomResource):
             },
             is_redo_logs_shipped=var["protected_database_is_redo_logs_shipped"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ProtectedDatabases can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:RecoveryMod/protectedDatabase:ProtectedDatabase test_protected_database "id"
+        $ pulumi import oci:RecoveryMod/protectedDatabase:ProtectedDatabase test_protected_database "id"
         ```
 
         :param str resource_name: The name of the resource.

@@ -16,6 +16,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -33,6 +34,7 @@ import * as utilities from "../utilities";
  *     zoneType: _var.zone_zone_type,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getZones(args: GetZonesArgs, opts?: pulumi.InvokeOptions): Promise<GetZonesResult> {
 
@@ -167,6 +169,7 @@ export interface GetZonesResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -184,6 +187,7 @@ export interface GetZonesResult {
  *     zoneType: _var.zone_zone_type,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getZonesOutput(args: GetZonesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetZonesResult> {
     return pulumi.output(args).apply((a: any) => getZones(a, opts))

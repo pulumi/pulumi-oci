@@ -184,6 +184,7 @@ class LogAnalyticsResourceCategoriesManagement(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -194,6 +195,7 @@ class LogAnalyticsResourceCategoriesManagement(pulumi.CustomResource):
             resource_type=var["log_analytics_resource_categories_management_resource_type"],
             resource_categories=var["log_analytics_resource_categories_management_resource_categories"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -223,6 +225,7 @@ class LogAnalyticsResourceCategoriesManagement(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -233,6 +236,7 @@ class LogAnalyticsResourceCategoriesManagement(pulumi.CustomResource):
             resource_type=var["log_analytics_resource_categories_management_resource_type"],
             resource_categories=var["log_analytics_resource_categories_management_resource_categories"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 

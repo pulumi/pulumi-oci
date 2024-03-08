@@ -18,10 +18,9 @@ namespace Pulumi.Oci.Optimizer
         /// For example, lists when recommendations have been implemented, dismissed, postponed, or reactivated.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -45,8 +44,7 @@ namespace Pulumi.Oci.Optimizer
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetHistoriesResult> InvokeAsync(GetHistoriesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetHistoriesResult>("oci:Optimizer/getHistories:getHistories", args ?? new GetHistoriesArgs(), options.WithDefaults());
@@ -58,10 +56,9 @@ namespace Pulumi.Oci.Optimizer
         /// For example, lists when recommendations have been implemented, dismissed, postponed, or reactivated.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -85,8 +82,7 @@ namespace Pulumi.Oci.Optimizer
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetHistoriesResult> Invoke(GetHistoriesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetHistoriesResult>("oci:Optimizer/getHistories:getHistories", args ?? new GetHistoriesInvokeArgs(), options.WithDefaults());

@@ -159,12 +159,14 @@ def get_suppression(suppression_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_suppression = oci.Email.get_suppression(suppression_id=oci_email_suppression["test_suppression"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str suppression_id: The unique OCID of the suppression.
@@ -198,12 +200,14 @@ def get_suppression_output(suppression_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_suppression = oci.Email.get_suppression(suppression_id=oci_email_suppression["test_suppression"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str suppression_id: The unique OCID of the suppression.

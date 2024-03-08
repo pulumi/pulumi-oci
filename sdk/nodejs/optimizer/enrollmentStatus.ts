@@ -14,7 +14,7 @@ import * as utilities from "../utilities";
  * EnrollmentStatus can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Optimizer/enrollmentStatus:EnrollmentStatus test_enrollment_status "id"
+ * $ pulumi import oci:Optimizer/enrollmentStatus:EnrollmentStatus test_enrollment_status "id"
  * ```
  */
 export class EnrollmentStatus extends pulumi.CustomResource {

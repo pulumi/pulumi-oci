@@ -302,6 +302,7 @@ class HttpRedirect(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -325,13 +326,14 @@ class HttpRedirect(pulumi.CustomResource):
             },
             response_code=var["http_redirect_response_code"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         HttpRedirects can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Waas/httpRedirect:HttpRedirect test_http_redirect "id"
+        $ pulumi import oci:Waas/httpRedirect:HttpRedirect test_http_redirect "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -357,6 +359,7 @@ class HttpRedirect(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -380,13 +383,14 @@ class HttpRedirect(pulumi.CustomResource):
             },
             response_code=var["http_redirect_response_code"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         HttpRedirects can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Waas/httpRedirect:HttpRedirect test_http_redirect "id"
+        $ pulumi import oci:Waas/httpRedirect:HttpRedirect test_http_redirect "id"
         ```
 
         :param str resource_name: The name of the resource.

@@ -23,6 +23,8 @@ import javax.annotation.Nullable;
  * This operation is not supported for keys having protection mode `EXTERNAL`.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -57,13 +59,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * Verify can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Kms/verify:Verify test_verify &#34;id&#34;
+ * $ pulumi import oci:Kms/verify:Verify test_verify &#34;id&#34;
  * ```
  * 
  */

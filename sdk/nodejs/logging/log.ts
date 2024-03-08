@@ -14,6 +14,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -42,13 +43,14 @@ import * as utilities from "../utilities";
  *     retentionDuration: _var.log_retention_duration,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * Logs can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Logging/log:Log test_log "logGroupId/{logGroupId}/logId/{logId}"
+ * $ pulumi import oci:Logging/log:Log test_log "logGroupId/{logGroupId}/logId/{logId}"
  * ```
  */
 export class Log extends pulumi.CustomResource {

@@ -17,10 +17,9 @@ namespace Pulumi.Oci.Waa
         /// Gets a list of all WebAppAccelerationPolicies in a compartment.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -39,8 +38,7 @@ namespace Pulumi.Oci.Waa
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetAppAccelerationPoliciesResult> InvokeAsync(GetAppAccelerationPoliciesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAppAccelerationPoliciesResult>("oci:Waa/getAppAccelerationPolicies:getAppAccelerationPolicies", args ?? new GetAppAccelerationPoliciesArgs(), options.WithDefaults());
@@ -51,10 +49,9 @@ namespace Pulumi.Oci.Waa
         /// Gets a list of all WebAppAccelerationPolicies in a compartment.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -73,8 +70,7 @@ namespace Pulumi.Oci.Waa
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetAppAccelerationPoliciesResult> Invoke(GetAppAccelerationPoliciesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAppAccelerationPoliciesResult>("oci:Waa/getAppAccelerationPolicies:getAppAccelerationPolicies", args ?? new GetAppAccelerationPoliciesInvokeArgs(), options.WithDefaults());

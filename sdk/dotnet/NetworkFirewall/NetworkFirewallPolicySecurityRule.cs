@@ -16,6 +16,7 @@ namespace Pulumi.Oci.NetworkFirewall
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -49,13 +50,14 @@ namespace Pulumi.Oci.NetworkFirewall
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// NetworkFirewallPolicySecurityRules can be imported using the `name`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:NetworkFirewall/networkFirewallPolicySecurityRule:NetworkFirewallPolicySecurityRule test_network_firewall_policy_security_rule "networkFirewallPolicies/{networkFirewallPolicyId}/securityRules/{securityRuleName}"
+    /// $ pulumi import oci:NetworkFirewall/networkFirewallPolicySecurityRule:NetworkFirewallPolicySecurityRule test_network_firewall_policy_security_rule "networkFirewallPolicies/{networkFirewallPolicyId}/securityRules/{securityRuleName}"
     /// ```
     /// </summary>
     [OciResourceType("oci:NetworkFirewall/networkFirewallPolicySecurityRule:NetworkFirewallPolicySecurityRule")]

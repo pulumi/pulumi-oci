@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -26,6 +27,7 @@ import * as utilities from "../utilities";
  *     resourceTypeSchemaVersion: _var.app_role_resource_type_schema_version,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDomainsAppRole(args: GetDomainsAppRoleArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsAppRoleResult> {
 
@@ -152,7 +154,7 @@ export interface GetDomainsAppRoleResult {
      */
     readonly localizedDisplayName: string;
     /**
-     * AppRole members - when requesting members attribute, it is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%26count=10]
+     * AppRole members - when requesting members attribute, it is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%!c(MISSING)ount=10]
      */
     readonly members: outputs.Identity.GetDomainsAppRoleMember[];
     /**
@@ -192,6 +194,7 @@ export interface GetDomainsAppRoleResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -205,6 +208,7 @@ export interface GetDomainsAppRoleResult {
  *     resourceTypeSchemaVersion: _var.app_role_resource_type_schema_version,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDomainsAppRoleOutput(args: GetDomainsAppRoleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsAppRoleResult> {
     return pulumi.output(args).apply((a: any) => getDomainsAppRole(a, opts))

@@ -16,6 +16,7 @@ namespace Pulumi.Oci.Identity
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -56,13 +57,14 @@ namespace Pulumi.Oci.Identity
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// CloudGates can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Identity/domainsCloudGate:DomainsCloudGate test_cloud_gate "idcsEndpoint/{idcsEndpoint}/cloudGates/{cloudGateId}"
+    /// $ pulumi import oci:Identity/domainsCloudGate:DomainsCloudGate test_cloud_gate "idcsEndpoint/{idcsEndpoint}/cloudGates/{cloudGateId}"
     /// ```
     /// </summary>
     [OciResourceType("oci:Identity/domainsCloudGate:DomainsCloudGate")]

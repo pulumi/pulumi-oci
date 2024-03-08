@@ -580,19 +580,21 @@ class ManagementAgent(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
 
         test_management_agent = oci.management_agent.ManagementAgent("testManagementAgent", managed_agent_id=oci_management_agent_managed_agent["test_managed_agent"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ManagementAgents can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:ManagementAgent/managementAgent:ManagementAgent test_management_agent "id"
+        $ pulumi import oci:ManagementAgent/managementAgent:ManagementAgent test_management_agent "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -617,19 +619,21 @@ class ManagementAgent(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
 
         test_management_agent = oci.management_agent.ManagementAgent("testManagementAgent", managed_agent_id=oci_management_agent_managed_agent["test_managed_agent"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ManagementAgents can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:ManagementAgent/managementAgent:ManagementAgent test_management_agent "id"
+        $ pulumi import oci:ManagementAgent/managementAgent:ManagementAgent test_management_agent "id"
         ```
 
         :param str resource_name: The name of the resource.

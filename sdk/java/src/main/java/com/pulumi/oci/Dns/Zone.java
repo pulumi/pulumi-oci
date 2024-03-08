@@ -33,6 +33,8 @@ import javax.annotation.Nullable;
  * `oraclevcn.com` within the default protected view of a VCN-dedicated resolver is not permitted.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -78,13 +80,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * Zones can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Dns/zone:Zone test_zone &#34;id&#34;
+ * $ pulumi import oci:Dns/zone:Zone test_zone &#34;id&#34;
  * ```
  * 
  */

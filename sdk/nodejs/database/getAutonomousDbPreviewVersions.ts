@@ -14,6 +14,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,6 +23,7 @@ import * as utilities from "../utilities";
  *     compartmentId: _var.compartment_id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAutonomousDbPreviewVersions(args: GetAutonomousDbPreviewVersionsArgs, opts?: pulumi.InvokeOptions): Promise<GetAutonomousDbPreviewVersionsResult> {
 
@@ -66,6 +68,7 @@ export interface GetAutonomousDbPreviewVersionsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -74,6 +77,7 @@ export interface GetAutonomousDbPreviewVersionsResult {
  *     compartmentId: _var.compartment_id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAutonomousDbPreviewVersionsOutput(args: GetAutonomousDbPreviewVersionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousDbPreviewVersionsResult> {
     return pulumi.output(args).apply((a: any) => getAutonomousDbPreviewVersions(a, opts))

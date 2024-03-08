@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -36,13 +37,14 @@ import * as utilities from "../utilities";
  *     vpcUsers: _var.backup_destination_vpc_users,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * BackupDestinations can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Database/backupDestination:BackupDestination test_backup_destination "id"
+ * $ pulumi import oci:Database/backupDestination:BackupDestination test_backup_destination "id"
  * ```
  */
 export class BackupDestination extends pulumi.CustomResource {

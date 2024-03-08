@@ -218,12 +218,14 @@ def get_dedicated_vm_host(dedicated_vm_host_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_dedicated_vm_host = oci.Core.get_dedicated_vm_host(dedicated_vm_host_id=oci_core_dedicated_vm_host["test_dedicated_vm_host"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str dedicated_vm_host_id: The OCID of the dedicated VM host.
@@ -261,12 +263,14 @@ def get_dedicated_vm_host_output(dedicated_vm_host_id: Optional[pulumi.Input[str
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_dedicated_vm_host = oci.Core.get_dedicated_vm_host(dedicated_vm_host_id=oci_core_dedicated_vm_host["test_dedicated_vm_host"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str dedicated_vm_host_id: The OCID of the dedicated VM host.

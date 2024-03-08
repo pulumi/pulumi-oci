@@ -908,6 +908,7 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -941,13 +942,14 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
             poll_till=var["log_analytics_object_collection_rule_poll_till"],
             timezone=var["log_analytics_object_collection_rule_timezone"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         LogAnalyticsObjectCollectionRules can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:LogAnalytics/logAnalyticsObjectCollectionRule:LogAnalyticsObjectCollectionRule test_log_analytics_object_collection_rule "namespaces/{namespaceName}/logAnalyticsObjectCollectionRules/{logAnalyticsObjectCollectionRuleId}"
+        $ pulumi import oci:LogAnalytics/logAnalyticsObjectCollectionRule:LogAnalyticsObjectCollectionRule test_log_analytics_object_collection_rule "namespaces/{namespaceName}/logAnalyticsObjectCollectionRules/{logAnalyticsObjectCollectionRuleId}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -994,6 +996,7 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -1027,13 +1030,14 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
             poll_till=var["log_analytics_object_collection_rule_poll_till"],
             timezone=var["log_analytics_object_collection_rule_timezone"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         LogAnalyticsObjectCollectionRules can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:LogAnalytics/logAnalyticsObjectCollectionRule:LogAnalyticsObjectCollectionRule test_log_analytics_object_collection_rule "namespaces/{namespaceName}/logAnalyticsObjectCollectionRules/{logAnalyticsObjectCollectionRuleId}"
+        $ pulumi import oci:LogAnalytics/logAnalyticsObjectCollectionRule:LogAnalyticsObjectCollectionRule test_log_analytics_object_collection_rule "namespaces/{namespaceName}/logAnalyticsObjectCollectionRules/{logAnalyticsObjectCollectionRuleId}"
         ```
 
         :param str resource_name: The name of the resource.

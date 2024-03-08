@@ -135,6 +135,7 @@ def get_fleet_performance_tuning_analysis_results(application_id: Optional[str] 
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -145,6 +146,7 @@ def get_fleet_performance_tuning_analysis_results(application_id: Optional[str] 
         time_end=var["fleet_performance_tuning_analysis_result_time_end"],
         time_start=var["fleet_performance_tuning_analysis_result_time_start"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str application_id: The Fleet-unique identifier of the related application.
@@ -189,6 +191,7 @@ def get_fleet_performance_tuning_analysis_results_output(application_id: Optiona
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -199,6 +202,7 @@ def get_fleet_performance_tuning_analysis_results_output(application_id: Optiona
         time_end=var["fleet_performance_tuning_analysis_result_time_end"],
         time_start=var["fleet_performance_tuning_analysis_result_time_start"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str application_id: The Fleet-unique identifier of the related application.

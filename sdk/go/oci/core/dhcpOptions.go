@@ -36,9 +36,7 @@ import (
 // DhcpOptions can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Core/dhcpOptions:DhcpOptions test_dhcp_options "id"
-//
+// $ pulumi import oci:Core/dhcpOptions:DhcpOptions test_dhcp_options "id"
 // ```
 type DhcpOptions struct {
 	pulumi.CustomResourceState

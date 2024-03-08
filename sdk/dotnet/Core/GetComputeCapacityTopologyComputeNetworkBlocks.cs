@@ -16,10 +16,9 @@ namespace Pulumi.Oci.Core
         /// 
         /// Lists compute network blocks in the specified compute capacity topology.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -38,8 +37,7 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetComputeCapacityTopologyComputeNetworkBlocksResult> InvokeAsync(GetComputeCapacityTopologyComputeNetworkBlocksArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetComputeCapacityTopologyComputeNetworkBlocksResult>("oci:Core/getComputeCapacityTopologyComputeNetworkBlocks:getComputeCapacityTopologyComputeNetworkBlocks", args ?? new GetComputeCapacityTopologyComputeNetworkBlocksArgs(), options.WithDefaults());
@@ -49,10 +47,9 @@ namespace Pulumi.Oci.Core
         /// 
         /// Lists compute network blocks in the specified compute capacity topology.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -71,8 +68,7 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetComputeCapacityTopologyComputeNetworkBlocksResult> Invoke(GetComputeCapacityTopologyComputeNetworkBlocksInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetComputeCapacityTopologyComputeNetworkBlocksResult>("oci:Core/getComputeCapacityTopologyComputeNetworkBlocks:getComputeCapacityTopologyComputeNetworkBlocks", args ?? new GetComputeCapacityTopologyComputeNetworkBlocksInvokeArgs(), options.WithDefaults());

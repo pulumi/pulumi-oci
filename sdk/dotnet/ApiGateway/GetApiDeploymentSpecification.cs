@@ -16,10 +16,9 @@ namespace Pulumi.Oci.ApiGateway
         /// 
         /// Gets an API Deployment specification by identifier.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,8 +34,7 @@ namespace Pulumi.Oci.ApiGateway
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetApiDeploymentSpecificationResult> InvokeAsync(GetApiDeploymentSpecificationArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetApiDeploymentSpecificationResult>("oci:ApiGateway/getApiDeploymentSpecification:getApiDeploymentSpecification", args ?? new GetApiDeploymentSpecificationArgs(), options.WithDefaults());
@@ -46,10 +44,9 @@ namespace Pulumi.Oci.ApiGateway
         /// 
         /// Gets an API Deployment specification by identifier.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -65,8 +62,7 @@ namespace Pulumi.Oci.ApiGateway
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetApiDeploymentSpecificationResult> Invoke(GetApiDeploymentSpecificationInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetApiDeploymentSpecificationResult>("oci:ApiGateway/getApiDeploymentSpecification:getApiDeploymentSpecification", args ?? new GetApiDeploymentSpecificationInvokeArgs(), options.WithDefaults());

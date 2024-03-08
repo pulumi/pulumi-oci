@@ -581,6 +581,7 @@ class SensitiveType(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -604,13 +605,14 @@ class SensitiveType(pulumi.CustomResource):
             search_type=var["sensitive_type_search_type"],
             short_name=var["sensitive_type_short_name"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         SensitiveTypes can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataSafe/sensitiveType:SensitiveType test_sensitive_type "id"
+        $ pulumi import oci:DataSafe/sensitiveType:SensitiveType test_sensitive_type "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -648,6 +650,7 @@ class SensitiveType(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -671,13 +674,14 @@ class SensitiveType(pulumi.CustomResource):
             search_type=var["sensitive_type_search_type"],
             short_name=var["sensitive_type_short_name"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         SensitiveTypes can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataSafe/sensitiveType:SensitiveType test_sensitive_type "id"
+        $ pulumi import oci:DataSafe/sensitiveType:SensitiveType test_sensitive_type "id"
         ```
 
         :param str resource_name: The name of the resource.

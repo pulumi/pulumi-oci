@@ -112,6 +112,7 @@ def get_private_applications(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -120,6 +121,7 @@ def get_private_applications(compartment_id: Optional[str] = None,
         display_name=var["private_application_display_name"],
         private_application_id=oci_service_catalog_private_application["test_private_application"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The unique identifier for the compartment.
@@ -156,6 +158,7 @@ def get_private_applications_output(compartment_id: Optional[pulumi.Input[str]] 
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -164,6 +167,7 @@ def get_private_applications_output(compartment_id: Optional[pulumi.Input[str]] 
         display_name=var["private_application_display_name"],
         private_application_id=oci_service_catalog_private_application["test_private_application"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The unique identifier for the compartment.

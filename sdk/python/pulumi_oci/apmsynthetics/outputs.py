@@ -3296,7 +3296,7 @@ class GetMonitorsMonitorCollectionItemResult(dict):
         :param str target: Specify the endpoint on which to run the monitor. For BROWSER, REST and NETWORK monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
         :param str time_created: The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
         :param str time_updated: The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
-        :param int timeout_in_seconds: Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+        :param int timeout_in_seconds: Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30%!o(MISSING)f repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50%!o(MISSING)f repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
         :param int vantage_point_count: Number of vantage points where monitor is running.
         :param Sequence['GetMonitorsMonitorCollectionItemVantagePointArgs'] vantage_points: List of public and dedicated vantage points where the monitor is running.
         """
@@ -3497,7 +3497,7 @@ class GetMonitorsMonitorCollectionItemResult(dict):
     @pulumi.getter(name="timeoutInSeconds")
     def timeout_in_seconds(self) -> int:
         """
-        Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+        Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30%!o(MISSING)f repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50%!o(MISSING)f repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
         """
         return pulumi.get(self, "timeout_in_seconds")
 

@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -19,6 +20,7 @@ import * as utilities from "../utilities";
  *     dependsOn: [oci_containerengine_cluster_start_credential_rotation_management.test_cluster_start_credential_rotation_management],
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *

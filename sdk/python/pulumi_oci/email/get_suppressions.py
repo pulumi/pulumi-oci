@@ -124,6 +124,7 @@ def get_suppressions(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -133,6 +134,7 @@ def get_suppressions(compartment_id: Optional[str] = None,
         time_created_greater_than_or_equal_to=var["suppression_time_created_greater_than_or_equal_to"],
         time_created_less_than=var["suppression_time_created_less_than"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID for the compartment.
@@ -179,6 +181,7 @@ def get_suppressions_output(compartment_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -188,6 +191,7 @@ def get_suppressions_output(compartment_id: Optional[pulumi.Input[str]] = None,
         time_created_greater_than_or_equal_to=var["suppression_time_created_greater_than_or_equal_to"],
         time_created_less_than=var["suppression_time_created_less_than"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID for the compartment.

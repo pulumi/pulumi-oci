@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,6 +23,7 @@ import * as utilities from "../utilities";
  *     subscribedServiceId: oci_onesubscription_subscribed_service.test_subscribed_service.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getCommitments(args: GetCommitmentsArgs, opts?: pulumi.InvokeOptions): Promise<GetCommitmentsResult> {
 
@@ -74,6 +76,7 @@ export interface GetCommitmentsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -83,6 +86,7 @@ export interface GetCommitmentsResult {
  *     subscribedServiceId: oci_onesubscription_subscribed_service.test_subscribed_service.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getCommitmentsOutput(args: GetCommitmentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCommitmentsResult> {
     return pulumi.output(args).apply((a: any) => getCommitments(a, opts))

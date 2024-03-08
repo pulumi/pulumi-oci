@@ -16,10 +16,9 @@ namespace Pulumi.Oci.Autoscaling
         /// 
         /// Gets information about the specified autoscaling configuration.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,8 +34,7 @@ namespace Pulumi.Oci.Autoscaling
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetAutoScalingConfigurationResult> InvokeAsync(GetAutoScalingConfigurationArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAutoScalingConfigurationResult>("oci:Autoscaling/getAutoScalingConfiguration:getAutoScalingConfiguration", args ?? new GetAutoScalingConfigurationArgs(), options.WithDefaults());
@@ -46,10 +44,9 @@ namespace Pulumi.Oci.Autoscaling
         /// 
         /// Gets information about the specified autoscaling configuration.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -65,8 +62,7 @@ namespace Pulumi.Oci.Autoscaling
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetAutoScalingConfigurationResult> Invoke(GetAutoScalingConfigurationInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAutoScalingConfigurationResult>("oci:Autoscaling/getAutoScalingConfiguration:getAutoScalingConfiguration", args ?? new GetAutoScalingConfigurationInvokeArgs(), options.WithDefaults());

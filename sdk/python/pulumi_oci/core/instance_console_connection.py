@@ -286,6 +286,7 @@ class InstanceConsoleConnection(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -300,13 +301,14 @@ class InstanceConsoleConnection(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         InstanceConsoleConnections can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/instanceConsoleConnection:InstanceConsoleConnection test_instance_console_connection "id"
+        $ pulumi import oci:Core/instanceConsoleConnection:InstanceConsoleConnection test_instance_console_connection "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -337,6 +339,7 @@ class InstanceConsoleConnection(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -351,13 +354,14 @@ class InstanceConsoleConnection(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         InstanceConsoleConnections can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/instanceConsoleConnection:InstanceConsoleConnection test_instance_console_connection "id"
+        $ pulumi import oci:Core/instanceConsoleConnection:InstanceConsoleConnection test_instance_console_connection "id"
         ```
 
         :param str resource_name: The name of the resource.

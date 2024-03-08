@@ -1460,7 +1460,7 @@ class DomainsIdentitySetting(pulumi.CustomResource):
         IdentitySettings can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/domainsIdentitySetting:DomainsIdentitySetting test_identity_setting "idcsEndpoint/{idcsEndpoint}/identitySettings/{identitySettingId}"
+        $ pulumi import oci:Identity/domainsIdentitySetting:DomainsIdentitySetting test_identity_setting "idcsEndpoint/{idcsEndpoint}/identitySettings/{identitySettingId}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -1618,7 +1618,7 @@ class DomainsIdentitySetting(pulumi.CustomResource):
         IdentitySettings can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/domainsIdentitySetting:DomainsIdentitySetting test_identity_setting "idcsEndpoint/{idcsEndpoint}/identitySettings/{identitySettingId}"
+        $ pulumi import oci:Identity/domainsIdentitySetting:DomainsIdentitySetting test_identity_setting "idcsEndpoint/{idcsEndpoint}/identitySettings/{identitySettingId}"
         ```
 
         :param str resource_name: The name of the resource.

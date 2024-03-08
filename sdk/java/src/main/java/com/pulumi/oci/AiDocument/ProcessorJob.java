@@ -23,6 +23,8 @@ import javax.annotation.Nullable;
  * Create a processor job for document analysis.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -82,13 +84,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * ProcessorJobs can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:AiDocument/processorJob:ProcessorJob test_processor_job &#34;id&#34;
+ * $ pulumi import oci:AiDocument/processorJob:ProcessorJob test_processor_job &#34;id&#34;
  * ```
  * 
  */

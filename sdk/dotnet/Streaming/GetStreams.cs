@@ -20,10 +20,9 @@ namespace Pulumi.Oci.Streaming
         /// The compartment id and stream pool id cannot be specified at the same time.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -43,8 +42,7 @@ namespace Pulumi.Oci.Streaming
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetStreamsResult> InvokeAsync(GetStreamsArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetStreamsResult>("oci:Streaming/getStreams:getStreams", args ?? new GetStreamsArgs(), options.WithDefaults());
@@ -58,10 +56,9 @@ namespace Pulumi.Oci.Streaming
         /// The compartment id and stream pool id cannot be specified at the same time.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -81,8 +78,7 @@ namespace Pulumi.Oci.Streaming
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetStreamsResult> Invoke(GetStreamsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetStreamsResult>("oci:Streaming/getStreams:getStreams", args ?? new GetStreamsInvokeArgs(), options.WithDefaults());

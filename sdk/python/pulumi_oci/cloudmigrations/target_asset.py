@@ -476,6 +476,7 @@ class TargetAsset(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -554,13 +555,14 @@ class TargetAsset(pulumi.CustomResource):
             block_volumes_performance=var["target_asset_block_volumes_performance"],
             ms_license=var["target_asset_ms_license"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         TargetAssets can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:CloudMigrations/targetAsset:TargetAsset test_target_asset "id"
+        $ pulumi import oci:CloudMigrations/targetAsset:TargetAsset test_target_asset "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -586,6 +588,7 @@ class TargetAsset(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -664,13 +667,14 @@ class TargetAsset(pulumi.CustomResource):
             block_volumes_performance=var["target_asset_block_volumes_performance"],
             ms_license=var["target_asset_ms_license"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         TargetAssets can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:CloudMigrations/targetAsset:TargetAsset test_target_asset "id"
+        $ pulumi import oci:CloudMigrations/targetAsset:TargetAsset test_target_asset "id"
         ```
 
         :param str resource_name: The name of the resource.

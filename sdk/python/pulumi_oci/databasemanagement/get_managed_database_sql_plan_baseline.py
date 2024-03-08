@@ -265,6 +265,7 @@ def get_managed_database_sql_plan_baseline(managed_database_id: Optional[str] = 
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -273,6 +274,7 @@ def get_managed_database_sql_plan_baseline(managed_database_id: Optional[str] = 
         plan_name=var["managed_database_sql_plan_baseline_plan_name"],
         opc_named_credential_id=var["managed_database_sql_plan_baseline_opc_named_credential_id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
@@ -320,6 +322,7 @@ def get_managed_database_sql_plan_baseline_output(managed_database_id: Optional[
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -328,6 +331,7 @@ def get_managed_database_sql_plan_baseline_output(managed_database_id: Optional[
         plan_name=var["managed_database_sql_plan_baseline_plan_name"],
         opc_named_credential_id=var["managed_database_sql_plan_baseline_opc_named_credential_id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.

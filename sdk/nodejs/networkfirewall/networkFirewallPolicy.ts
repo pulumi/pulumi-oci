@@ -10,7 +10,7 @@ import * as utilities from "../utilities";
  * NetworkFirewallPolicies can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:NetworkFirewall/networkFirewallPolicy:NetworkFirewallPolicy test_network_firewall_policy "id"
+ * $ pulumi import oci:NetworkFirewall/networkFirewallPolicy:NetworkFirewallPolicy test_network_firewall_policy "id"
  * ```
  */
 export class NetworkFirewallPolicy extends pulumi.CustomResource {

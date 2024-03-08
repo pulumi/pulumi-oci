@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -39,6 +40,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetNetworkLoadBalancersProtocols(ctx *pulumi.Context, args *GetNetworkLoadBalancersProtocolsArgs, opts ...pulumi.InvokeOption) (*GetNetworkLoadBalancersProtocolsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetNetworkLoadBalancersProtocolsResult

@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -19,6 +20,7 @@ import * as utilities from "../utilities";
  *     publicIpPoolId: oci_core_public_ip_pool.test_public_ip_pool.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getPublicIpPool(args: GetPublicIpPoolArgs, opts?: pulumi.InvokeOptions): Promise<GetPublicIpPoolResult> {
 
@@ -83,6 +85,7 @@ export interface GetPublicIpPoolResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -91,6 +94,7 @@ export interface GetPublicIpPoolResult {
  *     publicIpPoolId: oci_core_public_ip_pool.test_public_ip_pool.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getPublicIpPoolOutput(args: GetPublicIpPoolOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPublicIpPoolResult> {
     return pulumi.output(args).apply((a: any) => getPublicIpPool(a, opts))

@@ -32,6 +32,7 @@ namespace Pulumi.Oci.Core
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -68,13 +69,14 @@ namespace Pulumi.Oci.Core
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// RouteTables can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Core/routeTable:RouteTable test_route_table "id"
+    /// $ pulumi import oci:Core/routeTable:RouteTable test_route_table "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Core/routeTable:RouteTable")]

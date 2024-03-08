@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -40,6 +41,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupSecurityPolicyDeployment(ctx *pulumi.Context, args *LookupSecurityPolicyDeploymentArgs, opts ...pulumi.InvokeOption) (*LookupSecurityPolicyDeploymentResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupSecurityPolicyDeploymentResult

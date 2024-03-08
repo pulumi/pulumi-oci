@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -44,13 +45,14 @@ import * as utilities from "../utilities";
  *     },
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * Functions can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Functions/function:Function test_function "id"
+ * $ pulumi import oci:Functions/function:Function test_function "id"
  * ```
  */
 export class Function extends pulumi.CustomResource {

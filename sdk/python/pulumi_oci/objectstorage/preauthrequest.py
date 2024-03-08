@@ -392,6 +392,7 @@ class Preauthrequest(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -404,13 +405,14 @@ class Preauthrequest(pulumi.CustomResource):
             bucket_listing_action=var["preauthenticated_request_bucket_listing_action"],
             object=var["preauthenticated_request_object"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         PreauthenticatedRequests can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:ObjectStorage/preauthrequest:Preauthrequest test_preauthenticated_request "n/{namespaceName}/b/{bucketName}/p/{parId}"
+        $ pulumi import oci:ObjectStorage/preauthrequest:Preauthrequest test_preauthenticated_request "n/{namespaceName}/b/{bucketName}/p/{parId}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -441,6 +443,7 @@ class Preauthrequest(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -453,13 +456,14 @@ class Preauthrequest(pulumi.CustomResource):
             bucket_listing_action=var["preauthenticated_request_bucket_listing_action"],
             object=var["preauthenticated_request_object"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         PreauthenticatedRequests can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:ObjectStorage/preauthrequest:Preauthrequest test_preauthenticated_request "n/{namespaceName}/b/{bucketName}/p/{parId}"
+        $ pulumi import oci:ObjectStorage/preauthrequest:Preauthrequest test_preauthenticated_request "n/{namespaceName}/b/{bucketName}/p/{parId}"
         ```
 
         :param str resource_name: The name of the resource.

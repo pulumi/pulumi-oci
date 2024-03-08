@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -37,13 +38,14 @@ import * as utilities from "../utilities";
  *     sensitiveTypeIdsForDiscoveries: _var.sensitive_data_model_sensitive_type_ids_for_discovery,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * SensitiveDataModels can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:DataSafe/sensitiveDataModel:SensitiveDataModel test_sensitive_data_model "id"
+ * $ pulumi import oci:DataSafe/sensitiveDataModel:SensitiveDataModel test_sensitive_data_model "id"
  * ```
  */
 export class SensitiveDataModel extends pulumi.CustomResource {

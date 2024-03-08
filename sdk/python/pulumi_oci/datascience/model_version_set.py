@@ -332,6 +332,7 @@ class ModelVersionSet(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -347,13 +348,14 @@ class ModelVersionSet(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ModelVersionSets can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataScience/modelVersionSet:ModelVersionSet test_model_version_set "id"
+        $ pulumi import oci:DataScience/modelVersionSet:ModelVersionSet test_model_version_set "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -382,6 +384,7 @@ class ModelVersionSet(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -397,13 +400,14 @@ class ModelVersionSet(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ModelVersionSets can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataScience/modelVersionSet:ModelVersionSet test_model_version_set "id"
+        $ pulumi import oci:DataScience/modelVersionSet:ModelVersionSet test_model_version_set "id"
         ```
 
         :param str resource_name: The name of the resource.

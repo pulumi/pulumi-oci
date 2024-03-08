@@ -530,6 +530,7 @@ class Asset(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -638,13 +639,14 @@ class Asset(pulumi.CustomResource):
                 vmware_tools_status=var["asset_vmware_vm_vmware_tools_status"],
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Assets can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:CloudBridge/asset:Asset test_asset "id"
+        $ pulumi import oci:CloudBridge/asset:Asset test_asset "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -676,6 +678,7 @@ class Asset(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -784,13 +787,14 @@ class Asset(pulumi.CustomResource):
                 vmware_tools_status=var["asset_vmware_vm_vmware_tools_status"],
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Assets can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:CloudBridge/asset:Asset test_asset "id"
+        $ pulumi import oci:CloudBridge/asset:Asset test_asset "id"
         ```
 
         :param str resource_name: The name of the resource.

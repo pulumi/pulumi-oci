@@ -22,6 +22,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -80,21 +81,18 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 // **Note:** The `sessionPersistenceConfiguration` (application cookie stickiness) and `lbCookieSessionPersistenceConfiguration`
 //
 //	(LB cookie stickiness) attributes are mutually exclusive. To avoid returning an error, configure only one of these two
 //	attributes per backend set.
-//
-// {{% /example %}}
 //
 // ## Import
 //
 // BackendSets can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:LoadBalancer/backendSet:BackendSet test_backend_set "loadBalancers/{loadBalancerId}/backendSets/{backendSetName}"
-//
+// $ pulumi import oci:LoadBalancer/backendSet:BackendSet test_backend_set "loadBalancers/{loadBalancerId}/backendSets/{backendSetName}"
 // ```
 type BackendSet struct {
 	pulumi.CustomResourceState

@@ -19,7 +19,7 @@ namespace Pulumi.Oci.DatabaseTools
     /// DatabaseToolsConnections can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:DatabaseTools/databaseToolsConnection:DatabaseToolsConnection test_database_tools_connection "id"
+    /// $ pulumi import oci:DatabaseTools/databaseToolsConnection:DatabaseToolsConnection test_database_tools_connection "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:DatabaseTools/databaseToolsConnection:DatabaseToolsConnection")]

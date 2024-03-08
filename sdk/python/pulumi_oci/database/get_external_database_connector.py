@@ -231,12 +231,14 @@ def get_external_database_connector(external_database_connector_id: Optional[str
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_external_database_connector = oci.Database.get_external_database_connector(external_database_connector_id=oci_database_external_database_connector["test_external_database_connector"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str external_database_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database connector resource (`ExternalDatabaseConnectorId`).
@@ -275,12 +277,14 @@ def get_external_database_connector_output(external_database_connector_id: Optio
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_external_database_connector = oci.Database.get_external_database_connector(external_database_connector_id=oci_database_external_database_connector["test_external_database_connector"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str external_database_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database connector resource (`ExternalDatabaseConnectorId`).

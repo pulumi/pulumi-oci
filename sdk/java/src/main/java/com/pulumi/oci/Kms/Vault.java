@@ -37,6 +37,8 @@ import javax.annotation.Nullable;
  * write operations exceeds 10 requests per second for a given tenancy.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -80,13 +82,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * Vaults can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Kms/vault:Vault test_vault &#34;id&#34;
+ * $ pulumi import oci:Kms/vault:Vault test_vault &#34;id&#34;
  * ```
  * 
  */

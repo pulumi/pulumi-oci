@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -25,6 +26,7 @@ import * as utilities from "../utilities";
  *     state: _var.replication_target_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getReplicationTargets(args: GetReplicationTargetsArgs, opts?: pulumi.InvokeOptions): Promise<GetReplicationTargetsResult> {
 
@@ -103,6 +105,7 @@ export interface GetReplicationTargetsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -115,6 +118,7 @@ export interface GetReplicationTargetsResult {
  *     state: _var.replication_target_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getReplicationTargetsOutput(args: GetReplicationTargetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetReplicationTargetsResult> {
     return pulumi.output(args).apply((a: any) => getReplicationTargets(a, opts))

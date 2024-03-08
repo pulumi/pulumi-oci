@@ -38,6 +38,8 @@ public final class DatabaseMigrationFunctions {
      * Display Database Connection details.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -66,6 +68,7 @@ public final class DatabaseMigrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetConnectionResult> getConnection(GetConnectionArgs args) {
@@ -77,6 +80,8 @@ public final class DatabaseMigrationFunctions {
      * Display Database Connection details.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -105,6 +110,7 @@ public final class DatabaseMigrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetConnectionResult> getConnectionPlain(GetConnectionPlainArgs args) {
@@ -116,6 +122,8 @@ public final class DatabaseMigrationFunctions {
      * Display Database Connection details.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -144,6 +152,7 @@ public final class DatabaseMigrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetConnectionResult> getConnection(GetConnectionArgs args, InvokeOptions options) {
@@ -155,6 +164,8 @@ public final class DatabaseMigrationFunctions {
      * Display Database Connection details.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -183,6 +194,7 @@ public final class DatabaseMigrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetConnectionResult> getConnectionPlain(GetConnectionPlainArgs args, InvokeOptions options) {
@@ -194,6 +206,8 @@ public final class DatabaseMigrationFunctions {
      * List all Database Connections.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -224,6 +238,7 @@ public final class DatabaseMigrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetConnectionsResult> getConnections(GetConnectionsArgs args) {
@@ -235,6 +250,8 @@ public final class DatabaseMigrationFunctions {
      * List all Database Connections.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -265,6 +282,7 @@ public final class DatabaseMigrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetConnectionsResult> getConnectionsPlain(GetConnectionsPlainArgs args) {
@@ -276,6 +294,8 @@ public final class DatabaseMigrationFunctions {
      * List all Database Connections.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -306,6 +326,7 @@ public final class DatabaseMigrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetConnectionsResult> getConnections(GetConnectionsArgs args, InvokeOptions options) {
@@ -317,6 +338,8 @@ public final class DatabaseMigrationFunctions {
      * List all Database Connections.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -347,6 +370,7 @@ public final class DatabaseMigrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetConnectionsResult> getConnectionsPlain(GetConnectionsPlainArgs args, InvokeOptions options) {
@@ -358,6 +382,8 @@ public final class DatabaseMigrationFunctions {
      * Get the Pre-Migration Advisor report details
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -386,6 +412,7 @@ public final class DatabaseMigrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetJobAdvisorReportResult> getJobAdvisorReport(GetJobAdvisorReportArgs args) {
@@ -397,6 +424,8 @@ public final class DatabaseMigrationFunctions {
      * Get the Pre-Migration Advisor report details
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -425,6 +454,7 @@ public final class DatabaseMigrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetJobAdvisorReportResult> getJobAdvisorReportPlain(GetJobAdvisorReportPlainArgs args) {
@@ -436,6 +466,8 @@ public final class DatabaseMigrationFunctions {
      * Get the Pre-Migration Advisor report details
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -464,6 +496,7 @@ public final class DatabaseMigrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetJobAdvisorReportResult> getJobAdvisorReport(GetJobAdvisorReportArgs args, InvokeOptions options) {
@@ -475,6 +508,8 @@ public final class DatabaseMigrationFunctions {
      * Get the Pre-Migration Advisor report details
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -503,6 +538,7 @@ public final class DatabaseMigrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetJobAdvisorReportResult> getJobAdvisorReportPlain(GetJobAdvisorReportPlainArgs args, InvokeOptions options) {
@@ -514,6 +550,8 @@ public final class DatabaseMigrationFunctions {
      * List the Job Outputs
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -542,6 +580,7 @@ public final class DatabaseMigrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetJobOutputResult> getJobOutput(GetJobOutputArgs args) {
@@ -553,6 +592,8 @@ public final class DatabaseMigrationFunctions {
      * List the Job Outputs
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -581,6 +622,7 @@ public final class DatabaseMigrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetJobOutputResult> getJobOutputPlain(GetJobOutputPlainArgs args) {
@@ -592,6 +634,8 @@ public final class DatabaseMigrationFunctions {
      * List the Job Outputs
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -620,6 +664,7 @@ public final class DatabaseMigrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetJobOutputResult> getJobOutput(GetJobOutputArgs args, InvokeOptions options) {
@@ -631,6 +676,8 @@ public final class DatabaseMigrationFunctions {
      * List the Job Outputs
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -659,6 +706,7 @@ public final class DatabaseMigrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetJobOutputResult> getJobOutputPlain(GetJobOutputPlainArgs args, InvokeOptions options) {
@@ -670,6 +718,8 @@ public final class DatabaseMigrationFunctions {
      * Display Migration details.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -698,6 +748,7 @@ public final class DatabaseMigrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMigrationResult> getMigration(GetMigrationArgs args) {
@@ -709,6 +760,8 @@ public final class DatabaseMigrationFunctions {
      * Display Migration details.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -737,6 +790,7 @@ public final class DatabaseMigrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMigrationResult> getMigrationPlain(GetMigrationPlainArgs args) {
@@ -748,6 +802,8 @@ public final class DatabaseMigrationFunctions {
      * Display Migration details.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -776,6 +832,7 @@ public final class DatabaseMigrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMigrationResult> getMigration(GetMigrationArgs args, InvokeOptions options) {
@@ -787,6 +844,8 @@ public final class DatabaseMigrationFunctions {
      * Display Migration details.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -815,6 +874,7 @@ public final class DatabaseMigrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMigrationResult> getMigrationPlain(GetMigrationPlainArgs args, InvokeOptions options) {
@@ -826,6 +886,8 @@ public final class DatabaseMigrationFunctions {
      * Display sample object types to exclude or include for a Migration.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -852,6 +914,7 @@ public final class DatabaseMigrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMigrationObjectTypesResult> getMigrationObjectTypes() {
@@ -863,6 +926,8 @@ public final class DatabaseMigrationFunctions {
      * Display sample object types to exclude or include for a Migration.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -889,6 +954,7 @@ public final class DatabaseMigrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMigrationObjectTypesResult> getMigrationObjectTypesPlain() {
@@ -900,6 +966,8 @@ public final class DatabaseMigrationFunctions {
      * Display sample object types to exclude or include for a Migration.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -926,6 +994,7 @@ public final class DatabaseMigrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMigrationObjectTypesResult> getMigrationObjectTypes(GetMigrationObjectTypesArgs args) {
@@ -937,6 +1006,8 @@ public final class DatabaseMigrationFunctions {
      * Display sample object types to exclude or include for a Migration.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -963,6 +1034,7 @@ public final class DatabaseMigrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMigrationObjectTypesResult> getMigrationObjectTypesPlain(GetMigrationObjectTypesPlainArgs args) {
@@ -974,6 +1046,8 @@ public final class DatabaseMigrationFunctions {
      * Display sample object types to exclude or include for a Migration.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1000,6 +1074,7 @@ public final class DatabaseMigrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMigrationObjectTypesResult> getMigrationObjectTypes(GetMigrationObjectTypesArgs args, InvokeOptions options) {
@@ -1011,6 +1086,8 @@ public final class DatabaseMigrationFunctions {
      * Display sample object types to exclude or include for a Migration.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1037,6 +1114,7 @@ public final class DatabaseMigrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMigrationObjectTypesResult> getMigrationObjectTypesPlain(GetMigrationObjectTypesPlainArgs args, InvokeOptions options) {
@@ -1048,6 +1126,8 @@ public final class DatabaseMigrationFunctions {
      * List all Migrations.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1079,6 +1159,7 @@ public final class DatabaseMigrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMigrationsResult> getMigrations(GetMigrationsArgs args) {
@@ -1090,6 +1171,8 @@ public final class DatabaseMigrationFunctions {
      * List all Migrations.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1121,6 +1204,7 @@ public final class DatabaseMigrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMigrationsResult> getMigrationsPlain(GetMigrationsPlainArgs args) {
@@ -1132,6 +1216,8 @@ public final class DatabaseMigrationFunctions {
      * List all Migrations.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1163,6 +1249,7 @@ public final class DatabaseMigrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMigrationsResult> getMigrations(GetMigrationsArgs args, InvokeOptions options) {
@@ -1174,6 +1261,8 @@ public final class DatabaseMigrationFunctions {
      * List all Migrations.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1205,6 +1294,7 @@ public final class DatabaseMigrationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMigrationsResult> getMigrationsPlain(GetMigrationsPlainArgs args, InvokeOptions options) {

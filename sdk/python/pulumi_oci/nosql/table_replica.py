@@ -219,6 +219,7 @@ class TableReplica(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -230,13 +231,14 @@ class TableReplica(pulumi.CustomResource):
             max_read_units=var["table_replica_max_read_units"],
             max_write_units=var["table_replica_max_write_units"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         TableReplicas can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Nosql/tableReplica:TableReplica test_table_replica "tables/{tableNameOrId}/replicas/{region}"
+        $ pulumi import oci:Nosql/tableReplica:TableReplica test_table_replica "tables/{tableNameOrId}/replicas/{region}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -264,6 +266,7 @@ class TableReplica(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -275,13 +278,14 @@ class TableReplica(pulumi.CustomResource):
             max_read_units=var["table_replica_max_read_units"],
             max_write_units=var["table_replica_max_write_units"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         TableReplicas can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Nosql/tableReplica:TableReplica test_table_replica "tables/{tableNameOrId}/replicas/{region}"
+        $ pulumi import oci:Nosql/tableReplica:TableReplica test_table_replica "tables/{tableNameOrId}/replicas/{region}"
         ```
 
         :param str resource_name: The name of the resource.

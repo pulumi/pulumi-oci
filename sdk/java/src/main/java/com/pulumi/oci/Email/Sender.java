@@ -22,6 +22,8 @@ import javax.annotation.Nullable;
  * Creates a sender for a tenancy in a given compartment.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -53,13 +55,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * Senders can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Email/sender:Sender test_sender &#34;id&#34;
+ * $ pulumi import oci:Email/sender:Sender test_sender &#34;id&#34;
  * ```
  * 
  */

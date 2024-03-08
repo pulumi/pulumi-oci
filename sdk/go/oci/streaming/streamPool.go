@@ -20,6 +20,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -61,15 +62,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // StreamPools can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Streaming/streamPool:StreamPool test_stream_pool "id"
-//
+// $ pulumi import oci:Streaming/streamPool:StreamPool test_stream_pool "id"
 // ```
 type StreamPool struct {
 	pulumi.CustomResourceState

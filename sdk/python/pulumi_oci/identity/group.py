@@ -284,6 +284,7 @@ class Group(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -298,13 +299,14 @@ class Group(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Groups can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/group:Group test_group "id"
+        $ pulumi import oci:Identity/group:Group test_group "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -348,6 +350,7 @@ class Group(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -362,13 +365,14 @@ class Group(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Groups can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/group:Group test_group "id"
+        $ pulumi import oci:Identity/group:Group test_group "id"
         ```
 
         :param str resource_name: The name of the resource.

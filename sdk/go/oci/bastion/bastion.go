@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -54,15 +55,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Bastions can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Bastion/bastion:Bastion test_bastion "id"
-//
+// $ pulumi import oci:Bastion/bastion:Bastion test_bastion "id"
 // ```
 type Bastion struct {
 	pulumi.CustomResourceState

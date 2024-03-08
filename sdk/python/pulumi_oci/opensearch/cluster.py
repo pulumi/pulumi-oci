@@ -1123,15 +1123,18 @@ class Cluster(pulumi.CustomResource):
         The below policies must be created in compartment before creating OpensearchCluster
 
         ##### {Compartment-Name} - Name of  your compartment
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         ```
+        <!--End PulumiCodeChooser -->
 
         For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\\
         Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -1169,13 +1172,14 @@ class Cluster(pulumi.CustomResource):
             security_mode=var["opensearch_cluster_security_mode"],
             system_tags=var["opensearch_cluster_system_tags"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         OpensearchClusters can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Opensearch/cluster:Cluster test_opensearch_cluster "id"
+        $ pulumi import oci:Opensearch/cluster:Cluster test_opensearch_cluster "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -1228,15 +1232,18 @@ class Cluster(pulumi.CustomResource):
         The below policies must be created in compartment before creating OpensearchCluster
 
         ##### {Compartment-Name} - Name of  your compartment
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         ```
+        <!--End PulumiCodeChooser -->
 
         For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\\
         Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -1274,13 +1281,14 @@ class Cluster(pulumi.CustomResource):
             security_mode=var["opensearch_cluster_security_mode"],
             system_tags=var["opensearch_cluster_system_tags"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         OpensearchClusters can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Opensearch/cluster:Cluster test_opensearch_cluster "id"
+        $ pulumi import oci:Opensearch/cluster:Cluster test_opensearch_cluster "id"
         ```
 
         :param str resource_name: The name of the resource.

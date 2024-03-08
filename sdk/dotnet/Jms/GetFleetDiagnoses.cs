@@ -17,10 +17,9 @@ namespace Pulumi.Oci.Jms
         /// List potential diagnoses that would put a fleet into FAILED or NEEDS_ATTENTION lifecycle state.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,8 +35,7 @@ namespace Pulumi.Oci.Jms
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetFleetDiagnosesResult> InvokeAsync(GetFleetDiagnosesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetFleetDiagnosesResult>("oci:Jms/getFleetDiagnoses:getFleetDiagnoses", args ?? new GetFleetDiagnosesArgs(), options.WithDefaults());
@@ -48,10 +46,9 @@ namespace Pulumi.Oci.Jms
         /// List potential diagnoses that would put a fleet into FAILED or NEEDS_ATTENTION lifecycle state.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -67,8 +64,7 @@ namespace Pulumi.Oci.Jms
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetFleetDiagnosesResult> Invoke(GetFleetDiagnosesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFleetDiagnosesResult>("oci:Jms/getFleetDiagnoses:getFleetDiagnoses", args ?? new GetFleetDiagnosesInvokeArgs(), options.WithDefaults());

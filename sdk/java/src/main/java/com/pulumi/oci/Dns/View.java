@@ -23,6 +23,8 @@ import javax.annotation.Nullable;
  * Creates a new view in the specified compartment.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -55,13 +57,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * Views can be imported using their OCID, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Dns/view:View test_view &#34;id&#34;
+ * $ pulumi import oci:Dns/view:View test_view &#34;id&#34;
  * ```
  * 
  */

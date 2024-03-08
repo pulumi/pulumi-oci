@@ -14,6 +14,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -27,6 +28,7 @@ import * as utilities from "../utilities";
  *     xOneOriginRegion: _var.ratecard_x_one_origin_region,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getRatecards(args: GetRatecardsArgs, opts?: pulumi.InvokeOptions): Promise<GetRatecardsResult> {
 
@@ -104,6 +106,7 @@ export interface GetRatecardsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -117,6 +120,7 @@ export interface GetRatecardsResult {
  *     xOneOriginRegion: _var.ratecard_x_one_origin_region,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getRatecardsOutput(args: GetRatecardsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRatecardsResult> {
     return pulumi.output(args).apply((a: any) => getRatecards(a, opts))

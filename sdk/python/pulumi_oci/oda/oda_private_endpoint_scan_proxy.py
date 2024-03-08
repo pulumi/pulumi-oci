@@ -221,6 +221,7 @@ class OdaPrivateEndpointScanProxy(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -235,13 +236,14 @@ class OdaPrivateEndpointScanProxy(pulumi.CustomResource):
             )],
             scan_listener_type=var["oda_private_endpoint_scan_proxy_scan_listener_type"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         OdaPrivateEndpointScanProxies can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Oda/odaPrivateEndpointScanProxy:OdaPrivateEndpointScanProxy test_oda_private_endpoint_scan_proxy "odaPrivateEndpoints/{odaPrivateEndpointId}/odaPrivateEndpointScanProxies/{odaPrivateEndpointScanProxyId}"
+        $ pulumi import oci:Oda/odaPrivateEndpointScanProxy:OdaPrivateEndpointScanProxy test_oda_private_endpoint_scan_proxy "odaPrivateEndpoints/{odaPrivateEndpointId}/odaPrivateEndpointScanProxies/{odaPrivateEndpointScanProxyId}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -271,6 +273,7 @@ class OdaPrivateEndpointScanProxy(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -285,13 +288,14 @@ class OdaPrivateEndpointScanProxy(pulumi.CustomResource):
             )],
             scan_listener_type=var["oda_private_endpoint_scan_proxy_scan_listener_type"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         OdaPrivateEndpointScanProxies can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Oda/odaPrivateEndpointScanProxy:OdaPrivateEndpointScanProxy test_oda_private_endpoint_scan_proxy "odaPrivateEndpoints/{odaPrivateEndpointId}/odaPrivateEndpointScanProxies/{odaPrivateEndpointScanProxyId}"
+        $ pulumi import oci:Oda/odaPrivateEndpointScanProxy:OdaPrivateEndpointScanProxy test_oda_private_endpoint_scan_proxy "odaPrivateEndpoints/{odaPrivateEndpointId}/odaPrivateEndpointScanProxies/{odaPrivateEndpointScanProxyId}"
         ```
 
         :param str resource_name: The name of the resource.

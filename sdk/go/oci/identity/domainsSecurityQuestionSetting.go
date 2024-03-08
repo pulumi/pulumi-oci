@@ -21,9 +21,7 @@ import (
 // SecurityQuestionSettings can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Identity/domainsSecurityQuestionSetting:DomainsSecurityQuestionSetting test_security_question_setting "idcsEndpoint/{idcsEndpoint}/securityQuestionSettings/{securityQuestionSettingId}"
-//
+// $ pulumi import oci:Identity/domainsSecurityQuestionSetting:DomainsSecurityQuestionSetting test_security_question_setting "idcsEndpoint/{idcsEndpoint}/securityQuestionSettings/{securityQuestionSettingId}"
 // ```
 type DomainsSecurityQuestionSetting struct {
 	pulumi.CustomResourceState

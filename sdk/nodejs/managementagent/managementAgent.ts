@@ -11,19 +11,21 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
  * const testManagementAgent = new oci.managementagent.ManagementAgent("testManagementAgent", {managedAgentId: oci_management_agent_managed_agent.test_managed_agent.id});
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * ManagementAgents can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:ManagementAgent/managementAgent:ManagementAgent test_management_agent "id"
+ * $ pulumi import oci:ManagementAgent/managementAgent:ManagementAgent test_management_agent "id"
  * ```
  */
 export class ManagementAgent extends pulumi.CustomResource {

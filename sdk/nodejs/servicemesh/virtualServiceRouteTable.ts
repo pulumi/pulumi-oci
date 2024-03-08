@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -42,13 +43,14 @@ import * as utilities from "../utilities";
  *     priority: _var.virtual_service_route_table_priority,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * VirtualServiceRouteTables can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:ServiceMesh/virtualServiceRouteTable:VirtualServiceRouteTable test_virtual_service_route_table "id"
+ * $ pulumi import oci:ServiceMesh/virtualServiceRouteTable:VirtualServiceRouteTable test_virtual_service_route_table "id"
  * ```
  */
 export class VirtualServiceRouteTable extends pulumi.CustomResource {

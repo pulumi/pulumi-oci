@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -57,15 +58,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // StreamDistributionChannels can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:MediaServices/streamDistributionChannel:StreamDistributionChannel test_stream_distribution_channel "id"
-//
+// $ pulumi import oci:MediaServices/streamDistributionChannel:StreamDistributionChannel test_stream_distribution_channel "id"
 // ```
 type StreamDistributionChannel struct {
 	pulumi.CustomResourceState

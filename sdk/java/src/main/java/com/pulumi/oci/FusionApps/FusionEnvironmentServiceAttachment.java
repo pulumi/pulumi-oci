@@ -22,6 +22,8 @@ import javax.annotation.Nullable;
  * Attaches a service instance to the fusion pod.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -52,13 +54,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * FusionEnvironmentServiceAttachments can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:FusionApps/fusionEnvironmentServiceAttachment:FusionEnvironmentServiceAttachment test_fusion_environment_service_attachment &#34;fusionEnvironments/{fusionEnvironmentId}/serviceAttachments/{serviceAttachmentId}&#34;
+ * $ pulumi import oci:FusionApps/fusionEnvironmentServiceAttachment:FusionEnvironmentServiceAttachment test_fusion_environment_service_attachment &#34;fusionEnvironments/{fusionEnvironmentId}/serviceAttachments/{serviceAttachmentId}&#34;
  * ```
  * 
  */

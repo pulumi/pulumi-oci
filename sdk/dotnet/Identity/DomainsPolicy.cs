@@ -16,6 +16,7 @@ namespace Pulumi.Oci.Identity
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -67,13 +68,14 @@ namespace Pulumi.Oci.Identity
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// Policies can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Identity/domainsPolicy:DomainsPolicy test_policy "idcsEndpoint/{idcsEndpoint}/policies/{policyId}"
+    /// $ pulumi import oci:Identity/domainsPolicy:DomainsPolicy test_policy "idcsEndpoint/{idcsEndpoint}/policies/{policyId}"
     /// ```
     /// </summary>
     [OciResourceType("oci:Identity/domainsPolicy:DomainsPolicy")]

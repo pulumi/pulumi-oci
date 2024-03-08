@@ -32,6 +32,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -109,13 +110,14 @@ import * as utilities from "../utilities";
  *     }],
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * ServiceConnectors can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Sch/connector:Connector test_service_connector "id"
+ * $ pulumi import oci:Sch/connector:Connector test_service_connector "id"
  * ```
  */
 export class Connector extends pulumi.CustomResource {

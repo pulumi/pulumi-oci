@@ -116,6 +116,7 @@ def get_stream_distribution_channels(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -125,6 +126,7 @@ def get_stream_distribution_channels(compartment_id: Optional[str] = None,
         id=var["stream_distribution_channel_id"],
         state=var["stream_distribution_channel_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID of the compartment in which to list resources.
@@ -164,6 +166,7 @@ def get_stream_distribution_channels_output(compartment_id: Optional[pulumi.Inpu
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -173,6 +176,7 @@ def get_stream_distribution_channels_output(compartment_id: Optional[pulumi.Inpu
         id=var["stream_distribution_channel_id"],
         state=var["stream_distribution_channel_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID of the compartment in which to list resources.

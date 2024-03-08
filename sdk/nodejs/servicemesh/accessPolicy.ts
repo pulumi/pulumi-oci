@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -50,13 +51,14 @@ import * as utilities from "../utilities";
  *     },
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * AccessPolicies can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:ServiceMesh/accessPolicy:AccessPolicy test_access_policy "id"
+ * $ pulumi import oci:ServiceMesh/accessPolicy:AccessPolicy test_access_policy "id"
  * ```
  */
 export class AccessPolicy extends pulumi.CustomResource {

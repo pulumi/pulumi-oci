@@ -16,6 +16,7 @@ namespace Pulumi.Oci.Artifacts
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -45,13 +46,14 @@ namespace Pulumi.Oci.Artifacts
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// ContainerImageSignatures can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Artifacts/containerImageSignature:ContainerImageSignature test_container_image_signature "container/imageSignatures/{imageSignatureId}"
+    /// $ pulumi import oci:Artifacts/containerImageSignature:ContainerImageSignature test_container_image_signature "container/imageSignatures/{imageSignatureId}"
     /// ```
     /// </summary>
     [OciResourceType("oci:Artifacts/containerImageSignature:ContainerImageSignature")]

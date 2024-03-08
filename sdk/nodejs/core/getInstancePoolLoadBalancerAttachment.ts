@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -20,6 +21,7 @@ import * as utilities from "../utilities";
  *     instancePoolLoadBalancerAttachmentId: oci_core_instance_pool_load_balancer_attachment.test_instance_pool_load_balancer_attachment.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getInstancePoolLoadBalancerAttachment(args: GetInstancePoolLoadBalancerAttachmentArgs, opts?: pulumi.InvokeOptions): Promise<GetInstancePoolLoadBalancerAttachmentResult> {
 
@@ -85,6 +87,7 @@ export interface GetInstancePoolLoadBalancerAttachmentResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -94,6 +97,7 @@ export interface GetInstancePoolLoadBalancerAttachmentResult {
  *     instancePoolLoadBalancerAttachmentId: oci_core_instance_pool_load_balancer_attachment.test_instance_pool_load_balancer_attachment.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getInstancePoolLoadBalancerAttachmentOutput(args: GetInstancePoolLoadBalancerAttachmentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInstancePoolLoadBalancerAttachmentResult> {
     return pulumi.output(args).apply((a: any) => getInstancePoolLoadBalancerAttachment(a, opts))

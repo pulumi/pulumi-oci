@@ -14,6 +14,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,13 +24,14 @@ import * as utilities from "../utilities";
  *     odaPrivateEndpointId: oci_oda_oda_private_endpoint.test_oda_private_endpoint.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * OdaPrivateEndpointAttachments can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Oda/odaPrivateEndpointAttachment:OdaPrivateEndpointAttachment test_oda_private_endpoint_attachment "id"
+ * $ pulumi import oci:Oda/odaPrivateEndpointAttachment:OdaPrivateEndpointAttachment test_oda_private_endpoint_attachment "id"
  * ```
  */
 export class OdaPrivateEndpointAttachment extends pulumi.CustomResource {

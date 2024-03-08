@@ -18,6 +18,7 @@ namespace Pulumi.Oci.DataSafe
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -51,13 +52,14 @@ namespace Pulumi.Oci.DataSafe
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// SensitiveTypes can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:DataSafe/sensitiveType:SensitiveType test_sensitive_type "id"
+    /// $ pulumi import oci:DataSafe/sensitiveType:SensitiveType test_sensitive_type "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:DataSafe/sensitiveType:SensitiveType")]

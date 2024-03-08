@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,6 +23,7 @@ import * as utilities from "../utilities";
  *     traceKey: _var.trace_trace_key,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getTrace(args: GetTraceArgs, opts?: pulumi.InvokeOptions): Promise<GetTraceResult> {
 
@@ -139,6 +141,7 @@ export interface GetTraceResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -148,6 +151,7 @@ export interface GetTraceResult {
  *     traceKey: _var.trace_trace_key,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getTraceOutput(args: GetTraceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTraceResult> {
     return pulumi.output(args).apply((a: any) => getTrace(a, opts))

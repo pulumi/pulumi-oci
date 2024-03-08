@@ -230,12 +230,14 @@ def get_data_safe_private_endpoint(data_safe_private_endpoint_id: Optional[str] 
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_data_safe_private_endpoint = oci.DataSafe.get_data_safe_private_endpoint(data_safe_private_endpoint_id=oci_data_safe_data_safe_private_endpoint["test_data_safe_private_endpoint"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str data_safe_private_endpoint_id: The OCID of the private endpoint.
@@ -274,12 +276,14 @@ def get_data_safe_private_endpoint_output(data_safe_private_endpoint_id: Optiona
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_data_safe_private_endpoint = oci.DataSafe.get_data_safe_private_endpoint(data_safe_private_endpoint_id=oci_data_safe_data_safe_private_endpoint["test_data_safe_private_endpoint"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str data_safe_private_endpoint_id: The OCID of the private endpoint.

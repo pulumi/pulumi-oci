@@ -14,6 +14,7 @@ import (
 
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -38,15 +39,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Hostnames can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:LoadBalancer/hostname:Hostname test_hostname "loadBalancers/{loadBalancerId}/hostnames/{name}"
-//
+// $ pulumi import oci:LoadBalancer/hostname:Hostname test_hostname "loadBalancers/{loadBalancerId}/hostnames/{name}"
 // ```
 type Hostname struct {
 	pulumi.CustomResourceState

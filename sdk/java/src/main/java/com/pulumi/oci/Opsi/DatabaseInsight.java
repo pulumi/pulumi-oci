@@ -23,6 +23,7 @@ import javax.annotation.Nullable;
 /**
  * ## Example Usage
  * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -83,13 +84,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * DatabaseInsights can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Opsi/databaseInsight:DatabaseInsight test_database_insight &#34;id&#34;
+ * $ pulumi import oci:Opsi/databaseInsight:DatabaseInsight test_database_insight &#34;id&#34;
  * ```
  * 
  */

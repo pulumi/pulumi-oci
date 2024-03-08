@@ -21,6 +21,8 @@ import javax.annotation.Nullable;
  * Captures the most recent serial console data (up to a megabyte) for the specified database node.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -52,13 +54,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * DbNodeConsoleHistories can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Database/dbNodeConsoleHistory:DbNodeConsoleHistory test_db_node_console_history &#34;dbNodes/{dbNodeId}/consoleHistories/{consoleHistoryId}&#34;
+ * $ pulumi import oci:Database/dbNodeConsoleHistory:DbNodeConsoleHistory test_db_node_console_history &#34;dbNodes/{dbNodeId}/consoleHistories/{consoleHistoryId}&#34;
  * ```
  * 
  */

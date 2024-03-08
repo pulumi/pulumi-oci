@@ -19,6 +19,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -63,15 +64,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // DatabaseRegistrations can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:GoldenGate/databaseRegistration:DatabaseRegistration test_database_registration "id"
-//
+// $ pulumi import oci:GoldenGate/databaseRegistration:DatabaseRegistration test_database_registration "id"
 // ```
 type DatabaseRegistration struct {
 	pulumi.CustomResourceState

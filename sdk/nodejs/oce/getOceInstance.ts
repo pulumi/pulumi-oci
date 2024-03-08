@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -19,6 +20,7 @@ import * as utilities from "../utilities";
  *     oceInstanceId: oci_oce_oce_instance.test_oce_instance.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getOceInstance(args: GetOceInstanceArgs, opts?: pulumi.InvokeOptions): Promise<GetOceInstanceResult> {
 
@@ -156,6 +158,7 @@ export interface GetOceInstanceResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -164,6 +167,7 @@ export interface GetOceInstanceResult {
  *     oceInstanceId: oci_oce_oce_instance.test_oce_instance.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getOceInstanceOutput(args: GetOceInstanceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOceInstanceResult> {
     return pulumi.output(args).apply((a: any) => getOceInstance(a, opts))

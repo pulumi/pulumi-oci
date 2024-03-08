@@ -349,6 +349,7 @@ class DedicatedVantagePoint(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -371,13 +372,14 @@ class DedicatedVantagePoint(pulumi.CustomResource):
             },
             status=var["dedicated_vantage_point_status"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         DedicatedVantagePoints can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:ApmSynthetics/dedicatedVantagePoint:DedicatedVantagePoint test_dedicated_vantage_point "dedicatedVantagePoints/{dedicatedVantagePointId}/apmDomainId/{apmDomainId}"
+        $ pulumi import oci:ApmSynthetics/dedicatedVantagePoint:DedicatedVantagePoint test_dedicated_vantage_point "dedicatedVantagePoints/{dedicatedVantagePointId}/apmDomainId/{apmDomainId}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -407,6 +409,7 @@ class DedicatedVantagePoint(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -429,13 +432,14 @@ class DedicatedVantagePoint(pulumi.CustomResource):
             },
             status=var["dedicated_vantage_point_status"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         DedicatedVantagePoints can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:ApmSynthetics/dedicatedVantagePoint:DedicatedVantagePoint test_dedicated_vantage_point "dedicatedVantagePoints/{dedicatedVantagePointId}/apmDomainId/{apmDomainId}"
+        $ pulumi import oci:ApmSynthetics/dedicatedVantagePoint:DedicatedVantagePoint test_dedicated_vantage_point "dedicatedVantagePoints/{dedicatedVantagePointId}/apmDomainId/{apmDomainId}"
         ```
 
         :param str resource_name: The name of the resource.

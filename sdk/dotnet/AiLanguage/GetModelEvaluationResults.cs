@@ -16,10 +16,9 @@ namespace Pulumi.Oci.AiLanguage
         /// 
         /// Get a (paginated) list of evaluation results for a given model.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,8 +34,7 @@ namespace Pulumi.Oci.AiLanguage
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetModelEvaluationResultsResult> InvokeAsync(GetModelEvaluationResultsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetModelEvaluationResultsResult>("oci:AiLanguage/getModelEvaluationResults:getModelEvaluationResults", args ?? new GetModelEvaluationResultsArgs(), options.WithDefaults());
@@ -46,10 +44,9 @@ namespace Pulumi.Oci.AiLanguage
         /// 
         /// Get a (paginated) list of evaluation results for a given model.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -65,8 +62,7 @@ namespace Pulumi.Oci.AiLanguage
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetModelEvaluationResultsResult> Invoke(GetModelEvaluationResultsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetModelEvaluationResultsResult>("oci:AiLanguage/getModelEvaluationResults:getModelEvaluationResults", args ?? new GetModelEvaluationResultsInvokeArgs(), options.WithDefaults());

@@ -18,10 +18,9 @@ namespace Pulumi.Oci.Core
         /// provider service key. An invalid key returns a 404 error.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -38,8 +37,7 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetFastConnectProviderServiceKeyResult> InvokeAsync(GetFastConnectProviderServiceKeyArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetFastConnectProviderServiceKeyResult>("oci:Core/getFastConnectProviderServiceKey:getFastConnectProviderServiceKey", args ?? new GetFastConnectProviderServiceKeyArgs(), options.WithDefaults());
@@ -51,10 +49,9 @@ namespace Pulumi.Oci.Core
         /// provider service key. An invalid key returns a 404 error.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -71,8 +68,7 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetFastConnectProviderServiceKeyResult> Invoke(GetFastConnectProviderServiceKeyInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFastConnectProviderServiceKeyResult>("oci:Core/getFastConnectProviderServiceKey:getFastConnectProviderServiceKey", args ?? new GetFastConnectProviderServiceKeyInvokeArgs(), options.WithDefaults());

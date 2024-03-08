@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,6 +24,7 @@ import * as utilities from "../utilities";
  *     name: _var.pod_shape_name,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getPodShapes(args: GetPodShapesArgs, opts?: pulumi.InvokeOptions): Promise<GetPodShapesResult> {
 
@@ -81,6 +83,7 @@ export interface GetPodShapesResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -91,6 +94,7 @@ export interface GetPodShapesResult {
  *     name: _var.pod_shape_name,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getPodShapesOutput(args: GetPodShapesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPodShapesResult> {
     return pulumi.output(args).apply((a: any) => getPodShapes(a, opts))

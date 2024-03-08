@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -50,15 +51,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Ipv6 can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Core/ipv6:Ipv6 test_ipv6 "id"
-//
+// $ pulumi import oci:Core/ipv6:Ipv6 test_ipv6 "id"
 // ```
 type Ipv6 struct {
 	pulumi.CustomResourceState

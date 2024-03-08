@@ -350,6 +350,7 @@ class Mesh(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -371,13 +372,14 @@ class Mesh(pulumi.CustomResource):
                 minimum=var["mesh_mtls_minimum"],
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Meshes can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:ServiceMesh/mesh:Mesh test_mesh "id"
+        $ pulumi import oci:ServiceMesh/mesh:Mesh test_mesh "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -403,6 +405,7 @@ class Mesh(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -424,13 +427,14 @@ class Mesh(pulumi.CustomResource):
                 minimum=var["mesh_mtls_minimum"],
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Meshes can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:ServiceMesh/mesh:Mesh test_mesh "id"
+        $ pulumi import oci:ServiceMesh/mesh:Mesh test_mesh "id"
         ```
 
         :param str resource_name: The name of the resource.

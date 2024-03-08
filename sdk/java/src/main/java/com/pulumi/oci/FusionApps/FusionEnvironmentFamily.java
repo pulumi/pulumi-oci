@@ -25,6 +25,8 @@ import javax.annotation.Nullable;
  * Creates a new FusionEnvironmentFamily.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -63,13 +65,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * FusionEnvironmentFamilies can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:FusionApps/fusionEnvironmentFamily:FusionEnvironmentFamily test_fusion_environment_family &#34;id&#34;
+ * $ pulumi import oci:FusionApps/fusionEnvironmentFamily:FusionEnvironmentFamily test_fusion_environment_family &#34;id&#34;
  * ```
  * 
  */

@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -40,6 +41,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetLibraryMaskingFormat(ctx *pulumi.Context, args *GetLibraryMaskingFormatArgs, opts ...pulumi.InvokeOption) (*GetLibraryMaskingFormatResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetLibraryMaskingFormatResult

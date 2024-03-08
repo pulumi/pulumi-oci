@@ -433,6 +433,7 @@ class VirtualService(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -456,13 +457,14 @@ class VirtualService(pulumi.CustomResource):
                 maximum_validity=var["virtual_service_mtls_maximum_validity"],
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         VirtualServices can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:ServiceMesh/virtualService:VirtualService test_virtual_service "id"
+        $ pulumi import oci:ServiceMesh/virtualService:VirtualService test_virtual_service "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -494,6 +496,7 @@ class VirtualService(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -517,13 +520,14 @@ class VirtualService(pulumi.CustomResource):
                 maximum_validity=var["virtual_service_mtls_maximum_validity"],
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         VirtualServices can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:ServiceMesh/virtualService:VirtualService test_virtual_service "id"
+        $ pulumi import oci:ServiceMesh/virtualService:VirtualService test_virtual_service "id"
         ```
 
         :param str resource_name: The name of the resource.

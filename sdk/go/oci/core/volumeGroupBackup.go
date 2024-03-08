@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -50,15 +51,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // VolumeGroupBackups can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Core/volumeGroupBackup:VolumeGroupBackup test_volume_group_backup "id"
-//
+// $ pulumi import oci:Core/volumeGroupBackup:VolumeGroupBackup test_volume_group_backup "id"
 // ```
 type VolumeGroupBackup struct {
 	pulumi.CustomResourceState

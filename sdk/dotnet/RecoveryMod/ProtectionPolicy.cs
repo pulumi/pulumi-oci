@@ -16,6 +16,7 @@ namespace Pulumi.Oci.RecoveryMod
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -41,13 +42,14 @@ namespace Pulumi.Oci.RecoveryMod
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// ProtectionPolicies can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:RecoveryMod/protectionPolicy:ProtectionPolicy test_protection_policy "id"
+    /// $ pulumi import oci:RecoveryMod/protectionPolicy:ProtectionPolicy test_protection_policy "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:RecoveryMod/protectionPolicy:ProtectionPolicy")]

@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -33,6 +34,7 @@ import * as utilities from "../utilities";
  *     resourceId: oci_usage_proxy_resource.test_resource.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getBaselineableMetricsEvaluate(args: GetBaselineableMetricsEvaluateArgs, opts?: pulumi.InvokeOptions): Promise<GetBaselineableMetricsEvaluateResult> {
 
@@ -91,6 +93,7 @@ export interface GetBaselineableMetricsEvaluateResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -111,6 +114,7 @@ export interface GetBaselineableMetricsEvaluateResult {
  *     resourceId: oci_usage_proxy_resource.test_resource.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getBaselineableMetricsEvaluateOutput(args: GetBaselineableMetricsEvaluateOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBaselineableMetricsEvaluateResult> {
     return pulumi.output(args).apply((a: any) => getBaselineableMetricsEvaluate(a, opts))

@@ -31,6 +31,8 @@ import javax.annotation.Nullable;
  * Migrate existing fleets using the `UpdateFleet` API to set the `inventoryLog` parameter.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -74,13 +76,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * Fleets can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Jms/fleet:Fleet test_fleet &#34;id&#34;
+ * $ pulumi import oci:Jms/fleet:Fleet test_fleet &#34;id&#34;
  * ```
  * 
  */

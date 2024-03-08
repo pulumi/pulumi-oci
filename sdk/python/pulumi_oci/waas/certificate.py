@@ -492,6 +492,7 @@ class Certificate(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -509,6 +510,7 @@ class Certificate(pulumi.CustomResource):
             },
             is_trust_verification_disabled=var["certificate_is_trust_verification_disabled"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -547,6 +549,7 @@ class Certificate(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -564,6 +567,7 @@ class Certificate(pulumi.CustomResource):
             },
             is_trust_verification_disabled=var["certificate_is_trust_verification_disabled"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 

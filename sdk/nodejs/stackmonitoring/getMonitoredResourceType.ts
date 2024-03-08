@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,6 +22,7 @@ import * as utilities from "../utilities";
  *     monitoredResourceTypeId: oci_stack_monitoring_monitored_resource_type.test_monitored_resource_type.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getMonitoredResourceType(args: GetMonitoredResourceTypeArgs, opts?: pulumi.InvokeOptions): Promise<GetMonitoredResourceTypeResult> {
 
@@ -105,6 +107,7 @@ export interface GetMonitoredResourceTypeResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -113,6 +116,7 @@ export interface GetMonitoredResourceTypeResult {
  *     monitoredResourceTypeId: oci_stack_monitoring_monitored_resource_type.test_monitored_resource_type.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getMonitoredResourceTypeOutput(args: GetMonitoredResourceTypeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMonitoredResourceTypeResult> {
     return pulumi.output(args).apply((a: any) => getMonitoredResourceType(a, opts))

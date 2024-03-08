@@ -336,7 +336,7 @@ class Job(pulumi.CustomResource):
         Jobs can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DatabaseMigration/job:Job test_job "id"
+        $ pulumi import oci:DatabaseMigration/job:Job test_job "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -366,7 +366,7 @@ class Job(pulumi.CustomResource):
         Jobs can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DatabaseMigration/job:Job test_job "id"
+        $ pulumi import oci:DatabaseMigration/job:Job test_job "id"
         ```
 
         :param str resource_name: The name of the resource.

@@ -17,10 +17,9 @@ namespace Pulumi.Oci.Database
         /// Gets a list of the ExternalNonContainerDatabases in the specified compartment.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -38,8 +37,7 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetExternalNonContainerDatabasesResult> InvokeAsync(GetExternalNonContainerDatabasesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetExternalNonContainerDatabasesResult>("oci:Database/getExternalNonContainerDatabases:getExternalNonContainerDatabases", args ?? new GetExternalNonContainerDatabasesArgs(), options.WithDefaults());
@@ -50,10 +48,9 @@ namespace Pulumi.Oci.Database
         /// Gets a list of the ExternalNonContainerDatabases in the specified compartment.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -71,8 +68,7 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetExternalNonContainerDatabasesResult> Invoke(GetExternalNonContainerDatabasesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetExternalNonContainerDatabasesResult>("oci:Database/getExternalNonContainerDatabases:getExternalNonContainerDatabases", args ?? new GetExternalNonContainerDatabasesInvokeArgs(), options.WithDefaults());

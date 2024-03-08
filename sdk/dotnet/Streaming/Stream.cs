@@ -20,6 +20,7 @@ namespace Pulumi.Oci.Streaming
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -43,13 +44,14 @@ namespace Pulumi.Oci.Streaming
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// Streams can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Streaming/stream:Stream test_stream "id"
+    /// $ pulumi import oci:Streaming/stream:Stream test_stream "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Streaming/stream:Stream")]

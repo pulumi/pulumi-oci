@@ -1074,7 +1074,7 @@ class DomainsAccountRecoverySetting(pulumi.CustomResource):
         AccountRecoverySettings can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/domainsAccountRecoverySetting:DomainsAccountRecoverySetting test_account_recovery_setting "idcsEndpoint/{idcsEndpoint}/accountRecoverySettings/{accountRecoverySettingId}"
+        $ pulumi import oci:Identity/domainsAccountRecoverySetting:DomainsAccountRecoverySetting test_account_recovery_setting "idcsEndpoint/{idcsEndpoint}/accountRecoverySettings/{accountRecoverySettingId}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -1180,7 +1180,7 @@ class DomainsAccountRecoverySetting(pulumi.CustomResource):
         AccountRecoverySettings can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/domainsAccountRecoverySetting:DomainsAccountRecoverySetting test_account_recovery_setting "idcsEndpoint/{idcsEndpoint}/accountRecoverySettings/{accountRecoverySettingId}"
+        $ pulumi import oci:Identity/domainsAccountRecoverySetting:DomainsAccountRecoverySetting test_account_recovery_setting "idcsEndpoint/{idcsEndpoint}/accountRecoverySettings/{accountRecoverySettingId}"
         ```
 
         :param str resource_name: The name of the resource.

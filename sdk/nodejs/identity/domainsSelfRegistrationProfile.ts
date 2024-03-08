@@ -16,7 +16,7 @@ import * as utilities from "../utilities";
  * SelfRegistrationProfiles can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Identity/domainsSelfRegistrationProfile:DomainsSelfRegistrationProfile test_self_registration_profile "idcsEndpoint/{idcsEndpoint}/selfRegistrationProfiles/{selfRegistrationProfileId}"
+ * $ pulumi import oci:Identity/domainsSelfRegistrationProfile:DomainsSelfRegistrationProfile test_self_registration_profile "idcsEndpoint/{idcsEndpoint}/selfRegistrationProfiles/{selfRegistrationProfileId}"
  * ```
  */
 export class DomainsSelfRegistrationProfile extends pulumi.CustomResource {

@@ -28,6 +28,8 @@ import javax.annotation.Nullable;
  * tenancy can use this operation to create an auth token for any user, including themselves.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -57,13 +59,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * AuthTokens can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Identity/authToken:AuthToken test_auth_token &#34;users/{userId}/authTokens/{authTokenId}&#34;
+ * $ pulumi import oci:Identity/authToken:AuthToken test_auth_token &#34;users/{userId}/authTokens/{authTokenId}&#34;
  * ```
  * 
  */

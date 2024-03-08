@@ -16,6 +16,7 @@ namespace Pulumi.Oci.OsManagementHub
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -56,13 +57,14 @@ namespace Pulumi.Oci.OsManagementHub
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// ManagementStations can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:OsManagementHub/managementStation:ManagementStation test_management_station "id"
+    /// $ pulumi import oci:OsManagementHub/managementStation:ManagementStation test_management_station "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:OsManagementHub/managementStation:ManagementStation")]

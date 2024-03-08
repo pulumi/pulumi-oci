@@ -23,6 +23,8 @@ import javax.annotation.Nullable;
  * Datasource creation request to given Management Agent.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -67,13 +69,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * ManagementAgentDataSources can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:ManagementAgent/managementAgentDataSource:ManagementAgentDataSource test_management_agent_data_source &#34;managementAgents/{managementAgentId}/dataSources/{key}&#34;
+ * $ pulumi import oci:ManagementAgent/managementAgentDataSource:ManagementAgentDataSource test_management_agent_data_source &#34;managementAgents/{managementAgentId}/dataSources/{key}&#34;
  * ```
  * 
  */

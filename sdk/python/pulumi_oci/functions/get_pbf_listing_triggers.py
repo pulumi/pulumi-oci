@@ -89,12 +89,14 @@ def get_pbf_listing_triggers(filters: Optional[Sequence[pulumi.InputType['GetPbf
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_pbf_listing_triggers = oci.Functions.get_pbf_listing_triggers(name=var["pbf_listing_trigger_name"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str name: A filter to return only resources that match the service trigger source of a PBF.
@@ -123,12 +125,14 @@ def get_pbf_listing_triggers_output(filters: Optional[pulumi.Input[Optional[Sequ
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_pbf_listing_triggers = oci.Functions.get_pbf_listing_triggers(name=var["pbf_listing_trigger_name"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str name: A filter to return only resources that match the service trigger source of a PBF.

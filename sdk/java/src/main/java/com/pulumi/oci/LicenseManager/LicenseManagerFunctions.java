@@ -44,6 +44,8 @@ public final class LicenseManagerFunctions {
      * Retrieves configuration for a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -72,6 +74,7 @@ public final class LicenseManagerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetConfigurationResult> getConfiguration(GetConfigurationArgs args) {
@@ -83,6 +86,8 @@ public final class LicenseManagerFunctions {
      * Retrieves configuration for a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -111,6 +116,7 @@ public final class LicenseManagerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetConfigurationResult> getConfigurationPlain(GetConfigurationPlainArgs args) {
@@ -122,6 +128,8 @@ public final class LicenseManagerFunctions {
      * Retrieves configuration for a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -150,6 +158,7 @@ public final class LicenseManagerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetConfigurationResult> getConfiguration(GetConfigurationArgs args, InvokeOptions options) {
@@ -161,6 +170,8 @@ public final class LicenseManagerFunctions {
      * Retrieves configuration for a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -189,6 +200,7 @@ public final class LicenseManagerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetConfigurationResult> getConfigurationPlain(GetConfigurationPlainArgs args, InvokeOptions options) {
@@ -200,6 +212,8 @@ public final class LicenseManagerFunctions {
      * Retrieves the license metrics for a given compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -229,6 +243,7 @@ public final class LicenseManagerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetLicenseMetricResult> getLicenseMetric(GetLicenseMetricArgs args) {
@@ -240,6 +255,8 @@ public final class LicenseManagerFunctions {
      * Retrieves the license metrics for a given compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -269,6 +286,7 @@ public final class LicenseManagerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetLicenseMetricResult> getLicenseMetricPlain(GetLicenseMetricPlainArgs args) {
@@ -280,6 +298,8 @@ public final class LicenseManagerFunctions {
      * Retrieves the license metrics for a given compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -309,6 +329,7 @@ public final class LicenseManagerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetLicenseMetricResult> getLicenseMetric(GetLicenseMetricArgs args, InvokeOptions options) {
@@ -320,6 +341,8 @@ public final class LicenseManagerFunctions {
      * Retrieves the license metrics for a given compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -349,6 +372,7 @@ public final class LicenseManagerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetLicenseMetricResult> getLicenseMetricPlain(GetLicenseMetricPlainArgs args, InvokeOptions options) {
@@ -360,6 +384,8 @@ public final class LicenseManagerFunctions {
      * Retrieves license record details by the license record ID in a given compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -388,6 +414,7 @@ public final class LicenseManagerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetLicenseRecordResult> getLicenseRecord(GetLicenseRecordArgs args) {
@@ -399,6 +426,8 @@ public final class LicenseManagerFunctions {
      * Retrieves license record details by the license record ID in a given compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -427,6 +456,7 @@ public final class LicenseManagerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetLicenseRecordResult> getLicenseRecordPlain(GetLicenseRecordPlainArgs args) {
@@ -438,6 +468,8 @@ public final class LicenseManagerFunctions {
      * Retrieves license record details by the license record ID in a given compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -466,6 +498,7 @@ public final class LicenseManagerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetLicenseRecordResult> getLicenseRecord(GetLicenseRecordArgs args, InvokeOptions options) {
@@ -477,6 +510,8 @@ public final class LicenseManagerFunctions {
      * Retrieves license record details by the license record ID in a given compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -505,6 +540,7 @@ public final class LicenseManagerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetLicenseRecordResult> getLicenseRecordPlain(GetLicenseRecordPlainArgs args, InvokeOptions options) {
@@ -516,6 +552,8 @@ public final class LicenseManagerFunctions {
      * Retrieves all license records for a given product license ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -544,6 +582,7 @@ public final class LicenseManagerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetLicenseRecordsResult> getLicenseRecords(GetLicenseRecordsArgs args) {
@@ -555,6 +594,8 @@ public final class LicenseManagerFunctions {
      * Retrieves all license records for a given product license ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -583,6 +624,7 @@ public final class LicenseManagerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetLicenseRecordsResult> getLicenseRecordsPlain(GetLicenseRecordsPlainArgs args) {
@@ -594,6 +636,8 @@ public final class LicenseManagerFunctions {
      * Retrieves all license records for a given product license ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -622,6 +666,7 @@ public final class LicenseManagerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetLicenseRecordsResult> getLicenseRecords(GetLicenseRecordsArgs args, InvokeOptions options) {
@@ -633,6 +678,8 @@ public final class LicenseManagerFunctions {
      * Retrieves all license records for a given product license ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -661,6 +708,7 @@ public final class LicenseManagerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetLicenseRecordsResult> getLicenseRecordsPlain(GetLicenseRecordsPlainArgs args, InvokeOptions options) {
@@ -672,6 +720,8 @@ public final class LicenseManagerFunctions {
      * Retrieves product license details by product license ID in a given compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -700,6 +750,7 @@ public final class LicenseManagerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetProductLicenseResult> getProductLicense(GetProductLicenseArgs args) {
@@ -711,6 +762,8 @@ public final class LicenseManagerFunctions {
      * Retrieves product license details by product license ID in a given compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -739,6 +792,7 @@ public final class LicenseManagerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetProductLicenseResult> getProductLicensePlain(GetProductLicensePlainArgs args) {
@@ -750,6 +804,8 @@ public final class LicenseManagerFunctions {
      * Retrieves product license details by product license ID in a given compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -778,6 +834,7 @@ public final class LicenseManagerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetProductLicenseResult> getProductLicense(GetProductLicenseArgs args, InvokeOptions options) {
@@ -789,6 +846,8 @@ public final class LicenseManagerFunctions {
      * Retrieves product license details by product license ID in a given compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -817,6 +876,7 @@ public final class LicenseManagerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetProductLicenseResult> getProductLicensePlain(GetProductLicensePlainArgs args, InvokeOptions options) {
@@ -828,6 +888,8 @@ public final class LicenseManagerFunctions {
      * Retrieves the product license consumers for a particular product license ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -858,6 +920,7 @@ public final class LicenseManagerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetProductLicenseConsumersResult> getProductLicenseConsumers(GetProductLicenseConsumersArgs args) {
@@ -869,6 +932,8 @@ public final class LicenseManagerFunctions {
      * Retrieves the product license consumers for a particular product license ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -899,6 +964,7 @@ public final class LicenseManagerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetProductLicenseConsumersResult> getProductLicenseConsumersPlain(GetProductLicenseConsumersPlainArgs args) {
@@ -910,6 +976,8 @@ public final class LicenseManagerFunctions {
      * Retrieves the product license consumers for a particular product license ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -940,6 +1008,7 @@ public final class LicenseManagerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetProductLicenseConsumersResult> getProductLicenseConsumers(GetProductLicenseConsumersArgs args, InvokeOptions options) {
@@ -951,6 +1020,8 @@ public final class LicenseManagerFunctions {
      * Retrieves the product license consumers for a particular product license ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -981,6 +1052,7 @@ public final class LicenseManagerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetProductLicenseConsumersResult> getProductLicenseConsumersPlain(GetProductLicenseConsumersPlainArgs args, InvokeOptions options) {
@@ -992,6 +1064,8 @@ public final class LicenseManagerFunctions {
      * Retrieves all the product licenses from a given compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1021,6 +1095,7 @@ public final class LicenseManagerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetProductLicensesResult> getProductLicenses(GetProductLicensesArgs args) {
@@ -1032,6 +1107,8 @@ public final class LicenseManagerFunctions {
      * Retrieves all the product licenses from a given compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1061,6 +1138,7 @@ public final class LicenseManagerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetProductLicensesResult> getProductLicensesPlain(GetProductLicensesPlainArgs args) {
@@ -1072,6 +1150,8 @@ public final class LicenseManagerFunctions {
      * Retrieves all the product licenses from a given compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1101,6 +1181,7 @@ public final class LicenseManagerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetProductLicensesResult> getProductLicenses(GetProductLicensesArgs args, InvokeOptions options) {
@@ -1112,6 +1193,8 @@ public final class LicenseManagerFunctions {
      * Retrieves all the product licenses from a given compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1141,6 +1224,7 @@ public final class LicenseManagerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetProductLicensesResult> getProductLicensesPlain(GetProductLicensesPlainArgs args, InvokeOptions options) {
@@ -1152,6 +1236,8 @@ public final class LicenseManagerFunctions {
      * Retrieves the top utilized product licenses for a given compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1181,6 +1267,7 @@ public final class LicenseManagerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetTopUtilizedProductLicensesResult> getTopUtilizedProductLicenses(GetTopUtilizedProductLicensesArgs args) {
@@ -1192,6 +1279,8 @@ public final class LicenseManagerFunctions {
      * Retrieves the top utilized product licenses for a given compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1221,6 +1310,7 @@ public final class LicenseManagerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetTopUtilizedProductLicensesResult> getTopUtilizedProductLicensesPlain(GetTopUtilizedProductLicensesPlainArgs args) {
@@ -1232,6 +1322,8 @@ public final class LicenseManagerFunctions {
      * Retrieves the top utilized product licenses for a given compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1261,6 +1353,7 @@ public final class LicenseManagerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetTopUtilizedProductLicensesResult> getTopUtilizedProductLicenses(GetTopUtilizedProductLicensesArgs args, InvokeOptions options) {
@@ -1272,6 +1365,8 @@ public final class LicenseManagerFunctions {
      * Retrieves the top utilized product licenses for a given compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1301,6 +1396,7 @@ public final class LicenseManagerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetTopUtilizedProductLicensesResult> getTopUtilizedProductLicensesPlain(GetTopUtilizedProductLicensesPlainArgs args, InvokeOptions options) {
@@ -1312,6 +1408,8 @@ public final class LicenseManagerFunctions {
      * Retrieves the top utilized resources for a given compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1342,6 +1440,7 @@ public final class LicenseManagerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetTopUtilizedResourcesResult> getTopUtilizedResources(GetTopUtilizedResourcesArgs args) {
@@ -1353,6 +1452,8 @@ public final class LicenseManagerFunctions {
      * Retrieves the top utilized resources for a given compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1383,6 +1484,7 @@ public final class LicenseManagerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetTopUtilizedResourcesResult> getTopUtilizedResourcesPlain(GetTopUtilizedResourcesPlainArgs args) {
@@ -1394,6 +1496,8 @@ public final class LicenseManagerFunctions {
      * Retrieves the top utilized resources for a given compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1424,6 +1528,7 @@ public final class LicenseManagerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetTopUtilizedResourcesResult> getTopUtilizedResources(GetTopUtilizedResourcesArgs args, InvokeOptions options) {
@@ -1435,6 +1540,8 @@ public final class LicenseManagerFunctions {
      * Retrieves the top utilized resources for a given compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1465,6 +1572,7 @@ public final class LicenseManagerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetTopUtilizedResourcesResult> getTopUtilizedResourcesPlain(GetTopUtilizedResourcesPlainArgs args, InvokeOptions options) {

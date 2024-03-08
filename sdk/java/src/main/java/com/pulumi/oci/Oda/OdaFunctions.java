@@ -41,6 +41,8 @@ public final class OdaFunctions {
      * Gets the specified Digital Assistant instance.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -69,6 +71,7 @@ public final class OdaFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOdaInstanceResult> getOdaInstance(GetOdaInstanceArgs args) {
@@ -80,6 +83,8 @@ public final class OdaFunctions {
      * Gets the specified Digital Assistant instance.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -108,6 +113,7 @@ public final class OdaFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOdaInstanceResult> getOdaInstancePlain(GetOdaInstancePlainArgs args) {
@@ -119,6 +125,8 @@ public final class OdaFunctions {
      * Gets the specified Digital Assistant instance.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -147,6 +155,7 @@ public final class OdaFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOdaInstanceResult> getOdaInstance(GetOdaInstanceArgs args, InvokeOptions options) {
@@ -158,6 +167,8 @@ public final class OdaFunctions {
      * Gets the specified Digital Assistant instance.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -186,6 +197,7 @@ public final class OdaFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOdaInstanceResult> getOdaInstancePlain(GetOdaInstancePlainArgs args, InvokeOptions options) {
@@ -202,6 +214,8 @@ public final class OdaFunctions {
      * GET request, include the header&#39;s value as the `page` query parameter.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -232,6 +246,7 @@ public final class OdaFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOdaInstancesResult> getOdaInstances(GetOdaInstancesArgs args) {
@@ -248,6 +263,8 @@ public final class OdaFunctions {
      * GET request, include the header&#39;s value as the `page` query parameter.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -278,6 +295,7 @@ public final class OdaFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOdaInstancesResult> getOdaInstancesPlain(GetOdaInstancesPlainArgs args) {
@@ -294,6 +312,8 @@ public final class OdaFunctions {
      * GET request, include the header&#39;s value as the `page` query parameter.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -324,6 +344,7 @@ public final class OdaFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOdaInstancesResult> getOdaInstances(GetOdaInstancesArgs args, InvokeOptions options) {
@@ -340,6 +361,8 @@ public final class OdaFunctions {
      * GET request, include the header&#39;s value as the `page` query parameter.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -370,6 +393,7 @@ public final class OdaFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOdaInstancesResult> getOdaInstancesPlain(GetOdaInstancesPlainArgs args, InvokeOptions options) {
@@ -381,6 +405,8 @@ public final class OdaFunctions {
      * Gets the specified ODA Private Endpoint.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -409,6 +435,7 @@ public final class OdaFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOdaPrivateEndpointResult> getOdaPrivateEndpoint(GetOdaPrivateEndpointArgs args) {
@@ -420,6 +447,8 @@ public final class OdaFunctions {
      * Gets the specified ODA Private Endpoint.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -448,6 +477,7 @@ public final class OdaFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOdaPrivateEndpointResult> getOdaPrivateEndpointPlain(GetOdaPrivateEndpointPlainArgs args) {
@@ -459,6 +489,8 @@ public final class OdaFunctions {
      * Gets the specified ODA Private Endpoint.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -487,6 +519,7 @@ public final class OdaFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOdaPrivateEndpointResult> getOdaPrivateEndpoint(GetOdaPrivateEndpointArgs args, InvokeOptions options) {
@@ -498,6 +531,8 @@ public final class OdaFunctions {
      * Gets the specified ODA Private Endpoint.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -526,6 +561,7 @@ public final class OdaFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOdaPrivateEndpointResult> getOdaPrivateEndpointPlain(GetOdaPrivateEndpointPlainArgs args, InvokeOptions options) {
@@ -537,6 +573,8 @@ public final class OdaFunctions {
      * Gets the specified ODA Private Endpoint Attachment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -565,6 +603,7 @@ public final class OdaFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOdaPrivateEndpointAttachmentResult> getOdaPrivateEndpointAttachment(GetOdaPrivateEndpointAttachmentArgs args) {
@@ -576,6 +615,8 @@ public final class OdaFunctions {
      * Gets the specified ODA Private Endpoint Attachment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -604,6 +645,7 @@ public final class OdaFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOdaPrivateEndpointAttachmentResult> getOdaPrivateEndpointAttachmentPlain(GetOdaPrivateEndpointAttachmentPlainArgs args) {
@@ -615,6 +657,8 @@ public final class OdaFunctions {
      * Gets the specified ODA Private Endpoint Attachment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -643,6 +687,7 @@ public final class OdaFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOdaPrivateEndpointAttachmentResult> getOdaPrivateEndpointAttachment(GetOdaPrivateEndpointAttachmentArgs args, InvokeOptions options) {
@@ -654,6 +699,8 @@ public final class OdaFunctions {
      * Gets the specified ODA Private Endpoint Attachment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -682,6 +729,7 @@ public final class OdaFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOdaPrivateEndpointAttachmentResult> getOdaPrivateEndpointAttachmentPlain(GetOdaPrivateEndpointAttachmentPlainArgs args, InvokeOptions options) {
@@ -697,6 +745,8 @@ public final class OdaFunctions {
      * GET request, include the header&#39;s value as the `page` query parameter.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -727,6 +777,7 @@ public final class OdaFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOdaPrivateEndpointAttachmentsResult> getOdaPrivateEndpointAttachments(GetOdaPrivateEndpointAttachmentsArgs args) {
@@ -742,6 +793,8 @@ public final class OdaFunctions {
      * GET request, include the header&#39;s value as the `page` query parameter.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -772,6 +825,7 @@ public final class OdaFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOdaPrivateEndpointAttachmentsResult> getOdaPrivateEndpointAttachmentsPlain(GetOdaPrivateEndpointAttachmentsPlainArgs args) {
@@ -787,6 +841,8 @@ public final class OdaFunctions {
      * GET request, include the header&#39;s value as the `page` query parameter.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -817,6 +873,7 @@ public final class OdaFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOdaPrivateEndpointAttachmentsResult> getOdaPrivateEndpointAttachments(GetOdaPrivateEndpointAttachmentsArgs args, InvokeOptions options) {
@@ -832,6 +889,8 @@ public final class OdaFunctions {
      * GET request, include the header&#39;s value as the `page` query parameter.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -862,6 +921,7 @@ public final class OdaFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOdaPrivateEndpointAttachmentsResult> getOdaPrivateEndpointAttachmentsPlain(GetOdaPrivateEndpointAttachmentsPlainArgs args, InvokeOptions options) {
@@ -878,6 +938,8 @@ public final class OdaFunctions {
      * GET request, include the header&#39;s value as the `page` query parameter.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -907,6 +969,7 @@ public final class OdaFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOdaPrivateEndpointScanProxiesResult> getOdaPrivateEndpointScanProxies(GetOdaPrivateEndpointScanProxiesArgs args) {
@@ -923,6 +986,8 @@ public final class OdaFunctions {
      * GET request, include the header&#39;s value as the `page` query parameter.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -952,6 +1017,7 @@ public final class OdaFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOdaPrivateEndpointScanProxiesResult> getOdaPrivateEndpointScanProxiesPlain(GetOdaPrivateEndpointScanProxiesPlainArgs args) {
@@ -968,6 +1034,8 @@ public final class OdaFunctions {
      * GET request, include the header&#39;s value as the `page` query parameter.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -997,6 +1065,7 @@ public final class OdaFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOdaPrivateEndpointScanProxiesResult> getOdaPrivateEndpointScanProxies(GetOdaPrivateEndpointScanProxiesArgs args, InvokeOptions options) {
@@ -1013,6 +1082,8 @@ public final class OdaFunctions {
      * GET request, include the header&#39;s value as the `page` query parameter.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1042,6 +1113,7 @@ public final class OdaFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOdaPrivateEndpointScanProxiesResult> getOdaPrivateEndpointScanProxiesPlain(GetOdaPrivateEndpointScanProxiesPlainArgs args, InvokeOptions options) {
@@ -1053,6 +1125,8 @@ public final class OdaFunctions {
      * Gets the specified ODA Private Endpoint Scan Proxy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1082,6 +1156,7 @@ public final class OdaFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOdaPrivateEndpointScanProxyResult> getOdaPrivateEndpointScanProxy(GetOdaPrivateEndpointScanProxyArgs args) {
@@ -1093,6 +1168,8 @@ public final class OdaFunctions {
      * Gets the specified ODA Private Endpoint Scan Proxy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1122,6 +1199,7 @@ public final class OdaFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOdaPrivateEndpointScanProxyResult> getOdaPrivateEndpointScanProxyPlain(GetOdaPrivateEndpointScanProxyPlainArgs args) {
@@ -1133,6 +1211,8 @@ public final class OdaFunctions {
      * Gets the specified ODA Private Endpoint Scan Proxy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1162,6 +1242,7 @@ public final class OdaFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOdaPrivateEndpointScanProxyResult> getOdaPrivateEndpointScanProxy(GetOdaPrivateEndpointScanProxyArgs args, InvokeOptions options) {
@@ -1173,6 +1254,8 @@ public final class OdaFunctions {
      * Gets the specified ODA Private Endpoint Scan Proxy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1202,6 +1285,7 @@ public final class OdaFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOdaPrivateEndpointScanProxyResult> getOdaPrivateEndpointScanProxyPlain(GetOdaPrivateEndpointScanProxyPlainArgs args, InvokeOptions options) {
@@ -1218,6 +1302,8 @@ public final class OdaFunctions {
      * GET request, include the header&#39;s value as the `page` query parameter.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1248,6 +1334,7 @@ public final class OdaFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOdaPrivateEndpointsResult> getOdaPrivateEndpoints(GetOdaPrivateEndpointsArgs args) {
@@ -1264,6 +1351,8 @@ public final class OdaFunctions {
      * GET request, include the header&#39;s value as the `page` query parameter.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1294,6 +1383,7 @@ public final class OdaFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOdaPrivateEndpointsResult> getOdaPrivateEndpointsPlain(GetOdaPrivateEndpointsPlainArgs args) {
@@ -1310,6 +1400,8 @@ public final class OdaFunctions {
      * GET request, include the header&#39;s value as the `page` query parameter.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1340,6 +1432,7 @@ public final class OdaFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOdaPrivateEndpointsResult> getOdaPrivateEndpoints(GetOdaPrivateEndpointsArgs args, InvokeOptions options) {
@@ -1356,6 +1449,8 @@ public final class OdaFunctions {
      * GET request, include the header&#39;s value as the `page` query parameter.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1386,6 +1481,7 @@ public final class OdaFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOdaPrivateEndpointsResult> getOdaPrivateEndpointsPlain(GetOdaPrivateEndpointsPlainArgs args, InvokeOptions options) {

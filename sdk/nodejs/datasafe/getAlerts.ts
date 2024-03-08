@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -26,6 +27,7 @@ import * as utilities from "../utilities";
  *     scimQuery: _var.alert_scim_query,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAlerts(args: GetAlertsArgs, opts?: pulumi.InvokeOptions): Promise<GetAlertsResult> {
 
@@ -103,6 +105,7 @@ export interface GetAlertsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -116,6 +119,7 @@ export interface GetAlertsResult {
  *     scimQuery: _var.alert_scim_query,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAlertsOutput(args: GetAlertsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAlertsResult> {
     return pulumi.output(args).apply((a: any) => getAlerts(a, opts))

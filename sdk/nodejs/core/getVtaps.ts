@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -28,6 +29,7 @@ import * as utilities from "../utilities";
  *     vcnId: oci_core_vcn.test_vcn.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getVtaps(args: GetVtapsArgs, opts?: pulumi.InvokeOptions): Promise<GetVtapsResult> {
 
@@ -136,6 +138,7 @@ export interface GetVtapsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -151,6 +154,7 @@ export interface GetVtapsResult {
  *     vcnId: oci_core_vcn.test_vcn.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getVtapsOutput(args: GetVtapsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVtapsResult> {
     return pulumi.output(args).apply((a: any) => getVtaps(a, opts))

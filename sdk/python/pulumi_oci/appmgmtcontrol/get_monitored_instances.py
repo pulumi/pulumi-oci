@@ -102,6 +102,7 @@ def get_monitored_instances(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -109,6 +110,7 @@ def get_monitored_instances(compartment_id: Optional[str] = None,
     test_monitored_instances = oci.AppMgmtControl.get_monitored_instances(compartment_id=var["compartment_id"],
         display_name=var["monitored_instance_display_name"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID of the compartment in which to list resources.
@@ -141,6 +143,7 @@ def get_monitored_instances_output(compartment_id: Optional[pulumi.Input[str]] =
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -148,6 +151,7 @@ def get_monitored_instances_output(compartment_id: Optional[pulumi.Input[str]] =
     test_monitored_instances = oci.AppMgmtControl.get_monitored_instances(compartment_id=var["compartment_id"],
         display_name=var["monitored_instance_display_name"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID of the compartment in which to list resources.

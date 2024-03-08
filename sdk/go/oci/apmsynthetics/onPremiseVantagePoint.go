@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -49,15 +50,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // OnPremiseVantagePoints can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:ApmSynthetics/onPremiseVantagePoint:OnPremiseVantagePoint test_on_premise_vantage_point "onPremiseVantagePoints/{onPremiseVantagePointId}/apmDomainId/{apmDomainId}"
-//
+// $ pulumi import oci:ApmSynthetics/onPremiseVantagePoint:OnPremiseVantagePoint test_on_premise_vantage_point "onPremiseVantagePoints/{onPremiseVantagePointId}/apmDomainId/{apmDomainId}"
 // ```
 type OnPremiseVantagePoint struct {
 	pulumi.CustomResourceState

@@ -21,9 +21,7 @@ import (
 // Apps can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Identity/domainsApp:DomainsApp test_app "idcsEndpoint/{idcsEndpoint}/apps/{appId}"
-//
+// $ pulumi import oci:Identity/domainsApp:DomainsApp test_app "idcsEndpoint/{idcsEndpoint}/apps/{appId}"
 // ```
 type DomainsApp struct {
 	pulumi.CustomResourceState

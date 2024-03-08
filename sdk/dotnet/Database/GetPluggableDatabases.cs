@@ -17,10 +17,9 @@ namespace Pulumi.Oci.Database
         /// Gets a list of the pluggable databases in a database or compartment. You must provide either a `databaseId` or `compartmentId` value.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -39,8 +38,7 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetPluggableDatabasesResult> InvokeAsync(GetPluggableDatabasesArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetPluggableDatabasesResult>("oci:Database/getPluggableDatabases:getPluggableDatabases", args ?? new GetPluggableDatabasesArgs(), options.WithDefaults());
@@ -51,10 +49,9 @@ namespace Pulumi.Oci.Database
         /// Gets a list of the pluggable databases in a database or compartment. You must provide either a `databaseId` or `compartmentId` value.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -73,8 +70,7 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetPluggableDatabasesResult> Invoke(GetPluggableDatabasesInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPluggableDatabasesResult>("oci:Database/getPluggableDatabases:getPluggableDatabases", args ?? new GetPluggableDatabasesInvokeArgs(), options.WithDefaults());

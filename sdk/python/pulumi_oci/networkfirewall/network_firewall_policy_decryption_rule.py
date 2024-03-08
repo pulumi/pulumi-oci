@@ -322,7 +322,7 @@ class NetworkFirewallPolicyDecryptionRule(pulumi.CustomResource):
         NetworkFirewallPolicyDecryptionRules can be imported using the `name`, e.g.
 
         ```sh
-         $ pulumi import oci:NetworkFirewall/networkFirewallPolicyDecryptionRule:NetworkFirewallPolicyDecryptionRule test_network_firewall_policy_decryption_rule "networkFirewallPolicies/{networkFirewallPolicyId}/decryptionRules/{decryptionRuleName}"
+        $ pulumi import oci:NetworkFirewall/networkFirewallPolicyDecryptionRule:NetworkFirewallPolicyDecryptionRule test_network_firewall_policy_decryption_rule "networkFirewallPolicies/{networkFirewallPolicyId}/decryptionRules/{decryptionRuleName}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -353,7 +353,7 @@ class NetworkFirewallPolicyDecryptionRule(pulumi.CustomResource):
         NetworkFirewallPolicyDecryptionRules can be imported using the `name`, e.g.
 
         ```sh
-         $ pulumi import oci:NetworkFirewall/networkFirewallPolicyDecryptionRule:NetworkFirewallPolicyDecryptionRule test_network_firewall_policy_decryption_rule "networkFirewallPolicies/{networkFirewallPolicyId}/decryptionRules/{decryptionRuleName}"
+        $ pulumi import oci:NetworkFirewall/networkFirewallPolicyDecryptionRule:NetworkFirewallPolicyDecryptionRule test_network_firewall_policy_decryption_rule "networkFirewallPolicies/{networkFirewallPolicyId}/decryptionRules/{decryptionRuleName}"
         ```
 
         :param str resource_name: The name of the resource.

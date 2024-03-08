@@ -102,6 +102,7 @@ def get_backup_destinations(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -109,6 +110,7 @@ def get_backup_destinations(compartment_id: Optional[str] = None,
     test_backup_destinations = oci.Database.get_backup_destinations(compartment_id=var["compartment_id"],
         type=var["backup_destination_type"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -141,6 +143,7 @@ def get_backup_destinations_output(compartment_id: Optional[pulumi.Input[str]] =
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -148,6 +151,7 @@ def get_backup_destinations_output(compartment_id: Optional[pulumi.Input[str]] =
     test_backup_destinations = oci.Database.get_backup_destinations(compartment_id=var["compartment_id"],
         type=var["backup_destination_type"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -44,13 +45,14 @@ import * as utilities from "../utilities";
  *     repositoryId: oci_artifacts_repository.test_repository.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * Triggers can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:DevOps/trigger:Trigger test_trigger "id"
+ * $ pulumi import oci:DevOps/trigger:Trigger test_trigger "id"
  * ```
  */
 export class Trigger extends pulumi.CustomResource {

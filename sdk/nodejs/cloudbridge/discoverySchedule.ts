@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -27,13 +28,14 @@ import * as utilities from "../utilities";
  *     },
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * DiscoverySchedules can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:CloudBridge/discoverySchedule:DiscoverySchedule test_discovery_schedule "id"
+ * $ pulumi import oci:CloudBridge/discoverySchedule:DiscoverySchedule test_discovery_schedule "id"
  * ```
  */
 export class DiscoverySchedule extends pulumi.CustomResource {

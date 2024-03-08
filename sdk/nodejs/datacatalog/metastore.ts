@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -30,13 +31,14 @@ import * as utilities from "../utilities";
  *     },
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * Metastores can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:DataCatalog/metastore:Metastore test_metastore "id"
+ * $ pulumi import oci:DataCatalog/metastore:Metastore test_metastore "id"
  * ```
  */
 export class Metastore extends pulumi.CustomResource {

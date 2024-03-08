@@ -21,9 +21,7 @@ import (
 // Certificates can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:CertificatesManagement/certificate:Certificate test_certificate "id"
-//
+// $ pulumi import oci:CertificatesManagement/certificate:Certificate test_certificate "id"
 // ```
 type Certificate struct {
 	pulumi.CustomResourceState

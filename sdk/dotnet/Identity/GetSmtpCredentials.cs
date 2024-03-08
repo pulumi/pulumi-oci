@@ -18,10 +18,9 @@ namespace Pulumi.Oci.Identity
         /// the SMTP user name but not the SMTP password. The SMTP password is returned only upon creation.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -37,8 +36,7 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetSmtpCredentialsResult> InvokeAsync(GetSmtpCredentialsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetSmtpCredentialsResult>("oci:Identity/getSmtpCredentials:getSmtpCredentials", args ?? new GetSmtpCredentialsArgs(), options.WithDefaults());
@@ -50,10 +48,9 @@ namespace Pulumi.Oci.Identity
         /// the SMTP user name but not the SMTP password. The SMTP password is returned only upon creation.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -69,8 +66,7 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetSmtpCredentialsResult> Invoke(GetSmtpCredentialsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSmtpCredentialsResult>("oci:Identity/getSmtpCredentials:getSmtpCredentials", args ?? new GetSmtpCredentialsInvokeArgs(), options.WithDefaults());

@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,6 +23,7 @@ import * as utilities from "../utilities";
  *     securityAssessmentId: oci_data_safe_security_assessment.test_security_assessment.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getSecurityAssessmentComparison(args: GetSecurityAssessmentComparisonArgs, opts?: pulumi.InvokeOptions): Promise<GetSecurityAssessmentComparisonResult> {
 
@@ -80,6 +82,7 @@ export interface GetSecurityAssessmentComparisonResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -89,6 +92,7 @@ export interface GetSecurityAssessmentComparisonResult {
  *     securityAssessmentId: oci_data_safe_security_assessment.test_security_assessment.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getSecurityAssessmentComparisonOutput(args: GetSecurityAssessmentComparisonOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecurityAssessmentComparisonResult> {
     return pulumi.output(args).apply((a: any) => getSecurityAssessmentComparison(a, opts))

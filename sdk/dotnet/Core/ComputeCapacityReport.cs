@@ -21,6 +21,7 @@ namespace Pulumi.Oci.Core
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -51,13 +52,14 @@ namespace Pulumi.Oci.Core
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// ComputeCapacityReports can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Core/computeCapacityReport:ComputeCapacityReport test_compute_capacity_report "id"
+    /// $ pulumi import oci:Core/computeCapacityReport:ComputeCapacityReport test_compute_capacity_report "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Core/computeCapacityReport:ComputeCapacityReport")]

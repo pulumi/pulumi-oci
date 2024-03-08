@@ -7,12 +7,14 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
+ * ## Example Usage
+ *
  * ## Import
  *
  * DatabaseInsights can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Opsi/databaseInsight:DatabaseInsight test_database_insight "id"
+ * $ pulumi import oci:Opsi/databaseInsight:DatabaseInsight test_database_insight "id"
  * ```
  */
 export class DatabaseInsight extends pulumi.CustomResource {

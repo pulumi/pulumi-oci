@@ -26,7 +26,7 @@ import * as utilities from "../utilities";
  * DrgAttachments can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Core/drgAttachment:DrgAttachment test_drg_attachment "id"
+ * $ pulumi import oci:Core/drgAttachment:DrgAttachment test_drg_attachment "id"
  * ```
  */
 export class DrgAttachment extends pulumi.CustomResource {

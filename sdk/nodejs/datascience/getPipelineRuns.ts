@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -26,6 +27,7 @@ import * as utilities from "../utilities";
  *     state: _var.pipeline_run_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getPipelineRuns(args: GetPipelineRunsArgs, opts?: pulumi.InvokeOptions): Promise<GetPipelineRunsResult> {
 
@@ -113,6 +115,7 @@ export interface GetPipelineRunsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -126,6 +129,7 @@ export interface GetPipelineRunsResult {
  *     state: _var.pipeline_run_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getPipelineRunsOutput(args: GetPipelineRunsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPipelineRunsResult> {
     return pulumi.output(args).apply((a: any) => getPipelineRuns(a, opts))

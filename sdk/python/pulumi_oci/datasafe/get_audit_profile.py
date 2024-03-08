@@ -279,12 +279,14 @@ def get_audit_profile(audit_profile_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_audit_profile = oci.DataSafe.get_audit_profile(audit_profile_id=oci_data_safe_audit_profile["test_audit_profile"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str audit_profile_id: The OCID of the audit.
@@ -327,12 +329,14 @@ def get_audit_profile_output(audit_profile_id: Optional[pulumi.Input[str]] = Non
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_audit_profile = oci.DataSafe.get_audit_profile(audit_profile_id=oci_data_safe_audit_profile["test_audit_profile"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str audit_profile_id: The OCID of the audit.

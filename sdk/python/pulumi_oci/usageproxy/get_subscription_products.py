@@ -116,6 +116,7 @@ def get_subscription_products(filters: Optional[Sequence[pulumi.InputType['GetSu
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -125,6 +126,7 @@ def get_subscription_products(filters: Optional[Sequence[pulumi.InputType['GetSu
         usage_period_key=var["subscription_product_usage_period_key"],
         producttype=var["subscription_product_producttype"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str producttype: The field to specify the type of product.
@@ -165,6 +167,7 @@ def get_subscription_products_output(filters: Optional[pulumi.Input[Optional[Seq
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -174,6 +177,7 @@ def get_subscription_products_output(filters: Optional[pulumi.Input[Optional[Seq
         usage_period_key=var["subscription_product_usage_period_key"],
         producttype=var["subscription_product_producttype"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str producttype: The field to specify the type of product.

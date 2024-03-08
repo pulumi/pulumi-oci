@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -40,6 +41,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetKnowledgebase(ctx *pulumi.Context, args *GetKnowledgebaseArgs, opts ...pulumi.InvokeOption) (*GetKnowledgebaseResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetKnowledgebaseResult

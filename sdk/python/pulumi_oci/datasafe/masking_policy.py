@@ -582,6 +582,7 @@ class MaskingPolicy(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -609,13 +610,14 @@ class MaskingPolicy(pulumi.CustomResource):
             pre_masking_script=var["masking_policy_pre_masking_script"],
             recompile=var["masking_policy_recompile"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         MaskingPolicies can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataSafe/maskingPolicy:MaskingPolicy test_masking_policy "id"
+        $ pulumi import oci:DataSafe/maskingPolicy:MaskingPolicy test_masking_policy "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -668,6 +670,7 @@ class MaskingPolicy(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -695,13 +698,14 @@ class MaskingPolicy(pulumi.CustomResource):
             pre_masking_script=var["masking_policy_pre_masking_script"],
             recompile=var["masking_policy_recompile"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         MaskingPolicies can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataSafe/maskingPolicy:MaskingPolicy test_masking_policy "id"
+        $ pulumi import oci:DataSafe/maskingPolicy:MaskingPolicy test_masking_policy "id"
         ```
 
         :param str resource_name: The name of the resource.

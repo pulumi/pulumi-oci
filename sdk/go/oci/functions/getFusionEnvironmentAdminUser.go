@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -40,6 +41,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetFusionEnvironmentAdminUser(ctx *pulumi.Context, args *GetFusionEnvironmentAdminUserArgs, opts ...pulumi.InvokeOption) (*GetFusionEnvironmentAdminUserResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetFusionEnvironmentAdminUserResult

@@ -24,7 +24,7 @@ import javax.annotation.Nullable;
  * PrivateEndpoints can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:DataFlow/privateEndpoint:PrivateEndpoint test_private_endpoint &#34;id&#34;
+ * $ pulumi import oci:DataFlow/privateEndpoint:PrivateEndpoint test_private_endpoint &#34;id&#34;
  * ```
  * 
  */

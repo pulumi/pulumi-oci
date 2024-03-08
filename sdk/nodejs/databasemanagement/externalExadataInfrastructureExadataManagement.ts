@@ -16,6 +16,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -26,6 +27,7 @@ import * as utilities from "../utilities";
  *     licenseModel: _var.external_exadata_infrastructure_exadata_management_license_model,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export class ExternalExadataInfrastructureExadataManagement extends pulumi.CustomResource {
     /**

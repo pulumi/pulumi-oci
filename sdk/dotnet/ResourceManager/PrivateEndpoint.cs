@@ -16,6 +16,7 @@ namespace Pulumi.Oci.ResourceManager
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -46,13 +47,14 @@ namespace Pulumi.Oci.ResourceManager
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// PrivateEndpoints can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:ResourceManager/privateEndpoint:PrivateEndpoint test_private_endpoint "id"
+    /// $ pulumi import oci:ResourceManager/privateEndpoint:PrivateEndpoint test_private_endpoint "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:ResourceManager/privateEndpoint:PrivateEndpoint")]

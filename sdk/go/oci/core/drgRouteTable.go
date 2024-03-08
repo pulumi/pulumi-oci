@@ -19,6 +19,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -51,15 +52,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // DrgRouteTables can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Core/drgRouteTable:DrgRouteTable test_drg_route_table "id"
-//
+// $ pulumi import oci:Core/drgRouteTable:DrgRouteTable test_drg_route_table "id"
 // ```
 type DrgRouteTable struct {
 	pulumi.CustomResourceState

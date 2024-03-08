@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -40,6 +41,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupTargetAlertPolicyAssociation(ctx *pulumi.Context, args *LookupTargetAlertPolicyAssociationArgs, opts ...pulumi.InvokeOption) (*LookupTargetAlertPolicyAssociationResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupTargetAlertPolicyAssociationResult

@@ -26,10 +26,9 @@ namespace Pulumi.Oci.Identity
         /// - Although`userId` and `groupId` are not individually required, you must set one of them.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -47,8 +46,7 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetUserGroupMembershipsResult> InvokeAsync(GetUserGroupMembershipsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetUserGroupMembershipsResult>("oci:Identity/getUserGroupMemberships:getUserGroupMemberships", args ?? new GetUserGroupMembershipsArgs(), options.WithDefaults());
@@ -68,10 +66,9 @@ namespace Pulumi.Oci.Identity
         /// - Although`userId` and `groupId` are not individually required, you must set one of them.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -89,8 +86,7 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetUserGroupMembershipsResult> Invoke(GetUserGroupMembershipsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetUserGroupMembershipsResult>("oci:Identity/getUserGroupMemberships:getUserGroupMemberships", args ?? new GetUserGroupMembershipsInvokeArgs(), options.WithDefaults());

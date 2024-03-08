@@ -138,6 +138,7 @@ def get_boot_volume_replicas(availability_domain: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -148,6 +149,7 @@ def get_boot_volume_replicas(availability_domain: Optional[str] = None,
         state=var["boot_volume_replica_state"],
         volume_group_replica_id=oci_core_volume_group_replica["test_volume_group_replica"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
@@ -192,6 +194,7 @@ def get_boot_volume_replicas_output(availability_domain: Optional[pulumi.Input[O
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -202,6 +205,7 @@ def get_boot_volume_replicas_output(availability_domain: Optional[pulumi.Input[O
         state=var["boot_volume_replica_state"],
         volume_group_replica_id=oci_core_volume_group_replica["test_volume_group_replica"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`

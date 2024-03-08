@@ -15,6 +15,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -37,13 +38,14 @@ import * as utilities from "../utilities";
  *     parentId: oci_osmanagement_parent.test_parent.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * SoftwareSources can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:OsManagement/softwareSource:SoftwareSource test_software_source "id"
+ * $ pulumi import oci:OsManagement/softwareSource:SoftwareSource test_software_source "id"
  * ```
  */
 export class SoftwareSource extends pulumi.CustomResource {

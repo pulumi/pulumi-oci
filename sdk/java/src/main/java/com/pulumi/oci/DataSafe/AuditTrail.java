@@ -28,7 +28,7 @@ import javax.annotation.Nullable;
  * AuditTrails can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:DataSafe/auditTrail:AuditTrail test_audit_trail &#34;id&#34;
+ * $ pulumi import oci:DataSafe/auditTrail:AuditTrail test_audit_trail &#34;id&#34;
  * ```
  * 
  */

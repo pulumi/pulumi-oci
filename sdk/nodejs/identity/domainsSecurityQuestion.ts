@@ -16,7 +16,7 @@ import * as utilities from "../utilities";
  * SecurityQuestions can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Identity/domainsSecurityQuestion:DomainsSecurityQuestion test_security_question "idcsEndpoint/{idcsEndpoint}/securityQuestions/{securityQuestionId}"
+ * $ pulumi import oci:Identity/domainsSecurityQuestion:DomainsSecurityQuestion test_security_question "idcsEndpoint/{idcsEndpoint}/securityQuestions/{securityQuestionId}"
  * ```
  */
 export class DomainsSecurityQuestion extends pulumi.CustomResource {

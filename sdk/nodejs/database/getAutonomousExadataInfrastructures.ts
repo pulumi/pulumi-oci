@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,6 +25,7 @@ import * as utilities from "../utilities";
  *     state: _var.autonomous_exadata_infrastructure_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAutonomousExadataInfrastructures(args: GetAutonomousExadataInfrastructuresArgs, opts?: pulumi.InvokeOptions): Promise<GetAutonomousExadataInfrastructuresResult> {
 
@@ -97,6 +99,7 @@ export interface GetAutonomousExadataInfrastructuresResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -108,6 +111,7 @@ export interface GetAutonomousExadataInfrastructuresResult {
  *     state: _var.autonomous_exadata_infrastructure_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAutonomousExadataInfrastructuresOutput(args: GetAutonomousExadataInfrastructuresOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousExadataInfrastructuresResult> {
     return pulumi.output(args).apply((a: any) => getAutonomousExadataInfrastructures(a, opts))

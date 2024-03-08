@@ -164,6 +164,7 @@ def get_maintenance_runs(availability_domain: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -176,6 +177,7 @@ def get_maintenance_runs(availability_domain: Optional[str] = None,
         target_resource_id=oci_database_target_resource["test_target_resource"]["id"],
         target_resource_type=var["maintenance_run_target_resource_type"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str availability_domain: A filter to return only resources that match the given availability domain exactly.
@@ -228,6 +230,7 @@ def get_maintenance_runs_output(availability_domain: Optional[pulumi.Input[Optio
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -240,6 +243,7 @@ def get_maintenance_runs_output(availability_domain: Optional[pulumi.Input[Optio
         target_resource_id=oci_database_target_resource["test_target_resource"]["id"],
         target_resource_type=var["maintenance_run_target_resource_type"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str availability_domain: A filter to return only resources that match the given availability domain exactly.

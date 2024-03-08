@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -31,13 +32,14 @@ import * as utilities from "../utilities";
  *     retentionInDays: _var.mysql_backup_retention_in_days,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * MysqlBackups can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Mysql/mysqlBackup:MysqlBackup test_mysql_backup "id"
+ * $ pulumi import oci:Mysql/mysqlBackup:MysqlBackup test_mysql_backup "id"
  * ```
  */
 export class MysqlBackup extends pulumi.CustomResource {

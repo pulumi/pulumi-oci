@@ -23,6 +23,8 @@ import javax.annotation.Nullable;
  * Creates a new Protection Policy.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -55,13 +57,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * ProtectionPolicies can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:RecoveryMod/protectionPolicy:ProtectionPolicy test_protection_policy &#34;id&#34;
+ * $ pulumi import oci:RecoveryMod/protectionPolicy:ProtectionPolicy test_protection_policy &#34;id&#34;
  * ```
  * 
  */

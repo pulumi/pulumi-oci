@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,6 +23,7 @@ import * as utilities from "../utilities";
  *     compartmentId: _var.compartment_id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getClusterOption(args: GetClusterOptionArgs, opts?: pulumi.InvokeOptions): Promise<GetClusterOptionResult> {
 
@@ -72,6 +74,7 @@ export interface GetClusterOptionResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -81,6 +84,7 @@ export interface GetClusterOptionResult {
  *     compartmentId: _var.compartment_id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getClusterOptionOutput(args: GetClusterOptionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetClusterOptionResult> {
     return pulumi.output(args).apply((a: any) => getClusterOption(a, opts))

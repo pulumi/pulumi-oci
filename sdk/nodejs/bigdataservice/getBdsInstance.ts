@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,6 +22,7 @@ import * as utilities from "../utilities";
  *     bdsInstanceId: oci_bds_bds_instance.test_bds_instance.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getBdsInstance(args: GetBdsInstanceArgs, opts?: pulumi.InvokeOptions): Promise<GetBdsInstanceResult> {
 
@@ -156,6 +158,7 @@ export interface GetBdsInstanceResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -164,6 +167,7 @@ export interface GetBdsInstanceResult {
  *     bdsInstanceId: oci_bds_bds_instance.test_bds_instance.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getBdsInstanceOutput(args: GetBdsInstanceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBdsInstanceResult> {
     return pulumi.output(args).apply((a: any) => getBdsInstance(a, opts))

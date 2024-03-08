@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -58,15 +59,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // ProcessSets can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:StackMonitoring/processSet:ProcessSet test_process_set "id"
-//
+// $ pulumi import oci:StackMonitoring/processSet:ProcessSet test_process_set "id"
 // ```
 type ProcessSet struct {
 	pulumi.CustomResourceState

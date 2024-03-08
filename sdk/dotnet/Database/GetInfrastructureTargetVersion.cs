@@ -18,10 +18,9 @@ namespace Pulumi.Oci.Database
         /// Applies to Exadata Cloud@Customer and Exadata Cloud instances only.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -39,8 +38,7 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetInfrastructureTargetVersionResult> InvokeAsync(GetInfrastructureTargetVersionArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetInfrastructureTargetVersionResult>("oci:Database/getInfrastructureTargetVersion:getInfrastructureTargetVersion", args ?? new GetInfrastructureTargetVersionArgs(), options.WithDefaults());
@@ -52,10 +50,9 @@ namespace Pulumi.Oci.Database
         /// Applies to Exadata Cloud@Customer and Exadata Cloud instances only.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -73,8 +70,7 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetInfrastructureTargetVersionResult> Invoke(GetInfrastructureTargetVersionInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetInfrastructureTargetVersionResult>("oci:Database/getInfrastructureTargetVersion:getInfrastructureTargetVersion", args ?? new GetInfrastructureTargetVersionInvokeArgs(), options.WithDefaults());

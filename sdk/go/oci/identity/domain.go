@@ -33,6 +33,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -73,15 +74,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Domains can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Identity/domain:Domain test_domain "id"
-//
+// $ pulumi import oci:Identity/domain:Domain test_domain "id"
 // ```
 type Domain struct {
 	pulumi.CustomResourceState

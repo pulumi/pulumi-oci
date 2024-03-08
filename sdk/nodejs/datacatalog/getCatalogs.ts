@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,6 +24,7 @@ import * as utilities from "../utilities";
  *     state: _var.catalog_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getCatalogs(args: GetCatalogsArgs, opts?: pulumi.InvokeOptions): Promise<GetCatalogsResult> {
 
@@ -87,6 +89,7 @@ export interface GetCatalogsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -97,6 +100,7 @@ export interface GetCatalogsResult {
  *     state: _var.catalog_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getCatalogsOutput(args: GetCatalogsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCatalogsResult> {
     return pulumi.output(args).apply((a: any) => getCatalogs(a, opts))

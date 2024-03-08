@@ -20,10 +20,9 @@ namespace Pulumi.Oci.Identity
         /// - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -40,8 +39,7 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetIamWorkRequestsResult> InvokeAsync(GetIamWorkRequestsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetIamWorkRequestsResult>("oci:Identity/getIamWorkRequests:getIamWorkRequests", args ?? new GetIamWorkRequestsArgs(), options.WithDefaults());
@@ -55,10 +53,9 @@ namespace Pulumi.Oci.Identity
         /// - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -75,8 +72,7 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetIamWorkRequestsResult> Invoke(GetIamWorkRequestsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetIamWorkRequestsResult>("oci:Identity/getIamWorkRequests:getIamWorkRequests", args ?? new GetIamWorkRequestsInvokeArgs(), options.WithDefaults());

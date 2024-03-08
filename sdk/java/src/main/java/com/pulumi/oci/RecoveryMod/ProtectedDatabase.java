@@ -25,6 +25,8 @@ import javax.annotation.Nullable;
  * Creates a new Protected Database.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -66,13 +68,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * ProtectedDatabases can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:RecoveryMod/protectedDatabase:ProtectedDatabase test_protected_database &#34;id&#34;
+ * $ pulumi import oci:RecoveryMod/protectedDatabase:ProtectedDatabase test_protected_database &#34;id&#34;
  * ```
  * 
  */

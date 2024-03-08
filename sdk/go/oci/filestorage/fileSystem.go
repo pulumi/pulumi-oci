@@ -46,6 +46,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -80,15 +81,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // FileSystems can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:FileStorage/fileSystem:FileSystem test_file_system "id"
-//
+// $ pulumi import oci:FileStorage/fileSystem:FileSystem test_file_system "id"
 // ```
 type FileSystem struct {
 	pulumi.CustomResourceState

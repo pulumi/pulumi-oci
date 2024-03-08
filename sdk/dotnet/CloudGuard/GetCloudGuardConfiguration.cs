@@ -16,10 +16,9 @@ namespace Pulumi.Oci.CloudGuard
         /// 
         /// GET Cloud Guard Configuration Details for a Tenancy.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,8 +34,7 @@ namespace Pulumi.Oci.CloudGuard
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetCloudGuardConfigurationResult> InvokeAsync(GetCloudGuardConfigurationArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetCloudGuardConfigurationResult>("oci:CloudGuard/getCloudGuardConfiguration:getCloudGuardConfiguration", args ?? new GetCloudGuardConfigurationArgs(), options.WithDefaults());
@@ -46,10 +44,9 @@ namespace Pulumi.Oci.CloudGuard
         /// 
         /// GET Cloud Guard Configuration Details for a Tenancy.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -65,8 +62,7 @@ namespace Pulumi.Oci.CloudGuard
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetCloudGuardConfigurationResult> Invoke(GetCloudGuardConfigurationInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCloudGuardConfigurationResult>("oci:CloudGuard/getCloudGuardConfiguration:getCloudGuardConfiguration", args ?? new GetCloudGuardConfigurationInvokeArgs(), options.WithDefaults());

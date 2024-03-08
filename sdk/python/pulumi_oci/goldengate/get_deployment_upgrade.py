@@ -400,12 +400,14 @@ def get_deployment_upgrade(deployment_upgrade_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_deployment_upgrade = oci.GoldenGate.get_deployment_upgrade(deployment_upgrade_id=oci_golden_gate_deployment_upgrade["test_deployment_upgrade"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str deployment_upgrade_id: A unique Deployment Upgrade identifier.
@@ -458,12 +460,14 @@ def get_deployment_upgrade_output(deployment_upgrade_id: Optional[pulumi.Input[s
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_deployment_upgrade = oci.GoldenGate.get_deployment_upgrade(deployment_upgrade_id=oci_golden_gate_deployment_upgrade["test_deployment_upgrade"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str deployment_upgrade_id: A unique Deployment Upgrade identifier.

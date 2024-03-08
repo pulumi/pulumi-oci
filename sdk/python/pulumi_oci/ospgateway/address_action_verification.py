@@ -1028,6 +1028,7 @@ class AddressActionVerification(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -1062,13 +1063,14 @@ class AddressActionVerification(pulumi.CustomResource):
             street_name=var["address_action_verification_street_name"],
             street_number=var["address_action_verification_street_number"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         AddressActionVerifications can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:OspGateway/addressActionVerification:AddressActionVerification test_address_action_verification "id"
+        $ pulumi import oci:OspGateway/addressActionVerification:AddressActionVerification test_address_action_verification "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -1119,6 +1121,7 @@ class AddressActionVerification(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -1153,13 +1156,14 @@ class AddressActionVerification(pulumi.CustomResource):
             street_name=var["address_action_verification_street_name"],
             street_number=var["address_action_verification_street_number"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         AddressActionVerifications can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:OspGateway/addressActionVerification:AddressActionVerification test_address_action_verification "id"
+        $ pulumi import oci:OspGateway/addressActionVerification:AddressActionVerification test_address_action_verification "id"
         ```
 
         :param str resource_name: The name of the resource.

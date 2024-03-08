@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -46,15 +47,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // DbNodeConsoleHistories can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Database/dbNodeConsoleHistory:DbNodeConsoleHistory test_db_node_console_history "dbNodes/{dbNodeId}/consoleHistories/{consoleHistoryId}"
-//
+// $ pulumi import oci:Database/dbNodeConsoleHistory:DbNodeConsoleHistory test_db_node_console_history "dbNodes/{dbNodeId}/consoleHistories/{consoleHistoryId}"
 // ```
 type DbNodeConsoleHistory struct {
 	pulumi.CustomResourceState

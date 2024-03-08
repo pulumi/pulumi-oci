@@ -90,12 +90,14 @@ def get_smtp_credentials(filters: Optional[Sequence[pulumi.InputType['GetSmtpCre
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_smtp_credentials = oci.Identity.get_smtp_credentials(user_id=oci_identity_user["test_user"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str user_id: The OCID of the user.
@@ -125,12 +127,14 @@ def get_smtp_credentials_output(filters: Optional[pulumi.Input[Optional[Sequence
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_smtp_credentials = oci.Identity.get_smtp_credentials(user_id=oci_identity_user["test_user"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str user_id: The OCID of the user.

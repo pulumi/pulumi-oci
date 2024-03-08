@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -40,6 +41,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupAuditArchiveRetrieval(ctx *pulumi.Context, args *LookupAuditArchiveRetrievalArgs, opts ...pulumi.InvokeOption) (*LookupAuditArchiveRetrievalResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupAuditArchiveRetrievalResult

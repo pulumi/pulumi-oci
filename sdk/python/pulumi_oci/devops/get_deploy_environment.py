@@ -255,12 +255,14 @@ def get_deploy_environment(deploy_environment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_deploy_environment = oci.DevOps.get_deploy_environment(deploy_environment_id=oci_devops_deploy_environment["test_deploy_environment"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str deploy_environment_id: Unique environment identifier.
@@ -301,12 +303,14 @@ def get_deploy_environment_output(deploy_environment_id: Optional[pulumi.Input[s
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_deploy_environment = oci.DevOps.get_deploy_environment(deploy_environment_id=oci_devops_deploy_environment["test_deploy_environment"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str deploy_environment_id: Unique environment identifier.

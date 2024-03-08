@@ -20,6 +20,8 @@ import javax.annotation.Nullable;
  * Creates a custom SSL cipher suite.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -49,13 +51,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * SslCipherSuites can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:LoadBalancer/sslCipherSuite:SslCipherSuite test_ssl_cipher_suite &#34;loadBalancers/{loadBalancerId}/sslCipherSuites/{name}&#34;
+ * $ pulumi import oci:LoadBalancer/sslCipherSuite:SslCipherSuite test_ssl_cipher_suite &#34;loadBalancers/{loadBalancerId}/sslCipherSuites/{name}&#34;
  * ```
  * 
  */

@@ -29,6 +29,8 @@ import javax.annotation.Nullable;
  * tenancy can use this operation to create a secret key for any user, including themselves.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -58,13 +60,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * CustomerSecretKeys can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Identity/customerSecretKey:CustomerSecretKey test_customer_secret_key &#34;users/{userId}/customerSecretKeys/{customerSecretKeyId}&#34;
+ * $ pulumi import oci:Identity/customerSecretKey:CustomerSecretKey test_customer_secret_key &#34;users/{userId}/customerSecretKeys/{customerSecretKeyId}&#34;
  * ```
  * 
  */

@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,6 +42,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupPeer(ctx *pulumi.Context, args *LookupPeerArgs, opts ...pulumi.InvokeOption) (*LookupPeerResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupPeerResult

@@ -138,6 +138,7 @@ def get_pools(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -148,6 +149,7 @@ def get_pools(compartment_id: Optional[str] = None,
         owner_principal_id=oci_dataflow_owner_principal["test_owner_principal"]["id"],
         state=var["pool_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment.
@@ -192,6 +194,7 @@ def get_pools_output(compartment_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -202,6 +205,7 @@ def get_pools_output(compartment_id: Optional[pulumi.Input[str]] = None,
         owner_principal_id=oci_dataflow_owner_principal["test_owner_principal"]["id"],
         state=var["pool_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment.

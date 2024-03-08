@@ -120,6 +120,7 @@ def get_license_metric(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -127,6 +128,7 @@ def get_license_metric(compartment_id: Optional[str] = None,
     test_license_metric = oci.LicenseManager.get_license_metric(compartment_id=var["compartment_id"],
         is_compartment_id_in_subtree=var["license_metric_is_compartment_id_in_subtree"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for the license record, product license, and configuration.
@@ -159,6 +161,7 @@ def get_license_metric_output(compartment_id: Optional[pulumi.Input[str]] = None
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -166,6 +169,7 @@ def get_license_metric_output(compartment_id: Optional[pulumi.Input[str]] = None
     test_license_metric = oci.LicenseManager.get_license_metric(compartment_id=var["compartment_id"],
         is_compartment_id_in_subtree=var["license_metric_is_compartment_id_in_subtree"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for the license record, product license, and configuration.

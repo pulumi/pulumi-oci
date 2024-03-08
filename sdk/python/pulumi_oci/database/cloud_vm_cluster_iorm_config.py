@@ -173,6 +173,7 @@ class CloudVmClusterIormConfig(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -185,13 +186,14 @@ class CloudVmClusterIormConfig(pulumi.CustomResource):
             cloud_vm_cluster_id=oci_database_cloud_vm_cluster["test_cloud_vm_cluster"]["id"],
             objective="AUTO")
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         CloudVmClusterIormConfigs can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Database/cloudVmClusterIormConfig:CloudVmClusterIormConfig test_cloud_vm_cluster_iorm_config "cloudVmClusters/{cloudVmClusterId}/CloudVmClusterIormConfig"
+        $ pulumi import oci:Database/cloudVmClusterIormConfig:CloudVmClusterIormConfig test_cloud_vm_cluster_iorm_config "cloudVmClusters/{cloudVmClusterId}/CloudVmClusterIormConfig"
         ```
 
         :param str resource_name: The name of the resource.
@@ -215,6 +217,7 @@ class CloudVmClusterIormConfig(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -227,13 +230,14 @@ class CloudVmClusterIormConfig(pulumi.CustomResource):
             cloud_vm_cluster_id=oci_database_cloud_vm_cluster["test_cloud_vm_cluster"]["id"],
             objective="AUTO")
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         CloudVmClusterIormConfigs can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Database/cloudVmClusterIormConfig:CloudVmClusterIormConfig test_cloud_vm_cluster_iorm_config "cloudVmClusters/{cloudVmClusterId}/CloudVmClusterIormConfig"
+        $ pulumi import oci:Database/cloudVmClusterIormConfig:CloudVmClusterIormConfig test_cloud_vm_cluster_iorm_config "cloudVmClusters/{cloudVmClusterId}/CloudVmClusterIormConfig"
         ```
 
         :param str resource_name: The name of the resource.

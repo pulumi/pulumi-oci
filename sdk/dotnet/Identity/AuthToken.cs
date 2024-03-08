@@ -25,6 +25,7 @@ namespace Pulumi.Oci.Identity
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -41,13 +42,14 @@ namespace Pulumi.Oci.Identity
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// AuthTokens can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Identity/authToken:AuthToken test_auth_token "users/{userId}/authTokens/{authTokenId}"
+    /// $ pulumi import oci:Identity/authToken:AuthToken test_auth_token "users/{userId}/authTokens/{authTokenId}"
     /// ```
     /// </summary>
     [OciResourceType("oci:Identity/authToken:AuthToken")]

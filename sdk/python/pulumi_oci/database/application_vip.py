@@ -314,6 +314,7 @@ class ApplicationVip(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -325,13 +326,14 @@ class ApplicationVip(pulumi.CustomResource):
             db_node_id=oci_database_db_node["test_db_node"]["id"],
             ip_address=var["application_vip_ip_address"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ApplicationVips can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Database/applicationVip:ApplicationVip test_application_vip "id"
+        $ pulumi import oci:Database/applicationVip:ApplicationVip test_application_vip "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -359,6 +361,7 @@ class ApplicationVip(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -370,13 +373,14 @@ class ApplicationVip(pulumi.CustomResource):
             db_node_id=oci_database_db_node["test_db_node"]["id"],
             ip_address=var["application_vip_ip_address"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ApplicationVips can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Database/applicationVip:ApplicationVip test_application_vip "id"
+        $ pulumi import oci:Database/applicationVip:ApplicationVip test_application_vip "id"
         ```
 
         :param str resource_name: The name of the resource.

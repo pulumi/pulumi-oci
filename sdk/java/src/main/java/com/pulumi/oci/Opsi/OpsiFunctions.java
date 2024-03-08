@@ -110,6 +110,8 @@ public final class OpsiFunctions {
      * Gets details of an AWR hub.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -138,6 +140,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAwrHubResult> getAwrHub(GetAwrHubArgs args) {
@@ -149,6 +152,8 @@ public final class OpsiFunctions {
      * Gets details of an AWR hub.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -177,6 +182,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAwrHubResult> getAwrHubPlain(GetAwrHubPlainArgs args) {
@@ -188,6 +194,8 @@ public final class OpsiFunctions {
      * Gets details of an AWR hub.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -216,6 +224,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAwrHubResult> getAwrHub(GetAwrHubArgs args, InvokeOptions options) {
@@ -227,6 +236,8 @@ public final class OpsiFunctions {
      * Gets details of an AWR hub.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -255,6 +266,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAwrHubResult> getAwrHubPlain(GetAwrHubPlainArgs args, InvokeOptions options) {
@@ -267,6 +279,8 @@ public final class OpsiFunctions {
      * The timeGreaterThanOrEqualTo &amp; timeLessThanOrEqualTo params are optional. If these params are not provided, by default last 1 day snapshots will be returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -298,6 +312,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAwrHubAwrSnapshotResult> getAwrHubAwrSnapshot(GetAwrHubAwrSnapshotArgs args) {
@@ -310,6 +325,8 @@ public final class OpsiFunctions {
      * The timeGreaterThanOrEqualTo &amp; timeLessThanOrEqualTo params are optional. If these params are not provided, by default last 1 day snapshots will be returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -341,6 +358,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAwrHubAwrSnapshotResult> getAwrHubAwrSnapshotPlain(GetAwrHubAwrSnapshotPlainArgs args) {
@@ -353,6 +371,8 @@ public final class OpsiFunctions {
      * The timeGreaterThanOrEqualTo &amp; timeLessThanOrEqualTo params are optional. If these params are not provided, by default last 1 day snapshots will be returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -384,6 +404,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAwrHubAwrSnapshotResult> getAwrHubAwrSnapshot(GetAwrHubAwrSnapshotArgs args, InvokeOptions options) {
@@ -396,6 +417,8 @@ public final class OpsiFunctions {
      * The timeGreaterThanOrEqualTo &amp; timeLessThanOrEqualTo params are optional. If these params are not provided, by default last 1 day snapshots will be returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -427,6 +450,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAwrHubAwrSnapshotResult> getAwrHubAwrSnapshotPlain(GetAwrHubAwrSnapshotPlainArgs args, InvokeOptions options) {
@@ -439,6 +463,8 @@ public final class OpsiFunctions {
      * The timeGreaterThanOrEqualTo &amp; timeLessThanOrEqualTo params are optional. If these params are not provided, by default last 1 day snapshots will be returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -470,6 +496,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAwrHubAwrSnapshotsResult> getAwrHubAwrSnapshots(GetAwrHubAwrSnapshotsArgs args) {
@@ -482,6 +509,8 @@ public final class OpsiFunctions {
      * The timeGreaterThanOrEqualTo &amp; timeLessThanOrEqualTo params are optional. If these params are not provided, by default last 1 day snapshots will be returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -513,6 +542,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAwrHubAwrSnapshotsResult> getAwrHubAwrSnapshotsPlain(GetAwrHubAwrSnapshotsPlainArgs args) {
@@ -525,6 +555,8 @@ public final class OpsiFunctions {
      * The timeGreaterThanOrEqualTo &amp; timeLessThanOrEqualTo params are optional. If these params are not provided, by default last 1 day snapshots will be returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -556,6 +588,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAwrHubAwrSnapshotsResult> getAwrHubAwrSnapshots(GetAwrHubAwrSnapshotsArgs args, InvokeOptions options) {
@@ -568,6 +601,8 @@ public final class OpsiFunctions {
      * The timeGreaterThanOrEqualTo &amp; timeLessThanOrEqualTo params are optional. If these params are not provided, by default last 1 day snapshots will be returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -599,6 +634,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAwrHubAwrSnapshotsResult> getAwrHubAwrSnapshotsPlain(GetAwrHubAwrSnapshotsPlainArgs args, InvokeOptions options) {
@@ -610,6 +646,8 @@ public final class OpsiFunctions {
      * Gets a list of summary of AWR Sources.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -640,6 +678,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAwrHubAwrSourcesSummaryResult> getAwrHubAwrSourcesSummary(GetAwrHubAwrSourcesSummaryArgs args) {
@@ -651,6 +690,8 @@ public final class OpsiFunctions {
      * Gets a list of summary of AWR Sources.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -681,6 +722,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAwrHubAwrSourcesSummaryResult> getAwrHubAwrSourcesSummaryPlain(GetAwrHubAwrSourcesSummaryPlainArgs args) {
@@ -692,6 +734,8 @@ public final class OpsiFunctions {
      * Gets a list of summary of AWR Sources.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -722,6 +766,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAwrHubAwrSourcesSummaryResult> getAwrHubAwrSourcesSummary(GetAwrHubAwrSourcesSummaryArgs args, InvokeOptions options) {
@@ -733,6 +778,8 @@ public final class OpsiFunctions {
      * Gets a list of summary of AWR Sources.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -763,6 +810,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAwrHubAwrSourcesSummaryResult> getAwrHubAwrSourcesSummaryPlain(GetAwrHubAwrSourcesSummaryPlainArgs args, InvokeOptions options) {
@@ -774,6 +822,8 @@ public final class OpsiFunctions {
      * Gets the Awr Hub source object.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -802,6 +852,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAwrHubSourceResult> getAwrHubSource(GetAwrHubSourceArgs args) {
@@ -813,6 +864,8 @@ public final class OpsiFunctions {
      * Gets the Awr Hub source object.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -841,6 +894,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAwrHubSourceResult> getAwrHubSourcePlain(GetAwrHubSourcePlainArgs args) {
@@ -852,6 +906,8 @@ public final class OpsiFunctions {
      * Gets the Awr Hub source object.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -880,6 +936,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAwrHubSourceResult> getAwrHubSource(GetAwrHubSourceArgs args, InvokeOptions options) {
@@ -891,6 +948,8 @@ public final class OpsiFunctions {
      * Gets the Awr Hub source object.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -919,6 +978,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAwrHubSourceResult> getAwrHubSourcePlain(GetAwrHubSourcePlainArgs args, InvokeOptions options) {
@@ -930,6 +990,8 @@ public final class OpsiFunctions {
      * Gets a list of Awr Hub source objects.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -964,6 +1026,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAwrHubSourcesResult> getAwrHubSources(GetAwrHubSourcesArgs args) {
@@ -975,6 +1038,8 @@ public final class OpsiFunctions {
      * Gets a list of Awr Hub source objects.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1009,6 +1074,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAwrHubSourcesResult> getAwrHubSourcesPlain(GetAwrHubSourcesPlainArgs args) {
@@ -1020,6 +1086,8 @@ public final class OpsiFunctions {
      * Gets a list of Awr Hub source objects.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1054,6 +1122,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAwrHubSourcesResult> getAwrHubSources(GetAwrHubSourcesArgs args, InvokeOptions options) {
@@ -1065,6 +1134,8 @@ public final class OpsiFunctions {
      * Gets a list of Awr Hub source objects.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1099,6 +1170,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAwrHubSourcesResult> getAwrHubSourcesPlain(GetAwrHubSourcesPlainArgs args, InvokeOptions options) {
@@ -1110,6 +1182,8 @@ public final class OpsiFunctions {
      * Gets a list of AWR hubs. Either compartmentId or id must be specified. All these resources are expected to be in root compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1142,6 +1216,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAwrHubsResult> getAwrHubs(GetAwrHubsArgs args) {
@@ -1153,6 +1228,8 @@ public final class OpsiFunctions {
      * Gets a list of AWR hubs. Either compartmentId or id must be specified. All these resources are expected to be in root compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1185,6 +1262,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAwrHubsResult> getAwrHubsPlain(GetAwrHubsPlainArgs args) {
@@ -1196,6 +1274,8 @@ public final class OpsiFunctions {
      * Gets a list of AWR hubs. Either compartmentId or id must be specified. All these resources are expected to be in root compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1228,6 +1308,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAwrHubsResult> getAwrHubs(GetAwrHubsArgs args, InvokeOptions options) {
@@ -1239,6 +1320,8 @@ public final class OpsiFunctions {
      * Gets a list of AWR hubs. Either compartmentId or id must be specified. All these resources are expected to be in root compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1271,6 +1354,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAwrHubsResult> getAwrHubsPlain(GetAwrHubsPlainArgs args, InvokeOptions options) {
@@ -1282,6 +1366,8 @@ public final class OpsiFunctions {
      * Gets details of a database insight.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1310,6 +1396,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDatabaseInsightResult> getDatabaseInsight(GetDatabaseInsightArgs args) {
@@ -1321,6 +1408,8 @@ public final class OpsiFunctions {
      * Gets details of a database insight.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1349,6 +1438,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDatabaseInsightResult> getDatabaseInsightPlain(GetDatabaseInsightPlainArgs args) {
@@ -1360,6 +1450,8 @@ public final class OpsiFunctions {
      * Gets details of a database insight.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1388,6 +1480,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDatabaseInsightResult> getDatabaseInsight(GetDatabaseInsightArgs args, InvokeOptions options) {
@@ -1399,6 +1492,8 @@ public final class OpsiFunctions {
      * Gets details of a database insight.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1427,6 +1522,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDatabaseInsightResult> getDatabaseInsightPlain(GetDatabaseInsightPlainArgs args, InvokeOptions options) {
@@ -1439,6 +1535,8 @@ public final class OpsiFunctions {
      * When both compartmentId and compartmentIdInSubtree are specified, a list of database insights in that compartment and in all sub-compartments will be returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1477,6 +1575,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDatabaseInsightsResult> getDatabaseInsights() {
@@ -1489,6 +1588,8 @@ public final class OpsiFunctions {
      * When both compartmentId and compartmentIdInSubtree are specified, a list of database insights in that compartment and in all sub-compartments will be returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1527,6 +1628,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDatabaseInsightsResult> getDatabaseInsightsPlain() {
@@ -1539,6 +1641,8 @@ public final class OpsiFunctions {
      * When both compartmentId and compartmentIdInSubtree are specified, a list of database insights in that compartment and in all sub-compartments will be returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1577,6 +1681,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDatabaseInsightsResult> getDatabaseInsights(GetDatabaseInsightsArgs args) {
@@ -1589,6 +1694,8 @@ public final class OpsiFunctions {
      * When both compartmentId and compartmentIdInSubtree are specified, a list of database insights in that compartment and in all sub-compartments will be returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1627,6 +1734,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDatabaseInsightsResult> getDatabaseInsightsPlain(GetDatabaseInsightsPlainArgs args) {
@@ -1639,6 +1747,8 @@ public final class OpsiFunctions {
      * When both compartmentId and compartmentIdInSubtree are specified, a list of database insights in that compartment and in all sub-compartments will be returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1677,6 +1787,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDatabaseInsightsResult> getDatabaseInsights(GetDatabaseInsightsArgs args, InvokeOptions options) {
@@ -1689,6 +1800,8 @@ public final class OpsiFunctions {
      * When both compartmentId and compartmentIdInSubtree are specified, a list of database insights in that compartment and in all sub-compartments will be returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1727,6 +1840,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDatabaseInsightsResult> getDatabaseInsightsPlain(GetDatabaseInsightsPlainArgs args, InvokeOptions options) {
@@ -1738,6 +1852,8 @@ public final class OpsiFunctions {
      * Gets details of an Operations Insights Enterprise Manager bridge.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1766,6 +1882,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetEnterpriseManagerBridgeResult> getEnterpriseManagerBridge(GetEnterpriseManagerBridgeArgs args) {
@@ -1777,6 +1894,8 @@ public final class OpsiFunctions {
      * Gets details of an Operations Insights Enterprise Manager bridge.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1805,6 +1924,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetEnterpriseManagerBridgeResult> getEnterpriseManagerBridgePlain(GetEnterpriseManagerBridgePlainArgs args) {
@@ -1816,6 +1936,8 @@ public final class OpsiFunctions {
      * Gets details of an Operations Insights Enterprise Manager bridge.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1844,6 +1966,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetEnterpriseManagerBridgeResult> getEnterpriseManagerBridge(GetEnterpriseManagerBridgeArgs args, InvokeOptions options) {
@@ -1855,6 +1978,8 @@ public final class OpsiFunctions {
      * Gets details of an Operations Insights Enterprise Manager bridge.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1883,6 +2008,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetEnterpriseManagerBridgeResult> getEnterpriseManagerBridgePlain(GetEnterpriseManagerBridgePlainArgs args, InvokeOptions options) {
@@ -1895,6 +2021,8 @@ public final class OpsiFunctions {
      * When both compartmentId and compartmentIdInSubtree are specified, a list of bridges in that compartment and in all sub-compartments will be returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1927,6 +2055,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetEnterpriseManagerBridgesResult> getEnterpriseManagerBridges() {
@@ -1939,6 +2068,8 @@ public final class OpsiFunctions {
      * When both compartmentId and compartmentIdInSubtree are specified, a list of bridges in that compartment and in all sub-compartments will be returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1971,6 +2102,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetEnterpriseManagerBridgesResult> getEnterpriseManagerBridgesPlain() {
@@ -1983,6 +2115,8 @@ public final class OpsiFunctions {
      * When both compartmentId and compartmentIdInSubtree are specified, a list of bridges in that compartment and in all sub-compartments will be returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2015,6 +2149,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetEnterpriseManagerBridgesResult> getEnterpriseManagerBridges(GetEnterpriseManagerBridgesArgs args) {
@@ -2027,6 +2162,8 @@ public final class OpsiFunctions {
      * When both compartmentId and compartmentIdInSubtree are specified, a list of bridges in that compartment and in all sub-compartments will be returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2059,6 +2196,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetEnterpriseManagerBridgesResult> getEnterpriseManagerBridgesPlain(GetEnterpriseManagerBridgesPlainArgs args) {
@@ -2071,6 +2209,8 @@ public final class OpsiFunctions {
      * When both compartmentId and compartmentIdInSubtree are specified, a list of bridges in that compartment and in all sub-compartments will be returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2103,6 +2243,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetEnterpriseManagerBridgesResult> getEnterpriseManagerBridges(GetEnterpriseManagerBridgesArgs args, InvokeOptions options) {
@@ -2115,6 +2256,8 @@ public final class OpsiFunctions {
      * When both compartmentId and compartmentIdInSubtree are specified, a list of bridges in that compartment and in all sub-compartments will be returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2147,6 +2290,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetEnterpriseManagerBridgesResult> getEnterpriseManagerBridgesPlain(GetEnterpriseManagerBridgesPlainArgs args, InvokeOptions options) {
@@ -2158,6 +2302,8 @@ public final class OpsiFunctions {
      * Gets details of an Exadata insight.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2186,6 +2332,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExadataInsightResult> getExadataInsight(GetExadataInsightArgs args) {
@@ -2197,6 +2344,8 @@ public final class OpsiFunctions {
      * Gets details of an Exadata insight.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2225,6 +2374,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExadataInsightResult> getExadataInsightPlain(GetExadataInsightPlainArgs args) {
@@ -2236,6 +2386,8 @@ public final class OpsiFunctions {
      * Gets details of an Exadata insight.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2264,6 +2416,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExadataInsightResult> getExadataInsight(GetExadataInsightArgs args, InvokeOptions options) {
@@ -2275,6 +2428,8 @@ public final class OpsiFunctions {
      * Gets details of an Exadata insight.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2303,6 +2458,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExadataInsightResult> getExadataInsightPlain(GetExadataInsightPlainArgs args, InvokeOptions options) {
@@ -2315,6 +2471,8 @@ public final class OpsiFunctions {
      * When both compartmentId and compartmentIdInSubtree are specified, a list of Exadata insights in that compartment and in all sub-compartments will be returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2349,6 +2507,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExadataInsightsResult> getExadataInsights() {
@@ -2361,6 +2520,8 @@ public final class OpsiFunctions {
      * When both compartmentId and compartmentIdInSubtree are specified, a list of Exadata insights in that compartment and in all sub-compartments will be returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2395,6 +2556,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExadataInsightsResult> getExadataInsightsPlain() {
@@ -2407,6 +2569,8 @@ public final class OpsiFunctions {
      * When both compartmentId and compartmentIdInSubtree are specified, a list of Exadata insights in that compartment and in all sub-compartments will be returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2441,6 +2605,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExadataInsightsResult> getExadataInsights(GetExadataInsightsArgs args) {
@@ -2453,6 +2618,8 @@ public final class OpsiFunctions {
      * When both compartmentId and compartmentIdInSubtree are specified, a list of Exadata insights in that compartment and in all sub-compartments will be returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2487,6 +2654,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExadataInsightsResult> getExadataInsightsPlain(GetExadataInsightsPlainArgs args) {
@@ -2499,6 +2667,8 @@ public final class OpsiFunctions {
      * When both compartmentId and compartmentIdInSubtree are specified, a list of Exadata insights in that compartment and in all sub-compartments will be returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2533,6 +2703,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExadataInsightsResult> getExadataInsights(GetExadataInsightsArgs args, InvokeOptions options) {
@@ -2545,6 +2716,8 @@ public final class OpsiFunctions {
      * When both compartmentId and compartmentIdInSubtree are specified, a list of Exadata insights in that compartment and in all sub-compartments will be returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2579,6 +2752,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExadataInsightsResult> getExadataInsightsPlain(GetExadataInsightsPlainArgs args, InvokeOptions options) {
@@ -2590,6 +2764,8 @@ public final class OpsiFunctions {
      * Gets details of a host insight.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2618,6 +2794,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetHostInsightResult> getHostInsight(GetHostInsightArgs args) {
@@ -2629,6 +2806,8 @@ public final class OpsiFunctions {
      * Gets details of a host insight.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2657,6 +2836,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetHostInsightResult> getHostInsightPlain(GetHostInsightPlainArgs args) {
@@ -2668,6 +2848,8 @@ public final class OpsiFunctions {
      * Gets details of a host insight.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2696,6 +2878,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetHostInsightResult> getHostInsight(GetHostInsightArgs args, InvokeOptions options) {
@@ -2707,6 +2890,8 @@ public final class OpsiFunctions {
      * Gets details of a host insight.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2735,6 +2920,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetHostInsightResult> getHostInsightPlain(GetHostInsightPlainArgs args, InvokeOptions options) {
@@ -2747,6 +2933,8 @@ public final class OpsiFunctions {
      * When both compartmentId and compartmentIdInSubtree are specified, a list of host insights in that compartment and in all sub-compartments will be returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2782,6 +2970,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetHostInsightsResult> getHostInsights() {
@@ -2794,6 +2983,8 @@ public final class OpsiFunctions {
      * When both compartmentId and compartmentIdInSubtree are specified, a list of host insights in that compartment and in all sub-compartments will be returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2829,6 +3020,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetHostInsightsResult> getHostInsightsPlain() {
@@ -2841,6 +3033,8 @@ public final class OpsiFunctions {
      * When both compartmentId and compartmentIdInSubtree are specified, a list of host insights in that compartment and in all sub-compartments will be returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2876,6 +3070,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetHostInsightsResult> getHostInsights(GetHostInsightsArgs args) {
@@ -2888,6 +3083,8 @@ public final class OpsiFunctions {
      * When both compartmentId and compartmentIdInSubtree are specified, a list of host insights in that compartment and in all sub-compartments will be returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2923,6 +3120,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetHostInsightsResult> getHostInsightsPlain(GetHostInsightsPlainArgs args) {
@@ -2935,6 +3133,8 @@ public final class OpsiFunctions {
      * When both compartmentId and compartmentIdInSubtree are specified, a list of host insights in that compartment and in all sub-compartments will be returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2970,6 +3170,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetHostInsightsResult> getHostInsights(GetHostInsightsArgs args, InvokeOptions options) {
@@ -2982,6 +3183,8 @@ public final class OpsiFunctions {
      * When both compartmentId and compartmentIdInSubtree are specified, a list of host insights in that compartment and in all sub-compartments will be returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3017,6 +3220,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetHostInsightsResult> getHostInsightsPlain(GetHostInsightsPlainArgs args, InvokeOptions options) {
@@ -3032,6 +3236,8 @@ public final class OpsiFunctions {
      *    3.  The agent lifecycleState = &#39;ACTIVE&#39;
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3060,6 +3266,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetImportableAgentEntitiesResult> getImportableAgentEntities(GetImportableAgentEntitiesArgs args) {
@@ -3075,6 +3282,8 @@ public final class OpsiFunctions {
      *    3.  The agent lifecycleState = &#39;ACTIVE&#39;
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3103,6 +3312,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetImportableAgentEntitiesResult> getImportableAgentEntitiesPlain(GetImportableAgentEntitiesPlainArgs args) {
@@ -3118,6 +3328,8 @@ public final class OpsiFunctions {
      *    3.  The agent lifecycleState = &#39;ACTIVE&#39;
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3146,6 +3358,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetImportableAgentEntitiesResult> getImportableAgentEntities(GetImportableAgentEntitiesArgs args, InvokeOptions options) {
@@ -3161,6 +3374,8 @@ public final class OpsiFunctions {
      *    3.  The agent lifecycleState = &#39;ACTIVE&#39;
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3189,6 +3404,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetImportableAgentEntitiesResult> getImportableAgentEntitiesPlain(GetImportableAgentEntitiesPlainArgs args, InvokeOptions options) {
@@ -3204,6 +3420,8 @@ public final class OpsiFunctions {
      *    3.  The agent lifecycleState = &#39;ACTIVE&#39;
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3232,6 +3450,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetImportableAgentEntityResult> getImportableAgentEntity(GetImportableAgentEntityArgs args) {
@@ -3247,6 +3466,8 @@ public final class OpsiFunctions {
      *    3.  The agent lifecycleState = &#39;ACTIVE&#39;
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3275,6 +3496,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetImportableAgentEntityResult> getImportableAgentEntityPlain(GetImportableAgentEntityPlainArgs args) {
@@ -3290,6 +3512,8 @@ public final class OpsiFunctions {
      *    3.  The agent lifecycleState = &#39;ACTIVE&#39;
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3318,6 +3542,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetImportableAgentEntityResult> getImportableAgentEntity(GetImportableAgentEntityArgs args, InvokeOptions options) {
@@ -3333,6 +3558,8 @@ public final class OpsiFunctions {
      *    3.  The agent lifecycleState = &#39;ACTIVE&#39;
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3361,6 +3588,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetImportableAgentEntityResult> getImportableAgentEntityPlain(GetImportableAgentEntityPlainArgs args, InvokeOptions options) {
@@ -3378,6 +3606,8 @@ public final class OpsiFunctions {
      *       2.3 The agent lifecycleState = &#39;ACTIVE&#39;
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3406,6 +3636,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetImportableComputeEntitiesResult> getImportableComputeEntities(GetImportableComputeEntitiesArgs args) {
@@ -3423,6 +3654,8 @@ public final class OpsiFunctions {
      *       2.3 The agent lifecycleState = &#39;ACTIVE&#39;
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3451,6 +3684,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetImportableComputeEntitiesResult> getImportableComputeEntitiesPlain(GetImportableComputeEntitiesPlainArgs args) {
@@ -3468,6 +3702,8 @@ public final class OpsiFunctions {
      *       2.3 The agent lifecycleState = &#39;ACTIVE&#39;
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3496,6 +3732,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetImportableComputeEntitiesResult> getImportableComputeEntities(GetImportableComputeEntitiesArgs args, InvokeOptions options) {
@@ -3513,6 +3750,8 @@ public final class OpsiFunctions {
      *       2.3 The agent lifecycleState = &#39;ACTIVE&#39;
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3541,6 +3780,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetImportableComputeEntitiesResult> getImportableComputeEntitiesPlain(GetImportableComputeEntitiesPlainArgs args, InvokeOptions options) {
@@ -3558,6 +3798,8 @@ public final class OpsiFunctions {
      *       2.3 The agent lifecycleState = &#39;ACTIVE&#39;
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3586,6 +3828,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetImportableComputeEntityResult> getImportableComputeEntity(GetImportableComputeEntityArgs args) {
@@ -3603,6 +3846,8 @@ public final class OpsiFunctions {
      *       2.3 The agent lifecycleState = &#39;ACTIVE&#39;
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3631,6 +3876,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetImportableComputeEntityResult> getImportableComputeEntityPlain(GetImportableComputeEntityPlainArgs args) {
@@ -3648,6 +3894,8 @@ public final class OpsiFunctions {
      *       2.3 The agent lifecycleState = &#39;ACTIVE&#39;
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3676,6 +3924,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetImportableComputeEntityResult> getImportableComputeEntity(GetImportableComputeEntityArgs args, InvokeOptions options) {
@@ -3693,6 +3942,8 @@ public final class OpsiFunctions {
      *       2.3 The agent lifecycleState = &#39;ACTIVE&#39;
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3721,6 +3972,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetImportableComputeEntityResult> getImportableComputeEntityPlain(GetImportableComputeEntityPlainArgs args, InvokeOptions options) {
@@ -3732,6 +3984,8 @@ public final class OpsiFunctions {
      * Gets details of a news report.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3760,6 +4014,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNewsReportResult> getNewsReport(GetNewsReportArgs args) {
@@ -3771,6 +4026,8 @@ public final class OpsiFunctions {
      * Gets details of a news report.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3799,6 +4056,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNewsReportResult> getNewsReportPlain(GetNewsReportPlainArgs args) {
@@ -3810,6 +4068,8 @@ public final class OpsiFunctions {
      * Gets details of a news report.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3838,6 +4098,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNewsReportResult> getNewsReport(GetNewsReportArgs args, InvokeOptions options) {
@@ -3849,6 +4110,8 @@ public final class OpsiFunctions {
      * Gets details of a news report.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3877,6 +4140,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNewsReportResult> getNewsReportPlain(GetNewsReportPlainArgs args, InvokeOptions options) {
@@ -3888,6 +4152,8 @@ public final class OpsiFunctions {
      * Gets a list of news reports based on the query parameters specified. Either compartmentId or id query parameter must be specified.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3920,6 +4186,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNewsReportsResult> getNewsReports() {
@@ -3931,6 +4198,8 @@ public final class OpsiFunctions {
      * Gets a list of news reports based on the query parameters specified. Either compartmentId or id query parameter must be specified.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3963,6 +4232,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNewsReportsResult> getNewsReportsPlain() {
@@ -3974,6 +4244,8 @@ public final class OpsiFunctions {
      * Gets a list of news reports based on the query parameters specified. Either compartmentId or id query parameter must be specified.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4006,6 +4278,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNewsReportsResult> getNewsReports(GetNewsReportsArgs args) {
@@ -4017,6 +4290,8 @@ public final class OpsiFunctions {
      * Gets a list of news reports based on the query parameters specified. Either compartmentId or id query parameter must be specified.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4049,6 +4324,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNewsReportsResult> getNewsReportsPlain(GetNewsReportsPlainArgs args) {
@@ -4060,6 +4336,8 @@ public final class OpsiFunctions {
      * Gets a list of news reports based on the query parameters specified. Either compartmentId or id query parameter must be specified.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4092,6 +4370,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNewsReportsResult> getNewsReports(GetNewsReportsArgs args, InvokeOptions options) {
@@ -4103,6 +4382,8 @@ public final class OpsiFunctions {
      * Gets a list of news reports based on the query parameters specified. Either compartmentId or id query parameter must be specified.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4135,6 +4416,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNewsReportsResult> getNewsReportsPlain(GetNewsReportsPlainArgs args, InvokeOptions options) {
@@ -4146,6 +4428,8 @@ public final class OpsiFunctions {
      * Gets the details of the specified private endpoint.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4174,6 +4458,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOperationsInsightsPrivateEndpointResult> getOperationsInsightsPrivateEndpoint(GetOperationsInsightsPrivateEndpointArgs args) {
@@ -4185,6 +4470,8 @@ public final class OpsiFunctions {
      * Gets the details of the specified private endpoint.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4213,6 +4500,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOperationsInsightsPrivateEndpointResult> getOperationsInsightsPrivateEndpointPlain(GetOperationsInsightsPrivateEndpointPlainArgs args) {
@@ -4224,6 +4512,8 @@ public final class OpsiFunctions {
      * Gets the details of the specified private endpoint.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4252,6 +4542,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOperationsInsightsPrivateEndpointResult> getOperationsInsightsPrivateEndpoint(GetOperationsInsightsPrivateEndpointArgs args, InvokeOptions options) {
@@ -4263,6 +4554,8 @@ public final class OpsiFunctions {
      * Gets the details of the specified private endpoint.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4291,6 +4584,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOperationsInsightsPrivateEndpointResult> getOperationsInsightsPrivateEndpointPlain(GetOperationsInsightsPrivateEndpointPlainArgs args, InvokeOptions options) {
@@ -4302,6 +4596,8 @@ public final class OpsiFunctions {
      * Gets a list of Operation Insights private endpoints.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4336,6 +4632,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOperationsInsightsPrivateEndpointsResult> getOperationsInsightsPrivateEndpoints() {
@@ -4347,6 +4644,8 @@ public final class OpsiFunctions {
      * Gets a list of Operation Insights private endpoints.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4381,6 +4680,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOperationsInsightsPrivateEndpointsResult> getOperationsInsightsPrivateEndpointsPlain() {
@@ -4392,6 +4692,8 @@ public final class OpsiFunctions {
      * Gets a list of Operation Insights private endpoints.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4426,6 +4728,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOperationsInsightsPrivateEndpointsResult> getOperationsInsightsPrivateEndpoints(GetOperationsInsightsPrivateEndpointsArgs args) {
@@ -4437,6 +4740,8 @@ public final class OpsiFunctions {
      * Gets a list of Operation Insights private endpoints.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4471,6 +4776,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOperationsInsightsPrivateEndpointsResult> getOperationsInsightsPrivateEndpointsPlain(GetOperationsInsightsPrivateEndpointsPlainArgs args) {
@@ -4482,6 +4788,8 @@ public final class OpsiFunctions {
      * Gets a list of Operation Insights private endpoints.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4516,6 +4824,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOperationsInsightsPrivateEndpointsResult> getOperationsInsightsPrivateEndpoints(GetOperationsInsightsPrivateEndpointsArgs args, InvokeOptions options) {
@@ -4527,6 +4836,8 @@ public final class OpsiFunctions {
      * Gets a list of Operation Insights private endpoints.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4561,6 +4872,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOperationsInsightsPrivateEndpointsResult> getOperationsInsightsPrivateEndpointsPlain(GetOperationsInsightsPrivateEndpointsPlainArgs args, InvokeOptions options) {
@@ -4573,6 +4885,8 @@ public final class OpsiFunctions {
      * There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4601,6 +4915,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOperationsInsightsWarehouseResult> getOperationsInsightsWarehouse(GetOperationsInsightsWarehouseArgs args) {
@@ -4613,6 +4928,8 @@ public final class OpsiFunctions {
      * There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4641,6 +4958,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOperationsInsightsWarehouseResult> getOperationsInsightsWarehousePlain(GetOperationsInsightsWarehousePlainArgs args) {
@@ -4653,6 +4971,8 @@ public final class OpsiFunctions {
      * There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4681,6 +5001,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOperationsInsightsWarehouseResult> getOperationsInsightsWarehouse(GetOperationsInsightsWarehouseArgs args, InvokeOptions options) {
@@ -4693,6 +5014,8 @@ public final class OpsiFunctions {
      * There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4721,6 +5044,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOperationsInsightsWarehouseResult> getOperationsInsightsWarehousePlain(GetOperationsInsightsWarehousePlainArgs args, InvokeOptions options) {
@@ -4733,6 +5057,8 @@ public final class OpsiFunctions {
      * There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4761,6 +5087,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOperationsInsightsWarehouseResourceUsageSummaryResult> getOperationsInsightsWarehouseResourceUsageSummary(GetOperationsInsightsWarehouseResourceUsageSummaryArgs args) {
@@ -4773,6 +5100,8 @@ public final class OpsiFunctions {
      * There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4801,6 +5130,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOperationsInsightsWarehouseResourceUsageSummaryResult> getOperationsInsightsWarehouseResourceUsageSummaryPlain(GetOperationsInsightsWarehouseResourceUsageSummaryPlainArgs args) {
@@ -4813,6 +5143,8 @@ public final class OpsiFunctions {
      * There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4841,6 +5173,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOperationsInsightsWarehouseResourceUsageSummaryResult> getOperationsInsightsWarehouseResourceUsageSummary(GetOperationsInsightsWarehouseResourceUsageSummaryArgs args, InvokeOptions options) {
@@ -4853,6 +5186,8 @@ public final class OpsiFunctions {
      * There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4881,6 +5216,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOperationsInsightsWarehouseResourceUsageSummaryResult> getOperationsInsightsWarehouseResourceUsageSummaryPlain(GetOperationsInsightsWarehouseResourceUsageSummaryPlainArgs args, InvokeOptions options) {
@@ -4892,6 +5228,8 @@ public final class OpsiFunctions {
      * Gets details of an Operations Insights Warehouse User.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4920,6 +5258,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOperationsInsightsWarehouseUserResult> getOperationsInsightsWarehouseUser(GetOperationsInsightsWarehouseUserArgs args) {
@@ -4931,6 +5270,8 @@ public final class OpsiFunctions {
      * Gets details of an Operations Insights Warehouse User.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4959,6 +5300,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOperationsInsightsWarehouseUserResult> getOperationsInsightsWarehouseUserPlain(GetOperationsInsightsWarehouseUserPlainArgs args) {
@@ -4970,6 +5312,8 @@ public final class OpsiFunctions {
      * Gets details of an Operations Insights Warehouse User.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4998,6 +5342,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOperationsInsightsWarehouseUserResult> getOperationsInsightsWarehouseUser(GetOperationsInsightsWarehouseUserArgs args, InvokeOptions options) {
@@ -5009,6 +5354,8 @@ public final class OpsiFunctions {
      * Gets details of an Operations Insights Warehouse User.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5037,6 +5384,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOperationsInsightsWarehouseUserResult> getOperationsInsightsWarehouseUserPlain(GetOperationsInsightsWarehouseUserPlainArgs args, InvokeOptions options) {
@@ -5048,6 +5396,8 @@ public final class OpsiFunctions {
      * Gets a list of Operations Insights Warehouse users. Either compartmentId or id must be specified. All these resources are expected to be in root compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5080,6 +5430,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOperationsInsightsWarehouseUsersResult> getOperationsInsightsWarehouseUsers(GetOperationsInsightsWarehouseUsersArgs args) {
@@ -5091,6 +5442,8 @@ public final class OpsiFunctions {
      * Gets a list of Operations Insights Warehouse users. Either compartmentId or id must be specified. All these resources are expected to be in root compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5123,6 +5476,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOperationsInsightsWarehouseUsersResult> getOperationsInsightsWarehouseUsersPlain(GetOperationsInsightsWarehouseUsersPlainArgs args) {
@@ -5134,6 +5488,8 @@ public final class OpsiFunctions {
      * Gets a list of Operations Insights Warehouse users. Either compartmentId or id must be specified. All these resources are expected to be in root compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5166,6 +5522,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOperationsInsightsWarehouseUsersResult> getOperationsInsightsWarehouseUsers(GetOperationsInsightsWarehouseUsersArgs args, InvokeOptions options) {
@@ -5177,6 +5534,8 @@ public final class OpsiFunctions {
      * Gets a list of Operations Insights Warehouse users. Either compartmentId or id must be specified. All these resources are expected to be in root compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5209,6 +5568,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOperationsInsightsWarehouseUsersResult> getOperationsInsightsWarehouseUsersPlain(GetOperationsInsightsWarehouseUsersPlainArgs args, InvokeOptions options) {
@@ -5221,6 +5581,8 @@ public final class OpsiFunctions {
      * There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5252,6 +5614,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOperationsInsightsWarehousesResult> getOperationsInsightsWarehouses() {
@@ -5264,6 +5627,8 @@ public final class OpsiFunctions {
      * There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5295,6 +5660,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOperationsInsightsWarehousesResult> getOperationsInsightsWarehousesPlain() {
@@ -5307,6 +5673,8 @@ public final class OpsiFunctions {
      * There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5338,6 +5706,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOperationsInsightsWarehousesResult> getOperationsInsightsWarehouses(GetOperationsInsightsWarehousesArgs args) {
@@ -5350,6 +5719,8 @@ public final class OpsiFunctions {
      * There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5381,6 +5752,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOperationsInsightsWarehousesResult> getOperationsInsightsWarehousesPlain(GetOperationsInsightsWarehousesPlainArgs args) {
@@ -5393,6 +5765,8 @@ public final class OpsiFunctions {
      * There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5424,6 +5798,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOperationsInsightsWarehousesResult> getOperationsInsightsWarehouses(GetOperationsInsightsWarehousesArgs args, InvokeOptions options) {
@@ -5436,6 +5811,8 @@ public final class OpsiFunctions {
      * There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5467,6 +5844,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOperationsInsightsWarehousesResult> getOperationsInsightsWarehousesPlain(GetOperationsInsightsWarehousesPlainArgs args, InvokeOptions options) {
@@ -5480,6 +5858,8 @@ public final class OpsiFunctions {
      * Values specified in configItemCustomStatus will determine whether only customized configuration items or only non-customized configuration items or both have to be returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5512,6 +5892,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOpsiConfigurationResult> getOpsiConfiguration(GetOpsiConfigurationArgs args) {
@@ -5525,6 +5906,8 @@ public final class OpsiFunctions {
      * Values specified in configItemCustomStatus will determine whether only customized configuration items or only non-customized configuration items or both have to be returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5557,6 +5940,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOpsiConfigurationResult> getOpsiConfigurationPlain(GetOpsiConfigurationPlainArgs args) {
@@ -5570,6 +5954,8 @@ public final class OpsiFunctions {
      * Values specified in configItemCustomStatus will determine whether only customized configuration items or only non-customized configuration items or both have to be returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5602,6 +5988,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOpsiConfigurationResult> getOpsiConfiguration(GetOpsiConfigurationArgs args, InvokeOptions options) {
@@ -5615,6 +6002,8 @@ public final class OpsiFunctions {
      * Values specified in configItemCustomStatus will determine whether only customized configuration items or only non-customized configuration items or both have to be returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5647,6 +6036,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOpsiConfigurationResult> getOpsiConfigurationPlain(GetOpsiConfigurationPlainArgs args, InvokeOptions options) {
@@ -5659,6 +6049,8 @@ public final class OpsiFunctions {
      * Values specified in configItemField param will determine what fields for each configuration items have to be returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5691,6 +6083,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOpsiConfigurationConfigurationItemResult> getOpsiConfigurationConfigurationItem(GetOpsiConfigurationConfigurationItemArgs args) {
@@ -5703,6 +6096,8 @@ public final class OpsiFunctions {
      * Values specified in configItemField param will determine what fields for each configuration items have to be returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5735,6 +6130,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOpsiConfigurationConfigurationItemResult> getOpsiConfigurationConfigurationItemPlain(GetOpsiConfigurationConfigurationItemPlainArgs args) {
@@ -5747,6 +6143,8 @@ public final class OpsiFunctions {
      * Values specified in configItemField param will determine what fields for each configuration items have to be returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5779,6 +6177,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOpsiConfigurationConfigurationItemResult> getOpsiConfigurationConfigurationItem(GetOpsiConfigurationConfigurationItemArgs args, InvokeOptions options) {
@@ -5791,6 +6190,8 @@ public final class OpsiFunctions {
      * Values specified in configItemField param will determine what fields for each configuration items have to be returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5823,6 +6224,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOpsiConfigurationConfigurationItemResult> getOpsiConfigurationConfigurationItemPlain(GetOpsiConfigurationConfigurationItemPlainArgs args, InvokeOptions options) {
@@ -5834,6 +6236,8 @@ public final class OpsiFunctions {
      * Gets a list of OPSI configuration resources based on the query parameters specified.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5865,6 +6269,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOpsiConfigurationsResult> getOpsiConfigurations(GetOpsiConfigurationsArgs args) {
@@ -5876,6 +6281,8 @@ public final class OpsiFunctions {
      * Gets a list of OPSI configuration resources based on the query parameters specified.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5907,6 +6314,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOpsiConfigurationsResult> getOpsiConfigurationsPlain(GetOpsiConfigurationsPlainArgs args) {
@@ -5918,6 +6326,8 @@ public final class OpsiFunctions {
      * Gets a list of OPSI configuration resources based on the query parameters specified.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5949,6 +6359,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOpsiConfigurationsResult> getOpsiConfigurations(GetOpsiConfigurationsArgs args, InvokeOptions options) {
@@ -5960,6 +6371,8 @@ public final class OpsiFunctions {
      * Gets a list of OPSI configuration resources based on the query parameters specified.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5991,6 +6404,7 @@ public final class OpsiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOpsiConfigurationsResult> getOpsiConfigurationsPlain(GetOpsiConfigurationsPlainArgs args, InvokeOptions options) {

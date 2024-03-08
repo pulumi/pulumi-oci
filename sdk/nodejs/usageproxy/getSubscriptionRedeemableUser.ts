@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,6 +23,7 @@ import * as utilities from "../utilities";
  *     tenancyId: oci_identity_tenancy.test_tenancy.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getSubscriptionRedeemableUser(args: GetSubscriptionRedeemableUserArgs, opts?: pulumi.InvokeOptions): Promise<GetSubscriptionRedeemableUserResult> {
 
@@ -66,6 +68,7 @@ export interface GetSubscriptionRedeemableUserResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -75,6 +78,7 @@ export interface GetSubscriptionRedeemableUserResult {
  *     tenancyId: oci_identity_tenancy.test_tenancy.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getSubscriptionRedeemableUserOutput(args: GetSubscriptionRedeemableUserOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSubscriptionRedeemableUserResult> {
     return pulumi.output(args).apply((a: any) => getSubscriptionRedeemableUser(a, opts))

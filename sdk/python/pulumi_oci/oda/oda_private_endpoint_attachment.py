@@ -187,6 +187,7 @@ class OdaPrivateEndpointAttachment(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -195,13 +196,14 @@ class OdaPrivateEndpointAttachment(pulumi.CustomResource):
             oda_instance_id=oci_oda_oda_instance["test_oda_instance"]["id"],
             oda_private_endpoint_id=oci_oda_oda_private_endpoint["test_oda_private_endpoint"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         OdaPrivateEndpointAttachments can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Oda/odaPrivateEndpointAttachment:OdaPrivateEndpointAttachment test_oda_private_endpoint_attachment "id"
+        $ pulumi import oci:Oda/odaPrivateEndpointAttachment:OdaPrivateEndpointAttachment test_oda_private_endpoint_attachment "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -229,6 +231,7 @@ class OdaPrivateEndpointAttachment(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -237,13 +240,14 @@ class OdaPrivateEndpointAttachment(pulumi.CustomResource):
             oda_instance_id=oci_oda_oda_instance["test_oda_instance"]["id"],
             oda_private_endpoint_id=oci_oda_oda_private_endpoint["test_oda_private_endpoint"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         OdaPrivateEndpointAttachments can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Oda/odaPrivateEndpointAttachment:OdaPrivateEndpointAttachment test_oda_private_endpoint_attachment "id"
+        $ pulumi import oci:Oda/odaPrivateEndpointAttachment:OdaPrivateEndpointAttachment test_oda_private_endpoint_attachment "id"
         ```
 
         :param str resource_name: The name of the resource.

@@ -684,6 +684,7 @@ class ContainerInstance(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -790,13 +791,14 @@ class ContainerInstance(pulumi.CustomResource):
                 )],
             )])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ContainerInstances can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:ContainerEngine/containerInstance:ContainerInstance test_container_instance "id"
+        $ pulumi import oci:ContainerEngine/containerInstance:ContainerInstance test_container_instance "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -837,6 +839,7 @@ class ContainerInstance(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -943,13 +946,14 @@ class ContainerInstance(pulumi.CustomResource):
                 )],
             )])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ContainerInstances can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:ContainerEngine/containerInstance:ContainerInstance test_container_instance "id"
+        $ pulumi import oci:ContainerEngine/containerInstance:ContainerInstance test_container_instance "id"
         ```
 
         :param str resource_name: The name of the resource.

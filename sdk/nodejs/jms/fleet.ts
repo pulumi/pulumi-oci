@@ -19,6 +19,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -44,13 +45,14 @@ import * as utilities from "../utilities";
  *     },
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * Fleets can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Jms/fleet:Fleet test_fleet "id"
+ * $ pulumi import oci:Jms/fleet:Fleet test_fleet "id"
  * ```
  */
 export class Fleet extends pulumi.CustomResource {

@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -33,13 +34,14 @@ import * as utilities from "../utilities";
  *     },
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * DrPlanExecutions can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:DisasterRecovery/drPlanExecution:DrPlanExecution test_dr_plan_execution "id"
+ * $ pulumi import oci:DisasterRecovery/drPlanExecution:DrPlanExecution test_dr_plan_execution "id"
  * ```
  */
 export class DrPlanExecution extends pulumi.CustomResource {

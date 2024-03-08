@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,6 +25,7 @@ import * as utilities from "../utilities";
  *     state: _var.connect_harness_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getConnectHarnesses(args: GetConnectHarnessesArgs, opts?: pulumi.InvokeOptions): Promise<GetConnectHarnessesResult> {
 
@@ -93,6 +95,7 @@ export interface GetConnectHarnessesResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -104,6 +107,7 @@ export interface GetConnectHarnessesResult {
  *     state: _var.connect_harness_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getConnectHarnessesOutput(args: GetConnectHarnessesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetConnectHarnessesResult> {
     return pulumi.output(args).apply((a: any) => getConnectHarnesses(a, opts))

@@ -17,6 +17,7 @@ namespace Pulumi.Oci.Dns
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -36,13 +37,14 @@ namespace Pulumi.Oci.Dns
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// TsigKeys can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Dns/tsigKey:TsigKey test_tsig_key "id"
+    /// $ pulumi import oci:Dns/tsigKey:TsigKey test_tsig_key "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Dns/tsigKey:TsigKey")]

@@ -525,6 +525,7 @@ class MetricExtension(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -575,13 +576,14 @@ class MetricExtension(pulumi.CustomResource):
             resource_type=var["metric_extension_resource_type"],
             description=var["metric_extension_description"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         MetricExtensions can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:StackMonitoring/metricExtension:MetricExtension test_metric_extension "id"
+        $ pulumi import oci:StackMonitoring/metricExtension:MetricExtension test_metric_extension "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -613,6 +615,7 @@ class MetricExtension(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -663,13 +666,14 @@ class MetricExtension(pulumi.CustomResource):
             resource_type=var["metric_extension_resource_type"],
             description=var["metric_extension_description"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         MetricExtensions can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:StackMonitoring/metricExtension:MetricExtension test_metric_extension "id"
+        $ pulumi import oci:StackMonitoring/metricExtension:MetricExtension test_metric_extension "id"
         ```
 
         :param str resource_name: The name of the resource.

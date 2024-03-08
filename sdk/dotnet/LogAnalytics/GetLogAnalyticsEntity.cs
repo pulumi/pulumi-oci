@@ -16,10 +16,9 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// Retrieve the log analytics entity with the given id.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,8 +35,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetLogAnalyticsEntityResult> InvokeAsync(GetLogAnalyticsEntityArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetLogAnalyticsEntityResult>("oci:LogAnalytics/getLogAnalyticsEntity:getLogAnalyticsEntity", args ?? new GetLogAnalyticsEntityArgs(), options.WithDefaults());
@@ -47,10 +45,9 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// Retrieve the log analytics entity with the given id.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -67,8 +64,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetLogAnalyticsEntityResult> Invoke(GetLogAnalyticsEntityInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetLogAnalyticsEntityResult>("oci:LogAnalytics/getLogAnalyticsEntity:getLogAnalyticsEntity", args ?? new GetLogAnalyticsEntityInvokeArgs(), options.WithDefaults());

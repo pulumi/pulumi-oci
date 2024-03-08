@@ -118,6 +118,7 @@ def get_managed_database_sql_tuning_advisor_task(managed_database_id: Optional[s
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -128,6 +129,7 @@ def get_managed_database_sql_tuning_advisor_task(managed_database_id: Optional[s
         time_greater_than_or_equal_to=var["managed_database_sql_tuning_advisor_task_time_greater_than_or_equal_to"],
         time_less_than_or_equal_to=var["managed_database_sql_tuning_advisor_task_time_less_than_or_equal_to"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
@@ -169,6 +171,7 @@ def get_managed_database_sql_tuning_advisor_task_output(managed_database_id: Opt
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -179,6 +182,7 @@ def get_managed_database_sql_tuning_advisor_task_output(managed_database_id: Opt
         time_greater_than_or_equal_to=var["managed_database_sql_tuning_advisor_task_time_greater_than_or_equal_to"],
         time_less_than_or_equal_to=var["managed_database_sql_tuning_advisor_task_time_less_than_or_equal_to"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.

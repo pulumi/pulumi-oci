@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -50,15 +51,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // EmWarehouses can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:EmWarehouse/emWarehouse:EmWarehouse test_em_warehouse "id"
-//
+// $ pulumi import oci:EmWarehouse/emWarehouse:EmWarehouse test_em_warehouse "id"
 // ```
 type EmWarehouse struct {
 	pulumi.CustomResourceState

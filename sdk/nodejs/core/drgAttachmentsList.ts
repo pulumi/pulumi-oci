@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,6 +24,7 @@ import * as utilities from "../utilities";
  *     isCrossTenancy: _var.drg_attachments_list_is_cross_tenancy,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *

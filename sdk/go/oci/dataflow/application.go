@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -86,15 +87,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Applications can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:DataFlow/application:Application test_application "id"
-//
+// $ pulumi import oci:DataFlow/application:Application test_application "id"
 // ```
 type Application struct {
 	pulumi.CustomResourceState

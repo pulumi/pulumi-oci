@@ -28,6 +28,8 @@ import javax.annotation.Nullable;
  * Creates a new FusionEnvironment.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -86,13 +88,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * FusionEnvironments can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:FusionApps/fusionEnvironment:FusionEnvironment test_fusion_environment &#34;id&#34;
+ * $ pulumi import oci:FusionApps/fusionEnvironment:FusionEnvironment test_fusion_environment &#34;id&#34;
  * ```
  * 
  */

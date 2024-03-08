@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -43,6 +44,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupDomainsMyAuthToken(ctx *pulumi.Context, args *LookupDomainsMyAuthTokenArgs, opts ...pulumi.InvokeOption) (*LookupDomainsMyAuthTokenResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupDomainsMyAuthTokenResult

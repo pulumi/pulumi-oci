@@ -64,12 +64,14 @@ def get_proxy_detail(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGe
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_proxy_detail = oci.ServiceMesh.get_proxy_detail()
     ```
+    <!--End PulumiCodeChooser -->
     """
     __args__ = dict()
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -89,11 +91,13 @@ def get_proxy_detail_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulu
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_proxy_detail = oci.ServiceMesh.get_proxy_detail()
     ```
+    <!--End PulumiCodeChooser -->
     """
     ...

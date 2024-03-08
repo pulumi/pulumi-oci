@@ -17,10 +17,9 @@ namespace Pulumi.Oci.ServiceManagerProxy
         /// Get the detailed information for a specific service environment.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -37,8 +36,7 @@ namespace Pulumi.Oci.ServiceManagerProxy
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetServiceEnvironmentResult> InvokeAsync(GetServiceEnvironmentArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetServiceEnvironmentResult>("oci:ServiceManagerProxy/getServiceEnvironment:getServiceEnvironment", args ?? new GetServiceEnvironmentArgs(), options.WithDefaults());
@@ -49,10 +47,9 @@ namespace Pulumi.Oci.ServiceManagerProxy
         /// Get the detailed information for a specific service environment.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -69,8 +66,7 @@ namespace Pulumi.Oci.ServiceManagerProxy
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetServiceEnvironmentResult> Invoke(GetServiceEnvironmentInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetServiceEnvironmentResult>("oci:ServiceManagerProxy/getServiceEnvironment:getServiceEnvironment", args ?? new GetServiceEnvironmentInvokeArgs(), options.WithDefaults());

@@ -21,9 +21,7 @@ import (
 // Clusters can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:ContainerEngine/cluster:Cluster test_cluster "id"
-//
+// $ pulumi import oci:ContainerEngine/cluster:Cluster test_cluster "id"
 // ```
 type Cluster struct {
 	pulumi.CustomResourceState

@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,6 +22,7 @@ import * as utilities from "../utilities";
  *     clusterNetworkId: oci_core_cluster_network.test_cluster_network.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getClusterNetwork(args: GetClusterNetworkArgs, opts?: pulumi.InvokeOptions): Promise<GetClusterNetworkResult> {
 
@@ -102,6 +104,7 @@ export interface GetClusterNetworkResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -110,6 +113,7 @@ export interface GetClusterNetworkResult {
  *     clusterNetworkId: oci_core_cluster_network.test_cluster_network.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getClusterNetworkOutput(args: GetClusterNetworkOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetClusterNetworkResult> {
     return pulumi.output(args).apply((a: any) => getClusterNetwork(a, opts))

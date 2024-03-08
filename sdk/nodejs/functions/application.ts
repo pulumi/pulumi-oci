@@ -9,6 +9,7 @@ import * as utilities from "../utilities";
 /**
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -39,13 +40,14 @@ import * as utilities from "../utilities";
  *     },
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * Applications can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Functions/application:Application test_application "id"
+ * $ pulumi import oci:Functions/application:Application test_application "id"
  * ```
  */
 export class Application extends pulumi.CustomResource {

@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -52,15 +53,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // WebAppFirewalls can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Waf/appFirewall:AppFirewall test_web_app_firewall "id"
-//
+// $ pulumi import oci:Waf/appFirewall:AppFirewall test_web_app_firewall "id"
 // ```
 type AppFirewall struct {
 	pulumi.CustomResourceState

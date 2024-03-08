@@ -220,7 +220,7 @@ class GetDomainsGroupResult:
     @pulumi.getter
     def members(self) -> Sequence['outputs.GetDomainsGroupMemberResult']:
         """
-        The group members. <b>Important:</b> When requesting group members, a maximum of 10,000 members can be returned in a single request. If the response contains more than 10,000 members, the request will fail. Use 'startIndex' and 'count' to return members in pages instead of in a single response, for example: #attributes=members[startIndex=1%26count=10]. This REST API is SCIM compliant.
+        The group members. <b>Important:</b> When requesting group members, a maximum of 10,000 members can be returned in a single request. If the response contains more than 10,000 members, the request will fail. Use 'startIndex' and 'count' to return members in pages instead of in a single response, for example: #attributes=members[startIndex=1%!c(MISSING)ount=10]. This REST API is SCIM compliant.
         """
         return pulumi.get(self, "members")
 
@@ -377,6 +377,7 @@ def get_domains_group(attribute_sets: Optional[Sequence[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -388,6 +389,7 @@ def get_domains_group(attribute_sets: Optional[Sequence[str]] = None,
         authorization=var["group_authorization"],
         resource_type_schema_version=var["group_resource_type_schema_version"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param Sequence[str] attribute_sets: A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
@@ -454,6 +456,7 @@ def get_domains_group_output(attribute_sets: Optional[pulumi.Input[Optional[Sequ
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -465,6 +468,7 @@ def get_domains_group_output(attribute_sets: Optional[pulumi.Input[Optional[Sequ
         authorization=var["group_authorization"],
         resource_type_schema_version=var["group_resource_type_schema_version"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param Sequence[str] attribute_sets: A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.

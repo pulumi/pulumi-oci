@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -40,6 +41,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetDefaultConfiguration(ctx *pulumi.Context, args *GetDefaultConfigurationArgs, opts ...pulumi.InvokeOption) (*GetDefaultConfigurationResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDefaultConfigurationResult

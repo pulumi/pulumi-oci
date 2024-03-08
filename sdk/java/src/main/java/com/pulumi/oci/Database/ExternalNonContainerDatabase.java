@@ -25,6 +25,8 @@ import javax.annotation.Nullable;
  * Creates a new ExternalNonContainerDatabase resource
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -56,13 +58,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * ExternalNonContainerDatabases can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Database/externalNonContainerDatabase:ExternalNonContainerDatabase test_external_non_container_database &#34;id&#34;
+ * $ pulumi import oci:Database/externalNonContainerDatabase:ExternalNonContainerDatabase test_external_non_container_database &#34;id&#34;
  * ```
  * 
  */

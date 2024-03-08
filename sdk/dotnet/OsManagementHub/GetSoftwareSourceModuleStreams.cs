@@ -18,10 +18,9 @@ namespace Pulumi.Oci.OsManagementHub
         /// criteria including but not limited to its module name and (stream) name.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -41,8 +40,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetSoftwareSourceModuleStreamsResult> InvokeAsync(GetSoftwareSourceModuleStreamsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetSoftwareSourceModuleStreamsResult>("oci:OsManagementHub/getSoftwareSourceModuleStreams:getSoftwareSourceModuleStreams", args ?? new GetSoftwareSourceModuleStreamsArgs(), options.WithDefaults());
@@ -54,10 +52,9 @@ namespace Pulumi.Oci.OsManagementHub
         /// criteria including but not limited to its module name and (stream) name.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -77,8 +74,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetSoftwareSourceModuleStreamsResult> Invoke(GetSoftwareSourceModuleStreamsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSoftwareSourceModuleStreamsResult>("oci:OsManagementHub/getSoftwareSourceModuleStreams:getSoftwareSourceModuleStreams", args ?? new GetSoftwareSourceModuleStreamsInvokeArgs(), options.WithDefaults());

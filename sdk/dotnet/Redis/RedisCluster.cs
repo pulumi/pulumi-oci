@@ -16,6 +16,7 @@ namespace Pulumi.Oci.Redis
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -44,13 +45,14 @@ namespace Pulumi.Oci.Redis
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// RedisClusters can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Redis/redisCluster:RedisCluster test_redis_cluster "id"
+    /// $ pulumi import oci:Redis/redisCluster:RedisCluster test_redis_cluster "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Redis/redisCluster:RedisCluster")]

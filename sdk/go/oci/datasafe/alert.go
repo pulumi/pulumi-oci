@@ -21,9 +21,7 @@ import (
 // Alerts can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:DataSafe/alert:Alert test_alert "id"
-//
+// $ pulumi import oci:DataSafe/alert:Alert test_alert "id"
 // ```
 type Alert struct {
 	pulumi.CustomResourceState

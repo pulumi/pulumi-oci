@@ -17,10 +17,9 @@ namespace Pulumi.Oci.OsManagementHub
         /// Gets information about the specified management station.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,8 +35,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetManagementStationResult> InvokeAsync(GetManagementStationArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagementStationResult>("oci:OsManagementHub/getManagementStation:getManagementStation", args ?? new GetManagementStationArgs(), options.WithDefaults());
@@ -48,10 +46,9 @@ namespace Pulumi.Oci.OsManagementHub
         /// Gets information about the specified management station.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -67,8 +64,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetManagementStationResult> Invoke(GetManagementStationInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagementStationResult>("oci:OsManagementHub/getManagementStation:getManagementStation", args ?? new GetManagementStationInvokeArgs(), options.WithDefaults());

@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,6 +22,7 @@ import * as utilities from "../utilities";
  *     blockchainPlatformId: oci_blockchain_blockchain_platform.test_blockchain_platform.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getBlockchainPlatformPatches(args: GetBlockchainPlatformPatchesArgs, opts?: pulumi.InvokeOptions): Promise<GetBlockchainPlatformPatchesResult> {
 
@@ -64,6 +66,7 @@ export interface GetBlockchainPlatformPatchesResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -72,6 +75,7 @@ export interface GetBlockchainPlatformPatchesResult {
  *     blockchainPlatformId: oci_blockchain_blockchain_platform.test_blockchain_platform.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getBlockchainPlatformPatchesOutput(args: GetBlockchainPlatformPatchesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBlockchainPlatformPatchesResult> {
     return pulumi.output(args).apply((a: any) => getBlockchainPlatformPatches(a, opts))

@@ -15,6 +15,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -30,6 +31,7 @@ import * as utilities from "../utilities";
  *     timeStart: _var.java_download_record_time_start,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getJavaDownloadsJavaDownloadRecords(args: GetJavaDownloadsJavaDownloadRecordsArgs, opts?: pulumi.InvokeOptions): Promise<GetJavaDownloadsJavaDownloadRecordsResult> {
 
@@ -132,6 +134,7 @@ export interface GetJavaDownloadsJavaDownloadRecordsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -147,6 +150,7 @@ export interface GetJavaDownloadsJavaDownloadRecordsResult {
  *     timeStart: _var.java_download_record_time_start,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getJavaDownloadsJavaDownloadRecordsOutput(args: GetJavaDownloadsJavaDownloadRecordsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetJavaDownloadsJavaDownloadRecordsResult> {
     return pulumi.output(args).apply((a: any) => getJavaDownloadsJavaDownloadRecords(a, opts))

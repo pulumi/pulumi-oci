@@ -16,6 +16,7 @@ namespace Pulumi.Oci.MeteringComputation
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -46,13 +47,14 @@ namespace Pulumi.Oci.MeteringComputation
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// UsageCarbonEmissions can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:MeteringComputation/usageCarbonEmission:UsageCarbonEmission test_usage_carbon_emission "id"
+    /// $ pulumi import oci:MeteringComputation/usageCarbonEmission:UsageCarbonEmission test_usage_carbon_emission "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:MeteringComputation/usageCarbonEmission:UsageCarbonEmission")]

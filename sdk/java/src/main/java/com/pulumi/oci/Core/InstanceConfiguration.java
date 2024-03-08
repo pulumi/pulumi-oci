@@ -24,6 +24,8 @@ import javax.annotation.Nullable;
  * settings to use when creating Compute instances.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -374,13 +376,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * InstanceConfigurations can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Core/instanceConfiguration:InstanceConfiguration test_instance_configuration &#34;id&#34;
+ * $ pulumi import oci:Core/instanceConfiguration:InstanceConfiguration test_instance_configuration &#34;id&#34;
  * ```
  * 
  */

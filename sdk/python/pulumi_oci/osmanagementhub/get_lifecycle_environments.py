@@ -165,6 +165,7 @@ def get_lifecycle_environments(arch_type: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -177,6 +178,7 @@ def get_lifecycle_environments(arch_type: Optional[str] = None,
         os_family=var["lifecycle_environment_os_family"],
         state=var["lifecycle_environment_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str arch_type: A filter to return only profiles that match the given archType.
@@ -230,6 +232,7 @@ def get_lifecycle_environments_output(arch_type: Optional[pulumi.Input[Optional[
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -242,6 +245,7 @@ def get_lifecycle_environments_output(arch_type: Optional[pulumi.Input[Optional[
         os_family=var["lifecycle_environment_os_family"],
         state=var["lifecycle_environment_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str arch_type: A filter to return only profiles that match the given archType.

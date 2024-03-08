@@ -17,10 +17,9 @@ namespace Pulumi.Oci.Identity
         /// Lists available standard tag namespaces that users can create.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,8 +35,7 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetTagStandardTagNamespaceTemplatesResult> InvokeAsync(GetTagStandardTagNamespaceTemplatesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetTagStandardTagNamespaceTemplatesResult>("oci:Identity/getTagStandardTagNamespaceTemplates:getTagStandardTagNamespaceTemplates", args ?? new GetTagStandardTagNamespaceTemplatesArgs(), options.WithDefaults());
@@ -48,10 +46,9 @@ namespace Pulumi.Oci.Identity
         /// Lists available standard tag namespaces that users can create.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -67,8 +64,7 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetTagStandardTagNamespaceTemplatesResult> Invoke(GetTagStandardTagNamespaceTemplatesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetTagStandardTagNamespaceTemplatesResult>("oci:Identity/getTagStandardTagNamespaceTemplates:getTagStandardTagNamespaceTemplates", args ?? new GetTagStandardTagNamespaceTemplatesInvokeArgs(), options.WithDefaults());

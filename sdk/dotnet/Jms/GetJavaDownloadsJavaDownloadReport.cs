@@ -16,10 +16,9 @@ namespace Pulumi.Oci.Jms
         /// 
         /// Gets a JavaDownloadReport by the specified identifier.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,8 +34,7 @@ namespace Pulumi.Oci.Jms
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetJavaDownloadsJavaDownloadReportResult> InvokeAsync(GetJavaDownloadsJavaDownloadReportArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetJavaDownloadsJavaDownloadReportResult>("oci:Jms/getJavaDownloadsJavaDownloadReport:getJavaDownloadsJavaDownloadReport", args ?? new GetJavaDownloadsJavaDownloadReportArgs(), options.WithDefaults());
@@ -46,10 +44,9 @@ namespace Pulumi.Oci.Jms
         /// 
         /// Gets a JavaDownloadReport by the specified identifier.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -65,8 +62,7 @@ namespace Pulumi.Oci.Jms
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetJavaDownloadsJavaDownloadReportResult> Invoke(GetJavaDownloadsJavaDownloadReportInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetJavaDownloadsJavaDownloadReportResult>("oci:Jms/getJavaDownloadsJavaDownloadReport:getJavaDownloadsJavaDownloadReport", args ?? new GetJavaDownloadsJavaDownloadReportInvokeArgs(), options.WithDefaults());

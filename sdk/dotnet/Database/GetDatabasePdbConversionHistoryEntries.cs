@@ -17,10 +17,9 @@ namespace Pulumi.Oci.Database
         /// Gets the pluggable database conversion history for a specified database in a bare metal or virtual machine DB system.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -38,8 +37,7 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDatabasePdbConversionHistoryEntriesResult> InvokeAsync(GetDatabasePdbConversionHistoryEntriesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDatabasePdbConversionHistoryEntriesResult>("oci:Database/getDatabasePdbConversionHistoryEntries:getDatabasePdbConversionHistoryEntries", args ?? new GetDatabasePdbConversionHistoryEntriesArgs(), options.WithDefaults());
@@ -50,10 +48,9 @@ namespace Pulumi.Oci.Database
         /// Gets the pluggable database conversion history for a specified database in a bare metal or virtual machine DB system.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -71,8 +68,7 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDatabasePdbConversionHistoryEntriesResult> Invoke(GetDatabasePdbConversionHistoryEntriesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDatabasePdbConversionHistoryEntriesResult>("oci:Database/getDatabasePdbConversionHistoryEntries:getDatabasePdbConversionHistoryEntries", args ?? new GetDatabasePdbConversionHistoryEntriesInvokeArgs(), options.WithDefaults());

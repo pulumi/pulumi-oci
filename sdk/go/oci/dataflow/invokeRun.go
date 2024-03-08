@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -82,6 +83,8 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
+//
 // ## Note
 //
 // At a time service allows only one run to succeed if user is trying to invoke runs on multiple applications which have Private Endpoints and service will proceed invoking only one run and put the rest of them in failed state.
@@ -91,9 +94,7 @@ import (
 // InvokeRuns can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:DataFlow/invokeRun:InvokeRun test_invoke_run "id"
-//
+// $ pulumi import oci:DataFlow/invokeRun:InvokeRun test_invoke_run "id"
 // ```
 type InvokeRun struct {
 	pulumi.CustomResourceState

@@ -15,7 +15,7 @@ namespace Pulumi.Oci.Ocvp
     /// Sddcs can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Ocvp/sddc:Sddc test_sddc "id"
+    /// $ pulumi import oci:Ocvp/sddc:Sddc test_sddc "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Ocvp/sddc:Sddc")]

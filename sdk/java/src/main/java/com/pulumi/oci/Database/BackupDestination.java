@@ -25,6 +25,8 @@ import javax.annotation.Nullable;
  * Creates a backup destination in an Exadata Cloud@Customer system.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -67,13 +69,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * BackupDestinations can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Database/backupDestination:BackupDestination test_backup_destination &#34;id&#34;
+ * $ pulumi import oci:Database/backupDestination:BackupDestination test_backup_destination &#34;id&#34;
  * ```
  * 
  */

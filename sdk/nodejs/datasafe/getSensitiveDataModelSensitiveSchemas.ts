@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,6 +23,7 @@ import * as utilities from "../utilities";
  *     schemaNames: _var.sensitive_data_model_sensitive_schema_schema_name,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getSensitiveDataModelSensitiveSchemas(args: GetSensitiveDataModelSensitiveSchemasArgs, opts?: pulumi.InvokeOptions): Promise<GetSensitiveDataModelSensitiveSchemasResult> {
 
@@ -74,6 +76,7 @@ export interface GetSensitiveDataModelSensitiveSchemasResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -83,6 +86,7 @@ export interface GetSensitiveDataModelSensitiveSchemasResult {
  *     schemaNames: _var.sensitive_data_model_sensitive_schema_schema_name,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getSensitiveDataModelSensitiveSchemasOutput(args: GetSensitiveDataModelSensitiveSchemasOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSensitiveDataModelSensitiveSchemasResult> {
     return pulumi.output(args).apply((a: any) => getSensitiveDataModelSensitiveSchemas(a, opts))

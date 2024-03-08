@@ -18,10 +18,9 @@ namespace Pulumi.Oci.ManagementAgent
         /// Supported groupBy parameters: availabilityStatus, platformType, version
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -40,8 +39,7 @@ namespace Pulumi.Oci.ManagementAgent
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetManagementAgentCountResult> InvokeAsync(GetManagementAgentCountArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagementAgentCountResult>("oci:ManagementAgent/getManagementAgentCount:getManagementAgentCount", args ?? new GetManagementAgentCountArgs(), options.WithDefaults());
@@ -53,10 +51,9 @@ namespace Pulumi.Oci.ManagementAgent
         /// Supported groupBy parameters: availabilityStatus, platformType, version
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -75,8 +72,7 @@ namespace Pulumi.Oci.ManagementAgent
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetManagementAgentCountResult> Invoke(GetManagementAgentCountInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagementAgentCountResult>("oci:ManagementAgent/getManagementAgentCount:getManagementAgentCount", args ?? new GetManagementAgentCountInvokeArgs(), options.WithDefaults());

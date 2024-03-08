@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -49,13 +50,14 @@ import * as utilities from "../utilities";
  *     longDescription: _var.publication_long_description,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * Publications can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Marketplace/publication:Publication test_publication "id"
+ * $ pulumi import oci:Marketplace/publication:Publication test_publication "id"
  * ```
  */
 export class Publication extends pulumi.CustomResource {

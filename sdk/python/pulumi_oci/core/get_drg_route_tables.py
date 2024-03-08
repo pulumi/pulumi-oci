@@ -130,6 +130,7 @@ def get_drg_route_tables(display_name: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -139,6 +140,7 @@ def get_drg_route_tables(display_name: Optional[str] = None,
         import_drg_route_distribution_id=oci_core_drg_route_distribution["test_drg_route_distribution"]["id"],
         state=var["drg_route_table_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str display_name: A filter to return only resources that match the given display name exactly.
@@ -181,6 +183,7 @@ def get_drg_route_tables_output(display_name: Optional[pulumi.Input[Optional[str
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -190,6 +193,7 @@ def get_drg_route_tables_output(display_name: Optional[pulumi.Input[Optional[str
         import_drg_route_distribution_id=oci_core_drg_route_distribution["test_drg_route_distribution"]["id"],
         state=var["drg_route_table_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str display_name: A filter to return only resources that match the given display name exactly.

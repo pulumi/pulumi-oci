@@ -19,7 +19,7 @@ namespace Pulumi.Oci.CloudGuard
     /// ManagedLists can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:CloudGuard/managedList:ManagedList test_managed_list "id"
+    /// $ pulumi import oci:CloudGuard/managedList:ManagedList test_managed_list "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:CloudGuard/managedList:ManagedList")]

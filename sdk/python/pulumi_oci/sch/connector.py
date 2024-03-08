@@ -434,6 +434,7 @@ class Connector(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -510,13 +511,14 @@ class Connector(pulumi.CustomResource):
                 function_id=oci_functions_function["test_function"]["id"],
             )])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ServiceConnectors can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Sch/connector:Connector test_service_connector "id"
+        $ pulumi import oci:Sch/connector:Connector test_service_connector "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -567,6 +569,7 @@ class Connector(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -643,13 +646,14 @@ class Connector(pulumi.CustomResource):
                 function_id=oci_functions_function["test_function"]["id"],
             )])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ServiceConnectors can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Sch/connector:Connector test_service_connector "id"
+        $ pulumi import oci:Sch/connector:Connector test_service_connector "id"
         ```
 
         :param str resource_name: The name of the resource.

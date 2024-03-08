@@ -17,10 +17,9 @@ namespace Pulumi.Oci.DataSafe
         /// Lists the usage of Database security features for a given compartment or a target level, based on the filters provided.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -50,8 +49,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetSecurityAssessmentSecurityFeaturesResult> InvokeAsync(GetSecurityAssessmentSecurityFeaturesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetSecurityAssessmentSecurityFeaturesResult>("oci:DataSafe/getSecurityAssessmentSecurityFeatures:getSecurityAssessmentSecurityFeatures", args ?? new GetSecurityAssessmentSecurityFeaturesArgs(), options.WithDefaults());
@@ -62,10 +60,9 @@ namespace Pulumi.Oci.DataSafe
         /// Lists the usage of Database security features for a given compartment or a target level, based on the filters provided.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -95,8 +92,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetSecurityAssessmentSecurityFeaturesResult> Invoke(GetSecurityAssessmentSecurityFeaturesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSecurityAssessmentSecurityFeaturesResult>("oci:DataSafe/getSecurityAssessmentSecurityFeatures:getSecurityAssessmentSecurityFeatures", args ?? new GetSecurityAssessmentSecurityFeaturesInvokeArgs(), options.WithDefaults());

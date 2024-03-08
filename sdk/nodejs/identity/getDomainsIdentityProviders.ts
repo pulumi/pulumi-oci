@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -28,6 +29,7 @@ import * as utilities from "../utilities";
  *     startIndex: _var.identity_provider_start_index,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDomainsIdentityProviders(args: GetDomainsIdentityProvidersArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsIdentityProvidersResult> {
 
@@ -125,6 +127,7 @@ export interface GetDomainsIdentityProvidersResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -140,6 +143,7 @@ export interface GetDomainsIdentityProvidersResult {
  *     startIndex: _var.identity_provider_start_index,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDomainsIdentityProvidersOutput(args: GetDomainsIdentityProvidersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsIdentityProvidersResult> {
     return pulumi.output(args).apply((a: any) => getDomainsIdentityProviders(a, opts))

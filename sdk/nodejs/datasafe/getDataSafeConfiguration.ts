@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,6 +22,7 @@ import * as utilities from "../utilities";
  *     compartmentId: _var.compartment_id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDataSafeConfiguration(args: GetDataSafeConfigurationArgs, opts?: pulumi.InvokeOptions): Promise<GetDataSafeConfigurationResult> {
 
@@ -89,6 +91,7 @@ export interface GetDataSafeConfigurationResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -97,6 +100,7 @@ export interface GetDataSafeConfigurationResult {
  *     compartmentId: _var.compartment_id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDataSafeConfigurationOutput(args: GetDataSafeConfigurationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDataSafeConfigurationResult> {
     return pulumi.output(args).apply((a: any) => getDataSafeConfiguration(a, opts))

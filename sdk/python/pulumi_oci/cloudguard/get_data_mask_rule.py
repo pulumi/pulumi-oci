@@ -231,12 +231,14 @@ def get_data_mask_rule(data_mask_rule_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_data_mask_rule = oci.CloudGuard.get_data_mask_rule(data_mask_rule_id=oci_cloud_guard_data_mask_rule["test_data_mask_rule"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str data_mask_rule_id: OCID of dataMaskRule
@@ -275,12 +277,14 @@ def get_data_mask_rule_output(data_mask_rule_id: Optional[pulumi.Input[str]] = N
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_data_mask_rule = oci.CloudGuard.get_data_mask_rule(data_mask_rule_id=oci_cloud_guard_data_mask_rule["test_data_mask_rule"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str data_mask_rule_id: OCID of dataMaskRule

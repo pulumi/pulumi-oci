@@ -26,6 +26,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -46,13 +47,14 @@ import * as utilities from "../utilities";
  *     },
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * IdentityProviders can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Identity/identityProvider:IdentityProvider test_identity_provider "id"
+ * $ pulumi import oci:Identity/identityProvider:IdentityProvider test_identity_provider "id"
  * ```
  */
 export class IdentityProvider extends pulumi.CustomResource {

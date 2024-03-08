@@ -402,19 +402,21 @@ class DiscoveryJobsResult(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
 
         test_discovery_jobs_result = oci.data_safe.DiscoveryJobsResult("testDiscoveryJobsResult")
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         DiscoveryJobsResults can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataSafe/discoveryJobsResult:DiscoveryJobsResult test_discovery_jobs_result "discoveryJobs/{discoveryJobId}/results/{resultKey}"
+        $ pulumi import oci:DataSafe/discoveryJobsResult:DiscoveryJobsResult test_discovery_jobs_result "discoveryJobs/{discoveryJobId}/results/{resultKey}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -434,19 +436,21 @@ class DiscoveryJobsResult(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
 
         test_discovery_jobs_result = oci.data_safe.DiscoveryJobsResult("testDiscoveryJobsResult")
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         DiscoveryJobsResults can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataSafe/discoveryJobsResult:DiscoveryJobsResult test_discovery_jobs_result "discoveryJobs/{discoveryJobId}/results/{resultKey}"
+        $ pulumi import oci:DataSafe/discoveryJobsResult:DiscoveryJobsResult test_discovery_jobs_result "discoveryJobs/{discoveryJobId}/results/{resultKey}"
         ```
 
         :param str resource_name: The name of the resource.

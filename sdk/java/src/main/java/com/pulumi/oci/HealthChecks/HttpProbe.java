@@ -26,6 +26,8 @@ import javax.annotation.Nullable;
  * *Note:* On-demand probe configurations are not saved.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -62,13 +64,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * HttpProbes can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:HealthChecks/httpProbe:HttpProbe test_http_probe &#34;id&#34;
+ * $ pulumi import oci:HealthChecks/httpProbe:HttpProbe test_http_probe &#34;id&#34;
  * ```
  * 
  */

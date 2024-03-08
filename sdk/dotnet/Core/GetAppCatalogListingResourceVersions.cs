@@ -16,10 +16,9 @@ namespace Pulumi.Oci.Core
         /// 
         /// Gets all resource versions for a particular listing.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,8 +34,7 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetAppCatalogListingResourceVersionsResult> InvokeAsync(GetAppCatalogListingResourceVersionsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAppCatalogListingResourceVersionsResult>("oci:Core/getAppCatalogListingResourceVersions:getAppCatalogListingResourceVersions", args ?? new GetAppCatalogListingResourceVersionsArgs(), options.WithDefaults());
@@ -46,10 +44,9 @@ namespace Pulumi.Oci.Core
         /// 
         /// Gets all resource versions for a particular listing.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -65,8 +62,7 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetAppCatalogListingResourceVersionsResult> Invoke(GetAppCatalogListingResourceVersionsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAppCatalogListingResourceVersionsResult>("oci:Core/getAppCatalogListingResourceVersions:getAppCatalogListingResourceVersions", args ?? new GetAppCatalogListingResourceVersionsInvokeArgs(), options.WithDefaults());

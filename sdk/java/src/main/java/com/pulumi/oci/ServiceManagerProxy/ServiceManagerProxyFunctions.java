@@ -23,6 +23,8 @@ public final class ServiceManagerProxyFunctions {
      * Get the detailed information for a specific service environment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -52,6 +54,7 @@ public final class ServiceManagerProxyFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetServiceEnvironmentResult> getServiceEnvironment(GetServiceEnvironmentArgs args) {
@@ -63,6 +66,8 @@ public final class ServiceManagerProxyFunctions {
      * Get the detailed information for a specific service environment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -92,6 +97,7 @@ public final class ServiceManagerProxyFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetServiceEnvironmentResult> getServiceEnvironmentPlain(GetServiceEnvironmentPlainArgs args) {
@@ -103,6 +109,8 @@ public final class ServiceManagerProxyFunctions {
      * Get the detailed information for a specific service environment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -132,6 +140,7 @@ public final class ServiceManagerProxyFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetServiceEnvironmentResult> getServiceEnvironment(GetServiceEnvironmentArgs args, InvokeOptions options) {
@@ -143,6 +152,8 @@ public final class ServiceManagerProxyFunctions {
      * Get the detailed information for a specific service environment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -172,6 +183,7 @@ public final class ServiceManagerProxyFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetServiceEnvironmentResult> getServiceEnvironmentPlain(GetServiceEnvironmentPlainArgs args, InvokeOptions options) {
@@ -184,6 +196,8 @@ public final class ServiceManagerProxyFunctions {
      * Information includes the service instance endpoints and service definition details.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -215,6 +229,7 @@ public final class ServiceManagerProxyFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetServiceEnvironmentsResult> getServiceEnvironments(GetServiceEnvironmentsArgs args) {
@@ -227,6 +242,8 @@ public final class ServiceManagerProxyFunctions {
      * Information includes the service instance endpoints and service definition details.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -258,6 +275,7 @@ public final class ServiceManagerProxyFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetServiceEnvironmentsResult> getServiceEnvironmentsPlain(GetServiceEnvironmentsPlainArgs args) {
@@ -270,6 +288,8 @@ public final class ServiceManagerProxyFunctions {
      * Information includes the service instance endpoints and service definition details.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -301,6 +321,7 @@ public final class ServiceManagerProxyFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetServiceEnvironmentsResult> getServiceEnvironments(GetServiceEnvironmentsArgs args, InvokeOptions options) {
@@ -313,6 +334,8 @@ public final class ServiceManagerProxyFunctions {
      * Information includes the service instance endpoints and service definition details.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -344,6 +367,7 @@ public final class ServiceManagerProxyFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetServiceEnvironmentsResult> getServiceEnvironmentsPlain(GetServiceEnvironmentsPlainArgs args, InvokeOptions options) {

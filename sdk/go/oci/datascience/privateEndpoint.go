@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -53,15 +54,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // DataSciencePrivateEndpoints can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:DataScience/privateEndpoint:PrivateEndpoint test_data_science_private_endpoint "id"
-//
+// $ pulumi import oci:DataScience/privateEndpoint:PrivateEndpoint test_data_science_private_endpoint "id"
 // ```
 type PrivateEndpoint struct {
 	pulumi.CustomResourceState

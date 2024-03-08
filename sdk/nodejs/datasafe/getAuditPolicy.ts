@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,6 +22,7 @@ import * as utilities from "../utilities";
  *     auditPolicyId: oci_data_safe_audit_policy.test_audit_policy.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAuditPolicy(args: GetAuditPolicyArgs, opts?: pulumi.InvokeOptions): Promise<GetAuditPolicyResult> {
 
@@ -123,6 +125,7 @@ export interface GetAuditPolicyResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -131,6 +134,7 @@ export interface GetAuditPolicyResult {
  *     auditPolicyId: oci_data_safe_audit_policy.test_audit_policy.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAuditPolicyOutput(args: GetAuditPolicyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAuditPolicyResult> {
     return pulumi.output(args).apply((a: any) => getAuditPolicy(a, opts))

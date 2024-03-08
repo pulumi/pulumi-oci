@@ -23,6 +23,8 @@ import javax.annotation.Nullable;
  * Registers a new On-premise vantage point.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -55,13 +57,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * OnPremiseVantagePoints can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:ApmSynthetics/onPremiseVantagePoint:OnPremiseVantagePoint test_on_premise_vantage_point &#34;onPremiseVantagePoints/{onPremiseVantagePointId}/apmDomainId/{apmDomainId}&#34;
+ * $ pulumi import oci:ApmSynthetics/onPremiseVantagePoint:OnPremiseVantagePoint test_on_premise_vantage_point &#34;onPremiseVantagePoints/{onPremiseVantagePointId}/apmDomainId/{apmDomainId}&#34;
  * ```
  * 
  */

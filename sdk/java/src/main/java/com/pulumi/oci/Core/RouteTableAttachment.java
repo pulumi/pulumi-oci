@@ -19,6 +19,8 @@ import javax.annotation.Nullable;
  * Attaches the specified `route table` to the specified `subnet`.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -48,13 +50,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * Route Table Attachment can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Core/routeTableAttachment:RouteTableAttachment test_route_table_attachment &#34;{subnetId}/{routeTableId}&#34;
+ * $ pulumi import oci:Core/routeTableAttachment:RouteTableAttachment test_route_table_attachment &#34;{subnetId}/{routeTableId}&#34;
  * ```
  * 
  */

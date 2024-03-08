@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,6 +24,7 @@ import * as utilities from "../utilities";
  *     state: _var.vb_instance_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getVbInstances(args: GetVbInstancesArgs, opts?: pulumi.InvokeOptions): Promise<GetVbInstancesResult> {
 
@@ -87,6 +89,7 @@ export interface GetVbInstancesResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -97,6 +100,7 @@ export interface GetVbInstancesResult {
  *     state: _var.vb_instance_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getVbInstancesOutput(args: GetVbInstancesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVbInstancesResult> {
     return pulumi.output(args).apply((a: any) => getVbInstances(a, opts))

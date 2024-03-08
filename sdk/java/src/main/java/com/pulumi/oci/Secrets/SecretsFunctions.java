@@ -24,6 +24,8 @@ public final class SecretsFunctions {
      * If none of these parameters are provided, the bundle for the secret version marked as `CURRENT` will be returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -55,6 +57,7 @@ public final class SecretsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSecretbundleResult> getSecretbundle(GetSecretbundleArgs args) {
@@ -67,6 +70,8 @@ public final class SecretsFunctions {
      * If none of these parameters are provided, the bundle for the secret version marked as `CURRENT` will be returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -98,6 +103,7 @@ public final class SecretsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSecretbundleResult> getSecretbundlePlain(GetSecretbundlePlainArgs args) {
@@ -110,6 +116,8 @@ public final class SecretsFunctions {
      * If none of these parameters are provided, the bundle for the secret version marked as `CURRENT` will be returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -141,6 +149,7 @@ public final class SecretsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSecretbundleResult> getSecretbundle(GetSecretbundleArgs args, InvokeOptions options) {
@@ -153,6 +162,8 @@ public final class SecretsFunctions {
      * If none of these parameters are provided, the bundle for the secret version marked as `CURRENT` will be returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -184,6 +195,7 @@ public final class SecretsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSecretbundleResult> getSecretbundlePlain(GetSecretbundlePlainArgs args, InvokeOptions options) {
@@ -195,6 +207,8 @@ public final class SecretsFunctions {
      * Lists all secret bundle versions for the specified secret.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -223,6 +237,7 @@ public final class SecretsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSecretbundleVersionsResult> getSecretbundleVersions(GetSecretbundleVersionsArgs args) {
@@ -234,6 +249,8 @@ public final class SecretsFunctions {
      * Lists all secret bundle versions for the specified secret.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -262,6 +279,7 @@ public final class SecretsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSecretbundleVersionsResult> getSecretbundleVersionsPlain(GetSecretbundleVersionsPlainArgs args) {
@@ -273,6 +291,8 @@ public final class SecretsFunctions {
      * Lists all secret bundle versions for the specified secret.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -301,6 +321,7 @@ public final class SecretsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSecretbundleVersionsResult> getSecretbundleVersions(GetSecretbundleVersionsArgs args, InvokeOptions options) {
@@ -312,6 +333,8 @@ public final class SecretsFunctions {
      * Lists all secret bundle versions for the specified secret.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -340,6 +363,7 @@ public final class SecretsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSecretbundleVersionsResult> getSecretbundleVersionsPlain(GetSecretbundleVersionsPlainArgs args, InvokeOptions options) {

@@ -400,6 +400,7 @@ class Log(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -427,13 +428,14 @@ class Log(pulumi.CustomResource):
             is_enabled=var["log_is_enabled"],
             retention_duration=var["log_retention_duration"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Logs can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Logging/log:Log test_log "logGroupId/{logGroupId}/logId/{logId}"
+        $ pulumi import oci:Logging/log:Log test_log "logGroupId/{logGroupId}/logId/{logId}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -465,6 +467,7 @@ class Log(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -492,13 +495,14 @@ class Log(pulumi.CustomResource):
             is_enabled=var["log_is_enabled"],
             retention_duration=var["log_retention_duration"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Logs can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Logging/log:Log test_log "logGroupId/{logGroupId}/logId/{logId}"
+        $ pulumi import oci:Logging/log:Log test_log "logGroupId/{logGroupId}/logId/{logId}"
         ```
 
         :param str resource_name: The name of the resource.

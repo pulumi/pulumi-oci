@@ -29,6 +29,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -57,13 +58,14 @@ import * as utilities from "../utilities";
  *     recompile: _var.masking_policy_recompile,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * MaskingPolicies can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:DataSafe/maskingPolicy:MaskingPolicy test_masking_policy "id"
+ * $ pulumi import oci:DataSafe/maskingPolicy:MaskingPolicy test_masking_policy "id"
  * ```
  */
 export class MaskingPolicy extends pulumi.CustomResource {

@@ -119,6 +119,7 @@ def get_managed_database_cursor_cache_statements(filters: Optional[Sequence[pulu
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -127,11 +128,12 @@ def get_managed_database_cursor_cache_statements(filters: Optional[Sequence[pulu
         opc_named_credential_id=var["managed_database_cursor_cache_statement_opc_named_credential_id"],
         sql_text=var["managed_database_cursor_cache_statement_sql_text"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
     :param str opc_named_credential_id: The OCID of the Named Credential.
-    :param str sql_text: A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the '%' symbol as a wildcard.
+    :param str sql_text: A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the '%!'(MISSING) symbol as a wildcard.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -166,6 +168,7 @@ def get_managed_database_cursor_cache_statements_output(filters: Optional[pulumi
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -174,10 +177,11 @@ def get_managed_database_cursor_cache_statements_output(filters: Optional[pulumi
         opc_named_credential_id=var["managed_database_cursor_cache_statement_opc_named_credential_id"],
         sql_text=var["managed_database_cursor_cache_statement_sql_text"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
     :param str opc_named_credential_id: The OCID of the Named Credential.
-    :param str sql_text: A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the '%' symbol as a wildcard.
+    :param str sql_text: A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the '%!'(MISSING) symbol as a wildcard.
     """
     ...

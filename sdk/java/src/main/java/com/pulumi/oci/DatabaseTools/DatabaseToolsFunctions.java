@@ -35,6 +35,8 @@ public final class DatabaseToolsFunctions {
      * Gets details of the specified Database Tools connection.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -63,6 +65,7 @@ public final class DatabaseToolsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDatabaseToolsConnectionResult> getDatabaseToolsConnection(GetDatabaseToolsConnectionArgs args) {
@@ -74,6 +77,8 @@ public final class DatabaseToolsFunctions {
      * Gets details of the specified Database Tools connection.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -102,6 +107,7 @@ public final class DatabaseToolsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDatabaseToolsConnectionResult> getDatabaseToolsConnectionPlain(GetDatabaseToolsConnectionPlainArgs args) {
@@ -113,6 +119,8 @@ public final class DatabaseToolsFunctions {
      * Gets details of the specified Database Tools connection.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -141,6 +149,7 @@ public final class DatabaseToolsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDatabaseToolsConnectionResult> getDatabaseToolsConnection(GetDatabaseToolsConnectionArgs args, InvokeOptions options) {
@@ -152,6 +161,8 @@ public final class DatabaseToolsFunctions {
      * Gets details of the specified Database Tools connection.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -180,6 +191,7 @@ public final class DatabaseToolsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDatabaseToolsConnectionResult> getDatabaseToolsConnectionPlain(GetDatabaseToolsConnectionPlainArgs args, InvokeOptions options) {
@@ -191,6 +203,8 @@ public final class DatabaseToolsFunctions {
      * Returns a list of Database Tools connections.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -224,6 +238,7 @@ public final class DatabaseToolsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDatabaseToolsConnectionsResult> getDatabaseToolsConnections(GetDatabaseToolsConnectionsArgs args) {
@@ -235,6 +250,8 @@ public final class DatabaseToolsFunctions {
      * Returns a list of Database Tools connections.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -268,6 +285,7 @@ public final class DatabaseToolsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDatabaseToolsConnectionsResult> getDatabaseToolsConnectionsPlain(GetDatabaseToolsConnectionsPlainArgs args) {
@@ -279,6 +297,8 @@ public final class DatabaseToolsFunctions {
      * Returns a list of Database Tools connections.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -312,6 +332,7 @@ public final class DatabaseToolsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDatabaseToolsConnectionsResult> getDatabaseToolsConnections(GetDatabaseToolsConnectionsArgs args, InvokeOptions options) {
@@ -323,6 +344,8 @@ public final class DatabaseToolsFunctions {
      * Returns a list of Database Tools connections.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -356,6 +379,7 @@ public final class DatabaseToolsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDatabaseToolsConnectionsResult> getDatabaseToolsConnectionsPlain(GetDatabaseToolsConnectionsPlainArgs args, InvokeOptions options) {
@@ -367,6 +391,8 @@ public final class DatabaseToolsFunctions {
      * Gets details for the specified Database Tools endpoint service.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -395,6 +421,7 @@ public final class DatabaseToolsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDatabaseToolsEndpointServiceResult> getDatabaseToolsEndpointService(GetDatabaseToolsEndpointServiceArgs args) {
@@ -406,6 +433,8 @@ public final class DatabaseToolsFunctions {
      * Gets details for the specified Database Tools endpoint service.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -434,6 +463,7 @@ public final class DatabaseToolsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDatabaseToolsEndpointServiceResult> getDatabaseToolsEndpointServicePlain(GetDatabaseToolsEndpointServicePlainArgs args) {
@@ -445,6 +475,8 @@ public final class DatabaseToolsFunctions {
      * Gets details for the specified Database Tools endpoint service.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -473,6 +505,7 @@ public final class DatabaseToolsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDatabaseToolsEndpointServiceResult> getDatabaseToolsEndpointService(GetDatabaseToolsEndpointServiceArgs args, InvokeOptions options) {
@@ -484,6 +517,8 @@ public final class DatabaseToolsFunctions {
      * Gets details for the specified Database Tools endpoint service.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -512,6 +547,7 @@ public final class DatabaseToolsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDatabaseToolsEndpointServiceResult> getDatabaseToolsEndpointServicePlain(GetDatabaseToolsEndpointServicePlainArgs args, InvokeOptions options) {
@@ -523,6 +559,8 @@ public final class DatabaseToolsFunctions {
      * Returns a list of Database Tools endpoint services.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -554,6 +592,7 @@ public final class DatabaseToolsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDatabaseToolsEndpointServicesResult> getDatabaseToolsEndpointServices(GetDatabaseToolsEndpointServicesArgs args) {
@@ -565,6 +604,8 @@ public final class DatabaseToolsFunctions {
      * Returns a list of Database Tools endpoint services.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -596,6 +637,7 @@ public final class DatabaseToolsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDatabaseToolsEndpointServicesResult> getDatabaseToolsEndpointServicesPlain(GetDatabaseToolsEndpointServicesPlainArgs args) {
@@ -607,6 +649,8 @@ public final class DatabaseToolsFunctions {
      * Returns a list of Database Tools endpoint services.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -638,6 +682,7 @@ public final class DatabaseToolsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDatabaseToolsEndpointServicesResult> getDatabaseToolsEndpointServices(GetDatabaseToolsEndpointServicesArgs args, InvokeOptions options) {
@@ -649,6 +694,8 @@ public final class DatabaseToolsFunctions {
      * Returns a list of Database Tools endpoint services.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -680,6 +727,7 @@ public final class DatabaseToolsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDatabaseToolsEndpointServicesResult> getDatabaseToolsEndpointServicesPlain(GetDatabaseToolsEndpointServicesPlainArgs args, InvokeOptions options) {
@@ -691,6 +739,8 @@ public final class DatabaseToolsFunctions {
      * Gets details of a specified Database Tools private endpoint.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -719,6 +769,7 @@ public final class DatabaseToolsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDatabaseToolsPrivateEndpointResult> getDatabaseToolsPrivateEndpoint(GetDatabaseToolsPrivateEndpointArgs args) {
@@ -730,6 +781,8 @@ public final class DatabaseToolsFunctions {
      * Gets details of a specified Database Tools private endpoint.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -758,6 +811,7 @@ public final class DatabaseToolsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDatabaseToolsPrivateEndpointResult> getDatabaseToolsPrivateEndpointPlain(GetDatabaseToolsPrivateEndpointPlainArgs args) {
@@ -769,6 +823,8 @@ public final class DatabaseToolsFunctions {
      * Gets details of a specified Database Tools private endpoint.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -797,6 +853,7 @@ public final class DatabaseToolsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDatabaseToolsPrivateEndpointResult> getDatabaseToolsPrivateEndpoint(GetDatabaseToolsPrivateEndpointArgs args, InvokeOptions options) {
@@ -808,6 +865,8 @@ public final class DatabaseToolsFunctions {
      * Gets details of a specified Database Tools private endpoint.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -836,6 +895,7 @@ public final class DatabaseToolsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDatabaseToolsPrivateEndpointResult> getDatabaseToolsPrivateEndpointPlain(GetDatabaseToolsPrivateEndpointPlainArgs args, InvokeOptions options) {
@@ -847,6 +907,8 @@ public final class DatabaseToolsFunctions {
      * Returns a list of Database Tools private endpoints.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -879,6 +941,7 @@ public final class DatabaseToolsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDatabaseToolsPrivateEndpointsResult> getDatabaseToolsPrivateEndpoints(GetDatabaseToolsPrivateEndpointsArgs args) {
@@ -890,6 +953,8 @@ public final class DatabaseToolsFunctions {
      * Returns a list of Database Tools private endpoints.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -922,6 +987,7 @@ public final class DatabaseToolsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDatabaseToolsPrivateEndpointsResult> getDatabaseToolsPrivateEndpointsPlain(GetDatabaseToolsPrivateEndpointsPlainArgs args) {
@@ -933,6 +999,8 @@ public final class DatabaseToolsFunctions {
      * Returns a list of Database Tools private endpoints.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -965,6 +1033,7 @@ public final class DatabaseToolsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDatabaseToolsPrivateEndpointsResult> getDatabaseToolsPrivateEndpoints(GetDatabaseToolsPrivateEndpointsArgs args, InvokeOptions options) {
@@ -976,6 +1045,8 @@ public final class DatabaseToolsFunctions {
      * Returns a list of Database Tools private endpoints.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1008,6 +1079,7 @@ public final class DatabaseToolsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDatabaseToolsPrivateEndpointsResult> getDatabaseToolsPrivateEndpointsPlain(GetDatabaseToolsPrivateEndpointsPlainArgs args, InvokeOptions options) {

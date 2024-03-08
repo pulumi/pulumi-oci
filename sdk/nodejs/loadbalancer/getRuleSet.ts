@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,6 +23,7 @@ import * as utilities from "../utilities";
  *     name: _var.rule_set_name,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getRuleSet(args: GetRuleSetArgs, opts?: pulumi.InvokeOptions): Promise<GetRuleSetResult> {
 
@@ -69,6 +71,7 @@ export interface GetRuleSetResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -78,6 +81,7 @@ export interface GetRuleSetResult {
  *     name: _var.rule_set_name,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getRuleSetOutput(args: GetRuleSetOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRuleSetResult> {
     return pulumi.output(args).apply((a: any) => getRuleSet(a, opts))

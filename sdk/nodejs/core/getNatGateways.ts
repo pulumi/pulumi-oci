@@ -14,6 +14,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -25,6 +26,7 @@ import * as utilities from "../utilities";
  *     vcnId: oci_core_vcn.test_vcn.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getNatGateways(args: GetNatGatewaysArgs, opts?: pulumi.InvokeOptions): Promise<GetNatGatewaysResult> {
 
@@ -99,6 +101,7 @@ export interface GetNatGatewaysResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -110,6 +113,7 @@ export interface GetNatGatewaysResult {
  *     vcnId: oci_core_vcn.test_vcn.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getNatGatewaysOutput(args: GetNatGatewaysOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNatGatewaysResult> {
     return pulumi.output(args).apply((a: any) => getNatGateways(a, opts))

@@ -19,7 +19,7 @@ namespace Pulumi.Oci.Identity
     /// CustomerSecretKeys can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Identity/domainsCustomerSecretKey:DomainsCustomerSecretKey test_customer_secret_key "idcsEndpoint/{idcsEndpoint}/customerSecretKeys/{customerSecretKeyId}"
+    /// $ pulumi import oci:Identity/domainsCustomerSecretKey:DomainsCustomerSecretKey test_customer_secret_key "idcsEndpoint/{idcsEndpoint}/customerSecretKeys/{customerSecretKeyId}"
     /// ```
     /// </summary>
     [OciResourceType("oci:Identity/domainsCustomerSecretKey:DomainsCustomerSecretKey")]

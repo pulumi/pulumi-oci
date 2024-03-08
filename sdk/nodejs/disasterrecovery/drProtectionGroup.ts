@@ -15,24 +15,28 @@ import * as utilities from "../utilities";
  *
  * Create DR Protection Group resource with a default value of `disassociateTrigger` property, e.g.
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Delete
  *
  * Disassociate DR Protection Group (if associated) before deleting it. Increment value of `disassociateTrigger` property to trigger Disassociate, e.g.
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * DrProtectionGroups can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:DisasterRecovery/drProtectionGroup:DrProtectionGroup test_dr_protection_group "id"
+ * $ pulumi import oci:DisasterRecovery/drProtectionGroup:DrProtectionGroup test_dr_protection_group "id"
  * ```
  */
 export class DrProtectionGroup extends pulumi.CustomResource {

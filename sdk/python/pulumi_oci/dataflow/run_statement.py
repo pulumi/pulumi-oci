@@ -202,6 +202,7 @@ class RunStatement(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -210,13 +211,14 @@ class RunStatement(pulumi.CustomResource):
             code=var["run_statement_code"],
             run_id=oci_dataflow_run["test_run"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         RunStatements can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataFlow/runStatement:RunStatement test_run_statement "runs/{runId}/statements/{statementId}"
+        $ pulumi import oci:DataFlow/runStatement:RunStatement test_run_statement "runs/{runId}/statements/{statementId}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -241,6 +243,7 @@ class RunStatement(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -249,13 +252,14 @@ class RunStatement(pulumi.CustomResource):
             code=var["run_statement_code"],
             run_id=oci_dataflow_run["test_run"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         RunStatements can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataFlow/runStatement:RunStatement test_run_statement "runs/{runId}/statements/{statementId}"
+        $ pulumi import oci:DataFlow/runStatement:RunStatement test_run_statement "runs/{runId}/statements/{statementId}"
         ```
 
         :param str resource_name: The name of the resource.

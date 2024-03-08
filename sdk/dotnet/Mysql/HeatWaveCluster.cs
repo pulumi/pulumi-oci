@@ -16,6 +16,7 @@ namespace Pulumi.Oci.Mysql
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -34,13 +35,14 @@ namespace Pulumi.Oci.Mysql
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// HeatWaveCluster can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Mysql/heatWaveCluster:HeatWaveCluster test_heat_wave_cluster "dbSystem/{dbSystemId}/heatWaveCluster"
+    /// $ pulumi import oci:Mysql/heatWaveCluster:HeatWaveCluster test_heat_wave_cluster "dbSystem/{dbSystemId}/heatWaveCluster"
     /// ```
     /// </summary>
     [OciResourceType("oci:Mysql/heatWaveCluster:HeatWaveCluster")]

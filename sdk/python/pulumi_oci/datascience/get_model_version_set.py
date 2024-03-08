@@ -194,12 +194,14 @@ def get_model_version_set(model_version_set_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_model_version_set = oci.DataScience.get_model_version_set(model_version_set_id=oci_datascience_model_version_set["test_model_version_set"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str model_version_set_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model version set.
@@ -235,12 +237,14 @@ def get_model_version_set_output(model_version_set_id: Optional[pulumi.Input[str
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_model_version_set = oci.DataScience.get_model_version_set(model_version_set_id=oci_datascience_model_version_set["test_model_version_set"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str model_version_set_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model version set.

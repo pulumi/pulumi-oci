@@ -19,6 +19,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -54,15 +55,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // CccInfrastructures can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:ComputeCloud/atCustomerCccInfrastructure:AtCustomerCccInfrastructure test_ccc_infrastructure "id"
-//
+// $ pulumi import oci:ComputeCloud/atCustomerCccInfrastructure:AtCustomerCccInfrastructure test_ccc_infrastructure "id"
 // ```
 type AtCustomerCccInfrastructure struct {
 	pulumi.CustomResourceState

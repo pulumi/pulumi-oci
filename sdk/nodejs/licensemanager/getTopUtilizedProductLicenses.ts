@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,6 +23,7 @@ import * as utilities from "../utilities";
  *     isCompartmentIdInSubtree: _var.top_utilized_product_license_is_compartment_id_in_subtree,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getTopUtilizedProductLicenses(args: GetTopUtilizedProductLicensesArgs, opts?: pulumi.InvokeOptions): Promise<GetTopUtilizedProductLicensesResult> {
 
@@ -68,6 +70,7 @@ export interface GetTopUtilizedProductLicensesResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -77,6 +80,7 @@ export interface GetTopUtilizedProductLicensesResult {
  *     isCompartmentIdInSubtree: _var.top_utilized_product_license_is_compartment_id_in_subtree,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getTopUtilizedProductLicensesOutput(args: GetTopUtilizedProductLicensesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTopUtilizedProductLicensesResult> {
     return pulumi.output(args).apply((a: any) => getTopUtilizedProductLicenses(a, opts))

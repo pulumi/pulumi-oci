@@ -476,6 +476,7 @@ class Agent(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -494,13 +495,14 @@ class Agent(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Agents can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:CloudBridge/agent:Agent test_agent "id"
+        $ pulumi import oci:CloudBridge/agent:Agent test_agent "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -531,6 +533,7 @@ class Agent(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -549,13 +552,14 @@ class Agent(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Agents can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:CloudBridge/agent:Agent test_agent "id"
+        $ pulumi import oci:CloudBridge/agent:Agent test_agent "id"
         ```
 
         :param str resource_name: The name of the resource.

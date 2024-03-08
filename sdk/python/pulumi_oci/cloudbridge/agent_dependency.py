@@ -493,6 +493,7 @@ class AgentDependency(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -514,13 +515,14 @@ class AgentDependency(pulumi.CustomResource):
             },
             system_tags=var["agent_dependency_system_tags"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         AgentDependencies can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:CloudBridge/agentDependency:AgentDependency test_agent_dependency "id"
+        $ pulumi import oci:CloudBridge/agentDependency:AgentDependency test_agent_dependency "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -554,6 +556,7 @@ class AgentDependency(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -575,13 +578,14 @@ class AgentDependency(pulumi.CustomResource):
             },
             system_tags=var["agent_dependency_system_tags"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         AgentDependencies can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:CloudBridge/agentDependency:AgentDependency test_agent_dependency "id"
+        $ pulumi import oci:CloudBridge/agentDependency:AgentDependency test_agent_dependency "id"
         ```
 
         :param str resource_name: The name of the resource.

@@ -17,10 +17,9 @@ namespace Pulumi.Oci.DataIntegration
         /// Retrieves a lists of projects in a workspace and provides options to filter the list.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -40,8 +39,7 @@ namespace Pulumi.Oci.DataIntegration
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetWorkspaceProjectsResult> InvokeAsync(GetWorkspaceProjectsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetWorkspaceProjectsResult>("oci:DataIntegration/getWorkspaceProjects:getWorkspaceProjects", args ?? new GetWorkspaceProjectsArgs(), options.WithDefaults());
@@ -52,10 +50,9 @@ namespace Pulumi.Oci.DataIntegration
         /// Retrieves a lists of projects in a workspace and provides options to filter the list.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -75,8 +72,7 @@ namespace Pulumi.Oci.DataIntegration
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetWorkspaceProjectsResult> Invoke(GetWorkspaceProjectsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetWorkspaceProjectsResult>("oci:DataIntegration/getWorkspaceProjects:getWorkspaceProjects", args ?? new GetWorkspaceProjectsInvokeArgs(), options.WithDefaults());

@@ -630,6 +630,7 @@ class DiscoveryMod(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -652,13 +653,14 @@ class DiscoveryMod(pulumi.CustomResource):
             schemas_for_discoveries=var["discovery_job_schemas_for_discovery"],
             sensitive_type_ids_for_discoveries=var["discovery_job_sensitive_type_ids_for_discovery"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         DiscoveryJobs can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataSafe/discoveryMod:DiscoveryMod test_discovery_job "id"
+        $ pulumi import oci:DataSafe/discoveryMod:DiscoveryMod test_discovery_job "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -697,6 +699,7 @@ class DiscoveryMod(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -719,13 +722,14 @@ class DiscoveryMod(pulumi.CustomResource):
             schemas_for_discoveries=var["discovery_job_schemas_for_discovery"],
             sensitive_type_ids_for_discoveries=var["discovery_job_sensitive_type_ids_for_discovery"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         DiscoveryJobs can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataSafe/discoveryMod:DiscoveryMod test_discovery_job "id"
+        $ pulumi import oci:DataSafe/discoveryMod:DiscoveryMod test_discovery_job "id"
         ```
 
         :param str resource_name: The name of the resource.

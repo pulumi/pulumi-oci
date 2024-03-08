@@ -23,6 +23,8 @@ public final class OceFunctions {
      * Gets a OceInstance by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -51,6 +53,7 @@ public final class OceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOceInstanceResult> getOceInstance(GetOceInstanceArgs args) {
@@ -62,6 +65,8 @@ public final class OceFunctions {
      * Gets a OceInstance by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -90,6 +95,7 @@ public final class OceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOceInstanceResult> getOceInstancePlain(GetOceInstancePlainArgs args) {
@@ -101,6 +107,8 @@ public final class OceFunctions {
      * Gets a OceInstance by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -129,6 +137,7 @@ public final class OceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOceInstanceResult> getOceInstance(GetOceInstanceArgs args, InvokeOptions options) {
@@ -140,6 +149,8 @@ public final class OceFunctions {
      * Gets a OceInstance by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -168,6 +179,7 @@ public final class OceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOceInstanceResult> getOceInstancePlain(GetOceInstancePlainArgs args, InvokeOptions options) {
@@ -179,6 +191,8 @@ public final class OceFunctions {
      * Returns a list of OceInstances.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -210,6 +224,7 @@ public final class OceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOceInstancesResult> getOceInstances(GetOceInstancesArgs args) {
@@ -221,6 +236,8 @@ public final class OceFunctions {
      * Returns a list of OceInstances.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -252,6 +269,7 @@ public final class OceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOceInstancesResult> getOceInstancesPlain(GetOceInstancesPlainArgs args) {
@@ -263,6 +281,8 @@ public final class OceFunctions {
      * Returns a list of OceInstances.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -294,6 +314,7 @@ public final class OceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOceInstancesResult> getOceInstances(GetOceInstancesArgs args, InvokeOptions options) {
@@ -305,6 +326,8 @@ public final class OceFunctions {
      * Returns a list of OceInstances.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -336,6 +359,7 @@ public final class OceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOceInstancesResult> getOceInstancesPlain(GetOceInstancesPlainArgs args, InvokeOptions options) {

@@ -21,6 +21,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -29,6 +30,7 @@ import * as utilities from "../utilities";
  *     alarmId: oci_monitoring_alarm.test_alarm.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAlarm(args: GetAlarmArgs, opts?: pulumi.InvokeOptions): Promise<GetAlarmResult> {
 
@@ -161,6 +163,7 @@ export interface GetAlarmResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -169,6 +172,7 @@ export interface GetAlarmResult {
  *     alarmId: oci_monitoring_alarm.test_alarm.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAlarmOutput(args: GetAlarmOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAlarmResult> {
     return pulumi.output(args).apply((a: any) => getAlarm(a, opts))

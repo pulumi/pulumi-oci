@@ -16,6 +16,7 @@ namespace Pulumi.Oci.BigDataService
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -73,13 +74,14 @@ namespace Pulumi.Oci.BigDataService
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// AutoScalingConfiguration can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:BigDataService/autoScalingConfiguration:AutoScalingConfiguration test_auto_scaling_configuration "bdsInstances/{bdsInstanceId}/autoScalingConfiguration/{autoScalingConfigurationId}"
+    /// $ pulumi import oci:BigDataService/autoScalingConfiguration:AutoScalingConfiguration test_auto_scaling_configuration "bdsInstances/{bdsInstanceId}/autoScalingConfiguration/{autoScalingConfigurationId}"
     /// ```
     /// </summary>
     [OciResourceType("oci:BigDataService/autoScalingConfiguration:AutoScalingConfiguration")]

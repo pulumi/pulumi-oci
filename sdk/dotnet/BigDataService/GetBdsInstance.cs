@@ -16,10 +16,9 @@ namespace Pulumi.Oci.BigDataService
         /// 
         /// Returns information about the Big Data Service cluster identified by the given ID.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,8 +34,7 @@ namespace Pulumi.Oci.BigDataService
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetBdsInstanceResult> InvokeAsync(GetBdsInstanceArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetBdsInstanceResult>("oci:BigDataService/getBdsInstance:getBdsInstance", args ?? new GetBdsInstanceArgs(), options.WithDefaults());
@@ -46,10 +44,9 @@ namespace Pulumi.Oci.BigDataService
         /// 
         /// Returns information about the Big Data Service cluster identified by the given ID.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -65,8 +62,7 @@ namespace Pulumi.Oci.BigDataService
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetBdsInstanceResult> Invoke(GetBdsInstanceInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetBdsInstanceResult>("oci:BigDataService/getBdsInstance:getBdsInstance", args ?? new GetBdsInstanceInvokeArgs(), options.WithDefaults());

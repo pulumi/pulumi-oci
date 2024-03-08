@@ -99,6 +99,7 @@ def get_network_security_group_security_rules(direction: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -106,6 +107,7 @@ def get_network_security_group_security_rules(direction: Optional[str] = None,
     test_network_security_group_security_rules = oci.Core.get_network_security_group_security_rules(network_security_group_id=oci_core_network_security_group["test_network_security_group"]["id"],
         direction=var["network_security_group_security_rule_direction"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str direction: Direction of the security rule. Set to `EGRESS` for rules that allow outbound IP packets, or `INGRESS` for rules that allow inbound IP packets.
@@ -138,6 +140,7 @@ def get_network_security_group_security_rules_output(direction: Optional[pulumi.
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -145,6 +148,7 @@ def get_network_security_group_security_rules_output(direction: Optional[pulumi.
     test_network_security_group_security_rules = oci.Core.get_network_security_group_security_rules(network_security_group_id=oci_core_network_security_group["test_network_security_group"]["id"],
         direction=var["network_security_group_security_rule_direction"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str direction: Direction of the security rule. Set to `EGRESS` for rules that allow outbound IP packets, or `INGRESS` for rules that allow inbound IP packets.

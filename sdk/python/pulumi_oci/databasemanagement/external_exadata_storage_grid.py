@@ -367,7 +367,7 @@ class ExternalExadataStorageGrid(pulumi.CustomResource):
         ExternalExadataStorageGrids can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DatabaseManagement/externalExadataStorageGrid:ExternalExadataStorageGrid test_external_exadata_storage_grid "id"
+        $ pulumi import oci:DatabaseManagement/externalExadataStorageGrid:ExternalExadataStorageGrid test_external_exadata_storage_grid "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -396,7 +396,7 @@ class ExternalExadataStorageGrid(pulumi.CustomResource):
         ExternalExadataStorageGrids can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DatabaseManagement/externalExadataStorageGrid:ExternalExadataStorageGrid test_external_exadata_storage_grid "id"
+        $ pulumi import oci:DatabaseManagement/externalExadataStorageGrid:ExternalExadataStorageGrid test_external_exadata_storage_grid "id"
         ```
 
         :param str resource_name: The name of the resource.

@@ -15,6 +15,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -92,13 +93,14 @@ import * as utilities from "../utilities";
  *     resourceTimeZone: _var.monitored_resource_resource_time_zone,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * MonitoredResources can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:StackMonitoring/monitoredResource:MonitoredResource test_monitored_resource "id"
+ * $ pulumi import oci:StackMonitoring/monitoredResource:MonitoredResource test_monitored_resource "id"
  * ```
  */
 export class MonitoredResource extends pulumi.CustomResource {

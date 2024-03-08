@@ -16,6 +16,7 @@ namespace Pulumi.Oci.FusionApps
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -32,13 +33,14 @@ namespace Pulumi.Oci.FusionApps
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// FusionEnvironmentDataMaskingActivities can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:FusionApps/fusionEnvironmentDataMaskingActivity:FusionEnvironmentDataMaskingActivity test_fusion_environment_data_masking_activity "fusionEnvironments/{fusionEnvironmentId}/dataMaskingActivities/{dataMaskingActivityId}"
+    /// $ pulumi import oci:FusionApps/fusionEnvironmentDataMaskingActivity:FusionEnvironmentDataMaskingActivity test_fusion_environment_data_masking_activity "fusionEnvironments/{fusionEnvironmentId}/dataMaskingActivities/{dataMaskingActivityId}"
     /// ```
     /// </summary>
     [OciResourceType("oci:FusionApps/fusionEnvironmentDataMaskingActivity:FusionEnvironmentDataMaskingActivity")]

@@ -18,10 +18,9 @@ namespace Pulumi.Oci.OsManagementHub
         /// list against a variety of criteria including but not limited to its name, status, architecture, and OS family.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -44,8 +43,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetManagedInstanceGroupsResult> InvokeAsync(GetManagedInstanceGroupsArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagedInstanceGroupsResult>("oci:OsManagementHub/getManagedInstanceGroups:getManagedInstanceGroups", args ?? new GetManagedInstanceGroupsArgs(), options.WithDefaults());
@@ -57,10 +55,9 @@ namespace Pulumi.Oci.OsManagementHub
         /// list against a variety of criteria including but not limited to its name, status, architecture, and OS family.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -83,8 +80,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetManagedInstanceGroupsResult> Invoke(GetManagedInstanceGroupsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedInstanceGroupsResult>("oci:OsManagementHub/getManagedInstanceGroups:getManagedInstanceGroups", args ?? new GetManagedInstanceGroupsInvokeArgs(), options.WithDefaults());

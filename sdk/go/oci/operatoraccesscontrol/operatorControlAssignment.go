@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -58,15 +59,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // OperatorControlAssignments can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:OperatorAccessControl/operatorControlAssignment:OperatorControlAssignment test_operator_control_assignment "id"
-//
+// $ pulumi import oci:OperatorAccessControl/operatorControlAssignment:OperatorControlAssignment test_operator_control_assignment "id"
 // ```
 type OperatorControlAssignment struct {
 	pulumi.CustomResourceState

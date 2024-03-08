@@ -128,6 +128,7 @@ def get_cloud_vm_clusters(cloud_exadata_infrastructure_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -137,6 +138,7 @@ def get_cloud_vm_clusters(cloud_exadata_infrastructure_id: Optional[str] = None,
         display_name=var["cloud_vm_cluster_display_name"],
         state=var["cloud_vm_cluster_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str cloud_exadata_infrastructure_id: If provided, filters the results for the specified cloud Exadata infrastructure.
@@ -177,6 +179,7 @@ def get_cloud_vm_clusters_output(cloud_exadata_infrastructure_id: Optional[pulum
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -186,6 +189,7 @@ def get_cloud_vm_clusters_output(cloud_exadata_infrastructure_id: Optional[pulum
         display_name=var["cloud_vm_cluster_display_name"],
         state=var["cloud_vm_cluster_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str cloud_exadata_infrastructure_id: If provided, filters the results for the specified cloud Exadata infrastructure.

@@ -21,9 +21,7 @@ import (
 // SecurityQuestions can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Identity/domainsSecurityQuestion:DomainsSecurityQuestion test_security_question "idcsEndpoint/{idcsEndpoint}/securityQuestions/{securityQuestionId}"
-//
+// $ pulumi import oci:Identity/domainsSecurityQuestion:DomainsSecurityQuestion test_security_question "idcsEndpoint/{idcsEndpoint}/securityQuestions/{securityQuestionId}"
 // ```
 type DomainsSecurityQuestion struct {
 	pulumi.CustomResourceState

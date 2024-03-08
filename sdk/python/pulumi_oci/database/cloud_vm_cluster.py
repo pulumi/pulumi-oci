@@ -1384,6 +1384,7 @@ class CloudVmCluster(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -1426,13 +1427,14 @@ class CloudVmCluster(pulumi.CustomResource):
             system_version=var["cloud_vm_cluster_system_version"],
             time_zone=var["cloud_vm_cluster_time_zone"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         CloudVmClusters can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Database/cloudVmCluster:CloudVmCluster test_cloud_vm_cluster "id"
+        $ pulumi import oci:Database/cloudVmCluster:CloudVmCluster test_cloud_vm_cluster "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -1497,6 +1499,7 @@ class CloudVmCluster(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -1539,13 +1542,14 @@ class CloudVmCluster(pulumi.CustomResource):
             system_version=var["cloud_vm_cluster_system_version"],
             time_zone=var["cloud_vm_cluster_time_zone"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         CloudVmClusters can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Database/cloudVmCluster:CloudVmCluster test_cloud_vm_cluster "id"
+        $ pulumi import oci:Database/cloudVmCluster:CloudVmCluster test_cloud_vm_cluster "id"
         ```
 
         :param str resource_name: The name of the resource.

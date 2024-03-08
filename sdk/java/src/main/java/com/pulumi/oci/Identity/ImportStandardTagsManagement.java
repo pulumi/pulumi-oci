@@ -20,6 +20,8 @@ import javax.annotation.Nullable;
  * These Tag Namespaces will provide Tags for our customers and Partners to provide consistency and enable data reporting.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -49,13 +51,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * ImportStandardTagsManagement can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Identity/importStandardTagsManagement:ImportStandardTagsManagement test_import_standard_tags_management &#34;id&#34;
+ * $ pulumi import oci:Identity/importStandardTagsManagement:ImportStandardTagsManagement test_import_standard_tags_management &#34;id&#34;
  * ```
  * 
  */

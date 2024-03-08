@@ -20,6 +20,7 @@ namespace Pulumi.Oci.Ons
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -46,13 +47,14 @@ namespace Pulumi.Oci.Ons
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// Subscriptions can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Ons/subscription:Subscription test_subscription "id"
+    /// $ pulumi import oci:Ons/subscription:Subscription test_subscription "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Ons/subscription:Subscription")]

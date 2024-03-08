@@ -16,6 +16,7 @@ namespace Pulumi.Oci.Opsi
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -32,6 +33,7 @@ namespace Pulumi.Oci.Opsi
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [OciResourceType("oci:Opsi/awrHubSourceAwrhubsourcesManagement:AwrHubSourceAwrhubsourcesManagement")]
     public partial class AwrHubSourceAwrhubsourcesManagement : global::Pulumi.CustomResource

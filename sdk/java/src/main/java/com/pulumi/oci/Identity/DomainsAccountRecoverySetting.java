@@ -31,7 +31,7 @@ import javax.annotation.Nullable;
  * AccountRecoverySettings can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Identity/domainsAccountRecoverySetting:DomainsAccountRecoverySetting test_account_recovery_setting &#34;idcsEndpoint/{idcsEndpoint}/accountRecoverySettings/{accountRecoverySettingId}&#34;
+ * $ pulumi import oci:Identity/domainsAccountRecoverySetting:DomainsAccountRecoverySetting test_account_recovery_setting &#34;idcsEndpoint/{idcsEndpoint}/accountRecoverySettings/{accountRecoverySettingId}&#34;
  * ```
  * 
  */

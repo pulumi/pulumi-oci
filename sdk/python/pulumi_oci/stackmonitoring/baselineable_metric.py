@@ -377,6 +377,7 @@ class BaselineableMetric(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -387,13 +388,14 @@ class BaselineableMetric(pulumi.CustomResource):
             namespace=var["baselineable_metric_namespace"],
             resource_group=var["baselineable_metric_resource_group"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         BaselineableMetrics can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:StackMonitoring/baselineableMetric:BaselineableMetric test_baselineable_metric "id"
+        $ pulumi import oci:StackMonitoring/baselineableMetric:BaselineableMetric test_baselineable_metric "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -421,6 +423,7 @@ class BaselineableMetric(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -431,13 +434,14 @@ class BaselineableMetric(pulumi.CustomResource):
             namespace=var["baselineable_metric_namespace"],
             resource_group=var["baselineable_metric_resource_group"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         BaselineableMetrics can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:StackMonitoring/baselineableMetric:BaselineableMetric test_baselineable_metric "id"
+        $ pulumi import oci:StackMonitoring/baselineableMetric:BaselineableMetric test_baselineable_metric "id"
         ```
 
         :param str resource_name: The name of the resource.

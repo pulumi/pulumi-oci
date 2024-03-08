@@ -7,6 +7,7 @@ import * as utilities from "../utilities";
 /**
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -18,13 +19,14 @@ import * as utilities from "../utilities";
  *     maxFsStatFiles: "223442",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * ExportSets can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:FileStorage/exportSet:ExportSet test_export_set "id"
+ * $ pulumi import oci:FileStorage/exportSet:ExportSet test_export_set "id"
  * ```
  */
 export class ExportSet extends pulumi.CustomResource {

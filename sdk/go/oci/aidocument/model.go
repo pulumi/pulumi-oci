@@ -23,9 +23,7 @@ import (
 // Models can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:AiDocument/model:Model test_model "id"
-//
+// $ pulumi import oci:AiDocument/model:Model test_model "id"
 // ```
 type Model struct {
 	pulumi.CustomResourceState

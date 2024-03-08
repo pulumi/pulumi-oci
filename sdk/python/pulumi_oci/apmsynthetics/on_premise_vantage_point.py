@@ -319,6 +319,7 @@ class OnPremiseVantagePoint(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -334,13 +335,14 @@ class OnPremiseVantagePoint(pulumi.CustomResource):
             },
             type=var["on_premise_vantage_point_type"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         OnPremiseVantagePoints can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:ApmSynthetics/onPremiseVantagePoint:OnPremiseVantagePoint test_on_premise_vantage_point "onPremiseVantagePoints/{onPremiseVantagePointId}/apmDomainId/{apmDomainId}"
+        $ pulumi import oci:ApmSynthetics/onPremiseVantagePoint:OnPremiseVantagePoint test_on_premise_vantage_point "onPremiseVantagePoints/{onPremiseVantagePointId}/apmDomainId/{apmDomainId}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -369,6 +371,7 @@ class OnPremiseVantagePoint(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -384,13 +387,14 @@ class OnPremiseVantagePoint(pulumi.CustomResource):
             },
             type=var["on_premise_vantage_point_type"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         OnPremiseVantagePoints can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:ApmSynthetics/onPremiseVantagePoint:OnPremiseVantagePoint test_on_premise_vantage_point "onPremiseVantagePoints/{onPremiseVantagePointId}/apmDomainId/{apmDomainId}"
+        $ pulumi import oci:ApmSynthetics/onPremiseVantagePoint:OnPremiseVantagePoint test_on_premise_vantage_point "onPremiseVantagePoints/{onPremiseVantagePointId}/apmDomainId/{apmDomainId}"
         ```
 
         :param str resource_name: The name of the resource.

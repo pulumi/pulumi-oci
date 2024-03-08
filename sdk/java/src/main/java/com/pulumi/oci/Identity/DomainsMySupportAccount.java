@@ -28,6 +28,7 @@ import javax.annotation.Nullable;
  * 
  * ## Example Usage
  * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -72,13 +73,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * MySupportAccounts can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Identity/domainsMySupportAccount:DomainsMySupportAccount test_my_support_account &#34;idcsEndpoint/{idcsEndpoint}/mySupportAccounts/{mySupportAccountId}&#34;
+ * $ pulumi import oci:Identity/domainsMySupportAccount:DomainsMySupportAccount test_my_support_account &#34;idcsEndpoint/{idcsEndpoint}/mySupportAccounts/{mySupportAccountId}&#34;
  * ```
  * 
  */

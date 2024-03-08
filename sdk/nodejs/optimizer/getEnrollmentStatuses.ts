@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,6 +24,7 @@ import * as utilities from "../utilities";
  *     status: _var.enrollment_status_status,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getEnrollmentStatuses(args: GetEnrollmentStatusesArgs, opts?: pulumi.InvokeOptions): Promise<GetEnrollmentStatusesResult> {
 
@@ -87,6 +89,7 @@ export interface GetEnrollmentStatusesResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -97,6 +100,7 @@ export interface GetEnrollmentStatusesResult {
  *     status: _var.enrollment_status_status,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getEnrollmentStatusesOutput(args: GetEnrollmentStatusesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetEnrollmentStatusesResult> {
     return pulumi.output(args).apply((a: any) => getEnrollmentStatuses(a, opts))

@@ -22,10 +22,9 @@ namespace Pulumi.Oci.DataSafe
         ///              &amp;summaryField=eventcount&amp;q=(operationTime ge '2021-06-13T23:49:14')&amp;groupBy=targetName
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -49,8 +48,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetAuditEventAnalyticResult> InvokeAsync(GetAuditEventAnalyticArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAuditEventAnalyticResult>("oci:DataSafe/getAuditEventAnalytic:getAuditEventAnalytic", args ?? new GetAuditEventAnalyticArgs(), options.WithDefaults());
@@ -66,10 +64,9 @@ namespace Pulumi.Oci.DataSafe
         ///              &amp;summaryField=eventcount&amp;q=(operationTime ge '2021-06-13T23:49:14')&amp;groupBy=targetName
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -93,8 +90,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetAuditEventAnalyticResult> Invoke(GetAuditEventAnalyticInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAuditEventAnalyticResult>("oci:DataSafe/getAuditEventAnalytic:getAuditEventAnalytic", args ?? new GetAuditEventAnalyticInvokeArgs(), options.WithDefaults());

@@ -17,10 +17,9 @@ namespace Pulumi.Oci.CloudGuard
         /// Gets a list of all security zones in a compartment.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -41,8 +40,7 @@ namespace Pulumi.Oci.CloudGuard
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetSecurityZonesResult> InvokeAsync(GetSecurityZonesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetSecurityZonesResult>("oci:CloudGuard/getSecurityZones:getSecurityZones", args ?? new GetSecurityZonesArgs(), options.WithDefaults());
@@ -53,10 +51,9 @@ namespace Pulumi.Oci.CloudGuard
         /// Gets a list of all security zones in a compartment.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -77,8 +74,7 @@ namespace Pulumi.Oci.CloudGuard
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetSecurityZonesResult> Invoke(GetSecurityZonesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSecurityZonesResult>("oci:CloudGuard/getSecurityZones:getSecurityZones", args ?? new GetSecurityZonesInvokeArgs(), options.WithDefaults());

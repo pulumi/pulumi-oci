@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,6 +22,7 @@ import * as utilities from "../utilities";
  *     virtualCircuitId: oci_core_virtual_circuit.test_virtual_circuit.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getVirtualCircuit(args: GetVirtualCircuitArgs, opts?: pulumi.InvokeOptions): Promise<GetVirtualCircuitResult> {
 
@@ -173,6 +175,7 @@ export interface GetVirtualCircuitResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -181,6 +184,7 @@ export interface GetVirtualCircuitResult {
  *     virtualCircuitId: oci_core_virtual_circuit.test_virtual_circuit.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getVirtualCircuitOutput(args: GetVirtualCircuitOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVirtualCircuitResult> {
     return pulumi.output(args).apply((a: any) => getVirtualCircuit(a, opts))

@@ -19,6 +19,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -43,15 +44,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // CompareSecurityAssessment can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:DataSafe/compareSecurityAssessment:CompareSecurityAssessment test_compare_security_assessment "id"
-//
+// $ pulumi import oci:DataSafe/compareSecurityAssessment:CompareSecurityAssessment test_compare_security_assessment "id"
 // ```
 type CompareSecurityAssessment struct {
 	pulumi.CustomResourceState

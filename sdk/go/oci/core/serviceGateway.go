@@ -26,6 +26,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -63,15 +64,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // ServiceGateways can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Core/serviceGateway:ServiceGateway test_service_gateway "id"
-//
+// $ pulumi import oci:Core/serviceGateway:ServiceGateway test_service_gateway "id"
 // ```
 type ServiceGateway struct {
 	pulumi.CustomResourceState

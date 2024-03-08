@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -31,13 +32,14 @@ import * as utilities from "../utilities";
  *     vnicId: oci_core_vnic_attachment.test_vnic_attachment.vnic_id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * PrivateIps can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Core/privateIp:PrivateIp test_private_ip "id"
+ * $ pulumi import oci:Core/privateIp:PrivateIp test_private_ip "id"
  * ```
  */
 export class PrivateIp extends pulumi.CustomResource {

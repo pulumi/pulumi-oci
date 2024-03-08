@@ -16,10 +16,9 @@ namespace Pulumi.Oci.ServiceCatalog
         /// 
         /// Gets detailed information about specific service catalog association.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,8 +34,7 @@ namespace Pulumi.Oci.ServiceCatalog
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetServiceCatalogAssociationResult> InvokeAsync(GetServiceCatalogAssociationArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetServiceCatalogAssociationResult>("oci:ServiceCatalog/getServiceCatalogAssociation:getServiceCatalogAssociation", args ?? new GetServiceCatalogAssociationArgs(), options.WithDefaults());
@@ -46,10 +44,9 @@ namespace Pulumi.Oci.ServiceCatalog
         /// 
         /// Gets detailed information about specific service catalog association.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -65,8 +62,7 @@ namespace Pulumi.Oci.ServiceCatalog
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetServiceCatalogAssociationResult> Invoke(GetServiceCatalogAssociationInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetServiceCatalogAssociationResult>("oci:ServiceCatalog/getServiceCatalogAssociation:getServiceCatalogAssociation", args ?? new GetServiceCatalogAssociationInvokeArgs(), options.WithDefaults());

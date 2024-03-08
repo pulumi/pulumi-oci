@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -135,15 +136,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // MysqlConfigurations can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Mysql/mysqlConfiguration:MysqlConfiguration test_mysql_configuration "configurations/{configurationId}"
-//
+// $ pulumi import oci:Mysql/mysqlConfiguration:MysqlConfiguration test_mysql_configuration "configurations/{configurationId}"
 // ```
 type MysqlConfiguration struct {
 	pulumi.CustomResourceState

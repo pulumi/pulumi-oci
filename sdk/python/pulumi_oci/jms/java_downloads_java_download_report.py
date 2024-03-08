@@ -349,6 +349,7 @@ class JavaDownloadsJavaDownloadReport(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -359,6 +360,7 @@ class JavaDownloadsJavaDownloadReport(pulumi.CustomResource):
             time_end=var["java_download_report_time_end"],
             time_start=var["java_download_report_time_start"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -389,6 +391,7 @@ class JavaDownloadsJavaDownloadReport(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -399,6 +402,7 @@ class JavaDownloadsJavaDownloadReport(pulumi.CustomResource):
             time_end=var["java_download_report_time_end"],
             time_start=var["java_download_report_time_start"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 

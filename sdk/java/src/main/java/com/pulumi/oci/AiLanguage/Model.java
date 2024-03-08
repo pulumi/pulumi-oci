@@ -26,6 +26,8 @@ import javax.annotation.Nullable;
  * Creates a new model for training and train the model with date provided.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -110,13 +112,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * Models can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:AiLanguage/model:Model test_model &#34;id&#34;
+ * $ pulumi import oci:AiLanguage/model:Model test_model &#34;id&#34;
  * ```
  * 
  */

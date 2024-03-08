@@ -101,6 +101,8 @@ public final class FunctionsFunctions {
      * Retrieves an application.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -129,6 +131,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetApplicationResult> getApplication(GetApplicationArgs args) {
@@ -140,6 +143,8 @@ public final class FunctionsFunctions {
      * Retrieves an application.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -168,6 +173,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetApplicationResult> getApplicationPlain(GetApplicationPlainArgs args) {
@@ -179,6 +185,8 @@ public final class FunctionsFunctions {
      * Retrieves an application.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -207,6 +215,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetApplicationResult> getApplication(GetApplicationArgs args, InvokeOptions options) {
@@ -218,6 +227,8 @@ public final class FunctionsFunctions {
      * Retrieves an application.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -246,6 +257,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetApplicationResult> getApplicationPlain(GetApplicationPlainArgs args, InvokeOptions options) {
@@ -257,6 +269,8 @@ public final class FunctionsFunctions {
      * Lists applications for a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -288,6 +302,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetApplicationsResult> getApplications(GetApplicationsArgs args) {
@@ -299,6 +314,8 @@ public final class FunctionsFunctions {
      * Lists applications for a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -330,6 +347,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetApplicationsResult> getApplicationsPlain(GetApplicationsPlainArgs args) {
@@ -341,6 +359,8 @@ public final class FunctionsFunctions {
      * Lists applications for a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -372,6 +392,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetApplicationsResult> getApplications(GetApplicationsArgs args, InvokeOptions options) {
@@ -383,6 +404,8 @@ public final class FunctionsFunctions {
      * Lists applications for a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -414,6 +437,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetApplicationsResult> getApplicationsPlain(GetApplicationsPlainArgs args, InvokeOptions options) {
@@ -425,6 +449,8 @@ public final class FunctionsFunctions {
      * Retrieves a function.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -453,6 +479,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFunctionResult> getFunction(GetFunctionArgs args) {
@@ -464,6 +491,8 @@ public final class FunctionsFunctions {
      * Retrieves a function.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -492,6 +521,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFunctionResult> getFunctionPlain(GetFunctionPlainArgs args) {
@@ -503,6 +533,8 @@ public final class FunctionsFunctions {
      * Retrieves a function.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -531,6 +563,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFunctionResult> getFunction(GetFunctionArgs args, InvokeOptions options) {
@@ -542,6 +575,8 @@ public final class FunctionsFunctions {
      * Retrieves a function.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -570,6 +605,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFunctionResult> getFunctionPlain(GetFunctionPlainArgs args, InvokeOptions options) {
@@ -581,6 +617,8 @@ public final class FunctionsFunctions {
      * Lists functions for an application.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -612,6 +650,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFunctionsResult> getFunctions(GetFunctionsArgs args) {
@@ -623,6 +662,8 @@ public final class FunctionsFunctions {
      * Lists functions for an application.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -654,6 +695,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFunctionsResult> getFunctionsPlain(GetFunctionsPlainArgs args) {
@@ -665,6 +707,8 @@ public final class FunctionsFunctions {
      * Lists functions for an application.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -696,6 +740,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFunctionsResult> getFunctions(GetFunctionsArgs args, InvokeOptions options) {
@@ -707,6 +752,8 @@ public final class FunctionsFunctions {
      * Lists functions for an application.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -738,6 +785,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFunctionsResult> getFunctionsPlain(GetFunctionsPlainArgs args, InvokeOptions options) {
@@ -749,6 +797,8 @@ public final class FunctionsFunctions {
      * Gets a FusionEnvironment by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -777,6 +827,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFusionEnvironmentResult> getFusionEnvironment(GetFusionEnvironmentArgs args) {
@@ -788,6 +839,8 @@ public final class FunctionsFunctions {
      * Gets a FusionEnvironment by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -816,6 +869,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFusionEnvironmentResult> getFusionEnvironmentPlain(GetFusionEnvironmentPlainArgs args) {
@@ -827,6 +881,8 @@ public final class FunctionsFunctions {
      * Gets a FusionEnvironment by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -855,6 +911,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFusionEnvironmentResult> getFusionEnvironment(GetFusionEnvironmentArgs args, InvokeOptions options) {
@@ -866,6 +923,8 @@ public final class FunctionsFunctions {
      * Gets a FusionEnvironment by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -894,6 +953,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFusionEnvironmentResult> getFusionEnvironmentPlain(GetFusionEnvironmentPlainArgs args, InvokeOptions options) {
@@ -905,6 +965,8 @@ public final class FunctionsFunctions {
      * List all FusionEnvironment admin users
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -933,6 +995,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFusionEnvironmentAdminUserResult> getFusionEnvironmentAdminUser(GetFusionEnvironmentAdminUserArgs args) {
@@ -944,6 +1007,8 @@ public final class FunctionsFunctions {
      * List all FusionEnvironment admin users
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -972,6 +1037,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFusionEnvironmentAdminUserResult> getFusionEnvironmentAdminUserPlain(GetFusionEnvironmentAdminUserPlainArgs args) {
@@ -983,6 +1049,8 @@ public final class FunctionsFunctions {
      * List all FusionEnvironment admin users
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1011,6 +1079,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFusionEnvironmentAdminUserResult> getFusionEnvironmentAdminUser(GetFusionEnvironmentAdminUserArgs args, InvokeOptions options) {
@@ -1022,6 +1091,8 @@ public final class FunctionsFunctions {
      * List all FusionEnvironment admin users
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1050,6 +1121,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFusionEnvironmentAdminUserResult> getFusionEnvironmentAdminUserPlain(GetFusionEnvironmentAdminUserPlainArgs args, InvokeOptions options) {
@@ -1061,6 +1133,8 @@ public final class FunctionsFunctions {
      * List all FusionEnvironment admin users
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1089,6 +1163,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFusionEnvironmentAdminUsersResult> getFusionEnvironmentAdminUsers(GetFusionEnvironmentAdminUsersArgs args) {
@@ -1100,6 +1175,8 @@ public final class FunctionsFunctions {
      * List all FusionEnvironment admin users
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1128,6 +1205,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFusionEnvironmentAdminUsersResult> getFusionEnvironmentAdminUsersPlain(GetFusionEnvironmentAdminUsersPlainArgs args) {
@@ -1139,6 +1217,8 @@ public final class FunctionsFunctions {
      * List all FusionEnvironment admin users
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1167,6 +1247,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFusionEnvironmentAdminUsersResult> getFusionEnvironmentAdminUsers(GetFusionEnvironmentAdminUsersArgs args, InvokeOptions options) {
@@ -1178,6 +1259,8 @@ public final class FunctionsFunctions {
      * List all FusionEnvironment admin users
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1206,6 +1289,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFusionEnvironmentAdminUsersResult> getFusionEnvironmentAdminUsersPlain(GetFusionEnvironmentAdminUsersPlainArgs args, InvokeOptions options) {
@@ -1217,6 +1301,8 @@ public final class FunctionsFunctions {
      * Returns a list of DataMaskingActivities.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1246,6 +1332,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFusionEnvironmentDataMaskingActivitiesResult> getFusionEnvironmentDataMaskingActivities(GetFusionEnvironmentDataMaskingActivitiesArgs args) {
@@ -1257,6 +1344,8 @@ public final class FunctionsFunctions {
      * Returns a list of DataMaskingActivities.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1286,6 +1375,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFusionEnvironmentDataMaskingActivitiesResult> getFusionEnvironmentDataMaskingActivitiesPlain(GetFusionEnvironmentDataMaskingActivitiesPlainArgs args) {
@@ -1297,6 +1387,8 @@ public final class FunctionsFunctions {
      * Returns a list of DataMaskingActivities.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1326,6 +1418,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFusionEnvironmentDataMaskingActivitiesResult> getFusionEnvironmentDataMaskingActivities(GetFusionEnvironmentDataMaskingActivitiesArgs args, InvokeOptions options) {
@@ -1337,6 +1430,8 @@ public final class FunctionsFunctions {
      * Returns a list of DataMaskingActivities.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1366,6 +1461,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFusionEnvironmentDataMaskingActivitiesResult> getFusionEnvironmentDataMaskingActivitiesPlain(GetFusionEnvironmentDataMaskingActivitiesPlainArgs args, InvokeOptions options) {
@@ -1377,6 +1473,8 @@ public final class FunctionsFunctions {
      * Gets a DataMaskingActivity by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1406,6 +1504,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFusionEnvironmentDataMaskingActivityResult> getFusionEnvironmentDataMaskingActivity(GetFusionEnvironmentDataMaskingActivityArgs args) {
@@ -1417,6 +1516,8 @@ public final class FunctionsFunctions {
      * Gets a DataMaskingActivity by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1446,6 +1547,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFusionEnvironmentDataMaskingActivityResult> getFusionEnvironmentDataMaskingActivityPlain(GetFusionEnvironmentDataMaskingActivityPlainArgs args) {
@@ -1457,6 +1559,8 @@ public final class FunctionsFunctions {
      * Gets a DataMaskingActivity by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1486,6 +1590,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFusionEnvironmentDataMaskingActivityResult> getFusionEnvironmentDataMaskingActivity(GetFusionEnvironmentDataMaskingActivityArgs args, InvokeOptions options) {
@@ -1497,6 +1602,8 @@ public final class FunctionsFunctions {
      * Gets a DataMaskingActivity by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1526,6 +1633,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFusionEnvironmentDataMaskingActivityResult> getFusionEnvironmentDataMaskingActivityPlain(GetFusionEnvironmentDataMaskingActivityPlainArgs args, InvokeOptions options) {
@@ -1537,6 +1645,8 @@ public final class FunctionsFunctions {
      * Returns a list of FusionEnvironmentFamilies.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1568,6 +1678,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFusionEnvironmentFamiliesResult> getFusionEnvironmentFamilies(GetFusionEnvironmentFamiliesArgs args) {
@@ -1579,6 +1690,8 @@ public final class FunctionsFunctions {
      * Returns a list of FusionEnvironmentFamilies.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1610,6 +1723,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFusionEnvironmentFamiliesResult> getFusionEnvironmentFamiliesPlain(GetFusionEnvironmentFamiliesPlainArgs args) {
@@ -1621,6 +1735,8 @@ public final class FunctionsFunctions {
      * Returns a list of FusionEnvironmentFamilies.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1652,6 +1768,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFusionEnvironmentFamiliesResult> getFusionEnvironmentFamilies(GetFusionEnvironmentFamiliesArgs args, InvokeOptions options) {
@@ -1663,6 +1780,8 @@ public final class FunctionsFunctions {
      * Returns a list of FusionEnvironmentFamilies.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1694,6 +1813,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFusionEnvironmentFamiliesResult> getFusionEnvironmentFamiliesPlain(GetFusionEnvironmentFamiliesPlainArgs args, InvokeOptions options) {
@@ -1705,6 +1825,8 @@ public final class FunctionsFunctions {
      * Retrieves a fusion environment family identified by its OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1733,6 +1855,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFusionEnvironmentFamilyResult> getFusionEnvironmentFamily(GetFusionEnvironmentFamilyArgs args) {
@@ -1744,6 +1867,8 @@ public final class FunctionsFunctions {
      * Retrieves a fusion environment family identified by its OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1772,6 +1897,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFusionEnvironmentFamilyResult> getFusionEnvironmentFamilyPlain(GetFusionEnvironmentFamilyPlainArgs args) {
@@ -1783,6 +1909,8 @@ public final class FunctionsFunctions {
      * Retrieves a fusion environment family identified by its OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1811,6 +1939,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFusionEnvironmentFamilyResult> getFusionEnvironmentFamily(GetFusionEnvironmentFamilyArgs args, InvokeOptions options) {
@@ -1822,6 +1951,8 @@ public final class FunctionsFunctions {
      * Retrieves a fusion environment family identified by its OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1850,6 +1981,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFusionEnvironmentFamilyResult> getFusionEnvironmentFamilyPlain(GetFusionEnvironmentFamilyPlainArgs args, InvokeOptions options) {
@@ -1861,6 +1993,8 @@ public final class FunctionsFunctions {
      * Gets the number of environments (usage) of each type in the fusion environment family, as well as the limit that&#39;s allowed to be created based on the group&#39;s associated subscriptions.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1889,6 +2023,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFusionEnvironmentFamilyLimitsAndUsageResult> getFusionEnvironmentFamilyLimitsAndUsage(GetFusionEnvironmentFamilyLimitsAndUsageArgs args) {
@@ -1900,6 +2035,8 @@ public final class FunctionsFunctions {
      * Gets the number of environments (usage) of each type in the fusion environment family, as well as the limit that&#39;s allowed to be created based on the group&#39;s associated subscriptions.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1928,6 +2065,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFusionEnvironmentFamilyLimitsAndUsageResult> getFusionEnvironmentFamilyLimitsAndUsagePlain(GetFusionEnvironmentFamilyLimitsAndUsagePlainArgs args) {
@@ -1939,6 +2077,8 @@ public final class FunctionsFunctions {
      * Gets the number of environments (usage) of each type in the fusion environment family, as well as the limit that&#39;s allowed to be created based on the group&#39;s associated subscriptions.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1967,6 +2107,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFusionEnvironmentFamilyLimitsAndUsageResult> getFusionEnvironmentFamilyLimitsAndUsage(GetFusionEnvironmentFamilyLimitsAndUsageArgs args, InvokeOptions options) {
@@ -1978,6 +2119,8 @@ public final class FunctionsFunctions {
      * Gets the number of environments (usage) of each type in the fusion environment family, as well as the limit that&#39;s allowed to be created based on the group&#39;s associated subscriptions.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2006,6 +2149,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFusionEnvironmentFamilyLimitsAndUsageResult> getFusionEnvironmentFamilyLimitsAndUsagePlain(GetFusionEnvironmentFamilyLimitsAndUsagePlainArgs args, InvokeOptions options) {
@@ -2017,6 +2161,8 @@ public final class FunctionsFunctions {
      * Gets the subscription details of an fusion environment family.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2045,6 +2191,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFusionEnvironmentFamilySubscriptionDetailResult> getFusionEnvironmentFamilySubscriptionDetail(GetFusionEnvironmentFamilySubscriptionDetailArgs args) {
@@ -2056,6 +2203,8 @@ public final class FunctionsFunctions {
      * Gets the subscription details of an fusion environment family.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2084,6 +2233,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFusionEnvironmentFamilySubscriptionDetailResult> getFusionEnvironmentFamilySubscriptionDetailPlain(GetFusionEnvironmentFamilySubscriptionDetailPlainArgs args) {
@@ -2095,6 +2245,8 @@ public final class FunctionsFunctions {
      * Gets the subscription details of an fusion environment family.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2123,6 +2275,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFusionEnvironmentFamilySubscriptionDetailResult> getFusionEnvironmentFamilySubscriptionDetail(GetFusionEnvironmentFamilySubscriptionDetailArgs args, InvokeOptions options) {
@@ -2134,6 +2287,8 @@ public final class FunctionsFunctions {
      * Gets the subscription details of an fusion environment family.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2162,6 +2317,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFusionEnvironmentFamilySubscriptionDetailResult> getFusionEnvironmentFamilySubscriptionDetailPlain(GetFusionEnvironmentFamilySubscriptionDetailPlainArgs args, InvokeOptions options) {
@@ -2173,6 +2329,8 @@ public final class FunctionsFunctions {
      * Returns a list of RefreshActivities.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2205,6 +2363,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFusionEnvironmentRefreshActivitiesResult> getFusionEnvironmentRefreshActivities(GetFusionEnvironmentRefreshActivitiesArgs args) {
@@ -2216,6 +2375,8 @@ public final class FunctionsFunctions {
      * Returns a list of RefreshActivities.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2248,6 +2409,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFusionEnvironmentRefreshActivitiesResult> getFusionEnvironmentRefreshActivitiesPlain(GetFusionEnvironmentRefreshActivitiesPlainArgs args) {
@@ -2259,6 +2421,8 @@ public final class FunctionsFunctions {
      * Returns a list of RefreshActivities.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2291,6 +2455,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFusionEnvironmentRefreshActivitiesResult> getFusionEnvironmentRefreshActivities(GetFusionEnvironmentRefreshActivitiesArgs args, InvokeOptions options) {
@@ -2302,6 +2467,8 @@ public final class FunctionsFunctions {
      * Returns a list of RefreshActivities.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2334,6 +2501,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFusionEnvironmentRefreshActivitiesResult> getFusionEnvironmentRefreshActivitiesPlain(GetFusionEnvironmentRefreshActivitiesPlainArgs args, InvokeOptions options) {
@@ -2345,6 +2513,8 @@ public final class FunctionsFunctions {
      * Gets a RefreshActivity by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2374,6 +2544,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFusionEnvironmentRefreshActivityResult> getFusionEnvironmentRefreshActivity(GetFusionEnvironmentRefreshActivityArgs args) {
@@ -2385,6 +2556,8 @@ public final class FunctionsFunctions {
      * Gets a RefreshActivity by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2414,6 +2587,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFusionEnvironmentRefreshActivityResult> getFusionEnvironmentRefreshActivityPlain(GetFusionEnvironmentRefreshActivityPlainArgs args) {
@@ -2425,6 +2599,8 @@ public final class FunctionsFunctions {
      * Gets a RefreshActivity by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2454,6 +2630,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFusionEnvironmentRefreshActivityResult> getFusionEnvironmentRefreshActivity(GetFusionEnvironmentRefreshActivityArgs args, InvokeOptions options) {
@@ -2465,6 +2642,8 @@ public final class FunctionsFunctions {
      * Gets a RefreshActivity by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2494,6 +2673,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFusionEnvironmentRefreshActivityResult> getFusionEnvironmentRefreshActivityPlain(GetFusionEnvironmentRefreshActivityPlainArgs args, InvokeOptions options) {
@@ -2505,6 +2685,8 @@ public final class FunctionsFunctions {
      * Returns a list of ScheduledActivities.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2538,6 +2720,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFusionEnvironmentScheduledActivitiesResult> getFusionEnvironmentScheduledActivities(GetFusionEnvironmentScheduledActivitiesArgs args) {
@@ -2549,6 +2732,8 @@ public final class FunctionsFunctions {
      * Returns a list of ScheduledActivities.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2582,6 +2767,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFusionEnvironmentScheduledActivitiesResult> getFusionEnvironmentScheduledActivitiesPlain(GetFusionEnvironmentScheduledActivitiesPlainArgs args) {
@@ -2593,6 +2779,8 @@ public final class FunctionsFunctions {
      * Returns a list of ScheduledActivities.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2626,6 +2814,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFusionEnvironmentScheduledActivitiesResult> getFusionEnvironmentScheduledActivities(GetFusionEnvironmentScheduledActivitiesArgs args, InvokeOptions options) {
@@ -2637,6 +2826,8 @@ public final class FunctionsFunctions {
      * Returns a list of ScheduledActivities.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2670,6 +2861,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFusionEnvironmentScheduledActivitiesResult> getFusionEnvironmentScheduledActivitiesPlain(GetFusionEnvironmentScheduledActivitiesPlainArgs args, InvokeOptions options) {
@@ -2681,6 +2873,8 @@ public final class FunctionsFunctions {
      * Gets a ScheduledActivity by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2710,6 +2904,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFusionEnvironmentScheduledActivityResult> getFusionEnvironmentScheduledActivity(GetFusionEnvironmentScheduledActivityArgs args) {
@@ -2721,6 +2916,8 @@ public final class FunctionsFunctions {
      * Gets a ScheduledActivity by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2750,6 +2947,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFusionEnvironmentScheduledActivityResult> getFusionEnvironmentScheduledActivityPlain(GetFusionEnvironmentScheduledActivityPlainArgs args) {
@@ -2761,6 +2959,8 @@ public final class FunctionsFunctions {
      * Gets a ScheduledActivity by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2790,6 +2990,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFusionEnvironmentScheduledActivityResult> getFusionEnvironmentScheduledActivity(GetFusionEnvironmentScheduledActivityArgs args, InvokeOptions options) {
@@ -2801,6 +3002,8 @@ public final class FunctionsFunctions {
      * Gets a ScheduledActivity by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2830,6 +3033,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFusionEnvironmentScheduledActivityResult> getFusionEnvironmentScheduledActivityPlain(GetFusionEnvironmentScheduledActivityPlainArgs args, InvokeOptions options) {
@@ -2841,6 +3045,8 @@ public final class FunctionsFunctions {
      * Gets a Service Attachment by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2870,6 +3076,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFusionEnvironmentServiceAttachmentResult> getFusionEnvironmentServiceAttachment(GetFusionEnvironmentServiceAttachmentArgs args) {
@@ -2881,6 +3088,8 @@ public final class FunctionsFunctions {
      * Gets a Service Attachment by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2910,6 +3119,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFusionEnvironmentServiceAttachmentResult> getFusionEnvironmentServiceAttachmentPlain(GetFusionEnvironmentServiceAttachmentPlainArgs args) {
@@ -2921,6 +3131,8 @@ public final class FunctionsFunctions {
      * Gets a Service Attachment by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2950,6 +3162,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFusionEnvironmentServiceAttachmentResult> getFusionEnvironmentServiceAttachment(GetFusionEnvironmentServiceAttachmentArgs args, InvokeOptions options) {
@@ -2961,6 +3174,8 @@ public final class FunctionsFunctions {
      * Gets a Service Attachment by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2990,6 +3205,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFusionEnvironmentServiceAttachmentResult> getFusionEnvironmentServiceAttachmentPlain(GetFusionEnvironmentServiceAttachmentPlainArgs args, InvokeOptions options) {
@@ -3001,6 +3217,8 @@ public final class FunctionsFunctions {
      * Returns a list of service attachments.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3032,6 +3250,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFusionEnvironmentServiceAttachmentsResult> getFusionEnvironmentServiceAttachments(GetFusionEnvironmentServiceAttachmentsArgs args) {
@@ -3043,6 +3262,8 @@ public final class FunctionsFunctions {
      * Returns a list of service attachments.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3074,6 +3295,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFusionEnvironmentServiceAttachmentsResult> getFusionEnvironmentServiceAttachmentsPlain(GetFusionEnvironmentServiceAttachmentsPlainArgs args) {
@@ -3085,6 +3307,8 @@ public final class FunctionsFunctions {
      * Returns a list of service attachments.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3116,6 +3340,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFusionEnvironmentServiceAttachmentsResult> getFusionEnvironmentServiceAttachments(GetFusionEnvironmentServiceAttachmentsArgs args, InvokeOptions options) {
@@ -3127,6 +3352,8 @@ public final class FunctionsFunctions {
      * Returns a list of service attachments.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3158,6 +3385,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFusionEnvironmentServiceAttachmentsResult> getFusionEnvironmentServiceAttachmentsPlain(GetFusionEnvironmentServiceAttachmentsPlainArgs args, InvokeOptions options) {
@@ -3169,6 +3397,8 @@ public final class FunctionsFunctions {
      * Gets the status of a Fusion environment identified by its OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3197,6 +3427,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFusionEnvironmentStatusResult> getFusionEnvironmentStatus(GetFusionEnvironmentStatusArgs args) {
@@ -3208,6 +3439,8 @@ public final class FunctionsFunctions {
      * Gets the status of a Fusion environment identified by its OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3236,6 +3469,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFusionEnvironmentStatusResult> getFusionEnvironmentStatusPlain(GetFusionEnvironmentStatusPlainArgs args) {
@@ -3247,6 +3481,8 @@ public final class FunctionsFunctions {
      * Gets the status of a Fusion environment identified by its OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3275,6 +3511,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFusionEnvironmentStatusResult> getFusionEnvironmentStatus(GetFusionEnvironmentStatusArgs args, InvokeOptions options) {
@@ -3286,6 +3523,8 @@ public final class FunctionsFunctions {
      * Gets the status of a Fusion environment identified by its OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3314,6 +3553,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFusionEnvironmentStatusResult> getFusionEnvironmentStatusPlain(GetFusionEnvironmentStatusPlainArgs args, InvokeOptions options) {
@@ -3325,6 +3565,8 @@ public final class FunctionsFunctions {
      * Gets available refresh time for this fusion environment
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3353,6 +3595,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFusionEnvironmentTimeAvailableForRefreshResult> getFusionEnvironmentTimeAvailableForRefresh(GetFusionEnvironmentTimeAvailableForRefreshArgs args) {
@@ -3364,6 +3607,8 @@ public final class FunctionsFunctions {
      * Gets available refresh time for this fusion environment
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3392,6 +3637,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFusionEnvironmentTimeAvailableForRefreshResult> getFusionEnvironmentTimeAvailableForRefreshPlain(GetFusionEnvironmentTimeAvailableForRefreshPlainArgs args) {
@@ -3403,6 +3649,8 @@ public final class FunctionsFunctions {
      * Gets available refresh time for this fusion environment
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3431,6 +3679,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFusionEnvironmentTimeAvailableForRefreshResult> getFusionEnvironmentTimeAvailableForRefresh(GetFusionEnvironmentTimeAvailableForRefreshArgs args, InvokeOptions options) {
@@ -3442,6 +3691,8 @@ public final class FunctionsFunctions {
      * Gets available refresh time for this fusion environment
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3470,6 +3721,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFusionEnvironmentTimeAvailableForRefreshResult> getFusionEnvironmentTimeAvailableForRefreshPlain(GetFusionEnvironmentTimeAvailableForRefreshPlainArgs args, InvokeOptions options) {
@@ -3481,6 +3733,8 @@ public final class FunctionsFunctions {
      * Gets available refresh time for this fusion environment
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3509,6 +3763,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFusionEnvironmentTimeAvailableForRefreshsResult> getFusionEnvironmentTimeAvailableForRefreshs(GetFusionEnvironmentTimeAvailableForRefreshsArgs args) {
@@ -3520,6 +3775,8 @@ public final class FunctionsFunctions {
      * Gets available refresh time for this fusion environment
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3548,6 +3805,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFusionEnvironmentTimeAvailableForRefreshsResult> getFusionEnvironmentTimeAvailableForRefreshsPlain(GetFusionEnvironmentTimeAvailableForRefreshsPlainArgs args) {
@@ -3559,6 +3817,8 @@ public final class FunctionsFunctions {
      * Gets available refresh time for this fusion environment
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3587,6 +3847,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFusionEnvironmentTimeAvailableForRefreshsResult> getFusionEnvironmentTimeAvailableForRefreshs(GetFusionEnvironmentTimeAvailableForRefreshsArgs args, InvokeOptions options) {
@@ -3598,6 +3859,8 @@ public final class FunctionsFunctions {
      * Gets available refresh time for this fusion environment
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3626,6 +3889,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFusionEnvironmentTimeAvailableForRefreshsResult> getFusionEnvironmentTimeAvailableForRefreshsPlain(GetFusionEnvironmentTimeAvailableForRefreshsPlainArgs args, InvokeOptions options) {
@@ -3637,6 +3901,8 @@ public final class FunctionsFunctions {
      * Returns a list of FusionEnvironments.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3668,6 +3934,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFusionEnvironmentsResult> getFusionEnvironments(GetFusionEnvironmentsArgs args) {
@@ -3679,6 +3946,8 @@ public final class FunctionsFunctions {
      * Returns a list of FusionEnvironments.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3710,6 +3979,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFusionEnvironmentsResult> getFusionEnvironmentsPlain(GetFusionEnvironmentsPlainArgs args) {
@@ -3721,6 +3991,8 @@ public final class FunctionsFunctions {
      * Returns a list of FusionEnvironments.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3752,6 +4024,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFusionEnvironmentsResult> getFusionEnvironments(GetFusionEnvironmentsArgs args, InvokeOptions options) {
@@ -3763,6 +4036,8 @@ public final class FunctionsFunctions {
      * Returns a list of FusionEnvironments.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3794,6 +4069,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFusionEnvironmentsResult> getFusionEnvironmentsPlain(GetFusionEnvironmentsPlainArgs args, InvokeOptions options) {
@@ -3805,6 +4081,8 @@ public final class FunctionsFunctions {
      * Fetches a Pre-built Function(PBF) Listing. Returns a PbfListing response model.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3833,6 +4111,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPbfListingResult> getPbfListing(GetPbfListingArgs args) {
@@ -3844,6 +4123,8 @@ public final class FunctionsFunctions {
      * Fetches a Pre-built Function(PBF) Listing. Returns a PbfListing response model.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3872,6 +4153,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPbfListingResult> getPbfListingPlain(GetPbfListingPlainArgs args) {
@@ -3883,6 +4165,8 @@ public final class FunctionsFunctions {
      * Fetches a Pre-built Function(PBF) Listing. Returns a PbfListing response model.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3911,6 +4195,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPbfListingResult> getPbfListing(GetPbfListingArgs args, InvokeOptions options) {
@@ -3922,6 +4207,8 @@ public final class FunctionsFunctions {
      * Fetches a Pre-built Function(PBF) Listing. Returns a PbfListing response model.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3950,6 +4237,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPbfListingResult> getPbfListingPlain(GetPbfListingPlainArgs args, InvokeOptions options) {
@@ -3961,6 +4249,8 @@ public final class FunctionsFunctions {
      * Returns a list of Triggers.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3989,6 +4279,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPbfListingTriggersResult> getPbfListingTriggers() {
@@ -4000,6 +4291,8 @@ public final class FunctionsFunctions {
      * Returns a list of Triggers.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4028,6 +4321,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPbfListingTriggersResult> getPbfListingTriggersPlain() {
@@ -4039,6 +4333,8 @@ public final class FunctionsFunctions {
      * Returns a list of Triggers.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4067,6 +4363,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPbfListingTriggersResult> getPbfListingTriggers(GetPbfListingTriggersArgs args) {
@@ -4078,6 +4375,8 @@ public final class FunctionsFunctions {
      * Returns a list of Triggers.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4106,6 +4405,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPbfListingTriggersResult> getPbfListingTriggersPlain(GetPbfListingTriggersPlainArgs args) {
@@ -4117,6 +4417,8 @@ public final class FunctionsFunctions {
      * Returns a list of Triggers.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4145,6 +4447,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPbfListingTriggersResult> getPbfListingTriggers(GetPbfListingTriggersArgs args, InvokeOptions options) {
@@ -4156,6 +4459,8 @@ public final class FunctionsFunctions {
      * Returns a list of Triggers.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4184,6 +4489,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPbfListingTriggersResult> getPbfListingTriggersPlain(GetPbfListingTriggersPlainArgs args, InvokeOptions options) {
@@ -4195,6 +4501,8 @@ public final class FunctionsFunctions {
      * Gets a PbfListingVersion by identifier for a PbfListing.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4223,6 +4531,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPbfListingVersionResult> getPbfListingVersion(GetPbfListingVersionArgs args) {
@@ -4234,6 +4543,8 @@ public final class FunctionsFunctions {
      * Gets a PbfListingVersion by identifier for a PbfListing.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4262,6 +4573,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPbfListingVersionResult> getPbfListingVersionPlain(GetPbfListingVersionPlainArgs args) {
@@ -4273,6 +4585,8 @@ public final class FunctionsFunctions {
      * Gets a PbfListingVersion by identifier for a PbfListing.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4301,6 +4615,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPbfListingVersionResult> getPbfListingVersion(GetPbfListingVersionArgs args, InvokeOptions options) {
@@ -4312,6 +4627,8 @@ public final class FunctionsFunctions {
      * Gets a PbfListingVersion by identifier for a PbfListing.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4340,6 +4657,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPbfListingVersionResult> getPbfListingVersionPlain(GetPbfListingVersionPlainArgs args, InvokeOptions options) {
@@ -4355,6 +4673,8 @@ public final class FunctionsFunctions {
      * be thrown.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4387,6 +4707,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPbfListingVersionsResult> getPbfListingVersions(GetPbfListingVersionsArgs args) {
@@ -4402,6 +4723,8 @@ public final class FunctionsFunctions {
      * be thrown.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4434,6 +4757,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPbfListingVersionsResult> getPbfListingVersionsPlain(GetPbfListingVersionsPlainArgs args) {
@@ -4449,6 +4773,8 @@ public final class FunctionsFunctions {
      * be thrown.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4481,6 +4807,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPbfListingVersionsResult> getPbfListingVersions(GetPbfListingVersionsArgs args, InvokeOptions options) {
@@ -4496,6 +4823,8 @@ public final class FunctionsFunctions {
      * be thrown.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4528,6 +4857,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPbfListingVersionsResult> getPbfListingVersionsPlain(GetPbfListingVersionsPlainArgs args, InvokeOptions options) {
@@ -4540,6 +4870,8 @@ public final class FunctionsFunctions {
      * an array of PbfListingSummary response models.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4573,6 +4905,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPbfListingsResult> getPbfListings() {
@@ -4585,6 +4918,8 @@ public final class FunctionsFunctions {
      * an array of PbfListingSummary response models.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4618,6 +4953,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPbfListingsResult> getPbfListingsPlain() {
@@ -4630,6 +4966,8 @@ public final class FunctionsFunctions {
      * an array of PbfListingSummary response models.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4663,6 +5001,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPbfListingsResult> getPbfListings(GetPbfListingsArgs args) {
@@ -4675,6 +5014,8 @@ public final class FunctionsFunctions {
      * an array of PbfListingSummary response models.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4708,6 +5049,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPbfListingsResult> getPbfListingsPlain(GetPbfListingsPlainArgs args) {
@@ -4720,6 +5062,8 @@ public final class FunctionsFunctions {
      * an array of PbfListingSummary response models.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4753,6 +5097,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPbfListingsResult> getPbfListings(GetPbfListingsArgs args, InvokeOptions options) {
@@ -4765,6 +5110,8 @@ public final class FunctionsFunctions {
      * an array of PbfListingSummary response models.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4798,6 +5145,7 @@ public final class FunctionsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPbfListingsResult> getPbfListingsPlain(GetPbfListingsPlainArgs args, InvokeOptions options) {

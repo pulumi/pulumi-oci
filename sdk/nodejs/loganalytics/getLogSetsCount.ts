@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -19,6 +20,7 @@ import * as utilities from "../utilities";
  *     namespace: _var.log_sets_count_namespace,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getLogSetsCount(args: GetLogSetsCountArgs, opts?: pulumi.InvokeOptions): Promise<GetLogSetsCountResult> {
 
@@ -59,6 +61,7 @@ export interface GetLogSetsCountResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -67,6 +70,7 @@ export interface GetLogSetsCountResult {
  *     namespace: _var.log_sets_count_namespace,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getLogSetsCountOutput(args: GetLogSetsCountOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLogSetsCountResult> {
     return pulumi.output(args).apply((a: any) => getLogSetsCount(a, opts))

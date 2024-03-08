@@ -16,6 +16,7 @@ namespace Pulumi.Oci.DataCatalog
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -42,13 +43,14 @@ namespace Pulumi.Oci.DataCatalog
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// Metastores can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:DataCatalog/metastore:Metastore test_metastore "id"
+    /// $ pulumi import oci:DataCatalog/metastore:Metastore test_metastore "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:DataCatalog/metastore:Metastore")]

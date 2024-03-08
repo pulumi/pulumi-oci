@@ -111,6 +111,7 @@ def get_backend_health(backend_name: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -119,6 +120,7 @@ def get_backend_health(backend_name: Optional[str] = None,
         backend_set_name=oci_load_balancer_backend_set["test_backend_set"]["name"],
         load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str backend_name: The IP address and port of the backend server to retrieve the health status for.  Example: `10.0.0.3:8080`
@@ -153,6 +155,7 @@ def get_backend_health_output(backend_name: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -161,6 +164,7 @@ def get_backend_health_output(backend_name: Optional[pulumi.Input[str]] = None,
         backend_set_name=oci_load_balancer_backend_set["test_backend_set"]["name"],
         load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str backend_name: The IP address and port of the backend server to retrieve the health status for.  Example: `10.0.0.3:8080`

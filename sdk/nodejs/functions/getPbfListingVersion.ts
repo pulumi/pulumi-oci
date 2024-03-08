@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,6 +22,7 @@ import * as utilities from "../utilities";
  *     pbfListingVersionId: oci_functions_pbf_listing_version.test_pbf_listing_version.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getPbfListingVersion(args: GetPbfListingVersionArgs, opts?: pulumi.InvokeOptions): Promise<GetPbfListingVersionResult> {
 
@@ -105,6 +107,7 @@ export interface GetPbfListingVersionResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -113,6 +116,7 @@ export interface GetPbfListingVersionResult {
  *     pbfListingVersionId: oci_functions_pbf_listing_version.test_pbf_listing_version.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getPbfListingVersionOutput(args: GetPbfListingVersionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPbfListingVersionResult> {
     return pulumi.output(args).apply((a: any) => getPbfListingVersion(a, opts))

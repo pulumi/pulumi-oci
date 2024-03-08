@@ -17,10 +17,9 @@ namespace Pulumi.Oci.Database
         /// Lists the console connections for the specified database node.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,8 +35,7 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDbNodeConsoleConnectionsResult> InvokeAsync(GetDbNodeConsoleConnectionsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDbNodeConsoleConnectionsResult>("oci:Database/getDbNodeConsoleConnections:getDbNodeConsoleConnections", args ?? new GetDbNodeConsoleConnectionsArgs(), options.WithDefaults());
@@ -48,10 +46,9 @@ namespace Pulumi.Oci.Database
         /// Lists the console connections for the specified database node.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -67,8 +64,7 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDbNodeConsoleConnectionsResult> Invoke(GetDbNodeConsoleConnectionsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDbNodeConsoleConnectionsResult>("oci:Database/getDbNodeConsoleConnections:getDbNodeConsoleConnections", args ?? new GetDbNodeConsoleConnectionsInvokeArgs(), options.WithDefaults());

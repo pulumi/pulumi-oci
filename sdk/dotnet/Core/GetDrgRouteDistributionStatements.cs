@@ -16,10 +16,9 @@ namespace Pulumi.Oci.Core
         /// 
         /// Lists the statements for the specified route distribution.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,8 +34,7 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDrgRouteDistributionStatementsResult> InvokeAsync(GetDrgRouteDistributionStatementsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDrgRouteDistributionStatementsResult>("oci:Core/getDrgRouteDistributionStatements:getDrgRouteDistributionStatements", args ?? new GetDrgRouteDistributionStatementsArgs(), options.WithDefaults());
@@ -46,10 +44,9 @@ namespace Pulumi.Oci.Core
         /// 
         /// Lists the statements for the specified route distribution.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -65,8 +62,7 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDrgRouteDistributionStatementsResult> Invoke(GetDrgRouteDistributionStatementsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDrgRouteDistributionStatementsResult>("oci:Core/getDrgRouteDistributionStatements:getDrgRouteDistributionStatements", args ?? new GetDrgRouteDistributionStatementsInvokeArgs(), options.WithDefaults());

@@ -17,10 +17,9 @@ namespace Pulumi.Oci.ApmTraces
         /// Gets the aggregated snapshot identified by trace ID.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -37,8 +36,7 @@ namespace Pulumi.Oci.ApmTraces
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetTraceAggregatedSnapshotDataResult> InvokeAsync(GetTraceAggregatedSnapshotDataArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetTraceAggregatedSnapshotDataResult>("oci:ApmTraces/getTraceAggregatedSnapshotData:getTraceAggregatedSnapshotData", args ?? new GetTraceAggregatedSnapshotDataArgs(), options.WithDefaults());
@@ -49,10 +47,9 @@ namespace Pulumi.Oci.ApmTraces
         /// Gets the aggregated snapshot identified by trace ID.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -69,8 +66,7 @@ namespace Pulumi.Oci.ApmTraces
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetTraceAggregatedSnapshotDataResult> Invoke(GetTraceAggregatedSnapshotDataInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetTraceAggregatedSnapshotDataResult>("oci:ApmTraces/getTraceAggregatedSnapshotData:getTraceAggregatedSnapshotData", args ?? new GetTraceAggregatedSnapshotDataInvokeArgs(), options.WithDefaults());

@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -26,6 +27,7 @@ import * as utilities from "../utilities";
  *     startIndex: _var.my_completed_approval_start_index,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDomainsMyCompletedApprovals(args: GetDomainsMyCompletedApprovalsArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsMyCompletedApprovalsResult> {
 
@@ -111,6 +113,7 @@ export interface GetDomainsMyCompletedApprovalsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -124,6 +127,7 @@ export interface GetDomainsMyCompletedApprovalsResult {
  *     startIndex: _var.my_completed_approval_start_index,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDomainsMyCompletedApprovalsOutput(args: GetDomainsMyCompletedApprovalsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsMyCompletedApprovalsResult> {
     return pulumi.output(args).apply((a: any) => getDomainsMyCompletedApprovals(a, opts))

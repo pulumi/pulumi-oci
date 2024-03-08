@@ -129,6 +129,7 @@ def get_em_warehouses(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -139,6 +140,7 @@ def get_em_warehouses(compartment_id: Optional[str] = None,
         operations_insights_warehouse_id=oci_opsi_operations_insights_warehouse["test_operations_insights_warehouse"]["id"],
         state=var["em_warehouse_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID of the compartment in which to list resources.
@@ -182,6 +184,7 @@ def get_em_warehouses_output(compartment_id: Optional[pulumi.Input[Optional[str]
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -192,6 +195,7 @@ def get_em_warehouses_output(compartment_id: Optional[pulumi.Input[Optional[str]
         operations_insights_warehouse_id=oci_opsi_operations_insights_warehouse["test_operations_insights_warehouse"]["id"],
         state=var["em_warehouse_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID of the compartment in which to list resources.

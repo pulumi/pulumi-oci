@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -42,6 +43,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetAutonomousCharacterSets(ctx *pulumi.Context, args *GetAutonomousCharacterSetsArgs, opts ...pulumi.InvokeOption) (*GetAutonomousCharacterSetsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAutonomousCharacterSetsResult

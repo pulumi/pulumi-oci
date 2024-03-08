@@ -383,6 +383,7 @@ class Backend(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -398,13 +399,14 @@ class Backend(pulumi.CustomResource):
             target_id=oci_cloud_guard_target["test_target"]["id"],
             weight=var["backend_weight"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Backends can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:NetworkLoadBalancer/backend:Backend test_backend "networkLoadBalancers/{networkLoadBalancerId}/backendSets/{backendSetName}/backends/{backendName}"
+        $ pulumi import oci:NetworkLoadBalancer/backend:Backend test_backend "networkLoadBalancers/{networkLoadBalancerId}/backendSets/{backendSetName}/backends/{backendName}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -437,6 +439,7 @@ class Backend(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -452,13 +455,14 @@ class Backend(pulumi.CustomResource):
             target_id=oci_cloud_guard_target["test_target"]["id"],
             weight=var["backend_weight"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Backends can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:NetworkLoadBalancer/backend:Backend test_backend "networkLoadBalancers/{networkLoadBalancerId}/backendSets/{backendSetName}/backends/{backendName}"
+        $ pulumi import oci:NetworkLoadBalancer/backend:Backend test_backend "networkLoadBalancers/{networkLoadBalancerId}/backendSets/{backendSetName}/backends/{backendName}"
         ```
 
         :param str resource_name: The name of the resource.

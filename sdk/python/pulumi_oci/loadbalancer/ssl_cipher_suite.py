@@ -193,6 +193,7 @@ class SslCipherSuite(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -201,13 +202,14 @@ class SslCipherSuite(pulumi.CustomResource):
             ciphers=var["ssl_cipher_suite_ciphers"],
             load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         SslCipherSuites can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:LoadBalancer/sslCipherSuite:SslCipherSuite test_ssl_cipher_suite "loadBalancers/{loadBalancerId}/sslCipherSuites/{name}"
+        $ pulumi import oci:LoadBalancer/sslCipherSuite:SslCipherSuite test_ssl_cipher_suite "loadBalancers/{loadBalancerId}/sslCipherSuites/{name}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -241,6 +243,7 @@ class SslCipherSuite(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -249,13 +252,14 @@ class SslCipherSuite(pulumi.CustomResource):
             ciphers=var["ssl_cipher_suite_ciphers"],
             load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         SslCipherSuites can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:LoadBalancer/sslCipherSuite:SslCipherSuite test_ssl_cipher_suite "loadBalancers/{loadBalancerId}/sslCipherSuites/{name}"
+        $ pulumi import oci:LoadBalancer/sslCipherSuite:SslCipherSuite test_ssl_cipher_suite "loadBalancers/{loadBalancerId}/sslCipherSuites/{name}"
         ```
 
         :param str resource_name: The name of the resource.

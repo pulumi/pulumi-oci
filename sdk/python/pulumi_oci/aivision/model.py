@@ -675,6 +675,7 @@ class Model(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -716,13 +717,14 @@ class Model(pulumi.CustomResource):
                 object=var["model_validation_dataset_object"],
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Models can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:AiVision/model:Model test_model "id"
+        $ pulumi import oci:AiVision/model:Model test_model "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -754,6 +756,7 @@ class Model(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -795,13 +798,14 @@ class Model(pulumi.CustomResource):
                 object=var["model_validation_dataset_object"],
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Models can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:AiVision/model:Model test_model "id"
+        $ pulumi import oci:AiVision/model:Model test_model "id"
         ```
 
         :param str resource_name: The name of the resource.

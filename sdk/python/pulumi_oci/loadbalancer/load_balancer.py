@@ -618,6 +618,7 @@ class LoadBalancer(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -644,13 +645,14 @@ class LoadBalancer(pulumi.CustomResource):
                 minimum_bandwidth_in_mbps=var["load_balancer_shape_details_minimum_bandwidth_in_mbps"],
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         LoadBalancers can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:LoadBalancer/loadBalancer:LoadBalancer test_load_balancer "id"
+        $ pulumi import oci:LoadBalancer/loadBalancer:LoadBalancer test_load_balancer "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -733,6 +735,7 @@ class LoadBalancer(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -759,13 +762,14 @@ class LoadBalancer(pulumi.CustomResource):
                 minimum_bandwidth_in_mbps=var["load_balancer_shape_details_minimum_bandwidth_in_mbps"],
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         LoadBalancers can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:LoadBalancer/loadBalancer:LoadBalancer test_load_balancer "id"
+        $ pulumi import oci:LoadBalancer/loadBalancer:LoadBalancer test_load_balancer "id"
         ```
 
         :param str resource_name: The name of the resource.

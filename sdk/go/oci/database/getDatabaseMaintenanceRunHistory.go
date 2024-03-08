@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -40,6 +41,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetDatabaseMaintenanceRunHistory(ctx *pulumi.Context, args *GetDatabaseMaintenanceRunHistoryArgs, opts ...pulumi.InvokeOption) (*GetDatabaseMaintenanceRunHistoryResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDatabaseMaintenanceRunHistoryResult

@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -111,15 +112,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // NodePools can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:ContainerEngine/nodePool:NodePool test_node_pool "id"
-//
+// $ pulumi import oci:ContainerEngine/nodePool:NodePool test_node_pool "id"
 // ```
 type NodePool struct {
 	pulumi.CustomResourceState

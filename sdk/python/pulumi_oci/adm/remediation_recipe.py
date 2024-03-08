@@ -462,6 +462,7 @@ class RemediationRecipe(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -512,13 +513,14 @@ class RemediationRecipe(pulumi.CustomResource):
                 "bar-key": "value",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         RemediationRecipes can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Adm/remediationRecipe:RemediationRecipe test_remediation_recipe "id"
+        $ pulumi import oci:Adm/remediationRecipe:RemediationRecipe test_remediation_recipe "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -552,6 +554,7 @@ class RemediationRecipe(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -602,13 +605,14 @@ class RemediationRecipe(pulumi.CustomResource):
                 "bar-key": "value",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         RemediationRecipes can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Adm/remediationRecipe:RemediationRecipe test_remediation_recipe "id"
+        $ pulumi import oci:Adm/remediationRecipe:RemediationRecipe test_remediation_recipe "id"
         ```
 
         :param str resource_name: The name of the resource.

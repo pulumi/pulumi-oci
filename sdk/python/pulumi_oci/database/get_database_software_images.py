@@ -154,6 +154,7 @@ def get_database_software_images(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -165,6 +166,7 @@ def get_database_software_images(compartment_id: Optional[str] = None,
         is_upgrade_supported=var["database_software_image_is_upgrade_supported"],
         state=var["database_software_image_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -213,6 +215,7 @@ def get_database_software_images_output(compartment_id: Optional[pulumi.Input[st
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -224,6 +227,7 @@ def get_database_software_images_output(compartment_id: Optional[pulumi.Input[st
         is_upgrade_supported=var["database_software_image_is_upgrade_supported"],
         state=var["database_software_image_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -36,13 +37,14 @@ import * as utilities from "../utilities";
  *     }],
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * Scripts can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:ApmSynthetics/script:Script test_script "scripts/{scriptId}/apmDomainId/{apmDomainId}"
+ * $ pulumi import oci:ApmSynthetics/script:Script test_script "scripts/{scriptId}/apmDomainId/{apmDomainId}"
  * ```
  */
 export class Script extends pulumi.CustomResource {

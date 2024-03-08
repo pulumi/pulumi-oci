@@ -151,6 +151,7 @@ def get_metric_extensions(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -162,6 +163,7 @@ def get_metric_extensions(compartment_id: Optional[str] = None,
         state=var["metric_extension_state"],
         status=var["metric_extension_status"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID of the compartment in which data is listed.
@@ -210,6 +212,7 @@ def get_metric_extensions_output(compartment_id: Optional[pulumi.Input[str]] = N
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -221,6 +224,7 @@ def get_metric_extensions_output(compartment_id: Optional[pulumi.Input[str]] = N
         state=var["metric_extension_state"],
         status=var["metric_extension_status"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID of the compartment in which data is listed.

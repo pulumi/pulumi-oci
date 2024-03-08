@@ -19,7 +19,7 @@ namespace Pulumi.Oci.CloudGuard
     /// DetectorRecipes can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:CloudGuard/detectorRecipe:DetectorRecipe test_detector_recipe "id"
+    /// $ pulumi import oci:CloudGuard/detectorRecipe:DetectorRecipe test_detector_recipe "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:CloudGuard/detectorRecipe:DetectorRecipe")]

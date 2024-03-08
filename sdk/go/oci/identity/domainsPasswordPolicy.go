@@ -21,9 +21,7 @@ import (
 // PasswordPolicies can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Identity/domainsPasswordPolicy:DomainsPasswordPolicy test_password_policy "idcsEndpoint/{idcsEndpoint}/passwordPolicies/{passwordPolicyId}"
-//
+// $ pulumi import oci:Identity/domainsPasswordPolicy:DomainsPasswordPolicy test_password_policy "idcsEndpoint/{idcsEndpoint}/passwordPolicies/{passwordPolicyId}"
 // ```
 type DomainsPasswordPolicy struct {
 	pulumi.CustomResourceState

@@ -19,6 +19,7 @@ namespace Pulumi.Oci.Database
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -39,13 +40,14 @@ namespace Pulumi.Oci.Database
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// MaintenanceRuns can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Database/maintenanceRun:MaintenanceRun test_maintenance_run "id"
+    /// $ pulumi import oci:Database/maintenanceRun:MaintenanceRun test_maintenance_run "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Database/maintenanceRun:MaintenanceRun")]

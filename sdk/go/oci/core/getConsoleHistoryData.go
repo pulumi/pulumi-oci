@@ -19,6 +19,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -44,6 +45,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetConsoleHistoryData(ctx *pulumi.Context, args *GetConsoleHistoryDataArgs, opts ...pulumi.InvokeOption) (*GetConsoleHistoryDataResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetConsoleHistoryDataResult

@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,6 +24,7 @@ import * as utilities from "../utilities";
  *     compartmentId: _var.compartment_id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getComputeCapacityTopologyComputeHpcIslands(args: GetComputeCapacityTopologyComputeHpcIslandsArgs, opts?: pulumi.InvokeOptions): Promise<GetComputeCapacityTopologyComputeHpcIslandsResult> {
 
@@ -81,6 +83,7 @@ export interface GetComputeCapacityTopologyComputeHpcIslandsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -91,6 +94,7 @@ export interface GetComputeCapacityTopologyComputeHpcIslandsResult {
  *     compartmentId: _var.compartment_id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getComputeCapacityTopologyComputeHpcIslandsOutput(args: GetComputeCapacityTopologyComputeHpcIslandsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetComputeCapacityTopologyComputeHpcIslandsResult> {
     return pulumi.output(args).apply((a: any) => getComputeCapacityTopologyComputeHpcIslands(a, opts))

@@ -22,6 +22,8 @@ import javax.annotation.Nullable;
  * [group](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/Group/).
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -52,13 +54,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * IdpGroupMappings can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Identity/idpGroupMapping:IdpGroupMapping test_idp_group_mapping &#34;identityProviders/{identityProviderId}/groupMappings/{mappingId}&#34;
+ * $ pulumi import oci:Identity/idpGroupMapping:IdpGroupMapping test_idp_group_mapping &#34;identityProviders/{identityProviderId}/groupMappings/{mappingId}&#34;
  * ```
  * 
  */

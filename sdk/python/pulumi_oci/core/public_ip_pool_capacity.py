@@ -144,6 +144,7 @@ class PublicIpPoolCapacity(pulumi.CustomResource):
         """
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -153,13 +154,14 @@ class PublicIpPoolCapacity(pulumi.CustomResource):
             cidr_block=var["cidr_block"],
             public_ip_pool_id=var["public_ip_pool_id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         PublicIpPoolCapacity can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/publicIpPoolCapacity:PublicIpPoolCapacity test_public_ip_pool_capacity "publicIpPoolId/{publicIpPoolId}/byoipId/{byoipId}/cidrBlock/{cidrBlock}"
+        $ pulumi import oci:Core/publicIpPoolCapacity:PublicIpPoolCapacity test_public_ip_pool_capacity "publicIpPoolId/{publicIpPoolId}/byoipId/{byoipId}/cidrBlock/{cidrBlock}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -180,6 +182,7 @@ class PublicIpPoolCapacity(pulumi.CustomResource):
         """
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -189,13 +192,14 @@ class PublicIpPoolCapacity(pulumi.CustomResource):
             cidr_block=var["cidr_block"],
             public_ip_pool_id=var["public_ip_pool_id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         PublicIpPoolCapacity can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/publicIpPoolCapacity:PublicIpPoolCapacity test_public_ip_pool_capacity "publicIpPoolId/{publicIpPoolId}/byoipId/{byoipId}/cidrBlock/{cidrBlock}"
+        $ pulumi import oci:Core/publicIpPoolCapacity:PublicIpPoolCapacity test_public_ip_pool_capacity "publicIpPoolId/{publicIpPoolId}/byoipId/{byoipId}/cidrBlock/{cidrBlock}"
         ```
 
         :param str resource_name: The name of the resource.

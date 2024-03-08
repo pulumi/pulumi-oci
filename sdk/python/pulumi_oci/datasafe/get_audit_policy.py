@@ -273,12 +273,14 @@ def get_audit_policy(audit_policy_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_audit_policy = oci.DataSafe.get_audit_policy(audit_policy_id=oci_data_safe_audit_policy["test_audit_policy"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str audit_policy_id: Unique audit policy identifier.
@@ -321,12 +323,14 @@ def get_audit_policy_output(audit_policy_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_audit_policy = oci.DataSafe.get_audit_policy(audit_policy_id=oci_data_safe_audit_policy["test_audit_policy"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str audit_policy_id: Unique audit policy identifier.

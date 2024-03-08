@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -56,15 +57,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // PrivateApplications can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:ServiceCatalog/privateApplication:PrivateApplication test_private_application "id"
-//
+// $ pulumi import oci:ServiceCatalog/privateApplication:PrivateApplication test_private_application "id"
 // ```
 type PrivateApplication struct {
 	pulumi.CustomResourceState

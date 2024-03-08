@@ -21,6 +21,8 @@ import javax.annotation.Nullable;
  * Updates the plugin.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -51,13 +53,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * AgentPlugins can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:CloudBridge/agentPlugin:AgentPlugin test_agent_plugin &#34;agents/{agentId}/plugins/{pluginName}&#34;
+ * $ pulumi import oci:CloudBridge/agentPlugin:AgentPlugin test_agent_plugin &#34;agents/{agentId}/plugins/{pluginName}&#34;
  * ```
  * 
  */

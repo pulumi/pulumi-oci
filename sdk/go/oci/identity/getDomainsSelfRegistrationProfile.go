@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -47,6 +48,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupDomainsSelfRegistrationProfile(ctx *pulumi.Context, args *LookupDomainsSelfRegistrationProfileArgs, opts ...pulumi.InvokeOption) (*LookupDomainsSelfRegistrationProfileResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupDomainsSelfRegistrationProfileResult

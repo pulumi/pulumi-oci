@@ -225,12 +225,14 @@ def get_java_downloads_java_download_report(java_download_report_id: Optional[st
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_java_download_report = oci.Jms.get_java_downloads_java_download_report(java_download_report_id=oci_jms_java_downloads_java_download_report["test_java_download_report"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str java_download_report_id: Unique Java download report identifier.
@@ -269,12 +271,14 @@ def get_java_downloads_java_download_report_output(java_download_report_id: Opti
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_java_download_report = oci.Jms.get_java_downloads_java_download_report(java_download_report_id=oci_jms_java_downloads_java_download_report["test_java_download_report"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str java_download_report_id: Unique Java download report identifier.

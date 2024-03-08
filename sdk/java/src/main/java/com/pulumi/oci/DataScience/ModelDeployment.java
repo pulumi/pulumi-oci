@@ -23,6 +23,8 @@ import javax.annotation.Nullable;
  * Creates a new model deployment.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -103,13 +105,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * ModelDeployments can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:DataScience/modelDeployment:ModelDeployment test_model_deployment &#34;id&#34;
+ * $ pulumi import oci:DataScience/modelDeployment:ModelDeployment test_model_deployment &#34;id&#34;
  * ```
  * 
  */

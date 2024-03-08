@@ -266,6 +266,7 @@ class Inventory(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -280,13 +281,14 @@ class Inventory(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Inventories can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:CloudBridge/inventory:Inventory test_inventory "id"
+        $ pulumi import oci:CloudBridge/inventory:Inventory test_inventory "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -313,6 +315,7 @@ class Inventory(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -327,13 +330,14 @@ class Inventory(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Inventories can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:CloudBridge/inventory:Inventory test_inventory "id"
+        $ pulumi import oci:CloudBridge/inventory:Inventory test_inventory "id"
         ```
 
         :param str resource_name: The name of the resource.

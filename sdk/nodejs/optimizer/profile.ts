@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -46,13 +47,14 @@ import * as utilities from "../utilities";
  *     },
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * Profiles can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Optimizer/profile:Profile test_profile "id"
+ * $ pulumi import oci:Optimizer/profile:Profile test_profile "id"
  * ```
  */
 export class Profile extends pulumi.CustomResource {

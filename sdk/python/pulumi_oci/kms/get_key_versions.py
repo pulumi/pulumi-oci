@@ -105,6 +105,7 @@ def get_key_versions(filters: Optional[Sequence[pulumi.InputType['GetKeyVersions
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -112,6 +113,7 @@ def get_key_versions(filters: Optional[Sequence[pulumi.InputType['GetKeyVersions
     test_key_versions = oci.Kms.get_key_versions(key_id=oci_kms_key["test_key"]["id"],
         management_endpoint=var["key_version_management_endpoint"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str key_id: The OCID of the key.
@@ -150,6 +152,7 @@ def get_key_versions_output(filters: Optional[pulumi.Input[Optional[Sequence[pul
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -157,6 +160,7 @@ def get_key_versions_output(filters: Optional[pulumi.Input[Optional[Sequence[pul
     test_key_versions = oci.Kms.get_key_versions(key_id=oci_kms_key["test_key"]["id"],
         management_endpoint=var["key_version_management_endpoint"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str key_id: The OCID of the key.

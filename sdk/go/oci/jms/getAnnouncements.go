@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -42,6 +43,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetAnnouncements(ctx *pulumi.Context, args *GetAnnouncementsArgs, opts ...pulumi.InvokeOption) (*GetAnnouncementsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAnnouncementsResult

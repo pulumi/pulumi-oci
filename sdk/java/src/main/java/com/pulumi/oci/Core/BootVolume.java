@@ -30,6 +30,8 @@ import javax.annotation.Nullable;
  * description. It does not have to be unique, and you can change it. Avoid entering confidential information.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -83,13 +85,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * BootVolumes can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Core/bootVolume:BootVolume test_boot_volume &#34;id&#34;
+ * $ pulumi import oci:Core/bootVolume:BootVolume test_boot_volume &#34;id&#34;
  * ```
  * 
  */

@@ -16,6 +16,7 @@ namespace Pulumi.Oci.ApiGateway
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -676,13 +677,14 @@ namespace Pulumi.Oci.ApiGateway
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// Deployments can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:ApiGateway/deployment:Deployment test_deployment "id"
+    /// $ pulumi import oci:ApiGateway/deployment:Deployment test_deployment "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:ApiGateway/deployment:Deployment")]

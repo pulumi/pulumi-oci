@@ -155,6 +155,7 @@ class ObjectLifecyclePolicy(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -176,13 +177,14 @@ class ObjectLifecyclePolicy(pulumi.CustomResource):
                 target=var["object_lifecycle_policy_rules_target"],
             )])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ObjectLifecyclePolicies can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:ObjectStorage/objectLifecyclePolicy:ObjectLifecyclePolicy test_object_lifecycle_policy "n/{namespaceName}/b/{bucketName}/l"
+        $ pulumi import oci:ObjectStorage/objectLifecyclePolicy:ObjectLifecyclePolicy test_object_lifecycle_policy "n/{namespaceName}/b/{bucketName}/l"
         ```
 
         :param str resource_name: The name of the resource.
@@ -204,6 +206,7 @@ class ObjectLifecyclePolicy(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -225,13 +228,14 @@ class ObjectLifecyclePolicy(pulumi.CustomResource):
                 target=var["object_lifecycle_policy_rules_target"],
             )])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ObjectLifecyclePolicies can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:ObjectStorage/objectLifecyclePolicy:ObjectLifecyclePolicy test_object_lifecycle_policy "n/{namespaceName}/b/{bucketName}/l"
+        $ pulumi import oci:ObjectStorage/objectLifecyclePolicy:ObjectLifecyclePolicy test_object_lifecycle_policy "n/{namespaceName}/b/{bucketName}/l"
         ```
 
         :param str resource_name: The name of the resource.

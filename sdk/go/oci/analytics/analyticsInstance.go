@@ -19,6 +19,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -72,15 +73,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // AnalyticsInstances can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Analytics/analyticsInstance:AnalyticsInstance test_analytics_instance "id"
-//
+// $ pulumi import oci:Analytics/analyticsInstance:AnalyticsInstance test_analytics_instance "id"
 // ```
 type AnalyticsInstance struct {
 	pulumi.CustomResourceState

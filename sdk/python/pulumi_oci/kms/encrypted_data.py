@@ -301,6 +301,7 @@ class EncryptedData(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -314,6 +315,7 @@ class EncryptedData(pulumi.CustomResource):
             key_version_id=oci_kms_key_version["test_key_version"]["id"],
             logging_context=var["encrypted_data_logging_context"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -347,6 +349,7 @@ class EncryptedData(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -360,6 +363,7 @@ class EncryptedData(pulumi.CustomResource):
             key_version_id=oci_kms_key_version["test_key_version"]["id"],
             logging_context=var["encrypted_data_logging_context"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 

@@ -18,10 +18,9 @@ namespace Pulumi.Oci.Core
         /// You can filter the list by compatibility with a specific dedicated virtual machine host shape.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -39,8 +38,7 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDedicatedVmHostInstanceShapesResult> InvokeAsync(GetDedicatedVmHostInstanceShapesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDedicatedVmHostInstanceShapesResult>("oci:Core/getDedicatedVmHostInstanceShapes:getDedicatedVmHostInstanceShapes", args ?? new GetDedicatedVmHostInstanceShapesArgs(), options.WithDefaults());
@@ -52,10 +50,9 @@ namespace Pulumi.Oci.Core
         /// You can filter the list by compatibility with a specific dedicated virtual machine host shape.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -73,8 +70,7 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDedicatedVmHostInstanceShapesResult> Invoke(GetDedicatedVmHostInstanceShapesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDedicatedVmHostInstanceShapesResult>("oci:Core/getDedicatedVmHostInstanceShapes:getDedicatedVmHostInstanceShapes", args ?? new GetDedicatedVmHostInstanceShapesInvokeArgs(), options.WithDefaults());

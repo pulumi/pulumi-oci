@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,6 +22,7 @@ import * as utilities from "../utilities";
  *     backupDestinationId: oci_database_backup_destination.test_backup_destination.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getBackupDestination(args: GetBackupDestinationArgs, opts?: pulumi.InvokeOptions): Promise<GetBackupDestinationResult> {
 
@@ -120,6 +122,7 @@ export interface GetBackupDestinationResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -128,6 +131,7 @@ export interface GetBackupDestinationResult {
  *     backupDestinationId: oci_database_backup_destination.test_backup_destination.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getBackupDestinationOutput(args: GetBackupDestinationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBackupDestinationResult> {
     return pulumi.output(args).apply((a: any) => getBackupDestination(a, opts))

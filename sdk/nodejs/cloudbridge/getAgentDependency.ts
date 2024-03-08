@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -19,6 +20,7 @@ import * as utilities from "../utilities";
  *     agentDependencyId: oci_cloud_bridge_agent_dependency.test_agent_dependency.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAgentDependency(args: GetAgentDependencyArgs, opts?: pulumi.InvokeOptions): Promise<GetAgentDependencyResult> {
 
@@ -119,6 +121,7 @@ export interface GetAgentDependencyResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -127,6 +130,7 @@ export interface GetAgentDependencyResult {
  *     agentDependencyId: oci_cloud_bridge_agent_dependency.test_agent_dependency.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAgentDependencyOutput(args: GetAgentDependencyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAgentDependencyResult> {
     return pulumi.output(args).apply((a: any) => getAgentDependency(a, opts))

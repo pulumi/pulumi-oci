@@ -35,6 +35,8 @@ import javax.annotation.Nullable;
  * have to be unique, and you can change it anytime with [UpdateDynamicGroup](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/DynamicGroup/UpdateDynamicGroup).
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -67,13 +69,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * DynamicGroups can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Identity/dynamicGroup:DynamicGroup test_dynamic_group &#34;id&#34;
+ * $ pulumi import oci:Identity/dynamicGroup:DynamicGroup test_dynamic_group &#34;id&#34;
  * ```
  * 
  */

@@ -27,6 +27,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -75,13 +76,14 @@ import * as utilities from "../utilities";
  *     },
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * ClusterNetworks can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Core/clusterNetwork:ClusterNetwork test_cluster_network "id"
+ * $ pulumi import oci:Core/clusterNetwork:ClusterNetwork test_cluster_network "id"
  * ```
  */
 export class ClusterNetwork extends pulumi.CustomResource {

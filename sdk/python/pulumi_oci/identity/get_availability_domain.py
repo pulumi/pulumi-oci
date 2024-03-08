@@ -89,6 +89,7 @@ def get_availability_domain(ad_number: Optional[int] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -97,6 +98,7 @@ def get_availability_domain(ad_number: Optional[int] = None,
         id=var["id"],
         ad_number=var["ad_number"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param int ad_number: The number of the Availability Domain. Required if `id` is not specified. This number corresponds to the integer in the Availability Domain `name`.
@@ -127,6 +129,7 @@ def get_availability_domain_output(ad_number: Optional[pulumi.Input[Optional[int
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -135,6 +138,7 @@ def get_availability_domain_output(ad_number: Optional[pulumi.Input[Optional[int
         id=var["id"],
         ad_number=var["ad_number"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param int ad_number: The number of the Availability Domain. Required if `id` is not specified. This number corresponds to the integer in the Availability Domain `name`.

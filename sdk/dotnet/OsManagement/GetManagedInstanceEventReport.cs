@@ -17,10 +17,9 @@ namespace Pulumi.Oci.OsManagement
         /// Get summary information about events on this instance.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -39,8 +38,7 @@ namespace Pulumi.Oci.OsManagement
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetManagedInstanceEventReportResult> InvokeAsync(GetManagedInstanceEventReportArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagedInstanceEventReportResult>("oci:OsManagement/getManagedInstanceEventReport:getManagedInstanceEventReport", args ?? new GetManagedInstanceEventReportArgs(), options.WithDefaults());
@@ -51,10 +49,9 @@ namespace Pulumi.Oci.OsManagement
         /// Get summary information about events on this instance.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -73,8 +70,7 @@ namespace Pulumi.Oci.OsManagement
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetManagedInstanceEventReportResult> Invoke(GetManagedInstanceEventReportInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedInstanceEventReportResult>("oci:OsManagement/getManagedInstanceEventReport:getManagedInstanceEventReport", args ?? new GetManagedInstanceEventReportInvokeArgs(), options.WithDefaults());

@@ -31,6 +31,8 @@ import javax.annotation.Nullable;
  * Create a new node pool.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -124,13 +126,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * NodePools can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:ContainerEngine/nodePool:NodePool test_node_pool &#34;id&#34;
+ * $ pulumi import oci:ContainerEngine/nodePool:NodePool test_node_pool &#34;id&#34;
  * ```
  * 
  */

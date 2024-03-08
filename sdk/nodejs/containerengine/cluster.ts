@@ -16,7 +16,7 @@ import * as utilities from "../utilities";
  * Clusters can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:ContainerEngine/cluster:Cluster test_cluster "id"
+ * $ pulumi import oci:ContainerEngine/cluster:Cluster test_cluster "id"
  * ```
  */
 export class Cluster extends pulumi.CustomResource {

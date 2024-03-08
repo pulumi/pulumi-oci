@@ -277,6 +277,7 @@ def get_resource_action(include_resource_metadata: Optional[bool] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -284,6 +285,7 @@ def get_resource_action(include_resource_metadata: Optional[bool] = None,
     test_resource_action = oci.Optimizer.get_resource_action(resource_action_id=oci_optimizer_resource_action["test_resource_action"]["id"],
         include_resource_metadata=var["resource_action_include_resource_metadata"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param bool include_resource_metadata: Supplement additional resource information in extended metadata response.
@@ -329,6 +331,7 @@ def get_resource_action_output(include_resource_metadata: Optional[pulumi.Input[
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -336,6 +339,7 @@ def get_resource_action_output(include_resource_metadata: Optional[pulumi.Input[
     test_resource_action = oci.Optimizer.get_resource_action(resource_action_id=oci_optimizer_resource_action["test_resource_action"]["id"],
         include_resource_metadata=var["resource_action_include_resource_metadata"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param bool include_resource_metadata: Supplement additional resource information in extended metadata response.

@@ -27,6 +27,8 @@ import javax.annotation.Nullable;
  * Creates a publication of the specified listing type with an optional default package.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -82,13 +84,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * Publications can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Marketplace/publication:Publication test_publication &#34;id&#34;
+ * $ pulumi import oci:Marketplace/publication:Publication test_publication &#34;id&#34;
  * ```
  * 
  */

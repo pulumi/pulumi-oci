@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -48,15 +49,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // KnowledgeBases can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Adm/knowledgeBase:KnowledgeBase test_knowledge_base "id"
-//
+// $ pulumi import oci:Adm/knowledgeBase:KnowledgeBase test_knowledge_base "id"
 // ```
 type KnowledgeBase struct {
 	pulumi.CustomResourceState

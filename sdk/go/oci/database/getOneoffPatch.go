@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -40,6 +41,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupOneoffPatch(ctx *pulumi.Context, args *LookupOneoffPatchArgs, opts ...pulumi.InvokeOption) (*LookupOneoffPatchResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupOneoffPatchResult

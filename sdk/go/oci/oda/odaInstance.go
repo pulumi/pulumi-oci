@@ -21,6 +21,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -55,15 +56,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // OdaInstances can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Oda/odaInstance:OdaInstance test_oda_instance "id"
-//
+// $ pulumi import oci:Oda/odaInstance:OdaInstance test_oda_instance "id"
 // ```
 type OdaInstance struct {
 	pulumi.CustomResourceState

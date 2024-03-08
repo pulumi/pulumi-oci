@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,6 +42,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetOsns(ctx *pulumi.Context, args *GetOsnsArgs, opts ...pulumi.InvokeOption) (*GetOsnsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetOsnsResult

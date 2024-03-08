@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -44,6 +45,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetSecretbundle(ctx *pulumi.Context, args *GetSecretbundleArgs, opts ...pulumi.InvokeOption) (*GetSecretbundleResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetSecretbundleResult

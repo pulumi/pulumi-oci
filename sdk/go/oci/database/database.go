@@ -20,6 +20,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -83,15 +84,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Databases can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Database/database:Database test_database "id"
-//
+// $ pulumi import oci:Database/database:Database test_database "id"
 // ```
 type Database struct {
 	pulumi.CustomResourceState

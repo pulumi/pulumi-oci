@@ -231,12 +231,14 @@ def get_deploy_artifact(deploy_artifact_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_deploy_artifact = oci.DevOps.get_deploy_artifact(deploy_artifact_id=oci_devops_deploy_artifact["test_deploy_artifact"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str deploy_artifact_id: Unique artifact identifier.
@@ -275,12 +277,14 @@ def get_deploy_artifact_output(deploy_artifact_id: Optional[pulumi.Input[str]] =
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_deploy_artifact = oci.DevOps.get_deploy_artifact(deploy_artifact_id=oci_devops_deploy_artifact["test_deploy_artifact"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str deploy_artifact_id: Unique artifact identifier.

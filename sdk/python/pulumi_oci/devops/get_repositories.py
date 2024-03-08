@@ -138,6 +138,7 @@ def get_repositories(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -148,6 +149,7 @@ def get_repositories(compartment_id: Optional[str] = None,
         repository_id=oci_devops_repository["test_repository"]["id"],
         state=var["repository_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment in which to list resources.
@@ -192,6 +194,7 @@ def get_repositories_output(compartment_id: Optional[pulumi.Input[Optional[str]]
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -202,6 +205,7 @@ def get_repositories_output(compartment_id: Optional[pulumi.Input[Optional[str]]
         repository_id=oci_devops_repository["test_repository"]["id"],
         state=var["repository_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment in which to list resources.

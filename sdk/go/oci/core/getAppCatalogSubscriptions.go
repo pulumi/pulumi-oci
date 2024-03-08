@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,6 +42,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetAppCatalogSubscriptions(ctx *pulumi.Context, args *GetAppCatalogSubscriptionsArgs, opts ...pulumi.InvokeOption) (*GetAppCatalogSubscriptionsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAppCatalogSubscriptionsResult

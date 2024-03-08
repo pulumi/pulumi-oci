@@ -19,10 +19,9 @@ namespace Pulumi.Oci.Core
         /// one item, since volume can only have one volume backup policy assigned at a time.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -38,8 +37,7 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetVolumeBackupPolicyAssignmentsResult> InvokeAsync(GetVolumeBackupPolicyAssignmentsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetVolumeBackupPolicyAssignmentsResult>("oci:Core/getVolumeBackupPolicyAssignments:getVolumeBackupPolicyAssignments", args ?? new GetVolumeBackupPolicyAssignmentsArgs(), options.WithDefaults());
@@ -52,10 +50,9 @@ namespace Pulumi.Oci.Core
         /// one item, since volume can only have one volume backup policy assigned at a time.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -71,8 +68,7 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetVolumeBackupPolicyAssignmentsResult> Invoke(GetVolumeBackupPolicyAssignmentsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVolumeBackupPolicyAssignmentsResult>("oci:Core/getVolumeBackupPolicyAssignments:getVolumeBackupPolicyAssignments", args ?? new GetVolumeBackupPolicyAssignmentsInvokeArgs(), options.WithDefaults());

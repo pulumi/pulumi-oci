@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -115,13 +116,14 @@ import * as utilities from "../utilities";
  *     },
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * MysqlConfigurations can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Mysql/mysqlConfiguration:MysqlConfiguration test_mysql_configuration "configurations/{configurationId}"
+ * $ pulumi import oci:Mysql/mysqlConfiguration:MysqlConfiguration test_mysql_configuration "configurations/{configurationId}"
  * ```
  */
 export class MysqlConfiguration extends pulumi.CustomResource {

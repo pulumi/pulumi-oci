@@ -20,6 +20,7 @@ namespace Pulumi.Oci.DataSafe
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -46,13 +47,14 @@ namespace Pulumi.Oci.DataSafe
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// SdmMaskingPolicyDifferences can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:DataSafe/sdmMaskingPolicyDifference:SdmMaskingPolicyDifference test_sdm_masking_policy_difference "id"
+    /// $ pulumi import oci:DataSafe/sdmMaskingPolicyDifference:SdmMaskingPolicyDifference test_sdm_masking_policy_difference "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:DataSafe/sdmMaskingPolicyDifference:SdmMaskingPolicyDifference")]

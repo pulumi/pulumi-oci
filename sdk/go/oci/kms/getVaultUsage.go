@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -40,6 +41,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetVaultUsage(ctx *pulumi.Context, args *GetVaultUsageArgs, opts ...pulumi.InvokeOption) (*GetVaultUsageResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetVaultUsageResult

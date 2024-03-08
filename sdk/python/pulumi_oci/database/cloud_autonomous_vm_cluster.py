@@ -1299,6 +1299,7 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -1342,13 +1343,14 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
             scan_listener_port_tls=var["cloud_autonomous_vm_cluster_scan_listener_port_tls"],
             total_container_databases=var["cloud_autonomous_vm_cluster_total_container_databases"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         CloudAutonomousVmClusters can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Database/cloudAutonomousVmCluster:CloudAutonomousVmCluster test_cloud_autonomous_vm_cluster "id"
+        $ pulumi import oci:Database/cloudAutonomousVmCluster:CloudAutonomousVmCluster test_cloud_autonomous_vm_cluster "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -1394,6 +1396,7 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -1437,13 +1440,14 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
             scan_listener_port_tls=var["cloud_autonomous_vm_cluster_scan_listener_port_tls"],
             total_container_databases=var["cloud_autonomous_vm_cluster_total_container_databases"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         CloudAutonomousVmClusters can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Database/cloudAutonomousVmCluster:CloudAutonomousVmCluster test_cloud_autonomous_vm_cluster "id"
+        $ pulumi import oci:Database/cloudAutonomousVmCluster:CloudAutonomousVmCluster test_cloud_autonomous_vm_cluster "id"
         ```
 
         :param str resource_name: The name of the resource.

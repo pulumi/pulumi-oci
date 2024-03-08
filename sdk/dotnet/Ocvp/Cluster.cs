@@ -21,6 +21,7 @@ namespace Pulumi.Oci.Ocvp
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -78,13 +79,14 @@ namespace Pulumi.Oci.Ocvp
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// Clusters can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Ocvp/cluster:Cluster test_cluster "id"
+    /// $ pulumi import oci:Ocvp/cluster:Cluster test_cluster "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Ocvp/cluster:Cluster")]

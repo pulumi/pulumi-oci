@@ -34,7 +34,9 @@ import * as utilities from "../utilities";
  * Avoid entering confidential information.
  *
  * ## Example Usage
+ *
  * ### Create image from instance in tenancy
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -52,7 +54,10 @@ import * as utilities from "../utilities";
  *     },
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
+ *
  * ### Create image from exported image via direct access to object store
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -72,7 +77,10 @@ import * as utilities from "../utilities";
  *     },
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
+ *
  * ### Create image from exported image at publicly accessible uri
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -90,13 +98,14 @@ import * as utilities from "../utilities";
  *     },
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * Images can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Core/image:Image test_image "id"
+ * $ pulumi import oci:Core/image:Image test_image "id"
  * ```
  */
 export class Image extends pulumi.CustomResource {

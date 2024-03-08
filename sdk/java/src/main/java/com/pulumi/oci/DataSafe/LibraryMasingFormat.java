@@ -31,7 +31,7 @@ import javax.annotation.Nullable;
  * LibraryMaskingFormats can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:DataSafe/libraryMasingFormat:LibraryMasingFormat test_library_masking_format &#34;id&#34;
+ * $ pulumi import oci:DataSafe/libraryMasingFormat:LibraryMasingFormat test_library_masking_format &#34;id&#34;
  * ```
  * 
  */

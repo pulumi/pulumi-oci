@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,6 +22,7 @@ import * as utilities from "../utilities";
  *     externalExadataStorageServerId: oci_database_management_external_exadata_storage_server.test_external_exadata_storage_server.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getExternalExadataStorageServerOpenAlertHistory(args: GetExternalExadataStorageServerOpenAlertHistoryArgs, opts?: pulumi.InvokeOptions): Promise<GetExternalExadataStorageServerOpenAlertHistoryResult> {
 
@@ -61,6 +63,7 @@ export interface GetExternalExadataStorageServerOpenAlertHistoryResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -69,6 +72,7 @@ export interface GetExternalExadataStorageServerOpenAlertHistoryResult {
  *     externalExadataStorageServerId: oci_database_management_external_exadata_storage_server.test_external_exadata_storage_server.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getExternalExadataStorageServerOpenAlertHistoryOutput(args: GetExternalExadataStorageServerOpenAlertHistoryOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalExadataStorageServerOpenAlertHistoryResult> {
     return pulumi.output(args).apply((a: any) => getExternalExadataStorageServerOpenAlertHistory(a, opts))

@@ -32,7 +32,7 @@ import javax.annotation.Nullable;
  * NotificationSettings can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Identity/domainsNotificationSetting:DomainsNotificationSetting test_notification_setting &#34;idcsEndpoint/{idcsEndpoint}/notificationSettings/{notificationSettingId}&#34;
+ * $ pulumi import oci:Identity/domainsNotificationSetting:DomainsNotificationSetting test_notification_setting &#34;idcsEndpoint/{idcsEndpoint}/notificationSettings/{notificationSettingId}&#34;
  * ```
  * 
  */

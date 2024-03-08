@@ -20,6 +20,7 @@ namespace Pulumi.Oci.Email
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -44,13 +45,14 @@ namespace Pulumi.Oci.Email
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// Dkims can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Email/dkim:Dkim test_dkim "id"
+    /// $ pulumi import oci:Email/dkim:Dkim test_dkim "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Email/dkim:Dkim")]

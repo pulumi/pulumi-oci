@@ -135,6 +135,7 @@ def get_autonomous_databases_clones(autonomous_database_id: Optional[str] = None
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -145,6 +146,7 @@ def get_autonomous_databases_clones(autonomous_database_id: Optional[str] = None
         display_name=var["autonomous_databases_clone_display_name"],
         state=var["autonomous_databases_clone_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str autonomous_database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -189,6 +191,7 @@ def get_autonomous_databases_clones_output(autonomous_database_id: Optional[pulu
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -199,6 +202,7 @@ def get_autonomous_databases_clones_output(autonomous_database_id: Optional[pulu
         display_name=var["autonomous_databases_clone_display_name"],
         state=var["autonomous_databases_clone_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str autonomous_database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

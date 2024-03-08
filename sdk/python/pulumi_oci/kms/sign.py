@@ -272,7 +272,7 @@ class Sign(pulumi.CustomResource):
         Sign can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Kms/sign:Sign test_sign "id"
+        $ pulumi import oci:Kms/sign:Sign test_sign "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -307,7 +307,7 @@ class Sign(pulumi.CustomResource):
         Sign can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Kms/sign:Sign test_sign "id"
+        $ pulumi import oci:Kms/sign:Sign test_sign "id"
         ```
 
         :param str resource_name: The name of the resource.

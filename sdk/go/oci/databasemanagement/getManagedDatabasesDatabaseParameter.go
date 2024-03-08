@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -43,6 +44,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetManagedDatabasesDatabaseParameter(ctx *pulumi.Context, args *GetManagedDatabasesDatabaseParameterArgs, opts ...pulumi.InvokeOption) (*GetManagedDatabasesDatabaseParameterResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetManagedDatabasesDatabaseParameterResult

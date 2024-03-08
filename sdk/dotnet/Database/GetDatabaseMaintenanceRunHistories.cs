@@ -17,10 +17,9 @@ namespace Pulumi.Oci.Database
         /// Gets a list of the maintenance run histories in the specified compartment.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -41,8 +40,7 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDatabaseMaintenanceRunHistoriesResult> InvokeAsync(GetDatabaseMaintenanceRunHistoriesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDatabaseMaintenanceRunHistoriesResult>("oci:Database/getDatabaseMaintenanceRunHistories:getDatabaseMaintenanceRunHistories", args ?? new GetDatabaseMaintenanceRunHistoriesArgs(), options.WithDefaults());
@@ -53,10 +51,9 @@ namespace Pulumi.Oci.Database
         /// Gets a list of the maintenance run histories in the specified compartment.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -77,8 +74,7 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDatabaseMaintenanceRunHistoriesResult> Invoke(GetDatabaseMaintenanceRunHistoriesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDatabaseMaintenanceRunHistoriesResult>("oci:Database/getDatabaseMaintenanceRunHistories:getDatabaseMaintenanceRunHistories", args ?? new GetDatabaseMaintenanceRunHistoriesInvokeArgs(), options.WithDefaults());

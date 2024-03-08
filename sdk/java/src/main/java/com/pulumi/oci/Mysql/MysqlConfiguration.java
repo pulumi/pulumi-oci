@@ -23,6 +23,8 @@ import javax.annotation.Nullable;
  * Creates a new Configuration.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -143,13 +145,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * MysqlConfigurations can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Mysql/mysqlConfiguration:MysqlConfiguration test_mysql_configuration &#34;configurations/{configurationId}&#34;
+ * $ pulumi import oci:Mysql/mysqlConfiguration:MysqlConfiguration test_mysql_configuration &#34;configurations/{configurationId}&#34;
  * ```
  * 
  */

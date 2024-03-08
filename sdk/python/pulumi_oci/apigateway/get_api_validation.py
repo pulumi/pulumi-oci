@@ -75,12 +75,14 @@ def get_api_validation(api_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_api_validation = oci.ApiGateway.get_api_validation(api_id=oci_apigateway_api["test_api"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str api_id: The ocid of the API.
@@ -106,12 +108,14 @@ def get_api_validation_output(api_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_api_validation = oci.ApiGateway.get_api_validation(api_id=oci_apigateway_api["test_api"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str api_id: The ocid of the API.

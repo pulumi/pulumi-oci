@@ -636,6 +636,7 @@ class BootVolume(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -669,13 +670,14 @@ class BootVolume(pulumi.CustomResource):
             vpus_per_gb=var["boot_volume_vpus_per_gb"],
             boot_volume_replicas_deletion=True)
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         BootVolumes can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/bootVolume:BootVolume test_boot_volume "id"
+        $ pulumi import oci:Core/bootVolume:BootVolume test_boot_volume "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -711,6 +713,7 @@ class BootVolume(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -744,13 +747,14 @@ class BootVolume(pulumi.CustomResource):
             vpus_per_gb=var["boot_volume_vpus_per_gb"],
             boot_volume_replicas_deletion=True)
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         BootVolumes can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/bootVolume:BootVolume test_boot_volume "id"
+        $ pulumi import oci:Core/bootVolume:BootVolume test_boot_volume "id"
         ```
 
         :param str resource_name: The name of the resource.

@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -37,13 +38,14 @@ import * as utilities from "../utilities";
  *     }],
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * Conditions can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Identity/domainsCondition:DomainsCondition test_condition "idcsEndpoint/{idcsEndpoint}/conditions/{conditionId}"
+ * $ pulumi import oci:Identity/domainsCondition:DomainsCondition test_condition "idcsEndpoint/{idcsEndpoint}/conditions/{conditionId}"
  * ```
  */
 export class DomainsCondition extends pulumi.CustomResource {

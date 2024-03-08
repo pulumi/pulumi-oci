@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -43,6 +44,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetComputeCapacityTopologyComputeNetworkBlocks(ctx *pulumi.Context, args *GetComputeCapacityTopologyComputeNetworkBlocksArgs, opts ...pulumi.InvokeOption) (*GetComputeCapacityTopologyComputeNetworkBlocksResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetComputeCapacityTopologyComputeNetworkBlocksResult

@@ -71,7 +71,7 @@ public final class GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionIt
      */
     private String sqlHandle;
     /**
-     * @return A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the &#39;%&#39; symbol as a wildcard.
+     * @return A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the &#39;%!&#39;(MISSING) symbol as a wildcard.
      * 
      */
     private String sqlText;
@@ -177,7 +177,7 @@ public final class GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionIt
         return this.sqlHandle;
     }
     /**
-     * @return A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the &#39;%&#39; symbol as a wildcard.
+     * @return A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the &#39;%!&#39;(MISSING) symbol as a wildcard.
      * 
      */
     public String sqlText() {

@@ -151,6 +151,7 @@ def get_bds_instance_metastore_configs(bds_api_key_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -162,6 +163,7 @@ def get_bds_instance_metastore_configs(bds_api_key_id: Optional[str] = None,
         metastore_type=var["bds_instance_metastore_config_metastore_type"],
         state=var["bds_instance_metastore_config_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str bds_api_key_id: The ID of the API key that is associated with the external metastore in the metastore configuration
@@ -210,6 +212,7 @@ def get_bds_instance_metastore_configs_output(bds_api_key_id: Optional[pulumi.In
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -221,6 +224,7 @@ def get_bds_instance_metastore_configs_output(bds_api_key_id: Optional[pulumi.In
         metastore_type=var["bds_instance_metastore_config_metastore_type"],
         state=var["bds_instance_metastore_config_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str bds_api_key_id: The ID of the API key that is associated with the external metastore in the metastore configuration

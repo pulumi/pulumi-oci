@@ -133,6 +133,7 @@ def get_software_source_package_groups(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -143,6 +144,7 @@ def get_software_source_package_groups(compartment_id: Optional[str] = None,
         name=var["software_source_package_group_name"],
         name_contains=var["software_source_package_group_name_contains"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment that contains the resources to list.
@@ -188,6 +190,7 @@ def get_software_source_package_groups_output(compartment_id: Optional[pulumi.In
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -198,6 +201,7 @@ def get_software_source_package_groups_output(compartment_id: Optional[pulumi.In
         name=var["software_source_package_group_name"],
         name_contains=var["software_source_package_group_name_contains"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment that contains the resources to list.

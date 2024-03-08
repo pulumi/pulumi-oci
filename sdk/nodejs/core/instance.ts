@@ -58,7 +58,7 @@ import * as utilities from "../utilities";
  * Instances can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Core/instance:Instance test_instance "id"
+ * $ pulumi import oci:Core/instance:Instance test_instance "id"
  * ```
  */
 export class Instance extends pulumi.CustomResource {
@@ -223,21 +223,6 @@ export class Instance extends pulumi.CustomResource {
      * **"userData"** - Provide your own base64-encoded data to be used by Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For information about how to take advantage of user data, see the [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
      *
      * **Metadata Example**
-     *
-     *
-     * **Getting Metadata on the Instance**
-     *
-     * To get information about your instance, connect to the instance using SSH and issue any of the following GET requests:
-     *
-     * ```typescript
-     * import * as pulumi from "@pulumi/pulumi";
-     * ```
-     *
-     * You'll get back a response that includes all the instance information; only the metadata information; or the metadata information for the specified key name, respectively.
-     *
-     * The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
-     *
-     * **Note:** Both the 'user_data' and 'ssh_authorized_keys' fields cannot be changed after an instance has launched. Any request which updates, removes, or adds either of these fields will be rejected. You must provide the same values for 'user_data' and 'ssh_authorized_keys' that already exist on the instance.
      */
     public readonly metadata!: pulumi.Output<{[key: string]: any}>;
     /**
@@ -571,21 +556,6 @@ export interface InstanceState {
      * **"userData"** - Provide your own base64-encoded data to be used by Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For information about how to take advantage of user data, see the [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
      *
      * **Metadata Example**
-     *
-     *
-     * **Getting Metadata on the Instance**
-     *
-     * To get information about your instance, connect to the instance using SSH and issue any of the following GET requests:
-     *
-     * ```typescript
-     * import * as pulumi from "@pulumi/pulumi";
-     * ```
-     *
-     * You'll get back a response that includes all the instance information; only the metadata information; or the metadata information for the specified key name, respectively.
-     *
-     * The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
-     *
-     * **Note:** Both the 'user_data' and 'ssh_authorized_keys' fields cannot be changed after an instance has launched. Any request which updates, removes, or adds either of these fields will be rejected. You must provide the same values for 'user_data' and 'ssh_authorized_keys' that already exist on the instance.
      */
     metadata?: pulumi.Input<{[key: string]: any}>;
     /**
@@ -797,21 +767,6 @@ export interface InstanceArgs {
      * **"userData"** - Provide your own base64-encoded data to be used by Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For information about how to take advantage of user data, see the [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
      *
      * **Metadata Example**
-     *
-     *
-     * **Getting Metadata on the Instance**
-     *
-     * To get information about your instance, connect to the instance using SSH and issue any of the following GET requests:
-     *
-     * ```typescript
-     * import * as pulumi from "@pulumi/pulumi";
-     * ```
-     *
-     * You'll get back a response that includes all the instance information; only the metadata information; or the metadata information for the specified key name, respectively.
-     *
-     * The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
-     *
-     * **Note:** Both the 'user_data' and 'ssh_authorized_keys' fields cannot be changed after an instance has launched. Any request which updates, removes, or adds either of these fields will be rejected. You must provide the same values for 'user_data' and 'ssh_authorized_keys' that already exist on the instance.
      */
     metadata?: pulumi.Input<{[key: string]: any}>;
     /**

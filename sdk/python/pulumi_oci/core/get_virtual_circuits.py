@@ -115,6 +115,7 @@ def get_virtual_circuits(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -123,6 +124,7 @@ def get_virtual_circuits(compartment_id: Optional[str] = None,
         display_name=var["virtual_circuit_display_name"],
         state=var["virtual_circuit_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -159,6 +161,7 @@ def get_virtual_circuits_output(compartment_id: Optional[pulumi.Input[str]] = No
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -167,6 +170,7 @@ def get_virtual_circuits_output(compartment_id: Optional[pulumi.Input[str]] = No
         display_name=var["virtual_circuit_display_name"],
         state=var["virtual_circuit_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

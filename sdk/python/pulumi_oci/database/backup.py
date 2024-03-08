@@ -376,6 +376,7 @@ class Backup(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -384,13 +385,14 @@ class Backup(pulumi.CustomResource):
             database_id=oci_database_database["test_database"]["id"],
             display_name=var["backup_display_name"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Backups can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Database/backup:Backup test_backup "id"
+        $ pulumi import oci:Database/backup:Backup test_backup "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -415,6 +417,7 @@ class Backup(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -423,13 +426,14 @@ class Backup(pulumi.CustomResource):
             database_id=oci_database_database["test_database"]["id"],
             display_name=var["backup_display_name"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Backups can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Database/backup:Backup test_backup "id"
+        $ pulumi import oci:Database/backup:Backup test_backup "id"
         ```
 
         :param str resource_name: The name of the resource.

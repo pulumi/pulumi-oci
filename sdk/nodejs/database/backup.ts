@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -20,13 +21,14 @@ import * as utilities from "../utilities";
  *     displayName: _var.backup_display_name,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * Backups can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Database/backup:Backup test_backup "id"
+ * $ pulumi import oci:Database/backup:Backup test_backup "id"
  * ```
  */
 export class Backup extends pulumi.CustomResource {

@@ -160,6 +160,7 @@ def get_monitored_resource_types(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -172,6 +173,7 @@ def get_monitored_resource_types(compartment_id: Optional[str] = None,
         name=var["monitored_resource_type_name"],
         status=var["monitored_resource_type_status"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy for which  monitored resource types should be listed.
@@ -231,6 +233,7 @@ def get_monitored_resource_types_output(compartment_id: Optional[pulumi.Input[st
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -243,6 +246,7 @@ def get_monitored_resource_types_output(compartment_id: Optional[pulumi.Input[st
         name=var["monitored_resource_type_name"],
         status=var["monitored_resource_type_status"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy for which  monitored resource types should be listed.

@@ -21,9 +21,7 @@ import (
 // NotificationSettings can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Identity/domainsNotificationSetting:DomainsNotificationSetting test_notification_setting "idcsEndpoint/{idcsEndpoint}/notificationSettings/{notificationSettingId}"
-//
+// $ pulumi import oci:Identity/domainsNotificationSetting:DomainsNotificationSetting test_notification_setting "idcsEndpoint/{idcsEndpoint}/notificationSettings/{notificationSettingId}"
 // ```
 type DomainsNotificationSetting struct {
 	pulumi.CustomResourceState

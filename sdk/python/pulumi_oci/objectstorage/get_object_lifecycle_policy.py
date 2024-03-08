@@ -94,6 +94,7 @@ def get_object_lifecycle_policy(bucket: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -101,6 +102,7 @@ def get_object_lifecycle_policy(bucket: Optional[str] = None,
     test_object_lifecycle_policy = oci.ObjectStorage.get_object_lifecycle_policy(bucket=var["object_lifecycle_policy_bucket"],
         namespace=var["object_lifecycle_policy_namespace"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str bucket: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
@@ -131,6 +133,7 @@ def get_object_lifecycle_policy_output(bucket: Optional[pulumi.Input[str]] = Non
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -138,6 +141,7 @@ def get_object_lifecycle_policy_output(bucket: Optional[pulumi.Input[str]] = Non
     test_object_lifecycle_policy = oci.ObjectStorage.get_object_lifecycle_policy(bucket=var["object_lifecycle_policy_bucket"],
         namespace=var["object_lifecycle_policy_namespace"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str bucket: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`

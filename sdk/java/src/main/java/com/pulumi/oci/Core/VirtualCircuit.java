@@ -47,6 +47,8 @@ import javax.annotation.Nullable;
  * [Route Tables](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm).
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -105,13 +107,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * VirtualCircuits can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Core/virtualCircuit:VirtualCircuit test_virtual_circuit &#34;id&#34;
+ * $ pulumi import oci:Core/virtualCircuit:VirtualCircuit test_virtual_circuit &#34;id&#34;
  * ```
  * 
  */

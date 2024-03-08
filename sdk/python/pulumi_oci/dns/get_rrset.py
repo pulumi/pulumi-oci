@@ -138,6 +138,7 @@ def get_rrset(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -149,6 +150,7 @@ def get_rrset(compartment_id: Optional[str] = None,
         scope=var["rrset_scope"],
         view_id=oci_dns_view["test_view"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment the resource belongs to.
@@ -202,6 +204,7 @@ def get_rrset_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = Non
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -213,6 +216,7 @@ def get_rrset_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = Non
         scope=var["rrset_scope"],
         view_id=oci_dns_view["test_view"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment the resource belongs to.

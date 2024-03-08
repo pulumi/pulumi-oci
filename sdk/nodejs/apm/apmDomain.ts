@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -28,13 +29,14 @@ import * as utilities from "../utilities";
  *     isFreeTier: _var.apm_domain_is_free_tier,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * ApmDomains can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Apm/apmDomain:ApmDomain test_apm_domain "id"
+ * $ pulumi import oci:Apm/apmDomain:ApmDomain test_apm_domain "id"
  * ```
  */
 export class ApmDomain extends pulumi.CustomResource {

@@ -26,6 +26,8 @@ import javax.annotation.Nullable;
  * Creates a DB System read replica.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -65,13 +67,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * Replicas can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Mysql/replica:Replica test_replica &#34;id&#34;
+ * $ pulumi import oci:Mysql/replica:Replica test_replica &#34;id&#34;
  * ```
  * 
  */

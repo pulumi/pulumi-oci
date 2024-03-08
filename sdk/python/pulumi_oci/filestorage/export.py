@@ -297,6 +297,7 @@ class Export(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -317,13 +318,14 @@ class Export(pulumi.CustomResource):
             )],
             is_idmap_groups_for_sys_auth=var["export_is_idmap_groups_for_sys_auth"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Exports can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:FileStorage/export:Export test_export "id"
+        $ pulumi import oci:FileStorage/export:Export test_export "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -363,6 +365,7 @@ class Export(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -383,13 +386,14 @@ class Export(pulumi.CustomResource):
             )],
             is_idmap_groups_for_sys_auth=var["export_is_idmap_groups_for_sys_auth"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Exports can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:FileStorage/export:Export test_export "id"
+        $ pulumi import oci:FileStorage/export:Export test_export "id"
         ```
 
         :param str resource_name: The name of the resource.

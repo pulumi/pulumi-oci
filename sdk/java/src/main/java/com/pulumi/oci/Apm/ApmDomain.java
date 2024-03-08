@@ -22,6 +22,8 @@ import javax.annotation.Nullable;
  * Creates a new APM domain.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -55,13 +57,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * ApmDomains can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Apm/apmDomain:ApmDomain test_apm_domain &#34;id&#34;
+ * $ pulumi import oci:Apm/apmDomain:ApmDomain test_apm_domain &#34;id&#34;
  * ```
  * 
  */

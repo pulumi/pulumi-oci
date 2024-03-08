@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,6 +23,7 @@ import * as utilities from "../utilities";
  *     scope: "PRIVATE",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getView(args?: GetViewArgs, opts?: pulumi.InvokeOptions): Promise<GetViewResult> {
     args = args || {};
@@ -103,6 +105,7 @@ export interface GetViewResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -112,6 +115,7 @@ export interface GetViewResult {
  *     scope: "PRIVATE",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getViewOutput(args?: GetViewOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetViewResult> {
     return pulumi.output(args).apply((a: any) => getView(a, opts))

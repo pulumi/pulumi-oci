@@ -1968,7 +1968,7 @@ class Sddc(pulumi.CustomResource):
         Sddcs can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Ocvp/sddc:Sddc test_sddc "id"
+        $ pulumi import oci:Ocvp/sddc:Sddc test_sddc "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -2033,7 +2033,7 @@ class Sddc(pulumi.CustomResource):
         Sddcs can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Ocvp/sddc:Sddc test_sddc "id"
+        $ pulumi import oci:Ocvp/sddc:Sddc test_sddc "id"
         ```
 
         :param str resource_name: The name of the resource.

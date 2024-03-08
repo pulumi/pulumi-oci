@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,6 +24,7 @@ import * as utilities from "../utilities";
  *     fields: _var.invoice_line_computed_usage_fields,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getInvoiceLineComputedUsages(args: GetInvoiceLineComputedUsagesArgs, opts?: pulumi.InvokeOptions): Promise<GetInvoiceLineComputedUsagesResult> {
 
@@ -78,6 +80,7 @@ export interface GetInvoiceLineComputedUsagesResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -88,6 +91,7 @@ export interface GetInvoiceLineComputedUsagesResult {
  *     fields: _var.invoice_line_computed_usage_fields,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getInvoiceLineComputedUsagesOutput(args: GetInvoiceLineComputedUsagesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInvoiceLineComputedUsagesResult> {
     return pulumi.output(args).apply((a: any) => getInvoiceLineComputedUsages(a, opts))

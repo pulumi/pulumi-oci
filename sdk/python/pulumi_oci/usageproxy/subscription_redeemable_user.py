@@ -187,6 +187,7 @@ class SubscriptionRedeemableUser(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -201,13 +202,14 @@ class SubscriptionRedeemableUser(pulumi.CustomResource):
             )],
             user_id=oci_identity_user["test_user"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         SubscriptionRedeemableUsers can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:UsageProxy/subscriptionRedeemableUser:SubscriptionRedeemableUser test_subscription_redeemable_user "subscriptions/{subscriptionId}/redeemableUsers/tenancyId/{tenancyId}"
+        $ pulumi import oci:UsageProxy/subscriptionRedeemableUser:SubscriptionRedeemableUser test_subscription_redeemable_user "subscriptions/{subscriptionId}/redeemableUsers/tenancyId/{tenancyId}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -234,6 +236,7 @@ class SubscriptionRedeemableUser(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -248,13 +251,14 @@ class SubscriptionRedeemableUser(pulumi.CustomResource):
             )],
             user_id=oci_identity_user["test_user"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         SubscriptionRedeemableUsers can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:UsageProxy/subscriptionRedeemableUser:SubscriptionRedeemableUser test_subscription_redeemable_user "subscriptions/{subscriptionId}/redeemableUsers/tenancyId/{tenancyId}"
+        $ pulumi import oci:UsageProxy/subscriptionRedeemableUser:SubscriptionRedeemableUser test_subscription_redeemable_user "subscriptions/{subscriptionId}/redeemableUsers/tenancyId/{tenancyId}"
         ```
 
         :param str resource_name: The name of the resource.

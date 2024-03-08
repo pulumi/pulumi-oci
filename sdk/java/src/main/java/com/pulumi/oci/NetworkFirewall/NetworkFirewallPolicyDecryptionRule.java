@@ -23,6 +23,7 @@ import javax.annotation.Nullable;
  * 
  * ## Example Usage
  * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -65,13 +66,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * NetworkFirewallPolicyDecryptionRules can be imported using the `name`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:NetworkFirewall/networkFirewallPolicyDecryptionRule:NetworkFirewallPolicyDecryptionRule test_network_firewall_policy_decryption_rule &#34;networkFirewallPolicies/{networkFirewallPolicyId}/decryptionRules/{decryptionRuleName}&#34;
+ * $ pulumi import oci:NetworkFirewall/networkFirewallPolicyDecryptionRule:NetworkFirewallPolicyDecryptionRule test_network_firewall_policy_decryption_rule &#34;networkFirewallPolicies/{networkFirewallPolicyId}/decryptionRules/{decryptionRuleName}&#34;
  * ```
  * 
  */

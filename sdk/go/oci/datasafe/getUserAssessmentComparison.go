@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,6 +42,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetUserAssessmentComparison(ctx *pulumi.Context, args *GetUserAssessmentComparisonArgs, opts ...pulumi.InvokeOption) (*GetUserAssessmentComparisonResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetUserAssessmentComparisonResult

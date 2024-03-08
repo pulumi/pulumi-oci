@@ -16,7 +16,7 @@ import * as utilities from "../utilities";
  * Apps can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Identity/domainsApp:DomainsApp test_app "idcsEndpoint/{idcsEndpoint}/apps/{appId}"
+ * $ pulumi import oci:Identity/domainsApp:DomainsApp test_app "idcsEndpoint/{idcsEndpoint}/apps/{appId}"
  * ```
  */
 export class DomainsApp extends pulumi.CustomResource {

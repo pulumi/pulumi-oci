@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,6 +24,7 @@ import * as utilities from "../utilities";
  *     advertiser: _var.ipsec_connection_tunnel_route_advertiser,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getIpsecConnectionTunnelRoutes(args: GetIpsecConnectionTunnelRoutesArgs, opts?: pulumi.InvokeOptions): Promise<GetIpsecConnectionTunnelRoutesResult> {
 
@@ -81,6 +83,7 @@ export interface GetIpsecConnectionTunnelRoutesResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -91,6 +94,7 @@ export interface GetIpsecConnectionTunnelRoutesResult {
  *     advertiser: _var.ipsec_connection_tunnel_route_advertiser,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getIpsecConnectionTunnelRoutesOutput(args: GetIpsecConnectionTunnelRoutesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIpsecConnectionTunnelRoutesResult> {
     return pulumi.output(args).apply((a: any) => getIpsecConnectionTunnelRoutes(a, opts))

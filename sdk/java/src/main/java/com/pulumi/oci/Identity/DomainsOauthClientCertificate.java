@@ -26,6 +26,8 @@ import javax.annotation.Nullable;
  * Create an OAuth Client Certificate
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -60,13 +62,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * OAuthClientCertificates can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Identity/domainsOauthClientCertificate:DomainsOauthClientCertificate test_oauth_client_certificate &#34;idcsEndpoint/{idcsEndpoint}/oAuthClientCertificates/{oAuthClientCertificateId}&#34;
+ * $ pulumi import oci:Identity/domainsOauthClientCertificate:DomainsOauthClientCertificate test_oauth_client_certificate &#34;idcsEndpoint/{idcsEndpoint}/oAuthClientCertificates/{oAuthClientCertificateId}&#34;
  * ```
  * 
  */

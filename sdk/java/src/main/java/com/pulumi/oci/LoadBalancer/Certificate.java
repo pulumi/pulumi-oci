@@ -17,6 +17,8 @@ import javax.annotation.Nullable;
 
 /**
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -50,13 +52,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * Certificates can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:LoadBalancer/certificate:Certificate test_certificate &#34;loadBalancers/{loadBalancerId}/certificates/{certificateName}&#34;
+ * $ pulumi import oci:LoadBalancer/certificate:Certificate test_certificate &#34;loadBalancers/{loadBalancerId}/certificates/{certificateName}&#34;
  * ```
  * 
  */

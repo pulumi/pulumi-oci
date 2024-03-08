@@ -265,6 +265,7 @@ class NetworkFirewallPolicyMappedSecret(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -276,13 +277,14 @@ class NetworkFirewallPolicyMappedSecret(pulumi.CustomResource):
             vault_secret_id=oci_vault_secret["test_secret"]["id"],
             version_number=var["network_firewall_policy_mapped_secret_version_number"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         NetworkFirewallPolicyMappedSecrets can be imported using the `name`, e.g.
 
         ```sh
-         $ pulumi import oci:NetworkFirewall/networkFirewallPolicyMappedSecret:NetworkFirewallPolicyMappedSecret test_network_firewall_policy_mapped_secret "networkFirewallPolicies/{networkFirewallPolicyId}/mappedSecrets/{mappedSecretName}"
+        $ pulumi import oci:NetworkFirewall/networkFirewallPolicyMappedSecret:NetworkFirewallPolicyMappedSecret test_network_firewall_policy_mapped_secret "networkFirewallPolicies/{networkFirewallPolicyId}/mappedSecrets/{mappedSecretName}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -311,6 +313,7 @@ class NetworkFirewallPolicyMappedSecret(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -322,13 +325,14 @@ class NetworkFirewallPolicyMappedSecret(pulumi.CustomResource):
             vault_secret_id=oci_vault_secret["test_secret"]["id"],
             version_number=var["network_firewall_policy_mapped_secret_version_number"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         NetworkFirewallPolicyMappedSecrets can be imported using the `name`, e.g.
 
         ```sh
-         $ pulumi import oci:NetworkFirewall/networkFirewallPolicyMappedSecret:NetworkFirewallPolicyMappedSecret test_network_firewall_policy_mapped_secret "networkFirewallPolicies/{networkFirewallPolicyId}/mappedSecrets/{mappedSecretName}"
+        $ pulumi import oci:NetworkFirewall/networkFirewallPolicyMappedSecret:NetworkFirewallPolicyMappedSecret test_network_firewall_policy_mapped_secret "networkFirewallPolicies/{networkFirewallPolicyId}/mappedSecrets/{mappedSecretName}"
         ```
 
         :param str resource_name: The name of the resource.

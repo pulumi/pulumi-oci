@@ -364,6 +364,7 @@ class AwrHub(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -380,13 +381,14 @@ class AwrHub(pulumi.CustomResource):
             },
             object_storage_bucket_name=oci_objectstorage_bucket["test_bucket"]["name"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         AwrHubs can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Opsi/awrHub:AwrHub test_awr_hub "id"
+        $ pulumi import oci:Opsi/awrHub:AwrHub test_awr_hub "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -416,6 +418,7 @@ class AwrHub(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -432,13 +435,14 @@ class AwrHub(pulumi.CustomResource):
             },
             object_storage_bucket_name=oci_objectstorage_bucket["test_bucket"]["name"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         AwrHubs can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Opsi/awrHub:AwrHub test_awr_hub "id"
+        $ pulumi import oci:Opsi/awrHub:AwrHub test_awr_hub "id"
         ```
 
         :param str resource_name: The name of the resource.

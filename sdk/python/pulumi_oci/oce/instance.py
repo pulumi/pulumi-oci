@@ -755,6 +755,7 @@ class Instance(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -781,13 +782,14 @@ class Instance(pulumi.CustomResource):
             upgrade_schedule=var["oce_instance_upgrade_schedule"],
             waf_primary_domain=var["oce_instance_waf_primary_domain"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         OceInstances can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Oce/instance:Instance test_oce_instance "id"
+        $ pulumi import oci:Oce/instance:Instance test_oce_instance "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -827,6 +829,7 @@ class Instance(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -853,13 +856,14 @@ class Instance(pulumi.CustomResource):
             upgrade_schedule=var["oce_instance_upgrade_schedule"],
             waf_primary_domain=var["oce_instance_waf_primary_domain"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         OceInstances can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Oce/instance:Instance test_oce_instance "id"
+        $ pulumi import oci:Oce/instance:Instance test_oce_instance "id"
         ```
 
         :param str resource_name: The name of the resource.

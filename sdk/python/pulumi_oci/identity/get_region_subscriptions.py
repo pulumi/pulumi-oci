@@ -86,12 +86,14 @@ def get_region_subscriptions(filters: Optional[Sequence[pulumi.InputType['GetReg
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_region_subscriptions = oci.Identity.get_region_subscriptions(tenancy_id=oci_identity_tenancy["test_tenancy"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str tenancy_id: The OCID of the tenancy.
@@ -120,12 +122,14 @@ def get_region_subscriptions_output(filters: Optional[pulumi.Input[Optional[Sequ
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_region_subscriptions = oci.Identity.get_region_subscriptions(tenancy_id=oci_identity_tenancy["test_tenancy"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str tenancy_id: The OCID of the tenancy.

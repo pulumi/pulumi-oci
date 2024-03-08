@@ -17,10 +17,9 @@ namespace Pulumi.Oci.DataSafe
         /// Returns the list of audit archive retrieval.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -43,8 +42,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetAuditArchiveRetrievalsResult> InvokeAsync(GetAuditArchiveRetrievalsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAuditArchiveRetrievalsResult>("oci:DataSafe/getAuditArchiveRetrievals:getAuditArchiveRetrievals", args ?? new GetAuditArchiveRetrievalsArgs(), options.WithDefaults());
@@ -55,10 +53,9 @@ namespace Pulumi.Oci.DataSafe
         /// Returns the list of audit archive retrieval.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -81,8 +78,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetAuditArchiveRetrievalsResult> Invoke(GetAuditArchiveRetrievalsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAuditArchiveRetrievalsResult>("oci:DataSafe/getAuditArchiveRetrievals:getAuditArchiveRetrievals", args ?? new GetAuditArchiveRetrievalsInvokeArgs(), options.WithDefaults());

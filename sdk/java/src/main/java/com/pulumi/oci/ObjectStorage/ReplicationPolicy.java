@@ -20,6 +20,8 @@ import javax.annotation.Nullable;
  * Creates a replication policy for the specified bucket.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -51,13 +53,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * ReplicationPolicies can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:ObjectStorage/replicationPolicy:ReplicationPolicy test_replication_policy &#34;n/{namespaceName}/b/{bucketName}/replicationPolicies/{replicationId}&#34;
+ * $ pulumi import oci:ObjectStorage/replicationPolicy:ReplicationPolicy test_replication_policy &#34;n/{namespaceName}/b/{bucketName}/replicationPolicies/{replicationId}&#34;
  * ```
  * 
  */

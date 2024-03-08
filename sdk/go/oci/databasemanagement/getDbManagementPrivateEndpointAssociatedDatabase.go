@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,6 +42,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetDbManagementPrivateEndpointAssociatedDatabase(ctx *pulumi.Context, args *GetDbManagementPrivateEndpointAssociatedDatabaseArgs, opts ...pulumi.InvokeOption) (*GetDbManagementPrivateEndpointAssociatedDatabaseResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDbManagementPrivateEndpointAssociatedDatabaseResult

@@ -39,7 +39,9 @@ import (
 // Avoid entering confidential information.
 //
 // ## Example Usage
+//
 // ### Create image from instance in tenancy
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -72,7 +74,10 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
+//
 // ### Create image from exported image via direct access to object store
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -107,7 +112,10 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
+//
 // ### Create image from exported image at publicly accessible uri
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -140,15 +148,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Images can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Core/image:Image test_image "id"
-//
+// $ pulumi import oci:Core/image:Image test_image "id"
 // ```
 type Image struct {
 	pulumi.CustomResourceState

@@ -29,6 +29,8 @@ public final class NosqlFunctions {
      * Get information about a single index.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -59,6 +61,7 @@ public final class NosqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetIndexResult> getIndex(GetIndexArgs args) {
@@ -70,6 +73,8 @@ public final class NosqlFunctions {
      * Get information about a single index.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -100,6 +105,7 @@ public final class NosqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetIndexResult> getIndexPlain(GetIndexPlainArgs args) {
@@ -111,6 +117,8 @@ public final class NosqlFunctions {
      * Get information about a single index.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -141,6 +149,7 @@ public final class NosqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetIndexResult> getIndex(GetIndexArgs args, InvokeOptions options) {
@@ -152,6 +161,8 @@ public final class NosqlFunctions {
      * Get information about a single index.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -182,6 +193,7 @@ public final class NosqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetIndexResult> getIndexPlain(GetIndexPlainArgs args, InvokeOptions options) {
@@ -193,6 +205,8 @@ public final class NosqlFunctions {
      * Get a list of indexes on a table.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -224,6 +238,7 @@ public final class NosqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetIndexesResult> getIndexes(GetIndexesArgs args) {
@@ -235,6 +250,8 @@ public final class NosqlFunctions {
      * Get a list of indexes on a table.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -266,6 +283,7 @@ public final class NosqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetIndexesResult> getIndexesPlain(GetIndexesPlainArgs args) {
@@ -277,6 +295,8 @@ public final class NosqlFunctions {
      * Get a list of indexes on a table.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -308,6 +328,7 @@ public final class NosqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetIndexesResult> getIndexes(GetIndexesArgs args, InvokeOptions options) {
@@ -319,6 +340,8 @@ public final class NosqlFunctions {
      * Get a list of indexes on a table.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -350,6 +373,7 @@ public final class NosqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetIndexesResult> getIndexesPlain(GetIndexesPlainArgs args, InvokeOptions options) {
@@ -361,6 +385,8 @@ public final class NosqlFunctions {
      * Get table info by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -390,6 +416,7 @@ public final class NosqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetTableResult> getTable(GetTableArgs args) {
@@ -401,6 +428,8 @@ public final class NosqlFunctions {
      * Get table info by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -430,6 +459,7 @@ public final class NosqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetTableResult> getTablePlain(GetTablePlainArgs args) {
@@ -441,6 +471,8 @@ public final class NosqlFunctions {
      * Get table info by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -470,6 +502,7 @@ public final class NosqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetTableResult> getTable(GetTableArgs args, InvokeOptions options) {
@@ -481,6 +514,8 @@ public final class NosqlFunctions {
      * Get table info by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -510,6 +545,7 @@ public final class NosqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetTableResult> getTablePlain(GetTablePlainArgs args, InvokeOptions options) {
@@ -521,6 +557,8 @@ public final class NosqlFunctions {
      * Get a list of tables in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -551,6 +589,7 @@ public final class NosqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetTablesResult> getTables(GetTablesArgs args) {
@@ -562,6 +601,8 @@ public final class NosqlFunctions {
      * Get a list of tables in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -592,6 +633,7 @@ public final class NosqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetTablesResult> getTablesPlain(GetTablesPlainArgs args) {
@@ -603,6 +645,8 @@ public final class NosqlFunctions {
      * Get a list of tables in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -633,6 +677,7 @@ public final class NosqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetTablesResult> getTables(GetTablesArgs args, InvokeOptions options) {
@@ -644,6 +689,8 @@ public final class NosqlFunctions {
      * Get a list of tables in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -674,6 +721,7 @@ public final class NosqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetTablesResult> getTablesPlain(GetTablesPlainArgs args, InvokeOptions options) {

@@ -17,10 +17,9 @@ namespace Pulumi.Oci.LogAnalytics
         /// This API retrieves details of the configured bucket that stores unprocessed payloads.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,8 +35,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetLogAnalyticsUnprocessedDataBucketResult> InvokeAsync(GetLogAnalyticsUnprocessedDataBucketArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetLogAnalyticsUnprocessedDataBucketResult>("oci:LogAnalytics/getLogAnalyticsUnprocessedDataBucket:getLogAnalyticsUnprocessedDataBucket", args ?? new GetLogAnalyticsUnprocessedDataBucketArgs(), options.WithDefaults());
@@ -48,10 +46,9 @@ namespace Pulumi.Oci.LogAnalytics
         /// This API retrieves details of the configured bucket that stores unprocessed payloads.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -67,8 +64,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetLogAnalyticsUnprocessedDataBucketResult> Invoke(GetLogAnalyticsUnprocessedDataBucketInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetLogAnalyticsUnprocessedDataBucketResult>("oci:LogAnalytics/getLogAnalyticsUnprocessedDataBucket:getLogAnalyticsUnprocessedDataBucket", args ?? new GetLogAnalyticsUnprocessedDataBucketInvokeArgs(), options.WithDefaults());

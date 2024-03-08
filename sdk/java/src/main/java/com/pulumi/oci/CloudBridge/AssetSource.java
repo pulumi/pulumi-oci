@@ -24,6 +24,8 @@ import javax.annotation.Nullable;
  * Creates an asset source.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -74,13 +76,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * AssetSources can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:CloudBridge/assetSource:AssetSource test_asset_source &#34;id&#34;
+ * $ pulumi import oci:CloudBridge/assetSource:AssetSource test_asset_source &#34;id&#34;
  * ```
  * 
  */

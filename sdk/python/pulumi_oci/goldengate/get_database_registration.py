@@ -357,12 +357,14 @@ def get_database_registration(database_registration_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_database_registration = oci.GoldenGate.get_database_registration(database_registration_id=oci_golden_gate_database_registration["test_database_registration"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str database_registration_id: A unique DatabaseRegistration identifier.
@@ -413,12 +415,14 @@ def get_database_registration_output(database_registration_id: Optional[pulumi.I
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_database_registration = oci.GoldenGate.get_database_registration(database_registration_id=oci_golden_gate_database_registration["test_database_registration"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str database_registration_id: A unique DatabaseRegistration identifier.

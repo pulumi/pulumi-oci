@@ -378,6 +378,7 @@ class ComputeCapacityReservation(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -407,13 +408,14 @@ class ComputeCapacityReservation(pulumi.CustomResource):
             )],
             is_default_reservation=var["compute_capacity_reservation_is_default_reservation"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ComputeCapacityReservations can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/computeCapacityReservation:ComputeCapacityReservation test_compute_capacity_reservation "id"
+        $ pulumi import oci:Core/computeCapacityReservation:ComputeCapacityReservation test_compute_capacity_reservation "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -449,6 +451,7 @@ class ComputeCapacityReservation(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -478,13 +481,14 @@ class ComputeCapacityReservation(pulumi.CustomResource):
             )],
             is_default_reservation=var["compute_capacity_reservation_is_default_reservation"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ComputeCapacityReservations can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/computeCapacityReservation:ComputeCapacityReservation test_compute_capacity_reservation "id"
+        $ pulumi import oci:Core/computeCapacityReservation:ComputeCapacityReservation test_compute_capacity_reservation "id"
         ```
 
         :param str resource_name: The name of the resource.

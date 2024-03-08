@@ -28,6 +28,8 @@ import javax.annotation.Nullable;
  * Creates an Autonomous Exadata VM cluster in the Oracle cloud. For Exadata Cloud@Customer systems, see [CreateAutonomousVmCluster](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousVmCluster/CreateAutonomousVmCluster).
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -91,13 +93,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * CloudAutonomousVmClusters can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Database/cloudAutonomousVmCluster:CloudAutonomousVmCluster test_cloud_autonomous_vm_cluster &#34;id&#34;
+ * $ pulumi import oci:Database/cloudAutonomousVmCluster:CloudAutonomousVmCluster test_cloud_autonomous_vm_cluster &#34;id&#34;
  * ```
  * 
  */

@@ -136,6 +136,7 @@ def get_security_zones(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -147,6 +148,7 @@ def get_security_zones(compartment_id: Optional[str] = None,
         security_recipe_id=oci_cloud_guard_security_recipe["test_security_recipe"]["id"],
         state=var["security_zone_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID of the compartment in which to list resources.
@@ -194,6 +196,7 @@ def get_security_zones_output(compartment_id: Optional[pulumi.Input[str]] = None
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -205,6 +208,7 @@ def get_security_zones_output(compartment_id: Optional[pulumi.Input[str]] = None
         security_recipe_id=oci_cloud_guard_security_recipe["test_security_recipe"]["id"],
         state=var["security_zone_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID of the compartment in which to list resources.

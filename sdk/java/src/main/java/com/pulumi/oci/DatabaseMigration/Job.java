@@ -28,7 +28,7 @@ import javax.annotation.Nullable;
  * Jobs can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:DatabaseMigration/job:Job test_job &#34;id&#34;
+ * $ pulumi import oci:DatabaseMigration/job:Job test_job &#34;id&#34;
  * ```
  * 
  */

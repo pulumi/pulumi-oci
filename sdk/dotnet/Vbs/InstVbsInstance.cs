@@ -16,6 +16,7 @@ namespace Pulumi.Oci.Vbs
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -43,13 +44,14 @@ namespace Pulumi.Oci.Vbs
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// VbsInstances can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Vbs/instVbsInstance:InstVbsInstance test_vbs_instance "id"
+    /// $ pulumi import oci:Vbs/instVbsInstance:InstVbsInstance test_vbs_instance "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Vbs/instVbsInstance:InstVbsInstance")]

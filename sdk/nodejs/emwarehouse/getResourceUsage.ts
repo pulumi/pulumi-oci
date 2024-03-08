@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,6 +22,7 @@ import * as utilities from "../utilities";
  *     emWarehouseId: oci_em_warehouse_em_warehouse.test_em_warehouse.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getResourceUsage(args: GetResourceUsageArgs, opts?: pulumi.InvokeOptions): Promise<GetResourceUsageResult> {
 
@@ -77,6 +79,7 @@ export interface GetResourceUsageResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -85,6 +88,7 @@ export interface GetResourceUsageResult {
  *     emWarehouseId: oci_em_warehouse_em_warehouse.test_em_warehouse.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getResourceUsageOutput(args: GetResourceUsageOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetResourceUsageResult> {
     return pulumi.output(args).apply((a: any) => getResourceUsage(a, opts))

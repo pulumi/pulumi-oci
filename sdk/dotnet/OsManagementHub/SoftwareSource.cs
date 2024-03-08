@@ -16,6 +16,7 @@ namespace Pulumi.Oci.OsManagementHub
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -83,13 +84,14 @@ namespace Pulumi.Oci.OsManagementHub
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// SoftwareSources can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:OsManagementHub/softwareSource:SoftwareSource test_software_source "id"
+    /// $ pulumi import oci:OsManagementHub/softwareSource:SoftwareSource test_software_source "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:OsManagementHub/softwareSource:SoftwareSource")]

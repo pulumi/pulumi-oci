@@ -17,10 +17,9 @@ namespace Pulumi.Oci.RecoveryMod
         /// Returns a list of Recovery Service Subnets.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -40,8 +39,7 @@ namespace Pulumi.Oci.RecoveryMod
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetRecoveryServiceSubnetsResult> InvokeAsync(GetRecoveryServiceSubnetsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetRecoveryServiceSubnetsResult>("oci:RecoveryMod/getRecoveryServiceSubnets:getRecoveryServiceSubnets", args ?? new GetRecoveryServiceSubnetsArgs(), options.WithDefaults());
@@ -52,10 +50,9 @@ namespace Pulumi.Oci.RecoveryMod
         /// Returns a list of Recovery Service Subnets.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -75,8 +72,7 @@ namespace Pulumi.Oci.RecoveryMod
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetRecoveryServiceSubnetsResult> Invoke(GetRecoveryServiceSubnetsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetRecoveryServiceSubnetsResult>("oci:RecoveryMod/getRecoveryServiceSubnets:getRecoveryServiceSubnets", args ?? new GetRecoveryServiceSubnetsInvokeArgs(), options.WithDefaults());

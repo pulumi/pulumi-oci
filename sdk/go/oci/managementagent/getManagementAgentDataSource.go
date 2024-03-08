@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,6 +42,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupManagementAgentDataSource(ctx *pulumi.Context, args *LookupManagementAgentDataSourceArgs, opts ...pulumi.InvokeOption) (*LookupManagementAgentDataSourceResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupManagementAgentDataSourceResult

@@ -16,6 +16,7 @@ namespace Pulumi.Oci.DataFlow
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -83,13 +84,14 @@ namespace Pulumi.Oci.DataFlow
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// Applications can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:DataFlow/application:Application test_application "id"
+    /// $ pulumi import oci:DataFlow/application:Application test_application "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:DataFlow/application:Application")]

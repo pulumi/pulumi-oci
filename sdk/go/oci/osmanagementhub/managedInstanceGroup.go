@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -56,15 +57,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // ManagedInstanceGroups can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:OsManagementHub/managedInstanceGroup:ManagedInstanceGroup test_managed_instance_group "id"
-//
+// $ pulumi import oci:OsManagementHub/managedInstanceGroup:ManagedInstanceGroup test_managed_instance_group "id"
 // ```
 type ManagedInstanceGroup struct {
 	pulumi.CustomResourceState

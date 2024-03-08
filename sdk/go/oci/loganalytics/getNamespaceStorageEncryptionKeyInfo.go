@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -40,6 +41,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetNamespaceStorageEncryptionKeyInfo(ctx *pulumi.Context, args *GetNamespaceStorageEncryptionKeyInfoArgs, opts ...pulumi.InvokeOption) (*GetNamespaceStorageEncryptionKeyInfoResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetNamespaceStorageEncryptionKeyInfoResult

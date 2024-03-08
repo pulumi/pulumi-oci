@@ -109,6 +109,7 @@ def get_autonomous_container_patches(autonomous_container_database_id: Optional[
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -117,6 +118,7 @@ def get_autonomous_container_patches(autonomous_container_database_id: Optional[
         compartment_id=var["compartment_id"],
         autonomous_patch_type=var["autonomous_container_patch_autonomous_patch_type"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -153,6 +155,7 @@ def get_autonomous_container_patches_output(autonomous_container_database_id: Op
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -161,6 +164,7 @@ def get_autonomous_container_patches_output(autonomous_container_database_id: Op
         compartment_id=var["compartment_id"],
         autonomous_patch_type=var["autonomous_container_patch_autonomous_patch_type"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

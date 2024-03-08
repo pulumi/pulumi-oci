@@ -1055,6 +1055,7 @@ class Application(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -1105,13 +1106,14 @@ class Application(pulumi.CustomResource):
             type=var["application_type"],
             warehouse_bucket_uri=var["application_warehouse_bucket_uri"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Applications can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataFlow/application:Application test_application "id"
+        $ pulumi import oci:DataFlow/application:Application test_application "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -1162,6 +1164,7 @@ class Application(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -1212,13 +1215,14 @@ class Application(pulumi.CustomResource):
             type=var["application_type"],
             warehouse_bucket_uri=var["application_warehouse_bucket_uri"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Applications can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataFlow/application:Application test_application "id"
+        $ pulumi import oci:DataFlow/application:Application test_application "id"
         ```
 
         :param str resource_name: The name of the resource.

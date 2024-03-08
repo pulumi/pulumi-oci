@@ -227,12 +227,14 @@ def get_inst_vbs_instance(vbs_instance_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_vbs_instance = oci.Vbs.get_inst_vbs_instance(vbs_instance_id=oci_vbs_inst_vbs_instance["test_vbs_instance"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str vbs_instance_id: unique VbsInstance identifier
@@ -271,12 +273,14 @@ def get_inst_vbs_instance_output(vbs_instance_id: Optional[pulumi.Input[str]] = 
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_vbs_instance = oci.Vbs.get_inst_vbs_instance(vbs_instance_id=oci_vbs_inst_vbs_instance["test_vbs_instance"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str vbs_instance_id: unique VbsInstance identifier

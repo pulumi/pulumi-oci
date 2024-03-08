@@ -14,6 +14,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -32,6 +33,7 @@ import * as utilities from "../utilities";
  *     statuses: _var.database_insight_status,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDatabaseInsights(args?: GetDatabaseInsightsArgs, opts?: pulumi.InvokeOptions): Promise<GetDatabaseInsightsResult> {
     args = args || {};
@@ -160,6 +162,7 @@ export interface GetDatabaseInsightsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -178,6 +181,7 @@ export interface GetDatabaseInsightsResult {
  *     statuses: _var.database_insight_status,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDatabaseInsightsOutput(args?: GetDatabaseInsightsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDatabaseInsightsResult> {
     return pulumi.output(args).apply((a: any) => getDatabaseInsights(a, opts))

@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -42,6 +43,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetManagementAgentAvailableHistories(ctx *pulumi.Context, args *GetManagementAgentAvailableHistoriesArgs, opts ...pulumi.InvokeOption) (*GetManagementAgentAvailableHistoriesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetManagementAgentAvailableHistoriesResult

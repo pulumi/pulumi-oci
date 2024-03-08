@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -35,13 +36,14 @@ import * as utilities from "../utilities";
  *     vantagePointNames: _var.ping_monitor_vantage_point_names,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * PingMonitors can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:HealthChecks/pingMonitor:PingMonitor test_ping_monitor "id"
+ * $ pulumi import oci:HealthChecks/pingMonitor:PingMonitor test_ping_monitor "id"
  * ```
  */
 export class PingMonitor extends pulumi.CustomResource {

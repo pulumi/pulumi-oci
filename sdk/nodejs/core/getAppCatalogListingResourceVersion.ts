@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -20,6 +21,7 @@ import * as utilities from "../utilities";
  *     resourceVersion: _var.app_catalog_listing_resource_version_resource_version,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAppCatalogListingResourceVersion(args: GetAppCatalogListingResourceVersionArgs, opts?: pulumi.InvokeOptions): Promise<GetAppCatalogListingResourceVersionResult> {
 
@@ -93,6 +95,7 @@ export interface GetAppCatalogListingResourceVersionResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -102,6 +105,7 @@ export interface GetAppCatalogListingResourceVersionResult {
  *     resourceVersion: _var.app_catalog_listing_resource_version_resource_version,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAppCatalogListingResourceVersionOutput(args: GetAppCatalogListingResourceVersionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppCatalogListingResourceVersionResult> {
     return pulumi.output(args).apply((a: any) => getAppCatalogListingResourceVersion(a, opts))

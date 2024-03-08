@@ -132,6 +132,7 @@ def get_streams(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -142,6 +143,7 @@ def get_streams(compartment_id: Optional[str] = None,
         state=var["stream_state"],
         stream_pool_id=oci_streaming_stream_pool["test_stream_pool"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment. Is exclusive with the `streamPoolId` parameter. One of them is required.
@@ -188,6 +190,7 @@ def get_streams_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = N
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -198,6 +201,7 @@ def get_streams_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = N
         state=var["stream_state"],
         stream_pool_id=oci_streaming_stream_pool["test_stream_pool"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment. Is exclusive with the `streamPoolId` parameter. One of them is required.

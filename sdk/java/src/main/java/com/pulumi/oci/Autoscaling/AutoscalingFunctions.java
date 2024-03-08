@@ -23,6 +23,8 @@ public final class AutoscalingFunctions {
      * Gets information about the specified autoscaling configuration.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -51,6 +53,7 @@ public final class AutoscalingFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAutoScalingConfigurationResult> getAutoScalingConfiguration(GetAutoScalingConfigurationArgs args) {
@@ -62,6 +65,8 @@ public final class AutoscalingFunctions {
      * Gets information about the specified autoscaling configuration.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -90,6 +95,7 @@ public final class AutoscalingFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAutoScalingConfigurationResult> getAutoScalingConfigurationPlain(GetAutoScalingConfigurationPlainArgs args) {
@@ -101,6 +107,8 @@ public final class AutoscalingFunctions {
      * Gets information about the specified autoscaling configuration.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -129,6 +137,7 @@ public final class AutoscalingFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAutoScalingConfigurationResult> getAutoScalingConfiguration(GetAutoScalingConfigurationArgs args, InvokeOptions options) {
@@ -140,6 +149,8 @@ public final class AutoscalingFunctions {
      * Gets information about the specified autoscaling configuration.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -168,6 +179,7 @@ public final class AutoscalingFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAutoScalingConfigurationResult> getAutoScalingConfigurationPlain(GetAutoScalingConfigurationPlainArgs args, InvokeOptions options) {
@@ -179,6 +191,8 @@ public final class AutoscalingFunctions {
      * Lists autoscaling configurations in the specifed compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -208,6 +222,7 @@ public final class AutoscalingFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAutoScalingConfigurationsResult> getAutoScalingConfigurations(GetAutoScalingConfigurationsArgs args) {
@@ -219,6 +234,8 @@ public final class AutoscalingFunctions {
      * Lists autoscaling configurations in the specifed compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -248,6 +265,7 @@ public final class AutoscalingFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAutoScalingConfigurationsResult> getAutoScalingConfigurationsPlain(GetAutoScalingConfigurationsPlainArgs args) {
@@ -259,6 +277,8 @@ public final class AutoscalingFunctions {
      * Lists autoscaling configurations in the specifed compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -288,6 +308,7 @@ public final class AutoscalingFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAutoScalingConfigurationsResult> getAutoScalingConfigurations(GetAutoScalingConfigurationsArgs args, InvokeOptions options) {
@@ -299,6 +320,8 @@ public final class AutoscalingFunctions {
      * Lists autoscaling configurations in the specifed compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -328,6 +351,7 @@ public final class AutoscalingFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAutoScalingConfigurationsResult> getAutoScalingConfigurationsPlain(GetAutoScalingConfigurationsPlainArgs args, InvokeOptions options) {

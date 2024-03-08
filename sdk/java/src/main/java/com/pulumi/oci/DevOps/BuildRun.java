@@ -27,6 +27,8 @@ import javax.annotation.Nullable;
  * Starts a build pipeline run for a predefined build pipeline. Please ensure the completion of any work request for creation/updation of Build Pipeline before starting a Build Run.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -71,13 +73,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * BuildRuns can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:DevOps/buildRun:BuildRun test_build_run &#34;id&#34;
+ * $ pulumi import oci:DevOps/buildRun:BuildRun test_build_run &#34;id&#34;
  * ```
  * 
  */

@@ -16,7 +16,7 @@ import * as utilities from "../utilities";
  * ResponderRecipes can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:CloudGuard/responderRecipe:ResponderRecipe test_responder_recipe "id"
+ * $ pulumi import oci:CloudGuard/responderRecipe:ResponderRecipe test_responder_recipe "id"
  * ```
  */
 export class ResponderRecipe extends pulumi.CustomResource {

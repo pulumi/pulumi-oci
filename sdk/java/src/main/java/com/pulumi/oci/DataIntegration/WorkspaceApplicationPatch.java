@@ -28,6 +28,8 @@ import javax.annotation.Nullable;
  * Creates a patch in an application.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -72,13 +74,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * WorkspaceApplicationPatches can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:DataIntegration/workspaceApplicationPatch:WorkspaceApplicationPatch test_workspace_application_patch &#34;workspaces/{workspaceId}/applications/{applicationKey}/patches/{patchKey}&#34;
+ * $ pulumi import oci:DataIntegration/workspaceApplicationPatch:WorkspaceApplicationPatch test_workspace_application_patch &#34;workspaces/{workspaceId}/applications/{applicationKey}/patches/{patchKey}&#34;
  * ```
  * 
  */

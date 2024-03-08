@@ -20,6 +20,8 @@ import javax.annotation.Nullable;
  * Create a subscription for listing resource version for a compartment. It will take some time to propagate to all regions.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -54,13 +56,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * AppCatalogSubscriptions can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Core/appCatalogSubscription:AppCatalogSubscription test_app_catalog_subscription &#34;compartmentId/{compartmentId}/listingId/{listingId}/listingResourceVersion/{listingResourceVersion}&#34;
+ * $ pulumi import oci:Core/appCatalogSubscription:AppCatalogSubscription test_app_catalog_subscription &#34;compartmentId/{compartmentId}/listingId/{listingId}/listingResourceVersion/{listingResourceVersion}&#34;
  * ```
  * 
  */

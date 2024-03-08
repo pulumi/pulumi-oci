@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -56,15 +57,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // DedicatedVantagePoints can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:ApmSynthetics/dedicatedVantagePoint:DedicatedVantagePoint test_dedicated_vantage_point "dedicatedVantagePoints/{dedicatedVantagePointId}/apmDomainId/{apmDomainId}"
-//
+// $ pulumi import oci:ApmSynthetics/dedicatedVantagePoint:DedicatedVantagePoint test_dedicated_vantage_point "dedicatedVantagePoints/{dedicatedVantagePointId}/apmDomainId/{apmDomainId}"
 // ```
 type DedicatedVantagePoint struct {
 	pulumi.CustomResourceState

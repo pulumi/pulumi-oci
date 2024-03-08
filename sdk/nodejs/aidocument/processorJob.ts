@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -49,13 +50,14 @@ import * as utilities from "../utilities";
  *     displayName: _var.processor_job_display_name,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * ProcessorJobs can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:AiDocument/processorJob:ProcessorJob test_processor_job "id"
+ * $ pulumi import oci:AiDocument/processorJob:ProcessorJob test_processor_job "id"
  * ```
  */
 export class ProcessorJob extends pulumi.CustomResource {

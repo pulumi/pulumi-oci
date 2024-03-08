@@ -24,6 +24,8 @@ import javax.annotation.Nullable;
  * Adds a listener to a load balancer.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -75,13 +77,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * Listeners can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:LoadBalancer/listener:Listener test_listener &#34;loadBalancers/{loadBalancerId}/listeners/{listenerName}&#34;
+ * $ pulumi import oci:LoadBalancer/listener:Listener test_listener &#34;loadBalancers/{loadBalancerId}/listeners/{listenerName}&#34;
  * ```
  * 
  */

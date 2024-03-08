@@ -21,9 +21,7 @@ import (
 // DetectAnomalyJobs can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:AiAnomalyDetection/detectAnomalyJob:DetectAnomalyJob test_detect_anomaly_job "id"
-//
+// $ pulumi import oci:AiAnomalyDetection/detectAnomalyJob:DetectAnomalyJob test_detect_anomaly_job "id"
 // ```
 type DetectAnomalyJob struct {
 	pulumi.CustomResourceState

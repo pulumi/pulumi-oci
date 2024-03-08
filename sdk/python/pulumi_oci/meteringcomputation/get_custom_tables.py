@@ -102,6 +102,7 @@ def get_custom_tables(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -109,6 +110,7 @@ def get_custom_tables(compartment_id: Optional[str] = None,
     test_custom_tables = oci.MeteringComputation.get_custom_tables(compartment_id=var["compartment_id"],
         saved_report_id=oci_metering_computation_saved_report["test_saved_report"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The compartment ID in which to list resources.
@@ -141,6 +143,7 @@ def get_custom_tables_output(compartment_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -148,6 +151,7 @@ def get_custom_tables_output(compartment_id: Optional[pulumi.Input[str]] = None,
     test_custom_tables = oci.MeteringComputation.get_custom_tables(compartment_id=var["compartment_id"],
         saved_report_id=oci_metering_computation_saved_report["test_saved_report"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The compartment ID in which to list resources.

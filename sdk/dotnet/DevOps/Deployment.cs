@@ -19,7 +19,7 @@ namespace Pulumi.Oci.DevOps
     /// Deployments can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:DevOps/deployment:Deployment test_deployment "id"
+    /// $ pulumi import oci:DevOps/deployment:Deployment test_deployment "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:DevOps/deployment:Deployment")]

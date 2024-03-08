@@ -107,6 +107,7 @@ def get_resources(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -115,6 +116,7 @@ def get_resources(compartment_id: Optional[str] = None,
         service_name=oci_core_service["test_service"]["name"],
         entitlement_id=oci_usage_proxy_entitlement["test_entitlement"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the root compartment.
@@ -152,6 +154,7 @@ def get_resources_output(compartment_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -160,6 +163,7 @@ def get_resources_output(compartment_id: Optional[pulumi.Input[str]] = None,
         service_name=oci_core_service["test_service"]["name"],
         entitlement_id=oci_usage_proxy_entitlement["test_entitlement"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the root compartment.

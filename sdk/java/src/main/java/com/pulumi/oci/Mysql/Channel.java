@@ -28,7 +28,7 @@ import javax.annotation.Nullable;
  * Channels can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Mysql/channel:Channel test_channel &#34;id&#34;
+ * $ pulumi import oci:Mysql/channel:Channel test_channel &#34;id&#34;
  * ```
  * 
  */

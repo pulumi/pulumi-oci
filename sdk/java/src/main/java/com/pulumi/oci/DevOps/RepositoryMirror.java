@@ -19,6 +19,8 @@ import javax.annotation.Nullable;
  * Synchronize a mirrored repository to the latest version from external providers.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -47,13 +49,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * RepositoryMirror can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:DevOps/repositoryMirror:RepositoryMirror test_repository_mirror &#34;id&#34;
+ * $ pulumi import oci:DevOps/repositoryMirror:RepositoryMirror test_repository_mirror &#34;id&#34;
  * ```
  * 
  */

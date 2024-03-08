@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,13 +23,14 @@ import * as utilities from "../utilities";
  *     runId: oci_dataflow_run.test_run.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * RunStatements can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:DataFlow/runStatement:RunStatement test_run_statement "runs/{runId}/statements/{statementId}"
+ * $ pulumi import oci:DataFlow/runStatement:RunStatement test_run_statement "runs/{runId}/statements/{statementId}"
  * ```
  */
 export class RunStatement extends pulumi.CustomResource {

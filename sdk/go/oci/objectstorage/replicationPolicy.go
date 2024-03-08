@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -44,15 +45,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // ReplicationPolicies can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:ObjectStorage/replicationPolicy:ReplicationPolicy test_replication_policy "n/{namespaceName}/b/{bucketName}/replicationPolicies/{replicationId}"
-//
+// $ pulumi import oci:ObjectStorage/replicationPolicy:ReplicationPolicy test_replication_policy "n/{namespaceName}/b/{bucketName}/replicationPolicies/{replicationId}"
 // ```
 type ReplicationPolicy struct {
 	pulumi.CustomResourceState

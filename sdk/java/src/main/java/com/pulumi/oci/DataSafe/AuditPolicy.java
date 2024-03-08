@@ -31,7 +31,7 @@ import javax.annotation.Nullable;
  * AuditPolicies can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:DataSafe/auditPolicy:AuditPolicy test_audit_policy &#34;id&#34;
+ * $ pulumi import oci:DataSafe/auditPolicy:AuditPolicy test_audit_policy &#34;id&#34;
  * ```
  * 
  */

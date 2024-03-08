@@ -210,6 +210,7 @@ class CustomerSecretKey(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -218,13 +219,14 @@ class CustomerSecretKey(pulumi.CustomResource):
             display_name=var["customer_secret_key_display_name"],
             user_id=oci_identity_user["test_user"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         CustomerSecretKeys can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/customerSecretKey:CustomerSecretKey test_customer_secret_key "users/{userId}/customerSecretKeys/{customerSecretKeyId}"
+        $ pulumi import oci:Identity/customerSecretKey:CustomerSecretKey test_customer_secret_key "users/{userId}/customerSecretKeys/{customerSecretKeyId}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -259,6 +261,7 @@ class CustomerSecretKey(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -267,13 +270,14 @@ class CustomerSecretKey(pulumi.CustomResource):
             display_name=var["customer_secret_key_display_name"],
             user_id=oci_identity_user["test_user"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         CustomerSecretKeys can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/customerSecretKey:CustomerSecretKey test_customer_secret_key "users/{userId}/customerSecretKeys/{customerSecretKeyId}"
+        $ pulumi import oci:Identity/customerSecretKey:CustomerSecretKey test_customer_secret_key "users/{userId}/customerSecretKeys/{customerSecretKeyId}"
         ```
 
         :param str resource_name: The name of the resource.

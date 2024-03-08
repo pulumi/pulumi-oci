@@ -20,6 +20,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -56,15 +57,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Endpoints can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:GenerativeAi/endpoint:Endpoint test_endpoint "id"
-//
+// $ pulumi import oci:GenerativeAi/endpoint:Endpoint test_endpoint "id"
 // ```
 type Endpoint struct {
 	pulumi.CustomResourceState

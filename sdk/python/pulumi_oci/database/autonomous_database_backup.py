@@ -494,6 +494,7 @@ class AutonomousDatabaseBackup(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -504,13 +505,14 @@ class AutonomousDatabaseBackup(pulumi.CustomResource):
             is_long_term_backup=var["autonomous_database_backup_is_long_term_backup"],
             retention_period_in_days=var["autonomous_database_backup_retention_period_in_days"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         AutonomousDatabaseBackups can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Database/autonomousDatabaseBackup:AutonomousDatabaseBackup test_autonomous_database_backup "id"
+        $ pulumi import oci:Database/autonomousDatabaseBackup:AutonomousDatabaseBackup test_autonomous_database_backup "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -538,6 +540,7 @@ class AutonomousDatabaseBackup(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -548,13 +551,14 @@ class AutonomousDatabaseBackup(pulumi.CustomResource):
             is_long_term_backup=var["autonomous_database_backup_is_long_term_backup"],
             retention_period_in_days=var["autonomous_database_backup_retention_period_in_days"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         AutonomousDatabaseBackups can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Database/autonomousDatabaseBackup:AutonomousDatabaseBackup test_autonomous_database_backup "id"
+        $ pulumi import oci:Database/autonomousDatabaseBackup:AutonomousDatabaseBackup test_autonomous_database_backup "id"
         ```
 
         :param str resource_name: The name of the resource.

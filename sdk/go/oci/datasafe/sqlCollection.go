@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -53,15 +54,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // SqlCollections can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:DataSafe/sqlCollection:SqlCollection test_sql_collection "id"
-//
+// $ pulumi import oci:DataSafe/sqlCollection:SqlCollection test_sql_collection "id"
 // ```
 type SqlCollection struct {
 	pulumi.CustomResourceState

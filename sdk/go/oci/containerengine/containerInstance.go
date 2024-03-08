@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -156,15 +157,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // ContainerInstances can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:ContainerEngine/containerInstance:ContainerInstance test_container_instance "id"
-//
+// $ pulumi import oci:ContainerEngine/containerInstance:ContainerInstance test_container_instance "id"
 // ```
 type ContainerInstance struct {
 	pulumi.CustomResourceState

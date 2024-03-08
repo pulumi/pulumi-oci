@@ -96,6 +96,7 @@ def get_addon_options(addon_name: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -103,6 +104,7 @@ def get_addon_options(addon_name: Optional[str] = None,
     test_addon_options = oci.ContainerEngine.get_addon_options(kubernetes_version=var["addon_option_kubernetes_version"],
         addon_name=oci_containerengine_addon["test_addon"]["name"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str addon_name: The name of the addon.
@@ -135,6 +137,7 @@ def get_addon_options_output(addon_name: Optional[pulumi.Input[Optional[str]]] =
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -142,6 +145,7 @@ def get_addon_options_output(addon_name: Optional[pulumi.Input[Optional[str]]] =
     test_addon_options = oci.ContainerEngine.get_addon_options(kubernetes_version=var["addon_option_kubernetes_version"],
         addon_name=oci_containerengine_addon["test_addon"]["name"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str addon_name: The name of the addon.

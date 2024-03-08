@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -51,15 +52,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Repositories can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Artifacts/repository:Repository test_repository "id"
-//
+// $ pulumi import oci:Artifacts/repository:Repository test_repository "id"
 // ```
 type Repository struct {
 	pulumi.CustomResourceState

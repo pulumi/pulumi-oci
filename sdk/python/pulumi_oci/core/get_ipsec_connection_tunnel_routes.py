@@ -109,6 +109,7 @@ def get_ipsec_connection_tunnel_routes(advertiser: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -117,6 +118,7 @@ def get_ipsec_connection_tunnel_routes(advertiser: Optional[str] = None,
         tunnel_id=oci_core_tunnel["test_tunnel"]["id"],
         advertiser=var["ipsec_connection_tunnel_route_advertiser"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str advertiser: Specifies the advertiser of the routes. If set to `ORACLE`, this returns only the routes advertised by Oracle. When set to `CUSTOMER`, this returns only the routes advertised by the CPE.
@@ -153,6 +155,7 @@ def get_ipsec_connection_tunnel_routes_output(advertiser: Optional[pulumi.Input[
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -161,6 +164,7 @@ def get_ipsec_connection_tunnel_routes_output(advertiser: Optional[pulumi.Input[
         tunnel_id=oci_core_tunnel["test_tunnel"]["id"],
         advertiser=var["ipsec_connection_tunnel_route_advertiser"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str advertiser: Specifies the advertiser of the routes. If set to `ORACLE`, this returns only the routes advertised by Oracle. When set to `CUSTOMER`, this returns only the routes advertised by the CPE.

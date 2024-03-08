@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -43,6 +44,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetTagDefaults(ctx *pulumi.Context, args *GetTagDefaultsArgs, opts ...pulumi.InvokeOption) (*GetTagDefaultsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetTagDefaultsResult

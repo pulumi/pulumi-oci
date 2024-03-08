@@ -26,6 +26,8 @@ public final class ApmFunctions {
      * Gets the details of the APM domain specified by OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -54,6 +56,7 @@ public final class ApmFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetApmDomainResult> getApmDomain(GetApmDomainArgs args) {
@@ -65,6 +68,8 @@ public final class ApmFunctions {
      * Gets the details of the APM domain specified by OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -93,6 +98,7 @@ public final class ApmFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetApmDomainResult> getApmDomainPlain(GetApmDomainPlainArgs args) {
@@ -104,6 +110,8 @@ public final class ApmFunctions {
      * Gets the details of the APM domain specified by OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -132,6 +140,7 @@ public final class ApmFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetApmDomainResult> getApmDomain(GetApmDomainArgs args, InvokeOptions options) {
@@ -143,6 +152,8 @@ public final class ApmFunctions {
      * Gets the details of the APM domain specified by OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -171,6 +182,7 @@ public final class ApmFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetApmDomainResult> getApmDomainPlain(GetApmDomainPlainArgs args, InvokeOptions options) {
@@ -182,6 +194,8 @@ public final class ApmFunctions {
      * Lists all APM domains for the specified tenant compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -212,6 +226,7 @@ public final class ApmFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetApmDomainsResult> getApmDomains(GetApmDomainsArgs args) {
@@ -223,6 +238,8 @@ public final class ApmFunctions {
      * Lists all APM domains for the specified tenant compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -253,6 +270,7 @@ public final class ApmFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetApmDomainsResult> getApmDomainsPlain(GetApmDomainsPlainArgs args) {
@@ -264,6 +282,8 @@ public final class ApmFunctions {
      * Lists all APM domains for the specified tenant compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -294,6 +314,7 @@ public final class ApmFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetApmDomainsResult> getApmDomains(GetApmDomainsArgs args, InvokeOptions options) {
@@ -305,6 +326,8 @@ public final class ApmFunctions {
      * Lists all APM domains for the specified tenant compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -335,6 +358,7 @@ public final class ApmFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetApmDomainsResult> getApmDomainsPlain(GetApmDomainsPlainArgs args, InvokeOptions options) {
@@ -347,6 +371,8 @@ public final class ApmFunctions {
      * query parameter.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -376,6 +402,7 @@ public final class ApmFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDataKeysResult> getDataKeys(GetDataKeysArgs args) {
@@ -388,6 +415,8 @@ public final class ApmFunctions {
      * query parameter.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -417,6 +446,7 @@ public final class ApmFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDataKeysResult> getDataKeysPlain(GetDataKeysPlainArgs args) {
@@ -429,6 +459,8 @@ public final class ApmFunctions {
      * query parameter.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -458,6 +490,7 @@ public final class ApmFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDataKeysResult> getDataKeys(GetDataKeysArgs args, InvokeOptions options) {
@@ -470,6 +503,8 @@ public final class ApmFunctions {
      * query parameter.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -499,6 +534,7 @@ public final class ApmFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDataKeysResult> getDataKeysPlain(GetDataKeysPlainArgs args, InvokeOptions options) {

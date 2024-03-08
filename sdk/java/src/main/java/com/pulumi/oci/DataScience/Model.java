@@ -25,6 +25,8 @@ import javax.annotation.Nullable;
  * Creates a new model.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -74,13 +76,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * Models can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:DataScience/model:Model test_model &#34;id&#34;
+ * $ pulumi import oci:DataScience/model:Model test_model &#34;id&#34;
  * ```
  * 
  */

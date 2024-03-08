@@ -22,10 +22,9 @@ namespace Pulumi.Oci.DatabaseManagement
         /// considered and Managed Databases with `ADVANCED` management option are listed.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -46,8 +45,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetManagedDatabasesResult> InvokeAsync(GetManagedDatabasesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagedDatabasesResult>("oci:DatabaseManagement/getManagedDatabases:getManagedDatabases", args ?? new GetManagedDatabasesArgs(), options.WithDefaults());
@@ -63,10 +61,9 @@ namespace Pulumi.Oci.DatabaseManagement
         /// considered and Managed Databases with `ADVANCED` management option are listed.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -87,8 +84,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetManagedDatabasesResult> Invoke(GetManagedDatabasesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabasesResult>("oci:DatabaseManagement/getManagedDatabases:getManagedDatabases", args ?? new GetManagedDatabasesInvokeArgs(), options.WithDefaults());

@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -33,13 +34,14 @@ import * as utilities from "../utilities";
  *     },
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * Subscribers can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:ApiGateway/subscriber:Subscriber test_subscriber "id"
+ * $ pulumi import oci:ApiGateway/subscriber:Subscriber test_subscriber "id"
  * ```
  */
 export class Subscriber extends pulumi.CustomResource {

@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -42,6 +43,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupDataAsset(ctx *pulumi.Context, args *LookupDataAssetArgs, opts ...pulumi.InvokeOption) (*LookupDataAssetResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupDataAssetResult

@@ -23,6 +23,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -58,15 +59,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // ComputeCapacityReports can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Core/computeCapacityReport:ComputeCapacityReport test_compute_capacity_report "id"
-//
+// $ pulumi import oci:Core/computeCapacityReport:ComputeCapacityReport test_compute_capacity_report "id"
 // ```
 type ComputeCapacityReport struct {
 	pulumi.CustomResourceState

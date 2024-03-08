@@ -16,6 +16,7 @@ namespace Pulumi.Oci.DevOps
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -63,13 +64,14 @@ namespace Pulumi.Oci.DevOps
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// DeployEnvironments can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:DevOps/deployEnvironment:DeployEnvironment test_deploy_environment "id"
+    /// $ pulumi import oci:DevOps/deployEnvironment:DeployEnvironment test_deploy_environment "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:DevOps/deployEnvironment:DeployEnvironment")]

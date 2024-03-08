@@ -18,6 +18,7 @@ namespace Pulumi.Oci.DataSafe
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -45,13 +46,14 @@ namespace Pulumi.Oci.DataSafe
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// SecurityAssessments can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:DataSafe/securityAssessment:SecurityAssessment test_security_assessment "id"
+    /// $ pulumi import oci:DataSafe/securityAssessment:SecurityAssessment test_security_assessment "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:DataSafe/securityAssessment:SecurityAssessment")]

@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -43,6 +44,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetBastions(ctx *pulumi.Context, args *GetBastionsArgs, opts ...pulumi.InvokeOption) (*GetBastionsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetBastionsResult

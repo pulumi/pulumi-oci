@@ -1300,7 +1300,7 @@ class DomainsOauth2clientCredential(pulumi.CustomResource):
         OAuth2ClientCredentials can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/domainsOauth2clientCredential:DomainsOauth2clientCredential test_oauth2client_credential "idcsEndpoint/{idcsEndpoint}/oAuth2ClientCredentials/{oAuth2ClientCredentialId}"
+        $ pulumi import oci:Identity/domainsOauth2clientCredential:DomainsOauth2clientCredential test_oauth2client_credential "idcsEndpoint/{idcsEndpoint}/oAuth2ClientCredentials/{oAuth2ClientCredentialId}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -1442,7 +1442,7 @@ class DomainsOauth2clientCredential(pulumi.CustomResource):
         OAuth2ClientCredentials can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/domainsOauth2clientCredential:DomainsOauth2clientCredential test_oauth2client_credential "idcsEndpoint/{idcsEndpoint}/oAuth2ClientCredentials/{oAuth2ClientCredentialId}"
+        $ pulumi import oci:Identity/domainsOauth2clientCredential:DomainsOauth2clientCredential test_oauth2client_credential "idcsEndpoint/{idcsEndpoint}/oAuth2ClientCredentials/{oAuth2ClientCredentialId}"
         ```
 
         :param str resource_name: The name of the resource.

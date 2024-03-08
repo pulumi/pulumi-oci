@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,6 +23,7 @@ import * as utilities from "../utilities";
  *     displayName: _var.external_exadata_infrastructure_display_name,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getExternalExadataInfrastructures(args: GetExternalExadataInfrastructuresArgs, opts?: pulumi.InvokeOptions): Promise<GetExternalExadataInfrastructuresResult> {
 
@@ -77,6 +79,7 @@ export interface GetExternalExadataInfrastructuresResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -86,6 +89,7 @@ export interface GetExternalExadataInfrastructuresResult {
  *     displayName: _var.external_exadata_infrastructure_display_name,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getExternalExadataInfrastructuresOutput(args: GetExternalExadataInfrastructuresOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalExadataInfrastructuresResult> {
     return pulumi.output(args).apply((a: any) => getExternalExadataInfrastructures(a, opts))

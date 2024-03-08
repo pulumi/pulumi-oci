@@ -14,7 +14,7 @@ import * as utilities from "../utilities";
  * OperatorControls can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:OperatorAccessControl/operatorControl:OperatorControl test_operator_control "id"
+ * $ pulumi import oci:OperatorAccessControl/operatorControl:OperatorControl test_operator_control "id"
  * ```
  */
 export class OperatorControl extends pulumi.CustomResource {

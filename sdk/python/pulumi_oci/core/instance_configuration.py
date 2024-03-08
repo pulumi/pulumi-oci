@@ -329,6 +329,7 @@ class InstanceConfiguration(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -681,13 +682,14 @@ class InstanceConfiguration(pulumi.CustomResource):
             instance_id=oci_core_instance["test_instance"]["id"],
             source=var["instance_configuration_source"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         InstanceConfigurations can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/instanceConfiguration:InstanceConfiguration test_instance_configuration "id"
+        $ pulumi import oci:Core/instanceConfiguration:InstanceConfiguration test_instance_configuration "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -721,6 +723,7 @@ class InstanceConfiguration(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -1073,13 +1076,14 @@ class InstanceConfiguration(pulumi.CustomResource):
             instance_id=oci_core_instance["test_instance"]["id"],
             source=var["instance_configuration_source"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         InstanceConfigurations can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/instanceConfiguration:InstanceConfiguration test_instance_configuration "id"
+        $ pulumi import oci:Core/instanceConfiguration:InstanceConfiguration test_instance_configuration "id"
         ```
 
         :param str resource_name: The name of the resource.

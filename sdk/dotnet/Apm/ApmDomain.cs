@@ -16,6 +16,7 @@ namespace Pulumi.Oci.Apm
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -42,13 +43,14 @@ namespace Pulumi.Oci.Apm
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// ApmDomains can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Apm/apmDomain:ApmDomain test_apm_domain "id"
+    /// $ pulumi import oci:Apm/apmDomain:ApmDomain test_apm_domain "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Apm/apmDomain:ApmDomain")]

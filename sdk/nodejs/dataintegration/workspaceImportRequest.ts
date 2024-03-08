@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -32,13 +33,14 @@ import * as utilities from "../utilities";
  *     objectStorageTenancyId: oci_identity_tenancy.test_tenancy.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * WorkspaceImportRequests can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:DataIntegration/workspaceImportRequest:WorkspaceImportRequest test_workspace_import_request "workspaces/{workspaceId}/importRequests/{importRequestKey}"
+ * $ pulumi import oci:DataIntegration/workspaceImportRequest:WorkspaceImportRequest test_workspace_import_request "workspaces/{workspaceId}/importRequests/{importRequestKey}"
  * ```
  */
 export class WorkspaceImportRequest extends pulumi.CustomResource {

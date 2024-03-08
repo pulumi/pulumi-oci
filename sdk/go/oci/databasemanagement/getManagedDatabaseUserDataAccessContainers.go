@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -43,6 +44,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetManagedDatabaseUserDataAccessContainers(ctx *pulumi.Context, args *GetManagedDatabaseUserDataAccessContainersArgs, opts ...pulumi.InvokeOption) (*GetManagedDatabaseUserDataAccessContainersResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetManagedDatabaseUserDataAccessContainersResult

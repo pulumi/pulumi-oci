@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -62,15 +63,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // TargetDatabasePeerTargetDatabases can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:DataSafe/targetDatabasePeerTargetDatabase:TargetDatabasePeerTargetDatabase test_target_database_peer_target_database "targetDatabases/{targetDatabaseId}/peerTargetDatabases/{peerTargetDatabaseId}"
-//
+// $ pulumi import oci:DataSafe/targetDatabasePeerTargetDatabase:TargetDatabasePeerTargetDatabase test_target_database_peer_target_database "targetDatabases/{targetDatabaseId}/peerTargetDatabases/{peerTargetDatabaseId}"
 // ```
 type TargetDatabasePeerTargetDatabase struct {
 	pulumi.CustomResourceState

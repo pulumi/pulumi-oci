@@ -16,6 +16,7 @@ namespace Pulumi.Oci.Mysql
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -43,13 +44,14 @@ namespace Pulumi.Oci.Mysql
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// MysqlBackups can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Mysql/mysqlBackup:MysqlBackup test_mysql_backup "id"
+    /// $ pulumi import oci:Mysql/mysqlBackup:MysqlBackup test_mysql_backup "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Mysql/mysqlBackup:MysqlBackup")]

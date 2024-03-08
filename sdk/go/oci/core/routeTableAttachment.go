@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -42,15 +43,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Route Table Attachment can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Core/routeTableAttachment:RouteTableAttachment test_route_table_attachment "{subnetId}/{routeTableId}"
-//
+// $ pulumi import oci:Core/routeTableAttachment:RouteTableAttachment test_route_table_attachment "{subnetId}/{routeTableId}"
 // ```
 type RouteTableAttachment struct {
 	pulumi.CustomResourceState

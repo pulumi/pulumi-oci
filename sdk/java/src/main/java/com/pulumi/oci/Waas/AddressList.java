@@ -23,6 +23,8 @@ import javax.annotation.Nullable;
  * Creates an address list in a set compartment and allows it to be used in a WAAS policy and referenced by access rules. Addresses can be IP addresses and CIDR notations.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -55,13 +57,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * AddressLists can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Waas/addressList:AddressList test_address_list &#34;id&#34;
+ * $ pulumi import oci:Waas/addressList:AddressList test_address_list &#34;id&#34;
  * ```
  * 
  */

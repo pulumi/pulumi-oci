@@ -303,12 +303,14 @@ def get_dr_plan_execution(dr_plan_execution_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_dr_plan_execution = oci.DisasterRecovery.get_dr_plan_execution(dr_plan_execution_id=oci_disaster_recovery_dr_plan_execution["test_dr_plan_execution"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str dr_plan_execution_id: The OCID of the DR plan execution.  Example: `ocid1.drplanexecution.oc1..uniqueID`
@@ -353,12 +355,14 @@ def get_dr_plan_execution_output(dr_plan_execution_id: Optional[pulumi.Input[str
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_dr_plan_execution = oci.DisasterRecovery.get_dr_plan_execution(dr_plan_execution_id=oci_disaster_recovery_dr_plan_execution["test_dr_plan_execution"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str dr_plan_execution_id: The OCID of the DR plan execution.  Example: `ocid1.drplanexecution.oc1..uniqueID`

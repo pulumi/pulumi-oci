@@ -19,10 +19,9 @@ namespace Pulumi.Oci.Core
         /// cross-connect.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -38,8 +37,7 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetCrossConnectPortSpeedShapeResult> InvokeAsync(GetCrossConnectPortSpeedShapeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetCrossConnectPortSpeedShapeResult>("oci:Core/getCrossConnectPortSpeedShape:getCrossConnectPortSpeedShape", args ?? new GetCrossConnectPortSpeedShapeArgs(), options.WithDefaults());
@@ -52,10 +50,9 @@ namespace Pulumi.Oci.Core
         /// cross-connect.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -71,8 +68,7 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetCrossConnectPortSpeedShapeResult> Invoke(GetCrossConnectPortSpeedShapeInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCrossConnectPortSpeedShapeResult>("oci:Core/getCrossConnectPortSpeedShape:getCrossConnectPortSpeedShape", args ?? new GetCrossConnectPortSpeedShapeInvokeArgs(), options.WithDefaults());

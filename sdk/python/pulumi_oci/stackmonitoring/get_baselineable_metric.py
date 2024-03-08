@@ -242,12 +242,14 @@ def get_baselineable_metric(baselineable_metric_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_baselineable_metric = oci.StackMonitoring.get_baselineable_metric(baselineable_metric_id=oci_stack_monitoring_baselineable_metric["test_baselineable_metric"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str baselineable_metric_id: Identifier for the metric
@@ -287,12 +289,14 @@ def get_baselineable_metric_output(baselineable_metric_id: Optional[pulumi.Input
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_baselineable_metric = oci.StackMonitoring.get_baselineable_metric(baselineable_metric_id=oci_stack_monitoring_baselineable_metric["test_baselineable_metric"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str baselineable_metric_id: Identifier for the metric

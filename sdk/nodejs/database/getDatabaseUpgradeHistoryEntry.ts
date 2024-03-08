@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -20,6 +21,7 @@ import * as utilities from "../utilities";
  *     upgradeHistoryEntryId: oci_database_upgrade_history_entry.test_upgrade_history_entry.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDatabaseUpgradeHistoryEntry(args: GetDatabaseUpgradeHistoryEntryArgs, opts?: pulumi.InvokeOptions): Promise<GetDatabaseUpgradeHistoryEntryResult> {
 
@@ -108,6 +110,7 @@ export interface GetDatabaseUpgradeHistoryEntryResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -117,6 +120,7 @@ export interface GetDatabaseUpgradeHistoryEntryResult {
  *     upgradeHistoryEntryId: oci_database_upgrade_history_entry.test_upgrade_history_entry.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDatabaseUpgradeHistoryEntryOutput(args: GetDatabaseUpgradeHistoryEntryOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDatabaseUpgradeHistoryEntryResult> {
     return pulumi.output(args).apply((a: any) => getDatabaseUpgradeHistoryEntry(a, opts))

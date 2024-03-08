@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -40,6 +41,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetGuardTarget(ctx *pulumi.Context, args *GetGuardTargetArgs, opts ...pulumi.InvokeOption) (*GetGuardTargetResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetGuardTargetResult

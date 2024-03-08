@@ -454,6 +454,7 @@ class DedicatedAiCluster(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -472,13 +473,14 @@ class DedicatedAiCluster(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         DedicatedAiClusters can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:GenerativeAi/dedicatedAiCluster:DedicatedAiCluster test_dedicated_ai_cluster "id"
+        $ pulumi import oci:GenerativeAi/dedicatedAiCluster:DedicatedAiCluster test_dedicated_ai_cluster "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -519,6 +521,7 @@ class DedicatedAiCluster(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -537,13 +540,14 @@ class DedicatedAiCluster(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         DedicatedAiClusters can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:GenerativeAi/dedicatedAiCluster:DedicatedAiCluster test_dedicated_ai_cluster "id"
+        $ pulumi import oci:GenerativeAi/dedicatedAiCluster:DedicatedAiCluster test_dedicated_ai_cluster "id"
         ```
 
         :param str resource_name: The name of the resource.

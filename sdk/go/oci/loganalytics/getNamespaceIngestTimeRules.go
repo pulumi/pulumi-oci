@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -46,6 +47,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetNamespaceIngestTimeRules(ctx *pulumi.Context, args *GetNamespaceIngestTimeRulesArgs, opts ...pulumi.InvokeOption) (*GetNamespaceIngestTimeRulesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetNamespaceIngestTimeRulesResult

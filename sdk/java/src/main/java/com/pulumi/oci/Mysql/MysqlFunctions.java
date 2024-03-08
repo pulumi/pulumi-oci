@@ -58,6 +58,8 @@ public final class MysqlFunctions {
      * the state of the Channel, its sources and targets.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -86,6 +88,7 @@ public final class MysqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetChannelResult> getChannel(GetChannelArgs args) {
@@ -99,6 +102,8 @@ public final class MysqlFunctions {
      * the state of the Channel, its sources and targets.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -127,6 +132,7 @@ public final class MysqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetChannelResult> getChannelPlain(GetChannelPlainArgs args) {
@@ -140,6 +146,8 @@ public final class MysqlFunctions {
      * the state of the Channel, its sources and targets.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -168,6 +176,7 @@ public final class MysqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetChannelResult> getChannel(GetChannelArgs args, InvokeOptions options) {
@@ -181,6 +190,8 @@ public final class MysqlFunctions {
      * the state of the Channel, its sources and targets.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -209,6 +220,7 @@ public final class MysqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetChannelResult> getChannelPlain(GetChannelPlainArgs args, InvokeOptions options) {
@@ -220,6 +232,8 @@ public final class MysqlFunctions {
      * Lists all the Channels that match the specified filters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -253,6 +267,7 @@ public final class MysqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetChannelsResult> getChannels(GetChannelsArgs args) {
@@ -264,6 +279,8 @@ public final class MysqlFunctions {
      * Lists all the Channels that match the specified filters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -297,6 +314,7 @@ public final class MysqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetChannelsResult> getChannelsPlain(GetChannelsPlainArgs args) {
@@ -308,6 +326,8 @@ public final class MysqlFunctions {
      * Lists all the Channels that match the specified filters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -341,6 +361,7 @@ public final class MysqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetChannelsResult> getChannels(GetChannelsArgs args, InvokeOptions options) {
@@ -352,6 +373,8 @@ public final class MysqlFunctions {
      * Lists all the Channels that match the specified filters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -385,6 +408,7 @@ public final class MysqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetChannelsResult> getChannelsPlain(GetChannelsPlainArgs args, InvokeOptions options) {
@@ -396,6 +420,8 @@ public final class MysqlFunctions {
      * Gets information about the HeatWave cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -424,6 +450,7 @@ public final class MysqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetHeatWaveClusterResult> getHeatWaveCluster(GetHeatWaveClusterArgs args) {
@@ -435,6 +462,8 @@ public final class MysqlFunctions {
      * Gets information about the HeatWave cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -463,6 +492,7 @@ public final class MysqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetHeatWaveClusterResult> getHeatWaveClusterPlain(GetHeatWaveClusterPlainArgs args) {
@@ -474,6 +504,8 @@ public final class MysqlFunctions {
      * Gets information about the HeatWave cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -502,6 +534,7 @@ public final class MysqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetHeatWaveClusterResult> getHeatWaveCluster(GetHeatWaveClusterArgs args, InvokeOptions options) {
@@ -513,6 +546,8 @@ public final class MysqlFunctions {
      * Gets information about the HeatWave cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -541,6 +576,7 @@ public final class MysqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetHeatWaveClusterResult> getHeatWaveClusterPlain(GetHeatWaveClusterPlainArgs args, InvokeOptions options) {
@@ -552,6 +588,8 @@ public final class MysqlFunctions {
      * Get information about the specified Backup
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -580,6 +618,7 @@ public final class MysqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMysqlBackupResult> getMysqlBackup(GetMysqlBackupArgs args) {
@@ -591,6 +630,8 @@ public final class MysqlFunctions {
      * Get information about the specified Backup
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -619,6 +660,7 @@ public final class MysqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMysqlBackupResult> getMysqlBackupPlain(GetMysqlBackupPlainArgs args) {
@@ -630,6 +672,8 @@ public final class MysqlFunctions {
      * Get information about the specified Backup
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -658,6 +702,7 @@ public final class MysqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMysqlBackupResult> getMysqlBackup(GetMysqlBackupArgs args, InvokeOptions options) {
@@ -669,6 +714,8 @@ public final class MysqlFunctions {
      * Get information about the specified Backup
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -697,6 +744,7 @@ public final class MysqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMysqlBackupResult> getMysqlBackupPlain(GetMysqlBackupPlainArgs args, InvokeOptions options) {
@@ -708,6 +756,8 @@ public final class MysqlFunctions {
      * Get a list of DB System backups.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -741,6 +791,7 @@ public final class MysqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMysqlBackupsResult> getMysqlBackups(GetMysqlBackupsArgs args) {
@@ -752,6 +803,8 @@ public final class MysqlFunctions {
      * Get a list of DB System backups.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -785,6 +838,7 @@ public final class MysqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMysqlBackupsResult> getMysqlBackupsPlain(GetMysqlBackupsPlainArgs args) {
@@ -796,6 +850,8 @@ public final class MysqlFunctions {
      * Get a list of DB System backups.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -829,6 +885,7 @@ public final class MysqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMysqlBackupsResult> getMysqlBackups(GetMysqlBackupsArgs args, InvokeOptions options) {
@@ -840,6 +897,8 @@ public final class MysqlFunctions {
      * Get a list of DB System backups.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -873,6 +932,7 @@ public final class MysqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMysqlBackupsResult> getMysqlBackupsPlain(GetMysqlBackupsPlainArgs args, InvokeOptions options) {
@@ -884,6 +944,8 @@ public final class MysqlFunctions {
      * Get the full details of the specified Configuration, including the list of MySQL Variables and their values.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -912,6 +974,7 @@ public final class MysqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMysqlConfigurationResult> getMysqlConfiguration(GetMysqlConfigurationArgs args) {
@@ -923,6 +986,8 @@ public final class MysqlFunctions {
      * Get the full details of the specified Configuration, including the list of MySQL Variables and their values.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -951,6 +1016,7 @@ public final class MysqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMysqlConfigurationResult> getMysqlConfigurationPlain(GetMysqlConfigurationPlainArgs args) {
@@ -962,6 +1028,8 @@ public final class MysqlFunctions {
      * Get the full details of the specified Configuration, including the list of MySQL Variables and their values.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -990,6 +1058,7 @@ public final class MysqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMysqlConfigurationResult> getMysqlConfiguration(GetMysqlConfigurationArgs args, InvokeOptions options) {
@@ -1001,6 +1070,8 @@ public final class MysqlFunctions {
      * Get the full details of the specified Configuration, including the list of MySQL Variables and their values.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1029,6 +1100,7 @@ public final class MysqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMysqlConfigurationResult> getMysqlConfigurationPlain(GetMysqlConfigurationPlainArgs args, InvokeOptions options) {
@@ -1047,6 +1119,8 @@ public final class MysqlFunctions {
      *   - displayName ascending
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1080,6 +1154,7 @@ public final class MysqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMysqlConfigurationsResult> getMysqlConfigurations(GetMysqlConfigurationsArgs args) {
@@ -1098,6 +1173,8 @@ public final class MysqlFunctions {
      *   - displayName ascending
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1131,6 +1208,7 @@ public final class MysqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMysqlConfigurationsResult> getMysqlConfigurationsPlain(GetMysqlConfigurationsPlainArgs args) {
@@ -1149,6 +1227,8 @@ public final class MysqlFunctions {
      *   - displayName ascending
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1182,6 +1262,7 @@ public final class MysqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMysqlConfigurationsResult> getMysqlConfigurations(GetMysqlConfigurationsArgs args, InvokeOptions options) {
@@ -1200,6 +1281,8 @@ public final class MysqlFunctions {
      *   - displayName ascending
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1233,6 +1316,7 @@ public final class MysqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMysqlConfigurationsResult> getMysqlConfigurationsPlain(GetMysqlConfigurationsPlainArgs args, InvokeOptions options) {
@@ -1244,6 +1328,8 @@ public final class MysqlFunctions {
      * Get information about the specified DB System.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1272,6 +1358,7 @@ public final class MysqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMysqlDbSystemResult> getMysqlDbSystem(GetMysqlDbSystemArgs args) {
@@ -1283,6 +1370,8 @@ public final class MysqlFunctions {
      * Get information about the specified DB System.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1311,6 +1400,7 @@ public final class MysqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMysqlDbSystemResult> getMysqlDbSystemPlain(GetMysqlDbSystemPlainArgs args) {
@@ -1322,6 +1412,8 @@ public final class MysqlFunctions {
      * Get information about the specified DB System.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1350,6 +1442,7 @@ public final class MysqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMysqlDbSystemResult> getMysqlDbSystem(GetMysqlDbSystemArgs args, InvokeOptions options) {
@@ -1361,6 +1454,8 @@ public final class MysqlFunctions {
      * Get information about the specified DB System.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1389,6 +1484,7 @@ public final class MysqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMysqlDbSystemResult> getMysqlDbSystemPlain(GetMysqlDbSystemPlainArgs args, InvokeOptions options) {
@@ -1401,6 +1497,8 @@ public final class MysqlFunctions {
      * The default sort order is by timeUpdated, descending.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1436,6 +1534,7 @@ public final class MysqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMysqlDbSystemsResult> getMysqlDbSystems(GetMysqlDbSystemsArgs args) {
@@ -1448,6 +1547,8 @@ public final class MysqlFunctions {
      * The default sort order is by timeUpdated, descending.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1483,6 +1584,7 @@ public final class MysqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMysqlDbSystemsResult> getMysqlDbSystemsPlain(GetMysqlDbSystemsPlainArgs args) {
@@ -1495,6 +1597,8 @@ public final class MysqlFunctions {
      * The default sort order is by timeUpdated, descending.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1530,6 +1634,7 @@ public final class MysqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMysqlDbSystemsResult> getMysqlDbSystems(GetMysqlDbSystemsArgs args, InvokeOptions options) {
@@ -1542,6 +1647,8 @@ public final class MysqlFunctions {
      * The default sort order is by timeUpdated, descending.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1577,6 +1684,7 @@ public final class MysqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMysqlDbSystemsResult> getMysqlDbSystemsPlain(GetMysqlDbSystemsPlainArgs args, InvokeOptions options) {
@@ -1590,6 +1698,8 @@ public final class MysqlFunctions {
      * The list is sorted by version family.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1618,6 +1728,7 @@ public final class MysqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMysqlVersionResult> getMysqlVersion(GetMysqlVersionArgs args) {
@@ -1631,6 +1742,8 @@ public final class MysqlFunctions {
      * The list is sorted by version family.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1659,6 +1772,7 @@ public final class MysqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMysqlVersionResult> getMysqlVersionPlain(GetMysqlVersionPlainArgs args) {
@@ -1672,6 +1786,8 @@ public final class MysqlFunctions {
      * The list is sorted by version family.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1700,6 +1816,7 @@ public final class MysqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMysqlVersionResult> getMysqlVersion(GetMysqlVersionArgs args, InvokeOptions options) {
@@ -1713,6 +1830,8 @@ public final class MysqlFunctions {
      * The list is sorted by version family.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1741,6 +1860,7 @@ public final class MysqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMysqlVersionResult> getMysqlVersionPlain(GetMysqlVersionPlainArgs args, InvokeOptions options) {
@@ -1752,6 +1872,8 @@ public final class MysqlFunctions {
      * Gets the full details of the specified read replica.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1780,6 +1902,7 @@ public final class MysqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetReplicaResult> getReplica(GetReplicaArgs args) {
@@ -1791,6 +1914,8 @@ public final class MysqlFunctions {
      * Gets the full details of the specified read replica.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1819,6 +1944,7 @@ public final class MysqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetReplicaResult> getReplicaPlain(GetReplicaPlainArgs args) {
@@ -1830,6 +1956,8 @@ public final class MysqlFunctions {
      * Gets the full details of the specified read replica.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1858,6 +1986,7 @@ public final class MysqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetReplicaResult> getReplica(GetReplicaArgs args, InvokeOptions options) {
@@ -1869,6 +1998,8 @@ public final class MysqlFunctions {
      * Gets the full details of the specified read replica.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1897,6 +2028,7 @@ public final class MysqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetReplicaResult> getReplicaPlain(GetReplicaPlainArgs args, InvokeOptions options) {
@@ -1908,6 +2040,8 @@ public final class MysqlFunctions {
      * Lists all the read replicas that match the specified filters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1942,6 +2076,7 @@ public final class MysqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetReplicasResult> getReplicas(GetReplicasArgs args) {
@@ -1953,6 +2088,8 @@ public final class MysqlFunctions {
      * Lists all the read replicas that match the specified filters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1987,6 +2124,7 @@ public final class MysqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetReplicasResult> getReplicasPlain(GetReplicasPlainArgs args) {
@@ -1998,6 +2136,8 @@ public final class MysqlFunctions {
      * Lists all the read replicas that match the specified filters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2032,6 +2172,7 @@ public final class MysqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetReplicasResult> getReplicas(GetReplicasArgs args, InvokeOptions options) {
@@ -2043,6 +2184,8 @@ public final class MysqlFunctions {
      * Lists all the read replicas that match the specified filters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2077,6 +2220,7 @@ public final class MysqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetReplicasResult> getReplicasPlain(GetReplicasPlainArgs args, InvokeOptions options) {
@@ -2091,6 +2235,8 @@ public final class MysqlFunctions {
      * storage for non-VM (or bare metal) shapes.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2122,6 +2268,7 @@ public final class MysqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetShapesResult> getShapes(GetShapesArgs args) {
@@ -2136,6 +2283,8 @@ public final class MysqlFunctions {
      * storage for non-VM (or bare metal) shapes.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2167,6 +2316,7 @@ public final class MysqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetShapesResult> getShapesPlain(GetShapesPlainArgs args) {
@@ -2181,6 +2331,8 @@ public final class MysqlFunctions {
      * storage for non-VM (or bare metal) shapes.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2212,6 +2364,7 @@ public final class MysqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetShapesResult> getShapes(GetShapesArgs args, InvokeOptions options) {
@@ -2226,6 +2379,8 @@ public final class MysqlFunctions {
      * storage for non-VM (or bare metal) shapes.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2257,6 +2412,7 @@ public final class MysqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetShapesResult> getShapesPlain(GetShapesPlainArgs args, InvokeOptions options) {

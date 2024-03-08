@@ -26,6 +26,8 @@ import javax.annotation.Nullable;
  * must connect the rack in the data center to this Oracle Cloud Infrastructure resource.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -62,13 +64,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * CccInfrastructures can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:ComputeCloud/atCustomerCccInfrastructure:AtCustomerCccInfrastructure test_ccc_infrastructure &#34;id&#34;
+ * $ pulumi import oci:ComputeCloud/atCustomerCccInfrastructure:AtCustomerCccInfrastructure test_ccc_infrastructure &#34;id&#34;
  * ```
  * 
  */

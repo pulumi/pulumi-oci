@@ -16,10 +16,9 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// Gets a list of SDM and masking policy difference resources based on the specified query parameters.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -41,8 +40,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetSdmMaskingPolicyDifferencesResult> InvokeAsync(GetSdmMaskingPolicyDifferencesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetSdmMaskingPolicyDifferencesResult>("oci:DataSafe/getSdmMaskingPolicyDifferences:getSdmMaskingPolicyDifferences", args ?? new GetSdmMaskingPolicyDifferencesArgs(), options.WithDefaults());
@@ -52,10 +50,9 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// Gets a list of SDM and masking policy difference resources based on the specified query parameters.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -77,8 +74,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetSdmMaskingPolicyDifferencesResult> Invoke(GetSdmMaskingPolicyDifferencesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSdmMaskingPolicyDifferencesResult>("oci:DataSafe/getSdmMaskingPolicyDifferences:getSdmMaskingPolicyDifferences", args ?? new GetSdmMaskingPolicyDifferencesInvokeArgs(), options.WithDefaults());

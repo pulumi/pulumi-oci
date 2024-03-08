@@ -145,6 +145,7 @@ def get_categories(child_tenancy_ids: Optional[Sequence[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -156,6 +157,7 @@ def get_categories(child_tenancy_ids: Optional[Sequence[str]] = None,
         name=var["category_name"],
         state=var["category_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param Sequence[str] child_tenancy_ids: A list of child tenancies for which the respective data will be returned. Please note that  the parent tenancy id can also be included in this list. For example, if there is a parent P with two children A and B, to return results of only parent P and child A, this list should be populated with  tenancy id of parent P and child A. 
@@ -216,6 +218,7 @@ def get_categories_output(child_tenancy_ids: Optional[pulumi.Input[Optional[Sequ
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -227,6 +230,7 @@ def get_categories_output(child_tenancy_ids: Optional[pulumi.Input[Optional[Sequ
         name=var["category_name"],
         state=var["category_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param Sequence[str] child_tenancy_ids: A list of child tenancies for which the respective data will be returned. Please note that  the parent tenancy id can also be included in this list. For example, if there is a parent P with two children A and B, to return results of only parent P and child A, this list should be populated with  tenancy id of parent P and child A. 

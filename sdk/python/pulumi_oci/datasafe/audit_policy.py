@@ -500,7 +500,7 @@ class AuditPolicy(pulumi.CustomResource):
         AuditPolicies can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataSafe/auditPolicy:AuditPolicy test_audit_policy "id"
+        $ pulumi import oci:DataSafe/auditPolicy:AuditPolicy test_audit_policy "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -534,7 +534,7 @@ class AuditPolicy(pulumi.CustomResource):
         AuditPolicies can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataSafe/auditPolicy:AuditPolicy test_audit_policy "id"
+        $ pulumi import oci:DataSafe/auditPolicy:AuditPolicy test_audit_policy "id"
         ```
 
         :param str resource_name: The name of the resource.

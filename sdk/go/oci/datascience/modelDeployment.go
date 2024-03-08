@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -88,15 +89,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // ModelDeployments can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:DataScience/modelDeployment:ModelDeployment test_model_deployment "id"
-//
+// $ pulumi import oci:DataScience/modelDeployment:ModelDeployment test_model_deployment "id"
 // ```
 type ModelDeployment struct {
 	pulumi.CustomResourceState

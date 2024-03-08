@@ -195,12 +195,14 @@ def get_category(category_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_category = oci.Optimizer.get_category(category_id=oci_optimizer_category["test_category"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str category_id: The unique OCID associated with the category.
@@ -236,12 +238,14 @@ def get_category_output(category_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_category = oci.Optimizer.get_category(category_id=oci_optimizer_category["test_category"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str category_id: The unique OCID associated with the category.

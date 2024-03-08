@@ -1250,6 +1250,7 @@ class DomainsCondition(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -1273,13 +1274,14 @@ class DomainsCondition(pulumi.CustomResource):
                 value=var["condition_tags_value"],
             )])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Conditions can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/domainsCondition:DomainsCondition test_condition "idcsEndpoint/{idcsEndpoint}/conditions/{conditionId}"
+        $ pulumi import oci:Identity/domainsCondition:DomainsCondition test_condition "idcsEndpoint/{idcsEndpoint}/conditions/{conditionId}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -1412,6 +1414,7 @@ class DomainsCondition(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -1435,13 +1438,14 @@ class DomainsCondition(pulumi.CustomResource):
                 value=var["condition_tags_value"],
             )])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Conditions can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/domainsCondition:DomainsCondition test_condition "idcsEndpoint/{idcsEndpoint}/conditions/{conditionId}"
+        $ pulumi import oci:Identity/domainsCondition:DomainsCondition test_condition "idcsEndpoint/{idcsEndpoint}/conditions/{conditionId}"
         ```
 
         :param str resource_name: The name of the resource.

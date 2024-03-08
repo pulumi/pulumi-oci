@@ -231,12 +231,14 @@ def get_session(session_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_session = oci.Bastion.get_session(session_id=oci_bastion_session["test_session"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str session_id: The unique identifier (OCID) of the session.
@@ -275,12 +277,14 @@ def get_session_output(session_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_session = oci.Bastion.get_session(session_id=oci_bastion_session["test_session"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str session_id: The unique identifier (OCID) of the session.

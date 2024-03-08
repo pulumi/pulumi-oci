@@ -14,6 +14,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -25,6 +26,7 @@ import * as utilities from "../utilities";
  *     availabilityDomain: _var.resource_availability_availability_domain,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getResourceAvailability(args: GetResourceAvailabilityArgs, opts?: pulumi.InvokeOptions): Promise<GetResourceAvailabilityResult> {
 
@@ -102,6 +104,7 @@ export interface GetResourceAvailabilityResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -113,6 +116,7 @@ export interface GetResourceAvailabilityResult {
  *     availabilityDomain: _var.resource_availability_availability_domain,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getResourceAvailabilityOutput(args: GetResourceAvailabilityOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetResourceAvailabilityResult> {
     return pulumi.output(args).apply((a: any) => getResourceAvailability(a, opts))

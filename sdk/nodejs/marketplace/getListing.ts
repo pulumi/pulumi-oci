@@ -27,6 +27,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -36,6 +37,7 @@ import * as utilities from "../utilities";
  *     compartmentId: _var.compartment_id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getListing(args: GetListingArgs, opts?: pulumi.InvokeOptions): Promise<GetListingResult> {
 
@@ -208,6 +210,7 @@ export interface GetListingResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -217,6 +220,7 @@ export interface GetListingResult {
  *     compartmentId: _var.compartment_id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getListingOutput(args: GetListingOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetListingResult> {
     return pulumi.output(args).apply((a: any) => getListing(a, opts))

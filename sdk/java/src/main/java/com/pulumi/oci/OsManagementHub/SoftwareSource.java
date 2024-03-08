@@ -25,6 +25,8 @@ import javax.annotation.Nullable;
  * Creates a new versioned or custom software source.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -84,13 +86,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * SoftwareSources can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:OsManagementHub/softwareSource:SoftwareSource test_software_source &#34;id&#34;
+ * $ pulumi import oci:OsManagementHub/softwareSource:SoftwareSource test_software_source &#34;id&#34;
  * ```
  * 
  */

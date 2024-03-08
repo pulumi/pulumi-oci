@@ -15,6 +15,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,6 +25,7 @@ import * as utilities from "../utilities";
  *     instanceId: oci_core_instance.test_instance.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getInstanceConsoleConnections(args: GetInstanceConsoleConnectionsArgs, opts?: pulumi.InvokeOptions): Promise<GetInstanceConsoleConnectionsResult> {
 
@@ -81,6 +83,7 @@ export interface GetInstanceConsoleConnectionsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -90,6 +93,7 @@ export interface GetInstanceConsoleConnectionsResult {
  *     instanceId: oci_core_instance.test_instance.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getInstanceConsoleConnectionsOutput(args: GetInstanceConsoleConnectionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInstanceConsoleConnectionsResult> {
     return pulumi.output(args).apply((a: any) => getInstanceConsoleConnections(a, opts))

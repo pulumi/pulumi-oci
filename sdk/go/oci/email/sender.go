@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -48,15 +49,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Senders can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Email/sender:Sender test_sender "id"
-//
+// $ pulumi import oci:Email/sender:Sender test_sender "id"
 // ```
 type Sender struct {
 	pulumi.CustomResourceState

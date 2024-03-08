@@ -112,6 +112,7 @@ def get_monitored_resources(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -120,6 +121,7 @@ def get_monitored_resources(compartment_id: Optional[str] = None,
         name=var["monitored_resource_name"],
         work_request_id=oci_containerengine_work_request["test_work_request"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID of the compartment in which data is listed.
@@ -156,6 +158,7 @@ def get_monitored_resources_output(compartment_id: Optional[pulumi.Input[str]] =
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -164,6 +167,7 @@ def get_monitored_resources_output(compartment_id: Optional[pulumi.Input[str]] =
         name=var["monitored_resource_name"],
         work_request_id=oci_containerengine_work_request["test_work_request"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID of the compartment in which data is listed.

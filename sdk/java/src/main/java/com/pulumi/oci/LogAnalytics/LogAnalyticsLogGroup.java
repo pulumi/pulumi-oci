@@ -21,6 +21,8 @@ import javax.annotation.Nullable;
  * Creates a new log group in the specified compartment with the input display name. You may also specify optional information such as description, defined tags, and free-form tags.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -54,13 +56,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * LogAnalyticsLogGroups can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:LogAnalytics/logAnalyticsLogGroup:LogAnalyticsLogGroup test_log_analytics_log_group &#34;namespaces/{namespaceName}/logAnalyticsLogGroups/{logAnalyticsLogGroupId}&#34;
+ * $ pulumi import oci:LogAnalytics/logAnalyticsLogGroup:LogAnalyticsLogGroup test_log_analytics_log_group &#34;namespaces/{namespaceName}/logAnalyticsLogGroups/{logAnalyticsLogGroupId}&#34;
  * ```
  * 
  */

@@ -14,6 +14,7 @@ import (
 
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -40,15 +41,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // ExportSets can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:FileStorage/exportSet:ExportSet test_export_set "id"
-//
+// $ pulumi import oci:FileStorage/exportSet:ExportSet test_export_set "id"
 // ```
 type ExportSet struct {
 	pulumi.CustomResourceState

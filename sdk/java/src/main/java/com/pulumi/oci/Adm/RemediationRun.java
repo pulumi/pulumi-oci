@@ -23,6 +23,8 @@ import javax.annotation.Nullable;
  * Creates a new remediation run.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -54,13 +56,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * RemediationRuns can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Adm/remediationRun:RemediationRun test_remediation_run &#34;id&#34;
+ * $ pulumi import oci:Adm/remediationRun:RemediationRun test_remediation_run &#34;id&#34;
  * ```
  * 
  */

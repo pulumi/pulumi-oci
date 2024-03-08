@@ -24,6 +24,8 @@ import javax.annotation.Nullable;
  * Creates a Key Store.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -63,13 +65,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * KeyStores can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Database/keyStore:KeyStore test_key_store &#34;id&#34;
+ * $ pulumi import oci:Database/keyStore:KeyStore test_key_store &#34;id&#34;
  * ```
  * 
  */

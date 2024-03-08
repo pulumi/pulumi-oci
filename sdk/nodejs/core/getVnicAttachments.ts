@@ -15,6 +15,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -26,6 +27,7 @@ import * as utilities from "../utilities";
  *     vnicId: oci_core_vnic.test_vnic.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getVnicAttachments(args: GetVnicAttachmentsArgs, opts?: pulumi.InvokeOptions): Promise<GetVnicAttachmentsResult> {
 
@@ -101,6 +103,7 @@ export interface GetVnicAttachmentsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -112,6 +115,7 @@ export interface GetVnicAttachmentsResult {
  *     vnicId: oci_core_vnic.test_vnic.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getVnicAttachmentsOutput(args: GetVnicAttachmentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVnicAttachmentsResult> {
     return pulumi.output(args).apply((a: any) => getVnicAttachments(a, opts))

@@ -18,10 +18,9 @@ namespace Pulumi.Oci.OsManagementHub
         /// variety of criteria including but not limited to its name, status, vendor name, and architecture type.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -45,8 +44,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetProfilesResult> InvokeAsync(GetProfilesArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetProfilesResult>("oci:OsManagementHub/getProfiles:getProfiles", args ?? new GetProfilesArgs(), options.WithDefaults());
@@ -58,10 +56,9 @@ namespace Pulumi.Oci.OsManagementHub
         /// variety of criteria including but not limited to its name, status, vendor name, and architecture type.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -85,8 +82,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetProfilesResult> Invoke(GetProfilesInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetProfilesResult>("oci:OsManagementHub/getProfiles:getProfiles", args ?? new GetProfilesInvokeArgs(), options.WithDefaults());

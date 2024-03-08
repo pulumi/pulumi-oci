@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,6 +24,7 @@ import * as utilities from "../utilities";
  *     displayName: _var.em_warehouse_etl_run_display_name,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getEtlRuns(args: GetEtlRunsArgs, opts?: pulumi.InvokeOptions): Promise<GetEtlRunsResult> {
 
@@ -84,6 +86,7 @@ export interface GetEtlRunsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -94,6 +97,7 @@ export interface GetEtlRunsResult {
  *     displayName: _var.em_warehouse_etl_run_display_name,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getEtlRunsOutput(args: GetEtlRunsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetEtlRunsResult> {
     return pulumi.output(args).apply((a: any) => getEtlRuns(a, opts))

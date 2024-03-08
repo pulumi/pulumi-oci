@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -45,6 +46,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetDatabaseToolsConnections(ctx *pulumi.Context, args *GetDatabaseToolsConnectionsArgs, opts ...pulumi.InvokeOption) (*GetDatabaseToolsConnectionsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDatabaseToolsConnectionsResult

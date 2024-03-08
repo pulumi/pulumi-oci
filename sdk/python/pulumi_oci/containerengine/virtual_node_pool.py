@@ -544,6 +544,7 @@ class VirtualNodePool(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -588,13 +589,14 @@ class VirtualNodePool(pulumi.CustomResource):
                 },
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         VirtualNodePools can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:ContainerEngine/virtualNodePool:VirtualNodePool test_virtual_node_pool "id"
+        $ pulumi import oci:ContainerEngine/virtualNodePool:VirtualNodePool test_virtual_node_pool "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -629,6 +631,7 @@ class VirtualNodePool(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -673,13 +676,14 @@ class VirtualNodePool(pulumi.CustomResource):
                 },
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         VirtualNodePools can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:ContainerEngine/virtualNodePool:VirtualNodePool test_virtual_node_pool "id"
+        $ pulumi import oci:ContainerEngine/virtualNodePool:VirtualNodePool test_virtual_node_pool "id"
         ```
 
         :param str resource_name: The name of the resource.

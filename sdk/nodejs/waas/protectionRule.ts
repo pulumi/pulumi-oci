@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * ProtectionRules can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Waas/protectionRule:ProtectionRule test_protection_rule "waasPolicyId/{waasPolicyId}/key/{key}"
+ * $ pulumi import oci:Waas/protectionRule:ProtectionRule test_protection_rule "waasPolicyId/{waasPolicyId}/key/{key}"
  * ```
  */
 export class ProtectionRule extends pulumi.CustomResource {

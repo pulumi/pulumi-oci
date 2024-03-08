@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,6 +22,7 @@ import * as utilities from "../utilities";
  *     opaInstanceId: oci_opa_opa_instance.test_opa_instance.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getOpaInstance(args: GetOpaInstanceArgs, opts?: pulumi.InvokeOptions): Promise<GetOpaInstanceResult> {
 
@@ -134,6 +136,7 @@ export interface GetOpaInstanceResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -142,6 +145,7 @@ export interface GetOpaInstanceResult {
  *     opaInstanceId: oci_opa_opa_instance.test_opa_instance.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getOpaInstanceOutput(args: GetOpaInstanceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOpaInstanceResult> {
     return pulumi.output(args).apply((a: any) => getOpaInstance(a, opts))

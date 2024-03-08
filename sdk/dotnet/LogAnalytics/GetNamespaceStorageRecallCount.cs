@@ -17,10 +17,9 @@ namespace Pulumi.Oci.LogAnalytics
         /// This API gets the number of recalls made and the maximum recalls that can be made
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,8 +35,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetNamespaceStorageRecallCountResult> InvokeAsync(GetNamespaceStorageRecallCountArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetNamespaceStorageRecallCountResult>("oci:LogAnalytics/getNamespaceStorageRecallCount:getNamespaceStorageRecallCount", args ?? new GetNamespaceStorageRecallCountArgs(), options.WithDefaults());
@@ -48,10 +46,9 @@ namespace Pulumi.Oci.LogAnalytics
         /// This API gets the number of recalls made and the maximum recalls that can be made
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -67,8 +64,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetNamespaceStorageRecallCountResult> Invoke(GetNamespaceStorageRecallCountInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNamespaceStorageRecallCountResult>("oci:LogAnalytics/getNamespaceStorageRecallCount:getNamespaceStorageRecallCount", args ?? new GetNamespaceStorageRecallCountInvokeArgs(), options.WithDefaults());

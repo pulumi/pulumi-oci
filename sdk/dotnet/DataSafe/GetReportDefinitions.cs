@@ -19,10 +19,9 @@ namespace Pulumi.Oci.DataSafe
         /// It also returns the seeded report definitions which are available to all the compartments.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -45,8 +44,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetReportDefinitionsResult> InvokeAsync(GetReportDefinitionsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetReportDefinitionsResult>("oci:DataSafe/getReportDefinitions:getReportDefinitions", args ?? new GetReportDefinitionsArgs(), options.WithDefaults());
@@ -59,10 +57,9 @@ namespace Pulumi.Oci.DataSafe
         /// It also returns the seeded report definitions which are available to all the compartments.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -85,8 +82,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetReportDefinitionsResult> Invoke(GetReportDefinitionsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetReportDefinitionsResult>("oci:DataSafe/getReportDefinitions:getReportDefinitions", args ?? new GetReportDefinitionsInvokeArgs(), options.WithDefaults());

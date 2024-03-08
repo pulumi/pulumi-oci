@@ -23,6 +23,8 @@ import javax.annotation.Nullable;
  * Creates a named credential.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -65,13 +67,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * NamedCredentials can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:DatabaseManagement/namedCredential:NamedCredential test_named_credential &#34;id&#34;
+ * $ pulumi import oci:DatabaseManagement/namedCredential:NamedCredential test_named_credential &#34;id&#34;
  * ```
  * 
  */

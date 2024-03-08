@@ -1186,6 +1186,7 @@ class DomainsMyRequest(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -1214,6 +1215,7 @@ class DomainsMyRequest(pulumi.CustomResource):
                 value=var["my_request_tags_value"],
             )])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -1331,6 +1333,7 @@ class DomainsMyRequest(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -1359,6 +1362,7 @@ class DomainsMyRequest(pulumi.CustomResource):
                 value=var["my_request_tags_value"],
             )])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 

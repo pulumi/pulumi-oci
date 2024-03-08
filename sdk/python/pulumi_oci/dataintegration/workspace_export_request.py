@@ -513,6 +513,7 @@ class WorkspaceExportRequest(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -528,13 +529,14 @@ class WorkspaceExportRequest(pulumi.CustomResource):
             object_storage_region=var["workspace_export_request_object_storage_region"],
             object_storage_tenancy_id=oci_identity_tenancy["test_tenancy"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         WorkspaceExportRequests can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataIntegration/workspaceExportRequest:WorkspaceExportRequest test_workspace_export_request "workspaces/{workspaceId}/exportRequests/{exportRequestKey}"
+        $ pulumi import oci:DataIntegration/workspaceExportRequest:WorkspaceExportRequest test_workspace_export_request "workspaces/{workspaceId}/exportRequests/{exportRequestKey}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -566,6 +568,7 @@ class WorkspaceExportRequest(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -581,13 +584,14 @@ class WorkspaceExportRequest(pulumi.CustomResource):
             object_storage_region=var["workspace_export_request_object_storage_region"],
             object_storage_tenancy_id=oci_identity_tenancy["test_tenancy"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         WorkspaceExportRequests can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataIntegration/workspaceExportRequest:WorkspaceExportRequest test_workspace_export_request "workspaces/{workspaceId}/exportRequests/{exportRequestKey}"
+        $ pulumi import oci:DataIntegration/workspaceExportRequest:WorkspaceExportRequest test_workspace_export_request "workspaces/{workspaceId}/exportRequests/{exportRequestKey}"
         ```
 
         :param str resource_name: The name of the resource.

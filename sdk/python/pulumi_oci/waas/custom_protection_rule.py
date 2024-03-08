@@ -365,6 +365,7 @@ class CustomProtectionRule(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -381,13 +382,14 @@ class CustomProtectionRule(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         CustomProtectionRules can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Waas/customProtectionRule:CustomProtectionRule test_custom_protection_rule "id"
+        $ pulumi import oci:Waas/customProtectionRule:CustomProtectionRule test_custom_protection_rule "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -434,6 +436,7 @@ class CustomProtectionRule(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -450,13 +453,14 @@ class CustomProtectionRule(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         CustomProtectionRules can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Waas/customProtectionRule:CustomProtectionRule test_custom_protection_rule "id"
+        $ pulumi import oci:Waas/customProtectionRule:CustomProtectionRule test_custom_protection_rule "id"
         ```
 
         :param str resource_name: The name of the resource.

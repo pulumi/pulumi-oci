@@ -23,6 +23,8 @@ import javax.annotation.Nullable;
  * Adds a backend set to a network load balancer.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -67,13 +69,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * BackendSets can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:NetworkLoadBalancer/backendSet:BackendSet test_backend_set &#34;networkLoadBalancers/{networkLoadBalancerId}/backendSets/{backendSetName}&#34;
+ * $ pulumi import oci:NetworkLoadBalancer/backendSet:BackendSet test_backend_set &#34;networkLoadBalancers/{networkLoadBalancerId}/backendSets/{backendSetName}&#34;
  * ```
  * 
  */

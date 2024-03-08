@@ -16,10 +16,9 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// 
         /// Gets the Operator Control associated with the specified Operator Control ID.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,8 +34,7 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetControlResult> InvokeAsync(GetControlArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetControlResult>("oci:OperatorAccessControl/getControl:getControl", args ?? new GetControlArgs(), options.WithDefaults());
@@ -46,10 +44,9 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// 
         /// Gets the Operator Control associated with the specified Operator Control ID.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -65,8 +62,7 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetControlResult> Invoke(GetControlInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetControlResult>("oci:OperatorAccessControl/getControl:getControl", args ?? new GetControlInvokeArgs(), options.WithDefaults());

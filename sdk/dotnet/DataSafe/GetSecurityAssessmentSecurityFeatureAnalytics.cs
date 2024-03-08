@@ -24,10 +24,9 @@ namespace Pulumi.Oci.DataSafe
         /// compartmentId, then "Not Authorized" is returned.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -46,8 +45,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetSecurityAssessmentSecurityFeatureAnalyticsResult> InvokeAsync(GetSecurityAssessmentSecurityFeatureAnalyticsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetSecurityAssessmentSecurityFeatureAnalyticsResult>("oci:DataSafe/getSecurityAssessmentSecurityFeatureAnalytics:getSecurityAssessmentSecurityFeatureAnalytics", args ?? new GetSecurityAssessmentSecurityFeatureAnalyticsArgs(), options.WithDefaults());
@@ -65,10 +63,9 @@ namespace Pulumi.Oci.DataSafe
         /// compartmentId, then "Not Authorized" is returned.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -87,8 +84,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetSecurityAssessmentSecurityFeatureAnalyticsResult> Invoke(GetSecurityAssessmentSecurityFeatureAnalyticsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSecurityAssessmentSecurityFeatureAnalyticsResult>("oci:DataSafe/getSecurityAssessmentSecurityFeatureAnalytics:getSecurityAssessmentSecurityFeatureAnalytics", args ?? new GetSecurityAssessmentSecurityFeatureAnalyticsInvokeArgs(), options.WithDefaults());

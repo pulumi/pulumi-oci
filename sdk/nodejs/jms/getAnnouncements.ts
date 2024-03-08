@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,6 +24,7 @@ import * as utilities from "../utilities";
  *     timeStart: _var.announcement_time_start,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAnnouncements(args?: GetAnnouncementsArgs, opts?: pulumi.InvokeOptions): Promise<GetAnnouncementsResult> {
     args = args || {};
@@ -79,6 +81,7 @@ export interface GetAnnouncementsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -89,6 +92,7 @@ export interface GetAnnouncementsResult {
  *     timeStart: _var.announcement_time_start,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAnnouncementsOutput(args?: GetAnnouncementsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAnnouncementsResult> {
     return pulumi.output(args).apply((a: any) => getAnnouncements(a, opts))

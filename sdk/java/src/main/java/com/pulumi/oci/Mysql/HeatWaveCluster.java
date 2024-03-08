@@ -23,6 +23,8 @@ import javax.annotation.Nullable;
  * Updates the HeatWave cluster.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -54,13 +56,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * HeatWaveCluster can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Mysql/heatWaveCluster:HeatWaveCluster test_heat_wave_cluster &#34;dbSystem/{dbSystemId}/heatWaveCluster&#34;
+ * $ pulumi import oci:Mysql/heatWaveCluster:HeatWaveCluster test_heat_wave_cluster &#34;dbSystem/{dbSystemId}/heatWaveCluster&#34;
  * ```
  * 
  */

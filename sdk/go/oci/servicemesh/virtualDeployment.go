@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -64,15 +65,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // VirtualDeployments can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:ServiceMesh/virtualDeployment:VirtualDeployment test_virtual_deployment "id"
-//
+// $ pulumi import oci:ServiceMesh/virtualDeployment:VirtualDeployment test_virtual_deployment "id"
 // ```
 type VirtualDeployment struct {
 	pulumi.CustomResourceState

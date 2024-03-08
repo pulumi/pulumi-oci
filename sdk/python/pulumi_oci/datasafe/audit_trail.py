@@ -594,7 +594,7 @@ class AuditTrail(pulumi.CustomResource):
         AuditTrails can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataSafe/auditTrail:AuditTrail test_audit_trail "id"
+        $ pulumi import oci:DataSafe/auditTrail:AuditTrail test_audit_trail "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -628,7 +628,7 @@ class AuditTrail(pulumi.CustomResource):
         AuditTrails can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataSafe/auditTrail:AuditTrail test_audit_trail "id"
+        $ pulumi import oci:DataSafe/auditTrail:AuditTrail test_audit_trail "id"
         ```
 
         :param str resource_name: The name of the resource.

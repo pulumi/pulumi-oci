@@ -21,9 +21,7 @@ import (
 // MyUserDbCredentials can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Identity/domainsMyUserDbCredential:DomainsMyUserDbCredential test_my_user_db_credential "idcsEndpoint/{idcsEndpoint}/myUserDbCredentials/{myUserDbCredentialId}"
-//
+// $ pulumi import oci:Identity/domainsMyUserDbCredential:DomainsMyUserDbCredential test_my_user_db_credential "idcsEndpoint/{idcsEndpoint}/myUserDbCredentials/{myUserDbCredentialId}"
 // ```
 type DomainsMyUserDbCredential struct {
 	pulumi.CustomResourceState

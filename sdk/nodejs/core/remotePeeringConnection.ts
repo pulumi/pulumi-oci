@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -29,13 +30,14 @@ import * as utilities from "../utilities";
  *     peerRegionName: _var.remote_peering_connection_peer_region_name,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * RemotePeeringConnections can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Core/remotePeeringConnection:RemotePeeringConnection test_remote_peering_connection "id"
+ * $ pulumi import oci:Core/remotePeeringConnection:RemotePeeringConnection test_remote_peering_connection "id"
  * ```
  */
 export class RemotePeeringConnection extends pulumi.CustomResource {

@@ -743,6 +743,7 @@ class IntegrationInstance(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -784,13 +785,14 @@ class IntegrationInstance(pulumi.CustomResource):
             shape=var["integration_instance_shape"],
             state=var["integration_instance_target_state"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         IntegrationInstances can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Integration/integrationInstance:IntegrationInstance test_integration_instance "id"
+        $ pulumi import oci:Integration/integrationInstance:IntegrationInstance test_integration_instance "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -831,6 +833,7 @@ class IntegrationInstance(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -872,13 +875,14 @@ class IntegrationInstance(pulumi.CustomResource):
             shape=var["integration_instance_shape"],
             state=var["integration_instance_target_state"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         IntegrationInstances can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Integration/integrationInstance:IntegrationInstance test_integration_instance "id"
+        $ pulumi import oci:Integration/integrationInstance:IntegrationInstance test_integration_instance "id"
         ```
 
         :param str resource_name: The name of the resource.

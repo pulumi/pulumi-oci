@@ -16,6 +16,7 @@ namespace Pulumi.Oci.NetworkFirewall
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -33,13 +34,14 @@ namespace Pulumi.Oci.NetworkFirewall
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// NetworkFirewallPolicyAddressLists can be imported using the `name`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:NetworkFirewall/networkFirewallPolicyAddressList:NetworkFirewallPolicyAddressList test_network_firewall_policy_address_list "networkFirewallPolicies/{networkFirewallPolicyId}/addressLists/{addressListName}"
+    /// $ pulumi import oci:NetworkFirewall/networkFirewallPolicyAddressList:NetworkFirewallPolicyAddressList test_network_firewall_policy_address_list "networkFirewallPolicies/{networkFirewallPolicyId}/addressLists/{addressListName}"
     /// ```
     /// </summary>
     [OciResourceType("oci:NetworkFirewall/networkFirewallPolicyAddressList:NetworkFirewallPolicyAddressList")]

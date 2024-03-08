@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -42,6 +43,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetDbNodeConsoleHistories(ctx *pulumi.Context, args *GetDbNodeConsoleHistoriesArgs, opts ...pulumi.InvokeOption) (*GetDbNodeConsoleHistoriesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDbNodeConsoleHistoriesResult

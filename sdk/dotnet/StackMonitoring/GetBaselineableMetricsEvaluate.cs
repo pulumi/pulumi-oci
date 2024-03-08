@@ -16,10 +16,9 @@ namespace Pulumi.Oci.StackMonitoring
         /// 
         /// Evaluates metric for anomalies for the given data points
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -59,8 +58,7 @@ namespace Pulumi.Oci.StackMonitoring
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetBaselineableMetricsEvaluateResult> InvokeAsync(GetBaselineableMetricsEvaluateArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetBaselineableMetricsEvaluateResult>("oci:StackMonitoring/getBaselineableMetricsEvaluate:getBaselineableMetricsEvaluate", args ?? new GetBaselineableMetricsEvaluateArgs(), options.WithDefaults());
@@ -70,10 +68,9 @@ namespace Pulumi.Oci.StackMonitoring
         /// 
         /// Evaluates metric for anomalies for the given data points
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -113,8 +110,7 @@ namespace Pulumi.Oci.StackMonitoring
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetBaselineableMetricsEvaluateResult> Invoke(GetBaselineableMetricsEvaluateInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetBaselineableMetricsEvaluateResult>("oci:StackMonitoring/getBaselineableMetricsEvaluate:getBaselineableMetricsEvaluate", args ?? new GetBaselineableMetricsEvaluateInvokeArgs(), options.WithDefaults());

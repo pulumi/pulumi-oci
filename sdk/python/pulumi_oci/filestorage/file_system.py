@@ -500,6 +500,7 @@ class FileSystem(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -518,13 +519,14 @@ class FileSystem(pulumi.CustomResource):
             kms_key_id=oci_kms_key["test_key"]["id"],
             source_snapshot_id=oci_file_storage_snapshot["test_snapshot"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         FileSystems can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:FileStorage/fileSystem:FileSystem test_file_system "id"
+        $ pulumi import oci:FileStorage/fileSystem:FileSystem test_file_system "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -585,6 +587,7 @@ class FileSystem(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -603,13 +606,14 @@ class FileSystem(pulumi.CustomResource):
             kms_key_id=oci_kms_key["test_key"]["id"],
             source_snapshot_id=oci_file_storage_snapshot["test_snapshot"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         FileSystems can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:FileStorage/fileSystem:FileSystem test_file_system "id"
+        $ pulumi import oci:FileStorage/fileSystem:FileSystem test_file_system "id"
         ```
 
         :param str resource_name: The name of the resource.

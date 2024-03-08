@@ -22,6 +22,8 @@ import javax.annotation.Nullable;
  * Create a new EKMS private endpoint used to connect to external key manager system
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -57,13 +59,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * EkmsPrivateEndpoints can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Kms/ekmsPrivateEndpoint:EkmsPrivateEndpoint test_ekms_private_endpoint &#34;id&#34;
+ * $ pulumi import oci:Kms/ekmsPrivateEndpoint:EkmsPrivateEndpoint test_ekms_private_endpoint &#34;id&#34;
  * ```
  * 
  */

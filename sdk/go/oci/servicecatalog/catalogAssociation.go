@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -43,15 +44,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // ServiceCatalogAssociations can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:ServiceCatalog/catalogAssociation:CatalogAssociation test_service_catalog_association "id"
-//
+// $ pulumi import oci:ServiceCatalog/catalogAssociation:CatalogAssociation test_service_catalog_association "id"
 // ```
 type CatalogAssociation struct {
 	pulumi.CustomResourceState

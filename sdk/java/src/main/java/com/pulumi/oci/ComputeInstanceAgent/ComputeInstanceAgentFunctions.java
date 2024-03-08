@@ -26,6 +26,8 @@ public final class ComputeInstanceAgentFunctions {
      * The API to get information for a plugin.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -55,6 +57,7 @@ public final class ComputeInstanceAgentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetInstanceAgentPluginResult> getInstanceAgentPlugin(GetInstanceAgentPluginArgs args) {
@@ -66,6 +69,8 @@ public final class ComputeInstanceAgentFunctions {
      * The API to get information for a plugin.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -95,6 +100,7 @@ public final class ComputeInstanceAgentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetInstanceAgentPluginResult> getInstanceAgentPluginPlain(GetInstanceAgentPluginPlainArgs args) {
@@ -106,6 +112,8 @@ public final class ComputeInstanceAgentFunctions {
      * The API to get information for a plugin.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -135,6 +143,7 @@ public final class ComputeInstanceAgentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetInstanceAgentPluginResult> getInstanceAgentPlugin(GetInstanceAgentPluginArgs args, InvokeOptions options) {
@@ -146,6 +155,8 @@ public final class ComputeInstanceAgentFunctions {
      * The API to get information for a plugin.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -175,6 +186,7 @@ public final class ComputeInstanceAgentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetInstanceAgentPluginResult> getInstanceAgentPluginPlain(GetInstanceAgentPluginPlainArgs args, InvokeOptions options) {
@@ -186,6 +198,8 @@ public final class ComputeInstanceAgentFunctions {
      * The API to get one or more plugin information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -216,6 +230,7 @@ public final class ComputeInstanceAgentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetInstanceAgentPluginsResult> getInstanceAgentPlugins(GetInstanceAgentPluginsArgs args) {
@@ -227,6 +242,8 @@ public final class ComputeInstanceAgentFunctions {
      * The API to get one or more plugin information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -257,6 +274,7 @@ public final class ComputeInstanceAgentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetInstanceAgentPluginsResult> getInstanceAgentPluginsPlain(GetInstanceAgentPluginsPlainArgs args) {
@@ -268,6 +286,8 @@ public final class ComputeInstanceAgentFunctions {
      * The API to get one or more plugin information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -298,6 +318,7 @@ public final class ComputeInstanceAgentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetInstanceAgentPluginsResult> getInstanceAgentPlugins(GetInstanceAgentPluginsArgs args, InvokeOptions options) {
@@ -309,6 +330,8 @@ public final class ComputeInstanceAgentFunctions {
      * The API to get one or more plugin information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -339,6 +362,7 @@ public final class ComputeInstanceAgentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetInstanceAgentPluginsResult> getInstanceAgentPluginsPlain(GetInstanceAgentPluginsPlainArgs args, InvokeOptions options) {
@@ -350,6 +374,8 @@ public final class ComputeInstanceAgentFunctions {
      * The API to get the list of plugins that are available.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -380,6 +406,7 @@ public final class ComputeInstanceAgentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetInstanceAvailablePluginResult> getInstanceAvailablePlugin(GetInstanceAvailablePluginArgs args) {
@@ -391,6 +418,8 @@ public final class ComputeInstanceAgentFunctions {
      * The API to get the list of plugins that are available.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -421,6 +450,7 @@ public final class ComputeInstanceAgentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetInstanceAvailablePluginResult> getInstanceAvailablePluginPlain(GetInstanceAvailablePluginPlainArgs args) {
@@ -432,6 +462,8 @@ public final class ComputeInstanceAgentFunctions {
      * The API to get the list of plugins that are available.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -462,6 +494,7 @@ public final class ComputeInstanceAgentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetInstanceAvailablePluginResult> getInstanceAvailablePlugin(GetInstanceAvailablePluginArgs args, InvokeOptions options) {
@@ -473,6 +506,8 @@ public final class ComputeInstanceAgentFunctions {
      * The API to get the list of plugins that are available.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -503,6 +538,7 @@ public final class ComputeInstanceAgentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetInstanceAvailablePluginResult> getInstanceAvailablePluginPlain(GetInstanceAvailablePluginPlainArgs args, InvokeOptions options) {

@@ -26,6 +26,8 @@ import javax.annotation.Nullable;
  * Create a Condition
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -71,13 +73,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * Conditions can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Identity/domainsCondition:DomainsCondition test_condition &#34;idcsEndpoint/{idcsEndpoint}/conditions/{conditionId}&#34;
+ * $ pulumi import oci:Identity/domainsCondition:DomainsCondition test_condition &#34;idcsEndpoint/{idcsEndpoint}/conditions/{conditionId}&#34;
  * ```
  * 
  */

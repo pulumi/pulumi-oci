@@ -17,10 +17,9 @@ namespace Pulumi.Oci.UsageProxy
         /// Returns the list of redemption for the subscription ID.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -39,8 +38,7 @@ namespace Pulumi.Oci.UsageProxy
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetSubscriptionRedemptionResult> InvokeAsync(GetSubscriptionRedemptionArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetSubscriptionRedemptionResult>("oci:UsageProxy/getSubscriptionRedemption:getSubscriptionRedemption", args ?? new GetSubscriptionRedemptionArgs(), options.WithDefaults());
@@ -51,10 +49,9 @@ namespace Pulumi.Oci.UsageProxy
         /// Returns the list of redemption for the subscription ID.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -73,8 +70,7 @@ namespace Pulumi.Oci.UsageProxy
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetSubscriptionRedemptionResult> Invoke(GetSubscriptionRedemptionInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSubscriptionRedemptionResult>("oci:UsageProxy/getSubscriptionRedemption:getSubscriptionRedemption", args ?? new GetSubscriptionRedemptionInvokeArgs(), options.WithDefaults());

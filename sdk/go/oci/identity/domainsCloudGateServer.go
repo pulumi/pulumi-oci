@@ -21,9 +21,7 @@ import (
 // CloudGateServers can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Identity/domainsCloudGateServer:DomainsCloudGateServer test_cloud_gate_server "idcsEndpoint/{idcsEndpoint}/cloudGateServers/{cloudGateServerId}"
-//
+// $ pulumi import oci:Identity/domainsCloudGateServer:DomainsCloudGateServer test_cloud_gate_server "idcsEndpoint/{idcsEndpoint}/cloudGateServers/{cloudGateServerId}"
 // ```
 type DomainsCloudGateServer struct {
 	pulumi.CustomResourceState

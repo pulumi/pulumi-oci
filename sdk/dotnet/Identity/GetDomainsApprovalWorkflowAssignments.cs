@@ -16,10 +16,9 @@ namespace Pulumi.Oci.Identity
         /// 
         /// Search Approval Workflow Assignments
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -45,8 +44,7 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDomainsApprovalWorkflowAssignmentsResult> InvokeAsync(GetDomainsApprovalWorkflowAssignmentsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDomainsApprovalWorkflowAssignmentsResult>("oci:Identity/getDomainsApprovalWorkflowAssignments:getDomainsApprovalWorkflowAssignments", args ?? new GetDomainsApprovalWorkflowAssignmentsArgs(), options.WithDefaults());
@@ -56,10 +54,9 @@ namespace Pulumi.Oci.Identity
         /// 
         /// Search Approval Workflow Assignments
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -85,8 +82,7 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDomainsApprovalWorkflowAssignmentsResult> Invoke(GetDomainsApprovalWorkflowAssignmentsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsApprovalWorkflowAssignmentsResult>("oci:Identity/getDomainsApprovalWorkflowAssignments:getDomainsApprovalWorkflowAssignments", args ?? new GetDomainsApprovalWorkflowAssignmentsInvokeArgs(), options.WithDefaults());

@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -28,6 +29,7 @@ import * as utilities from "../utilities";
  *     startIndex: _var.dynamic_resource_group_start_index,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDomainsDynamicResourceGroups(args: GetDomainsDynamicResourceGroupsArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsDynamicResourceGroupsResult> {
 
@@ -125,6 +127,7 @@ export interface GetDomainsDynamicResourceGroupsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -140,6 +143,7 @@ export interface GetDomainsDynamicResourceGroupsResult {
  *     startIndex: _var.dynamic_resource_group_start_index,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDomainsDynamicResourceGroupsOutput(args: GetDomainsDynamicResourceGroupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsDynamicResourceGroupsResult> {
     return pulumi.output(args).apply((a: any) => getDomainsDynamicResourceGroups(a, opts))

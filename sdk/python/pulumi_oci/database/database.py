@@ -811,6 +811,7 @@ class Database(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -856,13 +857,14 @@ class Database(pulumi.CustomResource):
             kms_key_id=oci_kms_key["test_key"]["id"],
             kms_key_version_id=oci_kms_key_version["test_key_version"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Databases can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Database/database:Database test_database "id"
+        $ pulumi import oci:Database/database:Database test_database "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -901,6 +903,7 @@ class Database(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -946,13 +949,14 @@ class Database(pulumi.CustomResource):
             kms_key_id=oci_kms_key["test_key"]["id"],
             kms_key_version_id=oci_kms_key_version["test_key_version"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Databases can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Database/database:Database test_database "id"
+        $ pulumi import oci:Database/database:Database test_database "id"
         ```
 
         :param str resource_name: The name of the resource.

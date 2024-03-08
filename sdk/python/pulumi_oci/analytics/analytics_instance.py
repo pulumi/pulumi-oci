@@ -531,6 +531,7 @@ class AnalyticsInstance(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -566,13 +567,14 @@ class AnalyticsInstance(pulumi.CustomResource):
                 )],
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         AnalyticsInstances can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Analytics/analyticsInstance:AnalyticsInstance test_analytics_instance "id"
+        $ pulumi import oci:Analytics/analyticsInstance:AnalyticsInstance test_analytics_instance "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -609,6 +611,7 @@ class AnalyticsInstance(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -644,13 +647,14 @@ class AnalyticsInstance(pulumi.CustomResource):
                 )],
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         AnalyticsInstances can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Analytics/analyticsInstance:AnalyticsInstance test_analytics_instance "id"
+        $ pulumi import oci:Analytics/analyticsInstance:AnalyticsInstance test_analytics_instance "id"
         ```
 
         :param str resource_name: The name of the resource.

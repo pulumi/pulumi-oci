@@ -120,6 +120,7 @@ class OperationsInsightsWarehouseDownloadWarehouseWallet(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -128,13 +129,14 @@ class OperationsInsightsWarehouseDownloadWarehouseWallet(pulumi.CustomResource):
             operations_insights_warehouse_id=oci_opsi_operations_insights_warehouse["test_operations_insights_warehouse"]["id"],
             operations_insights_warehouse_wallet_password=var["operations_insights_warehouse_download_warehouse_wallet_operations_insights_warehouse_wallet_password"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         OperationsInsightsWarehouseDownloadWarehouseWallet can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Opsi/operationsInsightsWarehouseDownloadWarehouseWallet:OperationsInsightsWarehouseDownloadWarehouseWallet test_operations_insights_warehouse_download_warehouse_wallet "id"
+        $ pulumi import oci:Opsi/operationsInsightsWarehouseDownloadWarehouseWallet:OperationsInsightsWarehouseDownloadWarehouseWallet test_operations_insights_warehouse_download_warehouse_wallet "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -159,6 +161,7 @@ class OperationsInsightsWarehouseDownloadWarehouseWallet(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -167,13 +170,14 @@ class OperationsInsightsWarehouseDownloadWarehouseWallet(pulumi.CustomResource):
             operations_insights_warehouse_id=oci_opsi_operations_insights_warehouse["test_operations_insights_warehouse"]["id"],
             operations_insights_warehouse_wallet_password=var["operations_insights_warehouse_download_warehouse_wallet_operations_insights_warehouse_wallet_password"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         OperationsInsightsWarehouseDownloadWarehouseWallet can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Opsi/operationsInsightsWarehouseDownloadWarehouseWallet:OperationsInsightsWarehouseDownloadWarehouseWallet test_operations_insights_warehouse_download_warehouse_wallet "id"
+        $ pulumi import oci:Opsi/operationsInsightsWarehouseDownloadWarehouseWallet:OperationsInsightsWarehouseDownloadWarehouseWallet test_operations_insights_warehouse_download_warehouse_wallet "id"
         ```
 
         :param str resource_name: The name of the resource.

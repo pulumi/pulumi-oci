@@ -630,6 +630,7 @@ class Bucket(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -659,13 +660,14 @@ class Bucket(pulumi.CustomResource):
             )],
             versioning=var["bucket_versioning"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Buckets can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:ObjectStorage/bucket:Bucket test_bucket "n/{namespaceName}/b/{bucketName}"
+        $ pulumi import oci:ObjectStorage/bucket:Bucket test_bucket "n/{namespaceName}/b/{bucketName}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -702,6 +704,7 @@ class Bucket(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -731,13 +734,14 @@ class Bucket(pulumi.CustomResource):
             )],
             versioning=var["bucket_versioning"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Buckets can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:ObjectStorage/bucket:Bucket test_bucket "n/{namespaceName}/b/{bucketName}"
+        $ pulumi import oci:ObjectStorage/bucket:Bucket test_bucket "n/{namespaceName}/b/{bucketName}"
         ```
 
         :param str resource_name: The name of the resource.

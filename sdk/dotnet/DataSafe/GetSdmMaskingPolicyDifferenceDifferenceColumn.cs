@@ -16,10 +16,9 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// Gets the details of the specified SDM Masking policy difference column.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,8 +35,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetSdmMaskingPolicyDifferenceDifferenceColumnResult> InvokeAsync(GetSdmMaskingPolicyDifferenceDifferenceColumnArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetSdmMaskingPolicyDifferenceDifferenceColumnResult>("oci:DataSafe/getSdmMaskingPolicyDifferenceDifferenceColumn:getSdmMaskingPolicyDifferenceDifferenceColumn", args ?? new GetSdmMaskingPolicyDifferenceDifferenceColumnArgs(), options.WithDefaults());
@@ -47,10 +45,9 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// Gets the details of the specified SDM Masking policy difference column.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -67,8 +64,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetSdmMaskingPolicyDifferenceDifferenceColumnResult> Invoke(GetSdmMaskingPolicyDifferenceDifferenceColumnInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSdmMaskingPolicyDifferenceDifferenceColumnResult>("oci:DataSafe/getSdmMaskingPolicyDifferenceDifferenceColumn:getSdmMaskingPolicyDifferenceDifferenceColumn", args ?? new GetSdmMaskingPolicyDifferenceDifferenceColumnInvokeArgs(), options.WithDefaults());

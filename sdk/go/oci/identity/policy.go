@@ -30,6 +30,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -62,15 +63,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Policies can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Identity/policy:Policy test_policy "id"
-//
+// $ pulumi import oci:Identity/policy:Policy test_policy "id"
 // ```
 type Policy struct {
 	pulumi.CustomResourceState

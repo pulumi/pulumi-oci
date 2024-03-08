@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,6 +23,7 @@ import * as utilities from "../utilities";
  *     databaseId: oci_database_database.test_database.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDataGuardAssociation(args: GetDataGuardAssociationArgs, opts?: pulumi.InvokeOptions): Promise<GetDataGuardAssociationResult> {
 
@@ -150,6 +152,7 @@ export interface GetDataGuardAssociationResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -159,6 +162,7 @@ export interface GetDataGuardAssociationResult {
  *     databaseId: oci_database_database.test_database.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDataGuardAssociationOutput(args: GetDataGuardAssociationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDataGuardAssociationResult> {
     return pulumi.output(args).apply((a: any) => getDataGuardAssociation(a, opts))

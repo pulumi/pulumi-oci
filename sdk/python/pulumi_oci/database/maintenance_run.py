@@ -632,6 +632,7 @@ class MaintenanceRun(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -644,13 +645,14 @@ class MaintenanceRun(pulumi.CustomResource):
             is_dst_file_update_enabled=var["maintenance_run_is_dst_file_update_enabled"],
             patching_mode=var["maintenance_run_patching_mode"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         MaintenanceRuns can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Database/maintenanceRun:MaintenanceRun test_maintenance_run "id"
+        $ pulumi import oci:Database/maintenanceRun:MaintenanceRun test_maintenance_run "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -684,6 +686,7 @@ class MaintenanceRun(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -696,13 +699,14 @@ class MaintenanceRun(pulumi.CustomResource):
             is_dst_file_update_enabled=var["maintenance_run_is_dst_file_update_enabled"],
             patching_mode=var["maintenance_run_patching_mode"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         MaintenanceRuns can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Database/maintenanceRun:MaintenanceRun test_maintenance_run "id"
+        $ pulumi import oci:Database/maintenanceRun:MaintenanceRun test_maintenance_run "id"
         ```
 
         :param str resource_name: The name of the resource.

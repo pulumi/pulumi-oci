@@ -16,6 +16,7 @@ namespace Pulumi.Oci.DataScience
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -45,13 +46,14 @@ namespace Pulumi.Oci.DataScience
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// DataSciencePrivateEndpoints can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:DataScience/privateEndpoint:PrivateEndpoint test_data_science_private_endpoint "id"
+    /// $ pulumi import oci:DataScience/privateEndpoint:PrivateEndpoint test_data_science_private_endpoint "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:DataScience/privateEndpoint:PrivateEndpoint")]

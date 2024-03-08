@@ -126,6 +126,7 @@ def get_repository_paths(display_name: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -136,6 +137,7 @@ def get_repository_paths(display_name: Optional[str] = None,
         paths_in_subtree=var["repository_path_paths_in_subtree"],
         ref=var["repository_path_ref"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str display_name: A filter to return only resources that match the entire display name given.
@@ -180,6 +182,7 @@ def get_repository_paths_output(display_name: Optional[pulumi.Input[Optional[str
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -190,6 +193,7 @@ def get_repository_paths_output(display_name: Optional[pulumi.Input[Optional[str
         paths_in_subtree=var["repository_path_paths_in_subtree"],
         ref=var["repository_path_ref"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str display_name: A filter to return only resources that match the entire display name given.

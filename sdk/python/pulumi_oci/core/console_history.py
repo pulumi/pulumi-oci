@@ -267,6 +267,7 @@ class ConsoleHistory(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -281,13 +282,14 @@ class ConsoleHistory(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ConsoleHistories can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/consoleHistory:ConsoleHistory test_console_history "id"
+        $ pulumi import oci:Core/consoleHistory:ConsoleHistory test_console_history "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -330,6 +332,7 @@ class ConsoleHistory(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -344,13 +347,14 @@ class ConsoleHistory(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ConsoleHistories can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/consoleHistory:ConsoleHistory test_console_history "id"
+        $ pulumi import oci:Core/consoleHistory:ConsoleHistory test_console_history "id"
         ```
 
         :param str resource_name: The name of the resource.

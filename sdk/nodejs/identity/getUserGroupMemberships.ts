@@ -22,6 +22,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -32,6 +33,7 @@ import * as utilities from "../utilities";
  *     userId: oci_identity_user.test_user.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getUserGroupMemberships(args: GetUserGroupMembershipsArgs, opts?: pulumi.InvokeOptions): Promise<GetUserGroupMembershipsResult> {
 
@@ -105,6 +107,7 @@ export interface GetUserGroupMembershipsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -115,6 +118,7 @@ export interface GetUserGroupMembershipsResult {
  *     userId: oci_identity_user.test_user.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getUserGroupMembershipsOutput(args: GetUserGroupMembershipsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetUserGroupMembershipsResult> {
     return pulumi.output(args).apply((a: any) => getUserGroupMemberships(a, opts))

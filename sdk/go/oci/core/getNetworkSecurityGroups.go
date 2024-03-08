@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -45,6 +46,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetNetworkSecurityGroups(ctx *pulumi.Context, args *GetNetworkSecurityGroupsArgs, opts ...pulumi.InvokeOption) (*GetNetworkSecurityGroupsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetNetworkSecurityGroupsResult

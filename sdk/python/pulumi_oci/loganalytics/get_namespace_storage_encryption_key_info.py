@@ -75,12 +75,14 @@ def get_namespace_storage_encryption_key_info(namespace: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_namespace_storage_encryption_key_info = oci.LogAnalytics.get_namespace_storage_encryption_key_info(namespace=var["namespace_storage_encryption_key_info_namespace"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str namespace: The Logging Analytics namespace used for the request.
@@ -106,12 +108,14 @@ def get_namespace_storage_encryption_key_info_output(namespace: Optional[pulumi.
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_namespace_storage_encryption_key_info = oci.LogAnalytics.get_namespace_storage_encryption_key_info(namespace=var["namespace_storage_encryption_key_info_namespace"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str namespace: The Logging Analytics namespace used for the request.

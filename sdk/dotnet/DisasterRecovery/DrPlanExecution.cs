@@ -16,6 +16,7 @@ namespace Pulumi.Oci.DisasterRecovery
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -46,13 +47,14 @@ namespace Pulumi.Oci.DisasterRecovery
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// DrPlanExecutions can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:DisasterRecovery/drPlanExecution:DrPlanExecution test_dr_plan_execution "id"
+    /// $ pulumi import oci:DisasterRecovery/drPlanExecution:DrPlanExecution test_dr_plan_execution "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:DisasterRecovery/drPlanExecution:DrPlanExecution")]

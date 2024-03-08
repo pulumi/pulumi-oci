@@ -199,6 +199,7 @@ def get_installation_sites(application_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -216,6 +217,7 @@ def get_installation_sites(application_id: Optional[str] = None,
         time_end=var["fleet_installation_site_time_end"],
         time_start=var["fleet_installation_site_time_start"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str application_id: The Fleet-unique identifier of the related application.
@@ -288,6 +290,7 @@ def get_installation_sites_output(application_id: Optional[pulumi.Input[Optional
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -305,6 +308,7 @@ def get_installation_sites_output(application_id: Optional[pulumi.Input[Optional
         time_end=var["fleet_installation_site_time_end"],
         time_start=var["fleet_installation_site_time_start"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str application_id: The Fleet-unique identifier of the related application.

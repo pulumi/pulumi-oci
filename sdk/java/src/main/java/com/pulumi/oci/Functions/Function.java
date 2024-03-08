@@ -25,6 +25,8 @@ import javax.annotation.Nullable;
  * Creates a new function.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -75,13 +77,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * Functions can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Functions/function:Function test_function &#34;id&#34;
+ * $ pulumi import oci:Functions/function:Function test_function &#34;id&#34;
  * ```
  * 
  */

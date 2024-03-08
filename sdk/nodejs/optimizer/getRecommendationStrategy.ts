@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,6 +25,7 @@ import * as utilities from "../utilities";
  *     recommendationName: oci_optimizer_recommendation.test_recommendation.name,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getRecommendationStrategy(args: GetRecommendationStrategyArgs, opts?: pulumi.InvokeOptions): Promise<GetRecommendationStrategyResult> {
 
@@ -87,6 +89,7 @@ export interface GetRecommendationStrategyResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -98,6 +101,7 @@ export interface GetRecommendationStrategyResult {
  *     recommendationName: oci_optimizer_recommendation.test_recommendation.name,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getRecommendationStrategyOutput(args: GetRecommendationStrategyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRecommendationStrategyResult> {
     return pulumi.output(args).apply((a: any) => getRecommendationStrategy(a, opts))

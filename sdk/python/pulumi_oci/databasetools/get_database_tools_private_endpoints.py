@@ -141,6 +141,7 @@ def get_database_tools_private_endpoints(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -151,6 +152,7 @@ def get_database_tools_private_endpoints(compartment_id: Optional[str] = None,
         state=var["database_tools_private_endpoint_state"],
         subnet_id=oci_core_subnet["test_subnet"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID of the compartment in which to list resources.
@@ -195,6 +197,7 @@ def get_database_tools_private_endpoints_output(compartment_id: Optional[pulumi.
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -205,6 +208,7 @@ def get_database_tools_private_endpoints_output(compartment_id: Optional[pulumi.
         state=var["database_tools_private_endpoint_state"],
         subnet_id=oci_core_subnet["test_subnet"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID of the compartment in which to list resources.

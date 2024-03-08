@@ -24,6 +24,8 @@ import javax.annotation.Nullable;
  * API to create discovery Job and submit discovery Details to agent.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -82,13 +84,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * DiscoveryJobs can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:StackMonitoring/discoveryJob:DiscoveryJob test_discovery_job &#34;id&#34;
+ * $ pulumi import oci:StackMonitoring/discoveryJob:DiscoveryJob test_discovery_job &#34;id&#34;
  * ```
  * 
  */

@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -19,6 +20,7 @@ import * as utilities from "../utilities";
  *     crossConnectId: oci_core_cross_connect.test_cross_connect.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getCrossConnectStatus(args: GetCrossConnectStatusArgs, opts?: pulumi.InvokeOptions): Promise<GetCrossConnectStatusResult> {
 
@@ -79,6 +81,7 @@ export interface GetCrossConnectStatusResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -87,6 +90,7 @@ export interface GetCrossConnectStatusResult {
  *     crossConnectId: oci_core_cross_connect.test_cross_connect.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getCrossConnectStatusOutput(args: GetCrossConnectStatusOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCrossConnectStatusResult> {
     return pulumi.output(args).apply((a: any) => getCrossConnectStatus(a, opts))

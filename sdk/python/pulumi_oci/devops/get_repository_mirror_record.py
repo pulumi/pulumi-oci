@@ -132,6 +132,7 @@ def get_repository_mirror_record(mirror_record_type: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -139,6 +140,7 @@ def get_repository_mirror_record(mirror_record_type: Optional[str] = None,
     test_repository_mirror_record = oci.DevOps.get_repository_mirror_record(mirror_record_type=var["repository_mirror_record_mirror_record_type"],
         repository_id=oci_devops_repository["test_repository"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str mirror_record_type: The field of mirror record type. Only one mirror record type can be provided: current - The current mirror record. lastSuccessful - The last successful mirror record.
@@ -172,6 +174,7 @@ def get_repository_mirror_record_output(mirror_record_type: Optional[pulumi.Inpu
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -179,6 +182,7 @@ def get_repository_mirror_record_output(mirror_record_type: Optional[pulumi.Inpu
     test_repository_mirror_record = oci.DevOps.get_repository_mirror_record(mirror_record_type=var["repository_mirror_record_mirror_record_type"],
         repository_id=oci_devops_repository["test_repository"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str mirror_record_type: The field of mirror record type. Only one mirror record type can be provided: current - The current mirror record. lastSuccessful - The last successful mirror record.

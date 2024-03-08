@@ -17,10 +17,9 @@ namespace Pulumi.Oci.CloudGuard
         /// Returns a list of entities for a CloudGuard Problem
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,8 +35,7 @@ namespace Pulumi.Oci.CloudGuard
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetProblemEntityResult> InvokeAsync(GetProblemEntityArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetProblemEntityResult>("oci:CloudGuard/getProblemEntity:getProblemEntity", args ?? new GetProblemEntityArgs(), options.WithDefaults());
@@ -48,10 +46,9 @@ namespace Pulumi.Oci.CloudGuard
         /// Returns a list of entities for a CloudGuard Problem
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -67,8 +64,7 @@ namespace Pulumi.Oci.CloudGuard
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetProblemEntityResult> Invoke(GetProblemEntityInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetProblemEntityResult>("oci:CloudGuard/getProblemEntity:getProblemEntity", args ?? new GetProblemEntityInvokeArgs(), options.WithDefaults());

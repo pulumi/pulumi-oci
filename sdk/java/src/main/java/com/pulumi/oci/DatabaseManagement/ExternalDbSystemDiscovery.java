@@ -28,6 +28,7 @@ import javax.annotation.Nullable;
  * 
  * ## Example Usage
  * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -67,13 +68,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * ExternalDbSystemDiscoveries can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:DatabaseManagement/externalDbSystemDiscovery:ExternalDbSystemDiscovery test_external_db_system_discovery &#34;id&#34;
+ * $ pulumi import oci:DatabaseManagement/externalDbSystemDiscovery:ExternalDbSystemDiscovery test_external_db_system_discovery &#34;id&#34;
  * ```
  * 
  */

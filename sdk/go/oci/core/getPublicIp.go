@@ -26,7 +26,9 @@ import (
 // `lifecycleState` = ASSIGNING and `assignedEntityId` = [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target private IP.
 //
 // ## Example Usage
+//
 // ### Get a public ip by public ip id
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -50,7 +52,10 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
+//
 // ### Get a public ip by private ip id
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -74,7 +79,10 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
+//
 // ### Get a public ip by public ip address
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -98,6 +106,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupPublicIp(ctx *pulumi.Context, args *LookupPublicIpArgs, opts ...pulumi.InvokeOption) (*LookupPublicIpResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupPublicIpResult

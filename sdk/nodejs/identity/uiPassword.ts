@@ -21,12 +21,14 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
  * const testUiPassword = new oci.identity.UiPassword("testUiPassword", {userId: oci_identity_user.test_user.id});
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *

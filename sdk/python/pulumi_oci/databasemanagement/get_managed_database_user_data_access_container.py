@@ -98,6 +98,7 @@ def get_managed_database_user_data_access_container(managed_database_id: Optiona
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -106,6 +107,7 @@ def get_managed_database_user_data_access_container(managed_database_id: Optiona
         user_name=oci_identity_user["test_user"]["name"],
         name=var["managed_database_user_data_access_container_name"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
@@ -139,6 +141,7 @@ def get_managed_database_user_data_access_container_output(managed_database_id: 
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -147,6 +150,7 @@ def get_managed_database_user_data_access_container_output(managed_database_id: 
         user_name=oci_identity_user["test_user"]["name"],
         name=var["managed_database_user_data_access_container_name"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.

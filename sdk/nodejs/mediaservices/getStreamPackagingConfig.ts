@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,6 +22,7 @@ import * as utilities from "../utilities";
  *     streamPackagingConfigId: oci_media_services_stream_packaging_config.test_stream_packaging_config.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getStreamPackagingConfig(args: GetStreamPackagingConfigArgs, opts?: pulumi.InvokeOptions): Promise<GetStreamPackagingConfigResult> {
 
@@ -110,6 +112,7 @@ export interface GetStreamPackagingConfigResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -118,6 +121,7 @@ export interface GetStreamPackagingConfigResult {
  *     streamPackagingConfigId: oci_media_services_stream_packaging_config.test_stream_packaging_config.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getStreamPackagingConfigOutput(args: GetStreamPackagingConfigOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetStreamPackagingConfigResult> {
     return pulumi.output(args).apply((a: any) => getStreamPackagingConfig(a, opts))

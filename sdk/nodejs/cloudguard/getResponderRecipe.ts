@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,6 +22,7 @@ import * as utilities from "../utilities";
  *     responderRecipeId: oci_cloud_guard_responder_recipe.test_responder_recipe.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getResponderRecipe(args: GetResponderRecipeArgs, opts?: pulumi.InvokeOptions): Promise<GetResponderRecipeResult> {
 
@@ -113,6 +115,7 @@ export interface GetResponderRecipeResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -121,6 +124,7 @@ export interface GetResponderRecipeResult {
  *     responderRecipeId: oci_cloud_guard_responder_recipe.test_responder_recipe.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getResponderRecipeOutput(args: GetResponderRecipeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetResponderRecipeResult> {
     return pulumi.output(args).apply((a: any) => getResponderRecipe(a, opts))

@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,6 +24,7 @@ import * as utilities from "../utilities";
  *     state: _var.external_container_database_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getExternalContainerDatabases(args: GetExternalContainerDatabasesArgs, opts?: pulumi.InvokeOptions): Promise<GetExternalContainerDatabasesResult> {
 
@@ -87,6 +89,7 @@ export interface GetExternalContainerDatabasesResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -97,6 +100,7 @@ export interface GetExternalContainerDatabasesResult {
  *     state: _var.external_container_database_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getExternalContainerDatabasesOutput(args: GetExternalContainerDatabasesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalContainerDatabasesResult> {
     return pulumi.output(args).apply((a: any) => getExternalContainerDatabases(a, opts))

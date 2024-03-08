@@ -21,9 +21,7 @@ import (
 // ManagedLists can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:CloudGuard/managedList:ManagedList test_managed_list "id"
-//
+// $ pulumi import oci:CloudGuard/managedList:ManagedList test_managed_list "id"
 // ```
 type ManagedList struct {
 	pulumi.CustomResourceState

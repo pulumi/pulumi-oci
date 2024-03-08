@@ -29,6 +29,8 @@ import javax.annotation.Nullable;
  * After the zone has been created, it should be further managed by importing it to an `oci.Dns.Zone` resource.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -60,13 +62,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * ActionCreateZoneFromZoneFile can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Dns/actionCreateZoneFromZoneFile:ActionCreateZoneFromZoneFile test_action_create_zone_from_zone_file &#34;id&#34;
+ * $ pulumi import oci:Dns/actionCreateZoneFromZoneFile:ActionCreateZoneFromZoneFile test_action_create_zone_from_zone_file &#34;id&#34;
  * ```
  * 
  */

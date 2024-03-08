@@ -28,7 +28,7 @@ import javax.annotation.Nullable;
  * DatabaseSecurityConfigs can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:DataSafe/databaseSecurityConfig:DatabaseSecurityConfig test_database_security_config &#34;id&#34;
+ * $ pulumi import oci:DataSafe/databaseSecurityConfig:DatabaseSecurityConfig test_database_security_config &#34;id&#34;
  * ```
  * 
  */

@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -40,6 +41,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupDatabaseToolsPrivateEndpoint(ctx *pulumi.Context, args *LookupDatabaseToolsPrivateEndpointArgs, opts ...pulumi.InvokeOption) (*LookupDatabaseToolsPrivateEndpointResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupDatabaseToolsPrivateEndpointResult

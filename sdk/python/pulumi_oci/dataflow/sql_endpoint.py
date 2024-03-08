@@ -686,7 +686,7 @@ class SqlEndpoint(pulumi.CustomResource):
         SqlEndpoints can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataFlow/sqlEndpoint:SqlEndpoint test_sql_endpoint "id"
+        $ pulumi import oci:DataFlow/sqlEndpoint:SqlEndpoint test_sql_endpoint "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -726,7 +726,7 @@ class SqlEndpoint(pulumi.CustomResource):
         SqlEndpoints can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataFlow/sqlEndpoint:SqlEndpoint test_sql_endpoint "id"
+        $ pulumi import oci:DataFlow/sqlEndpoint:SqlEndpoint test_sql_endpoint "id"
         ```
 
         :param str resource_name: The name of the resource.

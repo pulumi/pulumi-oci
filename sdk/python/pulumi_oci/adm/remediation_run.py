@@ -366,6 +366,7 @@ class RemediationRun(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -380,13 +381,14 @@ class RemediationRun(pulumi.CustomResource):
                 "bar-key": "value",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         RemediationRuns can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Adm/remediationRun:RemediationRun test_remediation_run "id"
+        $ pulumi import oci:Adm/remediationRun:RemediationRun test_remediation_run "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -414,6 +416,7 @@ class RemediationRun(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -428,13 +431,14 @@ class RemediationRun(pulumi.CustomResource):
                 "bar-key": "value",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         RemediationRuns can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Adm/remediationRun:RemediationRun test_remediation_run "id"
+        $ pulumi import oci:Adm/remediationRun:RemediationRun test_remediation_run "id"
         ```
 
         :param str resource_name: The name of the resource.

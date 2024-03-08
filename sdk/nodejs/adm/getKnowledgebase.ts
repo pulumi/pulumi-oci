@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -19,6 +20,7 @@ import * as utilities from "../utilities";
  *     knowledgeBaseId: oci_adm_knowledge_base.test_knowledge_base.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getKnowledgebase(args: GetKnowledgebaseArgs, opts?: pulumi.InvokeOptions): Promise<GetKnowledgebaseResult> {
 
@@ -87,6 +89,7 @@ export interface GetKnowledgebaseResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -95,6 +98,7 @@ export interface GetKnowledgebaseResult {
  *     knowledgeBaseId: oci_adm_knowledge_base.test_knowledge_base.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getKnowledgebaseOutput(args: GetKnowledgebaseOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetKnowledgebaseResult> {
     return pulumi.output(args).apply((a: any) => getKnowledgebase(a, opts))

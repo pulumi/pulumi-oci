@@ -44,6 +44,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -82,13 +83,14 @@ import * as utilities from "../utilities";
  *     nsgIds: _var.mount_target_nsg_ids,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * MountTargets can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:FileStorage/mountTarget:MountTarget test_mount_target "id"
+ * $ pulumi import oci:FileStorage/mountTarget:MountTarget test_mount_target "id"
  * ```
  */
 export class MountTarget extends pulumi.CustomResource {

@@ -16,6 +16,7 @@ namespace Pulumi.Oci.Database
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -44,13 +45,14 @@ namespace Pulumi.Oci.Database
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// DatabaseSoftwareImages can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Database/databaseSoftwareImage:DatabaseSoftwareImage test_database_software_image "id"
+    /// $ pulumi import oci:Database/databaseSoftwareImage:DatabaseSoftwareImage test_database_software_image "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Database/databaseSoftwareImage:DatabaseSoftwareImage")]

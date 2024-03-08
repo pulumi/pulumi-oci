@@ -17,10 +17,9 @@ namespace Pulumi.Oci.GoldenGate
         /// Retrieves a DeploymentBackup.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,8 +35,7 @@ namespace Pulumi.Oci.GoldenGate
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDeploymentBackupResult> InvokeAsync(GetDeploymentBackupArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDeploymentBackupResult>("oci:GoldenGate/getDeploymentBackup:getDeploymentBackup", args ?? new GetDeploymentBackupArgs(), options.WithDefaults());
@@ -48,10 +46,9 @@ namespace Pulumi.Oci.GoldenGate
         /// Retrieves a DeploymentBackup.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -67,8 +64,7 @@ namespace Pulumi.Oci.GoldenGate
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDeploymentBackupResult> Invoke(GetDeploymentBackupInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDeploymentBackupResult>("oci:GoldenGate/getDeploymentBackup:getDeploymentBackup", args ?? new GetDeploymentBackupInvokeArgs(), options.WithDefaults());

@@ -55,6 +55,7 @@ namespace Pulumi.Oci.Core
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -93,13 +94,14 @@ namespace Pulumi.Oci.Core
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// Vcns can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Core/vcn:Vcn test_vcn "id"
+    /// $ pulumi import oci:Core/vcn:Vcn test_vcn "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Core/vcn:Vcn")]

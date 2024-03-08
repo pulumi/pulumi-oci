@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -43,6 +44,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetDkims(ctx *pulumi.Context, args *GetDkimsArgs, opts ...pulumi.InvokeOption) (*GetDkimsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDkimsResult

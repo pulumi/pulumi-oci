@@ -17,10 +17,9 @@ namespace Pulumi.Oci.Opsi
         /// Gets a list of AWR hubs. Either compartmentId or id must be specified. All these resources are expected to be in root compartment. 
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -40,8 +39,7 @@ namespace Pulumi.Oci.Opsi
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetAwrHubsResult> InvokeAsync(GetAwrHubsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAwrHubsResult>("oci:Opsi/getAwrHubs:getAwrHubs", args ?? new GetAwrHubsArgs(), options.WithDefaults());
@@ -52,10 +50,9 @@ namespace Pulumi.Oci.Opsi
         /// Gets a list of AWR hubs. Either compartmentId or id must be specified. All these resources are expected to be in root compartment. 
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -75,8 +72,7 @@ namespace Pulumi.Oci.Opsi
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetAwrHubsResult> Invoke(GetAwrHubsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAwrHubsResult>("oci:Opsi/getAwrHubs:getAwrHubs", args ?? new GetAwrHubsInvokeArgs(), options.WithDefaults());

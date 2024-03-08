@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,6 +25,7 @@ import * as utilities from "../utilities";
  *     name: _var.log_analytics_categories_list_name,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getLogAnalyticsCategoriesList(args: GetLogAnalyticsCategoriesListArgs, opts?: pulumi.InvokeOptions): Promise<GetLogAnalyticsCategoriesListResult> {
 
@@ -85,6 +87,7 @@ export interface GetLogAnalyticsCategoriesListResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -96,6 +99,7 @@ export interface GetLogAnalyticsCategoriesListResult {
  *     name: _var.log_analytics_categories_list_name,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getLogAnalyticsCategoriesListOutput(args: GetLogAnalyticsCategoriesListOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLogAnalyticsCategoriesListResult> {
     return pulumi.output(args).apply((a: any) => getLogAnalyticsCategoriesList(a, opts))

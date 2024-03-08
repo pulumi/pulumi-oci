@@ -98,6 +98,7 @@ def get_security_policy_report_database_table_access_entries(filters: Optional[S
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -105,6 +106,7 @@ def get_security_policy_report_database_table_access_entries(filters: Optional[S
     test_security_policy_report_database_table_access_entries = oci.DataSafe.get_security_policy_report_database_table_access_entries(security_policy_report_id=oci_data_safe_security_policy_report["test_security_policy_report"]["id"],
         scim_query=var["security_policy_report_database_table_access_entry_scim_query"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str scim_query: The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)
@@ -141,6 +143,7 @@ def get_security_policy_report_database_table_access_entries_output(filters: Opt
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -148,6 +151,7 @@ def get_security_policy_report_database_table_access_entries_output(filters: Opt
     test_security_policy_report_database_table_access_entries = oci.DataSafe.get_security_policy_report_database_table_access_entries(security_policy_report_id=oci_data_safe_security_policy_report["test_security_policy_report"]["id"],
         scim_query=var["security_policy_report_database_table_access_entry_scim_query"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str scim_query: The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)

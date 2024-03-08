@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -54,20 +55,19 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Queues can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Queue/queue:Queue test_queue "id"
-//
+// $ pulumi import oci:Queue/queue:Queue test_queue "id"
 // ```
 type Queue struct {
 	pulumi.CustomResourceState
 
-	// (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
+	// (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%!)(MISSING), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100%!((MISSING)default) means that a single channel can consume up-to all allocated queue's resources.
 	ChannelConsumptionLimit pulumi.IntOutput `pulumi:"channelConsumptionLimit"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the queue.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
@@ -139,7 +139,7 @@ func GetQueue(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Queue resources.
 type queueState struct {
-	// (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
+	// (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%!)(MISSING), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100%!((MISSING)default) means that a single channel can consume up-to all allocated queue's resources.
 	ChannelConsumptionLimit *int `pulumi:"channelConsumptionLimit"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the queue.
 	CompartmentId *string `pulumi:"compartmentId"`
@@ -176,7 +176,7 @@ type queueState struct {
 }
 
 type QueueState struct {
-	// (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
+	// (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%!)(MISSING), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100%!((MISSING)default) means that a single channel can consume up-to all allocated queue's resources.
 	ChannelConsumptionLimit pulumi.IntPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the queue.
 	CompartmentId pulumi.StringPtrInput
@@ -217,7 +217,7 @@ func (QueueState) ElementType() reflect.Type {
 }
 
 type queueArgs struct {
-	// (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
+	// (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%!)(MISSING), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100%!((MISSING)default) means that a single channel can consume up-to all allocated queue's resources.
 	ChannelConsumptionLimit *int `pulumi:"channelConsumptionLimit"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the queue.
 	CompartmentId string `pulumi:"compartmentId"`
@@ -243,7 +243,7 @@ type queueArgs struct {
 
 // The set of arguments for constructing a Queue resource.
 type QueueArgs struct {
-	// (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
+	// (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%!)(MISSING), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100%!((MISSING)default) means that a single channel can consume up-to all allocated queue's resources.
 	ChannelConsumptionLimit pulumi.IntPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the queue.
 	CompartmentId pulumi.StringInput
@@ -354,7 +354,7 @@ func (o QueueOutput) ToQueueOutputWithContext(ctx context.Context) QueueOutput {
 	return o
 }
 
-// (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
+// (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%!)(MISSING), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100%!((MISSING)default) means that a single channel can consume up-to all allocated queue's resources.
 func (o QueueOutput) ChannelConsumptionLimit() pulumi.IntOutput {
 	return o.ApplyT(func(v *Queue) pulumi.IntOutput { return v.ChannelConsumptionLimit }).(pulumi.IntOutput)
 }

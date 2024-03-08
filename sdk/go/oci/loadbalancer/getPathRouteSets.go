@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -40,6 +41,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetPathRouteSets(ctx *pulumi.Context, args *GetPathRouteSetsArgs, opts ...pulumi.InvokeOption) (*GetPathRouteSetsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetPathRouteSetsResult

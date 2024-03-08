@@ -355,6 +355,7 @@ class SecurityZone(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -371,13 +372,14 @@ class SecurityZone(pulumi.CustomResource):
                 "bar-key": "value",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         SecurityZones can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:CloudGuard/securityZone:SecurityZone test_security_zone "id"
+        $ pulumi import oci:CloudGuard/securityZone:SecurityZone test_security_zone "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -408,6 +410,7 @@ class SecurityZone(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -424,13 +427,14 @@ class SecurityZone(pulumi.CustomResource):
                 "bar-key": "value",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         SecurityZones can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:CloudGuard/securityZone:SecurityZone test_security_zone "id"
+        $ pulumi import oci:CloudGuard/securityZone:SecurityZone test_security_zone "id"
         ```
 
         :param str resource_name: The name of the resource.

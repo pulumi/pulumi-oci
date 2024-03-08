@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -42,15 +43,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // FusionEnvironmentRefreshActivities can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:FusionApps/fusionEnvironmentRefreshActivity:FusionEnvironmentRefreshActivity test_fusion_environment_refresh_activity "fusionEnvironments/{fusionEnvironmentId}/refreshActivities/{refreshActivityId}"
-//
+// $ pulumi import oci:FusionApps/fusionEnvironmentRefreshActivity:FusionEnvironmentRefreshActivity test_fusion_environment_refresh_activity "fusionEnvironments/{fusionEnvironmentId}/refreshActivities/{refreshActivityId}"
 // ```
 type FusionEnvironmentRefreshActivity struct {
 	pulumi.CustomResourceState

@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,6 +22,7 @@ import * as utilities from "../utilities";
  *     protectedDatabaseId: oci_recovery_protected_database.test_protected_database.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getProtectedDatabase(args: GetProtectedDatabaseArgs, opts?: pulumi.InvokeOptions): Promise<GetProtectedDatabaseResult> {
 
@@ -141,6 +143,7 @@ export interface GetProtectedDatabaseResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -149,6 +152,7 @@ export interface GetProtectedDatabaseResult {
  *     protectedDatabaseId: oci_recovery_protected_database.test_protected_database.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getProtectedDatabaseOutput(args: GetProtectedDatabaseOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetProtectedDatabaseResult> {
     return pulumi.output(args).apply((a: any) => getProtectedDatabase(a, opts))

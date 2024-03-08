@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -63,15 +64,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Conditions can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Identity/domainsCondition:DomainsCondition test_condition "idcsEndpoint/{idcsEndpoint}/conditions/{conditionId}"
-//
+// $ pulumi import oci:Identity/domainsCondition:DomainsCondition test_condition "idcsEndpoint/{idcsEndpoint}/conditions/{conditionId}"
 // ```
 type DomainsCondition struct {
 	pulumi.CustomResourceState

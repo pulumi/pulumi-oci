@@ -16,6 +16,7 @@ namespace Pulumi.Oci.MediaServices
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -58,13 +59,14 @@ namespace Pulumi.Oci.MediaServices
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// StreamPackagingConfigs can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:MediaServices/streamPackagingConfig:StreamPackagingConfig test_stream_packaging_config "id"
+    /// $ pulumi import oci:MediaServices/streamPackagingConfig:StreamPackagingConfig test_stream_packaging_config "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:MediaServices/streamPackagingConfig:StreamPackagingConfig")]

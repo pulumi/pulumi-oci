@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -63,15 +64,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Rules can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Events/rule:Rule test_rule "id"
-//
+// $ pulumi import oci:Events/rule:Rule test_rule "id"
 // ```
 type Rule struct {
 	pulumi.CustomResourceState

@@ -19,7 +19,7 @@ namespace Pulumi.Oci.DatabaseManagement
     /// ExternalClusterInstances can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:DatabaseManagement/externalClusterInstance:ExternalClusterInstance test_external_cluster_instance "id"
+    /// $ pulumi import oci:DatabaseManagement/externalClusterInstance:ExternalClusterInstance test_external_cluster_instance "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:DatabaseManagement/externalClusterInstance:ExternalClusterInstance")]

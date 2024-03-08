@@ -17,10 +17,9 @@ namespace Pulumi.Oci.DatabaseManagement
         /// Lists ASM disk groups for the external ASM specified by `externalAsmId`.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -37,8 +36,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetExternalAsmDiskGroupsResult> InvokeAsync(GetExternalAsmDiskGroupsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetExternalAsmDiskGroupsResult>("oci:DatabaseManagement/getExternalAsmDiskGroups:getExternalAsmDiskGroups", args ?? new GetExternalAsmDiskGroupsArgs(), options.WithDefaults());
@@ -49,10 +47,9 @@ namespace Pulumi.Oci.DatabaseManagement
         /// Lists ASM disk groups for the external ASM specified by `externalAsmId`.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -69,8 +66,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetExternalAsmDiskGroupsResult> Invoke(GetExternalAsmDiskGroupsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetExternalAsmDiskGroupsResult>("oci:DatabaseManagement/getExternalAsmDiskGroups:getExternalAsmDiskGroups", args ?? new GetExternalAsmDiskGroupsInvokeArgs(), options.WithDefaults());

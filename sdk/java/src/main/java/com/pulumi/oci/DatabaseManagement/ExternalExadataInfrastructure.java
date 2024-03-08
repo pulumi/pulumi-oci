@@ -30,6 +30,8 @@ import javax.annotation.Nullable;
  *   Storage grids
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -65,13 +67,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * ExternalExadataInfrastructures can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:DatabaseManagement/externalExadataInfrastructure:ExternalExadataInfrastructure test_external_exadata_infrastructure &#34;id&#34;
+ * $ pulumi import oci:DatabaseManagement/externalExadataInfrastructure:ExternalExadataInfrastructure test_external_exadata_infrastructure &#34;id&#34;
  * ```
  * 
  */

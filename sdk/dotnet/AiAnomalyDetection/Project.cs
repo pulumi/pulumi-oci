@@ -16,6 +16,7 @@ namespace Pulumi.Oci.AiAnomalyDetection
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -41,13 +42,14 @@ namespace Pulumi.Oci.AiAnomalyDetection
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// Projects can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:AiAnomalyDetection/project:Project test_project "id"
+    /// $ pulumi import oci:AiAnomalyDetection/project:Project test_project "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:AiAnomalyDetection/project:Project")]

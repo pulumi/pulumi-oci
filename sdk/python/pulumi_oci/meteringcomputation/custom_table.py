@@ -154,6 +154,7 @@ class CustomTable(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -174,13 +175,14 @@ class CustomTable(pulumi.CustomResource):
             ),
             saved_report_id=oci_metering_computation_saved_report["test_saved_report"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         CustomTables can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:MeteringComputation/customTable:CustomTable test_custom_table "id"
+        $ pulumi import oci:MeteringComputation/customTable:CustomTable test_custom_table "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -206,6 +208,7 @@ class CustomTable(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -226,13 +229,14 @@ class CustomTable(pulumi.CustomResource):
             ),
             saved_report_id=oci_metering_computation_saved_report["test_saved_report"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         CustomTables can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:MeteringComputation/customTable:CustomTable test_custom_table "id"
+        $ pulumi import oci:MeteringComputation/customTable:CustomTable test_custom_table "id"
         ```
 
         :param str resource_name: The name of the resource.

@@ -509,6 +509,7 @@ class Vault(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -533,13 +534,14 @@ class Vault(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Vaults can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Kms/vault:Vault test_vault "id"
+        $ pulumi import oci:Kms/vault:Vault test_vault "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -578,6 +580,7 @@ class Vault(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -602,13 +605,14 @@ class Vault(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Vaults can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Kms/vault:Vault test_vault "id"
+        $ pulumi import oci:Kms/vault:Vault test_vault "id"
         ```
 
         :param str resource_name: The name of the resource.

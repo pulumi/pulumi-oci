@@ -113,6 +113,7 @@ def get_infrastructure_target_version(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -121,6 +122,7 @@ def get_infrastructure_target_version(compartment_id: Optional[str] = None,
         target_resource_id=oci_database_target_resource["test_target_resource"]["id"],
         target_resource_type=var["infrastructure_target_version_target_resource_type"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -156,6 +158,7 @@ def get_infrastructure_target_version_output(compartment_id: Optional[pulumi.Inp
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -164,6 +167,7 @@ def get_infrastructure_target_version_output(compartment_id: Optional[pulumi.Inp
         target_resource_id=oci_database_target_resource["test_target_resource"]["id"],
         target_resource_type=var["infrastructure_target_version_target_resource_type"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

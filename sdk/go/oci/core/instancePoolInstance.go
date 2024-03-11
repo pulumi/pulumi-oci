@@ -22,6 +22,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -46,15 +47,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // InstancePoolInstances can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Core/instancePoolInstance:InstancePoolInstance test_instance_pool_instance "instancePools/{instancePoolId}/instances/compartmentId/{compartmentId}"
-//
+// $ pulumi import oci:Core/instancePoolInstance:InstancePoolInstance test_instance_pool_instance "instancePools/{instancePoolId}/instances/compartmentId/{compartmentId}"
 // ```
 type InstancePoolInstance struct {
 	pulumi.CustomResourceState

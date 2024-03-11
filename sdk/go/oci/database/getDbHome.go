@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -40,6 +41,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupDbHome(ctx *pulumi.Context, args *LookupDbHomeArgs, opts ...pulumi.InvokeOption) (*LookupDbHomeResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupDbHomeResult

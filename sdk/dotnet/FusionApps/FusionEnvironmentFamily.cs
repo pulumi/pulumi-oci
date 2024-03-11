@@ -16,6 +16,7 @@ namespace Pulumi.Oci.FusionApps
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -47,13 +48,14 @@ namespace Pulumi.Oci.FusionApps
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// FusionEnvironmentFamilies can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:FusionApps/fusionEnvironmentFamily:FusionEnvironmentFamily test_fusion_environment_family "id"
+    /// $ pulumi import oci:FusionApps/fusionEnvironmentFamily:FusionEnvironmentFamily test_fusion_environment_family "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:FusionApps/fusionEnvironmentFamily:FusionEnvironmentFamily")]

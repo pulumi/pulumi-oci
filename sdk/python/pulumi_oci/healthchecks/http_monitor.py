@@ -571,6 +571,7 @@ class HttpMonitor(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -595,13 +596,14 @@ class HttpMonitor(pulumi.CustomResource):
             timeout_in_seconds=var["http_monitor_timeout_in_seconds"],
             vantage_point_names=var["http_monitor_vantage_point_names"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         HttpMonitors can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:HealthChecks/httpMonitor:HttpMonitor test_http_monitor "id"
+        $ pulumi import oci:HealthChecks/httpMonitor:HttpMonitor test_http_monitor "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -642,6 +644,7 @@ class HttpMonitor(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -666,13 +669,14 @@ class HttpMonitor(pulumi.CustomResource):
             timeout_in_seconds=var["http_monitor_timeout_in_seconds"],
             vantage_point_names=var["http_monitor_vantage_point_names"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         HttpMonitors can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:HealthChecks/httpMonitor:HttpMonitor test_http_monitor "id"
+        $ pulumi import oci:HealthChecks/httpMonitor:HttpMonitor test_http_monitor "id"
         ```
 
         :param str resource_name: The name of the resource.

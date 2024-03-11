@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -43,15 +44,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // FusionEnvironmentServiceAttachments can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:FusionApps/fusionEnvironmentServiceAttachment:FusionEnvironmentServiceAttachment test_fusion_environment_service_attachment "fusionEnvironments/{fusionEnvironmentId}/serviceAttachments/{serviceAttachmentId}"
-//
+// $ pulumi import oci:FusionApps/fusionEnvironmentServiceAttachment:FusionEnvironmentServiceAttachment test_fusion_environment_service_attachment "fusionEnvironments/{fusionEnvironmentId}/serviceAttachments/{serviceAttachmentId}"
 // ```
 type FusionEnvironmentServiceAttachment struct {
 	pulumi.CustomResourceState

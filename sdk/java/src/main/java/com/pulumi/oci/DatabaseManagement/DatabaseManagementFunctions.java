@@ -317,6 +317,8 @@ public final class DatabaseManagementFunctions {
      * Gets the details of a specific Database Management private endpoint.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -345,6 +347,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDbManagementPrivateEndpointResult> getDbManagementPrivateEndpoint(GetDbManagementPrivateEndpointArgs args) {
@@ -356,6 +359,8 @@ public final class DatabaseManagementFunctions {
      * Gets the details of a specific Database Management private endpoint.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -384,6 +389,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDbManagementPrivateEndpointResult> getDbManagementPrivateEndpointPlain(GetDbManagementPrivateEndpointPlainArgs args) {
@@ -395,6 +401,8 @@ public final class DatabaseManagementFunctions {
      * Gets the details of a specific Database Management private endpoint.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -423,6 +431,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDbManagementPrivateEndpointResult> getDbManagementPrivateEndpoint(GetDbManagementPrivateEndpointArgs args, InvokeOptions options) {
@@ -434,6 +443,8 @@ public final class DatabaseManagementFunctions {
      * Gets the details of a specific Database Management private endpoint.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -462,6 +473,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDbManagementPrivateEndpointResult> getDbManagementPrivateEndpointPlain(GetDbManagementPrivateEndpointPlainArgs args, InvokeOptions options) {
@@ -473,6 +485,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of databases using a specific Database Management private endpoint.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -502,6 +516,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDbManagementPrivateEndpointAssociatedDatabaseResult> getDbManagementPrivateEndpointAssociatedDatabase(GetDbManagementPrivateEndpointAssociatedDatabaseArgs args) {
@@ -513,6 +528,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of databases using a specific Database Management private endpoint.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -542,6 +559,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDbManagementPrivateEndpointAssociatedDatabaseResult> getDbManagementPrivateEndpointAssociatedDatabasePlain(GetDbManagementPrivateEndpointAssociatedDatabasePlainArgs args) {
@@ -553,6 +571,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of databases using a specific Database Management private endpoint.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -582,6 +602,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDbManagementPrivateEndpointAssociatedDatabaseResult> getDbManagementPrivateEndpointAssociatedDatabase(GetDbManagementPrivateEndpointAssociatedDatabaseArgs args, InvokeOptions options) {
@@ -593,6 +614,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of databases using a specific Database Management private endpoint.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -622,6 +645,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDbManagementPrivateEndpointAssociatedDatabaseResult> getDbManagementPrivateEndpointAssociatedDatabasePlain(GetDbManagementPrivateEndpointAssociatedDatabasePlainArgs args, InvokeOptions options) {
@@ -633,6 +657,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of databases using a specific Database Management private endpoint.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -662,6 +688,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDbManagementPrivateEndpointAssociatedDatabasesResult> getDbManagementPrivateEndpointAssociatedDatabases(GetDbManagementPrivateEndpointAssociatedDatabasesArgs args) {
@@ -673,6 +700,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of databases using a specific Database Management private endpoint.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -702,6 +731,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDbManagementPrivateEndpointAssociatedDatabasesResult> getDbManagementPrivateEndpointAssociatedDatabasesPlain(GetDbManagementPrivateEndpointAssociatedDatabasesPlainArgs args) {
@@ -713,6 +743,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of databases using a specific Database Management private endpoint.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -742,6 +774,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDbManagementPrivateEndpointAssociatedDatabasesResult> getDbManagementPrivateEndpointAssociatedDatabases(GetDbManagementPrivateEndpointAssociatedDatabasesArgs args, InvokeOptions options) {
@@ -753,6 +786,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of databases using a specific Database Management private endpoint.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -782,6 +817,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDbManagementPrivateEndpointAssociatedDatabasesResult> getDbManagementPrivateEndpointAssociatedDatabasesPlain(GetDbManagementPrivateEndpointAssociatedDatabasesPlainArgs args, InvokeOptions options) {
@@ -793,6 +829,8 @@ public final class DatabaseManagementFunctions {
      * Gets a list of Database Management private endpoints.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -825,6 +863,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDbManagementPrivateEndpointsResult> getDbManagementPrivateEndpoints(GetDbManagementPrivateEndpointsArgs args) {
@@ -836,6 +875,8 @@ public final class DatabaseManagementFunctions {
      * Gets a list of Database Management private endpoints.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -868,6 +909,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDbManagementPrivateEndpointsResult> getDbManagementPrivateEndpointsPlain(GetDbManagementPrivateEndpointsPlainArgs args) {
@@ -879,6 +921,8 @@ public final class DatabaseManagementFunctions {
      * Gets a list of Database Management private endpoints.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -911,6 +955,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDbManagementPrivateEndpointsResult> getDbManagementPrivateEndpoints(GetDbManagementPrivateEndpointsArgs args, InvokeOptions options) {
@@ -922,6 +967,8 @@ public final class DatabaseManagementFunctions {
      * Gets a list of Database Management private endpoints.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -954,6 +1001,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDbManagementPrivateEndpointsResult> getDbManagementPrivateEndpointsPlain(GetDbManagementPrivateEndpointsPlainArgs args, InvokeOptions options) {
@@ -965,6 +1013,8 @@ public final class DatabaseManagementFunctions {
      * Gets the details for the external ASM specified by `externalAsmId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -993,6 +1043,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalAsmResult> getExternalAsm(GetExternalAsmArgs args) {
@@ -1004,6 +1055,8 @@ public final class DatabaseManagementFunctions {
      * Gets the details for the external ASM specified by `externalAsmId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1032,6 +1085,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalAsmResult> getExternalAsmPlain(GetExternalAsmPlainArgs args) {
@@ -1043,6 +1097,8 @@ public final class DatabaseManagementFunctions {
      * Gets the details for the external ASM specified by `externalAsmId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1071,6 +1127,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalAsmResult> getExternalAsm(GetExternalAsmArgs args, InvokeOptions options) {
@@ -1082,6 +1139,8 @@ public final class DatabaseManagementFunctions {
      * Gets the details for the external ASM specified by `externalAsmId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1110,6 +1169,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalAsmResult> getExternalAsmPlain(GetExternalAsmPlainArgs args, InvokeOptions options) {
@@ -1121,6 +1181,8 @@ public final class DatabaseManagementFunctions {
      * Gets configuration details including disk groups for the external ASM specified by `externalAsmId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1150,6 +1212,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalAsmConfigurationResult> getExternalAsmConfiguration(GetExternalAsmConfigurationArgs args) {
@@ -1161,6 +1224,8 @@ public final class DatabaseManagementFunctions {
      * Gets configuration details including disk groups for the external ASM specified by `externalAsmId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1190,6 +1255,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalAsmConfigurationResult> getExternalAsmConfigurationPlain(GetExternalAsmConfigurationPlainArgs args) {
@@ -1201,6 +1267,8 @@ public final class DatabaseManagementFunctions {
      * Gets configuration details including disk groups for the external ASM specified by `externalAsmId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1230,6 +1298,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalAsmConfigurationResult> getExternalAsmConfiguration(GetExternalAsmConfigurationArgs args, InvokeOptions options) {
@@ -1241,6 +1310,8 @@ public final class DatabaseManagementFunctions {
      * Gets configuration details including disk groups for the external ASM specified by `externalAsmId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1270,6 +1341,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalAsmConfigurationResult> getExternalAsmConfigurationPlain(GetExternalAsmConfigurationPlainArgs args, InvokeOptions options) {
@@ -1281,6 +1353,8 @@ public final class DatabaseManagementFunctions {
      * Lists ASM disk groups for the external ASM specified by `externalAsmId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1310,6 +1384,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalAsmDiskGroupsResult> getExternalAsmDiskGroups(GetExternalAsmDiskGroupsArgs args) {
@@ -1321,6 +1396,8 @@ public final class DatabaseManagementFunctions {
      * Lists ASM disk groups for the external ASM specified by `externalAsmId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1350,6 +1427,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalAsmDiskGroupsResult> getExternalAsmDiskGroupsPlain(GetExternalAsmDiskGroupsPlainArgs args) {
@@ -1361,6 +1439,8 @@ public final class DatabaseManagementFunctions {
      * Lists ASM disk groups for the external ASM specified by `externalAsmId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1390,6 +1470,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalAsmDiskGroupsResult> getExternalAsmDiskGroups(GetExternalAsmDiskGroupsArgs args, InvokeOptions options) {
@@ -1401,6 +1482,8 @@ public final class DatabaseManagementFunctions {
      * Lists ASM disk groups for the external ASM specified by `externalAsmId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1430,6 +1513,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalAsmDiskGroupsResult> getExternalAsmDiskGroupsPlain(GetExternalAsmDiskGroupsPlainArgs args, InvokeOptions options) {
@@ -1441,6 +1525,8 @@ public final class DatabaseManagementFunctions {
      * Gets the details for the external ASM instance specified by `externalAsmInstanceId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1469,6 +1555,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalAsmInstanceResult> getExternalAsmInstance(GetExternalAsmInstanceArgs args) {
@@ -1480,6 +1567,8 @@ public final class DatabaseManagementFunctions {
      * Gets the details for the external ASM instance specified by `externalAsmInstanceId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1508,6 +1597,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalAsmInstanceResult> getExternalAsmInstancePlain(GetExternalAsmInstancePlainArgs args) {
@@ -1519,6 +1609,8 @@ public final class DatabaseManagementFunctions {
      * Gets the details for the external ASM instance specified by `externalAsmInstanceId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1547,6 +1639,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalAsmInstanceResult> getExternalAsmInstance(GetExternalAsmInstanceArgs args, InvokeOptions options) {
@@ -1558,6 +1651,8 @@ public final class DatabaseManagementFunctions {
      * Gets the details for the external ASM instance specified by `externalAsmInstanceId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1586,6 +1681,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalAsmInstanceResult> getExternalAsmInstancePlain(GetExternalAsmInstancePlainArgs args, InvokeOptions options) {
@@ -1597,6 +1693,8 @@ public final class DatabaseManagementFunctions {
      * Lists the ASM instances in the specified external ASM.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1627,6 +1725,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalAsmInstancesResult> getExternalAsmInstances() {
@@ -1638,6 +1737,8 @@ public final class DatabaseManagementFunctions {
      * Lists the ASM instances in the specified external ASM.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1668,6 +1769,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalAsmInstancesResult> getExternalAsmInstancesPlain() {
@@ -1679,6 +1781,8 @@ public final class DatabaseManagementFunctions {
      * Lists the ASM instances in the specified external ASM.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1709,6 +1813,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalAsmInstancesResult> getExternalAsmInstances(GetExternalAsmInstancesArgs args) {
@@ -1720,6 +1825,8 @@ public final class DatabaseManagementFunctions {
      * Lists the ASM instances in the specified external ASM.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1750,6 +1857,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalAsmInstancesResult> getExternalAsmInstancesPlain(GetExternalAsmInstancesPlainArgs args) {
@@ -1761,6 +1869,8 @@ public final class DatabaseManagementFunctions {
      * Lists the ASM instances in the specified external ASM.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1791,6 +1901,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalAsmInstancesResult> getExternalAsmInstances(GetExternalAsmInstancesArgs args, InvokeOptions options) {
@@ -1802,6 +1913,8 @@ public final class DatabaseManagementFunctions {
      * Lists the ASM instances in the specified external ASM.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1832,6 +1945,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalAsmInstancesResult> getExternalAsmInstancesPlain(GetExternalAsmInstancesPlainArgs args, InvokeOptions options) {
@@ -1843,6 +1957,8 @@ public final class DatabaseManagementFunctions {
      * Lists ASM users for the external ASM specified by `externalAsmId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1872,6 +1988,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalAsmUsersResult> getExternalAsmUsers(GetExternalAsmUsersArgs args) {
@@ -1883,6 +2000,8 @@ public final class DatabaseManagementFunctions {
      * Lists ASM users for the external ASM specified by `externalAsmId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1912,6 +2031,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalAsmUsersResult> getExternalAsmUsersPlain(GetExternalAsmUsersPlainArgs args) {
@@ -1923,6 +2043,8 @@ public final class DatabaseManagementFunctions {
      * Lists ASM users for the external ASM specified by `externalAsmId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1952,6 +2074,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalAsmUsersResult> getExternalAsmUsers(GetExternalAsmUsersArgs args, InvokeOptions options) {
@@ -1963,6 +2086,8 @@ public final class DatabaseManagementFunctions {
      * Lists ASM users for the external ASM specified by `externalAsmId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1992,6 +2117,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalAsmUsersResult> getExternalAsmUsersPlain(GetExternalAsmUsersPlainArgs args, InvokeOptions options) {
@@ -2003,6 +2129,8 @@ public final class DatabaseManagementFunctions {
      * Lists the ASMs in the specified external DB system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2033,6 +2161,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalAsmsResult> getExternalAsms() {
@@ -2044,6 +2173,8 @@ public final class DatabaseManagementFunctions {
      * Lists the ASMs in the specified external DB system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2074,6 +2205,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalAsmsResult> getExternalAsmsPlain() {
@@ -2085,6 +2217,8 @@ public final class DatabaseManagementFunctions {
      * Lists the ASMs in the specified external DB system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2115,6 +2249,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalAsmsResult> getExternalAsms(GetExternalAsmsArgs args) {
@@ -2126,6 +2261,8 @@ public final class DatabaseManagementFunctions {
      * Lists the ASMs in the specified external DB system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2156,6 +2293,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalAsmsResult> getExternalAsmsPlain(GetExternalAsmsPlainArgs args) {
@@ -2167,6 +2305,8 @@ public final class DatabaseManagementFunctions {
      * Lists the ASMs in the specified external DB system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2197,6 +2337,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalAsmsResult> getExternalAsms(GetExternalAsmsArgs args, InvokeOptions options) {
@@ -2208,6 +2349,8 @@ public final class DatabaseManagementFunctions {
      * Lists the ASMs in the specified external DB system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2238,6 +2381,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalAsmsResult> getExternalAsmsPlain(GetExternalAsmsPlainArgs args, InvokeOptions options) {
@@ -2249,6 +2393,8 @@ public final class DatabaseManagementFunctions {
      * Gets the details for the external cluster specified by `externalClusterId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2277,6 +2423,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalClusterResult> getExternalCluster(GetExternalClusterArgs args) {
@@ -2288,6 +2435,8 @@ public final class DatabaseManagementFunctions {
      * Gets the details for the external cluster specified by `externalClusterId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2316,6 +2465,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalClusterResult> getExternalClusterPlain(GetExternalClusterPlainArgs args) {
@@ -2327,6 +2477,8 @@ public final class DatabaseManagementFunctions {
      * Gets the details for the external cluster specified by `externalClusterId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2355,6 +2507,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalClusterResult> getExternalCluster(GetExternalClusterArgs args, InvokeOptions options) {
@@ -2366,6 +2519,8 @@ public final class DatabaseManagementFunctions {
      * Gets the details for the external cluster specified by `externalClusterId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2394,6 +2549,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalClusterResult> getExternalClusterPlain(GetExternalClusterPlainArgs args, InvokeOptions options) {
@@ -2405,6 +2561,8 @@ public final class DatabaseManagementFunctions {
      * Gets the details for the external cluster instance specified by `externalClusterInstanceId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2433,6 +2591,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalClusterInstanceResult> getExternalClusterInstance(GetExternalClusterInstanceArgs args) {
@@ -2444,6 +2603,8 @@ public final class DatabaseManagementFunctions {
      * Gets the details for the external cluster instance specified by `externalClusterInstanceId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2472,6 +2633,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalClusterInstanceResult> getExternalClusterInstancePlain(GetExternalClusterInstancePlainArgs args) {
@@ -2483,6 +2645,8 @@ public final class DatabaseManagementFunctions {
      * Gets the details for the external cluster instance specified by `externalClusterInstanceId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2511,6 +2675,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalClusterInstanceResult> getExternalClusterInstance(GetExternalClusterInstanceArgs args, InvokeOptions options) {
@@ -2522,6 +2687,8 @@ public final class DatabaseManagementFunctions {
      * Gets the details for the external cluster instance specified by `externalClusterInstanceId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2550,6 +2717,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalClusterInstanceResult> getExternalClusterInstancePlain(GetExternalClusterInstancePlainArgs args, InvokeOptions options) {
@@ -2561,6 +2729,8 @@ public final class DatabaseManagementFunctions {
      * Lists the cluster instances in the specified external cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2591,6 +2761,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalClusterInstancesResult> getExternalClusterInstances() {
@@ -2602,6 +2773,8 @@ public final class DatabaseManagementFunctions {
      * Lists the cluster instances in the specified external cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2632,6 +2805,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalClusterInstancesResult> getExternalClusterInstancesPlain() {
@@ -2643,6 +2817,8 @@ public final class DatabaseManagementFunctions {
      * Lists the cluster instances in the specified external cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2673,6 +2849,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalClusterInstancesResult> getExternalClusterInstances(GetExternalClusterInstancesArgs args) {
@@ -2684,6 +2861,8 @@ public final class DatabaseManagementFunctions {
      * Lists the cluster instances in the specified external cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2714,6 +2893,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalClusterInstancesResult> getExternalClusterInstancesPlain(GetExternalClusterInstancesPlainArgs args) {
@@ -2725,6 +2905,8 @@ public final class DatabaseManagementFunctions {
      * Lists the cluster instances in the specified external cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2755,6 +2937,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalClusterInstancesResult> getExternalClusterInstances(GetExternalClusterInstancesArgs args, InvokeOptions options) {
@@ -2766,6 +2949,8 @@ public final class DatabaseManagementFunctions {
      * Lists the cluster instances in the specified external cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2796,6 +2981,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalClusterInstancesResult> getExternalClusterInstancesPlain(GetExternalClusterInstancesPlainArgs args, InvokeOptions options) {
@@ -2807,6 +2993,8 @@ public final class DatabaseManagementFunctions {
      * Lists the clusters in the specified external DB system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2837,6 +3025,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalClustersResult> getExternalClusters() {
@@ -2848,6 +3037,8 @@ public final class DatabaseManagementFunctions {
      * Lists the clusters in the specified external DB system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2878,6 +3069,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalClustersResult> getExternalClustersPlain() {
@@ -2889,6 +3081,8 @@ public final class DatabaseManagementFunctions {
      * Lists the clusters in the specified external DB system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2919,6 +3113,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalClustersResult> getExternalClusters(GetExternalClustersArgs args) {
@@ -2930,6 +3125,8 @@ public final class DatabaseManagementFunctions {
      * Lists the clusters in the specified external DB system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2960,6 +3157,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalClustersResult> getExternalClustersPlain(GetExternalClustersPlainArgs args) {
@@ -2971,6 +3169,8 @@ public final class DatabaseManagementFunctions {
      * Lists the clusters in the specified external DB system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3001,6 +3201,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalClustersResult> getExternalClusters(GetExternalClustersArgs args, InvokeOptions options) {
@@ -3012,6 +3213,8 @@ public final class DatabaseManagementFunctions {
      * Lists the clusters in the specified external DB system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3042,6 +3245,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalClustersResult> getExternalClustersPlain(GetExternalClustersPlainArgs args, InvokeOptions options) {
@@ -3053,6 +3257,8 @@ public final class DatabaseManagementFunctions {
      * Lists the external databases in the specified compartment or in the specified DB system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3083,6 +3289,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalDatabasesResult> getExternalDatabases() {
@@ -3094,6 +3301,8 @@ public final class DatabaseManagementFunctions {
      * Lists the external databases in the specified compartment or in the specified DB system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3124,6 +3333,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalDatabasesResult> getExternalDatabasesPlain() {
@@ -3135,6 +3345,8 @@ public final class DatabaseManagementFunctions {
      * Lists the external databases in the specified compartment or in the specified DB system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3165,6 +3377,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalDatabasesResult> getExternalDatabases(GetExternalDatabasesArgs args) {
@@ -3176,6 +3389,8 @@ public final class DatabaseManagementFunctions {
      * Lists the external databases in the specified compartment or in the specified DB system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3206,6 +3421,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalDatabasesResult> getExternalDatabasesPlain(GetExternalDatabasesPlainArgs args) {
@@ -3217,6 +3433,8 @@ public final class DatabaseManagementFunctions {
      * Lists the external databases in the specified compartment or in the specified DB system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3247,6 +3465,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalDatabasesResult> getExternalDatabases(GetExternalDatabasesArgs args, InvokeOptions options) {
@@ -3258,6 +3477,8 @@ public final class DatabaseManagementFunctions {
      * Lists the external databases in the specified compartment or in the specified DB system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3288,6 +3509,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalDatabasesResult> getExternalDatabasesPlain(GetExternalDatabasesPlainArgs args, InvokeOptions options) {
@@ -3299,6 +3521,8 @@ public final class DatabaseManagementFunctions {
      * Gets the details for the external DB home specified by `externalDbHomeId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3327,6 +3551,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalDbHomeResult> getExternalDbHome(GetExternalDbHomeArgs args) {
@@ -3338,6 +3563,8 @@ public final class DatabaseManagementFunctions {
      * Gets the details for the external DB home specified by `externalDbHomeId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3366,6 +3593,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalDbHomeResult> getExternalDbHomePlain(GetExternalDbHomePlainArgs args) {
@@ -3377,6 +3605,8 @@ public final class DatabaseManagementFunctions {
      * Gets the details for the external DB home specified by `externalDbHomeId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3405,6 +3635,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalDbHomeResult> getExternalDbHome(GetExternalDbHomeArgs args, InvokeOptions options) {
@@ -3416,6 +3647,8 @@ public final class DatabaseManagementFunctions {
      * Gets the details for the external DB home specified by `externalDbHomeId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3444,6 +3677,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalDbHomeResult> getExternalDbHomePlain(GetExternalDbHomePlainArgs args, InvokeOptions options) {
@@ -3455,6 +3689,8 @@ public final class DatabaseManagementFunctions {
      * Lists the DB homes in the specified external DB system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3485,6 +3721,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalDbHomesResult> getExternalDbHomes() {
@@ -3496,6 +3733,8 @@ public final class DatabaseManagementFunctions {
      * Lists the DB homes in the specified external DB system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3526,6 +3765,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalDbHomesResult> getExternalDbHomesPlain() {
@@ -3537,6 +3777,8 @@ public final class DatabaseManagementFunctions {
      * Lists the DB homes in the specified external DB system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3567,6 +3809,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalDbHomesResult> getExternalDbHomes(GetExternalDbHomesArgs args) {
@@ -3578,6 +3821,8 @@ public final class DatabaseManagementFunctions {
      * Lists the DB homes in the specified external DB system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3608,6 +3853,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalDbHomesResult> getExternalDbHomesPlain(GetExternalDbHomesPlainArgs args) {
@@ -3619,6 +3865,8 @@ public final class DatabaseManagementFunctions {
      * Lists the DB homes in the specified external DB system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3649,6 +3897,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalDbHomesResult> getExternalDbHomes(GetExternalDbHomesArgs args, InvokeOptions options) {
@@ -3660,6 +3909,8 @@ public final class DatabaseManagementFunctions {
      * Lists the DB homes in the specified external DB system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3690,6 +3941,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalDbHomesResult> getExternalDbHomesPlain(GetExternalDbHomesPlainArgs args, InvokeOptions options) {
@@ -3701,6 +3953,8 @@ public final class DatabaseManagementFunctions {
      * Gets the details for the external DB node specified by `externalDbNodeId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3729,6 +3983,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalDbNodeResult> getExternalDbNode(GetExternalDbNodeArgs args) {
@@ -3740,6 +3995,8 @@ public final class DatabaseManagementFunctions {
      * Gets the details for the external DB node specified by `externalDbNodeId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3768,6 +4025,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalDbNodeResult> getExternalDbNodePlain(GetExternalDbNodePlainArgs args) {
@@ -3779,6 +4037,8 @@ public final class DatabaseManagementFunctions {
      * Gets the details for the external DB node specified by `externalDbNodeId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3807,6 +4067,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalDbNodeResult> getExternalDbNode(GetExternalDbNodeArgs args, InvokeOptions options) {
@@ -3818,6 +4079,8 @@ public final class DatabaseManagementFunctions {
      * Gets the details for the external DB node specified by `externalDbNodeId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3846,6 +4109,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalDbNodeResult> getExternalDbNodePlain(GetExternalDbNodePlainArgs args, InvokeOptions options) {
@@ -3857,6 +4121,8 @@ public final class DatabaseManagementFunctions {
      * Lists the external DB nodes in the specified external DB system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3887,6 +4153,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalDbNodesResult> getExternalDbNodes() {
@@ -3898,6 +4165,8 @@ public final class DatabaseManagementFunctions {
      * Lists the external DB nodes in the specified external DB system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3928,6 +4197,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalDbNodesResult> getExternalDbNodesPlain() {
@@ -3939,6 +4209,8 @@ public final class DatabaseManagementFunctions {
      * Lists the external DB nodes in the specified external DB system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3969,6 +4241,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalDbNodesResult> getExternalDbNodes(GetExternalDbNodesArgs args) {
@@ -3980,6 +4253,8 @@ public final class DatabaseManagementFunctions {
      * Lists the external DB nodes in the specified external DB system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4010,6 +4285,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalDbNodesResult> getExternalDbNodesPlain(GetExternalDbNodesPlainArgs args) {
@@ -4021,6 +4297,8 @@ public final class DatabaseManagementFunctions {
      * Lists the external DB nodes in the specified external DB system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4051,6 +4329,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalDbNodesResult> getExternalDbNodes(GetExternalDbNodesArgs args, InvokeOptions options) {
@@ -4062,6 +4341,8 @@ public final class DatabaseManagementFunctions {
      * Lists the external DB nodes in the specified external DB system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4092,6 +4373,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalDbNodesResult> getExternalDbNodesPlain(GetExternalDbNodesPlainArgs args, InvokeOptions options) {
@@ -4103,6 +4385,8 @@ public final class DatabaseManagementFunctions {
      * Gets the details for the external DB system specified by `externalDbSystemId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4131,6 +4415,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalDbSystemResult> getExternalDbSystem(GetExternalDbSystemArgs args) {
@@ -4142,6 +4427,8 @@ public final class DatabaseManagementFunctions {
      * Gets the details for the external DB system specified by `externalDbSystemId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4170,6 +4457,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalDbSystemResult> getExternalDbSystemPlain(GetExternalDbSystemPlainArgs args) {
@@ -4181,6 +4469,8 @@ public final class DatabaseManagementFunctions {
      * Gets the details for the external DB system specified by `externalDbSystemId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4209,6 +4499,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalDbSystemResult> getExternalDbSystem(GetExternalDbSystemArgs args, InvokeOptions options) {
@@ -4220,6 +4511,8 @@ public final class DatabaseManagementFunctions {
      * Gets the details for the external DB system specified by `externalDbSystemId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4248,6 +4541,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalDbSystemResult> getExternalDbSystemPlain(GetExternalDbSystemPlainArgs args, InvokeOptions options) {
@@ -4259,6 +4553,8 @@ public final class DatabaseManagementFunctions {
      * Gets the details for the external connector specified by `externalDbSystemConnectorId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4287,6 +4583,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalDbSystemConnectorResult> getExternalDbSystemConnector(GetExternalDbSystemConnectorArgs args) {
@@ -4298,6 +4595,8 @@ public final class DatabaseManagementFunctions {
      * Gets the details for the external connector specified by `externalDbSystemConnectorId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4326,6 +4625,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalDbSystemConnectorResult> getExternalDbSystemConnectorPlain(GetExternalDbSystemConnectorPlainArgs args) {
@@ -4337,6 +4637,8 @@ public final class DatabaseManagementFunctions {
      * Gets the details for the external connector specified by `externalDbSystemConnectorId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4365,6 +4667,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalDbSystemConnectorResult> getExternalDbSystemConnector(GetExternalDbSystemConnectorArgs args, InvokeOptions options) {
@@ -4376,6 +4679,8 @@ public final class DatabaseManagementFunctions {
      * Gets the details for the external connector specified by `externalDbSystemConnectorId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4404,6 +4709,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalDbSystemConnectorResult> getExternalDbSystemConnectorPlain(GetExternalDbSystemConnectorPlainArgs args, InvokeOptions options) {
@@ -4415,6 +4721,8 @@ public final class DatabaseManagementFunctions {
      * Lists the external connectors in the specified external DB system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4445,6 +4753,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalDbSystemConnectorsResult> getExternalDbSystemConnectors() {
@@ -4456,6 +4765,8 @@ public final class DatabaseManagementFunctions {
      * Lists the external connectors in the specified external DB system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4486,6 +4797,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalDbSystemConnectorsResult> getExternalDbSystemConnectorsPlain() {
@@ -4497,6 +4809,8 @@ public final class DatabaseManagementFunctions {
      * Lists the external connectors in the specified external DB system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4527,6 +4841,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalDbSystemConnectorsResult> getExternalDbSystemConnectors(GetExternalDbSystemConnectorsArgs args) {
@@ -4538,6 +4853,8 @@ public final class DatabaseManagementFunctions {
      * Lists the external connectors in the specified external DB system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4568,6 +4885,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalDbSystemConnectorsResult> getExternalDbSystemConnectorsPlain(GetExternalDbSystemConnectorsPlainArgs args) {
@@ -4579,6 +4897,8 @@ public final class DatabaseManagementFunctions {
      * Lists the external connectors in the specified external DB system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4609,6 +4929,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalDbSystemConnectorsResult> getExternalDbSystemConnectors(GetExternalDbSystemConnectorsArgs args, InvokeOptions options) {
@@ -4620,6 +4941,8 @@ public final class DatabaseManagementFunctions {
      * Lists the external connectors in the specified external DB system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4650,6 +4973,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalDbSystemConnectorsResult> getExternalDbSystemConnectorsPlain(GetExternalDbSystemConnectorsPlainArgs args, InvokeOptions options) {
@@ -4661,6 +4985,8 @@ public final class DatabaseManagementFunctions {
      * Lists the external DB system discovery resources in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4690,6 +5016,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalDbSystemDiscoveriesResult> getExternalDbSystemDiscoveries(GetExternalDbSystemDiscoveriesArgs args) {
@@ -4701,6 +5028,8 @@ public final class DatabaseManagementFunctions {
      * Lists the external DB system discovery resources in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4730,6 +5059,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalDbSystemDiscoveriesResult> getExternalDbSystemDiscoveriesPlain(GetExternalDbSystemDiscoveriesPlainArgs args) {
@@ -4741,6 +5071,8 @@ public final class DatabaseManagementFunctions {
      * Lists the external DB system discovery resources in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4770,6 +5102,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalDbSystemDiscoveriesResult> getExternalDbSystemDiscoveries(GetExternalDbSystemDiscoveriesArgs args, InvokeOptions options) {
@@ -4781,6 +5114,8 @@ public final class DatabaseManagementFunctions {
      * Lists the external DB system discovery resources in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4810,6 +5145,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalDbSystemDiscoveriesResult> getExternalDbSystemDiscoveriesPlain(GetExternalDbSystemDiscoveriesPlainArgs args, InvokeOptions options) {
@@ -4821,6 +5157,8 @@ public final class DatabaseManagementFunctions {
      * Gets the details for the external DB system discovery resource specified by `externalDbSystemDiscoveryId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4849,6 +5187,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalDbSystemDiscoveryResult> getExternalDbSystemDiscovery(GetExternalDbSystemDiscoveryArgs args) {
@@ -4860,6 +5199,8 @@ public final class DatabaseManagementFunctions {
      * Gets the details for the external DB system discovery resource specified by `externalDbSystemDiscoveryId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4888,6 +5229,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalDbSystemDiscoveryResult> getExternalDbSystemDiscoveryPlain(GetExternalDbSystemDiscoveryPlainArgs args) {
@@ -4899,6 +5241,8 @@ public final class DatabaseManagementFunctions {
      * Gets the details for the external DB system discovery resource specified by `externalDbSystemDiscoveryId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4927,6 +5271,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalDbSystemDiscoveryResult> getExternalDbSystemDiscovery(GetExternalDbSystemDiscoveryArgs args, InvokeOptions options) {
@@ -4938,6 +5283,8 @@ public final class DatabaseManagementFunctions {
      * Gets the details for the external DB system discovery resource specified by `externalDbSystemDiscoveryId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4966,6 +5313,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalDbSystemDiscoveryResult> getExternalDbSystemDiscoveryPlain(GetExternalDbSystemDiscoveryPlainArgs args, InvokeOptions options) {
@@ -4977,6 +5325,8 @@ public final class DatabaseManagementFunctions {
      * Lists the external DB systems in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5006,6 +5356,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalDbSystemsResult> getExternalDbSystems(GetExternalDbSystemsArgs args) {
@@ -5017,6 +5368,8 @@ public final class DatabaseManagementFunctions {
      * Lists the external DB systems in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5046,6 +5399,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalDbSystemsResult> getExternalDbSystemsPlain(GetExternalDbSystemsPlainArgs args) {
@@ -5057,6 +5411,8 @@ public final class DatabaseManagementFunctions {
      * Lists the external DB systems in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5086,6 +5442,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalDbSystemsResult> getExternalDbSystems(GetExternalDbSystemsArgs args, InvokeOptions options) {
@@ -5097,6 +5454,8 @@ public final class DatabaseManagementFunctions {
      * Lists the external DB systems in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5126,6 +5485,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalDbSystemsResult> getExternalDbSystemsPlain(GetExternalDbSystemsPlainArgs args, InvokeOptions options) {
@@ -5138,6 +5498,8 @@ public final class DatabaseManagementFunctions {
      * Exadata infrastructure.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5166,6 +5528,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalExadataInfrastructureResult> getExternalExadataInfrastructure(GetExternalExadataInfrastructureArgs args) {
@@ -5178,6 +5541,8 @@ public final class DatabaseManagementFunctions {
      * Exadata infrastructure.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5206,6 +5571,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalExadataInfrastructureResult> getExternalExadataInfrastructurePlain(GetExternalExadataInfrastructurePlainArgs args) {
@@ -5218,6 +5584,8 @@ public final class DatabaseManagementFunctions {
      * Exadata infrastructure.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5246,6 +5614,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalExadataInfrastructureResult> getExternalExadataInfrastructure(GetExternalExadataInfrastructureArgs args, InvokeOptions options) {
@@ -5258,6 +5627,8 @@ public final class DatabaseManagementFunctions {
      * Exadata infrastructure.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5286,6 +5657,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalExadataInfrastructureResult> getExternalExadataInfrastructurePlain(GetExternalExadataInfrastructurePlainArgs args, InvokeOptions options) {
@@ -5297,6 +5669,8 @@ public final class DatabaseManagementFunctions {
      * Lists the Exadata infrastructure resources in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5326,6 +5700,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalExadataInfrastructuresResult> getExternalExadataInfrastructures(GetExternalExadataInfrastructuresArgs args) {
@@ -5337,6 +5712,8 @@ public final class DatabaseManagementFunctions {
      * Lists the Exadata infrastructure resources in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5366,6 +5743,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalExadataInfrastructuresResult> getExternalExadataInfrastructuresPlain(GetExternalExadataInfrastructuresPlainArgs args) {
@@ -5377,6 +5755,8 @@ public final class DatabaseManagementFunctions {
      * Lists the Exadata infrastructure resources in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5406,6 +5786,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalExadataInfrastructuresResult> getExternalExadataInfrastructures(GetExternalExadataInfrastructuresArgs args, InvokeOptions options) {
@@ -5417,6 +5798,8 @@ public final class DatabaseManagementFunctions {
      * Lists the Exadata infrastructure resources in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5446,6 +5829,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalExadataInfrastructuresResult> getExternalExadataInfrastructuresPlain(GetExternalExadataInfrastructuresPlainArgs args, InvokeOptions options) {
@@ -5457,6 +5841,8 @@ public final class DatabaseManagementFunctions {
      * Gets the details for the Exadata storage server connector specified by exadataStorageConnectorId.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5485,6 +5871,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalExadataStorageConnectorResult> getExternalExadataStorageConnector(GetExternalExadataStorageConnectorArgs args) {
@@ -5496,6 +5883,8 @@ public final class DatabaseManagementFunctions {
      * Gets the details for the Exadata storage server connector specified by exadataStorageConnectorId.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5524,6 +5913,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalExadataStorageConnectorResult> getExternalExadataStorageConnectorPlain(GetExternalExadataStorageConnectorPlainArgs args) {
@@ -5535,6 +5925,8 @@ public final class DatabaseManagementFunctions {
      * Gets the details for the Exadata storage server connector specified by exadataStorageConnectorId.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5563,6 +5955,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalExadataStorageConnectorResult> getExternalExadataStorageConnector(GetExternalExadataStorageConnectorArgs args, InvokeOptions options) {
@@ -5574,6 +5967,8 @@ public final class DatabaseManagementFunctions {
      * Gets the details for the Exadata storage server connector specified by exadataStorageConnectorId.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5602,6 +5997,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalExadataStorageConnectorResult> getExternalExadataStorageConnectorPlain(GetExternalExadataStorageConnectorPlainArgs args, InvokeOptions options) {
@@ -5613,6 +6009,8 @@ public final class DatabaseManagementFunctions {
      * Lists the Exadata storage server connectors for the specified Exadata infrastructure.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5643,6 +6041,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalExadataStorageConnectorsResult> getExternalExadataStorageConnectors(GetExternalExadataStorageConnectorsArgs args) {
@@ -5654,6 +6053,8 @@ public final class DatabaseManagementFunctions {
      * Lists the Exadata storage server connectors for the specified Exadata infrastructure.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5684,6 +6085,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalExadataStorageConnectorsResult> getExternalExadataStorageConnectorsPlain(GetExternalExadataStorageConnectorsPlainArgs args) {
@@ -5695,6 +6097,8 @@ public final class DatabaseManagementFunctions {
      * Lists the Exadata storage server connectors for the specified Exadata infrastructure.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5725,6 +6129,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalExadataStorageConnectorsResult> getExternalExadataStorageConnectors(GetExternalExadataStorageConnectorsArgs args, InvokeOptions options) {
@@ -5736,6 +6141,8 @@ public final class DatabaseManagementFunctions {
      * Lists the Exadata storage server connectors for the specified Exadata infrastructure.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5766,6 +6173,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalExadataStorageConnectorsResult> getExternalExadataStorageConnectorsPlain(GetExternalExadataStorageConnectorsPlainArgs args, InvokeOptions options) {
@@ -5777,6 +6185,8 @@ public final class DatabaseManagementFunctions {
      * Gets the details for the Exadata storage server grid specified by exadataStorageGridId.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5805,6 +6215,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalExadataStorageGridResult> getExternalExadataStorageGrid(GetExternalExadataStorageGridArgs args) {
@@ -5816,6 +6227,8 @@ public final class DatabaseManagementFunctions {
      * Gets the details for the Exadata storage server grid specified by exadataStorageGridId.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5844,6 +6257,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalExadataStorageGridResult> getExternalExadataStorageGridPlain(GetExternalExadataStorageGridPlainArgs args) {
@@ -5855,6 +6269,8 @@ public final class DatabaseManagementFunctions {
      * Gets the details for the Exadata storage server grid specified by exadataStorageGridId.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5883,6 +6299,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalExadataStorageGridResult> getExternalExadataStorageGrid(GetExternalExadataStorageGridArgs args, InvokeOptions options) {
@@ -5894,6 +6311,8 @@ public final class DatabaseManagementFunctions {
      * Gets the details for the Exadata storage server grid specified by exadataStorageGridId.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5922,6 +6341,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalExadataStorageGridResult> getExternalExadataStorageGridPlain(GetExternalExadataStorageGridPlainArgs args, InvokeOptions options) {
@@ -5933,6 +6353,8 @@ public final class DatabaseManagementFunctions {
      * Gets the summary for the Exadata storage server specified by exadataStorageServerId.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5961,6 +6383,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalExadataStorageServerResult> getExternalExadataStorageServer(GetExternalExadataStorageServerArgs args) {
@@ -5972,6 +6395,8 @@ public final class DatabaseManagementFunctions {
      * Gets the summary for the Exadata storage server specified by exadataStorageServerId.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6000,6 +6425,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalExadataStorageServerResult> getExternalExadataStorageServerPlain(GetExternalExadataStorageServerPlainArgs args) {
@@ -6011,6 +6437,8 @@ public final class DatabaseManagementFunctions {
      * Gets the summary for the Exadata storage server specified by exadataStorageServerId.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6039,6 +6467,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalExadataStorageServerResult> getExternalExadataStorageServer(GetExternalExadataStorageServerArgs args, InvokeOptions options) {
@@ -6050,6 +6479,8 @@ public final class DatabaseManagementFunctions {
      * Gets the summary for the Exadata storage server specified by exadataStorageServerId.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6078,6 +6509,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalExadataStorageServerResult> getExternalExadataStorageServerPlain(GetExternalExadataStorageServerPlainArgs args, InvokeOptions options) {
@@ -6089,6 +6521,8 @@ public final class DatabaseManagementFunctions {
      * Get the IORM plan from the specific Exadata storage server.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6117,6 +6551,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalExadataStorageServerIormPlanResult> getExternalExadataStorageServerIormPlan(GetExternalExadataStorageServerIormPlanArgs args) {
@@ -6128,6 +6563,8 @@ public final class DatabaseManagementFunctions {
      * Get the IORM plan from the specific Exadata storage server.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6156,6 +6593,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalExadataStorageServerIormPlanResult> getExternalExadataStorageServerIormPlanPlain(GetExternalExadataStorageServerIormPlanPlainArgs args) {
@@ -6167,6 +6605,8 @@ public final class DatabaseManagementFunctions {
      * Get the IORM plan from the specific Exadata storage server.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6195,6 +6635,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalExadataStorageServerIormPlanResult> getExternalExadataStorageServerIormPlan(GetExternalExadataStorageServerIormPlanArgs args, InvokeOptions options) {
@@ -6206,6 +6647,8 @@ public final class DatabaseManagementFunctions {
      * Get the IORM plan from the specific Exadata storage server.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6234,6 +6677,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalExadataStorageServerIormPlanResult> getExternalExadataStorageServerIormPlanPlain(GetExternalExadataStorageServerIormPlanPlainArgs args, InvokeOptions options) {
@@ -6245,6 +6689,8 @@ public final class DatabaseManagementFunctions {
      * Gets the open alerts from the specified Exadata storage server.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6273,6 +6719,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalExadataStorageServerOpenAlertHistoryResult> getExternalExadataStorageServerOpenAlertHistory(GetExternalExadataStorageServerOpenAlertHistoryArgs args) {
@@ -6284,6 +6731,8 @@ public final class DatabaseManagementFunctions {
      * Gets the open alerts from the specified Exadata storage server.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6312,6 +6761,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalExadataStorageServerOpenAlertHistoryResult> getExternalExadataStorageServerOpenAlertHistoryPlain(GetExternalExadataStorageServerOpenAlertHistoryPlainArgs args) {
@@ -6323,6 +6773,8 @@ public final class DatabaseManagementFunctions {
      * Gets the open alerts from the specified Exadata storage server.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6351,6 +6803,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalExadataStorageServerOpenAlertHistoryResult> getExternalExadataStorageServerOpenAlertHistory(GetExternalExadataStorageServerOpenAlertHistoryArgs args, InvokeOptions options) {
@@ -6362,6 +6815,8 @@ public final class DatabaseManagementFunctions {
      * Gets the open alerts from the specified Exadata storage server.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6390,6 +6845,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalExadataStorageServerOpenAlertHistoryResult> getExternalExadataStorageServerOpenAlertHistoryPlain(GetExternalExadataStorageServerOpenAlertHistoryPlainArgs args, InvokeOptions options) {
@@ -6401,6 +6857,8 @@ public final class DatabaseManagementFunctions {
      * Gets the SQL IDs with the top CPU activity from the Exadata storage server.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6429,6 +6887,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalExadataStorageServerTopSqlCpuActivityResult> getExternalExadataStorageServerTopSqlCpuActivity(GetExternalExadataStorageServerTopSqlCpuActivityArgs args) {
@@ -6440,6 +6899,8 @@ public final class DatabaseManagementFunctions {
      * Gets the SQL IDs with the top CPU activity from the Exadata storage server.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6468,6 +6929,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalExadataStorageServerTopSqlCpuActivityResult> getExternalExadataStorageServerTopSqlCpuActivityPlain(GetExternalExadataStorageServerTopSqlCpuActivityPlainArgs args) {
@@ -6479,6 +6941,8 @@ public final class DatabaseManagementFunctions {
      * Gets the SQL IDs with the top CPU activity from the Exadata storage server.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6507,6 +6971,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalExadataStorageServerTopSqlCpuActivityResult> getExternalExadataStorageServerTopSqlCpuActivity(GetExternalExadataStorageServerTopSqlCpuActivityArgs args, InvokeOptions options) {
@@ -6518,6 +6983,8 @@ public final class DatabaseManagementFunctions {
      * Gets the SQL IDs with the top CPU activity from the Exadata storage server.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6546,6 +7013,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalExadataStorageServerTopSqlCpuActivityResult> getExternalExadataStorageServerTopSqlCpuActivityPlain(GetExternalExadataStorageServerTopSqlCpuActivityPlainArgs args, InvokeOptions options) {
@@ -6557,6 +7025,8 @@ public final class DatabaseManagementFunctions {
      * Lists the Exadata storage servers for the specified Exadata infrastructure.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6587,6 +7057,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalExadataStorageServersResult> getExternalExadataStorageServers(GetExternalExadataStorageServersArgs args) {
@@ -6598,6 +7069,8 @@ public final class DatabaseManagementFunctions {
      * Lists the Exadata storage servers for the specified Exadata infrastructure.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6628,6 +7101,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalExadataStorageServersResult> getExternalExadataStorageServersPlain(GetExternalExadataStorageServersPlainArgs args) {
@@ -6639,6 +7113,8 @@ public final class DatabaseManagementFunctions {
      * Lists the Exadata storage servers for the specified Exadata infrastructure.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6669,6 +7145,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalExadataStorageServersResult> getExternalExadataStorageServers(GetExternalExadataStorageServersArgs args, InvokeOptions options) {
@@ -6680,6 +7157,8 @@ public final class DatabaseManagementFunctions {
      * Lists the Exadata storage servers for the specified Exadata infrastructure.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6710,6 +7189,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalExadataStorageServersResult> getExternalExadataStorageServersPlain(GetExternalExadataStorageServersPlainArgs args, InvokeOptions options) {
@@ -6721,6 +7201,8 @@ public final class DatabaseManagementFunctions {
      * Gets the details for the external listener specified by `externalListenerId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6749,6 +7231,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalListenerResult> getExternalListener(GetExternalListenerArgs args) {
@@ -6760,6 +7243,8 @@ public final class DatabaseManagementFunctions {
      * Gets the details for the external listener specified by `externalListenerId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6788,6 +7273,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalListenerResult> getExternalListenerPlain(GetExternalListenerPlainArgs args) {
@@ -6799,6 +7285,8 @@ public final class DatabaseManagementFunctions {
      * Gets the details for the external listener specified by `externalListenerId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6827,6 +7315,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalListenerResult> getExternalListener(GetExternalListenerArgs args, InvokeOptions options) {
@@ -6838,6 +7327,8 @@ public final class DatabaseManagementFunctions {
      * Gets the details for the external listener specified by `externalListenerId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6866,6 +7357,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalListenerResult> getExternalListenerPlain(GetExternalListenerPlainArgs args, InvokeOptions options) {
@@ -6878,6 +7370,8 @@ public final class DatabaseManagementFunctions {
      * for the specified Managed Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6908,6 +7402,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalListenerServicesResult> getExternalListenerServices(GetExternalListenerServicesArgs args) {
@@ -6920,6 +7415,8 @@ public final class DatabaseManagementFunctions {
      * for the specified Managed Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6950,6 +7447,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalListenerServicesResult> getExternalListenerServicesPlain(GetExternalListenerServicesPlainArgs args) {
@@ -6962,6 +7460,8 @@ public final class DatabaseManagementFunctions {
      * for the specified Managed Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6992,6 +7492,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalListenerServicesResult> getExternalListenerServices(GetExternalListenerServicesArgs args, InvokeOptions options) {
@@ -7004,6 +7505,8 @@ public final class DatabaseManagementFunctions {
      * for the specified Managed Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7034,6 +7537,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalListenerServicesResult> getExternalListenerServicesPlain(GetExternalListenerServicesPlainArgs args, InvokeOptions options) {
@@ -7045,6 +7549,8 @@ public final class DatabaseManagementFunctions {
      * Lists the listeners in the specified external DB system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7075,6 +7581,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalListenersResult> getExternalListeners() {
@@ -7086,6 +7593,8 @@ public final class DatabaseManagementFunctions {
      * Lists the listeners in the specified external DB system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7116,6 +7625,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalListenersResult> getExternalListenersPlain() {
@@ -7127,6 +7637,8 @@ public final class DatabaseManagementFunctions {
      * Lists the listeners in the specified external DB system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7157,6 +7669,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalListenersResult> getExternalListeners(GetExternalListenersArgs args) {
@@ -7168,6 +7681,8 @@ public final class DatabaseManagementFunctions {
      * Lists the listeners in the specified external DB system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7198,6 +7713,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalListenersResult> getExternalListenersPlain(GetExternalListenersPlainArgs args) {
@@ -7209,6 +7725,8 @@ public final class DatabaseManagementFunctions {
      * Lists the listeners in the specified external DB system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7239,6 +7757,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalListenersResult> getExternalListeners(GetExternalListenersArgs args, InvokeOptions options) {
@@ -7250,6 +7769,8 @@ public final class DatabaseManagementFunctions {
      * Lists the listeners in the specified external DB system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7280,6 +7801,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalListenersResult> getExternalListenersPlain(GetExternalListenersPlainArgs args, InvokeOptions options) {
@@ -7291,6 +7813,8 @@ public final class DatabaseManagementFunctions {
      * Gets the number of job executions grouped by status for a job, Managed Database, or Database Group in a specific compartment. Only one of the parameters, jobId, managedDatabaseId, or managedDatabaseGroupId should be provided.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7325,6 +7849,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetJobExecutionsStatusResult> getJobExecutionsStatus(GetJobExecutionsStatusArgs args) {
@@ -7336,6 +7861,8 @@ public final class DatabaseManagementFunctions {
      * Gets the number of job executions grouped by status for a job, Managed Database, or Database Group in a specific compartment. Only one of the parameters, jobId, managedDatabaseId, or managedDatabaseGroupId should be provided.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7370,6 +7897,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetJobExecutionsStatusResult> getJobExecutionsStatusPlain(GetJobExecutionsStatusPlainArgs args) {
@@ -7381,6 +7909,8 @@ public final class DatabaseManagementFunctions {
      * Gets the number of job executions grouped by status for a job, Managed Database, or Database Group in a specific compartment. Only one of the parameters, jobId, managedDatabaseId, or managedDatabaseGroupId should be provided.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7415,6 +7945,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetJobExecutionsStatusResult> getJobExecutionsStatus(GetJobExecutionsStatusArgs args, InvokeOptions options) {
@@ -7426,6 +7957,8 @@ public final class DatabaseManagementFunctions {
      * Gets the number of job executions grouped by status for a job, Managed Database, or Database Group in a specific compartment. Only one of the parameters, jobId, managedDatabaseId, or managedDatabaseGroupId should be provided.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7460,6 +7993,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetJobExecutionsStatusResult> getJobExecutionsStatusPlain(GetJobExecutionsStatusPlainArgs args, InvokeOptions options) {
@@ -7471,6 +8005,8 @@ public final class DatabaseManagementFunctions {
      * Gets the number of job executions grouped by status for a job, Managed Database, or Database Group in a specific compartment. Only one of the parameters, jobId, managedDatabaseId, or managedDatabaseGroupId should be provided.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7505,6 +8041,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetJobExecutionsStatusesResult> getJobExecutionsStatuses(GetJobExecutionsStatusesArgs args) {
@@ -7516,6 +8053,8 @@ public final class DatabaseManagementFunctions {
      * Gets the number of job executions grouped by status for a job, Managed Database, or Database Group in a specific compartment. Only one of the parameters, jobId, managedDatabaseId, or managedDatabaseGroupId should be provided.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7550,6 +8089,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetJobExecutionsStatusesResult> getJobExecutionsStatusesPlain(GetJobExecutionsStatusesPlainArgs args) {
@@ -7561,6 +8101,8 @@ public final class DatabaseManagementFunctions {
      * Gets the number of job executions grouped by status for a job, Managed Database, or Database Group in a specific compartment. Only one of the parameters, jobId, managedDatabaseId, or managedDatabaseGroupId should be provided.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7595,6 +8137,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetJobExecutionsStatusesResult> getJobExecutionsStatuses(GetJobExecutionsStatusesArgs args, InvokeOptions options) {
@@ -7606,6 +8149,8 @@ public final class DatabaseManagementFunctions {
      * Gets the number of job executions grouped by status for a job, Managed Database, or Database Group in a specific compartment. Only one of the parameters, jobId, managedDatabaseId, or managedDatabaseGroupId should be provided.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7640,6 +8185,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetJobExecutionsStatusesResult> getJobExecutionsStatusesPlain(GetJobExecutionsStatusesPlainArgs args, InvokeOptions options) {
@@ -7651,6 +8197,8 @@ public final class DatabaseManagementFunctions {
      * Gets the details for the Managed Database specified by managedDatabaseId.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7679,6 +8227,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseResult> getManagedDatabase(GetManagedDatabaseArgs args) {
@@ -7690,6 +8239,8 @@ public final class DatabaseManagementFunctions {
      * Gets the details for the Managed Database specified by managedDatabaseId.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7718,6 +8269,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseResult> getManagedDatabasePlain(GetManagedDatabasePlainArgs args) {
@@ -7729,6 +8281,8 @@ public final class DatabaseManagementFunctions {
      * Gets the details for the Managed Database specified by managedDatabaseId.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7757,6 +8311,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseResult> getManagedDatabase(GetManagedDatabaseArgs args, InvokeOptions options) {
@@ -7768,6 +8323,8 @@ public final class DatabaseManagementFunctions {
      * Gets the details for the Managed Database specified by managedDatabaseId.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7796,6 +8353,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseResult> getManagedDatabasePlain(GetManagedDatabasePlainArgs args, InvokeOptions options) {
@@ -7808,6 +8366,8 @@ public final class DatabaseManagementFunctions {
      * the name of the ADDM task, description, user, status and creation date time.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7838,6 +8398,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseAddmTaskResult> getManagedDatabaseAddmTask(GetManagedDatabaseAddmTaskArgs args) {
@@ -7850,6 +8411,8 @@ public final class DatabaseManagementFunctions {
      * the name of the ADDM task, description, user, status and creation date time.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7880,6 +8443,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseAddmTaskResult> getManagedDatabaseAddmTaskPlain(GetManagedDatabaseAddmTaskPlainArgs args) {
@@ -7892,6 +8456,8 @@ public final class DatabaseManagementFunctions {
      * the name of the ADDM task, description, user, status and creation date time.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7922,6 +8488,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseAddmTaskResult> getManagedDatabaseAddmTask(GetManagedDatabaseAddmTaskArgs args, InvokeOptions options) {
@@ -7934,6 +8501,8 @@ public final class DatabaseManagementFunctions {
      * the name of the ADDM task, description, user, status and creation date time.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7964,6 +8533,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseAddmTaskResult> getManagedDatabaseAddmTaskPlain(GetManagedDatabaseAddmTaskPlainArgs args, InvokeOptions options) {
@@ -7976,6 +8546,8 @@ public final class DatabaseManagementFunctions {
      * the name of the ADDM task, description, user, status and creation date time.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8006,6 +8578,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseAddmTasksResult> getManagedDatabaseAddmTasks(GetManagedDatabaseAddmTasksArgs args) {
@@ -8018,6 +8591,8 @@ public final class DatabaseManagementFunctions {
      * the name of the ADDM task, description, user, status and creation date time.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8048,6 +8623,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseAddmTasksResult> getManagedDatabaseAddmTasksPlain(GetManagedDatabaseAddmTasksPlainArgs args) {
@@ -8060,6 +8636,8 @@ public final class DatabaseManagementFunctions {
      * the name of the ADDM task, description, user, status and creation date time.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8090,6 +8668,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseAddmTasksResult> getManagedDatabaseAddmTasks(GetManagedDatabaseAddmTasksArgs args, InvokeOptions options) {
@@ -8102,6 +8681,8 @@ public final class DatabaseManagementFunctions {
      * the name of the ADDM task, description, user, status and creation date time.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8132,6 +8713,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseAddmTasksResult> getManagedDatabaseAddmTasksPlain(GetManagedDatabaseAddmTasksPlainArgs args, InvokeOptions options) {
@@ -8143,6 +8725,8 @@ public final class DatabaseManagementFunctions {
      * Get the counts of alert logs for the specified Managed Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8178,6 +8762,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseAlertLogCountResult> getManagedDatabaseAlertLogCount(GetManagedDatabaseAlertLogCountArgs args) {
@@ -8189,6 +8774,8 @@ public final class DatabaseManagementFunctions {
      * Get the counts of alert logs for the specified Managed Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8224,6 +8811,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseAlertLogCountResult> getManagedDatabaseAlertLogCountPlain(GetManagedDatabaseAlertLogCountPlainArgs args) {
@@ -8235,6 +8823,8 @@ public final class DatabaseManagementFunctions {
      * Get the counts of alert logs for the specified Managed Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8270,6 +8860,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseAlertLogCountResult> getManagedDatabaseAlertLogCount(GetManagedDatabaseAlertLogCountArgs args, InvokeOptions options) {
@@ -8281,6 +8872,8 @@ public final class DatabaseManagementFunctions {
      * Get the counts of alert logs for the specified Managed Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8316,6 +8909,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseAlertLogCountResult> getManagedDatabaseAlertLogCountPlain(GetManagedDatabaseAlertLogCountPlainArgs args, InvokeOptions options) {
@@ -8327,6 +8921,8 @@ public final class DatabaseManagementFunctions {
      * Get the counts of alert logs for the specified Managed Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8362,6 +8958,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseAlertLogCountsResult> getManagedDatabaseAlertLogCounts(GetManagedDatabaseAlertLogCountsArgs args) {
@@ -8373,6 +8970,8 @@ public final class DatabaseManagementFunctions {
      * Get the counts of alert logs for the specified Managed Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8408,6 +9007,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseAlertLogCountsResult> getManagedDatabaseAlertLogCountsPlain(GetManagedDatabaseAlertLogCountsPlainArgs args) {
@@ -8419,6 +9019,8 @@ public final class DatabaseManagementFunctions {
      * Get the counts of alert logs for the specified Managed Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8454,6 +9056,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseAlertLogCountsResult> getManagedDatabaseAlertLogCounts(GetManagedDatabaseAlertLogCountsArgs args, InvokeOptions options) {
@@ -8465,6 +9068,8 @@ public final class DatabaseManagementFunctions {
      * Get the counts of alert logs for the specified Managed Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8500,6 +9105,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseAlertLogCountsResult> getManagedDatabaseAlertLogCountsPlain(GetManagedDatabaseAlertLogCountsPlainArgs args, InvokeOptions options) {
@@ -8511,6 +9117,8 @@ public final class DatabaseManagementFunctions {
      * Get the counts of attention logs for the specified Managed Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8546,6 +9154,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseAttentionLogCountResult> getManagedDatabaseAttentionLogCount(GetManagedDatabaseAttentionLogCountArgs args) {
@@ -8557,6 +9166,8 @@ public final class DatabaseManagementFunctions {
      * Get the counts of attention logs for the specified Managed Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8592,6 +9203,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseAttentionLogCountResult> getManagedDatabaseAttentionLogCountPlain(GetManagedDatabaseAttentionLogCountPlainArgs args) {
@@ -8603,6 +9215,8 @@ public final class DatabaseManagementFunctions {
      * Get the counts of attention logs for the specified Managed Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8638,6 +9252,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseAttentionLogCountResult> getManagedDatabaseAttentionLogCount(GetManagedDatabaseAttentionLogCountArgs args, InvokeOptions options) {
@@ -8649,6 +9264,8 @@ public final class DatabaseManagementFunctions {
      * Get the counts of attention logs for the specified Managed Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8684,6 +9301,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseAttentionLogCountResult> getManagedDatabaseAttentionLogCountPlain(GetManagedDatabaseAttentionLogCountPlainArgs args, InvokeOptions options) {
@@ -8695,6 +9313,8 @@ public final class DatabaseManagementFunctions {
      * Get the counts of attention logs for the specified Managed Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8730,6 +9350,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseAttentionLogCountsResult> getManagedDatabaseAttentionLogCounts(GetManagedDatabaseAttentionLogCountsArgs args) {
@@ -8741,6 +9362,8 @@ public final class DatabaseManagementFunctions {
      * Get the counts of attention logs for the specified Managed Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8776,6 +9399,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseAttentionLogCountsResult> getManagedDatabaseAttentionLogCountsPlain(GetManagedDatabaseAttentionLogCountsPlainArgs args) {
@@ -8787,6 +9411,8 @@ public final class DatabaseManagementFunctions {
      * Get the counts of attention logs for the specified Managed Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8822,6 +9448,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseAttentionLogCountsResult> getManagedDatabaseAttentionLogCounts(GetManagedDatabaseAttentionLogCountsArgs args, InvokeOptions options) {
@@ -8833,6 +9460,8 @@ public final class DatabaseManagementFunctions {
      * Get the counts of attention logs for the specified Managed Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8868,6 +9497,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseAttentionLogCountsResult> getManagedDatabaseAttentionLogCountsPlain(GetManagedDatabaseAttentionLogCountsPlainArgs args, InvokeOptions options) {
@@ -8879,6 +9509,8 @@ public final class DatabaseManagementFunctions {
      * Lists the SQL statements from shared SQL area, also called the cursor cache.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8909,6 +9541,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseCursorCacheStatementsResult> getManagedDatabaseCursorCacheStatements(GetManagedDatabaseCursorCacheStatementsArgs args) {
@@ -8920,6 +9553,8 @@ public final class DatabaseManagementFunctions {
      * Lists the SQL statements from shared SQL area, also called the cursor cache.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8950,6 +9585,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseCursorCacheStatementsResult> getManagedDatabaseCursorCacheStatementsPlain(GetManagedDatabaseCursorCacheStatementsPlainArgs args) {
@@ -8961,6 +9597,8 @@ public final class DatabaseManagementFunctions {
      * Lists the SQL statements from shared SQL area, also called the cursor cache.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8991,6 +9629,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseCursorCacheStatementsResult> getManagedDatabaseCursorCacheStatements(GetManagedDatabaseCursorCacheStatementsArgs args, InvokeOptions options) {
@@ -9002,6 +9641,8 @@ public final class DatabaseManagementFunctions {
      * Lists the SQL statements from shared SQL area, also called the cursor cache.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9032,6 +9673,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseCursorCacheStatementsResult> getManagedDatabaseCursorCacheStatementsPlain(GetManagedDatabaseCursorCacheStatementsPlainArgs args, InvokeOptions options) {
@@ -9043,6 +9685,8 @@ public final class DatabaseManagementFunctions {
      * Gets the details for the Managed Database Group specified by managedDatabaseGroupId.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9071,6 +9715,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseGroupResult> getManagedDatabaseGroup(GetManagedDatabaseGroupArgs args) {
@@ -9082,6 +9727,8 @@ public final class DatabaseManagementFunctions {
      * Gets the details for the Managed Database Group specified by managedDatabaseGroupId.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9110,6 +9757,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseGroupResult> getManagedDatabaseGroupPlain(GetManagedDatabaseGroupPlainArgs args) {
@@ -9121,6 +9769,8 @@ public final class DatabaseManagementFunctions {
      * Gets the details for the Managed Database Group specified by managedDatabaseGroupId.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9149,6 +9799,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseGroupResult> getManagedDatabaseGroup(GetManagedDatabaseGroupArgs args, InvokeOptions options) {
@@ -9160,6 +9811,8 @@ public final class DatabaseManagementFunctions {
      * Gets the details for the Managed Database Group specified by managedDatabaseGroupId.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9188,6 +9841,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseGroupResult> getManagedDatabaseGroupPlain(GetManagedDatabaseGroupPlainArgs args, InvokeOptions options) {
@@ -9202,6 +9856,8 @@ public final class DatabaseManagementFunctions {
      * all the Managed Database Groups in the compartment are listed.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9233,6 +9889,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseGroupsResult> getManagedDatabaseGroups(GetManagedDatabaseGroupsArgs args) {
@@ -9247,6 +9904,8 @@ public final class DatabaseManagementFunctions {
      * all the Managed Database Groups in the compartment are listed.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9278,6 +9937,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseGroupsResult> getManagedDatabaseGroupsPlain(GetManagedDatabaseGroupsPlainArgs args) {
@@ -9292,6 +9952,8 @@ public final class DatabaseManagementFunctions {
      * all the Managed Database Groups in the compartment are listed.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9323,6 +9985,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseGroupsResult> getManagedDatabaseGroups(GetManagedDatabaseGroupsArgs args, InvokeOptions options) {
@@ -9337,6 +10000,8 @@ public final class DatabaseManagementFunctions {
      * all the Managed Database Groups in the compartment are listed.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9368,6 +10033,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseGroupsResult> getManagedDatabaseGroupsPlain(GetManagedDatabaseGroupsPlainArgs args, InvokeOptions options) {
@@ -9380,6 +10046,8 @@ public final class DatabaseManagementFunctions {
      * Managed Database, findings, recommendations, rationale, and examples.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9410,6 +10078,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult> getManagedDatabaseOptimizerStatisticsAdvisorExecution(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionArgs args) {
@@ -9422,6 +10091,8 @@ public final class DatabaseManagementFunctions {
      * Managed Database, findings, recommendations, rationale, and examples.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9452,6 +10123,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult> getManagedDatabaseOptimizerStatisticsAdvisorExecutionPlain(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionPlainArgs args) {
@@ -9464,6 +10136,8 @@ public final class DatabaseManagementFunctions {
      * Managed Database, findings, recommendations, rationale, and examples.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9494,6 +10168,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult> getManagedDatabaseOptimizerStatisticsAdvisorExecution(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionArgs args, InvokeOptions options) {
@@ -9506,6 +10181,8 @@ public final class DatabaseManagementFunctions {
      * Managed Database, findings, recommendations, rationale, and examples.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9536,6 +10213,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult> getManagedDatabaseOptimizerStatisticsAdvisorExecutionPlain(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionPlainArgs args, InvokeOptions options) {
@@ -9547,6 +10225,8 @@ public final class DatabaseManagementFunctions {
      * Gets the Oracle system-generated script for the specified Optimizer Statistics Advisor execution.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9577,6 +10257,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResult> getManagedDatabaseOptimizerStatisticsAdvisorExecutionScript(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptArgs args) {
@@ -9588,6 +10269,8 @@ public final class DatabaseManagementFunctions {
      * Gets the Oracle system-generated script for the specified Optimizer Statistics Advisor execution.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9618,6 +10301,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResult> getManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptPlain(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptPlainArgs args) {
@@ -9629,6 +10313,8 @@ public final class DatabaseManagementFunctions {
      * Gets the Oracle system-generated script for the specified Optimizer Statistics Advisor execution.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9659,6 +10345,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResult> getManagedDatabaseOptimizerStatisticsAdvisorExecutionScript(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptArgs args, InvokeOptions options) {
@@ -9670,6 +10357,8 @@ public final class DatabaseManagementFunctions {
      * Gets the Oracle system-generated script for the specified Optimizer Statistics Advisor execution.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9700,6 +10389,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResult> getManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptPlain(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptPlainArgs args, InvokeOptions options) {
@@ -9713,6 +10403,8 @@ public final class DatabaseManagementFunctions {
      * If the date-time range is not specified, then the executions in the last seven days are listed.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9743,6 +10435,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult> getManagedDatabaseOptimizerStatisticsAdvisorExecutions(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsArgs args) {
@@ -9756,6 +10449,8 @@ public final class DatabaseManagementFunctions {
      * If the date-time range is not specified, then the executions in the last seven days are listed.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9786,6 +10481,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult> getManagedDatabaseOptimizerStatisticsAdvisorExecutionsPlain(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsPlainArgs args) {
@@ -9799,6 +10495,8 @@ public final class DatabaseManagementFunctions {
      * If the date-time range is not specified, then the executions in the last seven days are listed.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9829,6 +10527,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult> getManagedDatabaseOptimizerStatisticsAdvisorExecutions(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsArgs args, InvokeOptions options) {
@@ -9842,6 +10541,8 @@ public final class DatabaseManagementFunctions {
      * If the date-time range is not specified, then the executions in the last seven days are listed.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9872,6 +10573,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult> getManagedDatabaseOptimizerStatisticsAdvisorExecutionsPlain(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsPlainArgs args, InvokeOptions options) {
@@ -9888,6 +10590,8 @@ public final class DatabaseManagementFunctions {
      * If the task type if not provided, then both Auto and Manual tasks are considered for aggregation.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9920,6 +10624,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResult> getManagedDatabaseOptimizerStatisticsCollectionAggregations(GetManagedDatabaseOptimizerStatisticsCollectionAggregationsArgs args) {
@@ -9936,6 +10641,8 @@ public final class DatabaseManagementFunctions {
      * If the task type if not provided, then both Auto and Manual tasks are considered for aggregation.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9968,6 +10675,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResult> getManagedDatabaseOptimizerStatisticsCollectionAggregationsPlain(GetManagedDatabaseOptimizerStatisticsCollectionAggregationsPlainArgs args) {
@@ -9984,6 +10692,8 @@ public final class DatabaseManagementFunctions {
      * If the task type if not provided, then both Auto and Manual tasks are considered for aggregation.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10016,6 +10726,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResult> getManagedDatabaseOptimizerStatisticsCollectionAggregations(GetManagedDatabaseOptimizerStatisticsCollectionAggregationsArgs args, InvokeOptions options) {
@@ -10032,6 +10743,8 @@ public final class DatabaseManagementFunctions {
      * If the task type if not provided, then both Auto and Manual tasks are considered for aggregation.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10064,6 +10777,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResult> getManagedDatabaseOptimizerStatisticsCollectionAggregationsPlain(GetManagedDatabaseOptimizerStatisticsCollectionAggregationsPlainArgs args, InvokeOptions options) {
@@ -10075,6 +10789,8 @@ public final class DatabaseManagementFunctions {
      * Gets a detailed report of the Optimizer Statistics Collection operation for the specified Managed Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10104,6 +10820,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseOptimizerStatisticsCollectionOperationResult> getManagedDatabaseOptimizerStatisticsCollectionOperation(GetManagedDatabaseOptimizerStatisticsCollectionOperationArgs args) {
@@ -10115,6 +10832,8 @@ public final class DatabaseManagementFunctions {
      * Gets a detailed report of the Optimizer Statistics Collection operation for the specified Managed Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10144,6 +10863,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseOptimizerStatisticsCollectionOperationResult> getManagedDatabaseOptimizerStatisticsCollectionOperationPlain(GetManagedDatabaseOptimizerStatisticsCollectionOperationPlainArgs args) {
@@ -10155,6 +10875,8 @@ public final class DatabaseManagementFunctions {
      * Gets a detailed report of the Optimizer Statistics Collection operation for the specified Managed Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10184,6 +10906,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseOptimizerStatisticsCollectionOperationResult> getManagedDatabaseOptimizerStatisticsCollectionOperation(GetManagedDatabaseOptimizerStatisticsCollectionOperationArgs args, InvokeOptions options) {
@@ -10195,6 +10918,8 @@ public final class DatabaseManagementFunctions {
      * Gets a detailed report of the Optimizer Statistics Collection operation for the specified Managed Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10224,6 +10949,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseOptimizerStatisticsCollectionOperationResult> getManagedDatabaseOptimizerStatisticsCollectionOperationPlain(GetManagedDatabaseOptimizerStatisticsCollectionOperationPlainArgs args, InvokeOptions options) {
@@ -10241,6 +10967,8 @@ public final class DatabaseManagementFunctions {
      * To obtain the required results, you can apply the different types of filters supported by this API.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10273,6 +11001,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseOptimizerStatisticsCollectionOperationsResult> getManagedDatabaseOptimizerStatisticsCollectionOperations(GetManagedDatabaseOptimizerStatisticsCollectionOperationsArgs args) {
@@ -10290,6 +11019,8 @@ public final class DatabaseManagementFunctions {
      * To obtain the required results, you can apply the different types of filters supported by this API.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10322,6 +11053,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseOptimizerStatisticsCollectionOperationsResult> getManagedDatabaseOptimizerStatisticsCollectionOperationsPlain(GetManagedDatabaseOptimizerStatisticsCollectionOperationsPlainArgs args) {
@@ -10339,6 +11071,8 @@ public final class DatabaseManagementFunctions {
      * To obtain the required results, you can apply the different types of filters supported by this API.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10371,6 +11105,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseOptimizerStatisticsCollectionOperationsResult> getManagedDatabaseOptimizerStatisticsCollectionOperations(GetManagedDatabaseOptimizerStatisticsCollectionOperationsArgs args, InvokeOptions options) {
@@ -10388,6 +11123,8 @@ public final class DatabaseManagementFunctions {
      * To obtain the required results, you can apply the different types of filters supported by this API.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10420,6 +11157,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseOptimizerStatisticsCollectionOperationsResult> getManagedDatabaseOptimizerStatisticsCollectionOperationsPlain(GetManagedDatabaseOptimizerStatisticsCollectionOperationsPlainArgs args, InvokeOptions options) {
@@ -10431,6 +11169,8 @@ public final class DatabaseManagementFunctions {
      * Gets the SQL plan baseline details for the specified planName.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10461,6 +11201,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseSqlPlanBaselineResult> getManagedDatabaseSqlPlanBaseline(GetManagedDatabaseSqlPlanBaselineArgs args) {
@@ -10472,6 +11213,8 @@ public final class DatabaseManagementFunctions {
      * Gets the SQL plan baseline details for the specified planName.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10502,6 +11245,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseSqlPlanBaselineResult> getManagedDatabaseSqlPlanBaselinePlain(GetManagedDatabaseSqlPlanBaselinePlainArgs args) {
@@ -10513,6 +11257,8 @@ public final class DatabaseManagementFunctions {
      * Gets the SQL plan baseline details for the specified planName.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10543,6 +11289,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseSqlPlanBaselineResult> getManagedDatabaseSqlPlanBaseline(GetManagedDatabaseSqlPlanBaselineArgs args, InvokeOptions options) {
@@ -10554,6 +11301,8 @@ public final class DatabaseManagementFunctions {
      * Gets the SQL plan baseline details for the specified planName.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10584,6 +11333,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseSqlPlanBaselineResult> getManagedDatabaseSqlPlanBaselinePlain(GetManagedDatabaseSqlPlanBaselinePlainArgs args, InvokeOptions options) {
@@ -10597,6 +11347,8 @@ public final class DatabaseManagementFunctions {
      * SQL plan baselines, SPM Evolve Advisor task, and SQL Management Base.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10626,6 +11378,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseSqlPlanBaselineConfigurationResult> getManagedDatabaseSqlPlanBaselineConfiguration(GetManagedDatabaseSqlPlanBaselineConfigurationArgs args) {
@@ -10639,6 +11392,8 @@ public final class DatabaseManagementFunctions {
      * SQL plan baselines, SPM Evolve Advisor task, and SQL Management Base.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10668,6 +11423,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseSqlPlanBaselineConfigurationResult> getManagedDatabaseSqlPlanBaselineConfigurationPlain(GetManagedDatabaseSqlPlanBaselineConfigurationPlainArgs args) {
@@ -10681,6 +11437,8 @@ public final class DatabaseManagementFunctions {
      * SQL plan baselines, SPM Evolve Advisor task, and SQL Management Base.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10710,6 +11468,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseSqlPlanBaselineConfigurationResult> getManagedDatabaseSqlPlanBaselineConfiguration(GetManagedDatabaseSqlPlanBaselineConfigurationArgs args, InvokeOptions options) {
@@ -10723,6 +11482,8 @@ public final class DatabaseManagementFunctions {
      * SQL plan baselines, SPM Evolve Advisor task, and SQL Management Base.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10752,6 +11513,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseSqlPlanBaselineConfigurationResult> getManagedDatabaseSqlPlanBaselineConfigurationPlain(GetManagedDatabaseSqlPlanBaselineConfigurationPlainArgs args, InvokeOptions options) {
@@ -10763,6 +11525,8 @@ public final class DatabaseManagementFunctions {
      * Lists the database jobs used for loading SQL plan baselines in the specified Managed Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10793,6 +11557,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseSqlPlanBaselineJobsResult> getManagedDatabaseSqlPlanBaselineJobs(GetManagedDatabaseSqlPlanBaselineJobsArgs args) {
@@ -10804,6 +11569,8 @@ public final class DatabaseManagementFunctions {
      * Lists the database jobs used for loading SQL plan baselines in the specified Managed Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10834,6 +11601,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseSqlPlanBaselineJobsResult> getManagedDatabaseSqlPlanBaselineJobsPlain(GetManagedDatabaseSqlPlanBaselineJobsPlainArgs args) {
@@ -10845,6 +11613,8 @@ public final class DatabaseManagementFunctions {
      * Lists the database jobs used for loading SQL plan baselines in the specified Managed Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10875,6 +11645,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseSqlPlanBaselineJobsResult> getManagedDatabaseSqlPlanBaselineJobs(GetManagedDatabaseSqlPlanBaselineJobsArgs args, InvokeOptions options) {
@@ -10886,6 +11657,8 @@ public final class DatabaseManagementFunctions {
      * Lists the database jobs used for loading SQL plan baselines in the specified Managed Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10916,6 +11689,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseSqlPlanBaselineJobsResult> getManagedDatabaseSqlPlanBaselineJobsPlain(GetManagedDatabaseSqlPlanBaselineJobsPlainArgs args, InvokeOptions options) {
@@ -10928,6 +11702,7 @@ public final class DatabaseManagementFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10970,6 +11745,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseSqlPlanBaselinesResult> getManagedDatabaseSqlPlanBaselines(GetManagedDatabaseSqlPlanBaselinesArgs args) {
@@ -10982,6 +11758,7 @@ public final class DatabaseManagementFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11024,6 +11801,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseSqlPlanBaselinesResult> getManagedDatabaseSqlPlanBaselinesPlain(GetManagedDatabaseSqlPlanBaselinesPlainArgs args) {
@@ -11036,6 +11814,7 @@ public final class DatabaseManagementFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11078,6 +11857,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseSqlPlanBaselinesResult> getManagedDatabaseSqlPlanBaselines(GetManagedDatabaseSqlPlanBaselinesArgs args, InvokeOptions options) {
@@ -11090,6 +11870,7 @@ public final class DatabaseManagementFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11132,6 +11913,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseSqlPlanBaselinesResult> getManagedDatabaseSqlPlanBaselinesPlain(GetManagedDatabaseSqlPlanBaselinesPlainArgs args, InvokeOptions options) {
@@ -11143,6 +11925,8 @@ public final class DatabaseManagementFunctions {
      * Lists the SQL Tuning Advisor tasks for the specified Managed Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11175,6 +11959,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseSqlTuningAdvisorTaskResult> getManagedDatabaseSqlTuningAdvisorTask(GetManagedDatabaseSqlTuningAdvisorTaskArgs args) {
@@ -11186,6 +11971,8 @@ public final class DatabaseManagementFunctions {
      * Lists the SQL Tuning Advisor tasks for the specified Managed Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11218,6 +12005,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseSqlTuningAdvisorTaskResult> getManagedDatabaseSqlTuningAdvisorTaskPlain(GetManagedDatabaseSqlTuningAdvisorTaskPlainArgs args) {
@@ -11229,6 +12017,8 @@ public final class DatabaseManagementFunctions {
      * Lists the SQL Tuning Advisor tasks for the specified Managed Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11261,6 +12051,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseSqlTuningAdvisorTaskResult> getManagedDatabaseSqlTuningAdvisorTask(GetManagedDatabaseSqlTuningAdvisorTaskArgs args, InvokeOptions options) {
@@ -11272,6 +12063,8 @@ public final class DatabaseManagementFunctions {
      * Lists the SQL Tuning Advisor tasks for the specified Managed Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11304,6 +12097,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseSqlTuningAdvisorTaskResult> getManagedDatabaseSqlTuningAdvisorTaskPlain(GetManagedDatabaseSqlTuningAdvisorTaskPlainArgs args, InvokeOptions options) {
@@ -11315,6 +12109,8 @@ public final class DatabaseManagementFunctions {
      * Lists the SQL Tuning Advisor tasks for the specified Managed Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11348,6 +12144,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseSqlTuningAdvisorTasksResult> getManagedDatabaseSqlTuningAdvisorTasks(GetManagedDatabaseSqlTuningAdvisorTasksArgs args) {
@@ -11359,6 +12156,8 @@ public final class DatabaseManagementFunctions {
      * Lists the SQL Tuning Advisor tasks for the specified Managed Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11392,6 +12191,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseSqlTuningAdvisorTasksResult> getManagedDatabaseSqlTuningAdvisorTasksPlain(GetManagedDatabaseSqlTuningAdvisorTasksPlainArgs args) {
@@ -11403,6 +12203,8 @@ public final class DatabaseManagementFunctions {
      * Lists the SQL Tuning Advisor tasks for the specified Managed Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11436,6 +12238,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseSqlTuningAdvisorTasksResult> getManagedDatabaseSqlTuningAdvisorTasks(GetManagedDatabaseSqlTuningAdvisorTasksArgs args, InvokeOptions options) {
@@ -11447,6 +12250,8 @@ public final class DatabaseManagementFunctions {
      * Lists the SQL Tuning Advisor tasks for the specified Managed Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11480,6 +12285,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseSqlTuningAdvisorTasksResult> getManagedDatabaseSqlTuningAdvisorTasksPlain(GetManagedDatabaseSqlTuningAdvisorTasksPlainArgs args, InvokeOptions options) {
@@ -11493,6 +12299,8 @@ public final class DatabaseManagementFunctions {
      * and this API retrieves the comparison report of the statistics of the two plans.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11525,6 +12333,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult> getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison(GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonArgs args) {
@@ -11538,6 +12347,8 @@ public final class DatabaseManagementFunctions {
      * and this API retrieves the comparison report of the statistics of the two plans.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11570,6 +12381,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult> getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonPlain(GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonPlainArgs args) {
@@ -11583,6 +12395,8 @@ public final class DatabaseManagementFunctions {
      * and this API retrieves the comparison report of the statistics of the two plans.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11615,6 +12429,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult> getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison(GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonArgs args, InvokeOptions options) {
@@ -11628,6 +12443,8 @@ public final class DatabaseManagementFunctions {
      * and this API retrieves the comparison report of the statistics of the two plans.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11660,6 +12477,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult> getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonPlain(GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonPlainArgs args, InvokeOptions options) {
@@ -11671,6 +12489,8 @@ public final class DatabaseManagementFunctions {
      * Gets an array of the details of the findings that match specific filters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11706,6 +12526,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseSqlTuningAdvisorTasksFindingResult> getManagedDatabaseSqlTuningAdvisorTasksFinding(GetManagedDatabaseSqlTuningAdvisorTasksFindingArgs args) {
@@ -11717,6 +12538,8 @@ public final class DatabaseManagementFunctions {
      * Gets an array of the details of the findings that match specific filters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11752,6 +12575,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseSqlTuningAdvisorTasksFindingResult> getManagedDatabaseSqlTuningAdvisorTasksFindingPlain(GetManagedDatabaseSqlTuningAdvisorTasksFindingPlainArgs args) {
@@ -11763,6 +12587,8 @@ public final class DatabaseManagementFunctions {
      * Gets an array of the details of the findings that match specific filters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11798,6 +12624,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseSqlTuningAdvisorTasksFindingResult> getManagedDatabaseSqlTuningAdvisorTasksFinding(GetManagedDatabaseSqlTuningAdvisorTasksFindingArgs args, InvokeOptions options) {
@@ -11809,6 +12636,8 @@ public final class DatabaseManagementFunctions {
      * Gets an array of the details of the findings that match specific filters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11844,6 +12673,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseSqlTuningAdvisorTasksFindingResult> getManagedDatabaseSqlTuningAdvisorTasksFindingPlain(GetManagedDatabaseSqlTuningAdvisorTasksFindingPlainArgs args, InvokeOptions options) {
@@ -11855,6 +12685,8 @@ public final class DatabaseManagementFunctions {
      * Gets an array of the details of the findings that match specific filters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11891,6 +12723,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult> getManagedDatabaseSqlTuningAdvisorTasksFindings(GetManagedDatabaseSqlTuningAdvisorTasksFindingsArgs args) {
@@ -11902,6 +12735,8 @@ public final class DatabaseManagementFunctions {
      * Gets an array of the details of the findings that match specific filters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11938,6 +12773,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult> getManagedDatabaseSqlTuningAdvisorTasksFindingsPlain(GetManagedDatabaseSqlTuningAdvisorTasksFindingsPlainArgs args) {
@@ -11949,6 +12785,8 @@ public final class DatabaseManagementFunctions {
      * Gets an array of the details of the findings that match specific filters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11985,6 +12823,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult> getManagedDatabaseSqlTuningAdvisorTasksFindings(GetManagedDatabaseSqlTuningAdvisorTasksFindingsArgs args, InvokeOptions options) {
@@ -11996,6 +12835,8 @@ public final class DatabaseManagementFunctions {
      * Gets an array of the details of the findings that match specific filters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12032,6 +12873,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult> getManagedDatabaseSqlTuningAdvisorTasksFindingsPlain(GetManagedDatabaseSqlTuningAdvisorTasksFindingsPlainArgs args, InvokeOptions options) {
@@ -12044,6 +12886,8 @@ public final class DatabaseManagementFunctions {
      * The task ID and object ID are used to retrieve the findings and recommendations.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12075,6 +12919,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseSqlTuningAdvisorTasksRecommendationResult> getManagedDatabaseSqlTuningAdvisorTasksRecommendation(GetManagedDatabaseSqlTuningAdvisorTasksRecommendationArgs args) {
@@ -12087,6 +12932,8 @@ public final class DatabaseManagementFunctions {
      * The task ID and object ID are used to retrieve the findings and recommendations.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12118,6 +12965,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseSqlTuningAdvisorTasksRecommendationResult> getManagedDatabaseSqlTuningAdvisorTasksRecommendationPlain(GetManagedDatabaseSqlTuningAdvisorTasksRecommendationPlainArgs args) {
@@ -12130,6 +12978,8 @@ public final class DatabaseManagementFunctions {
      * The task ID and object ID are used to retrieve the findings and recommendations.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12161,6 +13011,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseSqlTuningAdvisorTasksRecommendationResult> getManagedDatabaseSqlTuningAdvisorTasksRecommendation(GetManagedDatabaseSqlTuningAdvisorTasksRecommendationArgs args, InvokeOptions options) {
@@ -12173,6 +13024,8 @@ public final class DatabaseManagementFunctions {
      * The task ID and object ID are used to retrieve the findings and recommendations.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12204,6 +13057,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseSqlTuningAdvisorTasksRecommendationResult> getManagedDatabaseSqlTuningAdvisorTasksRecommendationPlain(GetManagedDatabaseSqlTuningAdvisorTasksRecommendationPlainArgs args, InvokeOptions options) {
@@ -12216,6 +13070,8 @@ public final class DatabaseManagementFunctions {
      * The task ID and object ID are used to retrieve the findings and recommendations.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12248,6 +13104,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult> getManagedDatabaseSqlTuningAdvisorTasksRecommendations(GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsArgs args) {
@@ -12260,6 +13117,8 @@ public final class DatabaseManagementFunctions {
      * The task ID and object ID are used to retrieve the findings and recommendations.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12292,6 +13151,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult> getManagedDatabaseSqlTuningAdvisorTasksRecommendationsPlain(GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsPlainArgs args) {
@@ -12304,6 +13164,8 @@ public final class DatabaseManagementFunctions {
      * The task ID and object ID are used to retrieve the findings and recommendations.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12336,6 +13198,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult> getManagedDatabaseSqlTuningAdvisorTasksRecommendations(GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsArgs args, InvokeOptions options) {
@@ -12348,6 +13211,8 @@ public final class DatabaseManagementFunctions {
      * The task ID and object ID are used to retrieve the findings and recommendations.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12380,6 +13245,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult> getManagedDatabaseSqlTuningAdvisorTasksRecommendationsPlain(GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsPlainArgs args, InvokeOptions options) {
@@ -12391,6 +13257,8 @@ public final class DatabaseManagementFunctions {
      * Retrieves a SQL execution plan for the SQL being tuned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12423,6 +13291,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResult> getManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan(GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanArgs args) {
@@ -12434,6 +13303,8 @@ public final class DatabaseManagementFunctions {
      * Retrieves a SQL execution plan for the SQL being tuned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12466,6 +13337,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResult> getManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlain(GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlainArgs args) {
@@ -12477,6 +13349,8 @@ public final class DatabaseManagementFunctions {
      * Retrieves a SQL execution plan for the SQL being tuned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12509,6 +13383,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResult> getManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan(GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanArgs args, InvokeOptions options) {
@@ -12520,6 +13395,8 @@ public final class DatabaseManagementFunctions {
      * Retrieves a SQL execution plan for the SQL being tuned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12552,6 +13429,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResult> getManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlain(GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlainArgs args, InvokeOptions options) {
@@ -12563,6 +13441,8 @@ public final class DatabaseManagementFunctions {
      * Gets the summary report for the specified SQL Tuning Advisor task.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12598,6 +13478,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult> getManagedDatabaseSqlTuningAdvisorTasksSummaryReport(GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportArgs args) {
@@ -12609,6 +13490,8 @@ public final class DatabaseManagementFunctions {
      * Gets the summary report for the specified SQL Tuning Advisor task.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12644,6 +13527,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult> getManagedDatabaseSqlTuningAdvisorTasksSummaryReportPlain(GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportPlainArgs args) {
@@ -12655,6 +13539,8 @@ public final class DatabaseManagementFunctions {
      * Gets the summary report for the specified SQL Tuning Advisor task.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12690,6 +13576,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult> getManagedDatabaseSqlTuningAdvisorTasksSummaryReport(GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportArgs args, InvokeOptions options) {
@@ -12701,6 +13588,8 @@ public final class DatabaseManagementFunctions {
      * Gets the summary report for the specified SQL Tuning Advisor task.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12736,6 +13625,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult> getManagedDatabaseSqlTuningAdvisorTasksSummaryReportPlain(GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportPlainArgs args, InvokeOptions options) {
@@ -12747,6 +13637,8 @@ public final class DatabaseManagementFunctions {
      * Lists the SQL tuning sets for the specified Managed Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12777,6 +13669,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseSqlTuningSetResult> getManagedDatabaseSqlTuningSet(GetManagedDatabaseSqlTuningSetArgs args) {
@@ -12788,6 +13681,8 @@ public final class DatabaseManagementFunctions {
      * Lists the SQL tuning sets for the specified Managed Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12818,6 +13713,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseSqlTuningSetResult> getManagedDatabaseSqlTuningSetPlain(GetManagedDatabaseSqlTuningSetPlainArgs args) {
@@ -12829,6 +13725,8 @@ public final class DatabaseManagementFunctions {
      * Lists the SQL tuning sets for the specified Managed Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12859,6 +13757,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseSqlTuningSetResult> getManagedDatabaseSqlTuningSet(GetManagedDatabaseSqlTuningSetArgs args, InvokeOptions options) {
@@ -12870,6 +13769,8 @@ public final class DatabaseManagementFunctions {
      * Lists the SQL tuning sets for the specified Managed Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12900,6 +13801,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseSqlTuningSetResult> getManagedDatabaseSqlTuningSetPlain(GetManagedDatabaseSqlTuningSetPlainArgs args, InvokeOptions options) {
@@ -12911,6 +13813,8 @@ public final class DatabaseManagementFunctions {
      * Lists the SQL tuning sets for the specified Managed Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12942,6 +13846,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseSqlTuningSetsResult> getManagedDatabaseSqlTuningSets(GetManagedDatabaseSqlTuningSetsArgs args) {
@@ -12953,6 +13858,8 @@ public final class DatabaseManagementFunctions {
      * Lists the SQL tuning sets for the specified Managed Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12984,6 +13891,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseSqlTuningSetsResult> getManagedDatabaseSqlTuningSetsPlain(GetManagedDatabaseSqlTuningSetsPlainArgs args) {
@@ -12995,6 +13903,8 @@ public final class DatabaseManagementFunctions {
      * Lists the SQL tuning sets for the specified Managed Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13026,6 +13936,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseSqlTuningSetsResult> getManagedDatabaseSqlTuningSets(GetManagedDatabaseSqlTuningSetsArgs args, InvokeOptions options) {
@@ -13037,6 +13948,8 @@ public final class DatabaseManagementFunctions {
      * Lists the SQL tuning sets for the specified Managed Database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13068,6 +13981,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseSqlTuningSetsResult> getManagedDatabaseSqlTuningSetsPlain(GetManagedDatabaseSqlTuningSetsPlainArgs args, InvokeOptions options) {
@@ -13080,6 +13994,8 @@ public final class DatabaseManagementFunctions {
      * Not Stale Stats, Stale Stats, and No Stats. This also includes the percentage of each status.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13108,6 +14024,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseTableStatisticsResult> getManagedDatabaseTableStatistics(GetManagedDatabaseTableStatisticsArgs args) {
@@ -13120,6 +14037,8 @@ public final class DatabaseManagementFunctions {
      * Not Stale Stats, Stale Stats, and No Stats. This also includes the percentage of each status.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13148,6 +14067,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseTableStatisticsResult> getManagedDatabaseTableStatisticsPlain(GetManagedDatabaseTableStatisticsPlainArgs args) {
@@ -13160,6 +14080,8 @@ public final class DatabaseManagementFunctions {
      * Not Stale Stats, Stale Stats, and No Stats. This also includes the percentage of each status.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13188,6 +14110,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseTableStatisticsResult> getManagedDatabaseTableStatistics(GetManagedDatabaseTableStatisticsArgs args, InvokeOptions options) {
@@ -13200,6 +14123,8 @@ public final class DatabaseManagementFunctions {
      * Not Stale Stats, Stale Stats, and No Stats. This also includes the percentage of each status.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13228,6 +14153,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseTableStatisticsResult> getManagedDatabaseTableStatisticsPlain(GetManagedDatabaseTableStatisticsPlainArgs args, InvokeOptions options) {
@@ -13239,6 +14165,8 @@ public final class DatabaseManagementFunctions {
      * Gets the details of the user specified by managedDatabaseId and userName.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13269,6 +14197,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseUserResult> getManagedDatabaseUser(GetManagedDatabaseUserArgs args) {
@@ -13280,6 +14209,8 @@ public final class DatabaseManagementFunctions {
      * Gets the details of the user specified by managedDatabaseId and userName.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13310,6 +14241,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseUserResult> getManagedDatabaseUserPlain(GetManagedDatabaseUserPlainArgs args) {
@@ -13321,6 +14253,8 @@ public final class DatabaseManagementFunctions {
      * Gets the details of the user specified by managedDatabaseId and userName.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13351,6 +14285,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseUserResult> getManagedDatabaseUser(GetManagedDatabaseUserArgs args, InvokeOptions options) {
@@ -13362,6 +14297,8 @@ public final class DatabaseManagementFunctions {
      * Gets the details of the user specified by managedDatabaseId and userName.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13392,6 +14329,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseUserResult> getManagedDatabaseUserPlain(GetManagedDatabaseUserPlainArgs args, InvokeOptions options) {
@@ -13403,6 +14341,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of consumer group privileges granted to a specific user.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13433,6 +14373,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseUserConsumerGroupPrivilegeResult> getManagedDatabaseUserConsumerGroupPrivilege(GetManagedDatabaseUserConsumerGroupPrivilegeArgs args) {
@@ -13444,6 +14385,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of consumer group privileges granted to a specific user.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13474,6 +14417,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseUserConsumerGroupPrivilegeResult> getManagedDatabaseUserConsumerGroupPrivilegePlain(GetManagedDatabaseUserConsumerGroupPrivilegePlainArgs args) {
@@ -13485,6 +14429,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of consumer group privileges granted to a specific user.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13515,6 +14461,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseUserConsumerGroupPrivilegeResult> getManagedDatabaseUserConsumerGroupPrivilege(GetManagedDatabaseUserConsumerGroupPrivilegeArgs args, InvokeOptions options) {
@@ -13526,6 +14473,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of consumer group privileges granted to a specific user.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13556,6 +14505,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseUserConsumerGroupPrivilegeResult> getManagedDatabaseUserConsumerGroupPrivilegePlain(GetManagedDatabaseUserConsumerGroupPrivilegePlainArgs args, InvokeOptions options) {
@@ -13567,6 +14517,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of consumer group privileges granted to a specific user.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13598,6 +14550,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseUserConsumerGroupPrivilegesResult> getManagedDatabaseUserConsumerGroupPrivileges(GetManagedDatabaseUserConsumerGroupPrivilegesArgs args) {
@@ -13609,6 +14562,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of consumer group privileges granted to a specific user.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13640,6 +14595,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseUserConsumerGroupPrivilegesResult> getManagedDatabaseUserConsumerGroupPrivilegesPlain(GetManagedDatabaseUserConsumerGroupPrivilegesPlainArgs args) {
@@ -13651,6 +14607,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of consumer group privileges granted to a specific user.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13682,6 +14640,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseUserConsumerGroupPrivilegesResult> getManagedDatabaseUserConsumerGroupPrivileges(GetManagedDatabaseUserConsumerGroupPrivilegesArgs args, InvokeOptions options) {
@@ -13693,6 +14652,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of consumer group privileges granted to a specific user.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13724,6 +14685,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseUserConsumerGroupPrivilegesResult> getManagedDatabaseUserConsumerGroupPrivilegesPlain(GetManagedDatabaseUserConsumerGroupPrivilegesPlainArgs args, InvokeOptions options) {
@@ -13735,6 +14697,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of containers for a specific user. This is only applicable if ALL_CONTAINERS !=&#39;Y&#39;.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13765,6 +14729,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseUserDataAccessContainerResult> getManagedDatabaseUserDataAccessContainer(GetManagedDatabaseUserDataAccessContainerArgs args) {
@@ -13776,6 +14741,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of containers for a specific user. This is only applicable if ALL_CONTAINERS !=&#39;Y&#39;.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13806,6 +14773,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseUserDataAccessContainerResult> getManagedDatabaseUserDataAccessContainerPlain(GetManagedDatabaseUserDataAccessContainerPlainArgs args) {
@@ -13817,6 +14785,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of containers for a specific user. This is only applicable if ALL_CONTAINERS !=&#39;Y&#39;.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13847,6 +14817,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseUserDataAccessContainerResult> getManagedDatabaseUserDataAccessContainer(GetManagedDatabaseUserDataAccessContainerArgs args, InvokeOptions options) {
@@ -13858,6 +14829,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of containers for a specific user. This is only applicable if ALL_CONTAINERS !=&#39;Y&#39;.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13888,6 +14861,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseUserDataAccessContainerResult> getManagedDatabaseUserDataAccessContainerPlain(GetManagedDatabaseUserDataAccessContainerPlainArgs args, InvokeOptions options) {
@@ -13899,6 +14873,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of containers for a specific user. This is only applicable if ALL_CONTAINERS !=&#39;Y&#39;.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13930,6 +14906,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseUserDataAccessContainersResult> getManagedDatabaseUserDataAccessContainers(GetManagedDatabaseUserDataAccessContainersArgs args) {
@@ -13941,6 +14918,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of containers for a specific user. This is only applicable if ALL_CONTAINERS !=&#39;Y&#39;.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13972,6 +14951,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseUserDataAccessContainersResult> getManagedDatabaseUserDataAccessContainersPlain(GetManagedDatabaseUserDataAccessContainersPlainArgs args) {
@@ -13983,6 +14963,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of containers for a specific user. This is only applicable if ALL_CONTAINERS !=&#39;Y&#39;.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14014,6 +14996,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseUserDataAccessContainersResult> getManagedDatabaseUserDataAccessContainers(GetManagedDatabaseUserDataAccessContainersArgs args, InvokeOptions options) {
@@ -14025,6 +15008,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of containers for a specific user. This is only applicable if ALL_CONTAINERS !=&#39;Y&#39;.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14056,6 +15041,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseUserDataAccessContainersResult> getManagedDatabaseUserDataAccessContainersPlain(GetManagedDatabaseUserDataAccessContainersPlainArgs args, InvokeOptions options) {
@@ -14067,6 +15053,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of object privileges granted to a specific user.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14097,6 +15085,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseUserObjectPrivilegeResult> getManagedDatabaseUserObjectPrivilege(GetManagedDatabaseUserObjectPrivilegeArgs args) {
@@ -14108,6 +15097,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of object privileges granted to a specific user.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14138,6 +15129,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseUserObjectPrivilegeResult> getManagedDatabaseUserObjectPrivilegePlain(GetManagedDatabaseUserObjectPrivilegePlainArgs args) {
@@ -14149,6 +15141,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of object privileges granted to a specific user.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14179,6 +15173,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseUserObjectPrivilegeResult> getManagedDatabaseUserObjectPrivilege(GetManagedDatabaseUserObjectPrivilegeArgs args, InvokeOptions options) {
@@ -14190,6 +15185,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of object privileges granted to a specific user.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14220,6 +15217,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseUserObjectPrivilegeResult> getManagedDatabaseUserObjectPrivilegePlain(GetManagedDatabaseUserObjectPrivilegePlainArgs args, InvokeOptions options) {
@@ -14231,6 +15229,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of object privileges granted to a specific user.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14262,6 +15262,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseUserObjectPrivilegesResult> getManagedDatabaseUserObjectPrivileges(GetManagedDatabaseUserObjectPrivilegesArgs args) {
@@ -14273,6 +15274,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of object privileges granted to a specific user.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14304,6 +15307,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseUserObjectPrivilegesResult> getManagedDatabaseUserObjectPrivilegesPlain(GetManagedDatabaseUserObjectPrivilegesPlainArgs args) {
@@ -14315,6 +15319,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of object privileges granted to a specific user.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14346,6 +15352,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseUserObjectPrivilegesResult> getManagedDatabaseUserObjectPrivileges(GetManagedDatabaseUserObjectPrivilegesArgs args, InvokeOptions options) {
@@ -14357,6 +15364,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of object privileges granted to a specific user.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14388,6 +15397,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseUserObjectPrivilegesResult> getManagedDatabaseUserObjectPrivilegesPlain(GetManagedDatabaseUserObjectPrivilegesPlainArgs args, InvokeOptions options) {
@@ -14399,6 +15409,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of users on whose behalf the current user acts as proxy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14429,6 +15441,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseUserProxiedForUserResult> getManagedDatabaseUserProxiedForUser(GetManagedDatabaseUserProxiedForUserArgs args) {
@@ -14440,6 +15453,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of users on whose behalf the current user acts as proxy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14470,6 +15485,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseUserProxiedForUserResult> getManagedDatabaseUserProxiedForUserPlain(GetManagedDatabaseUserProxiedForUserPlainArgs args) {
@@ -14481,6 +15497,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of users on whose behalf the current user acts as proxy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14511,6 +15529,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseUserProxiedForUserResult> getManagedDatabaseUserProxiedForUser(GetManagedDatabaseUserProxiedForUserArgs args, InvokeOptions options) {
@@ -14522,6 +15541,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of users on whose behalf the current user acts as proxy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14552,6 +15573,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseUserProxiedForUserResult> getManagedDatabaseUserProxiedForUserPlain(GetManagedDatabaseUserProxiedForUserPlainArgs args, InvokeOptions options) {
@@ -14563,6 +15585,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of users on whose behalf the current user acts as proxy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14594,6 +15618,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseUserProxiedForUsersResult> getManagedDatabaseUserProxiedForUsers(GetManagedDatabaseUserProxiedForUsersArgs args) {
@@ -14605,6 +15630,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of users on whose behalf the current user acts as proxy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14636,6 +15663,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseUserProxiedForUsersResult> getManagedDatabaseUserProxiedForUsersPlain(GetManagedDatabaseUserProxiedForUsersPlainArgs args) {
@@ -14647,6 +15675,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of users on whose behalf the current user acts as proxy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14678,6 +15708,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseUserProxiedForUsersResult> getManagedDatabaseUserProxiedForUsers(GetManagedDatabaseUserProxiedForUsersArgs args, InvokeOptions options) {
@@ -14689,6 +15720,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of users on whose behalf the current user acts as proxy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14720,6 +15753,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseUserProxiedForUsersResult> getManagedDatabaseUserProxiedForUsersPlain(GetManagedDatabaseUserProxiedForUsersPlainArgs args, InvokeOptions options) {
@@ -14731,6 +15765,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of roles granted to a specific user.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14761,6 +15797,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseUserRoleResult> getManagedDatabaseUserRole(GetManagedDatabaseUserRoleArgs args) {
@@ -14772,6 +15809,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of roles granted to a specific user.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14802,6 +15841,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseUserRoleResult> getManagedDatabaseUserRolePlain(GetManagedDatabaseUserRolePlainArgs args) {
@@ -14813,6 +15853,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of roles granted to a specific user.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14843,6 +15885,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseUserRoleResult> getManagedDatabaseUserRole(GetManagedDatabaseUserRoleArgs args, InvokeOptions options) {
@@ -14854,6 +15897,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of roles granted to a specific user.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14884,6 +15929,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseUserRoleResult> getManagedDatabaseUserRolePlain(GetManagedDatabaseUserRolePlainArgs args, InvokeOptions options) {
@@ -14895,6 +15941,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of roles granted to a specific user.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14926,6 +15974,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseUserRolesResult> getManagedDatabaseUserRoles(GetManagedDatabaseUserRolesArgs args) {
@@ -14937,6 +15986,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of roles granted to a specific user.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14968,6 +16019,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseUserRolesResult> getManagedDatabaseUserRolesPlain(GetManagedDatabaseUserRolesPlainArgs args) {
@@ -14979,6 +16031,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of roles granted to a specific user.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15010,6 +16064,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseUserRolesResult> getManagedDatabaseUserRoles(GetManagedDatabaseUserRolesArgs args, InvokeOptions options) {
@@ -15021,6 +16076,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of roles granted to a specific user.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15052,6 +16109,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseUserRolesResult> getManagedDatabaseUserRolesPlain(GetManagedDatabaseUserRolesPlainArgs args, InvokeOptions options) {
@@ -15063,6 +16121,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of users for the specified managedDatabaseId.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15093,6 +16153,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseUsersResult> getManagedDatabaseUsers(GetManagedDatabaseUsersArgs args) {
@@ -15104,6 +16165,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of users for the specified managedDatabaseId.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15134,6 +16197,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseUsersResult> getManagedDatabaseUsersPlain(GetManagedDatabaseUsersPlainArgs args) {
@@ -15145,6 +16209,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of users for the specified managedDatabaseId.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15175,6 +16241,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabaseUsersResult> getManagedDatabaseUsers(GetManagedDatabaseUsersArgs args, InvokeOptions options) {
@@ -15186,6 +16253,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of users for the specified managedDatabaseId.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15216,6 +16285,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabaseUsersResult> getManagedDatabaseUsersPlain(GetManagedDatabaseUsersPlainArgs args, InvokeOptions options) {
@@ -15232,6 +16302,8 @@ public final class DatabaseManagementFunctions {
      * considered and Managed Databases with `ADVANCED` management option are listed.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15265,6 +16337,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabasesResult> getManagedDatabases(GetManagedDatabasesArgs args) {
@@ -15281,6 +16354,8 @@ public final class DatabaseManagementFunctions {
      * considered and Managed Databases with `ADVANCED` management option are listed.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15314,6 +16389,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabasesResult> getManagedDatabasesPlain(GetManagedDatabasesPlainArgs args) {
@@ -15330,6 +16406,8 @@ public final class DatabaseManagementFunctions {
      * considered and Managed Databases with `ADVANCED` management option are listed.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15363,6 +16441,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabasesResult> getManagedDatabases(GetManagedDatabasesArgs args, InvokeOptions options) {
@@ -15379,6 +16458,8 @@ public final class DatabaseManagementFunctions {
      * considered and Managed Databases with `ADVANCED` management option are listed.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15412,6 +16493,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabasesResult> getManagedDatabasesPlain(GetManagedDatabasesPlainArgs args, InvokeOptions options) {
@@ -15423,6 +16505,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of ASM properties for the specified managedDatabaseId.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15452,6 +16536,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabasesAsmPropertiesResult> getManagedDatabasesAsmProperties(GetManagedDatabasesAsmPropertiesArgs args) {
@@ -15463,6 +16548,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of ASM properties for the specified managedDatabaseId.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15492,6 +16579,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabasesAsmPropertiesResult> getManagedDatabasesAsmPropertiesPlain(GetManagedDatabasesAsmPropertiesPlainArgs args) {
@@ -15503,6 +16591,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of ASM properties for the specified managedDatabaseId.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15532,6 +16622,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabasesAsmPropertiesResult> getManagedDatabasesAsmProperties(GetManagedDatabasesAsmPropertiesArgs args, InvokeOptions options) {
@@ -15543,6 +16634,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of ASM properties for the specified managedDatabaseId.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15572,6 +16665,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabasesAsmPropertiesResult> getManagedDatabasesAsmPropertiesPlain(GetManagedDatabasesAsmPropertiesPlainArgs args, InvokeOptions options) {
@@ -15583,6 +16677,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of ASM properties for the specified managedDatabaseId.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15612,6 +16708,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabasesAsmPropertyResult> getManagedDatabasesAsmProperty(GetManagedDatabasesAsmPropertyArgs args) {
@@ -15623,6 +16720,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of ASM properties for the specified managedDatabaseId.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15652,6 +16751,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabasesAsmPropertyResult> getManagedDatabasesAsmPropertyPlain(GetManagedDatabasesAsmPropertyPlainArgs args) {
@@ -15663,6 +16763,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of ASM properties for the specified managedDatabaseId.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15692,6 +16794,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabasesAsmPropertyResult> getManagedDatabasesAsmProperty(GetManagedDatabasesAsmPropertyArgs args, InvokeOptions options) {
@@ -15703,6 +16806,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of ASM properties for the specified managedDatabaseId.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15732,6 +16837,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabasesAsmPropertyResult> getManagedDatabasesAsmPropertyPlain(GetManagedDatabasesAsmPropertyPlainArgs args, InvokeOptions options) {
@@ -15743,6 +16849,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of database parameters for the specified Managed Database. The parameters are listed in alphabetical order, along with their current values.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15774,6 +16882,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabasesDatabaseParameterResult> getManagedDatabasesDatabaseParameter(GetManagedDatabasesDatabaseParameterArgs args) {
@@ -15785,6 +16894,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of database parameters for the specified Managed Database. The parameters are listed in alphabetical order, along with their current values.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15816,6 +16927,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabasesDatabaseParameterResult> getManagedDatabasesDatabaseParameterPlain(GetManagedDatabasesDatabaseParameterPlainArgs args) {
@@ -15827,6 +16939,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of database parameters for the specified Managed Database. The parameters are listed in alphabetical order, along with their current values.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15858,6 +16972,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabasesDatabaseParameterResult> getManagedDatabasesDatabaseParameter(GetManagedDatabasesDatabaseParameterArgs args, InvokeOptions options) {
@@ -15869,6 +16984,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of database parameters for the specified Managed Database. The parameters are listed in alphabetical order, along with their current values.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15900,6 +17017,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabasesDatabaseParameterResult> getManagedDatabasesDatabaseParameterPlain(GetManagedDatabasesDatabaseParameterPlainArgs args, InvokeOptions options) {
@@ -15911,6 +17029,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of database parameters for the specified Managed Database. The parameters are listed in alphabetical order, along with their current values.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15943,6 +17063,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabasesDatabaseParametersResult> getManagedDatabasesDatabaseParameters(GetManagedDatabasesDatabaseParametersArgs args) {
@@ -15954,6 +17075,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of database parameters for the specified Managed Database. The parameters are listed in alphabetical order, along with their current values.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15986,6 +17109,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabasesDatabaseParametersResult> getManagedDatabasesDatabaseParametersPlain(GetManagedDatabasesDatabaseParametersPlainArgs args) {
@@ -15997,6 +17121,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of database parameters for the specified Managed Database. The parameters are listed in alphabetical order, along with their current values.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16029,6 +17155,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabasesDatabaseParametersResult> getManagedDatabasesDatabaseParameters(GetManagedDatabasesDatabaseParametersArgs args, InvokeOptions options) {
@@ -16040,6 +17167,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of database parameters for the specified Managed Database. The parameters are listed in alphabetical order, along with their current values.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16072,6 +17201,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabasesDatabaseParametersResult> getManagedDatabasesDatabaseParametersPlain(GetManagedDatabasesDatabaseParametersPlainArgs args, InvokeOptions options) {
@@ -16083,6 +17213,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of proxy users for the current user.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16113,6 +17245,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabasesUserProxyUserResult> getManagedDatabasesUserProxyUser(GetManagedDatabasesUserProxyUserArgs args) {
@@ -16124,6 +17257,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of proxy users for the current user.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16154,6 +17289,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabasesUserProxyUserResult> getManagedDatabasesUserProxyUserPlain(GetManagedDatabasesUserProxyUserPlainArgs args) {
@@ -16165,6 +17301,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of proxy users for the current user.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16195,6 +17333,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabasesUserProxyUserResult> getManagedDatabasesUserProxyUser(GetManagedDatabasesUserProxyUserArgs args, InvokeOptions options) {
@@ -16206,6 +17345,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of proxy users for the current user.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16236,6 +17377,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabasesUserProxyUserResult> getManagedDatabasesUserProxyUserPlain(GetManagedDatabasesUserProxyUserPlainArgs args, InvokeOptions options) {
@@ -16247,6 +17389,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of proxy users for the current user.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16278,6 +17422,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabasesUserProxyUsersResult> getManagedDatabasesUserProxyUsers(GetManagedDatabasesUserProxyUsersArgs args) {
@@ -16289,6 +17434,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of proxy users for the current user.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16320,6 +17467,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabasesUserProxyUsersResult> getManagedDatabasesUserProxyUsersPlain(GetManagedDatabasesUserProxyUsersPlainArgs args) {
@@ -16331,6 +17479,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of proxy users for the current user.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16362,6 +17512,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabasesUserProxyUsersResult> getManagedDatabasesUserProxyUsers(GetManagedDatabasesUserProxyUsersArgs args, InvokeOptions options) {
@@ -16373,6 +17524,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of proxy users for the current user.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16404,6 +17557,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabasesUserProxyUsersResult> getManagedDatabasesUserProxyUsersPlain(GetManagedDatabasesUserProxyUsersPlainArgs args, InvokeOptions options) {
@@ -16415,6 +17569,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of system privileges granted to a specific user.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16445,6 +17601,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabasesUserSystemPrivilegeResult> getManagedDatabasesUserSystemPrivilege(GetManagedDatabasesUserSystemPrivilegeArgs args) {
@@ -16456,6 +17613,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of system privileges granted to a specific user.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16486,6 +17645,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabasesUserSystemPrivilegeResult> getManagedDatabasesUserSystemPrivilegePlain(GetManagedDatabasesUserSystemPrivilegePlainArgs args) {
@@ -16497,6 +17657,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of system privileges granted to a specific user.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16527,6 +17689,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabasesUserSystemPrivilegeResult> getManagedDatabasesUserSystemPrivilege(GetManagedDatabasesUserSystemPrivilegeArgs args, InvokeOptions options) {
@@ -16538,6 +17701,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of system privileges granted to a specific user.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16568,6 +17733,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabasesUserSystemPrivilegeResult> getManagedDatabasesUserSystemPrivilegePlain(GetManagedDatabasesUserSystemPrivilegePlainArgs args, InvokeOptions options) {
@@ -16579,6 +17745,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of system privileges granted to a specific user.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16610,6 +17778,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabasesUserSystemPrivilegesResult> getManagedDatabasesUserSystemPrivileges(GetManagedDatabasesUserSystemPrivilegesArgs args) {
@@ -16621,6 +17790,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of system privileges granted to a specific user.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16652,6 +17823,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabasesUserSystemPrivilegesResult> getManagedDatabasesUserSystemPrivilegesPlain(GetManagedDatabasesUserSystemPrivilegesPlainArgs args) {
@@ -16663,6 +17835,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of system privileges granted to a specific user.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16694,6 +17868,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedDatabasesUserSystemPrivilegesResult> getManagedDatabasesUserSystemPrivileges(GetManagedDatabasesUserSystemPrivilegesArgs args, InvokeOptions options) {
@@ -16705,6 +17880,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of system privileges granted to a specific user.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16736,6 +17913,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedDatabasesUserSystemPrivilegesResult> getManagedDatabasesUserSystemPrivilegesPlain(GetManagedDatabasesUserSystemPrivilegesPlainArgs args, InvokeOptions options) {
@@ -16747,6 +17925,8 @@ public final class DatabaseManagementFunctions {
      * Retrieves General Information for given MySQL Instance.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16775,6 +17955,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedMySqlDatabaseResult> getManagedMySqlDatabase(GetManagedMySqlDatabaseArgs args) {
@@ -16786,6 +17967,8 @@ public final class DatabaseManagementFunctions {
      * Retrieves General Information for given MySQL Instance.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16814,6 +17997,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedMySqlDatabaseResult> getManagedMySqlDatabasePlain(GetManagedMySqlDatabasePlainArgs args) {
@@ -16825,6 +18009,8 @@ public final class DatabaseManagementFunctions {
      * Retrieves General Information for given MySQL Instance.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16853,6 +18039,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedMySqlDatabaseResult> getManagedMySqlDatabase(GetManagedMySqlDatabaseArgs args, InvokeOptions options) {
@@ -16864,6 +18051,8 @@ public final class DatabaseManagementFunctions {
      * Retrieves General Information for given MySQL Instance.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16892,6 +18081,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedMySqlDatabaseResult> getManagedMySqlDatabasePlain(GetManagedMySqlDatabasePlainArgs args, InvokeOptions options) {
@@ -16903,6 +18093,8 @@ public final class DatabaseManagementFunctions {
      * Retrieves Configuration Data for given MySQL Instance.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16931,6 +18123,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedMySqlDatabaseConfigurationDataResult> getManagedMySqlDatabaseConfigurationData(GetManagedMySqlDatabaseConfigurationDataArgs args) {
@@ -16942,6 +18135,8 @@ public final class DatabaseManagementFunctions {
      * Retrieves Configuration Data for given MySQL Instance.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16970,6 +18165,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedMySqlDatabaseConfigurationDataResult> getManagedMySqlDatabaseConfigurationDataPlain(GetManagedMySqlDatabaseConfigurationDataPlainArgs args) {
@@ -16981,6 +18177,8 @@ public final class DatabaseManagementFunctions {
      * Retrieves Configuration Data for given MySQL Instance.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17009,6 +18207,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedMySqlDatabaseConfigurationDataResult> getManagedMySqlDatabaseConfigurationData(GetManagedMySqlDatabaseConfigurationDataArgs args, InvokeOptions options) {
@@ -17020,6 +18219,8 @@ public final class DatabaseManagementFunctions {
      * Retrieves Configuration Data for given MySQL Instance.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17048,6 +18249,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedMySqlDatabaseConfigurationDataResult> getManagedMySqlDatabaseConfigurationDataPlain(GetManagedMySqlDatabaseConfigurationDataPlainArgs args, InvokeOptions options) {
@@ -17059,6 +18261,8 @@ public final class DatabaseManagementFunctions {
      * Retrieves SQL performance data for given MySQL Instance.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17090,6 +18294,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedMySqlDatabaseSqlDataResult> getManagedMySqlDatabaseSqlData(GetManagedMySqlDatabaseSqlDataArgs args) {
@@ -17101,6 +18306,8 @@ public final class DatabaseManagementFunctions {
      * Retrieves SQL performance data for given MySQL Instance.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17132,6 +18339,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedMySqlDatabaseSqlDataResult> getManagedMySqlDatabaseSqlDataPlain(GetManagedMySqlDatabaseSqlDataPlainArgs args) {
@@ -17143,6 +18351,8 @@ public final class DatabaseManagementFunctions {
      * Retrieves SQL performance data for given MySQL Instance.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17174,6 +18384,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedMySqlDatabaseSqlDataResult> getManagedMySqlDatabaseSqlData(GetManagedMySqlDatabaseSqlDataArgs args, InvokeOptions options) {
@@ -17185,6 +18396,8 @@ public final class DatabaseManagementFunctions {
      * Retrieves SQL performance data for given MySQL Instance.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17216,6 +18429,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedMySqlDatabaseSqlDataResult> getManagedMySqlDatabaseSqlDataPlain(GetManagedMySqlDatabaseSqlDataPlainArgs args, InvokeOptions options) {
@@ -17227,6 +18441,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of Managed MySQL Databases in a specific compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17255,6 +18471,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedMySqlDatabasesResult> getManagedMySqlDatabases(GetManagedMySqlDatabasesArgs args) {
@@ -17266,6 +18483,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of Managed MySQL Databases in a specific compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17294,6 +18513,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedMySqlDatabasesResult> getManagedMySqlDatabasesPlain(GetManagedMySqlDatabasesPlainArgs args) {
@@ -17305,6 +18525,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of Managed MySQL Databases in a specific compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17333,6 +18555,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedMySqlDatabasesResult> getManagedMySqlDatabases(GetManagedMySqlDatabasesArgs args, InvokeOptions options) {
@@ -17344,6 +18567,8 @@ public final class DatabaseManagementFunctions {
      * Gets the list of Managed MySQL Databases in a specific compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17372,6 +18597,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedMySqlDatabasesResult> getManagedMySqlDatabasesPlain(GetManagedMySqlDatabasesPlainArgs args, InvokeOptions options) {
@@ -17383,6 +18609,8 @@ public final class DatabaseManagementFunctions {
      * Gets the details for the named credential specified by namedCredentialId.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17411,6 +18639,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNamedCredentialResult> getNamedCredential(GetNamedCredentialArgs args) {
@@ -17422,6 +18651,8 @@ public final class DatabaseManagementFunctions {
      * Gets the details for the named credential specified by namedCredentialId.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17450,6 +18681,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNamedCredentialResult> getNamedCredentialPlain(GetNamedCredentialPlainArgs args) {
@@ -17461,6 +18693,8 @@ public final class DatabaseManagementFunctions {
      * Gets the details for the named credential specified by namedCredentialId.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17489,6 +18723,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNamedCredentialResult> getNamedCredential(GetNamedCredentialArgs args, InvokeOptions options) {
@@ -17500,6 +18735,8 @@ public final class DatabaseManagementFunctions {
      * Gets the details for the named credential specified by namedCredentialId.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17528,6 +18765,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNamedCredentialResult> getNamedCredentialPlain(GetNamedCredentialPlainArgs args, InvokeOptions options) {
@@ -17539,6 +18777,8 @@ public final class DatabaseManagementFunctions {
      * Gets a single named credential specified by the name or all the named credentials in a specific compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17571,6 +18811,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNamedCredentialsResult> getNamedCredentials(GetNamedCredentialsArgs args) {
@@ -17582,6 +18823,8 @@ public final class DatabaseManagementFunctions {
      * Gets a single named credential specified by the name or all the named credentials in a specific compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17614,6 +18857,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNamedCredentialsResult> getNamedCredentialsPlain(GetNamedCredentialsPlainArgs args) {
@@ -17625,6 +18869,8 @@ public final class DatabaseManagementFunctions {
      * Gets a single named credential specified by the name or all the named credentials in a specific compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17657,6 +18903,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNamedCredentialsResult> getNamedCredentials(GetNamedCredentialsArgs args, InvokeOptions options) {
@@ -17668,6 +18915,8 @@ public final class DatabaseManagementFunctions {
      * Gets a single named credential specified by the name or all the named credentials in a specific compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17700,6 +18949,7 @@ public final class DatabaseManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNamedCredentialsResult> getNamedCredentialsPlain(GetNamedCredentialsPlainArgs args, InvokeOptions options) {

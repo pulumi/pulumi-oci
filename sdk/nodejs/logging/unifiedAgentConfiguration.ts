@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -97,13 +98,14 @@ import * as utilities from "../utilities";
  *     },
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * UnifiedAgentConfigurations can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Logging/unifiedAgentConfiguration:UnifiedAgentConfiguration test_unified_agent_configuration "id"
+ * $ pulumi import oci:Logging/unifiedAgentConfiguration:UnifiedAgentConfiguration test_unified_agent_configuration "id"
  * ```
  */
 export class UnifiedAgentConfiguration extends pulumi.CustomResource {

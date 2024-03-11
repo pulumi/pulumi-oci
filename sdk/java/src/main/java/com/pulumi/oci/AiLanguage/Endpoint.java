@@ -22,6 +22,8 @@ import javax.annotation.Nullable;
  * Creates a new endpoint and deploy the trained model
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -56,13 +58,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * Endpoints can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:AiLanguage/endpoint:Endpoint test_endpoint &#34;id&#34;
+ * $ pulumi import oci:AiLanguage/endpoint:Endpoint test_endpoint &#34;id&#34;
  * ```
  * 
  */

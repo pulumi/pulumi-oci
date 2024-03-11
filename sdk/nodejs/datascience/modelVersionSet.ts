@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -27,13 +28,14 @@ import * as utilities from "../utilities";
  *     },
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * ModelVersionSets can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:DataScience/modelVersionSet:ModelVersionSet test_model_version_set "id"
+ * $ pulumi import oci:DataScience/modelVersionSet:ModelVersionSet test_model_version_set "id"
  * ```
  */
 export class ModelVersionSet extends pulumi.CustomResource {

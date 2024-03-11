@@ -533,21 +533,25 @@ def get_opensearch_cluster(opensearch_cluster_id: Optional[str] = None,
     The below policies must be created in compartment before creating OpensearchCluster
 
     ##### {Compartment-Name} - Name of  your compartment
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     ```
+    <!--End PulumiCodeChooser -->
 
     For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\\
     Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_opensearch_cluster = oci.Opensearch.get_opensearch_cluster(opensearch_cluster_id=oci_opensearch_opensearch_cluster["test_opensearch_cluster"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str opensearch_cluster_id: unique OpensearchCluster identifier
@@ -614,21 +618,25 @@ def get_opensearch_cluster_output(opensearch_cluster_id: Optional[pulumi.Input[s
     The below policies must be created in compartment before creating OpensearchCluster
 
     ##### {Compartment-Name} - Name of  your compartment
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     ```
+    <!--End PulumiCodeChooser -->
 
     For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\\
     Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_opensearch_cluster = oci.Opensearch.get_opensearch_cluster(opensearch_cluster_id=oci_opensearch_opensearch_cluster["test_opensearch_cluster"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str opensearch_cluster_id: unique OpensearchCluster identifier

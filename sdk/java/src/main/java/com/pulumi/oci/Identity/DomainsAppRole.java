@@ -29,6 +29,7 @@ import javax.annotation.Nullable;
  * 
  * ## Example Usage
  * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -81,13 +82,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * AppRoles can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Identity/domainsAppRole:DomainsAppRole test_app_role &#34;idcsEndpoint/{idcsEndpoint}/appRoles/{appRoleId}&#34;
+ * $ pulumi import oci:Identity/domainsAppRole:DomainsAppRole test_app_role &#34;idcsEndpoint/{idcsEndpoint}/appRoles/{appRoleId}&#34;
  * ```
  * 
  */
@@ -720,7 +722,7 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
         return this.localizedDisplayName;
     }
     /**
-     * (Updatable) AppRole members - when requesting members attribute, it is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%26count=10]
+     * (Updatable) AppRole members - when requesting members attribute, it is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%!c(MISSING)ount=10]
      * 
      * **SCIM++ Properties:**
      * * idcsCompositeKey: [value, type]
@@ -739,7 +741,7 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
     private Output<List<DomainsAppRoleMember>> members;
 
     /**
-     * @return (Updatable) AppRole members - when requesting members attribute, it is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%26count=10]
+     * @return (Updatable) AppRole members - when requesting members attribute, it is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%!c(MISSING)ount=10]
      * 
      * **SCIM++ Properties:**
      * * idcsCompositeKey: [value, type]

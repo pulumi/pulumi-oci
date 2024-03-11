@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,6 +24,7 @@ import * as utilities from "../utilities";
  *     state: _var.tag_namespace_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getTagNamespaces(args: GetTagNamespacesArgs, opts?: pulumi.InvokeOptions): Promise<GetTagNamespacesResult> {
 
@@ -84,6 +86,7 @@ export interface GetTagNamespacesResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -94,6 +97,7 @@ export interface GetTagNamespacesResult {
  *     state: _var.tag_namespace_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getTagNamespacesOutput(args: GetTagNamespacesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTagNamespacesResult> {
     return pulumi.output(args).apply((a: any) => getTagNamespaces(a, opts))

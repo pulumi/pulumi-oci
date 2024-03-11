@@ -19,7 +19,7 @@ namespace Pulumi.Oci.Identity
     /// NetworkPerimeters can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Identity/domainsNetworkPerimeter:DomainsNetworkPerimeter test_network_perimeter "idcsEndpoint/{idcsEndpoint}/networkPerimeters/{networkPerimeterId}"
+    /// $ pulumi import oci:Identity/domainsNetworkPerimeter:DomainsNetworkPerimeter test_network_perimeter "idcsEndpoint/{idcsEndpoint}/networkPerimeters/{networkPerimeterId}"
     /// ```
     /// </summary>
     [OciResourceType("oci:Identity/domainsNetworkPerimeter:DomainsNetworkPerimeter")]

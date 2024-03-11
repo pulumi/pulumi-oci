@@ -24,6 +24,8 @@ import javax.annotation.Nullable;
  * User should have required access in both the compartments.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -55,13 +57,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * MonitoredResourcesAssociateMonitoredResources can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:StackMonitoring/monitoredResourcesAssociateMonitoredResource:MonitoredResourcesAssociateMonitoredResource test_monitored_resources_associate_monitored_resource &#34;id&#34;
+ * $ pulumi import oci:StackMonitoring/monitoredResourcesAssociateMonitoredResource:MonitoredResourcesAssociateMonitoredResource test_monitored_resources_associate_monitored_resource &#34;id&#34;
  * ```
  * 
  */

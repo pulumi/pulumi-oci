@@ -118,6 +118,7 @@ def get_announcement_subscriptions(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -127,6 +128,7 @@ def get_announcement_subscriptions(compartment_id: Optional[str] = None,
         id=var["announcement_subscription_id"],
         state=var["announcement_subscription_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment.
@@ -168,6 +170,7 @@ def get_announcement_subscriptions_output(compartment_id: Optional[pulumi.Input[
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -177,6 +180,7 @@ def get_announcement_subscriptions_output(compartment_id: Optional[pulumi.Input[
         id=var["announcement_subscription_id"],
         state=var["announcement_subscription_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment.

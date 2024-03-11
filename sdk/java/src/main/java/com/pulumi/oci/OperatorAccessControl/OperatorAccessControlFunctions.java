@@ -47,6 +47,8 @@ public final class OperatorAccessControlFunctions {
      * Gets details of an access request.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -75,6 +77,7 @@ public final class OperatorAccessControlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAccessRequestResult> getAccessRequest(GetAccessRequestArgs args) {
@@ -86,6 +89,8 @@ public final class OperatorAccessControlFunctions {
      * Gets details of an access request.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -114,6 +119,7 @@ public final class OperatorAccessControlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAccessRequestResult> getAccessRequestPlain(GetAccessRequestPlainArgs args) {
@@ -125,6 +131,8 @@ public final class OperatorAccessControlFunctions {
      * Gets details of an access request.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -153,6 +161,7 @@ public final class OperatorAccessControlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAccessRequestResult> getAccessRequest(GetAccessRequestArgs args, InvokeOptions options) {
@@ -164,6 +173,8 @@ public final class OperatorAccessControlFunctions {
      * Gets details of an access request.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -192,6 +203,7 @@ public final class OperatorAccessControlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAccessRequestResult> getAccessRequestPlain(GetAccessRequestPlainArgs args, InvokeOptions options) {
@@ -203,6 +215,8 @@ public final class OperatorAccessControlFunctions {
      * Gets the Audit Log Report for the given access requestId.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -232,6 +246,7 @@ public final class OperatorAccessControlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAccessRequestAuditLogReportResult> getAccessRequestAuditLogReport(GetAccessRequestAuditLogReportArgs args) {
@@ -243,6 +258,8 @@ public final class OperatorAccessControlFunctions {
      * Gets the Audit Log Report for the given access requestId.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -272,6 +289,7 @@ public final class OperatorAccessControlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAccessRequestAuditLogReportResult> getAccessRequestAuditLogReportPlain(GetAccessRequestAuditLogReportPlainArgs args) {
@@ -283,6 +301,8 @@ public final class OperatorAccessControlFunctions {
      * Gets the Audit Log Report for the given access requestId.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -312,6 +332,7 @@ public final class OperatorAccessControlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAccessRequestAuditLogReportResult> getAccessRequestAuditLogReport(GetAccessRequestAuditLogReportArgs args, InvokeOptions options) {
@@ -323,6 +344,8 @@ public final class OperatorAccessControlFunctions {
      * Gets the Audit Log Report for the given access requestId.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -352,6 +375,7 @@ public final class OperatorAccessControlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAccessRequestAuditLogReportResult> getAccessRequestAuditLogReportPlain(GetAccessRequestAuditLogReportPlainArgs args, InvokeOptions options) {
@@ -363,6 +387,8 @@ public final class OperatorAccessControlFunctions {
      * Returns a history of all status associated with the accessRequestId.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -391,6 +417,7 @@ public final class OperatorAccessControlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAccessRequestHistoryResult> getAccessRequestHistory(GetAccessRequestHistoryArgs args) {
@@ -402,6 +429,8 @@ public final class OperatorAccessControlFunctions {
      * Returns a history of all status associated with the accessRequestId.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -430,6 +459,7 @@ public final class OperatorAccessControlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAccessRequestHistoryResult> getAccessRequestHistoryPlain(GetAccessRequestHistoryPlainArgs args) {
@@ -441,6 +471,8 @@ public final class OperatorAccessControlFunctions {
      * Returns a history of all status associated with the accessRequestId.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -469,6 +501,7 @@ public final class OperatorAccessControlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAccessRequestHistoryResult> getAccessRequestHistory(GetAccessRequestHistoryArgs args, InvokeOptions options) {
@@ -480,6 +513,8 @@ public final class OperatorAccessControlFunctions {
      * Returns a history of all status associated with the accessRequestId.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -508,6 +543,7 @@ public final class OperatorAccessControlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAccessRequestHistoryResult> getAccessRequestHistoryPlain(GetAccessRequestHistoryPlainArgs args, InvokeOptions options) {
@@ -519,6 +555,8 @@ public final class OperatorAccessControlFunctions {
      * Lists all access requests in the compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -552,6 +590,7 @@ public final class OperatorAccessControlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAccessRequestsResult> getAccessRequests(GetAccessRequestsArgs args) {
@@ -563,6 +602,8 @@ public final class OperatorAccessControlFunctions {
      * Lists all access requests in the compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -596,6 +637,7 @@ public final class OperatorAccessControlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAccessRequestsResult> getAccessRequestsPlain(GetAccessRequestsPlainArgs args) {
@@ -607,6 +649,8 @@ public final class OperatorAccessControlFunctions {
      * Lists all access requests in the compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -640,6 +684,7 @@ public final class OperatorAccessControlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAccessRequestsResult> getAccessRequests(GetAccessRequestsArgs args, InvokeOptions options) {
@@ -651,6 +696,8 @@ public final class OperatorAccessControlFunctions {
      * Lists all access requests in the compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -684,6 +731,7 @@ public final class OperatorAccessControlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAccessRequestsResult> getAccessRequestsPlain(GetAccessRequestsPlainArgs args, InvokeOptions options) {
@@ -695,6 +743,8 @@ public final class OperatorAccessControlFunctions {
      * Gets the operator action associated with the specified operator action ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -723,6 +773,7 @@ public final class OperatorAccessControlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetActionResult> getAction(GetActionArgs args) {
@@ -734,6 +785,8 @@ public final class OperatorAccessControlFunctions {
      * Gets the operator action associated with the specified operator action ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -762,6 +815,7 @@ public final class OperatorAccessControlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetActionResult> getActionPlain(GetActionPlainArgs args) {
@@ -773,6 +827,8 @@ public final class OperatorAccessControlFunctions {
      * Gets the operator action associated with the specified operator action ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -801,6 +857,7 @@ public final class OperatorAccessControlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetActionResult> getAction(GetActionArgs args, InvokeOptions options) {
@@ -812,6 +869,8 @@ public final class OperatorAccessControlFunctions {
      * Gets the operator action associated with the specified operator action ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -840,6 +899,7 @@ public final class OperatorAccessControlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetActionResult> getActionPlain(GetActionPlainArgs args, InvokeOptions options) {
@@ -851,6 +911,8 @@ public final class OperatorAccessControlFunctions {
      * Lists all the OperatorActions available in the system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -882,6 +944,7 @@ public final class OperatorAccessControlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetActionsResult> getActions(GetActionsArgs args) {
@@ -893,6 +956,8 @@ public final class OperatorAccessControlFunctions {
      * Lists all the OperatorActions available in the system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -924,6 +989,7 @@ public final class OperatorAccessControlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetActionsResult> getActionsPlain(GetActionsPlainArgs args) {
@@ -935,6 +1001,8 @@ public final class OperatorAccessControlFunctions {
      * Lists all the OperatorActions available in the system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -966,6 +1034,7 @@ public final class OperatorAccessControlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetActionsResult> getActions(GetActionsArgs args, InvokeOptions options) {
@@ -977,6 +1046,8 @@ public final class OperatorAccessControlFunctions {
      * Lists all the OperatorActions available in the system.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1008,6 +1079,7 @@ public final class OperatorAccessControlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetActionsResult> getActionsPlain(GetActionsPlainArgs args, InvokeOptions options) {
@@ -1019,6 +1091,8 @@ public final class OperatorAccessControlFunctions {
      * Gets the Operator Control associated with the specified Operator Control ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1047,6 +1121,7 @@ public final class OperatorAccessControlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetControlResult> getControl(GetControlArgs args) {
@@ -1058,6 +1133,8 @@ public final class OperatorAccessControlFunctions {
      * Gets the Operator Control associated with the specified Operator Control ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1086,6 +1163,7 @@ public final class OperatorAccessControlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetControlResult> getControlPlain(GetControlPlainArgs args) {
@@ -1097,6 +1175,8 @@ public final class OperatorAccessControlFunctions {
      * Gets the Operator Control associated with the specified Operator Control ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1125,6 +1205,7 @@ public final class OperatorAccessControlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetControlResult> getControl(GetControlArgs args, InvokeOptions options) {
@@ -1136,6 +1217,8 @@ public final class OperatorAccessControlFunctions {
      * Gets the Operator Control associated with the specified Operator Control ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1164,6 +1247,7 @@ public final class OperatorAccessControlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetControlResult> getControlPlain(GetControlPlainArgs args, InvokeOptions options) {
@@ -1175,6 +1259,8 @@ public final class OperatorAccessControlFunctions {
      * Gets the details of an Operator Control Assignment of the specified ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1203,6 +1289,7 @@ public final class OperatorAccessControlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetControlAssignmentResult> getControlAssignment(GetControlAssignmentArgs args) {
@@ -1214,6 +1301,8 @@ public final class OperatorAccessControlFunctions {
      * Gets the details of an Operator Control Assignment of the specified ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1242,6 +1331,7 @@ public final class OperatorAccessControlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetControlAssignmentResult> getControlAssignmentPlain(GetControlAssignmentPlainArgs args) {
@@ -1253,6 +1343,8 @@ public final class OperatorAccessControlFunctions {
      * Gets the details of an Operator Control Assignment of the specified ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1281,6 +1373,7 @@ public final class OperatorAccessControlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetControlAssignmentResult> getControlAssignment(GetControlAssignmentArgs args, InvokeOptions options) {
@@ -1292,6 +1385,8 @@ public final class OperatorAccessControlFunctions {
      * Gets the details of an Operator Control Assignment of the specified ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1320,6 +1415,7 @@ public final class OperatorAccessControlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetControlAssignmentResult> getControlAssignmentPlain(GetControlAssignmentPlainArgs args, InvokeOptions options) {
@@ -1331,6 +1427,8 @@ public final class OperatorAccessControlFunctions {
      * Lists all Operator Control Assignments.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1363,6 +1461,7 @@ public final class OperatorAccessControlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetControlAssignmentsResult> getControlAssignments(GetControlAssignmentsArgs args) {
@@ -1374,6 +1473,8 @@ public final class OperatorAccessControlFunctions {
      * Lists all Operator Control Assignments.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1406,6 +1507,7 @@ public final class OperatorAccessControlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetControlAssignmentsResult> getControlAssignmentsPlain(GetControlAssignmentsPlainArgs args) {
@@ -1417,6 +1519,8 @@ public final class OperatorAccessControlFunctions {
      * Lists all Operator Control Assignments.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1449,6 +1553,7 @@ public final class OperatorAccessControlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetControlAssignmentsResult> getControlAssignments(GetControlAssignmentsArgs args, InvokeOptions options) {
@@ -1460,6 +1565,8 @@ public final class OperatorAccessControlFunctions {
      * Lists all Operator Control Assignments.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1492,6 +1599,7 @@ public final class OperatorAccessControlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetControlAssignmentsResult> getControlAssignmentsPlain(GetControlAssignmentsPlainArgs args, InvokeOptions options) {
@@ -1503,6 +1611,8 @@ public final class OperatorAccessControlFunctions {
      * Lists the operator controls in the compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1534,6 +1644,7 @@ public final class OperatorAccessControlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetControlsResult> getControls(GetControlsArgs args) {
@@ -1545,6 +1656,8 @@ public final class OperatorAccessControlFunctions {
      * Lists the operator controls in the compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1576,6 +1689,7 @@ public final class OperatorAccessControlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetControlsResult> getControlsPlain(GetControlsPlainArgs args) {
@@ -1587,6 +1701,8 @@ public final class OperatorAccessControlFunctions {
      * Lists the operator controls in the compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1618,6 +1734,7 @@ public final class OperatorAccessControlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetControlsResult> getControls(GetControlsArgs args, InvokeOptions options) {
@@ -1629,6 +1746,8 @@ public final class OperatorAccessControlFunctions {
      * Lists the operator controls in the compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1660,6 +1779,7 @@ public final class OperatorAccessControlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetControlsResult> getControlsPlain(GetControlsPlainArgs args, InvokeOptions options) {

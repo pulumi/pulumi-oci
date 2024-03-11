@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -91,15 +92,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // AutoScalingConfigurations can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Autoscaling/autoScalingConfiguration:AutoScalingConfiguration test_auto_scaling_configuration "id"
-//
+// $ pulumi import oci:Autoscaling/autoScalingConfiguration:AutoScalingConfiguration test_auto_scaling_configuration "id"
 // ```
 type AutoScalingConfiguration struct {
 	pulumi.CustomResourceState

@@ -16,6 +16,7 @@ namespace Pulumi.Oci.DevOps
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -31,13 +32,14 @@ namespace Pulumi.Oci.DevOps
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// RepositoryMirror can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:DevOps/repositoryMirror:RepositoryMirror test_repository_mirror "id"
+    /// $ pulumi import oci:DevOps/repositoryMirror:RepositoryMirror test_repository_mirror "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:DevOps/repositoryMirror:RepositoryMirror")]

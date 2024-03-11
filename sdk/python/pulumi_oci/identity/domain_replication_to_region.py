@@ -133,6 +133,7 @@ class DomainReplicationToRegion(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -141,6 +142,7 @@ class DomainReplicationToRegion(pulumi.CustomResource):
             domain_id=oci_identity_domain["test_domain"]["id"],
             replica_region=var["domain_replication_to_region_replica_region"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -180,6 +182,7 @@ class DomainReplicationToRegion(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -188,6 +191,7 @@ class DomainReplicationToRegion(pulumi.CustomResource):
             domain_id=oci_identity_domain["test_domain"]["id"],
             replica_region=var["domain_replication_to_region_replica_region"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 

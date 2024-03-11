@@ -19,6 +19,8 @@ import javax.annotation.Nullable;
  * Based on the calling principal and the input payload, derive the claims and create a security token.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -48,13 +50,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * GenerateScopedAccessToken can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:IdentityDataPlane/generatedScopedAccessToken:GeneratedScopedAccessToken test_generate_scoped_access_token &#34;id&#34;
+ * $ pulumi import oci:IdentityDataPlane/generatedScopedAccessToken:GeneratedScopedAccessToken test_generate_scoped_access_token &#34;id&#34;
  * ```
  * 
  */

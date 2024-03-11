@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -43,6 +44,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetInfrastructureTargetVersion(ctx *pulumi.Context, args *GetInfrastructureTargetVersionArgs, opts ...pulumi.InvokeOption) (*GetInfrastructureTargetVersionResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetInfrastructureTargetVersionResult

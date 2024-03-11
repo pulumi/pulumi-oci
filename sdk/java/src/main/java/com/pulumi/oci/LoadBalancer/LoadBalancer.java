@@ -54,6 +54,8 @@ import javax.annotation.Nullable;
  * * `oci_load_balancer`
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -99,13 +101,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * LoadBalancers can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:LoadBalancer/loadBalancer:LoadBalancer test_load_balancer &#34;id&#34;
+ * $ pulumi import oci:LoadBalancer/loadBalancer:LoadBalancer test_load_balancer &#34;id&#34;
  * ```
  * 
  */

@@ -16,9 +16,7 @@ import (
 // EsxiHosts can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Ocvp/esxiHost:EsxiHost test_esxi_host "id"
-//
+// $ pulumi import oci:Ocvp/esxiHost:EsxiHost test_esxi_host "id"
 // ```
 type EsxiHost struct {
 	pulumi.CustomResourceState

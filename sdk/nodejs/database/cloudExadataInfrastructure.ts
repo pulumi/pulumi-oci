@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -50,13 +51,14 @@ import * as utilities from "../utilities";
  *     storageCount: _var.cloud_exadata_infrastructure_storage_count,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * CloudExadataInfrastructures can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Database/cloudExadataInfrastructure:CloudExadataInfrastructure test_cloud_exadata_infrastructure "id"
+ * $ pulumi import oci:Database/cloudExadataInfrastructure:CloudExadataInfrastructure test_cloud_exadata_infrastructure "id"
  * ```
  */
 export class CloudExadataInfrastructure extends pulumi.CustomResource {

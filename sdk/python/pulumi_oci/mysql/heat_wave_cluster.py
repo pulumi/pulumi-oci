@@ -280,6 +280,7 @@ class HeatWaveCluster(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -290,13 +291,14 @@ class HeatWaveCluster(pulumi.CustomResource):
             is_lakehouse_enabled=var["heat_wave_cluster_is_lakehouse_enabled"],
             shape_name=oci_mysql_shape["test_shape"]["name"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         HeatWaveCluster can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Mysql/heatWaveCluster:HeatWaveCluster test_heat_wave_cluster "dbSystem/{dbSystemId}/heatWaveCluster"
+        $ pulumi import oci:Mysql/heatWaveCluster:HeatWaveCluster test_heat_wave_cluster "dbSystem/{dbSystemId}/heatWaveCluster"
         ```
 
         :param str resource_name: The name of the resource.
@@ -323,6 +325,7 @@ class HeatWaveCluster(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -333,13 +336,14 @@ class HeatWaveCluster(pulumi.CustomResource):
             is_lakehouse_enabled=var["heat_wave_cluster_is_lakehouse_enabled"],
             shape_name=oci_mysql_shape["test_shape"]["name"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         HeatWaveCluster can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Mysql/heatWaveCluster:HeatWaveCluster test_heat_wave_cluster "dbSystem/{dbSystemId}/heatWaveCluster"
+        $ pulumi import oci:Mysql/heatWaveCluster:HeatWaveCluster test_heat_wave_cluster "dbSystem/{dbSystemId}/heatWaveCluster"
         ```
 
         :param str resource_name: The name of the resource.

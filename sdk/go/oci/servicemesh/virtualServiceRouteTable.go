@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -66,15 +67,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // VirtualServiceRouteTables can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:ServiceMesh/virtualServiceRouteTable:VirtualServiceRouteTable test_virtual_service_route_table "id"
-//
+// $ pulumi import oci:ServiceMesh/virtualServiceRouteTable:VirtualServiceRouteTable test_virtual_service_route_table "id"
 // ```
 type VirtualServiceRouteTable struct {
 	pulumi.CustomResourceState

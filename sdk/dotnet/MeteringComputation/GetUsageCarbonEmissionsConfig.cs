@@ -17,10 +17,9 @@ namespace Pulumi.Oci.MeteringComputation
         /// Returns the configuration list for the UI drop-down list of carbon emission console.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,8 +35,7 @@ namespace Pulumi.Oci.MeteringComputation
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetUsageCarbonEmissionsConfigResult> InvokeAsync(GetUsageCarbonEmissionsConfigArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetUsageCarbonEmissionsConfigResult>("oci:MeteringComputation/getUsageCarbonEmissionsConfig:getUsageCarbonEmissionsConfig", args ?? new GetUsageCarbonEmissionsConfigArgs(), options.WithDefaults());
@@ -48,10 +46,9 @@ namespace Pulumi.Oci.MeteringComputation
         /// Returns the configuration list for the UI drop-down list of carbon emission console.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -67,8 +64,7 @@ namespace Pulumi.Oci.MeteringComputation
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetUsageCarbonEmissionsConfigResult> Invoke(GetUsageCarbonEmissionsConfigInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetUsageCarbonEmissionsConfigResult>("oci:MeteringComputation/getUsageCarbonEmissionsConfig:getUsageCarbonEmissionsConfig", args ?? new GetUsageCarbonEmissionsConfigInvokeArgs(), options.WithDefaults());

@@ -291,12 +291,14 @@ def get_certificate(certificate_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_certificate = oci.CertificatesManagement.get_certificate(certificate_id=oci_certificates_management_certificate["test_certificate"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str certificate_id: The OCID of the certificate.
@@ -340,12 +342,14 @@ def get_certificate_output(certificate_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_certificate = oci.CertificatesManagement.get_certificate(certificate_id=oci_certificates_management_certificate["test_certificate"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str certificate_id: The OCID of the certificate.

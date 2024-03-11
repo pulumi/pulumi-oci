@@ -413,6 +413,7 @@ class OperationsInsightsWarehouse(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -429,13 +430,14 @@ class OperationsInsightsWarehouse(pulumi.CustomResource):
             },
             storage_allocated_in_gbs=var["operations_insights_warehouse_storage_allocated_in_gbs"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         OperationsInsightsWarehouses can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Opsi/operationsInsightsWarehouse:OperationsInsightsWarehouse test_operations_insights_warehouse "id"
+        $ pulumi import oci:Opsi/operationsInsightsWarehouse:OperationsInsightsWarehouse test_operations_insights_warehouse "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -466,6 +468,7 @@ class OperationsInsightsWarehouse(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -482,13 +485,14 @@ class OperationsInsightsWarehouse(pulumi.CustomResource):
             },
             storage_allocated_in_gbs=var["operations_insights_warehouse_storage_allocated_in_gbs"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         OperationsInsightsWarehouses can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Opsi/operationsInsightsWarehouse:OperationsInsightsWarehouse test_operations_insights_warehouse "id"
+        $ pulumi import oci:Opsi/operationsInsightsWarehouse:OperationsInsightsWarehouse test_operations_insights_warehouse "id"
         ```
 
         :param str resource_name: The name of the resource.

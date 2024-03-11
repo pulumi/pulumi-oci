@@ -16,6 +16,7 @@ namespace Pulumi.Oci.Oce
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -52,13 +53,14 @@ namespace Pulumi.Oci.Oce
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// OceInstances can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Oce/instance:Instance test_oce_instance "id"
+    /// $ pulumi import oci:Oce/instance:Instance test_oce_instance "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Oce/instance:Instance")]

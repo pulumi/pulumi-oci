@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -37,13 +38,14 @@ import * as utilities from "../utilities";
  *     },
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * VirtualServices can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:ServiceMesh/virtualService:VirtualService test_virtual_service "id"
+ * $ pulumi import oci:ServiceMesh/virtualService:VirtualService test_virtual_service "id"
  * ```
  */
 export class VirtualService extends pulumi.CustomResource {

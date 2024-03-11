@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -62,15 +63,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // CloudGates can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Identity/domainsCloudGate:DomainsCloudGate test_cloud_gate "idcsEndpoint/{idcsEndpoint}/cloudGates/{cloudGateId}"
-//
+// $ pulumi import oci:Identity/domainsCloudGate:DomainsCloudGate test_cloud_gate "idcsEndpoint/{idcsEndpoint}/cloudGates/{cloudGateId}"
 // ```
 type DomainsCloudGate struct {
 	pulumi.CustomResourceState

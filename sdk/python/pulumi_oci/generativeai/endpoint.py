@@ -401,6 +401,7 @@ class Endpoint(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -421,13 +422,14 @@ class Endpoint(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Endpoints can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:GenerativeAi/endpoint:Endpoint test_endpoint "id"
+        $ pulumi import oci:GenerativeAi/endpoint:Endpoint test_endpoint "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -460,6 +462,7 @@ class Endpoint(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -480,13 +483,14 @@ class Endpoint(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Endpoints can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:GenerativeAi/endpoint:Endpoint test_endpoint "id"
+        $ pulumi import oci:GenerativeAi/endpoint:Endpoint test_endpoint "id"
         ```
 
         :param str resource_name: The name of the resource.

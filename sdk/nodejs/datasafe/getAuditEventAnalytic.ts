@@ -18,6 +18,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -34,6 +35,7 @@ import * as utilities from "../utilities";
  *     timeStarted: _var.audit_event_analytic_time_started,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAuditEventAnalytic(args: GetAuditEventAnalyticArgs, opts?: pulumi.InvokeOptions): Promise<GetAuditEventAnalyticResult> {
 
@@ -135,6 +137,7 @@ export interface GetAuditEventAnalyticResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -151,6 +154,7 @@ export interface GetAuditEventAnalyticResult {
  *     timeStarted: _var.audit_event_analytic_time_started,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAuditEventAnalyticOutput(args: GetAuditEventAnalyticOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAuditEventAnalyticResult> {
     return pulumi.output(args).apply((a: any) => getAuditEventAnalytic(a, opts))

@@ -24,7 +24,7 @@ import javax.annotation.Nullable;
  * EsxiHosts can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Ocvp/esxiHost:EsxiHost test_esxi_host &#34;id&#34;
+ * $ pulumi import oci:Ocvp/esxiHost:EsxiHost test_esxi_host &#34;id&#34;
  * ```
  * 
  */

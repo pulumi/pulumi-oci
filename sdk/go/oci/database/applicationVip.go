@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -45,15 +46,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // ApplicationVips can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Database/applicationVip:ApplicationVip test_application_vip "id"
-//
+// $ pulumi import oci:Database/applicationVip:ApplicationVip test_application_vip "id"
 // ```
 type ApplicationVip struct {
 	pulumi.CustomResourceState

@@ -29,6 +29,8 @@ import javax.annotation.Nullable;
  * ## Create
  * 
  * Create DR Protection Group resource with a default value of `disassociate_trigger` property, e.g.
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -51,10 +53,13 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Delete
  * 
  * Disassociate DR Protection Group (if associated) before deleting it. Increment value of `disassociate_trigger` property to trigger Disassociate, e.g.
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -77,13 +82,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * DrProtectionGroups can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:DisasterRecovery/drProtectionGroup:DrProtectionGroup test_dr_protection_group &#34;id&#34;
+ * $ pulumi import oci:DisasterRecovery/drProtectionGroup:DrProtectionGroup test_dr_protection_group &#34;id&#34;
  * ```
  * 
  */

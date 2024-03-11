@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -54,15 +55,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // NetworkFirewalls can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:NetworkFirewall/networkFirewall:NetworkFirewall test_network_firewall "id"
-//
+// $ pulumi import oci:NetworkFirewall/networkFirewall:NetworkFirewall test_network_firewall "id"
 // ```
 type NetworkFirewall struct {
 	pulumi.CustomResourceState

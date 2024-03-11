@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -29,6 +30,7 @@ import * as utilities from "../utilities";
  *     timeStarted: _var.alert_analytic_time_started,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAlertAnalytic(args: GetAlertAnalyticArgs, opts?: pulumi.InvokeOptions): Promise<GetAlertAnalyticResult> {
 
@@ -128,6 +130,7 @@ export interface GetAlertAnalyticResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -144,6 +147,7 @@ export interface GetAlertAnalyticResult {
  *     timeStarted: _var.alert_analytic_time_started,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAlertAnalyticOutput(args: GetAlertAnalyticOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAlertAnalyticResult> {
     return pulumi.output(args).apply((a: any) => getAlertAnalytic(a, opts))

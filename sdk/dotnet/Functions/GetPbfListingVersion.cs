@@ -16,10 +16,9 @@ namespace Pulumi.Oci.Functions
         /// 
         /// Gets a PbfListingVersion by identifier for a PbfListing.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,8 +34,7 @@ namespace Pulumi.Oci.Functions
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetPbfListingVersionResult> InvokeAsync(GetPbfListingVersionArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetPbfListingVersionResult>("oci:Functions/getPbfListingVersion:getPbfListingVersion", args ?? new GetPbfListingVersionArgs(), options.WithDefaults());
@@ -46,10 +44,9 @@ namespace Pulumi.Oci.Functions
         /// 
         /// Gets a PbfListingVersion by identifier for a PbfListing.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -65,8 +62,7 @@ namespace Pulumi.Oci.Functions
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetPbfListingVersionResult> Invoke(GetPbfListingVersionInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPbfListingVersionResult>("oci:Functions/getPbfListingVersion:getPbfListingVersion", args ?? new GetPbfListingVersionInvokeArgs(), options.WithDefaults());

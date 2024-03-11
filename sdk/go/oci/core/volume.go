@@ -31,6 +31,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -85,15 +86,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Volumes can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Core/volume:Volume test_volume "id"
-//
+// $ pulumi import oci:Core/volume:Volume test_volume "id"
 // ```
 type Volume struct {
 	pulumi.CustomResourceState

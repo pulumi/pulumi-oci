@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -43,6 +44,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetIndexes(ctx *pulumi.Context, args *GetIndexesArgs, opts ...pulumi.InvokeOption) (*GetIndexesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetIndexesResult

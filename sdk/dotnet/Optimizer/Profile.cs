@@ -16,6 +16,7 @@ namespace Pulumi.Oci.Optimizer
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -69,13 +70,14 @@ namespace Pulumi.Oci.Optimizer
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// Profiles can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Optimizer/profile:Profile test_profile "id"
+    /// $ pulumi import oci:Optimizer/profile:Profile test_profile "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Optimizer/profile:Profile")]

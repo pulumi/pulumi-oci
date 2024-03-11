@@ -206,12 +206,14 @@ def get_external_db_home(external_db_home_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_external_db_home = oci.DatabaseManagement.get_external_db_home(external_db_home_id=oci_database_management_external_db_home["test_external_db_home"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str external_db_home_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database home.
@@ -248,12 +250,14 @@ def get_external_db_home_output(external_db_home_id: Optional[pulumi.Input[str]]
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_external_db_home = oci.DatabaseManagement.get_external_db_home(external_db_home_id=oci_database_management_external_db_home["test_external_db_home"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str external_db_home_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database home.

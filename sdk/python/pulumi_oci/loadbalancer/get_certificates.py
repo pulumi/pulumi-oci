@@ -86,12 +86,14 @@ def get_certificates(filters: Optional[Sequence[pulumi.InputType['GetCertificate
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_certificates = oci.LoadBalancer.get_certificates(load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the certificate bundles to be listed.
@@ -120,12 +122,14 @@ def get_certificates_output(filters: Optional[pulumi.Input[Optional[Sequence[pul
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_certificates = oci.LoadBalancer.get_certificates(load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the certificate bundles to be listed.

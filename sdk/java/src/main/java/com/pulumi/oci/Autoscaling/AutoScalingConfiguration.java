@@ -26,6 +26,8 @@ import javax.annotation.Nullable;
  * Creates an autoscaling configuration.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -101,13 +103,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * AutoScalingConfigurations can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Autoscaling/autoScalingConfiguration:AutoScalingConfiguration test_auto_scaling_configuration &#34;id&#34;
+ * $ pulumi import oci:Autoscaling/autoScalingConfiguration:AutoScalingConfiguration test_auto_scaling_configuration &#34;id&#34;
  * ```
  * 
  */

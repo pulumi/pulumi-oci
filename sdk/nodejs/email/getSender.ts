@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -19,6 +20,7 @@ import * as utilities from "../utilities";
  *     senderId: oci_email_sender.test_sender.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getSender(args: GetSenderArgs, opts?: pulumi.InvokeOptions): Promise<GetSenderResult> {
 
@@ -87,6 +89,7 @@ export interface GetSenderResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -95,6 +98,7 @@ export interface GetSenderResult {
  *     senderId: oci_email_sender.test_sender.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getSenderOutput(args: GetSenderOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSenderResult> {
     return pulumi.output(args).apply((a: any) => getSender(a, opts))

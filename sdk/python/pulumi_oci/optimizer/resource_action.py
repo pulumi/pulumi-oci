@@ -411,7 +411,7 @@ class ResourceAction(pulumi.CustomResource):
         ResourceActions can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Optimizer/resourceAction:ResourceAction test_resource_action "id"
+        $ pulumi import oci:Optimizer/resourceAction:ResourceAction test_resource_action "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -447,7 +447,7 @@ class ResourceAction(pulumi.CustomResource):
         ResourceActions can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Optimizer/resourceAction:ResourceAction test_resource_action "id"
+        $ pulumi import oci:Optimizer/resourceAction:ResourceAction test_resource_action "id"
         ```
 
         :param str resource_name: The name of the resource.

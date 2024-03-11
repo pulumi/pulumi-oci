@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -40,6 +41,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupDedicatedAiCluster(ctx *pulumi.Context, args *LookupDedicatedAiClusterArgs, opts ...pulumi.InvokeOption) (*LookupDedicatedAiClusterResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupDedicatedAiClusterResult

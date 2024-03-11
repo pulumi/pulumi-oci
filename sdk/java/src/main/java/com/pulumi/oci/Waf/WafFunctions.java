@@ -41,6 +41,8 @@ public final class WafFunctions {
      * Gets a list of all WebAppFirewalls in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -73,6 +75,7 @@ public final class WafFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFirewallsResult> getFirewalls(GetFirewallsArgs args) {
@@ -84,6 +87,8 @@ public final class WafFunctions {
      * Gets a list of all WebAppFirewalls in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -116,6 +121,7 @@ public final class WafFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFirewallsResult> getFirewallsPlain(GetFirewallsPlainArgs args) {
@@ -127,6 +133,8 @@ public final class WafFunctions {
      * Gets a list of all WebAppFirewalls in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -159,6 +167,7 @@ public final class WafFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFirewallsResult> getFirewalls(GetFirewallsArgs args, InvokeOptions options) {
@@ -170,6 +179,8 @@ public final class WafFunctions {
      * Gets a list of all WebAppFirewalls in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -202,6 +213,7 @@ public final class WafFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFirewallsResult> getFirewallsPlain(GetFirewallsPlainArgs args, InvokeOptions options) {
@@ -213,6 +225,8 @@ public final class WafFunctions {
      * Gets a NetworkAddressList by OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -241,6 +255,7 @@ public final class WafFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkAddressListResult> getNetworkAddressList(GetNetworkAddressListArgs args) {
@@ -252,6 +267,8 @@ public final class WafFunctions {
      * Gets a NetworkAddressList by OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -280,6 +297,7 @@ public final class WafFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkAddressListResult> getNetworkAddressListPlain(GetNetworkAddressListPlainArgs args) {
@@ -291,6 +309,8 @@ public final class WafFunctions {
      * Gets a NetworkAddressList by OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -319,6 +339,7 @@ public final class WafFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkAddressListResult> getNetworkAddressList(GetNetworkAddressListArgs args, InvokeOptions options) {
@@ -330,6 +351,8 @@ public final class WafFunctions {
      * Gets a NetworkAddressList by OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -358,6 +381,7 @@ public final class WafFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkAddressListResult> getNetworkAddressListPlain(GetNetworkAddressListPlainArgs args, InvokeOptions options) {
@@ -369,6 +393,8 @@ public final class WafFunctions {
      * Gets a list of all NetworkAddressLists in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -400,6 +426,7 @@ public final class WafFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkAddressListsResult> getNetworkAddressLists(GetNetworkAddressListsArgs args) {
@@ -411,6 +438,8 @@ public final class WafFunctions {
      * Gets a list of all NetworkAddressLists in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -442,6 +471,7 @@ public final class WafFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkAddressListsResult> getNetworkAddressListsPlain(GetNetworkAddressListsPlainArgs args) {
@@ -453,6 +483,8 @@ public final class WafFunctions {
      * Gets a list of all NetworkAddressLists in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -484,6 +516,7 @@ public final class WafFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkAddressListsResult> getNetworkAddressLists(GetNetworkAddressListsArgs args, InvokeOptions options) {
@@ -495,6 +528,8 @@ public final class WafFunctions {
      * Gets a list of all NetworkAddressLists in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -526,6 +561,7 @@ public final class WafFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkAddressListsResult> getNetworkAddressListsPlain(GetNetworkAddressListsPlainArgs args, InvokeOptions options) {
@@ -537,6 +573,8 @@ public final class WafFunctions {
      * Lists of protection capabilities filtered by query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -570,6 +608,7 @@ public final class WafFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetProtectionCapabilitiesResult> getProtectionCapabilities(GetProtectionCapabilitiesArgs args) {
@@ -581,6 +620,8 @@ public final class WafFunctions {
      * Lists of protection capabilities filtered by query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -614,6 +655,7 @@ public final class WafFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetProtectionCapabilitiesResult> getProtectionCapabilitiesPlain(GetProtectionCapabilitiesPlainArgs args) {
@@ -625,6 +667,8 @@ public final class WafFunctions {
      * Lists of protection capabilities filtered by query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -658,6 +702,7 @@ public final class WafFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetProtectionCapabilitiesResult> getProtectionCapabilities(GetProtectionCapabilitiesArgs args, InvokeOptions options) {
@@ -669,6 +714,8 @@ public final class WafFunctions {
      * Lists of protection capabilities filtered by query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -702,6 +749,7 @@ public final class WafFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetProtectionCapabilitiesResult> getProtectionCapabilitiesPlain(GetProtectionCapabilitiesPlainArgs args, InvokeOptions options) {
@@ -713,6 +761,8 @@ public final class WafFunctions {
      * Lists of available group tags filtered by query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -743,6 +793,7 @@ public final class WafFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetProtectionCapabilityGroupTagsResult> getProtectionCapabilityGroupTags(GetProtectionCapabilityGroupTagsArgs args) {
@@ -754,6 +805,8 @@ public final class WafFunctions {
      * Lists of available group tags filtered by query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -784,6 +837,7 @@ public final class WafFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetProtectionCapabilityGroupTagsResult> getProtectionCapabilityGroupTagsPlain(GetProtectionCapabilityGroupTagsPlainArgs args) {
@@ -795,6 +849,8 @@ public final class WafFunctions {
      * Lists of available group tags filtered by query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -825,6 +881,7 @@ public final class WafFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetProtectionCapabilityGroupTagsResult> getProtectionCapabilityGroupTags(GetProtectionCapabilityGroupTagsArgs args, InvokeOptions options) {
@@ -836,6 +893,8 @@ public final class WafFunctions {
      * Lists of available group tags filtered by query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -866,6 +925,7 @@ public final class WafFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetProtectionCapabilityGroupTagsResult> getProtectionCapabilityGroupTagsPlain(GetProtectionCapabilityGroupTagsPlainArgs args, InvokeOptions options) {
@@ -877,6 +937,8 @@ public final class WafFunctions {
      * Gets a WebAppFirewall by OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -905,6 +967,7 @@ public final class WafFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetWebAppFirewallResult> getWebAppFirewall(GetWebAppFirewallArgs args) {
@@ -916,6 +979,8 @@ public final class WafFunctions {
      * Gets a WebAppFirewall by OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -944,6 +1009,7 @@ public final class WafFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetWebAppFirewallResult> getWebAppFirewallPlain(GetWebAppFirewallPlainArgs args) {
@@ -955,6 +1021,8 @@ public final class WafFunctions {
      * Gets a WebAppFirewall by OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -983,6 +1051,7 @@ public final class WafFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetWebAppFirewallResult> getWebAppFirewall(GetWebAppFirewallArgs args, InvokeOptions options) {
@@ -994,6 +1063,8 @@ public final class WafFunctions {
      * Gets a WebAppFirewall by OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1022,6 +1093,7 @@ public final class WafFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetWebAppFirewallResult> getWebAppFirewallPlain(GetWebAppFirewallPlainArgs args, InvokeOptions options) {
@@ -1033,6 +1105,8 @@ public final class WafFunctions {
      * Gets a list of all WebAppFirewallPolicies in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1064,6 +1138,7 @@ public final class WafFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetWebAppFirewallPoliciesResult> getWebAppFirewallPolicies(GetWebAppFirewallPoliciesArgs args) {
@@ -1075,6 +1150,8 @@ public final class WafFunctions {
      * Gets a list of all WebAppFirewallPolicies in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1106,6 +1183,7 @@ public final class WafFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetWebAppFirewallPoliciesResult> getWebAppFirewallPoliciesPlain(GetWebAppFirewallPoliciesPlainArgs args) {
@@ -1117,6 +1195,8 @@ public final class WafFunctions {
      * Gets a list of all WebAppFirewallPolicies in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1148,6 +1228,7 @@ public final class WafFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetWebAppFirewallPoliciesResult> getWebAppFirewallPolicies(GetWebAppFirewallPoliciesArgs args, InvokeOptions options) {
@@ -1159,6 +1240,8 @@ public final class WafFunctions {
      * Gets a list of all WebAppFirewallPolicies in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1190,6 +1273,7 @@ public final class WafFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetWebAppFirewallPoliciesResult> getWebAppFirewallPoliciesPlain(GetWebAppFirewallPoliciesPlainArgs args, InvokeOptions options) {
@@ -1201,6 +1285,8 @@ public final class WafFunctions {
      * Gets a WebAppFirewallPolicy with the given OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1229,6 +1315,7 @@ public final class WafFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetWebAppFirewallPolicyResult> getWebAppFirewallPolicy(GetWebAppFirewallPolicyArgs args) {
@@ -1240,6 +1327,8 @@ public final class WafFunctions {
      * Gets a WebAppFirewallPolicy with the given OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1268,6 +1357,7 @@ public final class WafFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetWebAppFirewallPolicyResult> getWebAppFirewallPolicyPlain(GetWebAppFirewallPolicyPlainArgs args) {
@@ -1279,6 +1369,8 @@ public final class WafFunctions {
      * Gets a WebAppFirewallPolicy with the given OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1307,6 +1399,7 @@ public final class WafFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetWebAppFirewallPolicyResult> getWebAppFirewallPolicy(GetWebAppFirewallPolicyArgs args, InvokeOptions options) {
@@ -1318,6 +1411,8 @@ public final class WafFunctions {
      * Gets a WebAppFirewallPolicy with the given OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1346,6 +1441,7 @@ public final class WafFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetWebAppFirewallPolicyResult> getWebAppFirewallPolicyPlain(GetWebAppFirewallPolicyPlainArgs args, InvokeOptions options) {

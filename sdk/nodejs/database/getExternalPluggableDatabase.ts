@@ -14,6 +14,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,6 +23,7 @@ import * as utilities from "../utilities";
  *     externalPluggableDatabaseId: oci_database_external_pluggable_database.test_external_pluggable_database.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getExternalPluggableDatabase(args: GetExternalPluggableDatabaseArgs, opts?: pulumi.InvokeOptions): Promise<GetExternalPluggableDatabaseResult> {
 
@@ -143,6 +145,7 @@ export interface GetExternalPluggableDatabaseResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -151,6 +154,7 @@ export interface GetExternalPluggableDatabaseResult {
  *     externalPluggableDatabaseId: oci_database_external_pluggable_database.test_external_pluggable_database.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getExternalPluggableDatabaseOutput(args: GetExternalPluggableDatabaseOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalPluggableDatabaseResult> {
     return pulumi.output(args).apply((a: any) => getExternalPluggableDatabase(a, opts))

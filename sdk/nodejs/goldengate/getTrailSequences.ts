@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,6 +25,7 @@ import * as utilities from "../utilities";
  *     trailSequenceId: oci_golden_gate_trail_sequence.test_trail_sequence.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getTrailSequences(args: GetTrailSequencesArgs, opts?: pulumi.InvokeOptions): Promise<GetTrailSequencesResult> {
 
@@ -88,6 +90,7 @@ export interface GetTrailSequencesResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -99,6 +102,7 @@ export interface GetTrailSequencesResult {
  *     trailSequenceId: oci_golden_gate_trail_sequence.test_trail_sequence.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getTrailSequencesOutput(args: GetTrailSequencesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTrailSequencesResult> {
     return pulumi.output(args).apply((a: any) => getTrailSequences(a, opts))

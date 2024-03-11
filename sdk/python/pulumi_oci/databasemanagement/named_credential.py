@@ -415,6 +415,7 @@ class NamedCredential(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -439,13 +440,14 @@ class NamedCredential(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         NamedCredentials can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DatabaseManagement/namedCredential:NamedCredential test_named_credential "id"
+        $ pulumi import oci:DatabaseManagement/namedCredential:NamedCredential test_named_credential "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -477,6 +479,7 @@ class NamedCredential(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -501,13 +504,14 @@ class NamedCredential(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         NamedCredentials can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DatabaseManagement/namedCredential:NamedCredential test_named_credential "id"
+        $ pulumi import oci:DatabaseManagement/namedCredential:NamedCredential test_named_credential "id"
         ```
 
         :param str resource_name: The name of the resource.

@@ -86,12 +86,14 @@ def get_messages(deployment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_messages = oci.GoldenGate.get_messages(deployment_id=oci_golden_gate_deployment["test_deployment"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str deployment_id: A unique Deployment identifier.
@@ -120,12 +122,14 @@ def get_messages_output(deployment_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_messages = oci.GoldenGate.get_messages(deployment_id=oci_golden_gate_deployment["test_deployment"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str deployment_id: A unique Deployment identifier.

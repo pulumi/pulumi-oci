@@ -17,10 +17,9 @@ namespace Pulumi.Oci.FileStorage
         /// Lists the replication target resources in the specified compartment.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -40,8 +39,7 @@ namespace Pulumi.Oci.FileStorage
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetReplicationTargetsResult> InvokeAsync(GetReplicationTargetsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetReplicationTargetsResult>("oci:FileStorage/getReplicationTargets:getReplicationTargets", args ?? new GetReplicationTargetsArgs(), options.WithDefaults());
@@ -52,10 +50,9 @@ namespace Pulumi.Oci.FileStorage
         /// Lists the replication target resources in the specified compartment.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -75,8 +72,7 @@ namespace Pulumi.Oci.FileStorage
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetReplicationTargetsResult> Invoke(GetReplicationTargetsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetReplicationTargetsResult>("oci:FileStorage/getReplicationTargets:getReplicationTargets", args ?? new GetReplicationTargetsInvokeArgs(), options.WithDefaults());

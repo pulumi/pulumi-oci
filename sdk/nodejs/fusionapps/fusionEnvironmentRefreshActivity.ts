@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,13 +23,14 @@ import * as utilities from "../utilities";
  *     sourceFusionEnvironmentId: oci_fusion_apps_fusion_environment.test_fusion_environment.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * FusionEnvironmentRefreshActivities can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:FusionApps/fusionEnvironmentRefreshActivity:FusionEnvironmentRefreshActivity test_fusion_environment_refresh_activity "fusionEnvironments/{fusionEnvironmentId}/refreshActivities/{refreshActivityId}"
+ * $ pulumi import oci:FusionApps/fusionEnvironmentRefreshActivity:FusionEnvironmentRefreshActivity test_fusion_environment_refresh_activity "fusionEnvironments/{fusionEnvironmentId}/refreshActivities/{refreshActivityId}"
  * ```
  */
 export class FusionEnvironmentRefreshActivity extends pulumi.CustomResource {

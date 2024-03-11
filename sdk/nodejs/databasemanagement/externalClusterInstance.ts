@@ -14,7 +14,7 @@ import * as utilities from "../utilities";
  * ExternalClusterInstances can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:DatabaseManagement/externalClusterInstance:ExternalClusterInstance test_external_cluster_instance "id"
+ * $ pulumi import oci:DatabaseManagement/externalClusterInstance:ExternalClusterInstance test_external_cluster_instance "id"
  * ```
  */
 export class ExternalClusterInstance extends pulumi.CustomResource {

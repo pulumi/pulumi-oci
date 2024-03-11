@@ -16,10 +16,9 @@ namespace Pulumi.Oci.Identity
         /// 
         /// Get a user's database (DB) credentials.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -40,8 +39,7 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDomainsUserDbCredentialResult> InvokeAsync(GetDomainsUserDbCredentialArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDomainsUserDbCredentialResult>("oci:Identity/getDomainsUserDbCredential:getDomainsUserDbCredential", args ?? new GetDomainsUserDbCredentialArgs(), options.WithDefaults());
@@ -51,10 +49,9 @@ namespace Pulumi.Oci.Identity
         /// 
         /// Get a user's database (DB) credentials.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -75,8 +72,7 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDomainsUserDbCredentialResult> Invoke(GetDomainsUserDbCredentialInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsUserDbCredentialResult>("oci:Identity/getDomainsUserDbCredential:getDomainsUserDbCredential", args ?? new GetDomainsUserDbCredentialInvokeArgs(), options.WithDefaults());

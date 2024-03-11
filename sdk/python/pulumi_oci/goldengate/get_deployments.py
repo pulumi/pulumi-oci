@@ -171,6 +171,7 @@ def get_deployments(assignable_connection_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -184,6 +185,7 @@ def get_deployments(assignable_connection_id: Optional[str] = None,
         state=var["deployment_state"],
         supported_connection_type=var["deployment_supported_connection_type"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str assignable_connection_id: Return the deployments to which the specified connectionId may be assigned.
@@ -240,6 +242,7 @@ def get_deployments_output(assignable_connection_id: Optional[pulumi.Input[Optio
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -253,6 +256,7 @@ def get_deployments_output(assignable_connection_id: Optional[pulumi.Input[Optio
         state=var["deployment_state"],
         supported_connection_type=var["deployment_supported_connection_type"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str assignable_connection_id: Return the deployments to which the specified connectionId may be assigned.

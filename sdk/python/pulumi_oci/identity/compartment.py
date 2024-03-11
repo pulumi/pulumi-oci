@@ -309,6 +309,7 @@ class Compartment(pulumi.CustomResource):
         """
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -323,13 +324,14 @@ class Compartment(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Compartments can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/compartment:Compartment test_compartment "id"
+        $ pulumi import oci:Identity/compartment:Compartment test_compartment "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -353,6 +355,7 @@ class Compartment(pulumi.CustomResource):
         """
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -367,13 +370,14 @@ class Compartment(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Compartments can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/compartment:Compartment test_compartment "id"
+        $ pulumi import oci:Identity/compartment:Compartment test_compartment "id"
         ```
 
         :param str resource_name: The name of the resource.

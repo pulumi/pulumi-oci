@@ -28,6 +28,8 @@ import javax.annotation.Nullable;
  * Registers the specified database with Data Safe and creates a Data Safe target database in the Data Safe Console.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -117,13 +119,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * TargetDatabases can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:DataSafe/targetDatabase:TargetDatabase test_target_database &#34;id&#34;
+ * $ pulumi import oci:DataSafe/targetDatabase:TargetDatabase test_target_database &#34;id&#34;
  * ```
  * 
  */

@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,6 +23,7 @@ import * as utilities from "../utilities";
  *     direction: _var.network_security_group_security_rule_direction,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getNetworkSecurityGroupSecurityRules(args: GetNetworkSecurityGroupSecurityRulesArgs, opts?: pulumi.InvokeOptions): Promise<GetNetworkSecurityGroupSecurityRulesResult> {
 
@@ -74,6 +76,7 @@ export interface GetNetworkSecurityGroupSecurityRulesResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -83,6 +86,7 @@ export interface GetNetworkSecurityGroupSecurityRulesResult {
  *     direction: _var.network_security_group_security_rule_direction,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getNetworkSecurityGroupSecurityRulesOutput(args: GetNetworkSecurityGroupSecurityRulesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNetworkSecurityGroupSecurityRulesResult> {
     return pulumi.output(args).apply((a: any) => getNetworkSecurityGroupSecurityRules(a, opts))

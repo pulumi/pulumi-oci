@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -49,6 +50,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetDomainsResourceTypeSchemaAttributes(ctx *pulumi.Context, args *GetDomainsResourceTypeSchemaAttributesArgs, opts ...pulumi.InvokeOption) (*GetDomainsResourceTypeSchemaAttributesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDomainsResourceTypeSchemaAttributesResult

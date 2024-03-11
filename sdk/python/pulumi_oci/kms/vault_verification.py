@@ -112,6 +112,7 @@ class VaultVerification(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -120,6 +121,7 @@ class VaultVerification(pulumi.CustomResource):
             vault_id=oci_kms_vault["test_vault"]["id"],
             replica_region=var["replica_region"])
         ```
+        <!--End PulumiCodeChooser -->
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -144,6 +146,7 @@ class VaultVerification(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -152,6 +155,7 @@ class VaultVerification(pulumi.CustomResource):
             vault_id=oci_kms_vault["test_vault"]["id"],
             replica_region=var["replica_region"])
         ```
+        <!--End PulumiCodeChooser -->
 
         :param str resource_name: The name of the resource.
         :param VaultVerificationArgs args: The arguments to use to populate this resource's properties.

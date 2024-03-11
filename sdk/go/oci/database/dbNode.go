@@ -21,9 +21,7 @@ import (
 // DbNodes can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Database/dbNode:DbNode test_db_node "id"
-//
+// $ pulumi import oci:Database/dbNode:DbNode test_db_node "id"
 // ```
 type DbNode struct {
 	pulumi.CustomResourceState

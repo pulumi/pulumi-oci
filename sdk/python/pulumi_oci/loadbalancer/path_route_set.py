@@ -152,6 +152,7 @@ class PathRouteSet(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -166,13 +167,14 @@ class PathRouteSet(pulumi.CustomResource):
                 ),
             )])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         PathRouteSets can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:LoadBalancer/pathRouteSet:PathRouteSet test_path_route_set "loadBalancers/{loadBalancerId}/pathRouteSets/{pathRouteSetName}"
+        $ pulumi import oci:LoadBalancer/pathRouteSet:PathRouteSet test_path_route_set "loadBalancers/{loadBalancerId}/pathRouteSets/{pathRouteSetName}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -195,6 +197,7 @@ class PathRouteSet(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -209,13 +212,14 @@ class PathRouteSet(pulumi.CustomResource):
                 ),
             )])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         PathRouteSets can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:LoadBalancer/pathRouteSet:PathRouteSet test_path_route_set "loadBalancers/{loadBalancerId}/pathRouteSets/{pathRouteSetName}"
+        $ pulumi import oci:LoadBalancer/pathRouteSet:PathRouteSet test_path_route_set "loadBalancers/{loadBalancerId}/pathRouteSets/{pathRouteSetName}"
         ```
 
         :param str resource_name: The name of the resource.

@@ -15,6 +15,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -38,13 +39,14 @@ import * as utilities from "../utilities";
  *     sensitiveTypeIdsForDiscoveries: _var.discovery_job_sensitive_type_ids_for_discovery,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * DiscoveryJobs can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:DataSafe/discoveryMod:DiscoveryMod test_discovery_job "id"
+ * $ pulumi import oci:DataSafe/discoveryMod:DiscoveryMod test_discovery_job "id"
  * ```
  */
 export class DiscoveryMod extends pulumi.CustomResource {

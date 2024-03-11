@@ -21,6 +21,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -36,6 +37,7 @@ import * as utilities from "../utilities";
  *     startTime: _var.metric_data_start_time,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getMetricData(args: GetMetricDataArgs, opts?: pulumi.InvokeOptions): Promise<GetMetricDataResult> {
 
@@ -149,6 +151,7 @@ export interface GetMetricDataResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -164,6 +167,7 @@ export interface GetMetricDataResult {
  *     startTime: _var.metric_data_start_time,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getMetricDataOutput(args: GetMetricDataOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMetricDataResult> {
     return pulumi.output(args).apply((a: any) => getMetricData(a, opts))

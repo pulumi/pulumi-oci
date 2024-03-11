@@ -16,6 +16,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -27,6 +28,7 @@ import * as utilities from "../utilities";
  *     state: _var.resolver_endpoint_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getResolverEndpoints(args: GetResolverEndpointsArgs, opts?: pulumi.InvokeOptions): Promise<GetResolverEndpointsResult> {
 
@@ -97,6 +99,7 @@ export interface GetResolverEndpointsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -108,6 +111,7 @@ export interface GetResolverEndpointsResult {
  *     state: _var.resolver_endpoint_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getResolverEndpointsOutput(args: GetResolverEndpointsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetResolverEndpointsResult> {
     return pulumi.output(args).apply((a: any) => getResolverEndpoints(a, opts))

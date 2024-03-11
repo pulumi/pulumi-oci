@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -20,13 +21,14 @@ import * as utilities from "../utilities";
  *     deploymentId: oci_golden_gate_deployment.test_deployment.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * ConnectionAssignments can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:GoldenGate/connectionAssignment:ConnectionAssignment test_connection_assignment "id"
+ * $ pulumi import oci:GoldenGate/connectionAssignment:ConnectionAssignment test_connection_assignment "id"
  * ```
  */
 export class ConnectionAssignment extends pulumi.CustomResource {

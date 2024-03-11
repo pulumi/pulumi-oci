@@ -17,6 +17,7 @@ namespace Pulumi.Oci.LoadBalancer
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -66,13 +67,14 @@ namespace Pulumi.Oci.LoadBalancer
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// RuleSets can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:LoadBalancer/ruleSet:RuleSet test_rule_set "loadBalancers/{loadBalancerId}/ruleSets/{ruleSetName}"
+    /// $ pulumi import oci:LoadBalancer/ruleSet:RuleSet test_rule_set "loadBalancers/{loadBalancerId}/ruleSets/{ruleSetName}"
     /// ```
     /// </summary>
     [OciResourceType("oci:LoadBalancer/ruleSet:RuleSet")]

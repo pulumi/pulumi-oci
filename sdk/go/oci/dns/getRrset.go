@@ -20,6 +20,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -48,6 +49,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupRrset(ctx *pulumi.Context, args *LookupRrsetArgs, opts ...pulumi.InvokeOption) (*LookupRrsetResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupRrsetResult

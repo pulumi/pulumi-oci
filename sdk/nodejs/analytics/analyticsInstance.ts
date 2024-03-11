@@ -14,6 +14,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -50,13 +51,14 @@ import * as utilities from "../utilities";
  *     },
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * AnalyticsInstances can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Analytics/analyticsInstance:AnalyticsInstance test_analytics_instance "id"
+ * $ pulumi import oci:Analytics/analyticsInstance:AnalyticsInstance test_analytics_instance "id"
  * ```
  */
 export class AnalyticsInstance extends pulumi.CustomResource {

@@ -15,6 +15,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -40,13 +41,14 @@ import * as utilities from "../utilities";
  *     nicIndex: _var.vnic_attachment_nic_index,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * VnicAttachments can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Core/vnicAttachment:VnicAttachment test_vnic_attachment "id"
+ * $ pulumi import oci:Core/vnicAttachment:VnicAttachment test_vnic_attachment "id"
  * ```
  */
 export class VnicAttachment extends pulumi.CustomResource {

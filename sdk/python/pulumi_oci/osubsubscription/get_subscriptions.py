@@ -149,6 +149,7 @@ def get_subscriptions(buyer_email: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -161,6 +162,7 @@ def get_subscriptions(buyer_email: Optional[str] = None,
         x_one_gateway_subscription_id=var["subscription_x_one_gateway_subscription_id"],
         x_one_origin_region=var["subscription_x_one_origin_region"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str buyer_email: Buyer Email Id
@@ -216,6 +218,7 @@ def get_subscriptions_output(buyer_email: Optional[pulumi.Input[Optional[str]]] 
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -228,6 +231,7 @@ def get_subscriptions_output(buyer_email: Optional[pulumi.Input[Optional[str]]] 
         x_one_gateway_subscription_id=var["subscription_x_one_gateway_subscription_id"],
         x_one_origin_region=var["subscription_x_one_origin_region"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str buyer_email: Buyer Email Id

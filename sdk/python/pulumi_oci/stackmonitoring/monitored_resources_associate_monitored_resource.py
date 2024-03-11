@@ -274,6 +274,7 @@ class MonitoredResourcesAssociateMonitoredResource(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -284,13 +285,14 @@ class MonitoredResourcesAssociateMonitoredResource(pulumi.CustomResource):
             destination_resource_id=oci_stack_monitoring_destination_resource["test_destination_resource"]["id"],
             source_resource_id=oci_stack_monitoring_source_resource["test_source_resource"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         MonitoredResourcesAssociateMonitoredResources can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:StackMonitoring/monitoredResourcesAssociateMonitoredResource:MonitoredResourcesAssociateMonitoredResource test_monitored_resources_associate_monitored_resource "id"
+        $ pulumi import oci:StackMonitoring/monitoredResourcesAssociateMonitoredResource:MonitoredResourcesAssociateMonitoredResource test_monitored_resources_associate_monitored_resource "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -319,6 +321,7 @@ class MonitoredResourcesAssociateMonitoredResource(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -329,13 +332,14 @@ class MonitoredResourcesAssociateMonitoredResource(pulumi.CustomResource):
             destination_resource_id=oci_stack_monitoring_destination_resource["test_destination_resource"]["id"],
             source_resource_id=oci_stack_monitoring_source_resource["test_source_resource"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         MonitoredResourcesAssociateMonitoredResources can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:StackMonitoring/monitoredResourcesAssociateMonitoredResource:MonitoredResourcesAssociateMonitoredResource test_monitored_resources_associate_monitored_resource "id"
+        $ pulumi import oci:StackMonitoring/monitoredResourcesAssociateMonitoredResource:MonitoredResourcesAssociateMonitoredResource test_monitored_resources_associate_monitored_resource "id"
         ```
 
         :param str resource_name: The name of the resource.

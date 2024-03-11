@@ -16,6 +16,7 @@ namespace Pulumi.Oci.LoadBalancer
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -60,13 +61,14 @@ namespace Pulumi.Oci.LoadBalancer
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// Listeners can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:LoadBalancer/listener:Listener test_listener "loadBalancers/{loadBalancerId}/listeners/{listenerName}"
+    /// $ pulumi import oci:LoadBalancer/listener:Listener test_listener "loadBalancers/{loadBalancerId}/listeners/{listenerName}"
     /// ```
     /// </summary>
     [OciResourceType("oci:LoadBalancer/listener:Listener")]

@@ -185,6 +185,7 @@ class NetworkFirewallPolicyApplicationGroup(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -193,13 +194,14 @@ class NetworkFirewallPolicyApplicationGroup(pulumi.CustomResource):
             apps=var["network_firewall_policy_application_group_apps"],
             network_firewall_policy_id=oci_network_firewall_network_firewall_policy["test_network_firewall_policy"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         NetworkFirewallPolicyApplicationGroups can be imported using the `name`, e.g.
 
         ```sh
-         $ pulumi import oci:NetworkFirewall/networkFirewallPolicyApplicationGroup:NetworkFirewallPolicyApplicationGroup test_network_firewall_policy_application_group "networkFirewallPolicies/{networkFirewallPolicyId}/applicationGroups/{applicationGroupName}"
+        $ pulumi import oci:NetworkFirewall/networkFirewallPolicyApplicationGroup:NetworkFirewallPolicyApplicationGroup test_network_firewall_policy_application_group "networkFirewallPolicies/{networkFirewallPolicyId}/applicationGroups/{applicationGroupName}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -225,6 +227,7 @@ class NetworkFirewallPolicyApplicationGroup(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -233,13 +236,14 @@ class NetworkFirewallPolicyApplicationGroup(pulumi.CustomResource):
             apps=var["network_firewall_policy_application_group_apps"],
             network_firewall_policy_id=oci_network_firewall_network_firewall_policy["test_network_firewall_policy"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         NetworkFirewallPolicyApplicationGroups can be imported using the `name`, e.g.
 
         ```sh
-         $ pulumi import oci:NetworkFirewall/networkFirewallPolicyApplicationGroup:NetworkFirewallPolicyApplicationGroup test_network_firewall_policy_application_group "networkFirewallPolicies/{networkFirewallPolicyId}/applicationGroups/{applicationGroupName}"
+        $ pulumi import oci:NetworkFirewall/networkFirewallPolicyApplicationGroup:NetworkFirewallPolicyApplicationGroup test_network_firewall_policy_application_group "networkFirewallPolicies/{networkFirewallPolicyId}/applicationGroups/{applicationGroupName}"
         ```
 
         :param str resource_name: The name of the resource.

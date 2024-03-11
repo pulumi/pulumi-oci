@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -52,15 +53,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // RedisClusters can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Redis/redisCluster:RedisCluster test_redis_cluster "id"
-//
+// $ pulumi import oci:Redis/redisCluster:RedisCluster test_redis_cluster "id"
 // ```
 type RedisCluster struct {
 	pulumi.CustomResourceState

@@ -313,6 +313,7 @@ class DynamicGroup(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -328,13 +329,14 @@ class DynamicGroup(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         DynamicGroups can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/dynamicGroup:DynamicGroup test_dynamic_group "id"
+        $ pulumi import oci:Identity/dynamicGroup:DynamicGroup test_dynamic_group "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -377,6 +379,7 @@ class DynamicGroup(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -392,13 +395,14 @@ class DynamicGroup(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         DynamicGroups can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/dynamicGroup:DynamicGroup test_dynamic_group "id"
+        $ pulumi import oci:Identity/dynamicGroup:DynamicGroup test_dynamic_group "id"
         ```
 
         :param str resource_name: The name of the resource.

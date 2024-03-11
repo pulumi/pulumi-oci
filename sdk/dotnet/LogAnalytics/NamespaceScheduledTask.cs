@@ -19,7 +19,7 @@ namespace Pulumi.Oci.LogAnalytics
     /// NamespaceScheduledTasks can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:LogAnalytics/namespaceScheduledTask:NamespaceScheduledTask test_namespace_scheduled_task "namespaces/{namespaceName}/scheduledTasks/{scheduledTaskId}"
+    /// $ pulumi import oci:LogAnalytics/namespaceScheduledTask:NamespaceScheduledTask test_namespace_scheduled_task "namespaces/{namespaceName}/scheduledTasks/{scheduledTaskId}"
     /// ```
     /// </summary>
     [OciResourceType("oci:LogAnalytics/namespaceScheduledTask:NamespaceScheduledTask")]

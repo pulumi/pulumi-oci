@@ -14,7 +14,7 @@ import * as utilities from "../utilities";
  * SecurityPolicies can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:DataSafe/securityPolicy:SecurityPolicy test_security_policy "id"
+ * $ pulumi import oci:DataSafe/securityPolicy:SecurityPolicy test_security_policy "id"
  * ```
  */
 export class SecurityPolicy extends pulumi.CustomResource {

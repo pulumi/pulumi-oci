@@ -16,6 +16,7 @@ namespace Pulumi.Oci.DataScience
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -41,13 +42,14 @@ namespace Pulumi.Oci.DataScience
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// ModelVersionSets can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:DataScience/modelVersionSet:ModelVersionSet test_model_version_set "id"
+    /// $ pulumi import oci:DataScience/modelVersionSet:ModelVersionSet test_model_version_set "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:DataScience/modelVersionSet:ModelVersionSet")]

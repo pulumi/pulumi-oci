@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -54,15 +55,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // OpaInstances can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Opa/opaInstance:OpaInstance test_opa_instance "id"
-//
+// $ pulumi import oci:Opa/opaInstance:OpaInstance test_opa_instance "id"
 // ```
 type OpaInstance struct {
 	pulumi.CustomResourceState

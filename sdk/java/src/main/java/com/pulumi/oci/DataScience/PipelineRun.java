@@ -30,6 +30,8 @@ import javax.annotation.Nullable;
  * Creates a new PipelineRun.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -88,13 +90,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * PipelineRuns can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:DataScience/pipelineRun:PipelineRun test_pipeline_run &#34;id&#34;
+ * $ pulumi import oci:DataScience/pipelineRun:PipelineRun test_pipeline_run &#34;id&#34;
  * ```
  * 
  */

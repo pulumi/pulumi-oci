@@ -28,6 +28,7 @@ import javax.annotation.Nullable;
  * 
  * ## Example Usage
  * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -74,13 +75,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * MySmtpCredentials can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Identity/domainsMySmtpCredential:DomainsMySmtpCredential test_my_smtp_credential &#34;idcsEndpoint/{idcsEndpoint}/mySmtpCredentials/{mySmtpCredentialId}&#34;
+ * $ pulumi import oci:Identity/domainsMySmtpCredential:DomainsMySmtpCredential test_my_smtp_credential &#34;idcsEndpoint/{idcsEndpoint}/mySmtpCredentials/{mySmtpCredentialId}&#34;
  * ```
  * 
  */

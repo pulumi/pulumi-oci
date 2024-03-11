@@ -21,6 +21,8 @@ import javax.annotation.Nullable;
  * Creates an AgentDependency.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -59,13 +61,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * AgentDependencies can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:CloudBridge/agentDependency:AgentDependency test_agent_dependency &#34;id&#34;
+ * $ pulumi import oci:CloudBridge/agentDependency:AgentDependency test_agent_dependency &#34;id&#34;
  * ```
  * 
  */

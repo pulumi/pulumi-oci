@@ -16,10 +16,9 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// 
         /// Retrieves the current health status of the specified backend server.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -37,8 +36,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetBackendHealthResult> InvokeAsync(GetBackendHealthArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetBackendHealthResult>("oci:NetworkLoadBalancer/getBackendHealth:getBackendHealth", args ?? new GetBackendHealthArgs(), options.WithDefaults());
@@ -48,10 +46,9 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// 
         /// Retrieves the current health status of the specified backend server.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -69,8 +66,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetBackendHealthResult> Invoke(GetBackendHealthInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetBackendHealthResult>("oci:NetworkLoadBalancer/getBackendHealth:getBackendHealth", args ?? new GetBackendHealthInvokeArgs(), options.WithDefaults());

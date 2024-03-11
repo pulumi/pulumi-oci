@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,6 +24,7 @@ import * as utilities from "../utilities";
  *     compartmentId: _var.compartment_id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getListingPackageAgreements(args: GetListingPackageAgreementsArgs, opts?: pulumi.InvokeOptions): Promise<GetListingPackageAgreementsResult> {
 
@@ -81,6 +83,7 @@ export interface GetListingPackageAgreementsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -91,6 +94,7 @@ export interface GetListingPackageAgreementsResult {
  *     compartmentId: _var.compartment_id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getListingPackageAgreementsOutput(args: GetListingPackageAgreementsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetListingPackageAgreementsResult> {
     return pulumi.output(args).apply((a: any) => getListingPackageAgreements(a, opts))

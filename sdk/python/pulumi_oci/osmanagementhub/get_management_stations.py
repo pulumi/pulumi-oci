@@ -139,6 +139,7 @@ def get_management_stations(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -150,6 +151,7 @@ def get_management_stations(compartment_id: Optional[str] = None,
         managed_instance_id=oci_osmanagement_managed_instance["test_managed_instance"]["id"],
         state=var["management_station_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment that contains the resources to list.
@@ -197,6 +199,7 @@ def get_management_stations_output(compartment_id: Optional[pulumi.Input[Optiona
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -208,6 +211,7 @@ def get_management_stations_output(compartment_id: Optional[pulumi.Input[Optiona
         managed_instance_id=oci_osmanagement_managed_instance["test_managed_instance"]["id"],
         state=var["management_station_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment that contains the resources to list.

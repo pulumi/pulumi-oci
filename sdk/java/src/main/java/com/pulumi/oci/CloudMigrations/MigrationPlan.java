@@ -29,7 +29,7 @@ import javax.annotation.Nullable;
  * MigrationPlans can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:CloudMigrations/migrationPlan:MigrationPlan test_migration_plan &#34;id&#34;
+ * $ pulumi import oci:CloudMigrations/migrationPlan:MigrationPlan test_migration_plan &#34;id&#34;
  * ```
  * 
  */

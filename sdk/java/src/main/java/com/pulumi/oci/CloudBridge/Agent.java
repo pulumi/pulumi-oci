@@ -23,6 +23,8 @@ import javax.annotation.Nullable;
  * Creates an Agent.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -58,13 +60,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * Agents can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:CloudBridge/agent:Agent test_agent &#34;id&#34;
+ * $ pulumi import oci:CloudBridge/agent:Agent test_agent &#34;id&#34;
  * ```
  * 
  */

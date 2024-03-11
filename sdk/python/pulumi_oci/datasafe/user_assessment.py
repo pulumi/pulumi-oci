@@ -553,6 +553,7 @@ class UserAssessment(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -570,13 +571,14 @@ class UserAssessment(pulumi.CustomResource):
             },
             schedule=var["user_assessment_schedule"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         UserAssessments can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataSafe/userAssessment:UserAssessment test_user_assessment "id"
+        $ pulumi import oci:DataSafe/userAssessment:UserAssessment test_user_assessment "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -610,6 +612,7 @@ class UserAssessment(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -627,13 +630,14 @@ class UserAssessment(pulumi.CustomResource):
             },
             schedule=var["user_assessment_schedule"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         UserAssessments can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataSafe/userAssessment:UserAssessment test_user_assessment "id"
+        $ pulumi import oci:DataSafe/userAssessment:UserAssessment test_user_assessment "id"
         ```
 
         :param str resource_name: The name of the resource.

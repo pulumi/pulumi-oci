@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -45,6 +46,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetAddressLists(ctx *pulumi.Context, args *GetAddressListsArgs, opts ...pulumi.InvokeOption) (*GetAddressListsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAddressListsResult

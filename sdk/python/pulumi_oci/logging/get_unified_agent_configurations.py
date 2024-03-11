@@ -145,6 +145,7 @@ def get_unified_agent_configurations(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -156,6 +157,7 @@ def get_unified_agent_configurations(compartment_id: Optional[str] = None,
         log_id=oci_logging_log["test_log"]["id"],
         state=var["unified_agent_configuration_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: Compartment OCID to list resources in. See compartmentIdInSubtree for nested compartments traversal.
@@ -204,6 +206,7 @@ def get_unified_agent_configurations_output(compartment_id: Optional[pulumi.Inpu
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -215,6 +218,7 @@ def get_unified_agent_configurations_output(compartment_id: Optional[pulumi.Inpu
         log_id=oci_logging_log["test_log"]["id"],
         state=var["unified_agent_configuration_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: Compartment OCID to list resources in. See compartmentIdInSubtree for nested compartments traversal.

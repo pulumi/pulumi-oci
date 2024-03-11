@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -26,6 +27,7 @@ import * as utilities from "../utilities";
  *     resourceTypeSchemaVersion: _var.branding_setting_resource_type_schema_version,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDomainsBrandingSetting(args: GetDomainsBrandingSettingArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsBrandingSettingResult> {
 
@@ -212,6 +214,7 @@ export interface GetDomainsBrandingSettingResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -225,6 +228,7 @@ export interface GetDomainsBrandingSettingResult {
  *     resourceTypeSchemaVersion: _var.branding_setting_resource_type_schema_version,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDomainsBrandingSettingOutput(args: GetDomainsBrandingSettingOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsBrandingSettingResult> {
     return pulumi.output(args).apply((a: any) => getDomainsBrandingSetting(a, opts))

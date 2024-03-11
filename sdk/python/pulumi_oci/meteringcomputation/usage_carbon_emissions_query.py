@@ -106,6 +106,7 @@ class UsageCarbonEmissionsQuery(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -136,13 +137,14 @@ class UsageCarbonEmissionsQuery(pulumi.CustomResource):
                 version=var["usage_carbon_emissions_query_query_definition_version"],
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         UsageCarbonEmissionsQueries can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:MeteringComputation/usageCarbonEmissionsQuery:UsageCarbonEmissionsQuery test_usage_carbon_emissions_query "id"
+        $ pulumi import oci:MeteringComputation/usageCarbonEmissionsQuery:UsageCarbonEmissionsQuery test_usage_carbon_emissions_query "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -163,6 +165,7 @@ class UsageCarbonEmissionsQuery(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -193,13 +196,14 @@ class UsageCarbonEmissionsQuery(pulumi.CustomResource):
                 version=var["usage_carbon_emissions_query_query_definition_version"],
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         UsageCarbonEmissionsQueries can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:MeteringComputation/usageCarbonEmissionsQuery:UsageCarbonEmissionsQuery test_usage_carbon_emissions_query "id"
+        $ pulumi import oci:MeteringComputation/usageCarbonEmissionsQuery:UsageCarbonEmissionsQuery test_usage_carbon_emissions_query "id"
         ```
 
         :param str resource_name: The name of the resource.

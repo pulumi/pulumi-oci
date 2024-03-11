@@ -19,6 +19,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -55,15 +56,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // WorkspaceFolders can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:DataIntegration/workspaceFolder:WorkspaceFolder test_workspace_folder "workspaces/{workspaceId}/folders/{folderKey}"
-//
+// $ pulumi import oci:DataIntegration/workspaceFolder:WorkspaceFolder test_workspace_folder "workspaces/{workspaceId}/folders/{folderKey}"
 // ```
 type WorkspaceFolder struct {
 	pulumi.CustomResourceState

@@ -39,6 +39,8 @@ import javax.annotation.Nullable;
  * IP address specified in your network source. For more information, see [Managing Network Sources](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingnetworksources.htm).
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -73,13 +75,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * NetworkSources can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Identity/networkSource:NetworkSource test_network_source &#34;id&#34;
+ * $ pulumi import oci:Identity/networkSource:NetworkSource test_network_source &#34;id&#34;
  * ```
  * 
  */

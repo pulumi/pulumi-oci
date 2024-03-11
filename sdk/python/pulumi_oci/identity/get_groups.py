@@ -117,6 +117,7 @@ def get_groups(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -125,6 +126,7 @@ def get_groups(compartment_id: Optional[str] = None,
         name=var["group_name"],
         state=var["group_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment (remember that the tenancy is simply the root compartment).
@@ -163,6 +165,7 @@ def get_groups_output(compartment_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -171,6 +174,7 @@ def get_groups_output(compartment_id: Optional[pulumi.Input[str]] = None,
         name=var["group_name"],
         state=var["group_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment (remember that the tenancy is simply the root compartment).

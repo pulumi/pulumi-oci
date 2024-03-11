@@ -74,12 +74,14 @@ def get_log_sets_count(namespace: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_log_sets_count = oci.LogAnalytics.get_log_sets_count(namespace=var["log_sets_count_namespace"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str namespace: The Logging Analytics namespace used for the request.
@@ -105,12 +107,14 @@ def get_log_sets_count_output(namespace: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_log_sets_count = oci.LogAnalytics.get_log_sets_count(namespace=var["log_sets_count_namespace"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str namespace: The Logging Analytics namespace used for the request.

@@ -184,6 +184,7 @@ def get_tag(tag_name: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -191,6 +192,7 @@ def get_tag(tag_name: Optional[str] = None,
     test_tag = oci.Identity.get_tag(tag_name=oci_identity_tag["test_tag"]["name"],
         tag_namespace_id=oci_identity_tag_namespace["test_tag_namespace"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str tag_name: The name of the tag.
@@ -228,6 +230,7 @@ def get_tag_output(tag_name: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -235,6 +238,7 @@ def get_tag_output(tag_name: Optional[pulumi.Input[str]] = None,
     test_tag = oci.Identity.get_tag(tag_name=oci_identity_tag["test_tag"]["name"],
         tag_namespace_id=oci_identity_tag_namespace["test_tag_namespace"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str tag_name: The name of the tag.

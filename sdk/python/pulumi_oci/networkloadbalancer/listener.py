@@ -250,6 +250,7 @@ class Listener(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -261,13 +262,14 @@ class Listener(pulumi.CustomResource):
             protocol=var["listener_protocol"],
             ip_version=var["listener_ip_version"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Listeners can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:NetworkLoadBalancer/listener:Listener test_listener "networkLoadBalancers/{networkLoadBalancerId}/listeners/{listenerName}"
+        $ pulumi import oci:NetworkLoadBalancer/listener:Listener test_listener "networkLoadBalancers/{networkLoadBalancerId}/listeners/{listenerName}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -296,6 +298,7 @@ class Listener(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -307,13 +310,14 @@ class Listener(pulumi.CustomResource):
             protocol=var["listener_protocol"],
             ip_version=var["listener_ip_version"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Listeners can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:NetworkLoadBalancer/listener:Listener test_listener "networkLoadBalancers/{networkLoadBalancerId}/listeners/{listenerName}"
+        $ pulumi import oci:NetworkLoadBalancer/listener:Listener test_listener "networkLoadBalancers/{networkLoadBalancerId}/listeners/{listenerName}"
         ```
 
         :param str resource_name: The name of the resource.

@@ -162,6 +162,7 @@ def get_deployments(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -175,6 +176,7 @@ def get_deployments(compartment_id: Optional[str] = None,
         time_created_greater_than_or_equal_to=var["deployment_time_created_greater_than_or_equal_to"],
         time_created_less_than=var["deployment_time_created_less_than"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment in which to list resources.
@@ -230,6 +232,7 @@ def get_deployments_output(compartment_id: Optional[pulumi.Input[Optional[str]]]
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -243,6 +246,7 @@ def get_deployments_output(compartment_id: Optional[pulumi.Input[Optional[str]]]
         time_created_greater_than_or_equal_to=var["deployment_time_created_greater_than_or_equal_to"],
         time_created_less_than=var["deployment_time_created_less_than"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment in which to list resources.

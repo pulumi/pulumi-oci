@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -43,15 +44,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // MonitoredResourcesListMembers can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:StackMonitoring/monitoredResourcesListMember:MonitoredResourcesListMember test_monitored_resources_list_member "id"
-//
+// $ pulumi import oci:StackMonitoring/monitoredResourcesListMember:MonitoredResourcesListMember test_monitored_resources_list_member "id"
 // ```
 type MonitoredResourcesListMember struct {
 	pulumi.CustomResourceState

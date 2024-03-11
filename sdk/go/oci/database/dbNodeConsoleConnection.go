@@ -20,6 +20,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -48,15 +49,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // DbNodeConsoleConnections can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Database/dbNodeConsoleConnection:DbNodeConsoleConnection test_db_node_console_connection "dbNodes/{dbNodeId}/consoleConnections/{consoleConnectionId}"
-//
+// $ pulumi import oci:Database/dbNodeConsoleConnection:DbNodeConsoleConnection test_db_node_console_connection "dbNodes/{dbNodeId}/consoleConnections/{consoleConnectionId}"
 // ```
 type DbNodeConsoleConnection struct {
 	pulumi.CustomResourceState

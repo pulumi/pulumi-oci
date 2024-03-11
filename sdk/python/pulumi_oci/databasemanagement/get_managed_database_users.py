@@ -109,6 +109,7 @@ def get_managed_database_users(filters: Optional[Sequence[pulumi.InputType['GetM
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -117,6 +118,7 @@ def get_managed_database_users(filters: Optional[Sequence[pulumi.InputType['GetM
         name=var["managed_database_user_name"],
         opc_named_credential_id=var["managed_database_user_opc_named_credential_id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
@@ -153,6 +155,7 @@ def get_managed_database_users_output(filters: Optional[pulumi.Input[Optional[Se
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -161,6 +164,7 @@ def get_managed_database_users_output(filters: Optional[pulumi.Input[Optional[Se
         name=var["managed_database_user_name"],
         opc_named_credential_id=var["managed_database_user_opc_named_credential_id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.

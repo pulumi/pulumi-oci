@@ -16,10 +16,9 @@ namespace Pulumi.Oci.CloudGuard
         /// 
         /// Returns a DataMaskRule identified by DataMaskRuleId
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,8 +34,7 @@ namespace Pulumi.Oci.CloudGuard
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDataMaskRuleResult> InvokeAsync(GetDataMaskRuleArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDataMaskRuleResult>("oci:CloudGuard/getDataMaskRule:getDataMaskRule", args ?? new GetDataMaskRuleArgs(), options.WithDefaults());
@@ -46,10 +44,9 @@ namespace Pulumi.Oci.CloudGuard
         /// 
         /// Returns a DataMaskRule identified by DataMaskRuleId
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -65,8 +62,7 @@ namespace Pulumi.Oci.CloudGuard
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDataMaskRuleResult> Invoke(GetDataMaskRuleInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDataMaskRuleResult>("oci:CloudGuard/getDataMaskRule:getDataMaskRule", args ?? new GetDataMaskRuleInvokeArgs(), options.WithDefaults());

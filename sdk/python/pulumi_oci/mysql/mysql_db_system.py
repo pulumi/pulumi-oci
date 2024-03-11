@@ -1178,6 +1178,7 @@ class MysqlDbSystem(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -1238,13 +1239,14 @@ class MysqlDbSystem(pulumi.CustomResource):
                 backup_id=oci_mysql_mysql_backup["test_backup"]["id"],
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         MysqlDbSystems can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Mysql/mysqlDbSystem:MysqlDbSystem test_mysql_db_system "id"
+        $ pulumi import oci:Mysql/mysqlDbSystem:MysqlDbSystem test_mysql_db_system "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -1309,6 +1311,7 @@ class MysqlDbSystem(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -1369,13 +1372,14 @@ class MysqlDbSystem(pulumi.CustomResource):
                 backup_id=oci_mysql_mysql_backup["test_backup"]["id"],
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         MysqlDbSystems can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Mysql/mysqlDbSystem:MysqlDbSystem test_mysql_db_system "id"
+        $ pulumi import oci:Mysql/mysqlDbSystem:MysqlDbSystem test_mysql_db_system "id"
         ```
 
         :param str resource_name: The name of the resource.

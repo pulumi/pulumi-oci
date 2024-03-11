@@ -22,6 +22,8 @@ public final class ManagementDashboardFunctions {
      * `$oci management-dashboard dashboard export --query data --export-dashboard-id &#34;{\&#34;dashboardIds\&#34;:[\&#34;ocid1.managementdashboard.oc1..dashboardId1\&#34;]}&#34;  &gt; dashboards.json`
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -50,6 +52,7 @@ public final class ManagementDashboardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagementDashboardsExportResult> getManagementDashboardsExport(GetManagementDashboardsExportArgs args) {
@@ -63,6 +66,8 @@ public final class ManagementDashboardFunctions {
      * `$oci management-dashboard dashboard export --query data --export-dashboard-id &#34;{\&#34;dashboardIds\&#34;:[\&#34;ocid1.managementdashboard.oc1..dashboardId1\&#34;]}&#34;  &gt; dashboards.json`
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -91,6 +96,7 @@ public final class ManagementDashboardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagementDashboardsExportResult> getManagementDashboardsExportPlain(GetManagementDashboardsExportPlainArgs args) {
@@ -104,6 +110,8 @@ public final class ManagementDashboardFunctions {
      * `$oci management-dashboard dashboard export --query data --export-dashboard-id &#34;{\&#34;dashboardIds\&#34;:[\&#34;ocid1.managementdashboard.oc1..dashboardId1\&#34;]}&#34;  &gt; dashboards.json`
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -132,6 +140,7 @@ public final class ManagementDashboardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagementDashboardsExportResult> getManagementDashboardsExport(GetManagementDashboardsExportArgs args, InvokeOptions options) {
@@ -145,6 +154,8 @@ public final class ManagementDashboardFunctions {
      * `$oci management-dashboard dashboard export --query data --export-dashboard-id &#34;{\&#34;dashboardIds\&#34;:[\&#34;ocid1.managementdashboard.oc1..dashboardId1\&#34;]}&#34;  &gt; dashboards.json`
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -173,6 +184,7 @@ public final class ManagementDashboardFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagementDashboardsExportResult> getManagementDashboardsExportPlain(GetManagementDashboardsExportPlainArgs args, InvokeOptions options) {

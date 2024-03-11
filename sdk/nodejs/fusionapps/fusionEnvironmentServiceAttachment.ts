@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,13 +22,14 @@ import * as utilities from "../utilities";
  *     serviceInstanceType: _var.fusion_environment_service_attachment_service_instance_type,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * FusionEnvironmentServiceAttachments can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:FusionApps/fusionEnvironmentServiceAttachment:FusionEnvironmentServiceAttachment test_fusion_environment_service_attachment "fusionEnvironments/{fusionEnvironmentId}/serviceAttachments/{serviceAttachmentId}"
+ * $ pulumi import oci:FusionApps/fusionEnvironmentServiceAttachment:FusionEnvironmentServiceAttachment test_fusion_environment_service_attachment "fusionEnvironments/{fusionEnvironmentId}/serviceAttachments/{serviceAttachmentId}"
  * ```
  */
 export class FusionEnvironmentServiceAttachment extends pulumi.CustomResource {

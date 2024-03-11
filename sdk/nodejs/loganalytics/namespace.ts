@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,13 +22,14 @@ import * as utilities from "../utilities";
  *     namespace: _var.namespace_namespace,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * Namespace can be imported using the `namespace`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:LogAnalytics/namespace:Namespace test_namespace "namespace"
+ * $ pulumi import oci:LogAnalytics/namespace:Namespace test_namespace "namespace"
  * ```
  */
 export class Namespace extends pulumi.CustomResource {

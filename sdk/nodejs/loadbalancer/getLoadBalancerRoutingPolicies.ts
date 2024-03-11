@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,6 +22,7 @@ import * as utilities from "../utilities";
  *     loadBalancerId: oci_load_balancer_load_balancer.test_load_balancer.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getLoadBalancerRoutingPolicies(args: GetLoadBalancerRoutingPoliciesArgs, opts?: pulumi.InvokeOptions): Promise<GetLoadBalancerRoutingPoliciesResult> {
 
@@ -64,6 +66,7 @@ export interface GetLoadBalancerRoutingPoliciesResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -72,6 +75,7 @@ export interface GetLoadBalancerRoutingPoliciesResult {
  *     loadBalancerId: oci_load_balancer_load_balancer.test_load_balancer.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getLoadBalancerRoutingPoliciesOutput(args: GetLoadBalancerRoutingPoliciesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLoadBalancerRoutingPoliciesResult> {
     return pulumi.output(args).apply((a: any) => getLoadBalancerRoutingPolicies(a, opts))

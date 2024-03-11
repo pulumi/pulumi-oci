@@ -21,9 +21,7 @@ import (
 // Deployments can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:GoldenGate/deployment:Deployment test_deployment "id"
-//
+// $ pulumi import oci:GoldenGate/deployment:Deployment test_deployment "id"
 // ```
 type Deployment struct {
 	pulumi.CustomResourceState

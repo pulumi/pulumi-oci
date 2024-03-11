@@ -57,6 +57,7 @@ import javax.annotation.Nullable;
  * 
  * ## Example Usage
  * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -375,13 +376,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * Users can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Identity/domainsUser:DomainsUser test_user &#34;idcsEndpoint/{idcsEndpoint}/users/{userId}&#34;
+ * $ pulumi import oci:Identity/domainsUser:DomainsUser test_user &#34;idcsEndpoint/{idcsEndpoint}/users/{userId}&#34;
  * ```
  * 
  */

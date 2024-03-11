@@ -21,9 +21,7 @@ import (
 // CloudGateMappings can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Identity/domainsCloudGateMapping:DomainsCloudGateMapping test_cloud_gate_mapping "idcsEndpoint/{idcsEndpoint}/cloudGateMappings/{cloudGateMappingId}"
-//
+// $ pulumi import oci:Identity/domainsCloudGateMapping:DomainsCloudGateMapping test_cloud_gate_mapping "idcsEndpoint/{idcsEndpoint}/cloudGateMappings/{cloudGateMappingId}"
 // ```
 type DomainsCloudGateMapping struct {
 	pulumi.CustomResourceState

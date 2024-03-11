@@ -20,6 +20,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -44,15 +45,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // VolumeBackupPolicyAssignments can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Core/volumeBackupPolicyAssignment:VolumeBackupPolicyAssignment test_volume_backup_policy_assignment "id"
-//
+// $ pulumi import oci:Core/volumeBackupPolicyAssignment:VolumeBackupPolicyAssignment test_volume_backup_policy_assignment "id"
 // ```
 type VolumeBackupPolicyAssignment struct {
 	pulumi.CustomResourceState

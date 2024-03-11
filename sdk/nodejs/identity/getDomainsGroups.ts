@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -28,6 +29,7 @@ import * as utilities from "../utilities";
  *     startIndex: _var.group_start_index,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDomainsGroups(args: GetDomainsGroupsArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsGroupsResult> {
 
@@ -125,6 +127,7 @@ export interface GetDomainsGroupsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -140,6 +143,7 @@ export interface GetDomainsGroupsResult {
  *     startIndex: _var.group_start_index,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDomainsGroupsOutput(args: GetDomainsGroupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsGroupsResult> {
     return pulumi.output(args).apply((a: any) => getDomainsGroups(a, opts))

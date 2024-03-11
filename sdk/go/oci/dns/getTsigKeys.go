@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -43,6 +44,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetTsigKeys(ctx *pulumi.Context, args *GetTsigKeysArgs, opts ...pulumi.InvokeOption) (*GetTsigKeysResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetTsigKeysResult

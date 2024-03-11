@@ -31,6 +31,8 @@ import javax.annotation.Nullable;
  * added to agent, resource state will be marked active.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -132,13 +134,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * MonitoredResources can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:StackMonitoring/monitoredResource:MonitoredResource test_monitored_resource &#34;id&#34;
+ * $ pulumi import oci:StackMonitoring/monitoredResource:MonitoredResource test_monitored_resource &#34;id&#34;
  * ```
  * 
  */

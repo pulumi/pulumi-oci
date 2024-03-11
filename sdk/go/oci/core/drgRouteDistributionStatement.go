@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -48,15 +49,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // DrgRouteDistributionStatement can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Core/drgRouteDistributionStatement:DrgRouteDistributionStatement test_drg_route_distribution_statement "drgRouteDistributions/{drgRouteDistributionId}/statements/{id}"
-//
+// $ pulumi import oci:Core/drgRouteDistributionStatement:DrgRouteDistributionStatement test_drg_route_distribution_statement "drgRouteDistributions/{drgRouteDistributionId}/statements/{id}"
 // ```
 type DrgRouteDistributionStatement struct {
 	pulumi.CustomResourceState

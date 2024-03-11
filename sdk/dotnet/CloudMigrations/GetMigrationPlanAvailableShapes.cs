@@ -16,10 +16,9 @@ namespace Pulumi.Oci.CloudMigrations
         /// 
         /// List of shapes by parameters.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -39,8 +38,7 @@ namespace Pulumi.Oci.CloudMigrations
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetMigrationPlanAvailableShapesResult> InvokeAsync(GetMigrationPlanAvailableShapesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetMigrationPlanAvailableShapesResult>("oci:CloudMigrations/getMigrationPlanAvailableShapes:getMigrationPlanAvailableShapes", args ?? new GetMigrationPlanAvailableShapesArgs(), options.WithDefaults());
@@ -50,10 +48,9 @@ namespace Pulumi.Oci.CloudMigrations
         /// 
         /// List of shapes by parameters.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -73,8 +70,7 @@ namespace Pulumi.Oci.CloudMigrations
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetMigrationPlanAvailableShapesResult> Invoke(GetMigrationPlanAvailableShapesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMigrationPlanAvailableShapesResult>("oci:CloudMigrations/getMigrationPlanAvailableShapes:getMigrationPlanAvailableShapes", args ?? new GetMigrationPlanAvailableShapesInvokeArgs(), options.WithDefaults());

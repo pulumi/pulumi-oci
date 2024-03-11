@@ -399,6 +399,7 @@ class DiscoveryJob(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -436,13 +437,14 @@ class DiscoveryJob(pulumi.CustomResource):
             },
             should_propagate_tags_to_discovered_resources=var["discovery_job_should_propagate_tags_to_discovered_resources"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         DiscoveryJobs can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:StackMonitoring/discoveryJob:DiscoveryJob test_discovery_job "id"
+        $ pulumi import oci:StackMonitoring/discoveryJob:DiscoveryJob test_discovery_job "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -472,6 +474,7 @@ class DiscoveryJob(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -509,13 +512,14 @@ class DiscoveryJob(pulumi.CustomResource):
             },
             should_propagate_tags_to_discovered_resources=var["discovery_job_should_propagate_tags_to_discovered_resources"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         DiscoveryJobs can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:StackMonitoring/discoveryJob:DiscoveryJob test_discovery_job "id"
+        $ pulumi import oci:StackMonitoring/discoveryJob:DiscoveryJob test_discovery_job "id"
         ```
 
         :param str resource_name: The name of the resource.

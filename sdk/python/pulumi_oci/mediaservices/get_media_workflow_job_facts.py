@@ -116,6 +116,7 @@ def get_media_workflow_job_facts(filters: Optional[Sequence[pulumi.InputType['Ge
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -124,6 +125,7 @@ def get_media_workflow_job_facts(filters: Optional[Sequence[pulumi.InputType['Ge
         key=var["media_workflow_job_fact_key"],
         type=var["media_workflow_job_fact_type"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str key: Filter by MediaWorkflowJob ID and MediaWorkflowJobFact key.
@@ -161,6 +163,7 @@ def get_media_workflow_job_facts_output(filters: Optional[pulumi.Input[Optional[
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -169,6 +172,7 @@ def get_media_workflow_job_facts_output(filters: Optional[pulumi.Input[Optional[
         key=var["media_workflow_job_fact_key"],
         type=var["media_workflow_job_fact_type"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str key: Filter by MediaWorkflowJob ID and MediaWorkflowJobFact key.

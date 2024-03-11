@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -26,6 +27,7 @@ import * as utilities from "../utilities";
  *     resourceTypeSchemaVersion: _var.user_resource_type_schema_version,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDomainsUser(args: GetDomainsUserArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsUserResult> {
 
@@ -315,6 +317,7 @@ export interface GetDomainsUserResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -328,6 +331,7 @@ export interface GetDomainsUserResult {
  *     resourceTypeSchemaVersion: _var.user_resource_type_schema_version,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDomainsUserOutput(args: GetDomainsUserOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsUserResult> {
     return pulumi.output(args).apply((a: any) => getDomainsUser(a, opts))

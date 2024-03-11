@@ -34,6 +34,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -55,13 +56,14 @@ import * as utilities from "../utilities";
  *     isRetired: false,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * Tags can be imported using the `tagNamespaceId` and `tagName`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Identity/tag:Tag test_tag "tagNamespaces/{tagNamespaceId}/tags/{tagName}"
+ * $ pulumi import oci:Identity/tag:Tag test_tag "tagNamespaces/{tagNamespaceId}/tags/{tagName}"
  * ```
  */
 export class Tag extends pulumi.CustomResource {

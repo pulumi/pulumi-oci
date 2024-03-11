@@ -13,12 +13,14 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
  * const testMigrationObjectTypes = oci.DatabaseMigration.getMigrationObjectTypes({});
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getMigrationObjectTypes(args?: GetMigrationObjectTypesArgs, opts?: pulumi.InvokeOptions): Promise<GetMigrationObjectTypesResult> {
     args = args || {};
@@ -57,12 +59,14 @@ export interface GetMigrationObjectTypesResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
  * const testMigrationObjectTypes = oci.DatabaseMigration.getMigrationObjectTypes({});
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getMigrationObjectTypesOutput(args?: GetMigrationObjectTypesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMigrationObjectTypesResult> {
     return pulumi.output(args).apply((a: any) => getMigrationObjectTypes(a, opts))

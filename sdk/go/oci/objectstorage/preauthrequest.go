@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -46,15 +47,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // PreauthenticatedRequests can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:ObjectStorage/preauthrequest:Preauthrequest test_preauthenticated_request "n/{namespaceName}/b/{bucketName}/p/{parId}"
-//
+// $ pulumi import oci:ObjectStorage/preauthrequest:Preauthrequest test_preauthenticated_request "n/{namespaceName}/b/{bucketName}/p/{parId}"
 // ```
 type Preauthrequest struct {
 	pulumi.CustomResourceState

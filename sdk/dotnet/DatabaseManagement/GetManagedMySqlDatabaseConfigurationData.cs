@@ -17,10 +17,9 @@ namespace Pulumi.Oci.DatabaseManagement
         /// Retrieves Configuration Data for given MySQL Instance.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,8 +35,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetManagedMySqlDatabaseConfigurationDataResult> InvokeAsync(GetManagedMySqlDatabaseConfigurationDataArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagedMySqlDatabaseConfigurationDataResult>("oci:DatabaseManagement/getManagedMySqlDatabaseConfigurationData:getManagedMySqlDatabaseConfigurationData", args ?? new GetManagedMySqlDatabaseConfigurationDataArgs(), options.WithDefaults());
@@ -48,10 +46,9 @@ namespace Pulumi.Oci.DatabaseManagement
         /// Retrieves Configuration Data for given MySQL Instance.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -67,8 +64,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetManagedMySqlDatabaseConfigurationDataResult> Invoke(GetManagedMySqlDatabaseConfigurationDataInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedMySqlDatabaseConfigurationDataResult>("oci:DatabaseManagement/getManagedMySqlDatabaseConfigurationData:getManagedMySqlDatabaseConfigurationData", args ?? new GetManagedMySqlDatabaseConfigurationDataInvokeArgs(), options.WithDefaults());

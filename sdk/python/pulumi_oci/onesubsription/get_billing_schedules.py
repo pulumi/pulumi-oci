@@ -110,6 +110,7 @@ def get_billing_schedules(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -118,6 +119,7 @@ def get_billing_schedules(compartment_id: Optional[str] = None,
         subscription_id=oci_onesubscription_subscription["test_subscription"]["id"],
         subscribed_service_id=oci_onesubscription_subscribed_service["test_subscribed_service"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the root compartment.
@@ -155,6 +157,7 @@ def get_billing_schedules_output(compartment_id: Optional[pulumi.Input[str]] = N
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -163,6 +166,7 @@ def get_billing_schedules_output(compartment_id: Optional[pulumi.Input[str]] = N
         subscription_id=oci_onesubscription_subscription["test_subscription"]["id"],
         subscribed_service_id=oci_onesubscription_subscribed_service["test_subscribed_service"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the root compartment.

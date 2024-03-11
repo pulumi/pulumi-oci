@@ -166,6 +166,7 @@ class AppCatalogListingResourceVersionAgreement(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -174,6 +175,7 @@ class AppCatalogListingResourceVersionAgreement(pulumi.CustomResource):
             listing_id=data["oci_core_app_catalog_listing"]["test_listing"]["id"],
             listing_resource_version=var["app_catalog_listing_resource_version_agreement_listing_resource_version"])
         ```
+        <!--End PulumiCodeChooser -->
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -191,6 +193,7 @@ class AppCatalogListingResourceVersionAgreement(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -199,6 +202,7 @@ class AppCatalogListingResourceVersionAgreement(pulumi.CustomResource):
             listing_id=data["oci_core_app_catalog_listing"]["test_listing"]["id"],
             listing_resource_version=var["app_catalog_listing_resource_version_agreement_listing_resource_version"])
         ```
+        <!--End PulumiCodeChooser -->
 
         :param str resource_name: The name of the resource.
         :param AppCatalogListingResourceVersionAgreementArgs args: The arguments to use to populate this resource's properties.

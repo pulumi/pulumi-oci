@@ -16,10 +16,9 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// Returns log analytics entities count summary report.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,8 +35,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetLogAnalyticsEntitiesSummaryResult> InvokeAsync(GetLogAnalyticsEntitiesSummaryArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetLogAnalyticsEntitiesSummaryResult>("oci:LogAnalytics/getLogAnalyticsEntitiesSummary:getLogAnalyticsEntitiesSummary", args ?? new GetLogAnalyticsEntitiesSummaryArgs(), options.WithDefaults());
@@ -47,10 +45,9 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// Returns log analytics entities count summary report.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -67,8 +64,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetLogAnalyticsEntitiesSummaryResult> Invoke(GetLogAnalyticsEntitiesSummaryInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetLogAnalyticsEntitiesSummaryResult>("oci:LogAnalytics/getLogAnalyticsEntitiesSummary:getLogAnalyticsEntitiesSummary", args ?? new GetLogAnalyticsEntitiesSummaryInvokeArgs(), options.WithDefaults());

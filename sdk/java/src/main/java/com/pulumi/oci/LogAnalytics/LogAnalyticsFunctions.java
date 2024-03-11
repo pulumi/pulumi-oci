@@ -104,6 +104,8 @@ public final class LogAnalyticsFunctions {
      * Returns a list of categories, containing detailed information about them. You may limit the number of results, provide sorting order, and filter by information such as category name or description.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -135,6 +137,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetLogAnalyticsCategoriesListResult> getLogAnalyticsCategoriesList(GetLogAnalyticsCategoriesListArgs args) {
@@ -146,6 +149,8 @@ public final class LogAnalyticsFunctions {
      * Returns a list of categories, containing detailed information about them. You may limit the number of results, provide sorting order, and filter by information such as category name or description.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -177,6 +182,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetLogAnalyticsCategoriesListResult> getLogAnalyticsCategoriesListPlain(GetLogAnalyticsCategoriesListPlainArgs args) {
@@ -188,6 +194,8 @@ public final class LogAnalyticsFunctions {
      * Returns a list of categories, containing detailed information about them. You may limit the number of results, provide sorting order, and filter by information such as category name or description.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -219,6 +227,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetLogAnalyticsCategoriesListResult> getLogAnalyticsCategoriesList(GetLogAnalyticsCategoriesListArgs args, InvokeOptions options) {
@@ -230,6 +239,8 @@ public final class LogAnalyticsFunctions {
      * Returns a list of categories, containing detailed information about them. You may limit the number of results, provide sorting order, and filter by information such as category name or description.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -261,6 +272,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetLogAnalyticsCategoriesListResult> getLogAnalyticsCategoriesListPlain(GetLogAnalyticsCategoriesListPlainArgs args, InvokeOptions options) {
@@ -272,6 +284,8 @@ public final class LogAnalyticsFunctions {
      * Gets detailed information about the category with the specified name.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -301,6 +315,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetLogAnalyticsCategoryResult> getLogAnalyticsCategory(GetLogAnalyticsCategoryArgs args) {
@@ -312,6 +327,8 @@ public final class LogAnalyticsFunctions {
      * Gets detailed information about the category with the specified name.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -341,6 +358,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetLogAnalyticsCategoryResult> getLogAnalyticsCategoryPlain(GetLogAnalyticsCategoryPlainArgs args) {
@@ -352,6 +370,8 @@ public final class LogAnalyticsFunctions {
      * Gets detailed information about the category with the specified name.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -381,6 +401,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetLogAnalyticsCategoryResult> getLogAnalyticsCategory(GetLogAnalyticsCategoryArgs args, InvokeOptions options) {
@@ -392,6 +413,8 @@ public final class LogAnalyticsFunctions {
      * Gets detailed information about the category with the specified name.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -421,6 +444,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetLogAnalyticsCategoryResult> getLogAnalyticsCategoryPlain(GetLogAnalyticsCategoryPlainArgs args, InvokeOptions options) {
@@ -432,6 +456,8 @@ public final class LogAnalyticsFunctions {
      * Return a list of log analytics entities.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -472,6 +498,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetLogAnalyticsEntitiesResult> getLogAnalyticsEntities(GetLogAnalyticsEntitiesArgs args) {
@@ -483,6 +510,8 @@ public final class LogAnalyticsFunctions {
      * Return a list of log analytics entities.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -523,6 +552,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetLogAnalyticsEntitiesResult> getLogAnalyticsEntitiesPlain(GetLogAnalyticsEntitiesPlainArgs args) {
@@ -534,6 +564,8 @@ public final class LogAnalyticsFunctions {
      * Return a list of log analytics entities.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -574,6 +606,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetLogAnalyticsEntitiesResult> getLogAnalyticsEntities(GetLogAnalyticsEntitiesArgs args, InvokeOptions options) {
@@ -585,6 +618,8 @@ public final class LogAnalyticsFunctions {
      * Return a list of log analytics entities.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -625,6 +660,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetLogAnalyticsEntitiesResult> getLogAnalyticsEntitiesPlain(GetLogAnalyticsEntitiesPlainArgs args, InvokeOptions options) {
@@ -636,6 +672,8 @@ public final class LogAnalyticsFunctions {
      * Returns log analytics entities count summary report.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -665,6 +703,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetLogAnalyticsEntitiesSummaryResult> getLogAnalyticsEntitiesSummary(GetLogAnalyticsEntitiesSummaryArgs args) {
@@ -676,6 +715,8 @@ public final class LogAnalyticsFunctions {
      * Returns log analytics entities count summary report.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -705,6 +746,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetLogAnalyticsEntitiesSummaryResult> getLogAnalyticsEntitiesSummaryPlain(GetLogAnalyticsEntitiesSummaryPlainArgs args) {
@@ -716,6 +758,8 @@ public final class LogAnalyticsFunctions {
      * Returns log analytics entities count summary report.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -745,6 +789,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetLogAnalyticsEntitiesSummaryResult> getLogAnalyticsEntitiesSummary(GetLogAnalyticsEntitiesSummaryArgs args, InvokeOptions options) {
@@ -756,6 +801,8 @@ public final class LogAnalyticsFunctions {
      * Returns log analytics entities count summary report.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -785,6 +832,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetLogAnalyticsEntitiesSummaryResult> getLogAnalyticsEntitiesSummaryPlain(GetLogAnalyticsEntitiesSummaryPlainArgs args, InvokeOptions options) {
@@ -796,6 +844,8 @@ public final class LogAnalyticsFunctions {
      * Retrieve the log analytics entity with the given id.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -825,6 +875,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetLogAnalyticsEntityResult> getLogAnalyticsEntity(GetLogAnalyticsEntityArgs args) {
@@ -836,6 +887,8 @@ public final class LogAnalyticsFunctions {
      * Retrieve the log analytics entity with the given id.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -865,6 +918,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetLogAnalyticsEntityResult> getLogAnalyticsEntityPlain(GetLogAnalyticsEntityPlainArgs args) {
@@ -876,6 +930,8 @@ public final class LogAnalyticsFunctions {
      * Retrieve the log analytics entity with the given id.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -905,6 +961,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetLogAnalyticsEntityResult> getLogAnalyticsEntity(GetLogAnalyticsEntityArgs args, InvokeOptions options) {
@@ -916,6 +973,8 @@ public final class LogAnalyticsFunctions {
      * Retrieve the log analytics entity with the given id.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -945,6 +1004,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetLogAnalyticsEntityResult> getLogAnalyticsEntityPlain(GetLogAnalyticsEntityPlainArgs args, InvokeOptions options) {
@@ -956,6 +1016,8 @@ public final class LogAnalyticsFunctions {
      * Return a log analytics entity topology collection that contains a set of log analytics entities and a set of relationships between those, for the input source entity.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -987,6 +1049,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetLogAnalyticsEntityTopologyResult> getLogAnalyticsEntityTopology(GetLogAnalyticsEntityTopologyArgs args) {
@@ -998,6 +1061,8 @@ public final class LogAnalyticsFunctions {
      * Return a log analytics entity topology collection that contains a set of log analytics entities and a set of relationships between those, for the input source entity.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1029,6 +1094,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetLogAnalyticsEntityTopologyResult> getLogAnalyticsEntityTopologyPlain(GetLogAnalyticsEntityTopologyPlainArgs args) {
@@ -1040,6 +1106,8 @@ public final class LogAnalyticsFunctions {
      * Return a log analytics entity topology collection that contains a set of log analytics entities and a set of relationships between those, for the input source entity.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1071,6 +1139,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetLogAnalyticsEntityTopologyResult> getLogAnalyticsEntityTopology(GetLogAnalyticsEntityTopologyArgs args, InvokeOptions options) {
@@ -1082,6 +1151,8 @@ public final class LogAnalyticsFunctions {
      * Return a log analytics entity topology collection that contains a set of log analytics entities and a set of relationships between those, for the input source entity.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1113,6 +1184,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetLogAnalyticsEntityTopologyResult> getLogAnalyticsEntityTopologyPlain(GetLogAnalyticsEntityTopologyPlainArgs args, InvokeOptions options) {
@@ -1124,6 +1196,8 @@ public final class LogAnalyticsFunctions {
      * Gets detailed information about the specified log group such as display name, description, defined tags, and free-form tags.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1153,6 +1227,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetLogAnalyticsLogGroupResult> getLogAnalyticsLogGroup(GetLogAnalyticsLogGroupArgs args) {
@@ -1164,6 +1239,8 @@ public final class LogAnalyticsFunctions {
      * Gets detailed information about the specified log group such as display name, description, defined tags, and free-form tags.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1193,6 +1270,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetLogAnalyticsLogGroupResult> getLogAnalyticsLogGroupPlain(GetLogAnalyticsLogGroupPlainArgs args) {
@@ -1204,6 +1282,8 @@ public final class LogAnalyticsFunctions {
      * Gets detailed information about the specified log group such as display name, description, defined tags, and free-form tags.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1233,6 +1313,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetLogAnalyticsLogGroupResult> getLogAnalyticsLogGroup(GetLogAnalyticsLogGroupArgs args, InvokeOptions options) {
@@ -1244,6 +1325,8 @@ public final class LogAnalyticsFunctions {
      * Gets detailed information about the specified log group such as display name, description, defined tags, and free-form tags.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1273,6 +1356,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetLogAnalyticsLogGroupResult> getLogAnalyticsLogGroupPlain(GetLogAnalyticsLogGroupPlainArgs args, InvokeOptions options) {
@@ -1284,6 +1368,8 @@ public final class LogAnalyticsFunctions {
      * Returns a list of log groups in a compartment. You may limit the number of log groups, provide sorting options, and filter the results by specifying a display name.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1314,6 +1400,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetLogAnalyticsLogGroupsResult> getLogAnalyticsLogGroups(GetLogAnalyticsLogGroupsArgs args) {
@@ -1325,6 +1412,8 @@ public final class LogAnalyticsFunctions {
      * Returns a list of log groups in a compartment. You may limit the number of log groups, provide sorting options, and filter the results by specifying a display name.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1355,6 +1444,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetLogAnalyticsLogGroupsResult> getLogAnalyticsLogGroupsPlain(GetLogAnalyticsLogGroupsPlainArgs args) {
@@ -1366,6 +1456,8 @@ public final class LogAnalyticsFunctions {
      * Returns a list of log groups in a compartment. You may limit the number of log groups, provide sorting options, and filter the results by specifying a display name.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1396,6 +1488,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetLogAnalyticsLogGroupsResult> getLogAnalyticsLogGroups(GetLogAnalyticsLogGroupsArgs args, InvokeOptions options) {
@@ -1407,6 +1500,8 @@ public final class LogAnalyticsFunctions {
      * Returns a list of log groups in a compartment. You may limit the number of log groups, provide sorting options, and filter the results by specifying a display name.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1437,6 +1532,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetLogAnalyticsLogGroupsResult> getLogAnalyticsLogGroupsPlain(GetLogAnalyticsLogGroupsPlainArgs args, InvokeOptions options) {
@@ -1448,6 +1544,8 @@ public final class LogAnalyticsFunctions {
      * Returns the count of log groups in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1477,6 +1575,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetLogAnalyticsLogGroupsSummaryResult> getLogAnalyticsLogGroupsSummary(GetLogAnalyticsLogGroupsSummaryArgs args) {
@@ -1488,6 +1587,8 @@ public final class LogAnalyticsFunctions {
      * Returns the count of log groups in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1517,6 +1618,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetLogAnalyticsLogGroupsSummaryResult> getLogAnalyticsLogGroupsSummaryPlain(GetLogAnalyticsLogGroupsSummaryPlainArgs args) {
@@ -1528,6 +1630,8 @@ public final class LogAnalyticsFunctions {
      * Returns the count of log groups in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1557,6 +1661,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetLogAnalyticsLogGroupsSummaryResult> getLogAnalyticsLogGroupsSummary(GetLogAnalyticsLogGroupsSummaryArgs args, InvokeOptions options) {
@@ -1568,6 +1673,8 @@ public final class LogAnalyticsFunctions {
      * Returns the count of log groups in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1597,6 +1704,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetLogAnalyticsLogGroupsSummaryResult> getLogAnalyticsLogGroupsSummaryPlain(GetLogAnalyticsLogGroupsSummaryPlainArgs args, InvokeOptions options) {
@@ -1608,6 +1716,8 @@ public final class LogAnalyticsFunctions {
      * Gets a configured object storage based collection rule by given id
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1637,6 +1747,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetLogAnalyticsObjectCollectionRuleResult> getLogAnalyticsObjectCollectionRule(GetLogAnalyticsObjectCollectionRuleArgs args) {
@@ -1648,6 +1759,8 @@ public final class LogAnalyticsFunctions {
      * Gets a configured object storage based collection rule by given id
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1677,6 +1790,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetLogAnalyticsObjectCollectionRuleResult> getLogAnalyticsObjectCollectionRulePlain(GetLogAnalyticsObjectCollectionRulePlainArgs args) {
@@ -1688,6 +1802,8 @@ public final class LogAnalyticsFunctions {
      * Gets a configured object storage based collection rule by given id
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1717,6 +1833,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetLogAnalyticsObjectCollectionRuleResult> getLogAnalyticsObjectCollectionRule(GetLogAnalyticsObjectCollectionRuleArgs args, InvokeOptions options) {
@@ -1728,6 +1845,8 @@ public final class LogAnalyticsFunctions {
      * Gets a configured object storage based collection rule by given id
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1757,6 +1876,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetLogAnalyticsObjectCollectionRuleResult> getLogAnalyticsObjectCollectionRulePlain(GetLogAnalyticsObjectCollectionRulePlainArgs args, InvokeOptions options) {
@@ -1768,6 +1888,8 @@ public final class LogAnalyticsFunctions {
      * Gets list of configuration details of Object Storage based collection rules.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1799,6 +1921,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetLogAnalyticsObjectCollectionRulesResult> getLogAnalyticsObjectCollectionRules(GetLogAnalyticsObjectCollectionRulesArgs args) {
@@ -1810,6 +1933,8 @@ public final class LogAnalyticsFunctions {
      * Gets list of configuration details of Object Storage based collection rules.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1841,6 +1966,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetLogAnalyticsObjectCollectionRulesResult> getLogAnalyticsObjectCollectionRulesPlain(GetLogAnalyticsObjectCollectionRulesPlainArgs args) {
@@ -1852,6 +1978,8 @@ public final class LogAnalyticsFunctions {
      * Gets list of configuration details of Object Storage based collection rules.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1883,6 +2011,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetLogAnalyticsObjectCollectionRulesResult> getLogAnalyticsObjectCollectionRules(GetLogAnalyticsObjectCollectionRulesArgs args, InvokeOptions options) {
@@ -1894,6 +2023,8 @@ public final class LogAnalyticsFunctions {
      * Gets list of configuration details of Object Storage based collection rules.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1925,6 +2056,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetLogAnalyticsObjectCollectionRulesResult> getLogAnalyticsObjectCollectionRulesPlain(GetLogAnalyticsObjectCollectionRulesPlainArgs args, InvokeOptions options) {
@@ -1936,6 +2068,8 @@ public final class LogAnalyticsFunctions {
      * Lists the tenant preferences such as DEFAULT_HOMEPAGE and collection properties.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1964,6 +2098,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetLogAnalyticsPreferenceResult> getLogAnalyticsPreference(GetLogAnalyticsPreferenceArgs args) {
@@ -1975,6 +2110,8 @@ public final class LogAnalyticsFunctions {
      * Lists the tenant preferences such as DEFAULT_HOMEPAGE and collection properties.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2003,6 +2140,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetLogAnalyticsPreferenceResult> getLogAnalyticsPreferencePlain(GetLogAnalyticsPreferencePlainArgs args) {
@@ -2014,6 +2152,8 @@ public final class LogAnalyticsFunctions {
      * Lists the tenant preferences such as DEFAULT_HOMEPAGE and collection properties.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2042,6 +2182,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetLogAnalyticsPreferenceResult> getLogAnalyticsPreference(GetLogAnalyticsPreferenceArgs args, InvokeOptions options) {
@@ -2053,6 +2194,8 @@ public final class LogAnalyticsFunctions {
      * Lists the tenant preferences such as DEFAULT_HOMEPAGE and collection properties.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2081,6 +2224,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetLogAnalyticsPreferenceResult> getLogAnalyticsPreferencePlain(GetLogAnalyticsPreferencePlainArgs args, InvokeOptions options) {
@@ -2092,6 +2236,8 @@ public final class LogAnalyticsFunctions {
      * Returns a list of resources and their category assignments.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2123,6 +2269,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetLogAnalyticsResourceCategoriesListResult> getLogAnalyticsResourceCategoriesList(GetLogAnalyticsResourceCategoriesListArgs args) {
@@ -2134,6 +2281,8 @@ public final class LogAnalyticsFunctions {
      * Returns a list of resources and their category assignments.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2165,6 +2314,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetLogAnalyticsResourceCategoriesListResult> getLogAnalyticsResourceCategoriesListPlain(GetLogAnalyticsResourceCategoriesListPlainArgs args) {
@@ -2176,6 +2326,8 @@ public final class LogAnalyticsFunctions {
      * Returns a list of resources and their category assignments.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2207,6 +2359,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetLogAnalyticsResourceCategoriesListResult> getLogAnalyticsResourceCategoriesList(GetLogAnalyticsResourceCategoriesListArgs args, InvokeOptions options) {
@@ -2218,6 +2371,8 @@ public final class LogAnalyticsFunctions {
      * Returns a list of resources and their category assignments.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2249,6 +2404,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetLogAnalyticsResourceCategoriesListResult> getLogAnalyticsResourceCategoriesListPlain(GetLogAnalyticsResourceCategoriesListPlainArgs args, InvokeOptions options) {
@@ -2260,6 +2416,8 @@ public final class LogAnalyticsFunctions {
      * This API retrieves details of the configured bucket that stores unprocessed payloads.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2288,6 +2446,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetLogAnalyticsUnprocessedDataBucketResult> getLogAnalyticsUnprocessedDataBucket(GetLogAnalyticsUnprocessedDataBucketArgs args) {
@@ -2299,6 +2458,8 @@ public final class LogAnalyticsFunctions {
      * This API retrieves details of the configured bucket that stores unprocessed payloads.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2327,6 +2488,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetLogAnalyticsUnprocessedDataBucketResult> getLogAnalyticsUnprocessedDataBucketPlain(GetLogAnalyticsUnprocessedDataBucketPlainArgs args) {
@@ -2338,6 +2500,8 @@ public final class LogAnalyticsFunctions {
      * This API retrieves details of the configured bucket that stores unprocessed payloads.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2366,6 +2530,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetLogAnalyticsUnprocessedDataBucketResult> getLogAnalyticsUnprocessedDataBucket(GetLogAnalyticsUnprocessedDataBucketArgs args, InvokeOptions options) {
@@ -2377,6 +2542,8 @@ public final class LogAnalyticsFunctions {
      * This API retrieves details of the configured bucket that stores unprocessed payloads.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2405,6 +2572,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetLogAnalyticsUnprocessedDataBucketResult> getLogAnalyticsUnprocessedDataBucketPlain(GetLogAnalyticsUnprocessedDataBucketPlainArgs args, InvokeOptions options) {
@@ -2416,6 +2584,8 @@ public final class LogAnalyticsFunctions {
      * This API returns the count of distinct log sets.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2444,6 +2614,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetLogSetsCountResult> getLogSetsCount(GetLogSetsCountArgs args) {
@@ -2455,6 +2626,8 @@ public final class LogAnalyticsFunctions {
      * This API returns the count of distinct log sets.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2483,6 +2656,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetLogSetsCountResult> getLogSetsCountPlain(GetLogSetsCountPlainArgs args) {
@@ -2494,6 +2668,8 @@ public final class LogAnalyticsFunctions {
      * This API returns the count of distinct log sets.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2522,6 +2698,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetLogSetsCountResult> getLogSetsCount(GetLogSetsCountArgs args, InvokeOptions options) {
@@ -2533,6 +2710,8 @@ public final class LogAnalyticsFunctions {
      * This API returns the count of distinct log sets.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2561,6 +2740,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetLogSetsCountResult> getLogSetsCountPlain(GetLogSetsCountPlainArgs args, InvokeOptions options) {
@@ -2572,6 +2752,8 @@ public final class LogAnalyticsFunctions {
      * This API gets the namespace details of a tenancy already onboarded in Logging Analytics Application
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2600,6 +2782,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNamespaceResult> getNamespace(GetNamespaceArgs args) {
@@ -2611,6 +2794,8 @@ public final class LogAnalyticsFunctions {
      * This API gets the namespace details of a tenancy already onboarded in Logging Analytics Application
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2639,6 +2824,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNamespaceResult> getNamespacePlain(GetNamespacePlainArgs args) {
@@ -2650,6 +2836,8 @@ public final class LogAnalyticsFunctions {
      * This API gets the namespace details of a tenancy already onboarded in Logging Analytics Application
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2678,6 +2866,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNamespaceResult> getNamespace(GetNamespaceArgs args, InvokeOptions options) {
@@ -2689,6 +2878,8 @@ public final class LogAnalyticsFunctions {
      * This API gets the namespace details of a tenancy already onboarded in Logging Analytics Application
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2717,6 +2908,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNamespaceResult> getNamespacePlain(GetNamespacePlainArgs args, InvokeOptions options) {
@@ -2728,6 +2920,8 @@ public final class LogAnalyticsFunctions {
      * Returns a list of effective properties for the specified resource.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2762,6 +2956,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNamespaceEffectivePropertiesResult> getNamespaceEffectiveProperties(GetNamespaceEffectivePropertiesArgs args) {
@@ -2773,6 +2968,8 @@ public final class LogAnalyticsFunctions {
      * Returns a list of effective properties for the specified resource.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2807,6 +3004,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNamespaceEffectivePropertiesResult> getNamespaceEffectivePropertiesPlain(GetNamespaceEffectivePropertiesPlainArgs args) {
@@ -2818,6 +3016,8 @@ public final class LogAnalyticsFunctions {
      * Returns a list of effective properties for the specified resource.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2852,6 +3052,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNamespaceEffectivePropertiesResult> getNamespaceEffectiveProperties(GetNamespaceEffectivePropertiesArgs args, InvokeOptions options) {
@@ -2863,6 +3064,8 @@ public final class LogAnalyticsFunctions {
      * Returns a list of effective properties for the specified resource.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2897,6 +3100,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNamespaceEffectivePropertiesResult> getNamespaceEffectivePropertiesPlain(GetNamespaceEffectivePropertiesPlainArgs args, InvokeOptions options) {
@@ -2908,6 +3112,8 @@ public final class LogAnalyticsFunctions {
      * Gets detailed information about the specified ingest time rule such as description, defined tags, and free-form tags.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2937,6 +3143,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNamespaceIngestTimeRuleResult> getNamespaceIngestTimeRule(GetNamespaceIngestTimeRuleArgs args) {
@@ -2948,6 +3155,8 @@ public final class LogAnalyticsFunctions {
      * Gets detailed information about the specified ingest time rule such as description, defined tags, and free-form tags.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2977,6 +3186,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNamespaceIngestTimeRuleResult> getNamespaceIngestTimeRulePlain(GetNamespaceIngestTimeRulePlainArgs args) {
@@ -2988,6 +3198,8 @@ public final class LogAnalyticsFunctions {
      * Gets detailed information about the specified ingest time rule such as description, defined tags, and free-form tags.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3017,6 +3229,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNamespaceIngestTimeRuleResult> getNamespaceIngestTimeRule(GetNamespaceIngestTimeRuleArgs args, InvokeOptions options) {
@@ -3028,6 +3241,8 @@ public final class LogAnalyticsFunctions {
      * Gets detailed information about the specified ingest time rule such as description, defined tags, and free-form tags.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3057,6 +3272,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNamespaceIngestTimeRuleResult> getNamespaceIngestTimeRulePlain(GetNamespaceIngestTimeRulePlainArgs args, InvokeOptions options) {
@@ -3068,6 +3284,8 @@ public final class LogAnalyticsFunctions {
      * Returns a list of ingest time rules in a compartment. You may limit the number of rules, provide sorting options, and filter the results.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3102,6 +3320,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNamespaceIngestTimeRulesResult> getNamespaceIngestTimeRules(GetNamespaceIngestTimeRulesArgs args) {
@@ -3113,6 +3332,8 @@ public final class LogAnalyticsFunctions {
      * Returns a list of ingest time rules in a compartment. You may limit the number of rules, provide sorting options, and filter the results.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3147,6 +3368,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNamespaceIngestTimeRulesResult> getNamespaceIngestTimeRulesPlain(GetNamespaceIngestTimeRulesPlainArgs args) {
@@ -3158,6 +3380,8 @@ public final class LogAnalyticsFunctions {
      * Returns a list of ingest time rules in a compartment. You may limit the number of rules, provide sorting options, and filter the results.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3192,6 +3416,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNamespaceIngestTimeRulesResult> getNamespaceIngestTimeRules(GetNamespaceIngestTimeRulesArgs args, InvokeOptions options) {
@@ -3203,6 +3428,8 @@ public final class LogAnalyticsFunctions {
      * Returns a list of ingest time rules in a compartment. You may limit the number of rules, provide sorting options, and filter the results.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3237,6 +3464,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNamespaceIngestTimeRulesResult> getNamespaceIngestTimeRulesPlain(GetNamespaceIngestTimeRulesPlainArgs args, InvokeOptions options) {
@@ -3248,6 +3476,8 @@ public final class LogAnalyticsFunctions {
      * Returns a list of properties along with their metadata.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3280,6 +3510,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNamespacePropertiesMetadataResult> getNamespacePropertiesMetadata(GetNamespacePropertiesMetadataArgs args) {
@@ -3291,6 +3522,8 @@ public final class LogAnalyticsFunctions {
      * Returns a list of properties along with their metadata.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3323,6 +3556,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNamespacePropertiesMetadataResult> getNamespacePropertiesMetadataPlain(GetNamespacePropertiesMetadataPlainArgs args) {
@@ -3334,6 +3568,8 @@ public final class LogAnalyticsFunctions {
      * Returns a list of properties along with their metadata.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3366,6 +3602,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNamespacePropertiesMetadataResult> getNamespacePropertiesMetadata(GetNamespacePropertiesMetadataArgs args, InvokeOptions options) {
@@ -3377,6 +3614,8 @@ public final class LogAnalyticsFunctions {
      * Returns a list of properties along with their metadata.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3409,6 +3648,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNamespacePropertiesMetadataResult> getNamespacePropertiesMetadataPlain(GetNamespacePropertiesMetadataPlainArgs args, InvokeOptions options) {
@@ -3420,6 +3660,8 @@ public final class LogAnalyticsFunctions {
      * Returns a list of ingest time rules and scheduled tasks in a compartment. You may limit the number of items returned, provide sorting options, and filter the results.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3453,6 +3695,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNamespaceRulesResult> getNamespaceRules(GetNamespaceRulesArgs args) {
@@ -3464,6 +3707,8 @@ public final class LogAnalyticsFunctions {
      * Returns a list of ingest time rules and scheduled tasks in a compartment. You may limit the number of items returned, provide sorting options, and filter the results.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3497,6 +3742,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNamespaceRulesResult> getNamespaceRulesPlain(GetNamespaceRulesPlainArgs args) {
@@ -3508,6 +3754,8 @@ public final class LogAnalyticsFunctions {
      * Returns a list of ingest time rules and scheduled tasks in a compartment. You may limit the number of items returned, provide sorting options, and filter the results.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3541,6 +3789,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNamespaceRulesResult> getNamespaceRules(GetNamespaceRulesArgs args, InvokeOptions options) {
@@ -3552,6 +3801,8 @@ public final class LogAnalyticsFunctions {
      * Returns a list of ingest time rules and scheduled tasks in a compartment. You may limit the number of items returned, provide sorting options, and filter the results.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3585,6 +3836,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNamespaceRulesResult> getNamespaceRulesPlain(GetNamespaceRulesPlainArgs args, InvokeOptions options) {
@@ -3596,6 +3848,8 @@ public final class LogAnalyticsFunctions {
      * Returns the count of detection rules in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3625,6 +3879,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNamespaceRulesSummaryResult> getNamespaceRulesSummary(GetNamespaceRulesSummaryArgs args) {
@@ -3636,6 +3891,8 @@ public final class LogAnalyticsFunctions {
      * Returns the count of detection rules in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3665,6 +3922,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNamespaceRulesSummaryResult> getNamespaceRulesSummaryPlain(GetNamespaceRulesSummaryPlainArgs args) {
@@ -3676,6 +3934,8 @@ public final class LogAnalyticsFunctions {
      * Returns the count of detection rules in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3705,6 +3965,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNamespaceRulesSummaryResult> getNamespaceRulesSummary(GetNamespaceRulesSummaryArgs args, InvokeOptions options) {
@@ -3716,6 +3977,8 @@ public final class LogAnalyticsFunctions {
      * Returns the count of detection rules in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3745,6 +4008,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNamespaceRulesSummaryResult> getNamespaceRulesSummaryPlain(GetNamespaceRulesSummaryPlainArgs args, InvokeOptions options) {
@@ -3756,6 +4020,8 @@ public final class LogAnalyticsFunctions {
      * Get the scheduled task for the specified task identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3785,6 +4051,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNamespaceScheduledTaskResult> getNamespaceScheduledTask(GetNamespaceScheduledTaskArgs args) {
@@ -3796,6 +4063,8 @@ public final class LogAnalyticsFunctions {
      * Get the scheduled task for the specified task identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3825,6 +4094,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNamespaceScheduledTaskResult> getNamespaceScheduledTaskPlain(GetNamespaceScheduledTaskPlainArgs args) {
@@ -3836,6 +4106,8 @@ public final class LogAnalyticsFunctions {
      * Get the scheduled task for the specified task identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3865,6 +4137,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNamespaceScheduledTaskResult> getNamespaceScheduledTask(GetNamespaceScheduledTaskArgs args, InvokeOptions options) {
@@ -3876,6 +4149,8 @@ public final class LogAnalyticsFunctions {
      * Get the scheduled task for the specified task identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3905,6 +4180,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNamespaceScheduledTaskResult> getNamespaceScheduledTaskPlain(GetNamespaceScheduledTaskPlainArgs args, InvokeOptions options) {
@@ -3916,6 +4192,8 @@ public final class LogAnalyticsFunctions {
      * Lists scheduled tasks.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3948,6 +4226,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNamespaceScheduledTasksResult> getNamespaceScheduledTasks(GetNamespaceScheduledTasksArgs args) {
@@ -3959,6 +4238,8 @@ public final class LogAnalyticsFunctions {
      * Lists scheduled tasks.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3991,6 +4272,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNamespaceScheduledTasksResult> getNamespaceScheduledTasksPlain(GetNamespaceScheduledTasksPlainArgs args) {
@@ -4002,6 +4284,8 @@ public final class LogAnalyticsFunctions {
      * Lists scheduled tasks.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4034,6 +4318,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNamespaceScheduledTasksResult> getNamespaceScheduledTasks(GetNamespaceScheduledTasksArgs args, InvokeOptions options) {
@@ -4045,6 +4330,8 @@ public final class LogAnalyticsFunctions {
      * Lists scheduled tasks.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4077,6 +4364,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNamespaceScheduledTasksResult> getNamespaceScheduledTasksPlain(GetNamespaceScheduledTasksPlainArgs args, InvokeOptions options) {
@@ -4088,6 +4376,8 @@ public final class LogAnalyticsFunctions {
      * This API returns the list of customer owned encryption key info.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4116,6 +4406,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNamespaceStorageEncryptionKeyInfoResult> getNamespaceStorageEncryptionKeyInfo(GetNamespaceStorageEncryptionKeyInfoArgs args) {
@@ -4127,6 +4418,8 @@ public final class LogAnalyticsFunctions {
      * This API returns the list of customer owned encryption key info.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4155,6 +4448,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNamespaceStorageEncryptionKeyInfoResult> getNamespaceStorageEncryptionKeyInfoPlain(GetNamespaceStorageEncryptionKeyInfoPlainArgs args) {
@@ -4166,6 +4460,8 @@ public final class LogAnalyticsFunctions {
      * This API returns the list of customer owned encryption key info.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4194,6 +4490,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNamespaceStorageEncryptionKeyInfoResult> getNamespaceStorageEncryptionKeyInfo(GetNamespaceStorageEncryptionKeyInfoArgs args, InvokeOptions options) {
@@ -4205,6 +4502,8 @@ public final class LogAnalyticsFunctions {
      * This API returns the list of customer owned encryption key info.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4233,6 +4532,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNamespaceStorageEncryptionKeyInfoResult> getNamespaceStorageEncryptionKeyInfoPlain(GetNamespaceStorageEncryptionKeyInfoPlainArgs args, InvokeOptions options) {
@@ -4244,6 +4544,8 @@ public final class LogAnalyticsFunctions {
      * This API gets the list of overlapping recalls made in the given timeframe
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4274,6 +4576,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNamespaceStorageOverlappingRecallsResult> getNamespaceStorageOverlappingRecalls(GetNamespaceStorageOverlappingRecallsArgs args) {
@@ -4285,6 +4588,8 @@ public final class LogAnalyticsFunctions {
      * This API gets the list of overlapping recalls made in the given timeframe
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4315,6 +4620,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNamespaceStorageOverlappingRecallsResult> getNamespaceStorageOverlappingRecallsPlain(GetNamespaceStorageOverlappingRecallsPlainArgs args) {
@@ -4326,6 +4632,8 @@ public final class LogAnalyticsFunctions {
      * This API gets the list of overlapping recalls made in the given timeframe
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4356,6 +4664,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNamespaceStorageOverlappingRecallsResult> getNamespaceStorageOverlappingRecalls(GetNamespaceStorageOverlappingRecallsArgs args, InvokeOptions options) {
@@ -4367,6 +4676,8 @@ public final class LogAnalyticsFunctions {
      * This API gets the list of overlapping recalls made in the given timeframe
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4397,6 +4708,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNamespaceStorageOverlappingRecallsResult> getNamespaceStorageOverlappingRecallsPlain(GetNamespaceStorageOverlappingRecallsPlainArgs args, InvokeOptions options) {
@@ -4408,6 +4720,8 @@ public final class LogAnalyticsFunctions {
      * This API gets the number of recalls made and the maximum recalls that can be made
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4436,6 +4750,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNamespaceStorageRecallCountResult> getNamespaceStorageRecallCount(GetNamespaceStorageRecallCountArgs args) {
@@ -4447,6 +4762,8 @@ public final class LogAnalyticsFunctions {
      * This API gets the number of recalls made and the maximum recalls that can be made
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4475,6 +4792,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNamespaceStorageRecallCountResult> getNamespaceStorageRecallCountPlain(GetNamespaceStorageRecallCountPlainArgs args) {
@@ -4486,6 +4804,8 @@ public final class LogAnalyticsFunctions {
      * This API gets the number of recalls made and the maximum recalls that can be made
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4514,6 +4834,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNamespaceStorageRecallCountResult> getNamespaceStorageRecallCount(GetNamespaceStorageRecallCountArgs args, InvokeOptions options) {
@@ -4525,6 +4846,8 @@ public final class LogAnalyticsFunctions {
      * This API gets the number of recalls made and the maximum recalls that can be made
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4553,6 +4876,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNamespaceStorageRecallCountResult> getNamespaceStorageRecallCountPlain(GetNamespaceStorageRecallCountPlainArgs args, InvokeOptions options) {
@@ -4564,6 +4888,8 @@ public final class LogAnalyticsFunctions {
      * This API gets the datasize of recalls for a given timeframe
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4594,6 +4920,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNamespaceStorageRecalledDataSizeResult> getNamespaceStorageRecalledDataSize(GetNamespaceStorageRecalledDataSizeArgs args) {
@@ -4605,6 +4932,8 @@ public final class LogAnalyticsFunctions {
      * This API gets the datasize of recalls for a given timeframe
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4635,6 +4964,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNamespaceStorageRecalledDataSizeResult> getNamespaceStorageRecalledDataSizePlain(GetNamespaceStorageRecalledDataSizePlainArgs args) {
@@ -4646,6 +4976,8 @@ public final class LogAnalyticsFunctions {
      * This API gets the datasize of recalls for a given timeframe
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4676,6 +5008,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNamespaceStorageRecalledDataSizeResult> getNamespaceStorageRecalledDataSize(GetNamespaceStorageRecalledDataSizeArgs args, InvokeOptions options) {
@@ -4687,6 +5020,8 @@ public final class LogAnalyticsFunctions {
      * This API gets the datasize of recalls for a given timeframe
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4717,6 +5052,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNamespaceStorageRecalledDataSizeResult> getNamespaceStorageRecalledDataSizePlain(GetNamespaceStorageRecalledDataSizePlainArgs args, InvokeOptions options) {
@@ -4729,6 +5065,8 @@ public final class LogAnalyticsFunctions {
      * result also indicates if the tenancy is onboarded with Logging Analytics.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4757,6 +5095,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNamespacesResult> getNamespaces(GetNamespacesArgs args) {
@@ -4769,6 +5108,8 @@ public final class LogAnalyticsFunctions {
      * result also indicates if the tenancy is onboarded with Logging Analytics.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4797,6 +5138,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNamespacesResult> getNamespacesPlain(GetNamespacesPlainArgs args) {
@@ -4809,6 +5151,8 @@ public final class LogAnalyticsFunctions {
      * result also indicates if the tenancy is onboarded with Logging Analytics.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4837,6 +5181,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNamespacesResult> getNamespaces(GetNamespacesArgs args, InvokeOptions options) {
@@ -4849,6 +5194,8 @@ public final class LogAnalyticsFunctions {
      * result also indicates if the tenancy is onboarded with Logging Analytics.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4877,6 +5224,7 @@ public final class LogAnalyticsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNamespacesResult> getNamespacesPlain(GetNamespacesPlainArgs args, InvokeOptions options) {

@@ -27,6 +27,8 @@ import javax.annotation.Nullable;
  * Creates a new Connection.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -133,13 +135,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * Connections can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:GoldenGate/connection:Connection test_connection &#34;id&#34;
+ * $ pulumi import oci:GoldenGate/connection:Connection test_connection &#34;id&#34;
  * ```
  * 
  */
@@ -808,14 +811,14 @@ public class Connection extends com.pulumi.resources.CustomResource {
         return this.routingMethod;
     }
     /**
-     * (Updatable) Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is required when &#39;authenticationType&#39; is set to &#39;SHARED_ACCESS_SIGNATURE&#39;. e.g.: ?sv=2020-06-08&amp;ss=bfqt&amp;srt=sco&amp;sp=rwdlacupyx&amp;se=2020-09-10T20:27:28Z&amp;st=2022-08-05T12:27:28Z&amp;spr=https&amp;sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D
+     * (Updatable) Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is required when &#39;authenticationType&#39; is set to &#39;SHARED_ACCESS_SIGNATURE&#39;. e.g.: ?sv=2020-06-08&amp;ss=bfqt&amp;srt=sco&amp;sp=rwdlacupyx&amp;se=2020-09-10T20:27:28Z&amp;st=2022-08-05T12:27:28Z&amp;spr=https&amp;sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%!D(MISSING)
      * 
      */
     @Export(name="sasToken", refs={String.class}, tree="[0]")
     private Output<String> sasToken;
 
     /**
-     * @return (Updatable) Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is required when &#39;authenticationType&#39; is set to &#39;SHARED_ACCESS_SIGNATURE&#39;. e.g.: ?sv=2020-06-08&amp;ss=bfqt&amp;srt=sco&amp;sp=rwdlacupyx&amp;se=2020-09-10T20:27:28Z&amp;st=2022-08-05T12:27:28Z&amp;spr=https&amp;sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D
+     * @return (Updatable) Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is required when &#39;authenticationType&#39; is set to &#39;SHARED_ACCESS_SIGNATURE&#39;. e.g.: ?sv=2020-06-08&amp;ss=bfqt&amp;srt=sco&amp;sp=rwdlacupyx&amp;se=2020-09-10T20:27:28Z&amp;st=2022-08-05T12:27:28Z&amp;spr=https&amp;sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%!D(MISSING)
      * 
      */
     public Output<String> sasToken() {

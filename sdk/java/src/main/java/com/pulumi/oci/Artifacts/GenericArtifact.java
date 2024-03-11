@@ -19,6 +19,8 @@ import javax.annotation.Nullable;
  * This resource provides the Generic Artifact resource in Oracle Cloud Infrastructure Artifacts service.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -49,13 +51,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * GenericArtifacts can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Artifacts/genericArtifact:GenericArtifact test_generic_artifact &#34;generic/artifacts/{artifactId}&#34;
+ * $ pulumi import oci:Artifacts/genericArtifact:GenericArtifact test_generic_artifact &#34;generic/artifacts/{artifactId}&#34;
  * ```
  * 
  */

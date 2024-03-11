@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -39,15 +40,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // DiscoveryJobsResults can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:DataSafe/discoveryJobsResult:DiscoveryJobsResult test_discovery_jobs_result "discoveryJobs/{discoveryJobId}/results/{resultKey}"
-//
+// $ pulumi import oci:DataSafe/discoveryJobsResult:DiscoveryJobsResult test_discovery_jobs_result "discoveryJobs/{discoveryJobId}/results/{resultKey}"
 // ```
 type DiscoveryJobsResult struct {
 	pulumi.CustomResourceState

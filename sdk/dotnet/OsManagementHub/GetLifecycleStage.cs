@@ -16,10 +16,9 @@ namespace Pulumi.Oci.OsManagementHub
         /// 
         /// Gets information about the specified lifecycle stage.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,8 +34,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetLifecycleStageResult> InvokeAsync(GetLifecycleStageArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetLifecycleStageResult>("oci:OsManagementHub/getLifecycleStage:getLifecycleStage", args ?? new GetLifecycleStageArgs(), options.WithDefaults());
@@ -46,10 +44,9 @@ namespace Pulumi.Oci.OsManagementHub
         /// 
         /// Gets information about the specified lifecycle stage.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -65,8 +62,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetLifecycleStageResult> Invoke(GetLifecycleStageInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetLifecycleStageResult>("oci:OsManagementHub/getLifecycleStage:getLifecycleStage", args ?? new GetLifecycleStageInvokeArgs(), options.WithDefaults());

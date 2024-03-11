@@ -15,6 +15,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -30,6 +31,7 @@ import * as utilities from "../utilities";
  *     state: _var.report_definition_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getReportDefinitions(args: GetReportDefinitionsArgs, opts?: pulumi.InvokeOptions): Promise<GetReportDefinitionsResult> {
 
@@ -135,6 +137,7 @@ export interface GetReportDefinitionsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -150,6 +153,7 @@ export interface GetReportDefinitionsResult {
  *     state: _var.report_definition_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getReportDefinitionsOutput(args: GetReportDefinitionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetReportDefinitionsResult> {
     return pulumi.output(args).apply((a: any) => getReportDefinitions(a, opts))

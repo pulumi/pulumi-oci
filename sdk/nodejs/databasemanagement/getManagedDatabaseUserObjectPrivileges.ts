@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,6 +25,7 @@ import * as utilities from "../utilities";
  *     opcNamedCredentialId: _var.managed_database_user_object_privilege_opc_named_credential_id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getManagedDatabaseUserObjectPrivileges(args: GetManagedDatabaseUserObjectPrivilegesArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabaseUserObjectPrivilegesResult> {
 
@@ -88,6 +90,7 @@ export interface GetManagedDatabaseUserObjectPrivilegesResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -99,6 +102,7 @@ export interface GetManagedDatabaseUserObjectPrivilegesResult {
  *     opcNamedCredentialId: _var.managed_database_user_object_privilege_opc_named_credential_id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getManagedDatabaseUserObjectPrivilegesOutput(args: GetManagedDatabaseUserObjectPrivilegesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseUserObjectPrivilegesResult> {
     return pulumi.output(args).apply((a: any) => getManagedDatabaseUserObjectPrivileges(a, opts))

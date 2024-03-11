@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,13 +25,14 @@ import * as utilities from "../utilities";
  *     vmClusterId: oci_database_vm_cluster.test_vm_cluster.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * VmClusterRemoveVirtualMachine can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Database/vmClusterRemoveVirtualMachine:VmClusterRemoveVirtualMachine test_vm_cluster_remove_virtual_machine "id"
+ * $ pulumi import oci:Database/vmClusterRemoveVirtualMachine:VmClusterRemoveVirtualMachine test_vm_cluster_remove_virtual_machine "id"
  * ```
  */
 export class VmClusterRemoveVirtualMachine extends pulumi.CustomResource {

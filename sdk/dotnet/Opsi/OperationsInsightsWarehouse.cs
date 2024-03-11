@@ -18,6 +18,7 @@ namespace Pulumi.Oci.Opsi
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -44,13 +45,14 @@ namespace Pulumi.Oci.Opsi
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// OperationsInsightsWarehouses can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Opsi/operationsInsightsWarehouse:OperationsInsightsWarehouse test_operations_insights_warehouse "id"
+    /// $ pulumi import oci:Opsi/operationsInsightsWarehouse:OperationsInsightsWarehouse test_operations_insights_warehouse "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Opsi/operationsInsightsWarehouse:OperationsInsightsWarehouse")]

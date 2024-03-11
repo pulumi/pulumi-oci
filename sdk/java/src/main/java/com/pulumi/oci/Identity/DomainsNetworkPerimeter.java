@@ -28,6 +28,7 @@ import javax.annotation.Nullable;
  * 
  * ## Example Usage
  * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -76,13 +77,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * NetworkPerimeters can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Identity/domainsNetworkPerimeter:DomainsNetworkPerimeter test_network_perimeter &#34;idcsEndpoint/{idcsEndpoint}/networkPerimeters/{networkPerimeterId}&#34;
+ * $ pulumi import oci:Identity/domainsNetworkPerimeter:DomainsNetworkPerimeter test_network_perimeter &#34;idcsEndpoint/{idcsEndpoint}/networkPerimeters/{networkPerimeterId}&#34;
  * ```
  * 
  */

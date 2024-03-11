@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,6 +42,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetAutonomousVmClusterAcdResourceUsages(ctx *pulumi.Context, args *GetAutonomousVmClusterAcdResourceUsagesArgs, opts ...pulumi.InvokeOption) (*GetAutonomousVmClusterAcdResourceUsagesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAutonomousVmClusterAcdResourceUsagesResult

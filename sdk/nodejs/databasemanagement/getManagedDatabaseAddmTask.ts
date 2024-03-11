@@ -14,6 +14,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,6 +25,7 @@ import * as utilities from "../utilities";
  *     timeStart: _var.managed_database_addm_task_time_start,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getManagedDatabaseAddmTask(args: GetManagedDatabaseAddmTaskArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabaseAddmTaskResult> {
 
@@ -80,6 +82,7 @@ export interface GetManagedDatabaseAddmTaskResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -90,6 +93,7 @@ export interface GetManagedDatabaseAddmTaskResult {
  *     timeStart: _var.managed_database_addm_task_time_start,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getManagedDatabaseAddmTaskOutput(args: GetManagedDatabaseAddmTaskOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseAddmTaskResult> {
     return pulumi.output(args).apply((a: any) => getManagedDatabaseAddmTask(a, opts))

@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -40,6 +41,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetDrgs(ctx *pulumi.Context, args *GetDrgsArgs, opts ...pulumi.InvokeOption) (*GetDrgsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDrgsResult

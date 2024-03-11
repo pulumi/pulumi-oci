@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -49,15 +50,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // LogSavedSearches can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Logging/logSavedSearch:LogSavedSearch test_log_saved_search "id"
-//
+// $ pulumi import oci:Logging/logSavedSearch:LogSavedSearch test_log_saved_search "id"
 // ```
 type LogSavedSearch struct {
 	pulumi.CustomResourceState

@@ -16,7 +16,7 @@ import * as utilities from "../utilities";
  * AuthTokens can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Identity/domainsAuthToken:DomainsAuthToken test_auth_token "idcsEndpoint/{idcsEndpoint}/authTokens/{authTokenId}"
+ * $ pulumi import oci:Identity/domainsAuthToken:DomainsAuthToken test_auth_token "idcsEndpoint/{idcsEndpoint}/authTokens/{authTokenId}"
  * ```
  */
 export class DomainsAuthToken extends pulumi.CustomResource {

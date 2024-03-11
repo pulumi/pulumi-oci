@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,6 +42,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetApplianceImage(ctx *pulumi.Context, args *GetApplianceImageArgs, opts ...pulumi.InvokeOption) (*GetApplianceImageResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetApplianceImageResult

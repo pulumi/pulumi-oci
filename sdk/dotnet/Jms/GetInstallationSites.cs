@@ -16,10 +16,9 @@ namespace Pulumi.Oci.Jms
         /// 
         /// List Java installation sites in a Fleet filtered by query parameters.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -46,8 +45,7 @@ namespace Pulumi.Oci.Jms
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetInstallationSitesResult> InvokeAsync(GetInstallationSitesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetInstallationSitesResult>("oci:Jms/getInstallationSites:getInstallationSites", args ?? new GetInstallationSitesArgs(), options.WithDefaults());
@@ -57,10 +55,9 @@ namespace Pulumi.Oci.Jms
         /// 
         /// List Java installation sites in a Fleet filtered by query parameters.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -87,8 +84,7 @@ namespace Pulumi.Oci.Jms
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetInstallationSitesResult> Invoke(GetInstallationSitesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetInstallationSitesResult>("oci:Jms/getInstallationSites:getInstallationSites", args ?? new GetInstallationSitesInvokeArgs(), options.WithDefaults());

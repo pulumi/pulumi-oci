@@ -14,6 +14,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,6 +25,7 @@ import * as utilities from "../utilities";
  *     state: _var.byoip_range_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getByoipRanges(args: GetByoipRangesArgs, opts?: pulumi.InvokeOptions): Promise<GetByoipRangesResult> {
 
@@ -89,6 +91,7 @@ export interface GetByoipRangesResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -99,6 +102,7 @@ export interface GetByoipRangesResult {
  *     state: _var.byoip_range_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getByoipRangesOutput(args: GetByoipRangesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetByoipRangesResult> {
     return pulumi.output(args).apply((a: any) => getByoipRanges(a, opts))

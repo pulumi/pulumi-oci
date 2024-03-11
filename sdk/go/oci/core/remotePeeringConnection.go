@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -51,15 +52,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // RemotePeeringConnections can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Core/remotePeeringConnection:RemotePeeringConnection test_remote_peering_connection "id"
-//
+// $ pulumi import oci:Core/remotePeeringConnection:RemotePeeringConnection test_remote_peering_connection "id"
 // ```
 type RemotePeeringConnection struct {
 	pulumi.CustomResourceState

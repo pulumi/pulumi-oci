@@ -16,10 +16,9 @@ namespace Pulumi.Oci.Identity
         /// 
         /// Search ApprovalWorkflow
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -45,8 +44,7 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDomainsApprovalWorkflowsResult> InvokeAsync(GetDomainsApprovalWorkflowsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDomainsApprovalWorkflowsResult>("oci:Identity/getDomainsApprovalWorkflows:getDomainsApprovalWorkflows", args ?? new GetDomainsApprovalWorkflowsArgs(), options.WithDefaults());
@@ -56,10 +54,9 @@ namespace Pulumi.Oci.Identity
         /// 
         /// Search ApprovalWorkflow
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -85,8 +82,7 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDomainsApprovalWorkflowsResult> Invoke(GetDomainsApprovalWorkflowsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsApprovalWorkflowsResult>("oci:Identity/getDomainsApprovalWorkflows:getDomainsApprovalWorkflows", args ?? new GetDomainsApprovalWorkflowsInvokeArgs(), options.WithDefaults());

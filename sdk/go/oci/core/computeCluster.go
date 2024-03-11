@@ -30,6 +30,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -61,15 +62,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // ComputeClusters can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Core/computeCluster:ComputeCluster test_compute_cluster "id"
-//
+// $ pulumi import oci:Core/computeCluster:ComputeCluster test_compute_cluster "id"
 // ```
 type ComputeCluster struct {
 	pulumi.CustomResourceState

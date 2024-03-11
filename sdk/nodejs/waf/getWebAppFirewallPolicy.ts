@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,6 +22,7 @@ import * as utilities from "../utilities";
  *     webAppFirewallPolicyId: oci_waf_web_app_firewall_policy.test_web_app_firewall_policy.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getWebAppFirewallPolicy(args: GetWebAppFirewallPolicyArgs, opts?: pulumi.InvokeOptions): Promise<GetWebAppFirewallPolicyResult> {
 
@@ -117,6 +119,7 @@ export interface GetWebAppFirewallPolicyResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -125,6 +128,7 @@ export interface GetWebAppFirewallPolicyResult {
  *     webAppFirewallPolicyId: oci_waf_web_app_firewall_policy.test_web_app_firewall_policy.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getWebAppFirewallPolicyOutput(args: GetWebAppFirewallPolicyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetWebAppFirewallPolicyResult> {
     return pulumi.output(args).apply((a: any) => getWebAppFirewallPolicy(a, opts))

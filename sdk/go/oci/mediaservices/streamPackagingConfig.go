@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -63,15 +64,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // StreamPackagingConfigs can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:MediaServices/streamPackagingConfig:StreamPackagingConfig test_stream_packaging_config "id"
-//
+// $ pulumi import oci:MediaServices/streamPackagingConfig:StreamPackagingConfig test_stream_packaging_config "id"
 // ```
 type StreamPackagingConfig struct {
 	pulumi.CustomResourceState

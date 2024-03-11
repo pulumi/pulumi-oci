@@ -16,6 +16,7 @@ namespace Pulumi.Oci.Database
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -40,13 +41,14 @@ namespace Pulumi.Oci.Database
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// OneoffPatches can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Database/oneoffPatch:OneoffPatch test_oneoff_patch "id"
+    /// $ pulumi import oci:Database/oneoffPatch:OneoffPatch test_oneoff_patch "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Database/oneoffPatch:OneoffPatch")]

@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -25,6 +26,7 @@ import * as utilities from "../utilities";
  *     roleNameContains: _var.target_database_role_role_name_contains,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getTargetDatabaseRoles(args: GetTargetDatabaseRolesArgs, opts?: pulumi.InvokeOptions): Promise<GetTargetDatabaseRolesResult> {
 
@@ -101,6 +103,7 @@ export interface GetTargetDatabaseRolesResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -113,6 +116,7 @@ export interface GetTargetDatabaseRolesResult {
  *     roleNameContains: _var.target_database_role_role_name_contains,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getTargetDatabaseRolesOutput(args: GetTargetDatabaseRolesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTargetDatabaseRolesResult> {
     return pulumi.output(args).apply((a: any) => getTargetDatabaseRoles(a, opts))

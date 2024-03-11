@@ -129,6 +129,7 @@ def get_usagelimits(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -139,6 +140,7 @@ def get_usagelimits(compartment_id: Optional[str] = None,
         resource_type=var["usagelimit_resource_type"],
         service_type=var["usagelimit_service_type"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the root compartment.
@@ -183,6 +185,7 @@ def get_usagelimits_output(compartment_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -193,6 +196,7 @@ def get_usagelimits_output(compartment_id: Optional[pulumi.Input[str]] = None,
         resource_type=var["usagelimit_resource_type"],
         service_type=var["usagelimit_service_type"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the root compartment.

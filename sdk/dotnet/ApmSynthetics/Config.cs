@@ -16,6 +16,7 @@ namespace Pulumi.Oci.ApmSynthetics
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -160,13 +161,14 @@ namespace Pulumi.Oci.ApmSynthetics
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// Monitors can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:ApmSynthetics/config:Config test_monitor "monitors/{monitorId}/apmDomainId/{apmDomainId}"
+    /// $ pulumi import oci:ApmSynthetics/config:Config test_monitor "monitors/{monitorId}/apmDomainId/{apmDomainId}"
     /// ```
     /// </summary>
     [OciResourceType("oci:ApmSynthetics/config:Config")]
@@ -293,7 +295,7 @@ namespace Pulumi.Oci.ApmSynthetics
         public Output<string> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+        /// (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30%!o(MISSING)f repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50%!o(MISSING)f repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
         /// </summary>
         [Output("timeoutInSeconds")]
         public Output<int> TimeoutInSeconds { get; private set; } = null!;
@@ -487,7 +489,7 @@ namespace Pulumi.Oci.ApmSynthetics
         public Input<string>? Target { get; set; }
 
         /// <summary>
-        /// (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+        /// (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30%!o(MISSING)f repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50%!o(MISSING)f repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
         /// </summary>
         [Input("timeoutInSeconds")]
         public Input<int>? TimeoutInSeconds { get; set; }
@@ -655,7 +657,7 @@ namespace Pulumi.Oci.ApmSynthetics
         public Input<string>? TimeUpdated { get; set; }
 
         /// <summary>
-        /// (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+        /// (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30%!o(MISSING)f repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50%!o(MISSING)f repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
         /// </summary>
         [Input("timeoutInSeconds")]
         public Input<int>? TimeoutInSeconds { get; set; }

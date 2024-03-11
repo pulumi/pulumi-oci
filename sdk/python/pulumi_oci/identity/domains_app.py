@@ -7234,7 +7234,7 @@ class DomainsApp(pulumi.CustomResource):
         Apps can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/domainsApp:DomainsApp test_app "idcsEndpoint/{idcsEndpoint}/apps/{appId}"
+        $ pulumi import oci:Identity/domainsApp:DomainsApp test_app "idcsEndpoint/{idcsEndpoint}/apps/{appId}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -8133,7 +8133,7 @@ class DomainsApp(pulumi.CustomResource):
         Apps can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/domainsApp:DomainsApp test_app "idcsEndpoint/{idcsEndpoint}/apps/{appId}"
+        $ pulumi import oci:Identity/domainsApp:DomainsApp test_app "idcsEndpoint/{idcsEndpoint}/apps/{appId}"
         ```
 
         :param str resource_name: The name of the resource.

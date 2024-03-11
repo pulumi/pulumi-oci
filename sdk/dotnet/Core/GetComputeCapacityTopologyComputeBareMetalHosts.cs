@@ -16,10 +16,9 @@ namespace Pulumi.Oci.Core
         /// 
         /// Lists compute bare metal hosts in the specified compute capacity topology.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -40,8 +39,7 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetComputeCapacityTopologyComputeBareMetalHostsResult> InvokeAsync(GetComputeCapacityTopologyComputeBareMetalHostsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetComputeCapacityTopologyComputeBareMetalHostsResult>("oci:Core/getComputeCapacityTopologyComputeBareMetalHosts:getComputeCapacityTopologyComputeBareMetalHosts", args ?? new GetComputeCapacityTopologyComputeBareMetalHostsArgs(), options.WithDefaults());
@@ -51,10 +49,9 @@ namespace Pulumi.Oci.Core
         /// 
         /// Lists compute bare metal hosts in the specified compute capacity topology.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -75,8 +72,7 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetComputeCapacityTopologyComputeBareMetalHostsResult> Invoke(GetComputeCapacityTopologyComputeBareMetalHostsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetComputeCapacityTopologyComputeBareMetalHostsResult>("oci:Core/getComputeCapacityTopologyComputeBareMetalHosts:getComputeCapacityTopologyComputeBareMetalHosts", args ?? new GetComputeCapacityTopologyComputeBareMetalHostsInvokeArgs(), options.WithDefaults());

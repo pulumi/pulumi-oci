@@ -266,12 +266,14 @@ def get_external_cluster_instance(external_cluster_instance_id: Optional[str] = 
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_external_cluster_instance = oci.DatabaseManagement.get_external_cluster_instance(external_cluster_instance_id=oci_database_management_external_cluster_instance["test_external_cluster_instance"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str external_cluster_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster instance.
@@ -313,12 +315,14 @@ def get_external_cluster_instance_output(external_cluster_instance_id: Optional[
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_external_cluster_instance = oci.DatabaseManagement.get_external_cluster_instance(external_cluster_instance_id=oci_database_management_external_cluster_instance["test_external_cluster_instance"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str external_cluster_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster instance.

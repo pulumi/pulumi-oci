@@ -59,6 +59,8 @@ public final class MeteringComputationFunctions {
      * Returns the average carbon emissions summary by SKU.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -87,6 +89,7 @@ public final class MeteringComputationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAverageCarbonEmissionResult> getAverageCarbonEmission(GetAverageCarbonEmissionArgs args) {
@@ -98,6 +101,8 @@ public final class MeteringComputationFunctions {
      * Returns the average carbon emissions summary by SKU.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -126,6 +131,7 @@ public final class MeteringComputationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAverageCarbonEmissionResult> getAverageCarbonEmissionPlain(GetAverageCarbonEmissionPlainArgs args) {
@@ -137,6 +143,8 @@ public final class MeteringComputationFunctions {
      * Returns the average carbon emissions summary by SKU.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -165,6 +173,7 @@ public final class MeteringComputationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAverageCarbonEmissionResult> getAverageCarbonEmission(GetAverageCarbonEmissionArgs args, InvokeOptions options) {
@@ -176,6 +185,8 @@ public final class MeteringComputationFunctions {
      * Returns the average carbon emissions summary by SKU.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -204,6 +215,7 @@ public final class MeteringComputationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAverageCarbonEmissionResult> getAverageCarbonEmissionPlain(GetAverageCarbonEmissionPlainArgs args, InvokeOptions options) {
@@ -216,6 +228,7 @@ public final class MeteringComputationFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -245,6 +258,7 @@ public final class MeteringComputationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCleanEnergyUsageResult> getCleanEnergyUsage(GetCleanEnergyUsageArgs args) {
@@ -257,6 +271,7 @@ public final class MeteringComputationFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -286,6 +301,7 @@ public final class MeteringComputationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCleanEnergyUsageResult> getCleanEnergyUsagePlain(GetCleanEnergyUsagePlainArgs args) {
@@ -298,6 +314,7 @@ public final class MeteringComputationFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -327,6 +344,7 @@ public final class MeteringComputationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCleanEnergyUsageResult> getCleanEnergyUsage(GetCleanEnergyUsageArgs args, InvokeOptions options) {
@@ -339,6 +357,7 @@ public final class MeteringComputationFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -368,6 +387,7 @@ public final class MeteringComputationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCleanEnergyUsageResult> getCleanEnergyUsagePlain(GetCleanEnergyUsagePlainArgs args, InvokeOptions options) {
@@ -379,6 +399,8 @@ public final class MeteringComputationFunctions {
      * Returns the configurations list for the UI drop-down list.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -407,6 +429,7 @@ public final class MeteringComputationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetConfigurationResult> getConfiguration(GetConfigurationArgs args) {
@@ -418,6 +441,8 @@ public final class MeteringComputationFunctions {
      * Returns the configurations list for the UI drop-down list.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -446,6 +471,7 @@ public final class MeteringComputationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetConfigurationResult> getConfigurationPlain(GetConfigurationPlainArgs args) {
@@ -457,6 +483,8 @@ public final class MeteringComputationFunctions {
      * Returns the configurations list for the UI drop-down list.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -485,6 +513,7 @@ public final class MeteringComputationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetConfigurationResult> getConfiguration(GetConfigurationArgs args, InvokeOptions options) {
@@ -496,6 +525,8 @@ public final class MeteringComputationFunctions {
      * Returns the configurations list for the UI drop-down list.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -524,6 +555,7 @@ public final class MeteringComputationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetConfigurationResult> getConfigurationPlain(GetConfigurationPlainArgs args, InvokeOptions options) {
@@ -535,6 +567,8 @@ public final class MeteringComputationFunctions {
      * Returns the saved custom table.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -563,6 +597,7 @@ public final class MeteringComputationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCustomTableResult> getCustomTable(GetCustomTableArgs args) {
@@ -574,6 +609,8 @@ public final class MeteringComputationFunctions {
      * Returns the saved custom table.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -602,6 +639,7 @@ public final class MeteringComputationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCustomTableResult> getCustomTablePlain(GetCustomTablePlainArgs args) {
@@ -613,6 +651,8 @@ public final class MeteringComputationFunctions {
      * Returns the saved custom table.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -641,6 +681,7 @@ public final class MeteringComputationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCustomTableResult> getCustomTable(GetCustomTableArgs args, InvokeOptions options) {
@@ -652,6 +693,8 @@ public final class MeteringComputationFunctions {
      * Returns the saved custom table.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -680,6 +723,7 @@ public final class MeteringComputationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCustomTableResult> getCustomTablePlain(GetCustomTablePlainArgs args, InvokeOptions options) {
@@ -691,6 +735,8 @@ public final class MeteringComputationFunctions {
      * Returns the saved custom table list.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -720,6 +766,7 @@ public final class MeteringComputationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCustomTablesResult> getCustomTables(GetCustomTablesArgs args) {
@@ -731,6 +778,8 @@ public final class MeteringComputationFunctions {
      * Returns the saved custom table list.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -760,6 +809,7 @@ public final class MeteringComputationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCustomTablesResult> getCustomTablesPlain(GetCustomTablesPlainArgs args) {
@@ -771,6 +821,8 @@ public final class MeteringComputationFunctions {
      * Returns the saved custom table list.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -800,6 +852,7 @@ public final class MeteringComputationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCustomTablesResult> getCustomTables(GetCustomTablesArgs args, InvokeOptions options) {
@@ -811,6 +864,8 @@ public final class MeteringComputationFunctions {
      * Returns the saved custom table list.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -840,6 +895,7 @@ public final class MeteringComputationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCustomTablesResult> getCustomTablesPlain(GetCustomTablesPlainArgs args, InvokeOptions options) {
@@ -851,6 +907,8 @@ public final class MeteringComputationFunctions {
      * Returns the saved query list.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -879,6 +937,7 @@ public final class MeteringComputationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetQueriesResult> getQueries(GetQueriesArgs args) {
@@ -890,6 +949,8 @@ public final class MeteringComputationFunctions {
      * Returns the saved query list.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -918,6 +979,7 @@ public final class MeteringComputationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetQueriesResult> getQueriesPlain(GetQueriesPlainArgs args) {
@@ -929,6 +991,8 @@ public final class MeteringComputationFunctions {
      * Returns the saved query list.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -957,6 +1021,7 @@ public final class MeteringComputationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetQueriesResult> getQueries(GetQueriesArgs args, InvokeOptions options) {
@@ -968,6 +1033,8 @@ public final class MeteringComputationFunctions {
      * Returns the saved query list.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -996,6 +1063,7 @@ public final class MeteringComputationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetQueriesResult> getQueriesPlain(GetQueriesPlainArgs args, InvokeOptions options) {
@@ -1007,6 +1075,8 @@ public final class MeteringComputationFunctions {
      * Returns the saved query.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1035,6 +1105,7 @@ public final class MeteringComputationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetQueryResult> getQuery(GetQueryArgs args) {
@@ -1046,6 +1117,8 @@ public final class MeteringComputationFunctions {
      * Returns the saved query.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1074,6 +1147,7 @@ public final class MeteringComputationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetQueryResult> getQueryPlain(GetQueryPlainArgs args) {
@@ -1085,6 +1159,8 @@ public final class MeteringComputationFunctions {
      * Returns the saved query.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1113,6 +1189,7 @@ public final class MeteringComputationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetQueryResult> getQuery(GetQueryArgs args, InvokeOptions options) {
@@ -1124,6 +1201,8 @@ public final class MeteringComputationFunctions {
      * Returns the saved query.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1152,6 +1231,7 @@ public final class MeteringComputationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetQueryResult> getQueryPlain(GetQueryPlainArgs args, InvokeOptions options) {
@@ -1163,6 +1243,8 @@ public final class MeteringComputationFunctions {
      * Returns the saved schedule.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1191,6 +1273,7 @@ public final class MeteringComputationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetScheduleResult> getSchedule(GetScheduleArgs args) {
@@ -1202,6 +1285,8 @@ public final class MeteringComputationFunctions {
      * Returns the saved schedule.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1230,6 +1315,7 @@ public final class MeteringComputationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetScheduleResult> getSchedulePlain(GetSchedulePlainArgs args) {
@@ -1241,6 +1327,8 @@ public final class MeteringComputationFunctions {
      * Returns the saved schedule.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1269,6 +1357,7 @@ public final class MeteringComputationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetScheduleResult> getSchedule(GetScheduleArgs args, InvokeOptions options) {
@@ -1280,6 +1369,8 @@ public final class MeteringComputationFunctions {
      * Returns the saved schedule.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1308,6 +1399,7 @@ public final class MeteringComputationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetScheduleResult> getSchedulePlain(GetSchedulePlainArgs args, InvokeOptions options) {
@@ -1319,6 +1411,8 @@ public final class MeteringComputationFunctions {
      * Returns the saved schedule run.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1347,6 +1441,7 @@ public final class MeteringComputationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetScheduledRunResult> getScheduledRun(GetScheduledRunArgs args) {
@@ -1358,6 +1453,8 @@ public final class MeteringComputationFunctions {
      * Returns the saved schedule run.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1386,6 +1483,7 @@ public final class MeteringComputationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetScheduledRunResult> getScheduledRunPlain(GetScheduledRunPlainArgs args) {
@@ -1397,6 +1495,8 @@ public final class MeteringComputationFunctions {
      * Returns the saved schedule run.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1425,6 +1525,7 @@ public final class MeteringComputationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetScheduledRunResult> getScheduledRun(GetScheduledRunArgs args, InvokeOptions options) {
@@ -1436,6 +1537,8 @@ public final class MeteringComputationFunctions {
      * Returns the saved schedule run.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1464,6 +1567,7 @@ public final class MeteringComputationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetScheduledRunResult> getScheduledRunPlain(GetScheduledRunPlainArgs args, InvokeOptions options) {
@@ -1475,6 +1579,8 @@ public final class MeteringComputationFunctions {
      * Returns schedule history list.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1503,6 +1609,7 @@ public final class MeteringComputationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetScheduledRunsResult> getScheduledRuns(GetScheduledRunsArgs args) {
@@ -1514,6 +1621,8 @@ public final class MeteringComputationFunctions {
      * Returns schedule history list.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1542,6 +1651,7 @@ public final class MeteringComputationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetScheduledRunsResult> getScheduledRunsPlain(GetScheduledRunsPlainArgs args) {
@@ -1553,6 +1663,8 @@ public final class MeteringComputationFunctions {
      * Returns schedule history list.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1581,6 +1693,7 @@ public final class MeteringComputationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetScheduledRunsResult> getScheduledRuns(GetScheduledRunsArgs args, InvokeOptions options) {
@@ -1592,6 +1705,8 @@ public final class MeteringComputationFunctions {
      * Returns schedule history list.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1620,6 +1735,7 @@ public final class MeteringComputationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetScheduledRunsResult> getScheduledRunsPlain(GetScheduledRunsPlainArgs args, InvokeOptions options) {
@@ -1631,6 +1747,8 @@ public final class MeteringComputationFunctions {
      * Returns the saved schedule list.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1660,6 +1778,7 @@ public final class MeteringComputationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSchedulesResult> getSchedules(GetSchedulesArgs args) {
@@ -1671,6 +1790,8 @@ public final class MeteringComputationFunctions {
      * Returns the saved schedule list.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1700,6 +1821,7 @@ public final class MeteringComputationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSchedulesResult> getSchedulesPlain(GetSchedulesPlainArgs args) {
@@ -1711,6 +1833,8 @@ public final class MeteringComputationFunctions {
      * Returns the saved schedule list.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1740,6 +1864,7 @@ public final class MeteringComputationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSchedulesResult> getSchedules(GetSchedulesArgs args, InvokeOptions options) {
@@ -1751,6 +1876,8 @@ public final class MeteringComputationFunctions {
      * Returns the saved schedule list.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1780,6 +1907,7 @@ public final class MeteringComputationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSchedulesResult> getSchedulesPlain(GetSchedulesPlainArgs args, InvokeOptions options) {
@@ -1791,6 +1919,8 @@ public final class MeteringComputationFunctions {
      * Returns the configuration list for the UI drop-down list of carbon emission console.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1819,6 +1949,7 @@ public final class MeteringComputationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetUsageCarbonEmissionsConfigResult> getUsageCarbonEmissionsConfig(GetUsageCarbonEmissionsConfigArgs args) {
@@ -1830,6 +1961,8 @@ public final class MeteringComputationFunctions {
      * Returns the configuration list for the UI drop-down list of carbon emission console.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1858,6 +1991,7 @@ public final class MeteringComputationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetUsageCarbonEmissionsConfigResult> getUsageCarbonEmissionsConfigPlain(GetUsageCarbonEmissionsConfigPlainArgs args) {
@@ -1869,6 +2003,8 @@ public final class MeteringComputationFunctions {
      * Returns the configuration list for the UI drop-down list of carbon emission console.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1897,6 +2033,7 @@ public final class MeteringComputationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetUsageCarbonEmissionsConfigResult> getUsageCarbonEmissionsConfig(GetUsageCarbonEmissionsConfigArgs args, InvokeOptions options) {
@@ -1908,6 +2045,8 @@ public final class MeteringComputationFunctions {
      * Returns the configuration list for the UI drop-down list of carbon emission console.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1936,6 +2075,7 @@ public final class MeteringComputationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetUsageCarbonEmissionsConfigResult> getUsageCarbonEmissionsConfigPlain(GetUsageCarbonEmissionsConfigPlainArgs args, InvokeOptions options) {
@@ -1947,6 +2087,8 @@ public final class MeteringComputationFunctions {
      * Returns the usage carbon emissions saved query list.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1975,6 +2117,7 @@ public final class MeteringComputationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetUsageCarbonEmissionsQueriesResult> getUsageCarbonEmissionsQueries(GetUsageCarbonEmissionsQueriesArgs args) {
@@ -1986,6 +2129,8 @@ public final class MeteringComputationFunctions {
      * Returns the usage carbon emissions saved query list.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2014,6 +2159,7 @@ public final class MeteringComputationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetUsageCarbonEmissionsQueriesResult> getUsageCarbonEmissionsQueriesPlain(GetUsageCarbonEmissionsQueriesPlainArgs args) {
@@ -2025,6 +2171,8 @@ public final class MeteringComputationFunctions {
      * Returns the usage carbon emissions saved query list.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2053,6 +2201,7 @@ public final class MeteringComputationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetUsageCarbonEmissionsQueriesResult> getUsageCarbonEmissionsQueries(GetUsageCarbonEmissionsQueriesArgs args, InvokeOptions options) {
@@ -2064,6 +2213,8 @@ public final class MeteringComputationFunctions {
      * Returns the usage carbon emissions saved query list.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2092,6 +2243,7 @@ public final class MeteringComputationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetUsageCarbonEmissionsQueriesResult> getUsageCarbonEmissionsQueriesPlain(GetUsageCarbonEmissionsQueriesPlainArgs args, InvokeOptions options) {
@@ -2103,6 +2255,8 @@ public final class MeteringComputationFunctions {
      * Returns the usage carbon emissions saved query.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2131,6 +2285,7 @@ public final class MeteringComputationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetUsageCarbonEmissionsQueryResult> getUsageCarbonEmissionsQuery(GetUsageCarbonEmissionsQueryArgs args) {
@@ -2142,6 +2297,8 @@ public final class MeteringComputationFunctions {
      * Returns the usage carbon emissions saved query.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2170,6 +2327,7 @@ public final class MeteringComputationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetUsageCarbonEmissionsQueryResult> getUsageCarbonEmissionsQueryPlain(GetUsageCarbonEmissionsQueryPlainArgs args) {
@@ -2181,6 +2339,8 @@ public final class MeteringComputationFunctions {
      * Returns the usage carbon emissions saved query.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2209,6 +2369,7 @@ public final class MeteringComputationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetUsageCarbonEmissionsQueryResult> getUsageCarbonEmissionsQuery(GetUsageCarbonEmissionsQueryArgs args, InvokeOptions options) {
@@ -2220,6 +2381,8 @@ public final class MeteringComputationFunctions {
      * Returns the usage carbon emissions saved query.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2248,6 +2411,7 @@ public final class MeteringComputationFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetUsageCarbonEmissionsQueryResult> getUsageCarbonEmissionsQueryPlain(GetUsageCarbonEmissionsQueryPlainArgs args, InvokeOptions options) {

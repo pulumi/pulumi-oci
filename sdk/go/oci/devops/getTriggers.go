@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -44,6 +45,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetTriggers(ctx *pulumi.Context, args *GetTriggersArgs, opts ...pulumi.InvokeOption) (*GetTriggersResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetTriggersResult

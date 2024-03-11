@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -42,6 +43,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetPathAnalyzerTests(ctx *pulumi.Context, args *GetPathAnalyzerTestsArgs, opts ...pulumi.InvokeOption) (*GetPathAnalyzerTestsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetPathAnalyzerTestsResult

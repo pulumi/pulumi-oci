@@ -16,6 +16,7 @@ namespace Pulumi.Oci.DataScience
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -94,13 +95,14 @@ namespace Pulumi.Oci.DataScience
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// Pipelines can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:DataScience/pipeline:Pipeline test_pipeline "id"
+    /// $ pulumi import oci:DataScience/pipeline:Pipeline test_pipeline "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:DataScience/pipeline:Pipeline")]

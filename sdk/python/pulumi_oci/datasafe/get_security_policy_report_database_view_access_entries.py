@@ -111,6 +111,7 @@ def get_security_policy_report_database_view_access_entries(filters: Optional[Se
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -119,6 +120,7 @@ def get_security_policy_report_database_view_access_entries(filters: Optional[Se
         scim_query=var["security_policy_report_database_view_access_entry_scim_query"],
         target_id=oci_cloud_guard_target["test_target"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str scim_query: The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)
@@ -159,6 +161,7 @@ def get_security_policy_report_database_view_access_entries_output(filters: Opti
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -167,6 +170,7 @@ def get_security_policy_report_database_view_access_entries_output(filters: Opti
         scim_query=var["security_policy_report_database_view_access_entry_scim_query"],
         target_id=oci_cloud_guard_target["test_target"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str scim_query: The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)

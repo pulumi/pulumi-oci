@@ -29,6 +29,8 @@ public final class BudgetFunctions {
      * Gets an Alert Rule for a specified budget.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -58,6 +60,7 @@ public final class BudgetFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAlertRuleResult> getAlertRule(GetAlertRuleArgs args) {
@@ -69,6 +72,8 @@ public final class BudgetFunctions {
      * Gets an Alert Rule for a specified budget.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -98,6 +103,7 @@ public final class BudgetFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAlertRuleResult> getAlertRulePlain(GetAlertRulePlainArgs args) {
@@ -109,6 +115,8 @@ public final class BudgetFunctions {
      * Gets an Alert Rule for a specified budget.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -138,6 +146,7 @@ public final class BudgetFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAlertRuleResult> getAlertRule(GetAlertRuleArgs args, InvokeOptions options) {
@@ -149,6 +158,8 @@ public final class BudgetFunctions {
      * Gets an Alert Rule for a specified budget.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -178,6 +189,7 @@ public final class BudgetFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAlertRuleResult> getAlertRulePlain(GetAlertRulePlainArgs args, InvokeOptions options) {
@@ -189,6 +201,8 @@ public final class BudgetFunctions {
      * Returns a list of Alert Rules for a specified budget.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -219,6 +233,7 @@ public final class BudgetFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAlertRulesResult> getAlertRules(GetAlertRulesArgs args) {
@@ -230,6 +245,8 @@ public final class BudgetFunctions {
      * Returns a list of Alert Rules for a specified budget.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -260,6 +277,7 @@ public final class BudgetFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAlertRulesResult> getAlertRulesPlain(GetAlertRulesPlainArgs args) {
@@ -271,6 +289,8 @@ public final class BudgetFunctions {
      * Returns a list of Alert Rules for a specified budget.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -301,6 +321,7 @@ public final class BudgetFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAlertRulesResult> getAlertRules(GetAlertRulesArgs args, InvokeOptions options) {
@@ -312,6 +333,8 @@ public final class BudgetFunctions {
      * Returns a list of Alert Rules for a specified budget.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -342,6 +365,7 @@ public final class BudgetFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAlertRulesResult> getAlertRulesPlain(GetAlertRulesPlainArgs args, InvokeOptions options) {
@@ -353,6 +377,8 @@ public final class BudgetFunctions {
      * Gets a budget by the identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -381,6 +407,7 @@ public final class BudgetFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBudgetResult> getBudget(GetBudgetArgs args) {
@@ -392,6 +419,8 @@ public final class BudgetFunctions {
      * Gets a budget by the identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -420,6 +449,7 @@ public final class BudgetFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBudgetResult> getBudgetPlain(GetBudgetPlainArgs args) {
@@ -431,6 +461,8 @@ public final class BudgetFunctions {
      * Gets a budget by the identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -459,6 +491,7 @@ public final class BudgetFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBudgetResult> getBudget(GetBudgetArgs args, InvokeOptions options) {
@@ -470,6 +503,8 @@ public final class BudgetFunctions {
      * Gets a budget by the identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -498,6 +533,7 @@ public final class BudgetFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBudgetResult> getBudgetPlain(GetBudgetPlainArgs args, InvokeOptions options) {
@@ -515,6 +551,8 @@ public final class BudgetFunctions {
      * Clients should ignore new targetTypes, or upgrade to the latest version of the client SDK to handle new targetTypes.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -546,6 +584,7 @@ public final class BudgetFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBudgetsResult> getBudgets(GetBudgetsArgs args) {
@@ -563,6 +602,8 @@ public final class BudgetFunctions {
      * Clients should ignore new targetTypes, or upgrade to the latest version of the client SDK to handle new targetTypes.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -594,6 +635,7 @@ public final class BudgetFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBudgetsResult> getBudgetsPlain(GetBudgetsPlainArgs args) {
@@ -611,6 +653,8 @@ public final class BudgetFunctions {
      * Clients should ignore new targetTypes, or upgrade to the latest version of the client SDK to handle new targetTypes.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -642,6 +686,7 @@ public final class BudgetFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBudgetsResult> getBudgets(GetBudgetsArgs args, InvokeOptions options) {
@@ -659,6 +704,8 @@ public final class BudgetFunctions {
      * Clients should ignore new targetTypes, or upgrade to the latest version of the client SDK to handle new targetTypes.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -690,6 +737,7 @@ public final class BudgetFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBudgetsResult> getBudgetsPlain(GetBudgetsPlainArgs args, InvokeOptions options) {

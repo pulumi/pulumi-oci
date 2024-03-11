@@ -125,6 +125,7 @@ def get_sensitive_data_model_sensitive_objects(filters: Optional[Sequence[pulumi
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -134,6 +135,7 @@ def get_sensitive_data_model_sensitive_objects(filters: Optional[Sequence[pulumi
         object_types=var["sensitive_data_model_sensitive_object_object_type"],
         schema_names=var["sensitive_data_model_sensitive_object_schema_name"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param Sequence[str] object_types: A filter to return only items related to a specific object type.
@@ -174,6 +176,7 @@ def get_sensitive_data_model_sensitive_objects_output(filters: Optional[pulumi.I
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -183,6 +186,7 @@ def get_sensitive_data_model_sensitive_objects_output(filters: Optional[pulumi.I
         object_types=var["sensitive_data_model_sensitive_object_object_type"],
         schema_names=var["sensitive_data_model_sensitive_object_schema_name"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param Sequence[str] object_types: A filter to return only items related to a specific object type.

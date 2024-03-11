@@ -627,6 +627,7 @@ class SqlCollection(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -646,13 +647,14 @@ class SqlCollection(pulumi.CustomResource):
             sql_level=var["sql_collection_sql_level"],
             status=var["sql_collection_status"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         SqlCollections can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataSafe/sqlCollection:SqlCollection test_sql_collection "id"
+        $ pulumi import oci:DataSafe/sqlCollection:SqlCollection test_sql_collection "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -689,6 +691,7 @@ class SqlCollection(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -708,13 +711,14 @@ class SqlCollection(pulumi.CustomResource):
             sql_level=var["sql_collection_sql_level"],
             status=var["sql_collection_status"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         SqlCollections can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataSafe/sqlCollection:SqlCollection test_sql_collection "id"
+        $ pulumi import oci:DataSafe/sqlCollection:SqlCollection test_sql_collection "id"
         ```
 
         :param str resource_name: The name of the resource.

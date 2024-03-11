@@ -549,6 +549,7 @@ class CrossConnect(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -578,13 +579,14 @@ class CrossConnect(pulumi.CustomResource):
             ),
             near_cross_connect_or_cross_connect_group_id=oci_core_cross_connect_group["test_cross_connect_group"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         CrossConnects can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/crossConnect:CrossConnect test_cross_connect "id"
+        $ pulumi import oci:Core/crossConnect:CrossConnect test_cross_connect "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -637,6 +639,7 @@ class CrossConnect(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -666,13 +669,14 @@ class CrossConnect(pulumi.CustomResource):
             ),
             near_cross_connect_or_cross_connect_group_id=oci_core_cross_connect_group["test_cross_connect_group"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         CrossConnects can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/crossConnect:CrossConnect test_cross_connect "id"
+        $ pulumi import oci:Core/crossConnect:CrossConnect test_cross_connect "id"
         ```
 
         :param str resource_name: The name of the resource.

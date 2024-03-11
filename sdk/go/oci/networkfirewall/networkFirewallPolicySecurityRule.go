@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -56,15 +57,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // NetworkFirewallPolicySecurityRules can be imported using the `name`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:NetworkFirewall/networkFirewallPolicySecurityRule:NetworkFirewallPolicySecurityRule test_network_firewall_policy_security_rule "networkFirewallPolicies/{networkFirewallPolicyId}/securityRules/{securityRuleName}"
-//
+// $ pulumi import oci:NetworkFirewall/networkFirewallPolicySecurityRule:NetworkFirewallPolicySecurityRule test_network_firewall_policy_security_rule "networkFirewallPolicies/{networkFirewallPolicyId}/securityRules/{securityRuleName}"
 // ```
 type NetworkFirewallPolicySecurityRule struct {
 	pulumi.CustomResourceState

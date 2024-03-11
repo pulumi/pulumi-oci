@@ -1313,7 +1313,7 @@ class DomainsGrant(pulumi.CustomResource):
         Grants can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/domainsGrant:DomainsGrant test_grant "idcsEndpoint/{idcsEndpoint}/grants/{grantId}"
+        $ pulumi import oci:Identity/domainsGrant:DomainsGrant test_grant "idcsEndpoint/{idcsEndpoint}/grants/{grantId}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -1444,7 +1444,7 @@ class DomainsGrant(pulumi.CustomResource):
         Grants can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/domainsGrant:DomainsGrant test_grant "idcsEndpoint/{idcsEndpoint}/grants/{grantId}"
+        $ pulumi import oci:Identity/domainsGrant:DomainsGrant test_grant "idcsEndpoint/{idcsEndpoint}/grants/{grantId}"
         ```
 
         :param str resource_name: The name of the resource.

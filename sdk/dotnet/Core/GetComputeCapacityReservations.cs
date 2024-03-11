@@ -20,10 +20,9 @@ namespace Pulumi.Oci.Core
         /// (the list will include all the identically-named compute capacity reservations in the compartment).
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -42,8 +41,7 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetComputeCapacityReservationsResult> InvokeAsync(GetComputeCapacityReservationsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetComputeCapacityReservationsResult>("oci:Core/getComputeCapacityReservations:getComputeCapacityReservations", args ?? new GetComputeCapacityReservationsArgs(), options.WithDefaults());
@@ -57,10 +55,9 @@ namespace Pulumi.Oci.Core
         /// (the list will include all the identically-named compute capacity reservations in the compartment).
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -79,8 +76,7 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetComputeCapacityReservationsResult> Invoke(GetComputeCapacityReservationsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetComputeCapacityReservationsResult>("oci:Core/getComputeCapacityReservations:getComputeCapacityReservations", args ?? new GetComputeCapacityReservationsInvokeArgs(), options.WithDefaults());

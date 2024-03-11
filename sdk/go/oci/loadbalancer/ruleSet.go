@@ -19,6 +19,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -71,15 +72,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // RuleSets can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:LoadBalancer/ruleSet:RuleSet test_rule_set "loadBalancers/{loadBalancerId}/ruleSets/{ruleSetName}"
-//
+// $ pulumi import oci:LoadBalancer/ruleSet:RuleSet test_rule_set "loadBalancers/{loadBalancerId}/ruleSets/{ruleSetName}"
 // ```
 type RuleSet struct {
 	pulumi.CustomResourceState

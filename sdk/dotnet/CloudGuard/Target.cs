@@ -16,6 +16,7 @@ namespace Pulumi.Oci.CloudGuard
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -97,13 +98,14 @@ namespace Pulumi.Oci.CloudGuard
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// Targets can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:CloudGuard/target:Target test_target "id"
+    /// $ pulumi import oci:CloudGuard/target:Target test_target "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:CloudGuard/target:Target")]

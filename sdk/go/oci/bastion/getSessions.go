@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -43,6 +44,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetSessions(ctx *pulumi.Context, args *GetSessionsArgs, opts ...pulumi.InvokeOption) (*GetSessionsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetSessionsResult

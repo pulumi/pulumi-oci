@@ -29,7 +29,7 @@ import javax.annotation.Nullable;
  * ExternalExadataStorageServers can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:DatabaseManagement/externalExadataStorageServer:ExternalExadataStorageServer test_external_exadata_storage_server &#34;id&#34;
+ * $ pulumi import oci:DatabaseManagement/externalExadataStorageServer:ExternalExadataStorageServer test_external_exadata_storage_server &#34;id&#34;
  * ```
  * 
  */

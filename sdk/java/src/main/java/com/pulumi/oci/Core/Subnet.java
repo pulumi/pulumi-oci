@@ -53,6 +53,8 @@ import javax.annotation.Nullable;
  * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -95,13 +97,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * Subnets can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Core/subnet:Subnet test_subnet &#34;id&#34;
+ * $ pulumi import oci:Core/subnet:Subnet test_subnet &#34;id&#34;
  * ```
  * 
  */

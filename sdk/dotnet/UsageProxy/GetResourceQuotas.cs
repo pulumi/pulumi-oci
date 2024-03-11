@@ -18,10 +18,9 @@ namespace Pulumi.Oci.UsageProxy
         /// &gt; **Important**: Calls to this API will only succeed against the endpoint in the home region.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -39,8 +38,7 @@ namespace Pulumi.Oci.UsageProxy
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetResourceQuotasResult> InvokeAsync(GetResourceQuotasArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetResourceQuotasResult>("oci:UsageProxy/getResourceQuotas:getResourceQuotas", args ?? new GetResourceQuotasArgs(), options.WithDefaults());
@@ -52,10 +50,9 @@ namespace Pulumi.Oci.UsageProxy
         /// &gt; **Important**: Calls to this API will only succeed against the endpoint in the home region.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -73,8 +70,7 @@ namespace Pulumi.Oci.UsageProxy
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetResourceQuotasResult> Invoke(GetResourceQuotasInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetResourceQuotasResult>("oci:UsageProxy/getResourceQuotas:getResourceQuotas", args ?? new GetResourceQuotasInvokeArgs(), options.WithDefaults());

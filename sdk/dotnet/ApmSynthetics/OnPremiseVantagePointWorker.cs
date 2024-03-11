@@ -16,6 +16,7 @@ namespace Pulumi.Oci.ApmSynthetics
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -46,13 +47,14 @@ namespace Pulumi.Oci.ApmSynthetics
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// OnPremiseVantagePointWorkers can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:ApmSynthetics/onPremiseVantagePointWorker:OnPremiseVantagePointWorker test_on_premise_vantage_point_worker "onPremiseVantagePoints/{onPremiseVantagePointId}/workers/{workerId}/apmDomainId/{apmDomainId}"
+    /// $ pulumi import oci:ApmSynthetics/onPremiseVantagePointWorker:OnPremiseVantagePointWorker test_on_premise_vantage_point_worker "onPremiseVantagePoints/{onPremiseVantagePointId}/workers/{workerId}/apmDomainId/{apmDomainId}"
     /// ```
     /// </summary>
     [OciResourceType("oci:ApmSynthetics/onPremiseVantagePointWorker:OnPremiseVantagePointWorker")]

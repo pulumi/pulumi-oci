@@ -63,14 +63,14 @@ public final class GetManagedDatabaseCursorCacheStatementsPlainArgs extends com.
     }
 
     /**
-     * A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the &#39;%&#39; symbol as a wildcard.
+     * A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the &#39;%!&#39;(MISSING) symbol as a wildcard.
      * 
      */
     @Import(name="sqlText")
     private @Nullable String sqlText;
 
     /**
-     * @return A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the &#39;%&#39; symbol as a wildcard.
+     * @return A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the &#39;%!&#39;(MISSING) symbol as a wildcard.
      * 
      */
     public Optional<String> sqlText() {
@@ -142,7 +142,7 @@ public final class GetManagedDatabaseCursorCacheStatementsPlainArgs extends com.
         }
 
         /**
-         * @param sqlText A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the &#39;%&#39; symbol as a wildcard.
+         * @param sqlText A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the &#39;%!&#39;(MISSING) symbol as a wildcard.
          * 
          * @return builder
          * 

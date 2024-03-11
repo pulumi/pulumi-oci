@@ -23,6 +23,8 @@ import javax.annotation.Nullable;
  * and the zone has a scope of `PRIVATE` then the viewId query parameter is required.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -63,20 +65,21 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * For legacy Rrsets that were created without using `scope`, these Rrsets can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Dns/rrset:Rrset test_rrset &#34;zoneNameOrId/{zoneNameOrId}/domain/{domain}/rtype/{rtype}&#34;
+ * $ pulumi import oci:Dns/rrset:Rrset test_rrset &#34;zoneNameOrId/{zoneNameOrId}/domain/{domain}/rtype/{rtype}&#34;
  * ```
- *  For Rrsets created using `scope` and `view_id`, these Rrsets can be imported using the `id`, e.g.
+ * For Rrsets created using `scope` and `view_id`, these Rrsets can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Dns/rrset:Rrset test_rrset &#34;zoneNameOrId/{zoneNameOrId}/domain/{domain}/rtype/{rtype}/scope/{scope}/viewId/{viewId}&#34;
+ * $ pulumi import oci:Dns/rrset:Rrset test_rrset &#34;zoneNameOrId/{zoneNameOrId}/domain/{domain}/rtype/{rtype}/scope/{scope}/viewId/{viewId}&#34;
  * ```
- *  skip adding `{view_id}` at the end if Rrset was created without `view_id`.
+ * skip adding `{view_id}` at the end if Rrset was created without `view_id`.
  * 
  */
 @ResourceType(type="oci:Dns/rrset:Rrset")

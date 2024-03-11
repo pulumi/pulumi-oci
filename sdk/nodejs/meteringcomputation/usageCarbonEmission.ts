@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -32,13 +33,14 @@ import * as utilities from "../utilities";
  *     usageCarbonEmissionFilter: _var.usage_carbon_emission_usage_carbon_emission_filter,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * UsageCarbonEmissions can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:MeteringComputation/usageCarbonEmission:UsageCarbonEmission test_usage_carbon_emission "id"
+ * $ pulumi import oci:MeteringComputation/usageCarbonEmission:UsageCarbonEmission test_usage_carbon_emission "id"
  * ```
  */
 export class UsageCarbonEmission extends pulumi.CustomResource {

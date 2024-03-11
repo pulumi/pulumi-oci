@@ -14,7 +14,7 @@ import * as utilities from "../utilities";
  * ManagedLists can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:CloudGuard/managedList:ManagedList test_managed_list "id"
+ * $ pulumi import oci:CloudGuard/managedList:ManagedList test_managed_list "id"
  * ```
  */
 export class ManagedList extends pulumi.CustomResource {

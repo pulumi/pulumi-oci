@@ -26,6 +26,8 @@ import javax.annotation.Nullable;
  * Creates a new Packaging Configuration.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -72,13 +74,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * StreamPackagingConfigs can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:MediaServices/streamPackagingConfig:StreamPackagingConfig test_stream_packaging_config &#34;id&#34;
+ * $ pulumi import oci:MediaServices/streamPackagingConfig:StreamPackagingConfig test_stream_packaging_config &#34;id&#34;
  * ```
  * 
  */

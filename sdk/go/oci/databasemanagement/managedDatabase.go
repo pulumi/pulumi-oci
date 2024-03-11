@@ -21,9 +21,7 @@ import (
 // ManagedDatabases can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:DatabaseManagement/managedDatabase:ManagedDatabase test_managed_database "id"
-//
+// $ pulumi import oci:DatabaseManagement/managedDatabase:ManagedDatabase test_managed_database "id"
 // ```
 type ManagedDatabase struct {
 	pulumi.CustomResourceState

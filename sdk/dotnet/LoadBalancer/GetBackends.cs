@@ -16,10 +16,9 @@ namespace Pulumi.Oci.LoadBalancer
         /// 
         /// Lists the backend servers for a given load balancer and backend set.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,8 +35,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetBackendsResult> InvokeAsync(GetBackendsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetBackendsResult>("oci:LoadBalancer/getBackends:getBackends", args ?? new GetBackendsArgs(), options.WithDefaults());
@@ -47,10 +45,9 @@ namespace Pulumi.Oci.LoadBalancer
         /// 
         /// Lists the backend servers for a given load balancer and backend set.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -67,8 +64,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetBackendsResult> Invoke(GetBackendsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetBackendsResult>("oci:LoadBalancer/getBackends:getBackends", args ?? new GetBackendsInvokeArgs(), options.WithDefaults());

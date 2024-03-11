@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -42,6 +43,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetAutonomousVirtualMachines(ctx *pulumi.Context, args *GetAutonomousVirtualMachinesArgs, opts ...pulumi.InvokeOption) (*GetAutonomousVirtualMachinesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAutonomousVirtualMachinesResult

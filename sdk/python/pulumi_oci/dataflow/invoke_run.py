@@ -1178,6 +1178,7 @@ class InvokeRun(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -1224,6 +1225,8 @@ class InvokeRun(pulumi.CustomResource):
             type=var["invoke_run_type"],
             warehouse_bucket_uri=var["invoke_run_warehouse_bucket_uri"])
         ```
+        <!--End PulumiCodeChooser -->
+
         ## Note
 
         At a time service allows only one run to succeed if user is trying to invoke runs on multiple applications which have Private Endpoints and service will proceed invoking only one run and put the rest of them in failed state.
@@ -1233,7 +1236,7 @@ class InvokeRun(pulumi.CustomResource):
         InvokeRuns can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataFlow/invokeRun:InvokeRun test_invoke_run "id"
+        $ pulumi import oci:DataFlow/invokeRun:InvokeRun test_invoke_run "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -1280,6 +1283,7 @@ class InvokeRun(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -1326,6 +1330,8 @@ class InvokeRun(pulumi.CustomResource):
             type=var["invoke_run_type"],
             warehouse_bucket_uri=var["invoke_run_warehouse_bucket_uri"])
         ```
+        <!--End PulumiCodeChooser -->
+
         ## Note
 
         At a time service allows only one run to succeed if user is trying to invoke runs on multiple applications which have Private Endpoints and service will proceed invoking only one run and put the rest of them in failed state.
@@ -1335,7 +1341,7 @@ class InvokeRun(pulumi.CustomResource):
         InvokeRuns can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataFlow/invokeRun:InvokeRun test_invoke_run "id"
+        $ pulumi import oci:DataFlow/invokeRun:InvokeRun test_invoke_run "id"
         ```
 
         :param str resource_name: The name of the resource.

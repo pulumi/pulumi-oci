@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -42,6 +43,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetNamespaceStorageRecalledDataSize(ctx *pulumi.Context, args *GetNamespaceStorageRecalledDataSizeArgs, opts ...pulumi.InvokeOption) (*GetNamespaceStorageRecalledDataSizeResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetNamespaceStorageRecalledDataSizeResult

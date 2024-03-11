@@ -23,6 +23,7 @@ namespace Pulumi.Oci.Monitoring
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -55,13 +56,14 @@ namespace Pulumi.Oci.Monitoring
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// AlarmSuppressions can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Monitoring/alarmSuppression:AlarmSuppression test_alarm_suppression "id"
+    /// $ pulumi import oci:Monitoring/alarmSuppression:AlarmSuppression test_alarm_suppression "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Monitoring/alarmSuppression:AlarmSuppression")]

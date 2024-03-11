@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -57,13 +58,14 @@ import * as utilities from "../utilities";
  *     },
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * ReportDefinitions can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:DataSafe/reportDefinition:ReportDefinition test_report_definition "id"
+ * $ pulumi import oci:DataSafe/reportDefinition:ReportDefinition test_report_definition "id"
  * ```
  */
 export class ReportDefinition extends pulumi.CustomResource {

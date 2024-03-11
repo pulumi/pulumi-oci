@@ -19,6 +19,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -48,13 +49,14 @@ import * as utilities from "../utilities";
  *     vxlanNetworkIdentifier: _var.vtap_vxlan_network_identifier,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * Vtaps can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Core/vtap:Vtap test_vtap "id"
+ * $ pulumi import oci:Core/vtap:Vtap test_vtap "id"
  * ```
  */
 export class Vtap extends pulumi.CustomResource {

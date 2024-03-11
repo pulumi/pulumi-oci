@@ -517,6 +517,7 @@ class OpsiConfiguration(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -543,13 +544,14 @@ class OpsiConfiguration(pulumi.CustomResource):
             opsi_config_fields=var["opsi_configuration_opsi_config_field"],
             system_tags=var["opsi_configuration_system_tags"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         OpsiConfigurations can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Opsi/opsiConfiguration:OpsiConfiguration test_opsi_configuration "id"
+        $ pulumi import oci:Opsi/opsiConfiguration:OpsiConfiguration test_opsi_configuration "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -584,6 +586,7 @@ class OpsiConfiguration(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -610,13 +613,14 @@ class OpsiConfiguration(pulumi.CustomResource):
             opsi_config_fields=var["opsi_configuration_opsi_config_field"],
             system_tags=var["opsi_configuration_system_tags"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         OpsiConfigurations can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Opsi/opsiConfiguration:OpsiConfiguration test_opsi_configuration "id"
+        $ pulumi import oci:Opsi/opsiConfiguration:OpsiConfiguration test_opsi_configuration "id"
         ```
 
         :param str resource_name: The name of the resource.

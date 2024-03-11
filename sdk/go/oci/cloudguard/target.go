@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -91,15 +92,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Targets can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:CloudGuard/target:Target test_target "id"
-//
+// $ pulumi import oci:CloudGuard/target:Target test_target "id"
 // ```
 type Target struct {
 	pulumi.CustomResourceState

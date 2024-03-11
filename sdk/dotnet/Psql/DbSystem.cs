@@ -16,6 +16,7 @@ namespace Pulumi.Oci.Psql
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -109,13 +110,14 @@ namespace Pulumi.Oci.Psql
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// DbSystems can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Psql/dbSystem:DbSystem test_db_system "id"
+    /// $ pulumi import oci:Psql/dbSystem:DbSystem test_db_system "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Psql/dbSystem:DbSystem")]

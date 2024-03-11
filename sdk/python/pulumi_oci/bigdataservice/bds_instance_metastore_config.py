@@ -346,6 +346,7 @@ class BdsInstanceMetastoreConfig(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -358,13 +359,14 @@ class BdsInstanceMetastoreConfig(pulumi.CustomResource):
             metastore_id=oci_datacatalog_metastore["test_metastore"]["id"],
             display_name=var["bds_instance_metastore_config_display_name"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         BdsInstanceMetastoreConfigs can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:BigDataService/bdsInstanceMetastoreConfig:BdsInstanceMetastoreConfig test_bds_instance_metastore_config "bdsInstances/{bdsInstanceId}/metastoreConfigs/{metastoreConfigId}"
+        $ pulumi import oci:BigDataService/bdsInstanceMetastoreConfig:BdsInstanceMetastoreConfig test_bds_instance_metastore_config "bdsInstances/{bdsInstanceId}/metastoreConfigs/{metastoreConfigId}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -394,6 +396,7 @@ class BdsInstanceMetastoreConfig(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -406,13 +409,14 @@ class BdsInstanceMetastoreConfig(pulumi.CustomResource):
             metastore_id=oci_datacatalog_metastore["test_metastore"]["id"],
             display_name=var["bds_instance_metastore_config_display_name"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         BdsInstanceMetastoreConfigs can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:BigDataService/bdsInstanceMetastoreConfig:BdsInstanceMetastoreConfig test_bds_instance_metastore_config "bdsInstances/{bdsInstanceId}/metastoreConfigs/{metastoreConfigId}"
+        $ pulumi import oci:BigDataService/bdsInstanceMetastoreConfig:BdsInstanceMetastoreConfig test_bds_instance_metastore_config "bdsInstances/{bdsInstanceId}/metastoreConfigs/{metastoreConfigId}"
         ```
 
         :param str resource_name: The name of the resource.

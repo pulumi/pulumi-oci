@@ -16,7 +16,7 @@ import * as utilities from "../utilities";
  * AppRoles can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Identity/domainsAppRole:DomainsAppRole test_app_role "idcsEndpoint/{idcsEndpoint}/appRoles/{appRoleId}"
+ * $ pulumi import oci:Identity/domainsAppRole:DomainsAppRole test_app_role "idcsEndpoint/{idcsEndpoint}/appRoles/{appRoleId}"
  * ```
  */
 export class DomainsAppRole extends pulumi.CustomResource {
@@ -298,7 +298,7 @@ export class DomainsAppRole extends pulumi.CustomResource {
      */
     public /*out*/ readonly localizedDisplayName!: pulumi.Output<string>;
     /**
-     * (Updatable) AppRole members - when requesting members attribute, it is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%26count=10]
+     * (Updatable) AppRole members - when requesting members attribute, it is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%!c(MISSING)ount=10]
      *
      * **SCIM++ Properties:**
      * * idcsCompositeKey: [value, type]
@@ -766,7 +766,7 @@ export interface DomainsAppRoleState {
      */
     localizedDisplayName?: pulumi.Input<string>;
     /**
-     * (Updatable) AppRole members - when requesting members attribute, it is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%26count=10]
+     * (Updatable) AppRole members - when requesting members attribute, it is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%!c(MISSING)ount=10]
      *
      * **SCIM++ Properties:**
      * * idcsCompositeKey: [value, type]

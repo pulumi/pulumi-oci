@@ -16,10 +16,9 @@ namespace Pulumi.Oci.Oda
         /// 
         /// Gets the specified ODA Private Endpoint Attachment.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,8 +34,7 @@ namespace Pulumi.Oci.Oda
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetOdaPrivateEndpointAttachmentResult> InvokeAsync(GetOdaPrivateEndpointAttachmentArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetOdaPrivateEndpointAttachmentResult>("oci:Oda/getOdaPrivateEndpointAttachment:getOdaPrivateEndpointAttachment", args ?? new GetOdaPrivateEndpointAttachmentArgs(), options.WithDefaults());
@@ -46,10 +44,9 @@ namespace Pulumi.Oci.Oda
         /// 
         /// Gets the specified ODA Private Endpoint Attachment.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -65,8 +62,7 @@ namespace Pulumi.Oci.Oda
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetOdaPrivateEndpointAttachmentResult> Invoke(GetOdaPrivateEndpointAttachmentInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetOdaPrivateEndpointAttachmentResult>("oci:Oda/getOdaPrivateEndpointAttachment:getOdaPrivateEndpointAttachment", args ?? new GetOdaPrivateEndpointAttachmentInvokeArgs(), options.WithDefaults());

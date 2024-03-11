@@ -389,6 +389,7 @@ class Tag(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -409,13 +410,14 @@ class Tag(pulumi.CustomResource):
             ),
             is_retired=False)
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Tags can be imported using the `tagNamespaceId` and `tagName`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/tag:Tag test_tag "tagNamespaces/{tagNamespaceId}/tags/{tagName}"
+        $ pulumi import oci:Identity/tag:Tag test_tag "tagNamespaces/{tagNamespaceId}/tags/{tagName}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -471,6 +473,7 @@ class Tag(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -491,13 +494,14 @@ class Tag(pulumi.CustomResource):
             ),
             is_retired=False)
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Tags can be imported using the `tagNamespaceId` and `tagName`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/tag:Tag test_tag "tagNamespaces/{tagNamespaceId}/tags/{tagName}"
+        $ pulumi import oci:Identity/tag:Tag test_tag "tagNamespaces/{tagNamespaceId}/tags/{tagName}"
         ```
 
         :param str resource_name: The name of the resource.

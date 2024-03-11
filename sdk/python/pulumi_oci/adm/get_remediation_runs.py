@@ -130,6 +130,7 @@ def get_remediation_runs(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -140,6 +141,7 @@ def get_remediation_runs(compartment_id: Optional[str] = None,
         remediation_recipe_id=oci_adm_remediation_recipe["test_remediation_recipe"]["id"],
         state=var["remediation_run_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: A filter to return only resources that belong to the specified compartment identifier. Required only if the id query param is not specified.
@@ -184,6 +186,7 @@ def get_remediation_runs_output(compartment_id: Optional[pulumi.Input[Optional[s
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -194,6 +197,7 @@ def get_remediation_runs_output(compartment_id: Optional[pulumi.Input[Optional[s
         remediation_recipe_id=oci_adm_remediation_recipe["test_remediation_recipe"]["id"],
         state=var["remediation_run_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: A filter to return only resources that belong to the specified compartment identifier. Required only if the id query param is not specified.

@@ -12,6 +12,7 @@ namespace Pulumi.Oci.LoadBalancer
     /// <summary>
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -28,13 +29,14 @@ namespace Pulumi.Oci.LoadBalancer
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// Hostnames can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:LoadBalancer/hostname:Hostname test_hostname "loadBalancers/{loadBalancerId}/hostnames/{name}"
+    /// $ pulumi import oci:LoadBalancer/hostname:Hostname test_hostname "loadBalancers/{loadBalancerId}/hostnames/{name}"
     /// ```
     /// </summary>
     [OciResourceType("oci:LoadBalancer/hostname:Hostname")]

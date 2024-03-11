@@ -23,6 +23,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -49,6 +50,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetBudgets(ctx *pulumi.Context, args *GetBudgetsArgs, opts ...pulumi.InvokeOption) (*GetBudgetsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetBudgetsResult

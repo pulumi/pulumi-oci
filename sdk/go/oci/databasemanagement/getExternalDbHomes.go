@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -42,6 +43,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetExternalDbHomes(ctx *pulumi.Context, args *GetExternalDbHomesArgs, opts ...pulumi.InvokeOption) (*GetExternalDbHomesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetExternalDbHomesResult

@@ -16,10 +16,9 @@ namespace Pulumi.Oci.Identity
         /// 
         /// List the Identity Propagation Trust configurations.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -45,8 +44,7 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDomainsIdentityPropagationTrustsResult> InvokeAsync(GetDomainsIdentityPropagationTrustsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDomainsIdentityPropagationTrustsResult>("oci:Identity/getDomainsIdentityPropagationTrusts:getDomainsIdentityPropagationTrusts", args ?? new GetDomainsIdentityPropagationTrustsArgs(), options.WithDefaults());
@@ -56,10 +54,9 @@ namespace Pulumi.Oci.Identity
         /// 
         /// List the Identity Propagation Trust configurations.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -85,8 +82,7 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDomainsIdentityPropagationTrustsResult> Invoke(GetDomainsIdentityPropagationTrustsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsIdentityPropagationTrustsResult>("oci:Identity/getDomainsIdentityPropagationTrusts:getDomainsIdentityPropagationTrusts", args ?? new GetDomainsIdentityPropagationTrustsInvokeArgs(), options.WithDefaults());

@@ -18,10 +18,9 @@ namespace Pulumi.Oci.Opsi
         /// There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -37,8 +36,7 @@ namespace Pulumi.Oci.Opsi
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetOperationsInsightsWarehouseResult> InvokeAsync(GetOperationsInsightsWarehouseArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetOperationsInsightsWarehouseResult>("oci:Opsi/getOperationsInsightsWarehouse:getOperationsInsightsWarehouse", args ?? new GetOperationsInsightsWarehouseArgs(), options.WithDefaults());
@@ -50,10 +48,9 @@ namespace Pulumi.Oci.Opsi
         /// There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -69,8 +66,7 @@ namespace Pulumi.Oci.Opsi
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetOperationsInsightsWarehouseResult> Invoke(GetOperationsInsightsWarehouseInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetOperationsInsightsWarehouseResult>("oci:Opsi/getOperationsInsightsWarehouse:getOperationsInsightsWarehouse", args ?? new GetOperationsInsightsWarehouseInvokeArgs(), options.WithDefaults());

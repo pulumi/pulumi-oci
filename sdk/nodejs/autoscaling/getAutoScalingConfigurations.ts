@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,6 +23,7 @@ import * as utilities from "../utilities";
  *     displayName: _var.auto_scaling_configuration_display_name,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAutoScalingConfigurations(args: GetAutoScalingConfigurationsArgs, opts?: pulumi.InvokeOptions): Promise<GetAutoScalingConfigurationsResult> {
 
@@ -77,6 +79,7 @@ export interface GetAutoScalingConfigurationsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -86,6 +89,7 @@ export interface GetAutoScalingConfigurationsResult {
  *     displayName: _var.auto_scaling_configuration_display_name,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAutoScalingConfigurationsOutput(args: GetAutoScalingConfigurationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutoScalingConfigurationsResult> {
     return pulumi.output(args).apply((a: any) => getAutoScalingConfigurations(a, opts))

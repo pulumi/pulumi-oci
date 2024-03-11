@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,6 +22,7 @@ import * as utilities from "../utilities";
  *     runId: oci_dataflow_run.test_run.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getRunLogs(args: GetRunLogsArgs, opts?: pulumi.InvokeOptions): Promise<GetRunLogsResult> {
 
@@ -64,6 +66,7 @@ export interface GetRunLogsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -72,6 +75,7 @@ export interface GetRunLogsResult {
  *     runId: oci_dataflow_run.test_run.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getRunLogsOutput(args: GetRunLogsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRunLogsResult> {
     return pulumi.output(args).apply((a: any) => getRunLogs(a, opts))

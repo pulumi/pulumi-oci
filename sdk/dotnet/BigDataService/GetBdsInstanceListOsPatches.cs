@@ -16,10 +16,9 @@ namespace Pulumi.Oci.BigDataService
         /// 
         /// List all available os patches for a given cluster
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,8 +34,7 @@ namespace Pulumi.Oci.BigDataService
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetBdsInstanceListOsPatchesResult> InvokeAsync(GetBdsInstanceListOsPatchesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetBdsInstanceListOsPatchesResult>("oci:BigDataService/getBdsInstanceListOsPatches:getBdsInstanceListOsPatches", args ?? new GetBdsInstanceListOsPatchesArgs(), options.WithDefaults());
@@ -46,10 +44,9 @@ namespace Pulumi.Oci.BigDataService
         /// 
         /// List all available os patches for a given cluster
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -65,8 +62,7 @@ namespace Pulumi.Oci.BigDataService
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetBdsInstanceListOsPatchesResult> Invoke(GetBdsInstanceListOsPatchesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetBdsInstanceListOsPatchesResult>("oci:BigDataService/getBdsInstanceListOsPatches:getBdsInstanceListOsPatches", args ?? new GetBdsInstanceListOsPatchesInvokeArgs(), options.WithDefaults());

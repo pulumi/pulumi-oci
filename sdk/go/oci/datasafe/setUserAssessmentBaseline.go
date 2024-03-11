@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -42,15 +43,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // SetUserAssessmentBaseline can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:DataSafe/setUserAssessmentBaseline:SetUserAssessmentBaseline test_set_user_assessment_baseline "id"
-//
+// $ pulumi import oci:DataSafe/setUserAssessmentBaseline:SetUserAssessmentBaseline test_set_user_assessment_baseline "id"
 // ```
 type SetUserAssessmentBaseline struct {
 	pulumi.CustomResourceState

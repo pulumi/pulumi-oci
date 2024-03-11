@@ -658,7 +658,7 @@ class PluggableDatabase(pulumi.CustomResource):
         PluggableDatabases can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Database/pluggableDatabase:PluggableDatabase test_pluggable_database "id"
+        $ pulumi import oci:Database/pluggableDatabase:PluggableDatabase test_pluggable_database "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -701,7 +701,7 @@ class PluggableDatabase(pulumi.CustomResource):
         PluggableDatabases can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Database/pluggableDatabase:PluggableDatabase test_pluggable_database "id"
+        $ pulumi import oci:Database/pluggableDatabase:PluggableDatabase test_pluggable_database "id"
         ```
 
         :param str resource_name: The name of the resource.

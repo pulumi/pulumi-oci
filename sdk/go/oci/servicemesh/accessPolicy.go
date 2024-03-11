@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -72,15 +73,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // AccessPolicies can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:ServiceMesh/accessPolicy:AccessPolicy test_access_policy "id"
-//
+// $ pulumi import oci:ServiceMesh/accessPolicy:AccessPolicy test_access_policy "id"
 // ```
 type AccessPolicy struct {
 	pulumi.CustomResourceState

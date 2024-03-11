@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -64,15 +65,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // LifecycleEnvironments can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:OsManagementHub/lifecycleEnvironment:LifecycleEnvironment test_lifecycle_environment "id"
-//
+// $ pulumi import oci:OsManagementHub/lifecycleEnvironment:LifecycleEnvironment test_lifecycle_environment "id"
 // ```
 type LifecycleEnvironment struct {
 	pulumi.CustomResourceState

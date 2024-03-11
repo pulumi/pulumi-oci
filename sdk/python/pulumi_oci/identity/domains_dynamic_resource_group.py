@@ -1073,7 +1073,7 @@ class DomainsDynamicResourceGroup(pulumi.CustomResource):
         DynamicResourceGroups can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/domainsDynamicResourceGroup:DomainsDynamicResourceGroup test_dynamic_resource_group "idcsEndpoint/{idcsEndpoint}/dynamicResourceGroups/{dynamicResourceGroupId}"
+        $ pulumi import oci:Identity/domainsDynamicResourceGroup:DomainsDynamicResourceGroup test_dynamic_resource_group "idcsEndpoint/{idcsEndpoint}/dynamicResourceGroups/{dynamicResourceGroupId}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -1169,7 +1169,7 @@ class DomainsDynamicResourceGroup(pulumi.CustomResource):
         DynamicResourceGroups can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/domainsDynamicResourceGroup:DomainsDynamicResourceGroup test_dynamic_resource_group "idcsEndpoint/{idcsEndpoint}/dynamicResourceGroups/{dynamicResourceGroupId}"
+        $ pulumi import oci:Identity/domainsDynamicResourceGroup:DomainsDynamicResourceGroup test_dynamic_resource_group "idcsEndpoint/{idcsEndpoint}/dynamicResourceGroups/{dynamicResourceGroupId}"
         ```
 
         :param str resource_name: The name of the resource.

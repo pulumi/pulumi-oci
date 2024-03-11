@@ -16,10 +16,9 @@ namespace Pulumi.Oci.ContainerInstances
         /// 
         /// Gets information about the specified container instance.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,8 +34,7 @@ namespace Pulumi.Oci.ContainerInstances
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetContainerInstanceResult> InvokeAsync(GetContainerInstanceArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetContainerInstanceResult>("oci:ContainerInstances/getContainerInstance:getContainerInstance", args ?? new GetContainerInstanceArgs(), options.WithDefaults());
@@ -46,10 +44,9 @@ namespace Pulumi.Oci.ContainerInstances
         /// 
         /// Gets information about the specified container instance.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -65,8 +62,7 @@ namespace Pulumi.Oci.ContainerInstances
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetContainerInstanceResult> Invoke(GetContainerInstanceInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetContainerInstanceResult>("oci:ContainerInstances/getContainerInstance:getContainerInstance", args ?? new GetContainerInstanceInvokeArgs(), options.WithDefaults());

@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -40,6 +41,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupMetastore(ctx *pulumi.Context, args *LookupMetastoreArgs, opts ...pulumi.InvokeOption) (*LookupMetastoreResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupMetastoreResult

@@ -34,6 +34,8 @@ import javax.annotation.Nullable;
  * It does not have to be unique, and you can change it. Avoid entering confidential information.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -65,13 +67,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * Drgs can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Core/drg:Drg test_drg &#34;id&#34;
+ * $ pulumi import oci:Core/drg:Drg test_drg &#34;id&#34;
  * ```
  * 
  */

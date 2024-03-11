@@ -20,6 +20,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -60,15 +61,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // VnicAttachments can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Core/vnicAttachment:VnicAttachment test_vnic_attachment "id"
-//
+// $ pulumi import oci:Core/vnicAttachment:VnicAttachment test_vnic_attachment "id"
 // ```
 type VnicAttachment struct {
 	pulumi.CustomResourceState

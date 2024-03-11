@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -73,15 +74,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Queries can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:MeteringComputation/query:Query test_query "id"
-//
+// $ pulumi import oci:MeteringComputation/query:Query test_query "id"
 // ```
 type Query struct {
 	pulumi.CustomResourceState

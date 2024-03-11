@@ -19,7 +19,7 @@ namespace Pulumi.Oci.Identity
     /// KmsiSettings can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Identity/domainsKmsiSetting:DomainsKmsiSetting test_kmsi_setting "idcsEndpoint/{idcsEndpoint}/kmsiSettings/{kmsiSettingId}"
+    /// $ pulumi import oci:Identity/domainsKmsiSetting:DomainsKmsiSetting test_kmsi_setting "idcsEndpoint/{idcsEndpoint}/kmsiSettings/{kmsiSettingId}"
     /// ```
     /// </summary>
     [OciResourceType("oci:Identity/domainsKmsiSetting:DomainsKmsiSetting")]

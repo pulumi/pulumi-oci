@@ -21,6 +21,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -52,15 +53,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // HttpProbes can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:HealthChecks/httpProbe:HttpProbe test_http_probe "id"
-//
+// $ pulumi import oci:HealthChecks/httpProbe:HttpProbe test_http_probe "id"
 // ```
 type HttpProbe struct {
 	pulumi.CustomResourceState

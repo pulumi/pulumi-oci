@@ -17,10 +17,9 @@ namespace Pulumi.Oci.MediaServices
         /// 
         /// Internal API to get a point-in-time snapshot of a MediaWorkflowJob.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -38,8 +37,7 @@ namespace Pulumi.Oci.MediaServices
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetMediaWorkflowJobFactsResult> InvokeAsync(GetMediaWorkflowJobFactsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetMediaWorkflowJobFactsResult>("oci:MediaServices/getMediaWorkflowJobFacts:getMediaWorkflowJobFacts", args ?? new GetMediaWorkflowJobFactsArgs(), options.WithDefaults());
@@ -50,10 +48,9 @@ namespace Pulumi.Oci.MediaServices
         /// 
         /// Internal API to get a point-in-time snapshot of a MediaWorkflowJob.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -71,8 +68,7 @@ namespace Pulumi.Oci.MediaServices
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetMediaWorkflowJobFactsResult> Invoke(GetMediaWorkflowJobFactsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMediaWorkflowJobFactsResult>("oci:MediaServices/getMediaWorkflowJobFacts:getMediaWorkflowJobFacts", args ?? new GetMediaWorkflowJobFactsInvokeArgs(), options.WithDefaults());

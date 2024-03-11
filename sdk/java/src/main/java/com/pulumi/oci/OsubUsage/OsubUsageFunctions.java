@@ -62,6 +62,8 @@ public final class OsubUsageFunctions {
      * This is an API which returns Computed Usage corresponding to the id passed
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -93,6 +95,7 @@ public final class OsubUsageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetComputedUsageResult> getComputedUsage(GetComputedUsageArgs args) {
@@ -104,6 +107,8 @@ public final class OsubUsageFunctions {
      * This is an API which returns Computed Usage corresponding to the id passed
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -135,6 +140,7 @@ public final class OsubUsageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetComputedUsageResult> getComputedUsagePlain(GetComputedUsagePlainArgs args) {
@@ -146,6 +152,8 @@ public final class OsubUsageFunctions {
      * This is an API which returns Computed Usage corresponding to the id passed
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -177,6 +185,7 @@ public final class OsubUsageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetComputedUsageResult> getComputedUsage(GetComputedUsageArgs args, InvokeOptions options) {
@@ -188,6 +197,8 @@ public final class OsubUsageFunctions {
      * This is an API which returns Computed Usage corresponding to the id passed
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -219,6 +230,7 @@ public final class OsubUsageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetComputedUsageResult> getComputedUsagePlain(GetComputedUsagePlainArgs args, InvokeOptions options) {

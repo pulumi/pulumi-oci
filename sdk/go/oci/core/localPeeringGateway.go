@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -51,15 +52,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // LocalPeeringGateways can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Core/localPeeringGateway:LocalPeeringGateway test_local_peering_gateway "id"
-//
+// $ pulumi import oci:Core/localPeeringGateway:LocalPeeringGateway test_local_peering_gateway "id"
 // ```
 type LocalPeeringGateway struct {
 	pulumi.CustomResourceState

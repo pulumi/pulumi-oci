@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -30,6 +31,7 @@ import * as utilities from "../utilities";
  *     zoneId: oci_dns_zone.test_zone.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getSteeringPolicyAttachments(args: GetSteeringPolicyAttachmentsArgs, opts?: pulumi.InvokeOptions): Promise<GetSteeringPolicyAttachmentsResult> {
 
@@ -141,6 +143,7 @@ export interface GetSteeringPolicyAttachmentsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -158,6 +161,7 @@ export interface GetSteeringPolicyAttachmentsResult {
  *     zoneId: oci_dns_zone.test_zone.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getSteeringPolicyAttachmentsOutput(args: GetSteeringPolicyAttachmentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSteeringPolicyAttachmentsResult> {
     return pulumi.output(args).apply((a: any) => getSteeringPolicyAttachments(a, opts))

@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,6 +22,7 @@ import * as utilities from "../utilities";
  *     base64EncodeContent: false,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getVmClusterNetworkDownloadConfigFile(args: GetVmClusterNetworkDownloadConfigFileArgs, opts?: pulumi.InvokeOptions): Promise<GetVmClusterNetworkDownloadConfigFileResult> {
 
@@ -70,6 +72,7 @@ export interface GetVmClusterNetworkDownloadConfigFileResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -80,6 +83,7 @@ export interface GetVmClusterNetworkDownloadConfigFileResult {
  *     base64EncodeContent: false,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getVmClusterNetworkDownloadConfigFileOutput(args: GetVmClusterNetworkDownloadConfigFileOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVmClusterNetworkDownloadConfigFileResult> {
     return pulumi.output(args).apply((a: any) => getVmClusterNetworkDownloadConfigFile(a, opts))

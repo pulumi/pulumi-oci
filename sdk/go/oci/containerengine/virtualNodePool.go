@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -84,15 +85,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // VirtualNodePools can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:ContainerEngine/virtualNodePool:VirtualNodePool test_virtual_node_pool "id"
-//
+// $ pulumi import oci:ContainerEngine/virtualNodePool:VirtualNodePool test_virtual_node_pool "id"
 // ```
 type VirtualNodePool struct {
 	pulumi.CustomResourceState

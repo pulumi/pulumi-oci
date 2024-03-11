@@ -20,6 +20,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -64,13 +65,14 @@ import * as utilities from "../utilities";
  *     },
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * PathAnalysis can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:VnMonitoring/pathAnalysi:PathAnalysi test_path_analysi "id"
+ * $ pulumi import oci:VnMonitoring/pathAnalysi:PathAnalysi test_path_analysi "id"
  * ```
  */
 export class PathAnalysi extends pulumi.CustomResource {

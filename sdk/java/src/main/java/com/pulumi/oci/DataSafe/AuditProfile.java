@@ -30,7 +30,7 @@ import javax.annotation.Nullable;
  * AuditProfiles can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:DataSafe/auditProfile:AuditProfile test_audit_profile &#34;id&#34;
+ * $ pulumi import oci:DataSafe/auditProfile:AuditProfile test_audit_profile &#34;id&#34;
  * ```
  * 
  */

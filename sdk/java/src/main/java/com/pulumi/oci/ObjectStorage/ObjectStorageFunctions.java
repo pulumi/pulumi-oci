@@ -59,6 +59,8 @@ public final class ObjectStorageFunctions {
      * Gets the current representation of the given bucket in the given Object Storage namespace.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -88,6 +90,7 @@ public final class ObjectStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBucketResult> getBucket(GetBucketArgs args) {
@@ -99,6 +102,8 @@ public final class ObjectStorageFunctions {
      * Gets the current representation of the given bucket in the given Object Storage namespace.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -128,6 +133,7 @@ public final class ObjectStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBucketResult> getBucketPlain(GetBucketPlainArgs args) {
@@ -139,6 +145,8 @@ public final class ObjectStorageFunctions {
      * Gets the current representation of the given bucket in the given Object Storage namespace.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -168,6 +176,7 @@ public final class ObjectStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBucketResult> getBucket(GetBucketArgs args, InvokeOptions options) {
@@ -179,6 +188,8 @@ public final class ObjectStorageFunctions {
      * Gets the current representation of the given bucket in the given Object Storage namespace.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -208,6 +219,7 @@ public final class ObjectStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBucketResult> getBucketPlain(GetBucketPlainArgs args, InvokeOptions options) {
@@ -227,6 +239,8 @@ public final class ObjectStorageFunctions {
      * [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -256,6 +270,7 @@ public final class ObjectStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBucketSummariesResult> getBucketSummaries(GetBucketSummariesArgs args) {
@@ -275,6 +290,8 @@ public final class ObjectStorageFunctions {
      * [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -304,6 +321,7 @@ public final class ObjectStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBucketSummariesResult> getBucketSummariesPlain(GetBucketSummariesPlainArgs args) {
@@ -323,6 +341,8 @@ public final class ObjectStorageFunctions {
      * [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -352,6 +372,7 @@ public final class ObjectStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBucketSummariesResult> getBucketSummaries(GetBucketSummariesArgs args, InvokeOptions options) {
@@ -371,6 +392,8 @@ public final class ObjectStorageFunctions {
      * [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -400,6 +423,7 @@ public final class ObjectStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBucketSummariesResult> getBucketSummariesPlain(GetBucketSummariesPlainArgs args, InvokeOptions options) {
@@ -417,6 +441,8 @@ public final class ObjectStorageFunctions {
      * tenancy, provided the user has access to it.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -445,6 +471,7 @@ public final class ObjectStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNamespaceResult> getNamespace() {
@@ -462,6 +489,8 @@ public final class ObjectStorageFunctions {
      * tenancy, provided the user has access to it.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -490,6 +519,7 @@ public final class ObjectStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNamespaceResult> getNamespacePlain() {
@@ -507,6 +537,8 @@ public final class ObjectStorageFunctions {
      * tenancy, provided the user has access to it.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -535,6 +567,7 @@ public final class ObjectStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNamespaceResult> getNamespace(GetNamespaceArgs args) {
@@ -552,6 +585,8 @@ public final class ObjectStorageFunctions {
      * tenancy, provided the user has access to it.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -580,6 +615,7 @@ public final class ObjectStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNamespaceResult> getNamespacePlain(GetNamespacePlainArgs args) {
@@ -597,6 +633,8 @@ public final class ObjectStorageFunctions {
      * tenancy, provided the user has access to it.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -625,6 +663,7 @@ public final class ObjectStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNamespaceResult> getNamespace(GetNamespaceArgs args, InvokeOptions options) {
@@ -642,6 +681,8 @@ public final class ObjectStorageFunctions {
      * tenancy, provided the user has access to it.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -670,6 +711,7 @@ public final class ObjectStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNamespaceResult> getNamespacePlain(GetNamespacePlainArgs args, InvokeOptions options) {
@@ -693,6 +735,8 @@ public final class ObjectStorageFunctions {
      * Gets the metadata and body of an object.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -730,6 +774,7 @@ public final class ObjectStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetObjectResult> getObject(GetObjectArgs args) {
@@ -741,6 +786,8 @@ public final class ObjectStorageFunctions {
      * Gets the metadata and body of an object.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -778,6 +825,7 @@ public final class ObjectStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetObjectResult> getObjectPlain(GetObjectPlainArgs args) {
@@ -789,6 +837,8 @@ public final class ObjectStorageFunctions {
      * Gets the metadata and body of an object.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -826,6 +876,7 @@ public final class ObjectStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetObjectResult> getObject(GetObjectArgs args, InvokeOptions options) {
@@ -837,6 +888,8 @@ public final class ObjectStorageFunctions {
      * Gets the metadata and body of an object.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -874,6 +927,7 @@ public final class ObjectStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetObjectResult> getObjectPlain(GetObjectPlainArgs args, InvokeOptions options) {
@@ -885,6 +939,8 @@ public final class ObjectStorageFunctions {
      * Gets the metadata of an object.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -915,6 +971,7 @@ public final class ObjectStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetObjectHeadResult> getObjectHead(GetObjectHeadArgs args) {
@@ -926,6 +983,8 @@ public final class ObjectStorageFunctions {
      * Gets the metadata of an object.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -956,6 +1015,7 @@ public final class ObjectStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetObjectHeadResult> getObjectHeadPlain(GetObjectHeadPlainArgs args) {
@@ -967,6 +1027,8 @@ public final class ObjectStorageFunctions {
      * Gets the metadata of an object.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -997,6 +1059,7 @@ public final class ObjectStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetObjectHeadResult> getObjectHead(GetObjectHeadArgs args, InvokeOptions options) {
@@ -1008,6 +1071,8 @@ public final class ObjectStorageFunctions {
      * Gets the metadata of an object.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1038,6 +1103,7 @@ public final class ObjectStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetObjectHeadResult> getObjectHeadPlain(GetObjectHeadPlainArgs args, InvokeOptions options) {
@@ -1049,6 +1115,8 @@ public final class ObjectStorageFunctions {
      * Gets the object lifecycle policy for the bucket.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1078,6 +1146,7 @@ public final class ObjectStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetObjectLifecyclePolicyResult> getObjectLifecyclePolicy(GetObjectLifecyclePolicyArgs args) {
@@ -1089,6 +1158,8 @@ public final class ObjectStorageFunctions {
      * Gets the object lifecycle policy for the bucket.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1118,6 +1189,7 @@ public final class ObjectStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetObjectLifecyclePolicyResult> getObjectLifecyclePolicyPlain(GetObjectLifecyclePolicyPlainArgs args) {
@@ -1129,6 +1201,8 @@ public final class ObjectStorageFunctions {
      * Gets the object lifecycle policy for the bucket.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1158,6 +1232,7 @@ public final class ObjectStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetObjectLifecyclePolicyResult> getObjectLifecyclePolicy(GetObjectLifecyclePolicyArgs args, InvokeOptions options) {
@@ -1169,6 +1244,8 @@ public final class ObjectStorageFunctions {
      * Gets the object lifecycle policy for the bucket.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1198,6 +1275,7 @@ public final class ObjectStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetObjectLifecyclePolicyResult> getObjectLifecyclePolicyPlain(GetObjectLifecyclePolicyPlainArgs args, InvokeOptions options) {
@@ -1216,6 +1294,8 @@ public final class ObjectStorageFunctions {
      * [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1251,6 +1331,7 @@ public final class ObjectStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetObjectVersionsResult> getObjectVersions(GetObjectVersionsArgs args) {
@@ -1269,6 +1350,8 @@ public final class ObjectStorageFunctions {
      * [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1304,6 +1387,7 @@ public final class ObjectStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetObjectVersionsResult> getObjectVersionsPlain(GetObjectVersionsPlainArgs args) {
@@ -1322,6 +1406,8 @@ public final class ObjectStorageFunctions {
      * [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1357,6 +1443,7 @@ public final class ObjectStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetObjectVersionsResult> getObjectVersions(GetObjectVersionsArgs args, InvokeOptions options) {
@@ -1375,6 +1462,8 @@ public final class ObjectStorageFunctions {
      * [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1410,6 +1499,7 @@ public final class ObjectStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetObjectVersionsResult> getObjectVersionsPlain(GetObjectVersionsPlainArgs args, InvokeOptions options) {
@@ -1431,6 +1521,7 @@ public final class ObjectStorageFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1466,6 +1557,7 @@ public final class ObjectStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetObjectsResult> getObjects(GetObjectsArgs args) {
@@ -1487,6 +1579,7 @@ public final class ObjectStorageFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1522,6 +1615,7 @@ public final class ObjectStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetObjectsResult> getObjectsPlain(GetObjectsPlainArgs args) {
@@ -1543,6 +1637,7 @@ public final class ObjectStorageFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1578,6 +1673,7 @@ public final class ObjectStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetObjectsResult> getObjects(GetObjectsArgs args, InvokeOptions options) {
@@ -1599,6 +1695,7 @@ public final class ObjectStorageFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1634,6 +1731,7 @@ public final class ObjectStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetObjectsResult> getObjectsPlain(GetObjectsPlainArgs args, InvokeOptions options) {
@@ -1645,6 +1743,8 @@ public final class ObjectStorageFunctions {
      * Gets the pre-authenticated request for the bucket.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1675,6 +1775,7 @@ public final class ObjectStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPreauthrequestResult> getPreauthrequest(GetPreauthrequestArgs args) {
@@ -1686,6 +1787,8 @@ public final class ObjectStorageFunctions {
      * Gets the pre-authenticated request for the bucket.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1716,6 +1819,7 @@ public final class ObjectStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPreauthrequestResult> getPreauthrequestPlain(GetPreauthrequestPlainArgs args) {
@@ -1727,6 +1831,8 @@ public final class ObjectStorageFunctions {
      * Gets the pre-authenticated request for the bucket.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1757,6 +1863,7 @@ public final class ObjectStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPreauthrequestResult> getPreauthrequest(GetPreauthrequestArgs args, InvokeOptions options) {
@@ -1768,6 +1875,8 @@ public final class ObjectStorageFunctions {
      * Gets the pre-authenticated request for the bucket.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1798,6 +1907,7 @@ public final class ObjectStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPreauthrequestResult> getPreauthrequestPlain(GetPreauthrequestPlainArgs args, InvokeOptions options) {
@@ -1809,6 +1919,8 @@ public final class ObjectStorageFunctions {
      * Lists pre-authenticated requests for the bucket.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1839,6 +1951,7 @@ public final class ObjectStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPreauthrequestsResult> getPreauthrequests(GetPreauthrequestsArgs args) {
@@ -1850,6 +1963,8 @@ public final class ObjectStorageFunctions {
      * Lists pre-authenticated requests for the bucket.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1880,6 +1995,7 @@ public final class ObjectStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPreauthrequestsResult> getPreauthrequestsPlain(GetPreauthrequestsPlainArgs args) {
@@ -1891,6 +2007,8 @@ public final class ObjectStorageFunctions {
      * Lists pre-authenticated requests for the bucket.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1921,6 +2039,7 @@ public final class ObjectStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPreauthrequestsResult> getPreauthrequests(GetPreauthrequestsArgs args, InvokeOptions options) {
@@ -1932,6 +2051,8 @@ public final class ObjectStorageFunctions {
      * Lists pre-authenticated requests for the bucket.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1962,6 +2083,7 @@ public final class ObjectStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPreauthrequestsResult> getPreauthrequestsPlain(GetPreauthrequestsPlainArgs args, InvokeOptions options) {
@@ -1973,6 +2095,8 @@ public final class ObjectStorageFunctions {
      * List the replication policies associated with a bucket.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2002,6 +2126,7 @@ public final class ObjectStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetReplicationPoliciesResult> getReplicationPolicies(GetReplicationPoliciesArgs args) {
@@ -2013,6 +2138,8 @@ public final class ObjectStorageFunctions {
      * List the replication policies associated with a bucket.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2042,6 +2169,7 @@ public final class ObjectStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetReplicationPoliciesResult> getReplicationPoliciesPlain(GetReplicationPoliciesPlainArgs args) {
@@ -2053,6 +2181,8 @@ public final class ObjectStorageFunctions {
      * List the replication policies associated with a bucket.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2082,6 +2212,7 @@ public final class ObjectStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetReplicationPoliciesResult> getReplicationPolicies(GetReplicationPoliciesArgs args, InvokeOptions options) {
@@ -2093,6 +2224,8 @@ public final class ObjectStorageFunctions {
      * List the replication policies associated with a bucket.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2122,6 +2255,7 @@ public final class ObjectStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetReplicationPoliciesResult> getReplicationPoliciesPlain(GetReplicationPoliciesPlainArgs args, InvokeOptions options) {
@@ -2133,6 +2267,8 @@ public final class ObjectStorageFunctions {
      * Get the replication policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2163,6 +2299,7 @@ public final class ObjectStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetReplicationPolicyResult> getReplicationPolicy(GetReplicationPolicyArgs args) {
@@ -2174,6 +2311,8 @@ public final class ObjectStorageFunctions {
      * Get the replication policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2204,6 +2343,7 @@ public final class ObjectStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetReplicationPolicyResult> getReplicationPolicyPlain(GetReplicationPolicyPlainArgs args) {
@@ -2215,6 +2355,8 @@ public final class ObjectStorageFunctions {
      * Get the replication policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2245,6 +2387,7 @@ public final class ObjectStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetReplicationPolicyResult> getReplicationPolicy(GetReplicationPolicyArgs args, InvokeOptions options) {
@@ -2256,6 +2399,8 @@ public final class ObjectStorageFunctions {
      * Get the replication policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2286,6 +2431,7 @@ public final class ObjectStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetReplicationPolicyResult> getReplicationPolicyPlain(GetReplicationPolicyPlainArgs args, InvokeOptions options) {
@@ -2297,6 +2443,8 @@ public final class ObjectStorageFunctions {
      * List the replication sources of a destination bucket.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2326,6 +2474,7 @@ public final class ObjectStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetReplicationSourcesResult> getReplicationSources(GetReplicationSourcesArgs args) {
@@ -2337,6 +2486,8 @@ public final class ObjectStorageFunctions {
      * List the replication sources of a destination bucket.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2366,6 +2517,7 @@ public final class ObjectStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetReplicationSourcesResult> getReplicationSourcesPlain(GetReplicationSourcesPlainArgs args) {
@@ -2377,6 +2529,8 @@ public final class ObjectStorageFunctions {
      * List the replication sources of a destination bucket.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2406,6 +2560,7 @@ public final class ObjectStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetReplicationSourcesResult> getReplicationSources(GetReplicationSourcesArgs args, InvokeOptions options) {
@@ -2417,6 +2572,8 @@ public final class ObjectStorageFunctions {
      * List the replication sources of a destination bucket.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2446,6 +2603,7 @@ public final class ObjectStorageFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetReplicationSourcesResult> getReplicationSourcesPlain(GetReplicationSourcesPlainArgs args, InvokeOptions options) {

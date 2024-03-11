@@ -2158,7 +2158,7 @@ class DomainsSelfRegistrationProfile(pulumi.CustomResource):
         SelfRegistrationProfiles can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/domainsSelfRegistrationProfile:DomainsSelfRegistrationProfile test_self_registration_profile "idcsEndpoint/{idcsEndpoint}/selfRegistrationProfiles/{selfRegistrationProfileId}"
+        $ pulumi import oci:Identity/domainsSelfRegistrationProfile:DomainsSelfRegistrationProfile test_self_registration_profile "idcsEndpoint/{idcsEndpoint}/selfRegistrationProfiles/{selfRegistrationProfileId}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -2429,7 +2429,7 @@ class DomainsSelfRegistrationProfile(pulumi.CustomResource):
         SelfRegistrationProfiles can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/domainsSelfRegistrationProfile:DomainsSelfRegistrationProfile test_self_registration_profile "idcsEndpoint/{idcsEndpoint}/selfRegistrationProfiles/{selfRegistrationProfileId}"
+        $ pulumi import oci:Identity/domainsSelfRegistrationProfile:DomainsSelfRegistrationProfile test_self_registration_profile "idcsEndpoint/{idcsEndpoint}/selfRegistrationProfiles/{selfRegistrationProfileId}"
         ```
 
         :param str resource_name: The name of the resource.

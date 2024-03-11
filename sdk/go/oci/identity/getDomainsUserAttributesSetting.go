@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -47,6 +48,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetDomainsUserAttributesSetting(ctx *pulumi.Context, args *GetDomainsUserAttributesSettingArgs, opts ...pulumi.InvokeOption) (*GetDomainsUserAttributesSettingResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDomainsUserAttributesSettingResult

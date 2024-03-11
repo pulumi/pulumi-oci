@@ -16,10 +16,9 @@ namespace Pulumi.Oci.Identity
         /// 
         /// Get an AppRole
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -43,8 +42,7 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDomainsAppRoleResult> InvokeAsync(GetDomainsAppRoleArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDomainsAppRoleResult>("oci:Identity/getDomainsAppRole:getDomainsAppRole", args ?? new GetDomainsAppRoleArgs(), options.WithDefaults());
@@ -54,10 +52,9 @@ namespace Pulumi.Oci.Identity
         /// 
         /// Get an AppRole
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -81,8 +78,7 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDomainsAppRoleResult> Invoke(GetDomainsAppRoleInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsAppRoleResult>("oci:Identity/getDomainsAppRole:getDomainsAppRole", args ?? new GetDomainsAppRoleInvokeArgs(), options.WithDefaults());
@@ -271,7 +267,7 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public readonly string LocalizedDisplayName;
         /// <summary>
-        /// AppRole members - when requesting members attribute, it is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%26count=10]
+        /// AppRole members - when requesting members attribute, it is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%!c(MISSING)ount=10]
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDomainsAppRoleMemberResult> Members;
         /// <summary>

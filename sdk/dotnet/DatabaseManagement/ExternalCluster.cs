@@ -19,7 +19,7 @@ namespace Pulumi.Oci.DatabaseManagement
     /// ExternalClusters can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:DatabaseManagement/externalCluster:ExternalCluster test_external_cluster "id"
+    /// $ pulumi import oci:DatabaseManagement/externalCluster:ExternalCluster test_external_cluster "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:DatabaseManagement/externalCluster:ExternalCluster")]

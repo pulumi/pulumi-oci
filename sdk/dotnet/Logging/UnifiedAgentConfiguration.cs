@@ -16,6 +16,7 @@ namespace Pulumi.Oci.Logging
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -126,13 +127,14 @@ namespace Pulumi.Oci.Logging
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// UnifiedAgentConfigurations can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Logging/unifiedAgentConfiguration:UnifiedAgentConfiguration test_unified_agent_configuration "id"
+    /// $ pulumi import oci:Logging/unifiedAgentConfiguration:UnifiedAgentConfiguration test_unified_agent_configuration "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Logging/unifiedAgentConfiguration:UnifiedAgentConfiguration")]

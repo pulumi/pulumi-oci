@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -26,6 +27,7 @@ import * as utilities from "../utilities";
  *     resourceTypeSchemaVersion: _var.rule_resource_type_schema_version,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDomainsRule(args: GetDomainsRuleArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsRuleResult> {
 
@@ -180,6 +182,7 @@ export interface GetDomainsRuleResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -193,6 +196,7 @@ export interface GetDomainsRuleResult {
  *     resourceTypeSchemaVersion: _var.rule_resource_type_schema_version,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDomainsRuleOutput(args: GetDomainsRuleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsRuleResult> {
     return pulumi.output(args).apply((a: any) => getDomainsRule(a, opts))

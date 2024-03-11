@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,6 +23,7 @@ import * as utilities from "../utilities";
  *     displayName: _var.monitored_instance_display_name,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getMonitoredInstances(args: GetMonitoredInstancesArgs, opts?: pulumi.InvokeOptions): Promise<GetMonitoredInstancesResult> {
 
@@ -77,6 +79,7 @@ export interface GetMonitoredInstancesResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -86,6 +89,7 @@ export interface GetMonitoredInstancesResult {
  *     displayName: _var.monitored_instance_display_name,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getMonitoredInstancesOutput(args: GetMonitoredInstancesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMonitoredInstancesResult> {
     return pulumi.output(args).apply((a: any) => getMonitoredInstances(a, opts))

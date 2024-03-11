@@ -14,6 +14,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,6 +23,7 @@ import * as utilities from "../utilities";
  *     ipsecId: oci_core_ipsec.test_ipsec.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getIpsecStatus(args: GetIpsecStatusArgs, opts?: pulumi.InvokeOptions): Promise<GetIpsecStatusResult> {
 
@@ -74,6 +76,7 @@ export interface GetIpsecStatusResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -82,6 +85,7 @@ export interface GetIpsecStatusResult {
  *     ipsecId: oci_core_ipsec.test_ipsec.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getIpsecStatusOutput(args: GetIpsecStatusOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIpsecStatusResult> {
     return pulumi.output(args).apply((a: any) => getIpsecStatus(a, opts))

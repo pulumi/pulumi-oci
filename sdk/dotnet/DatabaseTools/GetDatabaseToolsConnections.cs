@@ -17,10 +17,9 @@ namespace Pulumi.Oci.DatabaseTools
         /// Returns a list of Database Tools connections.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -41,8 +40,7 @@ namespace Pulumi.Oci.DatabaseTools
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDatabaseToolsConnectionsResult> InvokeAsync(GetDatabaseToolsConnectionsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDatabaseToolsConnectionsResult>("oci:DatabaseTools/getDatabaseToolsConnections:getDatabaseToolsConnections", args ?? new GetDatabaseToolsConnectionsArgs(), options.WithDefaults());
@@ -53,10 +51,9 @@ namespace Pulumi.Oci.DatabaseTools
         /// Returns a list of Database Tools connections.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -77,8 +74,7 @@ namespace Pulumi.Oci.DatabaseTools
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDatabaseToolsConnectionsResult> Invoke(GetDatabaseToolsConnectionsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDatabaseToolsConnectionsResult>("oci:DatabaseTools/getDatabaseToolsConnections:getDatabaseToolsConnections", args ?? new GetDatabaseToolsConnectionsInvokeArgs(), options.WithDefaults());

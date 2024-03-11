@@ -68,6 +68,8 @@ public final class CloudBridgeFunctions {
      * Gets an Agent by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -96,6 +98,7 @@ public final class CloudBridgeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAgentResult> getAgent(GetAgentArgs args) {
@@ -107,6 +110,8 @@ public final class CloudBridgeFunctions {
      * Gets an Agent by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -135,6 +140,7 @@ public final class CloudBridgeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAgentResult> getAgentPlain(GetAgentPlainArgs args) {
@@ -146,6 +152,8 @@ public final class CloudBridgeFunctions {
      * Gets an Agent by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -174,6 +182,7 @@ public final class CloudBridgeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAgentResult> getAgent(GetAgentArgs args, InvokeOptions options) {
@@ -185,6 +194,8 @@ public final class CloudBridgeFunctions {
      * Gets an Agent by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -213,6 +224,7 @@ public final class CloudBridgeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAgentResult> getAgentPlain(GetAgentPlainArgs args, InvokeOptions options) {
@@ -224,6 +236,8 @@ public final class CloudBridgeFunctions {
      * Returns a list of AgentDependencies such as AgentDependencyCollection.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -256,6 +270,7 @@ public final class CloudBridgeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAgentDependenciesResult> getAgentDependencies(GetAgentDependenciesArgs args) {
@@ -267,6 +282,8 @@ public final class CloudBridgeFunctions {
      * Returns a list of AgentDependencies such as AgentDependencyCollection.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -299,6 +316,7 @@ public final class CloudBridgeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAgentDependenciesResult> getAgentDependenciesPlain(GetAgentDependenciesPlainArgs args) {
@@ -310,6 +328,8 @@ public final class CloudBridgeFunctions {
      * Returns a list of AgentDependencies such as AgentDependencyCollection.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -342,6 +362,7 @@ public final class CloudBridgeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAgentDependenciesResult> getAgentDependencies(GetAgentDependenciesArgs args, InvokeOptions options) {
@@ -353,6 +374,8 @@ public final class CloudBridgeFunctions {
      * Returns a list of AgentDependencies such as AgentDependencyCollection.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -385,6 +408,7 @@ public final class CloudBridgeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAgentDependenciesResult> getAgentDependenciesPlain(GetAgentDependenciesPlainArgs args, InvokeOptions options) {
@@ -396,6 +420,8 @@ public final class CloudBridgeFunctions {
      * Gets an AgentDependency by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -424,6 +450,7 @@ public final class CloudBridgeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAgentDependencyResult> getAgentDependency(GetAgentDependencyArgs args) {
@@ -435,6 +462,8 @@ public final class CloudBridgeFunctions {
      * Gets an AgentDependency by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -463,6 +492,7 @@ public final class CloudBridgeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAgentDependencyResult> getAgentDependencyPlain(GetAgentDependencyPlainArgs args) {
@@ -474,6 +504,8 @@ public final class CloudBridgeFunctions {
      * Gets an AgentDependency by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -502,6 +534,7 @@ public final class CloudBridgeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAgentDependencyResult> getAgentDependency(GetAgentDependencyArgs args, InvokeOptions options) {
@@ -513,6 +546,8 @@ public final class CloudBridgeFunctions {
      * Gets an AgentDependency by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -541,6 +576,7 @@ public final class CloudBridgeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAgentDependencyResult> getAgentDependencyPlain(GetAgentDependencyPlainArgs args, InvokeOptions options) {
@@ -552,6 +588,8 @@ public final class CloudBridgeFunctions {
      * Gets a plugin by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -581,6 +619,7 @@ public final class CloudBridgeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAgentPluginResult> getAgentPlugin(GetAgentPluginArgs args) {
@@ -592,6 +631,8 @@ public final class CloudBridgeFunctions {
      * Gets a plugin by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -621,6 +662,7 @@ public final class CloudBridgeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAgentPluginResult> getAgentPluginPlain(GetAgentPluginPlainArgs args) {
@@ -632,6 +674,8 @@ public final class CloudBridgeFunctions {
      * Gets a plugin by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -661,6 +705,7 @@ public final class CloudBridgeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAgentPluginResult> getAgentPlugin(GetAgentPluginArgs args, InvokeOptions options) {
@@ -672,6 +717,8 @@ public final class CloudBridgeFunctions {
      * Gets a plugin by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -701,6 +748,7 @@ public final class CloudBridgeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAgentPluginResult> getAgentPluginPlain(GetAgentPluginPlainArgs args, InvokeOptions options) {
@@ -712,6 +760,8 @@ public final class CloudBridgeFunctions {
      * Returns a list of Agents.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -744,6 +794,7 @@ public final class CloudBridgeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAgentsResult> getAgents(GetAgentsArgs args) {
@@ -755,6 +806,8 @@ public final class CloudBridgeFunctions {
      * Returns a list of Agents.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -787,6 +840,7 @@ public final class CloudBridgeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAgentsResult> getAgentsPlain(GetAgentsPlainArgs args) {
@@ -798,6 +852,8 @@ public final class CloudBridgeFunctions {
      * Returns a list of Agents.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -830,6 +886,7 @@ public final class CloudBridgeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAgentsResult> getAgents(GetAgentsArgs args, InvokeOptions options) {
@@ -841,6 +898,8 @@ public final class CloudBridgeFunctions {
      * Returns a list of Agents.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -873,6 +932,7 @@ public final class CloudBridgeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAgentsResult> getAgentsPlain(GetAgentsPlainArgs args, InvokeOptions options) {
@@ -884,6 +944,8 @@ public final class CloudBridgeFunctions {
      * Returns a list of Appliance Images.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -913,6 +975,7 @@ public final class CloudBridgeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetApplianceImageResult> getApplianceImage(GetApplianceImageArgs args) {
@@ -924,6 +987,8 @@ public final class CloudBridgeFunctions {
      * Returns a list of Appliance Images.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -953,6 +1018,7 @@ public final class CloudBridgeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetApplianceImageResult> getApplianceImagePlain(GetApplianceImagePlainArgs args) {
@@ -964,6 +1030,8 @@ public final class CloudBridgeFunctions {
      * Returns a list of Appliance Images.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -993,6 +1061,7 @@ public final class CloudBridgeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetApplianceImageResult> getApplianceImage(GetApplianceImageArgs args, InvokeOptions options) {
@@ -1004,6 +1073,8 @@ public final class CloudBridgeFunctions {
      * Returns a list of Appliance Images.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1033,6 +1104,7 @@ public final class CloudBridgeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetApplianceImageResult> getApplianceImagePlain(GetApplianceImagePlainArgs args, InvokeOptions options) {
@@ -1044,6 +1116,8 @@ public final class CloudBridgeFunctions {
      * Returns a list of Appliance Images.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1073,6 +1147,7 @@ public final class CloudBridgeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetApplianceImagesResult> getApplianceImages(GetApplianceImagesArgs args) {
@@ -1084,6 +1159,8 @@ public final class CloudBridgeFunctions {
      * Returns a list of Appliance Images.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1113,6 +1190,7 @@ public final class CloudBridgeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetApplianceImagesResult> getApplianceImagesPlain(GetApplianceImagesPlainArgs args) {
@@ -1124,6 +1202,8 @@ public final class CloudBridgeFunctions {
      * Returns a list of Appliance Images.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1153,6 +1233,7 @@ public final class CloudBridgeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetApplianceImagesResult> getApplianceImages(GetApplianceImagesArgs args, InvokeOptions options) {
@@ -1164,6 +1245,8 @@ public final class CloudBridgeFunctions {
      * Returns a list of Appliance Images.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1193,6 +1276,7 @@ public final class CloudBridgeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetApplianceImagesResult> getApplianceImagesPlain(GetApplianceImagesPlainArgs args, InvokeOptions options) {
@@ -1204,6 +1288,8 @@ public final class CloudBridgeFunctions {
      * Gets an asset by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1232,6 +1318,7 @@ public final class CloudBridgeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAssetResult> getAsset(GetAssetArgs args) {
@@ -1243,6 +1330,8 @@ public final class CloudBridgeFunctions {
      * Gets an asset by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1271,6 +1360,7 @@ public final class CloudBridgeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAssetResult> getAssetPlain(GetAssetPlainArgs args) {
@@ -1282,6 +1372,8 @@ public final class CloudBridgeFunctions {
      * Gets an asset by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1310,6 +1402,7 @@ public final class CloudBridgeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAssetResult> getAsset(GetAssetArgs args, InvokeOptions options) {
@@ -1321,6 +1414,8 @@ public final class CloudBridgeFunctions {
      * Gets an asset by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1349,6 +1444,7 @@ public final class CloudBridgeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAssetResult> getAssetPlain(GetAssetPlainArgs args, InvokeOptions options) {
@@ -1360,6 +1456,8 @@ public final class CloudBridgeFunctions {
      * Gets the asset source by ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1388,6 +1486,7 @@ public final class CloudBridgeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAssetSourceResult> getAssetSource(GetAssetSourceArgs args) {
@@ -1399,6 +1498,8 @@ public final class CloudBridgeFunctions {
      * Gets the asset source by ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1427,6 +1528,7 @@ public final class CloudBridgeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAssetSourceResult> getAssetSourcePlain(GetAssetSourcePlainArgs args) {
@@ -1438,6 +1540,8 @@ public final class CloudBridgeFunctions {
      * Gets the asset source by ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1466,6 +1570,7 @@ public final class CloudBridgeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAssetSourceResult> getAssetSource(GetAssetSourceArgs args, InvokeOptions options) {
@@ -1477,6 +1582,8 @@ public final class CloudBridgeFunctions {
      * Gets the asset source by ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1505,6 +1612,7 @@ public final class CloudBridgeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAssetSourceResult> getAssetSourcePlain(GetAssetSourcePlainArgs args, InvokeOptions options) {
@@ -1516,6 +1624,8 @@ public final class CloudBridgeFunctions {
      * Returns a list of asset sources.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1547,6 +1657,7 @@ public final class CloudBridgeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAssetSourcesResult> getAssetSources(GetAssetSourcesArgs args) {
@@ -1558,6 +1669,8 @@ public final class CloudBridgeFunctions {
      * Returns a list of asset sources.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1589,6 +1702,7 @@ public final class CloudBridgeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAssetSourcesResult> getAssetSourcesPlain(GetAssetSourcesPlainArgs args) {
@@ -1600,6 +1714,8 @@ public final class CloudBridgeFunctions {
      * Returns a list of asset sources.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1631,6 +1747,7 @@ public final class CloudBridgeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAssetSourcesResult> getAssetSources(GetAssetSourcesArgs args, InvokeOptions options) {
@@ -1642,6 +1759,8 @@ public final class CloudBridgeFunctions {
      * Returns a list of asset sources.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1673,6 +1792,7 @@ public final class CloudBridgeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAssetSourcesResult> getAssetSourcesPlain(GetAssetSourcesPlainArgs args, InvokeOptions options) {
@@ -1684,6 +1804,8 @@ public final class CloudBridgeFunctions {
      * Returns a list of assets.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1719,6 +1841,7 @@ public final class CloudBridgeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAssetsResult> getAssets(GetAssetsArgs args) {
@@ -1730,6 +1853,8 @@ public final class CloudBridgeFunctions {
      * Returns a list of assets.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1765,6 +1890,7 @@ public final class CloudBridgeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAssetsResult> getAssetsPlain(GetAssetsPlainArgs args) {
@@ -1776,6 +1902,8 @@ public final class CloudBridgeFunctions {
      * Returns a list of assets.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1811,6 +1939,7 @@ public final class CloudBridgeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAssetsResult> getAssets(GetAssetsArgs args, InvokeOptions options) {
@@ -1822,6 +1951,8 @@ public final class CloudBridgeFunctions {
      * Returns a list of assets.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1857,6 +1988,7 @@ public final class CloudBridgeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAssetsResult> getAssetsPlain(GetAssetsPlainArgs args, InvokeOptions options) {
@@ -1868,6 +2000,8 @@ public final class CloudBridgeFunctions {
      * Reads information about the specified discovery schedule.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1896,6 +2030,7 @@ public final class CloudBridgeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDiscoveryScheduleResult> getDiscoverySchedule(GetDiscoveryScheduleArgs args) {
@@ -1907,6 +2042,8 @@ public final class CloudBridgeFunctions {
      * Reads information about the specified discovery schedule.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1935,6 +2072,7 @@ public final class CloudBridgeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDiscoveryScheduleResult> getDiscoverySchedulePlain(GetDiscoverySchedulePlainArgs args) {
@@ -1946,6 +2084,8 @@ public final class CloudBridgeFunctions {
      * Reads information about the specified discovery schedule.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1974,6 +2114,7 @@ public final class CloudBridgeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDiscoveryScheduleResult> getDiscoverySchedule(GetDiscoveryScheduleArgs args, InvokeOptions options) {
@@ -1985,6 +2126,8 @@ public final class CloudBridgeFunctions {
      * Reads information about the specified discovery schedule.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2013,6 +2156,7 @@ public final class CloudBridgeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDiscoveryScheduleResult> getDiscoverySchedulePlain(GetDiscoverySchedulePlainArgs args, InvokeOptions options) {
@@ -2024,6 +2168,8 @@ public final class CloudBridgeFunctions {
      * Lists discovery schedules.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2055,6 +2201,7 @@ public final class CloudBridgeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDiscoverySchedulesResult> getDiscoverySchedules(GetDiscoverySchedulesArgs args) {
@@ -2066,6 +2213,8 @@ public final class CloudBridgeFunctions {
      * Lists discovery schedules.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2097,6 +2246,7 @@ public final class CloudBridgeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDiscoverySchedulesResult> getDiscoverySchedulesPlain(GetDiscoverySchedulesPlainArgs args) {
@@ -2108,6 +2258,8 @@ public final class CloudBridgeFunctions {
      * Lists discovery schedules.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2139,6 +2291,7 @@ public final class CloudBridgeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDiscoverySchedulesResult> getDiscoverySchedules(GetDiscoverySchedulesArgs args, InvokeOptions options) {
@@ -2150,6 +2303,8 @@ public final class CloudBridgeFunctions {
      * Lists discovery schedules.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2181,6 +2336,7 @@ public final class CloudBridgeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDiscoverySchedulesResult> getDiscoverySchedulesPlain(GetDiscoverySchedulesPlainArgs args, InvokeOptions options) {
@@ -2192,6 +2348,8 @@ public final class CloudBridgeFunctions {
      * Gets a source environment by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2220,6 +2378,7 @@ public final class CloudBridgeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetEnvironmentResult> getEnvironment(GetEnvironmentArgs args) {
@@ -2231,6 +2390,8 @@ public final class CloudBridgeFunctions {
      * Gets a source environment by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2259,6 +2420,7 @@ public final class CloudBridgeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetEnvironmentResult> getEnvironmentPlain(GetEnvironmentPlainArgs args) {
@@ -2270,6 +2432,8 @@ public final class CloudBridgeFunctions {
      * Gets a source environment by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2298,6 +2462,7 @@ public final class CloudBridgeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetEnvironmentResult> getEnvironment(GetEnvironmentArgs args, InvokeOptions options) {
@@ -2309,6 +2474,8 @@ public final class CloudBridgeFunctions {
      * Gets a source environment by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2337,6 +2504,7 @@ public final class CloudBridgeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetEnvironmentResult> getEnvironmentPlain(GetEnvironmentPlainArgs args, InvokeOptions options) {
@@ -2348,6 +2516,8 @@ public final class CloudBridgeFunctions {
      * Returns a list of source environments.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2379,6 +2549,7 @@ public final class CloudBridgeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetEnvironmentsResult> getEnvironments(GetEnvironmentsArgs args) {
@@ -2390,6 +2561,8 @@ public final class CloudBridgeFunctions {
      * Returns a list of source environments.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2421,6 +2594,7 @@ public final class CloudBridgeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetEnvironmentsResult> getEnvironmentsPlain(GetEnvironmentsPlainArgs args) {
@@ -2432,6 +2606,8 @@ public final class CloudBridgeFunctions {
      * Returns a list of source environments.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2463,6 +2639,7 @@ public final class CloudBridgeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetEnvironmentsResult> getEnvironments(GetEnvironmentsArgs args, InvokeOptions options) {
@@ -2474,6 +2651,8 @@ public final class CloudBridgeFunctions {
      * Returns a list of source environments.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2505,6 +2684,7 @@ public final class CloudBridgeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetEnvironmentsResult> getEnvironmentsPlain(GetEnvironmentsPlainArgs args, InvokeOptions options) {
@@ -2516,6 +2696,8 @@ public final class CloudBridgeFunctions {
      * Returns a list of inventories.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2545,6 +2727,7 @@ public final class CloudBridgeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetInventoriesResult> getInventories(GetInventoriesArgs args) {
@@ -2556,6 +2739,8 @@ public final class CloudBridgeFunctions {
      * Returns a list of inventories.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2585,6 +2770,7 @@ public final class CloudBridgeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetInventoriesResult> getInventoriesPlain(GetInventoriesPlainArgs args) {
@@ -2596,6 +2782,8 @@ public final class CloudBridgeFunctions {
      * Returns a list of inventories.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2625,6 +2813,7 @@ public final class CloudBridgeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetInventoriesResult> getInventories(GetInventoriesArgs args, InvokeOptions options) {
@@ -2636,6 +2825,8 @@ public final class CloudBridgeFunctions {
      * Returns a list of inventories.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2665,6 +2856,7 @@ public final class CloudBridgeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetInventoriesResult> getInventoriesPlain(GetInventoriesPlainArgs args, InvokeOptions options) {
@@ -2676,6 +2868,8 @@ public final class CloudBridgeFunctions {
      * Gets an inventory by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2704,6 +2898,7 @@ public final class CloudBridgeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetInventoryResult> getInventory(GetInventoryArgs args) {
@@ -2715,6 +2910,8 @@ public final class CloudBridgeFunctions {
      * Gets an inventory by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2743,6 +2940,7 @@ public final class CloudBridgeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetInventoryResult> getInventoryPlain(GetInventoryPlainArgs args) {
@@ -2754,6 +2952,8 @@ public final class CloudBridgeFunctions {
      * Gets an inventory by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2782,6 +2982,7 @@ public final class CloudBridgeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetInventoryResult> getInventory(GetInventoryArgs args, InvokeOptions options) {
@@ -2793,6 +2994,8 @@ public final class CloudBridgeFunctions {
      * Gets an inventory by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2821,6 +3024,7 @@ public final class CloudBridgeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetInventoryResult> getInventoryPlain(GetInventoryPlainArgs args, InvokeOptions options) {

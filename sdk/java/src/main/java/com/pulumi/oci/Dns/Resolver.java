@@ -34,7 +34,7 @@ import javax.annotation.Nullable;
  * Resolvers can be imported using their OCID, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Dns/resolver:Resolver test_resolver &#34;id&#34;
+ * $ pulumi import oci:Dns/resolver:Resolver test_resolver &#34;id&#34;
  * ```
  * 
  */

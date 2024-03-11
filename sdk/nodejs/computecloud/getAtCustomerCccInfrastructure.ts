@@ -14,6 +14,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,6 +23,7 @@ import * as utilities from "../utilities";
  *     cccInfrastructureId: oci_compute_cloud_at_customer_ccc_infrastructure.test_ccc_infrastructure.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAtCustomerCccInfrastructure(args: GetAtCustomerCccInfrastructureArgs, opts?: pulumi.InvokeOptions): Promise<GetAtCustomerCccInfrastructureResult> {
 
@@ -139,6 +141,7 @@ export interface GetAtCustomerCccInfrastructureResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -147,6 +150,7 @@ export interface GetAtCustomerCccInfrastructureResult {
  *     cccInfrastructureId: oci_compute_cloud_at_customer_ccc_infrastructure.test_ccc_infrastructure.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAtCustomerCccInfrastructureOutput(args: GetAtCustomerCccInfrastructureOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAtCustomerCccInfrastructureResult> {
     return pulumi.output(args).apply((a: any) => getAtCustomerCccInfrastructure(a, opts))

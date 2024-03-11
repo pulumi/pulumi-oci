@@ -230,12 +230,14 @@ def get_ping_monitor(monitor_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_ping_monitor = oci.HealthChecks.get_ping_monitor(monitor_id=oci_apm_synthetics_monitor["test_monitor"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str monitor_id: The OCID of a monitor.
@@ -274,12 +276,14 @@ def get_ping_monitor_output(monitor_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_ping_monitor = oci.HealthChecks.get_ping_monitor(monitor_id=oci_apm_synthetics_monitor["test_monitor"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str monitor_id: The OCID of a monitor.

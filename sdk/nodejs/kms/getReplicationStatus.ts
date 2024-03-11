@@ -16,6 +16,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -25,6 +26,7 @@ import * as utilities from "../utilities";
  *     managementEndpoint: _var.replication_status_management_endpoint,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getReplicationStatus(args: GetReplicationStatusArgs, opts?: pulumi.InvokeOptions): Promise<GetReplicationStatusResult> {
 
@@ -74,6 +76,7 @@ export interface GetReplicationStatusResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -83,6 +86,7 @@ export interface GetReplicationStatusResult {
  *     managementEndpoint: _var.replication_status_management_endpoint,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getReplicationStatusOutput(args: GetReplicationStatusOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetReplicationStatusResult> {
     return pulumi.output(args).apply((a: any) => getReplicationStatus(a, opts))

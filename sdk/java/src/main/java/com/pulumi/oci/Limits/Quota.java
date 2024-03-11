@@ -24,6 +24,8 @@ import javax.annotation.Nullable;
  * Creates a new quota with the details supplied.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -62,13 +64,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * Quotas can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Limits/quota:Quota test_quota &#34;id&#34;
+ * $ pulumi import oci:Limits/quota:Quota test_quota &#34;id&#34;
  * ```
  * 
  */

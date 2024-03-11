@@ -17,10 +17,9 @@ namespace Pulumi.Oci.DatabaseManagement
         /// Gets the details for the external connector specified by `externalDbSystemConnectorId`.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,8 +35,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetExternalDbSystemConnectorResult> InvokeAsync(GetExternalDbSystemConnectorArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetExternalDbSystemConnectorResult>("oci:DatabaseManagement/getExternalDbSystemConnector:getExternalDbSystemConnector", args ?? new GetExternalDbSystemConnectorArgs(), options.WithDefaults());
@@ -48,10 +46,9 @@ namespace Pulumi.Oci.DatabaseManagement
         /// Gets the details for the external connector specified by `externalDbSystemConnectorId`.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -67,8 +64,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetExternalDbSystemConnectorResult> Invoke(GetExternalDbSystemConnectorInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetExternalDbSystemConnectorResult>("oci:DatabaseManagement/getExternalDbSystemConnector:getExternalDbSystemConnector", args ?? new GetExternalDbSystemConnectorInvokeArgs(), options.WithDefaults());

@@ -414,6 +414,7 @@ class ActionCreateZoneFromZoneFile(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -424,13 +425,14 @@ class ActionCreateZoneFromZoneFile(pulumi.CustomResource):
             scope=var["action_create_zone_from_zone_file_scope"],
             view_id=oci_dns_view["test_view"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ActionCreateZoneFromZoneFile can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Dns/actionCreateZoneFromZoneFile:ActionCreateZoneFromZoneFile test_action_create_zone_from_zone_file "id"
+        $ pulumi import oci:Dns/actionCreateZoneFromZoneFile:ActionCreateZoneFromZoneFile test_action_create_zone_from_zone_file "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -459,6 +461,7 @@ class ActionCreateZoneFromZoneFile(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -469,13 +472,14 @@ class ActionCreateZoneFromZoneFile(pulumi.CustomResource):
             scope=var["action_create_zone_from_zone_file_scope"],
             view_id=oci_dns_view["test_view"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ActionCreateZoneFromZoneFile can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Dns/actionCreateZoneFromZoneFile:ActionCreateZoneFromZoneFile test_action_create_zone_from_zone_file "id"
+        $ pulumi import oci:Dns/actionCreateZoneFromZoneFile:ActionCreateZoneFromZoneFile test_action_create_zone_from_zone_file "id"
         ```
 
         :param str resource_name: The name of the resource.

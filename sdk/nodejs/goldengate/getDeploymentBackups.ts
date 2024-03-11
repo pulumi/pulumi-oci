@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,6 +25,7 @@ import * as utilities from "../utilities";
  *     state: _var.deployment_backup_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDeploymentBackups(args: GetDeploymentBackupsArgs, opts?: pulumi.InvokeOptions): Promise<GetDeploymentBackupsResult> {
 
@@ -97,6 +99,7 @@ export interface GetDeploymentBackupsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -108,6 +111,7 @@ export interface GetDeploymentBackupsResult {
  *     state: _var.deployment_backup_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDeploymentBackupsOutput(args: GetDeploymentBackupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDeploymentBackupsResult> {
     return pulumi.output(args).apply((a: any) => getDeploymentBackups(a, opts))

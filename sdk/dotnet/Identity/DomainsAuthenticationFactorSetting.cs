@@ -19,7 +19,7 @@ namespace Pulumi.Oci.Identity
     /// AuthenticationFactorSettings can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Identity/domainsAuthenticationFactorSetting:DomainsAuthenticationFactorSetting test_authentication_factor_setting "idcsEndpoint/{idcsEndpoint}/authenticationFactorSettings/{authenticationFactorSettingId}"
+    /// $ pulumi import oci:Identity/domainsAuthenticationFactorSetting:DomainsAuthenticationFactorSetting test_authentication_factor_setting "idcsEndpoint/{idcsEndpoint}/authenticationFactorSettings/{authenticationFactorSettingId}"
     /// ```
     /// </summary>
     [OciResourceType("oci:Identity/domainsAuthenticationFactorSetting:DomainsAuthenticationFactorSetting")]

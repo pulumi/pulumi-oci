@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,6 +22,7 @@ import * as utilities from "../utilities";
  *     quotaId: oci_limits_quota.test_quota.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getQuota(args: GetQuotaArgs, opts?: pulumi.InvokeOptions): Promise<GetQuotaResult> {
 
@@ -94,6 +96,7 @@ export interface GetQuotaResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -102,6 +105,7 @@ export interface GetQuotaResult {
  *     quotaId: oci_limits_quota.test_quota.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getQuotaOutput(args: GetQuotaOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetQuotaResult> {
     return pulumi.output(args).apply((a: any) => getQuota(a, opts))

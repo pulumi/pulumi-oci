@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -46,15 +47,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // ExternalNonContainerDatabases can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Database/externalNonContainerDatabase:ExternalNonContainerDatabase test_external_non_container_database "id"
-//
+// $ pulumi import oci:Database/externalNonContainerDatabase:ExternalNonContainerDatabase test_external_non_container_database "id"
 // ```
 type ExternalNonContainerDatabase struct {
 	pulumi.CustomResourceState

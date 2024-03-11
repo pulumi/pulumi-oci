@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -60,15 +61,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // OceInstances can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Oce/instance:Instance test_oce_instance "id"
-//
+// $ pulumi import oci:Oce/instance:Instance test_oce_instance "id"
 // ```
 type Instance struct {
 	pulumi.CustomResourceState

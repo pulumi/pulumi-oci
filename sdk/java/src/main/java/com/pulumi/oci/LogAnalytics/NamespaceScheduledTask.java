@@ -24,6 +24,7 @@ import javax.annotation.Nullable;
  * 
  * ## Example Usage
  * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -85,13 +86,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * NamespaceScheduledTasks can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:LogAnalytics/namespaceScheduledTask:NamespaceScheduledTask test_namespace_scheduled_task &#34;namespaces/{namespaceName}/scheduledTasks/{scheduledTaskId}&#34;
+ * $ pulumi import oci:LogAnalytics/namespaceScheduledTask:NamespaceScheduledTask test_namespace_scheduled_task &#34;namespaces/{namespaceName}/scheduledTasks/{scheduledTaskId}&#34;
  * ```
  * 
  */

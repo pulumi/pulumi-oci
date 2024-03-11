@@ -534,6 +534,7 @@ class VmClusterAddVirtualNetwork(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -544,6 +545,7 @@ class VmClusterAddVirtualNetwork(pulumi.CustomResource):
             )],
             vm_cluster_id=oci_database_vm_cluster["test_vm_cluster"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ##### Note: You may also need to add `db_servers` and `cpu_core_count` to the ignore_changes for the resource `Database.VmCluster` list if you see a diff on a subsequent apply
 
@@ -552,7 +554,7 @@ class VmClusterAddVirtualNetwork(pulumi.CustomResource):
         VmClusterAddVirtualMachine can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Database/vmClusterAddVirtualNetwork:VmClusterAddVirtualNetwork test_vm_cluster_add_virtual_machine "id"
+        $ pulumi import oci:Database/vmClusterAddVirtualNetwork:VmClusterAddVirtualNetwork test_vm_cluster_add_virtual_machine "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -577,6 +579,7 @@ class VmClusterAddVirtualNetwork(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -587,6 +590,7 @@ class VmClusterAddVirtualNetwork(pulumi.CustomResource):
             )],
             vm_cluster_id=oci_database_vm_cluster["test_vm_cluster"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ##### Note: You may also need to add `db_servers` and `cpu_core_count` to the ignore_changes for the resource `Database.VmCluster` list if you see a diff on a subsequent apply
 
@@ -595,7 +599,7 @@ class VmClusterAddVirtualNetwork(pulumi.CustomResource):
         VmClusterAddVirtualMachine can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Database/vmClusterAddVirtualNetwork:VmClusterAddVirtualNetwork test_vm_cluster_add_virtual_machine "id"
+        $ pulumi import oci:Database/vmClusterAddVirtualNetwork:VmClusterAddVirtualNetwork test_vm_cluster_add_virtual_machine "id"
         ```
 
         :param str resource_name: The name of the resource.

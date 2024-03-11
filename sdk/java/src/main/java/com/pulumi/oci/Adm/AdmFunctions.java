@@ -56,6 +56,8 @@ public final class AdmFunctions {
      * Returns the details of the specified Knowledge Base.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -84,6 +86,7 @@ public final class AdmFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetKnowledgebaseResult> getKnowledgebase(GetKnowledgebaseArgs args) {
@@ -95,6 +98,8 @@ public final class AdmFunctions {
      * Returns the details of the specified Knowledge Base.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -123,6 +128,7 @@ public final class AdmFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetKnowledgebaseResult> getKnowledgebasePlain(GetKnowledgebasePlainArgs args) {
@@ -134,6 +140,8 @@ public final class AdmFunctions {
      * Returns the details of the specified Knowledge Base.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -162,6 +170,7 @@ public final class AdmFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetKnowledgebaseResult> getKnowledgebase(GetKnowledgebaseArgs args, InvokeOptions options) {
@@ -173,6 +182,8 @@ public final class AdmFunctions {
      * Returns the details of the specified Knowledge Base.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -201,6 +212,7 @@ public final class AdmFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetKnowledgebaseResult> getKnowledgebasePlain(GetKnowledgebasePlainArgs args, InvokeOptions options) {
@@ -213,6 +225,8 @@ public final class AdmFunctions {
      * At least id or compartmentId query parameter must be provided.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -244,6 +258,7 @@ public final class AdmFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetKnowledgebasesResult> getKnowledgebases() {
@@ -256,6 +271,8 @@ public final class AdmFunctions {
      * At least id or compartmentId query parameter must be provided.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -287,6 +304,7 @@ public final class AdmFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetKnowledgebasesResult> getKnowledgebasesPlain() {
@@ -299,6 +317,8 @@ public final class AdmFunctions {
      * At least id or compartmentId query parameter must be provided.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -330,6 +350,7 @@ public final class AdmFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetKnowledgebasesResult> getKnowledgebases(GetKnowledgebasesArgs args) {
@@ -342,6 +363,8 @@ public final class AdmFunctions {
      * At least id or compartmentId query parameter must be provided.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -373,6 +396,7 @@ public final class AdmFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetKnowledgebasesResult> getKnowledgebasesPlain(GetKnowledgebasesPlainArgs args) {
@@ -385,6 +409,8 @@ public final class AdmFunctions {
      * At least id or compartmentId query parameter must be provided.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -416,6 +442,7 @@ public final class AdmFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetKnowledgebasesResult> getKnowledgebases(GetKnowledgebasesArgs args, InvokeOptions options) {
@@ -428,6 +455,8 @@ public final class AdmFunctions {
      * At least id or compartmentId query parameter must be provided.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -459,6 +488,7 @@ public final class AdmFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetKnowledgebasesResult> getKnowledgebasesPlain(GetKnowledgebasesPlainArgs args, InvokeOptions options) {
@@ -470,6 +500,8 @@ public final class AdmFunctions {
      * Returns the details of the specified RemediationRecipe.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -498,6 +530,7 @@ public final class AdmFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRemediationRecipeResult> getRemediationRecipe(GetRemediationRecipeArgs args) {
@@ -509,6 +542,8 @@ public final class AdmFunctions {
      * Returns the details of the specified RemediationRecipe.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -537,6 +572,7 @@ public final class AdmFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRemediationRecipeResult> getRemediationRecipePlain(GetRemediationRecipePlainArgs args) {
@@ -548,6 +584,8 @@ public final class AdmFunctions {
      * Returns the details of the specified RemediationRecipe.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -576,6 +614,7 @@ public final class AdmFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRemediationRecipeResult> getRemediationRecipe(GetRemediationRecipeArgs args, InvokeOptions options) {
@@ -587,6 +626,8 @@ public final class AdmFunctions {
      * Returns the details of the specified RemediationRecipe.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -615,6 +656,7 @@ public final class AdmFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRemediationRecipeResult> getRemediationRecipePlain(GetRemediationRecipePlainArgs args, InvokeOptions options) {
@@ -627,6 +669,8 @@ public final class AdmFunctions {
      * The query parameters `compartmentId` or `id` must be provided.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -658,6 +702,7 @@ public final class AdmFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRemediationRecipesResult> getRemediationRecipes() {
@@ -670,6 +715,8 @@ public final class AdmFunctions {
      * The query parameters `compartmentId` or `id` must be provided.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -701,6 +748,7 @@ public final class AdmFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRemediationRecipesResult> getRemediationRecipesPlain() {
@@ -713,6 +761,8 @@ public final class AdmFunctions {
      * The query parameters `compartmentId` or `id` must be provided.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -744,6 +794,7 @@ public final class AdmFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRemediationRecipesResult> getRemediationRecipes(GetRemediationRecipesArgs args) {
@@ -756,6 +807,8 @@ public final class AdmFunctions {
      * The query parameters `compartmentId` or `id` must be provided.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -787,6 +840,7 @@ public final class AdmFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRemediationRecipesResult> getRemediationRecipesPlain(GetRemediationRecipesPlainArgs args) {
@@ -799,6 +853,8 @@ public final class AdmFunctions {
      * The query parameters `compartmentId` or `id` must be provided.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -830,6 +886,7 @@ public final class AdmFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRemediationRecipesResult> getRemediationRecipes(GetRemediationRecipesArgs args, InvokeOptions options) {
@@ -842,6 +899,8 @@ public final class AdmFunctions {
      * The query parameters `compartmentId` or `id` must be provided.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -873,6 +932,7 @@ public final class AdmFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRemediationRecipesResult> getRemediationRecipesPlain(GetRemediationRecipesPlainArgs args, InvokeOptions options) {
@@ -884,6 +944,8 @@ public final class AdmFunctions {
      * Returns the details of the specified remediation run.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -912,6 +974,7 @@ public final class AdmFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRemediationRunResult> getRemediationRun(GetRemediationRunArgs args) {
@@ -923,6 +986,8 @@ public final class AdmFunctions {
      * Returns the details of the specified remediation run.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -951,6 +1016,7 @@ public final class AdmFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRemediationRunResult> getRemediationRunPlain(GetRemediationRunPlainArgs args) {
@@ -962,6 +1028,8 @@ public final class AdmFunctions {
      * Returns the details of the specified remediation run.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -990,6 +1058,7 @@ public final class AdmFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRemediationRunResult> getRemediationRun(GetRemediationRunArgs args, InvokeOptions options) {
@@ -1001,6 +1070,8 @@ public final class AdmFunctions {
      * Returns the details of the specified remediation run.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1029,6 +1100,7 @@ public final class AdmFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRemediationRunResult> getRemediationRunPlain(GetRemediationRunPlainArgs args, InvokeOptions options) {
@@ -1040,6 +1112,8 @@ public final class AdmFunctions {
      * Returns a list of application dependency with their associated recommendations.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1070,6 +1144,7 @@ public final class AdmFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRemediationRunApplicationDependencyRecommendationsResult> getRemediationRunApplicationDependencyRecommendations(GetRemediationRunApplicationDependencyRecommendationsArgs args) {
@@ -1081,6 +1156,8 @@ public final class AdmFunctions {
      * Returns a list of application dependency with their associated recommendations.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1111,6 +1188,7 @@ public final class AdmFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRemediationRunApplicationDependencyRecommendationsResult> getRemediationRunApplicationDependencyRecommendationsPlain(GetRemediationRunApplicationDependencyRecommendationsPlainArgs args) {
@@ -1122,6 +1200,8 @@ public final class AdmFunctions {
      * Returns a list of application dependency with their associated recommendations.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1152,6 +1232,7 @@ public final class AdmFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRemediationRunApplicationDependencyRecommendationsResult> getRemediationRunApplicationDependencyRecommendations(GetRemediationRunApplicationDependencyRecommendationsArgs args, InvokeOptions options) {
@@ -1163,6 +1244,8 @@ public final class AdmFunctions {
      * Returns a list of application dependency with their associated recommendations.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1193,6 +1276,7 @@ public final class AdmFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRemediationRunApplicationDependencyRecommendationsResult> getRemediationRunApplicationDependencyRecommendationsPlain(GetRemediationRunApplicationDependencyRecommendationsPlainArgs args, InvokeOptions options) {
@@ -1204,6 +1288,8 @@ public final class AdmFunctions {
      * Returns the details of the specified Remediation Run Stage.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1233,6 +1319,7 @@ public final class AdmFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRemediationRunStageResult> getRemediationRunStage(GetRemediationRunStageArgs args) {
@@ -1244,6 +1331,8 @@ public final class AdmFunctions {
      * Returns the details of the specified Remediation Run Stage.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1273,6 +1362,7 @@ public final class AdmFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRemediationRunStageResult> getRemediationRunStagePlain(GetRemediationRunStagePlainArgs args) {
@@ -1284,6 +1374,8 @@ public final class AdmFunctions {
      * Returns the details of the specified Remediation Run Stage.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1313,6 +1405,7 @@ public final class AdmFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRemediationRunStageResult> getRemediationRunStage(GetRemediationRunStageArgs args, InvokeOptions options) {
@@ -1324,6 +1417,8 @@ public final class AdmFunctions {
      * Returns the details of the specified Remediation Run Stage.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1353,6 +1448,7 @@ public final class AdmFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRemediationRunStageResult> getRemediationRunStagePlain(GetRemediationRunStagePlainArgs args, InvokeOptions options) {
@@ -1364,6 +1460,8 @@ public final class AdmFunctions {
      * Returns a list of Remediation Run Stages based on the specified query parameters and Remediation Run identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1394,6 +1492,7 @@ public final class AdmFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRemediationRunStagesResult> getRemediationRunStages(GetRemediationRunStagesArgs args) {
@@ -1405,6 +1504,8 @@ public final class AdmFunctions {
      * Returns a list of Remediation Run Stages based on the specified query parameters and Remediation Run identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1435,6 +1536,7 @@ public final class AdmFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRemediationRunStagesResult> getRemediationRunStagesPlain(GetRemediationRunStagesPlainArgs args) {
@@ -1446,6 +1548,8 @@ public final class AdmFunctions {
      * Returns a list of Remediation Run Stages based on the specified query parameters and Remediation Run identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1476,6 +1580,7 @@ public final class AdmFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRemediationRunStagesResult> getRemediationRunStages(GetRemediationRunStagesArgs args, InvokeOptions options) {
@@ -1487,6 +1592,8 @@ public final class AdmFunctions {
      * Returns a list of Remediation Run Stages based on the specified query parameters and Remediation Run identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1517,6 +1624,7 @@ public final class AdmFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRemediationRunStagesResult> getRemediationRunStagesPlain(GetRemediationRunStagesPlainArgs args, InvokeOptions options) {
@@ -1529,6 +1637,8 @@ public final class AdmFunctions {
      * The query parameter `compartmentId` is required unless the query parameter `id` is specified.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1561,6 +1671,7 @@ public final class AdmFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRemediationRunsResult> getRemediationRuns() {
@@ -1573,6 +1684,8 @@ public final class AdmFunctions {
      * The query parameter `compartmentId` is required unless the query parameter `id` is specified.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1605,6 +1718,7 @@ public final class AdmFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRemediationRunsResult> getRemediationRunsPlain() {
@@ -1617,6 +1731,8 @@ public final class AdmFunctions {
      * The query parameter `compartmentId` is required unless the query parameter `id` is specified.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1649,6 +1765,7 @@ public final class AdmFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRemediationRunsResult> getRemediationRuns(GetRemediationRunsArgs args) {
@@ -1661,6 +1778,8 @@ public final class AdmFunctions {
      * The query parameter `compartmentId` is required unless the query parameter `id` is specified.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1693,6 +1812,7 @@ public final class AdmFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRemediationRunsResult> getRemediationRunsPlain(GetRemediationRunsPlainArgs args) {
@@ -1705,6 +1825,8 @@ public final class AdmFunctions {
      * The query parameter `compartmentId` is required unless the query parameter `id` is specified.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1737,6 +1859,7 @@ public final class AdmFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRemediationRunsResult> getRemediationRuns(GetRemediationRunsArgs args, InvokeOptions options) {
@@ -1749,6 +1872,8 @@ public final class AdmFunctions {
      * The query parameter `compartmentId` is required unless the query parameter `id` is specified.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1781,6 +1906,7 @@ public final class AdmFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRemediationRunsResult> getRemediationRunsPlain(GetRemediationRunsPlainArgs args, InvokeOptions options) {
@@ -1792,6 +1918,8 @@ public final class AdmFunctions {
      * Returns the details of the specified Vulnerability Audit.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1820,6 +1948,7 @@ public final class AdmFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVulnerabilityAuditResult> getVulnerabilityAudit(GetVulnerabilityAuditArgs args) {
@@ -1831,6 +1960,8 @@ public final class AdmFunctions {
      * Returns the details of the specified Vulnerability Audit.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1859,6 +1990,7 @@ public final class AdmFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVulnerabilityAuditResult> getVulnerabilityAuditPlain(GetVulnerabilityAuditPlainArgs args) {
@@ -1870,6 +2002,8 @@ public final class AdmFunctions {
      * Returns the details of the specified Vulnerability Audit.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1898,6 +2032,7 @@ public final class AdmFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVulnerabilityAuditResult> getVulnerabilityAudit(GetVulnerabilityAuditArgs args, InvokeOptions options) {
@@ -1909,6 +2044,8 @@ public final class AdmFunctions {
      * Returns the details of the specified Vulnerability Audit.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1937,6 +2074,7 @@ public final class AdmFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVulnerabilityAuditResult> getVulnerabilityAuditPlain(GetVulnerabilityAuditPlainArgs args, InvokeOptions options) {
@@ -1948,6 +2086,8 @@ public final class AdmFunctions {
      * Returns a list of Application Dependencies with their associated vulnerabilities.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1984,6 +2124,7 @@ public final class AdmFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVulnerabilityAuditApplicationDependencyVulnerabilitiesResult> getVulnerabilityAuditApplicationDependencyVulnerabilities(GetVulnerabilityAuditApplicationDependencyVulnerabilitiesArgs args) {
@@ -1995,6 +2136,8 @@ public final class AdmFunctions {
      * Returns a list of Application Dependencies with their associated vulnerabilities.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2031,6 +2174,7 @@ public final class AdmFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVulnerabilityAuditApplicationDependencyVulnerabilitiesResult> getVulnerabilityAuditApplicationDependencyVulnerabilitiesPlain(GetVulnerabilityAuditApplicationDependencyVulnerabilitiesPlainArgs args) {
@@ -2042,6 +2186,8 @@ public final class AdmFunctions {
      * Returns a list of Application Dependencies with their associated vulnerabilities.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2078,6 +2224,7 @@ public final class AdmFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVulnerabilityAuditApplicationDependencyVulnerabilitiesResult> getVulnerabilityAuditApplicationDependencyVulnerabilities(GetVulnerabilityAuditApplicationDependencyVulnerabilitiesArgs args, InvokeOptions options) {
@@ -2089,6 +2236,8 @@ public final class AdmFunctions {
      * Returns a list of Application Dependencies with their associated vulnerabilities.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2125,6 +2274,7 @@ public final class AdmFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVulnerabilityAuditApplicationDependencyVulnerabilitiesResult> getVulnerabilityAuditApplicationDependencyVulnerabilitiesPlain(GetVulnerabilityAuditApplicationDependencyVulnerabilitiesPlainArgs args, InvokeOptions options) {
@@ -2136,6 +2286,8 @@ public final class AdmFunctions {
      * Returns a list of Application Dependencies with their associated vulnerabilities.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2170,6 +2322,7 @@ public final class AdmFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVulnerabilityAuditApplicationDependencyVulnerabilityResult> getVulnerabilityAuditApplicationDependencyVulnerability(GetVulnerabilityAuditApplicationDependencyVulnerabilityArgs args) {
@@ -2181,6 +2334,8 @@ public final class AdmFunctions {
      * Returns a list of Application Dependencies with their associated vulnerabilities.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2215,6 +2370,7 @@ public final class AdmFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVulnerabilityAuditApplicationDependencyVulnerabilityResult> getVulnerabilityAuditApplicationDependencyVulnerabilityPlain(GetVulnerabilityAuditApplicationDependencyVulnerabilityPlainArgs args) {
@@ -2226,6 +2382,8 @@ public final class AdmFunctions {
      * Returns a list of Application Dependencies with their associated vulnerabilities.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2260,6 +2418,7 @@ public final class AdmFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVulnerabilityAuditApplicationDependencyVulnerabilityResult> getVulnerabilityAuditApplicationDependencyVulnerability(GetVulnerabilityAuditApplicationDependencyVulnerabilityArgs args, InvokeOptions options) {
@@ -2271,6 +2430,8 @@ public final class AdmFunctions {
      * Returns a list of Application Dependencies with their associated vulnerabilities.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2305,6 +2466,7 @@ public final class AdmFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVulnerabilityAuditApplicationDependencyVulnerabilityResult> getVulnerabilityAuditApplicationDependencyVulnerabilityPlain(GetVulnerabilityAuditApplicationDependencyVulnerabilityPlainArgs args, InvokeOptions options) {
@@ -2317,6 +2479,8 @@ public final class AdmFunctions {
      * At least one of id, compartmentId query parameter must be provided.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2353,6 +2517,7 @@ public final class AdmFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVulnerabilityAuditsResult> getVulnerabilityAudits() {
@@ -2365,6 +2530,8 @@ public final class AdmFunctions {
      * At least one of id, compartmentId query parameter must be provided.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2401,6 +2568,7 @@ public final class AdmFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVulnerabilityAuditsResult> getVulnerabilityAuditsPlain() {
@@ -2413,6 +2581,8 @@ public final class AdmFunctions {
      * At least one of id, compartmentId query parameter must be provided.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2449,6 +2619,7 @@ public final class AdmFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVulnerabilityAuditsResult> getVulnerabilityAudits(GetVulnerabilityAuditsArgs args) {
@@ -2461,6 +2632,8 @@ public final class AdmFunctions {
      * At least one of id, compartmentId query parameter must be provided.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2497,6 +2670,7 @@ public final class AdmFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVulnerabilityAuditsResult> getVulnerabilityAuditsPlain(GetVulnerabilityAuditsPlainArgs args) {
@@ -2509,6 +2683,8 @@ public final class AdmFunctions {
      * At least one of id, compartmentId query parameter must be provided.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2545,6 +2721,7 @@ public final class AdmFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVulnerabilityAuditsResult> getVulnerabilityAudits(GetVulnerabilityAuditsArgs args, InvokeOptions options) {
@@ -2557,6 +2734,8 @@ public final class AdmFunctions {
      * At least one of id, compartmentId query parameter must be provided.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2593,6 +2772,7 @@ public final class AdmFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVulnerabilityAuditsResult> getVulnerabilityAuditsPlain(GetVulnerabilityAuditsPlainArgs args, InvokeOptions options) {

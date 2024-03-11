@@ -129,6 +129,7 @@ def get_deploy_stages(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -139,6 +140,7 @@ def get_deploy_stages(compartment_id: Optional[str] = None,
         id=var["deploy_stage_id"],
         state=var["deploy_stage_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment in which to list resources.
@@ -182,6 +184,7 @@ def get_deploy_stages_output(compartment_id: Optional[pulumi.Input[Optional[str]
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -192,6 +195,7 @@ def get_deploy_stages_output(compartment_id: Optional[pulumi.Input[Optional[str]
         id=var["deploy_stage_id"],
         state=var["deploy_stage_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment in which to list resources.

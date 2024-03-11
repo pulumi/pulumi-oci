@@ -334,6 +334,7 @@ class TargetDatabasePeerTargetDatabase(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -362,13 +363,14 @@ class TargetDatabasePeerTargetDatabase(pulumi.CustomResource):
                 trust_store_content=var["target_database_peer_target_database_tls_config_trust_store_content"],
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         TargetDatabasePeerTargetDatabases can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataSafe/targetDatabasePeerTargetDatabase:TargetDatabasePeerTargetDatabase test_target_database_peer_target_database "targetDatabases/{targetDatabaseId}/peerTargetDatabases/{peerTargetDatabaseId}"
+        $ pulumi import oci:DataSafe/targetDatabasePeerTargetDatabase:TargetDatabasePeerTargetDatabase test_target_database_peer_target_database "targetDatabases/{targetDatabaseId}/peerTargetDatabases/{peerTargetDatabaseId}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -393,6 +395,7 @@ class TargetDatabasePeerTargetDatabase(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -421,13 +424,14 @@ class TargetDatabasePeerTargetDatabase(pulumi.CustomResource):
                 trust_store_content=var["target_database_peer_target_database_tls_config_trust_store_content"],
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         TargetDatabasePeerTargetDatabases can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataSafe/targetDatabasePeerTargetDatabase:TargetDatabasePeerTargetDatabase test_target_database_peer_target_database "targetDatabases/{targetDatabaseId}/peerTargetDatabases/{peerTargetDatabaseId}"
+        $ pulumi import oci:DataSafe/targetDatabasePeerTargetDatabase:TargetDatabasePeerTargetDatabase test_target_database_peer_target_database "targetDatabases/{targetDatabaseId}/peerTargetDatabases/{peerTargetDatabaseId}"
         ```
 
         :param str resource_name: The name of the resource.

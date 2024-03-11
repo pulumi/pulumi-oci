@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -55,15 +56,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Subscribers can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:ApiGateway/subscriber:Subscriber test_subscriber "id"
-//
+// $ pulumi import oci:ApiGateway/subscriber:Subscriber test_subscriber "id"
 // ```
 type Subscriber struct {
 	pulumi.CustomResourceState

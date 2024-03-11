@@ -22,6 +22,8 @@ import javax.annotation.Nullable;
  * Creates a Data Science private endpoint to be used by a Data Science resource.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -58,13 +60,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * DataSciencePrivateEndpoints can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:DataScience/privateEndpoint:PrivateEndpoint test_data_science_private_endpoint &#34;id&#34;
+ * $ pulumi import oci:DataScience/privateEndpoint:PrivateEndpoint test_data_science_private_endpoint &#34;id&#34;
  * ```
  * 
  */

@@ -17,10 +17,9 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// Returns a history of all status associated with the accessRequestId.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,8 +35,7 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetAccessRequestHistoryResult> InvokeAsync(GetAccessRequestHistoryArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAccessRequestHistoryResult>("oci:OperatorAccessControl/getAccessRequestHistory:getAccessRequestHistory", args ?? new GetAccessRequestHistoryArgs(), options.WithDefaults());
@@ -48,10 +46,9 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// Returns a history of all status associated with the accessRequestId.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -67,8 +64,7 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetAccessRequestHistoryResult> Invoke(GetAccessRequestHistoryInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAccessRequestHistoryResult>("oci:OperatorAccessControl/getAccessRequestHistory:getAccessRequestHistory", args ?? new GetAccessRequestHistoryInvokeArgs(), options.WithDefaults());

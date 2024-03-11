@@ -177,6 +177,7 @@ def get_bds_instance_api_key(api_key_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -184,6 +185,7 @@ def get_bds_instance_api_key(api_key_id: Optional[str] = None,
     test_bds_instance_api_key = oci.BigDataService.get_bds_instance_api_key(api_key_id=oci_identity_api_key["test_api_key"]["id"],
         bds_instance_id=oci_bds_bds_instance["test_bds_instance"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str api_key_id: The API key identifier.
@@ -221,6 +223,7 @@ def get_bds_instance_api_key_output(api_key_id: Optional[pulumi.Input[str]] = No
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -228,6 +231,7 @@ def get_bds_instance_api_key_output(api_key_id: Optional[pulumi.Input[str]] = No
     test_bds_instance_api_key = oci.BigDataService.get_bds_instance_api_key(api_key_id=oci_identity_api_key["test_api_key"]["id"],
         bds_instance_id=oci_bds_bds_instance["test_bds_instance"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str api_key_id: The API key identifier.

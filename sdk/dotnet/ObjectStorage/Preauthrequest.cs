@@ -16,6 +16,7 @@ namespace Pulumi.Oci.ObjectStorage
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -36,13 +37,14 @@ namespace Pulumi.Oci.ObjectStorage
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// PreauthenticatedRequests can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:ObjectStorage/preauthrequest:Preauthrequest test_preauthenticated_request "n/{namespaceName}/b/{bucketName}/p/{parId}"
+    /// $ pulumi import oci:ObjectStorage/preauthrequest:Preauthrequest test_preauthenticated_request "n/{namespaceName}/b/{bucketName}/p/{parId}"
     /// ```
     /// </summary>
     [OciResourceType("oci:ObjectStorage/preauthrequest:Preauthrequest")]

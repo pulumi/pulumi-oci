@@ -19,10 +19,9 @@ namespace Pulumi.Oci.DataSafe
         /// The ListRoleGrantPaths operation returns only the role grant paths for the specified security policy report.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -40,8 +39,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetSecurityPolicyReportRoleGrantPathsResult> InvokeAsync(GetSecurityPolicyReportRoleGrantPathsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetSecurityPolicyReportRoleGrantPathsResult>("oci:DataSafe/getSecurityPolicyReportRoleGrantPaths:getSecurityPolicyReportRoleGrantPaths", args ?? new GetSecurityPolicyReportRoleGrantPathsArgs(), options.WithDefaults());
@@ -54,10 +52,9 @@ namespace Pulumi.Oci.DataSafe
         /// The ListRoleGrantPaths operation returns only the role grant paths for the specified security policy report.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -75,8 +72,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetSecurityPolicyReportRoleGrantPathsResult> Invoke(GetSecurityPolicyReportRoleGrantPathsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSecurityPolicyReportRoleGrantPathsResult>("oci:DataSafe/getSecurityPolicyReportRoleGrantPaths:getSecurityPolicyReportRoleGrantPaths", args ?? new GetSecurityPolicyReportRoleGrantPathsInvokeArgs(), options.WithDefaults());

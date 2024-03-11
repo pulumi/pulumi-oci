@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -40,6 +41,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetDbSystemHistoryEntries(ctx *pulumi.Context, args *GetDbSystemHistoryEntriesArgs, opts ...pulumi.InvokeOption) (*GetDbSystemHistoryEntriesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDbSystemHistoryEntriesResult

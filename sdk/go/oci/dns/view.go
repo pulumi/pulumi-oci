@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -45,15 +46,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Views can be imported using their OCID, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Dns/view:View test_view "id"
-//
+// $ pulumi import oci:Dns/view:View test_view "id"
 // ```
 type View struct {
 	pulumi.CustomResourceState

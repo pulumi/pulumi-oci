@@ -17,6 +17,7 @@ namespace Pulumi.Oci.Logging
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -56,13 +57,14 @@ namespace Pulumi.Oci.Logging
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// Logs can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Logging/log:Log test_log "logGroupId/{logGroupId}/logId/{logId}"
+    /// $ pulumi import oci:Logging/log:Log test_log "logGroupId/{logGroupId}/logId/{logId}"
     /// ```
     /// </summary>
     [OciResourceType("oci:Logging/log:Log")]

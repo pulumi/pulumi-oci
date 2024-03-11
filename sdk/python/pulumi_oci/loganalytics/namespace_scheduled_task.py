@@ -493,7 +493,7 @@ class NamespaceScheduledTask(pulumi.CustomResource):
         NamespaceScheduledTasks can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:LogAnalytics/namespaceScheduledTask:NamespaceScheduledTask test_namespace_scheduled_task "namespaces/{namespaceName}/scheduledTasks/{scheduledTaskId}"
+        $ pulumi import oci:LogAnalytics/namespaceScheduledTask:NamespaceScheduledTask test_namespace_scheduled_task "namespaces/{namespaceName}/scheduledTasks/{scheduledTaskId}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -529,7 +529,7 @@ class NamespaceScheduledTask(pulumi.CustomResource):
         NamespaceScheduledTasks can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:LogAnalytics/namespaceScheduledTask:NamespaceScheduledTask test_namespace_scheduled_task "namespaces/{namespaceName}/scheduledTasks/{scheduledTaskId}"
+        $ pulumi import oci:LogAnalytics/namespaceScheduledTask:NamespaceScheduledTask test_namespace_scheduled_task "namespaces/{namespaceName}/scheduledTasks/{scheduledTaskId}"
         ```
 
         :param str resource_name: The name of the resource.

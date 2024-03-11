@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -40,6 +41,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupAwrHub(ctx *pulumi.Context, args *LookupAwrHubArgs, opts ...pulumi.InvokeOption) (*LookupAwrHubResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupAwrHubResult

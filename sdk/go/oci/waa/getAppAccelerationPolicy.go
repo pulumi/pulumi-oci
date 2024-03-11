@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -40,6 +41,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupAppAccelerationPolicy(ctx *pulumi.Context, args *LookupAppAccelerationPolicyArgs, opts ...pulumi.InvokeOption) (*LookupAppAccelerationPolicyResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupAppAccelerationPolicyResult

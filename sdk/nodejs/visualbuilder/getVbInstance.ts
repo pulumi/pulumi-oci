@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,6 +22,7 @@ import * as utilities from "../utilities";
  *     vbInstanceId: oci_visual_builder_vb_instance.test_vb_instance.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getVbInstance(args: GetVbInstanceArgs, opts?: pulumi.InvokeOptions): Promise<GetVbInstanceResult> {
 
@@ -142,6 +144,7 @@ export interface GetVbInstanceResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -150,6 +153,7 @@ export interface GetVbInstanceResult {
  *     vbInstanceId: oci_visual_builder_vb_instance.test_vb_instance.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getVbInstanceOutput(args: GetVbInstanceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVbInstanceResult> {
     return pulumi.output(args).apply((a: any) => getVbInstance(a, opts))

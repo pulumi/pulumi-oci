@@ -22,6 +22,8 @@ import javax.annotation.Nullable;
  * Creates a public IP pool.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -53,13 +55,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * PublicIpPools can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Core/publicIpPool:PublicIpPool test_public_ip_pool &#34;id&#34;
+ * $ pulumi import oci:Core/publicIpPool:PublicIpPool test_public_ip_pool &#34;id&#34;
  * ```
  * 
  */

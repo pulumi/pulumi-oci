@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -25,6 +26,7 @@ import * as utilities from "../utilities";
  *     trailLocation: _var.audit_profile_available_audit_volume_trail_location,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAuditProfileAvailableAuditVolume(args: GetAuditProfileAvailableAuditVolumeArgs, opts?: pulumi.InvokeOptions): Promise<GetAuditProfileAvailableAuditVolumeResult> {
 
@@ -99,6 +101,7 @@ export interface GetAuditProfileAvailableAuditVolumeResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -111,6 +114,7 @@ export interface GetAuditProfileAvailableAuditVolumeResult {
  *     trailLocation: _var.audit_profile_available_audit_volume_trail_location,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAuditProfileAvailableAuditVolumeOutput(args: GetAuditProfileAvailableAuditVolumeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAuditProfileAvailableAuditVolumeResult> {
     return pulumi.output(args).apply((a: any) => getAuditProfileAvailableAuditVolume(a, opts))

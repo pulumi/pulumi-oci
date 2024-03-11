@@ -300,6 +300,7 @@ class Project(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -311,13 +312,14 @@ class Project(pulumi.CustomResource):
             display_name=var["project_display_name"],
             freeform_tags=var["project_freeform_tags"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Projects can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:AiDocument/project:Project test_project "id"
+        $ pulumi import oci:AiDocument/project:Project test_project "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -345,6 +347,7 @@ class Project(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -356,13 +359,14 @@ class Project(pulumi.CustomResource):
             display_name=var["project_display_name"],
             freeform_tags=var["project_freeform_tags"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Projects can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:AiDocument/project:Project test_project "id"
+        $ pulumi import oci:AiDocument/project:Project test_project "id"
         ```
 
         :param str resource_name: The name of the resource.

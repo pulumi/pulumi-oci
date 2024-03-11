@@ -598,6 +598,7 @@ class Profile(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -621,13 +622,14 @@ class Profile(pulumi.CustomResource):
             software_source_ids=var["profile_software_source_ids"],
             vendor_name=var["profile_vendor_name"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Profiles can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:OsManagementHub/profile:Profile test_profile "id"
+        $ pulumi import oci:OsManagementHub/profile:Profile test_profile "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -665,6 +667,7 @@ class Profile(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -688,13 +691,14 @@ class Profile(pulumi.CustomResource):
             software_source_ids=var["profile_software_source_ids"],
             vendor_name=var["profile_vendor_name"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Profiles can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:OsManagementHub/profile:Profile test_profile "id"
+        $ pulumi import oci:OsManagementHub/profile:Profile test_profile "id"
         ```
 
         :param str resource_name: The name of the resource.

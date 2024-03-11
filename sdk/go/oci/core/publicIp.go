@@ -38,6 +38,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -71,15 +72,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // PublicIps can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Core/publicIp:PublicIp test_public_ip "id"
-//
+// $ pulumi import oci:Core/publicIp:PublicIp test_public_ip "id"
 // ```
 type PublicIp struct {
 	pulumi.CustomResourceState

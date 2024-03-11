@@ -250,6 +250,7 @@ class Sender(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -264,13 +265,14 @@ class Sender(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Senders can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Email/sender:Sender test_sender "id"
+        $ pulumi import oci:Email/sender:Sender test_sender "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -297,6 +299,7 @@ class Sender(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -311,13 +314,14 @@ class Sender(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Senders can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Email/sender:Sender test_sender "id"
+        $ pulumi import oci:Email/sender:Sender test_sender "id"
         ```
 
         :param str resource_name: The name of the resource.

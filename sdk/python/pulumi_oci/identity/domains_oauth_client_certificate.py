@@ -1301,6 +1301,7 @@ class DomainsOauthClientCertificate(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -1314,13 +1315,14 @@ class DomainsOauthClientCertificate(pulumi.CustomResource):
             external_id="externalId",
             resource_type_schema_version=var["oauth_client_certificate_resource_type_schema_version"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         OAuthClientCertificates can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/domainsOauthClientCertificate:DomainsOauthClientCertificate test_oauth_client_certificate "idcsEndpoint/{idcsEndpoint}/oAuthClientCertificates/{oAuthClientCertificateId}"
+        $ pulumi import oci:Identity/domainsOauthClientCertificate:DomainsOauthClientCertificate test_oauth_client_certificate "idcsEndpoint/{idcsEndpoint}/oAuthClientCertificates/{oAuthClientCertificateId}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -1448,6 +1450,7 @@ class DomainsOauthClientCertificate(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -1461,13 +1464,14 @@ class DomainsOauthClientCertificate(pulumi.CustomResource):
             external_id="externalId",
             resource_type_schema_version=var["oauth_client_certificate_resource_type_schema_version"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         OAuthClientCertificates can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/domainsOauthClientCertificate:DomainsOauthClientCertificate test_oauth_client_certificate "idcsEndpoint/{idcsEndpoint}/oAuthClientCertificates/{oAuthClientCertificateId}"
+        $ pulumi import oci:Identity/domainsOauthClientCertificate:DomainsOauthClientCertificate test_oauth_client_certificate "idcsEndpoint/{idcsEndpoint}/oAuthClientCertificates/{oAuthClientCertificateId}"
         ```
 
         :param str resource_name: The name of the resource.

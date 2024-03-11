@@ -17,10 +17,9 @@ namespace Pulumi.Oci.LogAnalytics
         /// This API returns the count of distinct log sets.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,8 +35,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetLogSetsCountResult> InvokeAsync(GetLogSetsCountArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetLogSetsCountResult>("oci:LogAnalytics/getLogSetsCount:getLogSetsCount", args ?? new GetLogSetsCountArgs(), options.WithDefaults());
@@ -48,10 +46,9 @@ namespace Pulumi.Oci.LogAnalytics
         /// This API returns the count of distinct log sets.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -67,8 +64,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetLogSetsCountResult> Invoke(GetLogSetsCountInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetLogSetsCountResult>("oci:LogAnalytics/getLogSetsCount:getLogSetsCount", args ?? new GetLogSetsCountInvokeArgs(), options.WithDefaults());

@@ -112,6 +112,7 @@ def get_log_analytics_log_groups(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -120,6 +121,7 @@ def get_log_analytics_log_groups(compartment_id: Optional[str] = None,
         namespace=var["log_analytics_log_group_namespace"],
         display_name=var["log_analytics_log_group_display_name"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID of the compartment in which to list resources.
@@ -156,6 +158,7 @@ def get_log_analytics_log_groups_output(compartment_id: Optional[pulumi.Input[st
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -164,6 +167,7 @@ def get_log_analytics_log_groups_output(compartment_id: Optional[pulumi.Input[st
         namespace=var["log_analytics_log_group_namespace"],
         display_name=var["log_analytics_log_group_display_name"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID of the compartment in which to list resources.

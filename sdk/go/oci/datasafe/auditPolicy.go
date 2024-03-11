@@ -21,9 +21,7 @@ import (
 // AuditPolicies can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:DataSafe/auditPolicy:AuditPolicy test_audit_policy "id"
-//
+// $ pulumi import oci:DataSafe/auditPolicy:AuditPolicy test_audit_policy "id"
 // ```
 type AuditPolicy struct {
 	pulumi.CustomResourceState

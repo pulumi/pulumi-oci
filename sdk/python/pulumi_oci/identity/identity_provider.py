@@ -475,6 +475,7 @@ class IdentityProvider(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -494,13 +495,14 @@ class IdentityProvider(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         IdentityProviders can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/identityProvider:IdentityProvider test_identity_provider "id"
+        $ pulumi import oci:Identity/identityProvider:IdentityProvider test_identity_provider "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -548,6 +550,7 @@ class IdentityProvider(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -567,13 +570,14 @@ class IdentityProvider(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         IdentityProviders can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/identityProvider:IdentityProvider test_identity_provider "id"
+        $ pulumi import oci:Identity/identityProvider:IdentityProvider test_identity_provider "id"
         ```
 
         :param str resource_name: The name of the resource.

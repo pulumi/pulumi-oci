@@ -500,7 +500,7 @@ class AuditProfile(pulumi.CustomResource):
         AuditProfiles can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataSafe/auditProfile:AuditProfile test_audit_profile "id"
+        $ pulumi import oci:DataSafe/auditProfile:AuditProfile test_audit_profile "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -534,7 +534,7 @@ class AuditProfile(pulumi.CustomResource):
         AuditProfiles can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataSafe/auditProfile:AuditProfile test_audit_profile "id"
+        $ pulumi import oci:DataSafe/auditProfile:AuditProfile test_audit_profile "id"
         ```
 
         :param str resource_name: The name of the resource.

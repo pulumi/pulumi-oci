@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -53,15 +54,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // KeyStores can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Database/keyStore:KeyStore test_key_store "id"
-//
+// $ pulumi import oci:Database/keyStore:KeyStore test_key_store "id"
 // ```
 type KeyStore struct {
 	pulumi.CustomResourceState

@@ -16,6 +16,7 @@ namespace Pulumi.Oci.Functions
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -59,13 +60,14 @@ namespace Pulumi.Oci.Functions
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// Functions can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Functions/function:Function test_function "id"
+    /// $ pulumi import oci:Functions/function:Function test_function "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Functions/function:Function")]

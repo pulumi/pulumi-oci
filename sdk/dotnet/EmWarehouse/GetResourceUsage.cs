@@ -16,10 +16,9 @@ namespace Pulumi.Oci.EmWarehouse
         /// 
         /// Gets a EmWarehouseResourceUsage by identifier
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,8 +34,7 @@ namespace Pulumi.Oci.EmWarehouse
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetResourceUsageResult> InvokeAsync(GetResourceUsageArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetResourceUsageResult>("oci:EmWarehouse/getResourceUsage:getResourceUsage", args ?? new GetResourceUsageArgs(), options.WithDefaults());
@@ -46,10 +44,9 @@ namespace Pulumi.Oci.EmWarehouse
         /// 
         /// Gets a EmWarehouseResourceUsage by identifier
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -65,8 +62,7 @@ namespace Pulumi.Oci.EmWarehouse
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetResourceUsageResult> Invoke(GetResourceUsageInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetResourceUsageResult>("oci:EmWarehouse/getResourceUsage:getResourceUsage", args ?? new GetResourceUsageInvokeArgs(), options.WithDefaults());

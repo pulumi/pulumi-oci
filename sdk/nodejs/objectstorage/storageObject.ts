@@ -20,6 +20,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -40,13 +41,14 @@ import * as utilities from "../utilities";
  *     opcSseKmsKeyId: _var.object_opc_sse_kms_key_id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * Objects can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:ObjectStorage/storageObject:StorageObject test_object "n/{namespaceName}/b/{bucketName}/o/{objectName}"
+ * $ pulumi import oci:ObjectStorage/storageObject:StorageObject test_object "n/{namespaceName}/b/{bucketName}/o/{objectName}"
  * ```
  */
 export class StorageObject extends pulumi.CustomResource {

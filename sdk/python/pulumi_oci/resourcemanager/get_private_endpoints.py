@@ -127,6 +127,7 @@ def get_private_endpoints(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -136,6 +137,7 @@ def get_private_endpoints(compartment_id: Optional[str] = None,
         private_endpoint_id=oci_resourcemanager_private_endpoint["test_private_endpoint"]["id"],
         vcn_id=oci_core_vcn["test_vcn"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: A filter to return only resources that exist in the compartment, identified by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -178,6 +180,7 @@ def get_private_endpoints_output(compartment_id: Optional[pulumi.Input[Optional[
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -187,6 +190,7 @@ def get_private_endpoints_output(compartment_id: Optional[pulumi.Input[Optional[
         private_endpoint_id=oci_resourcemanager_private_endpoint["test_private_endpoint"]["id"],
         vcn_id=oci_core_vcn["test_vcn"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: A filter to return only resources that exist in the compartment, identified by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

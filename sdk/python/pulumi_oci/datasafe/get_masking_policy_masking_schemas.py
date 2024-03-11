@@ -99,6 +99,7 @@ def get_masking_policy_masking_schemas(filters: Optional[Sequence[pulumi.InputTy
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -106,6 +107,7 @@ def get_masking_policy_masking_schemas(filters: Optional[Sequence[pulumi.InputTy
     test_masking_policy_masking_schemas = oci.DataSafe.get_masking_policy_masking_schemas(masking_policy_id=oci_data_safe_masking_policy["test_masking_policy"]["id"],
         schema_names=var["masking_policy_masking_schema_schema_name"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str masking_policy_id: The OCID of the masking policy.
@@ -138,6 +140,7 @@ def get_masking_policy_masking_schemas_output(filters: Optional[pulumi.Input[Opt
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -145,6 +148,7 @@ def get_masking_policy_masking_schemas_output(filters: Optional[pulumi.Input[Opt
     test_masking_policy_masking_schemas = oci.DataSafe.get_masking_policy_masking_schemas(masking_policy_id=oci_data_safe_masking_policy["test_masking_policy"]["id"],
         schema_names=var["masking_policy_masking_schema_schema_name"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str masking_policy_id: The OCID of the masking policy.

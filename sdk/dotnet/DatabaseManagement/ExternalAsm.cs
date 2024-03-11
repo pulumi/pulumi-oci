@@ -19,7 +19,7 @@ namespace Pulumi.Oci.DatabaseManagement
     /// ExternalAsms can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:DatabaseManagement/externalAsm:ExternalAsm test_external_asm "id"
+    /// $ pulumi import oci:DatabaseManagement/externalAsm:ExternalAsm test_external_asm "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:DatabaseManagement/externalAsm:ExternalAsm")]

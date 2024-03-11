@@ -22,6 +22,8 @@ import javax.annotation.Nullable;
  * **Important:** Deleting the User Capabilities Management leaves the User resource in its existing state (rather than returning to its defaults)
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -55,13 +57,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * Users can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Identity/userCapabilitiesManagement:UserCapabilitiesManagement test_user_capabilities_management &#34;capabilities/{userId}&#34;
+ * $ pulumi import oci:Identity/userCapabilitiesManagement:UserCapabilitiesManagement test_user_capabilities_management &#34;capabilities/{userId}&#34;
  * ```
  * 
  */

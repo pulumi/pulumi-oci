@@ -463,6 +463,8 @@ public final class IdentityFunctions {
      * - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -491,6 +493,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAllowedDomainLicenseTypesResult> getAllowedDomainLicenseTypes() {
@@ -507,6 +510,8 @@ public final class IdentityFunctions {
      * - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -535,6 +540,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAllowedDomainLicenseTypesResult> getAllowedDomainLicenseTypesPlain() {
@@ -551,6 +557,8 @@ public final class IdentityFunctions {
      * - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -579,6 +587,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAllowedDomainLicenseTypesResult> getAllowedDomainLicenseTypes(GetAllowedDomainLicenseTypesArgs args) {
@@ -595,6 +604,8 @@ public final class IdentityFunctions {
      * - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -623,6 +634,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAllowedDomainLicenseTypesResult> getAllowedDomainLicenseTypesPlain(GetAllowedDomainLicenseTypesPlainArgs args) {
@@ -639,6 +651,8 @@ public final class IdentityFunctions {
      * - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -667,6 +681,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAllowedDomainLicenseTypesResult> getAllowedDomainLicenseTypes(GetAllowedDomainLicenseTypesArgs args, InvokeOptions options) {
@@ -683,6 +698,8 @@ public final class IdentityFunctions {
      * - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -711,6 +728,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAllowedDomainLicenseTypesResult> getAllowedDomainLicenseTypesPlain(GetAllowedDomainLicenseTypesPlainArgs args, InvokeOptions options) {
@@ -725,6 +743,8 @@ public final class IdentityFunctions {
      * organization does not need to write a policy to give users this ability.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -753,6 +773,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetApiKeysResult> getApiKeys(GetApiKeysArgs args) {
@@ -767,6 +788,8 @@ public final class IdentityFunctions {
      * organization does not need to write a policy to give users this ability.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -795,6 +818,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetApiKeysResult> getApiKeysPlain(GetApiKeysPlainArgs args) {
@@ -809,6 +833,8 @@ public final class IdentityFunctions {
      * organization does not need to write a policy to give users this ability.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -837,6 +863,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetApiKeysResult> getApiKeys(GetApiKeysArgs args, InvokeOptions options) {
@@ -851,6 +878,8 @@ public final class IdentityFunctions {
      * organization does not need to write a policy to give users this ability.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -879,6 +908,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetApiKeysResult> getApiKeysPlain(GetApiKeysPlainArgs args, InvokeOptions options) {
@@ -891,6 +921,8 @@ public final class IdentityFunctions {
      * the token itself. The actual token is returned only upon creation.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -919,6 +951,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAuthTokensResult> getAuthTokens(GetAuthTokensArgs args) {
@@ -931,6 +964,8 @@ public final class IdentityFunctions {
      * the token itself. The actual token is returned only upon creation.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -959,6 +994,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAuthTokensResult> getAuthTokensPlain(GetAuthTokensPlainArgs args) {
@@ -971,6 +1007,8 @@ public final class IdentityFunctions {
      * the token itself. The actual token is returned only upon creation.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -999,6 +1037,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAuthTokensResult> getAuthTokens(GetAuthTokensArgs args, InvokeOptions options) {
@@ -1011,6 +1050,8 @@ public final class IdentityFunctions {
      * the token itself. The actual token is returned only upon creation.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1039,6 +1080,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAuthTokensResult> getAuthTokensPlain(GetAuthTokensPlainArgs args, InvokeOptions options) {
@@ -1051,6 +1093,8 @@ public final class IdentityFunctions {
      * the compartment ID (remember that the tenancy is simply the root compartment).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1079,6 +1123,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAuthenticationPolicyResult> getAuthenticationPolicy(GetAuthenticationPolicyArgs args) {
@@ -1091,6 +1136,8 @@ public final class IdentityFunctions {
      * the compartment ID (remember that the tenancy is simply the root compartment).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1119,6 +1166,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAuthenticationPolicyResult> getAuthenticationPolicyPlain(GetAuthenticationPolicyPlainArgs args) {
@@ -1131,6 +1179,8 @@ public final class IdentityFunctions {
      * the compartment ID (remember that the tenancy is simply the root compartment).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1159,6 +1209,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAuthenticationPolicyResult> getAuthenticationPolicy(GetAuthenticationPolicyArgs args, InvokeOptions options) {
@@ -1171,6 +1222,8 @@ public final class IdentityFunctions {
      * the compartment ID (remember that the tenancy is simply the root compartment).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1199,6 +1252,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAuthenticationPolicyResult> getAuthenticationPolicyPlain(GetAuthenticationPolicyPlainArgs args, InvokeOptions options) {
@@ -1208,6 +1262,8 @@ public final class IdentityFunctions {
      * This data source provides the details of a single Availability Domain in Oracle Cloud Infrastructure Identity service.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1238,6 +1294,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAvailabilityDomainResult> getAvailabilityDomain(GetAvailabilityDomainArgs args) {
@@ -1247,6 +1304,8 @@ public final class IdentityFunctions {
      * This data source provides the details of a single Availability Domain in Oracle Cloud Infrastructure Identity service.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1277,6 +1336,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAvailabilityDomainResult> getAvailabilityDomainPlain(GetAvailabilityDomainPlainArgs args) {
@@ -1286,6 +1346,8 @@ public final class IdentityFunctions {
      * This data source provides the details of a single Availability Domain in Oracle Cloud Infrastructure Identity service.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1316,6 +1378,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAvailabilityDomainResult> getAvailabilityDomain(GetAvailabilityDomainArgs args, InvokeOptions options) {
@@ -1325,6 +1388,8 @@ public final class IdentityFunctions {
      * This data source provides the details of a single Availability Domain in Oracle Cloud Infrastructure Identity service.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1355,6 +1420,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAvailabilityDomainResult> getAvailabilityDomainPlain(GetAvailabilityDomainPlainArgs args, InvokeOptions options) {
@@ -1370,6 +1436,8 @@ public final class IdentityFunctions {
      * create a dependency on the list order.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1398,6 +1466,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAvailabilityDomainsResult> getAvailabilityDomains(GetAvailabilityDomainsArgs args) {
@@ -1413,6 +1482,8 @@ public final class IdentityFunctions {
      * create a dependency on the list order.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1441,6 +1512,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAvailabilityDomainsResult> getAvailabilityDomainsPlain(GetAvailabilityDomainsPlainArgs args) {
@@ -1456,6 +1528,8 @@ public final class IdentityFunctions {
      * create a dependency on the list order.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1484,6 +1558,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAvailabilityDomainsResult> getAvailabilityDomains(GetAvailabilityDomainsArgs args, InvokeOptions options) {
@@ -1499,6 +1574,8 @@ public final class IdentityFunctions {
      * create a dependency on the list order.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1527,6 +1604,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAvailabilityDomainsResult> getAvailabilityDomainsPlain(GetAvailabilityDomainsPlainArgs args, InvokeOptions options) {
@@ -1545,6 +1623,8 @@ public final class IdentityFunctions {
      * Service or the [ListVolumes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/Volume/ListVolumes) operation in Cloud Block Storage.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1573,6 +1653,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCompartmentResult> getCompartment(GetCompartmentArgs args) {
@@ -1591,6 +1672,8 @@ public final class IdentityFunctions {
      * Service or the [ListVolumes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/Volume/ListVolumes) operation in Cloud Block Storage.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1619,6 +1702,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCompartmentResult> getCompartmentPlain(GetCompartmentPlainArgs args) {
@@ -1637,6 +1721,8 @@ public final class IdentityFunctions {
      * Service or the [ListVolumes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/Volume/ListVolumes) operation in Cloud Block Storage.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1665,6 +1751,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCompartmentResult> getCompartment(GetCompartmentArgs args, InvokeOptions options) {
@@ -1683,6 +1770,8 @@ public final class IdentityFunctions {
      * Service or the [ListVolumes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/Volume/ListVolumes) operation in Cloud Block Storage.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1711,6 +1800,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCompartmentResult> getCompartmentPlain(GetCompartmentPlainArgs args, InvokeOptions options) {
@@ -1739,6 +1829,8 @@ public final class IdentityFunctions {
      * See [Where to Get the Tenancy&#39;s OCID and User&#39;s OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1771,6 +1863,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCompartmentsResult> getCompartments(GetCompartmentsArgs args) {
@@ -1799,6 +1892,8 @@ public final class IdentityFunctions {
      * See [Where to Get the Tenancy&#39;s OCID and User&#39;s OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1831,6 +1926,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCompartmentsResult> getCompartmentsPlain(GetCompartmentsPlainArgs args) {
@@ -1859,6 +1955,8 @@ public final class IdentityFunctions {
      * See [Where to Get the Tenancy&#39;s OCID and User&#39;s OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1891,6 +1989,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCompartmentsResult> getCompartments(GetCompartmentsArgs args, InvokeOptions options) {
@@ -1919,6 +2018,8 @@ public final class IdentityFunctions {
      * See [Where to Get the Tenancy&#39;s OCID and User&#39;s OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1951,6 +2052,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCompartmentsResult> getCompartmentsPlain(GetCompartmentsPlainArgs args, InvokeOptions options) {
@@ -1963,6 +2065,8 @@ public final class IdentityFunctions {
      * cost-tracking tags, see [Using Cost-tracking Tags](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/taggingoverview.htm#costs).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1991,6 +2095,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCostTrackingTagsResult> getCostTrackingTags(GetCostTrackingTagsArgs args) {
@@ -2003,6 +2108,8 @@ public final class IdentityFunctions {
      * cost-tracking tags, see [Using Cost-tracking Tags](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/taggingoverview.htm#costs).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2031,6 +2138,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCostTrackingTagsResult> getCostTrackingTagsPlain(GetCostTrackingTagsPlainArgs args) {
@@ -2043,6 +2151,8 @@ public final class IdentityFunctions {
      * cost-tracking tags, see [Using Cost-tracking Tags](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/taggingoverview.htm#costs).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2071,6 +2181,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCostTrackingTagsResult> getCostTrackingTags(GetCostTrackingTagsArgs args, InvokeOptions options) {
@@ -2083,6 +2194,8 @@ public final class IdentityFunctions {
      * cost-tracking tags, see [Using Cost-tracking Tags](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/taggingoverview.htm#costs).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2111,6 +2224,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCostTrackingTagsResult> getCostTrackingTagsPlain(GetCostTrackingTagsPlainArgs args, InvokeOptions options) {
@@ -2123,6 +2237,8 @@ public final class IdentityFunctions {
      * the secret key itself. The actual secret key is returned only upon creation.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2151,6 +2267,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCustomerSecretKeysResult> getCustomerSecretKeys(GetCustomerSecretKeysArgs args) {
@@ -2163,6 +2280,8 @@ public final class IdentityFunctions {
      * the secret key itself. The actual secret key is returned only upon creation.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2191,6 +2310,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCustomerSecretKeysResult> getCustomerSecretKeysPlain(GetCustomerSecretKeysPlainArgs args) {
@@ -2203,6 +2323,8 @@ public final class IdentityFunctions {
      * the secret key itself. The actual secret key is returned only upon creation.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2231,6 +2353,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCustomerSecretKeysResult> getCustomerSecretKeys(GetCustomerSecretKeysArgs args, InvokeOptions options) {
@@ -2243,6 +2366,8 @@ public final class IdentityFunctions {
      * the secret key itself. The actual secret key is returned only upon creation.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2271,6 +2396,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCustomerSecretKeysResult> getCustomerSecretKeysPlain(GetCustomerSecretKeysPlainArgs args, InvokeOptions options) {
@@ -2282,6 +2408,8 @@ public final class IdentityFunctions {
      * Lists the DB credentials for the specified user. The returned object contains the credential&#39;s OCID
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2312,6 +2440,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDbCredentialsResult> getDbCredentials(GetDbCredentialsArgs args) {
@@ -2323,6 +2452,8 @@ public final class IdentityFunctions {
      * Lists the DB credentials for the specified user. The returned object contains the credential&#39;s OCID
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2353,6 +2484,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDbCredentialsResult> getDbCredentialsPlain(GetDbCredentialsPlainArgs args) {
@@ -2364,6 +2496,8 @@ public final class IdentityFunctions {
      * Lists the DB credentials for the specified user. The returned object contains the credential&#39;s OCID
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2394,6 +2528,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDbCredentialsResult> getDbCredentials(GetDbCredentialsArgs args, InvokeOptions options) {
@@ -2405,6 +2540,8 @@ public final class IdentityFunctions {
      * Lists the DB credentials for the specified user. The returned object contains the credential&#39;s OCID
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2435,6 +2572,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDbCredentialsResult> getDbCredentialsPlain(GetDbCredentialsPlainArgs args, InvokeOptions options) {
@@ -2449,6 +2587,8 @@ public final class IdentityFunctions {
      * - If any internal error occurs, returns 500 INTERNAL SERVER ERROR.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2477,6 +2617,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainResult> getDomain(GetDomainArgs args) {
@@ -2491,6 +2632,8 @@ public final class IdentityFunctions {
      * - If any internal error occurs, returns 500 INTERNAL SERVER ERROR.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2519,6 +2662,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainResult> getDomainPlain(GetDomainPlainArgs args) {
@@ -2533,6 +2677,8 @@ public final class IdentityFunctions {
      * - If any internal error occurs, returns 500 INTERNAL SERVER ERROR.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2561,6 +2707,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainResult> getDomain(GetDomainArgs args, InvokeOptions options) {
@@ -2575,6 +2722,8 @@ public final class IdentityFunctions {
      * - If any internal error occurs, returns 500 INTERNAL SERVER ERROR.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2603,6 +2752,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainResult> getDomainPlain(GetDomainPlainArgs args, InvokeOptions options) {
@@ -2615,6 +2765,8 @@ public final class IdentityFunctions {
      * - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2651,6 +2803,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsResult> getDomains(GetDomainsArgs args) {
@@ -2663,6 +2816,8 @@ public final class IdentityFunctions {
      * - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2699,6 +2854,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsResult> getDomainsPlain(GetDomainsPlainArgs args) {
@@ -2711,6 +2867,8 @@ public final class IdentityFunctions {
      * - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2747,6 +2905,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsResult> getDomains(GetDomainsArgs args, InvokeOptions options) {
@@ -2759,6 +2918,8 @@ public final class IdentityFunctions {
      * - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2795,6 +2956,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsResult> getDomainsPlain(GetDomainsPlainArgs args, InvokeOptions options) {
@@ -2806,6 +2968,8 @@ public final class IdentityFunctions {
      * Get Account Mgmt Info
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2839,6 +3003,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsAccountMgmtInfoResult> getDomainsAccountMgmtInfo(GetDomainsAccountMgmtInfoArgs args) {
@@ -2850,6 +3015,8 @@ public final class IdentityFunctions {
      * Get Account Mgmt Info
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2883,6 +3050,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsAccountMgmtInfoResult> getDomainsAccountMgmtInfoPlain(GetDomainsAccountMgmtInfoPlainArgs args) {
@@ -2894,6 +3062,8 @@ public final class IdentityFunctions {
      * Get Account Mgmt Info
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2927,6 +3097,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsAccountMgmtInfoResult> getDomainsAccountMgmtInfo(GetDomainsAccountMgmtInfoArgs args, InvokeOptions options) {
@@ -2938,6 +3109,8 @@ public final class IdentityFunctions {
      * Get Account Mgmt Info
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2971,6 +3144,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsAccountMgmtInfoResult> getDomainsAccountMgmtInfoPlain(GetDomainsAccountMgmtInfoPlainArgs args, InvokeOptions options) {
@@ -2982,6 +3156,8 @@ public final class IdentityFunctions {
      * Search Account Mgmt Info
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3017,6 +3193,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsAccountMgmtInfosResult> getDomainsAccountMgmtInfos(GetDomainsAccountMgmtInfosArgs args) {
@@ -3028,6 +3205,8 @@ public final class IdentityFunctions {
      * Search Account Mgmt Info
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3063,6 +3242,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsAccountMgmtInfosResult> getDomainsAccountMgmtInfosPlain(GetDomainsAccountMgmtInfosPlainArgs args) {
@@ -3074,6 +3254,8 @@ public final class IdentityFunctions {
      * Search Account Mgmt Info
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3109,6 +3291,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsAccountMgmtInfosResult> getDomainsAccountMgmtInfos(GetDomainsAccountMgmtInfosArgs args, InvokeOptions options) {
@@ -3120,6 +3303,8 @@ public final class IdentityFunctions {
      * Search Account Mgmt Info
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3155,6 +3340,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsAccountMgmtInfosResult> getDomainsAccountMgmtInfosPlain(GetDomainsAccountMgmtInfosPlainArgs args, InvokeOptions options) {
@@ -3166,6 +3352,8 @@ public final class IdentityFunctions {
      * Get an account recovery setting.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3199,6 +3387,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsAccountRecoverySettingResult> getDomainsAccountRecoverySetting(GetDomainsAccountRecoverySettingArgs args) {
@@ -3210,6 +3399,8 @@ public final class IdentityFunctions {
      * Get an account recovery setting.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3243,6 +3434,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsAccountRecoverySettingResult> getDomainsAccountRecoverySettingPlain(GetDomainsAccountRecoverySettingPlainArgs args) {
@@ -3254,6 +3446,8 @@ public final class IdentityFunctions {
      * Get an account recovery setting.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3287,6 +3481,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsAccountRecoverySettingResult> getDomainsAccountRecoverySetting(GetDomainsAccountRecoverySettingArgs args, InvokeOptions options) {
@@ -3298,6 +3493,8 @@ public final class IdentityFunctions {
      * Get an account recovery setting.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3331,6 +3528,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsAccountRecoverySettingResult> getDomainsAccountRecoverySettingPlain(GetDomainsAccountRecoverySettingPlainArgs args, InvokeOptions options) {
@@ -3342,6 +3540,8 @@ public final class IdentityFunctions {
      * Search for account recovery settings.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3374,6 +3574,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsAccountRecoverySettingsResult> getDomainsAccountRecoverySettings(GetDomainsAccountRecoverySettingsArgs args) {
@@ -3385,6 +3586,8 @@ public final class IdentityFunctions {
      * Search for account recovery settings.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3417,6 +3620,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsAccountRecoverySettingsResult> getDomainsAccountRecoverySettingsPlain(GetDomainsAccountRecoverySettingsPlainArgs args) {
@@ -3428,6 +3632,8 @@ public final class IdentityFunctions {
      * Search for account recovery settings.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3460,6 +3666,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsAccountRecoverySettingsResult> getDomainsAccountRecoverySettings(GetDomainsAccountRecoverySettingsArgs args, InvokeOptions options) {
@@ -3471,6 +3678,8 @@ public final class IdentityFunctions {
      * Search for account recovery settings.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3503,6 +3712,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsAccountRecoverySettingsResult> getDomainsAccountRecoverySettingsPlain(GetDomainsAccountRecoverySettingsPlainArgs args, InvokeOptions options) {
@@ -3514,6 +3724,8 @@ public final class IdentityFunctions {
      * Get a user&#39;s API key.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3547,6 +3759,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsApiKeyResult> getDomainsApiKey(GetDomainsApiKeyArgs args) {
@@ -3558,6 +3771,8 @@ public final class IdentityFunctions {
      * Get a user&#39;s API key.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3591,6 +3806,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsApiKeyResult> getDomainsApiKeyPlain(GetDomainsApiKeyPlainArgs args) {
@@ -3602,6 +3818,8 @@ public final class IdentityFunctions {
      * Get a user&#39;s API key.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3635,6 +3853,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsApiKeyResult> getDomainsApiKey(GetDomainsApiKeyArgs args, InvokeOptions options) {
@@ -3646,6 +3865,8 @@ public final class IdentityFunctions {
      * Get a user&#39;s API key.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3679,6 +3900,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsApiKeyResult> getDomainsApiKeyPlain(GetDomainsApiKeyPlainArgs args, InvokeOptions options) {
@@ -3690,6 +3912,8 @@ public final class IdentityFunctions {
      * Search API keys.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3725,6 +3949,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsApiKeysResult> getDomainsApiKeys(GetDomainsApiKeysArgs args) {
@@ -3736,6 +3961,8 @@ public final class IdentityFunctions {
      * Search API keys.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3771,6 +3998,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsApiKeysResult> getDomainsApiKeysPlain(GetDomainsApiKeysPlainArgs args) {
@@ -3782,6 +4010,8 @@ public final class IdentityFunctions {
      * Search API keys.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3817,6 +4047,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsApiKeysResult> getDomainsApiKeys(GetDomainsApiKeysArgs args, InvokeOptions options) {
@@ -3828,6 +4059,8 @@ public final class IdentityFunctions {
      * Search API keys.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3863,6 +4096,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsApiKeysResult> getDomainsApiKeysPlain(GetDomainsApiKeysPlainArgs args, InvokeOptions options) {
@@ -3874,6 +4108,8 @@ public final class IdentityFunctions {
      * Get an App
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3907,6 +4143,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsAppResult> getDomainsApp(GetDomainsAppArgs args) {
@@ -3918,6 +4155,8 @@ public final class IdentityFunctions {
      * Get an App
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3951,6 +4190,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsAppResult> getDomainsAppPlain(GetDomainsAppPlainArgs args) {
@@ -3962,6 +4202,8 @@ public final class IdentityFunctions {
      * Get an App
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3995,6 +4237,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsAppResult> getDomainsApp(GetDomainsAppArgs args, InvokeOptions options) {
@@ -4006,6 +4249,8 @@ public final class IdentityFunctions {
      * Get an App
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4039,6 +4284,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsAppResult> getDomainsAppPlain(GetDomainsAppPlainArgs args, InvokeOptions options) {
@@ -4050,6 +4296,8 @@ public final class IdentityFunctions {
      * Get an AppRole
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4083,6 +4331,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsAppRoleResult> getDomainsAppRole(GetDomainsAppRoleArgs args) {
@@ -4094,6 +4343,8 @@ public final class IdentityFunctions {
      * Get an AppRole
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4127,6 +4378,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsAppRoleResult> getDomainsAppRolePlain(GetDomainsAppRolePlainArgs args) {
@@ -4138,6 +4390,8 @@ public final class IdentityFunctions {
      * Get an AppRole
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4171,6 +4425,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsAppRoleResult> getDomainsAppRole(GetDomainsAppRoleArgs args, InvokeOptions options) {
@@ -4182,6 +4437,8 @@ public final class IdentityFunctions {
      * Get an AppRole
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4215,6 +4472,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsAppRoleResult> getDomainsAppRolePlain(GetDomainsAppRolePlainArgs args, InvokeOptions options) {
@@ -4226,6 +4484,8 @@ public final class IdentityFunctions {
      * Search AppRoles
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4261,6 +4521,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsAppRolesResult> getDomainsAppRoles(GetDomainsAppRolesArgs args) {
@@ -4272,6 +4533,8 @@ public final class IdentityFunctions {
      * Search AppRoles
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4307,6 +4570,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsAppRolesResult> getDomainsAppRolesPlain(GetDomainsAppRolesPlainArgs args) {
@@ -4318,6 +4582,8 @@ public final class IdentityFunctions {
      * Search AppRoles
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4353,6 +4619,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsAppRolesResult> getDomainsAppRoles(GetDomainsAppRolesArgs args, InvokeOptions options) {
@@ -4364,6 +4631,8 @@ public final class IdentityFunctions {
      * Search AppRoles
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4399,6 +4668,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsAppRolesResult> getDomainsAppRolesPlain(GetDomainsAppRolesPlainArgs args, InvokeOptions options) {
@@ -4410,6 +4680,8 @@ public final class IdentityFunctions {
      * Get ApprovalWorkflow
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4443,6 +4715,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsApprovalWorkflowResult> getDomainsApprovalWorkflow(GetDomainsApprovalWorkflowArgs args) {
@@ -4454,6 +4727,8 @@ public final class IdentityFunctions {
      * Get ApprovalWorkflow
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4487,6 +4762,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsApprovalWorkflowResult> getDomainsApprovalWorkflowPlain(GetDomainsApprovalWorkflowPlainArgs args) {
@@ -4498,6 +4774,8 @@ public final class IdentityFunctions {
      * Get ApprovalWorkflow
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4531,6 +4809,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsApprovalWorkflowResult> getDomainsApprovalWorkflow(GetDomainsApprovalWorkflowArgs args, InvokeOptions options) {
@@ -4542,6 +4821,8 @@ public final class IdentityFunctions {
      * Get ApprovalWorkflow
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4575,6 +4856,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsApprovalWorkflowResult> getDomainsApprovalWorkflowPlain(GetDomainsApprovalWorkflowPlainArgs args, InvokeOptions options) {
@@ -4586,6 +4868,8 @@ public final class IdentityFunctions {
      * Get an Approval Workflow Assignment
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4619,6 +4903,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsApprovalWorkflowAssignmentResult> getDomainsApprovalWorkflowAssignment(GetDomainsApprovalWorkflowAssignmentArgs args) {
@@ -4630,6 +4915,8 @@ public final class IdentityFunctions {
      * Get an Approval Workflow Assignment
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4663,6 +4950,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsApprovalWorkflowAssignmentResult> getDomainsApprovalWorkflowAssignmentPlain(GetDomainsApprovalWorkflowAssignmentPlainArgs args) {
@@ -4674,6 +4962,8 @@ public final class IdentityFunctions {
      * Get an Approval Workflow Assignment
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4707,6 +4997,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsApprovalWorkflowAssignmentResult> getDomainsApprovalWorkflowAssignment(GetDomainsApprovalWorkflowAssignmentArgs args, InvokeOptions options) {
@@ -4718,6 +5009,8 @@ public final class IdentityFunctions {
      * Get an Approval Workflow Assignment
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4751,6 +5044,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsApprovalWorkflowAssignmentResult> getDomainsApprovalWorkflowAssignmentPlain(GetDomainsApprovalWorkflowAssignmentPlainArgs args, InvokeOptions options) {
@@ -4762,6 +5056,8 @@ public final class IdentityFunctions {
      * Search Approval Workflow Assignments
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4797,6 +5093,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsApprovalWorkflowAssignmentsResult> getDomainsApprovalWorkflowAssignments(GetDomainsApprovalWorkflowAssignmentsArgs args) {
@@ -4808,6 +5105,8 @@ public final class IdentityFunctions {
      * Search Approval Workflow Assignments
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4843,6 +5142,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsApprovalWorkflowAssignmentsResult> getDomainsApprovalWorkflowAssignmentsPlain(GetDomainsApprovalWorkflowAssignmentsPlainArgs args) {
@@ -4854,6 +5154,8 @@ public final class IdentityFunctions {
      * Search Approval Workflow Assignments
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4889,6 +5191,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsApprovalWorkflowAssignmentsResult> getDomainsApprovalWorkflowAssignments(GetDomainsApprovalWorkflowAssignmentsArgs args, InvokeOptions options) {
@@ -4900,6 +5203,8 @@ public final class IdentityFunctions {
      * Search Approval Workflow Assignments
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4935,6 +5240,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsApprovalWorkflowAssignmentsResult> getDomainsApprovalWorkflowAssignmentsPlain(GetDomainsApprovalWorkflowAssignmentsPlainArgs args, InvokeOptions options) {
@@ -4946,6 +5252,8 @@ public final class IdentityFunctions {
      * Get ApprovalWorkflowStep
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4979,6 +5287,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsApprovalWorkflowStepResult> getDomainsApprovalWorkflowStep(GetDomainsApprovalWorkflowStepArgs args) {
@@ -4990,6 +5299,8 @@ public final class IdentityFunctions {
      * Get ApprovalWorkflowStep
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5023,6 +5334,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsApprovalWorkflowStepResult> getDomainsApprovalWorkflowStepPlain(GetDomainsApprovalWorkflowStepPlainArgs args) {
@@ -5034,6 +5346,8 @@ public final class IdentityFunctions {
      * Get ApprovalWorkflowStep
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5067,6 +5381,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsApprovalWorkflowStepResult> getDomainsApprovalWorkflowStep(GetDomainsApprovalWorkflowStepArgs args, InvokeOptions options) {
@@ -5078,6 +5393,8 @@ public final class IdentityFunctions {
      * Get ApprovalWorkflowStep
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5111,6 +5428,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsApprovalWorkflowStepResult> getDomainsApprovalWorkflowStepPlain(GetDomainsApprovalWorkflowStepPlainArgs args, InvokeOptions options) {
@@ -5122,6 +5440,8 @@ public final class IdentityFunctions {
      * Search ApprovalWorkflowStep
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5157,6 +5477,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsApprovalWorkflowStepsResult> getDomainsApprovalWorkflowSteps(GetDomainsApprovalWorkflowStepsArgs args) {
@@ -5168,6 +5489,8 @@ public final class IdentityFunctions {
      * Search ApprovalWorkflowStep
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5203,6 +5526,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsApprovalWorkflowStepsResult> getDomainsApprovalWorkflowStepsPlain(GetDomainsApprovalWorkflowStepsPlainArgs args) {
@@ -5214,6 +5538,8 @@ public final class IdentityFunctions {
      * Search ApprovalWorkflowStep
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5249,6 +5575,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsApprovalWorkflowStepsResult> getDomainsApprovalWorkflowSteps(GetDomainsApprovalWorkflowStepsArgs args, InvokeOptions options) {
@@ -5260,6 +5587,8 @@ public final class IdentityFunctions {
      * Search ApprovalWorkflowStep
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5295,6 +5624,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsApprovalWorkflowStepsResult> getDomainsApprovalWorkflowStepsPlain(GetDomainsApprovalWorkflowStepsPlainArgs args, InvokeOptions options) {
@@ -5306,6 +5636,8 @@ public final class IdentityFunctions {
      * Search ApprovalWorkflow
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5341,6 +5673,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsApprovalWorkflowsResult> getDomainsApprovalWorkflows(GetDomainsApprovalWorkflowsArgs args) {
@@ -5352,6 +5685,8 @@ public final class IdentityFunctions {
      * Search ApprovalWorkflow
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5387,6 +5722,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsApprovalWorkflowsResult> getDomainsApprovalWorkflowsPlain(GetDomainsApprovalWorkflowsPlainArgs args) {
@@ -5398,6 +5734,8 @@ public final class IdentityFunctions {
      * Search ApprovalWorkflow
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5433,6 +5771,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsApprovalWorkflowsResult> getDomainsApprovalWorkflows(GetDomainsApprovalWorkflowsArgs args, InvokeOptions options) {
@@ -5444,6 +5783,8 @@ public final class IdentityFunctions {
      * Search ApprovalWorkflow
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5479,6 +5820,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsApprovalWorkflowsResult> getDomainsApprovalWorkflowsPlain(GetDomainsApprovalWorkflowsPlainArgs args, InvokeOptions options) {
@@ -5490,6 +5832,8 @@ public final class IdentityFunctions {
      * Search Apps
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5525,6 +5869,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsAppsResult> getDomainsApps(GetDomainsAppsArgs args) {
@@ -5536,6 +5881,8 @@ public final class IdentityFunctions {
      * Search Apps
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5571,6 +5918,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsAppsResult> getDomainsAppsPlain(GetDomainsAppsPlainArgs args) {
@@ -5582,6 +5930,8 @@ public final class IdentityFunctions {
      * Search Apps
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5617,6 +5967,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsAppsResult> getDomainsApps(GetDomainsAppsArgs args, InvokeOptions options) {
@@ -5628,6 +5979,8 @@ public final class IdentityFunctions {
      * Search Apps
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5663,6 +6016,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsAppsResult> getDomainsAppsPlain(GetDomainsAppsPlainArgs args, InvokeOptions options) {
@@ -5674,6 +6028,8 @@ public final class IdentityFunctions {
      * Get a user&#39;s Auth token.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5707,6 +6063,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsAuthTokenResult> getDomainsAuthToken(GetDomainsAuthTokenArgs args) {
@@ -5718,6 +6075,8 @@ public final class IdentityFunctions {
      * Get a user&#39;s Auth token.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5751,6 +6110,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsAuthTokenResult> getDomainsAuthTokenPlain(GetDomainsAuthTokenPlainArgs args) {
@@ -5762,6 +6122,8 @@ public final class IdentityFunctions {
      * Get a user&#39;s Auth token.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5795,6 +6157,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsAuthTokenResult> getDomainsAuthToken(GetDomainsAuthTokenArgs args, InvokeOptions options) {
@@ -5806,6 +6169,8 @@ public final class IdentityFunctions {
      * Get a user&#39;s Auth token.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5839,6 +6204,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsAuthTokenResult> getDomainsAuthTokenPlain(GetDomainsAuthTokenPlainArgs args, InvokeOptions options) {
@@ -5850,6 +6216,8 @@ public final class IdentityFunctions {
      * Search for Auth tokens.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5885,6 +6253,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsAuthTokensResult> getDomainsAuthTokens(GetDomainsAuthTokensArgs args) {
@@ -5896,6 +6265,8 @@ public final class IdentityFunctions {
      * Search for Auth tokens.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5931,6 +6302,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsAuthTokensResult> getDomainsAuthTokensPlain(GetDomainsAuthTokensPlainArgs args) {
@@ -5942,6 +6314,8 @@ public final class IdentityFunctions {
      * Search for Auth tokens.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5977,6 +6351,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsAuthTokensResult> getDomainsAuthTokens(GetDomainsAuthTokensArgs args, InvokeOptions options) {
@@ -5988,6 +6363,8 @@ public final class IdentityFunctions {
      * Search for Auth tokens.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6023,6 +6400,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsAuthTokensResult> getDomainsAuthTokensPlain(GetDomainsAuthTokensPlainArgs args, InvokeOptions options) {
@@ -6034,6 +6412,8 @@ public final class IdentityFunctions {
      * Get Authentication Factor Settings
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6067,6 +6447,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsAuthenticationFactorSettingResult> getDomainsAuthenticationFactorSetting(GetDomainsAuthenticationFactorSettingArgs args) {
@@ -6078,6 +6459,8 @@ public final class IdentityFunctions {
      * Get Authentication Factor Settings
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6111,6 +6494,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsAuthenticationFactorSettingResult> getDomainsAuthenticationFactorSettingPlain(GetDomainsAuthenticationFactorSettingPlainArgs args) {
@@ -6122,6 +6506,8 @@ public final class IdentityFunctions {
      * Get Authentication Factor Settings
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6155,6 +6541,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsAuthenticationFactorSettingResult> getDomainsAuthenticationFactorSetting(GetDomainsAuthenticationFactorSettingArgs args, InvokeOptions options) {
@@ -6166,6 +6553,8 @@ public final class IdentityFunctions {
      * Get Authentication Factor Settings
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6199,6 +6588,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsAuthenticationFactorSettingResult> getDomainsAuthenticationFactorSettingPlain(GetDomainsAuthenticationFactorSettingPlainArgs args, InvokeOptions options) {
@@ -6210,6 +6600,8 @@ public final class IdentityFunctions {
      * Search Authentication Factor Settings
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6242,6 +6634,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsAuthenticationFactorSettingsResult> getDomainsAuthenticationFactorSettings(GetDomainsAuthenticationFactorSettingsArgs args) {
@@ -6253,6 +6646,8 @@ public final class IdentityFunctions {
      * Search Authentication Factor Settings
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6285,6 +6680,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsAuthenticationFactorSettingsResult> getDomainsAuthenticationFactorSettingsPlain(GetDomainsAuthenticationFactorSettingsPlainArgs args) {
@@ -6296,6 +6692,8 @@ public final class IdentityFunctions {
      * Search Authentication Factor Settings
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6328,6 +6726,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsAuthenticationFactorSettingsResult> getDomainsAuthenticationFactorSettings(GetDomainsAuthenticationFactorSettingsArgs args, InvokeOptions options) {
@@ -6339,6 +6738,8 @@ public final class IdentityFunctions {
      * Search Authentication Factor Settings
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6371,6 +6772,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsAuthenticationFactorSettingsResult> getDomainsAuthenticationFactorSettingsPlain(GetDomainsAuthenticationFactorSettingsPlainArgs args, InvokeOptions options) {
@@ -6382,6 +6784,8 @@ public final class IdentityFunctions {
      * Get Branding Settings
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6415,6 +6819,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsBrandingSettingResult> getDomainsBrandingSetting(GetDomainsBrandingSettingArgs args) {
@@ -6426,6 +6831,8 @@ public final class IdentityFunctions {
      * Get Branding Settings
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6459,6 +6866,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsBrandingSettingResult> getDomainsBrandingSettingPlain(GetDomainsBrandingSettingPlainArgs args) {
@@ -6470,6 +6878,8 @@ public final class IdentityFunctions {
      * Get Branding Settings
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6503,6 +6913,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsBrandingSettingResult> getDomainsBrandingSetting(GetDomainsBrandingSettingArgs args, InvokeOptions options) {
@@ -6514,6 +6925,8 @@ public final class IdentityFunctions {
      * Get Branding Settings
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6547,6 +6960,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsBrandingSettingResult> getDomainsBrandingSettingPlain(GetDomainsBrandingSettingPlainArgs args, InvokeOptions options) {
@@ -6558,6 +6972,8 @@ public final class IdentityFunctions {
      * Search Branding Settings
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6590,6 +7006,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsBrandingSettingsResult> getDomainsBrandingSettings(GetDomainsBrandingSettingsArgs args) {
@@ -6601,6 +7018,8 @@ public final class IdentityFunctions {
      * Search Branding Settings
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6633,6 +7052,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsBrandingSettingsResult> getDomainsBrandingSettingsPlain(GetDomainsBrandingSettingsPlainArgs args) {
@@ -6644,6 +7064,8 @@ public final class IdentityFunctions {
      * Search Branding Settings
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6676,6 +7098,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsBrandingSettingsResult> getDomainsBrandingSettings(GetDomainsBrandingSettingsArgs args, InvokeOptions options) {
@@ -6687,6 +7110,8 @@ public final class IdentityFunctions {
      * Search Branding Settings
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6719,6 +7144,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsBrandingSettingsResult> getDomainsBrandingSettingsPlain(GetDomainsBrandingSettingsPlainArgs args, InvokeOptions options) {
@@ -6730,6 +7156,8 @@ public final class IdentityFunctions {
      * Get a Cloud Gate
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6763,6 +7191,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsCloudGateResult> getDomainsCloudGate(GetDomainsCloudGateArgs args) {
@@ -6774,6 +7203,8 @@ public final class IdentityFunctions {
      * Get a Cloud Gate
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6807,6 +7238,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsCloudGateResult> getDomainsCloudGatePlain(GetDomainsCloudGatePlainArgs args) {
@@ -6818,6 +7250,8 @@ public final class IdentityFunctions {
      * Get a Cloud Gate
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6851,6 +7285,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsCloudGateResult> getDomainsCloudGate(GetDomainsCloudGateArgs args, InvokeOptions options) {
@@ -6862,6 +7297,8 @@ public final class IdentityFunctions {
      * Get a Cloud Gate
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6895,6 +7332,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsCloudGateResult> getDomainsCloudGatePlain(GetDomainsCloudGatePlainArgs args, InvokeOptions options) {
@@ -6906,6 +7344,8 @@ public final class IdentityFunctions {
      * Get a Cloud Gate mapping
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6939,6 +7379,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsCloudGateMappingResult> getDomainsCloudGateMapping(GetDomainsCloudGateMappingArgs args) {
@@ -6950,6 +7391,8 @@ public final class IdentityFunctions {
      * Get a Cloud Gate mapping
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6983,6 +7426,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsCloudGateMappingResult> getDomainsCloudGateMappingPlain(GetDomainsCloudGateMappingPlainArgs args) {
@@ -6994,6 +7438,8 @@ public final class IdentityFunctions {
      * Get a Cloud Gate mapping
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7027,6 +7473,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsCloudGateMappingResult> getDomainsCloudGateMapping(GetDomainsCloudGateMappingArgs args, InvokeOptions options) {
@@ -7038,6 +7485,8 @@ public final class IdentityFunctions {
      * Get a Cloud Gate mapping
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7071,6 +7520,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsCloudGateMappingResult> getDomainsCloudGateMappingPlain(GetDomainsCloudGateMappingPlainArgs args, InvokeOptions options) {
@@ -7082,6 +7532,8 @@ public final class IdentityFunctions {
      * Search Cloud Gate mappings
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7117,6 +7569,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsCloudGateMappingsResult> getDomainsCloudGateMappings(GetDomainsCloudGateMappingsArgs args) {
@@ -7128,6 +7581,8 @@ public final class IdentityFunctions {
      * Search Cloud Gate mappings
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7163,6 +7618,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsCloudGateMappingsResult> getDomainsCloudGateMappingsPlain(GetDomainsCloudGateMappingsPlainArgs args) {
@@ -7174,6 +7630,8 @@ public final class IdentityFunctions {
      * Search Cloud Gate mappings
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7209,6 +7667,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsCloudGateMappingsResult> getDomainsCloudGateMappings(GetDomainsCloudGateMappingsArgs args, InvokeOptions options) {
@@ -7220,6 +7679,8 @@ public final class IdentityFunctions {
      * Search Cloud Gate mappings
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7255,6 +7716,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsCloudGateMappingsResult> getDomainsCloudGateMappingsPlain(GetDomainsCloudGateMappingsPlainArgs args, InvokeOptions options) {
@@ -7266,6 +7728,8 @@ public final class IdentityFunctions {
      * Get a Cloud Gate server
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7299,6 +7763,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsCloudGateServerResult> getDomainsCloudGateServer(GetDomainsCloudGateServerArgs args) {
@@ -7310,6 +7775,8 @@ public final class IdentityFunctions {
      * Get a Cloud Gate server
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7343,6 +7810,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsCloudGateServerResult> getDomainsCloudGateServerPlain(GetDomainsCloudGateServerPlainArgs args) {
@@ -7354,6 +7822,8 @@ public final class IdentityFunctions {
      * Get a Cloud Gate server
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7387,6 +7857,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsCloudGateServerResult> getDomainsCloudGateServer(GetDomainsCloudGateServerArgs args, InvokeOptions options) {
@@ -7398,6 +7869,8 @@ public final class IdentityFunctions {
      * Get a Cloud Gate server
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7431,6 +7904,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsCloudGateServerResult> getDomainsCloudGateServerPlain(GetDomainsCloudGateServerPlainArgs args, InvokeOptions options) {
@@ -7442,6 +7916,8 @@ public final class IdentityFunctions {
      * Search Cloud Gate servers
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7477,6 +7953,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsCloudGateServersResult> getDomainsCloudGateServers(GetDomainsCloudGateServersArgs args) {
@@ -7488,6 +7965,8 @@ public final class IdentityFunctions {
      * Search Cloud Gate servers
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7523,6 +8002,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsCloudGateServersResult> getDomainsCloudGateServersPlain(GetDomainsCloudGateServersPlainArgs args) {
@@ -7534,6 +8014,8 @@ public final class IdentityFunctions {
      * Search Cloud Gate servers
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7569,6 +8051,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsCloudGateServersResult> getDomainsCloudGateServers(GetDomainsCloudGateServersArgs args, InvokeOptions options) {
@@ -7580,6 +8063,8 @@ public final class IdentityFunctions {
      * Search Cloud Gate servers
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7615,6 +8100,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsCloudGateServersResult> getDomainsCloudGateServersPlain(GetDomainsCloudGateServersPlainArgs args, InvokeOptions options) {
@@ -7626,6 +8112,8 @@ public final class IdentityFunctions {
      * Search Cloud Gates
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7661,6 +8149,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsCloudGatesResult> getDomainsCloudGates(GetDomainsCloudGatesArgs args) {
@@ -7672,6 +8161,8 @@ public final class IdentityFunctions {
      * Search Cloud Gates
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7707,6 +8198,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsCloudGatesResult> getDomainsCloudGatesPlain(GetDomainsCloudGatesPlainArgs args) {
@@ -7718,6 +8210,8 @@ public final class IdentityFunctions {
      * Search Cloud Gates
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7753,6 +8247,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsCloudGatesResult> getDomainsCloudGates(GetDomainsCloudGatesArgs args, InvokeOptions options) {
@@ -7764,6 +8259,8 @@ public final class IdentityFunctions {
      * Search Cloud Gates
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7799,6 +8296,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsCloudGatesResult> getDomainsCloudGatesPlain(GetDomainsCloudGatesPlainArgs args, InvokeOptions options) {
@@ -7810,6 +8308,8 @@ public final class IdentityFunctions {
      * Get a Condition
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7843,6 +8343,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsConditionResult> getDomainsCondition(GetDomainsConditionArgs args) {
@@ -7854,6 +8355,8 @@ public final class IdentityFunctions {
      * Get a Condition
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7887,6 +8390,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsConditionResult> getDomainsConditionPlain(GetDomainsConditionPlainArgs args) {
@@ -7898,6 +8402,8 @@ public final class IdentityFunctions {
      * Get a Condition
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7931,6 +8437,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsConditionResult> getDomainsCondition(GetDomainsConditionArgs args, InvokeOptions options) {
@@ -7942,6 +8449,8 @@ public final class IdentityFunctions {
      * Get a Condition
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7975,6 +8484,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsConditionResult> getDomainsConditionPlain(GetDomainsConditionPlainArgs args, InvokeOptions options) {
@@ -7986,6 +8496,8 @@ public final class IdentityFunctions {
      * Search Conditions
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8021,6 +8533,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsConditionsResult> getDomainsConditions(GetDomainsConditionsArgs args) {
@@ -8032,6 +8545,8 @@ public final class IdentityFunctions {
      * Search Conditions
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8067,6 +8582,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsConditionsResult> getDomainsConditionsPlain(GetDomainsConditionsPlainArgs args) {
@@ -8078,6 +8594,8 @@ public final class IdentityFunctions {
      * Search Conditions
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8113,6 +8631,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsConditionsResult> getDomainsConditions(GetDomainsConditionsArgs args, InvokeOptions options) {
@@ -8124,6 +8643,8 @@ public final class IdentityFunctions {
      * Search Conditions
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8159,6 +8680,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsConditionsResult> getDomainsConditionsPlain(GetDomainsConditionsPlainArgs args, InvokeOptions options) {
@@ -8170,6 +8692,8 @@ public final class IdentityFunctions {
      * Get a user&#39;s customer secret key.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8203,6 +8727,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsCustomerSecretKeyResult> getDomainsCustomerSecretKey(GetDomainsCustomerSecretKeyArgs args) {
@@ -8214,6 +8739,8 @@ public final class IdentityFunctions {
      * Get a user&#39;s customer secret key.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8247,6 +8774,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsCustomerSecretKeyResult> getDomainsCustomerSecretKeyPlain(GetDomainsCustomerSecretKeyPlainArgs args) {
@@ -8258,6 +8786,8 @@ public final class IdentityFunctions {
      * Get a user&#39;s customer secret key.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8291,6 +8821,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsCustomerSecretKeyResult> getDomainsCustomerSecretKey(GetDomainsCustomerSecretKeyArgs args, InvokeOptions options) {
@@ -8302,6 +8833,8 @@ public final class IdentityFunctions {
      * Get a user&#39;s customer secret key.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8335,6 +8868,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsCustomerSecretKeyResult> getDomainsCustomerSecretKeyPlain(GetDomainsCustomerSecretKeyPlainArgs args, InvokeOptions options) {
@@ -8346,6 +8880,8 @@ public final class IdentityFunctions {
      * Search for a user&#39;s customer secret keys.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8381,6 +8917,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsCustomerSecretKeysResult> getDomainsCustomerSecretKeys(GetDomainsCustomerSecretKeysArgs args) {
@@ -8392,6 +8929,8 @@ public final class IdentityFunctions {
      * Search for a user&#39;s customer secret keys.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8427,6 +8966,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsCustomerSecretKeysResult> getDomainsCustomerSecretKeysPlain(GetDomainsCustomerSecretKeysPlainArgs args) {
@@ -8438,6 +8978,8 @@ public final class IdentityFunctions {
      * Search for a user&#39;s customer secret keys.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8473,6 +9015,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsCustomerSecretKeysResult> getDomainsCustomerSecretKeys(GetDomainsCustomerSecretKeysArgs args, InvokeOptions options) {
@@ -8484,6 +9027,8 @@ public final class IdentityFunctions {
      * Search for a user&#39;s customer secret keys.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8519,6 +9064,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsCustomerSecretKeysResult> getDomainsCustomerSecretKeysPlain(GetDomainsCustomerSecretKeysPlainArgs args, InvokeOptions options) {
@@ -8530,6 +9076,8 @@ public final class IdentityFunctions {
      * Get a Dynamic Resource Group.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8563,6 +9111,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsDynamicResourceGroupResult> getDomainsDynamicResourceGroup(GetDomainsDynamicResourceGroupArgs args) {
@@ -8574,6 +9123,8 @@ public final class IdentityFunctions {
      * Get a Dynamic Resource Group.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8607,6 +9158,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsDynamicResourceGroupResult> getDomainsDynamicResourceGroupPlain(GetDomainsDynamicResourceGroupPlainArgs args) {
@@ -8618,6 +9170,8 @@ public final class IdentityFunctions {
      * Get a Dynamic Resource Group.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8651,6 +9205,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsDynamicResourceGroupResult> getDomainsDynamicResourceGroup(GetDomainsDynamicResourceGroupArgs args, InvokeOptions options) {
@@ -8662,6 +9217,8 @@ public final class IdentityFunctions {
      * Get a Dynamic Resource Group.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8695,6 +9252,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsDynamicResourceGroupResult> getDomainsDynamicResourceGroupPlain(GetDomainsDynamicResourceGroupPlainArgs args, InvokeOptions options) {
@@ -8706,6 +9264,8 @@ public final class IdentityFunctions {
      * Search for Dynamic Resource Groups.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8741,6 +9301,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsDynamicResourceGroupsResult> getDomainsDynamicResourceGroups(GetDomainsDynamicResourceGroupsArgs args) {
@@ -8752,6 +9313,8 @@ public final class IdentityFunctions {
      * Search for Dynamic Resource Groups.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8787,6 +9350,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsDynamicResourceGroupsResult> getDomainsDynamicResourceGroupsPlain(GetDomainsDynamicResourceGroupsPlainArgs args) {
@@ -8798,6 +9362,8 @@ public final class IdentityFunctions {
      * Search for Dynamic Resource Groups.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8833,6 +9399,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsDynamicResourceGroupsResult> getDomainsDynamicResourceGroups(GetDomainsDynamicResourceGroupsArgs args, InvokeOptions options) {
@@ -8844,6 +9411,8 @@ public final class IdentityFunctions {
      * Search for Dynamic Resource Groups.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8879,6 +9448,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsDynamicResourceGroupsResult> getDomainsDynamicResourceGroupsPlain(GetDomainsDynamicResourceGroupsPlainArgs args, InvokeOptions options) {
@@ -8890,6 +9460,8 @@ public final class IdentityFunctions {
      * Get a Grant
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8923,6 +9495,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsGrantResult> getDomainsGrant(GetDomainsGrantArgs args) {
@@ -8934,6 +9507,8 @@ public final class IdentityFunctions {
      * Get a Grant
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8967,6 +9542,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsGrantResult> getDomainsGrantPlain(GetDomainsGrantPlainArgs args) {
@@ -8978,6 +9554,8 @@ public final class IdentityFunctions {
      * Get a Grant
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9011,6 +9589,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsGrantResult> getDomainsGrant(GetDomainsGrantArgs args, InvokeOptions options) {
@@ -9022,6 +9601,8 @@ public final class IdentityFunctions {
      * Get a Grant
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9055,6 +9636,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsGrantResult> getDomainsGrantPlain(GetDomainsGrantPlainArgs args, InvokeOptions options) {
@@ -9066,6 +9648,8 @@ public final class IdentityFunctions {
      * Search Grants
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9101,6 +9685,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsGrantsResult> getDomainsGrants(GetDomainsGrantsArgs args) {
@@ -9112,6 +9697,8 @@ public final class IdentityFunctions {
      * Search Grants
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9147,6 +9734,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsGrantsResult> getDomainsGrantsPlain(GetDomainsGrantsPlainArgs args) {
@@ -9158,6 +9746,8 @@ public final class IdentityFunctions {
      * Search Grants
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9193,6 +9783,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsGrantsResult> getDomainsGrants(GetDomainsGrantsArgs args, InvokeOptions options) {
@@ -9204,6 +9795,8 @@ public final class IdentityFunctions {
      * Search Grants
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9239,6 +9832,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsGrantsResult> getDomainsGrantsPlain(GetDomainsGrantsPlainArgs args, InvokeOptions options) {
@@ -9250,6 +9844,8 @@ public final class IdentityFunctions {
      * Get a group. &lt;b&gt;Important:&lt;/b&gt; The Group SEARCH and GET operations on users and members will throw an exception if the response has more than 10,000 members. To avoid the exception, use the pagination filter to GET or SEARCH group members.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9283,6 +9879,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsGroupResult> getDomainsGroup(GetDomainsGroupArgs args) {
@@ -9294,6 +9891,8 @@ public final class IdentityFunctions {
      * Get a group. &lt;b&gt;Important:&lt;/b&gt; The Group SEARCH and GET operations on users and members will throw an exception if the response has more than 10,000 members. To avoid the exception, use the pagination filter to GET or SEARCH group members.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9327,6 +9926,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsGroupResult> getDomainsGroupPlain(GetDomainsGroupPlainArgs args) {
@@ -9338,6 +9938,8 @@ public final class IdentityFunctions {
      * Get a group. &lt;b&gt;Important:&lt;/b&gt; The Group SEARCH and GET operations on users and members will throw an exception if the response has more than 10,000 members. To avoid the exception, use the pagination filter to GET or SEARCH group members.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9371,6 +9973,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsGroupResult> getDomainsGroup(GetDomainsGroupArgs args, InvokeOptions options) {
@@ -9382,6 +9985,8 @@ public final class IdentityFunctions {
      * Get a group. &lt;b&gt;Important:&lt;/b&gt; The Group SEARCH and GET operations on users and members will throw an exception if the response has more than 10,000 members. To avoid the exception, use the pagination filter to GET or SEARCH group members.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9415,6 +10020,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsGroupResult> getDomainsGroupPlain(GetDomainsGroupPlainArgs args, InvokeOptions options) {
@@ -9426,6 +10032,8 @@ public final class IdentityFunctions {
      * Search for groups. &lt;b&gt;Important:&lt;/b&gt; The Group SEARCH and GET operations on users and members will throw an exception if the response has more than 10,000 members. To avoid the exception, use the pagination filter to GET or SEARCH group members.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9461,6 +10069,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsGroupsResult> getDomainsGroups(GetDomainsGroupsArgs args) {
@@ -9472,6 +10081,8 @@ public final class IdentityFunctions {
      * Search for groups. &lt;b&gt;Important:&lt;/b&gt; The Group SEARCH and GET operations on users and members will throw an exception if the response has more than 10,000 members. To avoid the exception, use the pagination filter to GET or SEARCH group members.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9507,6 +10118,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsGroupsResult> getDomainsGroupsPlain(GetDomainsGroupsPlainArgs args) {
@@ -9518,6 +10130,8 @@ public final class IdentityFunctions {
      * Search for groups. &lt;b&gt;Important:&lt;/b&gt; The Group SEARCH and GET operations on users and members will throw an exception if the response has more than 10,000 members. To avoid the exception, use the pagination filter to GET or SEARCH group members.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9553,6 +10167,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsGroupsResult> getDomainsGroups(GetDomainsGroupsArgs args, InvokeOptions options) {
@@ -9564,6 +10179,8 @@ public final class IdentityFunctions {
      * Search for groups. &lt;b&gt;Important:&lt;/b&gt; The Group SEARCH and GET operations on users and members will throw an exception if the response has more than 10,000 members. To avoid the exception, use the pagination filter to GET or SEARCH group members.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9599,6 +10216,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsGroupsResult> getDomainsGroupsPlain(GetDomainsGroupsPlainArgs args, InvokeOptions options) {
@@ -9610,6 +10228,8 @@ public final class IdentityFunctions {
      * Get an existing Identity Propagation Trust configuration.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9643,6 +10263,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsIdentityPropagationTrustResult> getDomainsIdentityPropagationTrust(GetDomainsIdentityPropagationTrustArgs args) {
@@ -9654,6 +10275,8 @@ public final class IdentityFunctions {
      * Get an existing Identity Propagation Trust configuration.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9687,6 +10310,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsIdentityPropagationTrustResult> getDomainsIdentityPropagationTrustPlain(GetDomainsIdentityPropagationTrustPlainArgs args) {
@@ -9698,6 +10322,8 @@ public final class IdentityFunctions {
      * Get an existing Identity Propagation Trust configuration.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9731,6 +10357,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsIdentityPropagationTrustResult> getDomainsIdentityPropagationTrust(GetDomainsIdentityPropagationTrustArgs args, InvokeOptions options) {
@@ -9742,6 +10369,8 @@ public final class IdentityFunctions {
      * Get an existing Identity Propagation Trust configuration.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9775,6 +10404,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsIdentityPropagationTrustResult> getDomainsIdentityPropagationTrustPlain(GetDomainsIdentityPropagationTrustPlainArgs args, InvokeOptions options) {
@@ -9786,6 +10416,8 @@ public final class IdentityFunctions {
      * List the Identity Propagation Trust configurations.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9821,6 +10453,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsIdentityPropagationTrustsResult> getDomainsIdentityPropagationTrusts(GetDomainsIdentityPropagationTrustsArgs args) {
@@ -9832,6 +10465,8 @@ public final class IdentityFunctions {
      * List the Identity Propagation Trust configurations.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9867,6 +10502,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsIdentityPropagationTrustsResult> getDomainsIdentityPropagationTrustsPlain(GetDomainsIdentityPropagationTrustsPlainArgs args) {
@@ -9878,6 +10514,8 @@ public final class IdentityFunctions {
      * List the Identity Propagation Trust configurations.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9913,6 +10551,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsIdentityPropagationTrustsResult> getDomainsIdentityPropagationTrusts(GetDomainsIdentityPropagationTrustsArgs args, InvokeOptions options) {
@@ -9924,6 +10563,8 @@ public final class IdentityFunctions {
      * List the Identity Propagation Trust configurations.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9959,6 +10600,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsIdentityPropagationTrustsResult> getDomainsIdentityPropagationTrustsPlain(GetDomainsIdentityPropagationTrustsPlainArgs args, InvokeOptions options) {
@@ -9970,6 +10612,8 @@ public final class IdentityFunctions {
      * Get an Identity Provider
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10003,6 +10647,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsIdentityProviderResult> getDomainsIdentityProvider(GetDomainsIdentityProviderArgs args) {
@@ -10014,6 +10659,8 @@ public final class IdentityFunctions {
      * Get an Identity Provider
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10047,6 +10694,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsIdentityProviderResult> getDomainsIdentityProviderPlain(GetDomainsIdentityProviderPlainArgs args) {
@@ -10058,6 +10706,8 @@ public final class IdentityFunctions {
      * Get an Identity Provider
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10091,6 +10741,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsIdentityProviderResult> getDomainsIdentityProvider(GetDomainsIdentityProviderArgs args, InvokeOptions options) {
@@ -10102,6 +10753,8 @@ public final class IdentityFunctions {
      * Get an Identity Provider
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10135,6 +10788,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsIdentityProviderResult> getDomainsIdentityProviderPlain(GetDomainsIdentityProviderPlainArgs args, InvokeOptions options) {
@@ -10146,6 +10800,8 @@ public final class IdentityFunctions {
      * Search Identity Providers
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10181,6 +10837,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsIdentityProvidersResult> getDomainsIdentityProviders(GetDomainsIdentityProvidersArgs args) {
@@ -10192,6 +10849,8 @@ public final class IdentityFunctions {
      * Search Identity Providers
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10227,6 +10886,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsIdentityProvidersResult> getDomainsIdentityProvidersPlain(GetDomainsIdentityProvidersPlainArgs args) {
@@ -10238,6 +10898,8 @@ public final class IdentityFunctions {
      * Search Identity Providers
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10273,6 +10935,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsIdentityProvidersResult> getDomainsIdentityProviders(GetDomainsIdentityProvidersArgs args, InvokeOptions options) {
@@ -10284,6 +10947,8 @@ public final class IdentityFunctions {
      * Search Identity Providers
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10319,6 +10984,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsIdentityProvidersResult> getDomainsIdentityProvidersPlain(GetDomainsIdentityProvidersPlainArgs args, InvokeOptions options) {
@@ -10330,6 +10996,8 @@ public final class IdentityFunctions {
      * Get an Identity setting.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10363,6 +11031,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsIdentitySettingResult> getDomainsIdentitySetting(GetDomainsIdentitySettingArgs args) {
@@ -10374,6 +11043,8 @@ public final class IdentityFunctions {
      * Get an Identity setting.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10407,6 +11078,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsIdentitySettingResult> getDomainsIdentitySettingPlain(GetDomainsIdentitySettingPlainArgs args) {
@@ -10418,6 +11090,8 @@ public final class IdentityFunctions {
      * Get an Identity setting.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10451,6 +11125,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsIdentitySettingResult> getDomainsIdentitySetting(GetDomainsIdentitySettingArgs args, InvokeOptions options) {
@@ -10462,6 +11137,8 @@ public final class IdentityFunctions {
      * Get an Identity setting.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10495,6 +11172,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsIdentitySettingResult> getDomainsIdentitySettingPlain(GetDomainsIdentitySettingPlainArgs args, InvokeOptions options) {
@@ -10506,6 +11184,8 @@ public final class IdentityFunctions {
      * Search for Identity settings.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10538,6 +11218,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsIdentitySettingsResult> getDomainsIdentitySettings(GetDomainsIdentitySettingsArgs args) {
@@ -10549,6 +11230,8 @@ public final class IdentityFunctions {
      * Search for Identity settings.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10581,6 +11264,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsIdentitySettingsResult> getDomainsIdentitySettingsPlain(GetDomainsIdentitySettingsPlainArgs args) {
@@ -10592,6 +11276,8 @@ public final class IdentityFunctions {
      * Search for Identity settings.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10624,6 +11310,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsIdentitySettingsResult> getDomainsIdentitySettings(GetDomainsIdentitySettingsArgs args, InvokeOptions options) {
@@ -10635,6 +11322,8 @@ public final class IdentityFunctions {
      * Search for Identity settings.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10667,6 +11356,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsIdentitySettingsResult> getDomainsIdentitySettingsPlain(GetDomainsIdentitySettingsPlainArgs args, InvokeOptions options) {
@@ -10678,6 +11368,8 @@ public final class IdentityFunctions {
      * Get KmsiSettings
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10711,6 +11403,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsKmsiSettingResult> getDomainsKmsiSetting(GetDomainsKmsiSettingArgs args) {
@@ -10722,6 +11415,8 @@ public final class IdentityFunctions {
      * Get KmsiSettings
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10755,6 +11450,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsKmsiSettingResult> getDomainsKmsiSettingPlain(GetDomainsKmsiSettingPlainArgs args) {
@@ -10766,6 +11462,8 @@ public final class IdentityFunctions {
      * Get KmsiSettings
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10799,6 +11497,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsKmsiSettingResult> getDomainsKmsiSetting(GetDomainsKmsiSettingArgs args, InvokeOptions options) {
@@ -10810,6 +11509,8 @@ public final class IdentityFunctions {
      * Get KmsiSettings
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10843,6 +11544,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsKmsiSettingResult> getDomainsKmsiSettingPlain(GetDomainsKmsiSettingPlainArgs args, InvokeOptions options) {
@@ -10854,6 +11556,8 @@ public final class IdentityFunctions {
      * Search KmsiSettings
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10886,6 +11590,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsKmsiSettingsResult> getDomainsKmsiSettings(GetDomainsKmsiSettingsArgs args) {
@@ -10897,6 +11602,8 @@ public final class IdentityFunctions {
      * Search KmsiSettings
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10929,6 +11636,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsKmsiSettingsResult> getDomainsKmsiSettingsPlain(GetDomainsKmsiSettingsPlainArgs args) {
@@ -10940,6 +11648,8 @@ public final class IdentityFunctions {
      * Search KmsiSettings
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10972,6 +11682,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsKmsiSettingsResult> getDomainsKmsiSettings(GetDomainsKmsiSettingsArgs args, InvokeOptions options) {
@@ -10983,6 +11694,8 @@ public final class IdentityFunctions {
      * Search KmsiSettings
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11015,6 +11728,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsKmsiSettingsResult> getDomainsKmsiSettingsPlain(GetDomainsKmsiSettingsPlainArgs args, InvokeOptions options) {
@@ -11026,6 +11740,8 @@ public final class IdentityFunctions {
      * Get a user&#39;s own API key.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11057,6 +11773,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsMyApiKeyResult> getDomainsMyApiKey(GetDomainsMyApiKeyArgs args) {
@@ -11068,6 +11785,8 @@ public final class IdentityFunctions {
      * Get a user&#39;s own API key.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11099,6 +11818,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsMyApiKeyResult> getDomainsMyApiKeyPlain(GetDomainsMyApiKeyPlainArgs args) {
@@ -11110,6 +11830,8 @@ public final class IdentityFunctions {
      * Get a user&#39;s own API key.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11141,6 +11863,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsMyApiKeyResult> getDomainsMyApiKey(GetDomainsMyApiKeyArgs args, InvokeOptions options) {
@@ -11152,6 +11875,8 @@ public final class IdentityFunctions {
      * Get a user&#39;s own API key.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11183,6 +11908,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsMyApiKeyResult> getDomainsMyApiKeyPlain(GetDomainsMyApiKeyPlainArgs args, InvokeOptions options) {
@@ -11194,6 +11920,8 @@ public final class IdentityFunctions {
      * Search for a user&#39;s own API key.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11227,6 +11955,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsMyApiKeysResult> getDomainsMyApiKeys(GetDomainsMyApiKeysArgs args) {
@@ -11238,6 +11967,8 @@ public final class IdentityFunctions {
      * Search for a user&#39;s own API key.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11271,6 +12002,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsMyApiKeysResult> getDomainsMyApiKeysPlain(GetDomainsMyApiKeysPlainArgs args) {
@@ -11282,6 +12014,8 @@ public final class IdentityFunctions {
      * Search for a user&#39;s own API key.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11315,6 +12049,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsMyApiKeysResult> getDomainsMyApiKeys(GetDomainsMyApiKeysArgs args, InvokeOptions options) {
@@ -11326,6 +12061,8 @@ public final class IdentityFunctions {
      * Search for a user&#39;s own API key.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11359,6 +12096,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsMyApiKeysResult> getDomainsMyApiKeysPlain(GetDomainsMyApiKeysPlainArgs args, InvokeOptions options) {
@@ -11370,6 +12108,8 @@ public final class IdentityFunctions {
      * Search My Apps
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11403,6 +12143,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsMyAppsResult> getDomainsMyApps(GetDomainsMyAppsArgs args) {
@@ -11414,6 +12155,8 @@ public final class IdentityFunctions {
      * Search My Apps
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11447,6 +12190,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsMyAppsResult> getDomainsMyAppsPlain(GetDomainsMyAppsPlainArgs args) {
@@ -11458,6 +12202,8 @@ public final class IdentityFunctions {
      * Search My Apps
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11491,6 +12237,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsMyAppsResult> getDomainsMyApps(GetDomainsMyAppsArgs args, InvokeOptions options) {
@@ -11502,6 +12249,8 @@ public final class IdentityFunctions {
      * Search My Apps
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11535,6 +12284,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsMyAppsResult> getDomainsMyAppsPlain(GetDomainsMyAppsPlainArgs args, InvokeOptions options) {
@@ -11546,6 +12296,8 @@ public final class IdentityFunctions {
      * Get a user&#39;s own Auth token.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11577,6 +12329,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsMyAuthTokenResult> getDomainsMyAuthToken(GetDomainsMyAuthTokenArgs args) {
@@ -11588,6 +12341,8 @@ public final class IdentityFunctions {
      * Get a user&#39;s own Auth token.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11619,6 +12374,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsMyAuthTokenResult> getDomainsMyAuthTokenPlain(GetDomainsMyAuthTokenPlainArgs args) {
@@ -11630,6 +12386,8 @@ public final class IdentityFunctions {
      * Get a user&#39;s own Auth token.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11661,6 +12419,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsMyAuthTokenResult> getDomainsMyAuthToken(GetDomainsMyAuthTokenArgs args, InvokeOptions options) {
@@ -11672,6 +12431,8 @@ public final class IdentityFunctions {
      * Get a user&#39;s own Auth token.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11703,6 +12464,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsMyAuthTokenResult> getDomainsMyAuthTokenPlain(GetDomainsMyAuthTokenPlainArgs args, InvokeOptions options) {
@@ -11714,6 +12476,8 @@ public final class IdentityFunctions {
      * Search for a user&#39;s own Auth token.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11747,6 +12511,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsMyAuthTokensResult> getDomainsMyAuthTokens(GetDomainsMyAuthTokensArgs args) {
@@ -11758,6 +12523,8 @@ public final class IdentityFunctions {
      * Search for a user&#39;s own Auth token.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11791,6 +12558,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsMyAuthTokensResult> getDomainsMyAuthTokensPlain(GetDomainsMyAuthTokensPlainArgs args) {
@@ -11802,6 +12570,8 @@ public final class IdentityFunctions {
      * Search for a user&#39;s own Auth token.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11835,6 +12605,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsMyAuthTokensResult> getDomainsMyAuthTokens(GetDomainsMyAuthTokensArgs args, InvokeOptions options) {
@@ -11846,6 +12617,8 @@ public final class IdentityFunctions {
      * Search for a user&#39;s own Auth token.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11879,6 +12652,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsMyAuthTokensResult> getDomainsMyAuthTokensPlain(GetDomainsMyAuthTokensPlainArgs args, InvokeOptions options) {
@@ -11890,6 +12664,8 @@ public final class IdentityFunctions {
      * Get My MyCompletedApproval
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11921,6 +12697,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsMyCompletedApprovalResult> getDomainsMyCompletedApproval(GetDomainsMyCompletedApprovalArgs args) {
@@ -11932,6 +12709,8 @@ public final class IdentityFunctions {
      * Get My MyCompletedApproval
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11963,6 +12742,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsMyCompletedApprovalResult> getDomainsMyCompletedApprovalPlain(GetDomainsMyCompletedApprovalPlainArgs args) {
@@ -11974,6 +12754,8 @@ public final class IdentityFunctions {
      * Get My MyCompletedApproval
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12005,6 +12787,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsMyCompletedApprovalResult> getDomainsMyCompletedApproval(GetDomainsMyCompletedApprovalArgs args, InvokeOptions options) {
@@ -12016,6 +12799,8 @@ public final class IdentityFunctions {
      * Get My MyCompletedApproval
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12047,6 +12832,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsMyCompletedApprovalResult> getDomainsMyCompletedApprovalPlain(GetDomainsMyCompletedApprovalPlainArgs args, InvokeOptions options) {
@@ -12058,6 +12844,8 @@ public final class IdentityFunctions {
      * Search My MyCompletedApproval
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12091,6 +12879,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsMyCompletedApprovalsResult> getDomainsMyCompletedApprovals(GetDomainsMyCompletedApprovalsArgs args) {
@@ -12102,6 +12891,8 @@ public final class IdentityFunctions {
      * Search My MyCompletedApproval
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12135,6 +12926,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsMyCompletedApprovalsResult> getDomainsMyCompletedApprovalsPlain(GetDomainsMyCompletedApprovalsPlainArgs args) {
@@ -12146,6 +12938,8 @@ public final class IdentityFunctions {
      * Search My MyCompletedApproval
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12179,6 +12973,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsMyCompletedApprovalsResult> getDomainsMyCompletedApprovals(GetDomainsMyCompletedApprovalsArgs args, InvokeOptions options) {
@@ -12190,6 +12985,8 @@ public final class IdentityFunctions {
      * Search My MyCompletedApproval
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12223,6 +13020,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsMyCompletedApprovalsResult> getDomainsMyCompletedApprovalsPlain(GetDomainsMyCompletedApprovalsPlainArgs args, InvokeOptions options) {
@@ -12234,6 +13032,8 @@ public final class IdentityFunctions {
      * Get a user&#39;s own customer secret key.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12265,6 +13065,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsMyCustomerSecretKeyResult> getDomainsMyCustomerSecretKey(GetDomainsMyCustomerSecretKeyArgs args) {
@@ -12276,6 +13077,8 @@ public final class IdentityFunctions {
      * Get a user&#39;s own customer secret key.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12307,6 +13110,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsMyCustomerSecretKeyResult> getDomainsMyCustomerSecretKeyPlain(GetDomainsMyCustomerSecretKeyPlainArgs args) {
@@ -12318,6 +13122,8 @@ public final class IdentityFunctions {
      * Get a user&#39;s own customer secret key.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12349,6 +13155,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsMyCustomerSecretKeyResult> getDomainsMyCustomerSecretKey(GetDomainsMyCustomerSecretKeyArgs args, InvokeOptions options) {
@@ -12360,6 +13167,8 @@ public final class IdentityFunctions {
      * Get a user&#39;s own customer secret key.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12391,6 +13200,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsMyCustomerSecretKeyResult> getDomainsMyCustomerSecretKeyPlain(GetDomainsMyCustomerSecretKeyPlainArgs args, InvokeOptions options) {
@@ -12402,6 +13212,8 @@ public final class IdentityFunctions {
      * Search for a user&#39;s own customer secret key.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12435,6 +13247,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsMyCustomerSecretKeysResult> getDomainsMyCustomerSecretKeys(GetDomainsMyCustomerSecretKeysArgs args) {
@@ -12446,6 +13259,8 @@ public final class IdentityFunctions {
      * Search for a user&#39;s own customer secret key.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12479,6 +13294,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsMyCustomerSecretKeysResult> getDomainsMyCustomerSecretKeysPlain(GetDomainsMyCustomerSecretKeysPlainArgs args) {
@@ -12490,6 +13306,8 @@ public final class IdentityFunctions {
      * Search for a user&#39;s own customer secret key.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12523,6 +13341,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsMyCustomerSecretKeysResult> getDomainsMyCustomerSecretKeys(GetDomainsMyCustomerSecretKeysArgs args, InvokeOptions options) {
@@ -12534,6 +13353,8 @@ public final class IdentityFunctions {
      * Search for a user&#39;s own customer secret key.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12567,6 +13388,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsMyCustomerSecretKeysResult> getDomainsMyCustomerSecretKeysPlain(GetDomainsMyCustomerSecretKeysPlainArgs args, InvokeOptions options) {
@@ -12578,6 +13400,8 @@ public final class IdentityFunctions {
      * Get a Device
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12611,6 +13435,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsMyDeviceResult> getDomainsMyDevice(GetDomainsMyDeviceArgs args) {
@@ -12622,6 +13447,8 @@ public final class IdentityFunctions {
      * Get a Device
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12655,6 +13482,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsMyDeviceResult> getDomainsMyDevicePlain(GetDomainsMyDevicePlainArgs args) {
@@ -12666,6 +13494,8 @@ public final class IdentityFunctions {
      * Get a Device
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12699,6 +13529,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsMyDeviceResult> getDomainsMyDevice(GetDomainsMyDeviceArgs args, InvokeOptions options) {
@@ -12710,6 +13541,8 @@ public final class IdentityFunctions {
      * Get a Device
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12743,6 +13576,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsMyDeviceResult> getDomainsMyDevicePlain(GetDomainsMyDevicePlainArgs args, InvokeOptions options) {
@@ -12754,6 +13588,8 @@ public final class IdentityFunctions {
      * Search Devices
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12789,6 +13625,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsMyDevicesResult> getDomainsMyDevices(GetDomainsMyDevicesArgs args) {
@@ -12800,6 +13637,8 @@ public final class IdentityFunctions {
      * Search Devices
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12835,6 +13674,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsMyDevicesResult> getDomainsMyDevicesPlain(GetDomainsMyDevicesPlainArgs args) {
@@ -12846,6 +13686,8 @@ public final class IdentityFunctions {
      * Search Devices
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12881,6 +13723,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsMyDevicesResult> getDomainsMyDevices(GetDomainsMyDevicesArgs args, InvokeOptions options) {
@@ -12892,6 +13735,8 @@ public final class IdentityFunctions {
      * Search Devices
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12927,6 +13772,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsMyDevicesResult> getDomainsMyDevicesPlain(GetDomainsMyDevicesPlainArgs args, InvokeOptions options) {
@@ -12938,6 +13784,8 @@ public final class IdentityFunctions {
      * Search for &#39;My Groups&#39;.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12973,6 +13821,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsMyGroupsResult> getDomainsMyGroups(GetDomainsMyGroupsArgs args) {
@@ -12984,6 +13833,8 @@ public final class IdentityFunctions {
      * Search for &#39;My Groups&#39;.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13019,6 +13870,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsMyGroupsResult> getDomainsMyGroupsPlain(GetDomainsMyGroupsPlainArgs args) {
@@ -13030,6 +13882,8 @@ public final class IdentityFunctions {
      * Search for &#39;My Groups&#39;.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13065,6 +13919,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsMyGroupsResult> getDomainsMyGroups(GetDomainsMyGroupsArgs args, InvokeOptions options) {
@@ -13076,6 +13931,8 @@ public final class IdentityFunctions {
      * Search for &#39;My Groups&#39;.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13111,6 +13968,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsMyGroupsResult> getDomainsMyGroupsPlain(GetDomainsMyGroupsPlainArgs args, InvokeOptions options) {
@@ -13122,6 +13980,8 @@ public final class IdentityFunctions {
      * Get a user&#39;s own OAuth2 client credential.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13153,6 +14013,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsMyOauth2clientCredentialResult> getDomainsMyOauth2clientCredential(GetDomainsMyOauth2clientCredentialArgs args) {
@@ -13164,6 +14025,8 @@ public final class IdentityFunctions {
      * Get a user&#39;s own OAuth2 client credential.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13195,6 +14058,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsMyOauth2clientCredentialResult> getDomainsMyOauth2clientCredentialPlain(GetDomainsMyOauth2clientCredentialPlainArgs args) {
@@ -13206,6 +14070,8 @@ public final class IdentityFunctions {
      * Get a user&#39;s own OAuth2 client credential.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13237,6 +14103,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsMyOauth2clientCredentialResult> getDomainsMyOauth2clientCredential(GetDomainsMyOauth2clientCredentialArgs args, InvokeOptions options) {
@@ -13248,6 +14115,8 @@ public final class IdentityFunctions {
      * Get a user&#39;s own OAuth2 client credential.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13279,6 +14148,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsMyOauth2clientCredentialResult> getDomainsMyOauth2clientCredentialPlain(GetDomainsMyOauth2clientCredentialPlainArgs args, InvokeOptions options) {
@@ -13290,6 +14160,8 @@ public final class IdentityFunctions {
      * Search for a user&#39;s own OAuth2 client credential.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13323,6 +14195,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsMyOauth2clientCredentialsResult> getDomainsMyOauth2clientCredentials(GetDomainsMyOauth2clientCredentialsArgs args) {
@@ -13334,6 +14207,8 @@ public final class IdentityFunctions {
      * Search for a user&#39;s own OAuth2 client credential.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13367,6 +14242,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsMyOauth2clientCredentialsResult> getDomainsMyOauth2clientCredentialsPlain(GetDomainsMyOauth2clientCredentialsPlainArgs args) {
@@ -13378,6 +14254,8 @@ public final class IdentityFunctions {
      * Search for a user&#39;s own OAuth2 client credential.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13411,6 +14289,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsMyOauth2clientCredentialsResult> getDomainsMyOauth2clientCredentials(GetDomainsMyOauth2clientCredentialsArgs args, InvokeOptions options) {
@@ -13422,6 +14301,8 @@ public final class IdentityFunctions {
      * Search for a user&#39;s own OAuth2 client credential.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13455,6 +14336,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsMyOauth2clientCredentialsResult> getDomainsMyOauth2clientCredentialsPlain(GetDomainsMyOauth2clientCredentialsPlainArgs args, InvokeOptions options) {
@@ -13466,6 +14348,8 @@ public final class IdentityFunctions {
      * Get My MyPendingApproval
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13497,6 +14381,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsMyPendingApprovalResult> getDomainsMyPendingApproval(GetDomainsMyPendingApprovalArgs args) {
@@ -13508,6 +14393,8 @@ public final class IdentityFunctions {
      * Get My MyPendingApproval
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13539,6 +14426,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsMyPendingApprovalResult> getDomainsMyPendingApprovalPlain(GetDomainsMyPendingApprovalPlainArgs args) {
@@ -13550,6 +14438,8 @@ public final class IdentityFunctions {
      * Get My MyPendingApproval
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13581,6 +14471,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsMyPendingApprovalResult> getDomainsMyPendingApproval(GetDomainsMyPendingApprovalArgs args, InvokeOptions options) {
@@ -13592,6 +14483,8 @@ public final class IdentityFunctions {
      * Get My MyPendingApproval
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13623,6 +14516,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsMyPendingApprovalResult> getDomainsMyPendingApprovalPlain(GetDomainsMyPendingApprovalPlainArgs args, InvokeOptions options) {
@@ -13634,6 +14528,8 @@ public final class IdentityFunctions {
      * Search My Approvals
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13667,6 +14563,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsMyPendingApprovalsResult> getDomainsMyPendingApprovals(GetDomainsMyPendingApprovalsArgs args) {
@@ -13678,6 +14575,8 @@ public final class IdentityFunctions {
      * Search My Approvals
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13711,6 +14610,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsMyPendingApprovalsResult> getDomainsMyPendingApprovalsPlain(GetDomainsMyPendingApprovalsPlainArgs args) {
@@ -13722,6 +14622,8 @@ public final class IdentityFunctions {
      * Search My Approvals
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13755,6 +14657,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsMyPendingApprovalsResult> getDomainsMyPendingApprovals(GetDomainsMyPendingApprovalsArgs args, InvokeOptions options) {
@@ -13766,6 +14669,8 @@ public final class IdentityFunctions {
      * Search My Approvals
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13799,6 +14704,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsMyPendingApprovalsResult> getDomainsMyPendingApprovalsPlain(GetDomainsMyPendingApprovalsPlainArgs args, InvokeOptions options) {
@@ -13810,6 +14716,8 @@ public final class IdentityFunctions {
      * Search My Requestable Groups
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13843,6 +14751,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsMyRequestableGroupsResult> getDomainsMyRequestableGroups(GetDomainsMyRequestableGroupsArgs args) {
@@ -13854,6 +14763,8 @@ public final class IdentityFunctions {
      * Search My Requestable Groups
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13887,6 +14798,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsMyRequestableGroupsResult> getDomainsMyRequestableGroupsPlain(GetDomainsMyRequestableGroupsPlainArgs args) {
@@ -13898,6 +14810,8 @@ public final class IdentityFunctions {
      * Search My Requestable Groups
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13931,6 +14845,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsMyRequestableGroupsResult> getDomainsMyRequestableGroups(GetDomainsMyRequestableGroupsArgs args, InvokeOptions options) {
@@ -13942,6 +14857,8 @@ public final class IdentityFunctions {
      * Search My Requestable Groups
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13975,6 +14892,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsMyRequestableGroupsResult> getDomainsMyRequestableGroupsPlain(GetDomainsMyRequestableGroupsPlainArgs args, InvokeOptions options) {
@@ -13986,6 +14904,8 @@ public final class IdentityFunctions {
      * Search My Requests
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14021,6 +14941,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsMyRequestsResult> getDomainsMyRequests(GetDomainsMyRequestsArgs args) {
@@ -14032,6 +14953,8 @@ public final class IdentityFunctions {
      * Search My Requests
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14067,6 +14990,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsMyRequestsResult> getDomainsMyRequestsPlain(GetDomainsMyRequestsPlainArgs args) {
@@ -14078,6 +15002,8 @@ public final class IdentityFunctions {
      * Search My Requests
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14113,6 +15039,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsMyRequestsResult> getDomainsMyRequests(GetDomainsMyRequestsArgs args, InvokeOptions options) {
@@ -14124,6 +15051,8 @@ public final class IdentityFunctions {
      * Search My Requests
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14159,6 +15088,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsMyRequestsResult> getDomainsMyRequestsPlain(GetDomainsMyRequestsPlainArgs args, InvokeOptions options) {
@@ -14170,6 +15100,8 @@ public final class IdentityFunctions {
      * Get a user&#39;s own SMTP credential.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14201,6 +15133,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsMySmtpCredentialResult> getDomainsMySmtpCredential(GetDomainsMySmtpCredentialArgs args) {
@@ -14212,6 +15145,8 @@ public final class IdentityFunctions {
      * Get a user&#39;s own SMTP credential.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14243,6 +15178,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsMySmtpCredentialResult> getDomainsMySmtpCredentialPlain(GetDomainsMySmtpCredentialPlainArgs args) {
@@ -14254,6 +15190,8 @@ public final class IdentityFunctions {
      * Get a user&#39;s own SMTP credential.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14285,6 +15223,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsMySmtpCredentialResult> getDomainsMySmtpCredential(GetDomainsMySmtpCredentialArgs args, InvokeOptions options) {
@@ -14296,6 +15235,8 @@ public final class IdentityFunctions {
      * Get a user&#39;s own SMTP credential.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14327,6 +15268,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsMySmtpCredentialResult> getDomainsMySmtpCredentialPlain(GetDomainsMySmtpCredentialPlainArgs args, InvokeOptions options) {
@@ -14338,6 +15280,8 @@ public final class IdentityFunctions {
      * Search for a user&#39;s own SMTP credential.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14371,6 +15315,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsMySmtpCredentialsResult> getDomainsMySmtpCredentials(GetDomainsMySmtpCredentialsArgs args) {
@@ -14382,6 +15327,8 @@ public final class IdentityFunctions {
      * Search for a user&#39;s own SMTP credential.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14415,6 +15362,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsMySmtpCredentialsResult> getDomainsMySmtpCredentialsPlain(GetDomainsMySmtpCredentialsPlainArgs args) {
@@ -14426,6 +15374,8 @@ public final class IdentityFunctions {
      * Search for a user&#39;s own SMTP credential.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14459,6 +15409,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsMySmtpCredentialsResult> getDomainsMySmtpCredentials(GetDomainsMySmtpCredentialsArgs args, InvokeOptions options) {
@@ -14470,6 +15421,8 @@ public final class IdentityFunctions {
      * Search for a user&#39;s own SMTP credential.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14503,6 +15456,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsMySmtpCredentialsResult> getDomainsMySmtpCredentialsPlain(GetDomainsMySmtpCredentialsPlainArgs args, InvokeOptions options) {
@@ -14514,6 +15468,8 @@ public final class IdentityFunctions {
      * Get a user&#39;s own support account.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14545,6 +15501,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsMySupportAccountResult> getDomainsMySupportAccount(GetDomainsMySupportAccountArgs args) {
@@ -14556,6 +15513,8 @@ public final class IdentityFunctions {
      * Get a user&#39;s own support account.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14587,6 +15546,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsMySupportAccountResult> getDomainsMySupportAccountPlain(GetDomainsMySupportAccountPlainArgs args) {
@@ -14598,6 +15558,8 @@ public final class IdentityFunctions {
      * Get a user&#39;s own support account.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14629,6 +15591,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsMySupportAccountResult> getDomainsMySupportAccount(GetDomainsMySupportAccountArgs args, InvokeOptions options) {
@@ -14640,6 +15603,8 @@ public final class IdentityFunctions {
      * Get a user&#39;s own support account.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14671,6 +15636,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsMySupportAccountResult> getDomainsMySupportAccountPlain(GetDomainsMySupportAccountPlainArgs args, InvokeOptions options) {
@@ -14682,6 +15648,8 @@ public final class IdentityFunctions {
      * Search for a user&#39;s own support account.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14715,6 +15683,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsMySupportAccountsResult> getDomainsMySupportAccounts(GetDomainsMySupportAccountsArgs args) {
@@ -14726,6 +15695,8 @@ public final class IdentityFunctions {
      * Search for a user&#39;s own support account.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14759,6 +15730,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsMySupportAccountsResult> getDomainsMySupportAccountsPlain(GetDomainsMySupportAccountsPlainArgs args) {
@@ -14770,6 +15742,8 @@ public final class IdentityFunctions {
      * Search for a user&#39;s own support account.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14803,6 +15777,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsMySupportAccountsResult> getDomainsMySupportAccounts(GetDomainsMySupportAccountsArgs args, InvokeOptions options) {
@@ -14814,6 +15789,8 @@ public final class IdentityFunctions {
      * Search for a user&#39;s own support account.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14847,6 +15824,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsMySupportAccountsResult> getDomainsMySupportAccountsPlain(GetDomainsMySupportAccountsPlainArgs args, InvokeOptions options) {
@@ -14858,6 +15836,8 @@ public final class IdentityFunctions {
      * Get a Trusted User Agent
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14891,6 +15871,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsMyTrustedUserAgentResult> getDomainsMyTrustedUserAgent(GetDomainsMyTrustedUserAgentArgs args) {
@@ -14902,6 +15883,8 @@ public final class IdentityFunctions {
      * Get a Trusted User Agent
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14935,6 +15918,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsMyTrustedUserAgentResult> getDomainsMyTrustedUserAgentPlain(GetDomainsMyTrustedUserAgentPlainArgs args) {
@@ -14946,6 +15930,8 @@ public final class IdentityFunctions {
      * Get a Trusted User Agent
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14979,6 +15965,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsMyTrustedUserAgentResult> getDomainsMyTrustedUserAgent(GetDomainsMyTrustedUserAgentArgs args, InvokeOptions options) {
@@ -14990,6 +15977,8 @@ public final class IdentityFunctions {
      * Get a Trusted User Agent
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15023,6 +16012,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsMyTrustedUserAgentResult> getDomainsMyTrustedUserAgentPlain(GetDomainsMyTrustedUserAgentPlainArgs args, InvokeOptions options) {
@@ -15034,6 +16024,8 @@ public final class IdentityFunctions {
      * Search Trusted User Agents
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15069,6 +16061,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsMyTrustedUserAgentsResult> getDomainsMyTrustedUserAgents(GetDomainsMyTrustedUserAgentsArgs args) {
@@ -15080,6 +16073,8 @@ public final class IdentityFunctions {
      * Search Trusted User Agents
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15115,6 +16110,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsMyTrustedUserAgentsResult> getDomainsMyTrustedUserAgentsPlain(GetDomainsMyTrustedUserAgentsPlainArgs args) {
@@ -15126,6 +16122,8 @@ public final class IdentityFunctions {
      * Search Trusted User Agents
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15161,6 +16159,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsMyTrustedUserAgentsResult> getDomainsMyTrustedUserAgents(GetDomainsMyTrustedUserAgentsArgs args, InvokeOptions options) {
@@ -15172,6 +16171,8 @@ public final class IdentityFunctions {
      * Search Trusted User Agents
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15207,6 +16208,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsMyTrustedUserAgentsResult> getDomainsMyTrustedUserAgentsPlain(GetDomainsMyTrustedUserAgentsPlainArgs args, InvokeOptions options) {
@@ -15218,6 +16220,8 @@ public final class IdentityFunctions {
      * Get a user&#39;s own database (DB) credential.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15249,6 +16253,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsMyUserDbCredentialResult> getDomainsMyUserDbCredential(GetDomainsMyUserDbCredentialArgs args) {
@@ -15260,6 +16265,8 @@ public final class IdentityFunctions {
      * Get a user&#39;s own database (DB) credential.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15291,6 +16298,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsMyUserDbCredentialResult> getDomainsMyUserDbCredentialPlain(GetDomainsMyUserDbCredentialPlainArgs args) {
@@ -15302,6 +16310,8 @@ public final class IdentityFunctions {
      * Get a user&#39;s own database (DB) credential.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15333,6 +16343,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsMyUserDbCredentialResult> getDomainsMyUserDbCredential(GetDomainsMyUserDbCredentialArgs args, InvokeOptions options) {
@@ -15344,6 +16355,8 @@ public final class IdentityFunctions {
      * Get a user&#39;s own database (DB) credential.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15375,6 +16388,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsMyUserDbCredentialResult> getDomainsMyUserDbCredentialPlain(GetDomainsMyUserDbCredentialPlainArgs args, InvokeOptions options) {
@@ -15386,6 +16400,8 @@ public final class IdentityFunctions {
      * Search for a user&#39;s own database (DB) credential.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15419,6 +16435,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsMyUserDbCredentialsResult> getDomainsMyUserDbCredentials(GetDomainsMyUserDbCredentialsArgs args) {
@@ -15430,6 +16447,8 @@ public final class IdentityFunctions {
      * Search for a user&#39;s own database (DB) credential.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15463,6 +16482,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsMyUserDbCredentialsResult> getDomainsMyUserDbCredentialsPlain(GetDomainsMyUserDbCredentialsPlainArgs args) {
@@ -15474,6 +16494,8 @@ public final class IdentityFunctions {
      * Search for a user&#39;s own database (DB) credential.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15507,6 +16529,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsMyUserDbCredentialsResult> getDomainsMyUserDbCredentials(GetDomainsMyUserDbCredentialsArgs args, InvokeOptions options) {
@@ -15518,6 +16541,8 @@ public final class IdentityFunctions {
      * Search for a user&#39;s own database (DB) credential.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15551,6 +16576,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsMyUserDbCredentialsResult> getDomainsMyUserDbCredentialsPlain(GetDomainsMyUserDbCredentialsPlainArgs args, InvokeOptions options) {
@@ -15562,6 +16588,8 @@ public final class IdentityFunctions {
      * Get a NetworkPerimeter
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15595,6 +16623,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsNetworkPerimeterResult> getDomainsNetworkPerimeter(GetDomainsNetworkPerimeterArgs args) {
@@ -15606,6 +16635,8 @@ public final class IdentityFunctions {
      * Get a NetworkPerimeter
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15639,6 +16670,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsNetworkPerimeterResult> getDomainsNetworkPerimeterPlain(GetDomainsNetworkPerimeterPlainArgs args) {
@@ -15650,6 +16682,8 @@ public final class IdentityFunctions {
      * Get a NetworkPerimeter
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15683,6 +16717,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsNetworkPerimeterResult> getDomainsNetworkPerimeter(GetDomainsNetworkPerimeterArgs args, InvokeOptions options) {
@@ -15694,6 +16729,8 @@ public final class IdentityFunctions {
      * Get a NetworkPerimeter
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15727,6 +16764,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsNetworkPerimeterResult> getDomainsNetworkPerimeterPlain(GetDomainsNetworkPerimeterPlainArgs args, InvokeOptions options) {
@@ -15738,6 +16776,8 @@ public final class IdentityFunctions {
      * Search NetworkPerimeters
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15773,6 +16813,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsNetworkPerimetersResult> getDomainsNetworkPerimeters(GetDomainsNetworkPerimetersArgs args) {
@@ -15784,6 +16825,8 @@ public final class IdentityFunctions {
      * Search NetworkPerimeters
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15819,6 +16862,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsNetworkPerimetersResult> getDomainsNetworkPerimetersPlain(GetDomainsNetworkPerimetersPlainArgs args) {
@@ -15830,6 +16874,8 @@ public final class IdentityFunctions {
      * Search NetworkPerimeters
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15865,6 +16911,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsNetworkPerimetersResult> getDomainsNetworkPerimeters(GetDomainsNetworkPerimetersArgs args, InvokeOptions options) {
@@ -15876,6 +16923,8 @@ public final class IdentityFunctions {
      * Search NetworkPerimeters
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15911,6 +16960,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsNetworkPerimetersResult> getDomainsNetworkPerimetersPlain(GetDomainsNetworkPerimetersPlainArgs args, InvokeOptions options) {
@@ -15922,6 +16972,8 @@ public final class IdentityFunctions {
      * Get Notification Settings
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15955,6 +17007,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsNotificationSettingResult> getDomainsNotificationSetting(GetDomainsNotificationSettingArgs args) {
@@ -15966,6 +17019,8 @@ public final class IdentityFunctions {
      * Get Notification Settings
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15999,6 +17054,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsNotificationSettingResult> getDomainsNotificationSettingPlain(GetDomainsNotificationSettingPlainArgs args) {
@@ -16010,6 +17066,8 @@ public final class IdentityFunctions {
      * Get Notification Settings
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16043,6 +17101,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsNotificationSettingResult> getDomainsNotificationSetting(GetDomainsNotificationSettingArgs args, InvokeOptions options) {
@@ -16054,6 +17113,8 @@ public final class IdentityFunctions {
      * Get Notification Settings
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16087,6 +17148,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsNotificationSettingResult> getDomainsNotificationSettingPlain(GetDomainsNotificationSettingPlainArgs args, InvokeOptions options) {
@@ -16098,6 +17160,8 @@ public final class IdentityFunctions {
      * Search Notification Settings
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16130,6 +17194,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsNotificationSettingsResult> getDomainsNotificationSettings(GetDomainsNotificationSettingsArgs args) {
@@ -16141,6 +17206,8 @@ public final class IdentityFunctions {
      * Search Notification Settings
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16173,6 +17240,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsNotificationSettingsResult> getDomainsNotificationSettingsPlain(GetDomainsNotificationSettingsPlainArgs args) {
@@ -16184,6 +17252,8 @@ public final class IdentityFunctions {
      * Search Notification Settings
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16216,6 +17286,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsNotificationSettingsResult> getDomainsNotificationSettings(GetDomainsNotificationSettingsArgs args, InvokeOptions options) {
@@ -16227,6 +17298,8 @@ public final class IdentityFunctions {
      * Search Notification Settings
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16259,6 +17332,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsNotificationSettingsResult> getDomainsNotificationSettingsPlain(GetDomainsNotificationSettingsPlainArgs args, InvokeOptions options) {
@@ -16270,6 +17344,8 @@ public final class IdentityFunctions {
      * Get a user&#39;s OAuth2 client credentials.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16303,6 +17379,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsOauth2clientCredentialResult> getDomainsOauth2clientCredential(GetDomainsOauth2clientCredentialArgs args) {
@@ -16314,6 +17391,8 @@ public final class IdentityFunctions {
      * Get a user&#39;s OAuth2 client credentials.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16347,6 +17426,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsOauth2clientCredentialResult> getDomainsOauth2clientCredentialPlain(GetDomainsOauth2clientCredentialPlainArgs args) {
@@ -16358,6 +17438,8 @@ public final class IdentityFunctions {
      * Get a user&#39;s OAuth2 client credentials.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16391,6 +17473,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsOauth2clientCredentialResult> getDomainsOauth2clientCredential(GetDomainsOauth2clientCredentialArgs args, InvokeOptions options) {
@@ -16402,6 +17485,8 @@ public final class IdentityFunctions {
      * Get a user&#39;s OAuth2 client credentials.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16435,6 +17520,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsOauth2clientCredentialResult> getDomainsOauth2clientCredentialPlain(GetDomainsOauth2clientCredentialPlainArgs args, InvokeOptions options) {
@@ -16446,6 +17532,8 @@ public final class IdentityFunctions {
      * Search for a user&#39;s OAuth2 client credentials.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16481,6 +17569,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsOauth2clientCredentialsResult> getDomainsOauth2clientCredentials(GetDomainsOauth2clientCredentialsArgs args) {
@@ -16492,6 +17581,8 @@ public final class IdentityFunctions {
      * Search for a user&#39;s OAuth2 client credentials.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16527,6 +17618,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsOauth2clientCredentialsResult> getDomainsOauth2clientCredentialsPlain(GetDomainsOauth2clientCredentialsPlainArgs args) {
@@ -16538,6 +17630,8 @@ public final class IdentityFunctions {
      * Search for a user&#39;s OAuth2 client credentials.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16573,6 +17667,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsOauth2clientCredentialsResult> getDomainsOauth2clientCredentials(GetDomainsOauth2clientCredentialsArgs args, InvokeOptions options) {
@@ -16584,6 +17679,8 @@ public final class IdentityFunctions {
      * Search for a user&#39;s OAuth2 client credentials.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16619,6 +17716,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsOauth2clientCredentialsResult> getDomainsOauth2clientCredentialsPlain(GetDomainsOauth2clientCredentialsPlainArgs args, InvokeOptions options) {
@@ -16630,6 +17728,8 @@ public final class IdentityFunctions {
      * Get OAuth Client Certificates
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16661,6 +17761,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsOauthClientCertificateResult> getDomainsOauthClientCertificate(GetDomainsOauthClientCertificateArgs args) {
@@ -16672,6 +17773,8 @@ public final class IdentityFunctions {
      * Get OAuth Client Certificates
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16703,6 +17806,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsOauthClientCertificateResult> getDomainsOauthClientCertificatePlain(GetDomainsOauthClientCertificatePlainArgs args) {
@@ -16714,6 +17818,8 @@ public final class IdentityFunctions {
      * Get OAuth Client Certificates
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16745,6 +17851,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsOauthClientCertificateResult> getDomainsOauthClientCertificate(GetDomainsOauthClientCertificateArgs args, InvokeOptions options) {
@@ -16756,6 +17863,8 @@ public final class IdentityFunctions {
      * Get OAuth Client Certificates
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16787,6 +17896,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsOauthClientCertificateResult> getDomainsOauthClientCertificatePlain(GetDomainsOauthClientCertificatePlainArgs args, InvokeOptions options) {
@@ -16798,6 +17908,8 @@ public final class IdentityFunctions {
      * Search OAuth Client Certificates
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16831,6 +17943,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsOauthClientCertificatesResult> getDomainsOauthClientCertificates(GetDomainsOauthClientCertificatesArgs args) {
@@ -16842,6 +17955,8 @@ public final class IdentityFunctions {
      * Search OAuth Client Certificates
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16875,6 +17990,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsOauthClientCertificatesResult> getDomainsOauthClientCertificatesPlain(GetDomainsOauthClientCertificatesPlainArgs args) {
@@ -16886,6 +18002,8 @@ public final class IdentityFunctions {
      * Search OAuth Client Certificates
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16919,6 +18037,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsOauthClientCertificatesResult> getDomainsOauthClientCertificates(GetDomainsOauthClientCertificatesArgs args, InvokeOptions options) {
@@ -16930,6 +18049,8 @@ public final class IdentityFunctions {
      * Search OAuth Client Certificates
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16963,6 +18084,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsOauthClientCertificatesResult> getDomainsOauthClientCertificatesPlain(GetDomainsOauthClientCertificatesPlainArgs args, InvokeOptions options) {
@@ -16974,6 +18096,8 @@ public final class IdentityFunctions {
      * Get an OAuth Partner Certificate
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17005,6 +18129,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsOauthPartnerCertificateResult> getDomainsOauthPartnerCertificate(GetDomainsOauthPartnerCertificateArgs args) {
@@ -17016,6 +18141,8 @@ public final class IdentityFunctions {
      * Get an OAuth Partner Certificate
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17047,6 +18174,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsOauthPartnerCertificateResult> getDomainsOauthPartnerCertificatePlain(GetDomainsOauthPartnerCertificatePlainArgs args) {
@@ -17058,6 +18186,8 @@ public final class IdentityFunctions {
      * Get an OAuth Partner Certificate
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17089,6 +18219,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsOauthPartnerCertificateResult> getDomainsOauthPartnerCertificate(GetDomainsOauthPartnerCertificateArgs args, InvokeOptions options) {
@@ -17100,6 +18231,8 @@ public final class IdentityFunctions {
      * Get an OAuth Partner Certificate
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17131,6 +18264,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsOauthPartnerCertificateResult> getDomainsOauthPartnerCertificatePlain(GetDomainsOauthPartnerCertificatePlainArgs args, InvokeOptions options) {
@@ -17142,6 +18276,8 @@ public final class IdentityFunctions {
      * Search OAuth Partner Certificates
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17175,6 +18311,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsOauthPartnerCertificatesResult> getDomainsOauthPartnerCertificates(GetDomainsOauthPartnerCertificatesArgs args) {
@@ -17186,6 +18323,8 @@ public final class IdentityFunctions {
      * Search OAuth Partner Certificates
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17219,6 +18358,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsOauthPartnerCertificatesResult> getDomainsOauthPartnerCertificatesPlain(GetDomainsOauthPartnerCertificatesPlainArgs args) {
@@ -17230,6 +18370,8 @@ public final class IdentityFunctions {
      * Search OAuth Partner Certificates
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17263,6 +18405,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsOauthPartnerCertificatesResult> getDomainsOauthPartnerCertificates(GetDomainsOauthPartnerCertificatesArgs args, InvokeOptions options) {
@@ -17274,6 +18417,8 @@ public final class IdentityFunctions {
      * Search OAuth Partner Certificates
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17307,6 +18452,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsOauthPartnerCertificatesResult> getDomainsOauthPartnerCertificatesPlain(GetDomainsOauthPartnerCertificatesPlainArgs args, InvokeOptions options) {
@@ -17318,6 +18464,8 @@ public final class IdentityFunctions {
      * Search for password policies.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17353,6 +18501,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsPasswordPoliciesResult> getDomainsPasswordPolicies(GetDomainsPasswordPoliciesArgs args) {
@@ -17364,6 +18513,8 @@ public final class IdentityFunctions {
      * Search for password policies.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17399,6 +18550,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsPasswordPoliciesResult> getDomainsPasswordPoliciesPlain(GetDomainsPasswordPoliciesPlainArgs args) {
@@ -17410,6 +18562,8 @@ public final class IdentityFunctions {
      * Search for password policies.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17445,6 +18599,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsPasswordPoliciesResult> getDomainsPasswordPolicies(GetDomainsPasswordPoliciesArgs args, InvokeOptions options) {
@@ -17456,6 +18611,8 @@ public final class IdentityFunctions {
      * Search for password policies.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17491,6 +18648,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsPasswordPoliciesResult> getDomainsPasswordPoliciesPlain(GetDomainsPasswordPoliciesPlainArgs args, InvokeOptions options) {
@@ -17502,6 +18660,8 @@ public final class IdentityFunctions {
      * Get a password policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17535,6 +18695,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsPasswordPolicyResult> getDomainsPasswordPolicy(GetDomainsPasswordPolicyArgs args) {
@@ -17546,6 +18707,8 @@ public final class IdentityFunctions {
      * Get a password policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17579,6 +18742,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsPasswordPolicyResult> getDomainsPasswordPolicyPlain(GetDomainsPasswordPolicyPlainArgs args) {
@@ -17590,6 +18754,8 @@ public final class IdentityFunctions {
      * Get a password policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17623,6 +18789,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsPasswordPolicyResult> getDomainsPasswordPolicy(GetDomainsPasswordPolicyArgs args, InvokeOptions options) {
@@ -17634,6 +18801,8 @@ public final class IdentityFunctions {
      * Get a password policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17667,6 +18836,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsPasswordPolicyResult> getDomainsPasswordPolicyPlain(GetDomainsPasswordPolicyPlainArgs args, InvokeOptions options) {
@@ -17678,6 +18848,8 @@ public final class IdentityFunctions {
      * Search Policies
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17713,6 +18885,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsPoliciesResult> getDomainsPolicies(GetDomainsPoliciesArgs args) {
@@ -17724,6 +18897,8 @@ public final class IdentityFunctions {
      * Search Policies
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17759,6 +18934,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsPoliciesResult> getDomainsPoliciesPlain(GetDomainsPoliciesPlainArgs args) {
@@ -17770,6 +18946,8 @@ public final class IdentityFunctions {
      * Search Policies
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17805,6 +18983,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsPoliciesResult> getDomainsPolicies(GetDomainsPoliciesArgs args, InvokeOptions options) {
@@ -17816,6 +18995,8 @@ public final class IdentityFunctions {
      * Search Policies
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17851,6 +19032,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsPoliciesResult> getDomainsPoliciesPlain(GetDomainsPoliciesPlainArgs args, InvokeOptions options) {
@@ -17862,6 +19044,8 @@ public final class IdentityFunctions {
      * Get a Policy
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17895,6 +19079,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsPolicyResult> getDomainsPolicy(GetDomainsPolicyArgs args) {
@@ -17906,6 +19091,8 @@ public final class IdentityFunctions {
      * Get a Policy
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17939,6 +19126,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsPolicyResult> getDomainsPolicyPlain(GetDomainsPolicyPlainArgs args) {
@@ -17950,6 +19138,8 @@ public final class IdentityFunctions {
      * Get a Policy
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17983,6 +19173,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsPolicyResult> getDomainsPolicy(GetDomainsPolicyArgs args, InvokeOptions options) {
@@ -17994,6 +19185,8 @@ public final class IdentityFunctions {
      * Get a Policy
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18027,6 +19220,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsPolicyResult> getDomainsPolicyPlain(GetDomainsPolicyPlainArgs args, InvokeOptions options) {
@@ -18038,6 +19232,8 @@ public final class IdentityFunctions {
      * Search Resource Type Schema Attributes
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18073,6 +19269,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsResourceTypeSchemaAttributesResult> getDomainsResourceTypeSchemaAttributes(GetDomainsResourceTypeSchemaAttributesArgs args) {
@@ -18084,6 +19281,8 @@ public final class IdentityFunctions {
      * Search Resource Type Schema Attributes
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18119,6 +19318,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsResourceTypeSchemaAttributesResult> getDomainsResourceTypeSchemaAttributesPlain(GetDomainsResourceTypeSchemaAttributesPlainArgs args) {
@@ -18130,6 +19330,8 @@ public final class IdentityFunctions {
      * Search Resource Type Schema Attributes
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18165,6 +19367,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsResourceTypeSchemaAttributesResult> getDomainsResourceTypeSchemaAttributes(GetDomainsResourceTypeSchemaAttributesArgs args, InvokeOptions options) {
@@ -18176,6 +19379,8 @@ public final class IdentityFunctions {
      * Search Resource Type Schema Attributes
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18211,6 +19416,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsResourceTypeSchemaAttributesResult> getDomainsResourceTypeSchemaAttributesPlain(GetDomainsResourceTypeSchemaAttributesPlainArgs args, InvokeOptions options) {
@@ -18222,6 +19428,8 @@ public final class IdentityFunctions {
      * Get a Rule
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18255,6 +19463,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsRuleResult> getDomainsRule(GetDomainsRuleArgs args) {
@@ -18266,6 +19475,8 @@ public final class IdentityFunctions {
      * Get a Rule
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18299,6 +19510,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsRuleResult> getDomainsRulePlain(GetDomainsRulePlainArgs args) {
@@ -18310,6 +19522,8 @@ public final class IdentityFunctions {
      * Get a Rule
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18343,6 +19557,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsRuleResult> getDomainsRule(GetDomainsRuleArgs args, InvokeOptions options) {
@@ -18354,6 +19569,8 @@ public final class IdentityFunctions {
      * Get a Rule
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18387,6 +19604,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsRuleResult> getDomainsRulePlain(GetDomainsRulePlainArgs args, InvokeOptions options) {
@@ -18398,6 +19616,8 @@ public final class IdentityFunctions {
      * Search Rules
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18433,6 +19653,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsRulesResult> getDomainsRules(GetDomainsRulesArgs args) {
@@ -18444,6 +19665,8 @@ public final class IdentityFunctions {
      * Search Rules
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18479,6 +19702,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsRulesResult> getDomainsRulesPlain(GetDomainsRulesPlainArgs args) {
@@ -18490,6 +19714,8 @@ public final class IdentityFunctions {
      * Search Rules
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18525,6 +19751,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsRulesResult> getDomainsRules(GetDomainsRulesArgs args, InvokeOptions options) {
@@ -18536,6 +19763,8 @@ public final class IdentityFunctions {
      * Search Rules
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18571,6 +19800,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsRulesResult> getDomainsRulesPlain(GetDomainsRulesPlainArgs args, InvokeOptions options) {
@@ -18582,6 +19812,8 @@ public final class IdentityFunctions {
      * Get a security question.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18615,6 +19847,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsSecurityQuestionResult> getDomainsSecurityQuestion(GetDomainsSecurityQuestionArgs args) {
@@ -18626,6 +19859,8 @@ public final class IdentityFunctions {
      * Get a security question.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18659,6 +19894,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsSecurityQuestionResult> getDomainsSecurityQuestionPlain(GetDomainsSecurityQuestionPlainArgs args) {
@@ -18670,6 +19906,8 @@ public final class IdentityFunctions {
      * Get a security question.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18703,6 +19941,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsSecurityQuestionResult> getDomainsSecurityQuestion(GetDomainsSecurityQuestionArgs args, InvokeOptions options) {
@@ -18714,6 +19953,8 @@ public final class IdentityFunctions {
      * Get a security question.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18747,6 +19988,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsSecurityQuestionResult> getDomainsSecurityQuestionPlain(GetDomainsSecurityQuestionPlainArgs args, InvokeOptions options) {
@@ -18758,6 +20000,8 @@ public final class IdentityFunctions {
      * Get a security question setting.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18791,6 +20035,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsSecurityQuestionSettingResult> getDomainsSecurityQuestionSetting(GetDomainsSecurityQuestionSettingArgs args) {
@@ -18802,6 +20047,8 @@ public final class IdentityFunctions {
      * Get a security question setting.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18835,6 +20082,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsSecurityQuestionSettingResult> getDomainsSecurityQuestionSettingPlain(GetDomainsSecurityQuestionSettingPlainArgs args) {
@@ -18846,6 +20094,8 @@ public final class IdentityFunctions {
      * Get a security question setting.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18879,6 +20129,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsSecurityQuestionSettingResult> getDomainsSecurityQuestionSetting(GetDomainsSecurityQuestionSettingArgs args, InvokeOptions options) {
@@ -18890,6 +20141,8 @@ public final class IdentityFunctions {
      * Get a security question setting.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18923,6 +20176,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsSecurityQuestionSettingResult> getDomainsSecurityQuestionSettingPlain(GetDomainsSecurityQuestionSettingPlainArgs args, InvokeOptions options) {
@@ -18934,6 +20188,8 @@ public final class IdentityFunctions {
      * Search for security question settings.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18966,6 +20222,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsSecurityQuestionSettingsResult> getDomainsSecurityQuestionSettings(GetDomainsSecurityQuestionSettingsArgs args) {
@@ -18977,6 +20234,8 @@ public final class IdentityFunctions {
      * Search for security question settings.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19009,6 +20268,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsSecurityQuestionSettingsResult> getDomainsSecurityQuestionSettingsPlain(GetDomainsSecurityQuestionSettingsPlainArgs args) {
@@ -19020,6 +20280,8 @@ public final class IdentityFunctions {
      * Search for security question settings.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19052,6 +20314,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsSecurityQuestionSettingsResult> getDomainsSecurityQuestionSettings(GetDomainsSecurityQuestionSettingsArgs args, InvokeOptions options) {
@@ -19063,6 +20326,8 @@ public final class IdentityFunctions {
      * Search for security question settings.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19095,6 +20360,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsSecurityQuestionSettingsResult> getDomainsSecurityQuestionSettingsPlain(GetDomainsSecurityQuestionSettingsPlainArgs args, InvokeOptions options) {
@@ -19106,6 +20372,8 @@ public final class IdentityFunctions {
      * Search for security questions.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19141,6 +20409,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsSecurityQuestionsResult> getDomainsSecurityQuestions(GetDomainsSecurityQuestionsArgs args) {
@@ -19152,6 +20421,8 @@ public final class IdentityFunctions {
      * Search for security questions.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19187,6 +20458,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsSecurityQuestionsResult> getDomainsSecurityQuestionsPlain(GetDomainsSecurityQuestionsPlainArgs args) {
@@ -19198,6 +20470,8 @@ public final class IdentityFunctions {
      * Search for security questions.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19233,6 +20507,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsSecurityQuestionsResult> getDomainsSecurityQuestions(GetDomainsSecurityQuestionsArgs args, InvokeOptions options) {
@@ -19244,6 +20519,8 @@ public final class IdentityFunctions {
      * Search for security questions.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19279,6 +20556,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsSecurityQuestionsResult> getDomainsSecurityQuestionsPlain(GetDomainsSecurityQuestionsPlainArgs args, InvokeOptions options) {
@@ -19290,6 +20568,8 @@ public final class IdentityFunctions {
      * Get a self-registration profile.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19323,6 +20603,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsSelfRegistrationProfileResult> getDomainsSelfRegistrationProfile(GetDomainsSelfRegistrationProfileArgs args) {
@@ -19334,6 +20615,8 @@ public final class IdentityFunctions {
      * Get a self-registration profile.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19367,6 +20650,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsSelfRegistrationProfileResult> getDomainsSelfRegistrationProfilePlain(GetDomainsSelfRegistrationProfilePlainArgs args) {
@@ -19378,6 +20662,8 @@ public final class IdentityFunctions {
      * Get a self-registration profile.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19411,6 +20697,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsSelfRegistrationProfileResult> getDomainsSelfRegistrationProfile(GetDomainsSelfRegistrationProfileArgs args, InvokeOptions options) {
@@ -19422,6 +20709,8 @@ public final class IdentityFunctions {
      * Get a self-registration profile.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19455,6 +20744,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsSelfRegistrationProfileResult> getDomainsSelfRegistrationProfilePlain(GetDomainsSelfRegistrationProfilePlainArgs args, InvokeOptions options) {
@@ -19466,6 +20756,8 @@ public final class IdentityFunctions {
      * Search for self-registration profiles.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19501,6 +20793,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsSelfRegistrationProfilesResult> getDomainsSelfRegistrationProfiles(GetDomainsSelfRegistrationProfilesArgs args) {
@@ -19512,6 +20805,8 @@ public final class IdentityFunctions {
      * Search for self-registration profiles.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19547,6 +20842,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsSelfRegistrationProfilesResult> getDomainsSelfRegistrationProfilesPlain(GetDomainsSelfRegistrationProfilesPlainArgs args) {
@@ -19558,6 +20854,8 @@ public final class IdentityFunctions {
      * Search for self-registration profiles.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19593,6 +20891,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsSelfRegistrationProfilesResult> getDomainsSelfRegistrationProfiles(GetDomainsSelfRegistrationProfilesArgs args, InvokeOptions options) {
@@ -19604,6 +20903,8 @@ public final class IdentityFunctions {
      * Search for self-registration profiles.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19639,6 +20940,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsSelfRegistrationProfilesResult> getDomainsSelfRegistrationProfilesPlain(GetDomainsSelfRegistrationProfilesPlainArgs args, InvokeOptions options) {
@@ -19650,6 +20952,8 @@ public final class IdentityFunctions {
      * Get Settings
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19683,6 +20987,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsSettingResult> getDomainsSetting(GetDomainsSettingArgs args) {
@@ -19694,6 +20999,8 @@ public final class IdentityFunctions {
      * Get Settings
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19727,6 +21034,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsSettingResult> getDomainsSettingPlain(GetDomainsSettingPlainArgs args) {
@@ -19738,6 +21046,8 @@ public final class IdentityFunctions {
      * Get Settings
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19771,6 +21081,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsSettingResult> getDomainsSetting(GetDomainsSettingArgs args, InvokeOptions options) {
@@ -19782,6 +21093,8 @@ public final class IdentityFunctions {
      * Get Settings
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19815,6 +21128,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsSettingResult> getDomainsSettingPlain(GetDomainsSettingPlainArgs args, InvokeOptions options) {
@@ -19826,6 +21140,8 @@ public final class IdentityFunctions {
      * Search Settings
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19858,6 +21174,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsSettingsResult> getDomainsSettings(GetDomainsSettingsArgs args) {
@@ -19869,6 +21186,8 @@ public final class IdentityFunctions {
      * Search Settings
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19901,6 +21220,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsSettingsResult> getDomainsSettingsPlain(GetDomainsSettingsPlainArgs args) {
@@ -19912,6 +21232,8 @@ public final class IdentityFunctions {
      * Search Settings
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19944,6 +21266,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsSettingsResult> getDomainsSettings(GetDomainsSettingsArgs args, InvokeOptions options) {
@@ -19955,6 +21278,8 @@ public final class IdentityFunctions {
      * Search Settings
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19987,6 +21312,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsSettingsResult> getDomainsSettingsPlain(GetDomainsSettingsPlainArgs args, InvokeOptions options) {
@@ -19998,6 +21324,8 @@ public final class IdentityFunctions {
      * Get a user&#39;s SMTP credentials.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -20031,6 +21359,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsSmtpCredentialResult> getDomainsSmtpCredential(GetDomainsSmtpCredentialArgs args) {
@@ -20042,6 +21371,8 @@ public final class IdentityFunctions {
      * Get a user&#39;s SMTP credentials.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -20075,6 +21406,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsSmtpCredentialResult> getDomainsSmtpCredentialPlain(GetDomainsSmtpCredentialPlainArgs args) {
@@ -20086,6 +21418,8 @@ public final class IdentityFunctions {
      * Get a user&#39;s SMTP credentials.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -20119,6 +21453,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsSmtpCredentialResult> getDomainsSmtpCredential(GetDomainsSmtpCredentialArgs args, InvokeOptions options) {
@@ -20130,6 +21465,8 @@ public final class IdentityFunctions {
      * Get a user&#39;s SMTP credentials.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -20163,6 +21500,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsSmtpCredentialResult> getDomainsSmtpCredentialPlain(GetDomainsSmtpCredentialPlainArgs args, InvokeOptions options) {
@@ -20174,6 +21512,8 @@ public final class IdentityFunctions {
      * Search for SMTP credentials.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -20209,6 +21549,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsSmtpCredentialsResult> getDomainsSmtpCredentials(GetDomainsSmtpCredentialsArgs args) {
@@ -20220,6 +21561,8 @@ public final class IdentityFunctions {
      * Search for SMTP credentials.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -20255,6 +21598,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsSmtpCredentialsResult> getDomainsSmtpCredentialsPlain(GetDomainsSmtpCredentialsPlainArgs args) {
@@ -20266,6 +21610,8 @@ public final class IdentityFunctions {
      * Search for SMTP credentials.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -20301,6 +21647,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsSmtpCredentialsResult> getDomainsSmtpCredentials(GetDomainsSmtpCredentialsArgs args, InvokeOptions options) {
@@ -20312,6 +21659,8 @@ public final class IdentityFunctions {
      * Search for SMTP credentials.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -20347,6 +21696,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsSmtpCredentialsResult> getDomainsSmtpCredentialsPlain(GetDomainsSmtpCredentialsPlainArgs args, InvokeOptions options) {
@@ -20358,6 +21708,8 @@ public final class IdentityFunctions {
      * Get a user.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -20391,6 +21743,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsUserResult> getDomainsUser(GetDomainsUserArgs args) {
@@ -20402,6 +21755,8 @@ public final class IdentityFunctions {
      * Get a user.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -20435,6 +21790,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsUserResult> getDomainsUserPlain(GetDomainsUserPlainArgs args) {
@@ -20446,6 +21802,8 @@ public final class IdentityFunctions {
      * Get a user.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -20479,6 +21837,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsUserResult> getDomainsUser(GetDomainsUserArgs args, InvokeOptions options) {
@@ -20490,6 +21849,8 @@ public final class IdentityFunctions {
      * Get a user.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -20523,6 +21884,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsUserResult> getDomainsUserPlain(GetDomainsUserPlainArgs args, InvokeOptions options) {
@@ -20534,6 +21896,8 @@ public final class IdentityFunctions {
      * Get User Schema Attribute Settings
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -20567,6 +21931,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsUserAttributesSettingResult> getDomainsUserAttributesSetting(GetDomainsUserAttributesSettingArgs args) {
@@ -20578,6 +21943,8 @@ public final class IdentityFunctions {
      * Get User Schema Attribute Settings
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -20611,6 +21978,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsUserAttributesSettingResult> getDomainsUserAttributesSettingPlain(GetDomainsUserAttributesSettingPlainArgs args) {
@@ -20622,6 +21990,8 @@ public final class IdentityFunctions {
      * Get User Schema Attribute Settings
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -20655,6 +22025,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsUserAttributesSettingResult> getDomainsUserAttributesSetting(GetDomainsUserAttributesSettingArgs args, InvokeOptions options) {
@@ -20666,6 +22037,8 @@ public final class IdentityFunctions {
      * Get User Schema Attribute Settings
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -20699,6 +22072,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsUserAttributesSettingResult> getDomainsUserAttributesSettingPlain(GetDomainsUserAttributesSettingPlainArgs args, InvokeOptions options) {
@@ -20711,6 +22085,7 @@ public final class IdentityFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -20744,6 +22119,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsUserAttributesSettingsResult> getDomainsUserAttributesSettings(GetDomainsUserAttributesSettingsArgs args) {
@@ -20756,6 +22132,7 @@ public final class IdentityFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -20789,6 +22166,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsUserAttributesSettingsResult> getDomainsUserAttributesSettingsPlain(GetDomainsUserAttributesSettingsPlainArgs args) {
@@ -20801,6 +22179,7 @@ public final class IdentityFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -20834,6 +22213,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsUserAttributesSettingsResult> getDomainsUserAttributesSettings(GetDomainsUserAttributesSettingsArgs args, InvokeOptions options) {
@@ -20846,6 +22226,7 @@ public final class IdentityFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -20879,6 +22260,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsUserAttributesSettingsResult> getDomainsUserAttributesSettingsPlain(GetDomainsUserAttributesSettingsPlainArgs args, InvokeOptions options) {
@@ -20890,6 +22272,8 @@ public final class IdentityFunctions {
      * Get a user&#39;s database (DB) credentials.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -20923,6 +22307,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsUserDbCredentialResult> getDomainsUserDbCredential(GetDomainsUserDbCredentialArgs args) {
@@ -20934,6 +22319,8 @@ public final class IdentityFunctions {
      * Get a user&#39;s database (DB) credentials.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -20967,6 +22354,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsUserDbCredentialResult> getDomainsUserDbCredentialPlain(GetDomainsUserDbCredentialPlainArgs args) {
@@ -20978,6 +22366,8 @@ public final class IdentityFunctions {
      * Get a user&#39;s database (DB) credentials.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -21011,6 +22401,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsUserDbCredentialResult> getDomainsUserDbCredential(GetDomainsUserDbCredentialArgs args, InvokeOptions options) {
@@ -21022,6 +22413,8 @@ public final class IdentityFunctions {
      * Get a user&#39;s database (DB) credentials.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -21055,6 +22448,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsUserDbCredentialResult> getDomainsUserDbCredentialPlain(GetDomainsUserDbCredentialPlainArgs args, InvokeOptions options) {
@@ -21066,6 +22460,8 @@ public final class IdentityFunctions {
      * Search for a user&#39;s database (DB) credentials.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -21101,6 +22497,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsUserDbCredentialsResult> getDomainsUserDbCredentials(GetDomainsUserDbCredentialsArgs args) {
@@ -21112,6 +22509,8 @@ public final class IdentityFunctions {
      * Search for a user&#39;s database (DB) credentials.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -21147,6 +22546,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsUserDbCredentialsResult> getDomainsUserDbCredentialsPlain(GetDomainsUserDbCredentialsPlainArgs args) {
@@ -21158,6 +22558,8 @@ public final class IdentityFunctions {
      * Search for a user&#39;s database (DB) credentials.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -21193,6 +22595,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsUserDbCredentialsResult> getDomainsUserDbCredentials(GetDomainsUserDbCredentialsArgs args, InvokeOptions options) {
@@ -21204,6 +22607,8 @@ public final class IdentityFunctions {
      * Search for a user&#39;s database (DB) credentials.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -21239,6 +22644,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsUserDbCredentialsResult> getDomainsUserDbCredentialsPlain(GetDomainsUserDbCredentialsPlainArgs args, InvokeOptions options) {
@@ -21250,6 +22656,8 @@ public final class IdentityFunctions {
      * Search for users.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -21285,6 +22693,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsUsersResult> getDomainsUsers(GetDomainsUsersArgs args) {
@@ -21296,6 +22705,8 @@ public final class IdentityFunctions {
      * Search for users.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -21331,6 +22742,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsUsersResult> getDomainsUsersPlain(GetDomainsUsersPlainArgs args) {
@@ -21342,6 +22754,8 @@ public final class IdentityFunctions {
      * Search for users.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -21377,6 +22791,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDomainsUsersResult> getDomainsUsers(GetDomainsUsersArgs args, InvokeOptions options) {
@@ -21388,6 +22803,8 @@ public final class IdentityFunctions {
      * Search for users.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -21423,6 +22840,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDomainsUsersResult> getDomainsUsersPlain(GetDomainsUsersPlainArgs args, InvokeOptions options) {
@@ -21436,6 +22854,8 @@ public final class IdentityFunctions {
      * See [Where to Get the Tenancy&#39;s OCID and User&#39;s OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -21466,6 +22886,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDynamicGroupsResult> getDynamicGroups(GetDynamicGroupsArgs args) {
@@ -21479,6 +22900,8 @@ public final class IdentityFunctions {
      * See [Where to Get the Tenancy&#39;s OCID and User&#39;s OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -21509,6 +22932,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDynamicGroupsResult> getDynamicGroupsPlain(GetDynamicGroupsPlainArgs args) {
@@ -21522,6 +22946,8 @@ public final class IdentityFunctions {
      * See [Where to Get the Tenancy&#39;s OCID and User&#39;s OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -21552,6 +22978,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDynamicGroupsResult> getDynamicGroups(GetDynamicGroupsArgs args, InvokeOptions options) {
@@ -21565,6 +22992,8 @@ public final class IdentityFunctions {
      * See [Where to Get the Tenancy&#39;s OCID and User&#39;s OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -21595,6 +23024,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDynamicGroupsResult> getDynamicGroupsPlain(GetDynamicGroupsPlainArgs args, InvokeOptions options) {
@@ -21608,6 +23038,8 @@ public final class IdentityFunctions {
      * See [Where to Get the Tenancy&#39;s OCID and User&#39;s OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -21637,6 +23069,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFaultDomainsResult> getFaultDomains(GetFaultDomainsArgs args) {
@@ -21650,6 +23083,8 @@ public final class IdentityFunctions {
      * See [Where to Get the Tenancy&#39;s OCID and User&#39;s OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -21679,6 +23114,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFaultDomainsResult> getFaultDomainsPlain(GetFaultDomainsPlainArgs args) {
@@ -21692,6 +23128,8 @@ public final class IdentityFunctions {
      * See [Where to Get the Tenancy&#39;s OCID and User&#39;s OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -21721,6 +23159,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFaultDomainsResult> getFaultDomains(GetFaultDomainsArgs args, InvokeOptions options) {
@@ -21734,6 +23173,8 @@ public final class IdentityFunctions {
      * See [Where to Get the Tenancy&#39;s OCID and User&#39;s OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -21763,6 +23204,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFaultDomainsResult> getFaultDomainsPlain(GetFaultDomainsPlainArgs args, InvokeOptions options) {
@@ -21778,6 +23220,8 @@ public final class IdentityFunctions {
      * provide the group&#39;s OCID as a query parameter in the request.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -21806,6 +23250,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetGroupResult> getGroup(GetGroupArgs args) {
@@ -21821,6 +23266,8 @@ public final class IdentityFunctions {
      * provide the group&#39;s OCID as a query parameter in the request.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -21849,6 +23296,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetGroupResult> getGroupPlain(GetGroupPlainArgs args) {
@@ -21864,6 +23312,8 @@ public final class IdentityFunctions {
      * provide the group&#39;s OCID as a query parameter in the request.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -21892,6 +23342,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetGroupResult> getGroup(GetGroupArgs args, InvokeOptions options) {
@@ -21907,6 +23358,8 @@ public final class IdentityFunctions {
      * provide the group&#39;s OCID as a query parameter in the request.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -21935,6 +23388,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetGroupResult> getGroupPlain(GetGroupPlainArgs args, InvokeOptions options) {
@@ -21948,6 +23402,8 @@ public final class IdentityFunctions {
      * See [Where to Get the Tenancy&#39;s OCID and User&#39;s OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -21978,6 +23434,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetGroupsResult> getGroups(GetGroupsArgs args) {
@@ -21991,6 +23448,8 @@ public final class IdentityFunctions {
      * See [Where to Get the Tenancy&#39;s OCID and User&#39;s OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -22021,6 +23480,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetGroupsResult> getGroupsPlain(GetGroupsPlainArgs args) {
@@ -22034,6 +23494,8 @@ public final class IdentityFunctions {
      * See [Where to Get the Tenancy&#39;s OCID and User&#39;s OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -22064,6 +23526,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetGroupsResult> getGroups(GetGroupsArgs args, InvokeOptions options) {
@@ -22077,6 +23540,8 @@ public final class IdentityFunctions {
      * See [Where to Get the Tenancy&#39;s OCID and User&#39;s OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -22107,6 +23572,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetGroupsResult> getGroupsPlain(GetGroupsPlainArgs args, InvokeOptions options) {
@@ -22122,6 +23588,8 @@ public final class IdentityFunctions {
      * - If workrequest does not exist, returns 404 NOT FOUND
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -22150,6 +23618,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetIamWorkRequestResult> getIamWorkRequest(GetIamWorkRequestArgs args) {
@@ -22165,6 +23634,8 @@ public final class IdentityFunctions {
      * - If workrequest does not exist, returns 404 NOT FOUND
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -22193,6 +23664,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetIamWorkRequestResult> getIamWorkRequestPlain(GetIamWorkRequestPlainArgs args) {
@@ -22208,6 +23680,8 @@ public final class IdentityFunctions {
      * - If workrequest does not exist, returns 404 NOT FOUND
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -22236,6 +23710,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetIamWorkRequestResult> getIamWorkRequest(GetIamWorkRequestArgs args, InvokeOptions options) {
@@ -22251,6 +23726,8 @@ public final class IdentityFunctions {
      * - If workrequest does not exist, returns 404 NOT FOUND
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -22279,6 +23756,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetIamWorkRequestResult> getIamWorkRequestPlain(GetIamWorkRequestPlainArgs args, InvokeOptions options) {
@@ -22294,6 +23772,8 @@ public final class IdentityFunctions {
      * - If workrequest does not exist, returns 404 NOT FOUND
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -22322,6 +23802,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetIamWorkRequestErrorsResult> getIamWorkRequestErrors(GetIamWorkRequestErrorsArgs args) {
@@ -22337,6 +23818,8 @@ public final class IdentityFunctions {
      * - If workrequest does not exist, returns 404 NOT FOUND
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -22365,6 +23848,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetIamWorkRequestErrorsResult> getIamWorkRequestErrorsPlain(GetIamWorkRequestErrorsPlainArgs args) {
@@ -22380,6 +23864,8 @@ public final class IdentityFunctions {
      * - If workrequest does not exist, returns 404 NOT FOUND
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -22408,6 +23894,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetIamWorkRequestErrorsResult> getIamWorkRequestErrors(GetIamWorkRequestErrorsArgs args, InvokeOptions options) {
@@ -22423,6 +23910,8 @@ public final class IdentityFunctions {
      * - If workrequest does not exist, returns 404 NOT FOUND
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -22451,6 +23940,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetIamWorkRequestErrorsResult> getIamWorkRequestErrorsPlain(GetIamWorkRequestErrorsPlainArgs args, InvokeOptions options) {
@@ -22466,6 +23956,8 @@ public final class IdentityFunctions {
      * - If workrequest does not exist, returns 404 NOT FOUND
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -22494,6 +23986,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetIamWorkRequestLogsResult> getIamWorkRequestLogs(GetIamWorkRequestLogsArgs args) {
@@ -22509,6 +24002,8 @@ public final class IdentityFunctions {
      * - If workrequest does not exist, returns 404 NOT FOUND
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -22537,6 +24032,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetIamWorkRequestLogsResult> getIamWorkRequestLogsPlain(GetIamWorkRequestLogsPlainArgs args) {
@@ -22552,6 +24048,8 @@ public final class IdentityFunctions {
      * - If workrequest does not exist, returns 404 NOT FOUND
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -22580,6 +24078,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetIamWorkRequestLogsResult> getIamWorkRequestLogs(GetIamWorkRequestLogsArgs args, InvokeOptions options) {
@@ -22595,6 +24094,8 @@ public final class IdentityFunctions {
      * - If workrequest does not exist, returns 404 NOT FOUND
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -22623,6 +24124,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetIamWorkRequestLogsResult> getIamWorkRequestLogsPlain(GetIamWorkRequestLogsPlainArgs args, InvokeOptions options) {
@@ -22637,6 +24139,8 @@ public final class IdentityFunctions {
      * - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -22666,6 +24170,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetIamWorkRequestsResult> getIamWorkRequests(GetIamWorkRequestsArgs args) {
@@ -22680,6 +24185,8 @@ public final class IdentityFunctions {
      * - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -22709,6 +24216,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetIamWorkRequestsResult> getIamWorkRequestsPlain(GetIamWorkRequestsPlainArgs args) {
@@ -22723,6 +24231,8 @@ public final class IdentityFunctions {
      * - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -22752,6 +24262,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetIamWorkRequestsResult> getIamWorkRequests(GetIamWorkRequestsArgs args, InvokeOptions options) {
@@ -22766,6 +24277,8 @@ public final class IdentityFunctions {
      * - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -22795,6 +24308,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetIamWorkRequestsResult> getIamWorkRequestsPlain(GetIamWorkRequestsPlainArgs args, InvokeOptions options) {
@@ -22808,6 +24322,8 @@ public final class IdentityFunctions {
      * Lists the identity provider groups.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -22838,6 +24354,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetIdentityProviderGroupsResult> getIdentityProviderGroups(GetIdentityProviderGroupsArgs args) {
@@ -22851,6 +24368,8 @@ public final class IdentityFunctions {
      * Lists the identity provider groups.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -22881,6 +24400,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetIdentityProviderGroupsResult> getIdentityProviderGroupsPlain(GetIdentityProviderGroupsPlainArgs args) {
@@ -22894,6 +24414,8 @@ public final class IdentityFunctions {
      * Lists the identity provider groups.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -22924,6 +24446,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetIdentityProviderGroupsResult> getIdentityProviderGroups(GetIdentityProviderGroupsArgs args, InvokeOptions options) {
@@ -22937,6 +24460,8 @@ public final class IdentityFunctions {
      * Lists the identity provider groups.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -22967,6 +24492,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetIdentityProviderGroupsResult> getIdentityProviderGroupsPlain(GetIdentityProviderGroupsPlainArgs args, InvokeOptions options) {
@@ -22983,6 +24509,8 @@ public final class IdentityFunctions {
      * See [Where to Get the Tenancy&#39;s OCID and User&#39;s OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -23014,6 +24542,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetIdentityProvidersResult> getIdentityProviders(GetIdentityProvidersArgs args) {
@@ -23030,6 +24559,8 @@ public final class IdentityFunctions {
      * See [Where to Get the Tenancy&#39;s OCID and User&#39;s OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -23061,6 +24592,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetIdentityProvidersResult> getIdentityProvidersPlain(GetIdentityProvidersPlainArgs args) {
@@ -23077,6 +24609,8 @@ public final class IdentityFunctions {
      * See [Where to Get the Tenancy&#39;s OCID and User&#39;s OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -23108,6 +24642,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetIdentityProvidersResult> getIdentityProviders(GetIdentityProvidersArgs args, InvokeOptions options) {
@@ -23124,6 +24659,8 @@ public final class IdentityFunctions {
      * See [Where to Get the Tenancy&#39;s OCID and User&#39;s OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -23155,6 +24692,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetIdentityProvidersResult> getIdentityProvidersPlain(GetIdentityProvidersPlainArgs args, InvokeOptions options) {
@@ -23168,6 +24706,8 @@ public final class IdentityFunctions {
      * Lists the group mappings for the specified identity provider.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -23196,6 +24736,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetIdpGroupMappingsResult> getIdpGroupMappings(GetIdpGroupMappingsArgs args) {
@@ -23209,6 +24750,8 @@ public final class IdentityFunctions {
      * Lists the group mappings for the specified identity provider.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -23237,6 +24780,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetIdpGroupMappingsResult> getIdpGroupMappingsPlain(GetIdpGroupMappingsPlainArgs args) {
@@ -23250,6 +24794,8 @@ public final class IdentityFunctions {
      * Lists the group mappings for the specified identity provider.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -23278,6 +24824,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetIdpGroupMappingsResult> getIdpGroupMappings(GetIdpGroupMappingsArgs args, InvokeOptions options) {
@@ -23291,6 +24838,8 @@ public final class IdentityFunctions {
      * Lists the group mappings for the specified identity provider.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -23319,6 +24868,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetIdpGroupMappingsResult> getIdpGroupMappingsPlain(GetIdpGroupMappingsPlainArgs args, InvokeOptions options) {
@@ -23330,6 +24880,8 @@ public final class IdentityFunctions {
      * Gets the specified network source&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -23358,6 +24910,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkSourceResult> getNetworkSource(GetNetworkSourceArgs args) {
@@ -23369,6 +24922,8 @@ public final class IdentityFunctions {
      * Gets the specified network source&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -23397,6 +24952,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkSourceResult> getNetworkSourcePlain(GetNetworkSourcePlainArgs args) {
@@ -23408,6 +24964,8 @@ public final class IdentityFunctions {
      * Gets the specified network source&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -23436,6 +24994,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkSourceResult> getNetworkSource(GetNetworkSourceArgs args, InvokeOptions options) {
@@ -23447,6 +25006,8 @@ public final class IdentityFunctions {
      * Gets the specified network source&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -23475,6 +25036,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkSourceResult> getNetworkSourcePlain(GetNetworkSourcePlainArgs args, InvokeOptions options) {
@@ -23488,6 +25050,8 @@ public final class IdentityFunctions {
      * See [Where to Get the Tenancy&#39;s OCID and User&#39;s OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -23518,6 +25082,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkSourcesResult> getNetworkSources(GetNetworkSourcesArgs args) {
@@ -23531,6 +25096,8 @@ public final class IdentityFunctions {
      * See [Where to Get the Tenancy&#39;s OCID and User&#39;s OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -23561,6 +25128,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkSourcesResult> getNetworkSourcesPlain(GetNetworkSourcesPlainArgs args) {
@@ -23574,6 +25142,8 @@ public final class IdentityFunctions {
      * See [Where to Get the Tenancy&#39;s OCID and User&#39;s OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -23604,6 +25174,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkSourcesResult> getNetworkSources(GetNetworkSourcesArgs args, InvokeOptions options) {
@@ -23617,6 +25188,8 @@ public final class IdentityFunctions {
      * See [Where to Get the Tenancy&#39;s OCID and User&#39;s OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -23647,6 +25220,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkSourcesResult> getNetworkSourcesPlain(GetNetworkSourcesPlainArgs args, InvokeOptions options) {
@@ -23662,6 +25236,8 @@ public final class IdentityFunctions {
      * statements inside all your policies. There isn&#39;t a way to automatically obtain that information via the API.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -23692,6 +25268,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPoliciesResult> getPolicies(GetPoliciesArgs args) {
@@ -23707,6 +25284,8 @@ public final class IdentityFunctions {
      * statements inside all your policies. There isn&#39;t a way to automatically obtain that information via the API.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -23737,6 +25316,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPoliciesResult> getPoliciesPlain(GetPoliciesPlainArgs args) {
@@ -23752,6 +25332,8 @@ public final class IdentityFunctions {
      * statements inside all your policies. There isn&#39;t a way to automatically obtain that information via the API.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -23782,6 +25364,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPoliciesResult> getPolicies(GetPoliciesArgs args, InvokeOptions options) {
@@ -23797,6 +25380,8 @@ public final class IdentityFunctions {
      * statements inside all your policies. There isn&#39;t a way to automatically obtain that information via the API.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -23827,6 +25412,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPoliciesResult> getPoliciesPlain(GetPoliciesPlainArgs args, InvokeOptions options) {
@@ -23838,6 +25424,8 @@ public final class IdentityFunctions {
      * Lists the region subscriptions for the specified tenancy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -23866,6 +25454,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRegionSubscriptionsResult> getRegionSubscriptions(GetRegionSubscriptionsArgs args) {
@@ -23877,6 +25466,8 @@ public final class IdentityFunctions {
      * Lists the region subscriptions for the specified tenancy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -23905,6 +25496,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRegionSubscriptionsResult> getRegionSubscriptionsPlain(GetRegionSubscriptionsPlainArgs args) {
@@ -23916,6 +25508,8 @@ public final class IdentityFunctions {
      * Lists the region subscriptions for the specified tenancy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -23944,6 +25538,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRegionSubscriptionsResult> getRegionSubscriptions(GetRegionSubscriptionsArgs args, InvokeOptions options) {
@@ -23955,6 +25550,8 @@ public final class IdentityFunctions {
      * Lists the region subscriptions for the specified tenancy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -23983,6 +25580,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRegionSubscriptionsResult> getRegionSubscriptionsPlain(GetRegionSubscriptionsPlainArgs args, InvokeOptions options) {
@@ -23994,6 +25592,8 @@ public final class IdentityFunctions {
      * Lists all the regions offered by Oracle Cloud Infrastructure.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -24020,6 +25620,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRegionsResult> getRegions() {
@@ -24031,6 +25632,8 @@ public final class IdentityFunctions {
      * Lists all the regions offered by Oracle Cloud Infrastructure.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -24057,6 +25660,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRegionsResult> getRegionsPlain() {
@@ -24068,6 +25672,8 @@ public final class IdentityFunctions {
      * Lists all the regions offered by Oracle Cloud Infrastructure.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -24094,6 +25700,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRegionsResult> getRegions(GetRegionsArgs args) {
@@ -24105,6 +25712,8 @@ public final class IdentityFunctions {
      * Lists all the regions offered by Oracle Cloud Infrastructure.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -24131,6 +25740,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRegionsResult> getRegionsPlain(GetRegionsPlainArgs args) {
@@ -24142,6 +25752,8 @@ public final class IdentityFunctions {
      * Lists all the regions offered by Oracle Cloud Infrastructure.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -24168,6 +25780,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRegionsResult> getRegions(GetRegionsArgs args, InvokeOptions options) {
@@ -24179,6 +25792,8 @@ public final class IdentityFunctions {
      * Lists all the regions offered by Oracle Cloud Infrastructure.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -24205,6 +25820,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRegionsResult> getRegionsPlain(GetRegionsPlainArgs args, InvokeOptions options) {
@@ -24217,6 +25833,8 @@ public final class IdentityFunctions {
      * the SMTP user name but not the SMTP password. The SMTP password is returned only upon creation.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -24245,6 +25863,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSmtpCredentialsResult> getSmtpCredentials(GetSmtpCredentialsArgs args) {
@@ -24257,6 +25876,8 @@ public final class IdentityFunctions {
      * the SMTP user name but not the SMTP password. The SMTP password is returned only upon creation.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -24285,6 +25906,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSmtpCredentialsResult> getSmtpCredentialsPlain(GetSmtpCredentialsPlainArgs args) {
@@ -24297,6 +25919,8 @@ public final class IdentityFunctions {
      * the SMTP user name but not the SMTP password. The SMTP password is returned only upon creation.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -24325,6 +25949,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSmtpCredentialsResult> getSmtpCredentials(GetSmtpCredentialsArgs args, InvokeOptions options) {
@@ -24337,6 +25962,8 @@ public final class IdentityFunctions {
      * the SMTP user name but not the SMTP password. The SMTP password is returned only upon creation.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -24365,6 +25992,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSmtpCredentialsResult> getSmtpCredentialsPlain(GetSmtpCredentialsPlainArgs args, InvokeOptions options) {
@@ -24376,6 +26004,8 @@ public final class IdentityFunctions {
      * Gets the specified tag&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -24405,6 +26035,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetTagResult> getTag(GetTagArgs args) {
@@ -24416,6 +26047,8 @@ public final class IdentityFunctions {
      * Gets the specified tag&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -24445,6 +26078,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetTagResult> getTagPlain(GetTagPlainArgs args) {
@@ -24456,6 +26090,8 @@ public final class IdentityFunctions {
      * Gets the specified tag&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -24485,6 +26121,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetTagResult> getTag(GetTagArgs args, InvokeOptions options) {
@@ -24496,6 +26133,8 @@ public final class IdentityFunctions {
      * Gets the specified tag&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -24525,6 +26164,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetTagResult> getTagPlain(GetTagPlainArgs args, InvokeOptions options) {
@@ -24536,6 +26176,8 @@ public final class IdentityFunctions {
      * Retrieves the specified tag default.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -24564,6 +26206,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetTagDefaultResult> getTagDefault(GetTagDefaultArgs args) {
@@ -24575,6 +26218,8 @@ public final class IdentityFunctions {
      * Retrieves the specified tag default.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -24603,6 +26248,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetTagDefaultResult> getTagDefaultPlain(GetTagDefaultPlainArgs args) {
@@ -24614,6 +26260,8 @@ public final class IdentityFunctions {
      * Retrieves the specified tag default.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -24642,6 +26290,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetTagDefaultResult> getTagDefault(GetTagDefaultArgs args, InvokeOptions options) {
@@ -24653,6 +26302,8 @@ public final class IdentityFunctions {
      * Retrieves the specified tag default.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -24681,6 +26332,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetTagDefaultResult> getTagDefaultPlain(GetTagDefaultPlainArgs args, InvokeOptions options) {
@@ -24692,6 +26344,8 @@ public final class IdentityFunctions {
      * Lists the tag defaults for tag definitions in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -24723,6 +26377,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetTagDefaultsResult> getTagDefaults() {
@@ -24734,6 +26389,8 @@ public final class IdentityFunctions {
      * Lists the tag defaults for tag definitions in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -24765,6 +26422,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetTagDefaultsResult> getTagDefaultsPlain() {
@@ -24776,6 +26434,8 @@ public final class IdentityFunctions {
      * Lists the tag defaults for tag definitions in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -24807,6 +26467,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetTagDefaultsResult> getTagDefaults(GetTagDefaultsArgs args) {
@@ -24818,6 +26479,8 @@ public final class IdentityFunctions {
      * Lists the tag defaults for tag definitions in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -24849,6 +26512,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetTagDefaultsResult> getTagDefaultsPlain(GetTagDefaultsPlainArgs args) {
@@ -24860,6 +26524,8 @@ public final class IdentityFunctions {
      * Lists the tag defaults for tag definitions in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -24891,6 +26557,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetTagDefaultsResult> getTagDefaults(GetTagDefaultsArgs args, InvokeOptions options) {
@@ -24902,6 +26569,8 @@ public final class IdentityFunctions {
      * Lists the tag defaults for tag definitions in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -24933,6 +26602,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetTagDefaultsResult> getTagDefaultsPlain(GetTagDefaultsPlainArgs args, InvokeOptions options) {
@@ -24944,6 +26614,8 @@ public final class IdentityFunctions {
      * Lists the tag namespaces in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -24974,6 +26646,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetTagNamespacesResult> getTagNamespaces(GetTagNamespacesArgs args) {
@@ -24985,6 +26658,8 @@ public final class IdentityFunctions {
      * Lists the tag namespaces in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -25015,6 +26690,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetTagNamespacesResult> getTagNamespacesPlain(GetTagNamespacesPlainArgs args) {
@@ -25026,6 +26702,8 @@ public final class IdentityFunctions {
      * Lists the tag namespaces in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -25056,6 +26734,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetTagNamespacesResult> getTagNamespaces(GetTagNamespacesArgs args, InvokeOptions options) {
@@ -25067,6 +26746,8 @@ public final class IdentityFunctions {
      * Lists the tag namespaces in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -25097,6 +26778,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetTagNamespacesResult> getTagNamespacesPlain(GetTagNamespacesPlainArgs args, InvokeOptions options) {
@@ -25108,6 +26790,8 @@ public final class IdentityFunctions {
      * Retrieve the standard tag namespace template given the standard tag namespace name.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -25137,6 +26821,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetTagStandardTagNamespaceTemplateResult> getTagStandardTagNamespaceTemplate(GetTagStandardTagNamespaceTemplateArgs args) {
@@ -25148,6 +26833,8 @@ public final class IdentityFunctions {
      * Retrieve the standard tag namespace template given the standard tag namespace name.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -25177,6 +26864,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetTagStandardTagNamespaceTemplateResult> getTagStandardTagNamespaceTemplatePlain(GetTagStandardTagNamespaceTemplatePlainArgs args) {
@@ -25188,6 +26876,8 @@ public final class IdentityFunctions {
      * Retrieve the standard tag namespace template given the standard tag namespace name.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -25217,6 +26907,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetTagStandardTagNamespaceTemplateResult> getTagStandardTagNamespaceTemplate(GetTagStandardTagNamespaceTemplateArgs args, InvokeOptions options) {
@@ -25228,6 +26919,8 @@ public final class IdentityFunctions {
      * Retrieve the standard tag namespace template given the standard tag namespace name.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -25257,6 +26950,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetTagStandardTagNamespaceTemplateResult> getTagStandardTagNamespaceTemplatePlain(GetTagStandardTagNamespaceTemplatePlainArgs args, InvokeOptions options) {
@@ -25268,6 +26962,8 @@ public final class IdentityFunctions {
      * Lists available standard tag namespaces that users can create.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -25296,6 +26992,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetTagStandardTagNamespaceTemplatesResult> getTagStandardTagNamespaceTemplates(GetTagStandardTagNamespaceTemplatesArgs args) {
@@ -25307,6 +27004,8 @@ public final class IdentityFunctions {
      * Lists available standard tag namespaces that users can create.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -25335,6 +27034,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetTagStandardTagNamespaceTemplatesResult> getTagStandardTagNamespaceTemplatesPlain(GetTagStandardTagNamespaceTemplatesPlainArgs args) {
@@ -25346,6 +27046,8 @@ public final class IdentityFunctions {
      * Lists available standard tag namespaces that users can create.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -25374,6 +27076,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetTagStandardTagNamespaceTemplatesResult> getTagStandardTagNamespaceTemplates(GetTagStandardTagNamespaceTemplatesArgs args, InvokeOptions options) {
@@ -25385,6 +27088,8 @@ public final class IdentityFunctions {
      * Lists available standard tag namespaces that users can create.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -25413,6 +27118,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetTagStandardTagNamespaceTemplatesResult> getTagStandardTagNamespaceTemplatesPlain(GetTagStandardTagNamespaceTemplatesPlainArgs args, InvokeOptions options) {
@@ -25424,6 +27130,8 @@ public final class IdentityFunctions {
      * Lists the tag definitions in the specified tag namespace.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -25453,6 +27161,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetTagsResult> getTags(GetTagsArgs args) {
@@ -25464,6 +27173,8 @@ public final class IdentityFunctions {
      * Lists the tag definitions in the specified tag namespace.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -25493,6 +27204,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetTagsResult> getTagsPlain(GetTagsPlainArgs args) {
@@ -25504,6 +27216,8 @@ public final class IdentityFunctions {
      * Lists the tag definitions in the specified tag namespace.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -25533,6 +27247,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetTagsResult> getTags(GetTagsArgs args, InvokeOptions options) {
@@ -25544,6 +27259,8 @@ public final class IdentityFunctions {
      * Lists the tag definitions in the specified tag namespace.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -25573,6 +27290,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetTagsResult> getTagsPlain(GetTagsPlainArgs args, InvokeOptions options) {
@@ -25584,6 +27302,8 @@ public final class IdentityFunctions {
      * Get the specified tenancy&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -25612,6 +27332,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetTenancyResult> getTenancy(GetTenancyArgs args) {
@@ -25623,6 +27344,8 @@ public final class IdentityFunctions {
      * Get the specified tenancy&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -25651,6 +27374,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetTenancyResult> getTenancyPlain(GetTenancyPlainArgs args) {
@@ -25662,6 +27386,8 @@ public final class IdentityFunctions {
      * Get the specified tenancy&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -25690,6 +27416,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetTenancyResult> getTenancy(GetTenancyArgs args, InvokeOptions options) {
@@ -25701,6 +27428,8 @@ public final class IdentityFunctions {
      * Get the specified tenancy&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -25729,6 +27458,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetTenancyResult> getTenancyPlain(GetTenancyPlainArgs args, InvokeOptions options) {
@@ -25741,6 +27471,8 @@ public final class IdentityFunctions {
      * but not the password itself. The actual password is returned only when created or reset.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -25769,6 +27501,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetUiPasswordResult> getUiPassword(GetUiPasswordArgs args) {
@@ -25781,6 +27514,8 @@ public final class IdentityFunctions {
      * but not the password itself. The actual password is returned only when created or reset.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -25809,6 +27544,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetUiPasswordResult> getUiPasswordPlain(GetUiPasswordPlainArgs args) {
@@ -25821,6 +27557,8 @@ public final class IdentityFunctions {
      * but not the password itself. The actual password is returned only when created or reset.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -25849,6 +27587,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetUiPasswordResult> getUiPassword(GetUiPasswordArgs args, InvokeOptions options) {
@@ -25861,6 +27600,8 @@ public final class IdentityFunctions {
      * but not the password itself. The actual password is returned only when created or reset.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -25889,6 +27630,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetUiPasswordResult> getUiPasswordPlain(GetUiPasswordPlainArgs args, InvokeOptions options) {
@@ -25900,6 +27642,8 @@ public final class IdentityFunctions {
      * Gets the specified user&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -25928,6 +27672,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetUserResult> getUser(GetUserArgs args) {
@@ -25939,6 +27684,8 @@ public final class IdentityFunctions {
      * Gets the specified user&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -25967,6 +27714,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetUserResult> getUserPlain(GetUserPlainArgs args) {
@@ -25978,6 +27726,8 @@ public final class IdentityFunctions {
      * Gets the specified user&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -26006,6 +27756,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetUserResult> getUser(GetUserArgs args, InvokeOptions options) {
@@ -26017,6 +27768,8 @@ public final class IdentityFunctions {
      * Gets the specified user&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -26045,6 +27798,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetUserResult> getUserPlain(GetUserPlainArgs args, InvokeOptions options) {
@@ -26065,6 +27819,8 @@ public final class IdentityFunctions {
      * - Although`userId` and `groupId` are not individually required, you must set one of them.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -26095,6 +27851,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetUserGroupMembershipsResult> getUserGroupMemberships(GetUserGroupMembershipsArgs args) {
@@ -26115,6 +27872,8 @@ public final class IdentityFunctions {
      * - Although`userId` and `groupId` are not individually required, you must set one of them.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -26145,6 +27904,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetUserGroupMembershipsResult> getUserGroupMembershipsPlain(GetUserGroupMembershipsPlainArgs args) {
@@ -26165,6 +27925,8 @@ public final class IdentityFunctions {
      * - Although`userId` and `groupId` are not individually required, you must set one of them.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -26195,6 +27957,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetUserGroupMembershipsResult> getUserGroupMemberships(GetUserGroupMembershipsArgs args, InvokeOptions options) {
@@ -26215,6 +27978,8 @@ public final class IdentityFunctions {
      * - Although`userId` and `groupId` are not individually required, you must set one of them.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -26245,6 +28010,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetUserGroupMembershipsResult> getUserGroupMembershipsPlain(GetUserGroupMembershipsPlainArgs args, InvokeOptions options) {
@@ -26258,6 +28024,8 @@ public final class IdentityFunctions {
      * See [Where to Get the Tenancy&#39;s OCID and User&#39;s OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -26290,6 +28058,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetUsersResult> getUsers(GetUsersArgs args) {
@@ -26303,6 +28072,8 @@ public final class IdentityFunctions {
      * See [Where to Get the Tenancy&#39;s OCID and User&#39;s OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -26335,6 +28106,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetUsersResult> getUsersPlain(GetUsersPlainArgs args) {
@@ -26348,6 +28120,8 @@ public final class IdentityFunctions {
      * See [Where to Get the Tenancy&#39;s OCID and User&#39;s OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -26380,6 +28154,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetUsersResult> getUsers(GetUsersArgs args, InvokeOptions options) {
@@ -26393,6 +28168,8 @@ public final class IdentityFunctions {
      * See [Where to Get the Tenancy&#39;s OCID and User&#39;s OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -26425,6 +28202,7 @@ public final class IdentityFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetUsersResult> getUsersPlain(GetUsersPlainArgs args, InvokeOptions options) {

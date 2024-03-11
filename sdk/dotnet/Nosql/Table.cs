@@ -16,6 +16,7 @@ namespace Pulumi.Oci.Nosql
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -45,13 +46,14 @@ namespace Pulumi.Oci.Nosql
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// Tables can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Nosql/table:Table test_table "id"
+    /// $ pulumi import oci:Nosql/table:Table test_table "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Nosql/table:Table")]

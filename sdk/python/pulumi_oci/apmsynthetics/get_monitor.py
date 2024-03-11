@@ -273,7 +273,7 @@ class GetMonitorResult:
     @pulumi.getter(name="timeoutInSeconds")
     def timeout_in_seconds(self) -> int:
         """
-        Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+        Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30%!o(MISSING)f repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50%!o(MISSING)f repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
         """
         return pulumi.get(self, "timeout_in_seconds")
 
@@ -337,6 +337,7 @@ def get_monitor(apm_domain_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -344,6 +345,7 @@ def get_monitor(apm_domain_id: Optional[str] = None,
     test_monitor = oci.ApmSynthetics.get_monitor(apm_domain_id=oci_apm_synthetics_apm_domain["test_apm_domain"]["id"],
         monitor_id=oci_apm_synthetics_monitor["test_monitor"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str apm_domain_id: The APM domain ID the request is intended for.
@@ -394,6 +396,7 @@ def get_monitor_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -401,6 +404,7 @@ def get_monitor_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
     test_monitor = oci.ApmSynthetics.get_monitor(apm_domain_id=oci_apm_synthetics_apm_domain["test_apm_domain"]["id"],
         monitor_id=oci_apm_synthetics_monitor["test_monitor"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str apm_domain_id: The APM domain ID the request is intended for.

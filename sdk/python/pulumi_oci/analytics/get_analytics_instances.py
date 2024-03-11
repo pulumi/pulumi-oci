@@ -141,6 +141,7 @@ def get_analytics_instances(capacity_type: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -151,6 +152,7 @@ def get_analytics_instances(capacity_type: Optional[str] = None,
         name=var["analytics_instance_name"],
         state=var["analytics_instance_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str capacity_type: A filter to only return resources matching the capacity type enum. Values are case-insensitive.
@@ -195,6 +197,7 @@ def get_analytics_instances_output(capacity_type: Optional[pulumi.Input[Optional
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -205,6 +208,7 @@ def get_analytics_instances_output(capacity_type: Optional[pulumi.Input[Optional
         name=var["analytics_instance_name"],
         state=var["analytics_instance_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str capacity_type: A filter to only return resources matching the capacity type enum. Values are case-insensitive.

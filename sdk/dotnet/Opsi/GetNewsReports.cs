@@ -17,10 +17,9 @@ namespace Pulumi.Oci.Opsi
         /// Gets a list of news reports based on the query parameters specified. Either compartmentId or id query parameter must be specified.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -40,8 +39,7 @@ namespace Pulumi.Oci.Opsi
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetNewsReportsResult> InvokeAsync(GetNewsReportsArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetNewsReportsResult>("oci:Opsi/getNewsReports:getNewsReports", args ?? new GetNewsReportsArgs(), options.WithDefaults());
@@ -52,10 +50,9 @@ namespace Pulumi.Oci.Opsi
         /// Gets a list of news reports based on the query parameters specified. Either compartmentId or id query parameter must be specified.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -75,8 +72,7 @@ namespace Pulumi.Oci.Opsi
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetNewsReportsResult> Invoke(GetNewsReportsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNewsReportsResult>("oci:Opsi/getNewsReports:getNewsReports", args ?? new GetNewsReportsInvokeArgs(), options.WithDefaults());

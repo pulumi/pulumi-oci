@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -49,15 +50,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // DiscoverySchedules can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:CloudBridge/discoverySchedule:DiscoverySchedule test_discovery_schedule "id"
-//
+// $ pulumi import oci:CloudBridge/discoverySchedule:DiscoverySchedule test_discovery_schedule "id"
 // ```
 type DiscoverySchedule struct {
 	pulumi.CustomResourceState

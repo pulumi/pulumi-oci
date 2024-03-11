@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -58,15 +59,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // ComputeImageCapabilitySchemas can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Core/computeImageCapabilitySchema:ComputeImageCapabilitySchema test_compute_image_capability_schema "id"
-//
+// $ pulumi import oci:Core/computeImageCapabilitySchema:ComputeImageCapabilitySchema test_compute_image_capability_schema "id"
 // ```
 type ComputeImageCapabilitySchema struct {
 	pulumi.CustomResourceState

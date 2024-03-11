@@ -50,6 +50,8 @@ public final class OcvpFunctions {
      * Gets the specified Cluster&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -78,6 +80,7 @@ public final class OcvpFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetClusterResult> getCluster(GetClusterArgs args) {
@@ -89,6 +92,8 @@ public final class OcvpFunctions {
      * Gets the specified Cluster&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -117,6 +122,7 @@ public final class OcvpFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetClusterResult> getClusterPlain(GetClusterPlainArgs args) {
@@ -128,6 +134,8 @@ public final class OcvpFunctions {
      * Gets the specified Cluster&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -156,6 +164,7 @@ public final class OcvpFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetClusterResult> getCluster(GetClusterArgs args, InvokeOptions options) {
@@ -167,6 +176,8 @@ public final class OcvpFunctions {
      * Gets the specified Cluster&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -195,6 +206,7 @@ public final class OcvpFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetClusterResult> getClusterPlain(GetClusterPlainArgs args, InvokeOptions options) {
@@ -206,6 +218,8 @@ public final class OcvpFunctions {
      * Lists the Clusters in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -237,6 +251,7 @@ public final class OcvpFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetClustersResult> getClusters() {
@@ -248,6 +263,8 @@ public final class OcvpFunctions {
      * Lists the Clusters in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -279,6 +296,7 @@ public final class OcvpFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetClustersResult> getClustersPlain() {
@@ -290,6 +308,8 @@ public final class OcvpFunctions {
      * Lists the Clusters in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -321,6 +341,7 @@ public final class OcvpFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetClustersResult> getClusters(GetClustersArgs args) {
@@ -332,6 +353,8 @@ public final class OcvpFunctions {
      * Lists the Clusters in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -363,6 +386,7 @@ public final class OcvpFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetClustersResult> getClustersPlain(GetClustersPlainArgs args) {
@@ -374,6 +398,8 @@ public final class OcvpFunctions {
      * Lists the Clusters in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -405,6 +431,7 @@ public final class OcvpFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetClustersResult> getClusters(GetClustersArgs args, InvokeOptions options) {
@@ -416,6 +443,8 @@ public final class OcvpFunctions {
      * Lists the Clusters in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -447,6 +476,7 @@ public final class OcvpFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetClustersResult> getClustersPlain(GetClustersPlainArgs args, InvokeOptions options) {
@@ -458,6 +488,8 @@ public final class OcvpFunctions {
      * Gets the specified ESXi host&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -486,6 +518,7 @@ public final class OcvpFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExsiHostResult> getExsiHost(GetExsiHostArgs args) {
@@ -497,6 +530,8 @@ public final class OcvpFunctions {
      * Gets the specified ESXi host&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -525,6 +560,7 @@ public final class OcvpFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExsiHostResult> getExsiHostPlain(GetExsiHostPlainArgs args) {
@@ -536,6 +572,8 @@ public final class OcvpFunctions {
      * Gets the specified ESXi host&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -564,6 +602,7 @@ public final class OcvpFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExsiHostResult> getExsiHost(GetExsiHostArgs args, InvokeOptions options) {
@@ -575,6 +614,8 @@ public final class OcvpFunctions {
      * Gets the specified ESXi host&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -603,6 +644,7 @@ public final class OcvpFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExsiHostResult> getExsiHostPlain(GetExsiHostPlainArgs args, InvokeOptions options) {
@@ -622,6 +664,8 @@ public final class OcvpFunctions {
      * ESXi host OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -657,6 +701,7 @@ public final class OcvpFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExsiHostsResult> getExsiHosts() {
@@ -676,6 +721,8 @@ public final class OcvpFunctions {
      * ESXi host OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -711,6 +758,7 @@ public final class OcvpFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExsiHostsResult> getExsiHostsPlain() {
@@ -730,6 +778,8 @@ public final class OcvpFunctions {
      * ESXi host OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -765,6 +815,7 @@ public final class OcvpFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExsiHostsResult> getExsiHosts(GetExsiHostsArgs args) {
@@ -784,6 +835,8 @@ public final class OcvpFunctions {
      * ESXi host OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -819,6 +872,7 @@ public final class OcvpFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExsiHostsResult> getExsiHostsPlain(GetExsiHostsPlainArgs args) {
@@ -838,6 +892,8 @@ public final class OcvpFunctions {
      * ESXi host OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -873,6 +929,7 @@ public final class OcvpFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExsiHostsResult> getExsiHosts(GetExsiHostsArgs args, InvokeOptions options) {
@@ -892,6 +949,8 @@ public final class OcvpFunctions {
      * ESXi host OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -927,6 +986,7 @@ public final class OcvpFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExsiHostsResult> getExsiHostsPlain(GetExsiHostsPlainArgs args, InvokeOptions options) {
@@ -936,6 +996,8 @@ public final class OcvpFunctions {
      * This data source retrieves the SDDC password in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -965,6 +1027,7 @@ public final class OcvpFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRetrievePasswordResult> getRetrievePassword(GetRetrievePasswordArgs args) {
@@ -974,6 +1037,8 @@ public final class OcvpFunctions {
      * This data source retrieves the SDDC password in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1003,6 +1068,7 @@ public final class OcvpFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRetrievePasswordResult> getRetrievePasswordPlain(GetRetrievePasswordPlainArgs args) {
@@ -1012,6 +1078,8 @@ public final class OcvpFunctions {
      * This data source retrieves the SDDC password in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1041,6 +1109,7 @@ public final class OcvpFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRetrievePasswordResult> getRetrievePassword(GetRetrievePasswordArgs args, InvokeOptions options) {
@@ -1050,6 +1119,8 @@ public final class OcvpFunctions {
      * This data source retrieves the SDDC password in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1079,6 +1150,7 @@ public final class OcvpFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRetrievePasswordResult> getRetrievePasswordPlain(GetRetrievePasswordPlainArgs args, InvokeOptions options) {
@@ -1090,6 +1162,8 @@ public final class OcvpFunctions {
      * Gets the specified SDDC&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1118,6 +1192,7 @@ public final class OcvpFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSddcResult> getSddc(GetSddcArgs args) {
@@ -1129,6 +1204,8 @@ public final class OcvpFunctions {
      * Gets the specified SDDC&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1157,6 +1234,7 @@ public final class OcvpFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSddcResult> getSddcPlain(GetSddcPlainArgs args) {
@@ -1168,6 +1246,8 @@ public final class OcvpFunctions {
      * Gets the specified SDDC&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1196,6 +1276,7 @@ public final class OcvpFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSddcResult> getSddc(GetSddcArgs args, InvokeOptions options) {
@@ -1207,6 +1288,8 @@ public final class OcvpFunctions {
      * Gets the specified SDDC&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1235,6 +1318,7 @@ public final class OcvpFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSddcResult> getSddcPlain(GetSddcPlainArgs args, InvokeOptions options) {
@@ -1247,6 +1331,8 @@ public final class OcvpFunctions {
      * filtered by display name or availability domain.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1278,6 +1364,7 @@ public final class OcvpFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSddcsResult> getSddcs(GetSddcsArgs args) {
@@ -1290,6 +1377,8 @@ public final class OcvpFunctions {
      * filtered by display name or availability domain.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1321,6 +1410,7 @@ public final class OcvpFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSddcsResult> getSddcsPlain(GetSddcsPlainArgs args) {
@@ -1333,6 +1423,8 @@ public final class OcvpFunctions {
      * filtered by display name or availability domain.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1364,6 +1456,7 @@ public final class OcvpFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSddcsResult> getSddcs(GetSddcsArgs args, InvokeOptions options) {
@@ -1376,6 +1469,8 @@ public final class OcvpFunctions {
      * filtered by display name or availability domain.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1407,6 +1502,7 @@ public final class OcvpFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSddcsResult> getSddcsPlain(GetSddcsPlainArgs args, InvokeOptions options) {
@@ -1418,6 +1514,8 @@ public final class OcvpFunctions {
      * Lists supported Commitments.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1447,6 +1545,7 @@ public final class OcvpFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSupportedCommitmentsResult> getSupportedCommitments(GetSupportedCommitmentsArgs args) {
@@ -1458,6 +1557,8 @@ public final class OcvpFunctions {
      * Lists supported Commitments.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1487,6 +1588,7 @@ public final class OcvpFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSupportedCommitmentsResult> getSupportedCommitmentsPlain(GetSupportedCommitmentsPlainArgs args) {
@@ -1498,6 +1600,8 @@ public final class OcvpFunctions {
      * Lists supported Commitments.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1527,6 +1631,7 @@ public final class OcvpFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSupportedCommitmentsResult> getSupportedCommitments(GetSupportedCommitmentsArgs args, InvokeOptions options) {
@@ -1538,6 +1643,8 @@ public final class OcvpFunctions {
      * Lists supported Commitments.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1567,6 +1674,7 @@ public final class OcvpFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSupportedCommitmentsResult> getSupportedCommitmentsPlain(GetSupportedCommitmentsPlainArgs args, InvokeOptions options) {
@@ -1578,6 +1686,8 @@ public final class OcvpFunctions {
      * Lists supported compute shapes for ESXi hosts.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1609,6 +1719,7 @@ public final class OcvpFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSupportedHostShapesResult> getSupportedHostShapes(GetSupportedHostShapesArgs args) {
@@ -1620,6 +1731,8 @@ public final class OcvpFunctions {
      * Lists supported compute shapes for ESXi hosts.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1651,6 +1764,7 @@ public final class OcvpFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSupportedHostShapesResult> getSupportedHostShapesPlain(GetSupportedHostShapesPlainArgs args) {
@@ -1662,6 +1776,8 @@ public final class OcvpFunctions {
      * Lists supported compute shapes for ESXi hosts.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1693,6 +1809,7 @@ public final class OcvpFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSupportedHostShapesResult> getSupportedHostShapes(GetSupportedHostShapesArgs args, InvokeOptions options) {
@@ -1704,6 +1821,8 @@ public final class OcvpFunctions {
      * Lists supported compute shapes for ESXi hosts.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1735,6 +1854,7 @@ public final class OcvpFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSupportedHostShapesResult> getSupportedHostShapesPlain(GetSupportedHostShapesPlainArgs args, InvokeOptions options) {
@@ -1747,6 +1867,8 @@ public final class OcvpFunctions {
      * Lists supported SKUs.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1776,6 +1898,7 @@ public final class OcvpFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSupportedSkusResult> getSupportedSkus(GetSupportedSkusArgs args) {
@@ -1788,6 +1911,8 @@ public final class OcvpFunctions {
      * Lists supported SKUs.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1817,6 +1942,7 @@ public final class OcvpFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSupportedSkusResult> getSupportedSkusPlain(GetSupportedSkusPlainArgs args) {
@@ -1829,6 +1955,8 @@ public final class OcvpFunctions {
      * Lists supported SKUs.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1858,6 +1986,7 @@ public final class OcvpFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSupportedSkusResult> getSupportedSkus(GetSupportedSkusArgs args, InvokeOptions options) {
@@ -1870,6 +1999,8 @@ public final class OcvpFunctions {
      * Lists supported SKUs.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1899,6 +2030,7 @@ public final class OcvpFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSupportedSkusResult> getSupportedSkusPlain(GetSupportedSkusPlainArgs args, InvokeOptions options) {
@@ -1911,6 +2043,8 @@ public final class OcvpFunctions {
      * VMware Solution.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1941,6 +2075,7 @@ public final class OcvpFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSupportedVmwareSoftwareVersionsResult> getSupportedVmwareSoftwareVersions(GetSupportedVmwareSoftwareVersionsArgs args) {
@@ -1953,6 +2088,8 @@ public final class OcvpFunctions {
      * VMware Solution.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1983,6 +2120,7 @@ public final class OcvpFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSupportedVmwareSoftwareVersionsResult> getSupportedVmwareSoftwareVersionsPlain(GetSupportedVmwareSoftwareVersionsPlainArgs args) {
@@ -1995,6 +2133,8 @@ public final class OcvpFunctions {
      * VMware Solution.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2025,6 +2165,7 @@ public final class OcvpFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSupportedVmwareSoftwareVersionsResult> getSupportedVmwareSoftwareVersions(GetSupportedVmwareSoftwareVersionsArgs args, InvokeOptions options) {
@@ -2037,6 +2178,8 @@ public final class OcvpFunctions {
      * VMware Solution.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2067,6 +2210,7 @@ public final class OcvpFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSupportedVmwareSoftwareVersionsResult> getSupportedVmwareSoftwareVersionsPlain(GetSupportedVmwareSoftwareVersionsPlainArgs args, InvokeOptions options) {

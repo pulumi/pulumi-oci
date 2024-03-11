@@ -20,6 +20,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -43,6 +44,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetIpsecConfig(ctx *pulumi.Context, args *GetIpsecConfigArgs, opts ...pulumi.InvokeOption) (*GetIpsecConfigResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetIpsecConfigResult

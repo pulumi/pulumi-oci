@@ -14,6 +14,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -30,13 +31,14 @@ import * as utilities from "../utilities";
  *     vantagePointNames: _var.http_probe_vantage_point_names,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * HttpProbes can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:HealthChecks/httpProbe:HttpProbe test_http_probe "id"
+ * $ pulumi import oci:HealthChecks/httpProbe:HttpProbe test_http_probe "id"
  * ```
  */
 export class HttpProbe extends pulumi.CustomResource {

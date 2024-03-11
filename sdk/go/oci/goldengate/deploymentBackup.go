@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -52,15 +53,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // DeploymentBackups can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:GoldenGate/deploymentBackup:DeploymentBackup test_deployment_backup "id"
-//
+// $ pulumi import oci:GoldenGate/deploymentBackup:DeploymentBackup test_deployment_backup "id"
 // ```
 type DeploymentBackup struct {
 	pulumi.CustomResourceState

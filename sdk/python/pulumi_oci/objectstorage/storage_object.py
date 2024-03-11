@@ -642,6 +642,7 @@ class StorageObject(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -661,13 +662,14 @@ class StorageObject(pulumi.CustomResource):
             storage_tier=var["object_storage_tier"],
             opc_sse_kms_key_id=var["object_opc_sse_kms_key_id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Objects can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:ObjectStorage/storageObject:StorageObject test_object "n/{namespaceName}/b/{bucketName}/o/{objectName}"
+        $ pulumi import oci:ObjectStorage/storageObject:StorageObject test_object "n/{namespaceName}/b/{bucketName}/o/{objectName}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -713,6 +715,7 @@ class StorageObject(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -732,13 +735,14 @@ class StorageObject(pulumi.CustomResource):
             storage_tier=var["object_storage_tier"],
             opc_sse_kms_key_id=var["object_opc_sse_kms_key_id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Objects can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:ObjectStorage/storageObject:StorageObject test_object "n/{namespaceName}/b/{bucketName}/o/{objectName}"
+        $ pulumi import oci:ObjectStorage/storageObject:StorageObject test_object "n/{namespaceName}/b/{bucketName}/o/{objectName}"
         ```
 
         :param str resource_name: The name of the resource.

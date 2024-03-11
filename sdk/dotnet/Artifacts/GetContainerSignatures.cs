@@ -16,10 +16,9 @@ namespace Pulumi.Oci.Artifacts
         /// 
         /// List container image signatures in an image.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -44,8 +43,7 @@ namespace Pulumi.Oci.Artifacts
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetContainerSignaturesResult> InvokeAsync(GetContainerSignaturesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetContainerSignaturesResult>("oci:Artifacts/getContainerSignatures:getContainerSignatures", args ?? new GetContainerSignaturesArgs(), options.WithDefaults());
@@ -55,10 +53,9 @@ namespace Pulumi.Oci.Artifacts
         /// 
         /// List container image signatures in an image.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -83,8 +80,7 @@ namespace Pulumi.Oci.Artifacts
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetContainerSignaturesResult> Invoke(GetContainerSignaturesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetContainerSignaturesResult>("oci:Artifacts/getContainerSignatures:getContainerSignatures", args ?? new GetContainerSignaturesInvokeArgs(), options.WithDefaults());

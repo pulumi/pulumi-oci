@@ -329,12 +329,14 @@ def get_budget(budget_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_budget = oci.Budget.get_budget(budget_id=oci_budget_budget["test_budget"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str budget_id: The unique budget OCID.
@@ -381,12 +383,14 @@ def get_budget_output(budget_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_budget = oci.Budget.get_budget(budget_id=oci_budget_budget["test_budget"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str budget_id: The unique budget OCID.

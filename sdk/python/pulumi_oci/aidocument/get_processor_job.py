@@ -195,12 +195,14 @@ def get_processor_job(processor_job_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_processor_job = oci.AiDocument.get_processor_job(processor_job_id=oci_ai_document_processor_job["test_processor_job"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str processor_job_id: Processor job id.
@@ -236,12 +238,14 @@ def get_processor_job_output(processor_job_id: Optional[pulumi.Input[str]] = Non
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_processor_job = oci.AiDocument.get_processor_job(processor_job_id=oci_ai_document_processor_job["test_processor_job"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str processor_job_id: Processor job id.

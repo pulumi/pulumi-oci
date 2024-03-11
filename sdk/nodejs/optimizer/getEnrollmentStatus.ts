@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -19,6 +20,7 @@ import * as utilities from "../utilities";
  *     enrollmentStatusId: oci_optimizer_enrollment_status.test_enrollment_status.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getEnrollmentStatus(args: GetEnrollmentStatusArgs, opts?: pulumi.InvokeOptions): Promise<GetEnrollmentStatusResult> {
 
@@ -79,6 +81,7 @@ export interface GetEnrollmentStatusResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -87,6 +90,7 @@ export interface GetEnrollmentStatusResult {
  *     enrollmentStatusId: oci_optimizer_enrollment_status.test_enrollment_status.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getEnrollmentStatusOutput(args: GetEnrollmentStatusOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetEnrollmentStatusResult> {
     return pulumi.output(args).apply((a: any) => getEnrollmentStatus(a, opts))

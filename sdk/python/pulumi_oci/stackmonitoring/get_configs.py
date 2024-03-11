@@ -125,6 +125,7 @@ def get_configs(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -134,6 +135,7 @@ def get_configs(compartment_id: Optional[str] = None,
         state=var["config_state"],
         type=var["config_type"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID of the compartment in which data is listed.
@@ -174,6 +176,7 @@ def get_configs_output(compartment_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -183,6 +186,7 @@ def get_configs_output(compartment_id: Optional[pulumi.Input[str]] = None,
         state=var["config_state"],
         type=var["config_type"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID of the compartment in which data is listed.

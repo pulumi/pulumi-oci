@@ -182,6 +182,7 @@ def get_steering_policy_attachments(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -197,6 +198,7 @@ def get_steering_policy_attachments(compartment_id: Optional[str] = None,
         time_created_less_than=var["steering_policy_attachment_time_created_less_than"],
         zone_id=oci_dns_zone["test_zone"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment the resource belongs to.
@@ -260,6 +262,7 @@ def get_steering_policy_attachments_output(compartment_id: Optional[pulumi.Input
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -275,6 +278,7 @@ def get_steering_policy_attachments_output(compartment_id: Optional[pulumi.Input
         time_created_less_than=var["steering_policy_attachment_time_created_less_than"],
         zone_id=oci_dns_zone["test_zone"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment the resource belongs to.

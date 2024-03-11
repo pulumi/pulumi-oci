@@ -29,6 +29,8 @@ import javax.annotation.Nullable;
  * Creates a new Pipeline.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -111,13 +113,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * Pipelines can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:DataScience/pipeline:Pipeline test_pipeline &#34;id&#34;
+ * $ pulumi import oci:DataScience/pipeline:Pipeline test_pipeline &#34;id&#34;
  * ```
  * 
  */

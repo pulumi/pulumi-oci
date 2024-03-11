@@ -288,6 +288,7 @@ class ManagedDatabaseGroup(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -305,13 +306,14 @@ class ManagedDatabaseGroup(pulumi.CustomResource):
                 id=var["managed_database_id"],
             )])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ManagedDatabaseGroups can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DatabaseManagement/managedDatabaseGroup:ManagedDatabaseGroup test_managed_database_group "id"
+        $ pulumi import oci:DatabaseManagement/managedDatabaseGroup:ManagedDatabaseGroup test_managed_database_group "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -337,6 +339,7 @@ class ManagedDatabaseGroup(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -354,13 +357,14 @@ class ManagedDatabaseGroup(pulumi.CustomResource):
                 id=var["managed_database_id"],
             )])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ManagedDatabaseGroups can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DatabaseManagement/managedDatabaseGroup:ManagedDatabaseGroup test_managed_database_group "id"
+        $ pulumi import oci:DatabaseManagement/managedDatabaseGroup:ManagedDatabaseGroup test_managed_database_group "id"
         ```
 
         :param str resource_name: The name of the resource.

@@ -122,6 +122,7 @@ def get_fleet_java_migration_analysis_results(filters: Optional[Sequence[pulumi.
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -131,6 +132,7 @@ def get_fleet_java_migration_analysis_results(filters: Optional[Sequence[pulumi.
         time_end=var["fleet_java_migration_analysis_result_time_end"],
         time_start=var["fleet_java_migration_analysis_result_time_start"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
@@ -171,6 +173,7 @@ def get_fleet_java_migration_analysis_results_output(filters: Optional[pulumi.In
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -180,6 +183,7 @@ def get_fleet_java_migration_analysis_results_output(filters: Optional[pulumi.In
         time_end=var["fleet_java_migration_analysis_result_time_end"],
         time_start=var["fleet_java_migration_analysis_result_time_start"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.

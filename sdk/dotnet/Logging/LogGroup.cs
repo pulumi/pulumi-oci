@@ -17,6 +17,7 @@ namespace Pulumi.Oci.Logging
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -42,13 +43,14 @@ namespace Pulumi.Oci.Logging
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// LogGroups can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Logging/logGroup:LogGroup test_log_group "id"
+    /// $ pulumi import oci:Logging/logGroup:LogGroup test_log_group "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Logging/logGroup:LogGroup")]

@@ -499,6 +499,7 @@ class MigrationAsset(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -513,13 +514,14 @@ class MigrationAsset(pulumi.CustomResource):
             replication_schedule_id=oci_cloud_migrations_replication_schedule["test_replication_schedule"]["id"],
             opts=pulumi.ResourceOptions(depends_on=var["migration_asset_depends_on"]))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         MigrationAssets can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:CloudMigrations/migrationAsset:MigrationAsset test_migration_asset "id"
+        $ pulumi import oci:CloudMigrations/migrationAsset:MigrationAsset test_migration_asset "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -549,6 +551,7 @@ class MigrationAsset(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -563,13 +566,14 @@ class MigrationAsset(pulumi.CustomResource):
             replication_schedule_id=oci_cloud_migrations_replication_schedule["test_replication_schedule"]["id"],
             opts=pulumi.ResourceOptions(depends_on=var["migration_asset_depends_on"]))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         MigrationAssets can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:CloudMigrations/migrationAsset:MigrationAsset test_migration_asset "id"
+        $ pulumi import oci:CloudMigrations/migrationAsset:MigrationAsset test_migration_asset "id"
         ```
 
         :param str resource_name: The name of the resource.

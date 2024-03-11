@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -58,15 +59,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // NamedCredentials can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:DatabaseManagement/namedCredential:NamedCredential test_named_credential "id"
-//
+// $ pulumi import oci:DatabaseManagement/namedCredential:NamedCredential test_named_credential "id"
 // ```
 type NamedCredential struct {
 	pulumi.CustomResourceState

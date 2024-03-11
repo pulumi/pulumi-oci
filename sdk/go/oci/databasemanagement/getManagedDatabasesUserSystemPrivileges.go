@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -43,6 +44,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetManagedDatabasesUserSystemPrivileges(ctx *pulumi.Context, args *GetManagedDatabasesUserSystemPrivilegesArgs, opts ...pulumi.InvokeOption) (*GetManagedDatabasesUserSystemPrivilegesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetManagedDatabasesUserSystemPrivilegesResult

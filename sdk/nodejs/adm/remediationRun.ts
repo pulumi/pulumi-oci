@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -28,13 +29,14 @@ import * as utilities from "../utilities";
  *     },
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * RemediationRuns can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Adm/remediationRun:RemediationRun test_remediation_run "id"
+ * $ pulumi import oci:Adm/remediationRun:RemediationRun test_remediation_run "id"
  * ```
  */
 export class RemediationRun extends pulumi.CustomResource {

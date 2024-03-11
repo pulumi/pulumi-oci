@@ -19,7 +19,7 @@ namespace Pulumi.Oci.Optimizer
     /// EnrollmentStatus can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Optimizer/enrollmentStatus:EnrollmentStatus test_enrollment_status "id"
+    /// $ pulumi import oci:Optimizer/enrollmentStatus:EnrollmentStatus test_enrollment_status "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Optimizer/enrollmentStatus:EnrollmentStatus")]

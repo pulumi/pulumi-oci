@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -59,15 +60,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // ProtectedDatabases can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:RecoveryMod/protectedDatabase:ProtectedDatabase test_protected_database "id"
-//
+// $ pulumi import oci:RecoveryMod/protectedDatabase:ProtectedDatabase test_protected_database "id"
 // ```
 type ProtectedDatabase struct {
 	pulumi.CustomResourceState

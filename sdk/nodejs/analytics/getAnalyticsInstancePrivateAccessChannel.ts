@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,6 +23,7 @@ import * as utilities from "../utilities";
  *     privateAccessChannelKey: _var.analytics_instance_private_access_channel_private_access_channel_key,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAnalyticsInstancePrivateAccessChannel(args: GetAnalyticsInstancePrivateAccessChannelArgs, opts?: pulumi.InvokeOptions): Promise<GetAnalyticsInstancePrivateAccessChannelResult> {
 
@@ -97,6 +99,7 @@ export interface GetAnalyticsInstancePrivateAccessChannelResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -106,6 +109,7 @@ export interface GetAnalyticsInstancePrivateAccessChannelResult {
  *     privateAccessChannelKey: _var.analytics_instance_private_access_channel_private_access_channel_key,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAnalyticsInstancePrivateAccessChannelOutput(args: GetAnalyticsInstancePrivateAccessChannelOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAnalyticsInstancePrivateAccessChannelResult> {
     return pulumi.output(args).apply((a: any) => getAnalyticsInstancePrivateAccessChannel(a, opts))

@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -43,6 +44,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetJavaFamilies(ctx *pulumi.Context, args *GetJavaFamiliesArgs, opts ...pulumi.InvokeOption) (*GetJavaFamiliesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetJavaFamiliesResult

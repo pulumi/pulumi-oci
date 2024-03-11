@@ -364,6 +364,7 @@ class DrPlan(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -379,13 +380,14 @@ class DrPlan(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         DrPlans can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DisasterRecovery/drPlan:DrPlan test_dr_plan "id"
+        $ pulumi import oci:DisasterRecovery/drPlan:DrPlan test_dr_plan "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -413,6 +415,7 @@ class DrPlan(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -428,13 +431,14 @@ class DrPlan(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         DrPlans can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DisasterRecovery/drPlan:DrPlan test_dr_plan "id"
+        $ pulumi import oci:DisasterRecovery/drPlan:DrPlan test_dr_plan "id"
         ```
 
         :param str resource_name: The name of the resource.

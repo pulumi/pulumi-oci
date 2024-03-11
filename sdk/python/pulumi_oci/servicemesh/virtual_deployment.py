@@ -433,6 +433,7 @@ class VirtualDeployment(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -461,13 +462,14 @@ class VirtualDeployment(pulumi.CustomResource):
                 hostname=var["virtual_deployment_service_discovery_hostname"],
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         VirtualDeployments can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:ServiceMesh/virtualDeployment:VirtualDeployment test_virtual_deployment "id"
+        $ pulumi import oci:ServiceMesh/virtualDeployment:VirtualDeployment test_virtual_deployment "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -499,6 +501,7 @@ class VirtualDeployment(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -527,13 +530,14 @@ class VirtualDeployment(pulumi.CustomResource):
                 hostname=var["virtual_deployment_service_discovery_hostname"],
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         VirtualDeployments can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:ServiceMesh/virtualDeployment:VirtualDeployment test_virtual_deployment "id"
+        $ pulumi import oci:ServiceMesh/virtualDeployment:VirtualDeployment test_virtual_deployment "id"
         ```
 
         :param str resource_name: The name of the resource.

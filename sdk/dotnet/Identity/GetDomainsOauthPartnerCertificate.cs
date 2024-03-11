@@ -16,10 +16,9 @@ namespace Pulumi.Oci.Identity
         /// 
         /// Get an OAuth Partner Certificate
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -38,8 +37,7 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDomainsOauthPartnerCertificateResult> InvokeAsync(GetDomainsOauthPartnerCertificateArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDomainsOauthPartnerCertificateResult>("oci:Identity/getDomainsOauthPartnerCertificate:getDomainsOauthPartnerCertificate", args ?? new GetDomainsOauthPartnerCertificateArgs(), options.WithDefaults());
@@ -49,10 +47,9 @@ namespace Pulumi.Oci.Identity
         /// 
         /// Get an OAuth Partner Certificate
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -71,8 +68,7 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDomainsOauthPartnerCertificateResult> Invoke(GetDomainsOauthPartnerCertificateInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsOauthPartnerCertificateResult>("oci:Identity/getDomainsOauthPartnerCertificate:getDomainsOauthPartnerCertificate", args ?? new GetDomainsOauthPartnerCertificateInvokeArgs(), options.WithDefaults());

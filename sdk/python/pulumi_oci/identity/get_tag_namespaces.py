@@ -112,6 +112,7 @@ def get_tag_namespaces(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -120,6 +121,7 @@ def get_tag_namespaces(compartment_id: Optional[str] = None,
         include_subcompartments=var["tag_namespace_include_subcompartments"],
         state=var["tag_namespace_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment (remember that the tenancy is simply the root compartment).
@@ -156,6 +158,7 @@ def get_tag_namespaces_output(compartment_id: Optional[pulumi.Input[str]] = None
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -164,6 +167,7 @@ def get_tag_namespaces_output(compartment_id: Optional[pulumi.Input[str]] = None
         include_subcompartments=var["tag_namespace_include_subcompartments"],
         state=var["tag_namespace_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment (remember that the tenancy is simply the root compartment).

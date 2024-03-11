@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -26,6 +27,7 @@ import * as utilities from "../utilities";
  *     state: _var.network_firewall_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getNetworkFirewalls(args: GetNetworkFirewallsArgs, opts?: pulumi.InvokeOptions): Promise<GetNetworkFirewallsResult> {
 
@@ -113,6 +115,7 @@ export interface GetNetworkFirewallsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -126,6 +129,7 @@ export interface GetNetworkFirewallsResult {
  *     state: _var.network_firewall_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getNetworkFirewallsOutput(args: GetNetworkFirewallsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNetworkFirewallsResult> {
     return pulumi.output(args).apply((a: any) => getNetworkFirewalls(a, opts))

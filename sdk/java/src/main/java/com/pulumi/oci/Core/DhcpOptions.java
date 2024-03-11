@@ -42,7 +42,7 @@ import javax.annotation.Nullable;
  * DhcpOptions can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Core/dhcpOptions:DhcpOptions test_dhcp_options &#34;id&#34;
+ * $ pulumi import oci:Core/dhcpOptions:DhcpOptions test_dhcp_options &#34;id&#34;
  * ```
  * 
  */

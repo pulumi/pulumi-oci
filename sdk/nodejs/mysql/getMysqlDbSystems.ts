@@ -14,6 +14,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -29,6 +30,7 @@ import * as utilities from "../utilities";
  *     state: _var.mysql_db_system_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getMysqlDbSystems(args: GetMysqlDbSystemsArgs, opts?: pulumi.InvokeOptions): Promise<GetMysqlDbSystemsResult> {
 
@@ -136,6 +138,7 @@ export interface GetMysqlDbSystemsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -151,6 +154,7 @@ export interface GetMysqlDbSystemsResult {
  *     state: _var.mysql_db_system_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getMysqlDbSystemsOutput(args: GetMysqlDbSystemsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMysqlDbSystemsResult> {
     return pulumi.output(args).apply((a: any) => getMysqlDbSystems(a, opts))

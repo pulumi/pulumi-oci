@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -46,6 +47,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetMaintenanceRuns(ctx *pulumi.Context, args *GetMaintenanceRunsArgs, opts ...pulumi.InvokeOption) (*GetMaintenanceRunsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetMaintenanceRunsResult

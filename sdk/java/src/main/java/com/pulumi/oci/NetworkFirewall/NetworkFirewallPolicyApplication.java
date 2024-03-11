@@ -20,6 +20,8 @@ import javax.annotation.Nullable;
  * Creates a new Application inside the Network Firewall Policy.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -51,13 +53,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * NetworkFirewallPolicyApplications can be imported using the `name`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:NetworkFirewall/networkFirewallPolicyApplication:NetworkFirewallPolicyApplication test_network_firewall_policy_application &#34;networkFirewallPolicies/{networkFirewallPolicyId}/applications/{applicationName}&#34;
+ * $ pulumi import oci:NetworkFirewall/networkFirewallPolicyApplication:NetworkFirewallPolicyApplication test_network_firewall_policy_application &#34;networkFirewallPolicies/{networkFirewallPolicyId}/applications/{applicationName}&#34;
  * ```
  * 
  */

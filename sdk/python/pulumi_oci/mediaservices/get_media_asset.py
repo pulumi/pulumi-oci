@@ -348,12 +348,14 @@ def get_media_asset(media_asset_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_media_asset = oci.MediaServices.get_media_asset(media_asset_id=oci_media_services_media_asset["test_media_asset"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str media_asset_id: Unique MediaAsset identifier
@@ -402,12 +404,14 @@ def get_media_asset_output(media_asset_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_media_asset = oci.MediaServices.get_media_asset(media_asset_id=oci_media_services_media_asset["test_media_asset"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str media_asset_id: Unique MediaAsset identifier

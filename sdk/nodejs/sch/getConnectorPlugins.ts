@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,6 +24,7 @@ import * as utilities from "../utilities";
  *     state: _var.connector_plugin_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getConnectorPlugins(args?: GetConnectorPluginsArgs, opts?: pulumi.InvokeOptions): Promise<GetConnectorPluginsResult> {
     args = args || {};
@@ -88,6 +90,7 @@ export interface GetConnectorPluginsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -98,6 +101,7 @@ export interface GetConnectorPluginsResult {
  *     state: _var.connector_plugin_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getConnectorPluginsOutput(args?: GetConnectorPluginsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetConnectorPluginsResult> {
     return pulumi.output(args).apply((a: any) => getConnectorPlugins(a, opts))

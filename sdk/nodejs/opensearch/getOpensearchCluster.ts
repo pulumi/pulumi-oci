@@ -14,15 +14,18 @@ import * as utilities from "../utilities";
  * The below policies must be created in compartment before creating OpensearchCluster
  *
  * ##### {Compartment-Name} - Name of  your compartment
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
  * Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -31,6 +34,7 @@ import * as utilities from "../utilities";
  *     opensearchClusterId: oci_opensearch_opensearch_cluster.test_opensearch_cluster.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getOpensearchCluster(args: GetOpensearchClusterArgs, opts?: pulumi.InvokeOptions): Promise<GetOpensearchClusterResult> {
 
@@ -226,15 +230,18 @@ export interface GetOpensearchClusterResult {
  * The below policies must be created in compartment before creating OpensearchCluster
  *
  * ##### {Compartment-Name} - Name of  your compartment
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
  * Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -243,6 +250,7 @@ export interface GetOpensearchClusterResult {
  *     opensearchClusterId: oci_opensearch_opensearch_cluster.test_opensearch_cluster.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getOpensearchClusterOutput(args: GetOpensearchClusterOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOpensearchClusterResult> {
     return pulumi.output(args).apply((a: any) => getOpensearchCluster(a, opts))

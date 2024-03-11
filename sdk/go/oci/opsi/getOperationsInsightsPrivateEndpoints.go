@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -46,6 +47,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetOperationsInsightsPrivateEndpoints(ctx *pulumi.Context, args *GetOperationsInsightsPrivateEndpointsArgs, opts ...pulumi.InvokeOption) (*GetOperationsInsightsPrivateEndpointsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetOperationsInsightsPrivateEndpointsResult

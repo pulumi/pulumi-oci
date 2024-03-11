@@ -14,6 +14,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,13 +24,14 @@ import * as utilities from "../utilities";
  *     emailAddress: _var.suppression_email_address,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * Suppressions can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Email/suppression:Suppression test_suppression "id"
+ * $ pulumi import oci:Email/suppression:Suppression test_suppression "id"
  * ```
  */
 export class Suppression extends pulumi.CustomResource {

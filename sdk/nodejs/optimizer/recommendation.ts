@@ -21,7 +21,7 @@ import * as utilities from "../utilities";
  * Recommendations can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Optimizer/recommendation:Recommendation test_recommendation "id"
+ * $ pulumi import oci:Optimizer/recommendation:Recommendation test_recommendation "id"
  * ```
  */
 export class Recommendation extends pulumi.CustomResource {

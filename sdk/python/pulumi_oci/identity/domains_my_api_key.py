@@ -925,7 +925,7 @@ class DomainsMyApiKey(pulumi.CustomResource):
         MyApiKeys can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/domainsMyApiKey:DomainsMyApiKey test_my_api_key "idcsEndpoint/{idcsEndpoint}/myApiKeys/{myApiKeyId}"
+        $ pulumi import oci:Identity/domainsMyApiKey:DomainsMyApiKey test_my_api_key "idcsEndpoint/{idcsEndpoint}/myApiKeys/{myApiKeyId}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -1015,7 +1015,7 @@ class DomainsMyApiKey(pulumi.CustomResource):
         MyApiKeys can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/domainsMyApiKey:DomainsMyApiKey test_my_api_key "idcsEndpoint/{idcsEndpoint}/myApiKeys/{myApiKeyId}"
+        $ pulumi import oci:Identity/domainsMyApiKey:DomainsMyApiKey test_my_api_key "idcsEndpoint/{idcsEndpoint}/myApiKeys/{myApiKeyId}"
         ```
 
         :param str resource_name: The name of the resource.

@@ -17,6 +17,7 @@ namespace Pulumi.Oci.Core
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -43,13 +44,14 @@ namespace Pulumi.Oci.Core
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// DrgRouteTables can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Core/drgRouteTable:DrgRouteTable test_drg_route_table "id"
+    /// $ pulumi import oci:Core/drgRouteTable:DrgRouteTable test_drg_route_table "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Core/drgRouteTable:DrgRouteTable")]

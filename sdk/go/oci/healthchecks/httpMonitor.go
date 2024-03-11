@@ -20,6 +20,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -60,15 +61,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // HttpMonitors can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:HealthChecks/httpMonitor:HttpMonitor test_http_monitor "id"
-//
+// $ pulumi import oci:HealthChecks/httpMonitor:HttpMonitor test_http_monitor "id"
 // ```
 type HttpMonitor struct {
 	pulumi.CustomResourceState

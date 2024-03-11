@@ -12,6 +12,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -26,13 +27,14 @@ import * as utilities from "../utilities";
  *     passphrase: _var.analytics_instance_vanity_url_passphrase,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * AnalyticsInstanceVanityUrls can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Analytics/analyticsInstanceVanityUrl:AnalyticsInstanceVanityUrl test_analytics_instance_vanity_url "analyticsInstances/{analyticsInstanceId}/vanityUrls/{vanityUrlKey}"
+ * $ pulumi import oci:Analytics/analyticsInstanceVanityUrl:AnalyticsInstanceVanityUrl test_analytics_instance_vanity_url "analyticsInstances/{analyticsInstanceId}/vanityUrls/{vanityUrlKey}"
  * ```
  */
 export class AnalyticsInstanceVanityUrl extends pulumi.CustomResource {

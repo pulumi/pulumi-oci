@@ -23,6 +23,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -49,6 +50,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetPingProbeResults(ctx *pulumi.Context, args *GetPingProbeResultsArgs, opts ...pulumi.InvokeOption) (*GetPingProbeResultsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetPingProbeResultsResult

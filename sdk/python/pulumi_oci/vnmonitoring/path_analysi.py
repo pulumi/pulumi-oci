@@ -361,6 +361,7 @@ class PathAnalysi(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -404,13 +405,14 @@ class PathAnalysi(pulumi.CustomResource):
                 vnic_id=oci_core_vnic_attachment["test_vnic_attachment"]["id"],
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         PathAnalysis can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:VnMonitoring/pathAnalysi:PathAnalysi test_path_analysi "id"
+        $ pulumi import oci:VnMonitoring/pathAnalysi:PathAnalysi test_path_analysi "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -449,6 +451,7 @@ class PathAnalysi(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -492,13 +495,14 @@ class PathAnalysi(pulumi.CustomResource):
                 vnic_id=oci_core_vnic_attachment["test_vnic_attachment"]["id"],
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         PathAnalysis can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:VnMonitoring/pathAnalysi:PathAnalysi test_path_analysi "id"
+        $ pulumi import oci:VnMonitoring/pathAnalysi:PathAnalysi test_path_analysi "id"
         ```
 
         :param str resource_name: The name of the resource.

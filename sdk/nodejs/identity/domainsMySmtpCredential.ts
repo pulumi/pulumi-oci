@@ -16,7 +16,7 @@ import * as utilities from "../utilities";
  * MySmtpCredentials can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Identity/domainsMySmtpCredential:DomainsMySmtpCredential test_my_smtp_credential "idcsEndpoint/{idcsEndpoint}/mySmtpCredentials/{mySmtpCredentialId}"
+ * $ pulumi import oci:Identity/domainsMySmtpCredential:DomainsMySmtpCredential test_my_smtp_credential "idcsEndpoint/{idcsEndpoint}/mySmtpCredentials/{mySmtpCredentialId}"
  * ```
  */
 export class DomainsMySmtpCredential extends pulumi.CustomResource {

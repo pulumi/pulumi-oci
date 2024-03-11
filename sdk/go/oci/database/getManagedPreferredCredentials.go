@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -40,6 +41,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetManagedPreferredCredentials(ctx *pulumi.Context, args *GetManagedPreferredCredentialsArgs, opts ...pulumi.InvokeOption) (*GetManagedPreferredCredentialsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetManagedPreferredCredentialsResult

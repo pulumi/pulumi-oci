@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -42,6 +43,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetEtlRun(ctx *pulumi.Context, args *GetEtlRunArgs, opts ...pulumi.InvokeOption) (*GetEtlRunResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetEtlRunResult

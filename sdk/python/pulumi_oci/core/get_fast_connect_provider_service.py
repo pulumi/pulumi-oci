@@ -195,12 +195,14 @@ def get_fast_connect_provider_service(provider_service_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_fast_connect_provider_service = oci.Core.get_fast_connect_provider_service(provider_service_id=data["oci_core_fast_connect_provider_services"]["test_fast_connect_provider_services"]["fast_connect_provider_services"][0]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str provider_service_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the provider service.
@@ -237,12 +239,14 @@ def get_fast_connect_provider_service_output(provider_service_id: Optional[pulum
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_fast_connect_provider_service = oci.Core.get_fast_connect_provider_service(provider_service_id=data["oci_core_fast_connect_provider_services"]["test_fast_connect_provider_services"]["fast_connect_provider_services"][0]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str provider_service_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the provider service.

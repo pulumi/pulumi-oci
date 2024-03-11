@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -38,6 +39,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetMigrationObjectTypes(ctx *pulumi.Context, args *GetMigrationObjectTypesArgs, opts ...pulumi.InvokeOption) (*GetMigrationObjectTypesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetMigrationObjectTypesResult

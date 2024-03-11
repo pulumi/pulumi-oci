@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -31,13 +32,14 @@ import * as utilities from "../utilities";
  *     status: _var.sql_collection_status,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * SqlCollections can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:DataSafe/sqlCollection:SqlCollection test_sql_collection "id"
+ * $ pulumi import oci:DataSafe/sqlCollection:SqlCollection test_sql_collection "id"
  * ```
  */
 export class SqlCollection extends pulumi.CustomResource {

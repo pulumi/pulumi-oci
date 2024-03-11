@@ -16,6 +16,7 @@ namespace Pulumi.Oci.OspGateway
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -58,13 +59,14 @@ namespace Pulumi.Oci.OspGateway
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// AddressActionVerifications can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:OspGateway/addressActionVerification:AddressActionVerification test_address_action_verification "id"
+    /// $ pulumi import oci:OspGateway/addressActionVerification:AddressActionVerification test_address_action_verification "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:OspGateway/addressActionVerification:AddressActionVerification")]

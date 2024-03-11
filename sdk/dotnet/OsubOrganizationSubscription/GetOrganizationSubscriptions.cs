@@ -17,10 +17,9 @@ namespace Pulumi.Oci.OsubOrganizationSubscription
         /// API that returns data for the list of subscription ids returned from Organizations API
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -38,8 +37,7 @@ namespace Pulumi.Oci.OsubOrganizationSubscription
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetOrganizationSubscriptionsResult> InvokeAsync(GetOrganizationSubscriptionsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetOrganizationSubscriptionsResult>("oci:OsubOrganizationSubscription/getOrganizationSubscriptions:getOrganizationSubscriptions", args ?? new GetOrganizationSubscriptionsArgs(), options.WithDefaults());
@@ -50,10 +48,9 @@ namespace Pulumi.Oci.OsubOrganizationSubscription
         /// API that returns data for the list of subscription ids returned from Organizations API
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -71,8 +68,7 @@ namespace Pulumi.Oci.OsubOrganizationSubscription
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetOrganizationSubscriptionsResult> Invoke(GetOrganizationSubscriptionsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetOrganizationSubscriptionsResult>("oci:OsubOrganizationSubscription/getOrganizationSubscriptions:getOrganizationSubscriptions", args ?? new GetOrganizationSubscriptionsInvokeArgs(), options.WithDefaults());

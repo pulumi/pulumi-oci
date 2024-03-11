@@ -350,6 +350,7 @@ class AccessPolicy(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -386,13 +387,14 @@ class AccessPolicy(pulumi.CustomResource):
                 "bar-key": "value",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         AccessPolicies can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:ServiceMesh/accessPolicy:AccessPolicy test_access_policy "id"
+        $ pulumi import oci:ServiceMesh/accessPolicy:AccessPolicy test_access_policy "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -418,6 +420,7 @@ class AccessPolicy(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -454,13 +457,14 @@ class AccessPolicy(pulumi.CustomResource):
                 "bar-key": "value",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         AccessPolicies can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:ServiceMesh/accessPolicy:AccessPolicy test_access_policy "id"
+        $ pulumi import oci:ServiceMesh/accessPolicy:AccessPolicy test_access_policy "id"
         ```
 
         :param str resource_name: The name of the resource.

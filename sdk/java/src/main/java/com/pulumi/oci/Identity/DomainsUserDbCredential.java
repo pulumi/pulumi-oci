@@ -29,6 +29,7 @@ import javax.annotation.Nullable;
  * 
  * ## Example Usage
  * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -82,13 +83,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * UserDbCredentials can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Identity/domainsUserDbCredential:DomainsUserDbCredential test_user_db_credential &#34;idcsEndpoint/{idcsEndpoint}/userDbCredentials/{userDbCredentialId}&#34;
+ * $ pulumi import oci:Identity/domainsUserDbCredential:DomainsUserDbCredential test_user_db_credential &#34;idcsEndpoint/{idcsEndpoint}/userDbCredentials/{userDbCredentialId}&#34;
  * ```
  * 
  */

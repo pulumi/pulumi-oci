@@ -123,6 +123,7 @@ def get_discovery_analytic(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -133,6 +134,7 @@ def get_discovery_analytic(compartment_id: Optional[str] = None,
         sensitive_data_model_id=oci_data_safe_sensitive_data_model["test_sensitive_data_model"]["id"],
         target_id=oci_cloud_guard_target["test_target"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
@@ -176,6 +178,7 @@ def get_discovery_analytic_output(compartment_id: Optional[pulumi.Input[str]] = 
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -186,6 +189,7 @@ def get_discovery_analytic_output(compartment_id: Optional[pulumi.Input[str]] = 
         sensitive_data_model_id=oci_data_safe_sensitive_data_model["test_sensitive_data_model"]["id"],
         target_id=oci_cloud_guard_target["test_target"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: A filter to return only resources that match the specified compartment OCID.

@@ -16,10 +16,9 @@ namespace Pulumi.Oci.Jms
         /// 
         /// Lists the results of a Java migration analysis.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -38,8 +37,7 @@ namespace Pulumi.Oci.Jms
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetFleetJavaMigrationAnalysisResultsResult> InvokeAsync(GetFleetJavaMigrationAnalysisResultsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetFleetJavaMigrationAnalysisResultsResult>("oci:Jms/getFleetJavaMigrationAnalysisResults:getFleetJavaMigrationAnalysisResults", args ?? new GetFleetJavaMigrationAnalysisResultsArgs(), options.WithDefaults());
@@ -49,10 +47,9 @@ namespace Pulumi.Oci.Jms
         /// 
         /// Lists the results of a Java migration analysis.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -71,8 +68,7 @@ namespace Pulumi.Oci.Jms
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetFleetJavaMigrationAnalysisResultsResult> Invoke(GetFleetJavaMigrationAnalysisResultsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFleetJavaMigrationAnalysisResultsResult>("oci:Jms/getFleetJavaMigrationAnalysisResults:getFleetJavaMigrationAnalysisResults", args ?? new GetFleetJavaMigrationAnalysisResultsInvokeArgs(), options.WithDefaults());

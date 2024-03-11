@@ -19,7 +19,7 @@ namespace Pulumi.Oci.OperatorAccessControl
     /// OperatorControls can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:OperatorAccessControl/operatorControl:OperatorControl test_operator_control "id"
+    /// $ pulumi import oci:OperatorAccessControl/operatorControl:OperatorControl test_operator_control "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:OperatorAccessControl/operatorControl:OperatorControl")]

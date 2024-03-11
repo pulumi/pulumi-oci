@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -37,13 +38,14 @@ import * as utilities from "../utilities";
  *     isRedoLogsShipped: _var.protected_database_is_redo_logs_shipped,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * ProtectedDatabases can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:RecoveryMod/protectedDatabase:ProtectedDatabase test_protected_database "id"
+ * $ pulumi import oci:RecoveryMod/protectedDatabase:ProtectedDatabase test_protected_database "id"
  * ```
  */
 export class ProtectedDatabase extends pulumi.CustomResource {

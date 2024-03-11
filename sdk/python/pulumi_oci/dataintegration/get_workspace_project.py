@@ -211,6 +211,7 @@ def get_workspace_project(project_key: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -218,6 +219,7 @@ def get_workspace_project(project_key: Optional[str] = None,
     test_workspace_project = oci.DataIntegration.get_workspace_project(project_key=var["workspace_project_project_key"],
         workspace_id=oci_dataintegration_workspace["test_workspace"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str project_key: The project key.
@@ -258,6 +260,7 @@ def get_workspace_project_output(project_key: Optional[pulumi.Input[str]] = None
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -265,6 +268,7 @@ def get_workspace_project_output(project_key: Optional[pulumi.Input[str]] = None
     test_workspace_project = oci.DataIntegration.get_workspace_project(project_key=var["workspace_project_project_key"],
         workspace_id=oci_dataintegration_workspace["test_workspace"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str project_key: The project key.

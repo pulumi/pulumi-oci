@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -37,13 +38,14 @@ import * as utilities from "../utilities";
  *     responseCode: _var.http_redirect_response_code,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * HttpRedirects can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Waas/httpRedirect:HttpRedirect test_http_redirect "id"
+ * $ pulumi import oci:Waas/httpRedirect:HttpRedirect test_http_redirect "id"
  * ```
  */
 export class HttpRedirect extends pulumi.CustomResource {

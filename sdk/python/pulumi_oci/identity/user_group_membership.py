@@ -201,6 +201,7 @@ class UserGroupMembership(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -209,13 +210,14 @@ class UserGroupMembership(pulumi.CustomResource):
             group_id=oci_identity_group["test_group"]["id"],
             user_id=oci_identity_user["test_user"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         UserGroupMemberships can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/userGroupMembership:UserGroupMembership test_user_group_membership "id"
+        $ pulumi import oci:Identity/userGroupMembership:UserGroupMembership test_user_group_membership "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -241,6 +243,7 @@ class UserGroupMembership(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -249,13 +252,14 @@ class UserGroupMembership(pulumi.CustomResource):
             group_id=oci_identity_group["test_group"]["id"],
             user_id=oci_identity_user["test_user"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         UserGroupMemberships can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/userGroupMembership:UserGroupMembership test_user_group_membership "id"
+        $ pulumi import oci:Identity/userGroupMembership:UserGroupMembership test_user_group_membership "id"
         ```
 
         :param str resource_name: The name of the resource.

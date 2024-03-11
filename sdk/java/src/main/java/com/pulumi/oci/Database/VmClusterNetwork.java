@@ -28,6 +28,8 @@ import javax.annotation.Nullable;
  * To create a cloud VM cluster in an Exadata Cloud Service instance, use the [CreateCloudVmCluster ](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudVmCluster/CreateCloudVmCluster) operation.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -93,13 +95,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * VmClusterNetworks can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Database/vmClusterNetwork:VmClusterNetwork test_vm_cluster_network &#34;exadataInfrastructures/{exadataInfrastructureId}/vmClusterNetworks/{vmClusterNetworkId}&#34;
+ * $ pulumi import oci:Database/vmClusterNetwork:VmClusterNetwork test_vm_cluster_network &#34;exadataInfrastructures/{exadataInfrastructureId}/vmClusterNetworks/{vmClusterNetworkId}&#34;
  * ```
  * 
  */

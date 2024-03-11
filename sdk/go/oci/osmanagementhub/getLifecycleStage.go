@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -40,6 +41,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetLifecycleStage(ctx *pulumi.Context, args *GetLifecycleStageArgs, opts ...pulumi.InvokeOption) (*GetLifecycleStageResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetLifecycleStageResult

@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -57,15 +58,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Meshes can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:ServiceMesh/mesh:Mesh test_mesh "id"
-//
+// $ pulumi import oci:ServiceMesh/mesh:Mesh test_mesh "id"
 // ```
 type Mesh struct {
 	pulumi.CustomResourceState

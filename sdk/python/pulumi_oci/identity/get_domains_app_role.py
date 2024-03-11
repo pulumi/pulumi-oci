@@ -293,7 +293,7 @@ class GetDomainsAppRoleResult:
     @pulumi.getter
     def members(self) -> Sequence['outputs.GetDomainsAppRoleMemberResult']:
         """
-        AppRole members - when requesting members attribute, it is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%26count=10]
+        AppRole members - when requesting members attribute, it is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%!c(MISSING)ount=10]
         """
         return pulumi.get(self, "members")
 
@@ -413,6 +413,7 @@ def get_domains_app_role(app_role_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -424,6 +425,7 @@ def get_domains_app_role(app_role_id: Optional[str] = None,
         authorization=var["app_role_authorization"],
         resource_type_schema_version=var["app_role_resource_type_schema_version"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str app_role_id: ID of the resource
@@ -493,6 +495,7 @@ def get_domains_app_role_output(app_role_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -504,6 +507,7 @@ def get_domains_app_role_output(app_role_id: Optional[pulumi.Input[str]] = None,
         authorization=var["app_role_authorization"],
         resource_type_schema_version=var["app_role_resource_type_schema_version"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str app_role_id: ID of the resource

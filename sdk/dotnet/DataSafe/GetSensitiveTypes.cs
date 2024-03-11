@@ -17,10 +17,9 @@ namespace Pulumi.Oci.DataSafe
         /// Gets a list of sensitive types based on the specified query parameters.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -48,8 +47,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetSensitiveTypesResult> InvokeAsync(GetSensitiveTypesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetSensitiveTypesResult>("oci:DataSafe/getSensitiveTypes:getSensitiveTypes", args ?? new GetSensitiveTypesArgs(), options.WithDefaults());
@@ -60,10 +58,9 @@ namespace Pulumi.Oci.DataSafe
         /// Gets a list of sensitive types based on the specified query parameters.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -91,8 +88,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetSensitiveTypesResult> Invoke(GetSensitiveTypesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSensitiveTypesResult>("oci:DataSafe/getSensitiveTypes:getSensitiveTypes", args ?? new GetSensitiveTypesInvokeArgs(), options.WithDefaults());

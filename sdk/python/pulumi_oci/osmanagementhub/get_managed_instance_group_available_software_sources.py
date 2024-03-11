@@ -123,6 +123,7 @@ def get_managed_instance_group_available_software_sources(compartment_id: Option
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -132,6 +133,7 @@ def get_managed_instance_group_available_software_sources(compartment_id: Option
         display_names=var["managed_instance_group_available_software_source_display_name"],
         display_name_contains=var["managed_instance_group_available_software_source_display_name_contains"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment that contains the resources to list.
@@ -173,6 +175,7 @@ def get_managed_instance_group_available_software_sources_output(compartment_id:
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -182,6 +185,7 @@ def get_managed_instance_group_available_software_sources_output(compartment_id:
         display_names=var["managed_instance_group_available_software_source_display_name"],
         display_name_contains=var["managed_instance_group_available_software_source_display_name_contains"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment that contains the resources to list.

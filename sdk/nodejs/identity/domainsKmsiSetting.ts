@@ -16,7 +16,7 @@ import * as utilities from "../utilities";
  * KmsiSettings can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Identity/domainsKmsiSetting:DomainsKmsiSetting test_kmsi_setting "idcsEndpoint/{idcsEndpoint}/kmsiSettings/{kmsiSettingId}"
+ * $ pulumi import oci:Identity/domainsKmsiSetting:DomainsKmsiSetting test_kmsi_setting "idcsEndpoint/{idcsEndpoint}/kmsiSettings/{kmsiSettingId}"
  * ```
  */
 export class DomainsKmsiSetting extends pulumi.CustomResource {

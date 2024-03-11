@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -42,6 +43,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetOneoffPatches(ctx *pulumi.Context, args *GetOneoffPatchesArgs, opts ...pulumi.InvokeOption) (*GetOneoffPatchesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetOneoffPatchesResult

@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -19,6 +20,7 @@ import * as utilities from "../utilities";
  *     sdmMaskingPolicyDifferenceId: oci_data_safe_sdm_masking_policy_difference.test_sdm_masking_policy_difference.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getSdmMaskingPolicyDifference(args: GetSdmMaskingPolicyDifferenceArgs, opts?: pulumi.InvokeOptions): Promise<GetSdmMaskingPolicyDifferenceResult> {
 
@@ -99,6 +101,7 @@ export interface GetSdmMaskingPolicyDifferenceResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -107,6 +110,7 @@ export interface GetSdmMaskingPolicyDifferenceResult {
  *     sdmMaskingPolicyDifferenceId: oci_data_safe_sdm_masking_policy_difference.test_sdm_masking_policy_difference.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getSdmMaskingPolicyDifferenceOutput(args: GetSdmMaskingPolicyDifferenceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSdmMaskingPolicyDifferenceResult> {
     return pulumi.output(args).apply((a: any) => getSdmMaskingPolicyDifference(a, opts))

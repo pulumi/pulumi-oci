@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,6 +22,7 @@ import * as utilities from "../utilities";
  *     dbHomeId: _var.db_home_id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDbHome(args: GetDbHomeArgs, opts?: pulumi.InvokeOptions): Promise<GetDbHomeResult> {
 
@@ -118,6 +120,7 @@ export interface GetDbHomeResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -126,6 +129,7 @@ export interface GetDbHomeResult {
  *     dbHomeId: _var.db_home_id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDbHomeOutput(args: GetDbHomeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbHomeResult> {
     return pulumi.output(args).apply((a: any) => getDbHome(a, opts))

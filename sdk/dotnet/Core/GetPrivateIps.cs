@@ -32,10 +32,9 @@ namespace Pulumi.Oci.Core
         /// in your VCN, you can filter the list by VLAN [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -51,6 +50,8 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -66,6 +67,8 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -84,8 +87,7 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetPrivateIpsResult> InvokeAsync(GetPrivateIpsArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetPrivateIpsResult>("oci:Core/getPrivateIps:getPrivateIps", args ?? new GetPrivateIpsArgs(), options.WithDefaults());
@@ -111,10 +113,9 @@ namespace Pulumi.Oci.Core
         /// in your VCN, you can filter the list by VLAN [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -130,6 +131,8 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -145,6 +148,8 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -163,8 +168,7 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetPrivateIpsResult> Invoke(GetPrivateIpsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPrivateIpsResult>("oci:Core/getPrivateIps:getPrivateIps", args ?? new GetPrivateIpsInvokeArgs(), options.WithDefaults());

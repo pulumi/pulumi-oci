@@ -32,6 +32,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -65,15 +66,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Cpes can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Core/cpe:Cpe test_cpe "id"
-//
+// $ pulumi import oci:Core/cpe:Cpe test_cpe "id"
 // ```
 type Cpe struct {
 	pulumi.CustomResourceState

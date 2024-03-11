@@ -50,6 +50,8 @@ import javax.annotation.Nullable;
  * [CPE Configuration](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/configuringCPE.htm).
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -86,13 +88,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * IpSecConnections can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Core/ipsec:Ipsec test_ip_sec_connection &#34;id&#34;
+ * $ pulumi import oci:Core/ipsec:Ipsec test_ip_sec_connection &#34;id&#34;
  * ```
  * 
  */

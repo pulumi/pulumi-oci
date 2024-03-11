@@ -16,10 +16,9 @@ namespace Pulumi.Oci.ApiGateway
         /// 
         /// Get the raw API content.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,8 +34,7 @@ namespace Pulumi.Oci.ApiGateway
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetApiContentResult> InvokeAsync(GetApiContentArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetApiContentResult>("oci:ApiGateway/getApiContent:getApiContent", args ?? new GetApiContentArgs(), options.WithDefaults());
@@ -46,10 +44,9 @@ namespace Pulumi.Oci.ApiGateway
         /// 
         /// Get the raw API content.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -65,8 +62,7 @@ namespace Pulumi.Oci.ApiGateway
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetApiContentResult> Invoke(GetApiContentInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetApiContentResult>("oci:ApiGateway/getApiContent:getApiContent", args ?? new GetApiContentInvokeArgs(), options.WithDefaults());

@@ -354,6 +354,7 @@ class StreamPool(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -379,13 +380,14 @@ class StreamPool(pulumi.CustomResource):
                 subnet_id=oci_core_subnet["test_subnet"]["id"],
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         StreamPools can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Streaming/streamPool:StreamPool test_stream_pool "id"
+        $ pulumi import oci:Streaming/streamPool:StreamPool test_stream_pool "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -413,6 +415,7 @@ class StreamPool(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -438,13 +441,14 @@ class StreamPool(pulumi.CustomResource):
                 subnet_id=oci_core_subnet["test_subnet"]["id"],
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         StreamPools can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Streaming/streamPool:StreamPool test_stream_pool "id"
+        $ pulumi import oci:Streaming/streamPool:StreamPool test_stream_pool "id"
         ```
 
         :param str resource_name: The name of the resource.

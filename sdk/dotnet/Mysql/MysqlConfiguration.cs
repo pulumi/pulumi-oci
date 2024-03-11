@@ -16,6 +16,7 @@ namespace Pulumi.Oci.Mysql
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -129,13 +130,14 @@ namespace Pulumi.Oci.Mysql
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// MysqlConfigurations can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Mysql/mysqlConfiguration:MysqlConfiguration test_mysql_configuration "configurations/{configurationId}"
+    /// $ pulumi import oci:Mysql/mysqlConfiguration:MysqlConfiguration test_mysql_configuration "configurations/{configurationId}"
     /// ```
     /// </summary>
     [OciResourceType("oci:Mysql/mysqlConfiguration:MysqlConfiguration")]

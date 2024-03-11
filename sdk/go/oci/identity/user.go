@@ -48,6 +48,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -79,15 +80,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Users can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Identity/user:User test_user "id"
-//
+// $ pulumi import oci:Identity/user:User test_user "id"
 // ```
 type User struct {
 	pulumi.CustomResourceState

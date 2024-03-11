@@ -16,6 +16,7 @@ namespace Pulumi.Oci.VisualBuilder
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -57,13 +58,14 @@ namespace Pulumi.Oci.VisualBuilder
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// VbInstances can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:VisualBuilder/vbInstance:VbInstance test_vb_instance "id"
+    /// $ pulumi import oci:VisualBuilder/vbInstance:VbInstance test_vb_instance "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:VisualBuilder/vbInstance:VbInstance")]

@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -73,15 +74,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // PipelineRuns can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:DataScience/pipelineRun:PipelineRun test_pipeline_run "id"
-//
+// $ pulumi import oci:DataScience/pipelineRun:PipelineRun test_pipeline_run "id"
 // ```
 type PipelineRun struct {
 	pulumi.CustomResourceState

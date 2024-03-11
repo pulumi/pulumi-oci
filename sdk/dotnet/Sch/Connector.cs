@@ -35,6 +35,7 @@ namespace Pulumi.Oci.Sch
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -147,13 +148,14 @@ namespace Pulumi.Oci.Sch
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// ServiceConnectors can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Sch/connector:Connector test_service_connector "id"
+    /// $ pulumi import oci:Sch/connector:Connector test_service_connector "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Sch/connector:Connector")]

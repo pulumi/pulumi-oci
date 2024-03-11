@@ -20,6 +20,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -122,15 +123,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // MonitoredResources can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:StackMonitoring/monitoredResource:MonitoredResource test_monitored_resource "id"
-//
+// $ pulumi import oci:StackMonitoring/monitoredResource:MonitoredResource test_monitored_resource "id"
 // ```
 type MonitoredResource struct {
 	pulumi.CustomResourceState

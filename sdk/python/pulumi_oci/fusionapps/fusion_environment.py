@@ -689,6 +689,7 @@ class FusionEnvironment(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -727,13 +728,14 @@ class FusionEnvironment(pulumi.CustomResource):
                 description=var["fusion_environment_rules_description"],
             )])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         FusionEnvironments can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:FusionApps/fusionEnvironment:FusionEnvironment test_fusion_environment "id"
+        $ pulumi import oci:FusionApps/fusionEnvironment:FusionEnvironment test_fusion_environment "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -764,6 +766,7 @@ class FusionEnvironment(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -802,13 +805,14 @@ class FusionEnvironment(pulumi.CustomResource):
                 description=var["fusion_environment_rules_description"],
             )])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         FusionEnvironments can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:FusionApps/fusionEnvironment:FusionEnvironment test_fusion_environment "id"
+        $ pulumi import oci:FusionApps/fusionEnvironment:FusionEnvironment test_fusion_environment "id"
         ```
 
         :param str resource_name: The name of the resource.

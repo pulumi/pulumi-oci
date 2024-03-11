@@ -16,6 +16,7 @@ namespace Pulumi.Oci.Database
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -37,13 +38,14 @@ namespace Pulumi.Oci.Database
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// DbNodeConsoleHistories can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Database/dbNodeConsoleHistory:DbNodeConsoleHistory test_db_node_console_history "dbNodes/{dbNodeId}/consoleHistories/{consoleHistoryId}"
+    /// $ pulumi import oci:Database/dbNodeConsoleHistory:DbNodeConsoleHistory test_db_node_console_history "dbNodes/{dbNodeId}/consoleHistories/{consoleHistoryId}"
     /// ```
     /// </summary>
     [OciResourceType("oci:Database/dbNodeConsoleHistory:DbNodeConsoleHistory")]

@@ -21,7 +21,7 @@ namespace Pulumi.Oci.GenerativeAi
     /// Models can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:GenerativeAi/model:Model test_model "id"
+    /// $ pulumi import oci:GenerativeAi/model:Model test_model "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:GenerativeAi/model:Model")]

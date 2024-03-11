@@ -33,6 +33,7 @@ public final class OpensearchFunctions {
      * The below policies must be created in compartment before creating OpensearchCluster
      * 
      * ##### {Compartment-Name} - Name of  your compartment
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -55,11 +56,14 @@ public final class OpensearchFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      * For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
      * Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -88,6 +92,7 @@ public final class OpensearchFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOpensearchClusterResult> getOpensearchCluster(GetOpensearchClusterArgs args) {
@@ -103,6 +108,7 @@ public final class OpensearchFunctions {
      * The below policies must be created in compartment before creating OpensearchCluster
      * 
      * ##### {Compartment-Name} - Name of  your compartment
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -125,11 +131,14 @@ public final class OpensearchFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      * For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
      * Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -158,6 +167,7 @@ public final class OpensearchFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOpensearchClusterResult> getOpensearchClusterPlain(GetOpensearchClusterPlainArgs args) {
@@ -173,6 +183,7 @@ public final class OpensearchFunctions {
      * The below policies must be created in compartment before creating OpensearchCluster
      * 
      * ##### {Compartment-Name} - Name of  your compartment
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -195,11 +206,14 @@ public final class OpensearchFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      * For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
      * Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -228,6 +242,7 @@ public final class OpensearchFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOpensearchClusterResult> getOpensearchCluster(GetOpensearchClusterArgs args, InvokeOptions options) {
@@ -243,6 +258,7 @@ public final class OpensearchFunctions {
      * The below policies must be created in compartment before creating OpensearchCluster
      * 
      * ##### {Compartment-Name} - Name of  your compartment
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -265,11 +281,14 @@ public final class OpensearchFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      * For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
      * Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -298,6 +317,7 @@ public final class OpensearchFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOpensearchClusterResult> getOpensearchClusterPlain(GetOpensearchClusterPlainArgs args, InvokeOptions options) {
@@ -313,6 +333,7 @@ public final class OpensearchFunctions {
      * The below policies must be created in compartment before creating OpensearchCluster
      * 
      * ##### {Compartment-Name} - Name of  your compartment
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -335,11 +356,14 @@ public final class OpensearchFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      * For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
      * Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -371,6 +395,7 @@ public final class OpensearchFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOpensearchClustersResult> getOpensearchClusters(GetOpensearchClustersArgs args) {
@@ -386,6 +411,7 @@ public final class OpensearchFunctions {
      * The below policies must be created in compartment before creating OpensearchCluster
      * 
      * ##### {Compartment-Name} - Name of  your compartment
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -408,11 +434,14 @@ public final class OpensearchFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      * For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
      * Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -444,6 +473,7 @@ public final class OpensearchFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOpensearchClustersResult> getOpensearchClustersPlain(GetOpensearchClustersPlainArgs args) {
@@ -459,6 +489,7 @@ public final class OpensearchFunctions {
      * The below policies must be created in compartment before creating OpensearchCluster
      * 
      * ##### {Compartment-Name} - Name of  your compartment
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -481,11 +512,14 @@ public final class OpensearchFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      * For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
      * Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -517,6 +551,7 @@ public final class OpensearchFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOpensearchClustersResult> getOpensearchClusters(GetOpensearchClustersArgs args, InvokeOptions options) {
@@ -532,6 +567,7 @@ public final class OpensearchFunctions {
      * The below policies must be created in compartment before creating OpensearchCluster
      * 
      * ##### {Compartment-Name} - Name of  your compartment
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -554,11 +590,14 @@ public final class OpensearchFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      * For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
      * Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -590,6 +629,7 @@ public final class OpensearchFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOpensearchClustersResult> getOpensearchClustersPlain(GetOpensearchClustersPlainArgs args, InvokeOptions options) {
@@ -605,6 +645,7 @@ public final class OpensearchFunctions {
      * The below policies must be created in compartment before creating OpensearchCluster
      * 
      * ##### {Compartment-Name} - Name of  your compartment
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -627,11 +668,14 @@ public final class OpensearchFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      * For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
      * Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -660,6 +704,7 @@ public final class OpensearchFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOpensearchVersionResult> getOpensearchVersion(GetOpensearchVersionArgs args) {
@@ -675,6 +720,7 @@ public final class OpensearchFunctions {
      * The below policies must be created in compartment before creating OpensearchCluster
      * 
      * ##### {Compartment-Name} - Name of  your compartment
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -697,11 +743,14 @@ public final class OpensearchFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      * For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
      * Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -730,6 +779,7 @@ public final class OpensearchFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOpensearchVersionResult> getOpensearchVersionPlain(GetOpensearchVersionPlainArgs args) {
@@ -745,6 +795,7 @@ public final class OpensearchFunctions {
      * The below policies must be created in compartment before creating OpensearchCluster
      * 
      * ##### {Compartment-Name} - Name of  your compartment
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -767,11 +818,14 @@ public final class OpensearchFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      * For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
      * Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -800,6 +854,7 @@ public final class OpensearchFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOpensearchVersionResult> getOpensearchVersion(GetOpensearchVersionArgs args, InvokeOptions options) {
@@ -815,6 +870,7 @@ public final class OpensearchFunctions {
      * The below policies must be created in compartment before creating OpensearchCluster
      * 
      * ##### {Compartment-Name} - Name of  your compartment
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -837,11 +893,14 @@ public final class OpensearchFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      * For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
      * Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -870,6 +929,7 @@ public final class OpensearchFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOpensearchVersionResult> getOpensearchVersionPlain(GetOpensearchVersionPlainArgs args, InvokeOptions options) {
@@ -885,6 +945,7 @@ public final class OpensearchFunctions {
      * The below policies must be created in compartment before creating OpensearchCluster
      * 
      * ##### {Compartment-Name} - Name of  your compartment
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -907,11 +968,14 @@ public final class OpensearchFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      * For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
      * Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -940,6 +1004,7 @@ public final class OpensearchFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOpensearchVersionsResult> getOpensearchVersions(GetOpensearchVersionsArgs args) {
@@ -955,6 +1020,7 @@ public final class OpensearchFunctions {
      * The below policies must be created in compartment before creating OpensearchCluster
      * 
      * ##### {Compartment-Name} - Name of  your compartment
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -977,11 +1043,14 @@ public final class OpensearchFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      * For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
      * Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1010,6 +1079,7 @@ public final class OpensearchFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOpensearchVersionsResult> getOpensearchVersionsPlain(GetOpensearchVersionsPlainArgs args) {
@@ -1025,6 +1095,7 @@ public final class OpensearchFunctions {
      * The below policies must be created in compartment before creating OpensearchCluster
      * 
      * ##### {Compartment-Name} - Name of  your compartment
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1047,11 +1118,14 @@ public final class OpensearchFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      * For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
      * Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1080,6 +1154,7 @@ public final class OpensearchFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOpensearchVersionsResult> getOpensearchVersions(GetOpensearchVersionsArgs args, InvokeOptions options) {
@@ -1095,6 +1170,7 @@ public final class OpensearchFunctions {
      * The below policies must be created in compartment before creating OpensearchCluster
      * 
      * ##### {Compartment-Name} - Name of  your compartment
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1117,11 +1193,14 @@ public final class OpensearchFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      * For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
      * Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1150,6 +1229,7 @@ public final class OpensearchFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOpensearchVersionsResult> getOpensearchVersionsPlain(GetOpensearchVersionsPlainArgs args, InvokeOptions options) {

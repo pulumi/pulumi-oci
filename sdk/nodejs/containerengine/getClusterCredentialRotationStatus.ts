@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -19,6 +20,7 @@ import * as utilities from "../utilities";
  *     clusterId: oci_containerengine_cluster.test_cluster.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getClusterCredentialRotationStatus(args: GetClusterCredentialRotationStatusArgs, opts?: pulumi.InvokeOptions): Promise<GetClusterCredentialRotationStatusResult> {
 
@@ -67,6 +69,7 @@ export interface GetClusterCredentialRotationStatusResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -75,6 +78,7 @@ export interface GetClusterCredentialRotationStatusResult {
  *     clusterId: oci_containerengine_cluster.test_cluster.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getClusterCredentialRotationStatusOutput(args: GetClusterCredentialRotationStatusOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetClusterCredentialRotationStatusResult> {
     return pulumi.output(args).apply((a: any) => getClusterCredentialRotationStatus(a, opts))

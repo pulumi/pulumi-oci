@@ -170,12 +170,14 @@ def get_log_saved_search(log_saved_search_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_log_saved_search = oci.Logging.get_log_saved_search(log_saved_search_id=oci_logging_log_saved_search["test_log_saved_search"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str log_saved_search_id: OCID of the logSavedSearch.
@@ -209,12 +211,14 @@ def get_log_saved_search_output(log_saved_search_id: Optional[pulumi.Input[str]]
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_log_saved_search = oci.Logging.get_log_saved_search(log_saved_search_id=oci_logging_log_saved_search["test_log_saved_search"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str log_saved_search_id: OCID of the logSavedSearch.

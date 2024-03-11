@@ -32,6 +32,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -56,13 +57,14 @@ import * as utilities from "../utilities";
  *     passwordSecretVersion: _var.outbound_connector_password_secret_version,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * OutboundConnectors can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:FileStorage/outboundConnector:OutboundConnector test_outbound_connector "id"
+ * $ pulumi import oci:FileStorage/outboundConnector:OutboundConnector test_outbound_connector "id"
  * ```
  */
 export class OutboundConnector extends pulumi.CustomResource {

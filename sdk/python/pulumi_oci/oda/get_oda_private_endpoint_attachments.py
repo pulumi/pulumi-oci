@@ -119,6 +119,7 @@ def get_oda_private_endpoint_attachments(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -127,6 +128,7 @@ def get_oda_private_endpoint_attachments(compartment_id: Optional[str] = None,
         oda_private_endpoint_id=oci_oda_oda_private_endpoint["test_oda_private_endpoint"]["id"],
         state=var["oda_private_endpoint_attachment_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: List the ODA Private Endpoint Attachments that belong to this compartment.
@@ -167,6 +169,7 @@ def get_oda_private_endpoint_attachments_output(compartment_id: Optional[pulumi.
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -175,6 +178,7 @@ def get_oda_private_endpoint_attachments_output(compartment_id: Optional[pulumi.
         oda_private_endpoint_id=oci_oda_oda_private_endpoint["test_oda_private_endpoint"]["id"],
         state=var["oda_private_endpoint_attachment_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: List the ODA Private Endpoint Attachments that belong to this compartment.

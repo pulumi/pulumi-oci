@@ -24,6 +24,8 @@ import javax.annotation.Nullable;
  * Creates a new IngressGatewayRouteTable.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -77,13 +79,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * IngressGatewayRouteTables can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:ServiceMesh/ingressGatewayRouteTable:IngressGatewayRouteTable test_ingress_gateway_route_table &#34;id&#34;
+ * $ pulumi import oci:ServiceMesh/ingressGatewayRouteTable:IngressGatewayRouteTable test_ingress_gateway_route_table &#34;id&#34;
  * ```
  * 
  */

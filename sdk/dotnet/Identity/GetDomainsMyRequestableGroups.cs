@@ -16,10 +16,9 @@ namespace Pulumi.Oci.Identity
         /// 
         /// Search My Requestable Groups
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -40,8 +39,7 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDomainsMyRequestableGroupsResult> InvokeAsync(GetDomainsMyRequestableGroupsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDomainsMyRequestableGroupsResult>("oci:Identity/getDomainsMyRequestableGroups:getDomainsMyRequestableGroups", args ?? new GetDomainsMyRequestableGroupsArgs(), options.WithDefaults());
@@ -51,10 +49,9 @@ namespace Pulumi.Oci.Identity
         /// 
         /// Search My Requestable Groups
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -75,8 +72,7 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDomainsMyRequestableGroupsResult> Invoke(GetDomainsMyRequestableGroupsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsMyRequestableGroupsResult>("oci:Identity/getDomainsMyRequestableGroups:getDomainsMyRequestableGroups", args ?? new GetDomainsMyRequestableGroupsInvokeArgs(), options.WithDefaults());

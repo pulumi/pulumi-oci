@@ -53,6 +53,8 @@ public final class CertificatesManagementFunctions {
      * Gets details about the specified association.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -81,6 +83,7 @@ public final class CertificatesManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAssociationResult> getAssociation(GetAssociationArgs args) {
@@ -92,6 +95,8 @@ public final class CertificatesManagementFunctions {
      * Gets details about the specified association.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -120,6 +125,7 @@ public final class CertificatesManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAssociationResult> getAssociationPlain(GetAssociationPlainArgs args) {
@@ -131,6 +137,8 @@ public final class CertificatesManagementFunctions {
      * Gets details about the specified association.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -159,6 +167,7 @@ public final class CertificatesManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAssociationResult> getAssociation(GetAssociationArgs args, InvokeOptions options) {
@@ -170,6 +179,8 @@ public final class CertificatesManagementFunctions {
      * Gets details about the specified association.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -198,6 +209,7 @@ public final class CertificatesManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAssociationResult> getAssociationPlain(GetAssociationPlainArgs args, InvokeOptions options) {
@@ -210,6 +222,8 @@ public final class CertificatesManagementFunctions {
      * Optionally, you can use the parameter `FilterByAssociationIdQueryParam` to limit the result set to a single item that matches the specified association.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -243,6 +257,7 @@ public final class CertificatesManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAssociationsResult> getAssociations() {
@@ -255,6 +270,8 @@ public final class CertificatesManagementFunctions {
      * Optionally, you can use the parameter `FilterByAssociationIdQueryParam` to limit the result set to a single item that matches the specified association.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -288,6 +305,7 @@ public final class CertificatesManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAssociationsResult> getAssociationsPlain() {
@@ -300,6 +318,8 @@ public final class CertificatesManagementFunctions {
      * Optionally, you can use the parameter `FilterByAssociationIdQueryParam` to limit the result set to a single item that matches the specified association.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -333,6 +353,7 @@ public final class CertificatesManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAssociationsResult> getAssociations(GetAssociationsArgs args) {
@@ -345,6 +366,8 @@ public final class CertificatesManagementFunctions {
      * Optionally, you can use the parameter `FilterByAssociationIdQueryParam` to limit the result set to a single item that matches the specified association.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -378,6 +401,7 @@ public final class CertificatesManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAssociationsResult> getAssociationsPlain(GetAssociationsPlainArgs args) {
@@ -390,6 +414,8 @@ public final class CertificatesManagementFunctions {
      * Optionally, you can use the parameter `FilterByAssociationIdQueryParam` to limit the result set to a single item that matches the specified association.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -423,6 +449,7 @@ public final class CertificatesManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAssociationsResult> getAssociations(GetAssociationsArgs args, InvokeOptions options) {
@@ -435,6 +462,8 @@ public final class CertificatesManagementFunctions {
      * Optionally, you can use the parameter `FilterByAssociationIdQueryParam` to limit the result set to a single item that matches the specified association.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -468,6 +497,7 @@ public final class CertificatesManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAssociationsResult> getAssociationsPlain(GetAssociationsPlainArgs args, InvokeOptions options) {
@@ -479,6 +509,8 @@ public final class CertificatesManagementFunctions {
      * Gets details about the specified CA bundle.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -507,6 +539,7 @@ public final class CertificatesManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCaBundleResult> getCaBundle(GetCaBundleArgs args) {
@@ -518,6 +551,8 @@ public final class CertificatesManagementFunctions {
      * Gets details about the specified CA bundle.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -546,6 +581,7 @@ public final class CertificatesManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCaBundleResult> getCaBundlePlain(GetCaBundlePlainArgs args) {
@@ -557,6 +593,8 @@ public final class CertificatesManagementFunctions {
      * Gets details about the specified CA bundle.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -585,6 +623,7 @@ public final class CertificatesManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCaBundleResult> getCaBundle(GetCaBundleArgs args, InvokeOptions options) {
@@ -596,6 +635,8 @@ public final class CertificatesManagementFunctions {
      * Gets details about the specified CA bundle.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -624,6 +665,7 @@ public final class CertificatesManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCaBundleResult> getCaBundlePlain(GetCaBundlePlainArgs args, InvokeOptions options) {
@@ -636,6 +678,8 @@ public final class CertificatesManagementFunctions {
      * Optionally, you can use the parameter `FilterByCaBundleIdQueryParam` to limit the result set to a single item that matches the specified CA bundle.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -667,6 +711,7 @@ public final class CertificatesManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCaBundlesResult> getCaBundles() {
@@ -679,6 +724,8 @@ public final class CertificatesManagementFunctions {
      * Optionally, you can use the parameter `FilterByCaBundleIdQueryParam` to limit the result set to a single item that matches the specified CA bundle.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -710,6 +757,7 @@ public final class CertificatesManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCaBundlesResult> getCaBundlesPlain() {
@@ -722,6 +770,8 @@ public final class CertificatesManagementFunctions {
      * Optionally, you can use the parameter `FilterByCaBundleIdQueryParam` to limit the result set to a single item that matches the specified CA bundle.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -753,6 +803,7 @@ public final class CertificatesManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCaBundlesResult> getCaBundles(GetCaBundlesArgs args) {
@@ -765,6 +816,8 @@ public final class CertificatesManagementFunctions {
      * Optionally, you can use the parameter `FilterByCaBundleIdQueryParam` to limit the result set to a single item that matches the specified CA bundle.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -796,6 +849,7 @@ public final class CertificatesManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCaBundlesResult> getCaBundlesPlain(GetCaBundlesPlainArgs args) {
@@ -808,6 +862,8 @@ public final class CertificatesManagementFunctions {
      * Optionally, you can use the parameter `FilterByCaBundleIdQueryParam` to limit the result set to a single item that matches the specified CA bundle.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -839,6 +895,7 @@ public final class CertificatesManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCaBundlesResult> getCaBundles(GetCaBundlesArgs args, InvokeOptions options) {
@@ -851,6 +908,8 @@ public final class CertificatesManagementFunctions {
      * Optionally, you can use the parameter `FilterByCaBundleIdQueryParam` to limit the result set to a single item that matches the specified CA bundle.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -882,6 +941,7 @@ public final class CertificatesManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCaBundlesResult> getCaBundlesPlain(GetCaBundlesPlainArgs args, InvokeOptions options) {
@@ -893,6 +953,8 @@ public final class CertificatesManagementFunctions {
      * Gets details about the specified certificate.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -921,6 +983,7 @@ public final class CertificatesManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCertificateResult> getCertificate(GetCertificateArgs args) {
@@ -932,6 +995,8 @@ public final class CertificatesManagementFunctions {
      * Gets details about the specified certificate.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -960,6 +1025,7 @@ public final class CertificatesManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCertificateResult> getCertificatePlain(GetCertificatePlainArgs args) {
@@ -971,6 +1037,8 @@ public final class CertificatesManagementFunctions {
      * Gets details about the specified certificate.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -999,6 +1067,7 @@ public final class CertificatesManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCertificateResult> getCertificate(GetCertificateArgs args, InvokeOptions options) {
@@ -1010,6 +1079,8 @@ public final class CertificatesManagementFunctions {
      * Gets details about the specified certificate.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1038,6 +1109,7 @@ public final class CertificatesManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCertificateResult> getCertificatePlain(GetCertificatePlainArgs args, InvokeOptions options) {
@@ -1050,6 +1122,8 @@ public final class CertificatesManagementFunctions {
      * Optionally, you can use the parameter `FilterByCertificateAuthorityIdQueryParam` to limit the results to a single item that matches the specified CA.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1082,6 +1156,7 @@ public final class CertificatesManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCertificateAuthoritiesResult> getCertificateAuthorities() {
@@ -1094,6 +1169,8 @@ public final class CertificatesManagementFunctions {
      * Optionally, you can use the parameter `FilterByCertificateAuthorityIdQueryParam` to limit the results to a single item that matches the specified CA.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1126,6 +1203,7 @@ public final class CertificatesManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCertificateAuthoritiesResult> getCertificateAuthoritiesPlain() {
@@ -1138,6 +1216,8 @@ public final class CertificatesManagementFunctions {
      * Optionally, you can use the parameter `FilterByCertificateAuthorityIdQueryParam` to limit the results to a single item that matches the specified CA.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1170,6 +1250,7 @@ public final class CertificatesManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCertificateAuthoritiesResult> getCertificateAuthorities(GetCertificateAuthoritiesArgs args) {
@@ -1182,6 +1263,8 @@ public final class CertificatesManagementFunctions {
      * Optionally, you can use the parameter `FilterByCertificateAuthorityIdQueryParam` to limit the results to a single item that matches the specified CA.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1214,6 +1297,7 @@ public final class CertificatesManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCertificateAuthoritiesResult> getCertificateAuthoritiesPlain(GetCertificateAuthoritiesPlainArgs args) {
@@ -1226,6 +1310,8 @@ public final class CertificatesManagementFunctions {
      * Optionally, you can use the parameter `FilterByCertificateAuthorityIdQueryParam` to limit the results to a single item that matches the specified CA.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1258,6 +1344,7 @@ public final class CertificatesManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCertificateAuthoritiesResult> getCertificateAuthorities(GetCertificateAuthoritiesArgs args, InvokeOptions options) {
@@ -1270,6 +1357,8 @@ public final class CertificatesManagementFunctions {
      * Optionally, you can use the parameter `FilterByCertificateAuthorityIdQueryParam` to limit the results to a single item that matches the specified CA.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1302,6 +1391,7 @@ public final class CertificatesManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCertificateAuthoritiesResult> getCertificateAuthoritiesPlain(GetCertificateAuthoritiesPlainArgs args, InvokeOptions options) {
@@ -1313,6 +1403,8 @@ public final class CertificatesManagementFunctions {
      * Gets details about the specified certificate authority (CA).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1341,6 +1433,7 @@ public final class CertificatesManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCertificateAuthorityResult> getCertificateAuthority(GetCertificateAuthorityArgs args) {
@@ -1352,6 +1445,8 @@ public final class CertificatesManagementFunctions {
      * Gets details about the specified certificate authority (CA).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1380,6 +1475,7 @@ public final class CertificatesManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCertificateAuthorityResult> getCertificateAuthorityPlain(GetCertificateAuthorityPlainArgs args) {
@@ -1391,6 +1487,8 @@ public final class CertificatesManagementFunctions {
      * Gets details about the specified certificate authority (CA).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1419,6 +1517,7 @@ public final class CertificatesManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCertificateAuthorityResult> getCertificateAuthority(GetCertificateAuthorityArgs args, InvokeOptions options) {
@@ -1430,6 +1529,8 @@ public final class CertificatesManagementFunctions {
      * Gets details about the specified certificate authority (CA).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1458,6 +1559,7 @@ public final class CertificatesManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCertificateAuthorityResult> getCertificateAuthorityPlain(GetCertificateAuthorityPlainArgs args, InvokeOptions options) {
@@ -1471,6 +1573,7 @@ public final class CertificatesManagementFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1500,6 +1603,7 @@ public final class CertificatesManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCertificateAuthorityVersionResult> getCertificateAuthorityVersion(GetCertificateAuthorityVersionArgs args) {
@@ -1513,6 +1617,7 @@ public final class CertificatesManagementFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1542,6 +1647,7 @@ public final class CertificatesManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCertificateAuthorityVersionResult> getCertificateAuthorityVersionPlain(GetCertificateAuthorityVersionPlainArgs args) {
@@ -1555,6 +1661,7 @@ public final class CertificatesManagementFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1584,6 +1691,7 @@ public final class CertificatesManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCertificateAuthorityVersionResult> getCertificateAuthorityVersion(GetCertificateAuthorityVersionArgs args, InvokeOptions options) {
@@ -1597,6 +1705,7 @@ public final class CertificatesManagementFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1626,6 +1735,7 @@ public final class CertificatesManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCertificateAuthorityVersionResult> getCertificateAuthorityVersionPlain(GetCertificateAuthorityVersionPlainArgs args, InvokeOptions options) {
@@ -1638,6 +1748,8 @@ public final class CertificatesManagementFunctions {
      * Optionally, you can use the parameter `FilterByVersionNumberQueryParam` to limit the results to a single item that matches the specified version number.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1667,6 +1779,7 @@ public final class CertificatesManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCertificateAuthorityVersionsResult> getCertificateAuthorityVersions(GetCertificateAuthorityVersionsArgs args) {
@@ -1679,6 +1792,8 @@ public final class CertificatesManagementFunctions {
      * Optionally, you can use the parameter `FilterByVersionNumberQueryParam` to limit the results to a single item that matches the specified version number.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1708,6 +1823,7 @@ public final class CertificatesManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCertificateAuthorityVersionsResult> getCertificateAuthorityVersionsPlain(GetCertificateAuthorityVersionsPlainArgs args) {
@@ -1720,6 +1836,8 @@ public final class CertificatesManagementFunctions {
      * Optionally, you can use the parameter `FilterByVersionNumberQueryParam` to limit the results to a single item that matches the specified version number.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1749,6 +1867,7 @@ public final class CertificatesManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCertificateAuthorityVersionsResult> getCertificateAuthorityVersions(GetCertificateAuthorityVersionsArgs args, InvokeOptions options) {
@@ -1761,6 +1880,8 @@ public final class CertificatesManagementFunctions {
      * Optionally, you can use the parameter `FilterByVersionNumberQueryParam` to limit the results to a single item that matches the specified version number.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1790,6 +1911,7 @@ public final class CertificatesManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCertificateAuthorityVersionsResult> getCertificateAuthorityVersionsPlain(GetCertificateAuthorityVersionsPlainArgs args, InvokeOptions options) {
@@ -1801,6 +1923,8 @@ public final class CertificatesManagementFunctions {
      * Gets details about the specified version of a certificate.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1830,6 +1954,7 @@ public final class CertificatesManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCertificateVersionResult> getCertificateVersion(GetCertificateVersionArgs args) {
@@ -1841,6 +1966,8 @@ public final class CertificatesManagementFunctions {
      * Gets details about the specified version of a certificate.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1870,6 +1997,7 @@ public final class CertificatesManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCertificateVersionResult> getCertificateVersionPlain(GetCertificateVersionPlainArgs args) {
@@ -1881,6 +2009,8 @@ public final class CertificatesManagementFunctions {
      * Gets details about the specified version of a certificate.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1910,6 +2040,7 @@ public final class CertificatesManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCertificateVersionResult> getCertificateVersion(GetCertificateVersionArgs args, InvokeOptions options) {
@@ -1921,6 +2052,8 @@ public final class CertificatesManagementFunctions {
      * Gets details about the specified version of a certificate.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1950,6 +2083,7 @@ public final class CertificatesManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCertificateVersionResult> getCertificateVersionPlain(GetCertificateVersionPlainArgs args, InvokeOptions options) {
@@ -1962,6 +2096,8 @@ public final class CertificatesManagementFunctions {
      * Optionally, you can use the parameter `FilterByVersionNumberQueryParam` to limit the result set to a single item that matches the specified version number.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1991,6 +2127,7 @@ public final class CertificatesManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCertificateVersionsResult> getCertificateVersions(GetCertificateVersionsArgs args) {
@@ -2003,6 +2140,8 @@ public final class CertificatesManagementFunctions {
      * Optionally, you can use the parameter `FilterByVersionNumberQueryParam` to limit the result set to a single item that matches the specified version number.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2032,6 +2171,7 @@ public final class CertificatesManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCertificateVersionsResult> getCertificateVersionsPlain(GetCertificateVersionsPlainArgs args) {
@@ -2044,6 +2184,8 @@ public final class CertificatesManagementFunctions {
      * Optionally, you can use the parameter `FilterByVersionNumberQueryParam` to limit the result set to a single item that matches the specified version number.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2073,6 +2215,7 @@ public final class CertificatesManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCertificateVersionsResult> getCertificateVersions(GetCertificateVersionsArgs args, InvokeOptions options) {
@@ -2085,6 +2228,8 @@ public final class CertificatesManagementFunctions {
      * Optionally, you can use the parameter `FilterByVersionNumberQueryParam` to limit the result set to a single item that matches the specified version number.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2114,6 +2259,7 @@ public final class CertificatesManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCertificateVersionsResult> getCertificateVersionsPlain(GetCertificateVersionsPlainArgs args, InvokeOptions options) {
@@ -2126,6 +2272,8 @@ public final class CertificatesManagementFunctions {
      * Optionally, you can use the parameter `FilterByCertificateIdQueryParam` to limit the result set to a single item that matches the specified certificate.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2158,6 +2306,7 @@ public final class CertificatesManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCertificatesResult> getCertificates() {
@@ -2170,6 +2319,8 @@ public final class CertificatesManagementFunctions {
      * Optionally, you can use the parameter `FilterByCertificateIdQueryParam` to limit the result set to a single item that matches the specified certificate.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2202,6 +2353,7 @@ public final class CertificatesManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCertificatesResult> getCertificatesPlain() {
@@ -2214,6 +2366,8 @@ public final class CertificatesManagementFunctions {
      * Optionally, you can use the parameter `FilterByCertificateIdQueryParam` to limit the result set to a single item that matches the specified certificate.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2246,6 +2400,7 @@ public final class CertificatesManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCertificatesResult> getCertificates(GetCertificatesArgs args) {
@@ -2258,6 +2413,8 @@ public final class CertificatesManagementFunctions {
      * Optionally, you can use the parameter `FilterByCertificateIdQueryParam` to limit the result set to a single item that matches the specified certificate.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2290,6 +2447,7 @@ public final class CertificatesManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCertificatesResult> getCertificatesPlain(GetCertificatesPlainArgs args) {
@@ -2302,6 +2460,8 @@ public final class CertificatesManagementFunctions {
      * Optionally, you can use the parameter `FilterByCertificateIdQueryParam` to limit the result set to a single item that matches the specified certificate.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2334,6 +2494,7 @@ public final class CertificatesManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCertificatesResult> getCertificates(GetCertificatesArgs args, InvokeOptions options) {
@@ -2346,6 +2507,8 @@ public final class CertificatesManagementFunctions {
      * Optionally, you can use the parameter `FilterByCertificateIdQueryParam` to limit the result set to a single item that matches the specified certificate.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2378,6 +2541,7 @@ public final class CertificatesManagementFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCertificatesResult> getCertificatesPlain(GetCertificatesPlainArgs args, InvokeOptions options) {

@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -46,15 +47,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // VmClusterRemoveVirtualMachine can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Database/vmClusterRemoveVirtualMachine:VmClusterRemoveVirtualMachine test_vm_cluster_remove_virtual_machine "id"
-//
+// $ pulumi import oci:Database/vmClusterRemoveVirtualMachine:VmClusterRemoveVirtualMachine test_vm_cluster_remove_virtual_machine "id"
 // ```
 type VmClusterRemoveVirtualMachine struct {
 	pulumi.CustomResourceState

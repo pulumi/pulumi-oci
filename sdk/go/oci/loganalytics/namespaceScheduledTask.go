@@ -21,9 +21,7 @@ import (
 // NamespaceScheduledTasks can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:LogAnalytics/namespaceScheduledTask:NamespaceScheduledTask test_namespace_scheduled_task "namespaces/{namespaceName}/scheduledTasks/{scheduledTaskId}"
-//
+// $ pulumi import oci:LogAnalytics/namespaceScheduledTask:NamespaceScheduledTask test_namespace_scheduled_task "namespaces/{namespaceName}/scheduledTasks/{scheduledTaskId}"
 // ```
 type NamespaceScheduledTask struct {
 	pulumi.CustomResourceState

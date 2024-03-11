@@ -17,10 +17,9 @@ namespace Pulumi.Oci.VnMonitoring
         /// Returns a list of all `PathAnalyzerTests` in a compartment.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -38,8 +37,7 @@ namespace Pulumi.Oci.VnMonitoring
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetPathAnalyzerTestsResult> InvokeAsync(GetPathAnalyzerTestsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetPathAnalyzerTestsResult>("oci:VnMonitoring/getPathAnalyzerTests:GetPathAnalyzerTests", args ?? new GetPathAnalyzerTestsArgs(), options.WithDefaults());
@@ -50,10 +48,9 @@ namespace Pulumi.Oci.VnMonitoring
         /// Returns a list of all `PathAnalyzerTests` in a compartment.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -71,8 +68,7 @@ namespace Pulumi.Oci.VnMonitoring
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetPathAnalyzerTestsResult> Invoke(GetPathAnalyzerTestsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPathAnalyzerTestsResult>("oci:VnMonitoring/getPathAnalyzerTests:GetPathAnalyzerTests", args ?? new GetPathAnalyzerTestsInvokeArgs(), options.WithDefaults());

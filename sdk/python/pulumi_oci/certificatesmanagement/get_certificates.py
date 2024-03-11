@@ -142,6 +142,7 @@ def get_certificates(certificate_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -152,6 +153,7 @@ def get_certificates(certificate_id: Optional[str] = None,
         name=var["certificate_name"],
         state=var["certificate_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str certificate_id: The OCID of the certificate. If the parameter is set to null, the service lists all certificates.
@@ -197,6 +199,7 @@ def get_certificates_output(certificate_id: Optional[pulumi.Input[Optional[str]]
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -207,6 +210,7 @@ def get_certificates_output(certificate_id: Optional[pulumi.Input[Optional[str]]
         name=var["certificate_name"],
         state=var["certificate_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str certificate_id: The OCID of the certificate. If the parameter is set to null, the service lists all certificates.

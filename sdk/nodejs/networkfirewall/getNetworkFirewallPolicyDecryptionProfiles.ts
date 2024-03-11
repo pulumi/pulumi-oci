@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,6 +23,7 @@ import * as utilities from "../utilities";
  *     displayName: _var.network_firewall_policy_decryption_profile_display_name,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getNetworkFirewallPolicyDecryptionProfiles(args: GetNetworkFirewallPolicyDecryptionProfilesArgs, opts?: pulumi.InvokeOptions): Promise<GetNetworkFirewallPolicyDecryptionProfilesResult> {
 
@@ -71,6 +73,7 @@ export interface GetNetworkFirewallPolicyDecryptionProfilesResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -80,6 +83,7 @@ export interface GetNetworkFirewallPolicyDecryptionProfilesResult {
  *     displayName: _var.network_firewall_policy_decryption_profile_display_name,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getNetworkFirewallPolicyDecryptionProfilesOutput(args: GetNetworkFirewallPolicyDecryptionProfilesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNetworkFirewallPolicyDecryptionProfilesResult> {
     return pulumi.output(args).apply((a: any) => getNetworkFirewallPolicyDecryptionProfiles(a, opts))

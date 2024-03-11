@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -40,6 +41,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupCaptureFilter(ctx *pulumi.Context, args *LookupCaptureFilterArgs, opts ...pulumi.InvokeOption) (*LookupCaptureFilterResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupCaptureFilterResult

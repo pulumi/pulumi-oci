@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -26,6 +27,7 @@ import * as utilities from "../utilities";
  *     resourceTypeSchemaVersion: _var.group_resource_type_schema_version,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDomainsGroup(args: GetDomainsGroupArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsGroupResult> {
 
@@ -120,7 +122,7 @@ export interface GetDomainsGroupResult {
      */
     readonly idcsPreventedOperations: string[];
     /**
-     * The group members. <b>Important:</b> When requesting group members, a maximum of 10,000 members can be returned in a single request. If the response contains more than 10,000 members, the request will fail. Use 'startIndex' and 'count' to return members in pages instead of in a single response, for example: #attributes=members[startIndex=1%26count=10]. This REST API is SCIM compliant.
+     * The group members. <b>Important:</b> When requesting group members, a maximum of 10,000 members can be returned in a single request. If the response contains more than 10,000 members, the request will fail. Use 'startIndex' and 'count' to return members in pages instead of in a single response, for example: #attributes=members[startIndex=1%!c(MISSING)ount=10]. This REST API is SCIM compliant.
      */
     readonly members: outputs.Identity.GetDomainsGroupMember[];
     /**
@@ -180,6 +182,7 @@ export interface GetDomainsGroupResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -193,6 +196,7 @@ export interface GetDomainsGroupResult {
  *     resourceTypeSchemaVersion: _var.group_resource_type_schema_version,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDomainsGroupOutput(args: GetDomainsGroupOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsGroupResult> {
     return pulumi.output(args).apply((a: any) => getDomainsGroup(a, opts))

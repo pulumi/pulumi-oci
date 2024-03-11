@@ -35,6 +35,8 @@ import javax.annotation.Nullable;
  * [UpdateTagNamespace](https://docs.cloud.oracle.com/iaas/api/#/en/identity/latest/TagNamespace/UpdateTagNamespace).
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -67,13 +69,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * TagNamespaces can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Identity/tagNamespace:TagNamespace test_tag_namespace &#34;id&#34;
+ * $ pulumi import oci:Identity/tagNamespace:TagNamespace test_tag_namespace &#34;id&#34;
  * ```
  * 
  */

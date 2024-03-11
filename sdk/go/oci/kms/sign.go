@@ -24,9 +24,7 @@ import (
 // Sign can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Kms/sign:Sign test_sign "id"
-//
+// $ pulumi import oci:Kms/sign:Sign test_sign "id"
 // ```
 type Sign struct {
 	pulumi.CustomResourceState

@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -40,6 +41,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupQueue(ctx *pulumi.Context, args *LookupQueueArgs, opts ...pulumi.InvokeOption) (*LookupQueueResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupQueueResult
@@ -58,7 +60,7 @@ type LookupQueueArgs struct {
 
 // A collection of values returned by getQueue.
 type LookupQueueResult struct {
-	// The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
+	// The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%!)(MISSING), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100%!((MISSING)default) means that a single channel can consume up-to all allocated queue's resources.
 	ChannelConsumptionLimit int `pulumi:"channelConsumptionLimit"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the queue.
 	CompartmentId string `pulumi:"compartmentId"`
@@ -135,7 +137,7 @@ func (o LookupQueueResultOutput) ToLookupQueueResultOutputWithContext(ctx contex
 	return o
 }
 
-// The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
+// The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%!)(MISSING), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100%!((MISSING)default) means that a single channel can consume up-to all allocated queue's resources.
 func (o LookupQueueResultOutput) ChannelConsumptionLimit() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupQueueResult) int { return v.ChannelConsumptionLimit }).(pulumi.IntOutput)
 }

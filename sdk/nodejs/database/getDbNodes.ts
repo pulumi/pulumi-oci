@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -25,6 +26,7 @@ import * as utilities from "../utilities";
  *     vmClusterId: oci_database_vm_cluster.test_vm_cluster.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDbNodes(args: GetDbNodesArgs, opts?: pulumi.InvokeOptions): Promise<GetDbNodesResult> {
 
@@ -101,6 +103,7 @@ export interface GetDbNodesResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -113,6 +116,7 @@ export interface GetDbNodesResult {
  *     vmClusterId: oci_database_vm_cluster.test_vm_cluster.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDbNodesOutput(args: GetDbNodesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbNodesResult> {
     return pulumi.output(args).apply((a: any) => getDbNodes(a, opts))

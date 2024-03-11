@@ -16,10 +16,9 @@ namespace Pulumi.Oci.Identity
         /// 
         /// Search Authentication Factor Settings
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -39,8 +38,7 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDomainsAuthenticationFactorSettingsResult> InvokeAsync(GetDomainsAuthenticationFactorSettingsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDomainsAuthenticationFactorSettingsResult>("oci:Identity/getDomainsAuthenticationFactorSettings:getDomainsAuthenticationFactorSettings", args ?? new GetDomainsAuthenticationFactorSettingsArgs(), options.WithDefaults());
@@ -50,10 +48,9 @@ namespace Pulumi.Oci.Identity
         /// 
         /// Search Authentication Factor Settings
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -73,8 +70,7 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDomainsAuthenticationFactorSettingsResult> Invoke(GetDomainsAuthenticationFactorSettingsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsAuthenticationFactorSettingsResult>("oci:Identity/getDomainsAuthenticationFactorSettings:getDomainsAuthenticationFactorSettings", args ?? new GetDomainsAuthenticationFactorSettingsInvokeArgs(), options.WithDefaults());

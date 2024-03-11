@@ -326,6 +326,7 @@ class VnicAttachment(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -350,13 +351,14 @@ class VnicAttachment(pulumi.CustomResource):
             display_name=var["vnic_attachment_display_name"],
             nic_index=var["vnic_attachment_nic_index"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         VnicAttachments can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/vnicAttachment:VnicAttachment test_vnic_attachment "id"
+        $ pulumi import oci:Core/vnicAttachment:VnicAttachment test_vnic_attachment "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -385,6 +387,7 @@ class VnicAttachment(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -409,13 +412,14 @@ class VnicAttachment(pulumi.CustomResource):
             display_name=var["vnic_attachment_display_name"],
             nic_index=var["vnic_attachment_nic_index"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         VnicAttachments can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/vnicAttachment:VnicAttachment test_vnic_attachment "id"
+        $ pulumi import oci:Core/vnicAttachment:VnicAttachment test_vnic_attachment "id"
         ```
 
         :param str resource_name: The name of the resource.

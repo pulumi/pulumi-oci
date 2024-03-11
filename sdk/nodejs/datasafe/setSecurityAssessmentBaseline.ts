@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -20,13 +21,14 @@ import * as utilities from "../utilities";
  *     assessmentIds: _var.set_security_assessment_baseline_assessment_ids,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * SetSecurityAssessmentBaseline can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:DataSafe/setSecurityAssessmentBaseline:SetSecurityAssessmentBaseline test_set_security_assessment_baseline "id"
+ * $ pulumi import oci:DataSafe/setSecurityAssessmentBaseline:SetSecurityAssessmentBaseline test_set_security_assessment_baseline "id"
  * ```
  */
 export class SetSecurityAssessmentBaseline extends pulumi.CustomResource {

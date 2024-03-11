@@ -18,6 +18,7 @@ namespace Pulumi.Oci.OsManagement
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -45,13 +46,14 @@ namespace Pulumi.Oci.OsManagement
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// ManagedInstanceGroups can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:OsManagement/managedInstanceGroup:ManagedInstanceGroup test_managed_instance_group "id"
+    /// $ pulumi import oci:OsManagement/managedInstanceGroup:ManagedInstanceGroup test_managed_instance_group "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:OsManagement/managedInstanceGroup:ManagedInstanceGroup")]

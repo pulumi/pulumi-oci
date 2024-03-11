@@ -115,6 +115,7 @@ def get_external_cluster_instances(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -123,6 +124,7 @@ def get_external_cluster_instances(compartment_id: Optional[str] = None,
         display_name=var["external_cluster_instance_display_name"],
         external_cluster_id=oci_database_management_external_cluster["test_external_cluster"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -159,6 +161,7 @@ def get_external_cluster_instances_output(compartment_id: Optional[pulumi.Input[
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -167,6 +170,7 @@ def get_external_cluster_instances_output(compartment_id: Optional[pulumi.Input[
         display_name=var["external_cluster_instance_display_name"],
         external_cluster_id=oci_database_management_external_cluster["test_external_cluster"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

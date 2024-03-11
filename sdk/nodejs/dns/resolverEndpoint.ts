@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -27,18 +28,19 @@ import * as utilities from "../utilities";
  *     nsgIds: _var.resolver_endpoint_nsg_ids,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * For legacy ResolverEndpoints created without `scope`, these ResolverEndpoints can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Dns/resolverEndpoint:ResolverEndpoint test_resolver_endpoint "resolverId/{resolverId}/name/{resolverEndpointName}"
+ * $ pulumi import oci:Dns/resolverEndpoint:ResolverEndpoint test_resolver_endpoint "resolverId/{resolverId}/name/{resolverEndpointName}"
  * ```
- *  For ResolverEndpoints created using `scope`, these ResolverEndpoints can be imported using the `id`, e.g.
+ * For ResolverEndpoints created using `scope`, these ResolverEndpoints can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Dns/resolverEndpoint:ResolverEndpoint test_resolver_endpoint "resolverId/{resolverId}/name/{name}/scope/{scope}"
+ * $ pulumi import oci:Dns/resolverEndpoint:ResolverEndpoint test_resolver_endpoint "resolverId/{resolverId}/name/{name}/scope/{scope}"
  * ```
  */
 export class ResolverEndpoint extends pulumi.CustomResource {

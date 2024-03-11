@@ -12,19 +12,21 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
  * const testUnsetSecurityAssessmentBaseline = new oci.datasafe.UnsetSecurityAssessmentBaseline("testUnsetSecurityAssessmentBaseline", {securityAssessmentId: oci_data_safe_security_assessment.test_security_assessment.id});
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * UnsetSecurityAssessmentBaseline can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:DataSafe/unsetSecurityAssessmentBaseline:UnsetSecurityAssessmentBaseline test_unset_security_assessment_baseline "id"
+ * $ pulumi import oci:DataSafe/unsetSecurityAssessmentBaseline:UnsetSecurityAssessmentBaseline test_unset_security_assessment_baseline "id"
  * ```
  */
 export class UnsetSecurityAssessmentBaseline extends pulumi.CustomResource {

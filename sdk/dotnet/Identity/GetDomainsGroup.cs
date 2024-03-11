@@ -16,10 +16,9 @@ namespace Pulumi.Oci.Identity
         /// 
         /// Get a group. &lt;b&gt;Important:&lt;/b&gt; The Group SEARCH and GET operations on users and members will throw an exception if the response has more than 10,000 members. To avoid the exception, use the pagination filter to GET or SEARCH group members.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -40,8 +39,7 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDomainsGroupResult> InvokeAsync(GetDomainsGroupArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDomainsGroupResult>("oci:Identity/getDomainsGroup:getDomainsGroup", args ?? new GetDomainsGroupArgs(), options.WithDefaults());
@@ -51,10 +49,9 @@ namespace Pulumi.Oci.Identity
         /// 
         /// Get a group. &lt;b&gt;Important:&lt;/b&gt; The Group SEARCH and GET operations on users and members will throw an exception if the response has more than 10,000 members. To avoid the exception, use the pagination filter to GET or SEARCH group members.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -75,8 +72,7 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDomainsGroupResult> Invoke(GetDomainsGroupInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsGroupResult>("oci:Identity/getDomainsGroup:getDomainsGroup", args ?? new GetDomainsGroupInvokeArgs(), options.WithDefaults());
@@ -233,7 +229,7 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public readonly ImmutableArray<string> IdcsPreventedOperations;
         /// <summary>
-        /// The group members. &lt;b&gt;Important:&lt;/b&gt; When requesting group members, a maximum of 10,000 members can be returned in a single request. If the response contains more than 10,000 members, the request will fail. Use 'startIndex' and 'count' to return members in pages instead of in a single response, for example: #attributes=members[startIndex=1%26count=10]. This REST API is SCIM compliant.
+        /// The group members. &lt;b&gt;Important:&lt;/b&gt; When requesting group members, a maximum of 10,000 members can be returned in a single request. If the response contains more than 10,000 members, the request will fail. Use 'startIndex' and 'count' to return members in pages instead of in a single response, for example: #attributes=members[startIndex=1%!c(MISSING)ount=10]. This REST API is SCIM compliant.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDomainsGroupMemberResult> Members;
         /// <summary>

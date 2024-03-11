@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,6 +25,7 @@ import * as utilities from "../utilities";
  *     filterColumn: _var.managed_my_sql_database_sql_data_filter_column,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getManagedMySqlDatabaseSqlData(args: GetManagedMySqlDatabaseSqlDataArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedMySqlDatabaseSqlDataResult> {
 
@@ -85,6 +87,7 @@ export interface GetManagedMySqlDatabaseSqlDataResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -96,6 +99,7 @@ export interface GetManagedMySqlDatabaseSqlDataResult {
  *     filterColumn: _var.managed_my_sql_database_sql_data_filter_column,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getManagedMySqlDatabaseSqlDataOutput(args: GetManagedMySqlDatabaseSqlDataOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedMySqlDatabaseSqlDataResult> {
     return pulumi.output(args).apply((a: any) => getManagedMySqlDatabaseSqlData(a, opts))

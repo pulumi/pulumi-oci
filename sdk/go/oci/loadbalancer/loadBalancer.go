@@ -45,6 +45,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -89,15 +90,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // LoadBalancers can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:LoadBalancer/loadBalancer:LoadBalancer test_load_balancer "id"
-//
+// $ pulumi import oci:LoadBalancer/loadBalancer:LoadBalancer test_load_balancer "id"
 // ```
 type LoadBalancer struct {
 	pulumi.CustomResourceState

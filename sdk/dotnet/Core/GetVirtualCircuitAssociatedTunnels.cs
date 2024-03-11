@@ -16,10 +16,9 @@ namespace Pulumi.Oci.Core
         /// 
         /// Gets the specified virtual circuit's associatedTunnelsInfo.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,8 +34,7 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetVirtualCircuitAssociatedTunnelsResult> InvokeAsync(GetVirtualCircuitAssociatedTunnelsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetVirtualCircuitAssociatedTunnelsResult>("oci:Core/getVirtualCircuitAssociatedTunnels:getVirtualCircuitAssociatedTunnels", args ?? new GetVirtualCircuitAssociatedTunnelsArgs(), options.WithDefaults());
@@ -46,10 +44,9 @@ namespace Pulumi.Oci.Core
         /// 
         /// Gets the specified virtual circuit's associatedTunnelsInfo.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -65,8 +62,7 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetVirtualCircuitAssociatedTunnelsResult> Invoke(GetVirtualCircuitAssociatedTunnelsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVirtualCircuitAssociatedTunnelsResult>("oci:Core/getVirtualCircuitAssociatedTunnels:getVirtualCircuitAssociatedTunnels", args ?? new GetVirtualCircuitAssociatedTunnelsInvokeArgs(), options.WithDefaults());

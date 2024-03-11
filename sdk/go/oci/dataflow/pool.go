@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -68,15 +69,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Pools can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:DataFlow/pool:Pool test_pool "id"
-//
+// $ pulumi import oci:DataFlow/pool:Pool test_pool "id"
 // ```
 type Pool struct {
 	pulumi.CustomResourceState

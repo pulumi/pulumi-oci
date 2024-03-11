@@ -13,6 +13,7 @@ import (
 
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -36,6 +37,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetStackTfState(ctx *pulumi.Context, args *GetStackTfStateArgs, opts ...pulumi.InvokeOption) (*GetStackTfStateResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetStackTfStateResult

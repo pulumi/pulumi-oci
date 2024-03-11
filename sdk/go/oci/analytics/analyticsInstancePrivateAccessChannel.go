@@ -19,6 +19,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -59,15 +60,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // AnalyticsInstancePrivateAccessChannels can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Analytics/analyticsInstancePrivateAccessChannel:AnalyticsInstancePrivateAccessChannel test_analytics_instance_private_access_channel "analyticsInstances/{analyticsInstanceId}/privateAccessChannels/{privateAccessChannelKey}"
-//
+// $ pulumi import oci:Analytics/analyticsInstancePrivateAccessChannel:AnalyticsInstancePrivateAccessChannel test_analytics_instance_private_access_channel "analyticsInstances/{analyticsInstanceId}/privateAccessChannels/{privateAccessChannelKey}"
 // ```
 type AnalyticsInstancePrivateAccessChannel struct {
 	pulumi.CustomResourceState

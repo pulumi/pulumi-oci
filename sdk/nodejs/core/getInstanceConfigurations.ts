@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,6 +22,7 @@ import * as utilities from "../utilities";
  *     compartmentId: _var.compartment_id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getInstanceConfigurations(args: GetInstanceConfigurationsArgs, opts?: pulumi.InvokeOptions): Promise<GetInstanceConfigurationsResult> {
 
@@ -67,6 +69,7 @@ export interface GetInstanceConfigurationsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -75,6 +78,7 @@ export interface GetInstanceConfigurationsResult {
  *     compartmentId: _var.compartment_id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getInstanceConfigurationsOutput(args: GetInstanceConfigurationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInstanceConfigurationsResult> {
     return pulumi.output(args).apply((a: any) => getInstanceConfigurations(a, opts))

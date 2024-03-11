@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -66,15 +67,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Triggers can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:DevOps/trigger:Trigger test_trigger "id"
-//
+// $ pulumi import oci:DevOps/trigger:Trigger test_trigger "id"
 // ```
 type Trigger struct {
 	pulumi.CustomResourceState

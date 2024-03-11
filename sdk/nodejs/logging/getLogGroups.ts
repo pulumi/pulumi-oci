@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,6 +24,7 @@ import * as utilities from "../utilities";
  *     isCompartmentIdInSubtree: _var.log_group_is_compartment_id_in_subtree,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getLogGroups(args: GetLogGroupsArgs, opts?: pulumi.InvokeOptions): Promise<GetLogGroupsResult> {
 
@@ -84,6 +86,7 @@ export interface GetLogGroupsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -94,6 +97,7 @@ export interface GetLogGroupsResult {
  *     isCompartmentIdInSubtree: _var.log_group_is_compartment_id_in_subtree,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getLogGroupsOutput(args: GetLogGroupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLogGroupsResult> {
     return pulumi.output(args).apply((a: any) => getLogGroups(a, opts))

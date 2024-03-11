@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,6 +22,7 @@ import * as utilities from "../utilities";
  *     compartmentId: _var.compartment_id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAnnotationFormat(args: GetAnnotationFormatArgs, opts?: pulumi.InvokeOptions): Promise<GetAnnotationFormatResult> {
 
@@ -61,6 +63,7 @@ export interface GetAnnotationFormatResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -69,6 +72,7 @@ export interface GetAnnotationFormatResult {
  *     compartmentId: _var.compartment_id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAnnotationFormatOutput(args: GetAnnotationFormatOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAnnotationFormatResult> {
     return pulumi.output(args).apply((a: any) => getAnnotationFormat(a, opts))

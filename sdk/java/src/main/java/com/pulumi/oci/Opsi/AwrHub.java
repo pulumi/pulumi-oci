@@ -22,6 +22,8 @@ import javax.annotation.Nullable;
  * This resource will be created in root compartment.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -55,13 +57,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * AwrHubs can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Opsi/awrHub:AwrHub test_awr_hub &#34;id&#34;
+ * $ pulumi import oci:Opsi/awrHub:AwrHub test_awr_hub &#34;id&#34;
  * ```
  * 
  */

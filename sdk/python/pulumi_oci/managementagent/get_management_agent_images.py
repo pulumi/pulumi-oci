@@ -119,6 +119,7 @@ def get_management_agent_images(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -128,6 +129,7 @@ def get_management_agent_images(compartment_id: Optional[str] = None,
         name=var["management_agent_image_name"],
         state=var["management_agent_image_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment to which a request will be scoped.
@@ -168,6 +170,7 @@ def get_management_agent_images_output(compartment_id: Optional[pulumi.Input[str
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -177,6 +180,7 @@ def get_management_agent_images_output(compartment_id: Optional[pulumi.Input[str
         name=var["management_agent_image_name"],
         state=var["management_agent_image_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment to which a request will be scoped.

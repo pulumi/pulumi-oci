@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -32,13 +33,14 @@ import * as utilities from "../utilities";
  *     supportEndDate: _var.license_record_support_end_date,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * LicenseRecords can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:LicenseManager/licenseRecord:LicenseRecord test_license_record "id"
+ * $ pulumi import oci:LicenseManager/licenseRecord:LicenseRecord test_license_record "id"
  * ```
  */
 export class LicenseRecord extends pulumi.CustomResource {

@@ -16,10 +16,9 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// Return a log analytics entity topology collection that contains a set of log analytics entities and a set of relationships between those, for the input source entity.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -38,8 +37,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetLogAnalyticsEntityTopologyResult> InvokeAsync(GetLogAnalyticsEntityTopologyArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetLogAnalyticsEntityTopologyResult>("oci:LogAnalytics/getLogAnalyticsEntityTopology:getLogAnalyticsEntityTopology", args ?? new GetLogAnalyticsEntityTopologyArgs(), options.WithDefaults());
@@ -49,10 +47,9 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// Return a log analytics entity topology collection that contains a set of log analytics entities and a set of relationships between those, for the input source entity.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -71,8 +68,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetLogAnalyticsEntityTopologyResult> Invoke(GetLogAnalyticsEntityTopologyInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetLogAnalyticsEntityTopologyResult>("oci:LogAnalytics/getLogAnalyticsEntityTopology:getLogAnalyticsEntityTopology", args ?? new GetLogAnalyticsEntityTopologyInvokeArgs(), options.WithDefaults());

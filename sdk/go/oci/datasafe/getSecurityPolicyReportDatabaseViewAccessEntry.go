@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,6 +42,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetSecurityPolicyReportDatabaseViewAccessEntry(ctx *pulumi.Context, args *GetSecurityPolicyReportDatabaseViewAccessEntryArgs, opts ...pulumi.InvokeOption) (*GetSecurityPolicyReportDatabaseViewAccessEntryResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetSecurityPolicyReportDatabaseViewAccessEntryResult

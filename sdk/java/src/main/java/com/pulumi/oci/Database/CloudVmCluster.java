@@ -28,6 +28,8 @@ import javax.annotation.Nullable;
  * Creates a cloud VM cluster.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -90,13 +92,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * CloudVmClusters can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Database/cloudVmCluster:CloudVmCluster test_cloud_vm_cluster &#34;id&#34;
+ * $ pulumi import oci:Database/cloudVmCluster:CloudVmCluster test_cloud_vm_cluster &#34;id&#34;
  * ```
  * 
  */

@@ -18,6 +18,7 @@ namespace Pulumi.Oci.Streaming
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -55,13 +56,14 @@ namespace Pulumi.Oci.Streaming
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// StreamPools can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Streaming/streamPool:StreamPool test_stream_pool "id"
+    /// $ pulumi import oci:Streaming/streamPool:StreamPool test_stream_pool "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Streaming/streamPool:StreamPool")]

@@ -17,10 +17,9 @@ namespace Pulumi.Oci.Core
         /// Lists the block volume replicas in the specified compartment and availability domain.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -40,8 +39,7 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetBlockVolumeReplicasResult> InvokeAsync(GetBlockVolumeReplicasArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetBlockVolumeReplicasResult>("oci:Core/getBlockVolumeReplicas:getBlockVolumeReplicas", args ?? new GetBlockVolumeReplicasArgs(), options.WithDefaults());
@@ -52,10 +50,9 @@ namespace Pulumi.Oci.Core
         /// Lists the block volume replicas in the specified compartment and availability domain.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -75,8 +72,7 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetBlockVolumeReplicasResult> Invoke(GetBlockVolumeReplicasInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetBlockVolumeReplicasResult>("oci:Core/getBlockVolumeReplicas:getBlockVolumeReplicas", args ?? new GetBlockVolumeReplicasInvokeArgs(), options.WithDefaults());

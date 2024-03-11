@@ -33,7 +33,7 @@ import javax.annotation.Nullable;
  * ResourceActions can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Optimizer/resourceAction:ResourceAction test_resource_action &#34;id&#34;
+ * $ pulumi import oci:Optimizer/resourceAction:ResourceAction test_resource_action &#34;id&#34;
  * ```
  * 
  */

@@ -16,10 +16,9 @@ namespace Pulumi.Oci.Database
         /// 
         /// Gets information about the specified database software image.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,8 +34,7 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDatabaseSoftwareImageResult> InvokeAsync(GetDatabaseSoftwareImageArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDatabaseSoftwareImageResult>("oci:Database/getDatabaseSoftwareImage:getDatabaseSoftwareImage", args ?? new GetDatabaseSoftwareImageArgs(), options.WithDefaults());
@@ -46,10 +44,9 @@ namespace Pulumi.Oci.Database
         /// 
         /// Gets information about the specified database software image.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -65,8 +62,7 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDatabaseSoftwareImageResult> Invoke(GetDatabaseSoftwareImageInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDatabaseSoftwareImageResult>("oci:Database/getDatabaseSoftwareImage:getDatabaseSoftwareImage", args ?? new GetDatabaseSoftwareImageInvokeArgs(), options.WithDefaults());

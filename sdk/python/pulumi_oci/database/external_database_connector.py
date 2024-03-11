@@ -413,6 +413,7 @@ class ExternalDatabaseConnector(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -441,13 +442,14 @@ class ExternalDatabaseConnector(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ExternalDatabaseConnectors can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Database/externalDatabaseConnector:ExternalDatabaseConnector test_external_database_connector "id"
+        $ pulumi import oci:Database/externalDatabaseConnector:ExternalDatabaseConnector test_external_database_connector "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -478,6 +480,7 @@ class ExternalDatabaseConnector(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -506,13 +509,14 @@ class ExternalDatabaseConnector(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ExternalDatabaseConnectors can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Database/externalDatabaseConnector:ExternalDatabaseConnector test_external_database_connector "id"
+        $ pulumi import oci:Database/externalDatabaseConnector:ExternalDatabaseConnector test_external_database_connector "id"
         ```
 
         :param str resource_name: The name of the resource.

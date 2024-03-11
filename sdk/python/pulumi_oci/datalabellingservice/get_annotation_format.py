@@ -75,12 +75,14 @@ def get_annotation_format(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_annotation_format = oci.DataLabellingService.get_annotation_format(compartment_id=var["compartment_id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID of the compartment in which to list resources.
@@ -106,12 +108,14 @@ def get_annotation_format_output(compartment_id: Optional[pulumi.Input[str]] = N
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_annotation_format = oci.DataLabellingService.get_annotation_format(compartment_id=var["compartment_id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID of the compartment in which to list resources.

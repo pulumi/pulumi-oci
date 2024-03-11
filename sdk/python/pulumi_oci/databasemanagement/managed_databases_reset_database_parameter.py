@@ -228,6 +228,7 @@ class ManagedDatabasesResetDatabaseParameter(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -251,6 +252,7 @@ class ManagedDatabasesResetDatabaseParameter(pulumi.CustomResource):
                 username=var["managed_databases_reset_database_parameter_database_credential_username"],
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -283,6 +285,7 @@ class ManagedDatabasesResetDatabaseParameter(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -306,6 +309,7 @@ class ManagedDatabasesResetDatabaseParameter(pulumi.CustomResource):
                 username=var["managed_databases_reset_database_parameter_database_credential_username"],
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 

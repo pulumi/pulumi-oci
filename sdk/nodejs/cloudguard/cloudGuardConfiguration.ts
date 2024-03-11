@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,6 +23,7 @@ import * as utilities from "../utilities";
  *     selfManageResources: _var.cloud_guard_configuration_self_manage_resources,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *

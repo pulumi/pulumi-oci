@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,6 +42,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetCloudExadataInfrastructureUnAllocatedResource(ctx *pulumi.Context, args *GetCloudExadataInfrastructureUnAllocatedResourceArgs, opts ...pulumi.InvokeOption) (*GetCloudExadataInfrastructureUnAllocatedResourceResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetCloudExadataInfrastructureUnAllocatedResourceResult

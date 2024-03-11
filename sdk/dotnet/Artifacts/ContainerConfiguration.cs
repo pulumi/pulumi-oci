@@ -14,6 +14,7 @@ namespace Pulumi.Oci.Artifacts
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -26,13 +27,14 @@ namespace Pulumi.Oci.Artifacts
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// ContainerConfiguration can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Artifacts/containerConfiguration:ContainerConfiguration test_container_configuration "container/configuration/compartmentId/{compartmentId}"
+    /// $ pulumi import oci:Artifacts/containerConfiguration:ContainerConfiguration test_container_configuration "container/configuration/compartmentId/{compartmentId}"
     /// ```
     /// </summary>
     [OciResourceType("oci:Artifacts/containerConfiguration:ContainerConfiguration")]

@@ -15,6 +15,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -32,13 +33,14 @@ import * as utilities from "../utilities";
  *     },
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * SdmMaskingPolicyDifferences can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:DataSafe/sdmMaskingPolicyDifference:SdmMaskingPolicyDifference test_sdm_masking_policy_difference "id"
+ * $ pulumi import oci:DataSafe/sdmMaskingPolicyDifference:SdmMaskingPolicyDifference test_sdm_masking_policy_difference "id"
  * ```
  */
 export class SdmMaskingPolicyDifference extends pulumi.CustomResource {

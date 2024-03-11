@@ -230,12 +230,14 @@ def get_dkim(dkim_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_dkim = oci.Email.get_dkim(dkim_id=oci_email_dkim["test_dkim"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str dkim_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this DKIM.
@@ -274,12 +276,14 @@ def get_dkim_output(dkim_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_dkim = oci.Email.get_dkim(dkim_id=oci_email_dkim["test_dkim"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str dkim_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this DKIM.

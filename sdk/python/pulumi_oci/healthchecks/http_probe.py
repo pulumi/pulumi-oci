@@ -409,6 +409,7 @@ class HttpProbe(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -424,13 +425,14 @@ class HttpProbe(pulumi.CustomResource):
             timeout_in_seconds=var["http_probe_timeout_in_seconds"],
             vantage_point_names=var["http_probe_vantage_point_names"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         HttpProbes can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:HealthChecks/httpProbe:HttpProbe test_http_probe "id"
+        $ pulumi import oci:HealthChecks/httpProbe:HttpProbe test_http_probe "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -467,6 +469,7 @@ class HttpProbe(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -482,13 +485,14 @@ class HttpProbe(pulumi.CustomResource):
             timeout_in_seconds=var["http_probe_timeout_in_seconds"],
             vantage_point_names=var["http_probe_vantage_point_names"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         HttpProbes can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:HealthChecks/httpProbe:HttpProbe test_http_probe "id"
+        $ pulumi import oci:HealthChecks/httpProbe:HttpProbe test_http_probe "id"
         ```
 
         :param str resource_name: The name of the resource.

@@ -448,6 +448,7 @@ class Pool(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -478,13 +479,14 @@ class Pool(pulumi.CustomResource):
                 stop_time=var["pool_schedules_stop_time"],
             )])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Pools can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataFlow/pool:Pool test_pool "id"
+        $ pulumi import oci:DataFlow/pool:Pool test_pool "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -516,6 +518,7 @@ class Pool(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -546,13 +549,14 @@ class Pool(pulumi.CustomResource):
                 stop_time=var["pool_schedules_stop_time"],
             )])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Pools can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataFlow/pool:Pool test_pool "id"
+        $ pulumi import oci:DataFlow/pool:Pool test_pool "id"
         ```
 
         :param str resource_name: The name of the resource.

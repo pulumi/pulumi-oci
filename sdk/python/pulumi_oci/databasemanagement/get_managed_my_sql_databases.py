@@ -89,12 +89,14 @@ def get_managed_my_sql_databases(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_managed_my_sql_databases = oci.DatabaseManagement.get_managed_my_sql_databases(compartment_id=var["compartment_id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -123,12 +125,14 @@ def get_managed_my_sql_databases_output(compartment_id: Optional[pulumi.Input[st
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_managed_my_sql_databases = oci.DatabaseManagement.get_managed_my_sql_databases(compartment_id=var["compartment_id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

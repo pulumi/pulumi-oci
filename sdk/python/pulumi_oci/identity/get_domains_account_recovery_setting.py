@@ -305,6 +305,7 @@ def get_domains_account_recovery_setting(account_recovery_setting_id: Optional[s
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -316,6 +317,7 @@ def get_domains_account_recovery_setting(account_recovery_setting_id: Optional[s
         authorization=var["account_recovery_setting_authorization"],
         resource_type_schema_version=var["account_recovery_setting_resource_type_schema_version"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str account_recovery_setting_id: ID of the resource
@@ -376,6 +378,7 @@ def get_domains_account_recovery_setting_output(account_recovery_setting_id: Opt
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -387,6 +390,7 @@ def get_domains_account_recovery_setting_output(account_recovery_setting_id: Opt
         authorization=var["account_recovery_setting_authorization"],
         resource_type_schema_version=var["account_recovery_setting_resource_type_schema_version"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str account_recovery_setting_id: ID of the resource

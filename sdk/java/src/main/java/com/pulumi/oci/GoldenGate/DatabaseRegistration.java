@@ -23,6 +23,8 @@ import javax.annotation.Nullable;
  * Creates a new DatabaseRegistration.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -68,13 +70,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * DatabaseRegistrations can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:GoldenGate/databaseRegistration:DatabaseRegistration test_database_registration &#34;id&#34;
+ * $ pulumi import oci:GoldenGate/databaseRegistration:DatabaseRegistration test_database_registration &#34;id&#34;
  * ```
  * 
  */

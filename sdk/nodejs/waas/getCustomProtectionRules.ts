@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -26,6 +27,7 @@ import * as utilities from "../utilities";
  *     timeCreatedLessThan: _var.custom_protection_rule_time_created_less_than,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getCustomProtectionRules(args: GetCustomProtectionRulesArgs, opts?: pulumi.InvokeOptions): Promise<GetCustomProtectionRulesResult> {
 
@@ -102,6 +104,7 @@ export interface GetCustomProtectionRulesResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -115,6 +118,7 @@ export interface GetCustomProtectionRulesResult {
  *     timeCreatedLessThan: _var.custom_protection_rule_time_created_less_than,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getCustomProtectionRulesOutput(args: GetCustomProtectionRulesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCustomProtectionRulesResult> {
     return pulumi.output(args).apply((a: any) => getCustomProtectionRules(a, opts))

@@ -16,6 +16,7 @@ namespace Pulumi.Oci.Adm
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -80,13 +81,14 @@ namespace Pulumi.Oci.Adm
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// RemediationRecipes can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Adm/remediationRecipe:RemediationRecipe test_remediation_recipe "id"
+    /// $ pulumi import oci:Adm/remediationRecipe:RemediationRecipe test_remediation_recipe "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Adm/remediationRecipe:RemediationRecipe")]

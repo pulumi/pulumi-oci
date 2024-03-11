@@ -9,6 +9,7 @@ import * as utilities from "../utilities";
 /**
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -35,13 +36,14 @@ import * as utilities from "../utilities";
  *     volumeIds: [_var.volume_group_source_id],
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * VolumeGroups can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Core/volumeGroup:VolumeGroup test_volume_group "id"
+ * $ pulumi import oci:Core/volumeGroup:VolumeGroup test_volume_group "id"
  * ```
  */
 export class VolumeGroup extends pulumi.CustomResource {

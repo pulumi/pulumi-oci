@@ -450,6 +450,7 @@ class NotebookSession(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -503,13 +504,14 @@ class NotebookSession(pulumi.CustomResource):
                 prefix=var["notebook_session_notebook_session_storage_mount_configuration_details_list_prefix"],
             )])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         NotebookSessions can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataScience/notebookSession:NotebookSession test_notebook_session "id"
+        $ pulumi import oci:DataScience/notebookSession:NotebookSession test_notebook_session "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -542,6 +544,7 @@ class NotebookSession(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -595,13 +598,14 @@ class NotebookSession(pulumi.CustomResource):
                 prefix=var["notebook_session_notebook_session_storage_mount_configuration_details_list_prefix"],
             )])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         NotebookSessions can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataScience/notebookSession:NotebookSession test_notebook_session "id"
+        $ pulumi import oci:DataScience/notebookSession:NotebookSession test_notebook_session "id"
         ```
 
         :param str resource_name: The name of the resource.

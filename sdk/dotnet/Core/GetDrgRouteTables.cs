@@ -19,10 +19,9 @@ namespace Pulumi.Oci.Core
         /// Use the `ListDrgRouteRules` operation to retrieve the route rules in a table.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -41,8 +40,7 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDrgRouteTablesResult> InvokeAsync(GetDrgRouteTablesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDrgRouteTablesResult>("oci:Core/getDrgRouteTables:getDrgRouteTables", args ?? new GetDrgRouteTablesArgs(), options.WithDefaults());
@@ -55,10 +53,9 @@ namespace Pulumi.Oci.Core
         /// Use the `ListDrgRouteRules` operation to retrieve the route rules in a table.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -77,8 +74,7 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDrgRouteTablesResult> Invoke(GetDrgRouteTablesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDrgRouteTablesResult>("oci:Core/getDrgRouteTables:getDrgRouteTables", args ?? new GetDrgRouteTablesInvokeArgs(), options.WithDefaults());

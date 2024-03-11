@@ -19,6 +19,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -57,15 +58,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Exports can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:FileStorage/export:Export test_export "id"
-//
+// $ pulumi import oci:FileStorage/export:Export test_export "id"
 // ```
 type Export struct {
 	pulumi.CustomResourceState

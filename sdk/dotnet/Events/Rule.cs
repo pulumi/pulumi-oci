@@ -16,6 +16,7 @@ namespace Pulumi.Oci.Events
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -58,13 +59,14 @@ namespace Pulumi.Oci.Events
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// Rules can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Events/rule:Rule test_rule "id"
+    /// $ pulumi import oci:Events/rule:Rule test_rule "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Events/rule:Rule")]

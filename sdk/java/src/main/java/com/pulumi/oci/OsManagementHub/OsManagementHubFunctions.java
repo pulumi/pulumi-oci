@@ -92,6 +92,8 @@ public final class OsManagementHubFunctions {
      * Gets information about the specified lifecycle environment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -120,6 +122,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetLifecycleEnvironmentResult> getLifecycleEnvironment(GetLifecycleEnvironmentArgs args) {
@@ -131,6 +134,8 @@ public final class OsManagementHubFunctions {
      * Gets information about the specified lifecycle environment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -159,6 +164,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetLifecycleEnvironmentResult> getLifecycleEnvironmentPlain(GetLifecycleEnvironmentPlainArgs args) {
@@ -170,6 +176,8 @@ public final class OsManagementHubFunctions {
      * Gets information about the specified lifecycle environment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -198,6 +206,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetLifecycleEnvironmentResult> getLifecycleEnvironment(GetLifecycleEnvironmentArgs args, InvokeOptions options) {
@@ -209,6 +218,8 @@ public final class OsManagementHubFunctions {
      * Gets information about the specified lifecycle environment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -237,6 +248,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetLifecycleEnvironmentResult> getLifecycleEnvironmentPlain(GetLifecycleEnvironmentPlainArgs args, InvokeOptions options) {
@@ -249,6 +261,8 @@ public final class OsManagementHubFunctions {
      * against a variety of criteria including but not limited to its name, status, architecture, and OS family.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -283,6 +297,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetLifecycleEnvironmentsResult> getLifecycleEnvironments() {
@@ -295,6 +310,8 @@ public final class OsManagementHubFunctions {
      * against a variety of criteria including but not limited to its name, status, architecture, and OS family.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -329,6 +346,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetLifecycleEnvironmentsResult> getLifecycleEnvironmentsPlain() {
@@ -341,6 +359,8 @@ public final class OsManagementHubFunctions {
      * against a variety of criteria including but not limited to its name, status, architecture, and OS family.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -375,6 +395,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetLifecycleEnvironmentsResult> getLifecycleEnvironments(GetLifecycleEnvironmentsArgs args) {
@@ -387,6 +408,8 @@ public final class OsManagementHubFunctions {
      * against a variety of criteria including but not limited to its name, status, architecture, and OS family.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -421,6 +444,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetLifecycleEnvironmentsResult> getLifecycleEnvironmentsPlain(GetLifecycleEnvironmentsPlainArgs args) {
@@ -433,6 +457,8 @@ public final class OsManagementHubFunctions {
      * against a variety of criteria including but not limited to its name, status, architecture, and OS family.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -467,6 +493,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetLifecycleEnvironmentsResult> getLifecycleEnvironments(GetLifecycleEnvironmentsArgs args, InvokeOptions options) {
@@ -479,6 +506,8 @@ public final class OsManagementHubFunctions {
      * against a variety of criteria including but not limited to its name, status, architecture, and OS family.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -513,6 +542,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetLifecycleEnvironmentsResult> getLifecycleEnvironmentsPlain(GetLifecycleEnvironmentsPlainArgs args, InvokeOptions options) {
@@ -524,6 +554,8 @@ public final class OsManagementHubFunctions {
      * Gets information about the specified lifecycle stage.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -552,6 +584,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetLifecycleStageResult> getLifecycleStage(GetLifecycleStageArgs args) {
@@ -563,6 +596,8 @@ public final class OsManagementHubFunctions {
      * Gets information about the specified lifecycle stage.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -591,6 +626,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetLifecycleStageResult> getLifecycleStagePlain(GetLifecycleStagePlainArgs args) {
@@ -602,6 +638,8 @@ public final class OsManagementHubFunctions {
      * Gets information about the specified lifecycle stage.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -630,6 +668,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetLifecycleStageResult> getLifecycleStage(GetLifecycleStageArgs args, InvokeOptions options) {
@@ -641,6 +680,8 @@ public final class OsManagementHubFunctions {
      * Gets information about the specified lifecycle stage.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -669,6 +710,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetLifecycleStageResult> getLifecycleStagePlain(GetLifecycleStagePlainArgs args, InvokeOptions options) {
@@ -740,6 +782,8 @@ public final class OsManagementHubFunctions {
      * Gets information about the specified managed instance group.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -768,6 +812,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedInstanceGroupResult> getManagedInstanceGroup(GetManagedInstanceGroupArgs args) {
@@ -779,6 +824,8 @@ public final class OsManagementHubFunctions {
      * Gets information about the specified managed instance group.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -807,6 +854,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedInstanceGroupResult> getManagedInstanceGroupPlain(GetManagedInstanceGroupPlainArgs args) {
@@ -818,6 +866,8 @@ public final class OsManagementHubFunctions {
      * Gets information about the specified managed instance group.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -846,6 +896,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedInstanceGroupResult> getManagedInstanceGroup(GetManagedInstanceGroupArgs args, InvokeOptions options) {
@@ -857,6 +908,8 @@ public final class OsManagementHubFunctions {
      * Gets information about the specified managed instance group.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -885,6 +938,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedInstanceGroupResult> getManagedInstanceGroupPlain(GetManagedInstanceGroupPlainArgs args, InvokeOptions options) {
@@ -897,6 +951,8 @@ public final class OsManagementHubFunctions {
      * criteria including but not limited to its name.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -928,6 +984,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedInstanceGroupAvailableModulesResult> getManagedInstanceGroupAvailableModules(GetManagedInstanceGroupAvailableModulesArgs args) {
@@ -940,6 +997,8 @@ public final class OsManagementHubFunctions {
      * criteria including but not limited to its name.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -971,6 +1030,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedInstanceGroupAvailableModulesResult> getManagedInstanceGroupAvailableModulesPlain(GetManagedInstanceGroupAvailableModulesPlainArgs args) {
@@ -983,6 +1043,8 @@ public final class OsManagementHubFunctions {
      * criteria including but not limited to its name.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1014,6 +1076,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedInstanceGroupAvailableModulesResult> getManagedInstanceGroupAvailableModules(GetManagedInstanceGroupAvailableModulesArgs args, InvokeOptions options) {
@@ -1026,6 +1089,8 @@ public final class OsManagementHubFunctions {
      * criteria including but not limited to its name.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1057,6 +1122,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedInstanceGroupAvailableModulesResult> getManagedInstanceGroupAvailableModulesPlain(GetManagedInstanceGroupAvailableModulesPlainArgs args, InvokeOptions options) {
@@ -1069,6 +1135,8 @@ public final class OsManagementHubFunctions {
      * of criteria including but not limited to the package name.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1101,6 +1169,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedInstanceGroupAvailablePackagesResult> getManagedInstanceGroupAvailablePackages(GetManagedInstanceGroupAvailablePackagesArgs args) {
@@ -1113,6 +1182,8 @@ public final class OsManagementHubFunctions {
      * of criteria including but not limited to the package name.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1145,6 +1216,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedInstanceGroupAvailablePackagesResult> getManagedInstanceGroupAvailablePackagesPlain(GetManagedInstanceGroupAvailablePackagesPlainArgs args) {
@@ -1157,6 +1229,8 @@ public final class OsManagementHubFunctions {
      * of criteria including but not limited to the package name.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1189,6 +1263,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedInstanceGroupAvailablePackagesResult> getManagedInstanceGroupAvailablePackages(GetManagedInstanceGroupAvailablePackagesArgs args, InvokeOptions options) {
@@ -1201,6 +1276,8 @@ public final class OsManagementHubFunctions {
      * of criteria including but not limited to the package name.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1233,6 +1310,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedInstanceGroupAvailablePackagesResult> getManagedInstanceGroupAvailablePackagesPlain(GetManagedInstanceGroupAvailablePackagesPlainArgs args, InvokeOptions options) {
@@ -1245,6 +1323,8 @@ public final class OsManagementHubFunctions {
      * criteria including but not limited to its name.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1276,6 +1356,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedInstanceGroupAvailableSoftwareSourcesResult> getManagedInstanceGroupAvailableSoftwareSources(GetManagedInstanceGroupAvailableSoftwareSourcesArgs args) {
@@ -1288,6 +1369,8 @@ public final class OsManagementHubFunctions {
      * criteria including but not limited to its name.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1319,6 +1402,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedInstanceGroupAvailableSoftwareSourcesResult> getManagedInstanceGroupAvailableSoftwareSourcesPlain(GetManagedInstanceGroupAvailableSoftwareSourcesPlainArgs args) {
@@ -1331,6 +1415,8 @@ public final class OsManagementHubFunctions {
      * criteria including but not limited to its name.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1362,6 +1448,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedInstanceGroupAvailableSoftwareSourcesResult> getManagedInstanceGroupAvailableSoftwareSources(GetManagedInstanceGroupAvailableSoftwareSourcesArgs args, InvokeOptions options) {
@@ -1374,6 +1461,8 @@ public final class OsManagementHubFunctions {
      * criteria including but not limited to its name.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1405,6 +1494,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedInstanceGroupAvailableSoftwareSourcesResult> getManagedInstanceGroupAvailableSoftwareSourcesPlain(GetManagedInstanceGroupAvailableSoftwareSourcesPlainArgs args, InvokeOptions options) {
@@ -1417,6 +1507,8 @@ public final class OsManagementHubFunctions {
      * list against a variety of criteria including but not limited to its name, status, architecture, and OS family.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1452,6 +1544,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedInstanceGroupsResult> getManagedInstanceGroups() {
@@ -1464,6 +1557,8 @@ public final class OsManagementHubFunctions {
      * list against a variety of criteria including but not limited to its name, status, architecture, and OS family.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1499,6 +1594,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedInstanceGroupsResult> getManagedInstanceGroupsPlain() {
@@ -1511,6 +1607,8 @@ public final class OsManagementHubFunctions {
      * list against a variety of criteria including but not limited to its name, status, architecture, and OS family.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1546,6 +1644,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedInstanceGroupsResult> getManagedInstanceGroups(GetManagedInstanceGroupsArgs args) {
@@ -1558,6 +1657,8 @@ public final class OsManagementHubFunctions {
      * list against a variety of criteria including but not limited to its name, status, architecture, and OS family.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1593,6 +1694,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedInstanceGroupsResult> getManagedInstanceGroupsPlain(GetManagedInstanceGroupsPlainArgs args) {
@@ -1605,6 +1707,8 @@ public final class OsManagementHubFunctions {
      * list against a variety of criteria including but not limited to its name, status, architecture, and OS family.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1640,6 +1744,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagedInstanceGroupsResult> getManagedInstanceGroups(GetManagedInstanceGroupsArgs args, InvokeOptions options) {
@@ -1652,6 +1757,8 @@ public final class OsManagementHubFunctions {
      * list against a variety of criteria including but not limited to its name, status, architecture, and OS family.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1687,6 +1794,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagedInstanceGroupsResult> getManagedInstanceGroupsPlain(GetManagedInstanceGroupsPlainArgs args, InvokeOptions options) {
@@ -1698,6 +1806,8 @@ public final class OsManagementHubFunctions {
      * Gets information about the specified management station.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1726,6 +1836,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagementStationResult> getManagementStation(GetManagementStationArgs args) {
@@ -1737,6 +1848,8 @@ public final class OsManagementHubFunctions {
      * Gets information about the specified management station.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1765,6 +1878,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagementStationResult> getManagementStationPlain(GetManagementStationPlainArgs args) {
@@ -1776,6 +1890,8 @@ public final class OsManagementHubFunctions {
      * Gets information about the specified management station.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1804,6 +1920,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagementStationResult> getManagementStation(GetManagementStationArgs args, InvokeOptions options) {
@@ -1815,6 +1932,8 @@ public final class OsManagementHubFunctions {
      * Gets information about the specified management station.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1843,6 +1962,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagementStationResult> getManagementStationPlain(GetManagementStationPlainArgs args, InvokeOptions options) {
@@ -1854,6 +1974,8 @@ public final class OsManagementHubFunctions {
      * Lists all software source mirrors associated with a specified management station.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1885,6 +2007,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagementStationMirrorsResult> getManagementStationMirrors(GetManagementStationMirrorsArgs args) {
@@ -1896,6 +2019,8 @@ public final class OsManagementHubFunctions {
      * Lists all software source mirrors associated with a specified management station.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1927,6 +2052,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagementStationMirrorsResult> getManagementStationMirrorsPlain(GetManagementStationMirrorsPlainArgs args) {
@@ -1938,6 +2064,8 @@ public final class OsManagementHubFunctions {
      * Lists all software source mirrors associated with a specified management station.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1969,6 +2097,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagementStationMirrorsResult> getManagementStationMirrors(GetManagementStationMirrorsArgs args, InvokeOptions options) {
@@ -1980,6 +2109,8 @@ public final class OsManagementHubFunctions {
      * Lists all software source mirrors associated with a specified management station.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2011,6 +2142,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagementStationMirrorsResult> getManagementStationMirrorsPlain(GetManagementStationMirrorsPlainArgs args, InvokeOptions options) {
@@ -2022,6 +2154,8 @@ public final class OsManagementHubFunctions {
      * Lists management stations in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2055,6 +2189,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagementStationsResult> getManagementStations() {
@@ -2066,6 +2201,8 @@ public final class OsManagementHubFunctions {
      * Lists management stations in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2099,6 +2236,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagementStationsResult> getManagementStationsPlain() {
@@ -2110,6 +2248,8 @@ public final class OsManagementHubFunctions {
      * Lists management stations in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2143,6 +2283,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagementStationsResult> getManagementStations(GetManagementStationsArgs args) {
@@ -2154,6 +2295,8 @@ public final class OsManagementHubFunctions {
      * Lists management stations in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2187,6 +2330,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagementStationsResult> getManagementStationsPlain(GetManagementStationsPlainArgs args) {
@@ -2198,6 +2342,8 @@ public final class OsManagementHubFunctions {
      * Lists management stations in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2231,6 +2377,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetManagementStationsResult> getManagementStations(GetManagementStationsArgs args, InvokeOptions options) {
@@ -2242,6 +2389,8 @@ public final class OsManagementHubFunctions {
      * Lists management stations in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2275,6 +2424,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetManagementStationsResult> getManagementStationsPlain(GetManagementStationsPlainArgs args, InvokeOptions options) {
@@ -2286,6 +2436,8 @@ public final class OsManagementHubFunctions {
      * Gets information about the specified registration profile.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2314,6 +2466,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetProfileResult> getProfile(GetProfileArgs args) {
@@ -2325,6 +2478,8 @@ public final class OsManagementHubFunctions {
      * Gets information about the specified registration profile.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2353,6 +2508,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetProfileResult> getProfilePlain(GetProfilePlainArgs args) {
@@ -2364,6 +2520,8 @@ public final class OsManagementHubFunctions {
      * Gets information about the specified registration profile.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2392,6 +2550,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetProfileResult> getProfile(GetProfileArgs args, InvokeOptions options) {
@@ -2403,6 +2562,8 @@ public final class OsManagementHubFunctions {
      * Gets information about the specified registration profile.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2431,6 +2592,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetProfileResult> getProfilePlain(GetProfilePlainArgs args, InvokeOptions options) {
@@ -2443,6 +2605,8 @@ public final class OsManagementHubFunctions {
      * variety of criteria including but not limited to its name, status, vendor name, and architecture type.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2479,6 +2643,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetProfilesResult> getProfiles() {
@@ -2491,6 +2656,8 @@ public final class OsManagementHubFunctions {
      * variety of criteria including but not limited to its name, status, vendor name, and architecture type.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2527,6 +2694,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetProfilesResult> getProfilesPlain() {
@@ -2539,6 +2707,8 @@ public final class OsManagementHubFunctions {
      * variety of criteria including but not limited to its name, status, vendor name, and architecture type.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2575,6 +2745,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetProfilesResult> getProfiles(GetProfilesArgs args) {
@@ -2587,6 +2758,8 @@ public final class OsManagementHubFunctions {
      * variety of criteria including but not limited to its name, status, vendor name, and architecture type.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2623,6 +2796,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetProfilesResult> getProfilesPlain(GetProfilesPlainArgs args) {
@@ -2635,6 +2809,8 @@ public final class OsManagementHubFunctions {
      * variety of criteria including but not limited to its name, status, vendor name, and architecture type.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2671,6 +2847,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetProfilesResult> getProfiles(GetProfilesArgs args, InvokeOptions options) {
@@ -2683,6 +2860,8 @@ public final class OsManagementHubFunctions {
      * variety of criteria including but not limited to its name, status, vendor name, and architecture type.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2719,6 +2898,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetProfilesResult> getProfilesPlain(GetProfilesPlainArgs args, InvokeOptions options) {
@@ -2730,6 +2910,8 @@ public final class OsManagementHubFunctions {
      * Gets information about the specified software source.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2758,6 +2940,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSoftwareSourceResult> getSoftwareSource(GetSoftwareSourceArgs args) {
@@ -2769,6 +2952,8 @@ public final class OsManagementHubFunctions {
      * Gets information about the specified software source.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2797,6 +2982,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSoftwareSourceResult> getSoftwareSourcePlain(GetSoftwareSourcePlainArgs args) {
@@ -2808,6 +2994,8 @@ public final class OsManagementHubFunctions {
      * Gets information about the specified software source.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2836,6 +3024,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSoftwareSourceResult> getSoftwareSource(GetSoftwareSourceArgs args, InvokeOptions options) {
@@ -2847,6 +3036,8 @@ public final class OsManagementHubFunctions {
      * Gets information about the specified software source.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2875,6 +3066,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSoftwareSourceResult> getSoftwareSourcePlain(GetSoftwareSourcePlainArgs args, InvokeOptions options) {
@@ -2886,6 +3078,8 @@ public final class OsManagementHubFunctions {
      * Gets information about the specified module stream in a software source.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2916,6 +3110,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSoftwareSourceModuleStreamResult> getSoftwareSourceModuleStream(GetSoftwareSourceModuleStreamArgs args) {
@@ -2927,6 +3122,8 @@ public final class OsManagementHubFunctions {
      * Gets information about the specified module stream in a software source.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2957,6 +3154,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSoftwareSourceModuleStreamResult> getSoftwareSourceModuleStreamPlain(GetSoftwareSourceModuleStreamPlainArgs args) {
@@ -2968,6 +3166,8 @@ public final class OsManagementHubFunctions {
      * Gets information about the specified module stream in a software source.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2998,6 +3198,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSoftwareSourceModuleStreamResult> getSoftwareSourceModuleStream(GetSoftwareSourceModuleStreamArgs args, InvokeOptions options) {
@@ -3009,6 +3210,8 @@ public final class OsManagementHubFunctions {
      * Gets information about the specified module stream in a software source.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3039,6 +3242,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSoftwareSourceModuleStreamResult> getSoftwareSourceModuleStreamPlain(GetSoftwareSourceModuleStreamPlainArgs args, InvokeOptions options) {
@@ -3050,6 +3254,8 @@ public final class OsManagementHubFunctions {
      * Gets information about the specified module stream profile in a software source.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3081,6 +3287,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSoftwareSourceModuleStreamProfileResult> getSoftwareSourceModuleStreamProfile(GetSoftwareSourceModuleStreamProfileArgs args) {
@@ -3092,6 +3299,8 @@ public final class OsManagementHubFunctions {
      * Gets information about the specified module stream profile in a software source.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3123,6 +3332,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSoftwareSourceModuleStreamProfileResult> getSoftwareSourceModuleStreamProfilePlain(GetSoftwareSourceModuleStreamProfilePlainArgs args) {
@@ -3134,6 +3344,8 @@ public final class OsManagementHubFunctions {
      * Gets information about the specified module stream profile in a software source.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3165,6 +3377,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSoftwareSourceModuleStreamProfileResult> getSoftwareSourceModuleStreamProfile(GetSoftwareSourceModuleStreamProfileArgs args, InvokeOptions options) {
@@ -3176,6 +3389,8 @@ public final class OsManagementHubFunctions {
      * Gets information about the specified module stream profile in a software source.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3207,6 +3422,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSoftwareSourceModuleStreamProfileResult> getSoftwareSourceModuleStreamProfilePlain(GetSoftwareSourceModuleStreamProfilePlainArgs args, InvokeOptions options) {
@@ -3219,6 +3435,8 @@ public final class OsManagementHubFunctions {
      * criteria including but not limited to its module name, stream name, and (profile) name.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3250,6 +3468,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSoftwareSourceModuleStreamProfilesResult> getSoftwareSourceModuleStreamProfiles(GetSoftwareSourceModuleStreamProfilesArgs args) {
@@ -3262,6 +3481,8 @@ public final class OsManagementHubFunctions {
      * criteria including but not limited to its module name, stream name, and (profile) name.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3293,6 +3514,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSoftwareSourceModuleStreamProfilesResult> getSoftwareSourceModuleStreamProfilesPlain(GetSoftwareSourceModuleStreamProfilesPlainArgs args) {
@@ -3305,6 +3527,8 @@ public final class OsManagementHubFunctions {
      * criteria including but not limited to its module name, stream name, and (profile) name.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3336,6 +3560,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSoftwareSourceModuleStreamProfilesResult> getSoftwareSourceModuleStreamProfiles(GetSoftwareSourceModuleStreamProfilesArgs args, InvokeOptions options) {
@@ -3348,6 +3573,8 @@ public final class OsManagementHubFunctions {
      * criteria including but not limited to its module name, stream name, and (profile) name.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3379,6 +3606,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSoftwareSourceModuleStreamProfilesResult> getSoftwareSourceModuleStreamProfilesPlain(GetSoftwareSourceModuleStreamProfilesPlainArgs args, InvokeOptions options) {
@@ -3391,6 +3619,8 @@ public final class OsManagementHubFunctions {
      * criteria including but not limited to its module name and (stream) name.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3423,6 +3653,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSoftwareSourceModuleStreamsResult> getSoftwareSourceModuleStreams(GetSoftwareSourceModuleStreamsArgs args) {
@@ -3435,6 +3666,8 @@ public final class OsManagementHubFunctions {
      * criteria including but not limited to its module name and (stream) name.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3467,6 +3700,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSoftwareSourceModuleStreamsResult> getSoftwareSourceModuleStreamsPlain(GetSoftwareSourceModuleStreamsPlainArgs args) {
@@ -3479,6 +3713,8 @@ public final class OsManagementHubFunctions {
      * criteria including but not limited to its module name and (stream) name.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3511,6 +3747,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSoftwareSourceModuleStreamsResult> getSoftwareSourceModuleStreams(GetSoftwareSourceModuleStreamsArgs args, InvokeOptions options) {
@@ -3523,6 +3760,8 @@ public final class OsManagementHubFunctions {
      * criteria including but not limited to its module name and (stream) name.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3555,6 +3794,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSoftwareSourceModuleStreamsResult> getSoftwareSourceModuleStreamsPlain(GetSoftwareSourceModuleStreamsPlainArgs args, InvokeOptions options) {
@@ -3566,6 +3806,8 @@ public final class OsManagementHubFunctions {
      * Gets information about the specified package group from a software source.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3595,6 +3837,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSoftwareSourcePackageGroupResult> getSoftwareSourcePackageGroup(GetSoftwareSourcePackageGroupArgs args) {
@@ -3606,6 +3849,8 @@ public final class OsManagementHubFunctions {
      * Gets information about the specified package group from a software source.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3635,6 +3880,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSoftwareSourcePackageGroupResult> getSoftwareSourcePackageGroupPlain(GetSoftwareSourcePackageGroupPlainArgs args) {
@@ -3646,6 +3892,8 @@ public final class OsManagementHubFunctions {
      * Gets information about the specified package group from a software source.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3675,6 +3923,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSoftwareSourcePackageGroupResult> getSoftwareSourcePackageGroup(GetSoftwareSourcePackageGroupArgs args, InvokeOptions options) {
@@ -3686,6 +3935,8 @@ public final class OsManagementHubFunctions {
      * Gets information about the specified package group from a software source.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3715,6 +3966,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSoftwareSourcePackageGroupResult> getSoftwareSourcePackageGroupPlain(GetSoftwareSourcePackageGroupPlainArgs args, InvokeOptions options) {
@@ -3727,6 +3979,8 @@ public final class OsManagementHubFunctions {
      * variety of criteria including but not limited to its name, and package group type.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3759,6 +4013,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSoftwareSourcePackageGroupsResult> getSoftwareSourcePackageGroups(GetSoftwareSourcePackageGroupsArgs args) {
@@ -3771,6 +4026,8 @@ public final class OsManagementHubFunctions {
      * variety of criteria including but not limited to its name, and package group type.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3803,6 +4060,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSoftwareSourcePackageGroupsResult> getSoftwareSourcePackageGroupsPlain(GetSoftwareSourcePackageGroupsPlainArgs args) {
@@ -3815,6 +4073,8 @@ public final class OsManagementHubFunctions {
      * variety of criteria including but not limited to its name, and package group type.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3847,6 +4107,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSoftwareSourcePackageGroupsResult> getSoftwareSourcePackageGroups(GetSoftwareSourcePackageGroupsArgs args, InvokeOptions options) {
@@ -3859,6 +4120,8 @@ public final class OsManagementHubFunctions {
      * variety of criteria including but not limited to its name, and package group type.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3891,6 +4154,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSoftwareSourcePackageGroupsResult> getSoftwareSourcePackageGroupsPlain(GetSoftwareSourcePackageGroupsPlainArgs args, InvokeOptions options) {
@@ -3902,6 +4166,8 @@ public final class OsManagementHubFunctions {
      * Gets information about the specified software package.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3931,6 +4197,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSoftwareSourceSoftwarePackageResult> getSoftwareSourceSoftwarePackage(GetSoftwareSourceSoftwarePackageArgs args) {
@@ -3942,6 +4209,8 @@ public final class OsManagementHubFunctions {
      * Gets information about the specified software package.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3971,6 +4240,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSoftwareSourceSoftwarePackageResult> getSoftwareSourceSoftwarePackagePlain(GetSoftwareSourceSoftwarePackagePlainArgs args) {
@@ -3982,6 +4252,8 @@ public final class OsManagementHubFunctions {
      * Gets information about the specified software package.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4011,6 +4283,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSoftwareSourceSoftwarePackageResult> getSoftwareSourceSoftwarePackage(GetSoftwareSourceSoftwarePackageArgs args, InvokeOptions options) {
@@ -4022,6 +4295,8 @@ public final class OsManagementHubFunctions {
      * Gets information about the specified software package.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4051,6 +4326,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSoftwareSourceSoftwarePackageResult> getSoftwareSourceSoftwarePackagePlain(GetSoftwareSourceSoftwarePackagePlainArgs args, InvokeOptions options) {
@@ -4063,6 +4339,8 @@ public final class OsManagementHubFunctions {
      * including but not limited to its name.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4094,6 +4372,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSoftwareSourceSoftwarePackagesResult> getSoftwareSourceSoftwarePackages(GetSoftwareSourceSoftwarePackagesArgs args) {
@@ -4106,6 +4385,8 @@ public final class OsManagementHubFunctions {
      * including but not limited to its name.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4137,6 +4418,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSoftwareSourceSoftwarePackagesResult> getSoftwareSourceSoftwarePackagesPlain(GetSoftwareSourceSoftwarePackagesPlainArgs args) {
@@ -4149,6 +4431,8 @@ public final class OsManagementHubFunctions {
      * including but not limited to its name.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4180,6 +4464,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSoftwareSourceSoftwarePackagesResult> getSoftwareSourceSoftwarePackages(GetSoftwareSourceSoftwarePackagesArgs args, InvokeOptions options) {
@@ -4192,6 +4477,8 @@ public final class OsManagementHubFunctions {
      * including but not limited to its name.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4223,6 +4510,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSoftwareSourceSoftwarePackagesResult> getSoftwareSourceSoftwarePackagesPlain(GetSoftwareSourceSoftwarePackagesPlainArgs args, InvokeOptions options) {
@@ -4235,6 +4523,8 @@ public final class OsManagementHubFunctions {
      * to its name.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4264,6 +4554,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSoftwareSourceVendorsResult> getSoftwareSourceVendors(GetSoftwareSourceVendorsArgs args) {
@@ -4276,6 +4567,8 @@ public final class OsManagementHubFunctions {
      * to its name.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4305,6 +4598,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSoftwareSourceVendorsResult> getSoftwareSourceVendorsPlain(GetSoftwareSourceVendorsPlainArgs args) {
@@ -4317,6 +4611,8 @@ public final class OsManagementHubFunctions {
      * to its name.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4346,6 +4642,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSoftwareSourceVendorsResult> getSoftwareSourceVendors(GetSoftwareSourceVendorsArgs args, InvokeOptions options) {
@@ -4358,6 +4655,8 @@ public final class OsManagementHubFunctions {
      * to its name.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4387,6 +4686,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSoftwareSourceVendorsResult> getSoftwareSourceVendorsPlain(GetSoftwareSourceVendorsPlainArgs args, InvokeOptions options) {
@@ -4399,6 +4699,8 @@ public final class OsManagementHubFunctions {
      * variety of criteria including but not limited to its name, status, architecture, and OS family.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4437,6 +4739,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSoftwareSourcesResult> getSoftwareSources() {
@@ -4449,6 +4752,8 @@ public final class OsManagementHubFunctions {
      * variety of criteria including but not limited to its name, status, architecture, and OS family.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4487,6 +4792,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSoftwareSourcesResult> getSoftwareSourcesPlain() {
@@ -4499,6 +4805,8 @@ public final class OsManagementHubFunctions {
      * variety of criteria including but not limited to its name, status, architecture, and OS family.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4537,6 +4845,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSoftwareSourcesResult> getSoftwareSources(GetSoftwareSourcesArgs args) {
@@ -4549,6 +4858,8 @@ public final class OsManagementHubFunctions {
      * variety of criteria including but not limited to its name, status, architecture, and OS family.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4587,6 +4898,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSoftwareSourcesResult> getSoftwareSourcesPlain(GetSoftwareSourcesPlainArgs args) {
@@ -4599,6 +4911,8 @@ public final class OsManagementHubFunctions {
      * variety of criteria including but not limited to its name, status, architecture, and OS family.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4637,6 +4951,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSoftwareSourcesResult> getSoftwareSources(GetSoftwareSourcesArgs args, InvokeOptions options) {
@@ -4649,6 +4964,8 @@ public final class OsManagementHubFunctions {
      * variety of criteria including but not limited to its name, status, architecture, and OS family.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4687,6 +5004,7 @@ public final class OsManagementHubFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSoftwareSourcesResult> getSoftwareSourcesPlain(GetSoftwareSourcesPlainArgs args, InvokeOptions options) {

@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -49,6 +50,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetContainerSignatures(ctx *pulumi.Context, args *GetContainerSignaturesArgs, opts ...pulumi.InvokeOption) (*GetContainerSignaturesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetContainerSignaturesResult

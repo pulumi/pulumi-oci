@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -51,15 +52,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Certificates can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:ApiGateway/certificate:Certificate test_certificate "id"
-//
+// $ pulumi import oci:ApiGateway/certificate:Certificate test_certificate "id"
 // ```
 type Certificate struct {
 	pulumi.CustomResourceState

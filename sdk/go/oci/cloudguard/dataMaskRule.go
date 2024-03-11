@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -57,15 +58,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // DataMaskRules can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:CloudGuard/dataMaskRule:DataMaskRule test_data_mask_rule "id"
-//
+// $ pulumi import oci:CloudGuard/dataMaskRule:DataMaskRule test_data_mask_rule "id"
 // ```
 type DataMaskRule struct {
 	pulumi.CustomResourceState

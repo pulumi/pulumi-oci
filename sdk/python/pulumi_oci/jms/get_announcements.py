@@ -106,6 +106,7 @@ def get_announcements(filters: Optional[Sequence[pulumi.InputType['GetAnnounceme
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -114,6 +115,7 @@ def get_announcements(filters: Optional[Sequence[pulumi.InputType['GetAnnounceme
         time_end=var["announcement_time_end"],
         time_start=var["announcement_time_start"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str summary_contains: Filter the list with summary contains the given value.
@@ -150,6 +152,7 @@ def get_announcements_output(filters: Optional[pulumi.Input[Optional[Sequence[pu
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -158,6 +161,7 @@ def get_announcements_output(filters: Optional[pulumi.Input[Optional[Sequence[pu
         time_end=var["announcement_time_end"],
         time_start=var["announcement_time_start"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str summary_contains: Filter the list with summary contains the given value.

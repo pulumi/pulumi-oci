@@ -132,6 +132,7 @@ def get_workspace_projects(fields: Optional[Sequence[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -142,6 +143,7 @@ def get_workspace_projects(fields: Optional[Sequence[str]] = None,
         name=var["workspace_project_name"],
         name_contains=var["workspace_project_name_contains"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param Sequence[str] fields: Specifies the fields to get for an object.
@@ -186,6 +188,7 @@ def get_workspace_projects_output(fields: Optional[pulumi.Input[Optional[Sequenc
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -196,6 +199,7 @@ def get_workspace_projects_output(fields: Optional[pulumi.Input[Optional[Sequenc
         name=var["workspace_project_name"],
         name_contains=var["workspace_project_name_contains"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param Sequence[str] fields: Specifies the fields to get for an object.

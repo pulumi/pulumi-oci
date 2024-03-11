@@ -17,6 +17,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -25,6 +26,7 @@ import * as utilities from "../utilities";
  *     iamWorkRequestId: oci_identity_iam_work_request.test_iam_work_request.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getIamWorkRequestLogs(args: GetIamWorkRequestLogsArgs, opts?: pulumi.InvokeOptions): Promise<GetIamWorkRequestLogsResult> {
 
@@ -72,6 +74,7 @@ export interface GetIamWorkRequestLogsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -80,6 +83,7 @@ export interface GetIamWorkRequestLogsResult {
  *     iamWorkRequestId: oci_identity_iam_work_request.test_iam_work_request.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getIamWorkRequestLogsOutput(args: GetIamWorkRequestLogsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIamWorkRequestLogsResult> {
     return pulumi.output(args).apply((a: any) => getIamWorkRequestLogs(a, opts))

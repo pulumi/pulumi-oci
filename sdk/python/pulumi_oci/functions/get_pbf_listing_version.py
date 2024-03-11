@@ -207,12 +207,14 @@ def get_pbf_listing_version(pbf_listing_version_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_pbf_listing_version = oci.Functions.get_pbf_listing_version(pbf_listing_version_id=oci_functions_pbf_listing_version["test_pbf_listing_version"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str pbf_listing_version_id: unique PbfListingVersion identifier
@@ -249,12 +251,14 @@ def get_pbf_listing_version_output(pbf_listing_version_id: Optional[pulumi.Input
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_pbf_listing_version = oci.Functions.get_pbf_listing_version(pbf_listing_version_id=oci_functions_pbf_listing_version["test_pbf_listing_version"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str pbf_listing_version_id: unique PbfListingVersion identifier

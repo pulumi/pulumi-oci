@@ -16,6 +16,7 @@ namespace Pulumi.Oci.CloudBridge
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -47,13 +48,14 @@ namespace Pulumi.Oci.CloudBridge
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// AgentDependencies can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:CloudBridge/agentDependency:AgentDependency test_agent_dependency "id"
+    /// $ pulumi import oci:CloudBridge/agentDependency:AgentDependency test_agent_dependency "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:CloudBridge/agentDependency:AgentDependency")]

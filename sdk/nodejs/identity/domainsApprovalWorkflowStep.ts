@@ -16,7 +16,7 @@ import * as utilities from "../utilities";
  * ApprovalWorkflowSteps can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Identity/domainsApprovalWorkflowStep:DomainsApprovalWorkflowStep test_approval_workflow_step "idcsEndpoint/{idcsEndpoint}/approvalWorkflowSteps/{approvalWorkflowStepId}"
+ * $ pulumi import oci:Identity/domainsApprovalWorkflowStep:DomainsApprovalWorkflowStep test_approval_workflow_step "idcsEndpoint/{idcsEndpoint}/approvalWorkflowSteps/{approvalWorkflowStepId}"
  * ```
  */
 export class DomainsApprovalWorkflowStep extends pulumi.CustomResource {

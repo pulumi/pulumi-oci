@@ -108,6 +108,7 @@ def get_log_analytics_entity_topology(log_analytics_entity_id: Optional[str] = N
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -117,6 +118,7 @@ def get_log_analytics_entity_topology(log_analytics_entity_id: Optional[str] = N
         metadata_equals=var["log_analytics_entity_topology_metadata_equals"],
         state=var["log_analytics_entity_topology_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str log_analytics_entity_id: The log analytics entity OCID.
@@ -154,6 +156,7 @@ def get_log_analytics_entity_topology_output(log_analytics_entity_id: Optional[p
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -163,6 +166,7 @@ def get_log_analytics_entity_topology_output(log_analytics_entity_id: Optional[p
         metadata_equals=var["log_analytics_entity_topology_metadata_equals"],
         state=var["log_analytics_entity_topology_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str log_analytics_entity_id: The log analytics entity OCID.

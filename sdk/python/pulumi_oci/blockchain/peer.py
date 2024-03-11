@@ -267,6 +267,7 @@ class Peer(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -280,13 +281,14 @@ class Peer(pulumi.CustomResource):
             role=var["peer_role"],
             alias=var["peer_alias"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Peers can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Blockchain/peer:Peer test_peer "blockchainPlatforms/{blockchainPlatformId}/peers/{peerId}"
+        $ pulumi import oci:Blockchain/peer:Peer test_peer "blockchainPlatforms/{blockchainPlatformId}/peers/{peerId}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -314,6 +316,7 @@ class Peer(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -327,13 +330,14 @@ class Peer(pulumi.CustomResource):
             role=var["peer_role"],
             alias=var["peer_alias"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Peers can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Blockchain/peer:Peer test_peer "blockchainPlatforms/{blockchainPlatformId}/peers/{peerId}"
+        $ pulumi import oci:Blockchain/peer:Peer test_peer "blockchainPlatforms/{blockchainPlatformId}/peers/{peerId}"
         ```
 
         :param str resource_name: The name of the resource.

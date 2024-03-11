@@ -16,6 +16,7 @@ namespace Pulumi.Oci.LicenseManager
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -32,13 +33,14 @@ namespace Pulumi.Oci.LicenseManager
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// Configurations can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:LicenseManager/configuration:Configuration test_configuration "configuration/compartmentId/{compartmentId}"
+    /// $ pulumi import oci:LicenseManager/configuration:Configuration test_configuration "configuration/compartmentId/{compartmentId}"
     /// ```
     /// </summary>
     [OciResourceType("oci:LicenseManager/configuration:Configuration")]

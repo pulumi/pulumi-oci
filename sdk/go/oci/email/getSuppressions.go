@@ -19,6 +19,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -45,6 +46,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetSuppressions(ctx *pulumi.Context, args *GetSuppressionsArgs, opts ...pulumi.InvokeOption) (*GetSuppressionsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetSuppressionsResult

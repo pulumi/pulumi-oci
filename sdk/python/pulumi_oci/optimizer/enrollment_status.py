@@ -203,7 +203,7 @@ class EnrollmentStatus(pulumi.CustomResource):
         EnrollmentStatus can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Optimizer/enrollmentStatus:EnrollmentStatus test_enrollment_status "id"
+        $ pulumi import oci:Optimizer/enrollmentStatus:EnrollmentStatus test_enrollment_status "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -231,7 +231,7 @@ class EnrollmentStatus(pulumi.CustomResource):
         EnrollmentStatus can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Optimizer/enrollmentStatus:EnrollmentStatus test_enrollment_status "id"
+        $ pulumi import oci:Optimizer/enrollmentStatus:EnrollmentStatus test_enrollment_status "id"
         ```
 
         :param str resource_name: The name of the resource.

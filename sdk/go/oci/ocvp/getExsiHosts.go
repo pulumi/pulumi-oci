@@ -25,6 +25,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -55,6 +56,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetExsiHosts(ctx *pulumi.Context, args *GetExsiHostsArgs, opts ...pulumi.InvokeOption) (*GetExsiHostsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetExsiHostsResult

@@ -32,6 +32,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -63,15 +64,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // DynamicGroups can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Identity/dynamicGroup:DynamicGroup test_dynamic_group "id"
-//
+// $ pulumi import oci:Identity/dynamicGroup:DynamicGroup test_dynamic_group "id"
 // ```
 type DynamicGroup struct {
 	pulumi.CustomResourceState

@@ -21,9 +21,7 @@ import (
 // Jobs can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:DatabaseMigration/job:Job test_job "id"
-//
+// $ pulumi import oci:DatabaseMigration/job:Job test_job "id"
 // ```
 type Job struct {
 	pulumi.CustomResourceState

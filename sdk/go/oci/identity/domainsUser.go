@@ -21,9 +21,7 @@ import (
 // Users can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Identity/domainsUser:DomainsUser test_user "idcsEndpoint/{idcsEndpoint}/users/{userId}"
-//
+// $ pulumi import oci:Identity/domainsUser:DomainsUser test_user "idcsEndpoint/{idcsEndpoint}/users/{userId}"
 // ```
 type DomainsUser struct {
 	pulumi.CustomResourceState

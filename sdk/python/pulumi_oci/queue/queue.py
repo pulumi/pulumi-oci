@@ -30,7 +30,7 @@ class QueueArgs:
         The set of arguments for constructing a Queue resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the queue.
         :param pulumi.Input[str] display_name: (Updatable) The user-friendly name of the queue.
-        :param pulumi.Input[int] channel_consumption_limit: (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
+        :param pulumi.Input[int] channel_consumption_limit: (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%!)(MISSING), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100%!((MISSING)default) means that a single channel can consume up-to all allocated queue's resources.
         :param pulumi.Input[str] custom_encryption_key_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom encryption key to be used to encrypt messages content.
         :param pulumi.Input[int] dead_letter_queue_delivery_count: (Updatable) The number of times a message can be delivered to a consumer before being moved to the dead letter queue. A value of 0 indicates that the DLQ is not used.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -90,7 +90,7 @@ class QueueArgs:
     @pulumi.getter(name="channelConsumptionLimit")
     def channel_consumption_limit(self) -> Optional[pulumi.Input[int]]:
         """
-        (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
+        (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%!)(MISSING), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100%!((MISSING)default) means that a single channel can consume up-to all allocated queue's resources.
         """
         return pulumi.get(self, "channel_consumption_limit")
 
@@ -224,7 +224,7 @@ class _QueueState:
                  visibility_in_seconds: Optional[pulumi.Input[int]] = None):
         """
         Input properties used for looking up and filtering Queue resources.
-        :param pulumi.Input[int] channel_consumption_limit: (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
+        :param pulumi.Input[int] channel_consumption_limit: (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%!)(MISSING), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100%!((MISSING)default) means that a single channel can consume up-to all allocated queue's resources.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the queue.
         :param pulumi.Input[str] custom_encryption_key_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom encryption key to be used to encrypt messages content.
         :param pulumi.Input[int] dead_letter_queue_delivery_count: (Updatable) The number of times a message can be delivered to a consumer before being moved to the dead letter queue. A value of 0 indicates that the DLQ is not used.
@@ -282,7 +282,7 @@ class _QueueState:
     @pulumi.getter(name="channelConsumptionLimit")
     def channel_consumption_limit(self) -> Optional[pulumi.Input[int]]:
         """
-        (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
+        (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%!)(MISSING), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100%!((MISSING)default) means that a single channel can consume up-to all allocated queue's resources.
         """
         return pulumi.get(self, "channel_consumption_limit")
 
@@ -514,6 +514,7 @@ class Queue(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -534,18 +535,19 @@ class Queue(pulumi.CustomResource):
             timeout_in_seconds=var["queue_timeout_in_seconds"],
             visibility_in_seconds=var["queue_visibility_in_seconds"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Queues can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Queue/queue:Queue test_queue "id"
+        $ pulumi import oci:Queue/queue:Queue test_queue "id"
         ```
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] channel_consumption_limit: (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
+        :param pulumi.Input[int] channel_consumption_limit: (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%!)(MISSING), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100%!((MISSING)default) means that a single channel can consume up-to all allocated queue's resources.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the queue.
         :param pulumi.Input[str] custom_encryption_key_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom encryption key to be used to encrypt messages content.
         :param pulumi.Input[int] dead_letter_queue_delivery_count: (Updatable) The number of times a message can be delivered to a consumer before being moved to the dead letter queue. A value of 0 indicates that the DLQ is not used.
@@ -569,6 +571,7 @@ class Queue(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -589,13 +592,14 @@ class Queue(pulumi.CustomResource):
             timeout_in_seconds=var["queue_timeout_in_seconds"],
             visibility_in_seconds=var["queue_visibility_in_seconds"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Queues can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Queue/queue:Queue test_queue "id"
+        $ pulumi import oci:Queue/queue:Queue test_queue "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -691,7 +695,7 @@ class Queue(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] channel_consumption_limit: (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
+        :param pulumi.Input[int] channel_consumption_limit: (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%!)(MISSING), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100%!((MISSING)default) means that a single channel can consume up-to all allocated queue's resources.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the queue.
         :param pulumi.Input[str] custom_encryption_key_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom encryption key to be used to encrypt messages content.
         :param pulumi.Input[int] dead_letter_queue_delivery_count: (Updatable) The number of times a message can be delivered to a consumer before being moved to the dead letter queue. A value of 0 indicates that the DLQ is not used.
@@ -736,7 +740,7 @@ class Queue(pulumi.CustomResource):
     @pulumi.getter(name="channelConsumptionLimit")
     def channel_consumption_limit(self) -> pulumi.Output[int]:
         """
-        (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
+        (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%!)(MISSING), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100%!((MISSING)default) means that a single channel can consume up-to all allocated queue's resources.
         """
         return pulumi.get(self, "channel_consumption_limit")
 

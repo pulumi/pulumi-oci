@@ -25,6 +25,8 @@ import javax.annotation.Nullable;
  * For more information, see [Dedicated Virtual Machine Hosts](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/dedicatedvmhosts.htm).
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -59,13 +61,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * DedicatedVmHosts can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Core/dedicatedVmHost:DedicatedVmHost test_dedicated_vm_host &#34;id&#34;
+ * $ pulumi import oci:Core/dedicatedVmHost:DedicatedVmHost test_dedicated_vm_host &#34;id&#34;
  * ```
  * 
  */

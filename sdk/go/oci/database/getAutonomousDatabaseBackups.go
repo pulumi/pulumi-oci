@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -44,6 +45,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetAutonomousDatabaseBackups(ctx *pulumi.Context, args *GetAutonomousDatabaseBackupsArgs, opts ...pulumi.InvokeOption) (*GetAutonomousDatabaseBackupsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAutonomousDatabaseBackupsResult

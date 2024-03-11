@@ -16,6 +16,7 @@ namespace Pulumi.Oci.Integration
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -77,13 +78,14 @@ namespace Pulumi.Oci.Integration
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// IntegrationInstances can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Integration/integrationInstance:IntegrationInstance test_integration_instance "id"
+    /// $ pulumi import oci:Integration/integrationInstance:IntegrationInstance test_integration_instance "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Integration/integrationInstance:IntegrationInstance")]

@@ -16,6 +16,7 @@ namespace Pulumi.Oci.ManagementAgent
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -50,13 +51,14 @@ namespace Pulumi.Oci.ManagementAgent
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// ManagementAgentDataSources can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:ManagementAgent/managementAgentDataSource:ManagementAgentDataSource test_management_agent_data_source "managementAgents/{managementAgentId}/dataSources/{key}"
+    /// $ pulumi import oci:ManagementAgent/managementAgentDataSource:ManagementAgentDataSource test_management_agent_data_source "managementAgents/{managementAgentId}/dataSources/{key}"
     /// ```
     /// </summary>
     [OciResourceType("oci:ManagementAgent/managementAgentDataSource:ManagementAgentDataSource")]

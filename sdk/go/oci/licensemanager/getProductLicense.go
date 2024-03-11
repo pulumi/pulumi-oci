@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -40,6 +41,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupProductLicense(ctx *pulumi.Context, args *LookupProductLicenseArgs, opts ...pulumi.InvokeOption) (*LookupProductLicenseResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupProductLicenseResult

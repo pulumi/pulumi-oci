@@ -54,6 +54,8 @@ import javax.annotation.Nullable;
  * **Important:** Make sure to inform the new user which compartment(s) they have access to.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -86,13 +88,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * Users can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Identity/user:User test_user &#34;id&#34;
+ * $ pulumi import oci:Identity/user:User test_user &#34;id&#34;
  * ```
  * 
  */

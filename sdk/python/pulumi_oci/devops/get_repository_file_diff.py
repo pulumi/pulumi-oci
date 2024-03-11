@@ -199,6 +199,7 @@ def get_repository_file_diff(base_version: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -209,6 +210,7 @@ def get_repository_file_diff(base_version: Optional[str] = None,
         file_path=var["repository_file_diff_file_path"],
         is_comparison_from_merge_base=var["repository_file_diff_is_comparison_from_merge_base"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str base_version: The branch to compare changes against.
@@ -257,6 +259,7 @@ def get_repository_file_diff_output(base_version: Optional[pulumi.Input[str]] = 
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -267,6 +270,7 @@ def get_repository_file_diff_output(base_version: Optional[pulumi.Input[str]] = 
         file_path=var["repository_file_diff_file_path"],
         is_comparison_from_merge_base=var["repository_file_diff_is_comparison_from_merge_base"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str base_version: The branch to compare changes against.

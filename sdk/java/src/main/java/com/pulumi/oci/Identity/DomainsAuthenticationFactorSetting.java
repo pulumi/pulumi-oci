@@ -41,7 +41,7 @@ import javax.annotation.Nullable;
  * AuthenticationFactorSettings can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Identity/domainsAuthenticationFactorSetting:DomainsAuthenticationFactorSetting test_authentication_factor_setting &#34;idcsEndpoint/{idcsEndpoint}/authenticationFactorSettings/{authenticationFactorSettingId}&#34;
+ * $ pulumi import oci:Identity/domainsAuthenticationFactorSetting:DomainsAuthenticationFactorSetting test_authentication_factor_setting &#34;idcsEndpoint/{idcsEndpoint}/authenticationFactorSettings/{authenticationFactorSettingId}&#34;
  * ```
  * 
  */

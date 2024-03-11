@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -45,6 +46,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetMetricExtensions(ctx *pulumi.Context, args *GetMetricExtensionsArgs, opts ...pulumi.InvokeOption) (*GetMetricExtensionsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetMetricExtensionsResult

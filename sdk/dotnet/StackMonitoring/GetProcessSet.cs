@@ -16,10 +16,9 @@ namespace Pulumi.Oci.StackMonitoring
         /// 
         /// API to get the details of a Process Set by identifier.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,8 +34,7 @@ namespace Pulumi.Oci.StackMonitoring
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetProcessSetResult> InvokeAsync(GetProcessSetArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetProcessSetResult>("oci:StackMonitoring/getProcessSet:getProcessSet", args ?? new GetProcessSetArgs(), options.WithDefaults());
@@ -46,10 +44,9 @@ namespace Pulumi.Oci.StackMonitoring
         /// 
         /// API to get the details of a Process Set by identifier.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -65,8 +62,7 @@ namespace Pulumi.Oci.StackMonitoring
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetProcessSetResult> Invoke(GetProcessSetInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetProcessSetResult>("oci:StackMonitoring/getProcessSet:getProcessSet", args ?? new GetProcessSetInvokeArgs(), options.WithDefaults());

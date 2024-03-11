@@ -213,12 +213,14 @@ def get_private_application(private_application_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_private_application = oci.ServiceCatalog.get_private_application(private_application_id=oci_service_catalog_private_application["test_private_application"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str private_application_id: The unique identifier for the private application.
@@ -256,12 +258,14 @@ def get_private_application_output(private_application_id: Optional[pulumi.Input
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_private_application = oci.ServiceCatalog.get_private_application(private_application_id=oci_service_catalog_private_application["test_private_application"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str private_application_id: The unique identifier for the private application.

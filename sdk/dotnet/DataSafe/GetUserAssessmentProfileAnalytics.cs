@@ -31,10 +31,9 @@ namespace Pulumi.Oci.DataSafe
         /// set the parameter compartmentIdInSubtree to true and accessLevel to ACCESSIBLE.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -55,8 +54,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetUserAssessmentProfileAnalyticsResult> InvokeAsync(GetUserAssessmentProfileAnalyticsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetUserAssessmentProfileAnalyticsResult>("oci:DataSafe/getUserAssessmentProfileAnalytics:getUserAssessmentProfileAnalytics", args ?? new GetUserAssessmentProfileAnalyticsArgs(), options.WithDefaults());
@@ -81,10 +79,9 @@ namespace Pulumi.Oci.DataSafe
         /// set the parameter compartmentIdInSubtree to true and accessLevel to ACCESSIBLE.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -105,8 +102,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetUserAssessmentProfileAnalyticsResult> Invoke(GetUserAssessmentProfileAnalyticsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetUserAssessmentProfileAnalyticsResult>("oci:DataSafe/getUserAssessmentProfileAnalytics:getUserAssessmentProfileAnalytics", args ?? new GetUserAssessmentProfileAnalyticsInvokeArgs(), options.WithDefaults());

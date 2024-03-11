@@ -283,6 +283,7 @@ class LogAnalyticsLogGroup(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -299,13 +300,14 @@ class LogAnalyticsLogGroup(pulumi.CustomResource):
                 "bar-key": "value",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         LogAnalyticsLogGroups can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:LogAnalytics/logAnalyticsLogGroup:LogAnalyticsLogGroup test_log_analytics_log_group "namespaces/{namespaceName}/logAnalyticsLogGroups/{logAnalyticsLogGroupId}"
+        $ pulumi import oci:LogAnalytics/logAnalyticsLogGroup:LogAnalyticsLogGroup test_log_analytics_log_group "namespaces/{namespaceName}/logAnalyticsLogGroups/{logAnalyticsLogGroupId}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -334,6 +336,7 @@ class LogAnalyticsLogGroup(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -350,13 +353,14 @@ class LogAnalyticsLogGroup(pulumi.CustomResource):
                 "bar-key": "value",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         LogAnalyticsLogGroups can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:LogAnalytics/logAnalyticsLogGroup:LogAnalyticsLogGroup test_log_analytics_log_group "namespaces/{namespaceName}/logAnalyticsLogGroups/{logAnalyticsLogGroupId}"
+        $ pulumi import oci:LogAnalytics/logAnalyticsLogGroup:LogAnalyticsLogGroup test_log_analytics_log_group "namespaces/{namespaceName}/logAnalyticsLogGroups/{logAnalyticsLogGroupId}"
         ```
 
         :param str resource_name: The name of the resource.

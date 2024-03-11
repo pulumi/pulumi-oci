@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,6 +22,7 @@ import * as utilities from "../utilities";
  *     problemId: oci_cloud_guard_problem.test_problem.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getProblemEntities(args: GetProblemEntitiesArgs, opts?: pulumi.InvokeOptions): Promise<GetProblemEntitiesResult> {
 
@@ -67,6 +69,7 @@ export interface GetProblemEntitiesResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -75,6 +78,7 @@ export interface GetProblemEntitiesResult {
  *     problemId: oci_cloud_guard_problem.test_problem.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getProblemEntitiesOutput(args: GetProblemEntitiesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetProblemEntitiesResult> {
     return pulumi.output(args).apply((a: any) => getProblemEntities(a, opts))

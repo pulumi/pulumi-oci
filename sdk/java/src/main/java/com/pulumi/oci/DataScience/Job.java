@@ -29,6 +29,8 @@ import javax.annotation.Nullable;
  * Creates a job.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -108,13 +110,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * Jobs can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:DataScience/job:Job test_job &#34;id&#34;
+ * $ pulumi import oci:DataScience/job:Job test_job &#34;id&#34;
  * ```
  * 
  */

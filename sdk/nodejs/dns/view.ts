@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,13 +24,14 @@ import * as utilities from "../utilities";
  *     freeformTags: _var.view_freeform_tags,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * Views can be imported using their OCID, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Dns/view:View test_view "id"
+ * $ pulumi import oci:Dns/view:View test_view "id"
  * ```
  */
 export class View extends pulumi.CustomResource {

@@ -25,6 +25,8 @@ import javax.annotation.Nullable;
  * `oci management-dashboard dashboard import --from-json file://Import.json`
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -54,13 +56,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * ManagementDashboardsImport can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:ManagementDashboard/managementDashboardsImport:ManagementDashboardsImport test_management_dashboards_import &#34;id&#34;
+ * $ pulumi import oci:ManagementDashboard/managementDashboardsImport:ManagementDashboardsImport test_management_dashboards_import &#34;id&#34;
  * ```
  * 
  */

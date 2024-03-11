@@ -21,9 +21,7 @@ import (
 // BdsInstances can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:BigDataService/bdsInstance:BdsInstance test_bds_instance "id"
-//
+// $ pulumi import oci:BigDataService/bdsInstance:BdsInstance test_bds_instance "id"
 // ```
 type BdsInstance struct {
 	pulumi.CustomResourceState

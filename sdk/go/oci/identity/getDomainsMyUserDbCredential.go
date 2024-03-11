@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -43,6 +44,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupDomainsMyUserDbCredential(ctx *pulumi.Context, args *LookupDomainsMyUserDbCredentialArgs, opts ...pulumi.InvokeOption) (*LookupDomainsMyUserDbCredentialResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupDomainsMyUserDbCredentialResult

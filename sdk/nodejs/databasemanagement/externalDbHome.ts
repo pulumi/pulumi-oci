@@ -14,7 +14,7 @@ import * as utilities from "../utilities";
  * ExternalDbHomes can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:DatabaseManagement/externalDbHome:ExternalDbHome test_external_db_home "id"
+ * $ pulumi import oci:DatabaseManagement/externalDbHome:ExternalDbHome test_external_db_home "id"
  * ```
  */
 export class ExternalDbHome extends pulumi.CustomResource {

@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -40,6 +41,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetFusionEnvironmentFamilyLimitsAndUsage(ctx *pulumi.Context, args *GetFusionEnvironmentFamilyLimitsAndUsageArgs, opts ...pulumi.InvokeOption) (*GetFusionEnvironmentFamilyLimitsAndUsageResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetFusionEnvironmentFamilyLimitsAndUsageResult

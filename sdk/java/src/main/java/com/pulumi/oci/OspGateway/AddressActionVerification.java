@@ -21,6 +21,8 @@ import javax.annotation.Nullable;
  * Verify address
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -76,13 +78,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * AddressActionVerifications can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:OspGateway/addressActionVerification:AddressActionVerification test_address_action_verification &#34;id&#34;
+ * $ pulumi import oci:OspGateway/addressActionVerification:AddressActionVerification test_address_action_verification &#34;id&#34;
  * ```
  * 
  */

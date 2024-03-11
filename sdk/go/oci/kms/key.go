@@ -26,9 +26,7 @@ import (
 // Keys can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Kms/key:Key test_key "managementEndpoint/{managementEndpoint}/keys/{keyId}"
-//
+// $ pulumi import oci:Kms/key:Key test_key "managementEndpoint/{managementEndpoint}/keys/{keyId}"
 // ```
 type Key struct {
 	pulumi.CustomResourceState

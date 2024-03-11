@@ -435,6 +435,7 @@ def get_listing(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -442,6 +443,7 @@ def get_listing(compartment_id: Optional[str] = None,
     test_listing = oci.Marketplace.get_listing(listing_id=oci_marketplace_listing["test_listing"]["id"],
         compartment_id=var["compartment_id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The unique identifier for the compartment. It is mandatory when used in non-commercial realms.
@@ -513,6 +515,7 @@ def get_listing_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = N
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -520,6 +523,7 @@ def get_listing_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = N
     test_listing = oci.Marketplace.get_listing(listing_id=oci_marketplace_listing["test_listing"]["id"],
         compartment_id=var["compartment_id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The unique identifier for the compartment. It is mandatory when used in non-commercial realms.

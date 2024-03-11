@@ -593,6 +593,7 @@ class OnPremiseVantagePointWorker(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -613,13 +614,14 @@ class OnPremiseVantagePointWorker(pulumi.CustomResource):
             status=var["on_premise_vantage_point_worker_status"],
             worker_type=var["on_premise_vantage_point_worker_worker_type"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         OnPremiseVantagePointWorkers can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:ApmSynthetics/onPremiseVantagePointWorker:OnPremiseVantagePointWorker test_on_premise_vantage_point_worker "onPremiseVantagePoints/{onPremiseVantagePointId}/workers/{workerId}/apmDomainId/{apmDomainId}"
+        $ pulumi import oci:ApmSynthetics/onPremiseVantagePointWorker:OnPremiseVantagePointWorker test_on_premise_vantage_point_worker "onPremiseVantagePoints/{onPremiseVantagePointId}/workers/{workerId}/apmDomainId/{apmDomainId}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -653,6 +655,7 @@ class OnPremiseVantagePointWorker(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -673,13 +676,14 @@ class OnPremiseVantagePointWorker(pulumi.CustomResource):
             status=var["on_premise_vantage_point_worker_status"],
             worker_type=var["on_premise_vantage_point_worker_worker_type"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         OnPremiseVantagePointWorkers can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:ApmSynthetics/onPremiseVantagePointWorker:OnPremiseVantagePointWorker test_on_premise_vantage_point_worker "onPremiseVantagePoints/{onPremiseVantagePointId}/workers/{workerId}/apmDomainId/{apmDomainId}"
+        $ pulumi import oci:ApmSynthetics/onPremiseVantagePointWorker:OnPremiseVantagePointWorker test_on_premise_vantage_point_worker "onPremiseVantagePoints/{onPremiseVantagePointId}/workers/{workerId}/apmDomainId/{apmDomainId}"
         ```
 
         :param str resource_name: The name of the resource.

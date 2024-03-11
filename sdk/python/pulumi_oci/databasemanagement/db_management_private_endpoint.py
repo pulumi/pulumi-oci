@@ -382,6 +382,7 @@ class DbManagementPrivateEndpoint(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -399,13 +400,14 @@ class DbManagementPrivateEndpoint(pulumi.CustomResource):
             is_cluster=var["db_management_private_endpoint_is_cluster"],
             nsg_ids=var["db_management_private_endpoint_nsg_ids"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         DbManagementPrivateEndpoints can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DatabaseManagement/dbManagementPrivateEndpoint:DbManagementPrivateEndpoint test_db_management_private_endpoint "id"
+        $ pulumi import oci:DatabaseManagement/dbManagementPrivateEndpoint:DbManagementPrivateEndpoint test_db_management_private_endpoint "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -436,6 +438,7 @@ class DbManagementPrivateEndpoint(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -453,13 +456,14 @@ class DbManagementPrivateEndpoint(pulumi.CustomResource):
             is_cluster=var["db_management_private_endpoint_is_cluster"],
             nsg_ids=var["db_management_private_endpoint_nsg_ids"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         DbManagementPrivateEndpoints can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DatabaseManagement/dbManagementPrivateEndpoint:DbManagementPrivateEndpoint test_db_management_private_endpoint "id"
+        $ pulumi import oci:DatabaseManagement/dbManagementPrivateEndpoint:DbManagementPrivateEndpoint test_db_management_private_endpoint "id"
         ```
 
         :param str resource_name: The name of the resource.

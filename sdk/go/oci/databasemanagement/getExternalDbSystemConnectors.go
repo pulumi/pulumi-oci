@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -42,6 +43,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetExternalDbSystemConnectors(ctx *pulumi.Context, args *GetExternalDbSystemConnectorsArgs, opts ...pulumi.InvokeOption) (*GetExternalDbSystemConnectorsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetExternalDbSystemConnectorsResult

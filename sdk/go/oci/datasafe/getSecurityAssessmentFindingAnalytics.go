@@ -26,6 +26,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -56,6 +57,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetSecurityAssessmentFindingAnalytics(ctx *pulumi.Context, args *GetSecurityAssessmentFindingAnalyticsArgs, opts ...pulumi.InvokeOption) (*GetSecurityAssessmentFindingAnalyticsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetSecurityAssessmentFindingAnalyticsResult

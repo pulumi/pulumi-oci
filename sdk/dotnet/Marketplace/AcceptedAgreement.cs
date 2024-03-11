@@ -17,6 +17,7 @@ namespace Pulumi.Oci.Marketplace
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -45,13 +46,14 @@ namespace Pulumi.Oci.Marketplace
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// AcceptedAgreements can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Marketplace/acceptedAgreement:AcceptedAgreement test_accepted_agreement "id"
+    /// $ pulumi import oci:Marketplace/acceptedAgreement:AcceptedAgreement test_accepted_agreement "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Marketplace/acceptedAgreement:AcceptedAgreement")]

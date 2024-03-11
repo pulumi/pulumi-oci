@@ -171,6 +171,7 @@ class NetworkFirewallPolicyUrlList(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -182,13 +183,14 @@ class NetworkFirewallPolicyUrlList(pulumi.CustomResource):
                 type=var["network_firewall_policy_url_list_urls_type"],
             )])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         NetworkFirewallPolicyUrlLists can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:NetworkFirewall/networkFirewallPolicyUrlList:NetworkFirewallPolicyUrlList test_network_firewall_policy_url_list "networkFirewallPolicies/{networkFirewallPolicyId}/urlLists/{urlListName}"
+        $ pulumi import oci:NetworkFirewall/networkFirewallPolicyUrlList:NetworkFirewallPolicyUrlList test_network_firewall_policy_url_list "networkFirewallPolicies/{networkFirewallPolicyId}/urlLists/{urlListName}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -210,6 +212,7 @@ class NetworkFirewallPolicyUrlList(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -221,13 +224,14 @@ class NetworkFirewallPolicyUrlList(pulumi.CustomResource):
                 type=var["network_firewall_policy_url_list_urls_type"],
             )])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         NetworkFirewallPolicyUrlLists can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:NetworkFirewall/networkFirewallPolicyUrlList:NetworkFirewallPolicyUrlList test_network_firewall_policy_url_list "networkFirewallPolicies/{networkFirewallPolicyId}/urlLists/{urlListName}"
+        $ pulumi import oci:NetworkFirewall/networkFirewallPolicyUrlList:NetworkFirewallPolicyUrlList test_network_firewall_policy_url_list "networkFirewallPolicies/{networkFirewallPolicyId}/urlLists/{urlListName}"
         ```
 
         :param str resource_name: The name of the resource.

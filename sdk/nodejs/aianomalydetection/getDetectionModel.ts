@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,6 +22,7 @@ import * as utilities from "../utilities";
  *     modelId: oci_ai_anomaly_detection_model.test_model.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDetectionModel(args: GetDetectionModelArgs, opts?: pulumi.InvokeOptions): Promise<GetDetectionModelResult> {
 
@@ -109,6 +111,7 @@ export interface GetDetectionModelResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -117,6 +120,7 @@ export interface GetDetectionModelResult {
  *     modelId: oci_ai_anomaly_detection_model.test_model.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDetectionModelOutput(args: GetDetectionModelOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDetectionModelResult> {
     return pulumi.output(args).apply((a: any) => getDetectionModel(a, opts))

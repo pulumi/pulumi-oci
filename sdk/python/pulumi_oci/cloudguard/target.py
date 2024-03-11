@@ -504,6 +504,7 @@ class Target(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -549,13 +550,14 @@ class Target(pulumi.CustomResource):
                 )],
             )])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Targets can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:CloudGuard/target:Target test_target "id"
+        $ pulumi import oci:CloudGuard/target:Target test_target "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -590,6 +592,7 @@ class Target(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -635,13 +638,14 @@ class Target(pulumi.CustomResource):
                 )],
             )])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Targets can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:CloudGuard/target:Target test_target "id"
+        $ pulumi import oci:CloudGuard/target:Target test_target "id"
         ```
 
         :param str resource_name: The name of the resource.

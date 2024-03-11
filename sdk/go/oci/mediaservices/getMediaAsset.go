@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -40,6 +41,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupMediaAsset(ctx *pulumi.Context, args *LookupMediaAssetArgs, opts ...pulumi.InvokeOption) (*LookupMediaAssetResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupMediaAssetResult

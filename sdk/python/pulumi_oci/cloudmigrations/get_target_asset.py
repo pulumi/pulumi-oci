@@ -303,12 +303,14 @@ def get_target_asset(target_asset_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_target_asset = oci.CloudMigrations.get_target_asset(target_asset_id=oci_cloud_migrations_target_asset["test_target_asset"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str target_asset_id: Unique target asset identifier
@@ -353,12 +355,14 @@ def get_target_asset_output(target_asset_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_target_asset = oci.CloudMigrations.get_target_asset(target_asset_id=oci_cloud_migrations_target_asset["test_target_asset"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str target_asset_id: Unique target asset identifier

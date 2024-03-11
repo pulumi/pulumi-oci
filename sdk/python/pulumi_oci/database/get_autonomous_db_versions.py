@@ -103,6 +103,7 @@ def get_autonomous_db_versions(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -110,6 +111,7 @@ def get_autonomous_db_versions(compartment_id: Optional[str] = None,
     test_autonomous_db_versions = oci.Database.get_autonomous_db_versions(compartment_id=var["compartment_id"],
         db_workload=var["autonomous_db_version_db_workload"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -142,6 +144,7 @@ def get_autonomous_db_versions_output(compartment_id: Optional[pulumi.Input[str]
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -149,6 +152,7 @@ def get_autonomous_db_versions_output(compartment_id: Optional[pulumi.Input[str]
     test_autonomous_db_versions = oci.Database.get_autonomous_db_versions(compartment_id=var["compartment_id"],
         db_workload=var["autonomous_db_version_db_workload"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

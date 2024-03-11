@@ -14,7 +14,7 @@ import * as utilities from "../utilities";
  * Reports can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:DataSafe/report:Report test_report "id"
+ * $ pulumi import oci:DataSafe/report:Report test_report "id"
  * ```
  */
 export class Report extends pulumi.CustomResource {

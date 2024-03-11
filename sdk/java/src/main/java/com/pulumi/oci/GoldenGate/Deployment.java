@@ -33,7 +33,7 @@ import javax.annotation.Nullable;
  * Deployments can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:GoldenGate/deployment:Deployment test_deployment &#34;id&#34;
+ * $ pulumi import oci:GoldenGate/deployment:Deployment test_deployment &#34;id&#34;
  * ```
  * 
  */

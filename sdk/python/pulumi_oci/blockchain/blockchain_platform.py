@@ -757,6 +757,7 @@ class BlockchainPlatform(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -779,13 +780,14 @@ class BlockchainPlatform(pulumi.CustomResource):
             is_byol=var["blockchain_platform_is_byol"],
             platform_version=var["blockchain_platform_platform_version"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         BlockchainPlatforms can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Blockchain/blockchainPlatform:BlockchainPlatform test_blockchain_platform "id"
+        $ pulumi import oci:Blockchain/blockchainPlatform:BlockchainPlatform test_blockchain_platform "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -824,6 +826,7 @@ class BlockchainPlatform(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -846,13 +849,14 @@ class BlockchainPlatform(pulumi.CustomResource):
             is_byol=var["blockchain_platform_is_byol"],
             platform_version=var["blockchain_platform_platform_version"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         BlockchainPlatforms can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Blockchain/blockchainPlatform:BlockchainPlatform test_blockchain_platform "id"
+        $ pulumi import oci:Blockchain/blockchainPlatform:BlockchainPlatform test_blockchain_platform "id"
         ```
 
         :param str resource_name: The name of the resource.

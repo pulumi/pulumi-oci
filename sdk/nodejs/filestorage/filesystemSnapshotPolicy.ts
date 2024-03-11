@@ -17,6 +17,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -45,13 +46,14 @@ import * as utilities from "../utilities";
  *     }],
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * FilesystemSnapshotPolicies can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:FileStorage/filesystemSnapshotPolicy:FilesystemSnapshotPolicy test_filesystem_snapshot_policy "id"
+ * $ pulumi import oci:FileStorage/filesystemSnapshotPolicy:FilesystemSnapshotPolicy test_filesystem_snapshot_policy "id"
  * ```
  */
 export class FilesystemSnapshotPolicy extends pulumi.CustomResource {

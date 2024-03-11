@@ -23,6 +23,8 @@ public final class GenericArtifactsContentFunctions {
      * Get generic artifact content.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -53,6 +55,7 @@ public final class GenericArtifactsContentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetArtifactByPathResult> getArtifactByPath(GetArtifactByPathArgs args) {
@@ -64,6 +67,8 @@ public final class GenericArtifactsContentFunctions {
      * Get generic artifact content.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -94,6 +99,7 @@ public final class GenericArtifactsContentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetArtifactByPathResult> getArtifactByPathPlain(GetArtifactByPathPlainArgs args) {
@@ -105,6 +111,8 @@ public final class GenericArtifactsContentFunctions {
      * Get generic artifact content.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -135,6 +143,7 @@ public final class GenericArtifactsContentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetArtifactByPathResult> getArtifactByPath(GetArtifactByPathArgs args, InvokeOptions options) {
@@ -146,6 +155,8 @@ public final class GenericArtifactsContentFunctions {
      * Get generic artifact content.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -176,6 +187,7 @@ public final class GenericArtifactsContentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetArtifactByPathResult> getArtifactByPathPlain(GetArtifactByPathPlainArgs args, InvokeOptions options) {
@@ -187,6 +199,8 @@ public final class GenericArtifactsContentFunctions {
      * Gets the specified artifact&#39;s content.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -215,6 +229,7 @@ public final class GenericArtifactsContentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetGenericArtifactsContentResult> getGenericArtifactsContent(GetGenericArtifactsContentArgs args) {
@@ -226,6 +241,8 @@ public final class GenericArtifactsContentFunctions {
      * Gets the specified artifact&#39;s content.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -254,6 +271,7 @@ public final class GenericArtifactsContentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetGenericArtifactsContentResult> getGenericArtifactsContentPlain(GetGenericArtifactsContentPlainArgs args) {
@@ -265,6 +283,8 @@ public final class GenericArtifactsContentFunctions {
      * Gets the specified artifact&#39;s content.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -293,6 +313,7 @@ public final class GenericArtifactsContentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetGenericArtifactsContentResult> getGenericArtifactsContent(GetGenericArtifactsContentArgs args, InvokeOptions options) {
@@ -304,6 +325,8 @@ public final class GenericArtifactsContentFunctions {
      * Gets the specified artifact&#39;s content.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -332,6 +355,7 @@ public final class GenericArtifactsContentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetGenericArtifactsContentResult> getGenericArtifactsContentPlain(GetGenericArtifactsContentPlainArgs args, InvokeOptions options) {

@@ -529,6 +529,7 @@ class JobRun(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -566,13 +567,14 @@ class JobRun(pulumi.CustomResource):
                 log_id=oci_logging_log["test_log"]["id"],
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         JobRuns can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataScience/jobRun:JobRun test_job_run "id"
+        $ pulumi import oci:DataScience/jobRun:JobRun test_job_run "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -605,6 +607,7 @@ class JobRun(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -642,13 +645,14 @@ class JobRun(pulumi.CustomResource):
                 log_id=oci_logging_log["test_log"]["id"],
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         JobRuns can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataScience/jobRun:JobRun test_job_run "id"
+        $ pulumi import oci:DataScience/jobRun:JobRun test_job_run "id"
         ```
 
         :param str resource_name: The name of the resource.

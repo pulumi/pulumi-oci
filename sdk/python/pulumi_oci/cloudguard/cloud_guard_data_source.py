@@ -373,6 +373,7 @@ class CloudGuardDataSource(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -406,13 +407,14 @@ class CloudGuardDataSource(pulumi.CustomResource):
                 "bar-key": "value",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         DataSources can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:CloudGuard/cloudGuardDataSource:CloudGuardDataSource test_data_source "id"
+        $ pulumi import oci:CloudGuard/cloudGuardDataSource:CloudGuardDataSource test_data_source "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -443,6 +445,7 @@ class CloudGuardDataSource(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -476,13 +479,14 @@ class CloudGuardDataSource(pulumi.CustomResource):
                 "bar-key": "value",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         DataSources can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:CloudGuard/cloudGuardDataSource:CloudGuardDataSource test_data_source "id"
+        $ pulumi import oci:CloudGuard/cloudGuardDataSource:CloudGuardDataSource test_data_source "id"
         ```
 
         :param str resource_name: The name of the resource.

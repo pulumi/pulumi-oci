@@ -22,6 +22,8 @@ import javax.annotation.Nullable;
  * file system.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -64,13 +66,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * Exports can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:FileStorage/export:Export test_export &#34;id&#34;
+ * $ pulumi import oci:FileStorage/export:Export test_export &#34;id&#34;
  * ```
  * 
  */

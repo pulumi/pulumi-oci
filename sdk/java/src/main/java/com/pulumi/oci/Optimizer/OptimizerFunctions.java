@@ -62,6 +62,8 @@ public final class OptimizerFunctions {
      * Lists the supported Cloud Advisor categories.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -95,6 +97,7 @@ public final class OptimizerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCategoriesResult> getCategories(GetCategoriesArgs args) {
@@ -106,6 +109,8 @@ public final class OptimizerFunctions {
      * Lists the supported Cloud Advisor categories.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -139,6 +144,7 @@ public final class OptimizerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCategoriesResult> getCategoriesPlain(GetCategoriesPlainArgs args) {
@@ -150,6 +156,8 @@ public final class OptimizerFunctions {
      * Lists the supported Cloud Advisor categories.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -183,6 +191,7 @@ public final class OptimizerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCategoriesResult> getCategories(GetCategoriesArgs args, InvokeOptions options) {
@@ -194,6 +203,8 @@ public final class OptimizerFunctions {
      * Lists the supported Cloud Advisor categories.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -227,6 +238,7 @@ public final class OptimizerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCategoriesResult> getCategoriesPlain(GetCategoriesPlainArgs args, InvokeOptions options) {
@@ -238,6 +250,8 @@ public final class OptimizerFunctions {
      * Gets the category that corresponds to the specified OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -266,6 +280,7 @@ public final class OptimizerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCategoryResult> getCategory(GetCategoryArgs args) {
@@ -277,6 +292,8 @@ public final class OptimizerFunctions {
      * Gets the category that corresponds to the specified OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -305,6 +322,7 @@ public final class OptimizerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCategoryResult> getCategoryPlain(GetCategoryPlainArgs args) {
@@ -316,6 +334,8 @@ public final class OptimizerFunctions {
      * Gets the category that corresponds to the specified OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -344,6 +364,7 @@ public final class OptimizerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCategoryResult> getCategory(GetCategoryArgs args, InvokeOptions options) {
@@ -355,6 +376,8 @@ public final class OptimizerFunctions {
      * Gets the category that corresponds to the specified OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -383,6 +406,7 @@ public final class OptimizerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCategoryResult> getCategoryPlain(GetCategoryPlainArgs args, InvokeOptions options) {
@@ -394,6 +418,8 @@ public final class OptimizerFunctions {
      * Gets the Cloud Advisor enrollment status.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -422,6 +448,7 @@ public final class OptimizerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetEnrollmentStatusResult> getEnrollmentStatus(GetEnrollmentStatusArgs args) {
@@ -433,6 +460,8 @@ public final class OptimizerFunctions {
      * Gets the Cloud Advisor enrollment status.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -461,6 +490,7 @@ public final class OptimizerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetEnrollmentStatusResult> getEnrollmentStatusPlain(GetEnrollmentStatusPlainArgs args) {
@@ -472,6 +502,8 @@ public final class OptimizerFunctions {
      * Gets the Cloud Advisor enrollment status.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -500,6 +532,7 @@ public final class OptimizerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetEnrollmentStatusResult> getEnrollmentStatus(GetEnrollmentStatusArgs args, InvokeOptions options) {
@@ -511,6 +544,8 @@ public final class OptimizerFunctions {
      * Gets the Cloud Advisor enrollment status.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -539,6 +574,7 @@ public final class OptimizerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetEnrollmentStatusResult> getEnrollmentStatusPlain(GetEnrollmentStatusPlainArgs args, InvokeOptions options) {
@@ -550,6 +586,8 @@ public final class OptimizerFunctions {
      * Lists the Cloud Advisor enrollment statuses.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -580,6 +618,7 @@ public final class OptimizerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetEnrollmentStatusesResult> getEnrollmentStatuses(GetEnrollmentStatusesArgs args) {
@@ -591,6 +630,8 @@ public final class OptimizerFunctions {
      * Lists the Cloud Advisor enrollment statuses.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -621,6 +662,7 @@ public final class OptimizerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetEnrollmentStatusesResult> getEnrollmentStatusesPlain(GetEnrollmentStatusesPlainArgs args) {
@@ -632,6 +674,8 @@ public final class OptimizerFunctions {
      * Lists the Cloud Advisor enrollment statuses.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -662,6 +706,7 @@ public final class OptimizerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetEnrollmentStatusesResult> getEnrollmentStatuses(GetEnrollmentStatusesArgs args, InvokeOptions options) {
@@ -673,6 +718,8 @@ public final class OptimizerFunctions {
      * Lists the Cloud Advisor enrollment statuses.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -703,6 +750,7 @@ public final class OptimizerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetEnrollmentStatusesResult> getEnrollmentStatusesPlain(GetEnrollmentStatusesPlainArgs args, InvokeOptions options) {
@@ -715,6 +763,8 @@ public final class OptimizerFunctions {
      * For example, lists when recommendations have been implemented, dismissed, postponed, or reactivated.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -751,6 +801,7 @@ public final class OptimizerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetHistoriesResult> getHistories(GetHistoriesArgs args) {
@@ -763,6 +814,8 @@ public final class OptimizerFunctions {
      * For example, lists when recommendations have been implemented, dismissed, postponed, or reactivated.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -799,6 +852,7 @@ public final class OptimizerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetHistoriesResult> getHistoriesPlain(GetHistoriesPlainArgs args) {
@@ -811,6 +865,8 @@ public final class OptimizerFunctions {
      * For example, lists when recommendations have been implemented, dismissed, postponed, or reactivated.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -847,6 +903,7 @@ public final class OptimizerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetHistoriesResult> getHistories(GetHistoriesArgs args, InvokeOptions options) {
@@ -859,6 +916,8 @@ public final class OptimizerFunctions {
      * For example, lists when recommendations have been implemented, dismissed, postponed, or reactivated.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -895,6 +954,7 @@ public final class OptimizerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetHistoriesResult> getHistoriesPlain(GetHistoriesPlainArgs args, InvokeOptions options) {
@@ -906,6 +966,8 @@ public final class OptimizerFunctions {
      * Gets the specified profile&#39;s information. Uses the profile&#39;s OCID to determine which profile to retrieve.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -934,6 +996,7 @@ public final class OptimizerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetProfileResult> getProfile(GetProfileArgs args) {
@@ -945,6 +1008,8 @@ public final class OptimizerFunctions {
      * Gets the specified profile&#39;s information. Uses the profile&#39;s OCID to determine which profile to retrieve.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -973,6 +1038,7 @@ public final class OptimizerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetProfileResult> getProfilePlain(GetProfilePlainArgs args) {
@@ -984,6 +1050,8 @@ public final class OptimizerFunctions {
      * Gets the specified profile&#39;s information. Uses the profile&#39;s OCID to determine which profile to retrieve.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1012,6 +1080,7 @@ public final class OptimizerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetProfileResult> getProfile(GetProfileArgs args, InvokeOptions options) {
@@ -1023,6 +1092,8 @@ public final class OptimizerFunctions {
      * Gets the specified profile&#39;s information. Uses the profile&#39;s OCID to determine which profile to retrieve.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1051,6 +1122,7 @@ public final class OptimizerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetProfileResult> getProfilePlain(GetProfilePlainArgs args, InvokeOptions options) {
@@ -1062,6 +1134,8 @@ public final class OptimizerFunctions {
      * Lists the existing profile levels.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1093,6 +1167,7 @@ public final class OptimizerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetProfileLevelResult> getProfileLevel(GetProfileLevelArgs args) {
@@ -1104,6 +1179,8 @@ public final class OptimizerFunctions {
      * Lists the existing profile levels.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1135,6 +1212,7 @@ public final class OptimizerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetProfileLevelResult> getProfileLevelPlain(GetProfileLevelPlainArgs args) {
@@ -1146,6 +1224,8 @@ public final class OptimizerFunctions {
      * Lists the existing profile levels.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1177,6 +1257,7 @@ public final class OptimizerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetProfileLevelResult> getProfileLevel(GetProfileLevelArgs args, InvokeOptions options) {
@@ -1188,6 +1269,8 @@ public final class OptimizerFunctions {
      * Lists the existing profile levels.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1219,6 +1302,7 @@ public final class OptimizerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetProfileLevelResult> getProfileLevelPlain(GetProfileLevelPlainArgs args, InvokeOptions options) {
@@ -1230,6 +1314,8 @@ public final class OptimizerFunctions {
      * Lists the existing profile levels.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1261,6 +1347,7 @@ public final class OptimizerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetProfileLevelsResult> getProfileLevels(GetProfileLevelsArgs args) {
@@ -1272,6 +1359,8 @@ public final class OptimizerFunctions {
      * Lists the existing profile levels.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1303,6 +1392,7 @@ public final class OptimizerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetProfileLevelsResult> getProfileLevelsPlain(GetProfileLevelsPlainArgs args) {
@@ -1314,6 +1404,8 @@ public final class OptimizerFunctions {
      * Lists the existing profile levels.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1345,6 +1437,7 @@ public final class OptimizerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetProfileLevelsResult> getProfileLevels(GetProfileLevelsArgs args, InvokeOptions options) {
@@ -1356,6 +1449,8 @@ public final class OptimizerFunctions {
      * Lists the existing profile levels.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1387,6 +1482,7 @@ public final class OptimizerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetProfileLevelsResult> getProfileLevelsPlain(GetProfileLevelsPlainArgs args, InvokeOptions options) {
@@ -1398,6 +1494,8 @@ public final class OptimizerFunctions {
      * Lists the existing profiles.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1428,6 +1526,7 @@ public final class OptimizerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetProfilesResult> getProfiles(GetProfilesArgs args) {
@@ -1439,6 +1538,8 @@ public final class OptimizerFunctions {
      * Lists the existing profiles.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1469,6 +1570,7 @@ public final class OptimizerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetProfilesResult> getProfilesPlain(GetProfilesPlainArgs args) {
@@ -1480,6 +1582,8 @@ public final class OptimizerFunctions {
      * Lists the existing profiles.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1510,6 +1614,7 @@ public final class OptimizerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetProfilesResult> getProfiles(GetProfilesArgs args, InvokeOptions options) {
@@ -1521,6 +1626,8 @@ public final class OptimizerFunctions {
      * Lists the existing profiles.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1551,6 +1658,7 @@ public final class OptimizerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetProfilesResult> getProfilesPlain(GetProfilesPlainArgs args, InvokeOptions options) {
@@ -1562,6 +1670,8 @@ public final class OptimizerFunctions {
      * Gets the recommendation for the specified OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1590,6 +1700,7 @@ public final class OptimizerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRecommendationResult> getRecommendation(GetRecommendationArgs args) {
@@ -1601,6 +1712,8 @@ public final class OptimizerFunctions {
      * Gets the recommendation for the specified OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1629,6 +1742,7 @@ public final class OptimizerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRecommendationResult> getRecommendationPlain(GetRecommendationPlainArgs args) {
@@ -1640,6 +1754,8 @@ public final class OptimizerFunctions {
      * Gets the recommendation for the specified OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1668,6 +1784,7 @@ public final class OptimizerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRecommendationResult> getRecommendation(GetRecommendationArgs args, InvokeOptions options) {
@@ -1679,6 +1796,8 @@ public final class OptimizerFunctions {
      * Gets the recommendation for the specified OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1707,6 +1826,7 @@ public final class OptimizerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRecommendationResult> getRecommendationPlain(GetRecommendationPlainArgs args, InvokeOptions options) {
@@ -1718,6 +1838,8 @@ public final class OptimizerFunctions {
      * Lists the existing strategies.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1749,6 +1871,7 @@ public final class OptimizerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRecommendationStrategiesResult> getRecommendationStrategies(GetRecommendationStrategiesArgs args) {
@@ -1760,6 +1883,8 @@ public final class OptimizerFunctions {
      * Lists the existing strategies.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1791,6 +1916,7 @@ public final class OptimizerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRecommendationStrategiesResult> getRecommendationStrategiesPlain(GetRecommendationStrategiesPlainArgs args) {
@@ -1802,6 +1928,8 @@ public final class OptimizerFunctions {
      * Lists the existing strategies.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1833,6 +1961,7 @@ public final class OptimizerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRecommendationStrategiesResult> getRecommendationStrategies(GetRecommendationStrategiesArgs args, InvokeOptions options) {
@@ -1844,6 +1973,8 @@ public final class OptimizerFunctions {
      * Lists the existing strategies.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1875,6 +2006,7 @@ public final class OptimizerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRecommendationStrategiesResult> getRecommendationStrategiesPlain(GetRecommendationStrategiesPlainArgs args, InvokeOptions options) {
@@ -1886,6 +2018,8 @@ public final class OptimizerFunctions {
      * Lists the existing strategies.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1917,6 +2051,7 @@ public final class OptimizerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRecommendationStrategyResult> getRecommendationStrategy(GetRecommendationStrategyArgs args) {
@@ -1928,6 +2063,8 @@ public final class OptimizerFunctions {
      * Lists the existing strategies.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1959,6 +2096,7 @@ public final class OptimizerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRecommendationStrategyResult> getRecommendationStrategyPlain(GetRecommendationStrategyPlainArgs args) {
@@ -1970,6 +2108,8 @@ public final class OptimizerFunctions {
      * Lists the existing strategies.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2001,6 +2141,7 @@ public final class OptimizerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRecommendationStrategyResult> getRecommendationStrategy(GetRecommendationStrategyArgs args, InvokeOptions options) {
@@ -2012,6 +2153,8 @@ public final class OptimizerFunctions {
      * Lists the existing strategies.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2043,6 +2186,7 @@ public final class OptimizerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRecommendationStrategyResult> getRecommendationStrategyPlain(GetRecommendationStrategyPlainArgs args, InvokeOptions options) {
@@ -2054,6 +2198,8 @@ public final class OptimizerFunctions {
      * Lists the Cloud Advisor recommendations that are currently supported.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2090,6 +2236,7 @@ public final class OptimizerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRecommendationsResult> getRecommendations(GetRecommendationsArgs args) {
@@ -2101,6 +2248,8 @@ public final class OptimizerFunctions {
      * Lists the Cloud Advisor recommendations that are currently supported.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2137,6 +2286,7 @@ public final class OptimizerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRecommendationsResult> getRecommendationsPlain(GetRecommendationsPlainArgs args) {
@@ -2148,6 +2298,8 @@ public final class OptimizerFunctions {
      * Lists the Cloud Advisor recommendations that are currently supported.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2184,6 +2336,7 @@ public final class OptimizerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRecommendationsResult> getRecommendations(GetRecommendationsArgs args, InvokeOptions options) {
@@ -2195,6 +2348,8 @@ public final class OptimizerFunctions {
      * Lists the Cloud Advisor recommendations that are currently supported.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2231,6 +2386,7 @@ public final class OptimizerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRecommendationsResult> getRecommendationsPlain(GetRecommendationsPlainArgs args, InvokeOptions options) {
@@ -2242,6 +2398,8 @@ public final class OptimizerFunctions {
      * Gets the resource action that corresponds to the specified OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2271,6 +2429,7 @@ public final class OptimizerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetResourceActionResult> getResourceAction(GetResourceActionArgs args) {
@@ -2282,6 +2441,8 @@ public final class OptimizerFunctions {
      * Gets the resource action that corresponds to the specified OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2311,6 +2472,7 @@ public final class OptimizerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetResourceActionResult> getResourceActionPlain(GetResourceActionPlainArgs args) {
@@ -2322,6 +2484,8 @@ public final class OptimizerFunctions {
      * Gets the resource action that corresponds to the specified OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2351,6 +2515,7 @@ public final class OptimizerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetResourceActionResult> getResourceAction(GetResourceActionArgs args, InvokeOptions options) {
@@ -2362,6 +2527,8 @@ public final class OptimizerFunctions {
      * Gets the resource action that corresponds to the specified OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2391,6 +2558,7 @@ public final class OptimizerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetResourceActionResult> getResourceActionPlain(GetResourceActionPlainArgs args, InvokeOptions options) {
@@ -2402,6 +2570,8 @@ public final class OptimizerFunctions {
      * Lists the Cloud Advisor resource actions that are supported.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2440,6 +2610,7 @@ public final class OptimizerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetResourceActionsResult> getResourceActions(GetResourceActionsArgs args) {
@@ -2451,6 +2622,8 @@ public final class OptimizerFunctions {
      * Lists the Cloud Advisor resource actions that are supported.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2489,6 +2662,7 @@ public final class OptimizerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetResourceActionsResult> getResourceActionsPlain(GetResourceActionsPlainArgs args) {
@@ -2500,6 +2674,8 @@ public final class OptimizerFunctions {
      * Lists the Cloud Advisor resource actions that are supported.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2538,6 +2714,7 @@ public final class OptimizerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetResourceActionsResult> getResourceActions(GetResourceActionsArgs args, InvokeOptions options) {
@@ -2549,6 +2726,8 @@ public final class OptimizerFunctions {
      * Lists the Cloud Advisor resource actions that are supported.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2587,6 +2766,7 @@ public final class OptimizerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetResourceActionsResult> getResourceActionsPlain(GetResourceActionsPlainArgs args, InvokeOptions options) {

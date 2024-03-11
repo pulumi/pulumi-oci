@@ -27,6 +27,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -51,15 +52,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // AuthTokens can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Identity/authToken:AuthToken test_auth_token "users/{userId}/authTokens/{authTokenId}"
-//
+// $ pulumi import oci:Identity/authToken:AuthToken test_auth_token "users/{userId}/authTokens/{authTokenId}"
 // ```
 type AuthToken struct {
 	pulumi.CustomResourceState

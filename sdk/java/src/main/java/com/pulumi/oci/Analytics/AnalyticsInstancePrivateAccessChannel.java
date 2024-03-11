@@ -23,6 +23,8 @@ import javax.annotation.Nullable;
  * and creates a new WorkRequest.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -66,13 +68,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * AnalyticsInstancePrivateAccessChannels can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Analytics/analyticsInstancePrivateAccessChannel:AnalyticsInstancePrivateAccessChannel test_analytics_instance_private_access_channel &#34;analyticsInstances/{analyticsInstanceId}/privateAccessChannels/{privateAccessChannelKey}&#34;
+ * $ pulumi import oci:Analytics/analyticsInstancePrivateAccessChannel:AnalyticsInstancePrivateAccessChannel test_analytics_instance_private_access_channel &#34;analyticsInstances/{analyticsInstanceId}/privateAccessChannels/{privateAccessChannelKey}&#34;
  * ```
  * 
  */

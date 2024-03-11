@@ -86,12 +86,14 @@ def get_hostnames(filters: Optional[Sequence[pulumi.InputType['GetHostnamesFilte
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_hostnames = oci.LoadBalancer.get_hostnames(load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the hostnames to retrieve.
@@ -120,12 +122,14 @@ def get_hostnames_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_hostnames = oci.LoadBalancer.get_hostnames(load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the hostnames to retrieve.

@@ -13,19 +13,21 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
  * const testDiscoveryJobsResult = new oci.datasafe.DiscoveryJobsResult("testDiscoveryJobsResult", {});
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * DiscoveryJobsResults can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:DataSafe/discoveryJobsResult:DiscoveryJobsResult test_discovery_jobs_result "discoveryJobs/{discoveryJobId}/results/{resultKey}"
+ * $ pulumi import oci:DataSafe/discoveryJobsResult:DiscoveryJobsResult test_discovery_jobs_result "discoveryJobs/{discoveryJobId}/results/{resultKey}"
  * ```
  */
 export class DiscoveryJobsResult extends pulumi.CustomResource {

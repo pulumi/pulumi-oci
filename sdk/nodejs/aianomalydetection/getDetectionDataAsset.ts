@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,6 +22,7 @@ import * as utilities from "../utilities";
  *     dataAssetId: oci_ai_anomaly_detection_data_asset.test_data_asset.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDetectionDataAsset(args: GetDetectionDataAssetArgs, opts?: pulumi.InvokeOptions): Promise<GetDetectionDataAssetResult> {
 
@@ -105,6 +107,7 @@ export interface GetDetectionDataAssetResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -113,6 +116,7 @@ export interface GetDetectionDataAssetResult {
  *     dataAssetId: oci_ai_anomaly_detection_data_asset.test_data_asset.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDetectionDataAssetOutput(args: GetDetectionDataAssetOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDetectionDataAssetResult> {
     return pulumi.output(args).apply((a: any) => getDetectionDataAsset(a, opts))

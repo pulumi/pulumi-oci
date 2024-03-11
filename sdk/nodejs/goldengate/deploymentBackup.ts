@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -30,13 +31,14 @@ import * as utilities from "../utilities";
  *     },
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * DeploymentBackups can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:GoldenGate/deploymentBackup:DeploymentBackup test_deployment_backup "id"
+ * $ pulumi import oci:GoldenGate/deploymentBackup:DeploymentBackup test_deployment_backup "id"
  * ```
  */
 export class DeploymentBackup extends pulumi.CustomResource {

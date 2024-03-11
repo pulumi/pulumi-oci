@@ -16,10 +16,9 @@ namespace Pulumi.Oci.Logging
         /// 
         /// Lists all unified agent configurations in the specified compartment.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -40,8 +39,7 @@ namespace Pulumi.Oci.Logging
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetUnifiedAgentConfigurationsResult> InvokeAsync(GetUnifiedAgentConfigurationsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetUnifiedAgentConfigurationsResult>("oci:Logging/getUnifiedAgentConfigurations:getUnifiedAgentConfigurations", args ?? new GetUnifiedAgentConfigurationsArgs(), options.WithDefaults());
@@ -51,10 +49,9 @@ namespace Pulumi.Oci.Logging
         /// 
         /// Lists all unified agent configurations in the specified compartment.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -75,8 +72,7 @@ namespace Pulumi.Oci.Logging
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetUnifiedAgentConfigurationsResult> Invoke(GetUnifiedAgentConfigurationsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetUnifiedAgentConfigurationsResult>("oci:Logging/getUnifiedAgentConfigurations:getUnifiedAgentConfigurations", args ?? new GetUnifiedAgentConfigurationsInvokeArgs(), options.WithDefaults());

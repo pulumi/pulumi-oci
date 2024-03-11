@@ -1141,6 +1141,7 @@ class AutonomousVmCluster(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -1180,13 +1181,14 @@ class AutonomousVmCluster(pulumi.CustomResource):
             time_zone=var["autonomous_vm_cluster_time_zone"],
             total_container_databases=var["autonomous_vm_cluster_total_container_databases"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         AutonomousVmClusters can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Database/autonomousVmCluster:AutonomousVmCluster test_autonomous_vm_cluster "id"
+        $ pulumi import oci:Database/autonomousVmCluster:AutonomousVmCluster test_autonomous_vm_cluster "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -1228,6 +1230,7 @@ class AutonomousVmCluster(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -1267,13 +1270,14 @@ class AutonomousVmCluster(pulumi.CustomResource):
             time_zone=var["autonomous_vm_cluster_time_zone"],
             total_container_databases=var["autonomous_vm_cluster_total_container_databases"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         AutonomousVmClusters can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Database/autonomousVmCluster:AutonomousVmCluster test_autonomous_vm_cluster "id"
+        $ pulumi import oci:Database/autonomousVmCluster:AutonomousVmCluster test_autonomous_vm_cluster "id"
         ```
 
         :param str resource_name: The name of the resource.

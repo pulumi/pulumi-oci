@@ -16,6 +16,7 @@ namespace Pulumi.Oci.Waf
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -51,13 +52,14 @@ namespace Pulumi.Oci.Waf
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// NetworkAddressLists can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Waf/networkAddressList:NetworkAddressList test_network_address_list "id"
+    /// $ pulumi import oci:Waf/networkAddressList:NetworkAddressList test_network_address_list "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Waf/networkAddressList:NetworkAddressList")]

@@ -42,6 +42,8 @@ import javax.annotation.Nullable;
  * the gateway without changing the route rule.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -76,13 +78,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * InternetGateways can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Core/internetGateway:InternetGateway test_internet_gateway &#34;id&#34;
+ * $ pulumi import oci:Core/internetGateway:InternetGateway test_internet_gateway &#34;id&#34;
  * ```
  * 
  */

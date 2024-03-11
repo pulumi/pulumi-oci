@@ -342,6 +342,7 @@ class RecoveryServiceSubnet(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -358,13 +359,14 @@ class RecoveryServiceSubnet(pulumi.CustomResource):
                 "bar-key": "value",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         RecoveryServiceSubnets can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:RecoveryMod/recoveryServiceSubnet:RecoveryServiceSubnet test_recovery_service_subnet "id"
+        $ pulumi import oci:RecoveryMod/recoveryServiceSubnet:RecoveryServiceSubnet test_recovery_service_subnet "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -393,6 +395,7 @@ class RecoveryServiceSubnet(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -409,13 +412,14 @@ class RecoveryServiceSubnet(pulumi.CustomResource):
                 "bar-key": "value",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         RecoveryServiceSubnets can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:RecoveryMod/recoveryServiceSubnet:RecoveryServiceSubnet test_recovery_service_subnet "id"
+        $ pulumi import oci:RecoveryMod/recoveryServiceSubnet:RecoveryServiceSubnet test_recovery_service_subnet "id"
         ```
 
         :param str resource_name: The name of the resource.

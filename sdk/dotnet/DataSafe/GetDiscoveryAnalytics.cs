@@ -19,10 +19,9 @@ namespace Pulumi.Oci.DataSafe
         /// is equivalent to accessLevel "ACCESSIBLE" by default.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -44,8 +43,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDiscoveryAnalyticsResult> InvokeAsync(GetDiscoveryAnalyticsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDiscoveryAnalyticsResult>("oci:DataSafe/getDiscoveryAnalytics:getDiscoveryAnalytics", args ?? new GetDiscoveryAnalyticsArgs(), options.WithDefaults());
@@ -58,10 +56,9 @@ namespace Pulumi.Oci.DataSafe
         /// is equivalent to accessLevel "ACCESSIBLE" by default.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -83,8 +80,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDiscoveryAnalyticsResult> Invoke(GetDiscoveryAnalyticsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDiscoveryAnalyticsResult>("oci:DataSafe/getDiscoveryAnalytics:getDiscoveryAnalytics", args ?? new GetDiscoveryAnalyticsInvokeArgs(), options.WithDefaults());

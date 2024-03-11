@@ -21,9 +21,7 @@ import (
 // ExternalAsmInstances can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:DatabaseManagement/externalAsmInstance:ExternalAsmInstance test_external_asm_instance "id"
-//
+// $ pulumi import oci:DatabaseManagement/externalAsmInstance:ExternalAsmInstance test_external_asm_instance "id"
 // ```
 type ExternalAsmInstance struct {
 	pulumi.CustomResourceState

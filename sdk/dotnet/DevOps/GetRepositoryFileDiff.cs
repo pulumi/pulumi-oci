@@ -17,10 +17,9 @@ namespace Pulumi.Oci.DevOps
         /// Gets the line-by-line difference between file on different commits.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -40,8 +39,7 @@ namespace Pulumi.Oci.DevOps
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetRepositoryFileDiffResult> InvokeAsync(GetRepositoryFileDiffArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetRepositoryFileDiffResult>("oci:DevOps/getRepositoryFileDiff:getRepositoryFileDiff", args ?? new GetRepositoryFileDiffArgs(), options.WithDefaults());
@@ -52,10 +50,9 @@ namespace Pulumi.Oci.DevOps
         /// Gets the line-by-line difference between file on different commits.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -75,8 +72,7 @@ namespace Pulumi.Oci.DevOps
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetRepositoryFileDiffResult> Invoke(GetRepositoryFileDiffInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetRepositoryFileDiffResult>("oci:DevOps/getRepositoryFileDiff:getRepositoryFileDiff", args ?? new GetRepositoryFileDiffInvokeArgs(), options.WithDefaults());

@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -50,13 +51,14 @@ import * as utilities from "../utilities";
  *     }],
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * StreamCdnConfigs can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:MediaServices/streamCdnConfig:StreamCdnConfig test_stream_cdn_config "id"
+ * $ pulumi import oci:MediaServices/streamCdnConfig:StreamCdnConfig test_stream_cdn_config "id"
  * ```
  */
 export class StreamCdnConfig extends pulumi.CustomResource {

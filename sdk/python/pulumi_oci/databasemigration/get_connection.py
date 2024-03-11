@@ -330,12 +330,14 @@ def get_connection(connection_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_connection = oci.DatabaseMigration.get_connection(connection_id=oci_database_migration_connection["test_connection"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str connection_id: The OCID of the database connection
@@ -383,12 +385,14 @@ def get_connection_output(connection_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_connection = oci.DatabaseMigration.get_connection(connection_id=oci_database_migration_connection["test_connection"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str connection_id: The OCID of the database connection

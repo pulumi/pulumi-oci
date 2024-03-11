@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,6 +22,7 @@ import * as utilities from "../utilities";
  *     dbSystemId: oci_mysql_mysql_db_system.test_db_system.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getMysqlDbSystem(args: GetMysqlDbSystemArgs, opts?: pulumi.InvokeOptions): Promise<GetMysqlDbSystemResult> {
 
@@ -199,6 +201,7 @@ export interface GetMysqlDbSystemResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -207,6 +210,7 @@ export interface GetMysqlDbSystemResult {
  *     dbSystemId: oci_mysql_mysql_db_system.test_db_system.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getMysqlDbSystemOutput(args: GetMysqlDbSystemOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMysqlDbSystemResult> {
     return pulumi.output(args).apply((a: any) => getMysqlDbSystem(a, opts))

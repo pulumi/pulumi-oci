@@ -539,6 +539,7 @@ class Function(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -569,13 +570,14 @@ class Function(pulumi.CustomResource):
                 is_enabled=var["function_trace_config_is_enabled"],
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Functions can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Functions/function:Function test_function "id"
+        $ pulumi import oci:Functions/function:Function test_function "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -608,6 +610,7 @@ class Function(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -638,13 +641,14 @@ class Function(pulumi.CustomResource):
                 is_enabled=var["function_trace_config_is_enabled"],
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Functions can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Functions/function:Function test_function "id"
+        $ pulumi import oci:Functions/function:Function test_function "id"
         ```
 
         :param str resource_name: The name of the resource.

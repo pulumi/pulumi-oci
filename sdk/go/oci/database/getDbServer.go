@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,6 +42,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetDbServer(ctx *pulumi.Context, args *GetDbServerArgs, opts ...pulumi.InvokeOption) (*GetDbServerResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDbServerResult

@@ -61,6 +61,8 @@ public final class ServiceMeshFunctions {
      * Returns a list of AccessPolicy objects.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -93,6 +95,7 @@ public final class ServiceMeshFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAccessPoliciesResult> getAccessPolicies(GetAccessPoliciesArgs args) {
@@ -104,6 +107,8 @@ public final class ServiceMeshFunctions {
      * Returns a list of AccessPolicy objects.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -136,6 +141,7 @@ public final class ServiceMeshFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAccessPoliciesResult> getAccessPoliciesPlain(GetAccessPoliciesPlainArgs args) {
@@ -147,6 +153,8 @@ public final class ServiceMeshFunctions {
      * Returns a list of AccessPolicy objects.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -179,6 +187,7 @@ public final class ServiceMeshFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAccessPoliciesResult> getAccessPolicies(GetAccessPoliciesArgs args, InvokeOptions options) {
@@ -190,6 +199,8 @@ public final class ServiceMeshFunctions {
      * Returns a list of AccessPolicy objects.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -222,6 +233,7 @@ public final class ServiceMeshFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAccessPoliciesResult> getAccessPoliciesPlain(GetAccessPoliciesPlainArgs args, InvokeOptions options) {
@@ -233,6 +245,8 @@ public final class ServiceMeshFunctions {
      * Get an AccessPolicy by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -261,6 +275,7 @@ public final class ServiceMeshFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAccessPolicyResult> getAccessPolicy(GetAccessPolicyArgs args) {
@@ -272,6 +287,8 @@ public final class ServiceMeshFunctions {
      * Get an AccessPolicy by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -300,6 +317,7 @@ public final class ServiceMeshFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAccessPolicyResult> getAccessPolicyPlain(GetAccessPolicyPlainArgs args) {
@@ -311,6 +329,8 @@ public final class ServiceMeshFunctions {
      * Get an AccessPolicy by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -339,6 +359,7 @@ public final class ServiceMeshFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAccessPolicyResult> getAccessPolicy(GetAccessPolicyArgs args, InvokeOptions options) {
@@ -350,6 +371,8 @@ public final class ServiceMeshFunctions {
      * Get an AccessPolicy by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -378,6 +401,7 @@ public final class ServiceMeshFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAccessPolicyResult> getAccessPolicyPlain(GetAccessPolicyPlainArgs args, InvokeOptions options) {
@@ -389,6 +413,8 @@ public final class ServiceMeshFunctions {
      * Gets an IngressGateway by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -417,6 +443,7 @@ public final class ServiceMeshFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetIngressGatewayResult> getIngressGateway(GetIngressGatewayArgs args) {
@@ -428,6 +455,8 @@ public final class ServiceMeshFunctions {
      * Gets an IngressGateway by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -456,6 +485,7 @@ public final class ServiceMeshFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetIngressGatewayResult> getIngressGatewayPlain(GetIngressGatewayPlainArgs args) {
@@ -467,6 +497,8 @@ public final class ServiceMeshFunctions {
      * Gets an IngressGateway by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -495,6 +527,7 @@ public final class ServiceMeshFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetIngressGatewayResult> getIngressGateway(GetIngressGatewayArgs args, InvokeOptions options) {
@@ -506,6 +539,8 @@ public final class ServiceMeshFunctions {
      * Gets an IngressGateway by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -534,6 +569,7 @@ public final class ServiceMeshFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetIngressGatewayResult> getIngressGatewayPlain(GetIngressGatewayPlainArgs args, InvokeOptions options) {
@@ -545,6 +581,8 @@ public final class ServiceMeshFunctions {
      * Gets a IngressGatewayRouteTable by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -573,6 +611,7 @@ public final class ServiceMeshFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetIngressGatewayRouteTableResult> getIngressGatewayRouteTable(GetIngressGatewayRouteTableArgs args) {
@@ -584,6 +623,8 @@ public final class ServiceMeshFunctions {
      * Gets a IngressGatewayRouteTable by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -612,6 +653,7 @@ public final class ServiceMeshFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetIngressGatewayRouteTableResult> getIngressGatewayRouteTablePlain(GetIngressGatewayRouteTablePlainArgs args) {
@@ -623,6 +665,8 @@ public final class ServiceMeshFunctions {
      * Gets a IngressGatewayRouteTable by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -651,6 +695,7 @@ public final class ServiceMeshFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetIngressGatewayRouteTableResult> getIngressGatewayRouteTable(GetIngressGatewayRouteTableArgs args, InvokeOptions options) {
@@ -662,6 +707,8 @@ public final class ServiceMeshFunctions {
      * Gets a IngressGatewayRouteTable by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -690,6 +737,7 @@ public final class ServiceMeshFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetIngressGatewayRouteTableResult> getIngressGatewayRouteTablePlain(GetIngressGatewayRouteTablePlainArgs args, InvokeOptions options) {
@@ -701,6 +749,8 @@ public final class ServiceMeshFunctions {
      * Returns a list of IngressGatewayRouteTable objects.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -733,6 +783,7 @@ public final class ServiceMeshFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetIngressGatewayRouteTablesResult> getIngressGatewayRouteTables(GetIngressGatewayRouteTablesArgs args) {
@@ -744,6 +795,8 @@ public final class ServiceMeshFunctions {
      * Returns a list of IngressGatewayRouteTable objects.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -776,6 +829,7 @@ public final class ServiceMeshFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetIngressGatewayRouteTablesResult> getIngressGatewayRouteTablesPlain(GetIngressGatewayRouteTablesPlainArgs args) {
@@ -787,6 +841,8 @@ public final class ServiceMeshFunctions {
      * Returns a list of IngressGatewayRouteTable objects.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -819,6 +875,7 @@ public final class ServiceMeshFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetIngressGatewayRouteTablesResult> getIngressGatewayRouteTables(GetIngressGatewayRouteTablesArgs args, InvokeOptions options) {
@@ -830,6 +887,8 @@ public final class ServiceMeshFunctions {
      * Returns a list of IngressGatewayRouteTable objects.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -862,6 +921,7 @@ public final class ServiceMeshFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetIngressGatewayRouteTablesResult> getIngressGatewayRouteTablesPlain(GetIngressGatewayRouteTablesPlainArgs args, InvokeOptions options) {
@@ -873,6 +933,8 @@ public final class ServiceMeshFunctions {
      * Returns a list of IngressGateway objects.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -905,6 +967,7 @@ public final class ServiceMeshFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetIngressGatewaysResult> getIngressGateways(GetIngressGatewaysArgs args) {
@@ -916,6 +979,8 @@ public final class ServiceMeshFunctions {
      * Returns a list of IngressGateway objects.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -948,6 +1013,7 @@ public final class ServiceMeshFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetIngressGatewaysResult> getIngressGatewaysPlain(GetIngressGatewaysPlainArgs args) {
@@ -959,6 +1025,8 @@ public final class ServiceMeshFunctions {
      * Returns a list of IngressGateway objects.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -991,6 +1059,7 @@ public final class ServiceMeshFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetIngressGatewaysResult> getIngressGateways(GetIngressGatewaysArgs args, InvokeOptions options) {
@@ -1002,6 +1071,8 @@ public final class ServiceMeshFunctions {
      * Returns a list of IngressGateway objects.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1034,6 +1105,7 @@ public final class ServiceMeshFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetIngressGatewaysResult> getIngressGatewaysPlain(GetIngressGatewaysPlainArgs args, InvokeOptions options) {
@@ -1045,6 +1117,8 @@ public final class ServiceMeshFunctions {
      * Gets a Mesh by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1073,6 +1147,7 @@ public final class ServiceMeshFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMeshResult> getMesh(GetMeshArgs args) {
@@ -1084,6 +1159,8 @@ public final class ServiceMeshFunctions {
      * Gets a Mesh by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1112,6 +1189,7 @@ public final class ServiceMeshFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMeshResult> getMeshPlain(GetMeshPlainArgs args) {
@@ -1123,6 +1201,8 @@ public final class ServiceMeshFunctions {
      * Gets a Mesh by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1151,6 +1231,7 @@ public final class ServiceMeshFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMeshResult> getMesh(GetMeshArgs args, InvokeOptions options) {
@@ -1162,6 +1243,8 @@ public final class ServiceMeshFunctions {
      * Gets a Mesh by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1190,6 +1273,7 @@ public final class ServiceMeshFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMeshResult> getMeshPlain(GetMeshPlainArgs args, InvokeOptions options) {
@@ -1201,6 +1285,8 @@ public final class ServiceMeshFunctions {
      * Returns a list of Mesh objects.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1232,6 +1318,7 @@ public final class ServiceMeshFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMeshesResult> getMeshes(GetMeshesArgs args) {
@@ -1243,6 +1330,8 @@ public final class ServiceMeshFunctions {
      * Returns a list of Mesh objects.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1274,6 +1363,7 @@ public final class ServiceMeshFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMeshesResult> getMeshesPlain(GetMeshesPlainArgs args) {
@@ -1285,6 +1375,8 @@ public final class ServiceMeshFunctions {
      * Returns a list of Mesh objects.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1316,6 +1408,7 @@ public final class ServiceMeshFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMeshesResult> getMeshes(GetMeshesArgs args, InvokeOptions options) {
@@ -1327,6 +1420,8 @@ public final class ServiceMeshFunctions {
      * Returns a list of Mesh objects.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1358,6 +1453,7 @@ public final class ServiceMeshFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMeshesResult> getMeshesPlain(GetMeshesPlainArgs args, InvokeOptions options) {
@@ -1369,6 +1465,8 @@ public final class ServiceMeshFunctions {
      * Returns the attributes of the Proxy such as proxy image version.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1394,6 +1492,7 @@ public final class ServiceMeshFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetProxyDetailResult> getProxyDetail() {
@@ -1405,6 +1504,8 @@ public final class ServiceMeshFunctions {
      * Returns the attributes of the Proxy such as proxy image version.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1430,6 +1531,7 @@ public final class ServiceMeshFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetProxyDetailResult> getProxyDetailPlain() {
@@ -1441,6 +1543,8 @@ public final class ServiceMeshFunctions {
      * Returns the attributes of the Proxy such as proxy image version.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1466,6 +1570,7 @@ public final class ServiceMeshFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetProxyDetailResult> getProxyDetail(InvokeArgs args) {
@@ -1477,6 +1582,8 @@ public final class ServiceMeshFunctions {
      * Returns the attributes of the Proxy such as proxy image version.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1502,6 +1609,7 @@ public final class ServiceMeshFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetProxyDetailResult> getProxyDetailPlain(InvokeArgs args) {
@@ -1513,6 +1621,8 @@ public final class ServiceMeshFunctions {
      * Returns the attributes of the Proxy such as proxy image version.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1538,6 +1648,7 @@ public final class ServiceMeshFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetProxyDetailResult> getProxyDetail(InvokeArgs args, InvokeOptions options) {
@@ -1549,6 +1660,8 @@ public final class ServiceMeshFunctions {
      * Returns the attributes of the Proxy such as proxy image version.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1574,6 +1687,7 @@ public final class ServiceMeshFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetProxyDetailResult> getProxyDetailPlain(InvokeArgs args, InvokeOptions options) {
@@ -1585,6 +1699,8 @@ public final class ServiceMeshFunctions {
      * Gets a VirtualDeployment by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1613,6 +1729,7 @@ public final class ServiceMeshFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVirtualDeploymentResult> getVirtualDeployment(GetVirtualDeploymentArgs args) {
@@ -1624,6 +1741,8 @@ public final class ServiceMeshFunctions {
      * Gets a VirtualDeployment by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1652,6 +1771,7 @@ public final class ServiceMeshFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVirtualDeploymentResult> getVirtualDeploymentPlain(GetVirtualDeploymentPlainArgs args) {
@@ -1663,6 +1783,8 @@ public final class ServiceMeshFunctions {
      * Gets a VirtualDeployment by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1691,6 +1813,7 @@ public final class ServiceMeshFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVirtualDeploymentResult> getVirtualDeployment(GetVirtualDeploymentArgs args, InvokeOptions options) {
@@ -1702,6 +1825,8 @@ public final class ServiceMeshFunctions {
      * Gets a VirtualDeployment by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1730,6 +1855,7 @@ public final class ServiceMeshFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVirtualDeploymentResult> getVirtualDeploymentPlain(GetVirtualDeploymentPlainArgs args, InvokeOptions options) {
@@ -1741,6 +1867,8 @@ public final class ServiceMeshFunctions {
      * Returns a list of VirtualDeployments.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1773,6 +1901,7 @@ public final class ServiceMeshFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVirtualDeploymentsResult> getVirtualDeployments(GetVirtualDeploymentsArgs args) {
@@ -1784,6 +1913,8 @@ public final class ServiceMeshFunctions {
      * Returns a list of VirtualDeployments.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1816,6 +1947,7 @@ public final class ServiceMeshFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVirtualDeploymentsResult> getVirtualDeploymentsPlain(GetVirtualDeploymentsPlainArgs args) {
@@ -1827,6 +1959,8 @@ public final class ServiceMeshFunctions {
      * Returns a list of VirtualDeployments.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1859,6 +1993,7 @@ public final class ServiceMeshFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVirtualDeploymentsResult> getVirtualDeployments(GetVirtualDeploymentsArgs args, InvokeOptions options) {
@@ -1870,6 +2005,8 @@ public final class ServiceMeshFunctions {
      * Returns a list of VirtualDeployments.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1902,6 +2039,7 @@ public final class ServiceMeshFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVirtualDeploymentsResult> getVirtualDeploymentsPlain(GetVirtualDeploymentsPlainArgs args, InvokeOptions options) {
@@ -1913,6 +2051,8 @@ public final class ServiceMeshFunctions {
      * Gets a VirtualService by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1941,6 +2081,7 @@ public final class ServiceMeshFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVirtualServiceResult> getVirtualService(GetVirtualServiceArgs args) {
@@ -1952,6 +2093,8 @@ public final class ServiceMeshFunctions {
      * Gets a VirtualService by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1980,6 +2123,7 @@ public final class ServiceMeshFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVirtualServiceResult> getVirtualServicePlain(GetVirtualServicePlainArgs args) {
@@ -1991,6 +2135,8 @@ public final class ServiceMeshFunctions {
      * Gets a VirtualService by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2019,6 +2165,7 @@ public final class ServiceMeshFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVirtualServiceResult> getVirtualService(GetVirtualServiceArgs args, InvokeOptions options) {
@@ -2030,6 +2177,8 @@ public final class ServiceMeshFunctions {
      * Gets a VirtualService by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2058,6 +2207,7 @@ public final class ServiceMeshFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVirtualServiceResult> getVirtualServicePlain(GetVirtualServicePlainArgs args, InvokeOptions options) {
@@ -2069,6 +2219,8 @@ public final class ServiceMeshFunctions {
      * Gets a VirtualServiceRouteTable by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2097,6 +2249,7 @@ public final class ServiceMeshFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVirtualServiceRouteTableResult> getVirtualServiceRouteTable(GetVirtualServiceRouteTableArgs args) {
@@ -2108,6 +2261,8 @@ public final class ServiceMeshFunctions {
      * Gets a VirtualServiceRouteTable by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2136,6 +2291,7 @@ public final class ServiceMeshFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVirtualServiceRouteTableResult> getVirtualServiceRouteTablePlain(GetVirtualServiceRouteTablePlainArgs args) {
@@ -2147,6 +2303,8 @@ public final class ServiceMeshFunctions {
      * Gets a VirtualServiceRouteTable by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2175,6 +2333,7 @@ public final class ServiceMeshFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVirtualServiceRouteTableResult> getVirtualServiceRouteTable(GetVirtualServiceRouteTableArgs args, InvokeOptions options) {
@@ -2186,6 +2345,8 @@ public final class ServiceMeshFunctions {
      * Gets a VirtualServiceRouteTable by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2214,6 +2375,7 @@ public final class ServiceMeshFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVirtualServiceRouteTableResult> getVirtualServiceRouteTablePlain(GetVirtualServiceRouteTablePlainArgs args, InvokeOptions options) {
@@ -2225,6 +2387,8 @@ public final class ServiceMeshFunctions {
      * Returns a list of VirtualServiceRouteTable objects.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2257,6 +2421,7 @@ public final class ServiceMeshFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVirtualServiceRouteTablesResult> getVirtualServiceRouteTables(GetVirtualServiceRouteTablesArgs args) {
@@ -2268,6 +2433,8 @@ public final class ServiceMeshFunctions {
      * Returns a list of VirtualServiceRouteTable objects.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2300,6 +2467,7 @@ public final class ServiceMeshFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVirtualServiceRouteTablesResult> getVirtualServiceRouteTablesPlain(GetVirtualServiceRouteTablesPlainArgs args) {
@@ -2311,6 +2479,8 @@ public final class ServiceMeshFunctions {
      * Returns a list of VirtualServiceRouteTable objects.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2343,6 +2513,7 @@ public final class ServiceMeshFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVirtualServiceRouteTablesResult> getVirtualServiceRouteTables(GetVirtualServiceRouteTablesArgs args, InvokeOptions options) {
@@ -2354,6 +2525,8 @@ public final class ServiceMeshFunctions {
      * Returns a list of VirtualServiceRouteTable objects.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2386,6 +2559,7 @@ public final class ServiceMeshFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVirtualServiceRouteTablesResult> getVirtualServiceRouteTablesPlain(GetVirtualServiceRouteTablesPlainArgs args, InvokeOptions options) {
@@ -2397,6 +2571,8 @@ public final class ServiceMeshFunctions {
      * Returns a list of VirtualService objects.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2429,6 +2605,7 @@ public final class ServiceMeshFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVirtualServicesResult> getVirtualServices(GetVirtualServicesArgs args) {
@@ -2440,6 +2617,8 @@ public final class ServiceMeshFunctions {
      * Returns a list of VirtualService objects.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2472,6 +2651,7 @@ public final class ServiceMeshFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVirtualServicesResult> getVirtualServicesPlain(GetVirtualServicesPlainArgs args) {
@@ -2483,6 +2663,8 @@ public final class ServiceMeshFunctions {
      * Returns a list of VirtualService objects.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2515,6 +2697,7 @@ public final class ServiceMeshFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVirtualServicesResult> getVirtualServices(GetVirtualServicesArgs args, InvokeOptions options) {
@@ -2526,6 +2709,8 @@ public final class ServiceMeshFunctions {
      * Returns a list of VirtualService objects.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2558,6 +2743,7 @@ public final class ServiceMeshFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVirtualServicesResult> getVirtualServicesPlain(GetVirtualServicesPlainArgs args, InvokeOptions options) {

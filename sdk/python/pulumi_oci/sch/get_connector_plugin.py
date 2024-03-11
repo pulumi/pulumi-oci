@@ -158,12 +158,14 @@ def get_connector_plugin(connector_plugin_name: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_connector_plugin = oci.Sch.get_connector_plugin(connector_plugin_name=oci_sch_connector_plugin["test_connector_plugin"]["name"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str connector_plugin_name: The name of the connector plugin. This name indicates the service to be called by the connector plugin. For example, `QueueSource` indicates the Queue service.
@@ -196,12 +198,14 @@ def get_connector_plugin_output(connector_plugin_name: Optional[pulumi.Input[str
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_connector_plugin = oci.Sch.get_connector_plugin(connector_plugin_name=oci_sch_connector_plugin["test_connector_plugin"]["name"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str connector_plugin_name: The name of the connector plugin. This name indicates the service to be called by the connector plugin. For example, `QueueSource` indicates the Queue service.

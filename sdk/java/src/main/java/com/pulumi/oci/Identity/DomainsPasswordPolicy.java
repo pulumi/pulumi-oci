@@ -30,6 +30,7 @@ import javax.annotation.Nullable;
  * 
  * ## Example Usage
  * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -109,13 +110,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * PasswordPolicies can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Identity/domainsPasswordPolicy:DomainsPasswordPolicy test_password_policy &#34;idcsEndpoint/{idcsEndpoint}/passwordPolicies/{passwordPolicyId}&#34;
+ * $ pulumi import oci:Identity/domainsPasswordPolicy:DomainsPasswordPolicy test_password_policy &#34;idcsEndpoint/{idcsEndpoint}/passwordPolicies/{passwordPolicyId}&#34;
  * ```
  * 
  */

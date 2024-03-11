@@ -16,10 +16,9 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// Gets a configured object storage based collection rule by given id
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,8 +35,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetLogAnalyticsObjectCollectionRuleResult> InvokeAsync(GetLogAnalyticsObjectCollectionRuleArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetLogAnalyticsObjectCollectionRuleResult>("oci:LogAnalytics/getLogAnalyticsObjectCollectionRule:getLogAnalyticsObjectCollectionRule", args ?? new GetLogAnalyticsObjectCollectionRuleArgs(), options.WithDefaults());
@@ -47,10 +45,9 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// Gets a configured object storage based collection rule by given id
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -67,8 +64,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetLogAnalyticsObjectCollectionRuleResult> Invoke(GetLogAnalyticsObjectCollectionRuleInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetLogAnalyticsObjectCollectionRuleResult>("oci:LogAnalytics/getLogAnalyticsObjectCollectionRule:getLogAnalyticsObjectCollectionRule", args ?? new GetLogAnalyticsObjectCollectionRuleInvokeArgs(), options.WithDefaults());

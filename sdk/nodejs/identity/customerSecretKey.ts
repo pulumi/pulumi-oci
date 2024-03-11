@@ -21,6 +21,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -30,13 +31,14 @@ import * as utilities from "../utilities";
  *     userId: oci_identity_user.test_user.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * CustomerSecretKeys can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Identity/customerSecretKey:CustomerSecretKey test_customer_secret_key "users/{userId}/customerSecretKeys/{customerSecretKeyId}"
+ * $ pulumi import oci:Identity/customerSecretKey:CustomerSecretKey test_customer_secret_key "users/{userId}/customerSecretKeys/{customerSecretKeyId}"
  * ```
  */
 export class CustomerSecretKey extends pulumi.CustomResource {

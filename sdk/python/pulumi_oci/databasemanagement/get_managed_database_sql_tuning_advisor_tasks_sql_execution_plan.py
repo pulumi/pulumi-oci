@@ -118,6 +118,7 @@ def get_managed_database_sql_tuning_advisor_tasks_sql_execution_plan(attribute: 
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -128,6 +129,7 @@ def get_managed_database_sql_tuning_advisor_tasks_sql_execution_plan(attribute: 
         sql_tuning_advisor_task_id=oci_database_management_sql_tuning_advisor_task["test_sql_tuning_advisor_task"]["id"],
         opc_named_credential_id=var["managed_database_sql_tuning_advisor_tasks_sql_execution_plan_opc_named_credential_id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str attribute: The attribute of the SQL execution plan.
@@ -169,6 +171,7 @@ def get_managed_database_sql_tuning_advisor_tasks_sql_execution_plan_output(attr
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -179,6 +182,7 @@ def get_managed_database_sql_tuning_advisor_tasks_sql_execution_plan_output(attr
         sql_tuning_advisor_task_id=oci_database_management_sql_tuning_advisor_task["test_sql_tuning_advisor_task"]["id"],
         opc_named_credential_id=var["managed_database_sql_tuning_advisor_tasks_sql_execution_plan_opc_named_credential_id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str attribute: The attribute of the SQL execution plan.

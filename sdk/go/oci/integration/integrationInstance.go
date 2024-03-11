@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -79,15 +80,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // IntegrationInstances can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Integration/integrationInstance:IntegrationInstance test_integration_instance "id"
-//
+// $ pulumi import oci:Integration/integrationInstance:IntegrationInstance test_integration_instance "id"
 // ```
 type IntegrationInstance struct {
 	pulumi.CustomResourceState

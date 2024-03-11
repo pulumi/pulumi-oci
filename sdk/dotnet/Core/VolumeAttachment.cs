@@ -16,6 +16,7 @@ namespace Pulumi.Oci.Core
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -41,13 +42,14 @@ namespace Pulumi.Oci.Core
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// VolumeAttachments can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Core/volumeAttachment:VolumeAttachment test_volume_attachment "id"
+    /// $ pulumi import oci:Core/volumeAttachment:VolumeAttachment test_volume_attachment "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Core/volumeAttachment:VolumeAttachment")]

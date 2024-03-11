@@ -25,6 +25,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -84,15 +85,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // PathAnalysis can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:VnMonitoring/pathAnalysi:PathAnalysi test_path_analysi "id"
-//
+// $ pulumi import oci:VnMonitoring/pathAnalysi:PathAnalysi test_path_analysi "id"
 // ```
 type PathAnalysi struct {
 	pulumi.CustomResourceState

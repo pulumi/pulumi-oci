@@ -31,7 +31,7 @@ import javax.annotation.Nullable;
  * Sddcs can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Ocvp/sddc:Sddc test_sddc &#34;id&#34;
+ * $ pulumi import oci:Ocvp/sddc:Sddc test_sddc &#34;id&#34;
  * ```
  * 
  */

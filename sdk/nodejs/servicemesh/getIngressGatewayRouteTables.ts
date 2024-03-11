@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -25,6 +26,7 @@ import * as utilities from "../utilities";
  *     state: _var.ingress_gateway_route_table_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getIngressGatewayRouteTables(args: GetIngressGatewayRouteTablesArgs, opts?: pulumi.InvokeOptions): Promise<GetIngressGatewayRouteTablesResult> {
 
@@ -103,6 +105,7 @@ export interface GetIngressGatewayRouteTablesResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -115,6 +118,7 @@ export interface GetIngressGatewayRouteTablesResult {
  *     state: _var.ingress_gateway_route_table_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getIngressGatewayRouteTablesOutput(args: GetIngressGatewayRouteTablesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIngressGatewayRouteTablesResult> {
     return pulumi.output(args).apply((a: any) => getIngressGatewayRouteTables(a, opts))

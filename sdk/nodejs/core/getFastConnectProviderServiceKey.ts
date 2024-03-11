@@ -12,6 +12,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,6 +22,7 @@ import * as utilities from "../utilities";
  *     providerServiceKeyName: _var.fast_connect_provider_service_key_provider_service_key_name,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getFastConnectProviderServiceKey(args: GetFastConnectProviderServiceKeyArgs, opts?: pulumi.InvokeOptions): Promise<GetFastConnectProviderServiceKeyResult> {
 
@@ -76,6 +78,7 @@ export interface GetFastConnectProviderServiceKeyResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -85,6 +88,7 @@ export interface GetFastConnectProviderServiceKeyResult {
  *     providerServiceKeyName: _var.fast_connect_provider_service_key_provider_service_key_name,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getFastConnectProviderServiceKeyOutput(args: GetFastConnectProviderServiceKeyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFastConnectProviderServiceKeyResult> {
     return pulumi.output(args).apply((a: any) => getFastConnectProviderServiceKey(a, opts))

@@ -17,10 +17,9 @@ namespace Pulumi.Oci.UsageProxy
         /// Provides product information that is specific to a reward usage period and its usage details.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -39,8 +38,7 @@ namespace Pulumi.Oci.UsageProxy
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetSubscriptionProductResult> InvokeAsync(GetSubscriptionProductArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetSubscriptionProductResult>("oci:UsageProxy/getSubscriptionProduct:getSubscriptionProduct", args ?? new GetSubscriptionProductArgs(), options.WithDefaults());
@@ -51,10 +49,9 @@ namespace Pulumi.Oci.UsageProxy
         /// Provides product information that is specific to a reward usage period and its usage details.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -73,8 +70,7 @@ namespace Pulumi.Oci.UsageProxy
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetSubscriptionProductResult> Invoke(GetSubscriptionProductInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSubscriptionProductResult>("oci:UsageProxy/getSubscriptionProduct:getSubscriptionProduct", args ?? new GetSubscriptionProductInvokeArgs(), options.WithDefaults());

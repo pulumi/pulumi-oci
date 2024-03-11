@@ -23,6 +23,8 @@ import javax.annotation.Nullable;
  * Create a new stack monitoring resource task.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -62,13 +64,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * MonitoredResourceTasks can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:StackMonitoring/monitoredResourceTask:MonitoredResourceTask test_monitored_resource_task &#34;id&#34;
+ * $ pulumi import oci:StackMonitoring/monitoredResourceTask:MonitoredResourceTask test_monitored_resource_task &#34;id&#34;
  * ```
  * 
  */

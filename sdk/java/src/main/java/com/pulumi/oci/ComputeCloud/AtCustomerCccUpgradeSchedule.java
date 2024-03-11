@@ -23,6 +23,8 @@ import javax.annotation.Nullable;
  * Creates a new Compute Cloud@Customer upgrade schedule.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -62,13 +64,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * CccUpgradeSchedules can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:ComputeCloud/atCustomerCccUpgradeSchedule:AtCustomerCccUpgradeSchedule test_ccc_upgrade_schedule &#34;id&#34;
+ * $ pulumi import oci:ComputeCloud/atCustomerCccUpgradeSchedule:AtCustomerCccUpgradeSchedule test_ccc_upgrade_schedule &#34;id&#34;
  * ```
  * 
  */

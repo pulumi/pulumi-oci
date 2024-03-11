@@ -16,10 +16,9 @@ namespace Pulumi.Oci.ServiceCatalog
         /// 
         /// Lists the packages in the specified private application.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -38,8 +37,7 @@ namespace Pulumi.Oci.ServiceCatalog
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetPrivateApplicationPackagesResult> InvokeAsync(GetPrivateApplicationPackagesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetPrivateApplicationPackagesResult>("oci:ServiceCatalog/getPrivateApplicationPackages:getPrivateApplicationPackages", args ?? new GetPrivateApplicationPackagesArgs(), options.WithDefaults());
@@ -49,10 +47,9 @@ namespace Pulumi.Oci.ServiceCatalog
         /// 
         /// Lists the packages in the specified private application.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -71,8 +68,7 @@ namespace Pulumi.Oci.ServiceCatalog
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetPrivateApplicationPackagesResult> Invoke(GetPrivateApplicationPackagesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPrivateApplicationPackagesResult>("oci:ServiceCatalog/getPrivateApplicationPackages:getPrivateApplicationPackages", args ?? new GetPrivateApplicationPackagesInvokeArgs(), options.WithDefaults());

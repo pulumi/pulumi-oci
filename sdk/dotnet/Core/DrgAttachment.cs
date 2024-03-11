@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Core
     /// DrgAttachments can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Core/drgAttachment:DrgAttachment test_drg_attachment "id"
+    /// $ pulumi import oci:Core/drgAttachment:DrgAttachment test_drg_attachment "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Core/drgAttachment:DrgAttachment")]

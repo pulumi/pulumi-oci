@@ -23,6 +23,8 @@ import javax.annotation.Nullable;
  * Creates a new HTTP Redirect on the WAF edge.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -64,13 +66,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * HttpRedirects can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Waas/httpRedirect:HttpRedirect test_http_redirect &#34;id&#34;
+ * $ pulumi import oci:Waas/httpRedirect:HttpRedirect test_http_redirect &#34;id&#34;
  * ```
  * 
  */

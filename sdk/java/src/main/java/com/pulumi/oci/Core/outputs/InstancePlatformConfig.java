@@ -69,7 +69,7 @@ public final class InstancePlatformConfig {
      */
     private @Nullable String numaNodesPerSocket;
     /**
-     * @return The percentage of cores enabled. Value must be a multiple of 25%. If the requested percentage results in a fractional number of cores, the system rounds up the number of cores across processors and provisions an instance with a whole number of cores.
+     * @return The percentage of cores enabled. Value must be a multiple of 25%! (MISSING)If the requested percentage results in a fractional number of cores, the system rounds up the number of cores across processors and provisions an instance with a whole number of cores.
      * 
      * If the applications that you run on the instance use a core-based licensing model and need fewer cores than the full size of the shape, you can disable cores to reduce your licensing costs. The instance itself is billed for the full shape, regardless of whether all cores are enabled.
      * 
@@ -155,7 +155,7 @@ public final class InstancePlatformConfig {
         return Optional.ofNullable(this.numaNodesPerSocket);
     }
     /**
-     * @return The percentage of cores enabled. Value must be a multiple of 25%. If the requested percentage results in a fractional number of cores, the system rounds up the number of cores across processors and provisions an instance with a whole number of cores.
+     * @return The percentage of cores enabled. Value must be a multiple of 25%! (MISSING)If the requested percentage results in a fractional number of cores, the system rounds up the number of cores across processors and provisions an instance with a whole number of cores.
      * 
      * If the applications that you run on the instance use a core-based licensing model and need fewer cores than the full size of the shape, you can disable cores to reduce your licensing costs. The instance itself is billed for the full shape, regardless of whether all cores are enabled.
      * 

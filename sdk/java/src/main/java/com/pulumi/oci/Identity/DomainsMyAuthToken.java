@@ -28,6 +28,7 @@ import javax.annotation.Nullable;
  * 
  * ## Example Usage
  * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -74,13 +75,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * MyAuthTokens can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Identity/domainsMyAuthToken:DomainsMyAuthToken test_my_auth_token &#34;idcsEndpoint/{idcsEndpoint}/myAuthTokens/{myAuthTokenId}&#34;
+ * $ pulumi import oci:Identity/domainsMyAuthToken:DomainsMyAuthToken test_my_auth_token &#34;idcsEndpoint/{idcsEndpoint}/myAuthTokens/{myAuthTokenId}&#34;
  * ```
  * 
  */

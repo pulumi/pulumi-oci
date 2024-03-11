@@ -18,6 +18,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -29,13 +30,14 @@ import * as utilities from "../utilities";
  *     isRequired: _var.tag_default_is_required,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * TagDefaults can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Identity/tagDefault:TagDefault test_tag_default "id"
+ * $ pulumi import oci:Identity/tagDefault:TagDefault test_tag_default "id"
  * ```
  */
 export class TagDefault extends pulumi.CustomResource {

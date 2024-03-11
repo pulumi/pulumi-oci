@@ -22,6 +22,8 @@ import javax.annotation.Nullable;
  * Creates a security zone recipe. A security zone recipe is a collection of security zone policies.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -55,13 +57,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * SecurityRecipes can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:CloudGuard/securityRecipe:SecurityRecipe test_security_recipe &#34;id&#34;
+ * $ pulumi import oci:CloudGuard/securityRecipe:SecurityRecipe test_security_recipe &#34;id&#34;
  * ```
  * 
  */

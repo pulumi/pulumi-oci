@@ -22,6 +22,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -52,15 +53,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // InstanceConsoleConnections can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Core/instanceConsoleConnection:InstanceConsoleConnection test_instance_console_connection "id"
-//
+// $ pulumi import oci:Core/instanceConsoleConnection:InstanceConsoleConnection test_instance_console_connection "id"
 // ```
 type InstanceConsoleConnection struct {
 	pulumi.CustomResourceState

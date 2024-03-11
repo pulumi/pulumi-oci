@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -62,13 +63,14 @@ import * as utilities from "../utilities";
  *     labelingInstructions: _var.dataset_labeling_instructions,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * Datasets can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:DataLabellingService/dataset:Dataset test_dataset "id"
+ * $ pulumi import oci:DataLabellingService/dataset:Dataset test_dataset "id"
  * ```
  */
 export class Dataset extends pulumi.CustomResource {

@@ -16,10 +16,9 @@ namespace Pulumi.Oci.CloudMigrations
         /// 
         /// List of shapes by parameters.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -39,8 +38,7 @@ namespace Pulumi.Oci.CloudMigrations
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetMigrationPlanAvailableShapeResult> InvokeAsync(GetMigrationPlanAvailableShapeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetMigrationPlanAvailableShapeResult>("oci:CloudMigrations/getMigrationPlanAvailableShape:getMigrationPlanAvailableShape", args ?? new GetMigrationPlanAvailableShapeArgs(), options.WithDefaults());
@@ -50,10 +48,9 @@ namespace Pulumi.Oci.CloudMigrations
         /// 
         /// List of shapes by parameters.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -73,8 +70,7 @@ namespace Pulumi.Oci.CloudMigrations
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetMigrationPlanAvailableShapeResult> Invoke(GetMigrationPlanAvailableShapeInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMigrationPlanAvailableShapeResult>("oci:CloudMigrations/getMigrationPlanAvailableShape:getMigrationPlanAvailableShape", args ?? new GetMigrationPlanAvailableShapeInvokeArgs(), options.WithDefaults());

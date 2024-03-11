@@ -19,7 +19,7 @@ namespace Pulumi.Oci.DatabaseManagement
     /// ExternalExadataStorageServers can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:DatabaseManagement/externalExadataStorageServer:ExternalExadataStorageServer test_external_exadata_storage_server "id"
+    /// $ pulumi import oci:DatabaseManagement/externalExadataStorageServer:ExternalExadataStorageServer test_external_exadata_storage_server "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:DatabaseManagement/externalExadataStorageServer:ExternalExadataStorageServer")]

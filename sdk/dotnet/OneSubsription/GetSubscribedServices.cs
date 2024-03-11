@@ -17,10 +17,9 @@ namespace Pulumi.Oci.OneSubsription
         /// This list API returns all subscribed services for given Subscription ID
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -39,8 +38,7 @@ namespace Pulumi.Oci.OneSubsription
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetSubscribedServicesResult> InvokeAsync(GetSubscribedServicesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetSubscribedServicesResult>("oci:OneSubsription/getSubscribedServices:getSubscribedServices", args ?? new GetSubscribedServicesArgs(), options.WithDefaults());
@@ -51,10 +49,9 @@ namespace Pulumi.Oci.OneSubsription
         /// This list API returns all subscribed services for given Subscription ID
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -73,8 +70,7 @@ namespace Pulumi.Oci.OneSubsription
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetSubscribedServicesResult> Invoke(GetSubscribedServicesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSubscribedServicesResult>("oci:OneSubsription/getSubscribedServices:getSubscribedServices", args ?? new GetSubscribedServicesInvokeArgs(), options.WithDefaults());

@@ -20,6 +20,8 @@ import javax.annotation.Nullable;
  * Create Blockchain Platform Osn
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -53,13 +55,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * Osns can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Blockchain/osn:Osn test_osn &#34;blockchainPlatforms/{blockchainPlatformId}/osns/{osnId}&#34;
+ * $ pulumi import oci:Blockchain/osn:Osn test_osn &#34;blockchainPlatforms/{blockchainPlatformId}/osns/{osnId}&#34;
  * ```
  * 
  */

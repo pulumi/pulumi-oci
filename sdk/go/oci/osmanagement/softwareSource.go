@@ -20,6 +20,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -57,15 +58,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // SoftwareSources can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:OsManagement/softwareSource:SoftwareSource test_software_source "id"
-//
+// $ pulumi import oci:OsManagement/softwareSource:SoftwareSource test_software_source "id"
 // ```
 type SoftwareSource struct {
 	pulumi.CustomResourceState

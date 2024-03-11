@@ -62,12 +62,14 @@ def get_report_content(report_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_report_content = oci.DataSafe.get_report_content(report_id=oci_data_safe_report["test_report"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str report_id: Unique report identifier
@@ -92,12 +94,14 @@ def get_report_content_output(report_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_report_content = oci.DataSafe.get_report_content(report_id=oci_data_safe_report["test_report"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str report_id: Unique report identifier

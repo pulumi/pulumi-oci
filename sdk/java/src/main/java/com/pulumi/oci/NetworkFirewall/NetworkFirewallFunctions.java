@@ -89,6 +89,8 @@ public final class NetworkFirewallFunctions {
      * Gets a NetworkFirewall by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -117,6 +119,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkFirewallResult> getNetworkFirewall(GetNetworkFirewallArgs args) {
@@ -128,6 +131,8 @@ public final class NetworkFirewallFunctions {
      * Gets a NetworkFirewall by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -156,6 +161,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkFirewallResult> getNetworkFirewallPlain(GetNetworkFirewallPlainArgs args) {
@@ -167,6 +173,8 @@ public final class NetworkFirewallFunctions {
      * Gets a NetworkFirewall by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -195,6 +203,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkFirewallResult> getNetworkFirewall(GetNetworkFirewallArgs args, InvokeOptions options) {
@@ -206,6 +215,8 @@ public final class NetworkFirewallFunctions {
      * Gets a NetworkFirewall by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -234,6 +245,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkFirewallResult> getNetworkFirewallPlain(GetNetworkFirewallPlainArgs args, InvokeOptions options) {
@@ -245,6 +257,8 @@ public final class NetworkFirewallFunctions {
      * Returns a list of Network Firewall Policies.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -276,6 +290,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkFirewallPoliciesResult> getNetworkFirewallPolicies(GetNetworkFirewallPoliciesArgs args) {
@@ -287,6 +302,8 @@ public final class NetworkFirewallFunctions {
      * Returns a list of Network Firewall Policies.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -318,6 +335,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPoliciesResult> getNetworkFirewallPoliciesPlain(GetNetworkFirewallPoliciesPlainArgs args) {
@@ -329,6 +347,8 @@ public final class NetworkFirewallFunctions {
      * Returns a list of Network Firewall Policies.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -360,6 +380,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkFirewallPoliciesResult> getNetworkFirewallPolicies(GetNetworkFirewallPoliciesArgs args, InvokeOptions options) {
@@ -371,6 +392,8 @@ public final class NetworkFirewallFunctions {
      * Returns a list of Network Firewall Policies.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -402,6 +425,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPoliciesResult> getNetworkFirewallPoliciesPlain(GetNetworkFirewallPoliciesPlainArgs args, InvokeOptions options) {
@@ -413,6 +437,8 @@ public final class NetworkFirewallFunctions {
      * Gets a NetworkFirewallPolicy given the network firewall policy identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -441,6 +467,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkFirewallPolicyResult> getNetworkFirewallPolicy(GetNetworkFirewallPolicyArgs args) {
@@ -452,6 +479,8 @@ public final class NetworkFirewallFunctions {
      * Gets a NetworkFirewallPolicy given the network firewall policy identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -480,6 +509,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyResult> getNetworkFirewallPolicyPlain(GetNetworkFirewallPolicyPlainArgs args) {
@@ -491,6 +521,8 @@ public final class NetworkFirewallFunctions {
      * Gets a NetworkFirewallPolicy given the network firewall policy identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -519,6 +551,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkFirewallPolicyResult> getNetworkFirewallPolicy(GetNetworkFirewallPolicyArgs args, InvokeOptions options) {
@@ -530,6 +563,8 @@ public final class NetworkFirewallFunctions {
      * Gets a NetworkFirewallPolicy given the network firewall policy identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -558,6 +593,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyResult> getNetworkFirewallPolicyPlain(GetNetworkFirewallPolicyPlainArgs args, InvokeOptions options) {
@@ -570,6 +606,7 @@ public final class NetworkFirewallFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -599,6 +636,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkFirewallPolicyAddressListResult> getNetworkFirewallPolicyAddressList(GetNetworkFirewallPolicyAddressListArgs args) {
@@ -611,6 +649,7 @@ public final class NetworkFirewallFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -640,6 +679,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyAddressListResult> getNetworkFirewallPolicyAddressListPlain(GetNetworkFirewallPolicyAddressListPlainArgs args) {
@@ -652,6 +692,7 @@ public final class NetworkFirewallFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -681,6 +722,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkFirewallPolicyAddressListResult> getNetworkFirewallPolicyAddressList(GetNetworkFirewallPolicyAddressListArgs args, InvokeOptions options) {
@@ -693,6 +735,7 @@ public final class NetworkFirewallFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -722,6 +765,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyAddressListResult> getNetworkFirewallPolicyAddressListPlain(GetNetworkFirewallPolicyAddressListPlainArgs args, InvokeOptions options) {
@@ -733,6 +777,8 @@ public final class NetworkFirewallFunctions {
      * Returns a list of Network Firewall Policies.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -762,6 +808,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkFirewallPolicyAddressListsResult> getNetworkFirewallPolicyAddressLists(GetNetworkFirewallPolicyAddressListsArgs args) {
@@ -773,6 +820,8 @@ public final class NetworkFirewallFunctions {
      * Returns a list of Network Firewall Policies.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -802,6 +851,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyAddressListsResult> getNetworkFirewallPolicyAddressListsPlain(GetNetworkFirewallPolicyAddressListsPlainArgs args) {
@@ -813,6 +863,8 @@ public final class NetworkFirewallFunctions {
      * Returns a list of Network Firewall Policies.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -842,6 +894,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkFirewallPolicyAddressListsResult> getNetworkFirewallPolicyAddressLists(GetNetworkFirewallPolicyAddressListsArgs args, InvokeOptions options) {
@@ -853,6 +906,8 @@ public final class NetworkFirewallFunctions {
      * Returns a list of Network Firewall Policies.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -882,6 +937,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyAddressListsResult> getNetworkFirewallPolicyAddressListsPlain(GetNetworkFirewallPolicyAddressListsPlainArgs args, InvokeOptions options) {
@@ -894,6 +950,7 @@ public final class NetworkFirewallFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -923,6 +980,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkFirewallPolicyApplicationResult> getNetworkFirewallPolicyApplication(GetNetworkFirewallPolicyApplicationArgs args) {
@@ -935,6 +993,7 @@ public final class NetworkFirewallFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -964,6 +1023,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyApplicationResult> getNetworkFirewallPolicyApplicationPlain(GetNetworkFirewallPolicyApplicationPlainArgs args) {
@@ -976,6 +1036,7 @@ public final class NetworkFirewallFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1005,6 +1066,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkFirewallPolicyApplicationResult> getNetworkFirewallPolicyApplication(GetNetworkFirewallPolicyApplicationArgs args, InvokeOptions options) {
@@ -1017,6 +1079,7 @@ public final class NetworkFirewallFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1046,6 +1109,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyApplicationResult> getNetworkFirewallPolicyApplicationPlain(GetNetworkFirewallPolicyApplicationPlainArgs args, InvokeOptions options) {
@@ -1058,6 +1122,7 @@ public final class NetworkFirewallFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1087,6 +1152,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkFirewallPolicyApplicationGroupResult> getNetworkFirewallPolicyApplicationGroup(GetNetworkFirewallPolicyApplicationGroupArgs args) {
@@ -1099,6 +1165,7 @@ public final class NetworkFirewallFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1128,6 +1195,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyApplicationGroupResult> getNetworkFirewallPolicyApplicationGroupPlain(GetNetworkFirewallPolicyApplicationGroupPlainArgs args) {
@@ -1140,6 +1208,7 @@ public final class NetworkFirewallFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1169,6 +1238,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkFirewallPolicyApplicationGroupResult> getNetworkFirewallPolicyApplicationGroup(GetNetworkFirewallPolicyApplicationGroupArgs args, InvokeOptions options) {
@@ -1181,6 +1251,7 @@ public final class NetworkFirewallFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1210,6 +1281,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyApplicationGroupResult> getNetworkFirewallPolicyApplicationGroupPlain(GetNetworkFirewallPolicyApplicationGroupPlainArgs args, InvokeOptions options) {
@@ -1221,6 +1293,8 @@ public final class NetworkFirewallFunctions {
      * Returns a list of ApplicationGroups for the policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1250,6 +1324,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkFirewallPolicyApplicationGroupsResult> getNetworkFirewallPolicyApplicationGroups(GetNetworkFirewallPolicyApplicationGroupsArgs args) {
@@ -1261,6 +1336,8 @@ public final class NetworkFirewallFunctions {
      * Returns a list of ApplicationGroups for the policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1290,6 +1367,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyApplicationGroupsResult> getNetworkFirewallPolicyApplicationGroupsPlain(GetNetworkFirewallPolicyApplicationGroupsPlainArgs args) {
@@ -1301,6 +1379,8 @@ public final class NetworkFirewallFunctions {
      * Returns a list of ApplicationGroups for the policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1330,6 +1410,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkFirewallPolicyApplicationGroupsResult> getNetworkFirewallPolicyApplicationGroups(GetNetworkFirewallPolicyApplicationGroupsArgs args, InvokeOptions options) {
@@ -1341,6 +1422,8 @@ public final class NetworkFirewallFunctions {
      * Returns a list of ApplicationGroups for the policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1370,6 +1453,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyApplicationGroupsResult> getNetworkFirewallPolicyApplicationGroupsPlain(GetNetworkFirewallPolicyApplicationGroupsPlainArgs args, InvokeOptions options) {
@@ -1381,6 +1465,8 @@ public final class NetworkFirewallFunctions {
      * Returns a list of Applications for the policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1410,6 +1496,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkFirewallPolicyApplicationsResult> getNetworkFirewallPolicyApplications(GetNetworkFirewallPolicyApplicationsArgs args) {
@@ -1421,6 +1508,8 @@ public final class NetworkFirewallFunctions {
      * Returns a list of Applications for the policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1450,6 +1539,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyApplicationsResult> getNetworkFirewallPolicyApplicationsPlain(GetNetworkFirewallPolicyApplicationsPlainArgs args) {
@@ -1461,6 +1551,8 @@ public final class NetworkFirewallFunctions {
      * Returns a list of Applications for the policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1490,6 +1582,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkFirewallPolicyApplicationsResult> getNetworkFirewallPolicyApplications(GetNetworkFirewallPolicyApplicationsArgs args, InvokeOptions options) {
@@ -1501,6 +1594,8 @@ public final class NetworkFirewallFunctions {
      * Returns a list of Applications for the policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1530,6 +1625,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyApplicationsResult> getNetworkFirewallPolicyApplicationsPlain(GetNetworkFirewallPolicyApplicationsPlainArgs args, InvokeOptions options) {
@@ -1542,6 +1638,7 @@ public final class NetworkFirewallFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1571,6 +1668,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkFirewallPolicyDecryptionProfileResult> getNetworkFirewallPolicyDecryptionProfile(GetNetworkFirewallPolicyDecryptionProfileArgs args) {
@@ -1583,6 +1681,7 @@ public final class NetworkFirewallFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1612,6 +1711,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyDecryptionProfileResult> getNetworkFirewallPolicyDecryptionProfilePlain(GetNetworkFirewallPolicyDecryptionProfilePlainArgs args) {
@@ -1624,6 +1724,7 @@ public final class NetworkFirewallFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1653,6 +1754,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkFirewallPolicyDecryptionProfileResult> getNetworkFirewallPolicyDecryptionProfile(GetNetworkFirewallPolicyDecryptionProfileArgs args, InvokeOptions options) {
@@ -1665,6 +1767,7 @@ public final class NetworkFirewallFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1694,6 +1797,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyDecryptionProfileResult> getNetworkFirewallPolicyDecryptionProfilePlain(GetNetworkFirewallPolicyDecryptionProfilePlainArgs args, InvokeOptions options) {
@@ -1705,6 +1809,8 @@ public final class NetworkFirewallFunctions {
      * Returns a list of Decryption Profile for the Network Firewall Policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1734,6 +1840,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkFirewallPolicyDecryptionProfilesResult> getNetworkFirewallPolicyDecryptionProfiles(GetNetworkFirewallPolicyDecryptionProfilesArgs args) {
@@ -1745,6 +1852,8 @@ public final class NetworkFirewallFunctions {
      * Returns a list of Decryption Profile for the Network Firewall Policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1774,6 +1883,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyDecryptionProfilesResult> getNetworkFirewallPolicyDecryptionProfilesPlain(GetNetworkFirewallPolicyDecryptionProfilesPlainArgs args) {
@@ -1785,6 +1895,8 @@ public final class NetworkFirewallFunctions {
      * Returns a list of Decryption Profile for the Network Firewall Policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1814,6 +1926,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkFirewallPolicyDecryptionProfilesResult> getNetworkFirewallPolicyDecryptionProfiles(GetNetworkFirewallPolicyDecryptionProfilesArgs args, InvokeOptions options) {
@@ -1825,6 +1938,8 @@ public final class NetworkFirewallFunctions {
      * Returns a list of Decryption Profile for the Network Firewall Policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1854,6 +1969,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyDecryptionProfilesResult> getNetworkFirewallPolicyDecryptionProfilesPlain(GetNetworkFirewallPolicyDecryptionProfilesPlainArgs args, InvokeOptions options) {
@@ -1866,6 +1982,7 @@ public final class NetworkFirewallFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1895,6 +2012,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkFirewallPolicyDecryptionRuleResult> getNetworkFirewallPolicyDecryptionRule(GetNetworkFirewallPolicyDecryptionRuleArgs args) {
@@ -1907,6 +2025,7 @@ public final class NetworkFirewallFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1936,6 +2055,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyDecryptionRuleResult> getNetworkFirewallPolicyDecryptionRulePlain(GetNetworkFirewallPolicyDecryptionRulePlainArgs args) {
@@ -1948,6 +2068,7 @@ public final class NetworkFirewallFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1977,6 +2098,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkFirewallPolicyDecryptionRuleResult> getNetworkFirewallPolicyDecryptionRule(GetNetworkFirewallPolicyDecryptionRuleArgs args, InvokeOptions options) {
@@ -1989,6 +2111,7 @@ public final class NetworkFirewallFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2018,6 +2141,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyDecryptionRuleResult> getNetworkFirewallPolicyDecryptionRulePlain(GetNetworkFirewallPolicyDecryptionRulePlainArgs args, InvokeOptions options) {
@@ -2029,6 +2153,8 @@ public final class NetworkFirewallFunctions {
      * Returns a list of Decryption Rule for the Network Firewall Policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2059,6 +2185,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkFirewallPolicyDecryptionRulesResult> getNetworkFirewallPolicyDecryptionRules(GetNetworkFirewallPolicyDecryptionRulesArgs args) {
@@ -2070,6 +2197,8 @@ public final class NetworkFirewallFunctions {
      * Returns a list of Decryption Rule for the Network Firewall Policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2100,6 +2229,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyDecryptionRulesResult> getNetworkFirewallPolicyDecryptionRulesPlain(GetNetworkFirewallPolicyDecryptionRulesPlainArgs args) {
@@ -2111,6 +2241,8 @@ public final class NetworkFirewallFunctions {
      * Returns a list of Decryption Rule for the Network Firewall Policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2141,6 +2273,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkFirewallPolicyDecryptionRulesResult> getNetworkFirewallPolicyDecryptionRules(GetNetworkFirewallPolicyDecryptionRulesArgs args, InvokeOptions options) {
@@ -2152,6 +2285,8 @@ public final class NetworkFirewallFunctions {
      * Returns a list of Decryption Rule for the Network Firewall Policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2182,6 +2317,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyDecryptionRulesResult> getNetworkFirewallPolicyDecryptionRulesPlain(GetNetworkFirewallPolicyDecryptionRulesPlainArgs args, InvokeOptions options) {
@@ -2194,6 +2330,7 @@ public final class NetworkFirewallFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2223,6 +2360,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkFirewallPolicyMappedSecretResult> getNetworkFirewallPolicyMappedSecret(GetNetworkFirewallPolicyMappedSecretArgs args) {
@@ -2235,6 +2373,7 @@ public final class NetworkFirewallFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2264,6 +2403,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyMappedSecretResult> getNetworkFirewallPolicyMappedSecretPlain(GetNetworkFirewallPolicyMappedSecretPlainArgs args) {
@@ -2276,6 +2416,7 @@ public final class NetworkFirewallFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2305,6 +2446,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkFirewallPolicyMappedSecretResult> getNetworkFirewallPolicyMappedSecret(GetNetworkFirewallPolicyMappedSecretArgs args, InvokeOptions options) {
@@ -2317,6 +2459,7 @@ public final class NetworkFirewallFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2346,6 +2489,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyMappedSecretResult> getNetworkFirewallPolicyMappedSecretPlain(GetNetworkFirewallPolicyMappedSecretPlainArgs args, InvokeOptions options) {
@@ -2357,6 +2501,8 @@ public final class NetworkFirewallFunctions {
      * Returns a list of Mapped Secret for the Network Firewall Policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2386,6 +2532,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkFirewallPolicyMappedSecretsResult> getNetworkFirewallPolicyMappedSecrets(GetNetworkFirewallPolicyMappedSecretsArgs args) {
@@ -2397,6 +2544,8 @@ public final class NetworkFirewallFunctions {
      * Returns a list of Mapped Secret for the Network Firewall Policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2426,6 +2575,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyMappedSecretsResult> getNetworkFirewallPolicyMappedSecretsPlain(GetNetworkFirewallPolicyMappedSecretsPlainArgs args) {
@@ -2437,6 +2587,8 @@ public final class NetworkFirewallFunctions {
      * Returns a list of Mapped Secret for the Network Firewall Policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2466,6 +2618,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkFirewallPolicyMappedSecretsResult> getNetworkFirewallPolicyMappedSecrets(GetNetworkFirewallPolicyMappedSecretsArgs args, InvokeOptions options) {
@@ -2477,6 +2630,8 @@ public final class NetworkFirewallFunctions {
      * Returns a list of Mapped Secret for the Network Firewall Policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2506,6 +2661,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyMappedSecretsResult> getNetworkFirewallPolicyMappedSecretsPlain(GetNetworkFirewallPolicyMappedSecretsPlainArgs args, InvokeOptions options) {
@@ -2518,6 +2674,7 @@ public final class NetworkFirewallFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2547,6 +2704,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkFirewallPolicySecurityRuleResult> getNetworkFirewallPolicySecurityRule(GetNetworkFirewallPolicySecurityRuleArgs args) {
@@ -2559,6 +2717,7 @@ public final class NetworkFirewallFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2588,6 +2747,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicySecurityRuleResult> getNetworkFirewallPolicySecurityRulePlain(GetNetworkFirewallPolicySecurityRulePlainArgs args) {
@@ -2600,6 +2760,7 @@ public final class NetworkFirewallFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2629,6 +2790,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkFirewallPolicySecurityRuleResult> getNetworkFirewallPolicySecurityRule(GetNetworkFirewallPolicySecurityRuleArgs args, InvokeOptions options) {
@@ -2641,6 +2803,7 @@ public final class NetworkFirewallFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2670,6 +2833,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicySecurityRuleResult> getNetworkFirewallPolicySecurityRulePlain(GetNetworkFirewallPolicySecurityRulePlainArgs args, InvokeOptions options) {
@@ -2681,6 +2845,8 @@ public final class NetworkFirewallFunctions {
      * Returns a list of Security Rule for the Network Firewall Policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2711,6 +2877,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkFirewallPolicySecurityRulesResult> getNetworkFirewallPolicySecurityRules(GetNetworkFirewallPolicySecurityRulesArgs args) {
@@ -2722,6 +2889,8 @@ public final class NetworkFirewallFunctions {
      * Returns a list of Security Rule for the Network Firewall Policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2752,6 +2921,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicySecurityRulesResult> getNetworkFirewallPolicySecurityRulesPlain(GetNetworkFirewallPolicySecurityRulesPlainArgs args) {
@@ -2763,6 +2933,8 @@ public final class NetworkFirewallFunctions {
      * Returns a list of Security Rule for the Network Firewall Policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2793,6 +2965,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkFirewallPolicySecurityRulesResult> getNetworkFirewallPolicySecurityRules(GetNetworkFirewallPolicySecurityRulesArgs args, InvokeOptions options) {
@@ -2804,6 +2977,8 @@ public final class NetworkFirewallFunctions {
      * Returns a list of Security Rule for the Network Firewall Policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2834,6 +3009,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicySecurityRulesResult> getNetworkFirewallPolicySecurityRulesPlain(GetNetworkFirewallPolicySecurityRulesPlainArgs args, InvokeOptions options) {
@@ -2846,6 +3022,7 @@ public final class NetworkFirewallFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2875,6 +3052,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkFirewallPolicyServiceResult> getNetworkFirewallPolicyService(GetNetworkFirewallPolicyServiceArgs args) {
@@ -2887,6 +3065,7 @@ public final class NetworkFirewallFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2916,6 +3095,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyServiceResult> getNetworkFirewallPolicyServicePlain(GetNetworkFirewallPolicyServicePlainArgs args) {
@@ -2928,6 +3108,7 @@ public final class NetworkFirewallFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2957,6 +3138,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkFirewallPolicyServiceResult> getNetworkFirewallPolicyService(GetNetworkFirewallPolicyServiceArgs args, InvokeOptions options) {
@@ -2969,6 +3151,7 @@ public final class NetworkFirewallFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2998,6 +3181,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyServiceResult> getNetworkFirewallPolicyServicePlain(GetNetworkFirewallPolicyServicePlainArgs args, InvokeOptions options) {
@@ -3010,6 +3194,7 @@ public final class NetworkFirewallFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3039,6 +3224,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkFirewallPolicyServiceListResult> getNetworkFirewallPolicyServiceList(GetNetworkFirewallPolicyServiceListArgs args) {
@@ -3051,6 +3237,7 @@ public final class NetworkFirewallFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3080,6 +3267,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyServiceListResult> getNetworkFirewallPolicyServiceListPlain(GetNetworkFirewallPolicyServiceListPlainArgs args) {
@@ -3092,6 +3280,7 @@ public final class NetworkFirewallFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3121,6 +3310,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkFirewallPolicyServiceListResult> getNetworkFirewallPolicyServiceList(GetNetworkFirewallPolicyServiceListArgs args, InvokeOptions options) {
@@ -3133,6 +3323,7 @@ public final class NetworkFirewallFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3162,6 +3353,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyServiceListResult> getNetworkFirewallPolicyServiceListPlain(GetNetworkFirewallPolicyServiceListPlainArgs args, InvokeOptions options) {
@@ -3173,6 +3365,8 @@ public final class NetworkFirewallFunctions {
      * Returns a list of ServiceLists for the policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3202,6 +3396,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkFirewallPolicyServiceListsResult> getNetworkFirewallPolicyServiceLists(GetNetworkFirewallPolicyServiceListsArgs args) {
@@ -3213,6 +3408,8 @@ public final class NetworkFirewallFunctions {
      * Returns a list of ServiceLists for the policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3242,6 +3439,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyServiceListsResult> getNetworkFirewallPolicyServiceListsPlain(GetNetworkFirewallPolicyServiceListsPlainArgs args) {
@@ -3253,6 +3451,8 @@ public final class NetworkFirewallFunctions {
      * Returns a list of ServiceLists for the policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3282,6 +3482,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkFirewallPolicyServiceListsResult> getNetworkFirewallPolicyServiceLists(GetNetworkFirewallPolicyServiceListsArgs args, InvokeOptions options) {
@@ -3293,6 +3494,8 @@ public final class NetworkFirewallFunctions {
      * Returns a list of ServiceLists for the policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3322,6 +3525,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyServiceListsResult> getNetworkFirewallPolicyServiceListsPlain(GetNetworkFirewallPolicyServiceListsPlainArgs args, InvokeOptions options) {
@@ -3333,6 +3537,8 @@ public final class NetworkFirewallFunctions {
      * Returns a list of Services for the policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3362,6 +3568,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkFirewallPolicyServicesResult> getNetworkFirewallPolicyServices(GetNetworkFirewallPolicyServicesArgs args) {
@@ -3373,6 +3580,8 @@ public final class NetworkFirewallFunctions {
      * Returns a list of Services for the policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3402,6 +3611,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyServicesResult> getNetworkFirewallPolicyServicesPlain(GetNetworkFirewallPolicyServicesPlainArgs args) {
@@ -3413,6 +3623,8 @@ public final class NetworkFirewallFunctions {
      * Returns a list of Services for the policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3442,6 +3654,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkFirewallPolicyServicesResult> getNetworkFirewallPolicyServices(GetNetworkFirewallPolicyServicesArgs args, InvokeOptions options) {
@@ -3453,6 +3666,8 @@ public final class NetworkFirewallFunctions {
      * Returns a list of Services for the policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3482,6 +3697,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyServicesResult> getNetworkFirewallPolicyServicesPlain(GetNetworkFirewallPolicyServicesPlainArgs args, InvokeOptions options) {
@@ -3494,6 +3710,7 @@ public final class NetworkFirewallFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3523,6 +3740,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkFirewallPolicyUrlListResult> getNetworkFirewallPolicyUrlList(GetNetworkFirewallPolicyUrlListArgs args) {
@@ -3535,6 +3753,7 @@ public final class NetworkFirewallFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3564,6 +3783,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyUrlListResult> getNetworkFirewallPolicyUrlListPlain(GetNetworkFirewallPolicyUrlListPlainArgs args) {
@@ -3576,6 +3796,7 @@ public final class NetworkFirewallFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3605,6 +3826,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkFirewallPolicyUrlListResult> getNetworkFirewallPolicyUrlList(GetNetworkFirewallPolicyUrlListArgs args, InvokeOptions options) {
@@ -3617,6 +3839,7 @@ public final class NetworkFirewallFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3646,6 +3869,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyUrlListResult> getNetworkFirewallPolicyUrlListPlain(GetNetworkFirewallPolicyUrlListPlainArgs args, InvokeOptions options) {
@@ -3657,6 +3881,8 @@ public final class NetworkFirewallFunctions {
      * Returns a list of URL lists for the Network Firewall Policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3686,6 +3912,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkFirewallPolicyUrlListsResult> getNetworkFirewallPolicyUrlLists(GetNetworkFirewallPolicyUrlListsArgs args) {
@@ -3697,6 +3924,8 @@ public final class NetworkFirewallFunctions {
      * Returns a list of URL lists for the Network Firewall Policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3726,6 +3955,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyUrlListsResult> getNetworkFirewallPolicyUrlListsPlain(GetNetworkFirewallPolicyUrlListsPlainArgs args) {
@@ -3737,6 +3967,8 @@ public final class NetworkFirewallFunctions {
      * Returns a list of URL lists for the Network Firewall Policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3766,6 +3998,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkFirewallPolicyUrlListsResult> getNetworkFirewallPolicyUrlLists(GetNetworkFirewallPolicyUrlListsArgs args, InvokeOptions options) {
@@ -3777,6 +4010,8 @@ public final class NetworkFirewallFunctions {
      * Returns a list of URL lists for the Network Firewall Policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3806,6 +4041,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyUrlListsResult> getNetworkFirewallPolicyUrlListsPlain(GetNetworkFirewallPolicyUrlListsPlainArgs args, InvokeOptions options) {
@@ -3817,6 +4053,8 @@ public final class NetworkFirewallFunctions {
      * Returns a list of NetworkFirewalls.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3850,6 +4088,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkFirewallsResult> getNetworkFirewalls(GetNetworkFirewallsArgs args) {
@@ -3861,6 +4100,8 @@ public final class NetworkFirewallFunctions {
      * Returns a list of NetworkFirewalls.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3894,6 +4135,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkFirewallsResult> getNetworkFirewallsPlain(GetNetworkFirewallsPlainArgs args) {
@@ -3905,6 +4147,8 @@ public final class NetworkFirewallFunctions {
      * Returns a list of NetworkFirewalls.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3938,6 +4182,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkFirewallsResult> getNetworkFirewalls(GetNetworkFirewallsArgs args, InvokeOptions options) {
@@ -3949,6 +4194,8 @@ public final class NetworkFirewallFunctions {
      * Returns a list of NetworkFirewalls.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3982,6 +4229,7 @@ public final class NetworkFirewallFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkFirewallsResult> getNetworkFirewallsPlain(GetNetworkFirewallsPlainArgs args, InvokeOptions options) {

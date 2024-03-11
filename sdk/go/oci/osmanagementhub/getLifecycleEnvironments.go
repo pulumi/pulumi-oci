@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -47,6 +48,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetLifecycleEnvironments(ctx *pulumi.Context, args *GetLifecycleEnvironmentsArgs, opts ...pulumi.InvokeOption) (*GetLifecycleEnvironmentsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetLifecycleEnvironmentsResult

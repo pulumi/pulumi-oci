@@ -121,6 +121,7 @@ class SetSecurityAssessmentBaseline(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -129,13 +130,14 @@ class SetSecurityAssessmentBaseline(pulumi.CustomResource):
             security_assessment_id=oci_data_safe_security_assessment["test_security_assessment"]["id"],
             assessment_ids=var["set_security_assessment_baseline_assessment_ids"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         SetSecurityAssessmentBaseline can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataSafe/setSecurityAssessmentBaseline:SetSecurityAssessmentBaseline test_set_security_assessment_baseline "id"
+        $ pulumi import oci:DataSafe/setSecurityAssessmentBaseline:SetSecurityAssessmentBaseline test_set_security_assessment_baseline "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -160,6 +162,7 @@ class SetSecurityAssessmentBaseline(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -168,13 +171,14 @@ class SetSecurityAssessmentBaseline(pulumi.CustomResource):
             security_assessment_id=oci_data_safe_security_assessment["test_security_assessment"]["id"],
             assessment_ids=var["set_security_assessment_baseline_assessment_ids"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         SetSecurityAssessmentBaseline can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataSafe/setSecurityAssessmentBaseline:SetSecurityAssessmentBaseline test_set_security_assessment_baseline "id"
+        $ pulumi import oci:DataSafe/setSecurityAssessmentBaseline:SetSecurityAssessmentBaseline test_set_security_assessment_baseline "id"
         ```
 
         :param str resource_name: The name of the resource.

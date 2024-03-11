@@ -28,6 +28,8 @@ import javax.annotation.Nullable;
  * that dictates the content for a managed instance at registration time.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -68,13 +70,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * Profiles can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:OsManagementHub/profile:Profile test_profile &#34;id&#34;
+ * $ pulumi import oci:OsManagementHub/profile:Profile test_profile &#34;id&#34;
  * ```
  * 
  */

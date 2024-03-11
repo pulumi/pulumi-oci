@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -43,6 +44,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetManagedDatabaseAddmTasks(ctx *pulumi.Context, args *GetManagedDatabaseAddmTasksArgs, opts ...pulumi.InvokeOption) (*GetManagedDatabaseAddmTasksResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetManagedDatabaseAddmTasksResult

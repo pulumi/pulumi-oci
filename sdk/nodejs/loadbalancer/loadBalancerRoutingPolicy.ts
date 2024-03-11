@@ -14,6 +14,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -31,13 +32,14 @@ import * as utilities from "../utilities";
  *     }],
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * LoadBalancerRoutingPolicies can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:LoadBalancer/loadBalancerRoutingPolicy:LoadBalancerRoutingPolicy test_load_balancer_routing_policy "loadBalancers/{loadBalancerId}/routingPolicies/{routingPolicyName}"
+ * $ pulumi import oci:LoadBalancer/loadBalancerRoutingPolicy:LoadBalancerRoutingPolicy test_load_balancer_routing_policy "loadBalancers/{loadBalancerId}/routingPolicies/{routingPolicyName}"
  * ```
  */
 export class LoadBalancerRoutingPolicy extends pulumi.CustomResource {

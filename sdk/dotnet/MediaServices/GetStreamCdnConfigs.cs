@@ -16,10 +16,9 @@ namespace Pulumi.Oci.MediaServices
         /// 
         /// Lists the StreamCdnConfig.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -38,8 +37,7 @@ namespace Pulumi.Oci.MediaServices
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetStreamCdnConfigsResult> InvokeAsync(GetStreamCdnConfigsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetStreamCdnConfigsResult>("oci:MediaServices/getStreamCdnConfigs:getStreamCdnConfigs", args ?? new GetStreamCdnConfigsArgs(), options.WithDefaults());
@@ -49,10 +47,9 @@ namespace Pulumi.Oci.MediaServices
         /// 
         /// Lists the StreamCdnConfig.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -71,8 +68,7 @@ namespace Pulumi.Oci.MediaServices
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetStreamCdnConfigsResult> Invoke(GetStreamCdnConfigsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetStreamCdnConfigsResult>("oci:MediaServices/getStreamCdnConfigs:getStreamCdnConfigs", args ?? new GetStreamCdnConfigsInvokeArgs(), options.WithDefaults());

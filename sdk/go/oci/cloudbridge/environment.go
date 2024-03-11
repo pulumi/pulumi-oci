@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -48,15 +49,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Environments can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:CloudBridge/environment:Environment test_environment "id"
-//
+// $ pulumi import oci:CloudBridge/environment:Environment test_environment "id"
 // ```
 type Environment struct {
 	pulumi.CustomResourceState

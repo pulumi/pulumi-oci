@@ -367,7 +367,7 @@ class ExternalDbSystemDiscovery(pulumi.CustomResource):
         ExternalDbSystemDiscoveries can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DatabaseManagement/externalDbSystemDiscovery:ExternalDbSystemDiscovery test_external_db_system_discovery "id"
+        $ pulumi import oci:DatabaseManagement/externalDbSystemDiscovery:ExternalDbSystemDiscovery test_external_db_system_discovery "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -397,7 +397,7 @@ class ExternalDbSystemDiscovery(pulumi.CustomResource):
         ExternalDbSystemDiscoveries can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DatabaseManagement/externalDbSystemDiscovery:ExternalDbSystemDiscovery test_external_db_system_discovery "id"
+        $ pulumi import oci:DatabaseManagement/externalDbSystemDiscovery:ExternalDbSystemDiscovery test_external_db_system_discovery "id"
         ```
 
         :param str resource_name: The name of the resource.

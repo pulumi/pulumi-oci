@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -49,15 +50,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // OnPremConnectors can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:DataSafe/onPremConnector:OnPremConnector test_on_prem_connector "id"
-//
+// $ pulumi import oci:DataSafe/onPremConnector:OnPremConnector test_on_prem_connector "id"
 // ```
 type OnPremConnector struct {
 	pulumi.CustomResourceState

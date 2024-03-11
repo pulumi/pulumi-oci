@@ -388,6 +388,7 @@ class Config(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -406,13 +407,14 @@ class Config(pulumi.CustomResource):
                 "bar-key": "value",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Configs can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:StackMonitoring/config:Config test_config "id"
+        $ pulumi import oci:StackMonitoring/config:Config test_config "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -449,6 +451,7 @@ class Config(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -467,13 +470,14 @@ class Config(pulumi.CustomResource):
                 "bar-key": "value",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Configs can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:StackMonitoring/config:Config test_config "id"
+        $ pulumi import oci:StackMonitoring/config:Config test_config "id"
         ```
 
         :param str resource_name: The name of the resource.

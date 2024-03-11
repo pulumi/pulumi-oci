@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -40,6 +41,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupBastion(ctx *pulumi.Context, args *LookupBastionArgs, opts ...pulumi.InvokeOption) (*LookupBastionResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupBastionResult

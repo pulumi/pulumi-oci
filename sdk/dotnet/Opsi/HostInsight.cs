@@ -16,6 +16,7 @@ namespace Pulumi.Oci.Opsi
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -47,13 +48,14 @@ namespace Pulumi.Oci.Opsi
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// HostInsights can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Opsi/hostInsight:HostInsight test_host_insight "id"
+    /// $ pulumi import oci:Opsi/hostInsight:HostInsight test_host_insight "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Opsi/hostInsight:HostInsight")]

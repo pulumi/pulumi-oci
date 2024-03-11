@@ -17,10 +17,9 @@ namespace Pulumi.Oci.Core
         /// Lists the boot volume backups in the specified compartment. You can filter the results by boot volume.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -40,8 +39,7 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetBootVolumeBackupsResult> InvokeAsync(GetBootVolumeBackupsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetBootVolumeBackupsResult>("oci:Core/getBootVolumeBackups:getBootVolumeBackups", args ?? new GetBootVolumeBackupsArgs(), options.WithDefaults());
@@ -52,10 +50,9 @@ namespace Pulumi.Oci.Core
         /// Lists the boot volume backups in the specified compartment. You can filter the results by boot volume.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -75,8 +72,7 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetBootVolumeBackupsResult> Invoke(GetBootVolumeBackupsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetBootVolumeBackupsResult>("oci:Core/getBootVolumeBackups:getBootVolumeBackups", args ?? new GetBootVolumeBackupsInvokeArgs(), options.WithDefaults());

@@ -329,6 +329,7 @@ class NotificationTopic(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -343,13 +344,14 @@ class NotificationTopic(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         NotificationTopics can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Ons/notificationTopic:NotificationTopic test_notification_topic "id"
+        $ pulumi import oci:Ons/notificationTopic:NotificationTopic test_notification_topic "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -390,6 +392,7 @@ class NotificationTopic(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -404,13 +407,14 @@ class NotificationTopic(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         NotificationTopics can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Ons/notificationTopic:NotificationTopic test_notification_topic "id"
+        $ pulumi import oci:Ons/notificationTopic:NotificationTopic test_notification_topic "id"
         ```
 
         :param str resource_name: The name of the resource.

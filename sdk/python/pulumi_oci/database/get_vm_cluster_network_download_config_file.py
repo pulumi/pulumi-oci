@@ -94,6 +94,7 @@ def get_vm_cluster_network_download_config_file(base64_encode_content: Optional[
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -102,6 +103,7 @@ def get_vm_cluster_network_download_config_file(base64_encode_content: Optional[
         vm_cluster_network_id=oci_database_vm_cluster_network["test_vm_cluster_network"]["id"],
         base64_encode_content=False)
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str exadata_infrastructure_id: The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -134,6 +136,7 @@ def get_vm_cluster_network_download_config_file_output(base64_encode_content: Op
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -142,6 +145,7 @@ def get_vm_cluster_network_download_config_file_output(base64_encode_content: Op
         vm_cluster_network_id=oci_database_vm_cluster_network["test_vm_cluster_network"]["id"],
         base64_encode_content=False)
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str exadata_infrastructure_id: The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

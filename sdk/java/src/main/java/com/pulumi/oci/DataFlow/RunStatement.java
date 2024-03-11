@@ -22,6 +22,8 @@ import javax.annotation.Nullable;
  * Executes a statement for a Session run.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -51,13 +53,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * RunStatements can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:DataFlow/runStatement:RunStatement test_run_statement &#34;runs/{runId}/statements/{statementId}&#34;
+ * $ pulumi import oci:DataFlow/runStatement:RunStatement test_run_statement &#34;runs/{runId}/statements/{statementId}&#34;
  * ```
  * 
  */

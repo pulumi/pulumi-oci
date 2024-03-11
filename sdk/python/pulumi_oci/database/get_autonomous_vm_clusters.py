@@ -128,6 +128,7 @@ def get_autonomous_vm_clusters(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -137,6 +138,7 @@ def get_autonomous_vm_clusters(compartment_id: Optional[str] = None,
         exadata_infrastructure_id=oci_database_exadata_infrastructure["test_exadata_infrastructure"]["id"],
         state=var["autonomous_vm_cluster_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -177,6 +179,7 @@ def get_autonomous_vm_clusters_output(compartment_id: Optional[pulumi.Input[str]
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -186,6 +189,7 @@ def get_autonomous_vm_clusters_output(compartment_id: Optional[pulumi.Input[str]
         exadata_infrastructure_id=oci_database_exadata_infrastructure["test_exadata_infrastructure"]["id"],
         state=var["autonomous_vm_cluster_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

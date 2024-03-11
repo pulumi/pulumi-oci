@@ -110,6 +110,7 @@ def get_bucket_summaries(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -117,6 +118,7 @@ def get_bucket_summaries(compartment_id: Optional[str] = None,
     test_buckets = oci.ObjectStorage.get_bucket_summaries(compartment_id=var["compartment_id"],
         namespace=var["bucket_namespace"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID of the compartment in which to list buckets.
@@ -157,6 +159,7 @@ def get_bucket_summaries_output(compartment_id: Optional[pulumi.Input[str]] = No
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -164,6 +167,7 @@ def get_bucket_summaries_output(compartment_id: Optional[pulumi.Input[str]] = No
     test_buckets = oci.ObjectStorage.get_bucket_summaries(compartment_id=var["compartment_id"],
         namespace=var["bucket_namespace"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID of the compartment in which to list buckets.

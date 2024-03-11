@@ -15,6 +15,8 @@ import javax.annotation.Nullable;
 
 /**
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -45,13 +47,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * PublicIpPoolCapacity can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Core/publicIpPoolCapacity:PublicIpPoolCapacity test_public_ip_pool_capacity &#34;publicIpPoolId/{publicIpPoolId}/byoipId/{byoipId}/cidrBlock/{cidrBlock}&#34;
+ * $ pulumi import oci:Core/publicIpPoolCapacity:PublicIpPoolCapacity test_public_ip_pool_capacity &#34;publicIpPoolId/{publicIpPoolId}/byoipId/{byoipId}/cidrBlock/{cidrBlock}&#34;
  * ```
  * 
  */

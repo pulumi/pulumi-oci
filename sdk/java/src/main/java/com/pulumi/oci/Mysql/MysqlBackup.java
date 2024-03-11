@@ -24,6 +24,8 @@ import javax.annotation.Nullable;
  * Create a backup of a DB System.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -58,13 +60,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * MysqlBackups can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Mysql/mysqlBackup:MysqlBackup test_mysql_backup &#34;id&#34;
+ * $ pulumi import oci:Mysql/mysqlBackup:MysqlBackup test_mysql_backup &#34;id&#34;
  * ```
  * 
  */

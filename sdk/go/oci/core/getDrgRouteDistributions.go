@@ -20,6 +20,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -45,6 +46,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetDrgRouteDistributions(ctx *pulumi.Context, args *GetDrgRouteDistributionsArgs, opts ...pulumi.InvokeOption) (*GetDrgRouteDistributionsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDrgRouteDistributionsResult

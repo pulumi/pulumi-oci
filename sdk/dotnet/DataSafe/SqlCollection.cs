@@ -16,6 +16,7 @@ namespace Pulumi.Oci.DataSafe
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -45,13 +46,14 @@ namespace Pulumi.Oci.DataSafe
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// SqlCollections can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:DataSafe/sqlCollection:SqlCollection test_sql_collection "id"
+    /// $ pulumi import oci:DataSafe/sqlCollection:SqlCollection test_sql_collection "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:DataSafe/sqlCollection:SqlCollection")]

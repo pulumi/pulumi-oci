@@ -61,7 +61,7 @@ namespace Pulumi.Oci.Core
     /// Instances can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Core/instance:Instance test_instance "id"
+    /// $ pulumi import oci:Core/instance:Instance test_instance "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Core/instance:Instance")]
@@ -247,27 +247,6 @@ namespace Pulumi.Oci.Core
         /// **"user_data"** - Provide your own base64-encoded data to be used by Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For information about how to take advantage of user data, see the [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
         /// 
         /// **Metadata Example**
-        /// 
-        /// 
-        /// **Getting Metadata on the Instance**
-        /// 
-        /// To get information about your instance, connect to the instance using SSH and issue any of the following GET requests:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using System.Linq;
-        /// using Pulumi;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        /// });
-        /// ```
-        /// 
-        /// You'll get back a response that includes all the instance information; only the metadata information; or the metadata information for the specified key name, respectively.
-        /// 
-        /// The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
-        /// 
-        /// **Note:** Both the 'user_data' and 'ssh_authorized_keys' fields cannot be changed after an instance has launched. Any request which updates, removes, or adds either of these fields will be rejected. You must provide the same values for 'user_data' and 'ssh_authorized_keys' that already exist on the instance.
         /// </summary>
         [Output("metadata")]
         public Output<ImmutableDictionary<string, object>> Metadata { get; private set; } = null!;
@@ -617,27 +596,6 @@ namespace Pulumi.Oci.Core
         /// **"user_data"** - Provide your own base64-encoded data to be used by Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For information about how to take advantage of user data, see the [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
         /// 
         /// **Metadata Example**
-        /// 
-        /// 
-        /// **Getting Metadata on the Instance**
-        /// 
-        /// To get information about your instance, connect to the instance using SSH and issue any of the following GET requests:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using System.Linq;
-        /// using Pulumi;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        /// });
-        /// ```
-        /// 
-        /// You'll get back a response that includes all the instance information; only the metadata information; or the metadata information for the specified key name, respectively.
-        /// 
-        /// The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
-        /// 
-        /// **Note:** Both the 'user_data' and 'ssh_authorized_keys' fields cannot be changed after an instance has launched. Any request which updates, removes, or adds either of these fields will be rejected. You must provide the same values for 'user_data' and 'ssh_authorized_keys' that already exist on the instance.
         /// </summary>
         public InputMap<object> Metadata
         {
@@ -930,27 +888,6 @@ namespace Pulumi.Oci.Core
         /// **"user_data"** - Provide your own base64-encoded data to be used by Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For information about how to take advantage of user data, see the [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
         /// 
         /// **Metadata Example**
-        /// 
-        /// 
-        /// **Getting Metadata on the Instance**
-        /// 
-        /// To get information about your instance, connect to the instance using SSH and issue any of the following GET requests:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using System.Linq;
-        /// using Pulumi;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        /// });
-        /// ```
-        /// 
-        /// You'll get back a response that includes all the instance information; only the metadata information; or the metadata information for the specified key name, respectively.
-        /// 
-        /// The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
-        /// 
-        /// **Note:** Both the 'user_data' and 'ssh_authorized_keys' fields cannot be changed after an instance has launched. Any request which updates, removes, or adds either of these fields will be rejected. You must provide the same values for 'user_data' and 'ssh_authorized_keys' that already exist on the instance.
         /// </summary>
         public InputMap<object> Metadata
         {

@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -77,15 +78,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Rules can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Identity/domainsRule:DomainsRule test_rule "idcsEndpoint/{idcsEndpoint}/rules/{ruleId}"
-//
+// $ pulumi import oci:Identity/domainsRule:DomainsRule test_rule "idcsEndpoint/{idcsEndpoint}/rules/{ruleId}"
 // ```
 type DomainsRule struct {
 	pulumi.CustomResourceState

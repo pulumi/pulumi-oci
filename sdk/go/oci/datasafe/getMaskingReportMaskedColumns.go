@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -46,6 +47,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetMaskingReportMaskedColumns(ctx *pulumi.Context, args *GetMaskingReportMaskedColumnsArgs, opts ...pulumi.InvokeOption) (*GetMaskingReportMaskedColumnsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetMaskingReportMaskedColumnsResult

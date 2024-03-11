@@ -343,6 +343,8 @@ public final class DataSafeFunctions {
      * Gets the details of the specified alerts.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -371,6 +373,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAlertResult> getAlert(GetAlertArgs args) {
@@ -382,6 +385,8 @@ public final class DataSafeFunctions {
      * Gets the details of the specified alerts.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -410,6 +415,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAlertResult> getAlertPlain(GetAlertPlainArgs args) {
@@ -421,6 +427,8 @@ public final class DataSafeFunctions {
      * Gets the details of the specified alerts.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -449,6 +457,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAlertResult> getAlert(GetAlertArgs args, InvokeOptions options) {
@@ -460,6 +469,8 @@ public final class DataSafeFunctions {
      * Gets the details of the specified alerts.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -488,6 +499,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAlertResult> getAlertPlain(GetAlertPlainArgs args, InvokeOptions options) {
@@ -499,6 +511,8 @@ public final class DataSafeFunctions {
      * Returns aggregation details of alerts.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -535,6 +549,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAlertAnalyticResult> getAlertAnalytic(GetAlertAnalyticArgs args) {
@@ -546,6 +561,8 @@ public final class DataSafeFunctions {
      * Returns aggregation details of alerts.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -582,6 +599,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAlertAnalyticResult> getAlertAnalyticPlain(GetAlertAnalyticPlainArgs args) {
@@ -593,6 +611,8 @@ public final class DataSafeFunctions {
      * Returns aggregation details of alerts.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -629,6 +649,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAlertAnalyticResult> getAlertAnalytic(GetAlertAnalyticArgs args, InvokeOptions options) {
@@ -640,6 +661,8 @@ public final class DataSafeFunctions {
      * Returns aggregation details of alerts.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -676,6 +699,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAlertAnalyticResult> getAlertAnalyticPlain(GetAlertAnalyticPlainArgs args, InvokeOptions options) {
@@ -687,6 +711,8 @@ public final class DataSafeFunctions {
      * Gets a list of all alert policies.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -724,6 +750,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAlertPoliciesResult> getAlertPolicies(GetAlertPoliciesArgs args) {
@@ -735,6 +762,8 @@ public final class DataSafeFunctions {
      * Gets a list of all alert policies.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -772,6 +801,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAlertPoliciesResult> getAlertPoliciesPlain(GetAlertPoliciesPlainArgs args) {
@@ -783,6 +813,8 @@ public final class DataSafeFunctions {
      * Gets a list of all alert policies.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -820,6 +852,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAlertPoliciesResult> getAlertPolicies(GetAlertPoliciesArgs args, InvokeOptions options) {
@@ -831,6 +864,8 @@ public final class DataSafeFunctions {
      * Gets a list of all alert policies.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -868,6 +903,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAlertPoliciesResult> getAlertPoliciesPlain(GetAlertPoliciesPlainArgs args, InvokeOptions options) {
@@ -879,6 +915,8 @@ public final class DataSafeFunctions {
      * Gets the details of alert policy by its ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -907,6 +945,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAlertPolicyResult> getAlertPolicy(GetAlertPolicyArgs args) {
@@ -918,6 +957,8 @@ public final class DataSafeFunctions {
      * Gets the details of alert policy by its ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -946,6 +987,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAlertPolicyResult> getAlertPolicyPlain(GetAlertPolicyPlainArgs args) {
@@ -957,6 +999,8 @@ public final class DataSafeFunctions {
      * Gets the details of alert policy by its ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -985,6 +1029,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAlertPolicyResult> getAlertPolicy(GetAlertPolicyArgs args, InvokeOptions options) {
@@ -996,6 +1041,8 @@ public final class DataSafeFunctions {
      * Gets the details of alert policy by its ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1024,6 +1071,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAlertPolicyResult> getAlertPolicyPlain(GetAlertPolicyPlainArgs args, InvokeOptions options) {
@@ -1036,6 +1084,8 @@ public final class DataSafeFunctions {
      * If there are three rules: rule1,rule2 and rule3, the policy is satisfied if rule1 AND rule2 AND rule3 is True.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1064,6 +1114,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAlertPolicyRuleResult> getAlertPolicyRule(GetAlertPolicyRuleArgs args) {
@@ -1076,6 +1127,8 @@ public final class DataSafeFunctions {
      * If there are three rules: rule1,rule2 and rule3, the policy is satisfied if rule1 AND rule2 AND rule3 is True.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1104,6 +1157,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAlertPolicyRuleResult> getAlertPolicyRulePlain(GetAlertPolicyRulePlainArgs args) {
@@ -1116,6 +1170,8 @@ public final class DataSafeFunctions {
      * If there are three rules: rule1,rule2 and rule3, the policy is satisfied if rule1 AND rule2 AND rule3 is True.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1144,6 +1200,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAlertPolicyRuleResult> getAlertPolicyRule(GetAlertPolicyRuleArgs args, InvokeOptions options) {
@@ -1156,6 +1213,8 @@ public final class DataSafeFunctions {
      * If there are three rules: rule1,rule2 and rule3, the policy is satisfied if rule1 AND rule2 AND rule3 is True.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1184,6 +1243,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAlertPolicyRuleResult> getAlertPolicyRulePlain(GetAlertPolicyRulePlainArgs args, InvokeOptions options) {
@@ -1196,6 +1256,8 @@ public final class DataSafeFunctions {
      * If there are three rules: rule1,rule2 and rule3, the policy is satisfied if rule1 AND rule2 AND rule3 is True.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1224,6 +1286,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAlertPolicyRulesResult> getAlertPolicyRules(GetAlertPolicyRulesArgs args) {
@@ -1236,6 +1299,8 @@ public final class DataSafeFunctions {
      * If there are three rules: rule1,rule2 and rule3, the policy is satisfied if rule1 AND rule2 AND rule3 is True.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1264,6 +1329,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAlertPolicyRulesResult> getAlertPolicyRulesPlain(GetAlertPolicyRulesPlainArgs args) {
@@ -1276,6 +1342,8 @@ public final class DataSafeFunctions {
      * If there are three rules: rule1,rule2 and rule3, the policy is satisfied if rule1 AND rule2 AND rule3 is True.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1304,6 +1372,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAlertPolicyRulesResult> getAlertPolicyRules(GetAlertPolicyRulesArgs args, InvokeOptions options) {
@@ -1316,6 +1385,8 @@ public final class DataSafeFunctions {
      * If there are three rules: rule1,rule2 and rule3, the policy is satisfied if rule1 AND rule2 AND rule3 is True.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1344,6 +1415,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAlertPolicyRulesResult> getAlertPolicyRulesPlain(GetAlertPolicyRulesPlainArgs args, InvokeOptions options) {
@@ -1355,6 +1427,8 @@ public final class DataSafeFunctions {
      * Gets a list of all alerts.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1388,6 +1462,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAlertsResult> getAlerts(GetAlertsArgs args) {
@@ -1399,6 +1474,8 @@ public final class DataSafeFunctions {
      * Gets a list of all alerts.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1432,6 +1509,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAlertsResult> getAlertsPlain(GetAlertsPlainArgs args) {
@@ -1443,6 +1521,8 @@ public final class DataSafeFunctions {
      * Gets a list of all alerts.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1476,6 +1556,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAlertsResult> getAlerts(GetAlertsArgs args, InvokeOptions options) {
@@ -1487,6 +1568,8 @@ public final class DataSafeFunctions {
      * Gets a list of all alerts.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1520,6 +1603,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAlertsResult> getAlertsPlain(GetAlertsPlainArgs args, InvokeOptions options) {
@@ -1531,6 +1615,8 @@ public final class DataSafeFunctions {
      * Gets the details of the specified archive retreival.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1559,6 +1645,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAuditArchiveRetrievalResult> getAuditArchiveRetrieval(GetAuditArchiveRetrievalArgs args) {
@@ -1570,6 +1657,8 @@ public final class DataSafeFunctions {
      * Gets the details of the specified archive retreival.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1598,6 +1687,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAuditArchiveRetrievalResult> getAuditArchiveRetrievalPlain(GetAuditArchiveRetrievalPlainArgs args) {
@@ -1609,6 +1699,8 @@ public final class DataSafeFunctions {
      * Gets the details of the specified archive retreival.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1637,6 +1729,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAuditArchiveRetrievalResult> getAuditArchiveRetrieval(GetAuditArchiveRetrievalArgs args, InvokeOptions options) {
@@ -1648,6 +1741,8 @@ public final class DataSafeFunctions {
      * Gets the details of the specified archive retreival.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1676,6 +1771,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAuditArchiveRetrievalResult> getAuditArchiveRetrievalPlain(GetAuditArchiveRetrievalPlainArgs args, InvokeOptions options) {
@@ -1687,6 +1783,8 @@ public final class DataSafeFunctions {
      * Returns the list of audit archive retrieval.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1722,6 +1820,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAuditArchiveRetrievalsResult> getAuditArchiveRetrievals(GetAuditArchiveRetrievalsArgs args) {
@@ -1733,6 +1832,8 @@ public final class DataSafeFunctions {
      * Returns the list of audit archive retrieval.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1768,6 +1869,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAuditArchiveRetrievalsResult> getAuditArchiveRetrievalsPlain(GetAuditArchiveRetrievalsPlainArgs args) {
@@ -1779,6 +1881,8 @@ public final class DataSafeFunctions {
      * Returns the list of audit archive retrieval.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1814,6 +1918,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAuditArchiveRetrievalsResult> getAuditArchiveRetrievals(GetAuditArchiveRetrievalsArgs args, InvokeOptions options) {
@@ -1825,6 +1930,8 @@ public final class DataSafeFunctions {
      * Returns the list of audit archive retrieval.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1860,6 +1967,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAuditArchiveRetrievalsResult> getAuditArchiveRetrievalsPlain(GetAuditArchiveRetrievalsPlainArgs args, InvokeOptions options) {
@@ -1883,6 +1991,8 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1914,6 +2024,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAuditEventResult> getAuditEvent(GetAuditEventArgs args) {
@@ -1937,6 +2048,8 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1968,6 +2081,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAuditEventResult> getAuditEventPlain(GetAuditEventPlainArgs args) {
@@ -1991,6 +2105,8 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2022,6 +2138,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAuditEventResult> getAuditEvent(GetAuditEventArgs args, InvokeOptions options) {
@@ -2045,6 +2162,8 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2076,6 +2195,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAuditEventResult> getAuditEventPlain(GetAuditEventPlainArgs args, InvokeOptions options) {
@@ -2092,6 +2212,8 @@ public final class DataSafeFunctions {
      *              &amp;summaryField=eventcount&amp;q=(operationTime ge &#39;2021-06-13T23:49:14&#39;)&amp;groupBy=targetName
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2128,6 +2250,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAuditEventAnalyticResult> getAuditEventAnalytic(GetAuditEventAnalyticArgs args) {
@@ -2144,6 +2267,8 @@ public final class DataSafeFunctions {
      *              &amp;summaryField=eventcount&amp;q=(operationTime ge &#39;2021-06-13T23:49:14&#39;)&amp;groupBy=targetName
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2180,6 +2305,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAuditEventAnalyticResult> getAuditEventAnalyticPlain(GetAuditEventAnalyticPlainArgs args) {
@@ -2196,6 +2322,8 @@ public final class DataSafeFunctions {
      *              &amp;summaryField=eventcount&amp;q=(operationTime ge &#39;2021-06-13T23:49:14&#39;)&amp;groupBy=targetName
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2232,6 +2360,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAuditEventAnalyticResult> getAuditEventAnalytic(GetAuditEventAnalyticArgs args, InvokeOptions options) {
@@ -2248,6 +2377,8 @@ public final class DataSafeFunctions {
      *              &amp;summaryField=eventcount&amp;q=(operationTime ge &#39;2021-06-13T23:49:14&#39;)&amp;groupBy=targetName
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2284,6 +2415,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAuditEventAnalyticResult> getAuditEventAnalyticPlain(GetAuditEventAnalyticPlainArgs args, InvokeOptions options) {
@@ -2307,6 +2439,8 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2338,6 +2472,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAuditEventsResult> getAuditEvents(GetAuditEventsArgs args) {
@@ -2361,6 +2496,8 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2392,6 +2529,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAuditEventsResult> getAuditEventsPlain(GetAuditEventsPlainArgs args) {
@@ -2415,6 +2553,8 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2446,6 +2586,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAuditEventsResult> getAuditEvents(GetAuditEventsArgs args, InvokeOptions options) {
@@ -2469,6 +2610,8 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2500,6 +2643,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAuditEventsResult> getAuditEventsPlain(GetAuditEventsPlainArgs args, InvokeOptions options) {
@@ -2525,6 +2669,8 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2559,6 +2705,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAuditPoliciesResult> getAuditPolicies(GetAuditPoliciesArgs args) {
@@ -2584,6 +2731,8 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2618,6 +2767,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAuditPoliciesResult> getAuditPoliciesPlain(GetAuditPoliciesPlainArgs args) {
@@ -2643,6 +2793,8 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2677,6 +2829,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAuditPoliciesResult> getAuditPolicies(GetAuditPoliciesArgs args, InvokeOptions options) {
@@ -2702,6 +2855,8 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2736,6 +2891,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAuditPoliciesResult> getAuditPoliciesPlain(GetAuditPoliciesPlainArgs args, InvokeOptions options) {
@@ -2747,6 +2903,8 @@ public final class DataSafeFunctions {
      * Gets a audit policy by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2775,6 +2933,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAuditPolicyResult> getAuditPolicy(GetAuditPolicyArgs args) {
@@ -2786,6 +2945,8 @@ public final class DataSafeFunctions {
      * Gets a audit policy by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2814,6 +2975,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAuditPolicyResult> getAuditPolicyPlain(GetAuditPolicyPlainArgs args) {
@@ -2825,6 +2987,8 @@ public final class DataSafeFunctions {
      * Gets a audit policy by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2853,6 +3017,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAuditPolicyResult> getAuditPolicy(GetAuditPolicyArgs args, InvokeOptions options) {
@@ -2864,6 +3029,8 @@ public final class DataSafeFunctions {
      * Gets a audit policy by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2892,6 +3059,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAuditPolicyResult> getAuditPolicyPlain(GetAuditPolicyPlainArgs args, InvokeOptions options) {
@@ -2903,6 +3071,8 @@ public final class DataSafeFunctions {
      * Gets the details of audit profile resource and associated audit trails of the audit profile.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2931,6 +3101,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAuditProfileResult> getAuditProfile(GetAuditProfileArgs args) {
@@ -2942,6 +3113,8 @@ public final class DataSafeFunctions {
      * Gets the details of audit profile resource and associated audit trails of the audit profile.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2970,6 +3143,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAuditProfileResult> getAuditProfilePlain(GetAuditProfilePlainArgs args) {
@@ -2981,6 +3155,8 @@ public final class DataSafeFunctions {
      * Gets the details of audit profile resource and associated audit trails of the audit profile.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3009,6 +3185,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAuditProfileResult> getAuditProfile(GetAuditProfileArgs args, InvokeOptions options) {
@@ -3020,6 +3197,8 @@ public final class DataSafeFunctions {
      * Gets the details of audit profile resource and associated audit trails of the audit profile.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3048,6 +3227,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAuditProfileResult> getAuditProfilePlain(GetAuditProfilePlainArgs args, InvokeOptions options) {
@@ -3071,6 +3251,8 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3102,6 +3284,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAuditProfileAnalyticResult> getAuditProfileAnalytic(GetAuditProfileAnalyticArgs args) {
@@ -3125,6 +3308,8 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3156,6 +3341,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAuditProfileAnalyticResult> getAuditProfileAnalyticPlain(GetAuditProfileAnalyticPlainArgs args) {
@@ -3179,6 +3365,8 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3210,6 +3398,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAuditProfileAnalyticResult> getAuditProfileAnalytic(GetAuditProfileAnalyticArgs args, InvokeOptions options) {
@@ -3233,6 +3422,8 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3264,6 +3455,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAuditProfileAnalyticResult> getAuditProfileAnalyticPlain(GetAuditProfileAnalyticPlainArgs args, InvokeOptions options) {
@@ -3275,6 +3467,8 @@ public final class DataSafeFunctions {
      * Retrieves a list of audit trails, and associated audit event volume for each trail up to defined start date.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3307,6 +3501,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAuditProfileAvailableAuditVolumeResult> getAuditProfileAvailableAuditVolume(GetAuditProfileAvailableAuditVolumeArgs args) {
@@ -3318,6 +3513,8 @@ public final class DataSafeFunctions {
      * Retrieves a list of audit trails, and associated audit event volume for each trail up to defined start date.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3350,6 +3547,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAuditProfileAvailableAuditVolumeResult> getAuditProfileAvailableAuditVolumePlain(GetAuditProfileAvailableAuditVolumePlainArgs args) {
@@ -3361,6 +3559,8 @@ public final class DataSafeFunctions {
      * Retrieves a list of audit trails, and associated audit event volume for each trail up to defined start date.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3393,6 +3593,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAuditProfileAvailableAuditVolumeResult> getAuditProfileAvailableAuditVolume(GetAuditProfileAvailableAuditVolumeArgs args, InvokeOptions options) {
@@ -3404,6 +3605,8 @@ public final class DataSafeFunctions {
      * Retrieves a list of audit trails, and associated audit event volume for each trail up to defined start date.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3436,6 +3639,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAuditProfileAvailableAuditVolumeResult> getAuditProfileAvailableAuditVolumePlain(GetAuditProfileAvailableAuditVolumePlainArgs args, InvokeOptions options) {
@@ -3447,6 +3651,8 @@ public final class DataSafeFunctions {
      * Retrieves a list of audit trails, and associated audit event volume for each trail up to defined start date.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3479,6 +3685,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAuditProfileAvailableAuditVolumesResult> getAuditProfileAvailableAuditVolumes(GetAuditProfileAvailableAuditVolumesArgs args) {
@@ -3490,6 +3697,8 @@ public final class DataSafeFunctions {
      * Retrieves a list of audit trails, and associated audit event volume for each trail up to defined start date.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3522,6 +3731,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAuditProfileAvailableAuditVolumesResult> getAuditProfileAvailableAuditVolumesPlain(GetAuditProfileAvailableAuditVolumesPlainArgs args) {
@@ -3533,6 +3743,8 @@ public final class DataSafeFunctions {
      * Retrieves a list of audit trails, and associated audit event volume for each trail up to defined start date.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3565,6 +3777,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAuditProfileAvailableAuditVolumesResult> getAuditProfileAvailableAuditVolumes(GetAuditProfileAvailableAuditVolumesArgs args, InvokeOptions options) {
@@ -3576,6 +3789,8 @@ public final class DataSafeFunctions {
      * Retrieves a list of audit trails, and associated audit event volume for each trail up to defined start date.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3608,6 +3823,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAuditProfileAvailableAuditVolumesResult> getAuditProfileAvailableAuditVolumesPlain(GetAuditProfileAvailableAuditVolumesPlainArgs args, InvokeOptions options) {
@@ -3619,6 +3835,8 @@ public final class DataSafeFunctions {
      * Gets a list of all collected audit volume data points.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3650,6 +3868,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAuditProfileCollectedAuditVolumeResult> getAuditProfileCollectedAuditVolume(GetAuditProfileCollectedAuditVolumeArgs args) {
@@ -3661,6 +3880,8 @@ public final class DataSafeFunctions {
      * Gets a list of all collected audit volume data points.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3692,6 +3913,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAuditProfileCollectedAuditVolumeResult> getAuditProfileCollectedAuditVolumePlain(GetAuditProfileCollectedAuditVolumePlainArgs args) {
@@ -3703,6 +3925,8 @@ public final class DataSafeFunctions {
      * Gets a list of all collected audit volume data points.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3734,6 +3958,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAuditProfileCollectedAuditVolumeResult> getAuditProfileCollectedAuditVolume(GetAuditProfileCollectedAuditVolumeArgs args, InvokeOptions options) {
@@ -3745,6 +3970,8 @@ public final class DataSafeFunctions {
      * Gets a list of all collected audit volume data points.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3776,6 +4003,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAuditProfileCollectedAuditVolumeResult> getAuditProfileCollectedAuditVolumePlain(GetAuditProfileCollectedAuditVolumePlainArgs args, InvokeOptions options) {
@@ -3787,6 +4015,8 @@ public final class DataSafeFunctions {
      * Gets a list of all collected audit volume data points.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3818,6 +4048,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAuditProfileCollectedAuditVolumesResult> getAuditProfileCollectedAuditVolumes(GetAuditProfileCollectedAuditVolumesArgs args) {
@@ -3829,6 +4060,8 @@ public final class DataSafeFunctions {
      * Gets a list of all collected audit volume data points.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3860,6 +4093,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAuditProfileCollectedAuditVolumesResult> getAuditProfileCollectedAuditVolumesPlain(GetAuditProfileCollectedAuditVolumesPlainArgs args) {
@@ -3871,6 +4105,8 @@ public final class DataSafeFunctions {
      * Gets a list of all collected audit volume data points.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3902,6 +4138,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAuditProfileCollectedAuditVolumesResult> getAuditProfileCollectedAuditVolumes(GetAuditProfileCollectedAuditVolumesArgs args, InvokeOptions options) {
@@ -3913,6 +4150,8 @@ public final class DataSafeFunctions {
      * Gets a list of all collected audit volume data points.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3944,6 +4183,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAuditProfileCollectedAuditVolumesResult> getAuditProfileCollectedAuditVolumesPlain(GetAuditProfileCollectedAuditVolumesPlainArgs args, InvokeOptions options) {
@@ -3969,6 +4209,8 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4006,6 +4248,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAuditProfilesResult> getAuditProfiles(GetAuditProfilesArgs args) {
@@ -4031,6 +4274,8 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4068,6 +4313,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAuditProfilesResult> getAuditProfilesPlain(GetAuditProfilesPlainArgs args) {
@@ -4093,6 +4339,8 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4130,6 +4378,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAuditProfilesResult> getAuditProfiles(GetAuditProfilesArgs args, InvokeOptions options) {
@@ -4155,6 +4404,8 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4192,6 +4443,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAuditProfilesResult> getAuditProfilesPlain(GetAuditProfilesPlainArgs args, InvokeOptions options) {
@@ -4203,6 +4455,8 @@ public final class DataSafeFunctions {
      * Gets the details of audit trail.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4231,6 +4485,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAuditTrailResult> getAuditTrail(GetAuditTrailArgs args) {
@@ -4242,6 +4497,8 @@ public final class DataSafeFunctions {
      * Gets the details of audit trail.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4270,6 +4527,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAuditTrailResult> getAuditTrailPlain(GetAuditTrailPlainArgs args) {
@@ -4281,6 +4539,8 @@ public final class DataSafeFunctions {
      * Gets the details of audit trail.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4309,6 +4569,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAuditTrailResult> getAuditTrail(GetAuditTrailArgs args, InvokeOptions options) {
@@ -4320,6 +4581,8 @@ public final class DataSafeFunctions {
      * Gets the details of audit trail.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4348,6 +4611,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAuditTrailResult> getAuditTrailPlain(GetAuditTrailPlainArgs args, InvokeOptions options) {
@@ -4371,6 +4635,8 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4403,6 +4669,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAuditTrailAnalyticResult> getAuditTrailAnalytic(GetAuditTrailAnalyticArgs args) {
@@ -4426,6 +4693,8 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4458,6 +4727,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAuditTrailAnalyticResult> getAuditTrailAnalyticPlain(GetAuditTrailAnalyticPlainArgs args) {
@@ -4481,6 +4751,8 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4513,6 +4785,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAuditTrailAnalyticResult> getAuditTrailAnalytic(GetAuditTrailAnalyticArgs args, InvokeOptions options) {
@@ -4536,6 +4809,8 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4568,6 +4843,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAuditTrailAnalyticResult> getAuditTrailAnalyticPlain(GetAuditTrailAnalyticPlainArgs args, InvokeOptions options) {
@@ -4592,6 +4868,8 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4627,6 +4905,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAuditTrailsResult> getAuditTrails(GetAuditTrailsArgs args) {
@@ -4651,6 +4930,8 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4686,6 +4967,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAuditTrailsResult> getAuditTrailsPlain(GetAuditTrailsPlainArgs args) {
@@ -4710,6 +4992,8 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4745,6 +5029,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAuditTrailsResult> getAuditTrails(GetAuditTrailsArgs args, InvokeOptions options) {
@@ -4769,6 +5054,8 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4804,6 +5091,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAuditTrailsResult> getAuditTrailsPlain(GetAuditTrailsPlainArgs args, InvokeOptions options) {
@@ -4821,6 +5109,8 @@ public final class DataSafeFunctions {
      * All - Includes all the supported data types
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4846,6 +5136,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCompatibleFormatsForDataTypeResult> getCompatibleFormatsForDataType() {
@@ -4863,6 +5154,8 @@ public final class DataSafeFunctions {
      * All - Includes all the supported data types
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4888,6 +5181,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCompatibleFormatsForDataTypeResult> getCompatibleFormatsForDataTypePlain() {
@@ -4905,6 +5199,8 @@ public final class DataSafeFunctions {
      * All - Includes all the supported data types
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4930,6 +5226,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCompatibleFormatsForDataTypeResult> getCompatibleFormatsForDataType(InvokeArgs args) {
@@ -4947,6 +5244,8 @@ public final class DataSafeFunctions {
      * All - Includes all the supported data types
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4972,6 +5271,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCompatibleFormatsForDataTypeResult> getCompatibleFormatsForDataTypePlain(InvokeArgs args) {
@@ -4989,6 +5289,8 @@ public final class DataSafeFunctions {
      * All - Includes all the supported data types
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5014,6 +5316,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCompatibleFormatsForDataTypeResult> getCompatibleFormatsForDataType(InvokeArgs args, InvokeOptions options) {
@@ -5031,6 +5334,8 @@ public final class DataSafeFunctions {
      * All - Includes all the supported data types
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5056,6 +5361,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCompatibleFormatsForDataTypeResult> getCompatibleFormatsForDataTypePlain(InvokeArgs args, InvokeOptions options) {
@@ -5070,6 +5376,8 @@ public final class DataSafeFunctions {
      * the OCID of the sensitive type.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5100,6 +5408,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCompatibleFormatsForSensitiveTypeResult> getCompatibleFormatsForSensitiveType(GetCompatibleFormatsForSensitiveTypeArgs args) {
@@ -5114,6 +5423,8 @@ public final class DataSafeFunctions {
      * the OCID of the sensitive type.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5144,6 +5455,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCompatibleFormatsForSensitiveTypeResult> getCompatibleFormatsForSensitiveTypePlain(GetCompatibleFormatsForSensitiveTypePlainArgs args) {
@@ -5158,6 +5470,8 @@ public final class DataSafeFunctions {
      * the OCID of the sensitive type.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5188,6 +5502,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCompatibleFormatsForSensitiveTypeResult> getCompatibleFormatsForSensitiveType(GetCompatibleFormatsForSensitiveTypeArgs args, InvokeOptions options) {
@@ -5202,6 +5517,8 @@ public final class DataSafeFunctions {
      * the OCID of the sensitive type.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5232,6 +5549,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCompatibleFormatsForSensitiveTypeResult> getCompatibleFormatsForSensitiveTypePlain(GetCompatibleFormatsForSensitiveTypePlainArgs args, InvokeOptions options) {
@@ -5243,6 +5561,8 @@ public final class DataSafeFunctions {
      * Gets the details of the Data Safe configuration.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5271,6 +5591,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDataSafeConfigurationResult> getDataSafeConfiguration(GetDataSafeConfigurationArgs args) {
@@ -5282,6 +5603,8 @@ public final class DataSafeFunctions {
      * Gets the details of the Data Safe configuration.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5310,6 +5633,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDataSafeConfigurationResult> getDataSafeConfigurationPlain(GetDataSafeConfigurationPlainArgs args) {
@@ -5321,6 +5645,8 @@ public final class DataSafeFunctions {
      * Gets the details of the Data Safe configuration.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5349,6 +5675,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDataSafeConfigurationResult> getDataSafeConfiguration(GetDataSafeConfigurationArgs args, InvokeOptions options) {
@@ -5360,6 +5687,8 @@ public final class DataSafeFunctions {
      * Gets the details of the Data Safe configuration.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5388,6 +5717,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDataSafeConfigurationResult> getDataSafeConfigurationPlain(GetDataSafeConfigurationPlainArgs args, InvokeOptions options) {
@@ -5399,6 +5729,8 @@ public final class DataSafeFunctions {
      * Gets the details of the specified Data Safe private endpoint.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5427,6 +5759,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDataSafePrivateEndpointResult> getDataSafePrivateEndpoint(GetDataSafePrivateEndpointArgs args) {
@@ -5438,6 +5771,8 @@ public final class DataSafeFunctions {
      * Gets the details of the specified Data Safe private endpoint.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5466,6 +5801,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDataSafePrivateEndpointResult> getDataSafePrivateEndpointPlain(GetDataSafePrivateEndpointPlainArgs args) {
@@ -5477,6 +5813,8 @@ public final class DataSafeFunctions {
      * Gets the details of the specified Data Safe private endpoint.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5505,6 +5843,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDataSafePrivateEndpointResult> getDataSafePrivateEndpoint(GetDataSafePrivateEndpointArgs args, InvokeOptions options) {
@@ -5516,6 +5855,8 @@ public final class DataSafeFunctions {
      * Gets the details of the specified Data Safe private endpoint.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5544,6 +5885,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDataSafePrivateEndpointResult> getDataSafePrivateEndpointPlain(GetDataSafePrivateEndpointPlainArgs args, InvokeOptions options) {
@@ -5555,6 +5897,8 @@ public final class DataSafeFunctions {
      * Gets a list of Data Safe private endpoints.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5588,6 +5932,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDataSafePrivateEndpointsResult> getDataSafePrivateEndpoints(GetDataSafePrivateEndpointsArgs args) {
@@ -5599,6 +5944,8 @@ public final class DataSafeFunctions {
      * Gets a list of Data Safe private endpoints.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5632,6 +5979,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDataSafePrivateEndpointsResult> getDataSafePrivateEndpointsPlain(GetDataSafePrivateEndpointsPlainArgs args) {
@@ -5643,6 +5991,8 @@ public final class DataSafeFunctions {
      * Gets a list of Data Safe private endpoints.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5676,6 +6026,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDataSafePrivateEndpointsResult> getDataSafePrivateEndpoints(GetDataSafePrivateEndpointsArgs args, InvokeOptions options) {
@@ -5687,6 +6038,8 @@ public final class DataSafeFunctions {
      * Gets a list of Data Safe private endpoints.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5720,6 +6073,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDataSafePrivateEndpointsResult> getDataSafePrivateEndpointsPlain(GetDataSafePrivateEndpointsPlainArgs args, InvokeOptions options) {
@@ -5733,6 +6087,8 @@ public final class DataSafeFunctions {
      * is equivalent to accessLevel &#34;ACCESSIBLE&#34; by default.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5765,6 +6121,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDiscoveryAnalyticResult> getDiscoveryAnalytic(GetDiscoveryAnalyticArgs args) {
@@ -5778,6 +6135,8 @@ public final class DataSafeFunctions {
      * is equivalent to accessLevel &#34;ACCESSIBLE&#34; by default.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5810,6 +6169,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDiscoveryAnalyticResult> getDiscoveryAnalyticPlain(GetDiscoveryAnalyticPlainArgs args) {
@@ -5823,6 +6183,8 @@ public final class DataSafeFunctions {
      * is equivalent to accessLevel &#34;ACCESSIBLE&#34; by default.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5855,6 +6217,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDiscoveryAnalyticResult> getDiscoveryAnalytic(GetDiscoveryAnalyticArgs args, InvokeOptions options) {
@@ -5868,6 +6231,8 @@ public final class DataSafeFunctions {
      * is equivalent to accessLevel &#34;ACCESSIBLE&#34; by default.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5900,6 +6265,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDiscoveryAnalyticResult> getDiscoveryAnalyticPlain(GetDiscoveryAnalyticPlainArgs args, InvokeOptions options) {
@@ -5913,6 +6279,8 @@ public final class DataSafeFunctions {
      * is equivalent to accessLevel &#34;ACCESSIBLE&#34; by default.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5947,6 +6315,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDiscoveryAnalyticsResult> getDiscoveryAnalytics(GetDiscoveryAnalyticsArgs args) {
@@ -5960,6 +6329,8 @@ public final class DataSafeFunctions {
      * is equivalent to accessLevel &#34;ACCESSIBLE&#34; by default.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5994,6 +6365,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDiscoveryAnalyticsResult> getDiscoveryAnalyticsPlain(GetDiscoveryAnalyticsPlainArgs args) {
@@ -6007,6 +6379,8 @@ public final class DataSafeFunctions {
      * is equivalent to accessLevel &#34;ACCESSIBLE&#34; by default.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6041,6 +6415,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDiscoveryAnalyticsResult> getDiscoveryAnalytics(GetDiscoveryAnalyticsArgs args, InvokeOptions options) {
@@ -6054,6 +6429,8 @@ public final class DataSafeFunctions {
      * is equivalent to accessLevel &#34;ACCESSIBLE&#34; by default.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6088,6 +6465,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDiscoveryAnalyticsResult> getDiscoveryAnalyticsPlain(GetDiscoveryAnalyticsPlainArgs args, InvokeOptions options) {
@@ -6099,6 +6477,8 @@ public final class DataSafeFunctions {
      * Gets the details of the specified discovery job.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6127,6 +6507,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDiscoveryJobResult> getDiscoveryJob(GetDiscoveryJobArgs args) {
@@ -6138,6 +6519,8 @@ public final class DataSafeFunctions {
      * Gets the details of the specified discovery job.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6166,6 +6549,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDiscoveryJobResult> getDiscoveryJobPlain(GetDiscoveryJobPlainArgs args) {
@@ -6177,6 +6561,8 @@ public final class DataSafeFunctions {
      * Gets the details of the specified discovery job.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6205,6 +6591,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDiscoveryJobResult> getDiscoveryJob(GetDiscoveryJobArgs args, InvokeOptions options) {
@@ -6216,6 +6603,8 @@ public final class DataSafeFunctions {
      * Gets the details of the specified discovery job.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6244,6 +6633,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDiscoveryJobResult> getDiscoveryJobPlain(GetDiscoveryJobPlainArgs args, InvokeOptions options) {
@@ -6255,6 +6645,8 @@ public final class DataSafeFunctions {
      * Gets the details of the specified discovery result.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6284,6 +6676,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDiscoveryJobsResultResult> getDiscoveryJobsResult(GetDiscoveryJobsResultArgs args) {
@@ -6295,6 +6688,8 @@ public final class DataSafeFunctions {
      * Gets the details of the specified discovery result.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6324,6 +6719,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDiscoveryJobsResultResult> getDiscoveryJobsResultPlain(GetDiscoveryJobsResultPlainArgs args) {
@@ -6335,6 +6731,8 @@ public final class DataSafeFunctions {
      * Gets the details of the specified discovery result.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6364,6 +6762,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDiscoveryJobsResultResult> getDiscoveryJobsResult(GetDiscoveryJobsResultArgs args, InvokeOptions options) {
@@ -6375,6 +6774,8 @@ public final class DataSafeFunctions {
      * Gets the details of the specified discovery result.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6404,6 +6805,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDiscoveryJobsResultResult> getDiscoveryJobsResultPlain(GetDiscoveryJobsResultPlainArgs args, InvokeOptions options) {
@@ -6415,6 +6817,8 @@ public final class DataSafeFunctions {
      * Gets a list of discovery results based on the specified query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6449,6 +6853,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDiscoveryJobsResultsResult> getDiscoveryJobsResults(GetDiscoveryJobsResultsArgs args) {
@@ -6460,6 +6865,8 @@ public final class DataSafeFunctions {
      * Gets a list of discovery results based on the specified query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6494,6 +6901,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDiscoveryJobsResultsResult> getDiscoveryJobsResultsPlain(GetDiscoveryJobsResultsPlainArgs args) {
@@ -6505,6 +6913,8 @@ public final class DataSafeFunctions {
      * Gets a list of discovery results based on the specified query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6539,6 +6949,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDiscoveryJobsResultsResult> getDiscoveryJobsResults(GetDiscoveryJobsResultsArgs args, InvokeOptions options) {
@@ -6550,6 +6961,8 @@ public final class DataSafeFunctions {
      * Gets a list of discovery results based on the specified query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6584,6 +6997,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDiscoveryJobsResultsResult> getDiscoveryJobsResultsPlain(GetDiscoveryJobsResultsPlainArgs args, InvokeOptions options) {
@@ -6595,6 +7009,8 @@ public final class DataSafeFunctions {
      * Gets the details of the specified library masking format.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6623,6 +7039,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetLibraryMaskingFormatResult> getLibraryMaskingFormat(GetLibraryMaskingFormatArgs args) {
@@ -6634,6 +7051,8 @@ public final class DataSafeFunctions {
      * Gets the details of the specified library masking format.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6662,6 +7081,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetLibraryMaskingFormatResult> getLibraryMaskingFormatPlain(GetLibraryMaskingFormatPlainArgs args) {
@@ -6673,6 +7093,8 @@ public final class DataSafeFunctions {
      * Gets the details of the specified library masking format.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6701,6 +7123,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetLibraryMaskingFormatResult> getLibraryMaskingFormat(GetLibraryMaskingFormatArgs args, InvokeOptions options) {
@@ -6712,6 +7135,8 @@ public final class DataSafeFunctions {
      * Gets the details of the specified library masking format.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6740,6 +7165,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetLibraryMaskingFormatResult> getLibraryMaskingFormatPlain(GetLibraryMaskingFormatPlainArgs args, InvokeOptions options) {
@@ -6751,6 +7177,8 @@ public final class DataSafeFunctions {
      * Gets a list of library masking formats based on the specified query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6787,6 +7215,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetLibraryMaskingFormatsResult> getLibraryMaskingFormats(GetLibraryMaskingFormatsArgs args) {
@@ -6798,6 +7227,8 @@ public final class DataSafeFunctions {
      * Gets a list of library masking formats based on the specified query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6834,6 +7265,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetLibraryMaskingFormatsResult> getLibraryMaskingFormatsPlain(GetLibraryMaskingFormatsPlainArgs args) {
@@ -6845,6 +7277,8 @@ public final class DataSafeFunctions {
      * Gets a list of library masking formats based on the specified query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6881,6 +7315,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetLibraryMaskingFormatsResult> getLibraryMaskingFormats(GetLibraryMaskingFormatsArgs args, InvokeOptions options) {
@@ -6892,6 +7327,8 @@ public final class DataSafeFunctions {
      * Gets a list of library masking formats based on the specified query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6928,6 +7365,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetLibraryMaskingFormatsResult> getLibraryMaskingFormatsPlain(GetLibraryMaskingFormatsPlainArgs args, InvokeOptions options) {
@@ -6942,6 +7380,8 @@ public final class DataSafeFunctions {
      * to get the userKey for a particular user.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6978,6 +7418,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetListUserGrantsResult> getListUserGrants(GetListUserGrantsArgs args) {
@@ -6992,6 +7433,8 @@ public final class DataSafeFunctions {
      * to get the userKey for a particular user.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7028,6 +7471,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetListUserGrantsResult> getListUserGrantsPlain(GetListUserGrantsPlainArgs args) {
@@ -7042,6 +7486,8 @@ public final class DataSafeFunctions {
      * to get the userKey for a particular user.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7078,6 +7524,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetListUserGrantsResult> getListUserGrants(GetListUserGrantsArgs args, InvokeOptions options) {
@@ -7092,6 +7539,8 @@ public final class DataSafeFunctions {
      * to get the userKey for a particular user.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7128,6 +7577,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetListUserGrantsResult> getListUserGrantsPlain(GetListUserGrantsPlainArgs args, InvokeOptions options) {
@@ -7141,6 +7591,8 @@ public final class DataSafeFunctions {
      * is equivalent to accessLevel &#34;ACCESSIBLE&#34; by default.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7173,6 +7625,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMaskingAnalyticResult> getMaskingAnalytic(GetMaskingAnalyticArgs args) {
@@ -7186,6 +7639,8 @@ public final class DataSafeFunctions {
      * is equivalent to accessLevel &#34;ACCESSIBLE&#34; by default.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7218,6 +7673,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMaskingAnalyticResult> getMaskingAnalyticPlain(GetMaskingAnalyticPlainArgs args) {
@@ -7231,6 +7687,8 @@ public final class DataSafeFunctions {
      * is equivalent to accessLevel &#34;ACCESSIBLE&#34; by default.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7263,6 +7721,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMaskingAnalyticResult> getMaskingAnalytic(GetMaskingAnalyticArgs args, InvokeOptions options) {
@@ -7276,6 +7735,8 @@ public final class DataSafeFunctions {
      * is equivalent to accessLevel &#34;ACCESSIBLE&#34; by default.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7308,6 +7769,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMaskingAnalyticResult> getMaskingAnalyticPlain(GetMaskingAnalyticPlainArgs args, InvokeOptions options) {
@@ -7321,6 +7783,8 @@ public final class DataSafeFunctions {
      * is equivalent to accessLevel &#34;ACCESSIBLE&#34; by default.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7353,6 +7817,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMaskingAnalyticsResult> getMaskingAnalytics(GetMaskingAnalyticsArgs args) {
@@ -7366,6 +7831,8 @@ public final class DataSafeFunctions {
      * is equivalent to accessLevel &#34;ACCESSIBLE&#34; by default.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7398,6 +7865,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMaskingAnalyticsResult> getMaskingAnalyticsPlain(GetMaskingAnalyticsPlainArgs args) {
@@ -7411,6 +7879,8 @@ public final class DataSafeFunctions {
      * is equivalent to accessLevel &#34;ACCESSIBLE&#34; by default.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7443,6 +7913,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMaskingAnalyticsResult> getMaskingAnalytics(GetMaskingAnalyticsArgs args, InvokeOptions options) {
@@ -7456,6 +7927,8 @@ public final class DataSafeFunctions {
      * is equivalent to accessLevel &#34;ACCESSIBLE&#34; by default.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7488,6 +7961,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMaskingAnalyticsResult> getMaskingAnalyticsPlain(GetMaskingAnalyticsPlainArgs args, InvokeOptions options) {
@@ -7499,6 +7973,8 @@ public final class DataSafeFunctions {
      * Gets a list of masking policies based on the specified query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7536,6 +8012,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMaskingPoliciesResult> getMaskingPolicies(GetMaskingPoliciesArgs args) {
@@ -7547,6 +8024,8 @@ public final class DataSafeFunctions {
      * Gets a list of masking policies based on the specified query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7584,6 +8063,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMaskingPoliciesResult> getMaskingPoliciesPlain(GetMaskingPoliciesPlainArgs args) {
@@ -7595,6 +8075,8 @@ public final class DataSafeFunctions {
      * Gets a list of masking policies based on the specified query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7632,6 +8114,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMaskingPoliciesResult> getMaskingPolicies(GetMaskingPoliciesArgs args, InvokeOptions options) {
@@ -7643,6 +8126,8 @@ public final class DataSafeFunctions {
      * Gets a list of masking policies based on the specified query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7680,6 +8165,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMaskingPoliciesResult> getMaskingPoliciesPlain(GetMaskingPoliciesPlainArgs args, InvokeOptions options) {
@@ -7691,6 +8177,8 @@ public final class DataSafeFunctions {
      * Gets the details of the specified masking column.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7720,6 +8208,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMaskingPoliciesMaskingColumnResult> getMaskingPoliciesMaskingColumn(GetMaskingPoliciesMaskingColumnArgs args) {
@@ -7731,6 +8220,8 @@ public final class DataSafeFunctions {
      * Gets the details of the specified masking column.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7760,6 +8251,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMaskingPoliciesMaskingColumnResult> getMaskingPoliciesMaskingColumnPlain(GetMaskingPoliciesMaskingColumnPlainArgs args) {
@@ -7771,6 +8263,8 @@ public final class DataSafeFunctions {
      * Gets the details of the specified masking column.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7800,6 +8294,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMaskingPoliciesMaskingColumnResult> getMaskingPoliciesMaskingColumn(GetMaskingPoliciesMaskingColumnArgs args, InvokeOptions options) {
@@ -7811,6 +8306,8 @@ public final class DataSafeFunctions {
      * Gets the details of the specified masking column.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7840,6 +8337,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMaskingPoliciesMaskingColumnResult> getMaskingPoliciesMaskingColumnPlain(GetMaskingPoliciesMaskingColumnPlainArgs args, InvokeOptions options) {
@@ -7851,6 +8349,8 @@ public final class DataSafeFunctions {
      * Gets a list of masking columns present in the specified masking policy and based on the specified query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7893,6 +8393,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMaskingPoliciesMaskingColumnsResult> getMaskingPoliciesMaskingColumns(GetMaskingPoliciesMaskingColumnsArgs args) {
@@ -7904,6 +8405,8 @@ public final class DataSafeFunctions {
      * Gets a list of masking columns present in the specified masking policy and based on the specified query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7946,6 +8449,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMaskingPoliciesMaskingColumnsResult> getMaskingPoliciesMaskingColumnsPlain(GetMaskingPoliciesMaskingColumnsPlainArgs args) {
@@ -7957,6 +8461,8 @@ public final class DataSafeFunctions {
      * Gets a list of masking columns present in the specified masking policy and based on the specified query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7999,6 +8505,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMaskingPoliciesMaskingColumnsResult> getMaskingPoliciesMaskingColumns(GetMaskingPoliciesMaskingColumnsArgs args, InvokeOptions options) {
@@ -8010,6 +8517,8 @@ public final class DataSafeFunctions {
      * Gets a list of masking columns present in the specified masking policy and based on the specified query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8052,6 +8561,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMaskingPoliciesMaskingColumnsResult> getMaskingPoliciesMaskingColumnsPlain(GetMaskingPoliciesMaskingColumnsPlainArgs args, InvokeOptions options) {
@@ -8063,6 +8573,8 @@ public final class DataSafeFunctions {
      * Gets the details of the specified masking policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8091,6 +8603,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMaskingPolicyResult> getMaskingPolicy(GetMaskingPolicyArgs args) {
@@ -8102,6 +8615,8 @@ public final class DataSafeFunctions {
      * Gets the details of the specified masking policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8130,6 +8645,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMaskingPolicyResult> getMaskingPolicyPlain(GetMaskingPolicyPlainArgs args) {
@@ -8141,6 +8657,8 @@ public final class DataSafeFunctions {
      * Gets the details of the specified masking policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8169,6 +8687,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMaskingPolicyResult> getMaskingPolicy(GetMaskingPolicyArgs args, InvokeOptions options) {
@@ -8180,6 +8699,8 @@ public final class DataSafeFunctions {
      * Gets the details of the specified masking policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8208,6 +8729,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMaskingPolicyResult> getMaskingPolicyPlain(GetMaskingPolicyPlainArgs args, InvokeOptions options) {
@@ -8219,6 +8741,8 @@ public final class DataSafeFunctions {
      * Gets a list of masking objects present in the specified masking policy and based on the specified query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8250,6 +8774,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMaskingPolicyMaskingObjectsResult> getMaskingPolicyMaskingObjects(GetMaskingPolicyMaskingObjectsArgs args) {
@@ -8261,6 +8786,8 @@ public final class DataSafeFunctions {
      * Gets a list of masking objects present in the specified masking policy and based on the specified query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8292,6 +8819,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMaskingPolicyMaskingObjectsResult> getMaskingPolicyMaskingObjectsPlain(GetMaskingPolicyMaskingObjectsPlainArgs args) {
@@ -8303,6 +8831,8 @@ public final class DataSafeFunctions {
      * Gets a list of masking objects present in the specified masking policy and based on the specified query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8334,6 +8864,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMaskingPolicyMaskingObjectsResult> getMaskingPolicyMaskingObjects(GetMaskingPolicyMaskingObjectsArgs args, InvokeOptions options) {
@@ -8345,6 +8876,8 @@ public final class DataSafeFunctions {
      * Gets a list of masking objects present in the specified masking policy and based on the specified query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8376,6 +8909,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMaskingPolicyMaskingObjectsResult> getMaskingPolicyMaskingObjectsPlain(GetMaskingPolicyMaskingObjectsPlainArgs args, InvokeOptions options) {
@@ -8387,6 +8921,8 @@ public final class DataSafeFunctions {
      * Gets a list of masking schemas present in the specified masking policy and based on the specified query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8416,6 +8952,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMaskingPolicyMaskingSchemasResult> getMaskingPolicyMaskingSchemas(GetMaskingPolicyMaskingSchemasArgs args) {
@@ -8427,6 +8964,8 @@ public final class DataSafeFunctions {
      * Gets a list of masking schemas present in the specified masking policy and based on the specified query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8456,6 +8995,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMaskingPolicyMaskingSchemasResult> getMaskingPolicyMaskingSchemasPlain(GetMaskingPolicyMaskingSchemasPlainArgs args) {
@@ -8467,6 +9007,8 @@ public final class DataSafeFunctions {
      * Gets a list of masking schemas present in the specified masking policy and based on the specified query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8496,6 +9038,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMaskingPolicyMaskingSchemasResult> getMaskingPolicyMaskingSchemas(GetMaskingPolicyMaskingSchemasArgs args, InvokeOptions options) {
@@ -8507,6 +9050,8 @@ public final class DataSafeFunctions {
      * Gets a list of masking schemas present in the specified masking policy and based on the specified query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8536,6 +9081,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMaskingPolicyMaskingSchemasResult> getMaskingPolicyMaskingSchemasPlain(GetMaskingPolicyMaskingSchemasPlainArgs args, InvokeOptions options) {
@@ -8547,6 +9093,8 @@ public final class DataSafeFunctions {
      * Gets the details of the specified masking report.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8575,6 +9123,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMaskingReportResult> getMaskingReport(GetMaskingReportArgs args) {
@@ -8586,6 +9135,8 @@ public final class DataSafeFunctions {
      * Gets the details of the specified masking report.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8614,6 +9165,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMaskingReportResult> getMaskingReportPlain(GetMaskingReportPlainArgs args) {
@@ -8625,6 +9177,8 @@ public final class DataSafeFunctions {
      * Gets the details of the specified masking report.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8653,6 +9207,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMaskingReportResult> getMaskingReport(GetMaskingReportArgs args, InvokeOptions options) {
@@ -8664,6 +9219,8 @@ public final class DataSafeFunctions {
      * Gets the details of the specified masking report.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8692,6 +9249,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMaskingReportResult> getMaskingReportPlain(GetMaskingReportPlainArgs args, InvokeOptions options) {
@@ -8703,6 +9261,8 @@ public final class DataSafeFunctions {
      * Gets a list of masked columns present in the specified masking report and based on the specified query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8737,6 +9297,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMaskingReportMaskedColumnsResult> getMaskingReportMaskedColumns(GetMaskingReportMaskedColumnsArgs args) {
@@ -8748,6 +9309,8 @@ public final class DataSafeFunctions {
      * Gets a list of masked columns present in the specified masking report and based on the specified query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8782,6 +9345,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMaskingReportMaskedColumnsResult> getMaskingReportMaskedColumnsPlain(GetMaskingReportMaskedColumnsPlainArgs args) {
@@ -8793,6 +9357,8 @@ public final class DataSafeFunctions {
      * Gets a list of masked columns present in the specified masking report and based on the specified query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8827,6 +9393,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMaskingReportMaskedColumnsResult> getMaskingReportMaskedColumns(GetMaskingReportMaskedColumnsArgs args, InvokeOptions options) {
@@ -8838,6 +9405,8 @@ public final class DataSafeFunctions {
      * Gets a list of masked columns present in the specified masking report and based on the specified query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8872,6 +9441,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMaskingReportMaskedColumnsResult> getMaskingReportMaskedColumnsPlain(GetMaskingReportMaskedColumnsPlainArgs args, InvokeOptions options) {
@@ -8883,6 +9453,8 @@ public final class DataSafeFunctions {
      * Gets a list of masking reports based on the specified query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8915,6 +9487,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMaskingReportsResult> getMaskingReports(GetMaskingReportsArgs args) {
@@ -8926,6 +9499,8 @@ public final class DataSafeFunctions {
      * Gets a list of masking reports based on the specified query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8958,6 +9533,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMaskingReportsResult> getMaskingReportsPlain(GetMaskingReportsPlainArgs args) {
@@ -8969,6 +9545,8 @@ public final class DataSafeFunctions {
      * Gets a list of masking reports based on the specified query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9001,6 +9579,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMaskingReportsResult> getMaskingReports(GetMaskingReportsArgs args, InvokeOptions options) {
@@ -9012,6 +9591,8 @@ public final class DataSafeFunctions {
      * Gets a list of masking reports based on the specified query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9044,6 +9625,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMaskingReportsResult> getMaskingReportsPlain(GetMaskingReportsPlainArgs args, InvokeOptions options) {
@@ -9055,6 +9637,8 @@ public final class DataSafeFunctions {
      * Gets a list of masked columns present in the specified masking report and based on the specified query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9089,6 +9673,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMaskingReportsMaskedColumnResult> getMaskingReportsMaskedColumn(GetMaskingReportsMaskedColumnArgs args) {
@@ -9100,6 +9685,8 @@ public final class DataSafeFunctions {
      * Gets a list of masked columns present in the specified masking report and based on the specified query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9134,6 +9721,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMaskingReportsMaskedColumnResult> getMaskingReportsMaskedColumnPlain(GetMaskingReportsMaskedColumnPlainArgs args) {
@@ -9145,6 +9733,8 @@ public final class DataSafeFunctions {
      * Gets a list of masked columns present in the specified masking report and based on the specified query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9179,6 +9769,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMaskingReportsMaskedColumnResult> getMaskingReportsMaskedColumn(GetMaskingReportsMaskedColumnArgs args, InvokeOptions options) {
@@ -9190,6 +9781,8 @@ public final class DataSafeFunctions {
      * Gets a list of masked columns present in the specified masking report and based on the specified query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9224,6 +9817,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMaskingReportsMaskedColumnResult> getMaskingReportsMaskedColumnPlain(GetMaskingReportsMaskedColumnPlainArgs args, InvokeOptions options) {
@@ -9235,6 +9829,8 @@ public final class DataSafeFunctions {
      * Gets the details of the specified on-premises connector.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9263,6 +9859,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOnpremConnectorResult> getOnpremConnector(GetOnpremConnectorArgs args) {
@@ -9274,6 +9871,8 @@ public final class DataSafeFunctions {
      * Gets the details of the specified on-premises connector.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9302,6 +9901,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOnpremConnectorResult> getOnpremConnectorPlain(GetOnpremConnectorPlainArgs args) {
@@ -9313,6 +9913,8 @@ public final class DataSafeFunctions {
      * Gets the details of the specified on-premises connector.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9341,6 +9943,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOnpremConnectorResult> getOnpremConnector(GetOnpremConnectorArgs args, InvokeOptions options) {
@@ -9352,6 +9955,8 @@ public final class DataSafeFunctions {
      * Gets the details of the specified on-premises connector.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9380,6 +9985,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOnpremConnectorResult> getOnpremConnectorPlain(GetOnpremConnectorPlainArgs args, InvokeOptions options) {
@@ -9391,6 +9997,8 @@ public final class DataSafeFunctions {
      * Gets a list of on-premises connectors.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9424,6 +10032,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOnpremConnectorsResult> getOnpremConnectors(GetOnpremConnectorsArgs args) {
@@ -9435,6 +10044,8 @@ public final class DataSafeFunctions {
      * Gets a list of on-premises connectors.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9468,6 +10079,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOnpremConnectorsResult> getOnpremConnectorsPlain(GetOnpremConnectorsPlainArgs args) {
@@ -9479,6 +10091,8 @@ public final class DataSafeFunctions {
      * Gets a list of on-premises connectors.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9512,6 +10126,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOnpremConnectorsResult> getOnpremConnectors(GetOnpremConnectorsArgs args, InvokeOptions options) {
@@ -9523,6 +10138,8 @@ public final class DataSafeFunctions {
      * Gets a list of on-premises connectors.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9556,6 +10173,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOnpremConnectorsResult> getOnpremConnectorsPlain(GetOnpremConnectorsPlainArgs args, InvokeOptions options) {
@@ -9567,6 +10185,8 @@ public final class DataSafeFunctions {
      * Gets a report by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9595,6 +10215,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetReportResult> getReport(GetReportArgs args) {
@@ -9606,6 +10227,8 @@ public final class DataSafeFunctions {
      * Gets a report by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9634,6 +10257,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetReportResult> getReportPlain(GetReportPlainArgs args) {
@@ -9645,6 +10269,8 @@ public final class DataSafeFunctions {
      * Gets a report by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9673,6 +10299,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetReportResult> getReport(GetReportArgs args, InvokeOptions options) {
@@ -9684,6 +10311,8 @@ public final class DataSafeFunctions {
      * Gets a report by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9712,6 +10341,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetReportResult> getReportPlain(GetReportPlainArgs args, InvokeOptions options) {
@@ -9723,6 +10353,8 @@ public final class DataSafeFunctions {
      * Downloads the specified report in the form of .xls or .pdf.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9751,6 +10383,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetReportContentResult> getReportContent(GetReportContentArgs args) {
@@ -9762,6 +10395,8 @@ public final class DataSafeFunctions {
      * Downloads the specified report in the form of .xls or .pdf.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9790,6 +10425,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetReportContentResult> getReportContentPlain(GetReportContentPlainArgs args) {
@@ -9801,6 +10437,8 @@ public final class DataSafeFunctions {
      * Downloads the specified report in the form of .xls or .pdf.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9829,6 +10467,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetReportContentResult> getReportContent(GetReportContentArgs args, InvokeOptions options) {
@@ -9840,6 +10479,8 @@ public final class DataSafeFunctions {
      * Downloads the specified report in the form of .xls or .pdf.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9868,6 +10509,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetReportContentResult> getReportContentPlain(GetReportContentPlainArgs args, InvokeOptions options) {
@@ -9879,6 +10521,8 @@ public final class DataSafeFunctions {
      * Gets the details of report definition specified by the identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9907,6 +10551,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetReportDefinitionResult> getReportDefinition(GetReportDefinitionArgs args) {
@@ -9918,6 +10563,8 @@ public final class DataSafeFunctions {
      * Gets the details of report definition specified by the identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9946,6 +10593,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetReportDefinitionResult> getReportDefinitionPlain(GetReportDefinitionPlainArgs args) {
@@ -9957,6 +10605,8 @@ public final class DataSafeFunctions {
      * Gets the details of report definition specified by the identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9985,6 +10635,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetReportDefinitionResult> getReportDefinition(GetReportDefinitionArgs args, InvokeOptions options) {
@@ -9996,6 +10647,8 @@ public final class DataSafeFunctions {
      * Gets the details of report definition specified by the identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10024,6 +10677,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetReportDefinitionResult> getReportDefinitionPlain(GetReportDefinitionPlainArgs args, InvokeOptions options) {
@@ -10037,6 +10691,8 @@ public final class DataSafeFunctions {
      * It also returns the seeded report definitions which are available to all the compartments.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10072,6 +10728,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetReportDefinitionsResult> getReportDefinitions(GetReportDefinitionsArgs args) {
@@ -10085,6 +10742,8 @@ public final class DataSafeFunctions {
      * It also returns the seeded report definitions which are available to all the compartments.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10120,6 +10779,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetReportDefinitionsResult> getReportDefinitionsPlain(GetReportDefinitionsPlainArgs args) {
@@ -10133,6 +10793,8 @@ public final class DataSafeFunctions {
      * It also returns the seeded report definitions which are available to all the compartments.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10168,6 +10830,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetReportDefinitionsResult> getReportDefinitions(GetReportDefinitionsArgs args, InvokeOptions options) {
@@ -10181,6 +10844,8 @@ public final class DataSafeFunctions {
      * It also returns the seeded report definitions which are available to all the compartments.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10216,6 +10881,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetReportDefinitionsResult> getReportDefinitionsPlain(GetReportDefinitionsPlainArgs args, InvokeOptions options) {
@@ -10227,6 +10893,8 @@ public final class DataSafeFunctions {
      * Gets a list of all the reports in the compartment. It contains information such as report generation time.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10261,6 +10929,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetReportsResult> getReports(GetReportsArgs args) {
@@ -10272,6 +10941,8 @@ public final class DataSafeFunctions {
      * Gets a list of all the reports in the compartment. It contains information such as report generation time.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10306,6 +10977,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetReportsResult> getReportsPlain(GetReportsPlainArgs args) {
@@ -10317,6 +10989,8 @@ public final class DataSafeFunctions {
      * Gets a list of all the reports in the compartment. It contains information such as report generation time.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10351,6 +11025,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetReportsResult> getReports(GetReportsArgs args, InvokeOptions options) {
@@ -10362,6 +11037,8 @@ public final class DataSafeFunctions {
      * Gets a list of all the reports in the compartment. It contains information such as report generation time.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10396,6 +11073,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetReportsResult> getReportsPlain(GetReportsPlainArgs args, InvokeOptions options) {
@@ -10407,6 +11085,8 @@ public final class DataSafeFunctions {
      * Gets the details of the specified SDM Masking policy difference.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10435,6 +11115,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSdmMaskingPolicyDifferenceResult> getSdmMaskingPolicyDifference(GetSdmMaskingPolicyDifferenceArgs args) {
@@ -10446,6 +11127,8 @@ public final class DataSafeFunctions {
      * Gets the details of the specified SDM Masking policy difference.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10474,6 +11157,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSdmMaskingPolicyDifferenceResult> getSdmMaskingPolicyDifferencePlain(GetSdmMaskingPolicyDifferencePlainArgs args) {
@@ -10485,6 +11169,8 @@ public final class DataSafeFunctions {
      * Gets the details of the specified SDM Masking policy difference.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10513,6 +11199,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSdmMaskingPolicyDifferenceResult> getSdmMaskingPolicyDifference(GetSdmMaskingPolicyDifferenceArgs args, InvokeOptions options) {
@@ -10524,6 +11211,8 @@ public final class DataSafeFunctions {
      * Gets the details of the specified SDM Masking policy difference.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10552,6 +11241,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSdmMaskingPolicyDifferenceResult> getSdmMaskingPolicyDifferencePlain(GetSdmMaskingPolicyDifferencePlainArgs args, InvokeOptions options) {
@@ -10563,6 +11253,8 @@ public final class DataSafeFunctions {
      * Gets the details of the specified SDM Masking policy difference column.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10592,6 +11284,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSdmMaskingPolicyDifferenceDifferenceColumnResult> getSdmMaskingPolicyDifferenceDifferenceColumn(GetSdmMaskingPolicyDifferenceDifferenceColumnArgs args) {
@@ -10603,6 +11296,8 @@ public final class DataSafeFunctions {
      * Gets the details of the specified SDM Masking policy difference column.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10632,6 +11327,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSdmMaskingPolicyDifferenceDifferenceColumnResult> getSdmMaskingPolicyDifferenceDifferenceColumnPlain(GetSdmMaskingPolicyDifferenceDifferenceColumnPlainArgs args) {
@@ -10643,6 +11339,8 @@ public final class DataSafeFunctions {
      * Gets the details of the specified SDM Masking policy difference column.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10672,6 +11370,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSdmMaskingPolicyDifferenceDifferenceColumnResult> getSdmMaskingPolicyDifferenceDifferenceColumn(GetSdmMaskingPolicyDifferenceDifferenceColumnArgs args, InvokeOptions options) {
@@ -10683,6 +11382,8 @@ public final class DataSafeFunctions {
      * Gets the details of the specified SDM Masking policy difference column.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10712,6 +11413,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSdmMaskingPolicyDifferenceDifferenceColumnResult> getSdmMaskingPolicyDifferenceDifferenceColumnPlain(GetSdmMaskingPolicyDifferenceDifferenceColumnPlainArgs args, InvokeOptions options) {
@@ -10723,6 +11425,8 @@ public final class DataSafeFunctions {
      * Gets a list of columns of a SDM masking policy difference resource based on the specified query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10757,6 +11461,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSdmMaskingPolicyDifferenceDifferenceColumnsResult> getSdmMaskingPolicyDifferenceDifferenceColumns(GetSdmMaskingPolicyDifferenceDifferenceColumnsArgs args) {
@@ -10768,6 +11473,8 @@ public final class DataSafeFunctions {
      * Gets a list of columns of a SDM masking policy difference resource based on the specified query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10802,6 +11509,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSdmMaskingPolicyDifferenceDifferenceColumnsResult> getSdmMaskingPolicyDifferenceDifferenceColumnsPlain(GetSdmMaskingPolicyDifferenceDifferenceColumnsPlainArgs args) {
@@ -10813,6 +11521,8 @@ public final class DataSafeFunctions {
      * Gets a list of columns of a SDM masking policy difference resource based on the specified query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10847,6 +11557,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSdmMaskingPolicyDifferenceDifferenceColumnsResult> getSdmMaskingPolicyDifferenceDifferenceColumns(GetSdmMaskingPolicyDifferenceDifferenceColumnsArgs args, InvokeOptions options) {
@@ -10858,6 +11569,8 @@ public final class DataSafeFunctions {
      * Gets a list of columns of a SDM masking policy difference resource based on the specified query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10892,6 +11605,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSdmMaskingPolicyDifferenceDifferenceColumnsResult> getSdmMaskingPolicyDifferenceDifferenceColumnsPlain(GetSdmMaskingPolicyDifferenceDifferenceColumnsPlainArgs args, InvokeOptions options) {
@@ -10903,6 +11617,8 @@ public final class DataSafeFunctions {
      * Gets a list of SDM and masking policy difference resources based on the specified query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10937,6 +11653,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSdmMaskingPolicyDifferencesResult> getSdmMaskingPolicyDifferences(GetSdmMaskingPolicyDifferencesArgs args) {
@@ -10948,6 +11665,8 @@ public final class DataSafeFunctions {
      * Gets a list of SDM and masking policy difference resources based on the specified query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10982,6 +11701,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSdmMaskingPolicyDifferencesResult> getSdmMaskingPolicyDifferencesPlain(GetSdmMaskingPolicyDifferencesPlainArgs args) {
@@ -10993,6 +11713,8 @@ public final class DataSafeFunctions {
      * Gets a list of SDM and masking policy difference resources based on the specified query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11027,6 +11749,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSdmMaskingPolicyDifferencesResult> getSdmMaskingPolicyDifferences(GetSdmMaskingPolicyDifferencesArgs args, InvokeOptions options) {
@@ -11038,6 +11761,8 @@ public final class DataSafeFunctions {
      * Gets a list of SDM and masking policy difference resources based on the specified query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11072,6 +11797,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSdmMaskingPolicyDifferencesResult> getSdmMaskingPolicyDifferencesPlain(GetSdmMaskingPolicyDifferencesPlainArgs args, InvokeOptions options) {
@@ -11083,6 +11809,8 @@ public final class DataSafeFunctions {
      * Gets the details of the specified security assessment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11111,6 +11839,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSecurityAssessmentResult> getSecurityAssessment(GetSecurityAssessmentArgs args) {
@@ -11122,6 +11851,8 @@ public final class DataSafeFunctions {
      * Gets the details of the specified security assessment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11150,6 +11881,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSecurityAssessmentResult> getSecurityAssessmentPlain(GetSecurityAssessmentPlainArgs args) {
@@ -11161,6 +11893,8 @@ public final class DataSafeFunctions {
      * Gets the details of the specified security assessment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11189,6 +11923,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSecurityAssessmentResult> getSecurityAssessment(GetSecurityAssessmentArgs args, InvokeOptions options) {
@@ -11200,6 +11935,8 @@ public final class DataSafeFunctions {
      * Gets the details of the specified security assessment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11228,6 +11965,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSecurityAssessmentResult> getSecurityAssessmentPlain(GetSecurityAssessmentPlainArgs args, InvokeOptions options) {
@@ -11239,6 +11977,8 @@ public final class DataSafeFunctions {
      * Gets the details of the comparison report for the security assessments submitted for comparison.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11268,6 +12008,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSecurityAssessmentComparisonResult> getSecurityAssessmentComparison(GetSecurityAssessmentComparisonArgs args) {
@@ -11279,6 +12020,8 @@ public final class DataSafeFunctions {
      * Gets the details of the comparison report for the security assessments submitted for comparison.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11308,6 +12051,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSecurityAssessmentComparisonResult> getSecurityAssessmentComparisonPlain(GetSecurityAssessmentComparisonPlainArgs args) {
@@ -11319,6 +12063,8 @@ public final class DataSafeFunctions {
      * Gets the details of the comparison report for the security assessments submitted for comparison.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11348,6 +12094,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSecurityAssessmentComparisonResult> getSecurityAssessmentComparison(GetSecurityAssessmentComparisonArgs args, InvokeOptions options) {
@@ -11359,6 +12106,8 @@ public final class DataSafeFunctions {
      * Gets the details of the comparison report for the security assessments submitted for comparison.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11388,6 +12137,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSecurityAssessmentComparisonResult> getSecurityAssessmentComparisonPlain(GetSecurityAssessmentComparisonPlainArgs args, InvokeOptions options) {
@@ -11420,6 +12170,8 @@ public final class DataSafeFunctions {
      * compartmentId, then &#34;Not Authorized&#34; is returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11455,6 +12207,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSecurityAssessmentFindingAnalyticsResult> getSecurityAssessmentFindingAnalytics(GetSecurityAssessmentFindingAnalyticsArgs args) {
@@ -11475,6 +12228,8 @@ public final class DataSafeFunctions {
      * compartmentId, then &#34;Not Authorized&#34; is returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11510,6 +12265,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSecurityAssessmentFindingAnalyticsResult> getSecurityAssessmentFindingAnalyticsPlain(GetSecurityAssessmentFindingAnalyticsPlainArgs args) {
@@ -11530,6 +12286,8 @@ public final class DataSafeFunctions {
      * compartmentId, then &#34;Not Authorized&#34; is returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11565,6 +12323,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSecurityAssessmentFindingAnalyticsResult> getSecurityAssessmentFindingAnalytics(GetSecurityAssessmentFindingAnalyticsArgs args, InvokeOptions options) {
@@ -11585,6 +12344,8 @@ public final class DataSafeFunctions {
      * compartmentId, then &#34;Not Authorized&#34; is returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11620,6 +12381,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSecurityAssessmentFindingAnalyticsResult> getSecurityAssessmentFindingAnalyticsPlain(GetSecurityAssessmentFindingAnalyticsPlainArgs args, InvokeOptions options) {
@@ -11667,6 +12429,8 @@ public final class DataSafeFunctions {
      * List all changes made by user to risk level of findings of the specified assessment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11704,6 +12468,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSecurityAssessmentFindingsChangeAuditLogsResult> getSecurityAssessmentFindingsChangeAuditLogs(GetSecurityAssessmentFindingsChangeAuditLogsArgs args) {
@@ -11715,6 +12480,8 @@ public final class DataSafeFunctions {
      * List all changes made by user to risk level of findings of the specified assessment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11752,6 +12519,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSecurityAssessmentFindingsChangeAuditLogsResult> getSecurityAssessmentFindingsChangeAuditLogsPlain(GetSecurityAssessmentFindingsChangeAuditLogsPlainArgs args) {
@@ -11763,6 +12531,8 @@ public final class DataSafeFunctions {
      * List all changes made by user to risk level of findings of the specified assessment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11800,6 +12570,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSecurityAssessmentFindingsChangeAuditLogsResult> getSecurityAssessmentFindingsChangeAuditLogs(GetSecurityAssessmentFindingsChangeAuditLogsArgs args, InvokeOptions options) {
@@ -11811,6 +12582,8 @@ public final class DataSafeFunctions {
      * List all changes made by user to risk level of findings of the specified assessment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11848,6 +12621,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSecurityAssessmentFindingsChangeAuditLogsResult> getSecurityAssessmentFindingsChangeAuditLogsPlain(GetSecurityAssessmentFindingsChangeAuditLogsPlainArgs args, InvokeOptions options) {
@@ -11866,6 +12640,8 @@ public final class DataSafeFunctions {
      * compartmentId, then &#34;Not Authorized&#34; is returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11897,6 +12673,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSecurityAssessmentSecurityFeatureAnalyticsResult> getSecurityAssessmentSecurityFeatureAnalytics(GetSecurityAssessmentSecurityFeatureAnalyticsArgs args) {
@@ -11915,6 +12692,8 @@ public final class DataSafeFunctions {
      * compartmentId, then &#34;Not Authorized&#34; is returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11946,6 +12725,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSecurityAssessmentSecurityFeatureAnalyticsResult> getSecurityAssessmentSecurityFeatureAnalyticsPlain(GetSecurityAssessmentSecurityFeatureAnalyticsPlainArgs args) {
@@ -11964,6 +12744,8 @@ public final class DataSafeFunctions {
      * compartmentId, then &#34;Not Authorized&#34; is returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11995,6 +12777,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSecurityAssessmentSecurityFeatureAnalyticsResult> getSecurityAssessmentSecurityFeatureAnalytics(GetSecurityAssessmentSecurityFeatureAnalyticsArgs args, InvokeOptions options) {
@@ -12013,6 +12796,8 @@ public final class DataSafeFunctions {
      * compartmentId, then &#34;Not Authorized&#34; is returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12044,6 +12829,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSecurityAssessmentSecurityFeatureAnalyticsResult> getSecurityAssessmentSecurityFeatureAnalyticsPlain(GetSecurityAssessmentSecurityFeatureAnalyticsPlainArgs args, InvokeOptions options) {
@@ -12055,6 +12841,8 @@ public final class DataSafeFunctions {
      * Lists the usage of Database security features for a given compartment or a target level, based on the filters provided.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12097,6 +12885,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSecurityAssessmentSecurityFeaturesResult> getSecurityAssessmentSecurityFeatures(GetSecurityAssessmentSecurityFeaturesArgs args) {
@@ -12108,6 +12897,8 @@ public final class DataSafeFunctions {
      * Lists the usage of Database security features for a given compartment or a target level, based on the filters provided.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12150,6 +12941,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSecurityAssessmentSecurityFeaturesResult> getSecurityAssessmentSecurityFeaturesPlain(GetSecurityAssessmentSecurityFeaturesPlainArgs args) {
@@ -12161,6 +12953,8 @@ public final class DataSafeFunctions {
      * Lists the usage of Database security features for a given compartment or a target level, based on the filters provided.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12203,6 +12997,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSecurityAssessmentSecurityFeaturesResult> getSecurityAssessmentSecurityFeatures(GetSecurityAssessmentSecurityFeaturesArgs args, InvokeOptions options) {
@@ -12214,6 +13009,8 @@ public final class DataSafeFunctions {
      * Lists the usage of Database security features for a given compartment or a target level, based on the filters provided.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12256,6 +13053,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSecurityAssessmentSecurityFeaturesResult> getSecurityAssessmentSecurityFeaturesPlain(GetSecurityAssessmentSecurityFeaturesPlainArgs args, InvokeOptions options) {
@@ -12281,6 +13079,8 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12321,6 +13121,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSecurityAssessmentsResult> getSecurityAssessments(GetSecurityAssessmentsArgs args) {
@@ -12346,6 +13147,8 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12386,6 +13189,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSecurityAssessmentsResult> getSecurityAssessmentsPlain(GetSecurityAssessmentsPlainArgs args) {
@@ -12411,6 +13215,8 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12451,6 +13257,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSecurityAssessmentsResult> getSecurityAssessments(GetSecurityAssessmentsArgs args, InvokeOptions options) {
@@ -12476,6 +13283,8 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12516,6 +13325,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSecurityAssessmentsResult> getSecurityAssessmentsPlain(GetSecurityAssessmentsPlainArgs args, InvokeOptions options) {
@@ -12540,6 +13350,8 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12573,6 +13385,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSecurityPoliciesResult> getSecurityPolicies(GetSecurityPoliciesArgs args) {
@@ -12597,6 +13410,8 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12630,6 +13445,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSecurityPoliciesResult> getSecurityPoliciesPlain(GetSecurityPoliciesPlainArgs args) {
@@ -12654,6 +13470,8 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12687,6 +13505,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSecurityPoliciesResult> getSecurityPolicies(GetSecurityPoliciesArgs args, InvokeOptions options) {
@@ -12711,6 +13530,8 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12744,6 +13565,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSecurityPoliciesResult> getSecurityPoliciesPlain(GetSecurityPoliciesPlainArgs args, InvokeOptions options) {
@@ -12755,6 +13577,8 @@ public final class DataSafeFunctions {
      * Gets a security policy by the specified OCID of the security policy resource.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12783,6 +13607,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSecurityPolicyResult> getSecurityPolicy(GetSecurityPolicyArgs args) {
@@ -12794,6 +13619,8 @@ public final class DataSafeFunctions {
      * Gets a security policy by the specified OCID of the security policy resource.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12822,6 +13649,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSecurityPolicyResult> getSecurityPolicyPlain(GetSecurityPolicyPlainArgs args) {
@@ -12833,6 +13661,8 @@ public final class DataSafeFunctions {
      * Gets a security policy by the specified OCID of the security policy resource.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12861,6 +13691,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSecurityPolicyResult> getSecurityPolicy(GetSecurityPolicyArgs args, InvokeOptions options) {
@@ -12872,6 +13703,8 @@ public final class DataSafeFunctions {
      * Gets a security policy by the specified OCID of the security policy resource.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12900,6 +13733,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSecurityPolicyResult> getSecurityPolicyPlain(GetSecurityPolicyPlainArgs args, InvokeOptions options) {
@@ -12911,6 +13745,8 @@ public final class DataSafeFunctions {
      * Gets a security policy deployment by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12939,6 +13775,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSecurityPolicyDeploymentResult> getSecurityPolicyDeployment(GetSecurityPolicyDeploymentArgs args) {
@@ -12950,6 +13787,8 @@ public final class DataSafeFunctions {
      * Gets a security policy deployment by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12978,6 +13817,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSecurityPolicyDeploymentResult> getSecurityPolicyDeploymentPlain(GetSecurityPolicyDeploymentPlainArgs args) {
@@ -12989,6 +13829,8 @@ public final class DataSafeFunctions {
      * Gets a security policy deployment by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13017,6 +13859,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSecurityPolicyDeploymentResult> getSecurityPolicyDeployment(GetSecurityPolicyDeploymentArgs args, InvokeOptions options) {
@@ -13028,6 +13871,8 @@ public final class DataSafeFunctions {
      * Gets a security policy deployment by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13056,6 +13901,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSecurityPolicyDeploymentResult> getSecurityPolicyDeploymentPlain(GetSecurityPolicyDeploymentPlainArgs args, InvokeOptions options) {
@@ -13067,6 +13913,8 @@ public final class DataSafeFunctions {
      * Gets a security policy entity states by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13096,6 +13944,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult> getSecurityPolicyDeploymentSecurityPolicyEntryState(GetSecurityPolicyDeploymentSecurityPolicyEntryStateArgs args) {
@@ -13107,6 +13956,8 @@ public final class DataSafeFunctions {
      * Gets a security policy entity states by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13136,6 +13987,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult> getSecurityPolicyDeploymentSecurityPolicyEntryStatePlain(GetSecurityPolicyDeploymentSecurityPolicyEntryStatePlainArgs args) {
@@ -13147,6 +13999,8 @@ public final class DataSafeFunctions {
      * Gets a security policy entity states by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13176,6 +14030,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult> getSecurityPolicyDeploymentSecurityPolicyEntryState(GetSecurityPolicyDeploymentSecurityPolicyEntryStateArgs args, InvokeOptions options) {
@@ -13187,6 +14042,8 @@ public final class DataSafeFunctions {
      * Gets a security policy entity states by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13216,6 +14073,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult> getSecurityPolicyDeploymentSecurityPolicyEntryStatePlain(GetSecurityPolicyDeploymentSecurityPolicyEntryStatePlainArgs args, InvokeOptions options) {
@@ -13229,6 +14087,8 @@ public final class DataSafeFunctions {
      * The ListSecurityPolicyEntryStates operation returns only the security policy entry states for the specified security policy entry.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13259,6 +14119,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSecurityPolicyDeploymentSecurityPolicyEntryStatesResult> getSecurityPolicyDeploymentSecurityPolicyEntryStates(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesArgs args) {
@@ -13272,6 +14133,8 @@ public final class DataSafeFunctions {
      * The ListSecurityPolicyEntryStates operation returns only the security policy entry states for the specified security policy entry.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13302,6 +14165,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSecurityPolicyDeploymentSecurityPolicyEntryStatesResult> getSecurityPolicyDeploymentSecurityPolicyEntryStatesPlain(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesPlainArgs args) {
@@ -13315,6 +14179,8 @@ public final class DataSafeFunctions {
      * The ListSecurityPolicyEntryStates operation returns only the security policy entry states for the specified security policy entry.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13345,6 +14211,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSecurityPolicyDeploymentSecurityPolicyEntryStatesResult> getSecurityPolicyDeploymentSecurityPolicyEntryStates(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesArgs args, InvokeOptions options) {
@@ -13358,6 +14225,8 @@ public final class DataSafeFunctions {
      * The ListSecurityPolicyEntryStates operation returns only the security policy entry states for the specified security policy entry.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13388,6 +14257,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSecurityPolicyDeploymentSecurityPolicyEntryStatesResult> getSecurityPolicyDeploymentSecurityPolicyEntryStatesPlain(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesPlainArgs args, InvokeOptions options) {
@@ -13412,6 +14282,8 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13447,6 +14319,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSecurityPolicyDeploymentsResult> getSecurityPolicyDeployments(GetSecurityPolicyDeploymentsArgs args) {
@@ -13471,6 +14344,8 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13506,6 +14381,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSecurityPolicyDeploymentsResult> getSecurityPolicyDeploymentsPlain(GetSecurityPolicyDeploymentsPlainArgs args) {
@@ -13530,6 +14406,8 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13565,6 +14443,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSecurityPolicyDeploymentsResult> getSecurityPolicyDeployments(GetSecurityPolicyDeploymentsArgs args, InvokeOptions options) {
@@ -13589,6 +14468,8 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13624,6 +14505,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSecurityPolicyDeploymentsResult> getSecurityPolicyDeploymentsPlain(GetSecurityPolicyDeploymentsPlainArgs args, InvokeOptions options) {
@@ -13635,6 +14517,8 @@ public final class DataSafeFunctions {
      * Gets a security policy report by the specified OCID of the security policy report resource.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13663,6 +14547,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSecurityPolicyReportResult> getSecurityPolicyReport(GetSecurityPolicyReportArgs args) {
@@ -13674,6 +14559,8 @@ public final class DataSafeFunctions {
      * Gets a security policy report by the specified OCID of the security policy report resource.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13702,6 +14589,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSecurityPolicyReportResult> getSecurityPolicyReportPlain(GetSecurityPolicyReportPlainArgs args) {
@@ -13713,6 +14601,8 @@ public final class DataSafeFunctions {
      * Gets a security policy report by the specified OCID of the security policy report resource.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13741,6 +14631,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSecurityPolicyReportResult> getSecurityPolicyReport(GetSecurityPolicyReportArgs args, InvokeOptions options) {
@@ -13752,6 +14643,8 @@ public final class DataSafeFunctions {
      * Gets a security policy report by the specified OCID of the security policy report resource.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13780,6 +14673,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSecurityPolicyReportResult> getSecurityPolicyReportPlain(GetSecurityPolicyReportPlainArgs args, InvokeOptions options) {
@@ -13793,6 +14687,8 @@ public final class DataSafeFunctions {
      * The ListDatabaseTableAccessEntries operation returns only the database table access reports for the specified security policy report.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13822,6 +14718,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSecurityPolicyReportDatabaseTableAccessEntriesResult> getSecurityPolicyReportDatabaseTableAccessEntries(GetSecurityPolicyReportDatabaseTableAccessEntriesArgs args) {
@@ -13835,6 +14732,8 @@ public final class DataSafeFunctions {
      * The ListDatabaseTableAccessEntries operation returns only the database table access reports for the specified security policy report.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13864,6 +14763,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSecurityPolicyReportDatabaseTableAccessEntriesResult> getSecurityPolicyReportDatabaseTableAccessEntriesPlain(GetSecurityPolicyReportDatabaseTableAccessEntriesPlainArgs args) {
@@ -13877,6 +14777,8 @@ public final class DataSafeFunctions {
      * The ListDatabaseTableAccessEntries operation returns only the database table access reports for the specified security policy report.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13906,6 +14808,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSecurityPolicyReportDatabaseTableAccessEntriesResult> getSecurityPolicyReportDatabaseTableAccessEntries(GetSecurityPolicyReportDatabaseTableAccessEntriesArgs args, InvokeOptions options) {
@@ -13919,6 +14822,8 @@ public final class DataSafeFunctions {
      * The ListDatabaseTableAccessEntries operation returns only the database table access reports for the specified security policy report.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13948,6 +14853,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSecurityPolicyReportDatabaseTableAccessEntriesResult> getSecurityPolicyReportDatabaseTableAccessEntriesPlain(GetSecurityPolicyReportDatabaseTableAccessEntriesPlainArgs args, InvokeOptions options) {
@@ -13959,6 +14865,8 @@ public final class DataSafeFunctions {
      * Gets a database table access entry object by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13988,6 +14896,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSecurityPolicyReportDatabaseTableAccessEntryResult> getSecurityPolicyReportDatabaseTableAccessEntry(GetSecurityPolicyReportDatabaseTableAccessEntryArgs args) {
@@ -13999,6 +14908,8 @@ public final class DataSafeFunctions {
      * Gets a database table access entry object by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14028,6 +14939,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSecurityPolicyReportDatabaseTableAccessEntryResult> getSecurityPolicyReportDatabaseTableAccessEntryPlain(GetSecurityPolicyReportDatabaseTableAccessEntryPlainArgs args) {
@@ -14039,6 +14951,8 @@ public final class DataSafeFunctions {
      * Gets a database table access entry object by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14068,6 +14982,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSecurityPolicyReportDatabaseTableAccessEntryResult> getSecurityPolicyReportDatabaseTableAccessEntry(GetSecurityPolicyReportDatabaseTableAccessEntryArgs args, InvokeOptions options) {
@@ -14079,6 +14994,8 @@ public final class DataSafeFunctions {
      * Gets a database table access entry object by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14108,6 +15025,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSecurityPolicyReportDatabaseTableAccessEntryResult> getSecurityPolicyReportDatabaseTableAccessEntryPlain(GetSecurityPolicyReportDatabaseTableAccessEntryPlainArgs args, InvokeOptions options) {
@@ -14121,6 +15039,8 @@ public final class DataSafeFunctions {
      * The ListDatabaseViewAccessEntries operation returns only the database view access objects for the specified security policy report.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14151,6 +15071,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSecurityPolicyReportDatabaseViewAccessEntriesResult> getSecurityPolicyReportDatabaseViewAccessEntries(GetSecurityPolicyReportDatabaseViewAccessEntriesArgs args) {
@@ -14164,6 +15085,8 @@ public final class DataSafeFunctions {
      * The ListDatabaseViewAccessEntries operation returns only the database view access objects for the specified security policy report.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14194,6 +15117,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSecurityPolicyReportDatabaseViewAccessEntriesResult> getSecurityPolicyReportDatabaseViewAccessEntriesPlain(GetSecurityPolicyReportDatabaseViewAccessEntriesPlainArgs args) {
@@ -14207,6 +15131,8 @@ public final class DataSafeFunctions {
      * The ListDatabaseViewAccessEntries operation returns only the database view access objects for the specified security policy report.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14237,6 +15163,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSecurityPolicyReportDatabaseViewAccessEntriesResult> getSecurityPolicyReportDatabaseViewAccessEntries(GetSecurityPolicyReportDatabaseViewAccessEntriesArgs args, InvokeOptions options) {
@@ -14250,6 +15177,8 @@ public final class DataSafeFunctions {
      * The ListDatabaseViewAccessEntries operation returns only the database view access objects for the specified security policy report.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14280,6 +15209,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSecurityPolicyReportDatabaseViewAccessEntriesResult> getSecurityPolicyReportDatabaseViewAccessEntriesPlain(GetSecurityPolicyReportDatabaseViewAccessEntriesPlainArgs args, InvokeOptions options) {
@@ -14291,6 +15221,8 @@ public final class DataSafeFunctions {
      * Gets a database view access object by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14320,6 +15252,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSecurityPolicyReportDatabaseViewAccessEntryResult> getSecurityPolicyReportDatabaseViewAccessEntry(GetSecurityPolicyReportDatabaseViewAccessEntryArgs args) {
@@ -14331,6 +15264,8 @@ public final class DataSafeFunctions {
      * Gets a database view access object by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14360,6 +15295,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSecurityPolicyReportDatabaseViewAccessEntryResult> getSecurityPolicyReportDatabaseViewAccessEntryPlain(GetSecurityPolicyReportDatabaseViewAccessEntryPlainArgs args) {
@@ -14371,6 +15307,8 @@ public final class DataSafeFunctions {
      * Gets a database view access object by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14400,6 +15338,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSecurityPolicyReportDatabaseViewAccessEntryResult> getSecurityPolicyReportDatabaseViewAccessEntry(GetSecurityPolicyReportDatabaseViewAccessEntryArgs args, InvokeOptions options) {
@@ -14411,6 +15350,8 @@ public final class DataSafeFunctions {
      * Gets a database view access object by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14440,6 +15381,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSecurityPolicyReportDatabaseViewAccessEntryResult> getSecurityPolicyReportDatabaseViewAccessEntryPlain(GetSecurityPolicyReportDatabaseViewAccessEntryPlainArgs args, InvokeOptions options) {
@@ -14453,6 +15395,8 @@ public final class DataSafeFunctions {
      * The ListRoleGrantPaths operation returns only the role grant paths for the specified security policy report.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14483,6 +15427,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSecurityPolicyReportRoleGrantPathsResult> getSecurityPolicyReportRoleGrantPaths(GetSecurityPolicyReportRoleGrantPathsArgs args) {
@@ -14496,6 +15441,8 @@ public final class DataSafeFunctions {
      * The ListRoleGrantPaths operation returns only the role grant paths for the specified security policy report.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14526,6 +15473,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSecurityPolicyReportRoleGrantPathsResult> getSecurityPolicyReportRoleGrantPathsPlain(GetSecurityPolicyReportRoleGrantPathsPlainArgs args) {
@@ -14539,6 +15487,8 @@ public final class DataSafeFunctions {
      * The ListRoleGrantPaths operation returns only the role grant paths for the specified security policy report.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14569,6 +15519,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSecurityPolicyReportRoleGrantPathsResult> getSecurityPolicyReportRoleGrantPaths(GetSecurityPolicyReportRoleGrantPathsArgs args, InvokeOptions options) {
@@ -14582,6 +15533,8 @@ public final class DataSafeFunctions {
      * The ListRoleGrantPaths operation returns only the role grant paths for the specified security policy report.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14612,6 +15565,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSecurityPolicyReportRoleGrantPathsResult> getSecurityPolicyReportRoleGrantPathsPlain(GetSecurityPolicyReportRoleGrantPathsPlainArgs args, InvokeOptions options) {
@@ -14636,6 +15590,8 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14670,6 +15626,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSecurityPolicyReportsResult> getSecurityPolicyReports(GetSecurityPolicyReportsArgs args) {
@@ -14694,6 +15651,8 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14728,6 +15687,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSecurityPolicyReportsResult> getSecurityPolicyReportsPlain(GetSecurityPolicyReportsPlainArgs args) {
@@ -14752,6 +15712,8 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14786,6 +15748,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSecurityPolicyReportsResult> getSecurityPolicyReports(GetSecurityPolicyReportsArgs args, InvokeOptions options) {
@@ -14810,6 +15773,8 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14844,6 +15809,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSecurityPolicyReportsResult> getSecurityPolicyReportsPlain(GetSecurityPolicyReportsPlainArgs args, InvokeOptions options) {
@@ -14855,6 +15821,8 @@ public final class DataSafeFunctions {
      * Gets the details of the specified sensitive data model.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14883,6 +15851,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSensitiveDataModelResult> getSensitiveDataModel(GetSensitiveDataModelArgs args) {
@@ -14894,6 +15863,8 @@ public final class DataSafeFunctions {
      * Gets the details of the specified sensitive data model.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14922,6 +15893,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSensitiveDataModelResult> getSensitiveDataModelPlain(GetSensitiveDataModelPlainArgs args) {
@@ -14933,6 +15905,8 @@ public final class DataSafeFunctions {
      * Gets the details of the specified sensitive data model.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14961,6 +15935,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSensitiveDataModelResult> getSensitiveDataModel(GetSensitiveDataModelArgs args, InvokeOptions options) {
@@ -14972,6 +15947,8 @@ public final class DataSafeFunctions {
      * Gets the details of the specified sensitive data model.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15000,6 +15977,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSensitiveDataModelResult> getSensitiveDataModelPlain(GetSensitiveDataModelPlainArgs args, InvokeOptions options) {
@@ -15011,6 +15989,8 @@ public final class DataSafeFunctions {
      * Gets a list of sensitive objects present in the specified sensitive data model based on the specified query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15042,6 +16022,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSensitiveDataModelSensitiveObjectsResult> getSensitiveDataModelSensitiveObjects(GetSensitiveDataModelSensitiveObjectsArgs args) {
@@ -15053,6 +16034,8 @@ public final class DataSafeFunctions {
      * Gets a list of sensitive objects present in the specified sensitive data model based on the specified query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15084,6 +16067,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSensitiveDataModelSensitiveObjectsResult> getSensitiveDataModelSensitiveObjectsPlain(GetSensitiveDataModelSensitiveObjectsPlainArgs args) {
@@ -15095,6 +16079,8 @@ public final class DataSafeFunctions {
      * Gets a list of sensitive objects present in the specified sensitive data model based on the specified query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15126,6 +16112,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSensitiveDataModelSensitiveObjectsResult> getSensitiveDataModelSensitiveObjects(GetSensitiveDataModelSensitiveObjectsArgs args, InvokeOptions options) {
@@ -15137,6 +16124,8 @@ public final class DataSafeFunctions {
      * Gets a list of sensitive objects present in the specified sensitive data model based on the specified query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15168,6 +16157,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSensitiveDataModelSensitiveObjectsResult> getSensitiveDataModelSensitiveObjectsPlain(GetSensitiveDataModelSensitiveObjectsPlainArgs args, InvokeOptions options) {
@@ -15179,6 +16169,8 @@ public final class DataSafeFunctions {
      * Gets a list of sensitive schemas present in the specified sensitive data model based on the specified query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15208,6 +16200,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSensitiveDataModelSensitiveSchemasResult> getSensitiveDataModelSensitiveSchemas(GetSensitiveDataModelSensitiveSchemasArgs args) {
@@ -15219,6 +16212,8 @@ public final class DataSafeFunctions {
      * Gets a list of sensitive schemas present in the specified sensitive data model based on the specified query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15248,6 +16243,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSensitiveDataModelSensitiveSchemasResult> getSensitiveDataModelSensitiveSchemasPlain(GetSensitiveDataModelSensitiveSchemasPlainArgs args) {
@@ -15259,6 +16255,8 @@ public final class DataSafeFunctions {
      * Gets a list of sensitive schemas present in the specified sensitive data model based on the specified query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15288,6 +16286,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSensitiveDataModelSensitiveSchemasResult> getSensitiveDataModelSensitiveSchemas(GetSensitiveDataModelSensitiveSchemasArgs args, InvokeOptions options) {
@@ -15299,6 +16298,8 @@ public final class DataSafeFunctions {
      * Gets a list of sensitive schemas present in the specified sensitive data model based on the specified query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15328,6 +16329,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSensitiveDataModelSensitiveSchemasResult> getSensitiveDataModelSensitiveSchemasPlain(GetSensitiveDataModelSensitiveSchemasPlainArgs args, InvokeOptions options) {
@@ -15339,6 +16341,8 @@ public final class DataSafeFunctions {
      * Gets a list of sensitive data models based on the specified query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15375,6 +16379,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSensitiveDataModelsResult> getSensitiveDataModels(GetSensitiveDataModelsArgs args) {
@@ -15386,6 +16391,8 @@ public final class DataSafeFunctions {
      * Gets a list of sensitive data models based on the specified query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15422,6 +16429,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSensitiveDataModelsResult> getSensitiveDataModelsPlain(GetSensitiveDataModelsPlainArgs args) {
@@ -15433,6 +16441,8 @@ public final class DataSafeFunctions {
      * Gets a list of sensitive data models based on the specified query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15469,6 +16479,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSensitiveDataModelsResult> getSensitiveDataModels(GetSensitiveDataModelsArgs args, InvokeOptions options) {
@@ -15480,6 +16491,8 @@ public final class DataSafeFunctions {
      * Gets a list of sensitive data models based on the specified query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15516,6 +16529,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSensitiveDataModelsResult> getSensitiveDataModelsPlain(GetSensitiveDataModelsPlainArgs args, InvokeOptions options) {
@@ -15527,6 +16541,8 @@ public final class DataSafeFunctions {
      * Gets the details of the specified sensitive column.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15556,6 +16572,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSensitiveDataModelsSensitiveColumnResult> getSensitiveDataModelsSensitiveColumn(GetSensitiveDataModelsSensitiveColumnArgs args) {
@@ -15567,6 +16584,8 @@ public final class DataSafeFunctions {
      * Gets the details of the specified sensitive column.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15596,6 +16615,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSensitiveDataModelsSensitiveColumnResult> getSensitiveDataModelsSensitiveColumnPlain(GetSensitiveDataModelsSensitiveColumnPlainArgs args) {
@@ -15607,6 +16627,8 @@ public final class DataSafeFunctions {
      * Gets the details of the specified sensitive column.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15636,6 +16658,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSensitiveDataModelsSensitiveColumnResult> getSensitiveDataModelsSensitiveColumn(GetSensitiveDataModelsSensitiveColumnArgs args, InvokeOptions options) {
@@ -15647,6 +16670,8 @@ public final class DataSafeFunctions {
      * Gets the details of the specified sensitive column.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15676,6 +16701,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSensitiveDataModelsSensitiveColumnResult> getSensitiveDataModelsSensitiveColumnPlain(GetSensitiveDataModelsSensitiveColumnPlainArgs args, InvokeOptions options) {
@@ -15687,6 +16713,8 @@ public final class DataSafeFunctions {
      * Gets a list of sensitive columns present in the specified sensitive data model based on the specified query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15731,6 +16759,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSensitiveDataModelsSensitiveColumnsResult> getSensitiveDataModelsSensitiveColumns(GetSensitiveDataModelsSensitiveColumnsArgs args) {
@@ -15742,6 +16771,8 @@ public final class DataSafeFunctions {
      * Gets a list of sensitive columns present in the specified sensitive data model based on the specified query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15786,6 +16817,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSensitiveDataModelsSensitiveColumnsResult> getSensitiveDataModelsSensitiveColumnsPlain(GetSensitiveDataModelsSensitiveColumnsPlainArgs args) {
@@ -15797,6 +16829,8 @@ public final class DataSafeFunctions {
      * Gets a list of sensitive columns present in the specified sensitive data model based on the specified query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15841,6 +16875,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSensitiveDataModelsSensitiveColumnsResult> getSensitiveDataModelsSensitiveColumns(GetSensitiveDataModelsSensitiveColumnsArgs args, InvokeOptions options) {
@@ -15852,6 +16887,8 @@ public final class DataSafeFunctions {
      * Gets a list of sensitive columns present in the specified sensitive data model based on the specified query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15896,6 +16933,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSensitiveDataModelsSensitiveColumnsResult> getSensitiveDataModelsSensitiveColumnsPlain(GetSensitiveDataModelsSensitiveColumnsPlainArgs args, InvokeOptions options) {
@@ -15907,6 +16945,8 @@ public final class DataSafeFunctions {
      * Gets the details of the specified sensitive type.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15935,6 +16975,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSensitiveTypeResult> getSensitiveType(GetSensitiveTypeArgs args) {
@@ -15946,6 +16987,8 @@ public final class DataSafeFunctions {
      * Gets the details of the specified sensitive type.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15974,6 +17017,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSensitiveTypeResult> getSensitiveTypePlain(GetSensitiveTypePlainArgs args) {
@@ -15985,6 +17029,8 @@ public final class DataSafeFunctions {
      * Gets the details of the specified sensitive type.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16013,6 +17059,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSensitiveTypeResult> getSensitiveType(GetSensitiveTypeArgs args, InvokeOptions options) {
@@ -16024,6 +17071,8 @@ public final class DataSafeFunctions {
      * Gets the details of the specified sensitive type.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16052,6 +17101,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSensitiveTypeResult> getSensitiveTypePlain(GetSensitiveTypePlainArgs args, InvokeOptions options) {
@@ -16063,6 +17113,8 @@ public final class DataSafeFunctions {
      * Gets a list of sensitive types based on the specified query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16103,6 +17155,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSensitiveTypesResult> getSensitiveTypes(GetSensitiveTypesArgs args) {
@@ -16114,6 +17167,8 @@ public final class DataSafeFunctions {
      * Gets a list of sensitive types based on the specified query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16154,6 +17209,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSensitiveTypesResult> getSensitiveTypesPlain(GetSensitiveTypesPlainArgs args) {
@@ -16165,6 +17221,8 @@ public final class DataSafeFunctions {
      * Gets a list of sensitive types based on the specified query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16205,6 +17263,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSensitiveTypesResult> getSensitiveTypes(GetSensitiveTypesArgs args, InvokeOptions options) {
@@ -16216,6 +17275,8 @@ public final class DataSafeFunctions {
      * Gets a list of sensitive types based on the specified query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16256,6 +17317,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSensitiveTypesResult> getSensitiveTypesPlain(GetSensitiveTypesPlainArgs args, InvokeOptions options) {
@@ -16267,6 +17329,8 @@ public final class DataSafeFunctions {
      * Gets the details of target-alert policy association by its ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16295,6 +17359,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetTargetAlertPolicyAssociationResult> getTargetAlertPolicyAssociation(GetTargetAlertPolicyAssociationArgs args) {
@@ -16306,6 +17371,8 @@ public final class DataSafeFunctions {
      * Gets the details of target-alert policy association by its ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16334,6 +17401,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetTargetAlertPolicyAssociationResult> getTargetAlertPolicyAssociationPlain(GetTargetAlertPolicyAssociationPlainArgs args) {
@@ -16345,6 +17413,8 @@ public final class DataSafeFunctions {
      * Gets the details of target-alert policy association by its ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16373,6 +17443,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetTargetAlertPolicyAssociationResult> getTargetAlertPolicyAssociation(GetTargetAlertPolicyAssociationArgs args, InvokeOptions options) {
@@ -16384,6 +17455,8 @@ public final class DataSafeFunctions {
      * Gets the details of target-alert policy association by its ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16412,6 +17485,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetTargetAlertPolicyAssociationResult> getTargetAlertPolicyAssociationPlain(GetTargetAlertPolicyAssociationPlainArgs args, InvokeOptions options) {
@@ -16423,6 +17497,8 @@ public final class DataSafeFunctions {
      * Gets a list of all target-alert policy associations.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16459,6 +17535,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetTargetAlertPolicyAssociationsResult> getTargetAlertPolicyAssociations(GetTargetAlertPolicyAssociationsArgs args) {
@@ -16470,6 +17547,8 @@ public final class DataSafeFunctions {
      * Gets a list of all target-alert policy associations.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16506,6 +17585,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetTargetAlertPolicyAssociationsResult> getTargetAlertPolicyAssociationsPlain(GetTargetAlertPolicyAssociationsPlainArgs args) {
@@ -16517,6 +17597,8 @@ public final class DataSafeFunctions {
      * Gets a list of all target-alert policy associations.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16553,6 +17635,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetTargetAlertPolicyAssociationsResult> getTargetAlertPolicyAssociations(GetTargetAlertPolicyAssociationsArgs args, InvokeOptions options) {
@@ -16564,6 +17647,8 @@ public final class DataSafeFunctions {
      * Gets a list of all target-alert policy associations.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16600,6 +17685,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetTargetAlertPolicyAssociationsResult> getTargetAlertPolicyAssociationsPlain(GetTargetAlertPolicyAssociationsPlainArgs args, InvokeOptions options) {
@@ -16611,6 +17697,8 @@ public final class DataSafeFunctions {
      * Returns the details of the specified Data Safe target database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16639,6 +17727,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetTargetDatabaseResult> getTargetDatabase(GetTargetDatabaseArgs args) {
@@ -16650,6 +17739,8 @@ public final class DataSafeFunctions {
      * Returns the details of the specified Data Safe target database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16678,6 +17769,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetTargetDatabaseResult> getTargetDatabasePlain(GetTargetDatabasePlainArgs args) {
@@ -16689,6 +17781,8 @@ public final class DataSafeFunctions {
      * Returns the details of the specified Data Safe target database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16717,6 +17811,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetTargetDatabaseResult> getTargetDatabase(GetTargetDatabaseArgs args, InvokeOptions options) {
@@ -16728,6 +17823,8 @@ public final class DataSafeFunctions {
      * Returns the details of the specified Data Safe target database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16756,6 +17853,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetTargetDatabaseResult> getTargetDatabasePlain(GetTargetDatabasePlainArgs args, InvokeOptions options) {
@@ -16767,6 +17865,8 @@ public final class DataSafeFunctions {
      * Returns the details of the specified Data Safe peer target database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16796,6 +17896,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetTargetDatabasePeerTargetDatabaseResult> getTargetDatabasePeerTargetDatabase(GetTargetDatabasePeerTargetDatabaseArgs args) {
@@ -16807,6 +17908,8 @@ public final class DataSafeFunctions {
      * Returns the details of the specified Data Safe peer target database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16836,6 +17939,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetTargetDatabasePeerTargetDatabaseResult> getTargetDatabasePeerTargetDatabasePlain(GetTargetDatabasePeerTargetDatabasePlainArgs args) {
@@ -16847,6 +17951,8 @@ public final class DataSafeFunctions {
      * Returns the details of the specified Data Safe peer target database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16876,6 +17982,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetTargetDatabasePeerTargetDatabaseResult> getTargetDatabasePeerTargetDatabase(GetTargetDatabasePeerTargetDatabaseArgs args, InvokeOptions options) {
@@ -16887,6 +17994,8 @@ public final class DataSafeFunctions {
      * Returns the details of the specified Data Safe peer target database.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16916,6 +18025,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetTargetDatabasePeerTargetDatabaseResult> getTargetDatabasePeerTargetDatabasePlain(GetTargetDatabasePeerTargetDatabasePlainArgs args, InvokeOptions options) {
@@ -16927,6 +18037,8 @@ public final class DataSafeFunctions {
      * Lists all the peer target databases under the primary target database identified by the OCID passed as path parameter.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16955,6 +18067,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetTargetDatabasePeerTargetDatabasesResult> getTargetDatabasePeerTargetDatabases(GetTargetDatabasePeerTargetDatabasesArgs args) {
@@ -16966,6 +18079,8 @@ public final class DataSafeFunctions {
      * Lists all the peer target databases under the primary target database identified by the OCID passed as path parameter.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16994,6 +18109,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetTargetDatabasePeerTargetDatabasesResult> getTargetDatabasePeerTargetDatabasesPlain(GetTargetDatabasePeerTargetDatabasesPlainArgs args) {
@@ -17005,6 +18121,8 @@ public final class DataSafeFunctions {
      * Lists all the peer target databases under the primary target database identified by the OCID passed as path parameter.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17033,6 +18151,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetTargetDatabasePeerTargetDatabasesResult> getTargetDatabasePeerTargetDatabases(GetTargetDatabasePeerTargetDatabasesArgs args, InvokeOptions options) {
@@ -17044,6 +18163,8 @@ public final class DataSafeFunctions {
      * Lists all the peer target databases under the primary target database identified by the OCID passed as path parameter.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17072,6 +18193,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetTargetDatabasePeerTargetDatabasesResult> getTargetDatabasePeerTargetDatabasesPlain(GetTargetDatabasePeerTargetDatabasesPlainArgs args, InvokeOptions options) {
@@ -17095,6 +18217,8 @@ public final class DataSafeFunctions {
      * Returns a list of role metadata objects.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17127,6 +18251,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetTargetDatabaseRolesResult> getTargetDatabaseRoles(GetTargetDatabaseRolesArgs args) {
@@ -17138,6 +18263,8 @@ public final class DataSafeFunctions {
      * Returns a list of role metadata objects.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17170,6 +18297,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetTargetDatabaseRolesResult> getTargetDatabaseRolesPlain(GetTargetDatabaseRolesPlainArgs args) {
@@ -17181,6 +18309,8 @@ public final class DataSafeFunctions {
      * Returns a list of role metadata objects.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17213,6 +18343,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetTargetDatabaseRolesResult> getTargetDatabaseRoles(GetTargetDatabaseRolesArgs args, InvokeOptions options) {
@@ -17224,6 +18355,8 @@ public final class DataSafeFunctions {
      * Returns a list of role metadata objects.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17256,6 +18389,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetTargetDatabaseRolesResult> getTargetDatabaseRolesPlain(GetTargetDatabaseRolesPlainArgs args, InvokeOptions options) {
@@ -17267,6 +18401,8 @@ public final class DataSafeFunctions {
      * Returns the list of registered target databases in Data Safe.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17303,6 +18439,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetTargetDatabasesResult> getTargetDatabases(GetTargetDatabasesArgs args) {
@@ -17314,6 +18451,8 @@ public final class DataSafeFunctions {
      * Returns the list of registered target databases in Data Safe.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17350,6 +18489,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetTargetDatabasesResult> getTargetDatabasesPlain(GetTargetDatabasesPlainArgs args) {
@@ -17361,6 +18501,8 @@ public final class DataSafeFunctions {
      * Returns the list of registered target databases in Data Safe.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17397,6 +18539,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetTargetDatabasesResult> getTargetDatabases(GetTargetDatabasesArgs args, InvokeOptions options) {
@@ -17408,6 +18551,8 @@ public final class DataSafeFunctions {
      * Returns the list of registered target databases in Data Safe.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17444,6 +18589,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetTargetDatabasesResult> getTargetDatabasesPlain(GetTargetDatabasesPlainArgs args, InvokeOptions options) {
@@ -17455,6 +18601,8 @@ public final class DataSafeFunctions {
      * Returns a list of column metadata objects.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17490,6 +18638,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetTargetDatabasesColumnsResult> getTargetDatabasesColumns(GetTargetDatabasesColumnsArgs args) {
@@ -17501,6 +18650,8 @@ public final class DataSafeFunctions {
      * Returns a list of column metadata objects.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17536,6 +18687,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetTargetDatabasesColumnsResult> getTargetDatabasesColumnsPlain(GetTargetDatabasesColumnsPlainArgs args) {
@@ -17547,6 +18699,8 @@ public final class DataSafeFunctions {
      * Returns a list of column metadata objects.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17582,6 +18736,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetTargetDatabasesColumnsResult> getTargetDatabasesColumns(GetTargetDatabasesColumnsArgs args, InvokeOptions options) {
@@ -17593,6 +18748,8 @@ public final class DataSafeFunctions {
      * Returns a list of column metadata objects.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17628,6 +18785,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetTargetDatabasesColumnsResult> getTargetDatabasesColumnsPlain(GetTargetDatabasesColumnsPlainArgs args, InvokeOptions options) {
@@ -17639,6 +18797,8 @@ public final class DataSafeFunctions {
      * Returns list of schema.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17670,6 +18830,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetTargetDatabasesSchemasResult> getTargetDatabasesSchemas(GetTargetDatabasesSchemasArgs args) {
@@ -17681,6 +18842,8 @@ public final class DataSafeFunctions {
      * Returns list of schema.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17712,6 +18875,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetTargetDatabasesSchemasResult> getTargetDatabasesSchemasPlain(GetTargetDatabasesSchemasPlainArgs args) {
@@ -17723,6 +18887,8 @@ public final class DataSafeFunctions {
      * Returns list of schema.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17754,6 +18920,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetTargetDatabasesSchemasResult> getTargetDatabasesSchemas(GetTargetDatabasesSchemasArgs args, InvokeOptions options) {
@@ -17765,6 +18932,8 @@ public final class DataSafeFunctions {
      * Returns list of schema.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17796,6 +18965,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetTargetDatabasesSchemasResult> getTargetDatabasesSchemasPlain(GetTargetDatabasesSchemasPlainArgs args, InvokeOptions options) {
@@ -17807,6 +18977,8 @@ public final class DataSafeFunctions {
      * Returns a list of table metadata objects.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17839,6 +19011,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetTargetDatabasesTablesResult> getTargetDatabasesTables(GetTargetDatabasesTablesArgs args) {
@@ -17850,6 +19023,8 @@ public final class DataSafeFunctions {
      * Returns a list of table metadata objects.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17882,6 +19057,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetTargetDatabasesTablesResult> getTargetDatabasesTablesPlain(GetTargetDatabasesTablesPlainArgs args) {
@@ -17893,6 +19069,8 @@ public final class DataSafeFunctions {
      * Returns a list of table metadata objects.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17925,6 +19103,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetTargetDatabasesTablesResult> getTargetDatabasesTables(GetTargetDatabasesTablesArgs args, InvokeOptions options) {
@@ -17936,6 +19115,8 @@ public final class DataSafeFunctions {
      * Returns a list of table metadata objects.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17968,6 +19149,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetTargetDatabasesTablesResult> getTargetDatabasesTablesPlain(GetTargetDatabasesTablesPlainArgs args, InvokeOptions options) {
@@ -17979,6 +19161,8 @@ public final class DataSafeFunctions {
      * Gets a user assessment by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18007,6 +19191,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetUserAssessmentResult> getUserAssessment(GetUserAssessmentArgs args) {
@@ -18018,6 +19203,8 @@ public final class DataSafeFunctions {
      * Gets a user assessment by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18046,6 +19233,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetUserAssessmentResult> getUserAssessmentPlain(GetUserAssessmentPlainArgs args) {
@@ -18057,6 +19245,8 @@ public final class DataSafeFunctions {
      * Gets a user assessment by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18085,6 +19275,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetUserAssessmentResult> getUserAssessment(GetUserAssessmentArgs args, InvokeOptions options) {
@@ -18096,6 +19287,8 @@ public final class DataSafeFunctions {
      * Gets a user assessment by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18124,6 +19317,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetUserAssessmentResult> getUserAssessmentPlain(GetUserAssessmentPlainArgs args, InvokeOptions options) {
@@ -18135,6 +19329,8 @@ public final class DataSafeFunctions {
      * Gets the details of the comparison report for the user assessments submitted for comparison.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18164,6 +19360,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetUserAssessmentComparisonResult> getUserAssessmentComparison(GetUserAssessmentComparisonArgs args) {
@@ -18175,6 +19372,8 @@ public final class DataSafeFunctions {
      * Gets the details of the comparison report for the user assessments submitted for comparison.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18204,6 +19403,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetUserAssessmentComparisonResult> getUserAssessmentComparisonPlain(GetUserAssessmentComparisonPlainArgs args) {
@@ -18215,6 +19415,8 @@ public final class DataSafeFunctions {
      * Gets the details of the comparison report for the user assessments submitted for comparison.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18244,6 +19446,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetUserAssessmentComparisonResult> getUserAssessmentComparison(GetUserAssessmentComparisonArgs args, InvokeOptions options) {
@@ -18255,6 +19458,8 @@ public final class DataSafeFunctions {
      * Gets the details of the comparison report for the user assessments submitted for comparison.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18284,6 +19489,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetUserAssessmentComparisonResult> getUserAssessmentComparisonPlain(GetUserAssessmentComparisonPlainArgs args, InvokeOptions options) {
@@ -18309,6 +19515,8 @@ public final class DataSafeFunctions {
      * set the parameter compartmentIdInSubtree to true and accessLevel to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18342,6 +19550,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetUserAssessmentProfileAnalyticsResult> getUserAssessmentProfileAnalytics(GetUserAssessmentProfileAnalyticsArgs args) {
@@ -18367,6 +19576,8 @@ public final class DataSafeFunctions {
      * set the parameter compartmentIdInSubtree to true and accessLevel to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18400,6 +19611,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetUserAssessmentProfileAnalyticsResult> getUserAssessmentProfileAnalyticsPlain(GetUserAssessmentProfileAnalyticsPlainArgs args) {
@@ -18425,6 +19637,8 @@ public final class DataSafeFunctions {
      * set the parameter compartmentIdInSubtree to true and accessLevel to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18458,6 +19672,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetUserAssessmentProfileAnalyticsResult> getUserAssessmentProfileAnalytics(GetUserAssessmentProfileAnalyticsArgs args, InvokeOptions options) {
@@ -18483,6 +19698,8 @@ public final class DataSafeFunctions {
      * set the parameter compartmentIdInSubtree to true and accessLevel to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18516,6 +19733,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetUserAssessmentProfileAnalyticsResult> getUserAssessmentProfileAnalyticsPlain(GetUserAssessmentProfileAnalyticsPlainArgs args, InvokeOptions options) {
@@ -18541,6 +19759,8 @@ public final class DataSafeFunctions {
      * &#39;compartmentIdInSubtree&#39; to true and &#39;accessLevel&#39; to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18586,6 +19806,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetUserAssessmentProfilesResult> getUserAssessmentProfiles(GetUserAssessmentProfilesArgs args) {
@@ -18611,6 +19832,8 @@ public final class DataSafeFunctions {
      * &#39;compartmentIdInSubtree&#39; to true and &#39;accessLevel&#39; to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18656,6 +19879,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetUserAssessmentProfilesResult> getUserAssessmentProfilesPlain(GetUserAssessmentProfilesPlainArgs args) {
@@ -18681,6 +19905,8 @@ public final class DataSafeFunctions {
      * &#39;compartmentIdInSubtree&#39; to true and &#39;accessLevel&#39; to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18726,6 +19952,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetUserAssessmentProfilesResult> getUserAssessmentProfiles(GetUserAssessmentProfilesArgs args, InvokeOptions options) {
@@ -18751,6 +19978,8 @@ public final class DataSafeFunctions {
      * &#39;compartmentIdInSubtree&#39; to true and &#39;accessLevel&#39; to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18796,6 +20025,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetUserAssessmentProfilesResult> getUserAssessmentProfilesPlain(GetUserAssessmentProfilesPlainArgs args, InvokeOptions options) {
@@ -18807,6 +20037,8 @@ public final class DataSafeFunctions {
      * Gets a list of aggregated user access analytics in the specified target in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18835,6 +20067,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetUserAssessmentUserAccessAnalyticsResult> getUserAssessmentUserAccessAnalytics(GetUserAssessmentUserAccessAnalyticsArgs args) {
@@ -18846,6 +20079,8 @@ public final class DataSafeFunctions {
      * Gets a list of aggregated user access analytics in the specified target in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18874,6 +20109,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetUserAssessmentUserAccessAnalyticsResult> getUserAssessmentUserAccessAnalyticsPlain(GetUserAssessmentUserAccessAnalyticsPlainArgs args) {
@@ -18885,6 +20121,8 @@ public final class DataSafeFunctions {
      * Gets a list of aggregated user access analytics in the specified target in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18913,6 +20151,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetUserAssessmentUserAccessAnalyticsResult> getUserAssessmentUserAccessAnalytics(GetUserAssessmentUserAccessAnalyticsArgs args, InvokeOptions options) {
@@ -18924,6 +20163,8 @@ public final class DataSafeFunctions {
      * Gets a list of aggregated user access analytics in the specified target in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18952,6 +20193,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetUserAssessmentUserAccessAnalyticsResult> getUserAssessmentUserAccessAnalyticsPlain(GetUserAssessmentUserAccessAnalyticsPlainArgs args, InvokeOptions options) {
@@ -18977,6 +20219,8 @@ public final class DataSafeFunctions {
      * set the parameter compartmentIdInSubtree to true and accessLevel to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19019,6 +20263,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetUserAssessmentUserAnalyticsResult> getUserAssessmentUserAnalytics(GetUserAssessmentUserAnalyticsArgs args) {
@@ -19044,6 +20289,8 @@ public final class DataSafeFunctions {
      * set the parameter compartmentIdInSubtree to true and accessLevel to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19086,6 +20333,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetUserAssessmentUserAnalyticsResult> getUserAssessmentUserAnalyticsPlain(GetUserAssessmentUserAnalyticsPlainArgs args) {
@@ -19111,6 +20359,8 @@ public final class DataSafeFunctions {
      * set the parameter compartmentIdInSubtree to true and accessLevel to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19153,6 +20403,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetUserAssessmentUserAnalyticsResult> getUserAssessmentUserAnalytics(GetUserAssessmentUserAnalyticsArgs args, InvokeOptions options) {
@@ -19178,6 +20429,8 @@ public final class DataSafeFunctions {
      * set the parameter compartmentIdInSubtree to true and accessLevel to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19220,6 +20473,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetUserAssessmentUserAnalyticsResult> getUserAssessmentUserAnalyticsPlain(GetUserAssessmentUserAnalyticsPlainArgs args, InvokeOptions options) {
@@ -19234,6 +20488,8 @@ public final class DataSafeFunctions {
      * granted to each user.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19281,6 +20537,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetUserAssessmentUsersResult> getUserAssessmentUsers(GetUserAssessmentUsersArgs args) {
@@ -19295,6 +20552,8 @@ public final class DataSafeFunctions {
      * granted to each user.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19342,6 +20601,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetUserAssessmentUsersResult> getUserAssessmentUsersPlain(GetUserAssessmentUsersPlainArgs args) {
@@ -19356,6 +20616,8 @@ public final class DataSafeFunctions {
      * granted to each user.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19403,6 +20665,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetUserAssessmentUsersResult> getUserAssessmentUsers(GetUserAssessmentUsersArgs args, InvokeOptions options) {
@@ -19417,6 +20680,8 @@ public final class DataSafeFunctions {
      * granted to each user.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19464,6 +20729,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetUserAssessmentUsersResult> getUserAssessmentUsersPlain(GetUserAssessmentUsersPlainArgs args, InvokeOptions options) {
@@ -19489,6 +20755,8 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19529,6 +20797,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetUserAssessmentsResult> getUserAssessments(GetUserAssessmentsArgs args) {
@@ -19554,6 +20823,8 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19594,6 +20865,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetUserAssessmentsResult> getUserAssessmentsPlain(GetUserAssessmentsPlainArgs args) {
@@ -19619,6 +20891,8 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19659,6 +20933,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetUserAssessmentsResult> getUserAssessments(GetUserAssessmentsArgs args, InvokeOptions options) {
@@ -19684,6 +20959,8 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19724,6 +21001,7 @@ public final class DataSafeFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetUserAssessmentsResult> getUserAssessmentsPlain(GetUserAssessmentsPlainArgs args, InvokeOptions options) {

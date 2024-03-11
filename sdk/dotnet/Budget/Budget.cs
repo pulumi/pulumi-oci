@@ -16,6 +16,7 @@ namespace Pulumi.Oci.Budget
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -50,13 +51,14 @@ namespace Pulumi.Oci.Budget
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// Budgets can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Budget/budget:Budget test_budget "id"
+    /// $ pulumi import oci:Budget/budget:Budget test_budget "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Budget/budget:Budget")]

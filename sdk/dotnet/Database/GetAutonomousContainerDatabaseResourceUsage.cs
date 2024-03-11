@@ -17,10 +17,9 @@ namespace Pulumi.Oci.Database
         /// Get resource usage details for the specified Autonomous Container Database.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,8 +35,7 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetAutonomousContainerDatabaseResourceUsageResult> InvokeAsync(GetAutonomousContainerDatabaseResourceUsageArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAutonomousContainerDatabaseResourceUsageResult>("oci:Database/getAutonomousContainerDatabaseResourceUsage:getAutonomousContainerDatabaseResourceUsage", args ?? new GetAutonomousContainerDatabaseResourceUsageArgs(), options.WithDefaults());
@@ -48,10 +46,9 @@ namespace Pulumi.Oci.Database
         /// Get resource usage details for the specified Autonomous Container Database.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -67,8 +64,7 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetAutonomousContainerDatabaseResourceUsageResult> Invoke(GetAutonomousContainerDatabaseResourceUsageInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousContainerDatabaseResourceUsageResult>("oci:Database/getAutonomousContainerDatabaseResourceUsage:getAutonomousContainerDatabaseResourceUsage", args ?? new GetAutonomousContainerDatabaseResourceUsageInvokeArgs(), options.WithDefaults());

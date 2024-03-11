@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -54,15 +55,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // AlertRules can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Budget/rule:Rule test_alert_rule "budgets/{budgetId}/alertRules/{alertRuleId}"
-//
+// $ pulumi import oci:Budget/rule:Rule test_alert_rule "budgets/{budgetId}/alertRules/{alertRuleId}"
 // ```
 type Rule struct {
 	pulumi.CustomResourceState

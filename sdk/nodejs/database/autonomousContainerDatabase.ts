@@ -16,7 +16,7 @@ import * as utilities from "../utilities";
  * AutonomousContainerDatabases can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Database/autonomousContainerDatabase:AutonomousContainerDatabase test_autonomous_container_database "id"
+ * $ pulumi import oci:Database/autonomousContainerDatabase:AutonomousContainerDatabase test_autonomous_container_database "id"
  * ```
  */
 export class AutonomousContainerDatabase extends pulumi.CustomResource {

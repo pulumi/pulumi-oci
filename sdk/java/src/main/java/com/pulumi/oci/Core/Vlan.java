@@ -23,6 +23,8 @@ import javax.annotation.Nullable;
  * Creates a VLAN in the specified VCN and the specified compartment.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -60,13 +62,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * Vlans can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Core/vlan:Vlan test_vlan &#34;id&#34;
+ * $ pulumi import oci:Core/vlan:Vlan test_vlan &#34;id&#34;
  * ```
  * 
  */

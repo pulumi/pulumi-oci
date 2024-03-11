@@ -23,6 +23,8 @@ import javax.annotation.Nullable;
  * `opc-retry-token` header since TSIG key names must be globally unique.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -55,13 +57,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * TsigKeys can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Dns/tsigKey:TsigKey test_tsig_key &#34;id&#34;
+ * $ pulumi import oci:Dns/tsigKey:TsigKey test_tsig_key &#34;id&#34;
  * ```
  * 
  */

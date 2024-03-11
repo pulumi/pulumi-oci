@@ -17,10 +17,9 @@ namespace Pulumi.Oci.DatabaseManagement
         /// Gets the details for the external DB system discovery resource specified by `externalDbSystemDiscoveryId`.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,8 +35,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetExternalDbSystemDiscoveryResult> InvokeAsync(GetExternalDbSystemDiscoveryArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetExternalDbSystemDiscoveryResult>("oci:DatabaseManagement/getExternalDbSystemDiscovery:getExternalDbSystemDiscovery", args ?? new GetExternalDbSystemDiscoveryArgs(), options.WithDefaults());
@@ -48,10 +46,9 @@ namespace Pulumi.Oci.DatabaseManagement
         /// Gets the details for the external DB system discovery resource specified by `externalDbSystemDiscoveryId`.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -67,8 +64,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetExternalDbSystemDiscoveryResult> Invoke(GetExternalDbSystemDiscoveryInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetExternalDbSystemDiscoveryResult>("oci:DatabaseManagement/getExternalDbSystemDiscovery:getExternalDbSystemDiscovery", args ?? new GetExternalDbSystemDiscoveryInvokeArgs(), options.WithDefaults());

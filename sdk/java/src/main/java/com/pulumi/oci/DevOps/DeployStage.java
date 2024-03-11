@@ -45,7 +45,7 @@ import javax.annotation.Nullable;
  * DeployStages can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:DevOps/deployStage:DeployStage test_deploy_stage &#34;id&#34;
+ * $ pulumi import oci:DevOps/deployStage:DeployStage test_deploy_stage &#34;id&#34;
  * ```
  * 
  */

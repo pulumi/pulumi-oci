@@ -316,6 +316,7 @@ def get_bucket(name: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -323,6 +324,7 @@ def get_bucket(name: Optional[str] = None,
     test_bucket = oci.ObjectStorage.get_bucket(name=var["bucket_name"],
         namespace=var["bucket_namespace"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str name: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
@@ -371,6 +373,7 @@ def get_bucket_output(name: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -378,6 +381,7 @@ def get_bucket_output(name: Optional[pulumi.Input[str]] = None,
     test_bucket = oci.ObjectStorage.get_bucket(name=var["bucket_name"],
         namespace=var["bucket_namespace"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str name: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`

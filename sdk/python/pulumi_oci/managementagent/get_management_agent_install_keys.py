@@ -135,6 +135,7 @@ def get_management_agent_install_keys(access_level: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -145,6 +146,7 @@ def get_management_agent_install_keys(access_level: Optional[str] = None,
         display_name=var["management_agent_install_key_display_name"],
         state=var["management_agent_install_key_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str access_level: Value of this is always "ACCESSIBLE" and any other value is not supported.
@@ -189,6 +191,7 @@ def get_management_agent_install_keys_output(access_level: Optional[pulumi.Input
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -199,6 +202,7 @@ def get_management_agent_install_keys_output(access_level: Optional[pulumi.Input
         display_name=var["management_agent_install_key_display_name"],
         state=var["management_agent_install_key_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str access_level: Value of this is always "ACCESSIBLE" and any other value is not supported.

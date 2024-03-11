@@ -23,6 +23,8 @@ import javax.annotation.Nullable;
  * The [UpdateCloudVmClusterIormConfig](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudVmCluster/UpdateCloudVmClusterIormConfig/) API is used for Cloud Vm Cluster.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -57,13 +59,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * CloudVmClusterIormConfigs can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Database/cloudVmClusterIormConfig:CloudVmClusterIormConfig test_cloud_vm_cluster_iorm_config &#34;cloudVmClusters/{cloudVmClusterId}/CloudVmClusterIormConfig&#34;
+ * $ pulumi import oci:Database/cloudVmClusterIormConfig:CloudVmClusterIormConfig test_cloud_vm_cluster_iorm_config &#34;cloudVmClusters/{cloudVmClusterId}/CloudVmClusterIormConfig&#34;
  * ```
  * 
  */

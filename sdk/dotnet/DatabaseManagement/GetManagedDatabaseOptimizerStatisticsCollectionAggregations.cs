@@ -22,10 +22,9 @@ namespace Pulumi.Oci.DatabaseManagement
         /// If the task type if not provided, then both Auto and Manual tasks are considered for aggregation.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -45,8 +44,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResult> InvokeAsync(GetManagedDatabaseOptimizerStatisticsCollectionAggregationsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResult>("oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsCollectionAggregations:getManagedDatabaseOptimizerStatisticsCollectionAggregations", args ?? new GetManagedDatabaseOptimizerStatisticsCollectionAggregationsArgs(), options.WithDefaults());
@@ -62,10 +60,9 @@ namespace Pulumi.Oci.DatabaseManagement
         /// If the task type if not provided, then both Auto and Manual tasks are considered for aggregation.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -85,8 +82,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResult> Invoke(GetManagedDatabaseOptimizerStatisticsCollectionAggregationsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResult>("oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsCollectionAggregations:getManagedDatabaseOptimizerStatisticsCollectionAggregations", args ?? new GetManagedDatabaseOptimizerStatisticsCollectionAggregationsInvokeArgs(), options.WithDefaults());

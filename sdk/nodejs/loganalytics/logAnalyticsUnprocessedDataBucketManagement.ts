@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,6 +23,7 @@ import * as utilities from "../utilities";
  *     namespace: _var.log_analytics_unprocessed_data_bucket_management_namespace,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *

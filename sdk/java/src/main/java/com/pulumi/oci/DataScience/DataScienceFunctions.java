@@ -92,6 +92,8 @@ public final class DataScienceFunctions {
      * List fast launch capable job configs in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -120,6 +122,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFastLaunchJobConfigsResult> getFastLaunchJobConfigs(GetFastLaunchJobConfigsArgs args) {
@@ -131,6 +134,8 @@ public final class DataScienceFunctions {
      * List fast launch capable job configs in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -159,6 +164,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFastLaunchJobConfigsResult> getFastLaunchJobConfigsPlain(GetFastLaunchJobConfigsPlainArgs args) {
@@ -170,6 +176,8 @@ public final class DataScienceFunctions {
      * List fast launch capable job configs in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -198,6 +206,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFastLaunchJobConfigsResult> getFastLaunchJobConfigs(GetFastLaunchJobConfigsArgs args, InvokeOptions options) {
@@ -209,6 +218,8 @@ public final class DataScienceFunctions {
      * List fast launch capable job configs in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -237,6 +248,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFastLaunchJobConfigsResult> getFastLaunchJobConfigsPlain(GetFastLaunchJobConfigsPlainArgs args, InvokeOptions options) {
@@ -248,6 +260,8 @@ public final class DataScienceFunctions {
      * Gets a job.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -276,6 +290,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetJobResult> getJob(GetJobArgs args) {
@@ -287,6 +302,8 @@ public final class DataScienceFunctions {
      * Gets a job.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -315,6 +332,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetJobResult> getJobPlain(GetJobPlainArgs args) {
@@ -326,6 +344,8 @@ public final class DataScienceFunctions {
      * Gets a job.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -354,6 +374,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetJobResult> getJob(GetJobArgs args, InvokeOptions options) {
@@ -365,6 +386,8 @@ public final class DataScienceFunctions {
      * Gets a job.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -393,6 +416,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetJobResult> getJobPlain(GetJobPlainArgs args, InvokeOptions options) {
@@ -404,6 +428,8 @@ public final class DataScienceFunctions {
      * Gets a job run.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -432,6 +458,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetJobRunResult> getJobRun(GetJobRunArgs args) {
@@ -443,6 +470,8 @@ public final class DataScienceFunctions {
      * Gets a job run.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -471,6 +500,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetJobRunResult> getJobRunPlain(GetJobRunPlainArgs args) {
@@ -482,6 +512,8 @@ public final class DataScienceFunctions {
      * Gets a job run.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -510,6 +542,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetJobRunResult> getJobRun(GetJobRunArgs args, InvokeOptions options) {
@@ -521,6 +554,8 @@ public final class DataScienceFunctions {
      * Gets a job run.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -549,6 +584,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetJobRunResult> getJobRunPlain(GetJobRunPlainArgs args, InvokeOptions options) {
@@ -560,6 +596,8 @@ public final class DataScienceFunctions {
      * List out job runs.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -593,6 +631,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetJobRunsResult> getJobRuns(GetJobRunsArgs args) {
@@ -604,6 +643,8 @@ public final class DataScienceFunctions {
      * List out job runs.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -637,6 +678,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetJobRunsResult> getJobRunsPlain(GetJobRunsPlainArgs args) {
@@ -648,6 +690,8 @@ public final class DataScienceFunctions {
      * List out job runs.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -681,6 +725,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetJobRunsResult> getJobRuns(GetJobRunsArgs args, InvokeOptions options) {
@@ -692,6 +737,8 @@ public final class DataScienceFunctions {
      * List out job runs.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -725,6 +772,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetJobRunsResult> getJobRunsPlain(GetJobRunsPlainArgs args, InvokeOptions options) {
@@ -736,6 +784,8 @@ public final class DataScienceFunctions {
      * List job shapes available in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -764,6 +814,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetJobShapesResult> getJobShapes(GetJobShapesArgs args) {
@@ -775,6 +826,8 @@ public final class DataScienceFunctions {
      * List job shapes available in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -803,6 +856,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetJobShapesResult> getJobShapesPlain(GetJobShapesPlainArgs args) {
@@ -814,6 +868,8 @@ public final class DataScienceFunctions {
      * List job shapes available in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -842,6 +898,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetJobShapesResult> getJobShapes(GetJobShapesArgs args, InvokeOptions options) {
@@ -853,6 +910,8 @@ public final class DataScienceFunctions {
      * List job shapes available in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -881,6 +940,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetJobShapesResult> getJobShapesPlain(GetJobShapesPlainArgs args, InvokeOptions options) {
@@ -892,6 +952,8 @@ public final class DataScienceFunctions {
      * List jobs in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -925,6 +987,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetJobsResult> getJobs(GetJobsArgs args) {
@@ -936,6 +999,8 @@ public final class DataScienceFunctions {
      * List jobs in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -969,6 +1034,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetJobsResult> getJobsPlain(GetJobsPlainArgs args) {
@@ -980,6 +1046,8 @@ public final class DataScienceFunctions {
      * List jobs in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1013,6 +1081,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetJobsResult> getJobs(GetJobsArgs args, InvokeOptions options) {
@@ -1024,6 +1093,8 @@ public final class DataScienceFunctions {
      * List jobs in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1057,6 +1128,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetJobsResult> getJobsPlain(GetJobsPlainArgs args, InvokeOptions options) {
@@ -1068,6 +1140,8 @@ public final class DataScienceFunctions {
      * Gets the specified model&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1096,6 +1170,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetModelResult> getModel(GetModelArgs args) {
@@ -1107,6 +1182,8 @@ public final class DataScienceFunctions {
      * Gets the specified model&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1135,6 +1212,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetModelResult> getModelPlain(GetModelPlainArgs args) {
@@ -1146,6 +1224,8 @@ public final class DataScienceFunctions {
      * Gets the specified model&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1174,6 +1254,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetModelResult> getModel(GetModelArgs args, InvokeOptions options) {
@@ -1185,6 +1266,8 @@ public final class DataScienceFunctions {
      * Gets the specified model&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1213,6 +1296,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetModelResult> getModelPlain(GetModelPlainArgs args, InvokeOptions options) {
@@ -1224,6 +1308,8 @@ public final class DataScienceFunctions {
      * Retrieves the model deployment for the specified `modelDeploymentId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1252,6 +1338,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetModelDeploymentResult> getModelDeployment(GetModelDeploymentArgs args) {
@@ -1263,6 +1350,8 @@ public final class DataScienceFunctions {
      * Retrieves the model deployment for the specified `modelDeploymentId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1291,6 +1380,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetModelDeploymentResult> getModelDeploymentPlain(GetModelDeploymentPlainArgs args) {
@@ -1302,6 +1392,8 @@ public final class DataScienceFunctions {
      * Retrieves the model deployment for the specified `modelDeploymentId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1330,6 +1422,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetModelDeploymentResult> getModelDeployment(GetModelDeploymentArgs args, InvokeOptions options) {
@@ -1341,6 +1434,8 @@ public final class DataScienceFunctions {
      * Retrieves the model deployment for the specified `modelDeploymentId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1369,6 +1464,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetModelDeploymentResult> getModelDeploymentPlain(GetModelDeploymentPlainArgs args, InvokeOptions options) {
@@ -1380,6 +1476,8 @@ public final class DataScienceFunctions {
      * Lists the valid model deployment shapes.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1408,6 +1506,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetModelDeploymentShapesResult> getModelDeploymentShapes(GetModelDeploymentShapesArgs args) {
@@ -1419,6 +1518,8 @@ public final class DataScienceFunctions {
      * Lists the valid model deployment shapes.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1447,6 +1548,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetModelDeploymentShapesResult> getModelDeploymentShapesPlain(GetModelDeploymentShapesPlainArgs args) {
@@ -1458,6 +1560,8 @@ public final class DataScienceFunctions {
      * Lists the valid model deployment shapes.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1486,6 +1590,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetModelDeploymentShapesResult> getModelDeploymentShapes(GetModelDeploymentShapesArgs args, InvokeOptions options) {
@@ -1497,6 +1602,8 @@ public final class DataScienceFunctions {
      * Lists the valid model deployment shapes.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1525,6 +1632,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetModelDeploymentShapesResult> getModelDeploymentShapesPlain(GetModelDeploymentShapesPlainArgs args, InvokeOptions options) {
@@ -1536,6 +1644,8 @@ public final class DataScienceFunctions {
      * Lists all model deployments in the specified compartment. Only one parameter other than compartmentId may also be included in a query. The query must include compartmentId. If the query does not include compartmentId, or includes compartmentId but two or more other parameters an error is returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1569,6 +1679,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetModelDeploymentsResult> getModelDeployments(GetModelDeploymentsArgs args) {
@@ -1580,6 +1691,8 @@ public final class DataScienceFunctions {
      * Lists all model deployments in the specified compartment. Only one parameter other than compartmentId may also be included in a query. The query must include compartmentId. If the query does not include compartmentId, or includes compartmentId but two or more other parameters an error is returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1613,6 +1726,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetModelDeploymentsResult> getModelDeploymentsPlain(GetModelDeploymentsPlainArgs args) {
@@ -1624,6 +1738,8 @@ public final class DataScienceFunctions {
      * Lists all model deployments in the specified compartment. Only one parameter other than compartmentId may also be included in a query. The query must include compartmentId. If the query does not include compartmentId, or includes compartmentId but two or more other parameters an error is returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1657,6 +1773,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetModelDeploymentsResult> getModelDeployments(GetModelDeploymentsArgs args, InvokeOptions options) {
@@ -1668,6 +1785,8 @@ public final class DataScienceFunctions {
      * Lists all model deployments in the specified compartment. Only one parameter other than compartmentId may also be included in a query. The query must include compartmentId. If the query does not include compartmentId, or includes compartmentId but two or more other parameters an error is returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1701,6 +1820,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetModelDeploymentsResult> getModelDeploymentsPlain(GetModelDeploymentsPlainArgs args, InvokeOptions options) {
@@ -1712,6 +1832,8 @@ public final class DataScienceFunctions {
      * Gets provenance information for specified model.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1740,6 +1862,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetModelProvenanceResult> getModelProvenance(GetModelProvenanceArgs args) {
@@ -1751,6 +1874,8 @@ public final class DataScienceFunctions {
      * Gets provenance information for specified model.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1779,6 +1904,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetModelProvenanceResult> getModelProvenancePlain(GetModelProvenancePlainArgs args) {
@@ -1790,6 +1916,8 @@ public final class DataScienceFunctions {
      * Gets provenance information for specified model.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1818,6 +1946,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetModelProvenanceResult> getModelProvenance(GetModelProvenanceArgs args, InvokeOptions options) {
@@ -1829,6 +1958,8 @@ public final class DataScienceFunctions {
      * Gets provenance information for specified model.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1857,6 +1988,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetModelProvenanceResult> getModelProvenancePlain(GetModelProvenancePlainArgs args, InvokeOptions options) {
@@ -1868,6 +2000,8 @@ public final class DataScienceFunctions {
      * Gets the specified model version set information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1896,6 +2030,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetModelVersionSetResult> getModelVersionSet(GetModelVersionSetArgs args) {
@@ -1907,6 +2042,8 @@ public final class DataScienceFunctions {
      * Gets the specified model version set information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1935,6 +2072,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetModelVersionSetResult> getModelVersionSetPlain(GetModelVersionSetPlainArgs args) {
@@ -1946,6 +2084,8 @@ public final class DataScienceFunctions {
      * Gets the specified model version set information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1974,6 +2114,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetModelVersionSetResult> getModelVersionSet(GetModelVersionSetArgs args, InvokeOptions options) {
@@ -1985,6 +2126,8 @@ public final class DataScienceFunctions {
      * Gets the specified model version set information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2013,6 +2156,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetModelVersionSetResult> getModelVersionSetPlain(GetModelVersionSetPlainArgs args, InvokeOptions options) {
@@ -2024,6 +2168,8 @@ public final class DataScienceFunctions {
      * Lists model version sets in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2057,6 +2203,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetModelVersionSetsResult> getModelVersionSets(GetModelVersionSetsArgs args) {
@@ -2068,6 +2215,8 @@ public final class DataScienceFunctions {
      * Lists model version sets in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2101,6 +2250,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetModelVersionSetsResult> getModelVersionSetsPlain(GetModelVersionSetsPlainArgs args) {
@@ -2112,6 +2262,8 @@ public final class DataScienceFunctions {
      * Lists model version sets in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2145,6 +2297,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetModelVersionSetsResult> getModelVersionSets(GetModelVersionSetsArgs args, InvokeOptions options) {
@@ -2156,6 +2309,8 @@ public final class DataScienceFunctions {
      * Lists model version sets in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2189,6 +2344,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetModelVersionSetsResult> getModelVersionSetsPlain(GetModelVersionSetsPlainArgs args, InvokeOptions options) {
@@ -2200,6 +2356,8 @@ public final class DataScienceFunctions {
      * Lists models in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2234,6 +2392,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetModelsResult> getModels(GetModelsArgs args) {
@@ -2245,6 +2404,8 @@ public final class DataScienceFunctions {
      * Lists models in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2279,6 +2440,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetModelsResult> getModelsPlain(GetModelsPlainArgs args) {
@@ -2290,6 +2452,8 @@ public final class DataScienceFunctions {
      * Lists models in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2324,6 +2488,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetModelsResult> getModels(GetModelsArgs args, InvokeOptions options) {
@@ -2335,6 +2500,8 @@ public final class DataScienceFunctions {
      * Lists models in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2369,6 +2536,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetModelsResult> getModelsPlain(GetModelsPlainArgs args, InvokeOptions options) {
@@ -2380,6 +2548,8 @@ public final class DataScienceFunctions {
      * Gets the specified notebook session&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2408,6 +2578,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNotebookSessionResult> getNotebookSession(GetNotebookSessionArgs args) {
@@ -2419,6 +2590,8 @@ public final class DataScienceFunctions {
      * Gets the specified notebook session&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2447,6 +2620,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNotebookSessionResult> getNotebookSessionPlain(GetNotebookSessionPlainArgs args) {
@@ -2458,6 +2632,8 @@ public final class DataScienceFunctions {
      * Gets the specified notebook session&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2486,6 +2662,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNotebookSessionResult> getNotebookSession(GetNotebookSessionArgs args, InvokeOptions options) {
@@ -2497,6 +2674,8 @@ public final class DataScienceFunctions {
      * Gets the specified notebook session&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2525,6 +2704,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNotebookSessionResult> getNotebookSessionPlain(GetNotebookSessionPlainArgs args, InvokeOptions options) {
@@ -2536,6 +2716,8 @@ public final class DataScienceFunctions {
      * Lists the valid notebook session shapes.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2564,6 +2746,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNotebookSessionShapesResult> getNotebookSessionShapes(GetNotebookSessionShapesArgs args) {
@@ -2575,6 +2758,8 @@ public final class DataScienceFunctions {
      * Lists the valid notebook session shapes.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2603,6 +2788,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNotebookSessionShapesResult> getNotebookSessionShapesPlain(GetNotebookSessionShapesPlainArgs args) {
@@ -2614,6 +2800,8 @@ public final class DataScienceFunctions {
      * Lists the valid notebook session shapes.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2642,6 +2830,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNotebookSessionShapesResult> getNotebookSessionShapes(GetNotebookSessionShapesArgs args, InvokeOptions options) {
@@ -2653,6 +2842,8 @@ public final class DataScienceFunctions {
      * Lists the valid notebook session shapes.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2681,6 +2872,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNotebookSessionShapesResult> getNotebookSessionShapesPlain(GetNotebookSessionShapesPlainArgs args, InvokeOptions options) {
@@ -2692,6 +2884,8 @@ public final class DataScienceFunctions {
      * Lists the notebook sessions in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2725,6 +2919,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNotebookSessionsResult> getNotebookSessions(GetNotebookSessionsArgs args) {
@@ -2736,6 +2931,8 @@ public final class DataScienceFunctions {
      * Lists the notebook sessions in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2769,6 +2966,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNotebookSessionsResult> getNotebookSessionsPlain(GetNotebookSessionsPlainArgs args) {
@@ -2780,6 +2978,8 @@ public final class DataScienceFunctions {
      * Lists the notebook sessions in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2813,6 +3013,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNotebookSessionsResult> getNotebookSessions(GetNotebookSessionsArgs args, InvokeOptions options) {
@@ -2824,6 +3025,8 @@ public final class DataScienceFunctions {
      * Lists the notebook sessions in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2857,6 +3060,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNotebookSessionsResult> getNotebookSessionsPlain(GetNotebookSessionsPlainArgs args, InvokeOptions options) {
@@ -2868,6 +3072,8 @@ public final class DataScienceFunctions {
      * Gets a Pipeline by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2896,6 +3102,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPipelineResult> getPipeline(GetPipelineArgs args) {
@@ -2907,6 +3114,8 @@ public final class DataScienceFunctions {
      * Gets a Pipeline by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2935,6 +3144,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPipelineResult> getPipelinePlain(GetPipelinePlainArgs args) {
@@ -2946,6 +3156,8 @@ public final class DataScienceFunctions {
      * Gets a Pipeline by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2974,6 +3186,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPipelineResult> getPipeline(GetPipelineArgs args, InvokeOptions options) {
@@ -2985,6 +3198,8 @@ public final class DataScienceFunctions {
      * Gets a Pipeline by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3013,6 +3228,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPipelineResult> getPipelinePlain(GetPipelinePlainArgs args, InvokeOptions options) {
@@ -3024,6 +3240,8 @@ public final class DataScienceFunctions {
      * Gets a PipelineRun by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3052,6 +3270,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPipelineRunResult> getPipelineRun(GetPipelineRunArgs args) {
@@ -3063,6 +3282,8 @@ public final class DataScienceFunctions {
      * Gets a PipelineRun by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3091,6 +3312,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPipelineRunResult> getPipelineRunPlain(GetPipelineRunPlainArgs args) {
@@ -3102,6 +3324,8 @@ public final class DataScienceFunctions {
      * Gets a PipelineRun by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3130,6 +3354,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPipelineRunResult> getPipelineRun(GetPipelineRunArgs args, InvokeOptions options) {
@@ -3141,6 +3366,8 @@ public final class DataScienceFunctions {
      * Gets a PipelineRun by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3169,6 +3396,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPipelineRunResult> getPipelineRunPlain(GetPipelineRunPlainArgs args, InvokeOptions options) {
@@ -3180,6 +3408,8 @@ public final class DataScienceFunctions {
      * Returns a list of PipelineRuns.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3213,6 +3443,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPipelineRunsResult> getPipelineRuns(GetPipelineRunsArgs args) {
@@ -3224,6 +3455,8 @@ public final class DataScienceFunctions {
      * Returns a list of PipelineRuns.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3257,6 +3490,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPipelineRunsResult> getPipelineRunsPlain(GetPipelineRunsPlainArgs args) {
@@ -3268,6 +3502,8 @@ public final class DataScienceFunctions {
      * Returns a list of PipelineRuns.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3301,6 +3537,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPipelineRunsResult> getPipelineRuns(GetPipelineRunsArgs args, InvokeOptions options) {
@@ -3312,6 +3549,8 @@ public final class DataScienceFunctions {
      * Returns a list of PipelineRuns.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3345,6 +3584,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPipelineRunsResult> getPipelineRunsPlain(GetPipelineRunsPlainArgs args, InvokeOptions options) {
@@ -3356,6 +3596,8 @@ public final class DataScienceFunctions {
      * Returns a list of Pipelines.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3389,6 +3631,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPipelinesResult> getPipelines(GetPipelinesArgs args) {
@@ -3400,6 +3643,8 @@ public final class DataScienceFunctions {
      * Returns a list of Pipelines.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3433,6 +3678,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPipelinesResult> getPipelinesPlain(GetPipelinesPlainArgs args) {
@@ -3444,6 +3690,8 @@ public final class DataScienceFunctions {
      * Returns a list of Pipelines.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3477,6 +3725,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPipelinesResult> getPipelines(GetPipelinesArgs args, InvokeOptions options) {
@@ -3488,6 +3737,8 @@ public final class DataScienceFunctions {
      * Returns a list of Pipelines.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3521,6 +3772,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPipelinesResult> getPipelinesPlain(GetPipelinesPlainArgs args, InvokeOptions options) {
@@ -3532,6 +3784,8 @@ public final class DataScienceFunctions {
      * Retrieves an private endpoint using a `privateEndpointId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3560,6 +3814,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPrivateEndpointResult> getPrivateEndpoint(GetPrivateEndpointArgs args) {
@@ -3571,6 +3826,8 @@ public final class DataScienceFunctions {
      * Retrieves an private endpoint using a `privateEndpointId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3599,6 +3856,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPrivateEndpointResult> getPrivateEndpointPlain(GetPrivateEndpointPlainArgs args) {
@@ -3610,6 +3868,8 @@ public final class DataScienceFunctions {
      * Retrieves an private endpoint using a `privateEndpointId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3638,6 +3898,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPrivateEndpointResult> getPrivateEndpoint(GetPrivateEndpointArgs args, InvokeOptions options) {
@@ -3649,6 +3910,8 @@ public final class DataScienceFunctions {
      * Retrieves an private endpoint using a `privateEndpointId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3677,6 +3940,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPrivateEndpointResult> getPrivateEndpointPlain(GetPrivateEndpointPlainArgs args, InvokeOptions options) {
@@ -3688,6 +3952,8 @@ public final class DataScienceFunctions {
      * Lists all Data Science private endpoints in the specified compartment. The query must include compartmentId. The query can also include one other parameter. If the query doesn&#39;t include compartmentId, or includes compartmentId with two or more other parameters, then an error is returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3720,6 +3986,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPrivateEndpointsResult> getPrivateEndpoints(GetPrivateEndpointsArgs args) {
@@ -3731,6 +3998,8 @@ public final class DataScienceFunctions {
      * Lists all Data Science private endpoints in the specified compartment. The query must include compartmentId. The query can also include one other parameter. If the query doesn&#39;t include compartmentId, or includes compartmentId with two or more other parameters, then an error is returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3763,6 +4032,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPrivateEndpointsResult> getPrivateEndpointsPlain(GetPrivateEndpointsPlainArgs args) {
@@ -3774,6 +4044,8 @@ public final class DataScienceFunctions {
      * Lists all Data Science private endpoints in the specified compartment. The query must include compartmentId. The query can also include one other parameter. If the query doesn&#39;t include compartmentId, or includes compartmentId with two or more other parameters, then an error is returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3806,6 +4078,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPrivateEndpointsResult> getPrivateEndpoints(GetPrivateEndpointsArgs args, InvokeOptions options) {
@@ -3817,6 +4090,8 @@ public final class DataScienceFunctions {
      * Lists all Data Science private endpoints in the specified compartment. The query must include compartmentId. The query can also include one other parameter. If the query doesn&#39;t include compartmentId, or includes compartmentId with two or more other parameters, then an error is returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3849,6 +4124,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPrivateEndpointsResult> getPrivateEndpointsPlain(GetPrivateEndpointsPlainArgs args, InvokeOptions options) {
@@ -3860,6 +4136,8 @@ public final class DataScienceFunctions {
      * Gets the specified project&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3888,6 +4166,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetProjectResult> getProject(GetProjectArgs args) {
@@ -3899,6 +4178,8 @@ public final class DataScienceFunctions {
      * Gets the specified project&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3927,6 +4208,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetProjectResult> getProjectPlain(GetProjectPlainArgs args) {
@@ -3938,6 +4220,8 @@ public final class DataScienceFunctions {
      * Gets the specified project&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3966,6 +4250,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetProjectResult> getProject(GetProjectArgs args, InvokeOptions options) {
@@ -3977,6 +4262,8 @@ public final class DataScienceFunctions {
      * Gets the specified project&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4005,6 +4292,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetProjectResult> getProjectPlain(GetProjectPlainArgs args, InvokeOptions options) {
@@ -4016,6 +4304,8 @@ public final class DataScienceFunctions {
      * Lists projects in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4048,6 +4338,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetProjectsResult> getProjects(GetProjectsArgs args) {
@@ -4059,6 +4350,8 @@ public final class DataScienceFunctions {
      * Lists projects in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4091,6 +4384,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetProjectsResult> getProjectsPlain(GetProjectsPlainArgs args) {
@@ -4102,6 +4396,8 @@ public final class DataScienceFunctions {
      * Lists projects in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4134,6 +4430,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetProjectsResult> getProjects(GetProjectsArgs args, InvokeOptions options) {
@@ -4145,6 +4442,8 @@ public final class DataScienceFunctions {
      * Lists projects in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4177,6 +4476,7 @@ public final class DataScienceFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetProjectsResult> getProjectsPlain(GetProjectsPlainArgs args, InvokeOptions options) {

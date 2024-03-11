@@ -120,6 +120,7 @@ def get_oda_instances(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -128,6 +129,7 @@ def get_oda_instances(compartment_id: Optional[str] = None,
         display_name=var["oda_instance_display_name"],
         state=var["oda_instance_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: List the Digital Assistant instances that belong to this compartment.
@@ -169,6 +171,7 @@ def get_oda_instances_output(compartment_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -177,6 +180,7 @@ def get_oda_instances_output(compartment_id: Optional[pulumi.Input[str]] = None,
         display_name=var["oda_instance_display_name"],
         state=var["oda_instance_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: List the Digital Assistant instances that belong to this compartment.

@@ -88,19 +88,21 @@ class OperationsInsightsWarehouseRotateWarehouseWallet(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
 
         test_operations_insights_warehouse_rotate_warehouse_wallet = oci.opsi.OperationsInsightsWarehouseRotateWarehouseWallet("testOperationsInsightsWarehouseRotateWarehouseWallet", operations_insights_warehouse_id=oci_opsi_operations_insights_warehouse["test_operations_insights_warehouse"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         OperationsInsightsWarehouseRotateWarehouseWallet can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Opsi/operationsInsightsWarehouseRotateWarehouseWallet:OperationsInsightsWarehouseRotateWarehouseWallet test_operations_insights_warehouse_rotate_warehouse_wallet "id"
+        $ pulumi import oci:Opsi/operationsInsightsWarehouseRotateWarehouseWallet:OperationsInsightsWarehouseRotateWarehouseWallet test_operations_insights_warehouse_rotate_warehouse_wallet "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -124,19 +126,21 @@ class OperationsInsightsWarehouseRotateWarehouseWallet(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
 
         test_operations_insights_warehouse_rotate_warehouse_wallet = oci.opsi.OperationsInsightsWarehouseRotateWarehouseWallet("testOperationsInsightsWarehouseRotateWarehouseWallet", operations_insights_warehouse_id=oci_opsi_operations_insights_warehouse["test_operations_insights_warehouse"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         OperationsInsightsWarehouseRotateWarehouseWallet can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Opsi/operationsInsightsWarehouseRotateWarehouseWallet:OperationsInsightsWarehouseRotateWarehouseWallet test_operations_insights_warehouse_rotate_warehouse_wallet "id"
+        $ pulumi import oci:Opsi/operationsInsightsWarehouseRotateWarehouseWallet:OperationsInsightsWarehouseRotateWarehouseWallet test_operations_insights_warehouse_rotate_warehouse_wallet "id"
         ```
 
         :param str resource_name: The name of the resource.

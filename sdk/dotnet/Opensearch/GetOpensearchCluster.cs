@@ -21,6 +21,7 @@ namespace Pulumi.Oci.Opensearch
         /// The below policies must be created in compartment before creating OpensearchCluster
         /// 
         /// ##### {Compartment-Name} - Name of  your compartment
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -30,14 +31,14 @@ namespace Pulumi.Oci.Opensearch
         /// {
         /// });
         /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// 
         /// For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm  
         /// Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -53,8 +54,7 @@ namespace Pulumi.Oci.Opensearch
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetOpensearchClusterResult> InvokeAsync(GetOpensearchClusterArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetOpensearchClusterResult>("oci:Opensearch/getOpensearchCluster:getOpensearchCluster", args ?? new GetOpensearchClusterArgs(), options.WithDefaults());
@@ -69,6 +69,7 @@ namespace Pulumi.Oci.Opensearch
         /// The below policies must be created in compartment before creating OpensearchCluster
         /// 
         /// ##### {Compartment-Name} - Name of  your compartment
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -78,14 +79,14 @@ namespace Pulumi.Oci.Opensearch
         /// {
         /// });
         /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// 
         /// For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm  
         /// Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -101,8 +102,7 @@ namespace Pulumi.Oci.Opensearch
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetOpensearchClusterResult> Invoke(GetOpensearchClusterInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetOpensearchClusterResult>("oci:Opensearch/getOpensearchCluster:getOpensearchCluster", args ?? new GetOpensearchClusterInvokeArgs(), options.WithDefaults());

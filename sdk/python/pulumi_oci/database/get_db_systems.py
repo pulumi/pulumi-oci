@@ -142,6 +142,7 @@ def get_db_systems(availability_domain: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -152,6 +153,7 @@ def get_db_systems(availability_domain: Optional[str] = None,
         display_name=var["db_system_display_name"],
         state=var["db_system_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str availability_domain: A filter to return only resources that match the given availability domain exactly.
@@ -200,6 +202,7 @@ def get_db_systems_output(availability_domain: Optional[pulumi.Input[Optional[st
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -210,6 +213,7 @@ def get_db_systems_output(availability_domain: Optional[pulumi.Input[Optional[st
         display_name=var["db_system_display_name"],
         state=var["db_system_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str availability_domain: A filter to return only resources that match the given availability domain exactly.

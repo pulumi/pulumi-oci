@@ -480,7 +480,7 @@ class PrivateEndpoint(pulumi.CustomResource):
         PrivateEndpoints can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataFlow/privateEndpoint:PrivateEndpoint test_private_endpoint "id"
+        $ pulumi import oci:DataFlow/privateEndpoint:PrivateEndpoint test_private_endpoint "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -512,7 +512,7 @@ class PrivateEndpoint(pulumi.CustomResource):
         PrivateEndpoints can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataFlow/privateEndpoint:PrivateEndpoint test_private_endpoint "id"
+        $ pulumi import oci:DataFlow/privateEndpoint:PrivateEndpoint test_private_endpoint "id"
         ```
 
         :param str resource_name: The name of the resource.

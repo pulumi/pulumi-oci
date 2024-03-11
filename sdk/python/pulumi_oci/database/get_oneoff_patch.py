@@ -239,12 +239,14 @@ def get_oneoff_patch(oneoff_patch_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_oneoff_patch = oci.Database.get_oneoff_patch(oneoff_patch_id=oci_database_oneoff_patch["test_oneoff_patch"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str oneoff_patch_id: The one-off patch [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -284,12 +286,14 @@ def get_oneoff_patch_output(oneoff_patch_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_oneoff_patch = oci.Database.get_oneoff_patch(oneoff_patch_id=oci_database_oneoff_patch["test_oneoff_patch"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str oneoff_patch_id: The one-off patch [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

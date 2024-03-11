@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -40,6 +41,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupExadataInsight(ctx *pulumi.Context, args *LookupExadataInsightArgs, opts ...pulumi.InvokeOption) (*LookupExadataInsightResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupExadataInsightResult

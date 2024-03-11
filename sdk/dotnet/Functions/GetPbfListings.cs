@@ -18,10 +18,9 @@ namespace Pulumi.Oci.Functions
         /// an array of PbfListingSummary response models.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -42,8 +41,7 @@ namespace Pulumi.Oci.Functions
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetPbfListingsResult> InvokeAsync(GetPbfListingsArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetPbfListingsResult>("oci:Functions/getPbfListings:getPbfListings", args ?? new GetPbfListingsArgs(), options.WithDefaults());
@@ -55,10 +53,9 @@ namespace Pulumi.Oci.Functions
         /// an array of PbfListingSummary response models.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -79,8 +76,7 @@ namespace Pulumi.Oci.Functions
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetPbfListingsResult> Invoke(GetPbfListingsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPbfListingsResult>("oci:Functions/getPbfListings:getPbfListings", args ?? new GetPbfListingsInvokeArgs(), options.WithDefaults());

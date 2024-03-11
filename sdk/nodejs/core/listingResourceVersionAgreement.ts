@@ -9,6 +9,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -18,6 +19,7 @@ import * as utilities from "../utilities";
  *     listingResourceVersion: _var.app_catalog_listing_resource_version_agreement_listing_resource_version,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export class ListingResourceVersionAgreement extends pulumi.CustomResource {
     /**

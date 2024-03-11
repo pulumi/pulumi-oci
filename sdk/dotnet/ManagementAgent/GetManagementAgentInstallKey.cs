@@ -16,10 +16,9 @@ namespace Pulumi.Oci.ManagementAgent
         /// 
         /// Gets complete details of the Agent install Key for a given key id
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,8 +34,7 @@ namespace Pulumi.Oci.ManagementAgent
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetManagementAgentInstallKeyResult> InvokeAsync(GetManagementAgentInstallKeyArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagementAgentInstallKeyResult>("oci:ManagementAgent/getManagementAgentInstallKey:getManagementAgentInstallKey", args ?? new GetManagementAgentInstallKeyArgs(), options.WithDefaults());
@@ -46,10 +44,9 @@ namespace Pulumi.Oci.ManagementAgent
         /// 
         /// Gets complete details of the Agent install Key for a given key id
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -65,8 +62,7 @@ namespace Pulumi.Oci.ManagementAgent
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetManagementAgentInstallKeyResult> Invoke(GetManagementAgentInstallKeyInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagementAgentInstallKeyResult>("oci:ManagementAgent/getManagementAgentInstallKey:getManagementAgentInstallKey", args ?? new GetManagementAgentInstallKeyInvokeArgs(), options.WithDefaults());

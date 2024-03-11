@@ -16,6 +16,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -26,6 +27,7 @@ import * as utilities from "../utilities";
  *     compartmentIdInSubtree: _var.compatible_formats_for_sensitive_type_compartment_id_in_subtree,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getCompatibleFormatsForSensitiveType(args: GetCompatibleFormatsForSensitiveTypeArgs, opts?: pulumi.InvokeOptions): Promise<GetCompatibleFormatsForSensitiveTypeResult> {
 
@@ -81,6 +83,7 @@ export interface GetCompatibleFormatsForSensitiveTypeResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -91,6 +94,7 @@ export interface GetCompatibleFormatsForSensitiveTypeResult {
  *     compartmentIdInSubtree: _var.compatible_formats_for_sensitive_type_compartment_id_in_subtree,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getCompatibleFormatsForSensitiveTypeOutput(args: GetCompatibleFormatsForSensitiveTypeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCompatibleFormatsForSensitiveTypeResult> {
     return pulumi.output(args).apply((a: any) => getCompatibleFormatsForSensitiveType(a, opts))

@@ -72,6 +72,7 @@ public final class DnsFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -107,6 +108,7 @@ public final class DnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRecordsResult> getRecords(GetRecordsArgs args) {
@@ -125,6 +127,7 @@ public final class DnsFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -160,6 +163,7 @@ public final class DnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRecordsResult> getRecordsPlain(GetRecordsPlainArgs args) {
@@ -178,6 +182,7 @@ public final class DnsFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -213,6 +218,7 @@ public final class DnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRecordsResult> getRecords(GetRecordsArgs args, InvokeOptions options) {
@@ -231,6 +237,7 @@ public final class DnsFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -266,6 +273,7 @@ public final class DnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRecordsResult> getRecordsPlain(GetRecordsPlainArgs args, InvokeOptions options) {
@@ -279,6 +287,8 @@ public final class DnsFunctions {
      * consistent with other operations of the API. Requires a `PRIVATE` scope query parameter.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -308,6 +318,7 @@ public final class DnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetResolverResult> getResolver(GetResolverArgs args) {
@@ -321,6 +332,8 @@ public final class DnsFunctions {
      * consistent with other operations of the API. Requires a `PRIVATE` scope query parameter.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -350,6 +363,7 @@ public final class DnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetResolverResult> getResolverPlain(GetResolverPlainArgs args) {
@@ -363,6 +377,8 @@ public final class DnsFunctions {
      * consistent with other operations of the API. Requires a `PRIVATE` scope query parameter.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -392,6 +408,7 @@ public final class DnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetResolverResult> getResolver(GetResolverArgs args, InvokeOptions options) {
@@ -405,6 +422,8 @@ public final class DnsFunctions {
      * consistent with other operations of the API. Requires a `PRIVATE` scope query parameter.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -434,6 +453,7 @@ public final class DnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetResolverResult> getResolverPlain(GetResolverPlainArgs args, InvokeOptions options) {
@@ -447,6 +467,8 @@ public final class DnsFunctions {
      * API. Requires a `PRIVATE` scope query parameter.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -477,6 +499,7 @@ public final class DnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetResolverEndpointResult> getResolverEndpoint(GetResolverEndpointArgs args) {
@@ -490,6 +513,8 @@ public final class DnsFunctions {
      * API. Requires a `PRIVATE` scope query parameter.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -520,6 +545,7 @@ public final class DnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetResolverEndpointResult> getResolverEndpointPlain(GetResolverEndpointPlainArgs args) {
@@ -533,6 +559,8 @@ public final class DnsFunctions {
      * API. Requires a `PRIVATE` scope query parameter.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -563,6 +591,7 @@ public final class DnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetResolverEndpointResult> getResolverEndpoint(GetResolverEndpointArgs args, InvokeOptions options) {
@@ -576,6 +605,8 @@ public final class DnsFunctions {
      * API. Requires a `PRIVATE` scope query parameter.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -606,6 +637,7 @@ public final class DnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetResolverEndpointResult> getResolverEndpointPlain(GetResolverEndpointPlainArgs args, InvokeOptions options) {
@@ -620,6 +652,8 @@ public final class DnsFunctions {
      * lifecycle state to be consistent with other operations of the API. Requires a `PRIVATE` scope query parameter.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -651,6 +685,7 @@ public final class DnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetResolverEndpointsResult> getResolverEndpoints(GetResolverEndpointsArgs args) {
@@ -665,6 +700,8 @@ public final class DnsFunctions {
      * lifecycle state to be consistent with other operations of the API. Requires a `PRIVATE` scope query parameter.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -696,6 +733,7 @@ public final class DnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetResolverEndpointsResult> getResolverEndpointsPlain(GetResolverEndpointsPlainArgs args) {
@@ -710,6 +748,8 @@ public final class DnsFunctions {
      * lifecycle state to be consistent with other operations of the API. Requires a `PRIVATE` scope query parameter.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -741,6 +781,7 @@ public final class DnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetResolverEndpointsResult> getResolverEndpoints(GetResolverEndpointsArgs args, InvokeOptions options) {
@@ -755,6 +796,8 @@ public final class DnsFunctions {
      * lifecycle state to be consistent with other operations of the API. Requires a `PRIVATE` scope query parameter.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -786,6 +829,7 @@ public final class DnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetResolverEndpointsResult> getResolverEndpointsPlain(GetResolverEndpointsPlainArgs args, InvokeOptions options) {
@@ -802,6 +846,8 @@ public final class DnsFunctions {
      * with other operations of the API. Requires a `PRIVATE` scope query parameter.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -834,6 +880,7 @@ public final class DnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetResolversResult> getResolvers(GetResolversArgs args) {
@@ -850,6 +897,8 @@ public final class DnsFunctions {
      * with other operations of the API. Requires a `PRIVATE` scope query parameter.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -882,6 +931,7 @@ public final class DnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetResolversResult> getResolversPlain(GetResolversPlainArgs args) {
@@ -898,6 +948,8 @@ public final class DnsFunctions {
      * with other operations of the API. Requires a `PRIVATE` scope query parameter.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -930,6 +982,7 @@ public final class DnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetResolversResult> getResolvers(GetResolversArgs args, InvokeOptions options) {
@@ -946,6 +999,8 @@ public final class DnsFunctions {
      * with other operations of the API. Requires a `PRIVATE` scope query parameter.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -978,6 +1033,7 @@ public final class DnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetResolversResult> getResolversPlain(GetResolversPlainArgs args, InvokeOptions options) {
@@ -992,6 +1048,8 @@ public final class DnsFunctions {
      * parameter is required.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1025,6 +1083,7 @@ public final class DnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRrsetResult> getRrset(GetRrsetArgs args) {
@@ -1039,6 +1098,8 @@ public final class DnsFunctions {
      * parameter is required.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1072,6 +1133,7 @@ public final class DnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRrsetResult> getRrsetPlain(GetRrsetPlainArgs args) {
@@ -1086,6 +1148,8 @@ public final class DnsFunctions {
      * parameter is required.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1119,6 +1183,7 @@ public final class DnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRrsetResult> getRrset(GetRrsetArgs args, InvokeOptions options) {
@@ -1133,6 +1198,8 @@ public final class DnsFunctions {
      * parameter is required.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1166,6 +1233,7 @@ public final class DnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRrsetResult> getRrsetPlain(GetRrsetPlainArgs args, InvokeOptions options) {
@@ -1180,6 +1248,8 @@ public final class DnsFunctions {
      * parameter is required.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1213,6 +1283,7 @@ public final class DnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRrsetsResult> getRrsets(GetRrsetsArgs args) {
@@ -1227,6 +1298,8 @@ public final class DnsFunctions {
      * parameter is required.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1260,6 +1333,7 @@ public final class DnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRrsetsResult> getRrsetsPlain(GetRrsetsPlainArgs args) {
@@ -1274,6 +1348,8 @@ public final class DnsFunctions {
      * parameter is required.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1307,6 +1383,7 @@ public final class DnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRrsetsResult> getRrsets(GetRrsetsArgs args, InvokeOptions options) {
@@ -1321,6 +1398,8 @@ public final class DnsFunctions {
      * parameter is required.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1354,6 +1433,7 @@ public final class DnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRrsetsResult> getRrsetsPlain(GetRrsetsPlainArgs args, InvokeOptions options) {
@@ -1365,6 +1445,8 @@ public final class DnsFunctions {
      * Gets a list of all steering policies in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1401,6 +1483,7 @@ public final class DnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSteeringPoliciesResult> getSteeringPolicies(GetSteeringPoliciesArgs args) {
@@ -1412,6 +1495,8 @@ public final class DnsFunctions {
      * Gets a list of all steering policies in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1448,6 +1533,7 @@ public final class DnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSteeringPoliciesResult> getSteeringPoliciesPlain(GetSteeringPoliciesPlainArgs args) {
@@ -1459,6 +1545,8 @@ public final class DnsFunctions {
      * Gets a list of all steering policies in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1495,6 +1583,7 @@ public final class DnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSteeringPoliciesResult> getSteeringPolicies(GetSteeringPoliciesArgs args, InvokeOptions options) {
@@ -1506,6 +1595,8 @@ public final class DnsFunctions {
      * Gets a list of all steering policies in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1542,6 +1633,7 @@ public final class DnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSteeringPoliciesResult> getSteeringPoliciesPlain(GetSteeringPoliciesPlainArgs args, InvokeOptions options) {
@@ -1553,6 +1645,8 @@ public final class DnsFunctions {
      * Gets information about the specified steering policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1581,6 +1675,7 @@ public final class DnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSteeringPolicyResult> getSteeringPolicy(GetSteeringPolicyArgs args) {
@@ -1592,6 +1687,8 @@ public final class DnsFunctions {
      * Gets information about the specified steering policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1620,6 +1717,7 @@ public final class DnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSteeringPolicyResult> getSteeringPolicyPlain(GetSteeringPolicyPlainArgs args) {
@@ -1631,6 +1729,8 @@ public final class DnsFunctions {
      * Gets information about the specified steering policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1659,6 +1759,7 @@ public final class DnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSteeringPolicyResult> getSteeringPolicy(GetSteeringPolicyArgs args, InvokeOptions options) {
@@ -1670,6 +1771,8 @@ public final class DnsFunctions {
      * Gets information about the specified steering policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1698,6 +1801,7 @@ public final class DnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSteeringPolicyResult> getSteeringPolicyPlain(GetSteeringPolicyPlainArgs args, InvokeOptions options) {
@@ -1709,6 +1813,8 @@ public final class DnsFunctions {
      * Gets information about the specified steering policy attachment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1737,6 +1843,7 @@ public final class DnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSteeringPolicyAttachmentResult> getSteeringPolicyAttachment(GetSteeringPolicyAttachmentArgs args) {
@@ -1748,6 +1855,8 @@ public final class DnsFunctions {
      * Gets information about the specified steering policy attachment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1776,6 +1885,7 @@ public final class DnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSteeringPolicyAttachmentResult> getSteeringPolicyAttachmentPlain(GetSteeringPolicyAttachmentPlainArgs args) {
@@ -1787,6 +1897,8 @@ public final class DnsFunctions {
      * Gets information about the specified steering policy attachment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1815,6 +1927,7 @@ public final class DnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSteeringPolicyAttachmentResult> getSteeringPolicyAttachment(GetSteeringPolicyAttachmentArgs args, InvokeOptions options) {
@@ -1826,6 +1939,8 @@ public final class DnsFunctions {
      * Gets information about the specified steering policy attachment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1854,6 +1969,7 @@ public final class DnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSteeringPolicyAttachmentResult> getSteeringPolicyAttachmentPlain(GetSteeringPolicyAttachmentPlainArgs args, InvokeOptions options) {
@@ -1865,6 +1981,8 @@ public final class DnsFunctions {
      * Lists the steering policy attachments in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1902,6 +2020,7 @@ public final class DnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSteeringPolicyAttachmentsResult> getSteeringPolicyAttachments(GetSteeringPolicyAttachmentsArgs args) {
@@ -1913,6 +2032,8 @@ public final class DnsFunctions {
      * Lists the steering policy attachments in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1950,6 +2071,7 @@ public final class DnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSteeringPolicyAttachmentsResult> getSteeringPolicyAttachmentsPlain(GetSteeringPolicyAttachmentsPlainArgs args) {
@@ -1961,6 +2083,8 @@ public final class DnsFunctions {
      * Lists the steering policy attachments in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1998,6 +2122,7 @@ public final class DnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSteeringPolicyAttachmentsResult> getSteeringPolicyAttachments(GetSteeringPolicyAttachmentsArgs args, InvokeOptions options) {
@@ -2009,6 +2134,8 @@ public final class DnsFunctions {
      * Lists the steering policy attachments in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2046,6 +2173,7 @@ public final class DnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSteeringPolicyAttachmentsResult> getSteeringPolicyAttachmentsPlain(GetSteeringPolicyAttachmentsPlainArgs args, InvokeOptions options) {
@@ -2057,6 +2185,8 @@ public final class DnsFunctions {
      * Gets information about the specified TSIG key.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2085,6 +2215,7 @@ public final class DnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetTsigKeyResult> getTsigKey(GetTsigKeyArgs args) {
@@ -2096,6 +2227,8 @@ public final class DnsFunctions {
      * Gets information about the specified TSIG key.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2124,6 +2257,7 @@ public final class DnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetTsigKeyResult> getTsigKeyPlain(GetTsigKeyPlainArgs args) {
@@ -2135,6 +2269,8 @@ public final class DnsFunctions {
      * Gets information about the specified TSIG key.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2163,6 +2299,7 @@ public final class DnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetTsigKeyResult> getTsigKey(GetTsigKeyArgs args, InvokeOptions options) {
@@ -2174,6 +2311,8 @@ public final class DnsFunctions {
      * Gets information about the specified TSIG key.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2202,6 +2341,7 @@ public final class DnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetTsigKeyResult> getTsigKeyPlain(GetTsigKeyPlainArgs args, InvokeOptions options) {
@@ -2213,6 +2353,8 @@ public final class DnsFunctions {
      * Gets a list of all TSIG keys in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2244,6 +2386,7 @@ public final class DnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetTsigKeysResult> getTsigKeys(GetTsigKeysArgs args) {
@@ -2255,6 +2398,8 @@ public final class DnsFunctions {
      * Gets a list of all TSIG keys in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2286,6 +2431,7 @@ public final class DnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetTsigKeysResult> getTsigKeysPlain(GetTsigKeysPlainArgs args) {
@@ -2297,6 +2443,8 @@ public final class DnsFunctions {
      * Gets a list of all TSIG keys in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2328,6 +2476,7 @@ public final class DnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetTsigKeysResult> getTsigKeys(GetTsigKeysArgs args, InvokeOptions options) {
@@ -2339,6 +2488,8 @@ public final class DnsFunctions {
      * Gets a list of all TSIG keys in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2370,6 +2521,7 @@ public final class DnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetTsigKeysResult> getTsigKeysPlain(GetTsigKeysPlainArgs args, InvokeOptions options) {
@@ -2383,6 +2535,8 @@ public final class DnsFunctions {
      * consistent with other operations of the API. Requires a `PRIVATE` scope query parameter.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2412,6 +2566,7 @@ public final class DnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetViewResult> getView() {
@@ -2425,6 +2580,8 @@ public final class DnsFunctions {
      * consistent with other operations of the API. Requires a `PRIVATE` scope query parameter.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2454,6 +2611,7 @@ public final class DnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetViewResult> getViewPlain() {
@@ -2467,6 +2625,8 @@ public final class DnsFunctions {
      * consistent with other operations of the API. Requires a `PRIVATE` scope query parameter.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2496,6 +2656,7 @@ public final class DnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetViewResult> getView(GetViewArgs args) {
@@ -2509,6 +2670,8 @@ public final class DnsFunctions {
      * consistent with other operations of the API. Requires a `PRIVATE` scope query parameter.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2538,6 +2701,7 @@ public final class DnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetViewResult> getViewPlain(GetViewPlainArgs args) {
@@ -2551,6 +2715,8 @@ public final class DnsFunctions {
      * consistent with other operations of the API. Requires a `PRIVATE` scope query parameter.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2580,6 +2746,7 @@ public final class DnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetViewResult> getView(GetViewArgs args, InvokeOptions options) {
@@ -2593,6 +2760,8 @@ public final class DnsFunctions {
      * consistent with other operations of the API. Requires a `PRIVATE` scope query parameter.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2622,6 +2791,7 @@ public final class DnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetViewResult> getViewPlain(GetViewPlainArgs args, InvokeOptions options) {
@@ -2638,6 +2808,8 @@ public final class DnsFunctions {
      * with other operations of the API. Requires a `PRIVATE` scope query parameter.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2670,6 +2842,7 @@ public final class DnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetViewsResult> getViews(GetViewsArgs args) {
@@ -2686,6 +2859,8 @@ public final class DnsFunctions {
      * with other operations of the API. Requires a `PRIVATE` scope query parameter.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2718,6 +2893,7 @@ public final class DnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetViewsResult> getViewsPlain(GetViewsPlainArgs args) {
@@ -2734,6 +2910,8 @@ public final class DnsFunctions {
      * with other operations of the API. Requires a `PRIVATE` scope query parameter.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2766,6 +2944,7 @@ public final class DnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetViewsResult> getViews(GetViewsArgs args, InvokeOptions options) {
@@ -2782,6 +2961,8 @@ public final class DnsFunctions {
      * with other operations of the API. Requires a `PRIVATE` scope query parameter.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2814,6 +2995,7 @@ public final class DnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetViewsResult> getViewsPlain(GetViewsPlainArgs args, InvokeOptions options) {
@@ -2828,6 +3010,8 @@ public final class DnsFunctions {
      * listing private zones.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2865,6 +3049,7 @@ public final class DnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetZonesResult> getZones(GetZonesArgs args) {
@@ -2879,6 +3064,8 @@ public final class DnsFunctions {
      * listing private zones.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2916,6 +3103,7 @@ public final class DnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetZonesResult> getZonesPlain(GetZonesPlainArgs args) {
@@ -2930,6 +3118,8 @@ public final class DnsFunctions {
      * listing private zones.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2967,6 +3157,7 @@ public final class DnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetZonesResult> getZones(GetZonesArgs args, InvokeOptions options) {
@@ -2981,6 +3172,8 @@ public final class DnsFunctions {
      * listing private zones.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3018,6 +3211,7 @@ public final class DnsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetZonesResult> getZonesPlain(GetZonesPlainArgs args, InvokeOptions options) {

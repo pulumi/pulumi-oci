@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,6 +22,7 @@ import * as utilities from "../utilities";
  *     nodePoolId: oci_containerengine_node_pool.test_node_pool.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getNodePool(args: GetNodePoolArgs, opts?: pulumi.InvokeOptions): Promise<GetNodePoolResult> {
 
@@ -156,6 +158,7 @@ export interface GetNodePoolResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -164,6 +167,7 @@ export interface GetNodePoolResult {
  *     nodePoolId: oci_containerengine_node_pool.test_node_pool.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getNodePoolOutput(args: GetNodePoolOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNodePoolResult> {
     return pulumi.output(args).apply((a: any) => getNodePool(a, opts))

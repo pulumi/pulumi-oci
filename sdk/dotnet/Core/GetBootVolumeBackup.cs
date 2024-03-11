@@ -16,10 +16,9 @@ namespace Pulumi.Oci.Core
         /// 
         /// Gets information for the specified boot volume backup.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,8 +34,7 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetBootVolumeBackupResult> InvokeAsync(GetBootVolumeBackupArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetBootVolumeBackupResult>("oci:Core/getBootVolumeBackup:getBootVolumeBackup", args ?? new GetBootVolumeBackupArgs(), options.WithDefaults());
@@ -46,10 +44,9 @@ namespace Pulumi.Oci.Core
         /// 
         /// Gets information for the specified boot volume backup.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -65,8 +62,7 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetBootVolumeBackupResult> Invoke(GetBootVolumeBackupInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetBootVolumeBackupResult>("oci:Core/getBootVolumeBackup:getBootVolumeBackup", args ?? new GetBootVolumeBackupInvokeArgs(), options.WithDefaults());

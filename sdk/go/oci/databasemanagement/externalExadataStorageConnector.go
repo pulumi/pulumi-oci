@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -57,15 +58,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // ExternalExadataStorageConnectors can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:DatabaseManagement/externalExadataStorageConnector:ExternalExadataStorageConnector test_external_exadata_storage_connector "id"
-//
+// $ pulumi import oci:DatabaseManagement/externalExadataStorageConnector:ExternalExadataStorageConnector test_external_exadata_storage_connector "id"
 // ```
 type ExternalExadataStorageConnector struct {
 	pulumi.CustomResourceState

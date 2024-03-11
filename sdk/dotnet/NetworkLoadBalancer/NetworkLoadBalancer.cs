@@ -16,6 +16,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -52,13 +53,14 @@ namespace Pulumi.Oci.NetworkLoadBalancer
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// NetworkLoadBalancers can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:NetworkLoadBalancer/networkLoadBalancer:NetworkLoadBalancer test_network_load_balancer "id"
+    /// $ pulumi import oci:NetworkLoadBalancer/networkLoadBalancer:NetworkLoadBalancer test_network_load_balancer "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:NetworkLoadBalancer/networkLoadBalancer:NetworkLoadBalancer")]

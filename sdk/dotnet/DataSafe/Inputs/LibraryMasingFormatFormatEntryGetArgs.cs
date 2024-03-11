@@ -125,7 +125,7 @@ namespace Pulumi.Oci.DataSafe.Inputs
         public Input<string>? SchemaName { get; set; }
 
         /// <summary>
-        /// (Updatable) The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%)  symbols.
+        /// (Updatable) The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%!)(MISSING)  symbols.
         /// </summary>
         [Input("sqlExpression")]
         public Input<string>? SqlExpression { get; set; }

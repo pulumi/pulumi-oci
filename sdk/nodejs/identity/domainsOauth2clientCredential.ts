@@ -16,7 +16,7 @@ import * as utilities from "../utilities";
  * OAuth2ClientCredentials can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Identity/domainsOauth2clientCredential:DomainsOauth2clientCredential test_oauth2client_credential "idcsEndpoint/{idcsEndpoint}/oAuth2ClientCredentials/{oAuth2ClientCredentialId}"
+ * $ pulumi import oci:Identity/domainsOauth2clientCredential:DomainsOauth2clientCredential test_oauth2client_credential "idcsEndpoint/{idcsEndpoint}/oAuth2ClientCredentials/{oAuth2ClientCredentialId}"
  * ```
  */
 export class DomainsOauth2clientCredential extends pulumi.CustomResource {

@@ -320,6 +320,7 @@ def get_on_premise_vantage_point_worker(apm_domain_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -328,6 +329,7 @@ def get_on_premise_vantage_point_worker(apm_domain_id: Optional[str] = None,
         on_premise_vantage_point_id=oci_apm_synthetics_on_premise_vantage_point["test_on_premise_vantage_point"]["id"],
         worker_id=oci_apm_synthetics_worker["test_worker"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str apm_domain_id: The APM domain ID the request is intended for.
@@ -380,6 +382,7 @@ def get_on_premise_vantage_point_worker_output(apm_domain_id: Optional[pulumi.In
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -388,6 +391,7 @@ def get_on_premise_vantage_point_worker_output(apm_domain_id: Optional[pulumi.In
         on_premise_vantage_point_id=oci_apm_synthetics_on_premise_vantage_point["test_on_premise_vantage_point"]["id"],
         worker_id=oci_apm_synthetics_worker["test_worker"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str apm_domain_id: The APM domain ID the request is intended for.

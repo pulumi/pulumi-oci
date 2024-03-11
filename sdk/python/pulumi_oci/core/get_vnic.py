@@ -269,12 +269,14 @@ def get_vnic(vnic_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_vnic = oci.Core.get_vnic(vnic_id=oci_core_vnic["test_vnic"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str vnic_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC.
@@ -319,12 +321,14 @@ def get_vnic_output(vnic_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_vnic = oci.Core.get_vnic(vnic_id=oci_core_vnic["test_vnic"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str vnic_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC.

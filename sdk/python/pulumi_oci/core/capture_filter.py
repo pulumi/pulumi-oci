@@ -311,6 +311,7 @@ class CaptureFilter(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -391,13 +392,14 @@ class CaptureFilter(pulumi.CustomResource):
                 ),
             )])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         CaptureFilters can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/captureFilter:CaptureFilter test_capture_filter "id"
+        $ pulumi import oci:Core/captureFilter:CaptureFilter test_capture_filter "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -431,6 +433,7 @@ class CaptureFilter(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -511,13 +514,14 @@ class CaptureFilter(pulumi.CustomResource):
                 ),
             )])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         CaptureFilters can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/captureFilter:CaptureFilter test_capture_filter "id"
+        $ pulumi import oci:Core/captureFilter:CaptureFilter test_capture_filter "id"
         ```
 
         :param str resource_name: The name of the resource.

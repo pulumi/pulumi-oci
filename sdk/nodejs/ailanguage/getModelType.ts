@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -19,6 +20,7 @@ import * as utilities from "../utilities";
  *     modelType: _var.model_type_model_type,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getModelType(args: GetModelTypeArgs, opts?: pulumi.InvokeOptions): Promise<GetModelTypeResult> {
 
@@ -63,6 +65,7 @@ export interface GetModelTypeResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -71,6 +74,7 @@ export interface GetModelTypeResult {
  *     modelType: _var.model_type_model_type,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getModelTypeOutput(args: GetModelTypeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetModelTypeResult> {
     return pulumi.output(args).apply((a: any) => getModelType(a, opts))

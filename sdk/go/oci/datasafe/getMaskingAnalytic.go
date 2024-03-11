@@ -19,6 +19,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -46,6 +47,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetMaskingAnalytic(ctx *pulumi.Context, args *GetMaskingAnalyticArgs, opts ...pulumi.InvokeOption) (*GetMaskingAnalyticResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetMaskingAnalyticResult

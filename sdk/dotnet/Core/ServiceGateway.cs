@@ -24,6 +24,7 @@ namespace Pulumi.Oci.Core
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -57,13 +58,14 @@ namespace Pulumi.Oci.Core
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// ServiceGateways can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Core/serviceGateway:ServiceGateway test_service_gateway "id"
+    /// $ pulumi import oci:Core/serviceGateway:ServiceGateway test_service_gateway "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Core/serviceGateway:ServiceGateway")]

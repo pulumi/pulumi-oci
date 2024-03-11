@@ -544,6 +544,7 @@ class Repository(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -568,13 +569,14 @@ class Repository(pulumi.CustomResource):
                 ),
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Repositories can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DevOps/repository:Repository test_repository "id"
+        $ pulumi import oci:DevOps/repository:Repository test_repository "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -605,6 +607,7 @@ class Repository(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -629,13 +632,14 @@ class Repository(pulumi.CustomResource):
                 ),
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Repositories can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DevOps/repository:Repository test_repository "id"
+        $ pulumi import oci:DevOps/repository:Repository test_repository "id"
         ```
 
         :param str resource_name: The name of the resource.

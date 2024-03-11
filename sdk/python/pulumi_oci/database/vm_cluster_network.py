@@ -490,6 +490,7 @@ class VmClusterNetwork(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -533,13 +534,14 @@ class VmClusterNetwork(pulumi.CustomResource):
             ntps=var["vm_cluster_network_ntp"],
             validate_vm_cluster_network=var["vm_cluster_network_validate_vm_cluster_network"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         VmClusterNetworks can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Database/vmClusterNetwork:VmClusterNetwork test_vm_cluster_network "exadataInfrastructures/{exadataInfrastructureId}/vmClusterNetworks/{vmClusterNetworkId}"
+        $ pulumi import oci:Database/vmClusterNetwork:VmClusterNetwork test_vm_cluster_network "exadataInfrastructures/{exadataInfrastructureId}/vmClusterNetworks/{vmClusterNetworkId}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -570,6 +572,7 @@ class VmClusterNetwork(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -613,13 +616,14 @@ class VmClusterNetwork(pulumi.CustomResource):
             ntps=var["vm_cluster_network_ntp"],
             validate_vm_cluster_network=var["vm_cluster_network_validate_vm_cluster_network"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         VmClusterNetworks can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Database/vmClusterNetwork:VmClusterNetwork test_vm_cluster_network "exadataInfrastructures/{exadataInfrastructureId}/vmClusterNetworks/{vmClusterNetworkId}"
+        $ pulumi import oci:Database/vmClusterNetwork:VmClusterNetwork test_vm_cluster_network "exadataInfrastructures/{exadataInfrastructureId}/vmClusterNetworks/{vmClusterNetworkId}"
         ```
 
         :param str resource_name: The name of the resource.

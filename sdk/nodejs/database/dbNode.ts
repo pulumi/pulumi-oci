@@ -14,7 +14,7 @@ import * as utilities from "../utilities";
  * DbNodes can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Database/dbNode:DbNode test_db_node "id"
+ * $ pulumi import oci:Database/dbNode:DbNode test_db_node "id"
  * ```
  */
 export class DbNode extends pulumi.CustomResource {

@@ -295,6 +295,7 @@ class Rrset(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -313,20 +314,21 @@ class Rrset(pulumi.CustomResource):
             scope=var["rrset_scope"],
             view_id=oci_dns_view["test_view"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         For legacy Rrsets that were created without using `scope`, these Rrsets can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Dns/rrset:Rrset test_rrset "zoneNameOrId/{zoneNameOrId}/domain/{domain}/rtype/{rtype}"
+        $ pulumi import oci:Dns/rrset:Rrset test_rrset "zoneNameOrId/{zoneNameOrId}/domain/{domain}/rtype/{rtype}"
         ```
-         For Rrsets created using `scope` and `view_id`, these Rrsets can be imported using the `id`, e.g.
+        For Rrsets created using `scope` and `view_id`, these Rrsets can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Dns/rrset:Rrset test_rrset "zoneNameOrId/{zoneNameOrId}/domain/{domain}/rtype/{rtype}/scope/{scope}/viewId/{viewId}"
+        $ pulumi import oci:Dns/rrset:Rrset test_rrset "zoneNameOrId/{zoneNameOrId}/domain/{domain}/rtype/{rtype}/scope/{scope}/viewId/{viewId}"
         ```
-         skip adding `{view_id}` at the end if Rrset was created without `view_id`.
+        skip adding `{view_id}` at the end if Rrset was created without `view_id`.
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -358,6 +360,7 @@ class Rrset(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -376,20 +379,21 @@ class Rrset(pulumi.CustomResource):
             scope=var["rrset_scope"],
             view_id=oci_dns_view["test_view"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         For legacy Rrsets that were created without using `scope`, these Rrsets can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Dns/rrset:Rrset test_rrset "zoneNameOrId/{zoneNameOrId}/domain/{domain}/rtype/{rtype}"
+        $ pulumi import oci:Dns/rrset:Rrset test_rrset "zoneNameOrId/{zoneNameOrId}/domain/{domain}/rtype/{rtype}"
         ```
-         For Rrsets created using `scope` and `view_id`, these Rrsets can be imported using the `id`, e.g.
+        For Rrsets created using `scope` and `view_id`, these Rrsets can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Dns/rrset:Rrset test_rrset "zoneNameOrId/{zoneNameOrId}/domain/{domain}/rtype/{rtype}/scope/{scope}/viewId/{viewId}"
+        $ pulumi import oci:Dns/rrset:Rrset test_rrset "zoneNameOrId/{zoneNameOrId}/domain/{domain}/rtype/{rtype}/scope/{scope}/viewId/{viewId}"
         ```
-         skip adding `{view_id}` at the end if Rrset was created without `view_id`.
+        skip adding `{view_id}` at the end if Rrset was created without `view_id`.
 
         :param str resource_name: The name of the resource.
         :param RrsetArgs args: The arguments to use to populate this resource's properties.

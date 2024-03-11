@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,6 +22,7 @@ import * as utilities from "../utilities";
  *     agentId: oci_cloud_bridge_agent.test_agent.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAgent(args: GetAgentArgs, opts?: pulumi.InvokeOptions): Promise<GetAgentResult> {
 
@@ -132,6 +134,7 @@ export interface GetAgentResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -140,6 +143,7 @@ export interface GetAgentResult {
  *     agentId: oci_cloud_bridge_agent.test_agent.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAgentOutput(args: GetAgentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAgentResult> {
     return pulumi.output(args).apply((a: any) => getAgent(a, opts))

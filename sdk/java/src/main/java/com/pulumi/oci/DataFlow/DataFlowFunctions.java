@@ -59,6 +59,8 @@ public final class DataFlowFunctions {
      * Retrieves an application using an `applicationId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -87,6 +89,7 @@ public final class DataFlowFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetApplicationResult> getApplication(GetApplicationArgs args) {
@@ -98,6 +101,8 @@ public final class DataFlowFunctions {
      * Retrieves an application using an `applicationId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -126,6 +131,7 @@ public final class DataFlowFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetApplicationResult> getApplicationPlain(GetApplicationPlainArgs args) {
@@ -137,6 +143,8 @@ public final class DataFlowFunctions {
      * Retrieves an application using an `applicationId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -165,6 +173,7 @@ public final class DataFlowFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetApplicationResult> getApplication(GetApplicationArgs args, InvokeOptions options) {
@@ -176,6 +185,8 @@ public final class DataFlowFunctions {
      * Retrieves an application using an `applicationId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -204,6 +215,7 @@ public final class DataFlowFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetApplicationResult> getApplicationPlain(GetApplicationPlainArgs args, InvokeOptions options) {
@@ -215,6 +227,8 @@ public final class DataFlowFunctions {
      * Lists all applications in the specified compartment. Only one parameter other than compartmentId may also be included in a query. The query must include compartmentId. If the query does not include compartmentId, or includes compartmentId but two or more other parameters an error is returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -247,6 +261,7 @@ public final class DataFlowFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetApplicationsResult> getApplications(GetApplicationsArgs args) {
@@ -258,6 +273,8 @@ public final class DataFlowFunctions {
      * Lists all applications in the specified compartment. Only one parameter other than compartmentId may also be included in a query. The query must include compartmentId. If the query does not include compartmentId, or includes compartmentId but two or more other parameters an error is returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -290,6 +307,7 @@ public final class DataFlowFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetApplicationsResult> getApplicationsPlain(GetApplicationsPlainArgs args) {
@@ -301,6 +319,8 @@ public final class DataFlowFunctions {
      * Lists all applications in the specified compartment. Only one parameter other than compartmentId may also be included in a query. The query must include compartmentId. If the query does not include compartmentId, or includes compartmentId but two or more other parameters an error is returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -333,6 +353,7 @@ public final class DataFlowFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetApplicationsResult> getApplications(GetApplicationsArgs args, InvokeOptions options) {
@@ -344,6 +365,8 @@ public final class DataFlowFunctions {
      * Lists all applications in the specified compartment. Only one parameter other than compartmentId may also be included in a query. The query must include compartmentId. If the query does not include compartmentId, or includes compartmentId but two or more other parameters an error is returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -376,6 +399,7 @@ public final class DataFlowFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetApplicationsResult> getApplicationsPlain(GetApplicationsPlainArgs args, InvokeOptions options) {
@@ -387,6 +411,8 @@ public final class DataFlowFunctions {
      * Retrieves the run for the specified `runId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -415,6 +441,7 @@ public final class DataFlowFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetInvokeRunResult> getInvokeRun(GetInvokeRunArgs args) {
@@ -426,6 +453,8 @@ public final class DataFlowFunctions {
      * Retrieves the run for the specified `runId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -454,6 +483,7 @@ public final class DataFlowFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetInvokeRunResult> getInvokeRunPlain(GetInvokeRunPlainArgs args) {
@@ -465,6 +495,8 @@ public final class DataFlowFunctions {
      * Retrieves the run for the specified `runId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -493,6 +525,7 @@ public final class DataFlowFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetInvokeRunResult> getInvokeRun(GetInvokeRunArgs args, InvokeOptions options) {
@@ -504,6 +537,8 @@ public final class DataFlowFunctions {
      * Retrieves the run for the specified `runId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -532,6 +567,7 @@ public final class DataFlowFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetInvokeRunResult> getInvokeRunPlain(GetInvokeRunPlainArgs args, InvokeOptions options) {
@@ -543,6 +579,8 @@ public final class DataFlowFunctions {
      * Lists all runs of an application in the specified compartment.  Only one parameter other than compartmentId may also be included in a query. The query must include compartmentId. If the query does not include compartmentId, or includes compartmentId but two or more other parameters an error is returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -578,6 +616,7 @@ public final class DataFlowFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetInvokeRunsResult> getInvokeRuns(GetInvokeRunsArgs args) {
@@ -589,6 +628,8 @@ public final class DataFlowFunctions {
      * Lists all runs of an application in the specified compartment.  Only one parameter other than compartmentId may also be included in a query. The query must include compartmentId. If the query does not include compartmentId, or includes compartmentId but two or more other parameters an error is returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -624,6 +665,7 @@ public final class DataFlowFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetInvokeRunsResult> getInvokeRunsPlain(GetInvokeRunsPlainArgs args) {
@@ -635,6 +677,8 @@ public final class DataFlowFunctions {
      * Lists all runs of an application in the specified compartment.  Only one parameter other than compartmentId may also be included in a query. The query must include compartmentId. If the query does not include compartmentId, or includes compartmentId but two or more other parameters an error is returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -670,6 +714,7 @@ public final class DataFlowFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetInvokeRunsResult> getInvokeRuns(GetInvokeRunsArgs args, InvokeOptions options) {
@@ -681,6 +726,8 @@ public final class DataFlowFunctions {
      * Lists all runs of an application in the specified compartment.  Only one parameter other than compartmentId may also be included in a query. The query must include compartmentId. If the query does not include compartmentId, or includes compartmentId but two or more other parameters an error is returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -716,6 +763,7 @@ public final class DataFlowFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetInvokeRunsResult> getInvokeRunsPlain(GetInvokeRunsPlainArgs args, InvokeOptions options) {
@@ -727,6 +775,8 @@ public final class DataFlowFunctions {
      * Retrieves a pool using a `poolId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -755,6 +805,7 @@ public final class DataFlowFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPoolResult> getPool(GetPoolArgs args) {
@@ -766,6 +817,8 @@ public final class DataFlowFunctions {
      * Retrieves a pool using a `poolId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -794,6 +847,7 @@ public final class DataFlowFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPoolResult> getPoolPlain(GetPoolPlainArgs args) {
@@ -805,6 +859,8 @@ public final class DataFlowFunctions {
      * Retrieves a pool using a `poolId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -833,6 +889,7 @@ public final class DataFlowFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPoolResult> getPool(GetPoolArgs args, InvokeOptions options) {
@@ -844,6 +901,8 @@ public final class DataFlowFunctions {
      * Retrieves a pool using a `poolId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -872,6 +931,7 @@ public final class DataFlowFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPoolResult> getPoolPlain(GetPoolPlainArgs args, InvokeOptions options) {
@@ -883,6 +943,8 @@ public final class DataFlowFunctions {
      * Lists all pools in the specified compartment. The query must include compartmentId. The query may also include one other parameter. If the query does not include compartmentId, or includes compartmentId, but with two or more other parameters, an error is returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -915,6 +977,7 @@ public final class DataFlowFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPoolsResult> getPools(GetPoolsArgs args) {
@@ -926,6 +989,8 @@ public final class DataFlowFunctions {
      * Lists all pools in the specified compartment. The query must include compartmentId. The query may also include one other parameter. If the query does not include compartmentId, or includes compartmentId, but with two or more other parameters, an error is returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -958,6 +1023,7 @@ public final class DataFlowFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPoolsResult> getPoolsPlain(GetPoolsPlainArgs args) {
@@ -969,6 +1035,8 @@ public final class DataFlowFunctions {
      * Lists all pools in the specified compartment. The query must include compartmentId. The query may also include one other parameter. If the query does not include compartmentId, or includes compartmentId, but with two or more other parameters, an error is returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1001,6 +1069,7 @@ public final class DataFlowFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPoolsResult> getPools(GetPoolsArgs args, InvokeOptions options) {
@@ -1012,6 +1081,8 @@ public final class DataFlowFunctions {
      * Lists all pools in the specified compartment. The query must include compartmentId. The query may also include one other parameter. If the query does not include compartmentId, or includes compartmentId, but with two or more other parameters, an error is returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1044,6 +1115,7 @@ public final class DataFlowFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPoolsResult> getPoolsPlain(GetPoolsPlainArgs args, InvokeOptions options) {
@@ -1055,6 +1127,8 @@ public final class DataFlowFunctions {
      * Retrieves an private endpoint using a `privateEndpointId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1083,6 +1157,7 @@ public final class DataFlowFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPrivateEndpointResult> getPrivateEndpoint(GetPrivateEndpointArgs args) {
@@ -1094,6 +1169,8 @@ public final class DataFlowFunctions {
      * Retrieves an private endpoint using a `privateEndpointId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1122,6 +1199,7 @@ public final class DataFlowFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPrivateEndpointResult> getPrivateEndpointPlain(GetPrivateEndpointPlainArgs args) {
@@ -1133,6 +1211,8 @@ public final class DataFlowFunctions {
      * Retrieves an private endpoint using a `privateEndpointId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1161,6 +1241,7 @@ public final class DataFlowFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPrivateEndpointResult> getPrivateEndpoint(GetPrivateEndpointArgs args, InvokeOptions options) {
@@ -1172,6 +1253,8 @@ public final class DataFlowFunctions {
      * Retrieves an private endpoint using a `privateEndpointId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1200,6 +1283,7 @@ public final class DataFlowFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPrivateEndpointResult> getPrivateEndpointPlain(GetPrivateEndpointPlainArgs args, InvokeOptions options) {
@@ -1211,6 +1295,8 @@ public final class DataFlowFunctions {
      * Lists all private endpoints in the specified compartment. The query must include compartmentId. The query may also include one other parameter. If the query does not include compartmentId, or includes compartmentId, but with two or more other parameters, an error is returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1243,6 +1329,7 @@ public final class DataFlowFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPrivateEndpointsResult> getPrivateEndpoints(GetPrivateEndpointsArgs args) {
@@ -1254,6 +1341,8 @@ public final class DataFlowFunctions {
      * Lists all private endpoints in the specified compartment. The query must include compartmentId. The query may also include one other parameter. If the query does not include compartmentId, or includes compartmentId, but with two or more other parameters, an error is returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1286,6 +1375,7 @@ public final class DataFlowFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPrivateEndpointsResult> getPrivateEndpointsPlain(GetPrivateEndpointsPlainArgs args) {
@@ -1297,6 +1387,8 @@ public final class DataFlowFunctions {
      * Lists all private endpoints in the specified compartment. The query must include compartmentId. The query may also include one other parameter. If the query does not include compartmentId, or includes compartmentId, but with two or more other parameters, an error is returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1329,6 +1421,7 @@ public final class DataFlowFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPrivateEndpointsResult> getPrivateEndpoints(GetPrivateEndpointsArgs args, InvokeOptions options) {
@@ -1340,6 +1433,8 @@ public final class DataFlowFunctions {
      * Lists all private endpoints in the specified compartment. The query must include compartmentId. The query may also include one other parameter. If the query does not include compartmentId, or includes compartmentId, but with two or more other parameters, an error is returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1372,6 +1467,7 @@ public final class DataFlowFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPrivateEndpointsResult> getPrivateEndpointsPlain(GetPrivateEndpointsPlainArgs args, InvokeOptions options) {
@@ -1383,6 +1479,8 @@ public final class DataFlowFunctions {
      * Retrieves the content of an run log.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1412,6 +1510,7 @@ public final class DataFlowFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRunLogResult> getRunLog(GetRunLogArgs args) {
@@ -1423,6 +1522,8 @@ public final class DataFlowFunctions {
      * Retrieves the content of an run log.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1452,6 +1553,7 @@ public final class DataFlowFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRunLogResult> getRunLogPlain(GetRunLogPlainArgs args) {
@@ -1463,6 +1565,8 @@ public final class DataFlowFunctions {
      * Retrieves the content of an run log.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1492,6 +1596,7 @@ public final class DataFlowFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRunLogResult> getRunLog(GetRunLogArgs args, InvokeOptions options) {
@@ -1503,6 +1608,8 @@ public final class DataFlowFunctions {
      * Retrieves the content of an run log.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1532,6 +1639,7 @@ public final class DataFlowFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRunLogResult> getRunLogPlain(GetRunLogPlainArgs args, InvokeOptions options) {
@@ -1543,6 +1651,8 @@ public final class DataFlowFunctions {
      * Retrieves summaries of the run&#39;s logs.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1571,6 +1681,7 @@ public final class DataFlowFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRunLogsResult> getRunLogs(GetRunLogsArgs args) {
@@ -1582,6 +1693,8 @@ public final class DataFlowFunctions {
      * Retrieves summaries of the run&#39;s logs.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1610,6 +1723,7 @@ public final class DataFlowFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRunLogsResult> getRunLogsPlain(GetRunLogsPlainArgs args) {
@@ -1621,6 +1735,8 @@ public final class DataFlowFunctions {
      * Retrieves summaries of the run&#39;s logs.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1649,6 +1765,7 @@ public final class DataFlowFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRunLogsResult> getRunLogs(GetRunLogsArgs args, InvokeOptions options) {
@@ -1660,6 +1777,8 @@ public final class DataFlowFunctions {
      * Retrieves summaries of the run&#39;s logs.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1688,6 +1807,7 @@ public final class DataFlowFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRunLogsResult> getRunLogsPlain(GetRunLogsPlainArgs args, InvokeOptions options) {
@@ -1699,6 +1819,8 @@ public final class DataFlowFunctions {
      * Retrieves the statement corresponding to the `statementId` for a Session run specified by `runId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1728,6 +1850,7 @@ public final class DataFlowFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRunStatementResult> getRunStatement(GetRunStatementArgs args) {
@@ -1739,6 +1862,8 @@ public final class DataFlowFunctions {
      * Retrieves the statement corresponding to the `statementId` for a Session run specified by `runId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1768,6 +1893,7 @@ public final class DataFlowFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRunStatementResult> getRunStatementPlain(GetRunStatementPlainArgs args) {
@@ -1779,6 +1905,8 @@ public final class DataFlowFunctions {
      * Retrieves the statement corresponding to the `statementId` for a Session run specified by `runId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1808,6 +1936,7 @@ public final class DataFlowFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRunStatementResult> getRunStatement(GetRunStatementArgs args, InvokeOptions options) {
@@ -1819,6 +1948,8 @@ public final class DataFlowFunctions {
      * Retrieves the statement corresponding to the `statementId` for a Session run specified by `runId`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1848,6 +1979,7 @@ public final class DataFlowFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRunStatementResult> getRunStatementPlain(GetRunStatementPlainArgs args, InvokeOptions options) {
@@ -1859,6 +1991,8 @@ public final class DataFlowFunctions {
      * Lists all statements for a Session run.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1888,6 +2022,7 @@ public final class DataFlowFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRunStatementsResult> getRunStatements(GetRunStatementsArgs args) {
@@ -1899,6 +2034,8 @@ public final class DataFlowFunctions {
      * Lists all statements for a Session run.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1928,6 +2065,7 @@ public final class DataFlowFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRunStatementsResult> getRunStatementsPlain(GetRunStatementsPlainArgs args) {
@@ -1939,6 +2077,8 @@ public final class DataFlowFunctions {
      * Lists all statements for a Session run.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1968,6 +2108,7 @@ public final class DataFlowFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRunStatementsResult> getRunStatements(GetRunStatementsArgs args, InvokeOptions options) {
@@ -1979,6 +2120,8 @@ public final class DataFlowFunctions {
      * Lists all statements for a Session run.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2008,6 +2151,7 @@ public final class DataFlowFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRunStatementsResult> getRunStatementsPlain(GetRunStatementsPlainArgs args, InvokeOptions options) {
@@ -2019,6 +2163,8 @@ public final class DataFlowFunctions {
      * Retrieves a SQL Endpoint using a sqlEndpointId.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2047,6 +2193,7 @@ public final class DataFlowFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSqlEndpointResult> getSqlEndpoint(GetSqlEndpointArgs args) {
@@ -2058,6 +2205,8 @@ public final class DataFlowFunctions {
      * Retrieves a SQL Endpoint using a sqlEndpointId.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2086,6 +2235,7 @@ public final class DataFlowFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSqlEndpointResult> getSqlEndpointPlain(GetSqlEndpointPlainArgs args) {
@@ -2097,6 +2247,8 @@ public final class DataFlowFunctions {
      * Retrieves a SQL Endpoint using a sqlEndpointId.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2125,6 +2277,7 @@ public final class DataFlowFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSqlEndpointResult> getSqlEndpoint(GetSqlEndpointArgs args, InvokeOptions options) {
@@ -2136,6 +2289,8 @@ public final class DataFlowFunctions {
      * Retrieves a SQL Endpoint using a sqlEndpointId.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2164,6 +2319,7 @@ public final class DataFlowFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSqlEndpointResult> getSqlEndpointPlain(GetSqlEndpointPlainArgs args, InvokeOptions options) {
@@ -2177,6 +2333,8 @@ public final class DataFlowFunctions {
      * If the query does not include either compartmentId or sqlEndpointId, an error is returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2208,6 +2366,7 @@ public final class DataFlowFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSqlEndpointsResult> getSqlEndpoints() {
@@ -2221,6 +2380,8 @@ public final class DataFlowFunctions {
      * If the query does not include either compartmentId or sqlEndpointId, an error is returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2252,6 +2413,7 @@ public final class DataFlowFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSqlEndpointsResult> getSqlEndpointsPlain() {
@@ -2265,6 +2427,8 @@ public final class DataFlowFunctions {
      * If the query does not include either compartmentId or sqlEndpointId, an error is returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2296,6 +2460,7 @@ public final class DataFlowFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSqlEndpointsResult> getSqlEndpoints(GetSqlEndpointsArgs args) {
@@ -2309,6 +2474,8 @@ public final class DataFlowFunctions {
      * If the query does not include either compartmentId or sqlEndpointId, an error is returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2340,6 +2507,7 @@ public final class DataFlowFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSqlEndpointsResult> getSqlEndpointsPlain(GetSqlEndpointsPlainArgs args) {
@@ -2353,6 +2521,8 @@ public final class DataFlowFunctions {
      * If the query does not include either compartmentId or sqlEndpointId, an error is returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2384,6 +2554,7 @@ public final class DataFlowFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSqlEndpointsResult> getSqlEndpoints(GetSqlEndpointsArgs args, InvokeOptions options) {
@@ -2397,6 +2568,8 @@ public final class DataFlowFunctions {
      * If the query does not include either compartmentId or sqlEndpointId, an error is returned.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2428,6 +2601,7 @@ public final class DataFlowFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSqlEndpointsResult> getSqlEndpointsPlain(GetSqlEndpointsPlainArgs args, InvokeOptions options) {

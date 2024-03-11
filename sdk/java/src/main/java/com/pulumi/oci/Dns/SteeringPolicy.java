@@ -26,6 +26,8 @@ import javax.annotation.Nullable;
  * creating policies with templates, see [Traffic Management API Guide](https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Concepts/trafficmanagementapi.htm).
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -88,13 +90,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * SteeringPolicies can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Dns/steeringPolicy:SteeringPolicy test_steering_policy &#34;id&#34;
+ * $ pulumi import oci:Dns/steeringPolicy:SteeringPolicy test_steering_policy &#34;id&#34;
  * ```
  * 
  */

@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -40,6 +41,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetCrossConnectStatus(ctx *pulumi.Context, args *GetCrossConnectStatusArgs, opts ...pulumi.InvokeOption) (*GetCrossConnectStatusResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetCrossConnectStatusResult

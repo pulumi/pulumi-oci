@@ -2732,7 +2732,7 @@ type ContainerInstanceContainerResourceConfig struct {
 	//
 	// CPU usage is defined in terms of logical CPUs. This means that the maximum possible value on an E3 ContainerInstance with 1 OCPU is 2.0.
 	//
-	// A container with a 2.0 vcpusLimit could consume up to 100% of the CPU resources available on the container instance. Values can be fractional. A value of "1.5" means that the container can consume at most the equivalent of 1 and a half logical CPUs worth of CPU capacity.
+	// A container with a 2.0 vcpusLimit could consume up to 100%!o(MISSING)f the CPU resources available on the container instance. Values can be fractional. A value of "1.5" means that the container can consume at most the equivalent of 1 and a half logical CPUs worth of CPU capacity.
 	VcpusLimit *float64 `pulumi:"vcpusLimit"`
 }
 
@@ -2758,7 +2758,7 @@ type ContainerInstanceContainerResourceConfigArgs struct {
 	//
 	// CPU usage is defined in terms of logical CPUs. This means that the maximum possible value on an E3 ContainerInstance with 1 OCPU is 2.0.
 	//
-	// A container with a 2.0 vcpusLimit could consume up to 100% of the CPU resources available on the container instance. Values can be fractional. A value of "1.5" means that the container can consume at most the equivalent of 1 and a half logical CPUs worth of CPU capacity.
+	// A container with a 2.0 vcpusLimit could consume up to 100%!o(MISSING)f the CPU resources available on the container instance. Values can be fractional. A value of "1.5" means that the container can consume at most the equivalent of 1 and a half logical CPUs worth of CPU capacity.
 	VcpusLimit pulumi.Float64PtrInput `pulumi:"vcpusLimit"`
 }
 
@@ -2852,7 +2852,7 @@ func (o ContainerInstanceContainerResourceConfigOutput) MemoryLimitInGbs() pulum
 //
 // CPU usage is defined in terms of logical CPUs. This means that the maximum possible value on an E3 ContainerInstance with 1 OCPU is 2.0.
 //
-// A container with a 2.0 vcpusLimit could consume up to 100% of the CPU resources available on the container instance. Values can be fractional. A value of "1.5" means that the container can consume at most the equivalent of 1 and a half logical CPUs worth of CPU capacity.
+// A container with a 2.0 vcpusLimit could consume up to 100%!o(MISSING)f the CPU resources available on the container instance. Values can be fractional. A value of "1.5" means that the container can consume at most the equivalent of 1 and a half logical CPUs worth of CPU capacity.
 func (o ContainerInstanceContainerResourceConfigOutput) VcpusLimit() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v ContainerInstanceContainerResourceConfig) *float64 { return v.VcpusLimit }).(pulumi.Float64PtrOutput)
 }
@@ -2899,7 +2899,7 @@ func (o ContainerInstanceContainerResourceConfigPtrOutput) MemoryLimitInGbs() pu
 //
 // CPU usage is defined in terms of logical CPUs. This means that the maximum possible value on an E3 ContainerInstance with 1 OCPU is 2.0.
 //
-// A container with a 2.0 vcpusLimit could consume up to 100% of the CPU resources available on the container instance. Values can be fractional. A value of "1.5" means that the container can consume at most the equivalent of 1 and a half logical CPUs worth of CPU capacity.
+// A container with a 2.0 vcpusLimit could consume up to 100%!o(MISSING)f the CPU resources available on the container instance. Values can be fractional. A value of "1.5" means that the container can consume at most the equivalent of 1 and a half logical CPUs worth of CPU capacity.
 func (o ContainerInstanceContainerResourceConfigPtrOutput) VcpusLimit() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v *ContainerInstanceContainerResourceConfig) *float64 {
 		if v == nil {
@@ -5855,9 +5855,11 @@ func (o NodePoolNodeEvictionNodePoolSettingsPtrOutput) IsForceDeleteAfterGraceDu
 type NodePoolNodePoolCyclingDetails struct {
 	// (Updatable) If nodes in the nodepool will be cycled to have new changes.
 	IsNodeCyclingEnabled *bool `pulumi:"isNodeCyclingEnabled"`
-	// (Updatable) Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0% to 100%
+	// (Updatable) Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0%!t(MISSING)o 100%!
+	// (MISSING)
 	MaximumSurge *string `pulumi:"maximumSurge"`
-	// (Updatable) Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0% to 100%
+	// (Updatable) Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0%!t(MISSING)o 100%!
+	// (MISSING)
 	MaximumUnavailable *string `pulumi:"maximumUnavailable"`
 }
 
@@ -5875,9 +5877,11 @@ type NodePoolNodePoolCyclingDetailsInput interface {
 type NodePoolNodePoolCyclingDetailsArgs struct {
 	// (Updatable) If nodes in the nodepool will be cycled to have new changes.
 	IsNodeCyclingEnabled pulumi.BoolPtrInput `pulumi:"isNodeCyclingEnabled"`
-	// (Updatable) Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0% to 100%
+	// (Updatable) Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0%!t(MISSING)o 100%!
+	// (MISSING)
 	MaximumSurge pulumi.StringPtrInput `pulumi:"maximumSurge"`
-	// (Updatable) Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0% to 100%
+	// (Updatable) Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0%!t(MISSING)o 100%!
+	// (MISSING)
 	MaximumUnavailable pulumi.StringPtrInput `pulumi:"maximumUnavailable"`
 }
 
@@ -5963,12 +5967,14 @@ func (o NodePoolNodePoolCyclingDetailsOutput) IsNodeCyclingEnabled() pulumi.Bool
 	return o.ApplyT(func(v NodePoolNodePoolCyclingDetails) *bool { return v.IsNodeCyclingEnabled }).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0% to 100%
+// (Updatable) Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0%!t(MISSING)o 100%!
+// (MISSING)
 func (o NodePoolNodePoolCyclingDetailsOutput) MaximumSurge() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolNodePoolCyclingDetails) *string { return v.MaximumSurge }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0% to 100%
+// (Updatable) Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0%!t(MISSING)o 100%!
+// (MISSING)
 func (o NodePoolNodePoolCyclingDetailsOutput) MaximumUnavailable() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolNodePoolCyclingDetails) *string { return v.MaximumUnavailable }).(pulumi.StringPtrOutput)
 }
@@ -6007,7 +6013,8 @@ func (o NodePoolNodePoolCyclingDetailsPtrOutput) IsNodeCyclingEnabled() pulumi.B
 	}).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0% to 100%
+// (Updatable) Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0%!t(MISSING)o 100%!
+// (MISSING)
 func (o NodePoolNodePoolCyclingDetailsPtrOutput) MaximumSurge() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NodePoolNodePoolCyclingDetails) *string {
 		if v == nil {
@@ -6017,7 +6024,8 @@ func (o NodePoolNodePoolCyclingDetailsPtrOutput) MaximumSurge() pulumi.StringPtr
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0% to 100%
+// (Updatable) Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0%!t(MISSING)o 100%!
+// (MISSING)
 func (o NodePoolNodePoolCyclingDetailsPtrOutput) MaximumUnavailable() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NodePoolNodePoolCyclingDetails) *string {
 		if v == nil {
@@ -11846,9 +11854,11 @@ func (o GetNodePoolNodeEvictionNodePoolSettingArrayOutput) Index(i pulumi.IntInp
 type GetNodePoolNodePoolCyclingDetail struct {
 	// If nodes in the nodepool will be cycled to have new changes.
 	IsNodeCyclingEnabled bool `pulumi:"isNodeCyclingEnabled"`
-	// Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0% to 100%
+	// Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0%!t(MISSING)o 100%!
+	// (MISSING)
 	MaximumSurge string `pulumi:"maximumSurge"`
-	// Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0% to 100%
+	// Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0%!t(MISSING)o 100%!
+	// (MISSING)
 	MaximumUnavailable string `pulumi:"maximumUnavailable"`
 }
 
@@ -11866,9 +11876,11 @@ type GetNodePoolNodePoolCyclingDetailInput interface {
 type GetNodePoolNodePoolCyclingDetailArgs struct {
 	// If nodes in the nodepool will be cycled to have new changes.
 	IsNodeCyclingEnabled pulumi.BoolInput `pulumi:"isNodeCyclingEnabled"`
-	// Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0% to 100%
+	// Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0%!t(MISSING)o 100%!
+	// (MISSING)
 	MaximumSurge pulumi.StringInput `pulumi:"maximumSurge"`
-	// Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0% to 100%
+	// Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0%!t(MISSING)o 100%!
+	// (MISSING)
 	MaximumUnavailable pulumi.StringInput `pulumi:"maximumUnavailable"`
 }
 
@@ -11928,12 +11940,14 @@ func (o GetNodePoolNodePoolCyclingDetailOutput) IsNodeCyclingEnabled() pulumi.Bo
 	return o.ApplyT(func(v GetNodePoolNodePoolCyclingDetail) bool { return v.IsNodeCyclingEnabled }).(pulumi.BoolOutput)
 }
 
-// Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0% to 100%
+// Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0%!t(MISSING)o 100%!
+// (MISSING)
 func (o GetNodePoolNodePoolCyclingDetailOutput) MaximumSurge() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolNodePoolCyclingDetail) string { return v.MaximumSurge }).(pulumi.StringOutput)
 }
 
-// Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0% to 100%
+// Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0%!t(MISSING)o 100%!
+// (MISSING)
 func (o GetNodePoolNodePoolCyclingDetailOutput) MaximumUnavailable() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolNodePoolCyclingDetail) string { return v.MaximumUnavailable }).(pulumi.StringOutput)
 }
@@ -13999,9 +14013,11 @@ func (o GetNodePoolsNodePoolNodeEvictionNodePoolSettingArrayOutput) Index(i pulu
 type GetNodePoolsNodePoolNodePoolCyclingDetail struct {
 	// If nodes in the nodepool will be cycled to have new changes.
 	IsNodeCyclingEnabled bool `pulumi:"isNodeCyclingEnabled"`
-	// Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0% to 100%
+	// Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0%!t(MISSING)o 100%!
+	// (MISSING)
 	MaximumSurge string `pulumi:"maximumSurge"`
-	// Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0% to 100%
+	// Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0%!t(MISSING)o 100%!
+	// (MISSING)
 	MaximumUnavailable string `pulumi:"maximumUnavailable"`
 }
 
@@ -14019,9 +14035,11 @@ type GetNodePoolsNodePoolNodePoolCyclingDetailInput interface {
 type GetNodePoolsNodePoolNodePoolCyclingDetailArgs struct {
 	// If nodes in the nodepool will be cycled to have new changes.
 	IsNodeCyclingEnabled pulumi.BoolInput `pulumi:"isNodeCyclingEnabled"`
-	// Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0% to 100%
+	// Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0%!t(MISSING)o 100%!
+	// (MISSING)
 	MaximumSurge pulumi.StringInput `pulumi:"maximumSurge"`
-	// Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0% to 100%
+	// Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0%!t(MISSING)o 100%!
+	// (MISSING)
 	MaximumUnavailable pulumi.StringInput `pulumi:"maximumUnavailable"`
 }
 
@@ -14081,12 +14099,14 @@ func (o GetNodePoolsNodePoolNodePoolCyclingDetailOutput) IsNodeCyclingEnabled() 
 	return o.ApplyT(func(v GetNodePoolsNodePoolNodePoolCyclingDetail) bool { return v.IsNodeCyclingEnabled }).(pulumi.BoolOutput)
 }
 
-// Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0% to 100%
+// Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0%!t(MISSING)o 100%!
+// (MISSING)
 func (o GetNodePoolsNodePoolNodePoolCyclingDetailOutput) MaximumSurge() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolsNodePoolNodePoolCyclingDetail) string { return v.MaximumSurge }).(pulumi.StringOutput)
 }
 
-// Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0% to 100%
+// Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0%!t(MISSING)o 100%!
+// (MISSING)
 func (o GetNodePoolsNodePoolNodePoolCyclingDetailOutput) MaximumUnavailable() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolsNodePoolNodePoolCyclingDetail) string { return v.MaximumUnavailable }).(pulumi.StringOutput)
 }

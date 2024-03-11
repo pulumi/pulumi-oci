@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -28,6 +29,7 @@ import * as utilities from "../utilities";
  *     typeFilter: _var.managed_database_alert_log_count_type_filter,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getManagedDatabaseAlertLogCount(args: GetManagedDatabaseAlertLogCountArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabaseAlertLogCountResult> {
 
@@ -113,6 +115,7 @@ export interface GetManagedDatabaseAlertLogCountResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -128,6 +131,7 @@ export interface GetManagedDatabaseAlertLogCountResult {
  *     typeFilter: _var.managed_database_alert_log_count_type_filter,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getManagedDatabaseAlertLogCountOutput(args: GetManagedDatabaseAlertLogCountOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseAlertLogCountResult> {
     return pulumi.output(args).apply((a: any) => getManagedDatabaseAlertLogCount(a, opts))

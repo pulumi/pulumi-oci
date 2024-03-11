@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,6 +22,7 @@ import * as utilities from "../utilities";
  *     dbSystemId: oci_psql_db_system.test_db_system.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDbSystemConnectionDetail(args: GetDbSystemConnectionDetailArgs, opts?: pulumi.InvokeOptions): Promise<GetDbSystemConnectionDetailResult> {
 
@@ -69,6 +71,7 @@ export interface GetDbSystemConnectionDetailResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -77,6 +80,7 @@ export interface GetDbSystemConnectionDetailResult {
  *     dbSystemId: oci_psql_db_system.test_db_system.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDbSystemConnectionDetailOutput(args: GetDbSystemConnectionDetailOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbSystemConnectionDetailResult> {
     return pulumi.output(args).apply((a: any) => getDbSystemConnectionDetail(a, opts))

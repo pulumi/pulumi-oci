@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -56,15 +57,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // ExternalDbSystems can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:DatabaseManagement/externalDbSystem:ExternalDbSystem test_external_db_system "id"
-//
+// $ pulumi import oci:DatabaseManagement/externalDbSystem:ExternalDbSystem test_external_db_system "id"
 // ```
 type ExternalDbSystem struct {
 	pulumi.CustomResourceState

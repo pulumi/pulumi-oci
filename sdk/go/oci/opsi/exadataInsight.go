@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -93,15 +94,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // ExadataInsights can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Opsi/exadataInsight:ExadataInsight test_exadata_insight "id"
-//
+// $ pulumi import oci:Opsi/exadataInsight:ExadataInsight test_exadata_insight "id"
 // ```
 type ExadataInsight struct {
 	pulumi.CustomResourceState

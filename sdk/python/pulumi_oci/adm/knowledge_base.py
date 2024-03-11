@@ -251,6 +251,7 @@ class KnowledgeBase(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -265,13 +266,14 @@ class KnowledgeBase(pulumi.CustomResource):
                 "bar-key": "value",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         KnowledgeBases can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Adm/knowledgeBase:KnowledgeBase test_knowledge_base "id"
+        $ pulumi import oci:Adm/knowledgeBase:KnowledgeBase test_knowledge_base "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -298,6 +300,7 @@ class KnowledgeBase(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -312,13 +315,14 @@ class KnowledgeBase(pulumi.CustomResource):
                 "bar-key": "value",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         KnowledgeBases can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Adm/knowledgeBase:KnowledgeBase test_knowledge_base "id"
+        $ pulumi import oci:Adm/knowledgeBase:KnowledgeBase test_knowledge_base "id"
         ```
 
         :param str resource_name: The name of the resource.

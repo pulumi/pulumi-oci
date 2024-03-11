@@ -545,6 +545,7 @@ class OpaInstance(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -565,13 +566,14 @@ class OpaInstance(pulumi.CustomResource):
             is_breakglass_enabled=var["opa_instance_is_breakglass_enabled"],
             metering_type=var["opa_instance_metering_type"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         OpaInstances can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Opa/opaInstance:OpaInstance test_opa_instance "id"
+        $ pulumi import oci:Opa/opaInstance:OpaInstance test_opa_instance "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -604,6 +606,7 @@ class OpaInstance(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -624,13 +627,14 @@ class OpaInstance(pulumi.CustomResource):
             is_breakglass_enabled=var["opa_instance_is_breakglass_enabled"],
             metering_type=var["opa_instance_metering_type"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         OpaInstances can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Opa/opaInstance:OpaInstance test_opa_instance "id"
+        $ pulumi import oci:Opa/opaInstance:OpaInstance test_opa_instance "id"
         ```
 
         :param str resource_name: The name of the resource.

@@ -316,12 +316,14 @@ def get_external_pluggable_database(external_pluggable_database_id: Optional[str
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_external_pluggable_database = oci.Database.get_external_pluggable_database(external_pluggable_database_id=oci_database_external_pluggable_database["test_external_pluggable_database"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str external_pluggable_database_id: The ExternalPluggableDatabaseId [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -368,12 +370,14 @@ def get_external_pluggable_database_output(external_pluggable_database_id: Optio
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_external_pluggable_database = oci.Database.get_external_pluggable_database(external_pluggable_database_id=oci_database_external_pluggable_database["test_external_pluggable_database"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str external_pluggable_database_id: The ExternalPluggableDatabaseId [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

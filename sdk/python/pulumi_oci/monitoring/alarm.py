@@ -845,6 +845,7 @@ class Alarm(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -878,13 +879,14 @@ class Alarm(pulumi.CustomResource):
                 description=var["alarm_suppression_description"],
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Alarms can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Monitoring/alarm:Alarm test_alarm "id"
+        $ pulumi import oci:Monitoring/alarm:Alarm test_alarm "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -962,6 +964,7 @@ class Alarm(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -995,13 +998,14 @@ class Alarm(pulumi.CustomResource):
                 description=var["alarm_suppression_description"],
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Alarms can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Monitoring/alarm:Alarm test_alarm "id"
+        $ pulumi import oci:Monitoring/alarm:Alarm test_alarm "id"
         ```
 
         :param str resource_name: The name of the resource.

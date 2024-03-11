@@ -24,6 +24,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -40,13 +41,14 @@ import * as utilities from "../utilities";
  *     isRetired: false,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * TagNamespaces can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Identity/tagNamespace:TagNamespace test_tag_namespace "id"
+ * $ pulumi import oci:Identity/tagNamespace:TagNamespace test_tag_namespace "id"
  * ```
  */
 export class TagNamespace extends pulumi.CustomResource {

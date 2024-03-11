@@ -21,9 +21,7 @@ import (
 // Subscriptions can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:OspGateway/subscription:Subscription test_subscription "subscriptions/{subscriptionId}/compartmentId/{compartmentId}/ospHomeRegion/{ospHomeRegion}"
-//
+// $ pulumi import oci:OspGateway/subscription:Subscription test_subscription "subscriptions/{subscriptionId}/compartmentId/{compartmentId}/ospHomeRegion/{ospHomeRegion}"
 // ```
 type Subscription struct {
 	pulumi.CustomResourceState

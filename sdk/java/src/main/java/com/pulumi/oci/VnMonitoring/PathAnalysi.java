@@ -31,6 +31,8 @@ import javax.annotation.Nullable;
  * returned from either of these methods can be used to build a final report.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -99,13 +101,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * PathAnalysis can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:VnMonitoring/pathAnalysi:PathAnalysi test_path_analysi &#34;id&#34;
+ * $ pulumi import oci:VnMonitoring/pathAnalysi:PathAnalysi test_path_analysi &#34;id&#34;
  * ```
  * 
  */

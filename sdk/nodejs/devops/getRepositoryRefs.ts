@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,6 +25,7 @@ import * as utilities from "../utilities";
  *     refType: _var.repository_ref_ref_type,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getRepositoryRefs(args: GetRepositoryRefsArgs, opts?: pulumi.InvokeOptions): Promise<GetRepositoryRefsResult> {
 
@@ -97,6 +99,7 @@ export interface GetRepositoryRefsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -108,6 +111,7 @@ export interface GetRepositoryRefsResult {
  *     refType: _var.repository_ref_ref_type,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getRepositoryRefsOutput(args: GetRepositoryRefsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRepositoryRefsResult> {
     return pulumi.output(args).apply((a: any) => getRepositoryRefs(a, opts))

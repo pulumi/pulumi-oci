@@ -16,10 +16,9 @@ namespace Pulumi.Oci.DataScience
         /// 
         /// List fast launch capable job configs in the specified compartment.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,8 +34,7 @@ namespace Pulumi.Oci.DataScience
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetFastLaunchJobConfigsResult> InvokeAsync(GetFastLaunchJobConfigsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetFastLaunchJobConfigsResult>("oci:DataScience/getFastLaunchJobConfigs:getFastLaunchJobConfigs", args ?? new GetFastLaunchJobConfigsArgs(), options.WithDefaults());
@@ -46,10 +44,9 @@ namespace Pulumi.Oci.DataScience
         /// 
         /// List fast launch capable job configs in the specified compartment.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -65,8 +62,7 @@ namespace Pulumi.Oci.DataScience
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetFastLaunchJobConfigsResult> Invoke(GetFastLaunchJobConfigsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFastLaunchJobConfigsResult>("oci:DataScience/getFastLaunchJobConfigs:getFastLaunchJobConfigs", args ?? new GetFastLaunchJobConfigsInvokeArgs(), options.WithDefaults());

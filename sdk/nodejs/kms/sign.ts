@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * Sign can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Kms/sign:Sign test_sign "id"
+ * $ pulumi import oci:Kms/sign:Sign test_sign "id"
  * ```
  */
 export class Sign extends pulumi.CustomResource {

@@ -24,6 +24,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -58,15 +59,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // ExternalExadataInfrastructures can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:DatabaseManagement/externalExadataInfrastructure:ExternalExadataInfrastructure test_external_exadata_infrastructure "id"
-//
+// $ pulumi import oci:DatabaseManagement/externalExadataInfrastructure:ExternalExadataInfrastructure test_external_exadata_infrastructure "id"
 // ```
 type ExternalExadataInfrastructure struct {
 	pulumi.CustomResourceState

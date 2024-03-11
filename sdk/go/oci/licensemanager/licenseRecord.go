@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -54,15 +55,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // LicenseRecords can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:LicenseManager/licenseRecord:LicenseRecord test_license_record "id"
-//
+// $ pulumi import oci:LicenseManager/licenseRecord:LicenseRecord test_license_record "id"
 // ```
 type LicenseRecord struct {
 	pulumi.CustomResourceState

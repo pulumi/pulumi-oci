@@ -161,6 +161,7 @@ class Hostname(pulumi.CustomResource):
         """
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -169,13 +170,14 @@ class Hostname(pulumi.CustomResource):
             hostname=var["hostname_hostname"],
             load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Hostnames can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:LoadBalancer/hostname:Hostname test_hostname "loadBalancers/{loadBalancerId}/hostnames/{name}"
+        $ pulumi import oci:LoadBalancer/hostname:Hostname test_hostname "loadBalancers/{loadBalancerId}/hostnames/{name}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -197,6 +199,7 @@ class Hostname(pulumi.CustomResource):
         """
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -205,13 +208,14 @@ class Hostname(pulumi.CustomResource):
             hostname=var["hostname_hostname"],
             load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Hostnames can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:LoadBalancer/hostname:Hostname test_hostname "loadBalancers/{loadBalancerId}/hostnames/{name}"
+        $ pulumi import oci:LoadBalancer/hostname:Hostname test_hostname "loadBalancers/{loadBalancerId}/hostnames/{name}"
         ```
 
         :param str resource_name: The name of the resource.

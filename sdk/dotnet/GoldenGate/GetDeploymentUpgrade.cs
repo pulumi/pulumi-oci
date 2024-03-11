@@ -17,10 +17,9 @@ namespace Pulumi.Oci.GoldenGate
         /// Retrieves a deployment upgrade.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,8 +35,7 @@ namespace Pulumi.Oci.GoldenGate
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDeploymentUpgradeResult> InvokeAsync(GetDeploymentUpgradeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDeploymentUpgradeResult>("oci:GoldenGate/getDeploymentUpgrade:getDeploymentUpgrade", args ?? new GetDeploymentUpgradeArgs(), options.WithDefaults());
@@ -48,10 +46,9 @@ namespace Pulumi.Oci.GoldenGate
         /// Retrieves a deployment upgrade.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -67,8 +64,7 @@ namespace Pulumi.Oci.GoldenGate
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDeploymentUpgradeResult> Invoke(GetDeploymentUpgradeInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDeploymentUpgradeResult>("oci:GoldenGate/getDeploymentUpgrade:getDeploymentUpgrade", args ?? new GetDeploymentUpgradeInvokeArgs(), options.WithDefaults());

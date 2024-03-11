@@ -19,6 +19,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -42,6 +43,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetMysqlVersion(ctx *pulumi.Context, args *GetMysqlVersionArgs, opts ...pulumi.InvokeOption) (*GetMysqlVersionResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetMysqlVersionResult

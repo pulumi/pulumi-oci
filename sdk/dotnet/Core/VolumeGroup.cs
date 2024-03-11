@@ -12,6 +12,7 @@ namespace Pulumi.Oci.Core
     /// <summary>
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -58,13 +59,14 @@ namespace Pulumi.Oci.Core
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// VolumeGroups can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Core/volumeGroup:VolumeGroup test_volume_group "id"
+    /// $ pulumi import oci:Core/volumeGroup:VolumeGroup test_volume_group "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Core/volumeGroup:VolumeGroup")]

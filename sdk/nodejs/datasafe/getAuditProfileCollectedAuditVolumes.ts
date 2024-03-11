@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,6 +25,7 @@ import * as utilities from "../utilities";
  *     monthInConsiderationLessThan: _var.audit_profile_collected_audit_volume_month_in_consideration_less_than,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAuditProfileCollectedAuditVolumes(args: GetAuditProfileCollectedAuditVolumesArgs, opts?: pulumi.InvokeOptions): Promise<GetAuditProfileCollectedAuditVolumesResult> {
 
@@ -92,6 +94,7 @@ export interface GetAuditProfileCollectedAuditVolumesResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -103,6 +106,7 @@ export interface GetAuditProfileCollectedAuditVolumesResult {
  *     monthInConsiderationLessThan: _var.audit_profile_collected_audit_volume_month_in_consideration_less_than,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAuditProfileCollectedAuditVolumesOutput(args: GetAuditProfileCollectedAuditVolumesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAuditProfileCollectedAuditVolumesResult> {
     return pulumi.output(args).apply((a: any) => getAuditProfileCollectedAuditVolumes(a, opts))

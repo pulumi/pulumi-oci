@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
  * ExternalDbNodes can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:DatabaseManagement/externalDbNode:ExternalDbNode test_external_db_node &#34;id&#34;
+ * $ pulumi import oci:DatabaseManagement/externalDbNode:ExternalDbNode test_external_db_node &#34;id&#34;
  * ```
  * 
  */

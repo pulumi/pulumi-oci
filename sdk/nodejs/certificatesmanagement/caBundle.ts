@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -27,13 +28,14 @@ import * as utilities from "../utilities";
  *     },
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * CaBundles can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:CertificatesManagement/caBundle:CaBundle test_ca_bundle "id"
+ * $ pulumi import oci:CertificatesManagement/caBundle:CaBundle test_ca_bundle "id"
  * ```
  */
 export class CaBundle extends pulumi.CustomResource {

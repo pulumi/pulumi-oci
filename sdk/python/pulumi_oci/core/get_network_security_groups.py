@@ -139,6 +139,7 @@ def get_network_security_groups(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -149,6 +150,7 @@ def get_network_security_groups(compartment_id: Optional[str] = None,
         vcn_id=oci_core_vcn["test_vcn"]["id"],
         vlan_id=oci_core_vlan["test_vlan"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -194,6 +196,7 @@ def get_network_security_groups_output(compartment_id: Optional[pulumi.Input[Opt
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -204,6 +207,7 @@ def get_network_security_groups_output(compartment_id: Optional[pulumi.Input[Opt
         vcn_id=oci_core_vcn["test_vcn"]["id"],
         vlan_id=oci_core_vlan["test_vlan"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

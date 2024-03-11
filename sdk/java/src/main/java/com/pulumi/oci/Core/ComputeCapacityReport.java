@@ -26,6 +26,8 @@ import javax.annotation.Nullable;
  * you create an instance or change the shape of an instance.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -66,13 +68,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * ComputeCapacityReports can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Core/computeCapacityReport:ComputeCapacityReport test_compute_capacity_report &#34;id&#34;
+ * $ pulumi import oci:Core/computeCapacityReport:ComputeCapacityReport test_compute_capacity_report &#34;id&#34;
  * ```
  * 
  */

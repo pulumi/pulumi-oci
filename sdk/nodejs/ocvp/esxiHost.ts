@@ -10,7 +10,7 @@ import * as utilities from "../utilities";
  * EsxiHosts can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Ocvp/esxiHost:EsxiHost test_esxi_host "id"
+ * $ pulumi import oci:Ocvp/esxiHost:EsxiHost test_esxi_host "id"
  * ```
  */
 export class EsxiHost extends pulumi.CustomResource {

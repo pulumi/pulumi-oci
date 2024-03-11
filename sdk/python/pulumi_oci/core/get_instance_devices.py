@@ -112,6 +112,7 @@ def get_instance_devices(filters: Optional[Sequence[pulumi.InputType['GetInstanc
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -120,6 +121,7 @@ def get_instance_devices(filters: Optional[Sequence[pulumi.InputType['GetInstanc
         is_available=var["instance_device_is_available"],
         name=var["instance_device_name"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
@@ -156,6 +158,7 @@ def get_instance_devices_output(filters: Optional[pulumi.Input[Optional[Sequence
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -164,6 +167,7 @@ def get_instance_devices_output(filters: Optional[pulumi.Input[Optional[Sequence
         is_available=var["instance_device_is_available"],
         name=var["instance_device_name"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.

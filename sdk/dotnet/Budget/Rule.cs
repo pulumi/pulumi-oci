@@ -16,6 +16,7 @@ namespace Pulumi.Oci.Budget
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -46,13 +47,14 @@ namespace Pulumi.Oci.Budget
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// AlertRules can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Budget/rule:Rule test_alert_rule "budgets/{budgetId}/alertRules/{alertRuleId}"
+    /// $ pulumi import oci:Budget/rule:Rule test_alert_rule "budgets/{budgetId}/alertRules/{alertRuleId}"
     /// ```
     /// </summary>
     [OciResourceType("oci:Budget/rule:Rule")]

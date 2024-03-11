@@ -16,6 +16,7 @@ namespace Pulumi.Oci.ServiceMesh
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -60,13 +61,14 @@ namespace Pulumi.Oci.ServiceMesh
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// VirtualDeployments can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:ServiceMesh/virtualDeployment:VirtualDeployment test_virtual_deployment "id"
+    /// $ pulumi import oci:ServiceMesh/virtualDeployment:VirtualDeployment test_virtual_deployment "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:ServiceMesh/virtualDeployment:VirtualDeployment")]

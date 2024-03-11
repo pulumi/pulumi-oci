@@ -16,10 +16,9 @@ namespace Pulumi.Oci.Marketplace
         /// 
         /// Returns list of all tax implications that current tenant may be liable to once they launch the listing.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,8 +35,7 @@ namespace Pulumi.Oci.Marketplace
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetListingTaxesResult> InvokeAsync(GetListingTaxesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetListingTaxesResult>("oci:Marketplace/getListingTaxes:getListingTaxes", args ?? new GetListingTaxesArgs(), options.WithDefaults());
@@ -47,10 +45,9 @@ namespace Pulumi.Oci.Marketplace
         /// 
         /// Returns list of all tax implications that current tenant may be liable to once they launch the listing.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -67,8 +64,7 @@ namespace Pulumi.Oci.Marketplace
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetListingTaxesResult> Invoke(GetListingTaxesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetListingTaxesResult>("oci:Marketplace/getListingTaxes:getListingTaxes", args ?? new GetListingTaxesInvokeArgs(), options.WithDefaults());

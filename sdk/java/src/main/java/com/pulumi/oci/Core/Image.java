@@ -49,7 +49,9 @@ import javax.annotation.Nullable;
  * Avoid entering confidential information.
  * 
  * ## Example Usage
+ * 
  * ### Create image from instance in tenancy
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -83,7 +85,10 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
+ * 
  * ### Create image from exported image via direct access to object store
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -124,7 +129,10 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
+ * 
  * ### Create image from exported image at publicly accessible uri
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -163,13 +171,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * Images can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Core/image:Image test_image &#34;id&#34;
+ * $ pulumi import oci:Core/image:Image test_image &#34;id&#34;
  * ```
  * 
  */

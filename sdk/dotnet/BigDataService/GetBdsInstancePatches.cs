@@ -17,10 +17,9 @@ namespace Pulumi.Oci.BigDataService
         /// List all the available patches for this cluster.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,8 +35,7 @@ namespace Pulumi.Oci.BigDataService
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetBdsInstancePatchesResult> InvokeAsync(GetBdsInstancePatchesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetBdsInstancePatchesResult>("oci:BigDataService/getBdsInstancePatches:getBdsInstancePatches", args ?? new GetBdsInstancePatchesArgs(), options.WithDefaults());
@@ -48,10 +46,9 @@ namespace Pulumi.Oci.BigDataService
         /// List all the available patches for this cluster.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -67,8 +64,7 @@ namespace Pulumi.Oci.BigDataService
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetBdsInstancePatchesResult> Invoke(GetBdsInstancePatchesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetBdsInstancePatchesResult>("oci:BigDataService/getBdsInstancePatches:getBdsInstancePatches", args ?? new GetBdsInstancePatchesInvokeArgs(), options.WithDefaults());

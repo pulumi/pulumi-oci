@@ -106,6 +106,7 @@ def get_network_firewall_policy_decryption_rules(decryption_rule_priority_order:
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -114,6 +115,7 @@ def get_network_firewall_policy_decryption_rules(decryption_rule_priority_order:
         decryption_rule_priority_order=var["network_firewall_policy_decryption_rule_decryption_rule_priority_order"],
         display_name=var["network_firewall_policy_decryption_rule_display_name"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param int decryption_rule_priority_order: Unique priority order for Decryption Rules in the network firewall policy.
@@ -150,6 +152,7 @@ def get_network_firewall_policy_decryption_rules_output(decryption_rule_priority
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -158,6 +161,7 @@ def get_network_firewall_policy_decryption_rules_output(decryption_rule_priority
         decryption_rule_priority_order=var["network_firewall_policy_decryption_rule_decryption_rule_priority_order"],
         display_name=var["network_firewall_policy_decryption_rule_display_name"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param int decryption_rule_priority_order: Unique priority order for Decryption Rules in the network firewall policy.

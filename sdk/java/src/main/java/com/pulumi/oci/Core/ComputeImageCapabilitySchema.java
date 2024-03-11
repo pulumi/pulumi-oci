@@ -21,6 +21,8 @@ import javax.annotation.Nullable;
  * Creates compute image capability schema.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -60,13 +62,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * ComputeImageCapabilitySchemas can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Core/computeImageCapabilitySchema:ComputeImageCapabilitySchema test_compute_image_capability_schema &#34;id&#34;
+ * $ pulumi import oci:Core/computeImageCapabilitySchema:ComputeImageCapabilitySchema test_compute_image_capability_schema &#34;id&#34;
  * ```
  * 
  */

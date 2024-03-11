@@ -16,6 +16,7 @@ namespace Pulumi.Oci.Adm
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -40,13 +41,14 @@ namespace Pulumi.Oci.Adm
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// KnowledgeBases can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Adm/knowledgeBase:KnowledgeBase test_knowledge_base "id"
+    /// $ pulumi import oci:Adm/knowledgeBase:KnowledgeBase test_knowledge_base "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Adm/knowledgeBase:KnowledgeBase")]

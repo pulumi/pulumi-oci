@@ -26,6 +26,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -70,15 +71,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Vtaps can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Core/vtap:Vtap test_vtap "id"
-//
+// $ pulumi import oci:Core/vtap:Vtap test_vtap "id"
 // ```
 type Vtap struct {
 	pulumi.CustomResourceState

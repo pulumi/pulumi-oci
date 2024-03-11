@@ -287,7 +287,7 @@ class Addon(pulumi.CustomResource):
         Addons can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:ContainerEngine/addon:Addon test_addon "clusters/{clusterId}/addons/{addonName}"
+        $ pulumi import oci:ContainerEngine/addon:Addon test_addon "clusters/{clusterId}/addons/{addonName}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -318,7 +318,7 @@ class Addon(pulumi.CustomResource):
         Addons can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:ContainerEngine/addon:Addon test_addon "clusters/{clusterId}/addons/{addonName}"
+        $ pulumi import oci:ContainerEngine/addon:Addon test_addon "clusters/{clusterId}/addons/{addonName}"
         ```
 
         :param str resource_name: The name of the resource.

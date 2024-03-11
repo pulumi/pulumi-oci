@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,6 +42,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetSdmMaskingPolicyDifferenceDifferenceColumn(ctx *pulumi.Context, args *GetSdmMaskingPolicyDifferenceDifferenceColumnArgs, opts ...pulumi.InvokeOption) (*GetSdmMaskingPolicyDifferenceDifferenceColumnResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetSdmMaskingPolicyDifferenceDifferenceColumnResult

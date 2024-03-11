@@ -17,6 +17,7 @@ namespace Pulumi.Oci.Identity
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -33,13 +34,14 @@ namespace Pulumi.Oci.Identity
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// ImportStandardTagsManagement can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Identity/importStandardTagsManagement:ImportStandardTagsManagement test_import_standard_tags_management "id"
+    /// $ pulumi import oci:Identity/importStandardTagsManagement:ImportStandardTagsManagement test_import_standard_tags_management "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Identity/importStandardTagsManagement:ImportStandardTagsManagement")]

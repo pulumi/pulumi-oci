@@ -119,6 +119,7 @@ def get_managed_database_user_roles(filters: Optional[Sequence[pulumi.InputType[
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -128,6 +129,7 @@ def get_managed_database_user_roles(filters: Optional[Sequence[pulumi.InputType[
         name=var["managed_database_user_role_name"],
         opc_named_credential_id=var["managed_database_user_role_opc_named_credential_id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
@@ -168,6 +170,7 @@ def get_managed_database_user_roles_output(filters: Optional[pulumi.Input[Option
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -177,6 +180,7 @@ def get_managed_database_user_roles_output(filters: Optional[pulumi.Input[Option
         name=var["managed_database_user_role_name"],
         opc_named_credential_id=var["managed_database_user_role_opc_named_credential_id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.

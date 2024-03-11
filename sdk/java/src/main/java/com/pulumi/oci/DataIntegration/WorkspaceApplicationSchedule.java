@@ -26,6 +26,8 @@ import javax.annotation.Nullable;
  * Endpoint to create a new schedule
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -87,13 +89,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * WorkspaceApplicationSchedules can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:DataIntegration/workspaceApplicationSchedule:WorkspaceApplicationSchedule test_workspace_application_schedule &#34;workspaces/{workspaceId}/applications/{applicationKey}/schedules/{scheduleKey}&#34;
+ * $ pulumi import oci:DataIntegration/workspaceApplicationSchedule:WorkspaceApplicationSchedule test_workspace_application_schedule &#34;workspaces/{workspaceId}/applications/{applicationKey}/schedules/{scheduleKey}&#34;
  * ```
  * 
  */

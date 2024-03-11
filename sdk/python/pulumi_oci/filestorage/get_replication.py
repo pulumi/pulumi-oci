@@ -254,12 +254,14 @@ def get_replication(replication_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_replication = oci.FileStorage.get_replication(replication_id=oci_file_storage_replication["test_replication"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str replication_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication.
@@ -300,12 +302,14 @@ def get_replication_output(replication_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_replication = oci.FileStorage.get_replication(replication_id=oci_file_storage_replication["test_replication"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str replication_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication.

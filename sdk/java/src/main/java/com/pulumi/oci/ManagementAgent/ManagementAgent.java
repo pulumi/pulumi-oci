@@ -26,6 +26,8 @@ import javax.annotation.Nullable;
  * This resource provides the Management Agent resource in Oracle Cloud Infrastructure Management Agent service.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -54,13 +56,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * ManagementAgents can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:ManagementAgent/managementAgent:ManagementAgent test_management_agent &#34;id&#34;
+ * $ pulumi import oci:ManagementAgent/managementAgent:ManagementAgent test_management_agent &#34;id&#34;
  * ```
  * 
  */

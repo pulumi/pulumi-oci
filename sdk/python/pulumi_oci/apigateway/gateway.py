@@ -481,6 +481,7 @@ class Gateway(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -518,13 +519,14 @@ class Gateway(pulumi.CustomResource):
                 )],
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Gateways can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:ApiGateway/gateway:Gateway test_gateway "id"
+        $ pulumi import oci:ApiGateway/gateway:Gateway test_gateway "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -557,6 +559,7 @@ class Gateway(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -594,13 +597,14 @@ class Gateway(pulumi.CustomResource):
                 )],
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Gateways can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:ApiGateway/gateway:Gateway test_gateway "id"
+        $ pulumi import oci:ApiGateway/gateway:Gateway test_gateway "id"
         ```
 
         :param str resource_name: The name of the resource.

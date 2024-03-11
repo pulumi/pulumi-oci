@@ -22,6 +22,8 @@ import javax.annotation.Nullable;
  * header value and use it to call `GET /workRequests/{workRequestID}`.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -51,13 +53,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * OdaPrivateEndpointAttachments can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Oda/odaPrivateEndpointAttachment:OdaPrivateEndpointAttachment test_oda_private_endpoint_attachment &#34;id&#34;
+ * $ pulumi import oci:Oda/odaPrivateEndpointAttachment:OdaPrivateEndpointAttachment test_oda_private_endpoint_attachment &#34;id&#34;
  * ```
  * 
  */

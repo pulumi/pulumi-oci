@@ -20,6 +20,8 @@ import javax.annotation.Nullable;
  * Returns the created usage carbon emissions query.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -74,13 +76,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * UsageCarbonEmissionsQueries can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:MeteringComputation/usageCarbonEmissionsQuery:UsageCarbonEmissionsQuery test_usage_carbon_emissions_query &#34;id&#34;
+ * $ pulumi import oci:MeteringComputation/usageCarbonEmissionsQuery:UsageCarbonEmissionsQuery test_usage_carbon_emissions_query &#34;id&#34;
  * ```
  * 
  */

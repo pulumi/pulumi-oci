@@ -16,10 +16,9 @@ namespace Pulumi.Oci.LicenseManager
         /// 
         /// Retrieves the top utilized resources for a given compartment.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -37,8 +36,7 @@ namespace Pulumi.Oci.LicenseManager
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetTopUtilizedResourcesResult> InvokeAsync(GetTopUtilizedResourcesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetTopUtilizedResourcesResult>("oci:LicenseManager/getTopUtilizedResources:getTopUtilizedResources", args ?? new GetTopUtilizedResourcesArgs(), options.WithDefaults());
@@ -48,10 +46,9 @@ namespace Pulumi.Oci.LicenseManager
         /// 
         /// Retrieves the top utilized resources for a given compartment.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -69,8 +66,7 @@ namespace Pulumi.Oci.LicenseManager
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetTopUtilizedResourcesResult> Invoke(GetTopUtilizedResourcesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetTopUtilizedResourcesResult>("oci:LicenseManager/getTopUtilizedResources:getTopUtilizedResources", args ?? new GetTopUtilizedResourcesInvokeArgs(), options.WithDefaults());

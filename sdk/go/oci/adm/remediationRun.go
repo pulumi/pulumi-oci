@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -48,15 +49,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // RemediationRuns can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Adm/remediationRun:RemediationRun test_remediation_run "id"
-//
+// $ pulumi import oci:Adm/remediationRun:RemediationRun test_remediation_run "id"
 // ```
 type RemediationRun struct {
 	pulumi.CustomResourceState

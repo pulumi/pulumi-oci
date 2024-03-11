@@ -471,7 +471,7 @@ class Resolver(pulumi.CustomResource):
         Resolvers can be imported using their OCID, e.g.
 
         ```sh
-         $ pulumi import oci:Dns/resolver:Resolver test_resolver "id"
+        $ pulumi import oci:Dns/resolver:Resolver test_resolver "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -512,7 +512,7 @@ class Resolver(pulumi.CustomResource):
         Resolvers can be imported using their OCID, e.g.
 
         ```sh
-         $ pulumi import oci:Dns/resolver:Resolver test_resolver "id"
+        $ pulumi import oci:Dns/resolver:Resolver test_resolver "id"
         ```
 
         :param str resource_name: The name of the resource.

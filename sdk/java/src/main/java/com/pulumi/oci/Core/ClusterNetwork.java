@@ -39,6 +39,8 @@ import javax.annotation.Nullable;
  * operation.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -103,13 +105,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * ClusterNetworks can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Core/clusterNetwork:ClusterNetwork test_cluster_network &#34;id&#34;
+ * $ pulumi import oci:Core/clusterNetwork:ClusterNetwork test_cluster_network &#34;id&#34;
  * ```
  * 
  */

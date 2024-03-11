@@ -12,7 +12,7 @@ import * as utilities from "../utilities";
  * PrivateEndpoints can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:DataFlow/privateEndpoint:PrivateEndpoint test_private_endpoint "id"
+ * $ pulumi import oci:DataFlow/privateEndpoint:PrivateEndpoint test_private_endpoint "id"
  * ```
  */
 export class PrivateEndpoint extends pulumi.CustomResource {

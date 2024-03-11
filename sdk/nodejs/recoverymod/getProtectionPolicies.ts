@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -25,6 +26,7 @@ import * as utilities from "../utilities";
  *     state: _var.protection_policy_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getProtectionPolicies(args: GetProtectionPoliciesArgs, opts?: pulumi.InvokeOptions): Promise<GetProtectionPoliciesResult> {
 
@@ -107,6 +109,7 @@ export interface GetProtectionPoliciesResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -119,6 +122,7 @@ export interface GetProtectionPoliciesResult {
  *     state: _var.protection_policy_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getProtectionPoliciesOutput(args: GetProtectionPoliciesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetProtectionPoliciesResult> {
     return pulumi.output(args).apply((a: any) => getProtectionPolicies(a, opts))

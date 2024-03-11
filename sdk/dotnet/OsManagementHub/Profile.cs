@@ -18,6 +18,7 @@ namespace Pulumi.Oci.OsManagementHub
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -51,13 +52,14 @@ namespace Pulumi.Oci.OsManagementHub
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// Profiles can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:OsManagementHub/profile:Profile test_profile "id"
+    /// $ pulumi import oci:OsManagementHub/profile:Profile test_profile "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:OsManagementHub/profile:Profile")]

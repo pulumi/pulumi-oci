@@ -335,6 +335,7 @@ class DrgRouteTable(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -351,13 +352,14 @@ class DrgRouteTable(pulumi.CustomResource):
             import_drg_route_distribution_id=oci_core_drg_route_distribution["test_drg_route_distribution"]["id"],
             is_ecmp_enabled=var["drg_route_table_is_ecmp_enabled"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         DrgRouteTables can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/drgRouteTable:DrgRouteTable test_drg_route_table "id"
+        $ pulumi import oci:Core/drgRouteTable:DrgRouteTable test_drg_route_table "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -388,6 +390,7 @@ class DrgRouteTable(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -404,13 +407,14 @@ class DrgRouteTable(pulumi.CustomResource):
             import_drg_route_distribution_id=oci_core_drg_route_distribution["test_drg_route_distribution"]["id"],
             is_ecmp_enabled=var["drg_route_table_is_ecmp_enabled"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         DrgRouteTables can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/drgRouteTable:DrgRouteTable test_drg_route_table "id"
+        $ pulumi import oci:Core/drgRouteTable:DrgRouteTable test_drg_route_table "id"
         ```
 
         :param str resource_name: The name of the resource.

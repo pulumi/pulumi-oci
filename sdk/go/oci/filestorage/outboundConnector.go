@@ -37,6 +37,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -78,15 +79,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // OutboundConnectors can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:FileStorage/outboundConnector:OutboundConnector test_outbound_connector "id"
-//
+// $ pulumi import oci:FileStorage/outboundConnector:OutboundConnector test_outbound_connector "id"
 // ```
 type OutboundConnector struct {
 	pulumi.CustomResourceState

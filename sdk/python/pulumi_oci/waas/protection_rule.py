@@ -241,7 +241,7 @@ class ProtectionRule(pulumi.CustomResource):
         ProtectionRules can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Waas/protectionRule:ProtectionRule test_protection_rule "waasPolicyId/{waasPolicyId}/key/{key}"
+        $ pulumi import oci:Waas/protectionRule:ProtectionRule test_protection_rule "waasPolicyId/{waasPolicyId}/key/{key}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -269,7 +269,7 @@ class ProtectionRule(pulumi.CustomResource):
         ProtectionRules can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Waas/protectionRule:ProtectionRule test_protection_rule "waasPolicyId/{waasPolicyId}/key/{key}"
+        $ pulumi import oci:Waas/protectionRule:ProtectionRule test_protection_rule "waasPolicyId/{waasPolicyId}/key/{key}"
         ```
 
         :param str resource_name: The name of the resource.

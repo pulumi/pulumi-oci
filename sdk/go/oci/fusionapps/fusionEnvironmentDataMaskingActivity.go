@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -42,15 +43,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // FusionEnvironmentDataMaskingActivities can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:FusionApps/fusionEnvironmentDataMaskingActivity:FusionEnvironmentDataMaskingActivity test_fusion_environment_data_masking_activity "fusionEnvironments/{fusionEnvironmentId}/dataMaskingActivities/{dataMaskingActivityId}"
-//
+// $ pulumi import oci:FusionApps/fusionEnvironmentDataMaskingActivity:FusionEnvironmentDataMaskingActivity test_fusion_environment_data_masking_activity "fusionEnvironments/{fusionEnvironmentId}/dataMaskingActivities/{dataMaskingActivityId}"
 // ```
 type FusionEnvironmentDataMaskingActivity struct {
 	pulumi.CustomResourceState

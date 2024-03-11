@@ -29,6 +29,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -50,6 +51,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetCpeDeviceShapes(ctx *pulumi.Context, args *GetCpeDeviceShapesArgs, opts ...pulumi.InvokeOption) (*GetCpeDeviceShapesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetCpeDeviceShapesResult

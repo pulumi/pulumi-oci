@@ -53,6 +53,8 @@ public final class CloudMigrationsFunctions {
      * Gets a migration by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -81,6 +83,7 @@ public final class CloudMigrationsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMigrationResult> getMigration(GetMigrationArgs args) {
@@ -92,6 +95,8 @@ public final class CloudMigrationsFunctions {
      * Gets a migration by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -120,6 +125,7 @@ public final class CloudMigrationsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMigrationResult> getMigrationPlain(GetMigrationPlainArgs args) {
@@ -131,6 +137,8 @@ public final class CloudMigrationsFunctions {
      * Gets a migration by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -159,6 +167,7 @@ public final class CloudMigrationsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMigrationResult> getMigration(GetMigrationArgs args, InvokeOptions options) {
@@ -170,6 +179,8 @@ public final class CloudMigrationsFunctions {
      * Gets a migration by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -198,6 +209,7 @@ public final class CloudMigrationsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMigrationResult> getMigrationPlain(GetMigrationPlainArgs args, InvokeOptions options) {
@@ -209,6 +221,8 @@ public final class CloudMigrationsFunctions {
      * Gets a migration asset by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -237,6 +251,7 @@ public final class CloudMigrationsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMigrationAssetResult> getMigrationAsset(GetMigrationAssetArgs args) {
@@ -248,6 +263,8 @@ public final class CloudMigrationsFunctions {
      * Gets a migration asset by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -276,6 +293,7 @@ public final class CloudMigrationsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMigrationAssetResult> getMigrationAssetPlain(GetMigrationAssetPlainArgs args) {
@@ -287,6 +305,8 @@ public final class CloudMigrationsFunctions {
      * Gets a migration asset by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -315,6 +335,7 @@ public final class CloudMigrationsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMigrationAssetResult> getMigrationAsset(GetMigrationAssetArgs args, InvokeOptions options) {
@@ -326,6 +347,8 @@ public final class CloudMigrationsFunctions {
      * Gets a migration asset by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -354,6 +377,7 @@ public final class CloudMigrationsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMigrationAssetResult> getMigrationAssetPlain(GetMigrationAssetPlainArgs args, InvokeOptions options) {
@@ -365,6 +389,8 @@ public final class CloudMigrationsFunctions {
      * Returns a list of migration assets.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -396,6 +422,7 @@ public final class CloudMigrationsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMigrationAssetsResult> getMigrationAssets() {
@@ -407,6 +434,8 @@ public final class CloudMigrationsFunctions {
      * Returns a list of migration assets.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -438,6 +467,7 @@ public final class CloudMigrationsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMigrationAssetsResult> getMigrationAssetsPlain() {
@@ -449,6 +479,8 @@ public final class CloudMigrationsFunctions {
      * Returns a list of migration assets.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -480,6 +512,7 @@ public final class CloudMigrationsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMigrationAssetsResult> getMigrationAssets(GetMigrationAssetsArgs args) {
@@ -491,6 +524,8 @@ public final class CloudMigrationsFunctions {
      * Returns a list of migration assets.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -522,6 +557,7 @@ public final class CloudMigrationsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMigrationAssetsResult> getMigrationAssetsPlain(GetMigrationAssetsPlainArgs args) {
@@ -533,6 +569,8 @@ public final class CloudMigrationsFunctions {
      * Returns a list of migration assets.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -564,6 +602,7 @@ public final class CloudMigrationsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMigrationAssetsResult> getMigrationAssets(GetMigrationAssetsArgs args, InvokeOptions options) {
@@ -575,6 +614,8 @@ public final class CloudMigrationsFunctions {
      * Returns a list of migration assets.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -606,6 +647,7 @@ public final class CloudMigrationsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMigrationAssetsResult> getMigrationAssetsPlain(GetMigrationAssetsPlainArgs args, InvokeOptions options) {
@@ -617,6 +659,8 @@ public final class CloudMigrationsFunctions {
      * Gets a migration plan by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -645,6 +689,7 @@ public final class CloudMigrationsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMigrationPlanResult> getMigrationPlan(GetMigrationPlanArgs args) {
@@ -656,6 +701,8 @@ public final class CloudMigrationsFunctions {
      * Gets a migration plan by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -684,6 +731,7 @@ public final class CloudMigrationsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMigrationPlanResult> getMigrationPlanPlain(GetMigrationPlanPlainArgs args) {
@@ -695,6 +743,8 @@ public final class CloudMigrationsFunctions {
      * Gets a migration plan by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -723,6 +773,7 @@ public final class CloudMigrationsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMigrationPlanResult> getMigrationPlan(GetMigrationPlanArgs args, InvokeOptions options) {
@@ -734,6 +785,8 @@ public final class CloudMigrationsFunctions {
      * Gets a migration plan by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -762,6 +815,7 @@ public final class CloudMigrationsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMigrationPlanResult> getMigrationPlanPlain(GetMigrationPlanPlainArgs args, InvokeOptions options) {
@@ -773,6 +827,8 @@ public final class CloudMigrationsFunctions {
      * List of shapes by parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -805,6 +861,7 @@ public final class CloudMigrationsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMigrationPlanAvailableShapeResult> getMigrationPlanAvailableShape(GetMigrationPlanAvailableShapeArgs args) {
@@ -816,6 +873,8 @@ public final class CloudMigrationsFunctions {
      * List of shapes by parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -848,6 +907,7 @@ public final class CloudMigrationsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMigrationPlanAvailableShapeResult> getMigrationPlanAvailableShapePlain(GetMigrationPlanAvailableShapePlainArgs args) {
@@ -859,6 +919,8 @@ public final class CloudMigrationsFunctions {
      * List of shapes by parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -891,6 +953,7 @@ public final class CloudMigrationsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMigrationPlanAvailableShapeResult> getMigrationPlanAvailableShape(GetMigrationPlanAvailableShapeArgs args, InvokeOptions options) {
@@ -902,6 +965,8 @@ public final class CloudMigrationsFunctions {
      * List of shapes by parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -934,6 +999,7 @@ public final class CloudMigrationsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMigrationPlanAvailableShapeResult> getMigrationPlanAvailableShapePlain(GetMigrationPlanAvailableShapePlainArgs args, InvokeOptions options) {
@@ -945,6 +1011,8 @@ public final class CloudMigrationsFunctions {
      * List of shapes by parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -977,6 +1045,7 @@ public final class CloudMigrationsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMigrationPlanAvailableShapesResult> getMigrationPlanAvailableShapes(GetMigrationPlanAvailableShapesArgs args) {
@@ -988,6 +1057,8 @@ public final class CloudMigrationsFunctions {
      * List of shapes by parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1020,6 +1091,7 @@ public final class CloudMigrationsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMigrationPlanAvailableShapesResult> getMigrationPlanAvailableShapesPlain(GetMigrationPlanAvailableShapesPlainArgs args) {
@@ -1031,6 +1103,8 @@ public final class CloudMigrationsFunctions {
      * List of shapes by parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1063,6 +1137,7 @@ public final class CloudMigrationsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMigrationPlanAvailableShapesResult> getMigrationPlanAvailableShapes(GetMigrationPlanAvailableShapesArgs args, InvokeOptions options) {
@@ -1074,6 +1149,8 @@ public final class CloudMigrationsFunctions {
      * List of shapes by parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1106,6 +1183,7 @@ public final class CloudMigrationsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMigrationPlanAvailableShapesResult> getMigrationPlanAvailableShapesPlain(GetMigrationPlanAvailableShapesPlainArgs args, InvokeOptions options) {
@@ -1117,6 +1195,8 @@ public final class CloudMigrationsFunctions {
      * Returns a list of migration plans.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1149,6 +1229,7 @@ public final class CloudMigrationsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMigrationPlansResult> getMigrationPlans() {
@@ -1160,6 +1241,8 @@ public final class CloudMigrationsFunctions {
      * Returns a list of migration plans.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1192,6 +1275,7 @@ public final class CloudMigrationsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMigrationPlansResult> getMigrationPlansPlain() {
@@ -1203,6 +1287,8 @@ public final class CloudMigrationsFunctions {
      * Returns a list of migration plans.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1235,6 +1321,7 @@ public final class CloudMigrationsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMigrationPlansResult> getMigrationPlans(GetMigrationPlansArgs args) {
@@ -1246,6 +1333,8 @@ public final class CloudMigrationsFunctions {
      * Returns a list of migration plans.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1278,6 +1367,7 @@ public final class CloudMigrationsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMigrationPlansResult> getMigrationPlansPlain(GetMigrationPlansPlainArgs args) {
@@ -1289,6 +1379,8 @@ public final class CloudMigrationsFunctions {
      * Returns a list of migration plans.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1321,6 +1413,7 @@ public final class CloudMigrationsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMigrationPlansResult> getMigrationPlans(GetMigrationPlansArgs args, InvokeOptions options) {
@@ -1332,6 +1425,8 @@ public final class CloudMigrationsFunctions {
      * Returns a list of migration plans.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1364,6 +1459,7 @@ public final class CloudMigrationsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMigrationPlansResult> getMigrationPlansPlain(GetMigrationPlansPlainArgs args, InvokeOptions options) {
@@ -1375,6 +1471,8 @@ public final class CloudMigrationsFunctions {
      * Returns a list of migrations.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1406,6 +1504,7 @@ public final class CloudMigrationsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMigrationsResult> getMigrations() {
@@ -1417,6 +1516,8 @@ public final class CloudMigrationsFunctions {
      * Returns a list of migrations.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1448,6 +1549,7 @@ public final class CloudMigrationsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMigrationsResult> getMigrationsPlain() {
@@ -1459,6 +1561,8 @@ public final class CloudMigrationsFunctions {
      * Returns a list of migrations.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1490,6 +1594,7 @@ public final class CloudMigrationsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMigrationsResult> getMigrations(GetMigrationsArgs args) {
@@ -1501,6 +1606,8 @@ public final class CloudMigrationsFunctions {
      * Returns a list of migrations.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1532,6 +1639,7 @@ public final class CloudMigrationsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMigrationsResult> getMigrationsPlain(GetMigrationsPlainArgs args) {
@@ -1543,6 +1651,8 @@ public final class CloudMigrationsFunctions {
      * Returns a list of migrations.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1574,6 +1684,7 @@ public final class CloudMigrationsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMigrationsResult> getMigrations(GetMigrationsArgs args, InvokeOptions options) {
@@ -1585,6 +1696,8 @@ public final class CloudMigrationsFunctions {
      * Returns a list of migrations.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1616,6 +1729,7 @@ public final class CloudMigrationsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMigrationsResult> getMigrationsPlain(GetMigrationsPlainArgs args, InvokeOptions options) {
@@ -1627,6 +1741,8 @@ public final class CloudMigrationsFunctions {
      * Gets a replication schedule by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1655,6 +1771,7 @@ public final class CloudMigrationsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetReplicationScheduleResult> getReplicationSchedule(GetReplicationScheduleArgs args) {
@@ -1666,6 +1783,8 @@ public final class CloudMigrationsFunctions {
      * Gets a replication schedule by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1694,6 +1813,7 @@ public final class CloudMigrationsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetReplicationScheduleResult> getReplicationSchedulePlain(GetReplicationSchedulePlainArgs args) {
@@ -1705,6 +1825,8 @@ public final class CloudMigrationsFunctions {
      * Gets a replication schedule by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1733,6 +1855,7 @@ public final class CloudMigrationsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetReplicationScheduleResult> getReplicationSchedule(GetReplicationScheduleArgs args, InvokeOptions options) {
@@ -1744,6 +1867,8 @@ public final class CloudMigrationsFunctions {
      * Gets a replication schedule by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1772,6 +1897,7 @@ public final class CloudMigrationsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetReplicationScheduleResult> getReplicationSchedulePlain(GetReplicationSchedulePlainArgs args, InvokeOptions options) {
@@ -1783,6 +1909,8 @@ public final class CloudMigrationsFunctions {
      * Returns a list of replication schedules.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1814,6 +1942,7 @@ public final class CloudMigrationsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetReplicationSchedulesResult> getReplicationSchedules() {
@@ -1825,6 +1954,8 @@ public final class CloudMigrationsFunctions {
      * Returns a list of replication schedules.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1856,6 +1987,7 @@ public final class CloudMigrationsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetReplicationSchedulesResult> getReplicationSchedulesPlain() {
@@ -1867,6 +1999,8 @@ public final class CloudMigrationsFunctions {
      * Returns a list of replication schedules.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1898,6 +2032,7 @@ public final class CloudMigrationsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetReplicationSchedulesResult> getReplicationSchedules(GetReplicationSchedulesArgs args) {
@@ -1909,6 +2044,8 @@ public final class CloudMigrationsFunctions {
      * Returns a list of replication schedules.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1940,6 +2077,7 @@ public final class CloudMigrationsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetReplicationSchedulesResult> getReplicationSchedulesPlain(GetReplicationSchedulesPlainArgs args) {
@@ -1951,6 +2089,8 @@ public final class CloudMigrationsFunctions {
      * Returns a list of replication schedules.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1982,6 +2122,7 @@ public final class CloudMigrationsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetReplicationSchedulesResult> getReplicationSchedules(GetReplicationSchedulesArgs args, InvokeOptions options) {
@@ -1993,6 +2134,8 @@ public final class CloudMigrationsFunctions {
      * Returns a list of replication schedules.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2024,6 +2167,7 @@ public final class CloudMigrationsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetReplicationSchedulesResult> getReplicationSchedulesPlain(GetReplicationSchedulesPlainArgs args, InvokeOptions options) {
@@ -2035,6 +2179,8 @@ public final class CloudMigrationsFunctions {
      * Gets a target asset by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2063,6 +2209,7 @@ public final class CloudMigrationsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetTargetAssetResult> getTargetAsset(GetTargetAssetArgs args) {
@@ -2074,6 +2221,8 @@ public final class CloudMigrationsFunctions {
      * Gets a target asset by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2102,6 +2251,7 @@ public final class CloudMigrationsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetTargetAssetResult> getTargetAssetPlain(GetTargetAssetPlainArgs args) {
@@ -2113,6 +2263,8 @@ public final class CloudMigrationsFunctions {
      * Gets a target asset by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2141,6 +2293,7 @@ public final class CloudMigrationsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetTargetAssetResult> getTargetAsset(GetTargetAssetArgs args, InvokeOptions options) {
@@ -2152,6 +2305,8 @@ public final class CloudMigrationsFunctions {
      * Gets a target asset by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2180,6 +2335,7 @@ public final class CloudMigrationsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetTargetAssetResult> getTargetAssetPlain(GetTargetAssetPlainArgs args, InvokeOptions options) {
@@ -2191,6 +2347,8 @@ public final class CloudMigrationsFunctions {
      * Returns a list of target assets.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2222,6 +2380,7 @@ public final class CloudMigrationsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetTargetAssetsResult> getTargetAssets() {
@@ -2233,6 +2392,8 @@ public final class CloudMigrationsFunctions {
      * Returns a list of target assets.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2264,6 +2425,7 @@ public final class CloudMigrationsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetTargetAssetsResult> getTargetAssetsPlain() {
@@ -2275,6 +2437,8 @@ public final class CloudMigrationsFunctions {
      * Returns a list of target assets.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2306,6 +2470,7 @@ public final class CloudMigrationsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetTargetAssetsResult> getTargetAssets(GetTargetAssetsArgs args) {
@@ -2317,6 +2482,8 @@ public final class CloudMigrationsFunctions {
      * Returns a list of target assets.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2348,6 +2515,7 @@ public final class CloudMigrationsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetTargetAssetsResult> getTargetAssetsPlain(GetTargetAssetsPlainArgs args) {
@@ -2359,6 +2527,8 @@ public final class CloudMigrationsFunctions {
      * Returns a list of target assets.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2390,6 +2560,7 @@ public final class CloudMigrationsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetTargetAssetsResult> getTargetAssets(GetTargetAssetsArgs args, InvokeOptions options) {
@@ -2401,6 +2572,8 @@ public final class CloudMigrationsFunctions {
      * Returns a list of target assets.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2432,6 +2605,7 @@ public final class CloudMigrationsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetTargetAssetsResult> getTargetAssetsPlain(GetTargetAssetsPlainArgs args, InvokeOptions options) {

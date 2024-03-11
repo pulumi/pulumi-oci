@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -45,15 +46,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Osns can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Blockchain/osn:Osn test_osn "blockchainPlatforms/{blockchainPlatformId}/osns/{osnId}"
-//
+// $ pulumi import oci:Blockchain/osn:Osn test_osn "blockchainPlatforms/{blockchainPlatformId}/osns/{osnId}"
 // ```
 type Osn struct {
 	pulumi.CustomResourceState

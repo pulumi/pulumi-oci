@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -25,6 +26,7 @@ import * as utilities from "../utilities";
  *     scopeType: _var.limit_value_scope_type,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getLimitValues(args: GetLimitValuesArgs, opts?: pulumi.InvokeOptions): Promise<GetLimitValuesResult> {
 
@@ -101,6 +103,7 @@ export interface GetLimitValuesResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -113,6 +116,7 @@ export interface GetLimitValuesResult {
  *     scopeType: _var.limit_value_scope_type,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getLimitValuesOutput(args: GetLimitValuesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLimitValuesResult> {
     return pulumi.output(args).apply((a: any) => getLimitValues(a, opts))

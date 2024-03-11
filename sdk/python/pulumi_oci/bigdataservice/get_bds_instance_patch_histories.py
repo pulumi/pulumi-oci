@@ -122,6 +122,7 @@ def get_bds_instance_patch_histories(bds_instance_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -131,6 +132,7 @@ def get_bds_instance_patch_histories(bds_instance_id: Optional[str] = None,
         patch_version=var["bds_instance_patch_history_patch_version"],
         state=var["bds_instance_patch_history_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str bds_instance_id: The OCID of the cluster.
@@ -171,6 +173,7 @@ def get_bds_instance_patch_histories_output(bds_instance_id: Optional[pulumi.Inp
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -180,6 +183,7 @@ def get_bds_instance_patch_histories_output(bds_instance_id: Optional[pulumi.Inp
         patch_version=var["bds_instance_patch_history_patch_version"],
         state=var["bds_instance_patch_history_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str bds_instance_id: The OCID of the cluster.

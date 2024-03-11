@@ -13,12 +13,14 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
  * const testEdgeSubnets = oci.Waas.getEdgeSubnets({});
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getEdgeSubnets(args?: GetEdgeSubnetsArgs, opts?: pulumi.InvokeOptions): Promise<GetEdgeSubnetsResult> {
     args = args || {};
@@ -57,12 +59,14 @@ export interface GetEdgeSubnetsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
  * const testEdgeSubnets = oci.Waas.getEdgeSubnets({});
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getEdgeSubnetsOutput(args?: GetEdgeSubnetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetEdgeSubnetsResult> {
     return pulumi.output(args).apply((a: any) => getEdgeSubnets(a, opts))

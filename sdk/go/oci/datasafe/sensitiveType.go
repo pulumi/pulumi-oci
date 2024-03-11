@@ -20,6 +20,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -59,15 +60,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // SensitiveTypes can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:DataSafe/sensitiveType:SensitiveType test_sensitive_type "id"
-//
+// $ pulumi import oci:DataSafe/sensitiveType:SensitiveType test_sensitive_type "id"
 // ```
 type SensitiveType struct {
 	pulumi.CustomResourceState

@@ -29,6 +29,7 @@ import javax.annotation.Nullable;
  * 
  * ## Example Usage
  * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -79,13 +80,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * ApprovalWorkflowSteps can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Identity/domainsApprovalWorkflowStep:DomainsApprovalWorkflowStep test_approval_workflow_step &#34;idcsEndpoint/{idcsEndpoint}/approvalWorkflowSteps/{approvalWorkflowStepId}&#34;
+ * $ pulumi import oci:Identity/domainsApprovalWorkflowStep:DomainsApprovalWorkflowStep test_approval_workflow_step &#34;idcsEndpoint/{idcsEndpoint}/approvalWorkflowSteps/{approvalWorkflowStepId}&#34;
  * ```
  * 
  */

@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,6 +42,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupLogAnalyticsObjectCollectionRule(ctx *pulumi.Context, args *LookupLogAnalyticsObjectCollectionRuleArgs, opts ...pulumi.InvokeOption) (*LookupLogAnalyticsObjectCollectionRuleResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupLogAnalyticsObjectCollectionRuleResult

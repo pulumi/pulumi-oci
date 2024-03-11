@@ -16,6 +16,7 @@ namespace Pulumi.Oci.DataIntegration
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -44,13 +45,14 @@ namespace Pulumi.Oci.DataIntegration
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// WorkspaceProjects can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:DataIntegration/workspaceProject:WorkspaceProject test_workspace_project "workspaces/{workspaceId}/projects/{projectKey}"
+    /// $ pulumi import oci:DataIntegration/workspaceProject:WorkspaceProject test_workspace_project "workspaces/{workspaceId}/projects/{projectKey}"
     /// ```
     /// </summary>
     [OciResourceType("oci:DataIntegration/workspaceProject:WorkspaceProject")]

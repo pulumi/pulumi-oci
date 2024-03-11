@@ -334,6 +334,7 @@ class SecurityList(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -403,13 +404,14 @@ class SecurityList(pulumi.CustomResource):
                 ),
             )])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         SecurityLists can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/securityList:SecurityList test_security_list "id"
+        $ pulumi import oci:Core/securityList:SecurityList test_security_list "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -454,6 +456,7 @@ class SecurityList(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -523,13 +526,14 @@ class SecurityList(pulumi.CustomResource):
                 ),
             )])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         SecurityLists can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/securityList:SecurityList test_security_list "id"
+        $ pulumi import oci:Core/securityList:SecurityList test_security_list "id"
         ```
 
         :param str resource_name: The name of the resource.

@@ -284,6 +284,7 @@ class DrgRouteTableRouteRule(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -294,13 +295,14 @@ class DrgRouteTableRouteRule(pulumi.CustomResource):
             destination_type=var["drg_route_table_route_rule_route_rules_destination_type"],
             next_hop_drg_attachment_id=oci_core_drg_attachment["test_drg_attachment"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         DrgRouteTableRouteRule can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/drgRouteTableRouteRule:DrgRouteTableRouteRule test_drg_route_table_route_rule "drgRouteTables/{drgRouteTableId}/routeRules/{id}"
+        $ pulumi import oci:Core/drgRouteTableRouteRule:DrgRouteTableRouteRule test_drg_route_table_route_rule "drgRouteTables/{drgRouteTableId}/routeRules/{id}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -332,6 +334,7 @@ class DrgRouteTableRouteRule(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -342,13 +345,14 @@ class DrgRouteTableRouteRule(pulumi.CustomResource):
             destination_type=var["drg_route_table_route_rule_route_rules_destination_type"],
             next_hop_drg_attachment_id=oci_core_drg_attachment["test_drg_attachment"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         DrgRouteTableRouteRule can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/drgRouteTableRouteRule:DrgRouteTableRouteRule test_drg_route_table_route_rule "drgRouteTables/{drgRouteTableId}/routeRules/{id}"
+        $ pulumi import oci:Core/drgRouteTableRouteRule:DrgRouteTableRouteRule test_drg_route_table_route_rule "drgRouteTables/{drgRouteTableId}/routeRules/{id}"
         ```
 
         :param str resource_name: The name of the resource.

@@ -16,10 +16,9 @@ namespace Pulumi.Oci.ComputeInstanceAgent
         /// 
         /// The API to get the list of plugins that are available.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -37,8 +36,7 @@ namespace Pulumi.Oci.ComputeInstanceAgent
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetInstanceAvailablePluginResult> InvokeAsync(GetInstanceAvailablePluginArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetInstanceAvailablePluginResult>("oci:ComputeInstanceAgent/getInstanceAvailablePlugin:getInstanceAvailablePlugin", args ?? new GetInstanceAvailablePluginArgs(), options.WithDefaults());
@@ -48,10 +46,9 @@ namespace Pulumi.Oci.ComputeInstanceAgent
         /// 
         /// The API to get the list of plugins that are available.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -69,8 +66,7 @@ namespace Pulumi.Oci.ComputeInstanceAgent
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetInstanceAvailablePluginResult> Invoke(GetInstanceAvailablePluginInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetInstanceAvailablePluginResult>("oci:ComputeInstanceAgent/getInstanceAvailablePlugin:getInstanceAvailablePlugin", args ?? new GetInstanceAvailablePluginInvokeArgs(), options.WithDefaults());

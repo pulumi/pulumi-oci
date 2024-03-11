@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,6 +22,7 @@ import * as utilities from "../utilities";
  *     autonomousExadataInfrastructureId: oci_database_autonomous_exadata_infrastructure.test_autonomous_exadata_infrastructure.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAutonomousExadataInfrastructureOcpu(args: GetAutonomousExadataInfrastructureOcpuArgs, opts?: pulumi.InvokeOptions): Promise<GetAutonomousExadataInfrastructureOcpuResult> {
 
@@ -69,6 +71,7 @@ export interface GetAutonomousExadataInfrastructureOcpuResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -77,6 +80,7 @@ export interface GetAutonomousExadataInfrastructureOcpuResult {
  *     autonomousExadataInfrastructureId: oci_database_autonomous_exadata_infrastructure.test_autonomous_exadata_infrastructure.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAutonomousExadataInfrastructureOcpuOutput(args: GetAutonomousExadataInfrastructureOcpuOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousExadataInfrastructureOcpuResult> {
     return pulumi.output(args).apply((a: any) => getAutonomousExadataInfrastructureOcpu(a, opts))

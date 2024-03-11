@@ -21,6 +21,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -45,15 +46,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Suppressions can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Email/suppression:Suppression test_suppression "id"
-//
+// $ pulumi import oci:Email/suppression:Suppression test_suppression "id"
 // ```
 type Suppression struct {
 	pulumi.CustomResourceState

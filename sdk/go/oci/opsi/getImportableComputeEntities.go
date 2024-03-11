@@ -23,6 +23,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -46,6 +47,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetImportableComputeEntities(ctx *pulumi.Context, args *GetImportableComputeEntitiesArgs, opts ...pulumi.InvokeOption) (*GetImportableComputeEntitiesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetImportableComputeEntitiesResult

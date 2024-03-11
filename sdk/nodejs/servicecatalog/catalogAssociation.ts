@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,13 +22,14 @@ import * as utilities from "../utilities";
  *     entityType: _var.service_catalog_association_entity_type,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * ServiceCatalogAssociations can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:ServiceCatalog/catalogAssociation:CatalogAssociation test_service_catalog_association "id"
+ * $ pulumi import oci:ServiceCatalog/catalogAssociation:CatalogAssociation test_service_catalog_association "id"
  * ```
  */
 export class CatalogAssociation extends pulumi.CustomResource {

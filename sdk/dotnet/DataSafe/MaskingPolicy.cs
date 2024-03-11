@@ -32,6 +32,7 @@ namespace Pulumi.Oci.DataSafe
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -73,13 +74,14 @@ namespace Pulumi.Oci.DataSafe
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// MaskingPolicies can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:DataSafe/maskingPolicy:MaskingPolicy test_masking_policy "id"
+    /// $ pulumi import oci:DataSafe/maskingPolicy:MaskingPolicy test_masking_policy "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:DataSafe/maskingPolicy:MaskingPolicy")]

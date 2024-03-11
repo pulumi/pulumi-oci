@@ -15,6 +15,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -168,13 +169,14 @@ import * as utilities from "../utilities";
  *     },
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * Migrations can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:DatabaseMigration/migration:Migration test_migration "id"
+ * $ pulumi import oci:DatabaseMigration/migration:Migration test_migration "id"
  * ```
  */
 export class Migration extends pulumi.CustomResource {

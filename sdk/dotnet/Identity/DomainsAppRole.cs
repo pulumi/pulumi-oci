@@ -19,7 +19,7 @@ namespace Pulumi.Oci.Identity
     /// AppRoles can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Identity/domainsAppRole:DomainsAppRole test_app_role "idcsEndpoint/{idcsEndpoint}/appRoles/{appRoleId}"
+    /// $ pulumi import oci:Identity/domainsAppRole:DomainsAppRole test_app_role "idcsEndpoint/{idcsEndpoint}/appRoles/{appRoleId}"
     /// ```
     /// </summary>
     [OciResourceType("oci:Identity/domainsAppRole:DomainsAppRole")]
@@ -318,7 +318,7 @@ namespace Pulumi.Oci.Identity
         public Output<string> LocalizedDisplayName { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) AppRole members - when requesting members attribute, it is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%26count=10]
+        /// (Updatable) AppRole members - when requesting members attribute, it is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%!c(MISSING)ount=10]
         /// 
         /// **SCIM++ Properties:**
         /// * idcsCompositeKey: [value, type]
@@ -1066,7 +1066,7 @@ namespace Pulumi.Oci.Identity
         private InputList<Inputs.DomainsAppRoleMemberGetArgs>? _members;
 
         /// <summary>
-        /// (Updatable) AppRole members - when requesting members attribute, it is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%26count=10]
+        /// (Updatable) AppRole members - when requesting members attribute, it is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%!c(MISSING)ount=10]
         /// 
         /// **SCIM++ Properties:**
         /// * idcsCompositeKey: [value, type]

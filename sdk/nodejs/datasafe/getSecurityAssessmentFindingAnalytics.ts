@@ -22,6 +22,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -37,6 +38,7 @@ import * as utilities from "../utilities";
  *     topFindingStatus: _var.security_assessment_finding_analytic_top_finding_status,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getSecurityAssessmentFindingAnalytics(args: GetSecurityAssessmentFindingAnalyticsArgs, opts?: pulumi.InvokeOptions): Promise<GetSecurityAssessmentFindingAnalyticsResult> {
 
@@ -137,6 +139,7 @@ export interface GetSecurityAssessmentFindingAnalyticsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -152,6 +155,7 @@ export interface GetSecurityAssessmentFindingAnalyticsResult {
  *     topFindingStatus: _var.security_assessment_finding_analytic_top_finding_status,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getSecurityAssessmentFindingAnalyticsOutput(args: GetSecurityAssessmentFindingAnalyticsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecurityAssessmentFindingAnalyticsResult> {
     return pulumi.output(args).apply((a: any) => getSecurityAssessmentFindingAnalytics(a, opts))

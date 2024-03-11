@@ -206,12 +206,14 @@ def get_vlan(vlan_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_vlan = oci.Core.get_vlan(vlan_id=oci_core_vlan["test_vlan"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str vlan_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN.
@@ -248,12 +250,14 @@ def get_vlan_output(vlan_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_vlan = oci.Core.get_vlan(vlan_id=oci_core_vlan["test_vlan"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str vlan_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN.

@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -36,13 +37,14 @@ import * as utilities from "../utilities";
  *     platformVersion: _var.blockchain_platform_platform_version,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * BlockchainPlatforms can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Blockchain/blockchainPlatform:BlockchainPlatform test_blockchain_platform "id"
+ * $ pulumi import oci:Blockchain/blockchainPlatform:BlockchainPlatform test_blockchain_platform "id"
  * ```
  */
 export class BlockchainPlatform extends pulumi.CustomResource {

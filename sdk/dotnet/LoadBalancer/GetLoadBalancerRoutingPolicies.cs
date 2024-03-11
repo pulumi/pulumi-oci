@@ -16,10 +16,9 @@ namespace Pulumi.Oci.LoadBalancer
         /// 
         /// Lists all routing policies associated with the specified load balancer.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,8 +34,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetLoadBalancerRoutingPoliciesResult> InvokeAsync(GetLoadBalancerRoutingPoliciesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetLoadBalancerRoutingPoliciesResult>("oci:LoadBalancer/getLoadBalancerRoutingPolicies:getLoadBalancerRoutingPolicies", args ?? new GetLoadBalancerRoutingPoliciesArgs(), options.WithDefaults());
@@ -46,10 +44,9 @@ namespace Pulumi.Oci.LoadBalancer
         /// 
         /// Lists all routing policies associated with the specified load balancer.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -65,8 +62,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetLoadBalancerRoutingPoliciesResult> Invoke(GetLoadBalancerRoutingPoliciesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetLoadBalancerRoutingPoliciesResult>("oci:LoadBalancer/getLoadBalancerRoutingPolicies:getLoadBalancerRoutingPolicies", args ?? new GetLoadBalancerRoutingPoliciesInvokeArgs(), options.WithDefaults());

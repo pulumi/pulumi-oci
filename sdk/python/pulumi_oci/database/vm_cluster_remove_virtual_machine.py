@@ -506,6 +506,7 @@ class VmClusterRemoveVirtualMachine(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -516,13 +517,14 @@ class VmClusterRemoveVirtualMachine(pulumi.CustomResource):
             )],
             vm_cluster_id=oci_database_vm_cluster["test_vm_cluster"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         VmClusterRemoveVirtualMachine can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Database/vmClusterRemoveVirtualMachine:VmClusterRemoveVirtualMachine test_vm_cluster_remove_virtual_machine "id"
+        $ pulumi import oci:Database/vmClusterRemoveVirtualMachine:VmClusterRemoveVirtualMachine test_vm_cluster_remove_virtual_machine "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -547,6 +549,7 @@ class VmClusterRemoveVirtualMachine(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -557,13 +560,14 @@ class VmClusterRemoveVirtualMachine(pulumi.CustomResource):
             )],
             vm_cluster_id=oci_database_vm_cluster["test_vm_cluster"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         VmClusterRemoveVirtualMachine can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Database/vmClusterRemoveVirtualMachine:VmClusterRemoveVirtualMachine test_vm_cluster_remove_virtual_machine "id"
+        $ pulumi import oci:Database/vmClusterRemoveVirtualMachine:VmClusterRemoveVirtualMachine test_vm_cluster_remove_virtual_machine "id"
         ```
 
         :param str resource_name: The name of the resource.

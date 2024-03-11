@@ -32,6 +32,8 @@ public final class EmWarehouseFunctions {
      * Gets a EmWarehouse by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -60,6 +62,7 @@ public final class EmWarehouseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetEmWarehouseResult> getEmWarehouse(GetEmWarehouseArgs args) {
@@ -71,6 +74,8 @@ public final class EmWarehouseFunctions {
      * Gets a EmWarehouse by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -99,6 +104,7 @@ public final class EmWarehouseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetEmWarehouseResult> getEmWarehousePlain(GetEmWarehousePlainArgs args) {
@@ -110,6 +116,8 @@ public final class EmWarehouseFunctions {
      * Gets a EmWarehouse by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -138,6 +146,7 @@ public final class EmWarehouseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetEmWarehouseResult> getEmWarehouse(GetEmWarehouseArgs args, InvokeOptions options) {
@@ -149,6 +158,8 @@ public final class EmWarehouseFunctions {
      * Gets a EmWarehouse by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -177,6 +188,7 @@ public final class EmWarehouseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetEmWarehouseResult> getEmWarehousePlain(GetEmWarehousePlainArgs args, InvokeOptions options) {
@@ -188,6 +200,8 @@ public final class EmWarehouseFunctions {
      * Returns a list of EmWarehouses.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -220,6 +234,7 @@ public final class EmWarehouseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetEmWarehousesResult> getEmWarehouses() {
@@ -231,6 +246,8 @@ public final class EmWarehouseFunctions {
      * Returns a list of EmWarehouses.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -263,6 +280,7 @@ public final class EmWarehouseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetEmWarehousesResult> getEmWarehousesPlain() {
@@ -274,6 +292,8 @@ public final class EmWarehouseFunctions {
      * Returns a list of EmWarehouses.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -306,6 +326,7 @@ public final class EmWarehouseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetEmWarehousesResult> getEmWarehouses(GetEmWarehousesArgs args) {
@@ -317,6 +338,8 @@ public final class EmWarehouseFunctions {
      * Returns a list of EmWarehouses.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -349,6 +372,7 @@ public final class EmWarehouseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetEmWarehousesResult> getEmWarehousesPlain(GetEmWarehousesPlainArgs args) {
@@ -360,6 +384,8 @@ public final class EmWarehouseFunctions {
      * Returns a list of EmWarehouses.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -392,6 +418,7 @@ public final class EmWarehouseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetEmWarehousesResult> getEmWarehouses(GetEmWarehousesArgs args, InvokeOptions options) {
@@ -403,6 +430,8 @@ public final class EmWarehouseFunctions {
      * Returns a list of EmWarehouses.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -435,6 +464,7 @@ public final class EmWarehouseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetEmWarehousesResult> getEmWarehousesPlain(GetEmWarehousesPlainArgs args, InvokeOptions options) {
@@ -446,6 +476,8 @@ public final class EmWarehouseFunctions {
      * Gets a list of runs of an EmWarehouseResource by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -476,6 +508,7 @@ public final class EmWarehouseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetEtlRunResult> getEtlRun(GetEtlRunArgs args) {
@@ -487,6 +520,8 @@ public final class EmWarehouseFunctions {
      * Gets a list of runs of an EmWarehouseResource by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -517,6 +552,7 @@ public final class EmWarehouseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetEtlRunResult> getEtlRunPlain(GetEtlRunPlainArgs args) {
@@ -528,6 +564,8 @@ public final class EmWarehouseFunctions {
      * Gets a list of runs of an EmWarehouseResource by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -558,6 +596,7 @@ public final class EmWarehouseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetEtlRunResult> getEtlRun(GetEtlRunArgs args, InvokeOptions options) {
@@ -569,6 +608,8 @@ public final class EmWarehouseFunctions {
      * Gets a list of runs of an EmWarehouseResource by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -599,6 +640,7 @@ public final class EmWarehouseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetEtlRunResult> getEtlRunPlain(GetEtlRunPlainArgs args, InvokeOptions options) {
@@ -610,6 +652,8 @@ public final class EmWarehouseFunctions {
      * Gets a list of runs of an EmWarehouseResource by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -640,6 +684,7 @@ public final class EmWarehouseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetEtlRunsResult> getEtlRuns(GetEtlRunsArgs args) {
@@ -651,6 +696,8 @@ public final class EmWarehouseFunctions {
      * Gets a list of runs of an EmWarehouseResource by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -681,6 +728,7 @@ public final class EmWarehouseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetEtlRunsResult> getEtlRunsPlain(GetEtlRunsPlainArgs args) {
@@ -692,6 +740,8 @@ public final class EmWarehouseFunctions {
      * Gets a list of runs of an EmWarehouseResource by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -722,6 +772,7 @@ public final class EmWarehouseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetEtlRunsResult> getEtlRuns(GetEtlRunsArgs args, InvokeOptions options) {
@@ -733,6 +784,8 @@ public final class EmWarehouseFunctions {
      * Gets a list of runs of an EmWarehouseResource by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -763,6 +816,7 @@ public final class EmWarehouseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetEtlRunsResult> getEtlRunsPlain(GetEtlRunsPlainArgs args, InvokeOptions options) {
@@ -774,6 +828,8 @@ public final class EmWarehouseFunctions {
      * Gets a EmWarehouseResourceUsage by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -802,6 +858,7 @@ public final class EmWarehouseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetResourceUsageResult> getResourceUsage(GetResourceUsageArgs args) {
@@ -813,6 +870,8 @@ public final class EmWarehouseFunctions {
      * Gets a EmWarehouseResourceUsage by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -841,6 +900,7 @@ public final class EmWarehouseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetResourceUsageResult> getResourceUsagePlain(GetResourceUsagePlainArgs args) {
@@ -852,6 +912,8 @@ public final class EmWarehouseFunctions {
      * Gets a EmWarehouseResourceUsage by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -880,6 +942,7 @@ public final class EmWarehouseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetResourceUsageResult> getResourceUsage(GetResourceUsageArgs args, InvokeOptions options) {
@@ -891,6 +954,8 @@ public final class EmWarehouseFunctions {
      * Gets a EmWarehouseResourceUsage by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -919,6 +984,7 @@ public final class EmWarehouseFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetResourceUsageResult> getResourceUsagePlain(GetResourceUsagePlainArgs args, InvokeOptions options) {

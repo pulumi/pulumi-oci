@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -19,6 +20,7 @@ import * as utilities from "../utilities";
  *     dataSciencePrivateEndpointId: oci_datascience_private_endpoint.test_data_science_private_endpoint.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getPrivateEndpoint(args: GetPrivateEndpointArgs, opts?: pulumi.InvokeOptions): Promise<GetPrivateEndpointResult> {
 
@@ -116,6 +118,7 @@ export interface GetPrivateEndpointResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -124,6 +127,7 @@ export interface GetPrivateEndpointResult {
  *     dataSciencePrivateEndpointId: oci_datascience_private_endpoint.test_data_science_private_endpoint.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getPrivateEndpointOutput(args: GetPrivateEndpointOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPrivateEndpointResult> {
     return pulumi.output(args).apply((a: any) => getPrivateEndpoint(a, opts))

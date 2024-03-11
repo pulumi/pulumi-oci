@@ -908,7 +908,7 @@ class DomainsMySupportAccount(pulumi.CustomResource):
         MySupportAccounts can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/domainsMySupportAccount:DomainsMySupportAccount test_my_support_account "idcsEndpoint/{idcsEndpoint}/mySupportAccounts/{mySupportAccountId}"
+        $ pulumi import oci:Identity/domainsMySupportAccount:DomainsMySupportAccount test_my_support_account "idcsEndpoint/{idcsEndpoint}/mySupportAccounts/{mySupportAccountId}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -988,7 +988,7 @@ class DomainsMySupportAccount(pulumi.CustomResource):
         MySupportAccounts can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/domainsMySupportAccount:DomainsMySupportAccount test_my_support_account "idcsEndpoint/{idcsEndpoint}/mySupportAccounts/{mySupportAccountId}"
+        $ pulumi import oci:Identity/domainsMySupportAccount:DomainsMySupportAccount test_my_support_account "idcsEndpoint/{idcsEndpoint}/mySupportAccounts/{mySupportAccountId}"
         ```
 
         :param str resource_name: The name of the resource.

@@ -255,6 +255,7 @@ class UserCapabilitiesManagement(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -267,13 +268,14 @@ class UserCapabilitiesManagement(pulumi.CustomResource):
             can_use_customer_secret_keys=True,
             can_use_smtp_credentials=True)
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Users can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/userCapabilitiesManagement:UserCapabilitiesManagement test_user_capabilities_management "capabilities/{userId}"
+        $ pulumi import oci:Identity/userCapabilitiesManagement:UserCapabilitiesManagement test_user_capabilities_management "capabilities/{userId}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -304,6 +306,7 @@ class UserCapabilitiesManagement(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -316,13 +319,14 @@ class UserCapabilitiesManagement(pulumi.CustomResource):
             can_use_customer_secret_keys=True,
             can_use_smtp_credentials=True)
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Users can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/userCapabilitiesManagement:UserCapabilitiesManagement test_user_capabilities_management "capabilities/{userId}"
+        $ pulumi import oci:Identity/userCapabilitiesManagement:UserCapabilitiesManagement test_user_capabilities_management "capabilities/{userId}"
         ```
 
         :param str resource_name: The name of the resource.

@@ -99,6 +99,7 @@ def get_db_management_private_endpoint_associated_databases(compartment_id: Opti
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -106,6 +107,7 @@ def get_db_management_private_endpoint_associated_databases(compartment_id: Opti
     test_db_management_private_endpoint_associated_databases = oci.DatabaseManagement.get_db_management_private_endpoint_associated_databases(compartment_id=var["compartment_id"],
         db_management_private_endpoint_id=oci_database_management_db_management_private_endpoint["test_db_management_private_endpoint"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -138,6 +140,7 @@ def get_db_management_private_endpoint_associated_databases_output(compartment_i
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -145,6 +148,7 @@ def get_db_management_private_endpoint_associated_databases_output(compartment_i
     test_db_management_private_endpoint_associated_databases = oci.DatabaseManagement.get_db_management_private_endpoint_associated_databases(compartment_id=var["compartment_id"],
         db_management_private_endpoint_id=oci_database_management_db_management_private_endpoint["test_db_management_private_endpoint"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

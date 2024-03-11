@@ -28,6 +28,8 @@ import javax.annotation.Nullable;
  * Create a new virtual node pool.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -90,13 +92,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * VirtualNodePools can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:ContainerEngine/virtualNodePool:VirtualNodePool test_virtual_node_pool &#34;id&#34;
+ * $ pulumi import oci:ContainerEngine/virtualNodePool:VirtualNodePool test_virtual_node_pool &#34;id&#34;
  * ```
  * 
  */

@@ -14,12 +14,14 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
  * const testPeerRegionForRemotePeerings = oci.Core.getPeerRegionForRemotePeerings({});
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getPeerRegionForRemotePeerings(args?: GetPeerRegionForRemotePeeringsArgs, opts?: pulumi.InvokeOptions): Promise<GetPeerRegionForRemotePeeringsResult> {
     args = args || {};
@@ -59,12 +61,14 @@ export interface GetPeerRegionForRemotePeeringsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
  * const testPeerRegionForRemotePeerings = oci.Core.getPeerRegionForRemotePeerings({});
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getPeerRegionForRemotePeeringsOutput(args?: GetPeerRegionForRemotePeeringsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPeerRegionForRemotePeeringsResult> {
     return pulumi.output(args).apply((a: any) => getPeerRegionForRemotePeerings(a, opts))

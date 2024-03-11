@@ -662,6 +662,7 @@ class AutonomousContainerDatabaseDataguardAssociation(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -689,13 +690,14 @@ class AutonomousContainerDatabaseDataguardAssociation(pulumi.CustomResource):
             peer_db_unique_name=var["autonomous_container_database_dataguard_association_peer_db_unique_name"],
             standby_maintenance_buffer_in_days=var["autonomous_container_database_dataguard_association_standby_maintenance_buffer_in_days"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         AutonomousContainerDatabaseDataguardAssociations can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Database/autonomousContainerDatabaseDataguardAssociation:AutonomousContainerDatabaseDataguardAssociation test_autonomous_container_database_dataguard_association "autonomousContainerDatabases/{autonomousContainerDatabaseId}/autonomousContainerDatabaseDataguardAssociations/{autonomousContainerDatabaseDataguardAssociationId}"
+        $ pulumi import oci:Database/autonomousContainerDatabaseDataguardAssociation:AutonomousContainerDatabaseDataguardAssociation test_autonomous_container_database_dataguard_association "autonomousContainerDatabases/{autonomousContainerDatabaseId}/autonomousContainerDatabaseDataguardAssociations/{autonomousContainerDatabaseDataguardAssociationId}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -737,6 +739,7 @@ class AutonomousContainerDatabaseDataguardAssociation(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -764,13 +767,14 @@ class AutonomousContainerDatabaseDataguardAssociation(pulumi.CustomResource):
             peer_db_unique_name=var["autonomous_container_database_dataguard_association_peer_db_unique_name"],
             standby_maintenance_buffer_in_days=var["autonomous_container_database_dataguard_association_standby_maintenance_buffer_in_days"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         AutonomousContainerDatabaseDataguardAssociations can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Database/autonomousContainerDatabaseDataguardAssociation:AutonomousContainerDatabaseDataguardAssociation test_autonomous_container_database_dataguard_association "autonomousContainerDatabases/{autonomousContainerDatabaseId}/autonomousContainerDatabaseDataguardAssociations/{autonomousContainerDatabaseDataguardAssociationId}"
+        $ pulumi import oci:Database/autonomousContainerDatabaseDataguardAssociation:AutonomousContainerDatabaseDataguardAssociation test_autonomous_container_database_dataguard_association "autonomousContainerDatabases/{autonomousContainerDatabaseId}/autonomousContainerDatabaseDataguardAssociations/{autonomousContainerDatabaseDataguardAssociationId}"
         ```
 
         :param str resource_name: The name of the resource.

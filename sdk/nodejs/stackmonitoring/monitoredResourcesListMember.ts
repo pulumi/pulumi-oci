@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,13 +24,14 @@ import * as utilities from "../utilities";
  *     limitLevel: _var.monitored_resources_list_member_limit_level,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * MonitoredResourcesListMembers can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:StackMonitoring/monitoredResourcesListMember:MonitoredResourcesListMember test_monitored_resources_list_member "id"
+ * $ pulumi import oci:StackMonitoring/monitoredResourcesListMember:MonitoredResourcesListMember test_monitored_resources_list_member "id"
  * ```
  */
 export class MonitoredResourcesListMember extends pulumi.CustomResource {

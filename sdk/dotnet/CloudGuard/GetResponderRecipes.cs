@@ -30,10 +30,9 @@ namespace Pulumi.Oci.CloudGuard
         /// set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -54,8 +53,7 @@ namespace Pulumi.Oci.CloudGuard
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetResponderRecipesResult> InvokeAsync(GetResponderRecipesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetResponderRecipesResult>("oci:CloudGuard/getResponderRecipes:getResponderRecipes", args ?? new GetResponderRecipesArgs(), options.WithDefaults());
@@ -79,10 +77,9 @@ namespace Pulumi.Oci.CloudGuard
         /// set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -103,8 +100,7 @@ namespace Pulumi.Oci.CloudGuard
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetResponderRecipesResult> Invoke(GetResponderRecipesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetResponderRecipesResult>("oci:CloudGuard/getResponderRecipes:getResponderRecipes", args ?? new GetResponderRecipesInvokeArgs(), options.WithDefaults());

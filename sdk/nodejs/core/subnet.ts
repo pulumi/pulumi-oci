@@ -41,6 +41,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -67,13 +68,14 @@ import * as utilities from "../utilities";
  *     securityListIds: _var.subnet_security_list_ids,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * Subnets can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Core/subnet:Subnet test_subnet "id"
+ * $ pulumi import oci:Core/subnet:Subnet test_subnet "id"
  * ```
  */
 export class Subnet extends pulumi.CustomResource {

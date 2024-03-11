@@ -16,6 +16,7 @@ namespace Pulumi.Oci.DataLabellingService
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -83,13 +84,14 @@ namespace Pulumi.Oci.DataLabellingService
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// Datasets can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:DataLabellingService/dataset:Dataset test_dataset "id"
+    /// $ pulumi import oci:DataLabellingService/dataset:Dataset test_dataset "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:DataLabellingService/dataset:Dataset")]

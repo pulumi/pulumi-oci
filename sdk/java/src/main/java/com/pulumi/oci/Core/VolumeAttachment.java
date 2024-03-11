@@ -23,6 +23,8 @@ import javax.annotation.Nullable;
  * Attaches the specified storage volume to the specified instance.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -61,13 +63,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * VolumeAttachments can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Core/volumeAttachment:VolumeAttachment test_volume_attachment &#34;id&#34;
+ * $ pulumi import oci:Core/volumeAttachment:VolumeAttachment test_volume_attachment &#34;id&#34;
  * ```
  * 
  */

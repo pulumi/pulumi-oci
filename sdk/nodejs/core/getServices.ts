@@ -14,12 +14,14 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
  * const testServices = oci.Core.getServices({});
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getServices(args?: GetServicesArgs, opts?: pulumi.InvokeOptions): Promise<GetServicesResult> {
     args = args || {};
@@ -59,12 +61,14 @@ export interface GetServicesResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
  * const testServices = oci.Core.getServices({});
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getServicesOutput(args?: GetServicesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetServicesResult> {
     return pulumi.output(args).apply((a: any) => getServices(a, opts))

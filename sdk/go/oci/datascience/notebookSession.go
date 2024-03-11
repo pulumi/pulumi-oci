@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -91,15 +92,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // NotebookSessions can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:DataScience/notebookSession:NotebookSession test_notebook_session "id"
-//
+// $ pulumi import oci:DataScience/notebookSession:NotebookSession test_notebook_session "id"
 // ```
 type NotebookSession struct {
 	pulumi.CustomResourceState

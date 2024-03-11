@@ -17,10 +17,9 @@ namespace Pulumi.Oci.Marketplace
         /// Gets the details of a specific, previously accepted terms of use agreement.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,8 +35,7 @@ namespace Pulumi.Oci.Marketplace
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetAcceptedAgreementResult> InvokeAsync(GetAcceptedAgreementArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAcceptedAgreementResult>("oci:Marketplace/getAcceptedAgreement:getAcceptedAgreement", args ?? new GetAcceptedAgreementArgs(), options.WithDefaults());
@@ -48,10 +46,9 @@ namespace Pulumi.Oci.Marketplace
         /// Gets the details of a specific, previously accepted terms of use agreement.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -67,8 +64,7 @@ namespace Pulumi.Oci.Marketplace
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetAcceptedAgreementResult> Invoke(GetAcceptedAgreementInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAcceptedAgreementResult>("oci:Marketplace/getAcceptedAgreement:getAcceptedAgreement", args ?? new GetAcceptedAgreementInvokeArgs(), options.WithDefaults());

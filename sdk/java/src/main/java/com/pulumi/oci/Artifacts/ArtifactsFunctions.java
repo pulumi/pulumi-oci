@@ -50,6 +50,8 @@ public final class ArtifactsFunctions {
      * Get container configuration.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -78,6 +80,7 @@ public final class ArtifactsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetContainerConfigurationResult> getContainerConfiguration(GetContainerConfigurationArgs args) {
@@ -89,6 +92,8 @@ public final class ArtifactsFunctions {
      * Get container configuration.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -117,6 +122,7 @@ public final class ArtifactsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetContainerConfigurationResult> getContainerConfigurationPlain(GetContainerConfigurationPlainArgs args) {
@@ -128,6 +134,8 @@ public final class ArtifactsFunctions {
      * Get container configuration.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -156,6 +164,7 @@ public final class ArtifactsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetContainerConfigurationResult> getContainerConfiguration(GetContainerConfigurationArgs args, InvokeOptions options) {
@@ -167,6 +176,8 @@ public final class ArtifactsFunctions {
      * Get container configuration.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -195,6 +206,7 @@ public final class ArtifactsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetContainerConfigurationResult> getContainerConfigurationPlain(GetContainerConfigurationPlainArgs args, InvokeOptions options) {
@@ -206,6 +218,8 @@ public final class ArtifactsFunctions {
      * Get container image metadata.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -234,6 +248,7 @@ public final class ArtifactsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetContainerImageResult> getContainerImage(GetContainerImageArgs args) {
@@ -245,6 +260,8 @@ public final class ArtifactsFunctions {
      * Get container image metadata.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -273,6 +290,7 @@ public final class ArtifactsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetContainerImageResult> getContainerImagePlain(GetContainerImagePlainArgs args) {
@@ -284,6 +302,8 @@ public final class ArtifactsFunctions {
      * Get container image metadata.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -312,6 +332,7 @@ public final class ArtifactsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetContainerImageResult> getContainerImage(GetContainerImageArgs args, InvokeOptions options) {
@@ -323,6 +344,8 @@ public final class ArtifactsFunctions {
      * Get container image metadata.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -351,6 +374,7 @@ public final class ArtifactsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetContainerImageResult> getContainerImagePlain(GetContainerImagePlainArgs args, InvokeOptions options) {
@@ -362,6 +386,8 @@ public final class ArtifactsFunctions {
      * Get container image signature metadata.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -390,6 +416,7 @@ public final class ArtifactsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetContainerImageSignatureResult> getContainerImageSignature(GetContainerImageSignatureArgs args) {
@@ -401,6 +428,8 @@ public final class ArtifactsFunctions {
      * Get container image signature metadata.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -429,6 +458,7 @@ public final class ArtifactsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetContainerImageSignatureResult> getContainerImageSignaturePlain(GetContainerImageSignaturePlainArgs args) {
@@ -440,6 +470,8 @@ public final class ArtifactsFunctions {
      * Get container image signature metadata.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -468,6 +500,7 @@ public final class ArtifactsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetContainerImageSignatureResult> getContainerImageSignature(GetContainerImageSignatureArgs args, InvokeOptions options) {
@@ -479,6 +512,8 @@ public final class ArtifactsFunctions {
      * Get container image signature metadata.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -507,6 +542,7 @@ public final class ArtifactsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetContainerImageSignatureResult> getContainerImageSignaturePlain(GetContainerImageSignaturePlainArgs args, InvokeOptions options) {
@@ -518,6 +554,8 @@ public final class ArtifactsFunctions {
      * List container images in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -554,6 +592,7 @@ public final class ArtifactsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetContainerImagesResult> getContainerImages(GetContainerImagesArgs args) {
@@ -565,6 +604,8 @@ public final class ArtifactsFunctions {
      * List container images in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -601,6 +642,7 @@ public final class ArtifactsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetContainerImagesResult> getContainerImagesPlain(GetContainerImagesPlainArgs args) {
@@ -612,6 +654,8 @@ public final class ArtifactsFunctions {
      * List container images in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -648,6 +692,7 @@ public final class ArtifactsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetContainerImagesResult> getContainerImages(GetContainerImagesArgs args, InvokeOptions options) {
@@ -659,6 +704,8 @@ public final class ArtifactsFunctions {
      * List container images in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -695,6 +742,7 @@ public final class ArtifactsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetContainerImagesResult> getContainerImagesPlain(GetContainerImagesPlainArgs args, InvokeOptions options) {
@@ -706,6 +754,8 @@ public final class ArtifactsFunctions {
      * List container repositories in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -739,6 +789,7 @@ public final class ArtifactsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetContainerRepositoriesResult> getContainerRepositories(GetContainerRepositoriesArgs args) {
@@ -750,6 +801,8 @@ public final class ArtifactsFunctions {
      * List container repositories in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -783,6 +836,7 @@ public final class ArtifactsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetContainerRepositoriesResult> getContainerRepositoriesPlain(GetContainerRepositoriesPlainArgs args) {
@@ -794,6 +848,8 @@ public final class ArtifactsFunctions {
      * List container repositories in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -827,6 +883,7 @@ public final class ArtifactsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetContainerRepositoriesResult> getContainerRepositories(GetContainerRepositoriesArgs args, InvokeOptions options) {
@@ -838,6 +895,8 @@ public final class ArtifactsFunctions {
      * List container repositories in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -871,6 +930,7 @@ public final class ArtifactsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetContainerRepositoriesResult> getContainerRepositoriesPlain(GetContainerRepositoriesPlainArgs args, InvokeOptions options) {
@@ -882,6 +942,8 @@ public final class ArtifactsFunctions {
      * Get container repository.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -910,6 +972,7 @@ public final class ArtifactsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetContainerRepositoryResult> getContainerRepository(GetContainerRepositoryArgs args) {
@@ -921,6 +984,8 @@ public final class ArtifactsFunctions {
      * Get container repository.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -949,6 +1014,7 @@ public final class ArtifactsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetContainerRepositoryResult> getContainerRepositoryPlain(GetContainerRepositoryPlainArgs args) {
@@ -960,6 +1026,8 @@ public final class ArtifactsFunctions {
      * Get container repository.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -988,6 +1056,7 @@ public final class ArtifactsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetContainerRepositoryResult> getContainerRepository(GetContainerRepositoryArgs args, InvokeOptions options) {
@@ -999,6 +1068,8 @@ public final class ArtifactsFunctions {
      * Get container repository.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1027,6 +1098,7 @@ public final class ArtifactsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetContainerRepositoryResult> getContainerRepositoryPlain(GetContainerRepositoryPlainArgs args, InvokeOptions options) {
@@ -1038,6 +1110,8 @@ public final class ArtifactsFunctions {
      * List container image signatures in an image.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1075,6 +1149,7 @@ public final class ArtifactsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetContainerSignaturesResult> getContainerSignatures(GetContainerSignaturesArgs args) {
@@ -1086,6 +1161,8 @@ public final class ArtifactsFunctions {
      * List container image signatures in an image.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1123,6 +1200,7 @@ public final class ArtifactsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetContainerSignaturesResult> getContainerSignaturesPlain(GetContainerSignaturesPlainArgs args) {
@@ -1134,6 +1212,8 @@ public final class ArtifactsFunctions {
      * List container image signatures in an image.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1171,6 +1251,7 @@ public final class ArtifactsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetContainerSignaturesResult> getContainerSignatures(GetContainerSignaturesArgs args, InvokeOptions options) {
@@ -1182,6 +1263,8 @@ public final class ArtifactsFunctions {
      * List container image signatures in an image.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1219,6 +1302,7 @@ public final class ArtifactsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetContainerSignaturesResult> getContainerSignaturesPlain(GetContainerSignaturesPlainArgs args, InvokeOptions options) {
@@ -1230,6 +1314,8 @@ public final class ArtifactsFunctions {
      * Gets information about an artifact with a specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1258,6 +1344,7 @@ public final class ArtifactsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetGenericArtifactResult> getGenericArtifact(GetGenericArtifactArgs args) {
@@ -1269,6 +1356,8 @@ public final class ArtifactsFunctions {
      * Gets information about an artifact with a specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1297,6 +1386,7 @@ public final class ArtifactsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetGenericArtifactResult> getGenericArtifactPlain(GetGenericArtifactPlainArgs args) {
@@ -1308,6 +1398,8 @@ public final class ArtifactsFunctions {
      * Gets information about an artifact with a specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1336,6 +1428,7 @@ public final class ArtifactsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetGenericArtifactResult> getGenericArtifact(GetGenericArtifactArgs args, InvokeOptions options) {
@@ -1347,6 +1440,8 @@ public final class ArtifactsFunctions {
      * Gets information about an artifact with a specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1375,6 +1470,7 @@ public final class ArtifactsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetGenericArtifactResult> getGenericArtifactPlain(GetGenericArtifactPlainArgs args, InvokeOptions options) {
@@ -1386,6 +1482,8 @@ public final class ArtifactsFunctions {
      * Lists artifacts in the specified repository.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1421,6 +1519,7 @@ public final class ArtifactsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetGenericArtifactsResult> getGenericArtifacts(GetGenericArtifactsArgs args) {
@@ -1432,6 +1531,8 @@ public final class ArtifactsFunctions {
      * Lists artifacts in the specified repository.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1467,6 +1568,7 @@ public final class ArtifactsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetGenericArtifactsResult> getGenericArtifactsPlain(GetGenericArtifactsPlainArgs args) {
@@ -1478,6 +1580,8 @@ public final class ArtifactsFunctions {
      * Lists artifacts in the specified repository.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1513,6 +1617,7 @@ public final class ArtifactsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetGenericArtifactsResult> getGenericArtifacts(GetGenericArtifactsArgs args, InvokeOptions options) {
@@ -1524,6 +1629,8 @@ public final class ArtifactsFunctions {
      * Lists artifacts in the specified repository.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1559,6 +1666,7 @@ public final class ArtifactsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetGenericArtifactsResult> getGenericArtifactsPlain(GetGenericArtifactsPlainArgs args, InvokeOptions options) {
@@ -1570,6 +1678,8 @@ public final class ArtifactsFunctions {
      * Lists repositories in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1602,6 +1712,7 @@ public final class ArtifactsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRepositoriesResult> getRepositories(GetRepositoriesArgs args) {
@@ -1613,6 +1724,8 @@ public final class ArtifactsFunctions {
      * Lists repositories in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1645,6 +1758,7 @@ public final class ArtifactsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRepositoriesResult> getRepositoriesPlain(GetRepositoriesPlainArgs args) {
@@ -1656,6 +1770,8 @@ public final class ArtifactsFunctions {
      * Lists repositories in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1688,6 +1804,7 @@ public final class ArtifactsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRepositoriesResult> getRepositories(GetRepositoriesArgs args, InvokeOptions options) {
@@ -1699,6 +1816,8 @@ public final class ArtifactsFunctions {
      * Lists repositories in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1731,6 +1850,7 @@ public final class ArtifactsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRepositoriesResult> getRepositoriesPlain(GetRepositoriesPlainArgs args, InvokeOptions options) {
@@ -1742,6 +1862,8 @@ public final class ArtifactsFunctions {
      * Gets the specified repository&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1770,6 +1892,7 @@ public final class ArtifactsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRepositoryResult> getRepository(GetRepositoryArgs args) {
@@ -1781,6 +1904,8 @@ public final class ArtifactsFunctions {
      * Gets the specified repository&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1809,6 +1934,7 @@ public final class ArtifactsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRepositoryResult> getRepositoryPlain(GetRepositoryPlainArgs args) {
@@ -1820,6 +1946,8 @@ public final class ArtifactsFunctions {
      * Gets the specified repository&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1848,6 +1976,7 @@ public final class ArtifactsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRepositoryResult> getRepository(GetRepositoryArgs args, InvokeOptions options) {
@@ -1859,6 +1988,8 @@ public final class ArtifactsFunctions {
      * Gets the specified repository&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1887,6 +2018,7 @@ public final class ArtifactsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRepositoryResult> getRepositoryPlain(GetRepositoryPlainArgs args, InvokeOptions options) {

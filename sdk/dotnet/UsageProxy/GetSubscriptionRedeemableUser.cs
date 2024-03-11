@@ -17,10 +17,9 @@ namespace Pulumi.Oci.UsageProxy
         /// Provides the list of user summary that can redeem rewards for the given subscription ID.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -37,8 +36,7 @@ namespace Pulumi.Oci.UsageProxy
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetSubscriptionRedeemableUserResult> InvokeAsync(GetSubscriptionRedeemableUserArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetSubscriptionRedeemableUserResult>("oci:UsageProxy/getSubscriptionRedeemableUser:getSubscriptionRedeemableUser", args ?? new GetSubscriptionRedeemableUserArgs(), options.WithDefaults());
@@ -49,10 +47,9 @@ namespace Pulumi.Oci.UsageProxy
         /// Provides the list of user summary that can redeem rewards for the given subscription ID.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -69,8 +66,7 @@ namespace Pulumi.Oci.UsageProxy
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetSubscriptionRedeemableUserResult> Invoke(GetSubscriptionRedeemableUserInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSubscriptionRedeemableUserResult>("oci:UsageProxy/getSubscriptionRedeemableUser:getSubscriptionRedeemableUser", args ?? new GetSubscriptionRedeemableUserInvokeArgs(), options.WithDefaults());

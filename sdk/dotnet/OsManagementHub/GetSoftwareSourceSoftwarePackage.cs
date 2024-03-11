@@ -17,10 +17,9 @@ namespace Pulumi.Oci.OsManagementHub
         /// Gets information about the specified software package.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -37,8 +36,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetSoftwareSourceSoftwarePackageResult> InvokeAsync(GetSoftwareSourceSoftwarePackageArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetSoftwareSourceSoftwarePackageResult>("oci:OsManagementHub/getSoftwareSourceSoftwarePackage:getSoftwareSourceSoftwarePackage", args ?? new GetSoftwareSourceSoftwarePackageArgs(), options.WithDefaults());
@@ -49,10 +47,9 @@ namespace Pulumi.Oci.OsManagementHub
         /// Gets information about the specified software package.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -69,8 +66,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetSoftwareSourceSoftwarePackageResult> Invoke(GetSoftwareSourceSoftwarePackageInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSoftwareSourceSoftwarePackageResult>("oci:OsManagementHub/getSoftwareSourceSoftwarePackage:getSoftwareSourceSoftwarePackage", args ?? new GetSoftwareSourceSoftwarePackageInvokeArgs(), options.WithDefaults());

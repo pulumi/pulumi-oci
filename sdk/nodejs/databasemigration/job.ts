@@ -16,7 +16,7 @@ import * as utilities from "../utilities";
  * Jobs can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:DatabaseMigration/job:Job test_job "id"
+ * $ pulumi import oci:DatabaseMigration/job:Job test_job "id"
  * ```
  */
 export class Job extends pulumi.CustomResource {

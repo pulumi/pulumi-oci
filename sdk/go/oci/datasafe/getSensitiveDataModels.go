@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -48,6 +49,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetSensitiveDataModels(ctx *pulumi.Context, args *GetSensitiveDataModelsArgs, opts ...pulumi.InvokeOption) (*GetSensitiveDataModelsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetSensitiveDataModelsResult

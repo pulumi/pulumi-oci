@@ -21,6 +21,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -49,15 +50,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // MaintenanceRuns can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Database/maintenanceRun:MaintenanceRun test_maintenance_run "id"
-//
+// $ pulumi import oci:Database/maintenanceRun:MaintenanceRun test_maintenance_run "id"
 // ```
 type MaintenanceRun struct {
 	pulumi.CustomResourceState

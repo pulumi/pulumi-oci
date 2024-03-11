@@ -17,6 +17,7 @@ namespace Pulumi.Oci.GoldenGate
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -55,13 +56,14 @@ namespace Pulumi.Oci.GoldenGate
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// DatabaseRegistrations can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:GoldenGate/databaseRegistration:DatabaseRegistration test_database_registration "id"
+    /// $ pulumi import oci:GoldenGate/databaseRegistration:DatabaseRegistration test_database_registration "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:GoldenGate/databaseRegistration:DatabaseRegistration")]

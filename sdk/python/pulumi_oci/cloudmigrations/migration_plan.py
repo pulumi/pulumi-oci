@@ -434,7 +434,7 @@ class MigrationPlan(pulumi.CustomResource):
         MigrationPlans can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:CloudMigrations/migrationPlan:MigrationPlan test_migration_plan "id"
+        $ pulumi import oci:CloudMigrations/migrationPlan:MigrationPlan test_migration_plan "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -464,7 +464,7 @@ class MigrationPlan(pulumi.CustomResource):
         MigrationPlans can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:CloudMigrations/migrationPlan:MigrationPlan test_migration_plan "id"
+        $ pulumi import oci:CloudMigrations/migrationPlan:MigrationPlan test_migration_plan "id"
         ```
 
         :param str resource_name: The name of the resource.

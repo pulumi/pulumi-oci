@@ -332,6 +332,7 @@ class Migration(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -348,13 +349,14 @@ class Migration(pulumi.CustomResource):
             is_completed=var["migration_is_completed"],
             replication_schedule_id=oci_cloud_migrations_replication_schedule["test_replication_schedule"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Migrations can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:CloudMigrations/migration:Migration test_migration "id"
+        $ pulumi import oci:CloudMigrations/migration:Migration test_migration "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -383,6 +385,7 @@ class Migration(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -399,13 +402,14 @@ class Migration(pulumi.CustomResource):
             is_completed=var["migration_is_completed"],
             replication_schedule_id=oci_cloud_migrations_replication_schedule["test_replication_schedule"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Migrations can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:CloudMigrations/migration:Migration test_migration "id"
+        $ pulumi import oci:CloudMigrations/migration:Migration test_migration "id"
         ```
 
         :param str resource_name: The name of the resource.

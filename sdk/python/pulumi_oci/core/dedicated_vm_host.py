@@ -399,6 +399,7 @@ class DedicatedVmHost(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -416,13 +417,14 @@ class DedicatedVmHost(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         DedicatedVmHosts can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/dedicatedVmHost:DedicatedVmHost test_dedicated_vm_host "id"
+        $ pulumi import oci:Core/dedicatedVmHost:DedicatedVmHost test_dedicated_vm_host "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -459,6 +461,7 @@ class DedicatedVmHost(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -476,13 +479,14 @@ class DedicatedVmHost(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         DedicatedVmHosts can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/dedicatedVmHost:DedicatedVmHost test_dedicated_vm_host "id"
+        $ pulumi import oci:Core/dedicatedVmHost:DedicatedVmHost test_dedicated_vm_host "id"
         ```
 
         :param str resource_name: The name of the resource.

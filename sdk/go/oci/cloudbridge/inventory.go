@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -48,15 +49,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Inventories can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:CloudBridge/inventory:Inventory test_inventory "id"
-//
+// $ pulumi import oci:CloudBridge/inventory:Inventory test_inventory "id"
 // ```
 type Inventory struct {
 	pulumi.CustomResourceState

@@ -492,7 +492,7 @@ class DrgAttachment(pulumi.CustomResource):
         DrgAttachments can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/drgAttachment:DrgAttachment test_drg_attachment "id"
+        $ pulumi import oci:Core/drgAttachment:DrgAttachment test_drg_attachment "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -545,7 +545,7 @@ class DrgAttachment(pulumi.CustomResource):
         DrgAttachments can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/drgAttachment:DrgAttachment test_drg_attachment "id"
+        $ pulumi import oci:Core/drgAttachment:DrgAttachment test_drg_attachment "id"
         ```
 
         :param str resource_name: The name of the resource.

@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -51,13 +52,14 @@ import * as utilities from "../utilities";
  *     timezone: _var.workspace_application_schedule_timezone,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * WorkspaceApplicationSchedules can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:DataIntegration/workspaceApplicationSchedule:WorkspaceApplicationSchedule test_workspace_application_schedule "workspaces/{workspaceId}/applications/{applicationKey}/schedules/{scheduleKey}"
+ * $ pulumi import oci:DataIntegration/workspaceApplicationSchedule:WorkspaceApplicationSchedule test_workspace_application_schedule "workspaces/{workspaceId}/applications/{applicationKey}/schedules/{scheduleKey}"
  * ```
  */
 export class WorkspaceApplicationSchedule extends pulumi.CustomResource {

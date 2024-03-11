@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * ExternalDbSystemDiscoveries can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:DatabaseManagement/externalDbSystemDiscovery:ExternalDbSystemDiscovery test_external_db_system_discovery "id"
+ * $ pulumi import oci:DatabaseManagement/externalDbSystemDiscovery:ExternalDbSystemDiscovery test_external_db_system_discovery "id"
  * ```
  */
 export class ExternalDbSystemDiscovery extends pulumi.CustomResource {

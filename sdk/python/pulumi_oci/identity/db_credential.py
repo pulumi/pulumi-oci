@@ -216,6 +216,7 @@ class DbCredential(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -225,6 +226,7 @@ class DbCredential(pulumi.CustomResource):
             password=var["db_credential_password"],
             user_id=oci_identity_user["test_user"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -253,6 +255,7 @@ class DbCredential(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -262,6 +265,7 @@ class DbCredential(pulumi.CustomResource):
             password=var["db_credential_password"],
             user_id=oci_identity_user["test_user"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 

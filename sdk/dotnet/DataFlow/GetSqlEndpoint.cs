@@ -16,10 +16,9 @@ namespace Pulumi.Oci.DataFlow
         /// 
         /// Retrieves a SQL Endpoint using a sqlEndpointId.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,8 +34,7 @@ namespace Pulumi.Oci.DataFlow
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetSqlEndpointResult> InvokeAsync(GetSqlEndpointArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetSqlEndpointResult>("oci:DataFlow/getSqlEndpoint:getSqlEndpoint", args ?? new GetSqlEndpointArgs(), options.WithDefaults());
@@ -46,10 +44,9 @@ namespace Pulumi.Oci.DataFlow
         /// 
         /// Retrieves a SQL Endpoint using a sqlEndpointId.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -65,8 +62,7 @@ namespace Pulumi.Oci.DataFlow
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetSqlEndpointResult> Invoke(GetSqlEndpointInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSqlEndpointResult>("oci:DataFlow/getSqlEndpoint:getSqlEndpoint", args ?? new GetSqlEndpointInvokeArgs(), options.WithDefaults());

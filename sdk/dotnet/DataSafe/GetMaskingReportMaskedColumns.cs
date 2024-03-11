@@ -17,10 +17,9 @@ namespace Pulumi.Oci.DataSafe
         /// Gets a list of masked columns present in the specified masking report and based on the specified query parameters.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -42,8 +41,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetMaskingReportMaskedColumnsResult> InvokeAsync(GetMaskingReportMaskedColumnsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetMaskingReportMaskedColumnsResult>("oci:DataSafe/getMaskingReportMaskedColumns:getMaskingReportMaskedColumns", args ?? new GetMaskingReportMaskedColumnsArgs(), options.WithDefaults());
@@ -54,10 +52,9 @@ namespace Pulumi.Oci.DataSafe
         /// Gets a list of masked columns present in the specified masking report and based on the specified query parameters.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -79,8 +76,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetMaskingReportMaskedColumnsResult> Invoke(GetMaskingReportMaskedColumnsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMaskingReportMaskedColumnsResult>("oci:DataSafe/getMaskingReportMaskedColumns:getMaskingReportMaskedColumns", args ?? new GetMaskingReportMaskedColumnsInvokeArgs(), options.WithDefaults());

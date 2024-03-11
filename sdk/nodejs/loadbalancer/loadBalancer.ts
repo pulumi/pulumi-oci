@@ -40,6 +40,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -67,13 +68,14 @@ import * as utilities from "../utilities";
  *     },
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * LoadBalancers can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:LoadBalancer/loadBalancer:LoadBalancer test_load_balancer "id"
+ * $ pulumi import oci:LoadBalancer/loadBalancer:LoadBalancer test_load_balancer "id"
  * ```
  */
 export class LoadBalancer extends pulumi.CustomResource {

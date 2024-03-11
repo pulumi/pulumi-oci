@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -43,6 +44,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetManagedMySqlDatabaseSqlData(ctx *pulumi.Context, args *GetManagedMySqlDatabaseSqlDataArgs, opts ...pulumi.InvokeOption) (*GetManagedMySqlDatabaseSqlDataResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetManagedMySqlDatabaseSqlDataResult

@@ -85,6 +85,7 @@ def get_vb_instance_applications(idcs_open_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -92,6 +93,7 @@ def get_vb_instance_applications(idcs_open_id: Optional[str] = None,
     test_vb_instance_applications = oci.VisualBuilder.get_vb_instance_applications(vb_instance_id=oci_visual_builder_vb_instance["test_vb_instance"]["id"],
         idcs_open_id="idcs_open_id_value")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str idcs_open_id: Encrypted IDCS Open ID token which allows access to Visual Builder REST apis
@@ -121,6 +123,7 @@ def get_vb_instance_applications_output(idcs_open_id: Optional[pulumi.Input[Opti
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -128,6 +131,7 @@ def get_vb_instance_applications_output(idcs_open_id: Optional[pulumi.Input[Opti
     test_vb_instance_applications = oci.VisualBuilder.get_vb_instance_applications(vb_instance_id=oci_visual_builder_vb_instance["test_vb_instance"]["id"],
         idcs_open_id="idcs_open_id_value")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str idcs_open_id: Encrypted IDCS Open ID token which allows access to Visual Builder REST apis

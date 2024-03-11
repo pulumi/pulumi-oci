@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,13 +22,14 @@ import * as utilities from "../utilities";
  *     addresses: _var.network_firewall_policy_address_list_addresses,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * NetworkFirewallPolicyAddressLists can be imported using the `name`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:NetworkFirewall/networkFirewallPolicyAddressList:NetworkFirewallPolicyAddressList test_network_firewall_policy_address_list "networkFirewallPolicies/{networkFirewallPolicyId}/addressLists/{addressListName}"
+ * $ pulumi import oci:NetworkFirewall/networkFirewallPolicyAddressList:NetworkFirewallPolicyAddressList test_network_firewall_policy_address_list "networkFirewallPolicies/{networkFirewallPolicyId}/addressLists/{addressListName}"
  * ```
  */
 export class NetworkFirewallPolicyAddressList extends pulumi.CustomResource {

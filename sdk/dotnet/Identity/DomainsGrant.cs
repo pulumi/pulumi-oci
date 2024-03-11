@@ -19,7 +19,7 @@ namespace Pulumi.Oci.Identity
     /// Grants can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Identity/domainsGrant:DomainsGrant test_grant "idcsEndpoint/{idcsEndpoint}/grants/{grantId}"
+    /// $ pulumi import oci:Identity/domainsGrant:DomainsGrant test_grant "idcsEndpoint/{idcsEndpoint}/grants/{grantId}"
     /// ```
     /// </summary>
     [OciResourceType("oci:Identity/domainsGrant:DomainsGrant")]

@@ -461,6 +461,7 @@ class ManagementStation(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -489,13 +490,14 @@ class ManagementStation(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ManagementStations can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:OsManagementHub/managementStation:ManagementStation test_management_station "id"
+        $ pulumi import oci:OsManagementHub/managementStation:ManagementStation test_management_station "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -522,6 +524,7 @@ class ManagementStation(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -550,13 +553,14 @@ class ManagementStation(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ManagementStations can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:OsManagementHub/managementStation:ManagementStation test_management_station "id"
+        $ pulumi import oci:OsManagementHub/managementStation:ManagementStation test_management_station "id"
         ```
 
         :param str resource_name: The name of the resource.

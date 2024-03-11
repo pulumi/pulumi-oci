@@ -16,6 +16,7 @@ namespace Pulumi.Oci.DatabaseManagement
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -51,13 +52,14 @@ namespace Pulumi.Oci.DatabaseManagement
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// NamedCredentials can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:DatabaseManagement/namedCredential:NamedCredential test_named_credential "id"
+    /// $ pulumi import oci:DatabaseManagement/namedCredential:NamedCredential test_named_credential "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:DatabaseManagement/namedCredential:NamedCredential")]

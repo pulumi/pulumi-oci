@@ -16,6 +16,7 @@ namespace Pulumi.Oci.ServiceCatalog
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -33,13 +34,14 @@ namespace Pulumi.Oci.ServiceCatalog
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// ServiceCatalogAssociations can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:ServiceCatalog/catalogAssociation:CatalogAssociation test_service_catalog_association "id"
+    /// $ pulumi import oci:ServiceCatalog/catalogAssociation:CatalogAssociation test_service_catalog_association "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:ServiceCatalog/catalogAssociation:CatalogAssociation")]

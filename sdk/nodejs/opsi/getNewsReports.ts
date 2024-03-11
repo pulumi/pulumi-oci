@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -25,6 +26,7 @@ import * as utilities from "../utilities";
  *     statuses: _var.news_report_status,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getNewsReports(args?: GetNewsReportsArgs, opts?: pulumi.InvokeOptions): Promise<GetNewsReportsResult> {
     args = args || {};
@@ -102,6 +104,7 @@ export interface GetNewsReportsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -114,6 +117,7 @@ export interface GetNewsReportsResult {
  *     statuses: _var.news_report_status,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getNewsReportsOutput(args?: GetNewsReportsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNewsReportsResult> {
     return pulumi.output(args).apply((a: any) => getNewsReports(a, opts))

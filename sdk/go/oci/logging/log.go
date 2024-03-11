@@ -19,6 +19,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -62,15 +63,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Logs can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Logging/log:Log test_log "logGroupId/{logGroupId}/logId/{logId}"
-//
+// $ pulumi import oci:Logging/log:Log test_log "logGroupId/{logGroupId}/logId/{logId}"
 // ```
 type Log struct {
 	pulumi.CustomResourceState

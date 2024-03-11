@@ -44,6 +44,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -77,15 +78,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Replications can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:FileStorage/replication:Replication test_replication "id"
-//
+// $ pulumi import oci:FileStorage/replication:Replication test_replication "id"
 // ```
 type Replication struct {
 	pulumi.CustomResourceState

@@ -15,6 +15,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -40,13 +41,14 @@ import * as utilities from "../utilities";
  *     preferredTimeZone: _var.announcement_subscription_preferred_time_zone,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * AnnouncementSubscriptions can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:AnnouncementsService/announcementSubscription:AnnouncementSubscription test_announcement_subscription "id"
+ * $ pulumi import oci:AnnouncementsService/announcementSubscription:AnnouncementSubscription test_announcement_subscription "id"
  * ```
  */
 export class AnnouncementSubscription extends pulumi.CustomResource {

@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,6 +22,7 @@ import * as utilities from "../utilities";
  *     dbSystemShape: _var.db_system_compute_performance_db_system_shape,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDbSystemComputePerformances(args?: GetDbSystemComputePerformancesArgs, opts?: pulumi.InvokeOptions): Promise<GetDbSystemComputePerformancesResult> {
     args = args || {};
@@ -65,6 +67,7 @@ export interface GetDbSystemComputePerformancesResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -73,6 +76,7 @@ export interface GetDbSystemComputePerformancesResult {
  *     dbSystemShape: _var.db_system_compute_performance_db_system_shape,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDbSystemComputePerformancesOutput(args?: GetDbSystemComputePerformancesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbSystemComputePerformancesResult> {
     return pulumi.output(args).apply((a: any) => getDbSystemComputePerformances(a, opts))

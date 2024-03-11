@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -19,6 +20,7 @@ import * as utilities from "../utilities";
  *     namespace: _var.log_analytics_unprocessed_data_bucket_namespace,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getLogAnalyticsUnprocessedDataBucket(args: GetLogAnalyticsUnprocessedDataBucketArgs, opts?: pulumi.InvokeOptions): Promise<GetLogAnalyticsUnprocessedDataBucketResult> {
 
@@ -74,6 +76,7 @@ export interface GetLogAnalyticsUnprocessedDataBucketResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -82,6 +85,7 @@ export interface GetLogAnalyticsUnprocessedDataBucketResult {
  *     namespace: _var.log_analytics_unprocessed_data_bucket_namespace,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getLogAnalyticsUnprocessedDataBucketOutput(args: GetLogAnalyticsUnprocessedDataBucketOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLogAnalyticsUnprocessedDataBucketResult> {
     return pulumi.output(args).apply((a: any) => getLogAnalyticsUnprocessedDataBucket(a, opts))

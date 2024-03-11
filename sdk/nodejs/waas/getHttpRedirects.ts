@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -26,6 +27,7 @@ import * as utilities from "../utilities";
  *     timeCreatedLessThan: _var.http_redirect_time_created_less_than,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getHttpRedirects(args: GetHttpRedirectsArgs, opts?: pulumi.InvokeOptions): Promise<GetHttpRedirectsResult> {
 
@@ -102,6 +104,7 @@ export interface GetHttpRedirectsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -115,6 +118,7 @@ export interface GetHttpRedirectsResult {
  *     timeCreatedLessThan: _var.http_redirect_time_created_less_than,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getHttpRedirectsOutput(args: GetHttpRedirectsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetHttpRedirectsResult> {
     return pulumi.output(args).apply((a: any) => getHttpRedirects(a, opts))

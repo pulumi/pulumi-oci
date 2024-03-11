@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -19,6 +20,7 @@ import * as utilities from "../utilities";
  *     bastionId: oci_bastion_bastion.test_bastion.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getBastion(args: GetBastionArgs, opts?: pulumi.InvokeOptions): Promise<GetBastionResult> {
 
@@ -131,6 +133,7 @@ export interface GetBastionResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -139,6 +142,7 @@ export interface GetBastionResult {
  *     bastionId: oci_bastion_bastion.test_bastion.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getBastionOutput(args: GetBastionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBastionResult> {
     return pulumi.output(args).apply((a: any) => getBastion(a, opts))

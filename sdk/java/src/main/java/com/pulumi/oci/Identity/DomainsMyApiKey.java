@@ -28,6 +28,7 @@ import javax.annotation.Nullable;
  * 
  * ## Example Usage
  * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -73,13 +74,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * MyApiKeys can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Identity/domainsMyApiKey:DomainsMyApiKey test_my_api_key &#34;idcsEndpoint/{idcsEndpoint}/myApiKeys/{myApiKeyId}&#34;
+ * $ pulumi import oci:Identity/domainsMyApiKey:DomainsMyApiKey test_my_api_key &#34;idcsEndpoint/{idcsEndpoint}/myApiKeys/{myApiKeyId}&#34;
  * ```
  * 
  */

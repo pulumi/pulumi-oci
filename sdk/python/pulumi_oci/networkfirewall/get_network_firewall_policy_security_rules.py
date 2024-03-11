@@ -106,6 +106,7 @@ def get_network_firewall_policy_security_rules(display_name: Optional[str] = Non
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -114,6 +115,7 @@ def get_network_firewall_policy_security_rules(display_name: Optional[str] = Non
         display_name=var["network_firewall_policy_security_rule_display_name"],
         security_rule_priority_order=var["network_firewall_policy_security_rule_security_rule_priority_order"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str display_name: A filter to return only resources that match the entire display name given.
@@ -150,6 +152,7 @@ def get_network_firewall_policy_security_rules_output(display_name: Optional[pul
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -158,6 +161,7 @@ def get_network_firewall_policy_security_rules_output(display_name: Optional[pul
         display_name=var["network_firewall_policy_security_rule_display_name"],
         security_rule_priority_order=var["network_firewall_policy_security_rule_security_rule_priority_order"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str display_name: A filter to return only resources that match the entire display name given.

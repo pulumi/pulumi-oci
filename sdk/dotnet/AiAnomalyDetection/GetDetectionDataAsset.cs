@@ -16,10 +16,9 @@ namespace Pulumi.Oci.AiAnomalyDetection
         /// 
         /// Gets a DataAsset by identifier
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,8 +34,7 @@ namespace Pulumi.Oci.AiAnomalyDetection
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDetectionDataAssetResult> InvokeAsync(GetDetectionDataAssetArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDetectionDataAssetResult>("oci:AiAnomalyDetection/getDetectionDataAsset:getDetectionDataAsset", args ?? new GetDetectionDataAssetArgs(), options.WithDefaults());
@@ -46,10 +44,9 @@ namespace Pulumi.Oci.AiAnomalyDetection
         /// 
         /// Gets a DataAsset by identifier
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -65,8 +62,7 @@ namespace Pulumi.Oci.AiAnomalyDetection
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDetectionDataAssetResult> Invoke(GetDetectionDataAssetInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDetectionDataAssetResult>("oci:AiAnomalyDetection/getDetectionDataAsset:getDetectionDataAsset", args ?? new GetDetectionDataAssetInvokeArgs(), options.WithDefaults());

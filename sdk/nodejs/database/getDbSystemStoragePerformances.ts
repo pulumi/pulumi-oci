@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,6 +23,7 @@ import * as utilities from "../utilities";
  *     shapeType: _var.db_system_storage_performance_shape_type,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDbSystemStoragePerformances(args: GetDbSystemStoragePerformancesArgs, opts?: pulumi.InvokeOptions): Promise<GetDbSystemStoragePerformancesResult> {
 
@@ -76,6 +78,7 @@ export interface GetDbSystemStoragePerformancesResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -85,6 +88,7 @@ export interface GetDbSystemStoragePerformancesResult {
  *     shapeType: _var.db_system_storage_performance_shape_type,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDbSystemStoragePerformancesOutput(args: GetDbSystemStoragePerformancesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbSystemStoragePerformancesResult> {
     return pulumi.output(args).apply((a: any) => getDbSystemStoragePerformances(a, opts))

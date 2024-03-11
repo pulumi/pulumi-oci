@@ -47,6 +47,8 @@ import javax.annotation.Nullable;
  * type, or by viewing the resource in the Console.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -81,13 +83,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * Replications can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:FileStorage/replication:Replication test_replication &#34;id&#34;
+ * $ pulumi import oci:FileStorage/replication:Replication test_replication &#34;id&#34;
  * ```
  * 
  */

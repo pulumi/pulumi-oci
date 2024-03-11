@@ -21,7 +21,7 @@ namespace Pulumi.Oci.Database
     /// PluggableDatabases can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Database/pluggableDatabase:PluggableDatabase test_pluggable_database "id"
+    /// $ pulumi import oci:Database/pluggableDatabase:PluggableDatabase test_pluggable_database "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Database/pluggableDatabase:PluggableDatabase")]

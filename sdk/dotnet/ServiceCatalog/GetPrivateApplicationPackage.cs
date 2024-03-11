@@ -16,10 +16,9 @@ namespace Pulumi.Oci.ServiceCatalog
         /// 
         /// Gets the details of a specific package within a given private application.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,8 +34,7 @@ namespace Pulumi.Oci.ServiceCatalog
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetPrivateApplicationPackageResult> InvokeAsync(GetPrivateApplicationPackageArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetPrivateApplicationPackageResult>("oci:ServiceCatalog/getPrivateApplicationPackage:getPrivateApplicationPackage", args ?? new GetPrivateApplicationPackageArgs(), options.WithDefaults());
@@ -46,10 +44,9 @@ namespace Pulumi.Oci.ServiceCatalog
         /// 
         /// Gets the details of a specific package within a given private application.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -65,8 +62,7 @@ namespace Pulumi.Oci.ServiceCatalog
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetPrivateApplicationPackageResult> Invoke(GetPrivateApplicationPackageInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPrivateApplicationPackageResult>("oci:ServiceCatalog/getPrivateApplicationPackage:getPrivateApplicationPackage", args ?? new GetPrivateApplicationPackageInvokeArgs(), options.WithDefaults());

@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -20,6 +21,7 @@ import * as utilities from "../utilities";
  *     pluginName: _var.instance_agent_plugin_plugin_name,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getInstanceAgentPlugin(args: GetInstanceAgentPluginArgs, opts?: pulumi.InvokeOptions): Promise<GetInstanceAgentPluginResult> {
 
@@ -81,6 +83,7 @@ export interface GetInstanceAgentPluginResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -90,6 +93,7 @@ export interface GetInstanceAgentPluginResult {
  *     pluginName: _var.instance_agent_plugin_plugin_name,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getInstanceAgentPluginOutput(args: GetInstanceAgentPluginOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInstanceAgentPluginResult> {
     return pulumi.output(args).apply((a: any) => getInstanceAgentPlugin(a, opts))

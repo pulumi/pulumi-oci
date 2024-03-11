@@ -16,6 +16,7 @@ namespace Pulumi.Oci.AiAnomalyDetection
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -73,13 +74,14 @@ namespace Pulumi.Oci.AiAnomalyDetection
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// DataAssets can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:AiAnomalyDetection/dataAsset:DataAsset test_data_asset "id"
+    /// $ pulumi import oci:AiAnomalyDetection/dataAsset:DataAsset test_data_asset "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:AiAnomalyDetection/dataAsset:DataAsset")]

@@ -49,6 +49,8 @@ public final class MonitoringFunctions {
      * or transactions, per second (TPS) for a given tenancy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -77,6 +79,7 @@ public final class MonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAlarmResult> getAlarm(GetAlarmArgs args) {
@@ -96,6 +99,8 @@ public final class MonitoringFunctions {
      * or transactions, per second (TPS) for a given tenancy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -124,6 +129,7 @@ public final class MonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAlarmResult> getAlarmPlain(GetAlarmPlainArgs args) {
@@ -143,6 +149,8 @@ public final class MonitoringFunctions {
      * or transactions, per second (TPS) for a given tenancy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -171,6 +179,7 @@ public final class MonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAlarmResult> getAlarm(GetAlarmArgs args, InvokeOptions options) {
@@ -190,6 +199,8 @@ public final class MonitoringFunctions {
      * or transactions, per second (TPS) for a given tenancy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -218,6 +229,7 @@ public final class MonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAlarmResult> getAlarmPlain(GetAlarmPlainArgs args, InvokeOptions options) {
@@ -237,6 +249,8 @@ public final class MonitoringFunctions {
      * or transactions, per second (TPS) for a given tenancy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -268,6 +282,7 @@ public final class MonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAlarmHistoryCollectionResult> getAlarmHistoryCollection(GetAlarmHistoryCollectionArgs args) {
@@ -287,6 +302,8 @@ public final class MonitoringFunctions {
      * or transactions, per second (TPS) for a given tenancy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -318,6 +335,7 @@ public final class MonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAlarmHistoryCollectionResult> getAlarmHistoryCollectionPlain(GetAlarmHistoryCollectionPlainArgs args) {
@@ -337,6 +355,8 @@ public final class MonitoringFunctions {
      * or transactions, per second (TPS) for a given tenancy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -368,6 +388,7 @@ public final class MonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAlarmHistoryCollectionResult> getAlarmHistoryCollection(GetAlarmHistoryCollectionArgs args, InvokeOptions options) {
@@ -387,6 +408,8 @@ public final class MonitoringFunctions {
      * or transactions, per second (TPS) for a given tenancy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -418,6 +441,7 @@ public final class MonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAlarmHistoryCollectionResult> getAlarmHistoryCollectionPlain(GetAlarmHistoryCollectionPlainArgs args, InvokeOptions options) {
@@ -440,6 +464,8 @@ public final class MonitoringFunctions {
      * or transactions, per second (TPS) for a given tenancy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -474,6 +500,7 @@ public final class MonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAlarmStatusesResult> getAlarmStatuses(GetAlarmStatusesArgs args) {
@@ -496,6 +523,8 @@ public final class MonitoringFunctions {
      * or transactions, per second (TPS) for a given tenancy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -530,6 +559,7 @@ public final class MonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAlarmStatusesResult> getAlarmStatusesPlain(GetAlarmStatusesPlainArgs args) {
@@ -552,6 +582,8 @@ public final class MonitoringFunctions {
      * or transactions, per second (TPS) for a given tenancy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -586,6 +618,7 @@ public final class MonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAlarmStatusesResult> getAlarmStatuses(GetAlarmStatusesArgs args, InvokeOptions options) {
@@ -608,6 +641,8 @@ public final class MonitoringFunctions {
      * or transactions, per second (TPS) for a given tenancy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -642,6 +677,7 @@ public final class MonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAlarmStatusesResult> getAlarmStatusesPlain(GetAlarmStatusesPlainArgs args, InvokeOptions options) {
@@ -660,6 +696,8 @@ public final class MonitoringFunctions {
      * or transactions, per second (TPS) for a given tenancy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -688,6 +726,7 @@ public final class MonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAlarmSuppressionResult> getAlarmSuppression(GetAlarmSuppressionArgs args) {
@@ -706,6 +745,8 @@ public final class MonitoringFunctions {
      * or transactions, per second (TPS) for a given tenancy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -734,6 +775,7 @@ public final class MonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAlarmSuppressionResult> getAlarmSuppressionPlain(GetAlarmSuppressionPlainArgs args) {
@@ -752,6 +794,8 @@ public final class MonitoringFunctions {
      * or transactions, per second (TPS) for a given tenancy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -780,6 +824,7 @@ public final class MonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAlarmSuppressionResult> getAlarmSuppression(GetAlarmSuppressionArgs args, InvokeOptions options) {
@@ -798,6 +843,8 @@ public final class MonitoringFunctions {
      * or transactions, per second (TPS) for a given tenancy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -826,6 +873,7 @@ public final class MonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAlarmSuppressionResult> getAlarmSuppressionPlain(GetAlarmSuppressionPlainArgs args, InvokeOptions options) {
@@ -845,6 +893,8 @@ public final class MonitoringFunctions {
      * or transactions, per second (TPS) for a given tenancy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -875,6 +925,7 @@ public final class MonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAlarmSuppressionsResult> getAlarmSuppressions(GetAlarmSuppressionsArgs args) {
@@ -894,6 +945,8 @@ public final class MonitoringFunctions {
      * or transactions, per second (TPS) for a given tenancy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -924,6 +977,7 @@ public final class MonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAlarmSuppressionsResult> getAlarmSuppressionsPlain(GetAlarmSuppressionsPlainArgs args) {
@@ -943,6 +997,8 @@ public final class MonitoringFunctions {
      * or transactions, per second (TPS) for a given tenancy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -973,6 +1029,7 @@ public final class MonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAlarmSuppressionsResult> getAlarmSuppressions(GetAlarmSuppressionsArgs args, InvokeOptions options) {
@@ -992,6 +1049,8 @@ public final class MonitoringFunctions {
      * or transactions, per second (TPS) for a given tenancy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1022,6 +1081,7 @@ public final class MonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAlarmSuppressionsResult> getAlarmSuppressionsPlain(GetAlarmSuppressionsPlainArgs args, InvokeOptions options) {
@@ -1041,6 +1101,8 @@ public final class MonitoringFunctions {
      * or transactions, per second (TPS) for a given tenancy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1072,6 +1134,7 @@ public final class MonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAlarmsResult> getAlarms(GetAlarmsArgs args) {
@@ -1091,6 +1154,8 @@ public final class MonitoringFunctions {
      * or transactions, per second (TPS) for a given tenancy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1122,6 +1187,7 @@ public final class MonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAlarmsResult> getAlarmsPlain(GetAlarmsPlainArgs args) {
@@ -1141,6 +1207,8 @@ public final class MonitoringFunctions {
      * or transactions, per second (TPS) for a given tenancy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1172,6 +1240,7 @@ public final class MonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAlarmsResult> getAlarms(GetAlarmsArgs args, InvokeOptions options) {
@@ -1191,6 +1260,8 @@ public final class MonitoringFunctions {
      * or transactions, per second (TPS) for a given tenancy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1222,6 +1293,7 @@ public final class MonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAlarmsResult> getAlarmsPlain(GetAlarmsPlainArgs args, InvokeOptions options) {
@@ -1241,6 +1313,8 @@ public final class MonitoringFunctions {
      * Transactions Per Second (TPS) per-tenancy limit for this operation: 10.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1276,6 +1350,7 @@ public final class MonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMetricDataResult> getMetricData(GetMetricDataArgs args) {
@@ -1295,6 +1370,8 @@ public final class MonitoringFunctions {
      * Transactions Per Second (TPS) per-tenancy limit for this operation: 10.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1330,6 +1407,7 @@ public final class MonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMetricDataResult> getMetricDataPlain(GetMetricDataPlainArgs args) {
@@ -1349,6 +1427,8 @@ public final class MonitoringFunctions {
      * Transactions Per Second (TPS) per-tenancy limit for this operation: 10.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1384,6 +1464,7 @@ public final class MonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMetricDataResult> getMetricData(GetMetricDataArgs args, InvokeOptions options) {
@@ -1403,6 +1484,8 @@ public final class MonitoringFunctions {
      * Transactions Per Second (TPS) per-tenancy limit for this operation: 10.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1438,6 +1521,7 @@ public final class MonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMetricDataResult> getMetricDataPlain(GetMetricDataPlainArgs args, InvokeOptions options) {
@@ -1457,6 +1541,8 @@ public final class MonitoringFunctions {
      * Transactions Per Second (TPS) per-tenancy limit for this operation: 10.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1491,6 +1577,7 @@ public final class MonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMetricsResult> getMetrics(GetMetricsArgs args) {
@@ -1510,6 +1597,8 @@ public final class MonitoringFunctions {
      * Transactions Per Second (TPS) per-tenancy limit for this operation: 10.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1544,6 +1633,7 @@ public final class MonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMetricsResult> getMetricsPlain(GetMetricsPlainArgs args) {
@@ -1563,6 +1653,8 @@ public final class MonitoringFunctions {
      * Transactions Per Second (TPS) per-tenancy limit for this operation: 10.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1597,6 +1689,7 @@ public final class MonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMetricsResult> getMetrics(GetMetricsArgs args, InvokeOptions options) {
@@ -1616,6 +1709,8 @@ public final class MonitoringFunctions {
      * Transactions Per Second (TPS) per-tenancy limit for this operation: 10.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1650,6 +1745,7 @@ public final class MonitoringFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMetricsResult> getMetricsPlain(GetMetricsPlainArgs args, InvokeOptions options) {

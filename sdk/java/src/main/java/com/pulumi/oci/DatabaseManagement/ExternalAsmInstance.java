@@ -25,7 +25,7 @@ import javax.annotation.Nullable;
  * ExternalAsmInstances can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:DatabaseManagement/externalAsmInstance:ExternalAsmInstance test_external_asm_instance &#34;id&#34;
+ * $ pulumi import oci:DatabaseManagement/externalAsmInstance:ExternalAsmInstance test_external_asm_instance &#34;id&#34;
  * ```
  * 
  */

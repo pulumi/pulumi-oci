@@ -19,7 +19,7 @@ namespace Pulumi.Oci.DataSafe
     /// DatabaseSecurityConfigs can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:DataSafe/databaseSecurityConfig:DatabaseSecurityConfig test_database_security_config "id"
+    /// $ pulumi import oci:DataSafe/databaseSecurityConfig:DatabaseSecurityConfig test_database_security_config "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:DataSafe/databaseSecurityConfig:DatabaseSecurityConfig")]

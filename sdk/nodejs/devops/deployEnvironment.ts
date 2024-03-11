@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -45,13 +46,14 @@ import * as utilities from "../utilities";
  *     },
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * DeployEnvironments can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:DevOps/deployEnvironment:DeployEnvironment test_deploy_environment "id"
+ * $ pulumi import oci:DevOps/deployEnvironment:DeployEnvironment test_deploy_environment "id"
  * ```
  */
 export class DeployEnvironment extends pulumi.CustomResource {

@@ -14,6 +14,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -34,13 +35,14 @@ import * as utilities from "../utilities";
  *     },
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * CccInfrastructures can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:ComputeCloud/atCustomerCccInfrastructure:AtCustomerCccInfrastructure test_ccc_infrastructure "id"
+ * $ pulumi import oci:ComputeCloud/atCustomerCccInfrastructure:AtCustomerCccInfrastructure test_ccc_infrastructure "id"
  * ```
  */
 export class AtCustomerCccInfrastructure extends pulumi.CustomResource {

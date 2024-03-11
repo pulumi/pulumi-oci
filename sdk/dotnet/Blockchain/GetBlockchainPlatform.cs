@@ -16,10 +16,9 @@ namespace Pulumi.Oci.Blockchain
         /// 
         /// Gets information about a Blockchain Platform identified by the specific id
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,8 +34,7 @@ namespace Pulumi.Oci.Blockchain
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetBlockchainPlatformResult> InvokeAsync(GetBlockchainPlatformArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetBlockchainPlatformResult>("oci:Blockchain/getBlockchainPlatform:getBlockchainPlatform", args ?? new GetBlockchainPlatformArgs(), options.WithDefaults());
@@ -46,10 +44,9 @@ namespace Pulumi.Oci.Blockchain
         /// 
         /// Gets information about a Blockchain Platform identified by the specific id
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -65,8 +62,7 @@ namespace Pulumi.Oci.Blockchain
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetBlockchainPlatformResult> Invoke(GetBlockchainPlatformInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetBlockchainPlatformResult>("oci:Blockchain/getBlockchainPlatform:getBlockchainPlatform", args ?? new GetBlockchainPlatformInvokeArgs(), options.WithDefaults());

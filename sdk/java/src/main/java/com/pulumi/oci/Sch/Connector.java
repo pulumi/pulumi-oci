@@ -44,6 +44,8 @@ import javax.annotation.Nullable;
  * [Activating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/activate-service-connector.htm).
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -141,13 +143,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * ServiceConnectors can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Sch/connector:Connector test_service_connector &#34;id&#34;
+ * $ pulumi import oci:Sch/connector:Connector test_service_connector &#34;id&#34;
  * ```
  * 
  */

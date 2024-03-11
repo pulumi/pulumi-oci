@@ -16,6 +16,7 @@ namespace Pulumi.Oci.DataScience
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -91,13 +92,14 @@ namespace Pulumi.Oci.DataScience
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// Jobs can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:DataScience/job:Job test_job "id"
+    /// $ pulumi import oci:DataScience/job:Job test_job "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:DataScience/job:Job")]

@@ -205,6 +205,7 @@ def get_domains_apps(app_count: Optional[int] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -218,6 +219,7 @@ def get_domains_apps(app_count: Optional[int] = None,
         resource_type_schema_version=var["app_resource_type_schema_version"],
         start_index=var["app_start_index"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param int app_count: OPTIONAL. An integer that indicates the desired maximum number of query results per page. 1000 is the largest value that you can use. See the Pagination section of the System for Cross-Domain Identity Management Protocol specification for more information. (Section 3.4.2.4).
@@ -283,6 +285,7 @@ def get_domains_apps_output(app_count: Optional[pulumi.Input[Optional[int]]] = N
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -296,6 +299,7 @@ def get_domains_apps_output(app_count: Optional[pulumi.Input[Optional[int]]] = N
         resource_type_schema_version=var["app_resource_type_schema_version"],
         start_index=var["app_start_index"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param int app_count: OPTIONAL. An integer that indicates the desired maximum number of query results per page. 1000 is the largest value that you can use. See the Pagination section of the System for Cross-Domain Identity Management Protocol specification for more information. (Section 3.4.2.4).

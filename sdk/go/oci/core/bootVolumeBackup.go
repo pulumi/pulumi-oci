@@ -22,6 +22,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -54,15 +55,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // BootVolumeBackups can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Core/bootVolumeBackup:BootVolumeBackup test_boot_volume_backup "id"
-//
+// $ pulumi import oci:Core/bootVolumeBackup:BootVolumeBackup test_boot_volume_backup "id"
 // ```
 type BootVolumeBackup struct {
 	pulumi.CustomResourceState

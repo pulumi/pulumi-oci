@@ -979,7 +979,7 @@ class DomainsMyAuthToken(pulumi.CustomResource):
         MyAuthTokens can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/domainsMyAuthToken:DomainsMyAuthToken test_my_auth_token "idcsEndpoint/{idcsEndpoint}/myAuthTokens/{myAuthTokenId}"
+        $ pulumi import oci:Identity/domainsMyAuthToken:DomainsMyAuthToken test_my_auth_token "idcsEndpoint/{idcsEndpoint}/myAuthTokens/{myAuthTokenId}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -1084,7 +1084,7 @@ class DomainsMyAuthToken(pulumi.CustomResource):
         MyAuthTokens can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/domainsMyAuthToken:DomainsMyAuthToken test_my_auth_token "idcsEndpoint/{idcsEndpoint}/myAuthTokens/{myAuthTokenId}"
+        $ pulumi import oci:Identity/domainsMyAuthToken:DomainsMyAuthToken test_my_auth_token "idcsEndpoint/{idcsEndpoint}/myAuthTokens/{myAuthTokenId}"
         ```
 
         :param str resource_name: The name of the resource.

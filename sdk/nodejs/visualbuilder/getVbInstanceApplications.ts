@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,6 +23,7 @@ import * as utilities from "../utilities";
  *     idcsOpenId: "idcs_open_id_value",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getVbInstanceApplications(args: GetVbInstanceApplicationsArgs, opts?: pulumi.InvokeOptions): Promise<GetVbInstanceApplicationsResult> {
 
@@ -68,6 +70,7 @@ export interface GetVbInstanceApplicationsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -77,6 +80,7 @@ export interface GetVbInstanceApplicationsResult {
  *     idcsOpenId: "idcs_open_id_value",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getVbInstanceApplicationsOutput(args: GetVbInstanceApplicationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVbInstanceApplicationsResult> {
     return pulumi.output(args).apply((a: any) => getVbInstanceApplications(a, opts))

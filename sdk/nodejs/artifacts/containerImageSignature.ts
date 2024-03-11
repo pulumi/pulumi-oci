@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -31,13 +32,14 @@ import * as utilities from "../utilities";
  *     },
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * ContainerImageSignatures can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Artifacts/containerImageSignature:ContainerImageSignature test_container_image_signature "container/imageSignatures/{imageSignatureId}"
+ * $ pulumi import oci:Artifacts/containerImageSignature:ContainerImageSignature test_container_image_signature "container/imageSignatures/{imageSignatureId}"
  * ```
  */
 export class ContainerImageSignature extends pulumi.CustomResource {

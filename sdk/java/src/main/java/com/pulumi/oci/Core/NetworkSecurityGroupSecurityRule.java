@@ -24,6 +24,8 @@ import javax.annotation.Nullable;
  * Adds a security rule to the specified network security group.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -91,13 +93,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * NetworkSecurityGroupSecurityRule can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Core/networkSecurityGroupSecurityRule:NetworkSecurityGroupSecurityRule test_network_security_group_security_rule &#34;networkSecurityGroups/{networkSecurityGroupId}/securityRules/{securityRuleId}&#34;
+ * $ pulumi import oci:Core/networkSecurityGroupSecurityRule:NetworkSecurityGroupSecurityRule test_network_security_group_security_rule &#34;networkSecurityGroups/{networkSecurityGroupId}/securityRules/{securityRuleId}&#34;
  * ```
  * 
  */

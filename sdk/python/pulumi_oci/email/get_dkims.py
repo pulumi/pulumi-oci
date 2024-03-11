@@ -116,6 +116,7 @@ def get_dkims(email_domain_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -125,6 +126,7 @@ def get_dkims(email_domain_id: Optional[str] = None,
         name=var["dkim_name"],
         state=var["dkim_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str email_domain_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the email domain to which this DKIM belongs.
@@ -164,6 +166,7 @@ def get_dkims_output(email_domain_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -173,6 +176,7 @@ def get_dkims_output(email_domain_id: Optional[pulumi.Input[str]] = None,
         name=var["dkim_name"],
         state=var["dkim_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str email_domain_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the email domain to which this DKIM belongs.

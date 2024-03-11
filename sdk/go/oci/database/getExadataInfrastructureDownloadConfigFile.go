@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,6 +42,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetExadataInfrastructureDownloadConfigFile(ctx *pulumi.Context, args *GetExadataInfrastructureDownloadConfigFileArgs, opts ...pulumi.InvokeOption) (*GetExadataInfrastructureDownloadConfigFileResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetExadataInfrastructureDownloadConfigFileResult

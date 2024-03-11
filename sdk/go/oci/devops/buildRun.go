@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -61,15 +62,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // BuildRuns can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:DevOps/buildRun:BuildRun test_build_run "id"
-//
+// $ pulumi import oci:DevOps/buildRun:BuildRun test_build_run "id"
 // ```
 type BuildRun struct {
 	pulumi.CustomResourceState

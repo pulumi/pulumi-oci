@@ -332,6 +332,7 @@ class Api(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -347,13 +348,14 @@ class Api(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Apis can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:ApiGateway/api:Api test_api "id"
+        $ pulumi import oci:ApiGateway/api:Api test_api "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -381,6 +383,7 @@ class Api(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -396,13 +399,14 @@ class Api(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Apis can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:ApiGateway/api:Api test_api "id"
+        $ pulumi import oci:ApiGateway/api:Api test_api "id"
         ```
 
         :param str resource_name: The name of the resource.

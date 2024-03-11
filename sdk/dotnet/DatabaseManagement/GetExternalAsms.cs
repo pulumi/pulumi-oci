@@ -16,10 +16,9 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// Lists the ASMs in the specified external DB system.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -37,8 +36,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetExternalAsmsResult> InvokeAsync(GetExternalAsmsArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetExternalAsmsResult>("oci:DatabaseManagement/getExternalAsms:getExternalAsms", args ?? new GetExternalAsmsArgs(), options.WithDefaults());
@@ -48,10 +46,9 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// Lists the ASMs in the specified external DB system.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -69,8 +66,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetExternalAsmsResult> Invoke(GetExternalAsmsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetExternalAsmsResult>("oci:DatabaseManagement/getExternalAsms:getExternalAsms", args ?? new GetExternalAsmsInvokeArgs(), options.WithDefaults());

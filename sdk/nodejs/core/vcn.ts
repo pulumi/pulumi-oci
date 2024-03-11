@@ -52,6 +52,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -77,13 +78,14 @@ import * as utilities from "../utilities";
  *     isOracleGuaAllocationEnabled: _var.vcn_is_oracle_gua_allocation_enabled,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * Vcns can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Core/vcn:Vcn test_vcn "id"
+ * $ pulumi import oci:Core/vcn:Vcn test_vcn "id"
  * ```
  */
 export class Vcn extends pulumi.CustomResource {

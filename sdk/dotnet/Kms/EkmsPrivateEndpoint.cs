@@ -16,6 +16,7 @@ namespace Pulumi.Oci.Kms
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -44,13 +45,14 @@ namespace Pulumi.Oci.Kms
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// EkmsPrivateEndpoints can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Kms/ekmsPrivateEndpoint:EkmsPrivateEndpoint test_ekms_private_endpoint "id"
+    /// $ pulumi import oci:Kms/ekmsPrivateEndpoint:EkmsPrivateEndpoint test_ekms_private_endpoint "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Kms/ekmsPrivateEndpoint:EkmsPrivateEndpoint")]

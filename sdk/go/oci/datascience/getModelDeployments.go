@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -45,6 +46,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetModelDeployments(ctx *pulumi.Context, args *GetModelDeploymentsArgs, opts ...pulumi.InvokeOption) (*GetModelDeploymentsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetModelDeploymentsResult

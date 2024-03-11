@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -70,15 +71,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // MediaWorkflows can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:MediaServices/mediaWorkflow:MediaWorkflow test_media_workflow "id"
-//
+// $ pulumi import oci:MediaServices/mediaWorkflow:MediaWorkflow test_media_workflow "id"
 // ```
 type MediaWorkflow struct {
 	pulumi.CustomResourceState

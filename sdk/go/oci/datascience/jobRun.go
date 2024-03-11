@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -71,15 +72,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // JobRuns can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:DataScience/jobRun:JobRun test_job_run "id"
-//
+// $ pulumi import oci:DataScience/jobRun:JobRun test_job_run "id"
 // ```
 type JobRun struct {
 	pulumi.CustomResourceState

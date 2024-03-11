@@ -430,6 +430,7 @@ class OperationsInsightsWarehouseUser(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -448,13 +449,14 @@ class OperationsInsightsWarehouseUser(pulumi.CustomResource):
             is_em_data_access=var["operations_insights_warehouse_user_is_em_data_access"],
             is_opsi_data_access=var["operations_insights_warehouse_user_is_opsi_data_access"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         OperationsInsightsWarehouseUsers can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Opsi/operationsInsightsWarehouseUser:OperationsInsightsWarehouseUser test_operations_insights_warehouse_user "id"
+        $ pulumi import oci:Opsi/operationsInsightsWarehouseUser:OperationsInsightsWarehouseUser test_operations_insights_warehouse_user "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -487,6 +489,7 @@ class OperationsInsightsWarehouseUser(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -505,13 +508,14 @@ class OperationsInsightsWarehouseUser(pulumi.CustomResource):
             is_em_data_access=var["operations_insights_warehouse_user_is_em_data_access"],
             is_opsi_data_access=var["operations_insights_warehouse_user_is_opsi_data_access"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         OperationsInsightsWarehouseUsers can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Opsi/operationsInsightsWarehouseUser:OperationsInsightsWarehouseUser test_operations_insights_warehouse_user "id"
+        $ pulumi import oci:Opsi/operationsInsightsWarehouseUser:OperationsInsightsWarehouseUser test_operations_insights_warehouse_user "id"
         ```
 
         :param str resource_name: The name of the resource.

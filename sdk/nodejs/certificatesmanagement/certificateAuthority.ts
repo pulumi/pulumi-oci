@@ -16,7 +16,7 @@ import * as utilities from "../utilities";
  * CertificateAuthorities can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:CertificatesManagement/certificateAuthority:CertificateAuthority test_certificate_authority "id"
+ * $ pulumi import oci:CertificatesManagement/certificateAuthority:CertificateAuthority test_certificate_authority "id"
  * ```
  */
 export class CertificateAuthority extends pulumi.CustomResource {

@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -37,6 +38,7 @@ import * as utilities from "../utilities";
  *     timeUpdatedLessThan: _var.sensitive_data_models_sensitive_column_time_updated_less_than,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getSensitiveDataModelsSensitiveColumns(args: GetSensitiveDataModelsSensitiveColumnsArgs, opts?: pulumi.InvokeOptions): Promise<GetSensitiveDataModelsSensitiveColumnsResult> {
 
@@ -207,6 +209,7 @@ export interface GetSensitiveDataModelsSensitiveColumnsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -231,6 +234,7 @@ export interface GetSensitiveDataModelsSensitiveColumnsResult {
  *     timeUpdatedLessThan: _var.sensitive_data_models_sensitive_column_time_updated_less_than,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getSensitiveDataModelsSensitiveColumnsOutput(args: GetSensitiveDataModelsSensitiveColumnsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSensitiveDataModelsSensitiveColumnsResult> {
     return pulumi.output(args).apply((a: any) => getSensitiveDataModelsSensitiveColumns(a, opts))

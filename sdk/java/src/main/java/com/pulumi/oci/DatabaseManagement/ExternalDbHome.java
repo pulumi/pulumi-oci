@@ -25,7 +25,7 @@ import javax.annotation.Nullable;
  * ExternalDbHomes can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:DatabaseManagement/externalDbHome:ExternalDbHome test_external_db_home &#34;id&#34;
+ * $ pulumi import oci:DatabaseManagement/externalDbHome:ExternalDbHome test_external_db_home &#34;id&#34;
  * ```
  * 
  */

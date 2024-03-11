@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -43,6 +44,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetFusionEnvironmentServiceAttachments(ctx *pulumi.Context, args *GetFusionEnvironmentServiceAttachmentsArgs, opts ...pulumi.InvokeOption) (*GetFusionEnvironmentServiceAttachmentsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetFusionEnvironmentServiceAttachmentsResult

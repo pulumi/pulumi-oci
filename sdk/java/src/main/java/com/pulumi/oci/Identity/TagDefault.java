@@ -27,6 +27,8 @@ import javax.annotation.Nullable;
  * * If the `isRequired` flag is set to &#34;false&#34;, the value you enter is set during resource creation.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -58,13 +60,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * TagDefaults can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Identity/tagDefault:TagDefault test_tag_default &#34;id&#34;
+ * $ pulumi import oci:Identity/tagDefault:TagDefault test_tag_default &#34;id&#34;
  * ```
  * 
  */

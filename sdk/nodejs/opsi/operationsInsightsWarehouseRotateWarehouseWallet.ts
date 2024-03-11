@@ -11,19 +11,21 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
  * const testOperationsInsightsWarehouseRotateWarehouseWallet = new oci.opsi.OperationsInsightsWarehouseRotateWarehouseWallet("testOperationsInsightsWarehouseRotateWarehouseWallet", {operationsInsightsWarehouseId: oci_opsi_operations_insights_warehouse.test_operations_insights_warehouse.id});
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * OperationsInsightsWarehouseRotateWarehouseWallet can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Opsi/operationsInsightsWarehouseRotateWarehouseWallet:OperationsInsightsWarehouseRotateWarehouseWallet test_operations_insights_warehouse_rotate_warehouse_wallet "id"
+ * $ pulumi import oci:Opsi/operationsInsightsWarehouseRotateWarehouseWallet:OperationsInsightsWarehouseRotateWarehouseWallet test_operations_insights_warehouse_rotate_warehouse_wallet "id"
  * ```
  */
 export class OperationsInsightsWarehouseRotateWarehouseWallet extends pulumi.CustomResource {

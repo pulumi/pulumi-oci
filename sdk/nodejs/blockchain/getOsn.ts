@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,6 +23,7 @@ import * as utilities from "../utilities";
  *     osnId: oci_blockchain_osn.test_osn.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getOsn(args: GetOsnArgs, opts?: pulumi.InvokeOptions): Promise<GetOsnResult> {
 
@@ -77,6 +79,7 @@ export interface GetOsnResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -86,6 +89,7 @@ export interface GetOsnResult {
  *     osnId: oci_blockchain_osn.test_osn.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getOsnOutput(args: GetOsnOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOsnResult> {
     return pulumi.output(args).apply((a: any) => getOsn(a, opts))

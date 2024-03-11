@@ -19,7 +19,7 @@ namespace Pulumi.Oci.ContainerEngine
     /// Clusters can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:ContainerEngine/cluster:Cluster test_cluster "id"
+    /// $ pulumi import oci:ContainerEngine/cluster:Cluster test_cluster "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:ContainerEngine/cluster:Cluster")]

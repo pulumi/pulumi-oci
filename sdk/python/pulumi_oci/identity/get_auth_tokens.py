@@ -90,12 +90,14 @@ def get_auth_tokens(filters: Optional[Sequence[pulumi.InputType['GetAuthTokensFi
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_auth_tokens = oci.Identity.get_auth_tokens(user_id=oci_identity_user["test_user"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str user_id: The OCID of the user.
@@ -125,12 +127,14 @@ def get_auth_tokens_output(filters: Optional[pulumi.Input[Optional[Sequence[pulu
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_auth_tokens = oci.Identity.get_auth_tokens(user_id=oci_identity_user["test_user"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str user_id: The OCID of the user.

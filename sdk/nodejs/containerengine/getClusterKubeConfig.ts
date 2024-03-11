@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,6 +23,7 @@ import * as utilities from "../utilities";
  *     tokenVersion: _var.cluster_kube_config_token_version,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getClusterKubeConfig(args: GetClusterKubeConfigArgs, opts?: pulumi.InvokeOptions): Promise<GetClusterKubeConfigResult> {
 
@@ -80,6 +82,7 @@ export interface GetClusterKubeConfigResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -91,6 +94,7 @@ export interface GetClusterKubeConfigResult {
  *     tokenVersion: _var.cluster_kube_config_token_version,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getClusterKubeConfigOutput(args: GetClusterKubeConfigOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetClusterKubeConfigResult> {
     return pulumi.output(args).apply((a: any) => getClusterKubeConfig(a, opts))

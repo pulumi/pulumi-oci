@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -28,13 +29,14 @@ import * as utilities from "../utilities";
  *     },
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * AiPrivateEndpoints can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:AiAnomalyDetection/aiPrivateEndpoint:AiPrivateEndpoint test_ai_private_endpoint "id"
+ * $ pulumi import oci:AiAnomalyDetection/aiPrivateEndpoint:AiPrivateEndpoint test_ai_private_endpoint "id"
  * ```
  */
 export class AiPrivateEndpoint extends pulumi.CustomResource {

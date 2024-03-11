@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -43,6 +44,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetManagementStationMirrors(ctx *pulumi.Context, args *GetManagementStationMirrorsArgs, opts ...pulumi.InvokeOption) (*GetManagementStationMirrorsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetManagementStationMirrorsResult

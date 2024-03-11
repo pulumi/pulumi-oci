@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -84,15 +85,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Datasets can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:DataLabellingService/dataset:Dataset test_dataset "id"
-//
+// $ pulumi import oci:DataLabellingService/dataset:Dataset test_dataset "id"
 // ```
 type Dataset struct {
 	pulumi.CustomResourceState

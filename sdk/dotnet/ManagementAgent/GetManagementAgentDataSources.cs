@@ -17,10 +17,9 @@ namespace Pulumi.Oci.ManagementAgent
         /// A list of Management Agent Data Sources for the given Management Agent Id.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -37,8 +36,7 @@ namespace Pulumi.Oci.ManagementAgent
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetManagementAgentDataSourcesResult> InvokeAsync(GetManagementAgentDataSourcesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagementAgentDataSourcesResult>("oci:ManagementAgent/getManagementAgentDataSources:getManagementAgentDataSources", args ?? new GetManagementAgentDataSourcesArgs(), options.WithDefaults());
@@ -49,10 +47,9 @@ namespace Pulumi.Oci.ManagementAgent
         /// A list of Management Agent Data Sources for the given Management Agent Id.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -69,8 +66,7 @@ namespace Pulumi.Oci.ManagementAgent
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetManagementAgentDataSourcesResult> Invoke(GetManagementAgentDataSourcesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagementAgentDataSourcesResult>("oci:ManagementAgent/getManagementAgentDataSources:getManagementAgentDataSources", args ?? new GetManagementAgentDataSourcesInvokeArgs(), options.WithDefaults());

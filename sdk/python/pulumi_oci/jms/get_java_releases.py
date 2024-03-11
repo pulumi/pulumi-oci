@@ -138,6 +138,7 @@ def get_java_releases(family_version: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -148,6 +149,7 @@ def get_java_releases(family_version: Optional[str] = None,
         release_type=var["java_release_release_type"],
         release_version=var["java_release_release_version"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str family_version: The version identifier for the Java family.
@@ -192,6 +194,7 @@ def get_java_releases_output(family_version: Optional[pulumi.Input[Optional[str]
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -202,6 +205,7 @@ def get_java_releases_output(family_version: Optional[pulumi.Input[Optional[str]
         release_type=var["java_release_release_type"],
         release_version=var["java_release_release_version"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str family_version: The version identifier for the Java family.

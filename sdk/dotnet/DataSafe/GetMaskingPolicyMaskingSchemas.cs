@@ -17,10 +17,9 @@ namespace Pulumi.Oci.DataSafe
         /// Gets a list of masking schemas present in the specified masking policy and based on the specified query parameters. 
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -37,8 +36,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetMaskingPolicyMaskingSchemasResult> InvokeAsync(GetMaskingPolicyMaskingSchemasArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetMaskingPolicyMaskingSchemasResult>("oci:DataSafe/getMaskingPolicyMaskingSchemas:getMaskingPolicyMaskingSchemas", args ?? new GetMaskingPolicyMaskingSchemasArgs(), options.WithDefaults());
@@ -49,10 +47,9 @@ namespace Pulumi.Oci.DataSafe
         /// Gets a list of masking schemas present in the specified masking policy and based on the specified query parameters. 
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -69,8 +66,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetMaskingPolicyMaskingSchemasResult> Invoke(GetMaskingPolicyMaskingSchemasInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMaskingPolicyMaskingSchemasResult>("oci:DataSafe/getMaskingPolicyMaskingSchemas:getMaskingPolicyMaskingSchemas", args ?? new GetMaskingPolicyMaskingSchemasInvokeArgs(), options.WithDefaults());

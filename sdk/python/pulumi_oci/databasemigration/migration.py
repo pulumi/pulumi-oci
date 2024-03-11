@@ -836,6 +836,7 @@ class Migration(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -988,13 +989,14 @@ class Migration(pulumi.CustomResource):
                 vault_id=oci_kms_vault["test_vault"]["id"],
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Migrations can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DatabaseMigration/migration:Migration test_migration "id"
+        $ pulumi import oci:DatabaseMigration/migration:Migration test_migration "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -1034,6 +1036,7 @@ class Migration(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -1186,13 +1189,14 @@ class Migration(pulumi.CustomResource):
                 vault_id=oci_kms_vault["test_vault"]["id"],
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Migrations can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DatabaseMigration/migration:Migration test_migration "id"
+        $ pulumi import oci:DatabaseMigration/migration:Migration test_migration "id"
         ```
 
         :param str resource_name: The name of the resource.

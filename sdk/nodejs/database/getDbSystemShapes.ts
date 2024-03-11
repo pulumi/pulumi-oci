@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,6 +23,7 @@ import * as utilities from "../utilities";
  *     availabilityDomain: _var.db_system_shape_availability_domain,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDbSystemShapes(args: GetDbSystemShapesArgs, opts?: pulumi.InvokeOptions): Promise<GetDbSystemShapesResult> {
 
@@ -71,6 +73,7 @@ export interface GetDbSystemShapesResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -80,6 +83,7 @@ export interface GetDbSystemShapesResult {
  *     availabilityDomain: _var.db_system_shape_availability_domain,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDbSystemShapesOutput(args: GetDbSystemShapesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbSystemShapesResult> {
     return pulumi.output(args).apply((a: any) => getDbSystemShapes(a, opts))

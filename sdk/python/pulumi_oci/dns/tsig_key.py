@@ -332,6 +332,7 @@ class TsigKey(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -343,13 +344,14 @@ class TsigKey(pulumi.CustomResource):
             defined_tags=var["tsig_key_defined_tags"],
             freeform_tags=var["tsig_key_freeform_tags"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         TsigKeys can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Dns/tsigKey:TsigKey test_tsig_key "id"
+        $ pulumi import oci:Dns/tsigKey:TsigKey test_tsig_key "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -383,6 +385,7 @@ class TsigKey(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -394,13 +397,14 @@ class TsigKey(pulumi.CustomResource):
             defined_tags=var["tsig_key_defined_tags"],
             freeform_tags=var["tsig_key_freeform_tags"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         TsigKeys can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Dns/tsigKey:TsigKey test_tsig_key "id"
+        $ pulumi import oci:Dns/tsigKey:TsigKey test_tsig_key "id"
         ```
 
         :param str resource_name: The name of the resource.

@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -40,6 +41,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetOnpremConnector(ctx *pulumi.Context, args *GetOnpremConnectorArgs, opts ...pulumi.InvokeOption) (*GetOnpremConnectorResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetOnpremConnectorResult

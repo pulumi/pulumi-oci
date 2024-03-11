@@ -24,6 +24,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -52,6 +53,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetMysqlConfigurations(ctx *pulumi.Context, args *GetMysqlConfigurationsArgs, opts ...pulumi.InvokeOption) (*GetMysqlConfigurationsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetMysqlConfigurationsResult

@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -34,13 +35,14 @@ import * as utilities from "../utilities";
  *     }],
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * NetworkFirewallPolicySecurityRules can be imported using the `name`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:NetworkFirewall/networkFirewallPolicySecurityRule:NetworkFirewallPolicySecurityRule test_network_firewall_policy_security_rule "networkFirewallPolicies/{networkFirewallPolicyId}/securityRules/{securityRuleName}"
+ * $ pulumi import oci:NetworkFirewall/networkFirewallPolicySecurityRule:NetworkFirewallPolicySecurityRule test_network_firewall_policy_security_rule "networkFirewallPolicies/{networkFirewallPolicyId}/securityRules/{securityRuleName}"
  * ```
  */
 export class NetworkFirewallPolicySecurityRule extends pulumi.CustomResource {

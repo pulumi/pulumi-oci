@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -44,6 +45,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetOutboundConnectors(ctx *pulumi.Context, args *GetOutboundConnectorsArgs, opts ...pulumi.InvokeOption) (*GetOutboundConnectorsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetOutboundConnectorsResult

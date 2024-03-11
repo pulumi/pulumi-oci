@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -32,13 +33,14 @@ import * as utilities from "../utilities";
  *     nsgIdLists: _var.private_endpoint_nsg_id_list,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * PrivateEndpoints can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:ResourceManager/privateEndpoint:PrivateEndpoint test_private_endpoint "id"
+ * $ pulumi import oci:ResourceManager/privateEndpoint:PrivateEndpoint test_private_endpoint "id"
  * ```
  */
 export class PrivateEndpoint extends pulumi.CustomResource {

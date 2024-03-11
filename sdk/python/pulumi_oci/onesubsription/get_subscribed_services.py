@@ -125,6 +125,7 @@ def get_subscribed_services(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -134,6 +135,7 @@ def get_subscribed_services(compartment_id: Optional[str] = None,
         order_line_id=oci_onesubscription_order_line["test_order_line"]["id"],
         status=var["subscribed_service_status"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the root compartment.
@@ -174,6 +176,7 @@ def get_subscribed_services_output(compartment_id: Optional[pulumi.Input[str]] =
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -183,6 +186,7 @@ def get_subscribed_services_output(compartment_id: Optional[pulumi.Input[str]] =
         order_line_id=oci_onesubscription_order_line["test_order_line"]["id"],
         status=var["subscribed_service_status"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the root compartment.

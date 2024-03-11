@@ -17,10 +17,9 @@ namespace Pulumi.Oci.DataSafe
         /// Gets a list of Data Safe private endpoints.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -41,8 +40,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDataSafePrivateEndpointsResult> InvokeAsync(GetDataSafePrivateEndpointsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDataSafePrivateEndpointsResult>("oci:DataSafe/getDataSafePrivateEndpoints:getDataSafePrivateEndpoints", args ?? new GetDataSafePrivateEndpointsArgs(), options.WithDefaults());
@@ -53,10 +51,9 @@ namespace Pulumi.Oci.DataSafe
         /// Gets a list of Data Safe private endpoints.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -77,8 +74,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDataSafePrivateEndpointsResult> Invoke(GetDataSafePrivateEndpointsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDataSafePrivateEndpointsResult>("oci:DataSafe/getDataSafePrivateEndpoints:getDataSafePrivateEndpoints", args ?? new GetDataSafePrivateEndpointsInvokeArgs(), options.WithDefaults());

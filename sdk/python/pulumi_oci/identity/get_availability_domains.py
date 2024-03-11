@@ -93,12 +93,14 @@ def get_availability_domains(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_availability_domains = oci.Identity.get_availability_domains(compartment_id=var["tenancy_ocid"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment (remember that the tenancy is simply the root compartment).
@@ -131,12 +133,14 @@ def get_availability_domains_output(compartment_id: Optional[pulumi.Input[str]] 
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_availability_domains = oci.Identity.get_availability_domains(compartment_id=var["tenancy_ocid"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment (remember that the tenancy is simply the root compartment).

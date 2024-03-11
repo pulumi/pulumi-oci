@@ -434,6 +434,7 @@ class AnnouncementSubscription(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -458,13 +459,14 @@ class AnnouncementSubscription(pulumi.CustomResource):
             preferred_language=var["announcement_subscription_preferred_language"],
             preferred_time_zone=var["announcement_subscription_preferred_time_zone"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         AnnouncementSubscriptions can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:AnnouncementsService/announcementSubscription:AnnouncementSubscription test_announcement_subscription "id"
+        $ pulumi import oci:AnnouncementsService/announcementSubscription:AnnouncementSubscription test_announcement_subscription "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -498,6 +500,7 @@ class AnnouncementSubscription(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -522,13 +525,14 @@ class AnnouncementSubscription(pulumi.CustomResource):
             preferred_language=var["announcement_subscription_preferred_language"],
             preferred_time_zone=var["announcement_subscription_preferred_time_zone"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         AnnouncementSubscriptions can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:AnnouncementsService/announcementSubscription:AnnouncementSubscription test_announcement_subscription "id"
+        $ pulumi import oci:AnnouncementsService/announcementSubscription:AnnouncementSubscription test_announcement_subscription "id"
         ```
 
         :param str resource_name: The name of the resource.

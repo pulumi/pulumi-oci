@@ -25,6 +25,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -37,6 +38,7 @@ import * as utilities from "../utilities";
  *     targetId: oci_cloud_guard_target.test_target.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAuditTrailAnalytic(args: GetAuditTrailAnalyticArgs, opts?: pulumi.InvokeOptions): Promise<GetAuditTrailAnalyticResult> {
 
@@ -116,6 +118,7 @@ export interface GetAuditTrailAnalyticResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -128,6 +131,7 @@ export interface GetAuditTrailAnalyticResult {
  *     targetId: oci_cloud_guard_target.test_target.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAuditTrailAnalyticOutput(args: GetAuditTrailAnalyticOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAuditTrailAnalyticResult> {
     return pulumi.output(args).apply((a: any) => getAuditTrailAnalytic(a, opts))

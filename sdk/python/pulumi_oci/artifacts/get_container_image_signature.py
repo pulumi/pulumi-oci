@@ -230,12 +230,14 @@ def get_container_image_signature(image_signature_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_container_image_signature = oci.Artifacts.get_container_image_signature(image_signature_id=oci_artifacts_image_signature["test_image_signature"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str image_signature_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container image signature.  Example: `ocid1.containersignature.oc1..exampleuniqueID`
@@ -274,12 +276,14 @@ def get_container_image_signature_output(image_signature_id: Optional[pulumi.Inp
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_container_image_signature = oci.Artifacts.get_container_image_signature(image_signature_id=oci_artifacts_image_signature["test_image_signature"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str image_signature_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container image signature.  Example: `ocid1.containersignature.oc1..exampleuniqueID`

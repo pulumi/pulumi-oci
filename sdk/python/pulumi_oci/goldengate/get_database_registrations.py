@@ -116,6 +116,7 @@ def get_database_registrations(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -124,6 +125,7 @@ def get_database_registrations(compartment_id: Optional[str] = None,
         display_name=var["database_registration_display_name"],
         state=var["database_registration_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
@@ -161,6 +163,7 @@ def get_database_registrations_output(compartment_id: Optional[pulumi.Input[str]
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -169,6 +172,7 @@ def get_database_registrations_output(compartment_id: Optional[pulumi.Input[str]
         display_name=var["database_registration_display_name"],
         state=var["database_registration_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.

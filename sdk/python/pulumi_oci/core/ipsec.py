@@ -473,6 +473,7 @@ class Ipsec(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -492,13 +493,14 @@ class Ipsec(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         IpSecConnections can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/ipsec:Ipsec test_ip_sec_connection "id"
+        $ pulumi import oci:Core/ipsec:Ipsec test_ip_sec_connection "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -570,6 +572,7 @@ class Ipsec(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -589,13 +592,14 @@ class Ipsec(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         IpSecConnections can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/ipsec:Ipsec test_ip_sec_connection "id"
+        $ pulumi import oci:Core/ipsec:Ipsec test_ip_sec_connection "id"
         ```
 
         :param str resource_name: The name of the resource.

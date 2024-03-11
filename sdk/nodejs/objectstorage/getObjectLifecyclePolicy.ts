@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,6 +23,7 @@ import * as utilities from "../utilities";
  *     namespace: _var.object_lifecycle_policy_namespace,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getObjectLifecyclePolicy(args: GetObjectLifecyclePolicyArgs, opts?: pulumi.InvokeOptions): Promise<GetObjectLifecyclePolicyResult> {
 
@@ -69,6 +71,7 @@ export interface GetObjectLifecyclePolicyResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -78,6 +81,7 @@ export interface GetObjectLifecyclePolicyResult {
  *     namespace: _var.object_lifecycle_policy_namespace,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getObjectLifecyclePolicyOutput(args: GetObjectLifecyclePolicyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetObjectLifecyclePolicyResult> {
     return pulumi.output(args).apply((a: any) => getObjectLifecyclePolicy(a, opts))

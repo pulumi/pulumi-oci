@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -36,13 +37,14 @@ import * as utilities from "../utilities";
  *     isPreserveSource: _var.backend_set_is_preserve_source,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * BackendSets can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:NetworkLoadBalancer/backendSet:BackendSet test_backend_set "networkLoadBalancers/{networkLoadBalancerId}/backendSets/{backendSetName}"
+ * $ pulumi import oci:NetworkLoadBalancer/backendSet:BackendSet test_backend_set "networkLoadBalancers/{networkLoadBalancerId}/backendSets/{backendSetName}"
  * ```
  */
 export class BackendSet extends pulumi.CustomResource {

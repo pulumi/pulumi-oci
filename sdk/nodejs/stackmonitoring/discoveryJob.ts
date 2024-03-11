@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -51,13 +52,14 @@ import * as utilities from "../utilities";
  *     shouldPropagateTagsToDiscoveredResources: _var.discovery_job_should_propagate_tags_to_discovered_resources,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * DiscoveryJobs can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:StackMonitoring/discoveryJob:DiscoveryJob test_discovery_job "id"
+ * $ pulumi import oci:StackMonitoring/discoveryJob:DiscoveryJob test_discovery_job "id"
  * ```
  */
 export class DiscoveryJob extends pulumi.CustomResource {

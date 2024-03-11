@@ -17,10 +17,9 @@ namespace Pulumi.Oci.Database
         /// Gets the list of resource usage details for all the Autonomous Container Database in the specified Autonomous Exadata VM cluster.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -37,8 +36,7 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetAutonomousVmClusterAcdResourceUsagesResult> InvokeAsync(GetAutonomousVmClusterAcdResourceUsagesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAutonomousVmClusterAcdResourceUsagesResult>("oci:Database/getAutonomousVmClusterAcdResourceUsages:getAutonomousVmClusterAcdResourceUsages", args ?? new GetAutonomousVmClusterAcdResourceUsagesArgs(), options.WithDefaults());
@@ -49,10 +47,9 @@ namespace Pulumi.Oci.Database
         /// Gets the list of resource usage details for all the Autonomous Container Database in the specified Autonomous Exadata VM cluster.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -69,8 +66,7 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetAutonomousVmClusterAcdResourceUsagesResult> Invoke(GetAutonomousVmClusterAcdResourceUsagesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousVmClusterAcdResourceUsagesResult>("oci:Database/getAutonomousVmClusterAcdResourceUsages:getAutonomousVmClusterAcdResourceUsages", args ?? new GetAutonomousVmClusterAcdResourceUsagesInvokeArgs(), options.WithDefaults());

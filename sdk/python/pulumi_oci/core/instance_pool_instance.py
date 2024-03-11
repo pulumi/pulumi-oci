@@ -336,6 +336,7 @@ class InstancePoolInstance(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -344,13 +345,14 @@ class InstancePoolInstance(pulumi.CustomResource):
             instance_id=oci_core_instance["test_instance"]["id"],
             instance_pool_id=oci_core_instance_pool["test_instance_pool"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         InstancePoolInstances can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/instancePoolInstance:InstancePoolInstance test_instance_pool_instance "instancePools/{instancePoolId}/instances/compartmentId/{compartmentId}"
+        $ pulumi import oci:Core/instancePoolInstance:InstancePoolInstance test_instance_pool_instance "instancePools/{instancePoolId}/instances/compartmentId/{compartmentId}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -379,6 +381,7 @@ class InstancePoolInstance(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -387,13 +390,14 @@ class InstancePoolInstance(pulumi.CustomResource):
             instance_id=oci_core_instance["test_instance"]["id"],
             instance_pool_id=oci_core_instance_pool["test_instance_pool"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         InstancePoolInstances can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/instancePoolInstance:InstancePoolInstance test_instance_pool_instance "instancePools/{instancePoolId}/instances/compartmentId/{compartmentId}"
+        $ pulumi import oci:Core/instancePoolInstance:InstancePoolInstance test_instance_pool_instance "instancePools/{instancePoolId}/instances/compartmentId/{compartmentId}"
         ```
 
         :param str resource_name: The name of the resource.

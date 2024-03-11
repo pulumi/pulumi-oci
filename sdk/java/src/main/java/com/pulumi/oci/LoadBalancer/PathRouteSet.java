@@ -22,6 +22,8 @@ import javax.annotation.Nullable;
  * [Managing Request Routing](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrequest.htm).
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -59,13 +61,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * PathRouteSets can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:LoadBalancer/pathRouteSet:PathRouteSet test_path_route_set &#34;loadBalancers/{loadBalancerId}/pathRouteSets/{pathRouteSetName}&#34;
+ * $ pulumi import oci:LoadBalancer/pathRouteSet:PathRouteSet test_path_route_set &#34;loadBalancers/{loadBalancerId}/pathRouteSets/{pathRouteSetName}&#34;
  * ```
  * 
  */

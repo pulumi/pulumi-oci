@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -53,15 +54,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // WorkspaceProjects can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:DataIntegration/workspaceProject:WorkspaceProject test_workspace_project "workspaces/{workspaceId}/projects/{projectKey}"
-//
+// $ pulumi import oci:DataIntegration/workspaceProject:WorkspaceProject test_workspace_project "workspaces/{workspaceId}/projects/{projectKey}"
 // ```
 type WorkspaceProject struct {
 	pulumi.CustomResourceState

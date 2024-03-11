@@ -16,6 +16,7 @@ namespace Pulumi.Oci.Database
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -48,13 +49,14 @@ namespace Pulumi.Oci.Database
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// BackupDestinations can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Database/backupDestination:BackupDestination test_backup_destination "id"
+    /// $ pulumi import oci:Database/backupDestination:BackupDestination test_backup_destination "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Database/backupDestination:BackupDestination")]

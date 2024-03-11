@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -19,6 +20,7 @@ import * as utilities from "../utilities";
  *     projectId: oci_ai_anomaly_detection_project.test_project.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDetectionProject(args: GetDetectionProjectArgs, opts?: pulumi.InvokeOptions): Promise<GetDetectionProjectResult> {
 
@@ -91,6 +93,7 @@ export interface GetDetectionProjectResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -99,6 +102,7 @@ export interface GetDetectionProjectResult {
  *     projectId: oci_ai_anomaly_detection_project.test_project.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDetectionProjectOutput(args: GetDetectionProjectOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDetectionProjectResult> {
     return pulumi.output(args).apply((a: any) => getDetectionProject(a, opts))

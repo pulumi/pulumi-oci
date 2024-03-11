@@ -476,6 +476,7 @@ class BackupDestination(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -498,13 +499,14 @@ class BackupDestination(pulumi.CustomResource):
             ),
             vpc_users=var["backup_destination_vpc_users"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         BackupDestinations can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Database/backupDestination:BackupDestination test_backup_destination "id"
+        $ pulumi import oci:Database/backupDestination:BackupDestination test_backup_destination "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -536,6 +538,7 @@ class BackupDestination(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -558,13 +561,14 @@ class BackupDestination(pulumi.CustomResource):
             ),
             vpc_users=var["backup_destination_vpc_users"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         BackupDestinations can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Database/backupDestination:BackupDestination test_backup_destination "id"
+        $ pulumi import oci:Database/backupDestination:BackupDestination test_backup_destination "id"
         ```
 
         :param str resource_name: The name of the resource.

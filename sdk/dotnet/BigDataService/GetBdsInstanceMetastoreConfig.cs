@@ -16,10 +16,9 @@ namespace Pulumi.Oci.BigDataService
         /// 
         /// Returns the BDS Metastore configuration information for the given ID.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,8 +35,7 @@ namespace Pulumi.Oci.BigDataService
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetBdsInstanceMetastoreConfigResult> InvokeAsync(GetBdsInstanceMetastoreConfigArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetBdsInstanceMetastoreConfigResult>("oci:BigDataService/getBdsInstanceMetastoreConfig:getBdsInstanceMetastoreConfig", args ?? new GetBdsInstanceMetastoreConfigArgs(), options.WithDefaults());
@@ -47,10 +45,9 @@ namespace Pulumi.Oci.BigDataService
         /// 
         /// Returns the BDS Metastore configuration information for the given ID.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -67,8 +64,7 @@ namespace Pulumi.Oci.BigDataService
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetBdsInstanceMetastoreConfigResult> Invoke(GetBdsInstanceMetastoreConfigInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetBdsInstanceMetastoreConfigResult>("oci:BigDataService/getBdsInstanceMetastoreConfig:getBdsInstanceMetastoreConfig", args ?? new GetBdsInstanceMetastoreConfigInvokeArgs(), options.WithDefaults());

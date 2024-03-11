@@ -23,6 +23,8 @@ import javax.annotation.Nullable;
  * Plaintext included in the example request is a base64-encoded value of a UTF-8 string.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -57,6 +59,7 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 

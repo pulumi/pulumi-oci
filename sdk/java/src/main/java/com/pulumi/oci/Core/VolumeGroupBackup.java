@@ -25,6 +25,8 @@ import javax.annotation.Nullable;
  * For more information, see [Volume Groups](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm).
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -58,13 +60,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * VolumeGroupBackups can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Core/volumeGroupBackup:VolumeGroupBackup test_volume_group_backup &#34;id&#34;
+ * $ pulumi import oci:Core/volumeGroupBackup:VolumeGroupBackup test_volume_group_backup &#34;id&#34;
  * ```
  * 
  */

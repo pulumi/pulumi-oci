@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -50,15 +51,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // SecurityRecipes can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:CloudGuard/securityRecipe:SecurityRecipe test_security_recipe "id"
-//
+// $ pulumi import oci:CloudGuard/securityRecipe:SecurityRecipe test_security_recipe "id"
 // ```
 type SecurityRecipe struct {
 	pulumi.CustomResourceState

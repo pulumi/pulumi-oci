@@ -347,12 +347,14 @@ def get_audit_trail(audit_trail_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_audit_trail = oci.DataSafe.get_audit_trail(audit_trail_id=oci_data_safe_audit_trail["test_audit_trail"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str audit_trail_id: The OCID of the audit trail.
@@ -401,12 +403,14 @@ def get_audit_trail_output(audit_trail_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_audit_trail = oci.DataSafe.get_audit_trail(audit_trail_id=oci_data_safe_audit_trail["test_audit_trail"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str audit_trail_id: The OCID of the audit trail.

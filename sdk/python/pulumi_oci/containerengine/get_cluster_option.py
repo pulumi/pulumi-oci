@@ -97,6 +97,7 @@ def get_cluster_option(cluster_option_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -104,6 +105,7 @@ def get_cluster_option(cluster_option_id: Optional[str] = None,
     test_cluster_option = oci.ContainerEngine.get_cluster_option(cluster_option_id=oci_containerengine_cluster_option["test_cluster_option"]["id"],
         compartment_id=var["compartment_id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str cluster_option_id: The id of the option set to retrieve. Use "all" get all options, or use a cluster ID to get options specific to the provided cluster.
@@ -134,6 +136,7 @@ def get_cluster_option_output(cluster_option_id: Optional[pulumi.Input[str]] = N
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -141,6 +144,7 @@ def get_cluster_option_output(cluster_option_id: Optional[pulumi.Input[str]] = N
     test_cluster_option = oci.ContainerEngine.get_cluster_option(cluster_option_id=oci_containerengine_cluster_option["test_cluster_option"]["id"],
         compartment_id=var["compartment_id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str cluster_option_id: The id of the option set to retrieve. Use "all" get all options, or use a cluster ID to get options specific to the provided cluster.

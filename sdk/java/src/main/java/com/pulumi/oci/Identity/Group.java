@@ -37,6 +37,8 @@ import javax.annotation.Nullable;
  * [CreatePolicy](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/Policy/CreatePolicy).
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -68,13 +70,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * Groups can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Identity/group:Group test_group &#34;id&#34;
+ * $ pulumi import oci:Identity/group:Group test_group &#34;id&#34;
  * ```
  * 
  */

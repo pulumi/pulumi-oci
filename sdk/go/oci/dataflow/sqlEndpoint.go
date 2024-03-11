@@ -24,9 +24,7 @@ import (
 // SqlEndpoints can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:DataFlow/sqlEndpoint:SqlEndpoint test_sql_endpoint "id"
-//
+// $ pulumi import oci:DataFlow/sqlEndpoint:SqlEndpoint test_sql_endpoint "id"
 // ```
 type SqlEndpoint struct {
 	pulumi.CustomResourceState

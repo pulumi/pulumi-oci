@@ -16,10 +16,9 @@ namespace Pulumi.Oci.DataScience
         /// 
         /// List out job runs.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -40,8 +39,7 @@ namespace Pulumi.Oci.DataScience
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetJobRunsResult> InvokeAsync(GetJobRunsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetJobRunsResult>("oci:DataScience/getJobRuns:getJobRuns", args ?? new GetJobRunsArgs(), options.WithDefaults());
@@ -51,10 +49,9 @@ namespace Pulumi.Oci.DataScience
         /// 
         /// List out job runs.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -75,8 +72,7 @@ namespace Pulumi.Oci.DataScience
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetJobRunsResult> Invoke(GetJobRunsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetJobRunsResult>("oci:DataScience/getJobRuns:getJobRuns", args ?? new GetJobRunsInvokeArgs(), options.WithDefaults());

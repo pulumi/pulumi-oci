@@ -26,6 +26,8 @@ import javax.annotation.Nullable;
  * `database.0.database_management_config` is updated to appropriate managementType and managementStatus for the specified Oracle Database instance.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -67,6 +69,7 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 

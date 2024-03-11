@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -19,6 +20,7 @@ import * as utilities from "../utilities";
  *     tsigKeyId: oci_dns_tsig_key.test_tsig_key.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getTsigKey(args: GetTsigKeyArgs, opts?: pulumi.InvokeOptions): Promise<GetTsigKeyResult> {
 
@@ -95,6 +97,7 @@ export interface GetTsigKeyResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -103,6 +106,7 @@ export interface GetTsigKeyResult {
  *     tsigKeyId: oci_dns_tsig_key.test_tsig_key.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getTsigKeyOutput(args: GetTsigKeyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTsigKeyResult> {
     return pulumi.output(args).apply((a: any) => getTsigKey(a, opts))

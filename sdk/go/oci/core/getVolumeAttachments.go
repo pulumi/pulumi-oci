@@ -21,6 +21,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -47,6 +48,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetVolumeAttachments(ctx *pulumi.Context, args *GetVolumeAttachmentsArgs, opts ...pulumi.InvokeOption) (*GetVolumeAttachmentsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetVolumeAttachmentsResult

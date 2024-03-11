@@ -17,10 +17,9 @@ namespace Pulumi.Oci.DatabaseManagement
         /// Lists the database jobs used for loading SQL plan baselines in the specified Managed Database.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -38,8 +37,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetManagedDatabaseSqlPlanBaselineJobsResult> InvokeAsync(GetManagedDatabaseSqlPlanBaselineJobsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagedDatabaseSqlPlanBaselineJobsResult>("oci:DatabaseManagement/getManagedDatabaseSqlPlanBaselineJobs:getManagedDatabaseSqlPlanBaselineJobs", args ?? new GetManagedDatabaseSqlPlanBaselineJobsArgs(), options.WithDefaults());
@@ -50,10 +48,9 @@ namespace Pulumi.Oci.DatabaseManagement
         /// Lists the database jobs used for loading SQL plan baselines in the specified Managed Database.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -71,8 +68,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetManagedDatabaseSqlPlanBaselineJobsResult> Invoke(GetManagedDatabaseSqlPlanBaselineJobsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseSqlPlanBaselineJobsResult>("oci:DatabaseManagement/getManagedDatabaseSqlPlanBaselineJobs:getManagedDatabaseSqlPlanBaselineJobs", args ?? new GetManagedDatabaseSqlPlanBaselineJobsInvokeArgs(), options.WithDefaults());

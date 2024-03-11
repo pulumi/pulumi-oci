@@ -192,6 +192,7 @@ def get_agent_plugin(agent_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -199,6 +200,7 @@ def get_agent_plugin(agent_id: Optional[str] = None,
     test_agent_plugin = oci.CloudBridge.get_agent_plugin(agent_id=oci_cloud_bridge_agent["test_agent"]["id"],
         plugin_name=var["agent_plugin_plugin_name"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str agent_id: Unique Agent identifier path parameter.
@@ -237,6 +239,7 @@ def get_agent_plugin_output(agent_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -244,6 +247,7 @@ def get_agent_plugin_output(agent_id: Optional[pulumi.Input[str]] = None,
     test_agent_plugin = oci.CloudBridge.get_agent_plugin(agent_id=oci_cloud_bridge_agent["test_agent"]["id"],
         plugin_name=var["agent_plugin_plugin_name"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str agent_id: Unique Agent identifier path parameter.

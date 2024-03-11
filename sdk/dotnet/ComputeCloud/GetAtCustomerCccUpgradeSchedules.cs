@@ -17,10 +17,9 @@ namespace Pulumi.Oci.ComputeCloud
         /// Returns a list of Compute Cloud@Customer upgrade schedules.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -42,8 +41,7 @@ namespace Pulumi.Oci.ComputeCloud
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetAtCustomerCccUpgradeSchedulesResult> InvokeAsync(GetAtCustomerCccUpgradeSchedulesArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAtCustomerCccUpgradeSchedulesResult>("oci:ComputeCloud/getAtCustomerCccUpgradeSchedules:getAtCustomerCccUpgradeSchedules", args ?? new GetAtCustomerCccUpgradeSchedulesArgs(), options.WithDefaults());
@@ -54,10 +52,9 @@ namespace Pulumi.Oci.ComputeCloud
         /// Returns a list of Compute Cloud@Customer upgrade schedules.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -79,8 +76,7 @@ namespace Pulumi.Oci.ComputeCloud
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetAtCustomerCccUpgradeSchedulesResult> Invoke(GetAtCustomerCccUpgradeSchedulesInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAtCustomerCccUpgradeSchedulesResult>("oci:ComputeCloud/getAtCustomerCccUpgradeSchedules:getAtCustomerCccUpgradeSchedules", args ?? new GetAtCustomerCccUpgradeSchedulesInvokeArgs(), options.WithDefaults());

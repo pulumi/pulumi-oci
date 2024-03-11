@@ -38,6 +38,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -97,15 +98,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // VirtualCircuits can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Core/virtualCircuit:VirtualCircuit test_virtual_circuit "id"
-//
+// $ pulumi import oci:Core/virtualCircuit:VirtualCircuit test_virtual_circuit "id"
 // ```
 type VirtualCircuit struct {
 	pulumi.CustomResourceState

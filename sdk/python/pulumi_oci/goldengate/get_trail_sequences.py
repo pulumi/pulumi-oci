@@ -119,6 +119,7 @@ def get_trail_sequences(deployment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -128,6 +129,7 @@ def get_trail_sequences(deployment_id: Optional[str] = None,
         display_name=var["trail_sequence_display_name"],
         trail_sequence_id=oci_golden_gate_trail_sequence["test_trail_sequence"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str deployment_id: A unique Deployment identifier.
@@ -168,6 +170,7 @@ def get_trail_sequences_output(deployment_id: Optional[pulumi.Input[str]] = None
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -177,6 +180,7 @@ def get_trail_sequences_output(deployment_id: Optional[pulumi.Input[str]] = None
         display_name=var["trail_sequence_display_name"],
         trail_sequence_id=oci_golden_gate_trail_sequence["test_trail_sequence"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str deployment_id: A unique Deployment identifier.

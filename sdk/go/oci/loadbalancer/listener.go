@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -66,15 +67,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Listeners can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:LoadBalancer/listener:Listener test_listener "loadBalancers/{loadBalancerId}/listeners/{listenerName}"
-//
+// $ pulumi import oci:LoadBalancer/listener:Listener test_listener "loadBalancers/{loadBalancerId}/listeners/{listenerName}"
 // ```
 type Listener struct {
 	pulumi.CustomResourceState

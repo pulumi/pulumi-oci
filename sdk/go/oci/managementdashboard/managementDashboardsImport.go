@@ -22,6 +22,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -46,15 +47,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // ManagementDashboardsImport can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:ManagementDashboard/managementDashboardsImport:ManagementDashboardsImport test_management_dashboards_import "id"
-//
+// $ pulumi import oci:ManagementDashboard/managementDashboardsImport:ManagementDashboardsImport test_management_dashboards_import "id"
 // ```
 type ManagementDashboardsImport struct {
 	pulumi.CustomResourceState

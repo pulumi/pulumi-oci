@@ -629,6 +629,7 @@ class ReportDefinition(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -672,13 +673,14 @@ class ReportDefinition(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ReportDefinitions can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataSafe/reportDefinition:ReportDefinition test_report_definition "id"
+        $ pulumi import oci:DataSafe/reportDefinition:ReportDefinition test_report_definition "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -707,6 +709,7 @@ class ReportDefinition(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -750,13 +753,14 @@ class ReportDefinition(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ReportDefinitions can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataSafe/reportDefinition:ReportDefinition test_report_definition "id"
+        $ pulumi import oci:DataSafe/reportDefinition:ReportDefinition test_report_definition "id"
         ```
 
         :param str resource_name: The name of the resource.

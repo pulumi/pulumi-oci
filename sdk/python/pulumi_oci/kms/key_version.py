@@ -377,7 +377,7 @@ class KeyVersion(pulumi.CustomResource):
         KeyVersions can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Kms/keyVersion:KeyVersion test_key_version "managementEndpoint/{managementEndpoint}/keys/{keyId}/keyVersions/{keyVersionId}"
+        $ pulumi import oci:Kms/keyVersion:KeyVersion test_key_version "managementEndpoint/{managementEndpoint}/keys/{keyId}/keyVersions/{keyVersionId}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -412,7 +412,7 @@ class KeyVersion(pulumi.CustomResource):
         KeyVersions can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Kms/keyVersion:KeyVersion test_key_version "managementEndpoint/{managementEndpoint}/keys/{keyId}/keyVersions/{keyVersionId}"
+        $ pulumi import oci:Kms/keyVersion:KeyVersion test_key_version "managementEndpoint/{managementEndpoint}/keys/{keyId}/keyVersions/{keyVersionId}"
         ```
 
         :param str resource_name: The name of the resource.

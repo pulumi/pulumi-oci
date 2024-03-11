@@ -22,10 +22,9 @@ namespace Pulumi.Oci.Core
         /// but you may request to list ALL attachments of ALL types.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -48,8 +47,7 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDrgAttachmentsResult> InvokeAsync(GetDrgAttachmentsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDrgAttachmentsResult>("oci:Core/getDrgAttachments:getDrgAttachments", args ?? new GetDrgAttachmentsArgs(), options.WithDefaults());
@@ -65,10 +63,9 @@ namespace Pulumi.Oci.Core
         /// but you may request to list ALL attachments of ALL types.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -91,8 +88,7 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDrgAttachmentsResult> Invoke(GetDrgAttachmentsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDrgAttachmentsResult>("oci:Core/getDrgAttachments:getDrgAttachments", args ?? new GetDrgAttachmentsInvokeArgs(), options.WithDefaults());

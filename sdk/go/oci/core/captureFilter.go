@@ -26,6 +26,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -126,15 +127,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // CaptureFilters can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Core/captureFilter:CaptureFilter test_capture_filter "id"
-//
+// $ pulumi import oci:Core/captureFilter:CaptureFilter test_capture_filter "id"
 // ```
 type CaptureFilter struct {
 	pulumi.CustomResourceState

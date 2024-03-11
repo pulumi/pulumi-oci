@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -152,15 +153,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Assets can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:CloudBridge/asset:Asset test_asset "id"
-//
+// $ pulumi import oci:CloudBridge/asset:Asset test_asset "id"
 // ```
 type Asset struct {
 	pulumi.CustomResourceState

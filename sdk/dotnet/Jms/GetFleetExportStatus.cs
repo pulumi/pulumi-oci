@@ -16,10 +16,9 @@ namespace Pulumi.Oci.Jms
         /// 
         /// Returns last export status for the specified Fleet.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,8 +34,7 @@ namespace Pulumi.Oci.Jms
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetFleetExportStatusResult> InvokeAsync(GetFleetExportStatusArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetFleetExportStatusResult>("oci:Jms/getFleetExportStatus:getFleetExportStatus", args ?? new GetFleetExportStatusArgs(), options.WithDefaults());
@@ -46,10 +44,9 @@ namespace Pulumi.Oci.Jms
         /// 
         /// Returns last export status for the specified Fleet.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -65,8 +62,7 @@ namespace Pulumi.Oci.Jms
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetFleetExportStatusResult> Invoke(GetFleetExportStatusInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFleetExportStatusResult>("oci:Jms/getFleetExportStatus:getFleetExportStatus", args ?? new GetFleetExportStatusInvokeArgs(), options.WithDefaults());

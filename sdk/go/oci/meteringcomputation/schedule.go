@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -79,15 +80,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Schedules can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:MeteringComputation/schedule:Schedule test_schedule "id"
-//
+// $ pulumi import oci:MeteringComputation/schedule:Schedule test_schedule "id"
 // ```
 type Schedule struct {
 	pulumi.CustomResourceState

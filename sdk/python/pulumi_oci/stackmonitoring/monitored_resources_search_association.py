@@ -337,6 +337,7 @@ class MonitoredResourcesSearchAssociation(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -351,13 +352,14 @@ class MonitoredResourcesSearchAssociation(pulumi.CustomResource):
             source_resource_name=var["monitored_resources_search_association_source_resource_name"],
             source_resource_type=var["monitored_resources_search_association_source_resource_type"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         MonitoredResourcesSearchAssociations can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:StackMonitoring/monitoredResourcesSearchAssociation:MonitoredResourcesSearchAssociation test_monitored_resources_search_association "id"
+        $ pulumi import oci:StackMonitoring/monitoredResourcesSearchAssociation:MonitoredResourcesSearchAssociation test_monitored_resources_search_association "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -388,6 +390,7 @@ class MonitoredResourcesSearchAssociation(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -402,13 +405,14 @@ class MonitoredResourcesSearchAssociation(pulumi.CustomResource):
             source_resource_name=var["monitored_resources_search_association_source_resource_name"],
             source_resource_type=var["monitored_resources_search_association_source_resource_type"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         MonitoredResourcesSearchAssociations can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:StackMonitoring/monitoredResourcesSearchAssociation:MonitoredResourcesSearchAssociation test_monitored_resources_search_association "id"
+        $ pulumi import oci:StackMonitoring/monitoredResourcesSearchAssociation:MonitoredResourcesSearchAssociation test_monitored_resources_search_association "id"
         ```
 
         :param str resource_name: The name of the resource.

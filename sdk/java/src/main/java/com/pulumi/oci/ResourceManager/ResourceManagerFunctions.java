@@ -35,6 +35,8 @@ public final class ResourceManagerFunctions {
      * Gets the specified private endpoint.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -63,6 +65,7 @@ public final class ResourceManagerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPrivateEndpointResult> getPrivateEndpoint(GetPrivateEndpointArgs args) {
@@ -74,6 +77,8 @@ public final class ResourceManagerFunctions {
      * Gets the specified private endpoint.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -102,6 +107,7 @@ public final class ResourceManagerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPrivateEndpointResult> getPrivateEndpointPlain(GetPrivateEndpointPlainArgs args) {
@@ -113,6 +119,8 @@ public final class ResourceManagerFunctions {
      * Gets the specified private endpoint.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -141,6 +149,7 @@ public final class ResourceManagerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPrivateEndpointResult> getPrivateEndpoint(GetPrivateEndpointArgs args, InvokeOptions options) {
@@ -152,6 +161,8 @@ public final class ResourceManagerFunctions {
      * Gets the specified private endpoint.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -180,6 +191,7 @@ public final class ResourceManagerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPrivateEndpointResult> getPrivateEndpointPlain(GetPrivateEndpointPlainArgs args, InvokeOptions options) {
@@ -191,6 +203,8 @@ public final class ResourceManagerFunctions {
      * Gets the alternative IP address of the private resource. This IP will be used by Resource Manager Service to connect to the private resource.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -220,6 +234,7 @@ public final class ResourceManagerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPrivateEndpointReachableIpResult> getPrivateEndpointReachableIp(GetPrivateEndpointReachableIpArgs args) {
@@ -231,6 +246,8 @@ public final class ResourceManagerFunctions {
      * Gets the alternative IP address of the private resource. This IP will be used by Resource Manager Service to connect to the private resource.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -260,6 +277,7 @@ public final class ResourceManagerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPrivateEndpointReachableIpResult> getPrivateEndpointReachableIpPlain(GetPrivateEndpointReachableIpPlainArgs args) {
@@ -271,6 +289,8 @@ public final class ResourceManagerFunctions {
      * Gets the alternative IP address of the private resource. This IP will be used by Resource Manager Service to connect to the private resource.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -300,6 +320,7 @@ public final class ResourceManagerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPrivateEndpointReachableIpResult> getPrivateEndpointReachableIp(GetPrivateEndpointReachableIpArgs args, InvokeOptions options) {
@@ -311,6 +332,8 @@ public final class ResourceManagerFunctions {
      * Gets the alternative IP address of the private resource. This IP will be used by Resource Manager Service to connect to the private resource.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -340,6 +363,7 @@ public final class ResourceManagerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPrivateEndpointReachableIpResult> getPrivateEndpointReachableIpPlain(GetPrivateEndpointReachableIpPlainArgs args, InvokeOptions options) {
@@ -353,6 +377,8 @@ public final class ResourceManagerFunctions {
      * - For `privateEndpointId`, lists the matching private endpoint.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -384,6 +410,7 @@ public final class ResourceManagerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPrivateEndpointsResult> getPrivateEndpoints() {
@@ -397,6 +424,8 @@ public final class ResourceManagerFunctions {
      * - For `privateEndpointId`, lists the matching private endpoint.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -428,6 +457,7 @@ public final class ResourceManagerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPrivateEndpointsResult> getPrivateEndpointsPlain() {
@@ -441,6 +471,8 @@ public final class ResourceManagerFunctions {
      * - For `privateEndpointId`, lists the matching private endpoint.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -472,6 +504,7 @@ public final class ResourceManagerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPrivateEndpointsResult> getPrivateEndpoints(GetPrivateEndpointsArgs args) {
@@ -485,6 +518,8 @@ public final class ResourceManagerFunctions {
      * - For `privateEndpointId`, lists the matching private endpoint.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -516,6 +551,7 @@ public final class ResourceManagerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPrivateEndpointsResult> getPrivateEndpointsPlain(GetPrivateEndpointsPlainArgs args) {
@@ -529,6 +565,8 @@ public final class ResourceManagerFunctions {
      * - For `privateEndpointId`, lists the matching private endpoint.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -560,6 +598,7 @@ public final class ResourceManagerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPrivateEndpointsResult> getPrivateEndpoints(GetPrivateEndpointsArgs args, InvokeOptions options) {
@@ -573,6 +612,8 @@ public final class ResourceManagerFunctions {
      * - For `privateEndpointId`, lists the matching private endpoint.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -604,6 +645,7 @@ public final class ResourceManagerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPrivateEndpointsResult> getPrivateEndpointsPlain(GetPrivateEndpointsPlainArgs args, InvokeOptions options) {
@@ -615,6 +657,8 @@ public final class ResourceManagerFunctions {
      * Gets a stack using the stack ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -643,6 +687,7 @@ public final class ResourceManagerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetStackResult> getStack(GetStackArgs args) {
@@ -654,6 +699,8 @@ public final class ResourceManagerFunctions {
      * Gets a stack using the stack ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -682,6 +729,7 @@ public final class ResourceManagerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetStackResult> getStackPlain(GetStackPlainArgs args) {
@@ -693,6 +741,8 @@ public final class ResourceManagerFunctions {
      * Gets a stack using the stack ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -721,6 +771,7 @@ public final class ResourceManagerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetStackResult> getStack(GetStackArgs args, InvokeOptions options) {
@@ -732,6 +783,8 @@ public final class ResourceManagerFunctions {
      * Gets a stack using the stack ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -760,6 +813,7 @@ public final class ResourceManagerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetStackResult> getStackPlain(GetStackPlainArgs args, InvokeOptions options) {
@@ -767,6 +821,8 @@ public final class ResourceManagerFunctions {
     }
     /**
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -795,6 +851,7 @@ public final class ResourceManagerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetStackTfStateResult> getStackTfState(GetStackTfStateArgs args) {
@@ -802,6 +859,8 @@ public final class ResourceManagerFunctions {
     }
     /**
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -830,6 +889,7 @@ public final class ResourceManagerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetStackTfStateResult> getStackTfStatePlain(GetStackTfStatePlainArgs args) {
@@ -837,6 +897,8 @@ public final class ResourceManagerFunctions {
     }
     /**
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -865,6 +927,7 @@ public final class ResourceManagerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetStackTfStateResult> getStackTfState(GetStackTfStateArgs args, InvokeOptions options) {
@@ -872,6 +935,8 @@ public final class ResourceManagerFunctions {
     }
     /**
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -900,6 +965,7 @@ public final class ResourceManagerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetStackTfStateResult> getStackTfStatePlain(GetStackTfStatePlainArgs args, InvokeOptions options) {
@@ -913,6 +979,8 @@ public final class ResourceManagerFunctions {
      * - If called using the stack ID, returns the specified stack.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -944,6 +1012,7 @@ public final class ResourceManagerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetStacksResult> getStacks(GetStacksArgs args) {
@@ -957,6 +1026,8 @@ public final class ResourceManagerFunctions {
      * - If called using the stack ID, returns the specified stack.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -988,6 +1059,7 @@ public final class ResourceManagerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetStacksResult> getStacksPlain(GetStacksPlainArgs args) {
@@ -1001,6 +1073,8 @@ public final class ResourceManagerFunctions {
      * - If called using the stack ID, returns the specified stack.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1032,6 +1106,7 @@ public final class ResourceManagerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetStacksResult> getStacks(GetStacksArgs args, InvokeOptions options) {
@@ -1045,6 +1120,8 @@ public final class ResourceManagerFunctions {
      * - If called using the stack ID, returns the specified stack.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1076,6 +1153,7 @@ public final class ResourceManagerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetStacksResult> getStacksPlain(GetStacksPlainArgs args, InvokeOptions options) {

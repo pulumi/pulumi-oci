@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,6 +25,7 @@ import * as utilities from "../utilities";
  *     state: _var.deployment_upgrade_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDeploymentUpgrades(args: GetDeploymentUpgradesArgs, opts?: pulumi.InvokeOptions): Promise<GetDeploymentUpgradesResult> {
 
@@ -97,6 +99,7 @@ export interface GetDeploymentUpgradesResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -108,6 +111,7 @@ export interface GetDeploymentUpgradesResult {
  *     state: _var.deployment_upgrade_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDeploymentUpgradesOutput(args: GetDeploymentUpgradesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDeploymentUpgradesResult> {
     return pulumi.output(args).apply((a: any) => getDeploymentUpgrades(a, opts))

@@ -21,6 +21,8 @@ import javax.annotation.Nullable;
  * Adds the list of redeemable user summary for a subscription ID.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -57,13 +59,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * SubscriptionRedeemableUsers can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:UsageProxy/subscriptionRedeemableUser:SubscriptionRedeemableUser test_subscription_redeemable_user &#34;subscriptions/{subscriptionId}/redeemableUsers/tenancyId/{tenancyId}&#34;
+ * $ pulumi import oci:UsageProxy/subscriptionRedeemableUser:SubscriptionRedeemableUser test_subscription_redeemable_user &#34;subscriptions/{subscriptionId}/redeemableUsers/tenancyId/{tenancyId}&#34;
  * ```
  * 
  */

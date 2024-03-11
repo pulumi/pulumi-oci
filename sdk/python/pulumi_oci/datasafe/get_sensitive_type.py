@@ -290,12 +290,14 @@ def get_sensitive_type(sensitive_type_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_sensitive_type = oci.DataSafe.get_sensitive_type(sensitive_type_id=oci_data_safe_sensitive_type["test_sensitive_type"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str sensitive_type_id: The OCID of the sensitive type.
@@ -339,12 +341,14 @@ def get_sensitive_type_output(sensitive_type_id: Optional[pulumi.Input[str]] = N
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_sensitive_type = oci.DataSafe.get_sensitive_type(sensitive_type_id=oci_data_safe_sensitive_type["test_sensitive_type"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str sensitive_type_id: The OCID of the sensitive type.

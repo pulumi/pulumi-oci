@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,6 +22,7 @@ import * as utilities from "../utilities";
  *     filesystemSnapshotPolicyId: oci_file_storage_filesystem_snapshot_policy.test_filesystem_snapshot_policy.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getFilesystemSnapshotPolicy(args: GetFilesystemSnapshotPolicyArgs, opts?: pulumi.InvokeOptions): Promise<GetFilesystemSnapshotPolicyResult> {
 
@@ -93,6 +95,7 @@ export interface GetFilesystemSnapshotPolicyResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -101,6 +104,7 @@ export interface GetFilesystemSnapshotPolicyResult {
  *     filesystemSnapshotPolicyId: oci_file_storage_filesystem_snapshot_policy.test_filesystem_snapshot_policy.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getFilesystemSnapshotPolicyOutput(args: GetFilesystemSnapshotPolicyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFilesystemSnapshotPolicyResult> {
     return pulumi.output(args).apply((a: any) => getFilesystemSnapshotPolicy(a, opts))

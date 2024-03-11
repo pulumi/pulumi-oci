@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -36,13 +37,14 @@ import * as utilities from "../utilities";
  *     status: _var.dedicated_vantage_point_status,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * DedicatedVantagePoints can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:ApmSynthetics/dedicatedVantagePoint:DedicatedVantagePoint test_dedicated_vantage_point "dedicatedVantagePoints/{dedicatedVantagePointId}/apmDomainId/{apmDomainId}"
+ * $ pulumi import oci:ApmSynthetics/dedicatedVantagePoint:DedicatedVantagePoint test_dedicated_vantage_point "dedicatedVantagePoints/{dedicatedVantagePointId}/apmDomainId/{apmDomainId}"
  * ```
  */
 export class DedicatedVantagePoint extends pulumi.CustomResource {

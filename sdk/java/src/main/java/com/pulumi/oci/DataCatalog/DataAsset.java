@@ -21,6 +21,8 @@ import javax.annotation.Nullable;
  * Create a new data asset.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -53,13 +55,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * DataAssets can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:DataCatalog/dataAsset:DataAsset test_data_asset &#34;catalogs/{catalogId}/dataAssets/{dataAssetKey}&#34;
+ * $ pulumi import oci:DataCatalog/dataAsset:DataAsset test_data_asset &#34;catalogs/{catalogId}/dataAssets/{dataAssetKey}&#34;
  * ```
  * 
  */

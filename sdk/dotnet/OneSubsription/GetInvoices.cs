@@ -17,10 +17,9 @@ namespace Pulumi.Oci.OneSubsription
         /// This is a collection API which returns a list of Invoices for given filters.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -40,8 +39,7 @@ namespace Pulumi.Oci.OneSubsription
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetInvoicesResult> InvokeAsync(GetInvoicesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetInvoicesResult>("oci:OneSubsription/getInvoices:getInvoices", args ?? new GetInvoicesArgs(), options.WithDefaults());
@@ -52,10 +50,9 @@ namespace Pulumi.Oci.OneSubsription
         /// This is a collection API which returns a list of Invoices for given filters.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -75,8 +72,7 @@ namespace Pulumi.Oci.OneSubsription
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetInvoicesResult> Invoke(GetInvoicesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetInvoicesResult>("oci:OneSubsription/getInvoices:getInvoices", args ?? new GetInvoicesInvokeArgs(), options.WithDefaults());

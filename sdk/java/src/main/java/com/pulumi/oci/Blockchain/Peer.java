@@ -20,6 +20,8 @@ import javax.annotation.Nullable;
  * Create Blockchain Platform Peer
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -55,13 +57,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * Peers can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Blockchain/peer:Peer test_peer &#34;blockchainPlatforms/{blockchainPlatformId}/peers/{peerId}&#34;
+ * $ pulumi import oci:Blockchain/peer:Peer test_peer &#34;blockchainPlatforms/{blockchainPlatformId}/peers/{peerId}&#34;
  * ```
  * 
  */

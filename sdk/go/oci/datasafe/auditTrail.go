@@ -21,9 +21,7 @@ import (
 // AuditTrails can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:DataSafe/auditTrail:AuditTrail test_audit_trail "id"
-//
+// $ pulumi import oci:DataSafe/auditTrail:AuditTrail test_audit_trail "id"
 // ```
 type AuditTrail struct {
 	pulumi.CustomResourceState

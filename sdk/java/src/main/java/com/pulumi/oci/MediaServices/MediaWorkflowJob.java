@@ -26,6 +26,8 @@ import javax.annotation.Nullable;
  * Run the MediaWorkflow according to the given mediaWorkflow definition and configuration.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -70,13 +72,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * MediaWorkflowJobs can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:MediaServices/mediaWorkflowJob:MediaWorkflowJob test_media_workflow_job &#34;id&#34;
+ * $ pulumi import oci:MediaServices/mediaWorkflowJob:MediaWorkflowJob test_media_workflow_job &#34;id&#34;
  * ```
  * 
  */

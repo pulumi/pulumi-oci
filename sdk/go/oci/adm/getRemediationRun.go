@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -40,6 +41,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupRemediationRun(ctx *pulumi.Context, args *LookupRemediationRunArgs, opts ...pulumi.InvokeOption) (*LookupRemediationRunResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupRemediationRunResult

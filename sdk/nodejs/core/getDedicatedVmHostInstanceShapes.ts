@@ -14,6 +14,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,6 +25,7 @@ import * as utilities from "../utilities";
  *     dedicatedVmHostShape: _var.dedicated_vm_host_instance_shape_dedicated_vm_host_shape,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDedicatedVmHostInstanceShapes(args: GetDedicatedVmHostInstanceShapesArgs, opts?: pulumi.InvokeOptions): Promise<GetDedicatedVmHostInstanceShapesResult> {
 
@@ -83,6 +85,7 @@ export interface GetDedicatedVmHostInstanceShapesResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -93,6 +96,7 @@ export interface GetDedicatedVmHostInstanceShapesResult {
  *     dedicatedVmHostShape: _var.dedicated_vm_host_instance_shape_dedicated_vm_host_shape,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDedicatedVmHostInstanceShapesOutput(args: GetDedicatedVmHostInstanceShapesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDedicatedVmHostInstanceShapesResult> {
     return pulumi.output(args).apply((a: any) => getDedicatedVmHostInstanceShapes(a, opts))

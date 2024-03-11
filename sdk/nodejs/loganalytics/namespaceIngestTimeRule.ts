@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -49,13 +50,14 @@ import * as utilities from "../utilities";
  *     },
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * NamespaceIngestTimeRules can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:LogAnalytics/namespaceIngestTimeRule:NamespaceIngestTimeRule test_namespace_ingest_time_rule "namespaces/{namespaceName}/ingestTimeRules/{ingestTimeRuleId}"
+ * $ pulumi import oci:LogAnalytics/namespaceIngestTimeRule:NamespaceIngestTimeRule test_namespace_ingest_time_rule "namespaces/{namespaceName}/ingestTimeRules/{ingestTimeRuleId}"
  * ```
  */
 export class NamespaceIngestTimeRule extends pulumi.CustomResource {

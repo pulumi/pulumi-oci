@@ -347,6 +347,7 @@ class AiPrivateEndpoint(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -363,13 +364,14 @@ class AiPrivateEndpoint(pulumi.CustomResource):
                 "bar-key": "value",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         AiPrivateEndpoints can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:AiAnomalyDetection/aiPrivateEndpoint:AiPrivateEndpoint test_ai_private_endpoint "id"
+        $ pulumi import oci:AiAnomalyDetection/aiPrivateEndpoint:AiPrivateEndpoint test_ai_private_endpoint "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -398,6 +400,7 @@ class AiPrivateEndpoint(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -414,13 +417,14 @@ class AiPrivateEndpoint(pulumi.CustomResource):
                 "bar-key": "value",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         AiPrivateEndpoints can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:AiAnomalyDetection/aiPrivateEndpoint:AiPrivateEndpoint test_ai_private_endpoint "id"
+        $ pulumi import oci:AiAnomalyDetection/aiPrivateEndpoint:AiPrivateEndpoint test_ai_private_endpoint "id"
         ```
 
         :param str resource_name: The name of the resource.

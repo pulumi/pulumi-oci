@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -26,6 +27,7 @@ import * as utilities from "../utilities";
  *     status: _var.metric_extension_status,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getMetricExtensions(args: GetMetricExtensionsArgs, opts?: pulumi.InvokeOptions): Promise<GetMetricExtensionsResult> {
 
@@ -114,6 +116,7 @@ export interface GetMetricExtensionsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -127,6 +130,7 @@ export interface GetMetricExtensionsResult {
  *     status: _var.metric_extension_status,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getMetricExtensionsOutput(args: GetMetricExtensionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMetricExtensionsResult> {
     return pulumi.output(args).apply((a: any) => getMetricExtensions(a, opts))

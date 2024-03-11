@@ -26,6 +26,8 @@ import javax.annotation.Nullable;
  * Creates a project. Projects are organizational constructs within a workspace that you use to organize your design-time resources, such as tasks or data flows. Projects can be organized into folders.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -67,13 +69,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * WorkspaceProjects can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:DataIntegration/workspaceProject:WorkspaceProject test_workspace_project &#34;workspaces/{workspaceId}/projects/{projectKey}&#34;
+ * $ pulumi import oci:DataIntegration/workspaceProject:WorkspaceProject test_workspace_project &#34;workspaces/{workspaceId}/projects/{projectKey}&#34;
  * ```
  * 
  */

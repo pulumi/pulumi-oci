@@ -35,6 +35,7 @@ namespace Pulumi.Oci.Core
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -62,13 +63,14 @@ namespace Pulumi.Oci.Core
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// InternetGateways can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Core/internetGateway:InternetGateway test_internet_gateway "id"
+    /// $ pulumi import oci:Core/internetGateway:InternetGateway test_internet_gateway "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Core/internetGateway:InternetGateway")]

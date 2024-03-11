@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,6 +42,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetListingTaxes(ctx *pulumi.Context, args *GetListingTaxesArgs, opts ...pulumi.InvokeOption) (*GetListingTaxesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetListingTaxesResult

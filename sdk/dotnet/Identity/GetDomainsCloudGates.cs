@@ -16,10 +16,9 @@ namespace Pulumi.Oci.Identity
         /// 
         /// Search Cloud Gates
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -45,8 +44,7 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDomainsCloudGatesResult> InvokeAsync(GetDomainsCloudGatesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDomainsCloudGatesResult>("oci:Identity/getDomainsCloudGates:getDomainsCloudGates", args ?? new GetDomainsCloudGatesArgs(), options.WithDefaults());
@@ -56,10 +54,9 @@ namespace Pulumi.Oci.Identity
         /// 
         /// Search Cloud Gates
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -85,8 +82,7 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDomainsCloudGatesResult> Invoke(GetDomainsCloudGatesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsCloudGatesResult>("oci:Identity/getDomainsCloudGates:getDomainsCloudGates", args ?? new GetDomainsCloudGatesInvokeArgs(), options.WithDefaults());

@@ -16,6 +16,7 @@ namespace Pulumi.Oci.ServiceCatalog
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -49,13 +50,14 @@ namespace Pulumi.Oci.ServiceCatalog
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// PrivateApplications can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:ServiceCatalog/privateApplication:PrivateApplication test_private_application "id"
+    /// $ pulumi import oci:ServiceCatalog/privateApplication:PrivateApplication test_private_application "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:ServiceCatalog/privateApplication:PrivateApplication")]

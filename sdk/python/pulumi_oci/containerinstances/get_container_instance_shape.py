@@ -85,6 +85,7 @@ def get_container_instance_shape(availability_domain: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -92,6 +93,7 @@ def get_container_instance_shape(availability_domain: Optional[str] = None,
     test_container_instance_shape = oci.ContainerInstances.get_container_instance_shape(compartment_id=var["compartment_id"],
         availability_domain=var["container_instance_shape_availability_domain"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
@@ -121,6 +123,7 @@ def get_container_instance_shape_output(availability_domain: Optional[pulumi.Inp
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -128,6 +131,7 @@ def get_container_instance_shape_output(availability_domain: Optional[pulumi.Inp
     test_container_instance_shape = oci.ContainerInstances.get_container_instance_shape(compartment_id=var["compartment_id"],
         availability_domain=var["container_instance_shape_availability_domain"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`

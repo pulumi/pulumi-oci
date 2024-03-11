@@ -16,10 +16,9 @@ namespace Pulumi.Oci.OspGateway
         /// 
         /// Get the subscription data for the compartment
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,8 +35,7 @@ namespace Pulumi.Oci.OspGateway
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetSubscriptionsResult> InvokeAsync(GetSubscriptionsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetSubscriptionsResult>("oci:OspGateway/getSubscriptions:getSubscriptions", args ?? new GetSubscriptionsArgs(), options.WithDefaults());
@@ -47,10 +45,9 @@ namespace Pulumi.Oci.OspGateway
         /// 
         /// Get the subscription data for the compartment
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -67,8 +64,7 @@ namespace Pulumi.Oci.OspGateway
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetSubscriptionsResult> Invoke(GetSubscriptionsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSubscriptionsResult>("oci:OspGateway/getSubscriptions:getSubscriptions", args ?? new GetSubscriptionsInvokeArgs(), options.WithDefaults());

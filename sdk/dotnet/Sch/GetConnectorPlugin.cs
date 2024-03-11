@@ -17,10 +17,9 @@ namespace Pulumi.Oci.Sch
         /// Gets the specified connector plugin configuration information.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,8 +35,7 @@ namespace Pulumi.Oci.Sch
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetConnectorPluginResult> InvokeAsync(GetConnectorPluginArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetConnectorPluginResult>("oci:Sch/getConnectorPlugin:getConnectorPlugin", args ?? new GetConnectorPluginArgs(), options.WithDefaults());
@@ -48,10 +46,9 @@ namespace Pulumi.Oci.Sch
         /// Gets the specified connector plugin configuration information.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -67,8 +64,7 @@ namespace Pulumi.Oci.Sch
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetConnectorPluginResult> Invoke(GetConnectorPluginInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetConnectorPluginResult>("oci:Sch/getConnectorPlugin:getConnectorPlugin", args ?? new GetConnectorPluginInvokeArgs(), options.WithDefaults());

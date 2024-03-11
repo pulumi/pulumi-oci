@@ -17,10 +17,9 @@ namespace Pulumi.Oci.StackMonitoring
         /// Get monitored resource for the given identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,8 +35,7 @@ namespace Pulumi.Oci.StackMonitoring
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetMonitoredResourceResult> InvokeAsync(GetMonitoredResourceArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetMonitoredResourceResult>("oci:StackMonitoring/getMonitoredResource:getMonitoredResource", args ?? new GetMonitoredResourceArgs(), options.WithDefaults());
@@ -48,10 +46,9 @@ namespace Pulumi.Oci.StackMonitoring
         /// Get monitored resource for the given identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -67,8 +64,7 @@ namespace Pulumi.Oci.StackMonitoring
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetMonitoredResourceResult> Invoke(GetMonitoredResourceInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMonitoredResourceResult>("oci:StackMonitoring/getMonitoredResource:getMonitoredResource", args ?? new GetMonitoredResourceInvokeArgs(), options.WithDefaults());

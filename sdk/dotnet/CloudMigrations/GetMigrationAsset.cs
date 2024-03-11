@@ -16,10 +16,9 @@ namespace Pulumi.Oci.CloudMigrations
         /// 
         /// Gets a migration asset by identifier.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,8 +34,7 @@ namespace Pulumi.Oci.CloudMigrations
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetMigrationAssetResult> InvokeAsync(GetMigrationAssetArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetMigrationAssetResult>("oci:CloudMigrations/getMigrationAsset:getMigrationAsset", args ?? new GetMigrationAssetArgs(), options.WithDefaults());
@@ -46,10 +44,9 @@ namespace Pulumi.Oci.CloudMigrations
         /// 
         /// Gets a migration asset by identifier.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -65,8 +62,7 @@ namespace Pulumi.Oci.CloudMigrations
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetMigrationAssetResult> Invoke(GetMigrationAssetInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMigrationAssetResult>("oci:CloudMigrations/getMigrationAsset:getMigrationAsset", args ?? new GetMigrationAssetInvokeArgs(), options.WithDefaults());

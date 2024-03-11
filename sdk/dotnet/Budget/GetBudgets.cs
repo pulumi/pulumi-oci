@@ -23,10 +23,9 @@ namespace Pulumi.Oci.Budget
         /// Clients should ignore new targetTypes, or upgrade to the latest version of the client SDK to handle new targetTypes.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -45,8 +44,7 @@ namespace Pulumi.Oci.Budget
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetBudgetsResult> InvokeAsync(GetBudgetsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetBudgetsResult>("oci:Budget/getBudgets:getBudgets", args ?? new GetBudgetsArgs(), options.WithDefaults());
@@ -63,10 +61,9 @@ namespace Pulumi.Oci.Budget
         /// Clients should ignore new targetTypes, or upgrade to the latest version of the client SDK to handle new targetTypes.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -85,8 +82,7 @@ namespace Pulumi.Oci.Budget
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetBudgetsResult> Invoke(GetBudgetsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetBudgetsResult>("oci:Budget/getBudgets:getBudgets", args ?? new GetBudgetsInvokeArgs(), options.WithDefaults());

@@ -29,6 +29,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -55,6 +56,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetAuditProfileAnalytic(ctx *pulumi.Context, args *GetAuditProfileAnalyticArgs, opts ...pulumi.InvokeOption) (*GetAuditProfileAnalyticResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAuditProfileAnalyticResult

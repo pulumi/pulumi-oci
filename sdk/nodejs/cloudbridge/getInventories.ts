@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,6 +23,7 @@ import * as utilities from "../utilities";
  *     state: _var.inventory_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getInventories(args: GetInventoriesArgs, opts?: pulumi.InvokeOptions): Promise<GetInventoriesResult> {
 
@@ -77,6 +79,7 @@ export interface GetInventoriesResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -86,6 +89,7 @@ export interface GetInventoriesResult {
  *     state: _var.inventory_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getInventoriesOutput(args: GetInventoriesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInventoriesResult> {
     return pulumi.output(args).apply((a: any) => getInventories(a, opts))

@@ -17,10 +17,9 @@ namespace Pulumi.Oci.Database
         /// Gets the patch history details for the specified patch history entry.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -37,8 +36,7 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetVmClusterPatchHistoryEntryResult> InvokeAsync(GetVmClusterPatchHistoryEntryArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetVmClusterPatchHistoryEntryResult>("oci:Database/getVmClusterPatchHistoryEntry:getVmClusterPatchHistoryEntry", args ?? new GetVmClusterPatchHistoryEntryArgs(), options.WithDefaults());
@@ -49,10 +47,9 @@ namespace Pulumi.Oci.Database
         /// Gets the patch history details for the specified patch history entry.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -69,8 +66,7 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetVmClusterPatchHistoryEntryResult> Invoke(GetVmClusterPatchHistoryEntryInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVmClusterPatchHistoryEntryResult>("oci:Database/getVmClusterPatchHistoryEntry:getVmClusterPatchHistoryEntry", args ?? new GetVmClusterPatchHistoryEntryInvokeArgs(), options.WithDefaults());

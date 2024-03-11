@@ -15,6 +15,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -61,13 +62,14 @@ import * as utilities from "../utilities";
  *     kmsKeyVersionId: oci_kms_key_version.test_key_version.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * Databases can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Database/database:Database test_database "id"
+ * $ pulumi import oci:Database/database:Database test_database "id"
  * ```
  */
 export class Database extends pulumi.CustomResource {

@@ -16,6 +16,7 @@ namespace Pulumi.Oci.LogAnalytics
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -59,13 +60,14 @@ namespace Pulumi.Oci.LogAnalytics
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// LogAnalyticsObjectCollectionRules can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:LogAnalytics/logAnalyticsObjectCollectionRule:LogAnalyticsObjectCollectionRule test_log_analytics_object_collection_rule "namespaces/{namespaceName}/logAnalyticsObjectCollectionRules/{logAnalyticsObjectCollectionRuleId}"
+    /// $ pulumi import oci:LogAnalytics/logAnalyticsObjectCollectionRule:LogAnalyticsObjectCollectionRule test_log_analytics_object_collection_rule "namespaces/{namespaceName}/logAnalyticsObjectCollectionRules/{logAnalyticsObjectCollectionRuleId}"
     /// ```
     /// </summary>
     [OciResourceType("oci:LogAnalytics/logAnalyticsObjectCollectionRule:LogAnalyticsObjectCollectionRule")]

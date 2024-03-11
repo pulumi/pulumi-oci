@@ -16,6 +16,7 @@ namespace Pulumi.Oci.NetworkFirewall
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -39,13 +40,14 @@ namespace Pulumi.Oci.NetworkFirewall
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// NetworkFirewallPolicyUrlLists can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:NetworkFirewall/networkFirewallPolicyUrlList:NetworkFirewallPolicyUrlList test_network_firewall_policy_url_list "networkFirewallPolicies/{networkFirewallPolicyId}/urlLists/{urlListName}"
+    /// $ pulumi import oci:NetworkFirewall/networkFirewallPolicyUrlList:NetworkFirewallPolicyUrlList test_network_firewall_policy_url_list "networkFirewallPolicies/{networkFirewallPolicyId}/urlLists/{urlListName}"
     /// ```
     /// </summary>
     [OciResourceType("oci:NetworkFirewall/networkFirewallPolicyUrlList:NetworkFirewallPolicyUrlList")]

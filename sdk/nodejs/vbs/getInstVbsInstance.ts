@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -19,6 +20,7 @@ import * as utilities from "../utilities";
  *     vbsInstanceId: oci_vbs_inst_vbs_instance.test_vbs_instance.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getInstVbsInstance(args: GetInstVbsInstanceArgs, opts?: pulumi.InvokeOptions): Promise<GetInstVbsInstanceResult> {
 
@@ -108,6 +110,7 @@ export interface GetInstVbsInstanceResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -116,6 +119,7 @@ export interface GetInstVbsInstanceResult {
  *     vbsInstanceId: oci_vbs_inst_vbs_instance.test_vbs_instance.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getInstVbsInstanceOutput(args: GetInstVbsInstanceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInstVbsInstanceResult> {
     return pulumi.output(args).apply((a: any) => getInstVbsInstance(a, opts))

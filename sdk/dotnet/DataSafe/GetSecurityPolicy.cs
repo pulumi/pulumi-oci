@@ -16,10 +16,9 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// Gets a security policy by the specified OCID of the security policy resource.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,8 +34,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetSecurityPolicyResult> InvokeAsync(GetSecurityPolicyArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetSecurityPolicyResult>("oci:DataSafe/getSecurityPolicy:getSecurityPolicy", args ?? new GetSecurityPolicyArgs(), options.WithDefaults());
@@ -46,10 +44,9 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// Gets a security policy by the specified OCID of the security policy resource.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -65,8 +62,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetSecurityPolicyResult> Invoke(GetSecurityPolicyInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSecurityPolicyResult>("oci:DataSafe/getSecurityPolicy:getSecurityPolicy", args ?? new GetSecurityPolicyInvokeArgs(), options.WithDefaults());

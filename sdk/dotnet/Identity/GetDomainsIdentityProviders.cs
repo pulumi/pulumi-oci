@@ -16,10 +16,9 @@ namespace Pulumi.Oci.Identity
         /// 
         /// Search Identity Providers
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -42,8 +41,7 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDomainsIdentityProvidersResult> InvokeAsync(GetDomainsIdentityProvidersArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDomainsIdentityProvidersResult>("oci:Identity/getDomainsIdentityProviders:getDomainsIdentityProviders", args ?? new GetDomainsIdentityProvidersArgs(), options.WithDefaults());
@@ -53,10 +51,9 @@ namespace Pulumi.Oci.Identity
         /// 
         /// Search Identity Providers
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -79,8 +76,7 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDomainsIdentityProvidersResult> Invoke(GetDomainsIdentityProvidersInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsIdentityProvidersResult>("oci:Identity/getDomainsIdentityProviders:getDomainsIdentityProviders", args ?? new GetDomainsIdentityProvidersInvokeArgs(), options.WithDefaults());

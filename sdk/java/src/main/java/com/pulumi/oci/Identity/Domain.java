@@ -39,6 +39,8 @@ import javax.annotation.Nullable;
  * - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -80,13 +82,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * Domains can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Identity/domain:Domain test_domain &#34;id&#34;
+ * $ pulumi import oci:Identity/domain:Domain test_domain &#34;id&#34;
  * ```
  * 
  */

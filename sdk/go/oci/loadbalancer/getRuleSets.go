@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -40,6 +41,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetRuleSets(ctx *pulumi.Context, args *GetRuleSetsArgs, opts ...pulumi.InvokeOption) (*GetRuleSetsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetRuleSetsResult

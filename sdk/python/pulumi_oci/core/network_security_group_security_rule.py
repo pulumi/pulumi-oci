@@ -531,6 +531,7 @@ class NetworkSecurityGroupSecurityRule(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -570,13 +571,14 @@ class NetworkSecurityGroupSecurityRule(pulumi.CustomResource):
                 ),
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         NetworkSecurityGroupSecurityRule can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/networkSecurityGroupSecurityRule:NetworkSecurityGroupSecurityRule test_network_security_group_security_rule "networkSecurityGroups/{networkSecurityGroupId}/securityRules/{securityRuleId}"
+        $ pulumi import oci:Core/networkSecurityGroupSecurityRule:NetworkSecurityGroupSecurityRule test_network_security_group_security_rule "networkSecurityGroups/{networkSecurityGroupId}/securityRules/{securityRuleId}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -623,6 +625,7 @@ class NetworkSecurityGroupSecurityRule(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -662,13 +665,14 @@ class NetworkSecurityGroupSecurityRule(pulumi.CustomResource):
                 ),
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         NetworkSecurityGroupSecurityRule can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/networkSecurityGroupSecurityRule:NetworkSecurityGroupSecurityRule test_network_security_group_security_rule "networkSecurityGroups/{networkSecurityGroupId}/securityRules/{securityRuleId}"
+        $ pulumi import oci:Core/networkSecurityGroupSecurityRule:NetworkSecurityGroupSecurityRule test_network_security_group_security_rule "networkSecurityGroups/{networkSecurityGroupId}/securityRules/{securityRuleId}"
         ```
 
         :param str resource_name: The name of the resource.

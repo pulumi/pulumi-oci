@@ -444,6 +444,7 @@ class ExternalExadataStorageConnector(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -467,13 +468,14 @@ class ExternalExadataStorageConnector(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ExternalExadataStorageConnectors can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DatabaseManagement/externalExadataStorageConnector:ExternalExadataStorageConnector test_external_exadata_storage_connector "id"
+        $ pulumi import oci:DatabaseManagement/externalExadataStorageConnector:ExternalExadataStorageConnector test_external_exadata_storage_connector "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -503,6 +505,7 @@ class ExternalExadataStorageConnector(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -526,13 +529,14 @@ class ExternalExadataStorageConnector(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ExternalExadataStorageConnectors can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DatabaseManagement/externalExadataStorageConnector:ExternalExadataStorageConnector test_external_exadata_storage_connector "id"
+        $ pulumi import oci:DatabaseManagement/externalExadataStorageConnector:ExternalExadataStorageConnector test_external_exadata_storage_connector "id"
         ```
 
         :param str resource_name: The name of the resource.

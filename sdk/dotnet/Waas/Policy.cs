@@ -31,7 +31,7 @@ namespace Pulumi.Oci.Waas
     /// WaasPolicies can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Waas/policy:Policy test_waas_policy "id"
+    /// $ pulumi import oci:Waas/policy:Policy test_waas_policy "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Waas/policy:Policy")]

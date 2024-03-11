@@ -145,6 +145,7 @@ def get_workspace_export_requests(export_status: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -156,6 +157,7 @@ def get_workspace_export_requests(export_status: Optional[str] = None,
         time_ended_in_millis=var["workspace_export_request_time_ended_in_millis"],
         time_started_in_millis=var["workspace_export_request_time_started_in_millis"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str export_status: Specifies export status to use, either -  ALL, SUCCESSFUL, IN_PROGRESS, QUEUED, FAILED .
@@ -204,6 +206,7 @@ def get_workspace_export_requests_output(export_status: Optional[pulumi.Input[Op
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -215,6 +218,7 @@ def get_workspace_export_requests_output(export_status: Optional[pulumi.Input[Op
         time_ended_in_millis=var["workspace_export_request_time_ended_in_millis"],
         time_started_in_millis=var["workspace_export_request_time_started_in_millis"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str export_status: Specifies export status to use, either -  ALL, SUCCESSFUL, IN_PROGRESS, QUEUED, FAILED .

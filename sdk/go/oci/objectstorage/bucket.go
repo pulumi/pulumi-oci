@@ -19,6 +19,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -66,15 +67,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Buckets can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:ObjectStorage/bucket:Bucket test_bucket "n/{namespaceName}/b/{bucketName}"
-//
+// $ pulumi import oci:ObjectStorage/bucket:Bucket test_bucket "n/{namespaceName}/b/{bucketName}"
 // ```
 type Bucket struct {
 	pulumi.CustomResourceState

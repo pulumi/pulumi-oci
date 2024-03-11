@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -25,6 +26,7 @@ import * as utilities from "../utilities";
  *     state: _var.private_endpoint_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getPrivateEndpoints(args: GetPrivateEndpointsArgs, opts?: pulumi.InvokeOptions): Promise<GetPrivateEndpointsResult> {
 
@@ -104,6 +106,7 @@ export interface GetPrivateEndpointsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -116,6 +119,7 @@ export interface GetPrivateEndpointsResult {
  *     state: _var.private_endpoint_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getPrivateEndpointsOutput(args: GetPrivateEndpointsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPrivateEndpointsResult> {
     return pulumi.output(args).apply((a: any) => getPrivateEndpoints(a, opts))

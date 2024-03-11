@@ -17,10 +17,9 @@ namespace Pulumi.Oci.DatabaseManagement
         /// Get the counts of alert logs for the specified Managed Database.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -43,8 +42,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetManagedDatabaseAlertLogCountResult> InvokeAsync(GetManagedDatabaseAlertLogCountArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagedDatabaseAlertLogCountResult>("oci:DatabaseManagement/getManagedDatabaseAlertLogCount:getManagedDatabaseAlertLogCount", args ?? new GetManagedDatabaseAlertLogCountArgs(), options.WithDefaults());
@@ -55,10 +53,9 @@ namespace Pulumi.Oci.DatabaseManagement
         /// Get the counts of alert logs for the specified Managed Database.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -81,8 +78,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetManagedDatabaseAlertLogCountResult> Invoke(GetManagedDatabaseAlertLogCountInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseAlertLogCountResult>("oci:DatabaseManagement/getManagedDatabaseAlertLogCount:getManagedDatabaseAlertLogCount", args ?? new GetManagedDatabaseAlertLogCountInvokeArgs(), options.WithDefaults());

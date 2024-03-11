@@ -17,10 +17,9 @@ namespace Pulumi.Oci.Database
         /// gets the upgrade history for a specified database.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -37,8 +36,7 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDatabaseUpgradeHistoryEntryResult> InvokeAsync(GetDatabaseUpgradeHistoryEntryArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDatabaseUpgradeHistoryEntryResult>("oci:Database/getDatabaseUpgradeHistoryEntry:getDatabaseUpgradeHistoryEntry", args ?? new GetDatabaseUpgradeHistoryEntryArgs(), options.WithDefaults());
@@ -49,10 +47,9 @@ namespace Pulumi.Oci.Database
         /// gets the upgrade history for a specified database.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -69,8 +66,7 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDatabaseUpgradeHistoryEntryResult> Invoke(GetDatabaseUpgradeHistoryEntryInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDatabaseUpgradeHistoryEntryResult>("oci:Database/getDatabaseUpgradeHistoryEntry:getDatabaseUpgradeHistoryEntry", args ?? new GetDatabaseUpgradeHistoryEntryInvokeArgs(), options.WithDefaults());

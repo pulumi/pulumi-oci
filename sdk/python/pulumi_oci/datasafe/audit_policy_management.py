@@ -500,6 +500,7 @@ class AuditPolicyManagement(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -517,6 +518,7 @@ class AuditPolicyManagement(pulumi.CustomResource):
             },
             retrieve_from_target_trigger=True)
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -548,6 +550,7 @@ class AuditPolicyManagement(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -565,6 +568,7 @@ class AuditPolicyManagement(pulumi.CustomResource):
             },
             retrieve_from_target_trigger=True)
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 

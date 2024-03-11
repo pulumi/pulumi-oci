@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -47,15 +48,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // ModelProvenances can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:DataScience/modelProvenance:ModelProvenance test_model_provenance "models/{modelId}/provenance"
-//
+// $ pulumi import oci:DataScience/modelProvenance:ModelProvenance test_model_provenance "models/{modelId}/provenance"
 // ```
 type ModelProvenance struct {
 	pulumi.CustomResourceState

@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,6 +22,7 @@ import * as utilities from "../utilities";
  *     managedInstanceGroupId: oci_osmanagement_managed_instance_group.test_managed_instance_group.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getManagedInstanceGroup(args: GetManagedInstanceGroupArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedInstanceGroupResult> {
 
@@ -91,6 +93,7 @@ export interface GetManagedInstanceGroupResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -99,6 +102,7 @@ export interface GetManagedInstanceGroupResult {
  *     managedInstanceGroupId: oci_osmanagement_managed_instance_group.test_managed_instance_group.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getManagedInstanceGroupOutput(args: GetManagedInstanceGroupOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedInstanceGroupResult> {
     return pulumi.output(args).apply((a: any) => getManagedInstanceGroup(a, opts))

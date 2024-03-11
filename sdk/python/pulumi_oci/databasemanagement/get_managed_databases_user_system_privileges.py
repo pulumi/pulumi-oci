@@ -119,6 +119,7 @@ def get_managed_databases_user_system_privileges(filters: Optional[Sequence[pulu
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -128,6 +129,7 @@ def get_managed_databases_user_system_privileges(filters: Optional[Sequence[pulu
         name=var["managed_databases_user_system_privilege_name"],
         opc_named_credential_id=var["managed_databases_user_system_privilege_opc_named_credential_id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
@@ -168,6 +170,7 @@ def get_managed_databases_user_system_privileges_output(filters: Optional[pulumi
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -177,6 +180,7 @@ def get_managed_databases_user_system_privileges_output(filters: Optional[pulumi
         name=var["managed_databases_user_system_privilege_name"],
         opc_named_credential_id=var["managed_databases_user_system_privilege_opc_named_credential_id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.

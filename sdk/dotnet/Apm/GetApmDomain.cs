@@ -16,10 +16,9 @@ namespace Pulumi.Oci.Apm
         /// 
         /// Gets the details of the APM domain specified by OCID.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,8 +34,7 @@ namespace Pulumi.Oci.Apm
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetApmDomainResult> InvokeAsync(GetApmDomainArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetApmDomainResult>("oci:Apm/getApmDomain:getApmDomain", args ?? new GetApmDomainArgs(), options.WithDefaults());
@@ -46,10 +44,9 @@ namespace Pulumi.Oci.Apm
         /// 
         /// Gets the details of the APM domain specified by OCID.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -65,8 +62,7 @@ namespace Pulumi.Oci.Apm
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetApmDomainResult> Invoke(GetApmDomainInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetApmDomainResult>("oci:Apm/getApmDomain:getApmDomain", args ?? new GetApmDomainInvokeArgs(), options.WithDefaults());

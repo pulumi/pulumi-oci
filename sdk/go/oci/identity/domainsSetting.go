@@ -21,9 +21,7 @@ import (
 // Settings can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Identity/domainsSetting:DomainsSetting test_setting "idcsEndpoint/{idcsEndpoint}/settings/{settingId}"
-//
+// $ pulumi import oci:Identity/domainsSetting:DomainsSetting test_setting "idcsEndpoint/{idcsEndpoint}/settings/{settingId}"
 // ```
 type DomainsSetting struct {
 	pulumi.CustomResourceState

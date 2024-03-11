@@ -29,6 +29,8 @@ public final class ContainerInstancesFunctions {
      * Gets information about the specified container instance.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -57,6 +59,7 @@ public final class ContainerInstancesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetContainerInstanceResult> getContainerInstance(GetContainerInstanceArgs args) {
@@ -68,6 +71,8 @@ public final class ContainerInstancesFunctions {
      * Gets information about the specified container instance.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -96,6 +101,7 @@ public final class ContainerInstancesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetContainerInstanceResult> getContainerInstancePlain(GetContainerInstancePlainArgs args) {
@@ -107,6 +113,8 @@ public final class ContainerInstancesFunctions {
      * Gets information about the specified container instance.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -135,6 +143,7 @@ public final class ContainerInstancesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetContainerInstanceResult> getContainerInstance(GetContainerInstanceArgs args, InvokeOptions options) {
@@ -146,6 +155,8 @@ public final class ContainerInstancesFunctions {
      * Gets information about the specified container instance.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -174,6 +185,7 @@ public final class ContainerInstancesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetContainerInstanceResult> getContainerInstancePlain(GetContainerInstancePlainArgs args, InvokeOptions options) {
@@ -185,6 +197,8 @@ public final class ContainerInstancesFunctions {
      * Get a list of shapes for creating Container Instances and their details.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -214,6 +228,7 @@ public final class ContainerInstancesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetContainerInstanceShapeResult> getContainerInstanceShape(GetContainerInstanceShapeArgs args) {
@@ -225,6 +240,8 @@ public final class ContainerInstancesFunctions {
      * Get a list of shapes for creating Container Instances and their details.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -254,6 +271,7 @@ public final class ContainerInstancesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetContainerInstanceShapeResult> getContainerInstanceShapePlain(GetContainerInstanceShapePlainArgs args) {
@@ -265,6 +283,8 @@ public final class ContainerInstancesFunctions {
      * Get a list of shapes for creating Container Instances and their details.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -294,6 +314,7 @@ public final class ContainerInstancesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetContainerInstanceShapeResult> getContainerInstanceShape(GetContainerInstanceShapeArgs args, InvokeOptions options) {
@@ -305,6 +326,8 @@ public final class ContainerInstancesFunctions {
      * Get a list of shapes for creating Container Instances and their details.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -334,6 +357,7 @@ public final class ContainerInstancesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetContainerInstanceShapeResult> getContainerInstanceShapePlain(GetContainerInstanceShapePlainArgs args, InvokeOptions options) {
@@ -345,6 +369,8 @@ public final class ContainerInstancesFunctions {
      * Lists the shapes that can be used to create container instances.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -374,6 +400,7 @@ public final class ContainerInstancesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetContainerInstanceShapesResult> getContainerInstanceShapes(GetContainerInstanceShapesArgs args) {
@@ -385,6 +412,8 @@ public final class ContainerInstancesFunctions {
      * Lists the shapes that can be used to create container instances.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -414,6 +443,7 @@ public final class ContainerInstancesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetContainerInstanceShapesResult> getContainerInstanceShapesPlain(GetContainerInstanceShapesPlainArgs args) {
@@ -425,6 +455,8 @@ public final class ContainerInstancesFunctions {
      * Lists the shapes that can be used to create container instances.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -454,6 +486,7 @@ public final class ContainerInstancesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetContainerInstanceShapesResult> getContainerInstanceShapes(GetContainerInstanceShapesArgs args, InvokeOptions options) {
@@ -465,6 +498,8 @@ public final class ContainerInstancesFunctions {
      * Lists the shapes that can be used to create container instances.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -494,6 +529,7 @@ public final class ContainerInstancesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetContainerInstanceShapesResult> getContainerInstanceShapesPlain(GetContainerInstanceShapesPlainArgs args, InvokeOptions options) {
@@ -505,6 +541,8 @@ public final class ContainerInstancesFunctions {
      * Returns a list of container instances.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -536,6 +574,7 @@ public final class ContainerInstancesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetContainerInstancesResult> getContainerInstances(GetContainerInstancesArgs args) {
@@ -547,6 +586,8 @@ public final class ContainerInstancesFunctions {
      * Returns a list of container instances.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -578,6 +619,7 @@ public final class ContainerInstancesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetContainerInstancesResult> getContainerInstancesPlain(GetContainerInstancesPlainArgs args) {
@@ -589,6 +631,8 @@ public final class ContainerInstancesFunctions {
      * Returns a list of container instances.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -620,6 +664,7 @@ public final class ContainerInstancesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetContainerInstancesResult> getContainerInstances(GetContainerInstancesArgs args, InvokeOptions options) {
@@ -631,6 +676,8 @@ public final class ContainerInstancesFunctions {
      * Returns a list of container instances.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -662,6 +709,7 @@ public final class ContainerInstancesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetContainerInstancesResult> getContainerInstancesPlain(GetContainerInstancesPlainArgs args, InvokeOptions options) {

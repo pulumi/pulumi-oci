@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -62,15 +63,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // OpsiConfigurations can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Opsi/opsiConfiguration:OpsiConfiguration test_opsi_configuration "id"
-//
+// $ pulumi import oci:Opsi/opsiConfiguration:OpsiConfiguration test_opsi_configuration "id"
 // ```
 type OpsiConfiguration struct {
 	pulumi.CustomResourceState

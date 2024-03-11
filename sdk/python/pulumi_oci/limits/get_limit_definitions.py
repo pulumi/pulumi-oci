@@ -114,6 +114,7 @@ def get_limit_definitions(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -122,6 +123,7 @@ def get_limit_definitions(compartment_id: Optional[str] = None,
         name=var["limit_definition_name"],
         service_name=oci_limits_service["test_service"]["name"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
@@ -160,6 +162,7 @@ def get_limit_definitions_output(compartment_id: Optional[pulumi.Input[str]] = N
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -168,6 +171,7 @@ def get_limit_definitions_output(compartment_id: Optional[pulumi.Input[str]] = N
         name=var["limit_definition_name"],
         service_name=oci_limits_service["test_service"]["name"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the parent compartment (remember that the tenancy is simply the root compartment).

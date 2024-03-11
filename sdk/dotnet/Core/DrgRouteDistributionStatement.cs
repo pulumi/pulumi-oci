@@ -16,6 +16,7 @@ namespace Pulumi.Oci.Core
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -39,13 +40,14 @@ namespace Pulumi.Oci.Core
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// DrgRouteDistributionStatement can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Core/drgRouteDistributionStatement:DrgRouteDistributionStatement test_drg_route_distribution_statement "drgRouteDistributions/{drgRouteDistributionId}/statements/{id}"
+    /// $ pulumi import oci:Core/drgRouteDistributionStatement:DrgRouteDistributionStatement test_drg_route_distribution_statement "drgRouteDistributions/{drgRouteDistributionId}/statements/{id}"
     /// ```
     /// </summary>
     [OciResourceType("oci:Core/drgRouteDistributionStatement:DrgRouteDistributionStatement")]

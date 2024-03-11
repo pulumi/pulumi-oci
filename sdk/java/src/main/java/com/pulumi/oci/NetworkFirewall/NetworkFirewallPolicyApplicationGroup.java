@@ -21,6 +21,8 @@ import javax.annotation.Nullable;
  * Creates a new ApplicationGroup inside the Network Firewall Policy.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -50,13 +52,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * NetworkFirewallPolicyApplicationGroups can be imported using the `name`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:NetworkFirewall/networkFirewallPolicyApplicationGroup:NetworkFirewallPolicyApplicationGroup test_network_firewall_policy_application_group &#34;networkFirewallPolicies/{networkFirewallPolicyId}/applicationGroups/{applicationGroupName}&#34;
+ * $ pulumi import oci:NetworkFirewall/networkFirewallPolicyApplicationGroup:NetworkFirewallPolicyApplicationGroup test_network_firewall_policy_application_group &#34;networkFirewallPolicies/{networkFirewallPolicyId}/applicationGroups/{applicationGroupName}&#34;
  * ```
  * 
  */

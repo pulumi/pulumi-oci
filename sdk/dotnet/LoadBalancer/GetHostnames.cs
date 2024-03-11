@@ -16,10 +16,9 @@ namespace Pulumi.Oci.LoadBalancer
         /// 
         /// Lists all hostname resources associated with the specified load balancer.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,8 +34,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetHostnamesResult> InvokeAsync(GetHostnamesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetHostnamesResult>("oci:LoadBalancer/getHostnames:getHostnames", args ?? new GetHostnamesArgs(), options.WithDefaults());
@@ -46,10 +44,9 @@ namespace Pulumi.Oci.LoadBalancer
         /// 
         /// Lists all hostname resources associated with the specified load balancer.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -65,8 +62,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetHostnamesResult> Invoke(GetHostnamesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetHostnamesResult>("oci:LoadBalancer/getHostnames:getHostnames", args ?? new GetHostnamesInvokeArgs(), options.WithDefaults());

@@ -22,6 +22,8 @@ import javax.annotation.Nullable;
  * Creates a new deployment artifact.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -74,13 +76,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * DeployArtifacts can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:DevOps/deployArtifact:DeployArtifact test_deploy_artifact &#34;id&#34;
+ * $ pulumi import oci:DevOps/deployArtifact:DeployArtifact test_deploy_artifact &#34;id&#34;
  * ```
  * 
  */

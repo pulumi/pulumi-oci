@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,6 +23,7 @@ import * as utilities from "../utilities";
  *     namespace: _var.replication_source_namespace,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getReplicationSources(args: GetReplicationSourcesArgs, opts?: pulumi.InvokeOptions): Promise<GetReplicationSourcesResult> {
 
@@ -71,6 +73,7 @@ export interface GetReplicationSourcesResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -80,6 +83,7 @@ export interface GetReplicationSourcesResult {
  *     namespace: _var.replication_source_namespace,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getReplicationSourcesOutput(args: GetReplicationSourcesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetReplicationSourcesResult> {
     return pulumi.output(args).apply((a: any) => getReplicationSources(a, opts))

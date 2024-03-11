@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -40,6 +41,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupHttpRedirect(ctx *pulumi.Context, args *LookupHttpRedirectArgs, opts ...pulumi.InvokeOption) (*LookupHttpRedirectResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupHttpRedirectResult

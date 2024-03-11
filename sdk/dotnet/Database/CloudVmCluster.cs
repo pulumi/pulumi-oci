@@ -16,6 +16,7 @@ namespace Pulumi.Oci.Database
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -68,13 +69,14 @@ namespace Pulumi.Oci.Database
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// CloudVmClusters can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Database/cloudVmCluster:CloudVmCluster test_cloud_vm_cluster "id"
+    /// $ pulumi import oci:Database/cloudVmCluster:CloudVmCluster test_cloud_vm_cluster "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Database/cloudVmCluster:CloudVmCluster")]

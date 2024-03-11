@@ -21,6 +21,8 @@ import javax.annotation.Nullable;
  * Create a new project.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -53,13 +55,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * Projects can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:AiDocument/project:Project test_project &#34;id&#34;
+ * $ pulumi import oci:AiDocument/project:Project test_project &#34;id&#34;
  * ```
  * 
  */

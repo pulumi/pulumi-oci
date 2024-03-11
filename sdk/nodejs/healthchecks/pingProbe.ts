@@ -14,6 +14,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -27,13 +28,14 @@ import * as utilities from "../utilities";
  *     vantagePointNames: _var.ping_probe_vantage_point_names,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * PingProbes can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:HealthChecks/pingProbe:PingProbe test_ping_probe "id"
+ * $ pulumi import oci:HealthChecks/pingProbe:PingProbe test_ping_probe "id"
  * ```
  */
 export class PingProbe extends pulumi.CustomResource {

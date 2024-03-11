@@ -15,6 +15,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -25,6 +26,7 @@ import * as utilities from "../utilities";
  *     state: _var.identity_provider_group_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getIdentityProviderGroups(args: GetIdentityProviderGroupsArgs, opts?: pulumi.InvokeOptions): Promise<GetIdentityProviderGroupsResult> {
 
@@ -88,6 +90,7 @@ export interface GetIdentityProviderGroupsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -98,6 +101,7 @@ export interface GetIdentityProviderGroupsResult {
  *     state: _var.identity_provider_group_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getIdentityProviderGroupsOutput(args: GetIdentityProviderGroupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIdentityProviderGroupsResult> {
     return pulumi.output(args).apply((a: any) => getIdentityProviderGroups(a, opts))

@@ -361,6 +361,7 @@ class AppCatalogSubscription(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -374,13 +375,14 @@ class AppCatalogSubscription(pulumi.CustomResource):
             time_retrieved=var["app_catalog_subscription_time_retrieved"],
             eula_link=var["app_catalog_subscription_eula_link"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         AppCatalogSubscriptions can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/appCatalogSubscription:AppCatalogSubscription test_app_catalog_subscription "compartmentId/{compartmentId}/listingId/{listingId}/listingResourceVersion/{listingResourceVersion}"
+        $ pulumi import oci:Core/appCatalogSubscription:AppCatalogSubscription test_app_catalog_subscription "compartmentId/{compartmentId}/listingId/{listingId}/listingResourceVersion/{listingResourceVersion}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -410,6 +412,7 @@ class AppCatalogSubscription(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -423,13 +426,14 @@ class AppCatalogSubscription(pulumi.CustomResource):
             time_retrieved=var["app_catalog_subscription_time_retrieved"],
             eula_link=var["app_catalog_subscription_eula_link"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         AppCatalogSubscriptions can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/appCatalogSubscription:AppCatalogSubscription test_app_catalog_subscription "compartmentId/{compartmentId}/listingId/{listingId}/listingResourceVersion/{listingResourceVersion}"
+        $ pulumi import oci:Core/appCatalogSubscription:AppCatalogSubscription test_app_catalog_subscription "compartmentId/{compartmentId}/listingId/{listingId}/listingResourceVersion/{listingResourceVersion}"
         ```
 
         :param str resource_name: The name of the resource.

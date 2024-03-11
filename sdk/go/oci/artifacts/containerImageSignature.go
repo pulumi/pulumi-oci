@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -53,15 +54,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // ContainerImageSignatures can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Artifacts/containerImageSignature:ContainerImageSignature test_container_image_signature "container/imageSignatures/{imageSignatureId}"
-//
+// $ pulumi import oci:Artifacts/containerImageSignature:ContainerImageSignature test_container_image_signature "container/imageSignatures/{imageSignatureId}"
 // ```
 type ContainerImageSignature struct {
 	pulumi.CustomResourceState

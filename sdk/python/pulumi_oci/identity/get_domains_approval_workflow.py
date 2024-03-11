@@ -305,6 +305,7 @@ def get_domains_approval_workflow(approval_workflow_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -316,6 +317,7 @@ def get_domains_approval_workflow(approval_workflow_id: Optional[str] = None,
         authorization=var["approval_workflow_authorization"],
         resource_type_schema_version=var["approval_workflow_resource_type_schema_version"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str approval_workflow_id: ID of the resource
@@ -376,6 +378,7 @@ def get_domains_approval_workflow_output(approval_workflow_id: Optional[pulumi.I
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -387,6 +390,7 @@ def get_domains_approval_workflow_output(approval_workflow_id: Optional[pulumi.I
         authorization=var["approval_workflow_authorization"],
         resource_type_schema_version=var["approval_workflow_resource_type_schema_version"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str approval_workflow_id: ID of the resource

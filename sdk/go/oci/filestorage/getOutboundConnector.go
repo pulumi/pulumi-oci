@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -40,6 +41,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupOutboundConnector(ctx *pulumi.Context, args *LookupOutboundConnectorArgs, opts ...pulumi.InvokeOption) (*LookupOutboundConnectorResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupOutboundConnectorResult

@@ -19,7 +19,7 @@ namespace Pulumi.Oci.Identity
     /// Apps can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Identity/domainsApp:DomainsApp test_app "idcsEndpoint/{idcsEndpoint}/apps/{appId}"
+    /// $ pulumi import oci:Identity/domainsApp:DomainsApp test_app "idcsEndpoint/{idcsEndpoint}/apps/{appId}"
     /// ```
     /// </summary>
     [OciResourceType("oci:Identity/domainsApp:DomainsApp")]

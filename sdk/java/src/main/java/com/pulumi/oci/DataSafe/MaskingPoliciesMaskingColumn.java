@@ -41,6 +41,8 @@ import javax.annotation.Nullable;
  * masked data across the columns in a group continue to retain the same logical relationship.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -107,13 +109,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * MaskingPoliciesMaskingColumns can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:DataSafe/maskingPoliciesMaskingColumn:MaskingPoliciesMaskingColumn test_masking_policies_masking_column &#34;maskingPolicies/{maskingPolicyId}/maskingColumns/{maskingColumnKey}&#34;
+ * $ pulumi import oci:DataSafe/maskingPoliciesMaskingColumn:MaskingPoliciesMaskingColumn test_masking_policies_masking_column &#34;maskingPolicies/{maskingPolicyId}/maskingColumns/{maskingColumnKey}&#34;
  * ```
  * 
  */

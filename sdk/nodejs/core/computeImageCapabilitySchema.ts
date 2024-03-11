@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -34,13 +35,14 @@ import * as utilities from "../utilities";
  *     },
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * ComputeImageCapabilitySchemas can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Core/computeImageCapabilitySchema:ComputeImageCapabilitySchema test_compute_image_capability_schema "id"
+ * $ pulumi import oci:Core/computeImageCapabilitySchema:ComputeImageCapabilitySchema test_compute_image_capability_schema "id"
  * ```
  */
 export class ComputeImageCapabilitySchema extends pulumi.CustomResource {

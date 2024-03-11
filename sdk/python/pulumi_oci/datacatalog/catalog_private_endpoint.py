@@ -365,6 +365,7 @@ class CatalogPrivateEndpoint(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -381,13 +382,14 @@ class CatalogPrivateEndpoint(pulumi.CustomResource):
                 "bar-key": "value",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         CatalogPrivateEndpoints can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataCatalog/catalogPrivateEndpoint:CatalogPrivateEndpoint test_catalog_private_endpoint "id"
+        $ pulumi import oci:DataCatalog/catalogPrivateEndpoint:CatalogPrivateEndpoint test_catalog_private_endpoint "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -416,6 +418,7 @@ class CatalogPrivateEndpoint(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -432,13 +435,14 @@ class CatalogPrivateEndpoint(pulumi.CustomResource):
                 "bar-key": "value",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         CatalogPrivateEndpoints can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataCatalog/catalogPrivateEndpoint:CatalogPrivateEndpoint test_catalog_private_endpoint "id"
+        $ pulumi import oci:DataCatalog/catalogPrivateEndpoint:CatalogPrivateEndpoint test_catalog_private_endpoint "id"
         ```
 
         :param str resource_name: The name of the resource.

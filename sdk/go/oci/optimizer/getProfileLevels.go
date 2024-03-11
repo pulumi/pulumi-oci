@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -43,6 +44,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetProfileLevels(ctx *pulumi.Context, args *GetProfileLevelsArgs, opts ...pulumi.InvokeOption) (*GetProfileLevelsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetProfileLevelsResult

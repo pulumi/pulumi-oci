@@ -16,10 +16,9 @@ namespace Pulumi.Oci.DatabaseTools
         /// 
         /// Gets details of a specified Database Tools private endpoint.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,8 +34,7 @@ namespace Pulumi.Oci.DatabaseTools
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDatabaseToolsPrivateEndpointResult> InvokeAsync(GetDatabaseToolsPrivateEndpointArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDatabaseToolsPrivateEndpointResult>("oci:DatabaseTools/getDatabaseToolsPrivateEndpoint:getDatabaseToolsPrivateEndpoint", args ?? new GetDatabaseToolsPrivateEndpointArgs(), options.WithDefaults());
@@ -46,10 +44,9 @@ namespace Pulumi.Oci.DatabaseTools
         /// 
         /// Gets details of a specified Database Tools private endpoint.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -65,8 +62,7 @@ namespace Pulumi.Oci.DatabaseTools
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDatabaseToolsPrivateEndpointResult> Invoke(GetDatabaseToolsPrivateEndpointInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDatabaseToolsPrivateEndpointResult>("oci:DatabaseTools/getDatabaseToolsPrivateEndpoint:getDatabaseToolsPrivateEndpoint", args ?? new GetDatabaseToolsPrivateEndpointInvokeArgs(), options.WithDefaults());

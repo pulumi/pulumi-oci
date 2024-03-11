@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -29,13 +30,14 @@ import * as utilities from "../utilities";
  *     },
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * Apis can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:ApiGateway/api:Api test_api "id"
+ * $ pulumi import oci:ApiGateway/api:Api test_api "id"
  * ```
  */
 export class Api extends pulumi.CustomResource {

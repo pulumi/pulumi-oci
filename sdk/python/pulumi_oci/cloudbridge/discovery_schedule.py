@@ -299,6 +299,7 @@ class DiscoverySchedule(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -314,13 +315,14 @@ class DiscoverySchedule(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         DiscoverySchedules can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:CloudBridge/discoverySchedule:DiscoverySchedule test_discovery_schedule "id"
+        $ pulumi import oci:CloudBridge/discoverySchedule:DiscoverySchedule test_discovery_schedule "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -348,6 +350,7 @@ class DiscoverySchedule(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -363,13 +366,14 @@ class DiscoverySchedule(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         DiscoverySchedules can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:CloudBridge/discoverySchedule:DiscoverySchedule test_discovery_schedule "id"
+        $ pulumi import oci:CloudBridge/discoverySchedule:DiscoverySchedule test_discovery_schedule "id"
         ```
 
         :param str resource_name: The name of the resource.

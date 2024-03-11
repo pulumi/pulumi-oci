@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,6 +42,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupWorkspaceImportRequest(ctx *pulumi.Context, args *LookupWorkspaceImportRequestArgs, opts ...pulumi.InvokeOption) (*LookupWorkspaceImportRequestResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupWorkspaceImportRequestResult

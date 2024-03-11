@@ -19,10 +19,9 @@ namespace Pulumi.Oci.Core
         /// filtered by instance, VNIC, or availability domain.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -41,8 +40,7 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetVnicAttachmentsResult> InvokeAsync(GetVnicAttachmentsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetVnicAttachmentsResult>("oci:Core/getVnicAttachments:getVnicAttachments", args ?? new GetVnicAttachmentsArgs(), options.WithDefaults());
@@ -55,10 +53,9 @@ namespace Pulumi.Oci.Core
         /// filtered by instance, VNIC, or availability domain.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -77,8 +74,7 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetVnicAttachmentsResult> Invoke(GetVnicAttachmentsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVnicAttachmentsResult>("oci:Core/getVnicAttachments:getVnicAttachments", args ?? new GetVnicAttachmentsInvokeArgs(), options.WithDefaults());

@@ -195,12 +195,14 @@ def get_monitored_resource_task(monitored_resource_task_id: Optional[str] = None
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_monitored_resource_task = oci.StackMonitoring.get_monitored_resource_task(monitored_resource_task_id=oci_stack_monitoring_monitored_resource_task["test_monitored_resource_task"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str monitored_resource_task_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of stack monitoring resource task.
@@ -236,12 +238,14 @@ def get_monitored_resource_task_output(monitored_resource_task_id: Optional[pulu
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_monitored_resource_task = oci.StackMonitoring.get_monitored_resource_task(monitored_resource_task_id=oci_stack_monitoring_monitored_resource_task["test_monitored_resource_task"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str monitored_resource_task_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of stack monitoring resource task.

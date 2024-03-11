@@ -482,7 +482,7 @@ class Certificate(pulumi.CustomResource):
         Certificates can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:CertificatesManagement/certificate:Certificate test_certificate "id"
+        $ pulumi import oci:CertificatesManagement/certificate:Certificate test_certificate "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -515,7 +515,7 @@ class Certificate(pulumi.CustomResource):
         Certificates can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:CertificatesManagement/certificate:Certificate test_certificate "id"
+        $ pulumi import oci:CertificatesManagement/certificate:Certificate test_certificate "id"
         ```
 
         :param str resource_name: The name of the resource.

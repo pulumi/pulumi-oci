@@ -105,6 +105,7 @@ def get_schedules(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -112,6 +113,7 @@ def get_schedules(compartment_id: Optional[str] = None,
     test_schedules = oci.MeteringComputation.get_schedules(compartment_id=var["compartment_id"],
         name=var["schedule_name"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The compartment ID in which to list resources.
@@ -145,6 +147,7 @@ def get_schedules_output(compartment_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -152,6 +155,7 @@ def get_schedules_output(compartment_id: Optional[pulumi.Input[str]] = None,
     test_schedules = oci.MeteringComputation.get_schedules(compartment_id=var["compartment_id"],
         name=var["schedule_name"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The compartment ID in which to list resources.

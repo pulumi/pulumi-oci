@@ -22,6 +22,8 @@ import javax.annotation.Nullable;
  * Creates a new Url List for the Network Firewall Policy.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -55,13 +57,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * NetworkFirewallPolicyUrlLists can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:NetworkFirewall/networkFirewallPolicyUrlList:NetworkFirewallPolicyUrlList test_network_firewall_policy_url_list &#34;networkFirewallPolicies/{networkFirewallPolicyId}/urlLists/{urlListName}&#34;
+ * $ pulumi import oci:NetworkFirewall/networkFirewallPolicyUrlList:NetworkFirewallPolicyUrlList test_network_firewall_policy_url_list &#34;networkFirewallPolicies/{networkFirewallPolicyId}/urlLists/{urlListName}&#34;
  * ```
  * 
  */

@@ -342,12 +342,14 @@ def get_integration_instance(integration_instance_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_integration_instance = oci.Integration.get_integration_instance(integration_instance_id=oci_integration_integration_instance["test_integration_instance"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str integration_instance_id: Unique Integration Instance identifier.
@@ -396,12 +398,14 @@ def get_integration_instance_output(integration_instance_id: Optional[pulumi.Inp
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_integration_instance = oci.Integration.get_integration_instance(integration_instance_id=oci_integration_integration_instance["test_integration_instance"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str integration_instance_id: Unique Integration Instance identifier.

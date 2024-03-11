@@ -23,10 +23,9 @@ namespace Pulumi.Oci.HealthChecks
         /// `startTime`.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -45,8 +44,7 @@ namespace Pulumi.Oci.HealthChecks
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetPingProbeResultsResult> InvokeAsync(GetPingProbeResultsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetPingProbeResultsResult>("oci:HealthChecks/getPingProbeResults:getPingProbeResults", args ?? new GetPingProbeResultsArgs(), options.WithDefaults());
@@ -63,10 +61,9 @@ namespace Pulumi.Oci.HealthChecks
         /// `startTime`.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -85,8 +82,7 @@ namespace Pulumi.Oci.HealthChecks
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetPingProbeResultsResult> Invoke(GetPingProbeResultsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPingProbeResultsResult>("oci:HealthChecks/getPingProbeResults:getPingProbeResults", args ?? new GetPingProbeResultsInvokeArgs(), options.WithDefaults());

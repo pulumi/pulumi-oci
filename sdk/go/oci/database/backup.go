@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -42,15 +43,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Backups can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Database/backup:Backup test_backup "id"
-//
+// $ pulumi import oci:Database/backup:Backup test_backup "id"
 // ```
 type Backup struct {
 	pulumi.CustomResourceState

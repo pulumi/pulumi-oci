@@ -398,6 +398,7 @@ class PrivateApplication(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -420,13 +421,14 @@ class PrivateApplication(pulumi.CustomResource):
             logo_file_base64encoded=var["private_application_logo_file_base64encoded"],
             long_description=var["private_application_long_description"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         PrivateApplications can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:ServiceCatalog/privateApplication:PrivateApplication test_private_application "id"
+        $ pulumi import oci:ServiceCatalog/privateApplication:PrivateApplication test_private_application "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -457,6 +459,7 @@ class PrivateApplication(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -479,13 +482,14 @@ class PrivateApplication(pulumi.CustomResource):
             logo_file_base64encoded=var["private_application_logo_file_base64encoded"],
             long_description=var["private_application_long_description"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         PrivateApplications can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:ServiceCatalog/privateApplication:PrivateApplication test_private_application "id"
+        $ pulumi import oci:ServiceCatalog/privateApplication:PrivateApplication test_private_application "id"
         ```
 
         :param str resource_name: The name of the resource.

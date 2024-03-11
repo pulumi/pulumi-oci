@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,6 +22,7 @@ import * as utilities from "../utilities";
  *     exadataInsightId: oci_opsi_exadata_insight.test_exadata_insight.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getExadataInsight(args: GetExadataInsightArgs, opts?: pulumi.InvokeOptions): Promise<GetExadataInsightResult> {
 
@@ -155,6 +157,7 @@ export interface GetExadataInsightResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -163,6 +166,7 @@ export interface GetExadataInsightResult {
  *     exadataInsightId: oci_opsi_exadata_insight.test_exadata_insight.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getExadataInsightOutput(args: GetExadataInsightOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExadataInsightResult> {
     return pulumi.output(args).apply((a: any) => getExadataInsight(a, opts))

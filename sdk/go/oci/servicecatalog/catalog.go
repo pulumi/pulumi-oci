@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -48,15 +49,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // ServiceCatalogs can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:ServiceCatalog/catalog:Catalog test_service_catalog "id"
-//
+// $ pulumi import oci:ServiceCatalog/catalog:Catalog test_service_catalog "id"
 // ```
 type Catalog struct {
 	pulumi.CustomResourceState

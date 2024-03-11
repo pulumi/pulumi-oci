@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,6 +22,7 @@ import * as utilities from "../utilities";
  *     runId: oci_dataflow_run.test_run.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getInvokeRun(args: GetInvokeRunArgs, opts?: pulumi.InvokeOptions): Promise<GetInvokeRunResult> {
 
@@ -230,6 +232,7 @@ export interface GetInvokeRunResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -238,6 +241,7 @@ export interface GetInvokeRunResult {
  *     runId: oci_dataflow_run.test_run.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getInvokeRunOutput(args: GetInvokeRunOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInvokeRunResult> {
     return pulumi.output(args).apply((a: any) => getInvokeRun(a, opts))

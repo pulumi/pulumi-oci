@@ -20,6 +20,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -57,15 +58,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // PingMonitors can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:HealthChecks/pingMonitor:PingMonitor test_ping_monitor "id"
-//
+// $ pulumi import oci:HealthChecks/pingMonitor:PingMonitor test_ping_monitor "id"
 // ```
 type PingMonitor struct {
 	pulumi.CustomResourceState

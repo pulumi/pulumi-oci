@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -32,13 +33,14 @@ import * as utilities from "../utilities";
  *     },
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * AuditArchiveRetrievals can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:DataSafe/auditArchiveRetrieval:AuditArchiveRetrieval test_audit_archive_retrieval "id"
+ * $ pulumi import oci:DataSafe/auditArchiveRetrieval:AuditArchiveRetrieval test_audit_archive_retrieval "id"
  * ```
  */
 export class AuditArchiveRetrieval extends pulumi.CustomResource {

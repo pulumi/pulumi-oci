@@ -18,6 +18,7 @@ namespace Pulumi.Oci.Streaming
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -38,13 +39,14 @@ namespace Pulumi.Oci.Streaming
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// ConnectHarnesses can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Streaming/connectHarness:ConnectHarness test_connect_harness "id"
+    /// $ pulumi import oci:Streaming/connectHarness:ConnectHarness test_connect_harness "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Streaming/connectHarness:ConnectHarness")]

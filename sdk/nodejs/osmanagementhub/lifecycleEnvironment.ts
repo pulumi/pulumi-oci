@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -42,13 +43,14 @@ import * as utilities from "../utilities";
  *     },
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * LifecycleEnvironments can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:OsManagementHub/lifecycleEnvironment:LifecycleEnvironment test_lifecycle_environment "id"
+ * $ pulumi import oci:OsManagementHub/lifecycleEnvironment:LifecycleEnvironment test_lifecycle_environment "id"
  * ```
  */
 export class LifecycleEnvironment extends pulumi.CustomResource {

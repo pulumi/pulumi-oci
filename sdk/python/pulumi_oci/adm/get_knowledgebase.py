@@ -158,12 +158,14 @@ def get_knowledgebase(knowledge_base_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_knowledge_base = oci.Adm.get_knowledgebase(knowledge_base_id=oci_adm_knowledge_base["test_knowledge_base"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str knowledge_base_id: The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of a Knowledge Base, as a URL path parameter.
@@ -196,12 +198,14 @@ def get_knowledgebase_output(knowledge_base_id: Optional[pulumi.Input[str]] = No
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_knowledge_base = oci.Adm.get_knowledgebase(knowledge_base_id=oci_adm_knowledge_base["test_knowledge_base"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str knowledge_base_id: The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of a Knowledge Base, as a URL path parameter.

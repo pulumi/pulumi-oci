@@ -464,6 +464,7 @@ class PingMonitor(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -485,13 +486,14 @@ class PingMonitor(pulumi.CustomResource):
             timeout_in_seconds=var["ping_monitor_timeout_in_seconds"],
             vantage_point_names=var["ping_monitor_vantage_point_names"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         PingMonitors can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:HealthChecks/pingMonitor:PingMonitor test_ping_monitor "id"
+        $ pulumi import oci:HealthChecks/pingMonitor:PingMonitor test_ping_monitor "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -527,6 +529,7 @@ class PingMonitor(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -548,13 +551,14 @@ class PingMonitor(pulumi.CustomResource):
             timeout_in_seconds=var["ping_monitor_timeout_in_seconds"],
             vantage_point_names=var["ping_monitor_vantage_point_names"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         PingMonitors can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:HealthChecks/pingMonitor:PingMonitor test_ping_monitor "id"
+        $ pulumi import oci:HealthChecks/pingMonitor:PingMonitor test_ping_monitor "id"
         ```
 
         :param str resource_name: The name of the resource.

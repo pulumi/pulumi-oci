@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,6 +22,7 @@ import * as utilities from "../utilities";
  *     functionId: oci_functions_function.test_function.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getFunction(args: GetFunctionArgs, opts?: pulumi.InvokeOptions): Promise<GetFunctionResult> {
 
@@ -129,6 +131,7 @@ export interface GetFunctionResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -137,6 +140,7 @@ export interface GetFunctionResult {
  *     functionId: oci_functions_function.test_function.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getFunctionOutput(args: GetFunctionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFunctionResult> {
     return pulumi.output(args).apply((a: any) => getFunction(a, opts))

@@ -23,6 +23,8 @@ public final class QueueFunctions {
      * Gets a queue by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -51,6 +53,7 @@ public final class QueueFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetQueueResult> getQueue(GetQueueArgs args) {
@@ -62,6 +65,8 @@ public final class QueueFunctions {
      * Gets a queue by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -90,6 +95,7 @@ public final class QueueFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetQueueResult> getQueuePlain(GetQueuePlainArgs args) {
@@ -101,6 +107,8 @@ public final class QueueFunctions {
      * Gets a queue by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -129,6 +137,7 @@ public final class QueueFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetQueueResult> getQueue(GetQueueArgs args, InvokeOptions options) {
@@ -140,6 +149,8 @@ public final class QueueFunctions {
      * Gets a queue by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -168,6 +179,7 @@ public final class QueueFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetQueueResult> getQueuePlain(GetQueuePlainArgs args, InvokeOptions options) {
@@ -179,6 +191,8 @@ public final class QueueFunctions {
      * Returns a list of queues.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -210,6 +224,7 @@ public final class QueueFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetQueuesResult> getQueues() {
@@ -221,6 +236,8 @@ public final class QueueFunctions {
      * Returns a list of queues.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -252,6 +269,7 @@ public final class QueueFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetQueuesResult> getQueuesPlain() {
@@ -263,6 +281,8 @@ public final class QueueFunctions {
      * Returns a list of queues.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -294,6 +314,7 @@ public final class QueueFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetQueuesResult> getQueues(GetQueuesArgs args) {
@@ -305,6 +326,8 @@ public final class QueueFunctions {
      * Returns a list of queues.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -336,6 +359,7 @@ public final class QueueFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetQueuesResult> getQueuesPlain(GetQueuesPlainArgs args) {
@@ -347,6 +371,8 @@ public final class QueueFunctions {
      * Returns a list of queues.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -378,6 +404,7 @@ public final class QueueFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetQueuesResult> getQueues(GetQueuesArgs args, InvokeOptions options) {
@@ -389,6 +416,8 @@ public final class QueueFunctions {
      * Returns a list of queues.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -420,6 +449,7 @@ public final class QueueFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetQueuesResult> getQueuesPlain(GetQueuesPlainArgs args, InvokeOptions options) {

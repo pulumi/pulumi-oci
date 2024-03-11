@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -45,15 +46,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // BdsInstanceApiKeys can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:BigDataService/bdsInstanceApiKey:BdsInstanceApiKey test_bds_instance_api_key "bdsInstances/{bdsInstanceId}/apiKeys/{apiKeyId}"
-//
+// $ pulumi import oci:BigDataService/bdsInstanceApiKey:BdsInstanceApiKey test_bds_instance_api_key "bdsInstances/{bdsInstanceId}/apiKeys/{apiKeyId}"
 // ```
 type BdsInstanceApiKey struct {
 	pulumi.CustomResourceState

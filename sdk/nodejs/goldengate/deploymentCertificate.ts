@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,13 +22,14 @@ import * as utilities from "../utilities";
  *     key: _var.deployment_certificate_key,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * DeploymentCertificates can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:GoldenGate/deploymentCertificate:DeploymentCertificate test_deployment_certificate "deployments/{deploymentId}/certificates/{certificateKey}"
+ * $ pulumi import oci:GoldenGate/deploymentCertificate:DeploymentCertificate test_deployment_certificate "deployments/{deploymentId}/certificates/{certificateKey}"
  * ```
  */
 export class DeploymentCertificate extends pulumi.CustomResource {

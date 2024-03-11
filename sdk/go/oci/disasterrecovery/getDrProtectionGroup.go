@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -40,6 +41,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupDrProtectionGroup(ctx *pulumi.Context, args *LookupDrProtectionGroupArgs, opts ...pulumi.InvokeOption) (*LookupDrProtectionGroupResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupDrProtectionGroupResult

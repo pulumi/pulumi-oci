@@ -14,6 +14,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -25,6 +26,7 @@ import * as utilities from "../utilities";
  *     state: _var.sddc_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getSddcs(args: GetSddcsArgs, opts?: pulumi.InvokeOptions): Promise<GetSddcsResult> {
 
@@ -99,6 +101,7 @@ export interface GetSddcsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -110,6 +113,7 @@ export interface GetSddcsResult {
  *     state: _var.sddc_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getSddcsOutput(args: GetSddcsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSddcsResult> {
     return pulumi.output(args).apply((a: any) => getSddcs(a, opts))

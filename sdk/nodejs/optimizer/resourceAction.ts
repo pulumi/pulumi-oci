@@ -21,7 +21,7 @@ import * as utilities from "../utilities";
  * ResourceActions can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Optimizer/resourceAction:ResourceAction test_resource_action "id"
+ * $ pulumi import oci:Optimizer/resourceAction:ResourceAction test_resource_action "id"
  * ```
  */
 export class ResourceAction extends pulumi.CustomResource {

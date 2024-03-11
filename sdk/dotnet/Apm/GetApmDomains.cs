@@ -17,10 +17,9 @@ namespace Pulumi.Oci.Apm
         /// Lists all APM domains for the specified tenant compartment.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -38,8 +37,7 @@ namespace Pulumi.Oci.Apm
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetApmDomainsResult> InvokeAsync(GetApmDomainsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetApmDomainsResult>("oci:Apm/getApmDomains:getApmDomains", args ?? new GetApmDomainsArgs(), options.WithDefaults());
@@ -50,10 +48,9 @@ namespace Pulumi.Oci.Apm
         /// Lists all APM domains for the specified tenant compartment.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -71,8 +68,7 @@ namespace Pulumi.Oci.Apm
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetApmDomainsResult> Invoke(GetApmDomainsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetApmDomainsResult>("oci:Apm/getApmDomains:getApmDomains", args ?? new GetApmDomainsInvokeArgs(), options.WithDefaults());

@@ -20,10 +20,9 @@ namespace Pulumi.Oci.Database
         /// The [GetCloudVmClusterIormConfig](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudVmCluster/GetCloudVmClusterIormConfig/) API is used for this operation with Cloud Vm Cluster.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -39,8 +38,7 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetCloudVmClusterIormConfigResult> InvokeAsync(GetCloudVmClusterIormConfigArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetCloudVmClusterIormConfigResult>("oci:Database/getCloudVmClusterIormConfig:getCloudVmClusterIormConfig", args ?? new GetCloudVmClusterIormConfigArgs(), options.WithDefaults());
@@ -54,10 +52,9 @@ namespace Pulumi.Oci.Database
         /// The [GetCloudVmClusterIormConfig](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudVmCluster/GetCloudVmClusterIormConfig/) API is used for this operation with Cloud Vm Cluster.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -73,8 +70,7 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetCloudVmClusterIormConfigResult> Invoke(GetCloudVmClusterIormConfigInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCloudVmClusterIormConfigResult>("oci:Database/getCloudVmClusterIormConfig:getCloudVmClusterIormConfig", args ?? new GetCloudVmClusterIormConfigInvokeArgs(), options.WithDefaults());

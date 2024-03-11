@@ -17,10 +17,9 @@ namespace Pulumi.Oci.NetworkFirewall
         /// Returns a list of Network Firewall Policies.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -37,8 +36,7 @@ namespace Pulumi.Oci.NetworkFirewall
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetNetworkFirewallPolicyAddressListsResult> InvokeAsync(GetNetworkFirewallPolicyAddressListsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetNetworkFirewallPolicyAddressListsResult>("oci:NetworkFirewall/getNetworkFirewallPolicyAddressLists:getNetworkFirewallPolicyAddressLists", args ?? new GetNetworkFirewallPolicyAddressListsArgs(), options.WithDefaults());
@@ -49,10 +47,9 @@ namespace Pulumi.Oci.NetworkFirewall
         /// Returns a list of Network Firewall Policies.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -69,8 +66,7 @@ namespace Pulumi.Oci.NetworkFirewall
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetNetworkFirewallPolicyAddressListsResult> Invoke(GetNetworkFirewallPolicyAddressListsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNetworkFirewallPolicyAddressListsResult>("oci:NetworkFirewall/getNetworkFirewallPolicyAddressLists:getNetworkFirewallPolicyAddressLists", args ?? new GetNetworkFirewallPolicyAddressListsInvokeArgs(), options.WithDefaults());

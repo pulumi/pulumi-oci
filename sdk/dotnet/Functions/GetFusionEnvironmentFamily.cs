@@ -16,10 +16,9 @@ namespace Pulumi.Oci.Functions
         /// 
         /// Retrieves a fusion environment family identified by its OCID.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,8 +34,7 @@ namespace Pulumi.Oci.Functions
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetFusionEnvironmentFamilyResult> InvokeAsync(GetFusionEnvironmentFamilyArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetFusionEnvironmentFamilyResult>("oci:Functions/getFusionEnvironmentFamily:getFusionEnvironmentFamily", args ?? new GetFusionEnvironmentFamilyArgs(), options.WithDefaults());
@@ -46,10 +44,9 @@ namespace Pulumi.Oci.Functions
         /// 
         /// Retrieves a fusion environment family identified by its OCID.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -65,8 +62,7 @@ namespace Pulumi.Oci.Functions
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetFusionEnvironmentFamilyResult> Invoke(GetFusionEnvironmentFamilyInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFusionEnvironmentFamilyResult>("oci:Functions/getFusionEnvironmentFamily:getFusionEnvironmentFamily", args ?? new GetFusionEnvironmentFamilyInvokeArgs(), options.WithDefaults());

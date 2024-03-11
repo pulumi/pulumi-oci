@@ -23,6 +23,8 @@ public final class EventsFunctions {
      * Retrieves a rule.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -51,6 +53,7 @@ public final class EventsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRuleResult> getRule(GetRuleArgs args) {
@@ -62,6 +65,8 @@ public final class EventsFunctions {
      * Retrieves a rule.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -90,6 +95,7 @@ public final class EventsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRuleResult> getRulePlain(GetRulePlainArgs args) {
@@ -101,6 +107,8 @@ public final class EventsFunctions {
      * Retrieves a rule.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -129,6 +137,7 @@ public final class EventsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRuleResult> getRule(GetRuleArgs args, InvokeOptions options) {
@@ -140,6 +149,8 @@ public final class EventsFunctions {
      * Retrieves a rule.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -168,6 +179,7 @@ public final class EventsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRuleResult> getRulePlain(GetRulePlainArgs args, InvokeOptions options) {
@@ -179,6 +191,8 @@ public final class EventsFunctions {
      * Lists rules for this compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -209,6 +223,7 @@ public final class EventsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRulesResult> getRules(GetRulesArgs args) {
@@ -220,6 +235,8 @@ public final class EventsFunctions {
      * Lists rules for this compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -250,6 +267,7 @@ public final class EventsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRulesResult> getRulesPlain(GetRulesPlainArgs args) {
@@ -261,6 +279,8 @@ public final class EventsFunctions {
      * Lists rules for this compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -291,6 +311,7 @@ public final class EventsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRulesResult> getRules(GetRulesArgs args, InvokeOptions options) {
@@ -302,6 +323,8 @@ public final class EventsFunctions {
      * Lists rules for this compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -332,6 +355,7 @@ public final class EventsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRulesResult> getRulesPlain(GetRulesPlainArgs args, InvokeOptions options) {

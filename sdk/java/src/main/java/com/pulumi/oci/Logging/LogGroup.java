@@ -22,6 +22,8 @@ import javax.annotation.Nullable;
  * if the log group is already created with the same displayName in the compartment.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -54,13 +56,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * LogGroups can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Logging/logGroup:LogGroup test_log_group &#34;id&#34;
+ * $ pulumi import oci:Logging/logGroup:LogGroup test_log_group &#34;id&#34;
  * ```
  * 
  */

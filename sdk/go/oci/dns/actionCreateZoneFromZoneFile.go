@@ -20,6 +20,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -46,15 +47,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // ActionCreateZoneFromZoneFile can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Dns/actionCreateZoneFromZoneFile:ActionCreateZoneFromZoneFile test_action_create_zone_from_zone_file "id"
-//
+// $ pulumi import oci:Dns/actionCreateZoneFromZoneFile:ActionCreateZoneFromZoneFile test_action_create_zone_from_zone_file "id"
 // ```
 type ActionCreateZoneFromZoneFile struct {
 	pulumi.CustomResourceState

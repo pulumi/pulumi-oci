@@ -17,10 +17,9 @@ namespace Pulumi.Oci.LogAnalytics
         /// Returns a list of ingest time rules in a compartment. You may limit the number of rules, provide sorting options, and filter the results.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -42,8 +41,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetNamespaceIngestTimeRulesResult> InvokeAsync(GetNamespaceIngestTimeRulesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetNamespaceIngestTimeRulesResult>("oci:LogAnalytics/getNamespaceIngestTimeRules:getNamespaceIngestTimeRules", args ?? new GetNamespaceIngestTimeRulesArgs(), options.WithDefaults());
@@ -54,10 +52,9 @@ namespace Pulumi.Oci.LogAnalytics
         /// Returns a list of ingest time rules in a compartment. You may limit the number of rules, provide sorting options, and filter the results.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -79,8 +76,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetNamespaceIngestTimeRulesResult> Invoke(GetNamespaceIngestTimeRulesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNamespaceIngestTimeRulesResult>("oci:LogAnalytics/getNamespaceIngestTimeRules:getNamespaceIngestTimeRules", args ?? new GetNamespaceIngestTimeRulesInvokeArgs(), options.WithDefaults());

@@ -62,6 +62,8 @@ public final class ApiGatewayFunctions {
      * Gets an API by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -90,6 +92,7 @@ public final class ApiGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetApiResult> getApi(GetApiArgs args) {
@@ -101,6 +104,8 @@ public final class ApiGatewayFunctions {
      * Gets an API by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -129,6 +134,7 @@ public final class ApiGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetApiResult> getApiPlain(GetApiPlainArgs args) {
@@ -140,6 +146,8 @@ public final class ApiGatewayFunctions {
      * Gets an API by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -168,6 +176,7 @@ public final class ApiGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetApiResult> getApi(GetApiArgs args, InvokeOptions options) {
@@ -179,6 +188,8 @@ public final class ApiGatewayFunctions {
      * Gets an API by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -207,6 +218,7 @@ public final class ApiGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetApiResult> getApiPlain(GetApiPlainArgs args, InvokeOptions options) {
@@ -218,6 +230,8 @@ public final class ApiGatewayFunctions {
      * Get the raw API content.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -246,6 +260,7 @@ public final class ApiGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetApiContentResult> getApiContent(GetApiContentArgs args) {
@@ -257,6 +272,8 @@ public final class ApiGatewayFunctions {
      * Get the raw API content.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -285,6 +302,7 @@ public final class ApiGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetApiContentResult> getApiContentPlain(GetApiContentPlainArgs args) {
@@ -296,6 +314,8 @@ public final class ApiGatewayFunctions {
      * Get the raw API content.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -324,6 +344,7 @@ public final class ApiGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetApiContentResult> getApiContent(GetApiContentArgs args, InvokeOptions options) {
@@ -335,6 +356,8 @@ public final class ApiGatewayFunctions {
      * Get the raw API content.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -363,6 +386,7 @@ public final class ApiGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetApiContentResult> getApiContentPlain(GetApiContentPlainArgs args, InvokeOptions options) {
@@ -374,6 +398,8 @@ public final class ApiGatewayFunctions {
      * Gets an API Deployment specification by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -402,6 +428,7 @@ public final class ApiGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetApiDeploymentSpecificationResult> getApiDeploymentSpecification(GetApiDeploymentSpecificationArgs args) {
@@ -413,6 +440,8 @@ public final class ApiGatewayFunctions {
      * Gets an API Deployment specification by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -441,6 +470,7 @@ public final class ApiGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetApiDeploymentSpecificationResult> getApiDeploymentSpecificationPlain(GetApiDeploymentSpecificationPlainArgs args) {
@@ -452,6 +482,8 @@ public final class ApiGatewayFunctions {
      * Gets an API Deployment specification by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -480,6 +512,7 @@ public final class ApiGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetApiDeploymentSpecificationResult> getApiDeploymentSpecification(GetApiDeploymentSpecificationArgs args, InvokeOptions options) {
@@ -491,6 +524,8 @@ public final class ApiGatewayFunctions {
      * Gets an API Deployment specification by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -519,6 +554,7 @@ public final class ApiGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetApiDeploymentSpecificationResult> getApiDeploymentSpecificationPlain(GetApiDeploymentSpecificationPlainArgs args, InvokeOptions options) {
@@ -530,6 +566,8 @@ public final class ApiGatewayFunctions {
      * Gets the API validation results.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -558,6 +596,7 @@ public final class ApiGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetApiValidationInvokeResult> getApiValidation(GetApiValidationArgs args) {
@@ -569,6 +608,8 @@ public final class ApiGatewayFunctions {
      * Gets the API validation results.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -597,6 +638,7 @@ public final class ApiGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetApiValidationInvokeResult> getApiValidationPlain(GetApiValidationPlainArgs args) {
@@ -608,6 +650,8 @@ public final class ApiGatewayFunctions {
      * Gets the API validation results.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -636,6 +680,7 @@ public final class ApiGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetApiValidationInvokeResult> getApiValidation(GetApiValidationArgs args, InvokeOptions options) {
@@ -647,6 +692,8 @@ public final class ApiGatewayFunctions {
      * Gets the API validation results.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -675,6 +722,7 @@ public final class ApiGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetApiValidationInvokeResult> getApiValidationPlain(GetApiValidationPlainArgs args, InvokeOptions options) {
@@ -686,6 +734,8 @@ public final class ApiGatewayFunctions {
      * Returns a list of APIs.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -716,6 +766,7 @@ public final class ApiGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetApisResult> getApis(GetApisArgs args) {
@@ -727,6 +778,8 @@ public final class ApiGatewayFunctions {
      * Returns a list of APIs.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -757,6 +810,7 @@ public final class ApiGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetApisResult> getApisPlain(GetApisPlainArgs args) {
@@ -768,6 +822,8 @@ public final class ApiGatewayFunctions {
      * Returns a list of APIs.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -798,6 +854,7 @@ public final class ApiGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetApisResult> getApis(GetApisArgs args, InvokeOptions options) {
@@ -809,6 +866,8 @@ public final class ApiGatewayFunctions {
      * Returns a list of APIs.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -839,6 +898,7 @@ public final class ApiGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetApisResult> getApisPlain(GetApisPlainArgs args, InvokeOptions options) {
@@ -850,6 +910,8 @@ public final class ApiGatewayFunctions {
      * Gets a certificate by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -878,6 +940,7 @@ public final class ApiGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCertificateResult> getCertificate(GetCertificateArgs args) {
@@ -889,6 +952,8 @@ public final class ApiGatewayFunctions {
      * Gets a certificate by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -917,6 +982,7 @@ public final class ApiGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCertificateResult> getCertificatePlain(GetCertificatePlainArgs args) {
@@ -928,6 +994,8 @@ public final class ApiGatewayFunctions {
      * Gets a certificate by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -956,6 +1024,7 @@ public final class ApiGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCertificateResult> getCertificate(GetCertificateArgs args, InvokeOptions options) {
@@ -967,6 +1036,8 @@ public final class ApiGatewayFunctions {
      * Gets a certificate by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -995,6 +1066,7 @@ public final class ApiGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCertificateResult> getCertificatePlain(GetCertificatePlainArgs args, InvokeOptions options) {
@@ -1006,6 +1078,8 @@ public final class ApiGatewayFunctions {
      * Returns a list of certificates.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1036,6 +1110,7 @@ public final class ApiGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCertificatesResult> getCertificates(GetCertificatesArgs args) {
@@ -1047,6 +1122,8 @@ public final class ApiGatewayFunctions {
      * Returns a list of certificates.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1077,6 +1154,7 @@ public final class ApiGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCertificatesResult> getCertificatesPlain(GetCertificatesPlainArgs args) {
@@ -1088,6 +1166,8 @@ public final class ApiGatewayFunctions {
      * Returns a list of certificates.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1118,6 +1198,7 @@ public final class ApiGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCertificatesResult> getCertificates(GetCertificatesArgs args, InvokeOptions options) {
@@ -1129,6 +1210,8 @@ public final class ApiGatewayFunctions {
      * Returns a list of certificates.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1159,6 +1242,7 @@ public final class ApiGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCertificatesResult> getCertificatesPlain(GetCertificatesPlainArgs args, InvokeOptions options) {
@@ -1170,6 +1254,8 @@ public final class ApiGatewayFunctions {
      * Gets a deployment by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1198,6 +1284,7 @@ public final class ApiGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDeploymentResult> getDeployment(GetDeploymentArgs args) {
@@ -1209,6 +1296,8 @@ public final class ApiGatewayFunctions {
      * Gets a deployment by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1237,6 +1326,7 @@ public final class ApiGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDeploymentResult> getDeploymentPlain(GetDeploymentPlainArgs args) {
@@ -1248,6 +1338,8 @@ public final class ApiGatewayFunctions {
      * Gets a deployment by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1276,6 +1368,7 @@ public final class ApiGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDeploymentResult> getDeployment(GetDeploymentArgs args, InvokeOptions options) {
@@ -1287,6 +1380,8 @@ public final class ApiGatewayFunctions {
      * Gets a deployment by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1315,6 +1410,7 @@ public final class ApiGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDeploymentResult> getDeploymentPlain(GetDeploymentPlainArgs args, InvokeOptions options) {
@@ -1326,6 +1422,8 @@ public final class ApiGatewayFunctions {
      * Returns a list of deployments.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1357,6 +1455,7 @@ public final class ApiGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDeploymentsResult> getDeployments(GetDeploymentsArgs args) {
@@ -1368,6 +1467,8 @@ public final class ApiGatewayFunctions {
      * Returns a list of deployments.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1399,6 +1500,7 @@ public final class ApiGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDeploymentsResult> getDeploymentsPlain(GetDeploymentsPlainArgs args) {
@@ -1410,6 +1512,8 @@ public final class ApiGatewayFunctions {
      * Returns a list of deployments.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1441,6 +1545,7 @@ public final class ApiGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDeploymentsResult> getDeployments(GetDeploymentsArgs args, InvokeOptions options) {
@@ -1452,6 +1557,8 @@ public final class ApiGatewayFunctions {
      * Returns a list of deployments.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1483,6 +1590,7 @@ public final class ApiGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDeploymentsResult> getDeploymentsPlain(GetDeploymentsPlainArgs args, InvokeOptions options) {
@@ -1494,6 +1602,8 @@ public final class ApiGatewayFunctions {
      * Gets a gateway by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1522,6 +1632,7 @@ public final class ApiGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetGatewayResult> getGateway(GetGatewayArgs args) {
@@ -1533,6 +1644,8 @@ public final class ApiGatewayFunctions {
      * Gets a gateway by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1561,6 +1674,7 @@ public final class ApiGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetGatewayResult> getGatewayPlain(GetGatewayPlainArgs args) {
@@ -1572,6 +1686,8 @@ public final class ApiGatewayFunctions {
      * Gets a gateway by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1600,6 +1716,7 @@ public final class ApiGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetGatewayResult> getGateway(GetGatewayArgs args, InvokeOptions options) {
@@ -1611,6 +1728,8 @@ public final class ApiGatewayFunctions {
      * Gets a gateway by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1639,6 +1758,7 @@ public final class ApiGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetGatewayResult> getGatewayPlain(GetGatewayPlainArgs args, InvokeOptions options) {
@@ -1650,6 +1770,8 @@ public final class ApiGatewayFunctions {
      * Returns a list of gateways.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1681,6 +1803,7 @@ public final class ApiGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetGatewaysResult> getGateways(GetGatewaysArgs args) {
@@ -1692,6 +1815,8 @@ public final class ApiGatewayFunctions {
      * Returns a list of gateways.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1723,6 +1848,7 @@ public final class ApiGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetGatewaysResult> getGatewaysPlain(GetGatewaysPlainArgs args) {
@@ -1734,6 +1860,8 @@ public final class ApiGatewayFunctions {
      * Returns a list of gateways.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1765,6 +1893,7 @@ public final class ApiGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetGatewaysResult> getGateways(GetGatewaysArgs args, InvokeOptions options) {
@@ -1776,6 +1905,8 @@ public final class ApiGatewayFunctions {
      * Returns a list of gateways.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1807,6 +1938,7 @@ public final class ApiGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetGatewaysResult> getGatewaysPlain(GetGatewaysPlainArgs args, InvokeOptions options) {
@@ -1818,6 +1950,8 @@ public final class ApiGatewayFunctions {
      * Gets a subscriber by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1846,6 +1980,7 @@ public final class ApiGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSubscriberResult> getSubscriber(GetSubscriberArgs args) {
@@ -1857,6 +1992,8 @@ public final class ApiGatewayFunctions {
      * Gets a subscriber by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1885,6 +2022,7 @@ public final class ApiGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSubscriberResult> getSubscriberPlain(GetSubscriberPlainArgs args) {
@@ -1896,6 +2034,8 @@ public final class ApiGatewayFunctions {
      * Gets a subscriber by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1924,6 +2064,7 @@ public final class ApiGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSubscriberResult> getSubscriber(GetSubscriberArgs args, InvokeOptions options) {
@@ -1935,6 +2076,8 @@ public final class ApiGatewayFunctions {
      * Gets a subscriber by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1963,6 +2106,7 @@ public final class ApiGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSubscriberResult> getSubscriberPlain(GetSubscriberPlainArgs args, InvokeOptions options) {
@@ -1974,6 +2118,8 @@ public final class ApiGatewayFunctions {
      * Returns a list of subscribers.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2004,6 +2150,7 @@ public final class ApiGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSubscribersResult> getSubscribers(GetSubscribersArgs args) {
@@ -2015,6 +2162,8 @@ public final class ApiGatewayFunctions {
      * Returns a list of subscribers.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2045,6 +2194,7 @@ public final class ApiGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSubscribersResult> getSubscribersPlain(GetSubscribersPlainArgs args) {
@@ -2056,6 +2206,8 @@ public final class ApiGatewayFunctions {
      * Returns a list of subscribers.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2086,6 +2238,7 @@ public final class ApiGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSubscribersResult> getSubscribers(GetSubscribersArgs args, InvokeOptions options) {
@@ -2097,6 +2250,8 @@ public final class ApiGatewayFunctions {
      * Returns a list of subscribers.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2127,6 +2282,7 @@ public final class ApiGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSubscribersResult> getSubscribersPlain(GetSubscribersPlainArgs args, InvokeOptions options) {
@@ -2138,6 +2294,8 @@ public final class ApiGatewayFunctions {
      * Gets a usage plan by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2166,6 +2324,7 @@ public final class ApiGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetUsagePlanResult> getUsagePlan(GetUsagePlanArgs args) {
@@ -2177,6 +2336,8 @@ public final class ApiGatewayFunctions {
      * Gets a usage plan by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2205,6 +2366,7 @@ public final class ApiGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetUsagePlanResult> getUsagePlanPlain(GetUsagePlanPlainArgs args) {
@@ -2216,6 +2378,8 @@ public final class ApiGatewayFunctions {
      * Gets a usage plan by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2244,6 +2408,7 @@ public final class ApiGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetUsagePlanResult> getUsagePlan(GetUsagePlanArgs args, InvokeOptions options) {
@@ -2255,6 +2420,8 @@ public final class ApiGatewayFunctions {
      * Gets a usage plan by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2283,6 +2450,7 @@ public final class ApiGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetUsagePlanResult> getUsagePlanPlain(GetUsagePlanPlainArgs args, InvokeOptions options) {
@@ -2294,6 +2462,8 @@ public final class ApiGatewayFunctions {
      * Returns a list of usage plans.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2324,6 +2494,7 @@ public final class ApiGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetUsagePlansResult> getUsagePlans(GetUsagePlansArgs args) {
@@ -2335,6 +2506,8 @@ public final class ApiGatewayFunctions {
      * Returns a list of usage plans.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2365,6 +2538,7 @@ public final class ApiGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetUsagePlansResult> getUsagePlansPlain(GetUsagePlansPlainArgs args) {
@@ -2376,6 +2550,8 @@ public final class ApiGatewayFunctions {
      * Returns a list of usage plans.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2406,6 +2582,7 @@ public final class ApiGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetUsagePlansResult> getUsagePlans(GetUsagePlansArgs args, InvokeOptions options) {
@@ -2417,6 +2594,8 @@ public final class ApiGatewayFunctions {
      * Returns a list of usage plans.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2447,6 +2626,7 @@ public final class ApiGatewayFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetUsagePlansResult> getUsagePlansPlain(GetUsagePlansPlainArgs args, InvokeOptions options) {

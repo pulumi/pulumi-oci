@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -62,15 +63,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Configurations can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Psql/configuration:Configuration test_configuration "id"
-//
+// $ pulumi import oci:Psql/configuration:Configuration test_configuration "id"
 // ```
 type Configuration struct {
 	pulumi.CustomResourceState

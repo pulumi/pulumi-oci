@@ -112,6 +112,7 @@ def get_vm_cluster_updates(filters: Optional[Sequence[pulumi.InputType['GetVmClu
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -120,6 +121,7 @@ def get_vm_cluster_updates(filters: Optional[Sequence[pulumi.InputType['GetVmClu
         state=var["vm_cluster_update_state"],
         update_type=var["vm_cluster_update_update_type"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str state: A filter to return only resources that match the given lifecycle state exactly.
@@ -156,6 +158,7 @@ def get_vm_cluster_updates_output(filters: Optional[pulumi.Input[Optional[Sequen
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -164,6 +167,7 @@ def get_vm_cluster_updates_output(filters: Optional[pulumi.Input[Optional[Sequen
         state=var["vm_cluster_update_state"],
         update_type=var["vm_cluster_update_update_type"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str state: A filter to return only resources that match the given lifecycle state exactly.

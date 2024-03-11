@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -43,6 +44,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetDatabaseRegistrations(ctx *pulumi.Context, args *GetDatabaseRegistrationsArgs, opts ...pulumi.InvokeOption) (*GetDatabaseRegistrationsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDatabaseRegistrationsResult

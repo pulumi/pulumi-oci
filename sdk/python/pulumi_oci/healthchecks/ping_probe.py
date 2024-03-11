@@ -302,6 +302,7 @@ class PingProbe(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -314,13 +315,14 @@ class PingProbe(pulumi.CustomResource):
             timeout_in_seconds=var["ping_probe_timeout_in_seconds"],
             vantage_point_names=var["ping_probe_vantage_point_names"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         PingProbes can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:HealthChecks/pingProbe:PingProbe test_ping_probe "id"
+        $ pulumi import oci:HealthChecks/pingProbe:PingProbe test_ping_probe "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -352,6 +354,7 @@ class PingProbe(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -364,13 +367,14 @@ class PingProbe(pulumi.CustomResource):
             timeout_in_seconds=var["ping_probe_timeout_in_seconds"],
             vantage_point_names=var["ping_probe_vantage_point_names"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         PingProbes can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:HealthChecks/pingProbe:PingProbe test_ping_probe "id"
+        $ pulumi import oci:HealthChecks/pingProbe:PingProbe test_ping_probe "id"
         ```
 
         :param str resource_name: The name of the resource.

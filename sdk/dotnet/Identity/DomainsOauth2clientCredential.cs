@@ -19,7 +19,7 @@ namespace Pulumi.Oci.Identity
     /// OAuth2ClientCredentials can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Identity/domainsOauth2clientCredential:DomainsOauth2clientCredential test_oauth2client_credential "idcsEndpoint/{idcsEndpoint}/oAuth2ClientCredentials/{oAuth2ClientCredentialId}"
+    /// $ pulumi import oci:Identity/domainsOauth2clientCredential:DomainsOauth2clientCredential test_oauth2client_credential "idcsEndpoint/{idcsEndpoint}/oAuth2ClientCredentials/{oAuth2ClientCredentialId}"
     /// ```
     /// </summary>
     [OciResourceType("oci:Identity/domainsOauth2clientCredential:DomainsOauth2clientCredential")]

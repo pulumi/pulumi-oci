@@ -17,10 +17,9 @@ namespace Pulumi.Oci.Database
         /// Gets the history of the patch actions performed on the specified VM cluster in an Exadata Cloud@Customer system.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,8 +35,7 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetVmClusterPatchHistoryEntriesResult> InvokeAsync(GetVmClusterPatchHistoryEntriesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetVmClusterPatchHistoryEntriesResult>("oci:Database/getVmClusterPatchHistoryEntries:getVmClusterPatchHistoryEntries", args ?? new GetVmClusterPatchHistoryEntriesArgs(), options.WithDefaults());
@@ -48,10 +46,9 @@ namespace Pulumi.Oci.Database
         /// Gets the history of the patch actions performed on the specified VM cluster in an Exadata Cloud@Customer system.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -67,8 +64,7 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetVmClusterPatchHistoryEntriesResult> Invoke(GetVmClusterPatchHistoryEntriesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVmClusterPatchHistoryEntriesResult>("oci:Database/getVmClusterPatchHistoryEntries:getVmClusterPatchHistoryEntries", args ?? new GetVmClusterPatchHistoryEntriesInvokeArgs(), options.WithDefaults());

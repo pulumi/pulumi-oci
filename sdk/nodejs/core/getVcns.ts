@@ -17,6 +17,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -27,6 +28,7 @@ import * as utilities from "../utilities";
  *     state: _var.vcn_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getVcns(args: GetVcnsArgs, opts?: pulumi.InvokeOptions): Promise<GetVcnsResult> {
 
@@ -95,6 +97,7 @@ export interface GetVcnsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -105,6 +108,7 @@ export interface GetVcnsResult {
  *     state: _var.vcn_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getVcnsOutput(args: GetVcnsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVcnsResult> {
     return pulumi.output(args).apply((a: any) => getVcns(a, opts))

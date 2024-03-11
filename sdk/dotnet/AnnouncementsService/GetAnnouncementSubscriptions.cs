@@ -19,10 +19,9 @@ namespace Pulumi.Oci.AnnouncementsService
         /// This call is subject to an Announcements limit that applies to the total number of requests across all read or write operations. Announcements might throttle this call to reject an otherwise valid request when the total rate of operations exceeds 20 requests per second for a given user. The service might also throttle this call to reject an otherwise valid request when the total rate of operations exceeds 100 requests per second for a given tenancy.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -41,8 +40,7 @@ namespace Pulumi.Oci.AnnouncementsService
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetAnnouncementSubscriptionsResult> InvokeAsync(GetAnnouncementSubscriptionsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAnnouncementSubscriptionsResult>("oci:AnnouncementsService/getAnnouncementSubscriptions:getAnnouncementSubscriptions", args ?? new GetAnnouncementSubscriptionsArgs(), options.WithDefaults());
@@ -55,10 +53,9 @@ namespace Pulumi.Oci.AnnouncementsService
         /// This call is subject to an Announcements limit that applies to the total number of requests across all read or write operations. Announcements might throttle this call to reject an otherwise valid request when the total rate of operations exceeds 20 requests per second for a given user. The service might also throttle this call to reject an otherwise valid request when the total rate of operations exceeds 100 requests per second for a given tenancy.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -77,8 +74,7 @@ namespace Pulumi.Oci.AnnouncementsService
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetAnnouncementSubscriptionsResult> Invoke(GetAnnouncementSubscriptionsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAnnouncementSubscriptionsResult>("oci:AnnouncementsService/getAnnouncementSubscriptions:getAnnouncementSubscriptions", args ?? new GetAnnouncementSubscriptionsInvokeArgs(), options.WithDefaults());

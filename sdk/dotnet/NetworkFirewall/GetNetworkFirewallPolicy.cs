@@ -16,10 +16,9 @@ namespace Pulumi.Oci.NetworkFirewall
         /// 
         /// Gets a NetworkFirewallPolicy given the network firewall policy identifier.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,8 +34,7 @@ namespace Pulumi.Oci.NetworkFirewall
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetNetworkFirewallPolicyResult> InvokeAsync(GetNetworkFirewallPolicyArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetNetworkFirewallPolicyResult>("oci:NetworkFirewall/getNetworkFirewallPolicy:getNetworkFirewallPolicy", args ?? new GetNetworkFirewallPolicyArgs(), options.WithDefaults());
@@ -46,10 +44,9 @@ namespace Pulumi.Oci.NetworkFirewall
         /// 
         /// Gets a NetworkFirewallPolicy given the network firewall policy identifier.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -65,8 +62,7 @@ namespace Pulumi.Oci.NetworkFirewall
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetNetworkFirewallPolicyResult> Invoke(GetNetworkFirewallPolicyInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNetworkFirewallPolicyResult>("oci:NetworkFirewall/getNetworkFirewallPolicy:getNetworkFirewallPolicy", args ?? new GetNetworkFirewallPolicyInvokeArgs(), options.WithDefaults());

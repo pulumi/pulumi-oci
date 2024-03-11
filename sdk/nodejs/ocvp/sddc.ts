@@ -12,7 +12,7 @@ import * as utilities from "../utilities";
  * Sddcs can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Ocvp/sddc:Sddc test_sddc "id"
+ * $ pulumi import oci:Ocvp/sddc:Sddc test_sddc "id"
  * ```
  */
 export class Sddc extends pulumi.CustomResource {

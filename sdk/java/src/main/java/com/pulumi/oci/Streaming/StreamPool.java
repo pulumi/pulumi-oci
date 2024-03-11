@@ -27,6 +27,8 @@ import javax.annotation.Nullable;
  * In the response, the `lifecycleState` parameter of the object tells you its current state.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -74,13 +76,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * StreamPools can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Streaming/streamPool:StreamPool test_stream_pool &#34;id&#34;
+ * $ pulumi import oci:Streaming/streamPool:StreamPool test_stream_pool &#34;id&#34;
  * ```
  * 
  */

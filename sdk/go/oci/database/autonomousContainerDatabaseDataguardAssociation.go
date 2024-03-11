@@ -25,6 +25,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -70,15 +71,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // AutonomousContainerDatabaseDataguardAssociations can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Database/autonomousContainerDatabaseDataguardAssociation:AutonomousContainerDatabaseDataguardAssociation test_autonomous_container_database_dataguard_association "autonomousContainerDatabases/{autonomousContainerDatabaseId}/autonomousContainerDatabaseDataguardAssociations/{autonomousContainerDatabaseDataguardAssociationId}"
-//
+// $ pulumi import oci:Database/autonomousContainerDatabaseDataguardAssociation:AutonomousContainerDatabaseDataguardAssociation test_autonomous_container_database_dataguard_association "autonomousContainerDatabases/{autonomousContainerDatabaseId}/autonomousContainerDatabaseDataguardAssociations/{autonomousContainerDatabaseDataguardAssociationId}"
 // ```
 type AutonomousContainerDatabaseDataguardAssociation struct {
 	pulumi.CustomResourceState

@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,6 +22,7 @@ import * as utilities from "../utilities";
  *     streamCdnConfigId: oci_media_services_stream_cdn_config.test_stream_cdn_config.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getStreamCdnConfig(args: GetStreamCdnConfigArgs, opts?: pulumi.InvokeOptions): Promise<GetStreamCdnConfigResult> {
 
@@ -110,6 +112,7 @@ export interface GetStreamCdnConfigResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -118,6 +121,7 @@ export interface GetStreamCdnConfigResult {
  *     streamCdnConfigId: oci_media_services_stream_cdn_config.test_stream_cdn_config.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getStreamCdnConfigOutput(args: GetStreamCdnConfigOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetStreamCdnConfigResult> {
     return pulumi.output(args).apply((a: any) => getStreamCdnConfig(a, opts))

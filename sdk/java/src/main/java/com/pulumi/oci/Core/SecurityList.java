@@ -40,6 +40,8 @@ import javax.annotation.Nullable;
  * For more information on configuring a VCN&#39;s default security list, see [Managing Default VCN Resources](https://www.terraform.io/docs/providers/oci/guides/managing_default_resources.html)
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -138,13 +140,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * SecurityLists can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Core/securityList:SecurityList test_security_list &#34;id&#34;
+ * $ pulumi import oci:Core/securityList:SecurityList test_security_list &#34;id&#34;
  * ```
  * 
  */

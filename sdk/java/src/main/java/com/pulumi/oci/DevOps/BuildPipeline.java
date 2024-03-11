@@ -22,6 +22,8 @@ import javax.annotation.Nullable;
  * Creates a new build pipeline.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -62,13 +64,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * BuildPipelines can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:DevOps/buildPipeline:BuildPipeline test_build_pipeline &#34;id&#34;
+ * $ pulumi import oci:DevOps/buildPipeline:BuildPipeline test_build_pipeline &#34;id&#34;
  * ```
  * 
  */

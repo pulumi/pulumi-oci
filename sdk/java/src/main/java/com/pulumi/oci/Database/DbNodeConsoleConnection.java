@@ -23,6 +23,8 @@ import javax.annotation.Nullable;
  * you connect to the console using SSH.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -54,13 +56,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * DbNodeConsoleConnections can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Database/dbNodeConsoleConnection:DbNodeConsoleConnection test_db_node_console_connection &#34;dbNodes/{dbNodeId}/consoleConnections/{consoleConnectionId}&#34;
+ * $ pulumi import oci:Database/dbNodeConsoleConnection:DbNodeConsoleConnection test_db_node_console_connection &#34;dbNodes/{dbNodeId}/consoleConnections/{consoleConnectionId}&#34;
  * ```
  * 
  */

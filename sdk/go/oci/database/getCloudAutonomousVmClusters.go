@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -44,6 +45,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetCloudAutonomousVmClusters(ctx *pulumi.Context, args *GetCloudAutonomousVmClustersArgs, opts ...pulumi.InvokeOption) (*GetCloudAutonomousVmClustersResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetCloudAutonomousVmClustersResult

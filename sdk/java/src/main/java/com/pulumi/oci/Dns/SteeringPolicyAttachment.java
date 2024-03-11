@@ -25,6 +25,8 @@ import javax.annotation.Nullable;
  * into the same compartment as the domain&#39;s zone.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -56,13 +58,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * SteeringPolicyAttachments can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Dns/steeringPolicyAttachment:SteeringPolicyAttachment test_steering_policy_attachment &#34;id&#34;
+ * $ pulumi import oci:Dns/steeringPolicyAttachment:SteeringPolicyAttachment test_steering_policy_attachment &#34;id&#34;
  * ```
  * 
  */

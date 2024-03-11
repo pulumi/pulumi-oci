@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -49,15 +50,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // ClusterWorkloadMappings can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:ContainerEngine/clusterWorkloadMapping:ClusterWorkloadMapping test_cluster_workload_mapping "clusters/{clusterId}/workloadMappings/{workloadMappingId}"
-//
+// $ pulumi import oci:ContainerEngine/clusterWorkloadMapping:ClusterWorkloadMapping test_cluster_workload_mapping "clusters/{clusterId}/workloadMappings/{workloadMappingId}"
 // ```
 type ClusterWorkloadMapping struct {
 	pulumi.CustomResourceState

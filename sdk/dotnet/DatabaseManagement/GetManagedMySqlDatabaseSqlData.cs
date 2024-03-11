@@ -17,10 +17,9 @@ namespace Pulumi.Oci.DatabaseManagement
         /// Retrieves SQL performance data for given MySQL Instance.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -39,8 +38,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetManagedMySqlDatabaseSqlDataResult> InvokeAsync(GetManagedMySqlDatabaseSqlDataArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagedMySqlDatabaseSqlDataResult>("oci:DatabaseManagement/getManagedMySqlDatabaseSqlData:getManagedMySqlDatabaseSqlData", args ?? new GetManagedMySqlDatabaseSqlDataArgs(), options.WithDefaults());
@@ -51,10 +49,9 @@ namespace Pulumi.Oci.DatabaseManagement
         /// Retrieves SQL performance data for given MySQL Instance.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -73,8 +70,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetManagedMySqlDatabaseSqlDataResult> Invoke(GetManagedMySqlDatabaseSqlDataInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedMySqlDatabaseSqlDataResult>("oci:DatabaseManagement/getManagedMySqlDatabaseSqlData:getManagedMySqlDatabaseSqlData", args ?? new GetManagedMySqlDatabaseSqlDataInvokeArgs(), options.WithDefaults());

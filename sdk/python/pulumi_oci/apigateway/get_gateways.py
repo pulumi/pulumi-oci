@@ -128,6 +128,7 @@ def get_gateways(certificate_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -137,6 +138,7 @@ def get_gateways(certificate_id: Optional[str] = None,
         display_name=var["gateway_display_name"],
         state=var["gateway_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str certificate_id: Filter gateways by the certificate ocid.
@@ -177,6 +179,7 @@ def get_gateways_output(certificate_id: Optional[pulumi.Input[Optional[str]]] = 
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -186,6 +189,7 @@ def get_gateways_output(certificate_id: Optional[pulumi.Input[Optional[str]]] = 
         display_name=var["gateway_display_name"],
         state=var["gateway_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str certificate_id: Filter gateways by the certificate ocid.

@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -28,6 +29,7 @@ import * as utilities from "../utilities";
  *     startIndex: _var.network_perimeter_start_index,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDomainsNetworkPerimeters(args: GetDomainsNetworkPerimetersArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsNetworkPerimetersResult> {
 
@@ -125,6 +127,7 @@ export interface GetDomainsNetworkPerimetersResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -140,6 +143,7 @@ export interface GetDomainsNetworkPerimetersResult {
  *     startIndex: _var.network_perimeter_start_index,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDomainsNetworkPerimetersOutput(args: GetDomainsNetworkPerimetersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsNetworkPerimetersResult> {
     return pulumi.output(args).apply((a: any) => getDomainsNetworkPerimeters(a, opts))

@@ -24,6 +24,8 @@ import javax.annotation.Nullable;
  * Creates a new MediaWorkflowConfiguration.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -64,13 +66,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * MediaWorkflowConfigurations can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:MediaServices/mediaWorkflowConfiguration:MediaWorkflowConfiguration test_media_workflow_configuration &#34;id&#34;
+ * $ pulumi import oci:MediaServices/mediaWorkflowConfiguration:MediaWorkflowConfiguration test_media_workflow_configuration &#34;id&#34;
  * ```
  * 
  */

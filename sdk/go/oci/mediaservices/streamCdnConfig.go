@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -72,15 +73,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // StreamCdnConfigs can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:MediaServices/streamCdnConfig:StreamCdnConfig test_stream_cdn_config "id"
-//
+// $ pulumi import oci:MediaServices/streamCdnConfig:StreamCdnConfig test_stream_cdn_config "id"
 // ```
 type StreamCdnConfig struct {
 	pulumi.CustomResourceState

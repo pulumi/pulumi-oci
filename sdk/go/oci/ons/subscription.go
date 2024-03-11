@@ -22,6 +22,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -54,15 +55,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Subscriptions can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Ons/subscription:Subscription test_subscription "id"
-//
+// $ pulumi import oci:Ons/subscription:Subscription test_subscription "id"
 // ```
 type Subscription struct {
 	pulumi.CustomResourceState

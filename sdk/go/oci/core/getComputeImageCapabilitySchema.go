@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,6 +42,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupComputeImageCapabilitySchema(ctx *pulumi.Context, args *LookupComputeImageCapabilitySchemaArgs, opts ...pulumi.InvokeOption) (*LookupComputeImageCapabilitySchemaResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupComputeImageCapabilitySchemaResult

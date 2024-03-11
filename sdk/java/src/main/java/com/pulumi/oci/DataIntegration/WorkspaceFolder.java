@@ -27,6 +27,8 @@ import javax.annotation.Nullable;
  * Folders are used to organize your design-time resources, such as tasks or data flows.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -69,13 +71,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * WorkspaceFolders can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:DataIntegration/workspaceFolder:WorkspaceFolder test_workspace_folder &#34;workspaces/{workspaceId}/folders/{folderKey}&#34;
+ * $ pulumi import oci:DataIntegration/workspaceFolder:WorkspaceFolder test_workspace_folder &#34;workspaces/{workspaceId}/folders/{folderKey}&#34;
  * ```
  * 
  */

@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -44,15 +45,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // BaselineableMetrics can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:StackMonitoring/baselineableMetric:BaselineableMetric test_baselineable_metric "id"
-//
+// $ pulumi import oci:StackMonitoring/baselineableMetric:BaselineableMetric test_baselineable_metric "id"
 // ```
 type BaselineableMetric struct {
 	pulumi.CustomResourceState

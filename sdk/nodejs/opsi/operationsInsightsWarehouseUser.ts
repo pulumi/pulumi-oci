@@ -12,6 +12,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -31,13 +32,14 @@ import * as utilities from "../utilities";
  *     isOpsiDataAccess: _var.operations_insights_warehouse_user_is_opsi_data_access,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * OperationsInsightsWarehouseUsers can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Opsi/operationsInsightsWarehouseUser:OperationsInsightsWarehouseUser test_operations_insights_warehouse_user "id"
+ * $ pulumi import oci:Opsi/operationsInsightsWarehouseUser:OperationsInsightsWarehouseUser test_operations_insights_warehouse_user "id"
  * ```
  */
 export class OperationsInsightsWarehouseUser extends pulumi.CustomResource {

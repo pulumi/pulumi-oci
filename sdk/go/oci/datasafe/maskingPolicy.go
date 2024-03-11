@@ -34,6 +34,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -79,15 +80,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // MaskingPolicies can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:DataSafe/maskingPolicy:MaskingPolicy test_masking_policy "id"
-//
+// $ pulumi import oci:DataSafe/maskingPolicy:MaskingPolicy test_masking_policy "id"
 // ```
 type MaskingPolicy struct {
 	pulumi.CustomResourceState

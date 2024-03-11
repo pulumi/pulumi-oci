@@ -17,10 +17,9 @@ namespace Pulumi.Oci.Database
         /// Lists the patches applicable to the specified VM cluster in an Exadata Cloud@Customer system.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,8 +35,7 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetVmClusterPatchesResult> InvokeAsync(GetVmClusterPatchesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetVmClusterPatchesResult>("oci:Database/getVmClusterPatches:getVmClusterPatches", args ?? new GetVmClusterPatchesArgs(), options.WithDefaults());
@@ -48,10 +46,9 @@ namespace Pulumi.Oci.Database
         /// Lists the patches applicable to the specified VM cluster in an Exadata Cloud@Customer system.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -67,8 +64,7 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetVmClusterPatchesResult> Invoke(GetVmClusterPatchesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVmClusterPatchesResult>("oci:Database/getVmClusterPatches:getVmClusterPatches", args ?? new GetVmClusterPatchesInvokeArgs(), options.WithDefaults());

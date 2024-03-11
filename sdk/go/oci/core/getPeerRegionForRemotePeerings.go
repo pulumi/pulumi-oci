@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -39,6 +40,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetPeerRegionForRemotePeerings(ctx *pulumi.Context, args *GetPeerRegionForRemotePeeringsArgs, opts ...pulumi.InvokeOption) (*GetPeerRegionForRemotePeeringsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetPeerRegionForRemotePeeringsResult

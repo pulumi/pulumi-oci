@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -43,6 +44,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetVolumeGroupBackups(ctx *pulumi.Context, args *GetVolumeGroupBackupsArgs, opts ...pulumi.InvokeOption) (*GetVolumeGroupBackupsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetVolumeGroupBackupsResult

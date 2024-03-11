@@ -16,10 +16,9 @@ namespace Pulumi.Oci.DataIntegration
         /// 
         /// Retrieves an application using the specified identifier.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,8 +35,7 @@ namespace Pulumi.Oci.DataIntegration
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetWorkspaceApplicationResult> InvokeAsync(GetWorkspaceApplicationArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetWorkspaceApplicationResult>("oci:DataIntegration/getWorkspaceApplication:getWorkspaceApplication", args ?? new GetWorkspaceApplicationArgs(), options.WithDefaults());
@@ -47,10 +45,9 @@ namespace Pulumi.Oci.DataIntegration
         /// 
         /// Retrieves an application using the specified identifier.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -67,8 +64,7 @@ namespace Pulumi.Oci.DataIntegration
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetWorkspaceApplicationResult> Invoke(GetWorkspaceApplicationInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetWorkspaceApplicationResult>("oci:DataIntegration/getWorkspaceApplication:getWorkspaceApplication", args ?? new GetWorkspaceApplicationInvokeArgs(), options.WithDefaults());

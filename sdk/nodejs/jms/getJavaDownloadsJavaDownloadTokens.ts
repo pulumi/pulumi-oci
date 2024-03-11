@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -27,6 +28,7 @@ import * as utilities from "../utilities";
  *     value: _var.java_download_token_value,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getJavaDownloadsJavaDownloadTokens(args: GetJavaDownloadsJavaDownloadTokensArgs, opts?: pulumi.InvokeOptions): Promise<GetJavaDownloadsJavaDownloadTokensResult> {
 
@@ -117,6 +119,7 @@ export interface GetJavaDownloadsJavaDownloadTokensResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -131,6 +134,7 @@ export interface GetJavaDownloadsJavaDownloadTokensResult {
  *     value: _var.java_download_token_value,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getJavaDownloadsJavaDownloadTokensOutput(args: GetJavaDownloadsJavaDownloadTokensOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetJavaDownloadsJavaDownloadTokensResult> {
     return pulumi.output(args).apply((a: any) => getJavaDownloadsJavaDownloadTokens(a, opts))

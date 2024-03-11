@@ -19,6 +19,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -49,15 +50,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // ExternalPluggableDatabases can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Database/externalPluggableDatabase:ExternalPluggableDatabase test_external_pluggable_database "id"
-//
+// $ pulumi import oci:Database/externalPluggableDatabase:ExternalPluggableDatabase test_external_pluggable_database "id"
 // ```
 type ExternalPluggableDatabase struct {
 	pulumi.CustomResourceState

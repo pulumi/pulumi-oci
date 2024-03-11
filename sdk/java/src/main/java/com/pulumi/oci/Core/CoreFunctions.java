@@ -460,6 +460,8 @@ public final class CoreFunctions {
      * Gets the specified listing.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -488,6 +490,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAppCatalogListingResult> getAppCatalogListing(GetAppCatalogListingArgs args) {
@@ -499,6 +502,8 @@ public final class CoreFunctions {
      * Gets the specified listing.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -527,6 +532,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAppCatalogListingResult> getAppCatalogListingPlain(GetAppCatalogListingPlainArgs args) {
@@ -538,6 +544,8 @@ public final class CoreFunctions {
      * Gets the specified listing.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -566,6 +574,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAppCatalogListingResult> getAppCatalogListing(GetAppCatalogListingArgs args, InvokeOptions options) {
@@ -577,6 +586,8 @@ public final class CoreFunctions {
      * Gets the specified listing.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -605,6 +616,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAppCatalogListingResult> getAppCatalogListingPlain(GetAppCatalogListingPlainArgs args, InvokeOptions options) {
@@ -616,6 +628,8 @@ public final class CoreFunctions {
      * Gets the specified listing resource version.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -645,6 +659,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAppCatalogListingResourceVersionResult> getAppCatalogListingResourceVersion(GetAppCatalogListingResourceVersionArgs args) {
@@ -656,6 +671,8 @@ public final class CoreFunctions {
      * Gets the specified listing resource version.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -685,6 +702,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAppCatalogListingResourceVersionResult> getAppCatalogListingResourceVersionPlain(GetAppCatalogListingResourceVersionPlainArgs args) {
@@ -696,6 +714,8 @@ public final class CoreFunctions {
      * Gets the specified listing resource version.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -725,6 +745,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAppCatalogListingResourceVersionResult> getAppCatalogListingResourceVersion(GetAppCatalogListingResourceVersionArgs args, InvokeOptions options) {
@@ -736,6 +757,8 @@ public final class CoreFunctions {
      * Gets the specified listing resource version.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -765,6 +788,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAppCatalogListingResourceVersionResult> getAppCatalogListingResourceVersionPlain(GetAppCatalogListingResourceVersionPlainArgs args, InvokeOptions options) {
@@ -776,6 +800,8 @@ public final class CoreFunctions {
      * Gets all resource versions for a particular listing.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -804,6 +830,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAppCatalogListingResourceVersionsResult> getAppCatalogListingResourceVersions(GetAppCatalogListingResourceVersionsArgs args) {
@@ -815,6 +842,8 @@ public final class CoreFunctions {
      * Gets all resource versions for a particular listing.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -843,6 +872,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAppCatalogListingResourceVersionsResult> getAppCatalogListingResourceVersionsPlain(GetAppCatalogListingResourceVersionsPlainArgs args) {
@@ -854,6 +884,8 @@ public final class CoreFunctions {
      * Gets all resource versions for a particular listing.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -882,6 +914,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAppCatalogListingResourceVersionsResult> getAppCatalogListingResourceVersions(GetAppCatalogListingResourceVersionsArgs args, InvokeOptions options) {
@@ -893,6 +926,8 @@ public final class CoreFunctions {
      * Gets all resource versions for a particular listing.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -921,6 +956,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAppCatalogListingResourceVersionsResult> getAppCatalogListingResourceVersionsPlain(GetAppCatalogListingResourceVersionsPlainArgs args, InvokeOptions options) {
@@ -932,6 +968,8 @@ public final class CoreFunctions {
      * Lists the published listings.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -962,6 +1000,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAppCatalogListingsResult> getAppCatalogListings() {
@@ -973,6 +1012,8 @@ public final class CoreFunctions {
      * Lists the published listings.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1003,6 +1044,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAppCatalogListingsResult> getAppCatalogListingsPlain() {
@@ -1014,6 +1056,8 @@ public final class CoreFunctions {
      * Lists the published listings.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1044,6 +1088,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAppCatalogListingsResult> getAppCatalogListings(GetAppCatalogListingsArgs args) {
@@ -1055,6 +1100,8 @@ public final class CoreFunctions {
      * Lists the published listings.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1085,6 +1132,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAppCatalogListingsResult> getAppCatalogListingsPlain(GetAppCatalogListingsPlainArgs args) {
@@ -1096,6 +1144,8 @@ public final class CoreFunctions {
      * Lists the published listings.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1126,6 +1176,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAppCatalogListingsResult> getAppCatalogListings(GetAppCatalogListingsArgs args, InvokeOptions options) {
@@ -1137,6 +1188,8 @@ public final class CoreFunctions {
      * Lists the published listings.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1167,6 +1220,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAppCatalogListingsResult> getAppCatalogListingsPlain(GetAppCatalogListingsPlainArgs args, InvokeOptions options) {
@@ -1178,6 +1232,8 @@ public final class CoreFunctions {
      * Lists subscriptions for a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1207,6 +1263,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAppCatalogSubscriptionsResult> getAppCatalogSubscriptions(GetAppCatalogSubscriptionsArgs args) {
@@ -1218,6 +1275,8 @@ public final class CoreFunctions {
      * Lists subscriptions for a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1247,6 +1306,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAppCatalogSubscriptionsResult> getAppCatalogSubscriptionsPlain(GetAppCatalogSubscriptionsPlainArgs args) {
@@ -1258,6 +1318,8 @@ public final class CoreFunctions {
      * Lists subscriptions for a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1287,6 +1349,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAppCatalogSubscriptionsResult> getAppCatalogSubscriptions(GetAppCatalogSubscriptionsArgs args, InvokeOptions options) {
@@ -1298,6 +1361,8 @@ public final class CoreFunctions {
      * Lists subscriptions for a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1327,6 +1392,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAppCatalogSubscriptionsResult> getAppCatalogSubscriptionsPlain(GetAppCatalogSubscriptionsPlainArgs args, InvokeOptions options) {
@@ -1338,6 +1404,8 @@ public final class CoreFunctions {
      * Gets information for the specified block volume replica.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1366,6 +1434,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBlockVolumeReplicaResult> getBlockVolumeReplica(GetBlockVolumeReplicaArgs args) {
@@ -1377,6 +1446,8 @@ public final class CoreFunctions {
      * Gets information for the specified block volume replica.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1405,6 +1476,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBlockVolumeReplicaResult> getBlockVolumeReplicaPlain(GetBlockVolumeReplicaPlainArgs args) {
@@ -1416,6 +1488,8 @@ public final class CoreFunctions {
      * Gets information for the specified block volume replica.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1444,6 +1518,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBlockVolumeReplicaResult> getBlockVolumeReplica(GetBlockVolumeReplicaArgs args, InvokeOptions options) {
@@ -1455,6 +1530,8 @@ public final class CoreFunctions {
      * Gets information for the specified block volume replica.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1483,6 +1560,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBlockVolumeReplicaResult> getBlockVolumeReplicaPlain(GetBlockVolumeReplicaPlainArgs args, InvokeOptions options) {
@@ -1494,6 +1572,8 @@ public final class CoreFunctions {
      * Lists the block volume replicas in the specified compartment and availability domain.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1526,6 +1606,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBlockVolumeReplicasResult> getBlockVolumeReplicas() {
@@ -1537,6 +1618,8 @@ public final class CoreFunctions {
      * Lists the block volume replicas in the specified compartment and availability domain.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1569,6 +1652,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBlockVolumeReplicasResult> getBlockVolumeReplicasPlain() {
@@ -1580,6 +1664,8 @@ public final class CoreFunctions {
      * Lists the block volume replicas in the specified compartment and availability domain.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1612,6 +1698,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBlockVolumeReplicasResult> getBlockVolumeReplicas(GetBlockVolumeReplicasArgs args) {
@@ -1623,6 +1710,8 @@ public final class CoreFunctions {
      * Lists the block volume replicas in the specified compartment and availability domain.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1655,6 +1744,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBlockVolumeReplicasResult> getBlockVolumeReplicasPlain(GetBlockVolumeReplicasPlainArgs args) {
@@ -1666,6 +1756,8 @@ public final class CoreFunctions {
      * Lists the block volume replicas in the specified compartment and availability domain.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1698,6 +1790,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBlockVolumeReplicasResult> getBlockVolumeReplicas(GetBlockVolumeReplicasArgs args, InvokeOptions options) {
@@ -1709,6 +1802,8 @@ public final class CoreFunctions {
      * Lists the block volume replicas in the specified compartment and availability domain.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1741,6 +1836,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBlockVolumeReplicasResult> getBlockVolumeReplicasPlain(GetBlockVolumeReplicasPlainArgs args, InvokeOptions options) {
@@ -1752,6 +1848,8 @@ public final class CoreFunctions {
      * Gets information for the specified boot volume.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1780,6 +1878,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBootVolumeResult> getBootVolume(GetBootVolumeArgs args) {
@@ -1791,6 +1890,8 @@ public final class CoreFunctions {
      * Gets information for the specified boot volume.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1819,6 +1920,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBootVolumeResult> getBootVolumePlain(GetBootVolumePlainArgs args) {
@@ -1830,6 +1932,8 @@ public final class CoreFunctions {
      * Gets information for the specified boot volume.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1858,6 +1962,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBootVolumeResult> getBootVolume(GetBootVolumeArgs args, InvokeOptions options) {
@@ -1869,6 +1974,8 @@ public final class CoreFunctions {
      * Gets information for the specified boot volume.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1897,6 +2004,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBootVolumeResult> getBootVolumePlain(GetBootVolumePlainArgs args, InvokeOptions options) {
@@ -1909,6 +2017,8 @@ public final class CoreFunctions {
      * list by specifying an instance OCID, boot volume OCID, or both.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1940,6 +2050,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * For more detailed implementation refer the instance example
      * 
      */
@@ -1953,6 +2064,8 @@ public final class CoreFunctions {
      * list by specifying an instance OCID, boot volume OCID, or both.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1984,6 +2097,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * For more detailed implementation refer the instance example
      * 
      */
@@ -1997,6 +2111,8 @@ public final class CoreFunctions {
      * list by specifying an instance OCID, boot volume OCID, or both.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2028,6 +2144,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * For more detailed implementation refer the instance example
      * 
      */
@@ -2041,6 +2158,8 @@ public final class CoreFunctions {
      * list by specifying an instance OCID, boot volume OCID, or both.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2072,6 +2191,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * For more detailed implementation refer the instance example
      * 
      */
@@ -2084,6 +2204,8 @@ public final class CoreFunctions {
      * Gets information for the specified boot volume backup.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2112,6 +2234,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBootVolumeBackupResult> getBootVolumeBackup(GetBootVolumeBackupArgs args) {
@@ -2123,6 +2246,8 @@ public final class CoreFunctions {
      * Gets information for the specified boot volume backup.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2151,6 +2276,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBootVolumeBackupResult> getBootVolumeBackupPlain(GetBootVolumeBackupPlainArgs args) {
@@ -2162,6 +2288,8 @@ public final class CoreFunctions {
      * Gets information for the specified boot volume backup.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2190,6 +2318,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBootVolumeBackupResult> getBootVolumeBackup(GetBootVolumeBackupArgs args, InvokeOptions options) {
@@ -2201,6 +2330,8 @@ public final class CoreFunctions {
      * Gets information for the specified boot volume backup.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2229,6 +2360,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBootVolumeBackupResult> getBootVolumeBackupPlain(GetBootVolumeBackupPlainArgs args, InvokeOptions options) {
@@ -2240,6 +2372,8 @@ public final class CoreFunctions {
      * Lists the boot volume backups in the specified compartment. You can filter the results by boot volume.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2272,6 +2406,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBootVolumeBackupsResult> getBootVolumeBackups(GetBootVolumeBackupsArgs args) {
@@ -2283,6 +2418,8 @@ public final class CoreFunctions {
      * Lists the boot volume backups in the specified compartment. You can filter the results by boot volume.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2315,6 +2452,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBootVolumeBackupsResult> getBootVolumeBackupsPlain(GetBootVolumeBackupsPlainArgs args) {
@@ -2326,6 +2464,8 @@ public final class CoreFunctions {
      * Lists the boot volume backups in the specified compartment. You can filter the results by boot volume.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2358,6 +2498,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBootVolumeBackupsResult> getBootVolumeBackups(GetBootVolumeBackupsArgs args, InvokeOptions options) {
@@ -2369,6 +2510,8 @@ public final class CoreFunctions {
      * Lists the boot volume backups in the specified compartment. You can filter the results by boot volume.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2401,6 +2544,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBootVolumeBackupsResult> getBootVolumeBackupsPlain(GetBootVolumeBackupsPlainArgs args, InvokeOptions options) {
@@ -2412,6 +2556,8 @@ public final class CoreFunctions {
      * Gets information for the specified boot volume replica.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2440,6 +2586,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBootVolumeReplicaResult> getBootVolumeReplica(GetBootVolumeReplicaArgs args) {
@@ -2451,6 +2598,8 @@ public final class CoreFunctions {
      * Gets information for the specified boot volume replica.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2479,6 +2628,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBootVolumeReplicaResult> getBootVolumeReplicaPlain(GetBootVolumeReplicaPlainArgs args) {
@@ -2490,6 +2640,8 @@ public final class CoreFunctions {
      * Gets information for the specified boot volume replica.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2518,6 +2670,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBootVolumeReplicaResult> getBootVolumeReplica(GetBootVolumeReplicaArgs args, InvokeOptions options) {
@@ -2529,6 +2682,8 @@ public final class CoreFunctions {
      * Gets information for the specified boot volume replica.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2557,6 +2712,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBootVolumeReplicaResult> getBootVolumeReplicaPlain(GetBootVolumeReplicaPlainArgs args, InvokeOptions options) {
@@ -2568,6 +2724,8 @@ public final class CoreFunctions {
      * Lists the boot volume replicas in the specified compartment and availability domain.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2600,6 +2758,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBootVolumeReplicasResult> getBootVolumeReplicas() {
@@ -2611,6 +2770,8 @@ public final class CoreFunctions {
      * Lists the boot volume replicas in the specified compartment and availability domain.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2643,6 +2804,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBootVolumeReplicasResult> getBootVolumeReplicasPlain() {
@@ -2654,6 +2816,8 @@ public final class CoreFunctions {
      * Lists the boot volume replicas in the specified compartment and availability domain.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2686,6 +2850,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBootVolumeReplicasResult> getBootVolumeReplicas(GetBootVolumeReplicasArgs args) {
@@ -2697,6 +2862,8 @@ public final class CoreFunctions {
      * Lists the boot volume replicas in the specified compartment and availability domain.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2729,6 +2896,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBootVolumeReplicasResult> getBootVolumeReplicasPlain(GetBootVolumeReplicasPlainArgs args) {
@@ -2740,6 +2908,8 @@ public final class CoreFunctions {
      * Lists the boot volume replicas in the specified compartment and availability domain.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2772,6 +2942,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBootVolumeReplicasResult> getBootVolumeReplicas(GetBootVolumeReplicasArgs args, InvokeOptions options) {
@@ -2783,6 +2954,8 @@ public final class CoreFunctions {
      * Lists the boot volume replicas in the specified compartment and availability domain.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2815,6 +2988,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBootVolumeReplicasResult> getBootVolumeReplicasPlain(GetBootVolumeReplicasPlainArgs args, InvokeOptions options) {
@@ -2826,6 +3000,8 @@ public final class CoreFunctions {
      * Lists the boot volumes in the specified compartment and availability domain.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2856,6 +3032,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBootVolumesResult> getBootVolumes() {
@@ -2867,6 +3044,8 @@ public final class CoreFunctions {
      * Lists the boot volumes in the specified compartment and availability domain.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2897,6 +3076,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBootVolumesResult> getBootVolumesPlain() {
@@ -2908,6 +3088,8 @@ public final class CoreFunctions {
      * Lists the boot volumes in the specified compartment and availability domain.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2938,6 +3120,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBootVolumesResult> getBootVolumes(GetBootVolumesArgs args) {
@@ -2949,6 +3132,8 @@ public final class CoreFunctions {
      * Lists the boot volumes in the specified compartment and availability domain.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2979,6 +3164,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBootVolumesResult> getBootVolumesPlain(GetBootVolumesPlainArgs args) {
@@ -2990,6 +3176,8 @@ public final class CoreFunctions {
      * Lists the boot volumes in the specified compartment and availability domain.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3020,6 +3208,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBootVolumesResult> getBootVolumes(GetBootVolumesArgs args, InvokeOptions options) {
@@ -3031,6 +3220,8 @@ public final class CoreFunctions {
      * Lists the boot volumes in the specified compartment and availability domain.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3061,6 +3252,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBootVolumesResult> getBootVolumesPlain(GetBootVolumesPlainArgs args, InvokeOptions options) {
@@ -3073,6 +3265,8 @@ public final class CoreFunctions {
      * Each `ByoipAllocatedRange` object also lists the IP pool where it is allocated.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3101,6 +3295,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetByoipAllocatedRangesResult> getByoipAllocatedRanges(GetByoipAllocatedRangesArgs args) {
@@ -3113,6 +3308,8 @@ public final class CoreFunctions {
      * Each `ByoipAllocatedRange` object also lists the IP pool where it is allocated.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3141,6 +3338,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetByoipAllocatedRangesResult> getByoipAllocatedRangesPlain(GetByoipAllocatedRangesPlainArgs args) {
@@ -3153,6 +3351,8 @@ public final class CoreFunctions {
      * Each `ByoipAllocatedRange` object also lists the IP pool where it is allocated.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3181,6 +3381,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetByoipAllocatedRangesResult> getByoipAllocatedRanges(GetByoipAllocatedRangesArgs args, InvokeOptions options) {
@@ -3193,6 +3394,8 @@ public final class CoreFunctions {
      * Each `ByoipAllocatedRange` object also lists the IP pool where it is allocated.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3221,6 +3424,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetByoipAllocatedRangesResult> getByoipAllocatedRangesPlain(GetByoipAllocatedRangesPlainArgs args, InvokeOptions options) {
@@ -3232,6 +3436,8 @@ public final class CoreFunctions {
      * Gets the `ByoipRange` resource. You must specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3260,6 +3466,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetByoipRangeResult> getByoipRange(GetByoipRangeArgs args) {
@@ -3271,6 +3478,8 @@ public final class CoreFunctions {
      * Gets the `ByoipRange` resource. You must specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3299,6 +3508,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetByoipRangeResult> getByoipRangePlain(GetByoipRangePlainArgs args) {
@@ -3310,6 +3520,8 @@ public final class CoreFunctions {
      * Gets the `ByoipRange` resource. You must specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3338,6 +3550,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetByoipRangeResult> getByoipRange(GetByoipRangeArgs args, InvokeOptions options) {
@@ -3349,6 +3562,8 @@ public final class CoreFunctions {
      * Gets the `ByoipRange` resource. You must specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3377,6 +3592,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetByoipRangeResult> getByoipRangePlain(GetByoipRangePlainArgs args, InvokeOptions options) {
@@ -3389,6 +3605,8 @@ public final class CoreFunctions {
      * You can filter the list using query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3419,6 +3637,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetByoipRangesResult> getByoipRanges(GetByoipRangesArgs args) {
@@ -3431,6 +3650,8 @@ public final class CoreFunctions {
      * You can filter the list using query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3461,6 +3682,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetByoipRangesResult> getByoipRangesPlain(GetByoipRangesPlainArgs args) {
@@ -3473,6 +3695,8 @@ public final class CoreFunctions {
      * You can filter the list using query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3503,6 +3727,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetByoipRangesResult> getByoipRanges(GetByoipRangesArgs args, InvokeOptions options) {
@@ -3515,6 +3740,8 @@ public final class CoreFunctions {
      * You can filter the list using query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3545,6 +3772,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetByoipRangesResult> getByoipRangesPlain(GetByoipRangesPlainArgs args, InvokeOptions options) {
@@ -3556,6 +3784,8 @@ public final class CoreFunctions {
      * Gets information about the specified VTAP capture filter.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3584,6 +3814,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCaptureFilterResult> getCaptureFilter(GetCaptureFilterArgs args) {
@@ -3595,6 +3826,8 @@ public final class CoreFunctions {
      * Gets information about the specified VTAP capture filter.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3623,6 +3856,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCaptureFilterResult> getCaptureFilterPlain(GetCaptureFilterPlainArgs args) {
@@ -3634,6 +3868,8 @@ public final class CoreFunctions {
      * Gets information about the specified VTAP capture filter.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3662,6 +3898,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCaptureFilterResult> getCaptureFilter(GetCaptureFilterArgs args, InvokeOptions options) {
@@ -3673,6 +3910,8 @@ public final class CoreFunctions {
      * Gets information about the specified VTAP capture filter.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3701,6 +3940,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCaptureFilterResult> getCaptureFilterPlain(GetCaptureFilterPlainArgs args, InvokeOptions options) {
@@ -3712,6 +3952,8 @@ public final class CoreFunctions {
      * Lists the capture filters in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3743,6 +3985,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCaptureFiltersResult> getCaptureFilters(GetCaptureFiltersArgs args) {
@@ -3754,6 +3997,8 @@ public final class CoreFunctions {
      * Lists the capture filters in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3785,6 +4030,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCaptureFiltersResult> getCaptureFiltersPlain(GetCaptureFiltersPlainArgs args) {
@@ -3796,6 +4042,8 @@ public final class CoreFunctions {
      * Lists the capture filters in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3827,6 +4075,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCaptureFiltersResult> getCaptureFilters(GetCaptureFiltersArgs args, InvokeOptions options) {
@@ -3838,6 +4087,8 @@ public final class CoreFunctions {
      * Lists the capture filters in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3869,6 +4120,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCaptureFiltersResult> getCaptureFiltersPlain(GetCaptureFiltersPlainArgs args, InvokeOptions options) {
@@ -3880,6 +4132,8 @@ public final class CoreFunctions {
      * Gets information about a [cluster network with instance pools](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3908,6 +4162,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetClusterNetworkResult> getClusterNetwork(GetClusterNetworkArgs args) {
@@ -3919,6 +4174,8 @@ public final class CoreFunctions {
      * Gets information about a [cluster network with instance pools](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3947,6 +4204,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetClusterNetworkResult> getClusterNetworkPlain(GetClusterNetworkPlainArgs args) {
@@ -3958,6 +4216,8 @@ public final class CoreFunctions {
      * Gets information about a [cluster network with instance pools](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3986,6 +4246,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetClusterNetworkResult> getClusterNetwork(GetClusterNetworkArgs args, InvokeOptions options) {
@@ -3997,6 +4258,8 @@ public final class CoreFunctions {
      * Gets information about a [cluster network with instance pools](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4025,6 +4288,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetClusterNetworkResult> getClusterNetworkPlain(GetClusterNetworkPlainArgs args, InvokeOptions options) {
@@ -4036,6 +4300,8 @@ public final class CoreFunctions {
      * Lists the instances in a [cluster network with instance pools](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4066,6 +4332,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetClusterNetworkInstancesResult> getClusterNetworkInstances(GetClusterNetworkInstancesArgs args) {
@@ -4077,6 +4344,8 @@ public final class CoreFunctions {
      * Lists the instances in a [cluster network with instance pools](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4107,6 +4376,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetClusterNetworkInstancesResult> getClusterNetworkInstancesPlain(GetClusterNetworkInstancesPlainArgs args) {
@@ -4118,6 +4388,8 @@ public final class CoreFunctions {
      * Lists the instances in a [cluster network with instance pools](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4148,6 +4420,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetClusterNetworkInstancesResult> getClusterNetworkInstances(GetClusterNetworkInstancesArgs args, InvokeOptions options) {
@@ -4159,6 +4432,8 @@ public final class CoreFunctions {
      * Lists the instances in a [cluster network with instance pools](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4189,6 +4464,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetClusterNetworkInstancesResult> getClusterNetworkInstancesPlain(GetClusterNetworkInstancesPlainArgs args, InvokeOptions options) {
@@ -4201,6 +4477,8 @@ public final class CoreFunctions {
      * in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4231,6 +4509,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetClusterNetworksResult> getClusterNetworks(GetClusterNetworksArgs args) {
@@ -4243,6 +4522,8 @@ public final class CoreFunctions {
      * in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4273,6 +4554,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetClusterNetworksResult> getClusterNetworksPlain(GetClusterNetworksPlainArgs args) {
@@ -4285,6 +4567,8 @@ public final class CoreFunctions {
      * in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4315,6 +4599,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetClusterNetworksResult> getClusterNetworks(GetClusterNetworksArgs args, InvokeOptions options) {
@@ -4327,6 +4612,8 @@ public final class CoreFunctions {
      * in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4357,6 +4644,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetClusterNetworksResult> getClusterNetworksPlain(GetClusterNetworksPlainArgs args, InvokeOptions options) {
@@ -4368,6 +4656,8 @@ public final class CoreFunctions {
      * Get the associated DNS resolver information with a vcn
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4396,6 +4686,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCnvDnsResolverAssociationResult> getCnvDnsResolverAssociation(GetCnvDnsResolverAssociationArgs args) {
@@ -4407,6 +4698,8 @@ public final class CoreFunctions {
      * Get the associated DNS resolver information with a vcn
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4435,6 +4728,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCnvDnsResolverAssociationResult> getCnvDnsResolverAssociationPlain(GetCnvDnsResolverAssociationPlainArgs args) {
@@ -4446,6 +4740,8 @@ public final class CoreFunctions {
      * Get the associated DNS resolver information with a vcn
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4474,6 +4770,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCnvDnsResolverAssociationResult> getCnvDnsResolverAssociation(GetCnvDnsResolverAssociationArgs args, InvokeOptions options) {
@@ -4485,6 +4782,8 @@ public final class CoreFunctions {
      * Get the associated DNS resolver information with a vcn
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4513,6 +4812,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCnvDnsResolverAssociationResult> getCnvDnsResolverAssociationPlain(GetCnvDnsResolverAssociationPlainArgs args, InvokeOptions options) {
@@ -4524,6 +4824,8 @@ public final class CoreFunctions {
      * Gets information about the specified compute capacity reservation.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4552,6 +4854,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetComputeCapacityReservationResult> getComputeCapacityReservation(GetComputeCapacityReservationArgs args) {
@@ -4563,6 +4866,8 @@ public final class CoreFunctions {
      * Gets information about the specified compute capacity reservation.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4591,6 +4896,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetComputeCapacityReservationResult> getComputeCapacityReservationPlain(GetComputeCapacityReservationPlainArgs args) {
@@ -4602,6 +4908,8 @@ public final class CoreFunctions {
      * Gets information about the specified compute capacity reservation.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4630,6 +4938,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetComputeCapacityReservationResult> getComputeCapacityReservation(GetComputeCapacityReservationArgs args, InvokeOptions options) {
@@ -4641,6 +4950,8 @@ public final class CoreFunctions {
      * Gets information about the specified compute capacity reservation.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4669,6 +4980,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetComputeCapacityReservationResult> getComputeCapacityReservationPlain(GetComputeCapacityReservationPlainArgs args, InvokeOptions options) {
@@ -4680,6 +4992,8 @@ public final class CoreFunctions {
      * Lists the shapes that can be reserved within the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4710,6 +5024,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetComputeCapacityReservationInstanceShapesResult> getComputeCapacityReservationInstanceShapes(GetComputeCapacityReservationInstanceShapesArgs args) {
@@ -4721,6 +5036,8 @@ public final class CoreFunctions {
      * Lists the shapes that can be reserved within the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4751,6 +5068,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetComputeCapacityReservationInstanceShapesResult> getComputeCapacityReservationInstanceShapesPlain(GetComputeCapacityReservationInstanceShapesPlainArgs args) {
@@ -4762,6 +5080,8 @@ public final class CoreFunctions {
      * Lists the shapes that can be reserved within the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4792,6 +5112,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetComputeCapacityReservationInstanceShapesResult> getComputeCapacityReservationInstanceShapes(GetComputeCapacityReservationInstanceShapesArgs args, InvokeOptions options) {
@@ -4803,6 +5124,8 @@ public final class CoreFunctions {
      * Lists the shapes that can be reserved within the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4833,6 +5156,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetComputeCapacityReservationInstanceShapesResult> getComputeCapacityReservationInstanceShapesPlain(GetComputeCapacityReservationInstanceShapesPlainArgs args, InvokeOptions options) {
@@ -4844,6 +5168,8 @@ public final class CoreFunctions {
      * Lists the instances launched under a capacity reservation. You can filter results by specifying criteria.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4874,6 +5200,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetComputeCapacityReservationInstancesResult> getComputeCapacityReservationInstances(GetComputeCapacityReservationInstancesArgs args) {
@@ -4885,6 +5212,8 @@ public final class CoreFunctions {
      * Lists the instances launched under a capacity reservation. You can filter results by specifying criteria.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4915,6 +5244,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetComputeCapacityReservationInstancesResult> getComputeCapacityReservationInstancesPlain(GetComputeCapacityReservationInstancesPlainArgs args) {
@@ -4926,6 +5256,8 @@ public final class CoreFunctions {
      * Lists the instances launched under a capacity reservation. You can filter results by specifying criteria.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4956,6 +5288,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetComputeCapacityReservationInstancesResult> getComputeCapacityReservationInstances(GetComputeCapacityReservationInstancesArgs args, InvokeOptions options) {
@@ -4967,6 +5300,8 @@ public final class CoreFunctions {
      * Lists the instances launched under a capacity reservation. You can filter results by specifying criteria.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -4997,6 +5332,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetComputeCapacityReservationInstancesResult> getComputeCapacityReservationInstancesPlain(GetComputeCapacityReservationInstancesPlainArgs args, InvokeOptions options) {
@@ -5011,6 +5347,8 @@ public final class CoreFunctions {
      * (the list will include all the identically-named compute capacity reservations in the compartment).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5042,6 +5380,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetComputeCapacityReservationsResult> getComputeCapacityReservations(GetComputeCapacityReservationsArgs args) {
@@ -5056,6 +5395,8 @@ public final class CoreFunctions {
      * (the list will include all the identically-named compute capacity reservations in the compartment).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5087,6 +5428,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetComputeCapacityReservationsResult> getComputeCapacityReservationsPlain(GetComputeCapacityReservationsPlainArgs args) {
@@ -5101,6 +5443,8 @@ public final class CoreFunctions {
      * (the list will include all the identically-named compute capacity reservations in the compartment).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5132,6 +5476,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetComputeCapacityReservationsResult> getComputeCapacityReservations(GetComputeCapacityReservationsArgs args, InvokeOptions options) {
@@ -5146,6 +5491,8 @@ public final class CoreFunctions {
      * (the list will include all the identically-named compute capacity reservations in the compartment).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5177,6 +5524,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetComputeCapacityReservationsResult> getComputeCapacityReservationsPlain(GetComputeCapacityReservationsPlainArgs args, InvokeOptions options) {
@@ -5189,6 +5537,8 @@ public final class CoreFunctions {
      * capacity topology display name.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5219,6 +5569,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetComputeCapacityTopologiesResult> getComputeCapacityTopologies(GetComputeCapacityTopologiesArgs args) {
@@ -5231,6 +5582,8 @@ public final class CoreFunctions {
      * capacity topology display name.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5261,6 +5614,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetComputeCapacityTopologiesResult> getComputeCapacityTopologiesPlain(GetComputeCapacityTopologiesPlainArgs args) {
@@ -5273,6 +5627,8 @@ public final class CoreFunctions {
      * capacity topology display name.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5303,6 +5659,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetComputeCapacityTopologiesResult> getComputeCapacityTopologies(GetComputeCapacityTopologiesArgs args, InvokeOptions options) {
@@ -5315,6 +5672,8 @@ public final class CoreFunctions {
      * capacity topology display name.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5345,6 +5704,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetComputeCapacityTopologiesResult> getComputeCapacityTopologiesPlain(GetComputeCapacityTopologiesPlainArgs args, InvokeOptions options) {
@@ -5356,6 +5716,8 @@ public final class CoreFunctions {
      * Gets information about the specified compute capacity topology.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5384,6 +5746,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetComputeCapacityTopologyResult> getComputeCapacityTopology(GetComputeCapacityTopologyArgs args) {
@@ -5395,6 +5758,8 @@ public final class CoreFunctions {
      * Gets information about the specified compute capacity topology.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5423,6 +5788,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetComputeCapacityTopologyResult> getComputeCapacityTopologyPlain(GetComputeCapacityTopologyPlainArgs args) {
@@ -5434,6 +5800,8 @@ public final class CoreFunctions {
      * Gets information about the specified compute capacity topology.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5462,6 +5830,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetComputeCapacityTopologyResult> getComputeCapacityTopology(GetComputeCapacityTopologyArgs args, InvokeOptions options) {
@@ -5473,6 +5842,8 @@ public final class CoreFunctions {
      * Gets information about the specified compute capacity topology.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5501,6 +5872,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetComputeCapacityTopologyResult> getComputeCapacityTopologyPlain(GetComputeCapacityTopologyPlainArgs args, InvokeOptions options) {
@@ -5512,6 +5884,8 @@ public final class CoreFunctions {
      * Lists compute bare metal hosts in the specified compute capacity topology.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5545,6 +5919,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetComputeCapacityTopologyComputeBareMetalHostsResult> getComputeCapacityTopologyComputeBareMetalHosts(GetComputeCapacityTopologyComputeBareMetalHostsArgs args) {
@@ -5556,6 +5931,8 @@ public final class CoreFunctions {
      * Lists compute bare metal hosts in the specified compute capacity topology.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5589,6 +5966,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetComputeCapacityTopologyComputeBareMetalHostsResult> getComputeCapacityTopologyComputeBareMetalHostsPlain(GetComputeCapacityTopologyComputeBareMetalHostsPlainArgs args) {
@@ -5600,6 +5978,8 @@ public final class CoreFunctions {
      * Lists compute bare metal hosts in the specified compute capacity topology.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5633,6 +6013,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetComputeCapacityTopologyComputeBareMetalHostsResult> getComputeCapacityTopologyComputeBareMetalHosts(GetComputeCapacityTopologyComputeBareMetalHostsArgs args, InvokeOptions options) {
@@ -5644,6 +6025,8 @@ public final class CoreFunctions {
      * Lists compute bare metal hosts in the specified compute capacity topology.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5677,6 +6060,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetComputeCapacityTopologyComputeBareMetalHostsResult> getComputeCapacityTopologyComputeBareMetalHostsPlain(GetComputeCapacityTopologyComputeBareMetalHostsPlainArgs args, InvokeOptions options) {
@@ -5688,6 +6072,8 @@ public final class CoreFunctions {
      * Lists compute HPC islands in the specified compute capacity topology.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5718,6 +6104,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetComputeCapacityTopologyComputeHpcIslandsResult> getComputeCapacityTopologyComputeHpcIslands(GetComputeCapacityTopologyComputeHpcIslandsArgs args) {
@@ -5729,6 +6116,8 @@ public final class CoreFunctions {
      * Lists compute HPC islands in the specified compute capacity topology.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5759,6 +6148,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetComputeCapacityTopologyComputeHpcIslandsResult> getComputeCapacityTopologyComputeHpcIslandsPlain(GetComputeCapacityTopologyComputeHpcIslandsPlainArgs args) {
@@ -5770,6 +6160,8 @@ public final class CoreFunctions {
      * Lists compute HPC islands in the specified compute capacity topology.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5800,6 +6192,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetComputeCapacityTopologyComputeHpcIslandsResult> getComputeCapacityTopologyComputeHpcIslands(GetComputeCapacityTopologyComputeHpcIslandsArgs args, InvokeOptions options) {
@@ -5811,6 +6204,8 @@ public final class CoreFunctions {
      * Lists compute HPC islands in the specified compute capacity topology.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5841,6 +6236,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetComputeCapacityTopologyComputeHpcIslandsResult> getComputeCapacityTopologyComputeHpcIslandsPlain(GetComputeCapacityTopologyComputeHpcIslandsPlainArgs args, InvokeOptions options) {
@@ -5852,6 +6248,8 @@ public final class CoreFunctions {
      * Lists compute network blocks in the specified compute capacity topology.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5883,6 +6281,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetComputeCapacityTopologyComputeNetworkBlocksResult> getComputeCapacityTopologyComputeNetworkBlocks(GetComputeCapacityTopologyComputeNetworkBlocksArgs args) {
@@ -5894,6 +6293,8 @@ public final class CoreFunctions {
      * Lists compute network blocks in the specified compute capacity topology.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5925,6 +6326,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetComputeCapacityTopologyComputeNetworkBlocksResult> getComputeCapacityTopologyComputeNetworkBlocksPlain(GetComputeCapacityTopologyComputeNetworkBlocksPlainArgs args) {
@@ -5936,6 +6338,8 @@ public final class CoreFunctions {
      * Lists compute network blocks in the specified compute capacity topology.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -5967,6 +6371,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetComputeCapacityTopologyComputeNetworkBlocksResult> getComputeCapacityTopologyComputeNetworkBlocks(GetComputeCapacityTopologyComputeNetworkBlocksArgs args, InvokeOptions options) {
@@ -5978,6 +6383,8 @@ public final class CoreFunctions {
      * Lists compute network blocks in the specified compute capacity topology.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6009,6 +6416,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetComputeCapacityTopologyComputeNetworkBlocksResult> getComputeCapacityTopologyComputeNetworkBlocksPlain(GetComputeCapacityTopologyComputeNetworkBlocksPlainArgs args, InvokeOptions options) {
@@ -6021,6 +6429,8 @@ public final class CoreFunctions {
      * is a remote direct memory access (RDMA) network group.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6049,6 +6459,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetComputeClusterResult> getComputeCluster(GetComputeClusterArgs args) {
@@ -6061,6 +6472,8 @@ public final class CoreFunctions {
      * is a remote direct memory access (RDMA) network group.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6089,6 +6502,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetComputeClusterResult> getComputeClusterPlain(GetComputeClusterPlainArgs args) {
@@ -6101,6 +6515,8 @@ public final class CoreFunctions {
      * is a remote direct memory access (RDMA) network group.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6129,6 +6545,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetComputeClusterResult> getComputeCluster(GetComputeClusterArgs args, InvokeOptions options) {
@@ -6141,6 +6558,8 @@ public final class CoreFunctions {
      * is a remote direct memory access (RDMA) network group.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6169,6 +6588,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetComputeClusterResult> getComputeClusterPlain(GetComputeClusterPlainArgs args, InvokeOptions options) {
@@ -6181,6 +6601,8 @@ public final class CoreFunctions {
      * A [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a remote direct memory access (RDMA) network group.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6211,6 +6633,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetComputeClustersResult> getComputeClusters(GetComputeClustersArgs args) {
@@ -6223,6 +6646,8 @@ public final class CoreFunctions {
      * A [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a remote direct memory access (RDMA) network group.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6253,6 +6678,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetComputeClustersResult> getComputeClustersPlain(GetComputeClustersPlainArgs args) {
@@ -6265,6 +6691,8 @@ public final class CoreFunctions {
      * A [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a remote direct memory access (RDMA) network group.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6295,6 +6723,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetComputeClustersResult> getComputeClusters(GetComputeClustersArgs args, InvokeOptions options) {
@@ -6307,6 +6736,8 @@ public final class CoreFunctions {
      * A [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a remote direct memory access (RDMA) network group.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6337,6 +6768,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetComputeClustersResult> getComputeClustersPlain(GetComputeClustersPlainArgs args, InvokeOptions options) {
@@ -6348,6 +6780,8 @@ public final class CoreFunctions {
      * Gets the specified Compute Global Image Capability Schema
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6376,6 +6810,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetComputeGlobalImageCapabilitySchemaResult> getComputeGlobalImageCapabilitySchema(GetComputeGlobalImageCapabilitySchemaArgs args) {
@@ -6387,6 +6822,8 @@ public final class CoreFunctions {
      * Gets the specified Compute Global Image Capability Schema
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6415,6 +6852,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetComputeGlobalImageCapabilitySchemaResult> getComputeGlobalImageCapabilitySchemaPlain(GetComputeGlobalImageCapabilitySchemaPlainArgs args) {
@@ -6426,6 +6864,8 @@ public final class CoreFunctions {
      * Gets the specified Compute Global Image Capability Schema
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6454,6 +6894,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetComputeGlobalImageCapabilitySchemaResult> getComputeGlobalImageCapabilitySchema(GetComputeGlobalImageCapabilitySchemaArgs args, InvokeOptions options) {
@@ -6465,6 +6906,8 @@ public final class CoreFunctions {
      * Gets the specified Compute Global Image Capability Schema
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6493,6 +6936,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetComputeGlobalImageCapabilitySchemaResult> getComputeGlobalImageCapabilitySchemaPlain(GetComputeGlobalImageCapabilitySchemaPlainArgs args, InvokeOptions options) {
@@ -6504,6 +6948,8 @@ public final class CoreFunctions {
      * Lists Compute Global Image Capability Schema in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6533,6 +6979,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetComputeGlobalImageCapabilitySchemasResult> getComputeGlobalImageCapabilitySchemas() {
@@ -6544,6 +6991,8 @@ public final class CoreFunctions {
      * Lists Compute Global Image Capability Schema in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6573,6 +7022,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetComputeGlobalImageCapabilitySchemasResult> getComputeGlobalImageCapabilitySchemasPlain() {
@@ -6584,6 +7034,8 @@ public final class CoreFunctions {
      * Lists Compute Global Image Capability Schema in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6613,6 +7065,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetComputeGlobalImageCapabilitySchemasResult> getComputeGlobalImageCapabilitySchemas(GetComputeGlobalImageCapabilitySchemasArgs args) {
@@ -6624,6 +7077,8 @@ public final class CoreFunctions {
      * Lists Compute Global Image Capability Schema in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6653,6 +7108,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetComputeGlobalImageCapabilitySchemasResult> getComputeGlobalImageCapabilitySchemasPlain(GetComputeGlobalImageCapabilitySchemasPlainArgs args) {
@@ -6664,6 +7120,8 @@ public final class CoreFunctions {
      * Lists Compute Global Image Capability Schema in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6693,6 +7151,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetComputeGlobalImageCapabilitySchemasResult> getComputeGlobalImageCapabilitySchemas(GetComputeGlobalImageCapabilitySchemasArgs args, InvokeOptions options) {
@@ -6704,6 +7163,8 @@ public final class CoreFunctions {
      * Lists Compute Global Image Capability Schema in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6733,6 +7194,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetComputeGlobalImageCapabilitySchemasResult> getComputeGlobalImageCapabilitySchemasPlain(GetComputeGlobalImageCapabilitySchemasPlainArgs args, InvokeOptions options) {
@@ -6744,6 +7206,8 @@ public final class CoreFunctions {
      * Gets the specified Compute Global Image Capability Schema Version
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6773,6 +7237,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetComputeGlobalImageCapabilitySchemasVersionResult> getComputeGlobalImageCapabilitySchemasVersion(GetComputeGlobalImageCapabilitySchemasVersionArgs args) {
@@ -6784,6 +7249,8 @@ public final class CoreFunctions {
      * Gets the specified Compute Global Image Capability Schema Version
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6813,6 +7280,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetComputeGlobalImageCapabilitySchemasVersionResult> getComputeGlobalImageCapabilitySchemasVersionPlain(GetComputeGlobalImageCapabilitySchemasVersionPlainArgs args) {
@@ -6824,6 +7292,8 @@ public final class CoreFunctions {
      * Gets the specified Compute Global Image Capability Schema Version
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6853,6 +7323,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetComputeGlobalImageCapabilitySchemasVersionResult> getComputeGlobalImageCapabilitySchemasVersion(GetComputeGlobalImageCapabilitySchemasVersionArgs args, InvokeOptions options) {
@@ -6864,6 +7335,8 @@ public final class CoreFunctions {
      * Gets the specified Compute Global Image Capability Schema Version
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6893,6 +7366,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetComputeGlobalImageCapabilitySchemasVersionResult> getComputeGlobalImageCapabilitySchemasVersionPlain(GetComputeGlobalImageCapabilitySchemasVersionPlainArgs args, InvokeOptions options) {
@@ -6904,6 +7378,8 @@ public final class CoreFunctions {
      * Lists Compute Global Image Capability Schema versions in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6933,6 +7409,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetComputeGlobalImageCapabilitySchemasVersionsResult> getComputeGlobalImageCapabilitySchemasVersions(GetComputeGlobalImageCapabilitySchemasVersionsArgs args) {
@@ -6944,6 +7421,8 @@ public final class CoreFunctions {
      * Lists Compute Global Image Capability Schema versions in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -6973,6 +7452,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetComputeGlobalImageCapabilitySchemasVersionsResult> getComputeGlobalImageCapabilitySchemasVersionsPlain(GetComputeGlobalImageCapabilitySchemasVersionsPlainArgs args) {
@@ -6984,6 +7464,8 @@ public final class CoreFunctions {
      * Lists Compute Global Image Capability Schema versions in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7013,6 +7495,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetComputeGlobalImageCapabilitySchemasVersionsResult> getComputeGlobalImageCapabilitySchemasVersions(GetComputeGlobalImageCapabilitySchemasVersionsArgs args, InvokeOptions options) {
@@ -7024,6 +7507,8 @@ public final class CoreFunctions {
      * Lists Compute Global Image Capability Schema versions in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7053,6 +7538,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetComputeGlobalImageCapabilitySchemasVersionsResult> getComputeGlobalImageCapabilitySchemasVersionsPlain(GetComputeGlobalImageCapabilitySchemasVersionsPlainArgs args, InvokeOptions options) {
@@ -7064,6 +7550,8 @@ public final class CoreFunctions {
      * Gets the specified Compute Image Capability Schema
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7093,6 +7581,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetComputeImageCapabilitySchemaResult> getComputeImageCapabilitySchema(GetComputeImageCapabilitySchemaArgs args) {
@@ -7104,6 +7593,8 @@ public final class CoreFunctions {
      * Gets the specified Compute Image Capability Schema
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7133,6 +7624,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetComputeImageCapabilitySchemaResult> getComputeImageCapabilitySchemaPlain(GetComputeImageCapabilitySchemaPlainArgs args) {
@@ -7144,6 +7636,8 @@ public final class CoreFunctions {
      * Gets the specified Compute Image Capability Schema
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7173,6 +7667,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetComputeImageCapabilitySchemaResult> getComputeImageCapabilitySchema(GetComputeImageCapabilitySchemaArgs args, InvokeOptions options) {
@@ -7184,6 +7679,8 @@ public final class CoreFunctions {
      * Gets the specified Compute Image Capability Schema
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7213,6 +7710,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetComputeImageCapabilitySchemaResult> getComputeImageCapabilitySchemaPlain(GetComputeImageCapabilitySchemaPlainArgs args, InvokeOptions options) {
@@ -7224,6 +7722,8 @@ public final class CoreFunctions {
      * Lists Compute Image Capability Schema in the specified compartment. You can also query by a specific imageId.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7254,6 +7754,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetComputeImageCapabilitySchemasResult> getComputeImageCapabilitySchemas() {
@@ -7265,6 +7766,8 @@ public final class CoreFunctions {
      * Lists Compute Image Capability Schema in the specified compartment. You can also query by a specific imageId.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7295,6 +7798,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetComputeImageCapabilitySchemasResult> getComputeImageCapabilitySchemasPlain() {
@@ -7306,6 +7810,8 @@ public final class CoreFunctions {
      * Lists Compute Image Capability Schema in the specified compartment. You can also query by a specific imageId.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7336,6 +7842,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetComputeImageCapabilitySchemasResult> getComputeImageCapabilitySchemas(GetComputeImageCapabilitySchemasArgs args) {
@@ -7347,6 +7854,8 @@ public final class CoreFunctions {
      * Lists Compute Image Capability Schema in the specified compartment. You can also query by a specific imageId.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7377,6 +7886,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetComputeImageCapabilitySchemasResult> getComputeImageCapabilitySchemasPlain(GetComputeImageCapabilitySchemasPlainArgs args) {
@@ -7388,6 +7898,8 @@ public final class CoreFunctions {
      * Lists Compute Image Capability Schema in the specified compartment. You can also query by a specific imageId.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7418,6 +7930,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetComputeImageCapabilitySchemasResult> getComputeImageCapabilitySchemas(GetComputeImageCapabilitySchemasArgs args, InvokeOptions options) {
@@ -7429,6 +7942,8 @@ public final class CoreFunctions {
      * Lists Compute Image Capability Schema in the specified compartment. You can also query by a specific imageId.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7459,6 +7974,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetComputeImageCapabilitySchemasResult> getComputeImageCapabilitySchemasPlain(GetComputeImageCapabilitySchemasPlainArgs args, InvokeOptions options) {
@@ -7470,6 +7986,8 @@ public final class CoreFunctions {
      * Lists the console history metadata for the specified compartment or instance.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7501,6 +8019,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetConsoleHistoriesResult> getConsoleHistories(GetConsoleHistoriesArgs args) {
@@ -7512,6 +8031,8 @@ public final class CoreFunctions {
      * Lists the console history metadata for the specified compartment or instance.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7543,6 +8064,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetConsoleHistoriesResult> getConsoleHistoriesPlain(GetConsoleHistoriesPlainArgs args) {
@@ -7554,6 +8076,8 @@ public final class CoreFunctions {
      * Lists the console history metadata for the specified compartment or instance.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7585,6 +8109,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetConsoleHistoriesResult> getConsoleHistories(GetConsoleHistoriesArgs args, InvokeOptions options) {
@@ -7596,6 +8121,8 @@ public final class CoreFunctions {
      * Lists the console history metadata for the specified compartment or instance.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7627,6 +8154,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetConsoleHistoriesResult> getConsoleHistoriesPlain(GetConsoleHistoriesPlainArgs args, InvokeOptions options) {
@@ -7640,6 +8168,8 @@ public final class CoreFunctions {
      * for details about using the console history operations.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7670,6 +8200,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetConsoleHistoryDataResult> getConsoleHistoryData(GetConsoleHistoryDataArgs args) {
@@ -7683,6 +8214,8 @@ public final class CoreFunctions {
      * for details about using the console history operations.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7713,6 +8246,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetConsoleHistoryDataResult> getConsoleHistoryDataPlain(GetConsoleHistoryDataPlainArgs args) {
@@ -7726,6 +8260,8 @@ public final class CoreFunctions {
      * for details about using the console history operations.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7756,6 +8292,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetConsoleHistoryDataResult> getConsoleHistoryData(GetConsoleHistoryDataArgs args, InvokeOptions options) {
@@ -7769,6 +8306,8 @@ public final class CoreFunctions {
      * for details about using the console history operations.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7799,6 +8338,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetConsoleHistoryDataResult> getConsoleHistoryDataPlain(GetConsoleHistoryDataPlainArgs args, InvokeOptions options) {
@@ -7818,6 +8358,8 @@ public final class CoreFunctions {
      *   * [GetTunnelCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfigContent)
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7846,6 +8388,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCpeDeviceShapeResult> getCpeDeviceShape(GetCpeDeviceShapeArgs args) {
@@ -7865,6 +8408,8 @@ public final class CoreFunctions {
      *   * [GetTunnelCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfigContent)
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7893,6 +8438,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCpeDeviceShapeResult> getCpeDeviceShapePlain(GetCpeDeviceShapePlainArgs args) {
@@ -7912,6 +8458,8 @@ public final class CoreFunctions {
      *   * [GetTunnelCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfigContent)
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7940,6 +8488,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCpeDeviceShapeResult> getCpeDeviceShape(GetCpeDeviceShapeArgs args, InvokeOptions options) {
@@ -7959,6 +8508,8 @@ public final class CoreFunctions {
      *   * [GetTunnelCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfigContent)
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -7987,6 +8538,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCpeDeviceShapeResult> getCpeDeviceShapePlain(GetCpeDeviceShapePlainArgs args, InvokeOptions options) {
@@ -8010,6 +8562,8 @@ public final class CoreFunctions {
      *   * [GetTunnelCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfigContent)
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8036,6 +8590,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCpeDeviceShapesResult> getCpeDeviceShapes() {
@@ -8059,6 +8614,8 @@ public final class CoreFunctions {
      *   * [GetTunnelCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfigContent)
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8085,6 +8642,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCpeDeviceShapesResult> getCpeDeviceShapesPlain() {
@@ -8108,6 +8666,8 @@ public final class CoreFunctions {
      *   * [GetTunnelCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfigContent)
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8134,6 +8694,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCpeDeviceShapesResult> getCpeDeviceShapes(GetCpeDeviceShapesArgs args) {
@@ -8157,6 +8718,8 @@ public final class CoreFunctions {
      *   * [GetTunnelCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfigContent)
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8183,6 +8746,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCpeDeviceShapesResult> getCpeDeviceShapesPlain(GetCpeDeviceShapesPlainArgs args) {
@@ -8206,6 +8770,8 @@ public final class CoreFunctions {
      *   * [GetTunnelCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfigContent)
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8232,6 +8798,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCpeDeviceShapesResult> getCpeDeviceShapes(GetCpeDeviceShapesArgs args, InvokeOptions options) {
@@ -8255,6 +8822,8 @@ public final class CoreFunctions {
      *   * [GetTunnelCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfigContent)
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8281,6 +8850,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCpeDeviceShapesResult> getCpeDeviceShapesPlain(GetCpeDeviceShapesPlainArgs args, InvokeOptions options) {
@@ -8292,6 +8862,8 @@ public final class CoreFunctions {
      * Lists the customer-premises equipment objects (CPEs) in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8320,6 +8892,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCpesResult> getCpes(GetCpesArgs args) {
@@ -8331,6 +8904,8 @@ public final class CoreFunctions {
      * Lists the customer-premises equipment objects (CPEs) in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8359,6 +8934,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCpesResult> getCpesPlain(GetCpesPlainArgs args) {
@@ -8370,6 +8946,8 @@ public final class CoreFunctions {
      * Lists the customer-premises equipment objects (CPEs) in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8398,6 +8976,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCpesResult> getCpes(GetCpesArgs args, InvokeOptions options) {
@@ -8409,6 +8988,8 @@ public final class CoreFunctions {
      * Lists the customer-premises equipment objects (CPEs) in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8437,6 +9018,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCpesResult> getCpesPlain(GetCpesPlainArgs args, InvokeOptions options) {
@@ -8448,6 +9030,8 @@ public final class CoreFunctions {
      * Gets the specified cross-connect&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8476,6 +9060,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCrossConnectResult> getCrossConnect(GetCrossConnectArgs args) {
@@ -8487,6 +9072,8 @@ public final class CoreFunctions {
      * Gets the specified cross-connect&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8515,6 +9102,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCrossConnectResult> getCrossConnectPlain(GetCrossConnectPlainArgs args) {
@@ -8526,6 +9114,8 @@ public final class CoreFunctions {
      * Gets the specified cross-connect&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8554,6 +9144,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCrossConnectResult> getCrossConnect(GetCrossConnectArgs args, InvokeOptions options) {
@@ -8565,6 +9156,8 @@ public final class CoreFunctions {
      * Gets the specified cross-connect&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8593,6 +9186,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCrossConnectResult> getCrossConnectPlain(GetCrossConnectPlainArgs args, InvokeOptions options) {
@@ -8604,6 +9198,8 @@ public final class CoreFunctions {
      * Gets the specified cross-connect group&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8632,6 +9228,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCrossConnectGroupResult> getCrossConnectGroup(GetCrossConnectGroupArgs args) {
@@ -8643,6 +9240,8 @@ public final class CoreFunctions {
      * Gets the specified cross-connect group&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8671,6 +9270,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCrossConnectGroupResult> getCrossConnectGroupPlain(GetCrossConnectGroupPlainArgs args) {
@@ -8682,6 +9282,8 @@ public final class CoreFunctions {
      * Gets the specified cross-connect group&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8710,6 +9312,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCrossConnectGroupResult> getCrossConnectGroup(GetCrossConnectGroupArgs args, InvokeOptions options) {
@@ -8721,6 +9324,8 @@ public final class CoreFunctions {
      * Gets the specified cross-connect group&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8749,6 +9354,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCrossConnectGroupResult> getCrossConnectGroupPlain(GetCrossConnectGroupPlainArgs args, InvokeOptions options) {
@@ -8760,6 +9366,8 @@ public final class CoreFunctions {
      * Lists the cross-connect groups in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8790,6 +9398,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCrossConnectGroupsResult> getCrossConnectGroups(GetCrossConnectGroupsArgs args) {
@@ -8801,6 +9410,8 @@ public final class CoreFunctions {
      * Lists the cross-connect groups in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8831,6 +9442,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCrossConnectGroupsResult> getCrossConnectGroupsPlain(GetCrossConnectGroupsPlainArgs args) {
@@ -8842,6 +9454,8 @@ public final class CoreFunctions {
      * Lists the cross-connect groups in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8872,6 +9486,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCrossConnectGroupsResult> getCrossConnectGroups(GetCrossConnectGroupsArgs args, InvokeOptions options) {
@@ -8883,6 +9498,8 @@ public final class CoreFunctions {
      * Lists the cross-connect groups in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8913,6 +9530,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCrossConnectGroupsResult> getCrossConnectGroupsPlain(GetCrossConnectGroupsPlainArgs args, InvokeOptions options) {
@@ -8925,6 +9543,8 @@ public final class CoreFunctions {
      * this information so you can specify your desired location when you create a cross-connect.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8953,6 +9573,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCrossConnectLocationsResult> getCrossConnectLocations(GetCrossConnectLocationsArgs args) {
@@ -8965,6 +9586,8 @@ public final class CoreFunctions {
      * this information so you can specify your desired location when you create a cross-connect.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -8993,6 +9616,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCrossConnectLocationsResult> getCrossConnectLocationsPlain(GetCrossConnectLocationsPlainArgs args) {
@@ -9005,6 +9629,8 @@ public final class CoreFunctions {
      * this information so you can specify your desired location when you create a cross-connect.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9033,6 +9659,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCrossConnectLocationsResult> getCrossConnectLocations(GetCrossConnectLocationsArgs args, InvokeOptions options) {
@@ -9045,6 +9672,8 @@ public final class CoreFunctions {
      * this information so you can specify your desired location when you create a cross-connect.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9073,6 +9702,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCrossConnectLocationsResult> getCrossConnectLocationsPlain(GetCrossConnectLocationsPlainArgs args, InvokeOptions options) {
@@ -9086,6 +9716,8 @@ public final class CoreFunctions {
      * cross-connect.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9114,6 +9746,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCrossConnectPortSpeedShapeResult> getCrossConnectPortSpeedShape(GetCrossConnectPortSpeedShapeArgs args) {
@@ -9127,6 +9760,8 @@ public final class CoreFunctions {
      * cross-connect.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9155,6 +9790,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCrossConnectPortSpeedShapeResult> getCrossConnectPortSpeedShapePlain(GetCrossConnectPortSpeedShapePlainArgs args) {
@@ -9168,6 +9804,8 @@ public final class CoreFunctions {
      * cross-connect.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9196,6 +9834,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCrossConnectPortSpeedShapeResult> getCrossConnectPortSpeedShape(GetCrossConnectPortSpeedShapeArgs args, InvokeOptions options) {
@@ -9209,6 +9848,8 @@ public final class CoreFunctions {
      * cross-connect.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9237,6 +9878,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCrossConnectPortSpeedShapeResult> getCrossConnectPortSpeedShapePlain(GetCrossConnectPortSpeedShapePlainArgs args, InvokeOptions options) {
@@ -9248,6 +9890,8 @@ public final class CoreFunctions {
      * Gets the status of the specified cross-connect.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9276,6 +9920,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCrossConnectStatusResult> getCrossConnectStatus(GetCrossConnectStatusArgs args) {
@@ -9287,6 +9932,8 @@ public final class CoreFunctions {
      * Gets the status of the specified cross-connect.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9315,6 +9962,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCrossConnectStatusResult> getCrossConnectStatusPlain(GetCrossConnectStatusPlainArgs args) {
@@ -9326,6 +9974,8 @@ public final class CoreFunctions {
      * Gets the status of the specified cross-connect.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9354,6 +10004,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCrossConnectStatusResult> getCrossConnectStatus(GetCrossConnectStatusArgs args, InvokeOptions options) {
@@ -9365,6 +10016,8 @@ public final class CoreFunctions {
      * Gets the status of the specified cross-connect.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9393,6 +10046,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCrossConnectStatusResult> getCrossConnectStatusPlain(GetCrossConnectStatusPlainArgs args, InvokeOptions options) {
@@ -9405,6 +10059,8 @@ public final class CoreFunctions {
      * by specifying the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a cross-connect group.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9436,6 +10092,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCrossConnectsResult> getCrossConnects(GetCrossConnectsArgs args) {
@@ -9448,6 +10105,8 @@ public final class CoreFunctions {
      * by specifying the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a cross-connect group.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9479,6 +10138,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCrossConnectsResult> getCrossConnectsPlain(GetCrossConnectsPlainArgs args) {
@@ -9491,6 +10151,8 @@ public final class CoreFunctions {
      * by specifying the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a cross-connect group.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9522,6 +10184,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCrossConnectsResult> getCrossConnects(GetCrossConnectsArgs args, InvokeOptions options) {
@@ -9534,6 +10197,8 @@ public final class CoreFunctions {
      * by specifying the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a cross-connect group.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9565,6 +10230,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCrossConnectsResult> getCrossConnectsPlain(GetCrossConnectsPlainArgs args, InvokeOptions options) {
@@ -9576,6 +10242,8 @@ public final class CoreFunctions {
      * Gets information about the specified dedicated virtual machine host.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9604,6 +10272,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDedicatedVmHostResult> getDedicatedVmHost(GetDedicatedVmHostArgs args) {
@@ -9615,6 +10284,8 @@ public final class CoreFunctions {
      * Gets information about the specified dedicated virtual machine host.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9643,6 +10314,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDedicatedVmHostResult> getDedicatedVmHostPlain(GetDedicatedVmHostPlainArgs args) {
@@ -9654,6 +10326,8 @@ public final class CoreFunctions {
      * Gets information about the specified dedicated virtual machine host.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9682,6 +10356,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDedicatedVmHostResult> getDedicatedVmHost(GetDedicatedVmHostArgs args, InvokeOptions options) {
@@ -9693,6 +10368,8 @@ public final class CoreFunctions {
      * Gets information about the specified dedicated virtual machine host.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9721,6 +10398,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDedicatedVmHostResult> getDedicatedVmHostPlain(GetDedicatedVmHostPlainArgs args, InvokeOptions options) {
@@ -9733,6 +10411,8 @@ public final class CoreFunctions {
      * You can filter the list by compatibility with a specific dedicated virtual machine host shape.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9763,6 +10443,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDedicatedVmHostInstanceShapesResult> getDedicatedVmHostInstanceShapes(GetDedicatedVmHostInstanceShapesArgs args) {
@@ -9775,6 +10456,8 @@ public final class CoreFunctions {
      * You can filter the list by compatibility with a specific dedicated virtual machine host shape.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9805,6 +10488,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDedicatedVmHostInstanceShapesResult> getDedicatedVmHostInstanceShapesPlain(GetDedicatedVmHostInstanceShapesPlainArgs args) {
@@ -9817,6 +10501,8 @@ public final class CoreFunctions {
      * You can filter the list by compatibility with a specific dedicated virtual machine host shape.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9847,6 +10533,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDedicatedVmHostInstanceShapesResult> getDedicatedVmHostInstanceShapes(GetDedicatedVmHostInstanceShapesArgs args, InvokeOptions options) {
@@ -9859,6 +10546,8 @@ public final class CoreFunctions {
      * You can filter the list by compatibility with a specific dedicated virtual machine host shape.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9889,6 +10578,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDedicatedVmHostInstanceShapesResult> getDedicatedVmHostInstanceShapesPlain(GetDedicatedVmHostInstanceShapesPlainArgs args, InvokeOptions options) {
@@ -9900,6 +10590,8 @@ public final class CoreFunctions {
      * Returns the list of instances on the dedicated virtual machine hosts that match the specified criteria.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9930,6 +10622,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDedicatedVmHostInstancesResult> getDedicatedVmHostInstances(GetDedicatedVmHostInstancesArgs args) {
@@ -9941,6 +10634,8 @@ public final class CoreFunctions {
      * Returns the list of instances on the dedicated virtual machine hosts that match the specified criteria.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -9971,6 +10666,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDedicatedVmHostInstancesResult> getDedicatedVmHostInstancesPlain(GetDedicatedVmHostInstancesPlainArgs args) {
@@ -9982,6 +10678,8 @@ public final class CoreFunctions {
      * Returns the list of instances on the dedicated virtual machine hosts that match the specified criteria.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10012,6 +10710,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDedicatedVmHostInstancesResult> getDedicatedVmHostInstances(GetDedicatedVmHostInstancesArgs args, InvokeOptions options) {
@@ -10023,6 +10722,8 @@ public final class CoreFunctions {
      * Returns the list of instances on the dedicated virtual machine hosts that match the specified criteria.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10053,6 +10754,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDedicatedVmHostInstancesResult> getDedicatedVmHostInstancesPlain(GetDedicatedVmHostInstancesPlainArgs args, InvokeOptions options) {
@@ -10064,6 +10766,8 @@ public final class CoreFunctions {
      * Lists the shapes that can be used to launch a dedicated virtual machine host within the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10094,6 +10798,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDedicatedVmHostShapesResult> getDedicatedVmHostShapes(GetDedicatedVmHostShapesArgs args) {
@@ -10105,6 +10810,8 @@ public final class CoreFunctions {
      * Lists the shapes that can be used to launch a dedicated virtual machine host within the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10135,6 +10842,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDedicatedVmHostShapesResult> getDedicatedVmHostShapesPlain(GetDedicatedVmHostShapesPlainArgs args) {
@@ -10146,6 +10854,8 @@ public final class CoreFunctions {
      * Lists the shapes that can be used to launch a dedicated virtual machine host within the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10176,6 +10886,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDedicatedVmHostShapesResult> getDedicatedVmHostShapes(GetDedicatedVmHostShapesArgs args, InvokeOptions options) {
@@ -10187,6 +10898,8 @@ public final class CoreFunctions {
      * Lists the shapes that can be used to launch a dedicated virtual machine host within the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10217,6 +10930,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDedicatedVmHostShapesResult> getDedicatedVmHostShapesPlain(GetDedicatedVmHostShapesPlainArgs args, InvokeOptions options) {
@@ -10231,6 +10945,8 @@ public final class CoreFunctions {
      * dedicated virtual machine hosts in the compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10265,6 +10981,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDedicatedVmHostsResult> getDedicatedVmHosts(GetDedicatedVmHostsArgs args) {
@@ -10279,6 +10996,8 @@ public final class CoreFunctions {
      * dedicated virtual machine hosts in the compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10313,6 +11032,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDedicatedVmHostsResult> getDedicatedVmHostsPlain(GetDedicatedVmHostsPlainArgs args) {
@@ -10327,6 +11047,8 @@ public final class CoreFunctions {
      * dedicated virtual machine hosts in the compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10361,6 +11083,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDedicatedVmHostsResult> getDedicatedVmHosts(GetDedicatedVmHostsArgs args, InvokeOptions options) {
@@ -10375,6 +11098,8 @@ public final class CoreFunctions {
      * dedicated virtual machine hosts in the compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10409,6 +11134,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDedicatedVmHostsResult> getDedicatedVmHostsPlain(GetDedicatedVmHostsPlainArgs args, InvokeOptions options) {
@@ -10423,6 +11149,8 @@ public final class CoreFunctions {
      * plus any other sets you&#39;ve created.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10454,6 +11182,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDhcpOptionsResult> getDhcpOptions(GetDhcpOptionsArgs args) {
@@ -10468,6 +11197,8 @@ public final class CoreFunctions {
      * plus any other sets you&#39;ve created.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10499,6 +11230,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDhcpOptionsResult> getDhcpOptionsPlain(GetDhcpOptionsPlainArgs args) {
@@ -10513,6 +11245,8 @@ public final class CoreFunctions {
      * plus any other sets you&#39;ve created.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10544,6 +11278,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDhcpOptionsResult> getDhcpOptions(GetDhcpOptionsArgs args, InvokeOptions options) {
@@ -10558,6 +11293,8 @@ public final class CoreFunctions {
      * plus any other sets you&#39;ve created.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10589,6 +11326,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDhcpOptionsResult> getDhcpOptionsPlain(GetDhcpOptionsPlainArgs args, InvokeOptions options) {
@@ -10605,6 +11343,8 @@ public final class CoreFunctions {
      * but you may request to list ALL attachments of ALL types.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10640,6 +11380,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDrgAttachmentsResult> getDrgAttachments(GetDrgAttachmentsArgs args) {
@@ -10656,6 +11397,8 @@ public final class CoreFunctions {
      * but you may request to list ALL attachments of ALL types.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10691,6 +11434,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDrgAttachmentsResult> getDrgAttachmentsPlain(GetDrgAttachmentsPlainArgs args) {
@@ -10707,6 +11451,8 @@ public final class CoreFunctions {
      * but you may request to list ALL attachments of ALL types.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10742,6 +11488,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDrgAttachmentsResult> getDrgAttachments(GetDrgAttachmentsArgs args, InvokeOptions options) {
@@ -10758,6 +11505,8 @@ public final class CoreFunctions {
      * but you may request to list ALL attachments of ALL types.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10793,6 +11542,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDrgAttachmentsResult> getDrgAttachmentsPlain(GetDrgAttachmentsPlainArgs args, InvokeOptions options) {
@@ -10804,6 +11554,8 @@ public final class CoreFunctions {
      * Gets the specified route distribution&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10832,6 +11584,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDrgRouteDistributionResult> getDrgRouteDistribution(GetDrgRouteDistributionArgs args) {
@@ -10843,6 +11596,8 @@ public final class CoreFunctions {
      * Gets the specified route distribution&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10871,6 +11626,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDrgRouteDistributionResult> getDrgRouteDistributionPlain(GetDrgRouteDistributionPlainArgs args) {
@@ -10882,6 +11638,8 @@ public final class CoreFunctions {
      * Gets the specified route distribution&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10910,6 +11668,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDrgRouteDistributionResult> getDrgRouteDistribution(GetDrgRouteDistributionArgs args, InvokeOptions options) {
@@ -10921,6 +11680,8 @@ public final class CoreFunctions {
      * Gets the specified route distribution&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10949,6 +11710,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDrgRouteDistributionResult> getDrgRouteDistributionPlain(GetDrgRouteDistributionPlainArgs args, InvokeOptions options) {
@@ -10960,6 +11722,8 @@ public final class CoreFunctions {
      * Lists the statements for the specified route distribution.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -10988,6 +11752,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDrgRouteDistributionStatementsResult> getDrgRouteDistributionStatements(GetDrgRouteDistributionStatementsArgs args) {
@@ -10999,6 +11764,8 @@ public final class CoreFunctions {
      * Lists the statements for the specified route distribution.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11027,6 +11794,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDrgRouteDistributionStatementsResult> getDrgRouteDistributionStatementsPlain(GetDrgRouteDistributionStatementsPlainArgs args) {
@@ -11038,6 +11806,8 @@ public final class CoreFunctions {
      * Lists the statements for the specified route distribution.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11066,6 +11836,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDrgRouteDistributionStatementsResult> getDrgRouteDistributionStatements(GetDrgRouteDistributionStatementsArgs args, InvokeOptions options) {
@@ -11077,6 +11848,8 @@ public final class CoreFunctions {
      * Lists the statements for the specified route distribution.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11105,6 +11878,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDrgRouteDistributionStatementsResult> getDrgRouteDistributionStatementsPlain(GetDrgRouteDistributionStatementsPlainArgs args, InvokeOptions options) {
@@ -11119,6 +11893,8 @@ public final class CoreFunctions {
      * ListDrgRouteDistributionStatements operation.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11149,6 +11925,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDrgRouteDistributionsResult> getDrgRouteDistributions(GetDrgRouteDistributionsArgs args) {
@@ -11163,6 +11940,8 @@ public final class CoreFunctions {
      * ListDrgRouteDistributionStatements operation.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11193,6 +11972,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDrgRouteDistributionsResult> getDrgRouteDistributionsPlain(GetDrgRouteDistributionsPlainArgs args) {
@@ -11207,6 +11987,8 @@ public final class CoreFunctions {
      * ListDrgRouteDistributionStatements operation.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11237,6 +12019,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDrgRouteDistributionsResult> getDrgRouteDistributions(GetDrgRouteDistributionsArgs args, InvokeOptions options) {
@@ -11251,6 +12034,8 @@ public final class CoreFunctions {
      * ListDrgRouteDistributionStatements operation.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11281,6 +12066,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDrgRouteDistributionsResult> getDrgRouteDistributionsPlain(GetDrgRouteDistributionsPlainArgs args, InvokeOptions options) {
@@ -11292,6 +12078,8 @@ public final class CoreFunctions {
      * Gets the specified DRG route table&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11320,6 +12108,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDrgRouteRuleResult> getDrgRouteRule(GetDrgRouteRuleArgs args) {
@@ -11331,6 +12120,8 @@ public final class CoreFunctions {
      * Gets the specified DRG route table&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11359,6 +12150,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDrgRouteRuleResult> getDrgRouteRulePlain(GetDrgRouteRulePlainArgs args) {
@@ -11370,6 +12162,8 @@ public final class CoreFunctions {
      * Gets the specified DRG route table&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11398,6 +12192,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDrgRouteRuleResult> getDrgRouteRule(GetDrgRouteRuleArgs args, InvokeOptions options) {
@@ -11409,6 +12204,8 @@ public final class CoreFunctions {
      * Gets the specified DRG route table&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11437,6 +12234,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDrgRouteRuleResult> getDrgRouteRulePlain(GetDrgRouteRulePlainArgs args, InvokeOptions options) {
@@ -11448,6 +12246,8 @@ public final class CoreFunctions {
      * Lists the route rules in the specified DRG route table.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11477,6 +12277,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDrgRouteTableRouteRulesResult> getDrgRouteTableRouteRules(GetDrgRouteTableRouteRulesArgs args) {
@@ -11488,6 +12289,8 @@ public final class CoreFunctions {
      * Lists the route rules in the specified DRG route table.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11517,6 +12320,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDrgRouteTableRouteRulesResult> getDrgRouteTableRouteRulesPlain(GetDrgRouteTableRouteRulesPlainArgs args) {
@@ -11528,6 +12332,8 @@ public final class CoreFunctions {
      * Lists the route rules in the specified DRG route table.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11557,6 +12363,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDrgRouteTableRouteRulesResult> getDrgRouteTableRouteRules(GetDrgRouteTableRouteRulesArgs args, InvokeOptions options) {
@@ -11568,6 +12375,8 @@ public final class CoreFunctions {
      * Lists the route rules in the specified DRG route table.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11597,6 +12406,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDrgRouteTableRouteRulesResult> getDrgRouteTableRouteRulesPlain(GetDrgRouteTableRouteRulesPlainArgs args, InvokeOptions options) {
@@ -11610,6 +12420,8 @@ public final class CoreFunctions {
      * Use the `ListDrgRouteRules` operation to retrieve the route rules in a table.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11641,6 +12453,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDrgRouteTablesResult> getDrgRouteTables(GetDrgRouteTablesArgs args) {
@@ -11654,6 +12467,8 @@ public final class CoreFunctions {
      * Use the `ListDrgRouteRules` operation to retrieve the route rules in a table.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11685,6 +12500,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDrgRouteTablesResult> getDrgRouteTablesPlain(GetDrgRouteTablesPlainArgs args) {
@@ -11698,6 +12514,8 @@ public final class CoreFunctions {
      * Use the `ListDrgRouteRules` operation to retrieve the route rules in a table.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11729,6 +12547,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDrgRouteTablesResult> getDrgRouteTables(GetDrgRouteTablesArgs args, InvokeOptions options) {
@@ -11742,6 +12561,8 @@ public final class CoreFunctions {
      * Use the `ListDrgRouteRules` operation to retrieve the route rules in a table.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11773,6 +12594,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDrgRouteTablesResult> getDrgRouteTablesPlain(GetDrgRouteTablesPlainArgs args, InvokeOptions options) {
@@ -11784,6 +12606,8 @@ public final class CoreFunctions {
      * Lists the DRGs in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11812,6 +12636,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDrgsResult> getDrgs(GetDrgsArgs args) {
@@ -11823,6 +12648,8 @@ public final class CoreFunctions {
      * Lists the DRGs in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11851,6 +12678,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDrgsResult> getDrgsPlain(GetDrgsPlainArgs args) {
@@ -11862,6 +12690,8 @@ public final class CoreFunctions {
      * Lists the DRGs in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11890,6 +12720,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDrgsResult> getDrgs(GetDrgsArgs args, InvokeOptions options) {
@@ -11901,6 +12732,8 @@ public final class CoreFunctions {
      * Lists the DRGs in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11929,6 +12762,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDrgsResult> getDrgsPlain(GetDrgsPlainArgs args, InvokeOptions options) {
@@ -11941,6 +12775,8 @@ public final class CoreFunctions {
      * For more information, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -11969,6 +12805,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFastConnectProviderServiceResult> getFastConnectProviderService(GetFastConnectProviderServiceArgs args) {
@@ -11981,6 +12818,8 @@ public final class CoreFunctions {
      * For more information, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12009,6 +12848,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFastConnectProviderServiceResult> getFastConnectProviderServicePlain(GetFastConnectProviderServicePlainArgs args) {
@@ -12021,6 +12861,8 @@ public final class CoreFunctions {
      * For more information, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12049,6 +12891,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFastConnectProviderServiceResult> getFastConnectProviderService(GetFastConnectProviderServiceArgs args, InvokeOptions options) {
@@ -12061,6 +12904,8 @@ public final class CoreFunctions {
      * For more information, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12089,6 +12934,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFastConnectProviderServiceResult> getFastConnectProviderServicePlain(GetFastConnectProviderServicePlainArgs args, InvokeOptions options) {
@@ -12101,6 +12947,8 @@ public final class CoreFunctions {
      * provider service key. An invalid key returns a 404 error.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12130,6 +12978,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFastConnectProviderServiceKeyResult> getFastConnectProviderServiceKey(GetFastConnectProviderServiceKeyArgs args) {
@@ -12142,6 +12991,8 @@ public final class CoreFunctions {
      * provider service key. An invalid key returns a 404 error.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12171,6 +13022,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFastConnectProviderServiceKeyResult> getFastConnectProviderServiceKeyPlain(GetFastConnectProviderServiceKeyPlainArgs args) {
@@ -12183,6 +13035,8 @@ public final class CoreFunctions {
      * provider service key. An invalid key returns a 404 error.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12212,6 +13066,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFastConnectProviderServiceKeyResult> getFastConnectProviderServiceKey(GetFastConnectProviderServiceKeyArgs args, InvokeOptions options) {
@@ -12224,6 +13079,8 @@ public final class CoreFunctions {
      * provider service key. An invalid key returns a 404 error.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12253,6 +13110,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFastConnectProviderServiceKeyResult> getFastConnectProviderServiceKeyPlain(GetFastConnectProviderServiceKeyPlainArgs args, InvokeOptions options) {
@@ -12270,6 +13128,8 @@ public final class CoreFunctions {
      * For more information, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12298,6 +13158,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFastConnectProviderServicesResult> getFastConnectProviderServices(GetFastConnectProviderServicesArgs args) {
@@ -12315,6 +13176,8 @@ public final class CoreFunctions {
      * For more information, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12343,6 +13206,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFastConnectProviderServicesResult> getFastConnectProviderServicesPlain(GetFastConnectProviderServicesPlainArgs args) {
@@ -12360,6 +13224,8 @@ public final class CoreFunctions {
      * For more information, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12388,6 +13254,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetFastConnectProviderServicesResult> getFastConnectProviderServices(GetFastConnectProviderServicesArgs args, InvokeOptions options) {
@@ -12405,6 +13272,8 @@ public final class CoreFunctions {
      * For more information, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12433,6 +13302,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetFastConnectProviderServicesResult> getFastConnectProviderServicesPlain(GetFastConnectProviderServicesPlainArgs args, InvokeOptions options) {
@@ -12444,6 +13314,8 @@ public final class CoreFunctions {
      * Gets the specified image.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12472,6 +13344,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetImageResult> getImage(GetImageArgs args) {
@@ -12483,6 +13356,8 @@ public final class CoreFunctions {
      * Gets the specified image.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12511,6 +13386,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetImageResult> getImagePlain(GetImagePlainArgs args) {
@@ -12522,6 +13398,8 @@ public final class CoreFunctions {
      * Gets the specified image.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12550,6 +13428,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetImageResult> getImage(GetImageArgs args, InvokeOptions options) {
@@ -12561,6 +13440,8 @@ public final class CoreFunctions {
      * Gets the specified image.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12589,6 +13470,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetImageResult> getImagePlain(GetImagePlainArgs args, InvokeOptions options) {
@@ -12600,6 +13482,8 @@ public final class CoreFunctions {
      * Retrieves an image shape compatibility entry.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12629,6 +13513,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetImageShapeResult> getImageShape(GetImageShapeArgs args) {
@@ -12640,6 +13525,8 @@ public final class CoreFunctions {
      * Retrieves an image shape compatibility entry.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12669,6 +13556,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetImageShapeResult> getImageShapePlain(GetImageShapePlainArgs args) {
@@ -12680,6 +13568,8 @@ public final class CoreFunctions {
      * Retrieves an image shape compatibility entry.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12709,6 +13599,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetImageShapeResult> getImageShape(GetImageShapeArgs args, InvokeOptions options) {
@@ -12720,6 +13611,8 @@ public final class CoreFunctions {
      * Retrieves an image shape compatibility entry.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12749,6 +13642,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetImageShapeResult> getImageShapePlain(GetImageShapePlainArgs args, InvokeOptions options) {
@@ -12760,6 +13654,8 @@ public final class CoreFunctions {
      * Lists the compatible shapes for the specified image.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12788,6 +13684,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetImageShapesResult> getImageShapes(GetImageShapesArgs args) {
@@ -12799,6 +13696,8 @@ public final class CoreFunctions {
      * Lists the compatible shapes for the specified image.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12827,6 +13726,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetImageShapesResult> getImageShapesPlain(GetImageShapesPlainArgs args) {
@@ -12838,6 +13738,8 @@ public final class CoreFunctions {
      * Lists the compatible shapes for the specified image.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12866,6 +13768,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetImageShapesResult> getImageShapes(GetImageShapesArgs args, InvokeOptions options) {
@@ -12877,6 +13780,8 @@ public final class CoreFunctions {
      * Lists the compatible shapes for the specified image.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12905,6 +13810,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetImageShapesResult> getImageShapesPlain(GetImageShapesPlainArgs args, InvokeOptions options) {
@@ -12926,6 +13832,8 @@ public final class CoreFunctions {
      * The image OCIDs remain available, but when the platform image is replaced, the image OCIDs are no longer returned as part of the platform image list.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -12961,6 +13869,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetImagesResult> getImages(GetImagesArgs args) {
@@ -12982,6 +13891,8 @@ public final class CoreFunctions {
      * The image OCIDs remain available, but when the platform image is replaced, the image OCIDs are no longer returned as part of the platform image list.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13017,6 +13928,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetImagesResult> getImagesPlain(GetImagesPlainArgs args) {
@@ -13038,6 +13950,8 @@ public final class CoreFunctions {
      * The image OCIDs remain available, but when the platform image is replaced, the image OCIDs are no longer returned as part of the platform image list.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13073,6 +13987,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetImagesResult> getImages(GetImagesArgs args, InvokeOptions options) {
@@ -13094,6 +14009,8 @@ public final class CoreFunctions {
      * The image OCIDs remain available, but when the platform image is replaced, the image OCIDs are no longer returned as part of the platform image list.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13129,6 +14046,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetImagesResult> getImagesPlain(GetImagesPlainArgs args, InvokeOptions options) {
@@ -13143,6 +14061,8 @@ public final class CoreFunctions {
      * operation to get the VNIC ID for the instance, and then call [GetVnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/GetVnic) with the VNIC ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13171,6 +14091,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetInstanceResult> getInstance(GetInstanceArgs args) {
@@ -13185,6 +14106,8 @@ public final class CoreFunctions {
      * operation to get the VNIC ID for the instance, and then call [GetVnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/GetVnic) with the VNIC ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13213,6 +14136,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetInstanceResult> getInstancePlain(GetInstancePlainArgs args) {
@@ -13227,6 +14151,8 @@ public final class CoreFunctions {
      * operation to get the VNIC ID for the instance, and then call [GetVnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/GetVnic) with the VNIC ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13255,6 +14181,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetInstanceResult> getInstance(GetInstanceArgs args, InvokeOptions options) {
@@ -13269,6 +14196,8 @@ public final class CoreFunctions {
      * operation to get the VNIC ID for the instance, and then call [GetVnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/GetVnic) with the VNIC ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13297,6 +14226,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetInstanceResult> getInstancePlain(GetInstancePlainArgs args, InvokeOptions options) {
@@ -13308,6 +14238,8 @@ public final class CoreFunctions {
      * Gets the specified instance configuration
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13336,6 +14268,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetInstanceConfigurationResult> getInstanceConfiguration(GetInstanceConfigurationArgs args) {
@@ -13347,6 +14280,8 @@ public final class CoreFunctions {
      * Gets the specified instance configuration
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13375,6 +14310,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetInstanceConfigurationResult> getInstanceConfigurationPlain(GetInstanceConfigurationPlainArgs args) {
@@ -13386,6 +14322,8 @@ public final class CoreFunctions {
      * Gets the specified instance configuration
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13414,6 +14352,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetInstanceConfigurationResult> getInstanceConfiguration(GetInstanceConfigurationArgs args, InvokeOptions options) {
@@ -13425,6 +14364,8 @@ public final class CoreFunctions {
      * Gets the specified instance configuration
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13453,6 +14394,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetInstanceConfigurationResult> getInstanceConfigurationPlain(GetInstanceConfigurationPlainArgs args, InvokeOptions options) {
@@ -13464,6 +14406,8 @@ public final class CoreFunctions {
      * Lists the instance configurations in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13492,6 +14436,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetInstanceConfigurationsResult> getInstanceConfigurations(GetInstanceConfigurationsArgs args) {
@@ -13503,6 +14448,8 @@ public final class CoreFunctions {
      * Lists the instance configurations in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13531,6 +14478,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetInstanceConfigurationsResult> getInstanceConfigurationsPlain(GetInstanceConfigurationsPlainArgs args) {
@@ -13542,6 +14490,8 @@ public final class CoreFunctions {
      * Lists the instance configurations in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13570,6 +14520,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetInstanceConfigurationsResult> getInstanceConfigurations(GetInstanceConfigurationsArgs args, InvokeOptions options) {
@@ -13581,6 +14532,8 @@ public final class CoreFunctions {
      * Lists the instance configurations in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13609,6 +14562,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetInstanceConfigurationsResult> getInstanceConfigurationsPlain(GetInstanceConfigurationsPlainArgs args, InvokeOptions options) {
@@ -13622,6 +14576,8 @@ public final class CoreFunctions {
      * For more information about instance console connections, see [Troubleshooting Instances Using Instance Console Connections](https://docs.cloud.oracle.com/iaas/Content/Compute/References/serialconsole.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13651,6 +14607,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetInstanceConsoleConnectionsResult> getInstanceConsoleConnections(GetInstanceConsoleConnectionsArgs args) {
@@ -13664,6 +14621,8 @@ public final class CoreFunctions {
      * For more information about instance console connections, see [Troubleshooting Instances Using Instance Console Connections](https://docs.cloud.oracle.com/iaas/Content/Compute/References/serialconsole.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13693,6 +14652,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetInstanceConsoleConnectionsResult> getInstanceConsoleConnectionsPlain(GetInstanceConsoleConnectionsPlainArgs args) {
@@ -13706,6 +14666,8 @@ public final class CoreFunctions {
      * For more information about instance console connections, see [Troubleshooting Instances Using Instance Console Connections](https://docs.cloud.oracle.com/iaas/Content/Compute/References/serialconsole.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13735,6 +14697,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetInstanceConsoleConnectionsResult> getInstanceConsoleConnections(GetInstanceConsoleConnectionsArgs args, InvokeOptions options) {
@@ -13748,6 +14711,8 @@ public final class CoreFunctions {
      * For more information about instance console connections, see [Troubleshooting Instances Using Instance Console Connections](https://docs.cloud.oracle.com/iaas/Content/Compute/References/serialconsole.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13777,6 +14742,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetInstanceConsoleConnectionsResult> getInstanceConsoleConnectionsPlain(GetInstanceConsoleConnectionsPlainArgs args, InvokeOptions options) {
@@ -13789,6 +14755,8 @@ public final class CoreFunctions {
      * For certain operating systems, users will be forced to change the initial credentials.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13817,6 +14785,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetInstanceCredentialsResult> getInstanceCredentials(GetInstanceCredentialsArgs args) {
@@ -13829,6 +14798,8 @@ public final class CoreFunctions {
      * For certain operating systems, users will be forced to change the initial credentials.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13857,6 +14828,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetInstanceCredentialsResult> getInstanceCredentialsPlain(GetInstanceCredentialsPlainArgs args) {
@@ -13869,6 +14841,8 @@ public final class CoreFunctions {
      * For certain operating systems, users will be forced to change the initial credentials.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13897,6 +14871,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetInstanceCredentialsResult> getInstanceCredentials(GetInstanceCredentialsArgs args, InvokeOptions options) {
@@ -13909,6 +14884,8 @@ public final class CoreFunctions {
      * For certain operating systems, users will be forced to change the initial credentials.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13937,6 +14914,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetInstanceCredentialsResult> getInstanceCredentialsPlain(GetInstanceCredentialsPlainArgs args, InvokeOptions options) {
@@ -13948,6 +14926,8 @@ public final class CoreFunctions {
      * Gets a list of all the devices for given instance. You can optionally filter results by device availability.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -13978,6 +14958,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetInstanceDevicesResult> getInstanceDevices(GetInstanceDevicesArgs args) {
@@ -13989,6 +14970,8 @@ public final class CoreFunctions {
      * Gets a list of all the devices for given instance. You can optionally filter results by device availability.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14019,6 +15002,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetInstanceDevicesResult> getInstanceDevicesPlain(GetInstanceDevicesPlainArgs args) {
@@ -14030,6 +15014,8 @@ public final class CoreFunctions {
      * Gets a list of all the devices for given instance. You can optionally filter results by device availability.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14060,6 +15046,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetInstanceDevicesResult> getInstanceDevices(GetInstanceDevicesArgs args, InvokeOptions options) {
@@ -14071,6 +15058,8 @@ public final class CoreFunctions {
      * Gets a list of all the devices for given instance. You can optionally filter results by device availability.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14101,6 +15090,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetInstanceDevicesResult> getInstanceDevicesPlain(GetInstanceDevicesPlainArgs args, InvokeOptions options) {
@@ -14113,6 +15103,8 @@ public final class CoreFunctions {
      * [Infrastructure Maintenance](https://docs.cloud.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14141,6 +15133,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetInstanceMaintenanceRebootResult> getInstanceMaintenanceReboot(GetInstanceMaintenanceRebootArgs args) {
@@ -14153,6 +15146,8 @@ public final class CoreFunctions {
      * [Infrastructure Maintenance](https://docs.cloud.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14181,6 +15176,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetInstanceMaintenanceRebootResult> getInstanceMaintenanceRebootPlain(GetInstanceMaintenanceRebootPlainArgs args) {
@@ -14193,6 +15189,8 @@ public final class CoreFunctions {
      * [Infrastructure Maintenance](https://docs.cloud.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14221,6 +15219,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetInstanceMaintenanceRebootResult> getInstanceMaintenanceReboot(GetInstanceMaintenanceRebootArgs args, InvokeOptions options) {
@@ -14233,6 +15232,8 @@ public final class CoreFunctions {
      * [Infrastructure Maintenance](https://docs.cloud.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14261,6 +15262,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetInstanceMaintenanceRebootResult> getInstanceMaintenanceRebootPlain(GetInstanceMaintenanceRebootPlainArgs args, InvokeOptions options) {
@@ -14272,6 +15274,8 @@ public final class CoreFunctions {
      * Gets the measured boot report for this shielded instance.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14300,6 +15304,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetInstanceMeasuredBootReportResult> getInstanceMeasuredBootReport(GetInstanceMeasuredBootReportArgs args) {
@@ -14311,6 +15316,8 @@ public final class CoreFunctions {
      * Gets the measured boot report for this shielded instance.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14339,6 +15346,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetInstanceMeasuredBootReportResult> getInstanceMeasuredBootReportPlain(GetInstanceMeasuredBootReportPlainArgs args) {
@@ -14350,6 +15358,8 @@ public final class CoreFunctions {
      * Gets the measured boot report for this shielded instance.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14378,6 +15388,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetInstanceMeasuredBootReportResult> getInstanceMeasuredBootReport(GetInstanceMeasuredBootReportArgs args, InvokeOptions options) {
@@ -14389,6 +15400,8 @@ public final class CoreFunctions {
      * Gets the measured boot report for this shielded instance.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14417,6 +15430,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetInstanceMeasuredBootReportResult> getInstanceMeasuredBootReportPlain(GetInstanceMeasuredBootReportPlainArgs args, InvokeOptions options) {
@@ -14428,6 +15442,8 @@ public final class CoreFunctions {
      * Gets the specified instance pool
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14456,6 +15472,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetInstancePoolResult> getInstancePool(GetInstancePoolArgs args) {
@@ -14467,6 +15484,8 @@ public final class CoreFunctions {
      * Gets the specified instance pool
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14495,6 +15514,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetInstancePoolResult> getInstancePoolPlain(GetInstancePoolPlainArgs args) {
@@ -14506,6 +15526,8 @@ public final class CoreFunctions {
      * Gets the specified instance pool
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14534,6 +15556,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetInstancePoolResult> getInstancePool(GetInstancePoolArgs args, InvokeOptions options) {
@@ -14545,6 +15568,8 @@ public final class CoreFunctions {
      * Gets the specified instance pool
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14573,6 +15598,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetInstancePoolResult> getInstancePoolPlain(GetInstancePoolPlainArgs args, InvokeOptions options) {
@@ -14584,6 +15610,8 @@ public final class CoreFunctions {
      * List the instances in the specified instance pool.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14614,6 +15642,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetInstancePoolInstancesResult> getInstancePoolInstances(GetInstancePoolInstancesArgs args) {
@@ -14625,6 +15654,8 @@ public final class CoreFunctions {
      * List the instances in the specified instance pool.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14655,6 +15686,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetInstancePoolInstancesResult> getInstancePoolInstancesPlain(GetInstancePoolInstancesPlainArgs args) {
@@ -14666,6 +15698,8 @@ public final class CoreFunctions {
      * List the instances in the specified instance pool.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14696,6 +15730,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetInstancePoolInstancesResult> getInstancePoolInstances(GetInstancePoolInstancesArgs args, InvokeOptions options) {
@@ -14707,6 +15742,8 @@ public final class CoreFunctions {
      * List the instances in the specified instance pool.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14737,6 +15774,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetInstancePoolInstancesResult> getInstancePoolInstancesPlain(GetInstancePoolInstancesPlainArgs args, InvokeOptions options) {
@@ -14748,6 +15786,8 @@ public final class CoreFunctions {
      * Gets information about a load balancer that is attached to the specified instance pool.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14777,6 +15817,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetInstancePoolLoadBalancerAttachmentResult> getInstancePoolLoadBalancerAttachment(GetInstancePoolLoadBalancerAttachmentArgs args) {
@@ -14788,6 +15829,8 @@ public final class CoreFunctions {
      * Gets information about a load balancer that is attached to the specified instance pool.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14817,6 +15860,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetInstancePoolLoadBalancerAttachmentResult> getInstancePoolLoadBalancerAttachmentPlain(GetInstancePoolLoadBalancerAttachmentPlainArgs args) {
@@ -14828,6 +15872,8 @@ public final class CoreFunctions {
      * Gets information about a load balancer that is attached to the specified instance pool.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14857,6 +15903,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetInstancePoolLoadBalancerAttachmentResult> getInstancePoolLoadBalancerAttachment(GetInstancePoolLoadBalancerAttachmentArgs args, InvokeOptions options) {
@@ -14868,6 +15915,8 @@ public final class CoreFunctions {
      * Gets information about a load balancer that is attached to the specified instance pool.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14897,6 +15946,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetInstancePoolLoadBalancerAttachmentResult> getInstancePoolLoadBalancerAttachmentPlain(GetInstancePoolLoadBalancerAttachmentPlainArgs args, InvokeOptions options) {
@@ -14908,6 +15958,8 @@ public final class CoreFunctions {
      * Lists the instance pools in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14938,6 +15990,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetInstancePoolsResult> getInstancePools(GetInstancePoolsArgs args) {
@@ -14949,6 +16002,8 @@ public final class CoreFunctions {
      * Lists the instance pools in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -14979,6 +16034,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetInstancePoolsResult> getInstancePoolsPlain(GetInstancePoolsPlainArgs args) {
@@ -14990,6 +16046,8 @@ public final class CoreFunctions {
      * Lists the instance pools in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15020,6 +16078,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetInstancePoolsResult> getInstancePools(GetInstancePoolsArgs args, InvokeOptions options) {
@@ -15031,6 +16090,8 @@ public final class CoreFunctions {
      * Lists the instance pools in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15061,6 +16122,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetInstancePoolsResult> getInstancePoolsPlain(GetInstancePoolsPlainArgs args, InvokeOptions options) {
@@ -15077,6 +16139,8 @@ public final class CoreFunctions {
      * operation to get the VNIC ID for the instance, and then call [GetVnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/GetVnic) with the VNIC ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15110,6 +16174,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetInstancesResult> getInstances(GetInstancesArgs args) {
@@ -15126,6 +16191,8 @@ public final class CoreFunctions {
      * operation to get the VNIC ID for the instance, and then call [GetVnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/GetVnic) with the VNIC ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15159,6 +16226,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetInstancesResult> getInstancesPlain(GetInstancesPlainArgs args) {
@@ -15175,6 +16243,8 @@ public final class CoreFunctions {
      * operation to get the VNIC ID for the instance, and then call [GetVnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/GetVnic) with the VNIC ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15208,6 +16278,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetInstancesResult> getInstances(GetInstancesArgs args, InvokeOptions options) {
@@ -15224,6 +16295,8 @@ public final class CoreFunctions {
      * operation to get the VNIC ID for the instance, and then call [GetVnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/GetVnic) with the VNIC ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15257,6 +16330,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetInstancesResult> getInstancesPlain(GetInstancesPlainArgs args, InvokeOptions options) {
@@ -15269,6 +16343,8 @@ public final class CoreFunctions {
      * If the VCN ID is not provided, then the list includes the internet gateways from all VCNs in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15300,6 +16376,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetInternetGatewaysResult> getInternetGateways(GetInternetGatewaysArgs args) {
@@ -15312,6 +16389,8 @@ public final class CoreFunctions {
      * If the VCN ID is not provided, then the list includes the internet gateways from all VCNs in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15343,6 +16422,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetInternetGatewaysResult> getInternetGatewaysPlain(GetInternetGatewaysPlainArgs args) {
@@ -15355,6 +16435,8 @@ public final class CoreFunctions {
      * If the VCN ID is not provided, then the list includes the internet gateways from all VCNs in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15386,6 +16468,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetInternetGatewaysResult> getInternetGateways(GetInternetGatewaysArgs args, InvokeOptions options) {
@@ -15398,6 +16481,8 @@ public final class CoreFunctions {
      * If the VCN ID is not provided, then the list includes the internet gateways from all VCNs in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15429,6 +16514,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetInternetGatewaysResult> getInternetGatewaysPlain(GetInternetGatewaysPlainArgs args, InvokeOptions options) {
@@ -15440,6 +16526,8 @@ public final class CoreFunctions {
      * The parameters allowed for IKE IPSec tunnels.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15465,6 +16553,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetIpsecAlgorithmResult> getIpsecAlgorithm() {
@@ -15476,6 +16565,8 @@ public final class CoreFunctions {
      * The parameters allowed for IKE IPSec tunnels.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15501,6 +16592,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetIpsecAlgorithmResult> getIpsecAlgorithmPlain() {
@@ -15512,6 +16604,8 @@ public final class CoreFunctions {
      * The parameters allowed for IKE IPSec tunnels.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15537,6 +16631,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetIpsecAlgorithmResult> getIpsecAlgorithm(InvokeArgs args) {
@@ -15548,6 +16643,8 @@ public final class CoreFunctions {
      * The parameters allowed for IKE IPSec tunnels.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15573,6 +16670,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetIpsecAlgorithmResult> getIpsecAlgorithmPlain(InvokeArgs args) {
@@ -15584,6 +16682,8 @@ public final class CoreFunctions {
      * The parameters allowed for IKE IPSec tunnels.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15609,6 +16709,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetIpsecAlgorithmResult> getIpsecAlgorithm(InvokeArgs args, InvokeOptions options) {
@@ -15620,6 +16721,8 @@ public final class CoreFunctions {
      * The parameters allowed for IKE IPSec tunnels.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15645,6 +16748,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetIpsecAlgorithmResult> getIpsecAlgorithmPlain(InvokeArgs args, InvokeOptions options) {
@@ -15659,6 +16763,8 @@ public final class CoreFunctions {
      * * [GetIPSecConnectionTunnelSharedSecret](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnectionTunnelSharedSecret/GetIPSecConnectionTunnelSharedSecret)
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15687,6 +16793,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetIpsecConfigResult> getIpsecConfig(GetIpsecConfigArgs args) {
@@ -15701,6 +16808,8 @@ public final class CoreFunctions {
      * * [GetIPSecConnectionTunnelSharedSecret](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnectionTunnelSharedSecret/GetIPSecConnectionTunnelSharedSecret)
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15729,6 +16838,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetIpsecConfigResult> getIpsecConfigPlain(GetIpsecConfigPlainArgs args) {
@@ -15743,6 +16853,8 @@ public final class CoreFunctions {
      * * [GetIPSecConnectionTunnelSharedSecret](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnectionTunnelSharedSecret/GetIPSecConnectionTunnelSharedSecret)
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15771,6 +16883,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetIpsecConfigResult> getIpsecConfig(GetIpsecConfigArgs args, InvokeOptions options) {
@@ -15785,6 +16898,8 @@ public final class CoreFunctions {
      * * [GetIPSecConnectionTunnelSharedSecret](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnectionTunnelSharedSecret/GetIPSecConnectionTunnelSharedSecret)
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15813,6 +16928,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetIpsecConfigResult> getIpsecConfigPlain(GetIpsecConfigPlainArgs args, InvokeOptions options) {
@@ -15824,6 +16940,8 @@ public final class CoreFunctions {
      * Gets the specified IPSec connection&#39;s specified tunnel basic information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15853,6 +16971,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetIpsecConnectionTunnelResult> getIpsecConnectionTunnel(GetIpsecConnectionTunnelArgs args) {
@@ -15864,6 +16983,8 @@ public final class CoreFunctions {
      * Gets the specified IPSec connection&#39;s specified tunnel basic information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15893,6 +17014,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetIpsecConnectionTunnelResult> getIpsecConnectionTunnelPlain(GetIpsecConnectionTunnelPlainArgs args) {
@@ -15904,6 +17026,8 @@ public final class CoreFunctions {
      * Gets the specified IPSec connection&#39;s specified tunnel basic information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15933,6 +17057,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetIpsecConnectionTunnelResult> getIpsecConnectionTunnel(GetIpsecConnectionTunnelArgs args, InvokeOptions options) {
@@ -15944,6 +17069,8 @@ public final class CoreFunctions {
      * Gets the specified IPSec connection&#39;s specified tunnel basic information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -15973,6 +17100,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetIpsecConnectionTunnelResult> getIpsecConnectionTunnelPlain(GetIpsecConnectionTunnelPlainArgs args, InvokeOptions options) {
@@ -15984,6 +17112,8 @@ public final class CoreFunctions {
      * Gets the identified error for the specified IPSec tunnel ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16013,6 +17143,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetIpsecConnectionTunnelErrorResult> getIpsecConnectionTunnelError(GetIpsecConnectionTunnelErrorArgs args) {
@@ -16024,6 +17155,8 @@ public final class CoreFunctions {
      * Gets the identified error for the specified IPSec tunnel ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16053,6 +17186,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetIpsecConnectionTunnelErrorResult> getIpsecConnectionTunnelErrorPlain(GetIpsecConnectionTunnelErrorPlainArgs args) {
@@ -16064,6 +17198,8 @@ public final class CoreFunctions {
      * Gets the identified error for the specified IPSec tunnel ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16093,6 +17229,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetIpsecConnectionTunnelErrorResult> getIpsecConnectionTunnelError(GetIpsecConnectionTunnelErrorArgs args, InvokeOptions options) {
@@ -16104,6 +17241,8 @@ public final class CoreFunctions {
      * Gets the identified error for the specified IPSec tunnel ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16133,6 +17272,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetIpsecConnectionTunnelErrorResult> getIpsecConnectionTunnelErrorPlain(GetIpsecConnectionTunnelErrorPlainArgs args, InvokeOptions options) {
@@ -16144,6 +17284,8 @@ public final class CoreFunctions {
      * The routes advertised to the on-premises network and the routes received from the on-premises network.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16174,6 +17316,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetIpsecConnectionTunnelRoutesResult> getIpsecConnectionTunnelRoutes(GetIpsecConnectionTunnelRoutesArgs args) {
@@ -16185,6 +17328,8 @@ public final class CoreFunctions {
      * The routes advertised to the on-premises network and the routes received from the on-premises network.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16215,6 +17360,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetIpsecConnectionTunnelRoutesResult> getIpsecConnectionTunnelRoutesPlain(GetIpsecConnectionTunnelRoutesPlainArgs args) {
@@ -16226,6 +17372,8 @@ public final class CoreFunctions {
      * The routes advertised to the on-premises network and the routes received from the on-premises network.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16256,6 +17404,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetIpsecConnectionTunnelRoutesResult> getIpsecConnectionTunnelRoutes(GetIpsecConnectionTunnelRoutesArgs args, InvokeOptions options) {
@@ -16267,6 +17416,8 @@ public final class CoreFunctions {
      * The routes advertised to the on-premises network and the routes received from the on-premises network.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16297,6 +17448,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetIpsecConnectionTunnelRoutesResult> getIpsecConnectionTunnelRoutesPlain(GetIpsecConnectionTunnelRoutesPlainArgs args, InvokeOptions options) {
@@ -16308,6 +17460,8 @@ public final class CoreFunctions {
      * Lists the tunnel information for the specified IPSec connection.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16336,6 +17490,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetIpsecConnectionTunnelsResult> getIpsecConnectionTunnels(GetIpsecConnectionTunnelsArgs args) {
@@ -16347,6 +17502,8 @@ public final class CoreFunctions {
      * Lists the tunnel information for the specified IPSec connection.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16375,6 +17532,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetIpsecConnectionTunnelsResult> getIpsecConnectionTunnelsPlain(GetIpsecConnectionTunnelsPlainArgs args) {
@@ -16386,6 +17544,8 @@ public final class CoreFunctions {
      * Lists the tunnel information for the specified IPSec connection.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16414,6 +17574,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetIpsecConnectionTunnelsResult> getIpsecConnectionTunnels(GetIpsecConnectionTunnelsArgs args, InvokeOptions options) {
@@ -16425,6 +17586,8 @@ public final class CoreFunctions {
      * Lists the tunnel information for the specified IPSec connection.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16453,6 +17616,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetIpsecConnectionTunnelsResult> getIpsecConnectionTunnelsPlain(GetIpsecConnectionTunnelsPlainArgs args, InvokeOptions options) {
@@ -16465,6 +17629,8 @@ public final class CoreFunctions {
      * results by DRG or CPE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16495,6 +17661,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetIpsecConnectionsResult> getIpsecConnections(GetIpsecConnectionsArgs args) {
@@ -16507,6 +17674,8 @@ public final class CoreFunctions {
      * results by DRG or CPE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16537,6 +17706,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetIpsecConnectionsResult> getIpsecConnectionsPlain(GetIpsecConnectionsPlainArgs args) {
@@ -16549,6 +17719,8 @@ public final class CoreFunctions {
      * results by DRG or CPE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16579,6 +17751,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetIpsecConnectionsResult> getIpsecConnections(GetIpsecConnectionsArgs args, InvokeOptions options) {
@@ -16591,6 +17764,8 @@ public final class CoreFunctions {
      * results by DRG or CPE.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16621,6 +17796,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetIpsecConnectionsResult> getIpsecConnectionsPlain(GetIpsecConnectionsPlainArgs args, InvokeOptions options) {
@@ -16633,6 +17809,8 @@ public final class CoreFunctions {
      * [GetIPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnectionTunnel/GetIPSecConnectionTunnel).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16661,6 +17839,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetIpsecStatusResult> getIpsecStatus(GetIpsecStatusArgs args) {
@@ -16673,6 +17852,8 @@ public final class CoreFunctions {
      * [GetIPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnectionTunnel/GetIPSecConnectionTunnel).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16701,6 +17882,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetIpsecStatusResult> getIpsecStatusPlain(GetIpsecStatusPlainArgs args) {
@@ -16713,6 +17895,8 @@ public final class CoreFunctions {
      * [GetIPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnectionTunnel/GetIPSecConnectionTunnel).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16741,6 +17925,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetIpsecStatusResult> getIpsecStatus(GetIpsecStatusArgs args, InvokeOptions options) {
@@ -16753,6 +17938,8 @@ public final class CoreFunctions {
      * [GetIPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnectionTunnel/GetIPSecConnectionTunnel).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16781,6 +17968,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetIpsecStatusResult> getIpsecStatusPlain(GetIpsecStatusPlainArgs args, InvokeOptions options) {
@@ -16795,6 +17983,8 @@ public final class CoreFunctions {
      * with the IPv6 address (for example, 2001:0db8:0123:1111:98fe:dcba:9876:4321) and subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16823,6 +18013,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetIpv6Result> getIpv6(GetIpv6Args args) {
@@ -16837,6 +18028,8 @@ public final class CoreFunctions {
      * with the IPv6 address (for example, 2001:0db8:0123:1111:98fe:dcba:9876:4321) and subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16865,6 +18058,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetIpv6Result> getIpv6Plain(GetIpv6PlainArgs args) {
@@ -16879,6 +18073,8 @@ public final class CoreFunctions {
      * with the IPv6 address (for example, 2001:0db8:0123:1111:98fe:dcba:9876:4321) and subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16907,6 +18103,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetIpv6Result> getIpv6(GetIpv6Args args, InvokeOptions options) {
@@ -16921,6 +18118,8 @@ public final class CoreFunctions {
      * with the IPv6 address (for example, 2001:0db8:0123:1111:98fe:dcba:9876:4321) and subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16949,6 +18148,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetIpv6Result> getIpv6Plain(GetIpv6PlainArgs args, InvokeOptions options) {
@@ -16967,6 +18167,8 @@ public final class CoreFunctions {
      *       [GetIpv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Ipv6/GetIpv6) requires the OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -16997,6 +18199,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetIpv6sResult> getIpv6s() {
@@ -17015,6 +18218,8 @@ public final class CoreFunctions {
      *       [GetIpv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Ipv6/GetIpv6) requires the OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17045,6 +18250,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetIpv6sResult> getIpv6sPlain() {
@@ -17063,6 +18269,8 @@ public final class CoreFunctions {
      *       [GetIpv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Ipv6/GetIpv6) requires the OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17093,6 +18301,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetIpv6sResult> getIpv6s(GetIpv6sArgs args) {
@@ -17111,6 +18320,8 @@ public final class CoreFunctions {
      *       [GetIpv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Ipv6/GetIpv6) requires the OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17141,6 +18352,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetIpv6sResult> getIpv6sPlain(GetIpv6sPlainArgs args) {
@@ -17159,6 +18371,8 @@ public final class CoreFunctions {
      *       [GetIpv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Ipv6/GetIpv6) requires the OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17189,6 +18403,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetIpv6sResult> getIpv6s(GetIpv6sArgs args, InvokeOptions options) {
@@ -17207,6 +18422,8 @@ public final class CoreFunctions {
      *       [GetIpv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Ipv6/GetIpv6) requires the OCID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17237,6 +18454,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetIpv6sResult> getIpv6sPlain(GetIpv6sPlainArgs args, InvokeOptions options) {
@@ -17248,6 +18466,8 @@ public final class CoreFunctions {
      * Gets the Letter of Authority for the specified cross-connect.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17276,6 +18496,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetLetterOfAuthorityResult> getLetterOfAuthority(GetLetterOfAuthorityArgs args) {
@@ -17287,6 +18508,8 @@ public final class CoreFunctions {
      * Gets the Letter of Authority for the specified cross-connect.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17315,6 +18538,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetLetterOfAuthorityResult> getLetterOfAuthorityPlain(GetLetterOfAuthorityPlainArgs args) {
@@ -17326,6 +18550,8 @@ public final class CoreFunctions {
      * Gets the Letter of Authority for the specified cross-connect.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17354,6 +18580,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetLetterOfAuthorityResult> getLetterOfAuthority(GetLetterOfAuthorityArgs args, InvokeOptions options) {
@@ -17365,6 +18592,8 @@ public final class CoreFunctions {
      * Gets the Letter of Authority for the specified cross-connect.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17393,6 +18622,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetLetterOfAuthorityResult> getLetterOfAuthorityPlain(GetLetterOfAuthorityPlainArgs args, InvokeOptions options) {
@@ -17429,6 +18659,8 @@ public final class CoreFunctions {
      * If the VCN ID is not provided, then the list includes the LPGs from all VCNs in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17458,6 +18690,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetLocalPeeringGatewaysResult> getLocalPeeringGateways(GetLocalPeeringGatewaysArgs args) {
@@ -17470,6 +18703,8 @@ public final class CoreFunctions {
      * If the VCN ID is not provided, then the list includes the LPGs from all VCNs in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17499,6 +18734,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetLocalPeeringGatewaysResult> getLocalPeeringGatewaysPlain(GetLocalPeeringGatewaysPlainArgs args) {
@@ -17511,6 +18747,8 @@ public final class CoreFunctions {
      * If the VCN ID is not provided, then the list includes the LPGs from all VCNs in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17540,6 +18778,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetLocalPeeringGatewaysResult> getLocalPeeringGateways(GetLocalPeeringGatewaysArgs args, InvokeOptions options) {
@@ -17552,6 +18791,8 @@ public final class CoreFunctions {
      * If the VCN ID is not provided, then the list includes the LPGs from all VCNs in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17581,6 +18822,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetLocalPeeringGatewaysResult> getLocalPeeringGatewaysPlain(GetLocalPeeringGatewaysPlainArgs args, InvokeOptions options) {
@@ -17592,6 +18834,8 @@ public final class CoreFunctions {
      * Gets the specified NAT gateway&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17620,6 +18864,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNatGatewayResult> getNatGateway(GetNatGatewayArgs args) {
@@ -17631,6 +18876,8 @@ public final class CoreFunctions {
      * Gets the specified NAT gateway&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17659,6 +18906,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNatGatewayResult> getNatGatewayPlain(GetNatGatewayPlainArgs args) {
@@ -17670,6 +18918,8 @@ public final class CoreFunctions {
      * Gets the specified NAT gateway&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17698,6 +18948,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNatGatewayResult> getNatGateway(GetNatGatewayArgs args, InvokeOptions options) {
@@ -17709,6 +18960,8 @@ public final class CoreFunctions {
      * Gets the specified NAT gateway&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17737,6 +18990,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNatGatewayResult> getNatGatewayPlain(GetNatGatewayPlainArgs args, InvokeOptions options) {
@@ -17749,6 +19003,8 @@ public final class CoreFunctions {
      * to filter the results by VCN.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17780,6 +19036,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNatGatewaysResult> getNatGateways(GetNatGatewaysArgs args) {
@@ -17792,6 +19049,8 @@ public final class CoreFunctions {
      * to filter the results by VCN.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17823,6 +19082,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNatGatewaysResult> getNatGatewaysPlain(GetNatGatewaysPlainArgs args) {
@@ -17835,6 +19095,8 @@ public final class CoreFunctions {
      * to filter the results by VCN.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17866,6 +19128,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNatGatewaysResult> getNatGateways(GetNatGatewaysArgs args, InvokeOptions options) {
@@ -17878,6 +19141,8 @@ public final class CoreFunctions {
      * to filter the results by VCN.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17909,6 +19174,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNatGatewaysResult> getNatGatewaysPlain(GetNatGatewaysPlainArgs args, InvokeOptions options) {
@@ -17926,6 +19192,8 @@ public final class CoreFunctions {
      * [ListNetworkSecurityGroupSecurityRules](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/SecurityRule/ListNetworkSecurityGroupSecurityRules).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17954,6 +19222,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkSecurityGroupResult> getNetworkSecurityGroup(GetNetworkSecurityGroupArgs args) {
@@ -17971,6 +19240,8 @@ public final class CoreFunctions {
      * [ListNetworkSecurityGroupSecurityRules](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/SecurityRule/ListNetworkSecurityGroupSecurityRules).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -17999,6 +19270,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkSecurityGroupResult> getNetworkSecurityGroupPlain(GetNetworkSecurityGroupPlainArgs args) {
@@ -18016,6 +19288,8 @@ public final class CoreFunctions {
      * [ListNetworkSecurityGroupSecurityRules](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/SecurityRule/ListNetworkSecurityGroupSecurityRules).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18044,6 +19318,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkSecurityGroupResult> getNetworkSecurityGroup(GetNetworkSecurityGroupArgs args, InvokeOptions options) {
@@ -18061,6 +19336,8 @@ public final class CoreFunctions {
      * [ListNetworkSecurityGroupSecurityRules](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/SecurityRule/ListNetworkSecurityGroupSecurityRules).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18089,6 +19366,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkSecurityGroupResult> getNetworkSecurityGroupPlain(GetNetworkSecurityGroupPlainArgs args, InvokeOptions options) {
@@ -18100,6 +19378,8 @@ public final class CoreFunctions {
      * Lists the security rules in the specified network security group.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18129,6 +19409,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkSecurityGroupSecurityRulesResult> getNetworkSecurityGroupSecurityRules(GetNetworkSecurityGroupSecurityRulesArgs args) {
@@ -18140,6 +19421,8 @@ public final class CoreFunctions {
      * Lists the security rules in the specified network security group.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18169,6 +19452,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkSecurityGroupSecurityRulesResult> getNetworkSecurityGroupSecurityRulesPlain(GetNetworkSecurityGroupSecurityRulesPlainArgs args) {
@@ -18180,6 +19464,8 @@ public final class CoreFunctions {
      * Lists the security rules in the specified network security group.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18209,6 +19495,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkSecurityGroupSecurityRulesResult> getNetworkSecurityGroupSecurityRules(GetNetworkSecurityGroupSecurityRulesArgs args, InvokeOptions options) {
@@ -18220,6 +19507,8 @@ public final class CoreFunctions {
      * Lists the security rules in the specified network security group.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18249,6 +19538,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkSecurityGroupSecurityRulesResult> getNetworkSecurityGroupSecurityRulesPlain(GetNetworkSecurityGroupSecurityRulesPlainArgs args, InvokeOptions options) {
@@ -18260,6 +19550,8 @@ public final class CoreFunctions {
      * Lists the VNICs in the specified network security group.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18288,6 +19580,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkSecurityGroupVnicsResult> getNetworkSecurityGroupVnics(GetNetworkSecurityGroupVnicsArgs args) {
@@ -18299,6 +19592,8 @@ public final class CoreFunctions {
      * Lists the VNICs in the specified network security group.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18327,6 +19622,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkSecurityGroupVnicsResult> getNetworkSecurityGroupVnicsPlain(GetNetworkSecurityGroupVnicsPlainArgs args) {
@@ -18338,6 +19634,8 @@ public final class CoreFunctions {
      * Lists the VNICs in the specified network security group.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18366,6 +19664,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkSecurityGroupVnicsResult> getNetworkSecurityGroupVnics(GetNetworkSecurityGroupVnicsArgs args, InvokeOptions options) {
@@ -18377,6 +19676,8 @@ public final class CoreFunctions {
      * Lists the VNICs in the specified network security group.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18405,6 +19706,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkSecurityGroupVnicsResult> getNetworkSecurityGroupVnicsPlain(GetNetworkSecurityGroupVnicsPlainArgs args, InvokeOptions options) {
@@ -18417,6 +19719,8 @@ public final class CoreFunctions {
      * You must specify either a `vlanId` or a `compartmentId`, but not both. If you specify a `vlanId`, all other parameters are ignored.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18449,6 +19753,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkSecurityGroupsResult> getNetworkSecurityGroups() {
@@ -18461,6 +19766,8 @@ public final class CoreFunctions {
      * You must specify either a `vlanId` or a `compartmentId`, but not both. If you specify a `vlanId`, all other parameters are ignored.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18493,6 +19800,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkSecurityGroupsResult> getNetworkSecurityGroupsPlain() {
@@ -18505,6 +19813,8 @@ public final class CoreFunctions {
      * You must specify either a `vlanId` or a `compartmentId`, but not both. If you specify a `vlanId`, all other parameters are ignored.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18537,6 +19847,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkSecurityGroupsResult> getNetworkSecurityGroups(GetNetworkSecurityGroupsArgs args) {
@@ -18549,6 +19860,8 @@ public final class CoreFunctions {
      * You must specify either a `vlanId` or a `compartmentId`, but not both. If you specify a `vlanId`, all other parameters are ignored.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18581,6 +19894,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkSecurityGroupsResult> getNetworkSecurityGroupsPlain(GetNetworkSecurityGroupsPlainArgs args) {
@@ -18593,6 +19907,8 @@ public final class CoreFunctions {
      * You must specify either a `vlanId` or a `compartmentId`, but not both. If you specify a `vlanId`, all other parameters are ignored.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18625,6 +19941,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetNetworkSecurityGroupsResult> getNetworkSecurityGroups(GetNetworkSecurityGroupsArgs args, InvokeOptions options) {
@@ -18637,6 +19954,8 @@ public final class CoreFunctions {
      * You must specify either a `vlanId` or a `compartmentId`, but not both. If you specify a `vlanId`, all other parameters are ignored.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18669,6 +19988,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetNetworkSecurityGroupsResult> getNetworkSecurityGroupsPlain(GetNetworkSecurityGroupsPlainArgs args, InvokeOptions options) {
@@ -18681,6 +20001,8 @@ public final class CoreFunctions {
      * For more information, see [VCN Peering](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/VCNpeering.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18707,6 +20029,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPeerRegionForRemotePeeringsResult> getPeerRegionForRemotePeerings() {
@@ -18719,6 +20042,8 @@ public final class CoreFunctions {
      * For more information, see [VCN Peering](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/VCNpeering.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18745,6 +20070,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPeerRegionForRemotePeeringsResult> getPeerRegionForRemotePeeringsPlain() {
@@ -18757,6 +20083,8 @@ public final class CoreFunctions {
      * For more information, see [VCN Peering](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/VCNpeering.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18783,6 +20111,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPeerRegionForRemotePeeringsResult> getPeerRegionForRemotePeerings(GetPeerRegionForRemotePeeringsArgs args) {
@@ -18795,6 +20124,8 @@ public final class CoreFunctions {
      * For more information, see [VCN Peering](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/VCNpeering.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18821,6 +20152,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPeerRegionForRemotePeeringsResult> getPeerRegionForRemotePeeringsPlain(GetPeerRegionForRemotePeeringsPlainArgs args) {
@@ -18833,6 +20165,8 @@ public final class CoreFunctions {
      * For more information, see [VCN Peering](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/VCNpeering.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18859,6 +20193,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPeerRegionForRemotePeeringsResult> getPeerRegionForRemotePeerings(GetPeerRegionForRemotePeeringsArgs args, InvokeOptions options) {
@@ -18871,6 +20206,8 @@ public final class CoreFunctions {
      * For more information, see [VCN Peering](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/VCNpeering.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18897,6 +20234,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPeerRegionForRemotePeeringsResult> getPeerRegionForRemotePeeringsPlain(GetPeerRegionForRemotePeeringsPlainArgs args, InvokeOptions options) {
@@ -18911,6 +20249,8 @@ public final class CoreFunctions {
      * with the private IP address (for example, 10.0.3.3) and subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18939,6 +20279,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPrivateIpResult> getPrivateIp(GetPrivateIpArgs args) {
@@ -18953,6 +20294,8 @@ public final class CoreFunctions {
      * with the private IP address (for example, 10.0.3.3) and subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -18981,6 +20324,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPrivateIpResult> getPrivateIpPlain(GetPrivateIpPlainArgs args) {
@@ -18995,6 +20339,8 @@ public final class CoreFunctions {
      * with the private IP address (for example, 10.0.3.3) and subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19023,6 +20369,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPrivateIpResult> getPrivateIp(GetPrivateIpArgs args, InvokeOptions options) {
@@ -19037,6 +20384,8 @@ public final class CoreFunctions {
      * with the private IP address (for example, 10.0.3.3) and subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19065,6 +20414,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPrivateIpResult> getPrivateIpPlain(GetPrivateIpPlainArgs args, InvokeOptions options) {
@@ -19091,6 +20441,8 @@ public final class CoreFunctions {
      * in your VCN, you can filter the list by VLAN [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19119,6 +20471,8 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19147,6 +20501,8 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19178,6 +20534,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPrivateIpsResult> getPrivateIps() {
@@ -19204,6 +20561,8 @@ public final class CoreFunctions {
      * in your VCN, you can filter the list by VLAN [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19232,6 +20591,8 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19260,6 +20621,8 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19291,6 +20654,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPrivateIpsResult> getPrivateIpsPlain() {
@@ -19317,6 +20681,8 @@ public final class CoreFunctions {
      * in your VCN, you can filter the list by VLAN [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19345,6 +20711,8 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19373,6 +20741,8 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19404,6 +20774,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPrivateIpsResult> getPrivateIps(GetPrivateIpsArgs args) {
@@ -19430,6 +20801,8 @@ public final class CoreFunctions {
      * in your VCN, you can filter the list by VLAN [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19458,6 +20831,8 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19486,6 +20861,8 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19517,6 +20894,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPrivateIpsResult> getPrivateIpsPlain(GetPrivateIpsPlainArgs args) {
@@ -19543,6 +20921,8 @@ public final class CoreFunctions {
      * in your VCN, you can filter the list by VLAN [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19571,6 +20951,8 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19599,6 +20981,8 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19630,6 +21014,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPrivateIpsResult> getPrivateIps(GetPrivateIpsArgs args, InvokeOptions options) {
@@ -19656,6 +21041,8 @@ public final class CoreFunctions {
      * in your VCN, you can filter the list by VLAN [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19684,6 +21071,8 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19712,6 +21101,8 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19743,6 +21134,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPrivateIpsResult> getPrivateIpsPlain(GetPrivateIpsPlainArgs args, InvokeOptions options) {
@@ -19764,7 +21156,9 @@ public final class CoreFunctions {
      * `lifecycleState` = ASSIGNING and `assignedEntityId` = [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target private IP.
      * 
      * ## Example Usage
+     * 
      * ### Get a public ip by public ip id
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19793,7 +21187,10 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
      * ### Get a public ip by private ip id
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19822,7 +21219,10 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
      * ### Get a public ip by public ip address
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19851,6 +21251,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPublicIpResult> getPublicIp() {
@@ -19872,7 +21273,9 @@ public final class CoreFunctions {
      * `lifecycleState` = ASSIGNING and `assignedEntityId` = [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target private IP.
      * 
      * ## Example Usage
+     * 
      * ### Get a public ip by public ip id
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19901,7 +21304,10 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
      * ### Get a public ip by private ip id
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19930,7 +21336,10 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
      * ### Get a public ip by public ip address
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -19959,6 +21368,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPublicIpResult> getPublicIpPlain() {
@@ -19980,7 +21390,9 @@ public final class CoreFunctions {
      * `lifecycleState` = ASSIGNING and `assignedEntityId` = [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target private IP.
      * 
      * ## Example Usage
+     * 
      * ### Get a public ip by public ip id
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -20009,7 +21421,10 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
      * ### Get a public ip by private ip id
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -20038,7 +21453,10 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
      * ### Get a public ip by public ip address
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -20067,6 +21485,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPublicIpResult> getPublicIp(GetPublicIpArgs args) {
@@ -20088,7 +21507,9 @@ public final class CoreFunctions {
      * `lifecycleState` = ASSIGNING and `assignedEntityId` = [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target private IP.
      * 
      * ## Example Usage
+     * 
      * ### Get a public ip by public ip id
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -20117,7 +21538,10 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
      * ### Get a public ip by private ip id
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -20146,7 +21570,10 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
      * ### Get a public ip by public ip address
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -20175,6 +21602,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPublicIpResult> getPublicIpPlain(GetPublicIpPlainArgs args) {
@@ -20196,7 +21624,9 @@ public final class CoreFunctions {
      * `lifecycleState` = ASSIGNING and `assignedEntityId` = [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target private IP.
      * 
      * ## Example Usage
+     * 
      * ### Get a public ip by public ip id
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -20225,7 +21655,10 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
      * ### Get a public ip by private ip id
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -20254,7 +21687,10 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
      * ### Get a public ip by public ip address
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -20283,6 +21719,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPublicIpResult> getPublicIp(GetPublicIpArgs args, InvokeOptions options) {
@@ -20304,7 +21741,9 @@ public final class CoreFunctions {
      * `lifecycleState` = ASSIGNING and `assignedEntityId` = [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target private IP.
      * 
      * ## Example Usage
+     * 
      * ### Get a public ip by public ip id
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -20333,7 +21772,10 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
      * ### Get a public ip by private ip id
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -20362,7 +21804,10 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
      * ### Get a public ip by public ip address
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -20391,6 +21836,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPublicIpResult> getPublicIpPlain(GetPublicIpPlainArgs args, InvokeOptions options) {
@@ -20402,6 +21848,8 @@ public final class CoreFunctions {
      * Gets the specified `PublicIpPool` object. You must specify the object&#39;s [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -20430,6 +21878,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPublicIpPoolResult> getPublicIpPool(GetPublicIpPoolArgs args) {
@@ -20441,6 +21890,8 @@ public final class CoreFunctions {
      * Gets the specified `PublicIpPool` object. You must specify the object&#39;s [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -20469,6 +21920,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPublicIpPoolResult> getPublicIpPoolPlain(GetPublicIpPoolPlainArgs args) {
@@ -20480,6 +21932,8 @@ public final class CoreFunctions {
      * Gets the specified `PublicIpPool` object. You must specify the object&#39;s [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -20508,6 +21962,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPublicIpPoolResult> getPublicIpPool(GetPublicIpPoolArgs args, InvokeOptions options) {
@@ -20519,6 +21974,8 @@ public final class CoreFunctions {
      * Gets the specified `PublicIpPool` object. You must specify the object&#39;s [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -20547,6 +22004,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPublicIpPoolResult> getPublicIpPoolPlain(GetPublicIpPoolPlainArgs args, InvokeOptions options) {
@@ -20559,6 +22017,8 @@ public final class CoreFunctions {
      * You can filter the list using query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -20589,6 +22049,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPublicIpPoolsResult> getPublicIpPools(GetPublicIpPoolsArgs args) {
@@ -20601,6 +22062,8 @@ public final class CoreFunctions {
      * You can filter the list using query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -20631,6 +22094,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPublicIpPoolsResult> getPublicIpPoolsPlain(GetPublicIpPoolsPlainArgs args) {
@@ -20643,6 +22107,8 @@ public final class CoreFunctions {
      * You can filter the list using query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -20673,6 +22139,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPublicIpPoolsResult> getPublicIpPools(GetPublicIpPoolsArgs args, InvokeOptions options) {
@@ -20685,6 +22152,8 @@ public final class CoreFunctions {
      * You can filter the list using query parameters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -20715,6 +22184,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPublicIpPoolsResult> getPublicIpPoolsPlain(GetPublicIpPoolsPlainArgs args, InvokeOptions options) {
@@ -20745,6 +22215,8 @@ public final class CoreFunctions {
      * is always in the same availability domain and compartment as the private IP.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -20777,6 +22249,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPublicIpsResult> getPublicIps(GetPublicIpsArgs args) {
@@ -20807,6 +22280,8 @@ public final class CoreFunctions {
      * is always in the same availability domain and compartment as the private IP.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -20839,6 +22314,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPublicIpsResult> getPublicIpsPlain(GetPublicIpsPlainArgs args) {
@@ -20869,6 +22345,8 @@ public final class CoreFunctions {
      * is always in the same availability domain and compartment as the private IP.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -20901,6 +22379,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPublicIpsResult> getPublicIps(GetPublicIpsArgs args, InvokeOptions options) {
@@ -20931,6 +22410,8 @@ public final class CoreFunctions {
      * is always in the same availability domain and compartment as the private IP.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -20963,6 +22444,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPublicIpsResult> getPublicIpsPlain(GetPublicIpsPlainArgs args, InvokeOptions options) {
@@ -20975,6 +22457,8 @@ public final class CoreFunctions {
      * (the RPC&#39;s compartment).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -21004,6 +22488,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRemotePeeringConnectionsResult> getRemotePeeringConnections(GetRemotePeeringConnectionsArgs args) {
@@ -21016,6 +22501,8 @@ public final class CoreFunctions {
      * (the RPC&#39;s compartment).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -21045,6 +22532,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRemotePeeringConnectionsResult> getRemotePeeringConnectionsPlain(GetRemotePeeringConnectionsPlainArgs args) {
@@ -21057,6 +22545,8 @@ public final class CoreFunctions {
      * (the RPC&#39;s compartment).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -21086,6 +22576,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRemotePeeringConnectionsResult> getRemotePeeringConnections(GetRemotePeeringConnectionsArgs args, InvokeOptions options) {
@@ -21098,6 +22589,8 @@ public final class CoreFunctions {
      * (the RPC&#39;s compartment).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -21127,6 +22620,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRemotePeeringConnectionsResult> getRemotePeeringConnectionsPlain(GetRemotePeeringConnectionsPlainArgs args, InvokeOptions options) {
@@ -21141,6 +22635,8 @@ public final class CoreFunctions {
      * each VCN in the specified compartment, plus any route tables you&#39;ve created.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -21172,6 +22668,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRouteTablesResult> getRouteTables(GetRouteTablesArgs args) {
@@ -21186,6 +22683,8 @@ public final class CoreFunctions {
      * each VCN in the specified compartment, plus any route tables you&#39;ve created.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -21217,6 +22716,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRouteTablesResult> getRouteTablesPlain(GetRouteTablesPlainArgs args) {
@@ -21231,6 +22731,8 @@ public final class CoreFunctions {
      * each VCN in the specified compartment, plus any route tables you&#39;ve created.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -21262,6 +22764,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRouteTablesResult> getRouteTables(GetRouteTablesArgs args, InvokeOptions options) {
@@ -21276,6 +22779,8 @@ public final class CoreFunctions {
      * each VCN in the specified compartment, plus any route tables you&#39;ve created.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -21307,6 +22812,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRouteTablesResult> getRouteTablesPlain(GetRouteTablesPlainArgs args, InvokeOptions options) {
@@ -21319,6 +22825,8 @@ public final class CoreFunctions {
      * If the VCN ID is not provided, then the list includes the security lists from all VCNs in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -21350,6 +22858,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSecurityListsResult> getSecurityLists(GetSecurityListsArgs args) {
@@ -21362,6 +22871,8 @@ public final class CoreFunctions {
      * If the VCN ID is not provided, then the list includes the security lists from all VCNs in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -21393,6 +22904,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSecurityListsResult> getSecurityListsPlain(GetSecurityListsPlainArgs args) {
@@ -21405,6 +22917,8 @@ public final class CoreFunctions {
      * If the VCN ID is not provided, then the list includes the security lists from all VCNs in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -21436,6 +22950,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSecurityListsResult> getSecurityLists(GetSecurityListsArgs args, InvokeOptions options) {
@@ -21448,6 +22963,8 @@ public final class CoreFunctions {
      * If the VCN ID is not provided, then the list includes the security lists from all VCNs in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -21479,6 +22996,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSecurityListsResult> getSecurityListsPlain(GetSecurityListsPlainArgs args, InvokeOptions options) {
@@ -21491,6 +23009,8 @@ public final class CoreFunctions {
      * to filter the results by VCN.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -21521,6 +23041,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetServiceGatewaysResult> getServiceGateways(GetServiceGatewaysArgs args) {
@@ -21533,6 +23054,8 @@ public final class CoreFunctions {
      * to filter the results by VCN.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -21563,6 +23086,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetServiceGatewaysResult> getServiceGatewaysPlain(GetServiceGatewaysPlainArgs args) {
@@ -21575,6 +23099,8 @@ public final class CoreFunctions {
      * to filter the results by VCN.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -21605,6 +23131,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetServiceGatewaysResult> getServiceGateways(GetServiceGatewaysArgs args, InvokeOptions options) {
@@ -21617,6 +23144,8 @@ public final class CoreFunctions {
      * to filter the results by VCN.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -21647,6 +23176,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetServiceGatewaysResult> getServiceGatewaysPlain(GetServiceGatewaysPlainArgs args, InvokeOptions options) {
@@ -21659,6 +23189,8 @@ public final class CoreFunctions {
      * service gateway in this region.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -21685,6 +23217,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetServicesResult> getServices() {
@@ -21697,6 +23230,8 @@ public final class CoreFunctions {
      * service gateway in this region.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -21723,6 +23258,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetServicesResult> getServicesPlain() {
@@ -21735,6 +23271,8 @@ public final class CoreFunctions {
      * service gateway in this region.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -21761,6 +23299,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetServicesResult> getServices(GetServicesArgs args) {
@@ -21773,6 +23312,8 @@ public final class CoreFunctions {
      * service gateway in this region.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -21799,6 +23340,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetServicesResult> getServicesPlain(GetServicesPlainArgs args) {
@@ -21811,6 +23353,8 @@ public final class CoreFunctions {
      * service gateway in this region.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -21837,6 +23381,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetServicesResult> getServices(GetServicesArgs args, InvokeOptions options) {
@@ -21849,6 +23394,8 @@ public final class CoreFunctions {
      * service gateway in this region.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -21875,6 +23422,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetServicesResult> getServicesPlain(GetServicesPlainArgs args, InvokeOptions options) {
@@ -21899,6 +23447,8 @@ public final class CoreFunctions {
      * filter the list by compatibility with a specific image.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -21929,6 +23479,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetShapesResult> getShapes(GetShapesArgs args) {
@@ -21941,6 +23492,8 @@ public final class CoreFunctions {
      * filter the list by compatibility with a specific image.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -21971,6 +23524,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetShapesResult> getShapesPlain(GetShapesPlainArgs args) {
@@ -21983,6 +23537,8 @@ public final class CoreFunctions {
      * filter the list by compatibility with a specific image.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -22013,6 +23569,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetShapesResult> getShapes(GetShapesArgs args, InvokeOptions options) {
@@ -22025,6 +23582,8 @@ public final class CoreFunctions {
      * filter the list by compatibility with a specific image.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -22055,6 +23614,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetShapesResult> getShapesPlain(GetShapesPlainArgs args, InvokeOptions options) {
@@ -22066,6 +23626,8 @@ public final class CoreFunctions {
      * Gets the specified subnet&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -22094,6 +23656,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSubnetResult> getSubnet(GetSubnetArgs args) {
@@ -22105,6 +23668,8 @@ public final class CoreFunctions {
      * Gets the specified subnet&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -22133,6 +23698,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSubnetResult> getSubnetPlain(GetSubnetPlainArgs args) {
@@ -22144,6 +23710,8 @@ public final class CoreFunctions {
      * Gets the specified subnet&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -22172,6 +23740,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSubnetResult> getSubnet(GetSubnetArgs args, InvokeOptions options) {
@@ -22183,6 +23752,8 @@ public final class CoreFunctions {
      * Gets the specified subnet&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -22211,6 +23782,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSubnetResult> getSubnetPlain(GetSubnetPlainArgs args, InvokeOptions options) {
@@ -22223,6 +23795,8 @@ public final class CoreFunctions {
      * If the VCN ID is not provided, then the list includes the subnets from all VCNs in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -22254,6 +23828,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSubnetsResult> getSubnets(GetSubnetsArgs args) {
@@ -22266,6 +23841,8 @@ public final class CoreFunctions {
      * If the VCN ID is not provided, then the list includes the subnets from all VCNs in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -22297,6 +23874,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSubnetsResult> getSubnetsPlain(GetSubnetsPlainArgs args) {
@@ -22309,6 +23887,8 @@ public final class CoreFunctions {
      * If the VCN ID is not provided, then the list includes the subnets from all VCNs in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -22340,6 +23920,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSubnetsResult> getSubnets(GetSubnetsArgs args, InvokeOptions options) {
@@ -22352,6 +23933,8 @@ public final class CoreFunctions {
      * If the VCN ID is not provided, then the list includes the subnets from all VCNs in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -22383,6 +23966,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSubnetsResult> getSubnetsPlain(GetSubnetsPlainArgs args, InvokeOptions options) {
@@ -22394,6 +23978,8 @@ public final class CoreFunctions {
      * Lists the tunnel security associations information for the specified IPSec tunnel ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -22423,6 +24009,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetTunnelSecurityAssociationsResult> getTunnelSecurityAssociations(GetTunnelSecurityAssociationsArgs args) {
@@ -22434,6 +24021,8 @@ public final class CoreFunctions {
      * Lists the tunnel security associations information for the specified IPSec tunnel ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -22463,6 +24052,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetTunnelSecurityAssociationsResult> getTunnelSecurityAssociationsPlain(GetTunnelSecurityAssociationsPlainArgs args) {
@@ -22474,6 +24064,8 @@ public final class CoreFunctions {
      * Lists the tunnel security associations information for the specified IPSec tunnel ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -22503,6 +24095,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetTunnelSecurityAssociationsResult> getTunnelSecurityAssociations(GetTunnelSecurityAssociationsArgs args, InvokeOptions options) {
@@ -22514,6 +24107,8 @@ public final class CoreFunctions {
      * Lists the tunnel security associations information for the specified IPSec tunnel ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -22543,6 +24138,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetTunnelSecurityAssociationsResult> getTunnelSecurityAssociationsPlain(GetTunnelSecurityAssociationsPlainArgs args, InvokeOptions options) {
@@ -22554,6 +24150,8 @@ public final class CoreFunctions {
      * Gets the specified VCN&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -22582,6 +24180,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVcnResult> getVcn(GetVcnArgs args) {
@@ -22593,6 +24192,8 @@ public final class CoreFunctions {
      * Gets the specified VCN&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -22621,6 +24222,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVcnResult> getVcnPlain(GetVcnPlainArgs args) {
@@ -22632,6 +24234,8 @@ public final class CoreFunctions {
      * Gets the specified VCN&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -22660,6 +24264,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVcnResult> getVcn(GetVcnArgs args, InvokeOptions options) {
@@ -22671,6 +24276,8 @@ public final class CoreFunctions {
      * Gets the specified VCN&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -22699,6 +24306,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVcnResult> getVcnPlain(GetVcnPlainArgs args, InvokeOptions options) {
@@ -22714,6 +24322,8 @@ public final class CoreFunctions {
      * * `oci.Core.getVirtualNetworks`
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -22744,6 +24354,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVcnsResult> getVcns(GetVcnsArgs args) {
@@ -22759,6 +24370,8 @@ public final class CoreFunctions {
      * * `oci.Core.getVirtualNetworks`
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -22789,6 +24402,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVcnsResult> getVcnsPlain(GetVcnsPlainArgs args) {
@@ -22804,6 +24418,8 @@ public final class CoreFunctions {
      * * `oci.Core.getVirtualNetworks`
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -22834,6 +24450,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVcnsResult> getVcns(GetVcnsArgs args, InvokeOptions options) {
@@ -22849,6 +24466,8 @@ public final class CoreFunctions {
      * * `oci.Core.getVirtualNetworks`
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -22879,6 +24498,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVcnsResult> getVcnsPlain(GetVcnsPlainArgs args, InvokeOptions options) {
@@ -22890,6 +24510,8 @@ public final class CoreFunctions {
      * Gets the specified virtual circuit&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -22918,6 +24540,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVirtualCircuitResult> getVirtualCircuit(GetVirtualCircuitArgs args) {
@@ -22929,6 +24552,8 @@ public final class CoreFunctions {
      * Gets the specified virtual circuit&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -22957,6 +24582,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVirtualCircuitResult> getVirtualCircuitPlain(GetVirtualCircuitPlainArgs args) {
@@ -22968,6 +24594,8 @@ public final class CoreFunctions {
      * Gets the specified virtual circuit&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -22996,6 +24624,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVirtualCircuitResult> getVirtualCircuit(GetVirtualCircuitArgs args, InvokeOptions options) {
@@ -23007,6 +24636,8 @@ public final class CoreFunctions {
      * Gets the specified virtual circuit&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -23035,6 +24666,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVirtualCircuitResult> getVirtualCircuitPlain(GetVirtualCircuitPlainArgs args, InvokeOptions options) {
@@ -23046,6 +24678,8 @@ public final class CoreFunctions {
      * Gets the specified virtual circuit&#39;s associatedTunnelsInfo.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -23074,6 +24708,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVirtualCircuitAssociatedTunnelsResult> getVirtualCircuitAssociatedTunnels(GetVirtualCircuitAssociatedTunnelsArgs args) {
@@ -23085,6 +24720,8 @@ public final class CoreFunctions {
      * Gets the specified virtual circuit&#39;s associatedTunnelsInfo.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -23113,6 +24750,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVirtualCircuitAssociatedTunnelsResult> getVirtualCircuitAssociatedTunnelsPlain(GetVirtualCircuitAssociatedTunnelsPlainArgs args) {
@@ -23124,6 +24762,8 @@ public final class CoreFunctions {
      * Gets the specified virtual circuit&#39;s associatedTunnelsInfo.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -23152,6 +24792,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVirtualCircuitAssociatedTunnelsResult> getVirtualCircuitAssociatedTunnels(GetVirtualCircuitAssociatedTunnelsArgs args, InvokeOptions options) {
@@ -23163,6 +24804,8 @@ public final class CoreFunctions {
      * Gets the specified virtual circuit&#39;s associatedTunnelsInfo.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -23191,6 +24834,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVirtualCircuitAssociatedTunnelsResult> getVirtualCircuitAssociatedTunnelsPlain(GetVirtualCircuitAssociatedTunnelsPlainArgs args, InvokeOptions options) {
@@ -23205,6 +24849,8 @@ public final class CoreFunctions {
      * For more information about virtual circuits, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -23233,6 +24879,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVirtualCircuitBandwidthShapesResult> getVirtualCircuitBandwidthShapes(GetVirtualCircuitBandwidthShapesArgs args) {
@@ -23247,6 +24894,8 @@ public final class CoreFunctions {
      * For more information about virtual circuits, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -23275,6 +24924,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVirtualCircuitBandwidthShapesResult> getVirtualCircuitBandwidthShapesPlain(GetVirtualCircuitBandwidthShapesPlainArgs args) {
@@ -23289,6 +24939,8 @@ public final class CoreFunctions {
      * For more information about virtual circuits, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -23317,6 +24969,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVirtualCircuitBandwidthShapesResult> getVirtualCircuitBandwidthShapes(GetVirtualCircuitBandwidthShapesArgs args, InvokeOptions options) {
@@ -23331,6 +24984,8 @@ public final class CoreFunctions {
      * For more information about virtual circuits, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -23359,6 +25014,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVirtualCircuitBandwidthShapesResult> getVirtualCircuitBandwidthShapesPlain(GetVirtualCircuitBandwidthShapesPlainArgs args, InvokeOptions options) {
@@ -23371,6 +25027,8 @@ public final class CoreFunctions {
      * public virtual circuit.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -23400,6 +25058,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVirtualCircuitPublicPrefixesResult> getVirtualCircuitPublicPrefixes(GetVirtualCircuitPublicPrefixesArgs args) {
@@ -23412,6 +25071,8 @@ public final class CoreFunctions {
      * public virtual circuit.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -23441,6 +25102,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVirtualCircuitPublicPrefixesResult> getVirtualCircuitPublicPrefixesPlain(GetVirtualCircuitPublicPrefixesPlainArgs args) {
@@ -23453,6 +25115,8 @@ public final class CoreFunctions {
      * public virtual circuit.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -23482,6 +25146,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVirtualCircuitPublicPrefixesResult> getVirtualCircuitPublicPrefixes(GetVirtualCircuitPublicPrefixesArgs args, InvokeOptions options) {
@@ -23494,6 +25159,8 @@ public final class CoreFunctions {
      * public virtual circuit.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -23523,6 +25190,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVirtualCircuitPublicPrefixesResult> getVirtualCircuitPublicPrefixesPlain(GetVirtualCircuitPublicPrefixesPlainArgs args, InvokeOptions options) {
@@ -23534,6 +25202,8 @@ public final class CoreFunctions {
      * Lists the virtual circuits in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -23564,6 +25234,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVirtualCircuitsResult> getVirtualCircuits(GetVirtualCircuitsArgs args) {
@@ -23575,6 +25246,8 @@ public final class CoreFunctions {
      * Lists the virtual circuits in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -23605,6 +25278,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVirtualCircuitsResult> getVirtualCircuitsPlain(GetVirtualCircuitsPlainArgs args) {
@@ -23616,6 +25290,8 @@ public final class CoreFunctions {
      * Lists the virtual circuits in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -23646,6 +25322,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVirtualCircuitsResult> getVirtualCircuits(GetVirtualCircuitsArgs args, InvokeOptions options) {
@@ -23657,6 +25334,8 @@ public final class CoreFunctions {
      * Lists the virtual circuits in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -23687,6 +25366,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVirtualCircuitsResult> getVirtualCircuitsPlain(GetVirtualCircuitsPlainArgs args, InvokeOptions options) {
@@ -23710,6 +25390,8 @@ public final class CoreFunctions {
      * Gets the specified VLAN&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -23738,6 +25420,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVlanResult> getVlan(GetVlanArgs args) {
@@ -23749,6 +25432,8 @@ public final class CoreFunctions {
      * Gets the specified VLAN&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -23777,6 +25462,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVlanResult> getVlanPlain(GetVlanPlainArgs args) {
@@ -23788,6 +25474,8 @@ public final class CoreFunctions {
      * Gets the specified VLAN&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -23816,6 +25504,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVlanResult> getVlan(GetVlanArgs args, InvokeOptions options) {
@@ -23827,6 +25516,8 @@ public final class CoreFunctions {
      * Gets the specified VLAN&#39;s information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -23855,6 +25546,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVlanResult> getVlanPlain(GetVlanPlainArgs args, InvokeOptions options) {
@@ -23866,6 +25558,8 @@ public final class CoreFunctions {
      * Lists the VLANs in the specified VCN and the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -23897,6 +25591,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVlansResult> getVlans(GetVlansArgs args) {
@@ -23908,6 +25603,8 @@ public final class CoreFunctions {
      * Lists the VLANs in the specified VCN and the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -23939,6 +25636,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVlansResult> getVlansPlain(GetVlansPlainArgs args) {
@@ -23950,6 +25648,8 @@ public final class CoreFunctions {
      * Lists the VLANs in the specified VCN and the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -23981,6 +25681,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVlansResult> getVlans(GetVlansArgs args, InvokeOptions options) {
@@ -23992,6 +25693,8 @@ public final class CoreFunctions {
      * Lists the VLANs in the specified VCN and the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -24023,6 +25726,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVlansResult> getVlansPlain(GetVlansPlainArgs args, InvokeOptions options) {
@@ -24037,6 +25741,8 @@ public final class CoreFunctions {
      * operation.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -24065,6 +25771,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVnicResult> getVnic(GetVnicArgs args) {
@@ -24079,6 +25786,8 @@ public final class CoreFunctions {
      * operation.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -24107,6 +25816,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVnicResult> getVnicPlain(GetVnicPlainArgs args) {
@@ -24121,6 +25831,8 @@ public final class CoreFunctions {
      * operation.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -24149,6 +25861,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVnicResult> getVnic(GetVnicArgs args, InvokeOptions options) {
@@ -24163,6 +25876,8 @@ public final class CoreFunctions {
      * operation.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -24191,6 +25906,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVnicResult> getVnicPlain(GetVnicPlainArgs args, InvokeOptions options) {
@@ -24204,6 +25920,8 @@ public final class CoreFunctions {
      * filtered by instance, VNIC, or availability domain.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -24235,6 +25953,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVnicAttachmentsResult> getVnicAttachments(GetVnicAttachmentsArgs args) {
@@ -24248,6 +25967,8 @@ public final class CoreFunctions {
      * filtered by instance, VNIC, or availability domain.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -24279,6 +26000,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVnicAttachmentsResult> getVnicAttachmentsPlain(GetVnicAttachmentsPlainArgs args) {
@@ -24292,6 +26014,8 @@ public final class CoreFunctions {
      * filtered by instance, VNIC, or availability domain.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -24323,6 +26047,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVnicAttachmentsResult> getVnicAttachments(GetVnicAttachmentsArgs args, InvokeOptions options) {
@@ -24336,6 +26061,8 @@ public final class CoreFunctions {
      * filtered by instance, VNIC, or availability domain.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -24367,6 +26094,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVnicAttachmentsResult> getVnicAttachmentsPlain(GetVnicAttachmentsPlainArgs args, InvokeOptions options) {
@@ -24378,6 +26106,8 @@ public final class CoreFunctions {
      * Gets information for the specified volume.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -24406,6 +26136,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVolumeResult> getVolume(GetVolumeArgs args) {
@@ -24417,6 +26148,8 @@ public final class CoreFunctions {
      * Gets information for the specified volume.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -24445,6 +26178,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVolumeResult> getVolumePlain(GetVolumePlainArgs args) {
@@ -24456,6 +26190,8 @@ public final class CoreFunctions {
      * Gets information for the specified volume.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -24484,6 +26220,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVolumeResult> getVolume(GetVolumeArgs args, InvokeOptions options) {
@@ -24495,6 +26232,8 @@ public final class CoreFunctions {
      * Gets information for the specified volume.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -24523,6 +26262,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVolumeResult> getVolumePlain(GetVolumePlainArgs args, InvokeOptions options) {
@@ -24538,6 +26278,8 @@ public final class CoreFunctions {
      * [ParavirtualizedVolumeAttachment](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ParavirtualizedVolumeAttachment/).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -24569,6 +26311,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVolumeAttachmentsResult> getVolumeAttachments(GetVolumeAttachmentsArgs args) {
@@ -24584,6 +26327,8 @@ public final class CoreFunctions {
      * [ParavirtualizedVolumeAttachment](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ParavirtualizedVolumeAttachment/).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -24615,6 +26360,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVolumeAttachmentsResult> getVolumeAttachmentsPlain(GetVolumeAttachmentsPlainArgs args) {
@@ -24630,6 +26376,8 @@ public final class CoreFunctions {
      * [ParavirtualizedVolumeAttachment](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ParavirtualizedVolumeAttachment/).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -24661,6 +26409,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVolumeAttachmentsResult> getVolumeAttachments(GetVolumeAttachmentsArgs args, InvokeOptions options) {
@@ -24676,6 +26425,8 @@ public final class CoreFunctions {
      * [ParavirtualizedVolumeAttachment](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ParavirtualizedVolumeAttachment/).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -24707,6 +26458,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVolumeAttachmentsResult> getVolumeAttachmentsPlain(GetVolumeAttachmentsPlainArgs args, InvokeOptions options) {
@@ -24721,6 +26473,8 @@ public final class CoreFunctions {
      * see [Policy-Based Backups](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -24749,6 +26503,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVolumeBackupPoliciesResult> getVolumeBackupPolicies() {
@@ -24763,6 +26518,8 @@ public final class CoreFunctions {
      * see [Policy-Based Backups](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -24791,6 +26548,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVolumeBackupPoliciesResult> getVolumeBackupPoliciesPlain() {
@@ -24805,6 +26563,8 @@ public final class CoreFunctions {
      * see [Policy-Based Backups](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -24833,6 +26593,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVolumeBackupPoliciesResult> getVolumeBackupPolicies(GetVolumeBackupPoliciesArgs args) {
@@ -24847,6 +26608,8 @@ public final class CoreFunctions {
      * see [Policy-Based Backups](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -24875,6 +26638,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVolumeBackupPoliciesResult> getVolumeBackupPoliciesPlain(GetVolumeBackupPoliciesPlainArgs args) {
@@ -24889,6 +26653,8 @@ public final class CoreFunctions {
      * see [Policy-Based Backups](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -24917,6 +26683,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVolumeBackupPoliciesResult> getVolumeBackupPolicies(GetVolumeBackupPoliciesArgs args, InvokeOptions options) {
@@ -24931,6 +26698,8 @@ public final class CoreFunctions {
      * see [Policy-Based Backups](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -24959,6 +26728,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVolumeBackupPoliciesResult> getVolumeBackupPoliciesPlain(GetVolumeBackupPoliciesPlainArgs args, InvokeOptions options) {
@@ -24972,6 +26742,8 @@ public final class CoreFunctions {
      * one item, since volume can only have one volume backup policy assigned at a time.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -25000,6 +26772,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVolumeBackupPolicyAssignmentsResult> getVolumeBackupPolicyAssignments(GetVolumeBackupPolicyAssignmentsArgs args) {
@@ -25013,6 +26786,8 @@ public final class CoreFunctions {
      * one item, since volume can only have one volume backup policy assigned at a time.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -25041,6 +26816,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVolumeBackupPolicyAssignmentsResult> getVolumeBackupPolicyAssignmentsPlain(GetVolumeBackupPolicyAssignmentsPlainArgs args) {
@@ -25054,6 +26830,8 @@ public final class CoreFunctions {
      * one item, since volume can only have one volume backup policy assigned at a time.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -25082,6 +26860,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVolumeBackupPolicyAssignmentsResult> getVolumeBackupPolicyAssignments(GetVolumeBackupPolicyAssignmentsArgs args, InvokeOptions options) {
@@ -25095,6 +26874,8 @@ public final class CoreFunctions {
      * one item, since volume can only have one volume backup policy assigned at a time.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -25123,6 +26904,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVolumeBackupPolicyAssignmentsResult> getVolumeBackupPolicyAssignmentsPlain(GetVolumeBackupPolicyAssignmentsPlainArgs args, InvokeOptions options) {
@@ -25134,6 +26916,8 @@ public final class CoreFunctions {
      * Lists the volume backups in the specified compartment. You can filter the results by volume.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -25166,6 +26950,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVolumeBackupsResult> getVolumeBackups(GetVolumeBackupsArgs args) {
@@ -25177,6 +26962,8 @@ public final class CoreFunctions {
      * Lists the volume backups in the specified compartment. You can filter the results by volume.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -25209,6 +26996,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVolumeBackupsResult> getVolumeBackupsPlain(GetVolumeBackupsPlainArgs args) {
@@ -25220,6 +27008,8 @@ public final class CoreFunctions {
      * Lists the volume backups in the specified compartment. You can filter the results by volume.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -25252,6 +27042,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVolumeBackupsResult> getVolumeBackups(GetVolumeBackupsArgs args, InvokeOptions options) {
@@ -25263,6 +27054,8 @@ public final class CoreFunctions {
      * Lists the volume backups in the specified compartment. You can filter the results by volume.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -25295,6 +27088,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVolumeBackupsResult> getVolumeBackupsPlain(GetVolumeBackupsPlainArgs args, InvokeOptions options) {
@@ -25307,6 +27101,8 @@ public final class CoreFunctions {
      * For more information, see [Volume Groups](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -25337,6 +27133,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVolumeGroupBackupsResult> getVolumeGroupBackups(GetVolumeGroupBackupsArgs args) {
@@ -25349,6 +27146,8 @@ public final class CoreFunctions {
      * For more information, see [Volume Groups](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -25379,6 +27178,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVolumeGroupBackupsResult> getVolumeGroupBackupsPlain(GetVolumeGroupBackupsPlainArgs args) {
@@ -25391,6 +27191,8 @@ public final class CoreFunctions {
      * For more information, see [Volume Groups](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -25421,6 +27223,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVolumeGroupBackupsResult> getVolumeGroupBackups(GetVolumeGroupBackupsArgs args, InvokeOptions options) {
@@ -25433,6 +27236,8 @@ public final class CoreFunctions {
      * For more information, see [Volume Groups](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -25463,6 +27268,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVolumeGroupBackupsResult> getVolumeGroupBackupsPlain(GetVolumeGroupBackupsPlainArgs args, InvokeOptions options) {
@@ -25474,6 +27280,8 @@ public final class CoreFunctions {
      * Gets information for the specified volume group replica.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -25502,6 +27310,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVolumeGroupReplicaResult> getVolumeGroupReplica(GetVolumeGroupReplicaArgs args) {
@@ -25513,6 +27322,8 @@ public final class CoreFunctions {
      * Gets information for the specified volume group replica.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -25541,6 +27352,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVolumeGroupReplicaResult> getVolumeGroupReplicaPlain(GetVolumeGroupReplicaPlainArgs args) {
@@ -25552,6 +27364,8 @@ public final class CoreFunctions {
      * Gets information for the specified volume group replica.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -25580,6 +27394,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVolumeGroupReplicaResult> getVolumeGroupReplica(GetVolumeGroupReplicaArgs args, InvokeOptions options) {
@@ -25591,6 +27406,8 @@ public final class CoreFunctions {
      * Gets information for the specified volume group replica.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -25619,6 +27436,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVolumeGroupReplicaResult> getVolumeGroupReplicaPlain(GetVolumeGroupReplicaPlainArgs args, InvokeOptions options) {
@@ -25631,6 +27449,8 @@ public final class CoreFunctions {
      * For more information, see [Volume Group Replication](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroupreplication.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -25662,6 +27482,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVolumeGroupReplicasResult> getVolumeGroupReplicas(GetVolumeGroupReplicasArgs args) {
@@ -25674,6 +27495,8 @@ public final class CoreFunctions {
      * For more information, see [Volume Group Replication](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroupreplication.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -25705,6 +27528,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVolumeGroupReplicasResult> getVolumeGroupReplicasPlain(GetVolumeGroupReplicasPlainArgs args) {
@@ -25717,6 +27541,8 @@ public final class CoreFunctions {
      * For more information, see [Volume Group Replication](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroupreplication.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -25748,6 +27574,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVolumeGroupReplicasResult> getVolumeGroupReplicas(GetVolumeGroupReplicasArgs args, InvokeOptions options) {
@@ -25760,6 +27587,8 @@ public final class CoreFunctions {
      * For more information, see [Volume Group Replication](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroupreplication.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -25791,6 +27620,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVolumeGroupReplicasResult> getVolumeGroupReplicasPlain(GetVolumeGroupReplicasPlainArgs args, InvokeOptions options) {
@@ -25803,6 +27633,8 @@ public final class CoreFunctions {
      * For more information, see [Volume Groups](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -25834,6 +27666,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVolumeGroupsResult> getVolumeGroups(GetVolumeGroupsArgs args) {
@@ -25846,6 +27679,8 @@ public final class CoreFunctions {
      * For more information, see [Volume Groups](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -25877,6 +27712,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVolumeGroupsResult> getVolumeGroupsPlain(GetVolumeGroupsPlainArgs args) {
@@ -25889,6 +27725,8 @@ public final class CoreFunctions {
      * For more information, see [Volume Groups](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -25920,6 +27758,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVolumeGroupsResult> getVolumeGroups(GetVolumeGroupsArgs args, InvokeOptions options) {
@@ -25932,6 +27771,8 @@ public final class CoreFunctions {
      * For more information, see [Volume Groups](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -25963,6 +27804,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVolumeGroupsResult> getVolumeGroupsPlain(GetVolumeGroupsPlainArgs args, InvokeOptions options) {
@@ -25974,6 +27816,8 @@ public final class CoreFunctions {
      * Lists the volumes in the specified compartment and availability domain.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -26006,6 +27850,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVolumesResult> getVolumes() {
@@ -26017,6 +27862,8 @@ public final class CoreFunctions {
      * Lists the volumes in the specified compartment and availability domain.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -26049,6 +27896,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVolumesResult> getVolumesPlain() {
@@ -26060,6 +27908,8 @@ public final class CoreFunctions {
      * Lists the volumes in the specified compartment and availability domain.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -26092,6 +27942,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVolumesResult> getVolumes(GetVolumesArgs args) {
@@ -26103,6 +27954,8 @@ public final class CoreFunctions {
      * Lists the volumes in the specified compartment and availability domain.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -26135,6 +27988,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVolumesResult> getVolumesPlain(GetVolumesPlainArgs args) {
@@ -26146,6 +28000,8 @@ public final class CoreFunctions {
      * Lists the volumes in the specified compartment and availability domain.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -26178,6 +28034,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVolumesResult> getVolumes(GetVolumesArgs args, InvokeOptions options) {
@@ -26189,6 +28046,8 @@ public final class CoreFunctions {
      * Lists the volumes in the specified compartment and availability domain.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -26221,6 +28080,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVolumesResult> getVolumesPlain(GetVolumesPlainArgs args, InvokeOptions options) {
@@ -26232,6 +28092,8 @@ public final class CoreFunctions {
      * Gets the specified `Vtap` resource.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -26260,6 +28122,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVtapResult> getVtap(GetVtapArgs args) {
@@ -26271,6 +28134,8 @@ public final class CoreFunctions {
      * Gets the specified `Vtap` resource.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -26299,6 +28164,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVtapResult> getVtapPlain(GetVtapPlainArgs args) {
@@ -26310,6 +28176,8 @@ public final class CoreFunctions {
      * Gets the specified `Vtap` resource.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -26338,6 +28206,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVtapResult> getVtap(GetVtapArgs args, InvokeOptions options) {
@@ -26349,6 +28218,8 @@ public final class CoreFunctions {
      * Gets the specified `Vtap` resource.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -26377,6 +28248,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVtapResult> getVtapPlain(GetVtapPlainArgs args, InvokeOptions options) {
@@ -26388,6 +28260,8 @@ public final class CoreFunctions {
      * Lists the virtual test access points (VTAPs) in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -26423,6 +28297,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVtapsResult> getVtaps(GetVtapsArgs args) {
@@ -26434,6 +28309,8 @@ public final class CoreFunctions {
      * Lists the virtual test access points (VTAPs) in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -26469,6 +28346,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVtapsResult> getVtapsPlain(GetVtapsPlainArgs args) {
@@ -26480,6 +28358,8 @@ public final class CoreFunctions {
      * Lists the virtual test access points (VTAPs) in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -26515,6 +28395,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVtapsResult> getVtaps(GetVtapsArgs args, InvokeOptions options) {
@@ -26526,6 +28407,8 @@ public final class CoreFunctions {
      * Lists the virtual test access points (VTAPs) in the specified compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -26561,6 +28444,7 @@ public final class CoreFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVtapsResult> getVtapsPlain(GetVtapsPlainArgs args, InvokeOptions options) {

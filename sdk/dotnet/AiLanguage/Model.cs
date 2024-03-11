@@ -16,6 +16,7 @@ namespace Pulumi.Oci.AiLanguage
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -93,13 +94,14 @@ namespace Pulumi.Oci.AiLanguage
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// Models can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:AiLanguage/model:Model test_model "id"
+    /// $ pulumi import oci:AiLanguage/model:Model test_model "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:AiLanguage/model:Model")]

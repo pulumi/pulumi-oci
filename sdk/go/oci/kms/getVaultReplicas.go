@@ -22,6 +22,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -45,6 +46,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetVaultReplicas(ctx *pulumi.Context, args *GetVaultReplicasArgs, opts ...pulumi.InvokeOption) (*GetVaultReplicasResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetVaultReplicasResult

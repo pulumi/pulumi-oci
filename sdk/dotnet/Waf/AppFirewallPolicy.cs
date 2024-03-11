@@ -16,6 +16,7 @@ namespace Pulumi.Oci.Waf
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -211,13 +212,14 @@ namespace Pulumi.Oci.Waf
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// WebAppFirewallPolicies can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Waf/appFirewallPolicy:AppFirewallPolicy test_web_app_firewall_policy "id"
+    /// $ pulumi import oci:Waf/appFirewallPolicy:AppFirewallPolicy test_web_app_firewall_policy "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Waf/appFirewallPolicy:AppFirewallPolicy")]

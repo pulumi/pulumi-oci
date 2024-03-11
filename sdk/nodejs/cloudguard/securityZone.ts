@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -28,13 +29,14 @@ import * as utilities from "../utilities";
  *     },
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * SecurityZones can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:CloudGuard/securityZone:SecurityZone test_security_zone "id"
+ * $ pulumi import oci:CloudGuard/securityZone:SecurityZone test_security_zone "id"
  * ```
  */
 export class SecurityZone extends pulumi.CustomResource {

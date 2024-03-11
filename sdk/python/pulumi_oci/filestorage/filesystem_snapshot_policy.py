@@ -348,6 +348,7 @@ class FilesystemSnapshotPolicy(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -375,13 +376,14 @@ class FilesystemSnapshotPolicy(pulumi.CustomResource):
                 time_schedule_start=var["filesystem_snapshot_policy_schedules_time_schedule_start"],
             )])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         FilesystemSnapshotPolicies can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:FileStorage/filesystemSnapshotPolicy:FilesystemSnapshotPolicy test_filesystem_snapshot_policy "id"
+        $ pulumi import oci:FileStorage/filesystemSnapshotPolicy:FilesystemSnapshotPolicy test_filesystem_snapshot_policy "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -418,6 +420,7 @@ class FilesystemSnapshotPolicy(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -445,13 +448,14 @@ class FilesystemSnapshotPolicy(pulumi.CustomResource):
                 time_schedule_start=var["filesystem_snapshot_policy_schedules_time_schedule_start"],
             )])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         FilesystemSnapshotPolicies can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:FileStorage/filesystemSnapshotPolicy:FilesystemSnapshotPolicy test_filesystem_snapshot_policy "id"
+        $ pulumi import oci:FileStorage/filesystemSnapshotPolicy:FilesystemSnapshotPolicy test_filesystem_snapshot_policy "id"
         ```
 
         :param str resource_name: The name of the resource.

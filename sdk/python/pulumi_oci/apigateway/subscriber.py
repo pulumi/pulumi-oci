@@ -317,6 +317,7 @@ class Subscriber(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -336,13 +337,14 @@ class Subscriber(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Subscribers can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:ApiGateway/subscriber:Subscriber test_subscriber "id"
+        $ pulumi import oci:ApiGateway/subscriber:Subscriber test_subscriber "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -371,6 +373,7 @@ class Subscriber(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -390,13 +393,14 @@ class Subscriber(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Subscribers can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:ApiGateway/subscriber:Subscriber test_subscriber "id"
+        $ pulumi import oci:ApiGateway/subscriber:Subscriber test_subscriber "id"
         ```
 
         :param str resource_name: The name of the resource.

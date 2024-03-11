@@ -16,6 +16,7 @@ namespace Pulumi.Oci.CloudGuard
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -50,13 +51,14 @@ namespace Pulumi.Oci.CloudGuard
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// DataMaskRules can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:CloudGuard/dataMaskRule:DataMaskRule test_data_mask_rule "id"
+    /// $ pulumi import oci:CloudGuard/dataMaskRule:DataMaskRule test_data_mask_rule "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:CloudGuard/dataMaskRule:DataMaskRule")]

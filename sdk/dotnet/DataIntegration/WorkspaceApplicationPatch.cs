@@ -16,6 +16,7 @@ namespace Pulumi.Oci.DataIntegration
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -47,13 +48,14 @@ namespace Pulumi.Oci.DataIntegration
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// WorkspaceApplicationPatches can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:DataIntegration/workspaceApplicationPatch:WorkspaceApplicationPatch test_workspace_application_patch "workspaces/{workspaceId}/applications/{applicationKey}/patches/{patchKey}"
+    /// $ pulumi import oci:DataIntegration/workspaceApplicationPatch:WorkspaceApplicationPatch test_workspace_application_patch "workspaces/{workspaceId}/applications/{applicationKey}/patches/{patchKey}"
     /// ```
     /// </summary>
     [OciResourceType("oci:DataIntegration/workspaceApplicationPatch:WorkspaceApplicationPatch")]

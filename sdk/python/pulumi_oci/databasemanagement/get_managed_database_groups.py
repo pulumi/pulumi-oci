@@ -119,6 +119,7 @@ def get_managed_database_groups(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -128,6 +129,7 @@ def get_managed_database_groups(compartment_id: Optional[str] = None,
         name=var["managed_database_group_name"],
         state=var["managed_database_group_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -170,6 +172,7 @@ def get_managed_database_groups_output(compartment_id: Optional[pulumi.Input[str
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -179,6 +182,7 @@ def get_managed_database_groups_output(compartment_id: Optional[pulumi.Input[str
         name=var["managed_database_group_name"],
         state=var["managed_database_group_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

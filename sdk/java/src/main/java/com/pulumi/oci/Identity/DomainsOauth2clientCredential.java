@@ -30,6 +30,7 @@ import javax.annotation.Nullable;
  * 
  * ## Example Usage
  * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -88,13 +89,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * OAuth2ClientCredentials can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Identity/domainsOauth2clientCredential:DomainsOauth2clientCredential test_oauth2client_credential &#34;idcsEndpoint/{idcsEndpoint}/oAuth2ClientCredentials/{oAuth2ClientCredentialId}&#34;
+ * $ pulumi import oci:Identity/domainsOauth2clientCredential:DomainsOauth2clientCredential test_oauth2client_credential &#34;idcsEndpoint/{idcsEndpoint}/oAuth2ClientCredentials/{oAuth2ClientCredentialId}&#34;
  * ```
  * 
  */

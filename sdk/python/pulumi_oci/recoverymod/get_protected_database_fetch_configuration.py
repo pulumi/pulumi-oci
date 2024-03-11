@@ -94,6 +94,7 @@ def get_protected_database_fetch_configuration(base64_encode_content: Optional[b
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -102,6 +103,7 @@ def get_protected_database_fetch_configuration(base64_encode_content: Optional[b
         base64_encode_content=True,
         configuration_type=var["protected_database_fetch_configuration_configuration_type"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str configuration_type: Currently has four config options ALL, TNSNAMES, HOSTS and CABUNDLE. All will return a zipped folder containing the contents of both tnsnames and the certificateChainPem.
@@ -134,6 +136,7 @@ def get_protected_database_fetch_configuration_output(base64_encode_content: Opt
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -142,6 +145,7 @@ def get_protected_database_fetch_configuration_output(base64_encode_content: Opt
         base64_encode_content=True,
         configuration_type=var["protected_database_fetch_configuration_configuration_type"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str configuration_type: Currently has four config options ALL, TNSNAMES, HOSTS and CABUNDLE. All will return a zipped folder containing the contents of both tnsnames and the certificateChainPem.

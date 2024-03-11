@@ -251,6 +251,7 @@ class NetworkSecurityGroup(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -266,13 +267,14 @@ class NetworkSecurityGroup(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         NetworkSecurityGroups can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/networkSecurityGroup:NetworkSecurityGroup test_network_security_group "id"
+        $ pulumi import oci:Core/networkSecurityGroup:NetworkSecurityGroup test_network_security_group "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -300,6 +302,7 @@ class NetworkSecurityGroup(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -315,13 +318,14 @@ class NetworkSecurityGroup(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         NetworkSecurityGroups can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/networkSecurityGroup:NetworkSecurityGroup test_network_security_group "id"
+        $ pulumi import oci:Core/networkSecurityGroup:NetworkSecurityGroup test_network_security_group "id"
         ```
 
         :param str resource_name: The name of the resource.

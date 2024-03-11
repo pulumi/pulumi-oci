@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -43,6 +44,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetCloudExadataInfrastructures(ctx *pulumi.Context, args *GetCloudExadataInfrastructuresArgs, opts ...pulumi.InvokeOption) (*GetCloudExadataInfrastructuresResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetCloudExadataInfrastructuresResult

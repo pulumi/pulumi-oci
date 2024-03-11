@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,13 +23,14 @@ import * as utilities from "../utilities";
  *     icmpCode: _var.network_firewall_policy_application_icmp_code,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * NetworkFirewallPolicyApplications can be imported using the `name`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:NetworkFirewall/networkFirewallPolicyApplication:NetworkFirewallPolicyApplication test_network_firewall_policy_application "networkFirewallPolicies/{networkFirewallPolicyId}/applications/{applicationName}"
+ * $ pulumi import oci:NetworkFirewall/networkFirewallPolicyApplication:NetworkFirewallPolicyApplication test_network_firewall_policy_application "networkFirewallPolicies/{networkFirewallPolicyId}/applications/{applicationName}"
  * ```
  */
 export class NetworkFirewallPolicyApplication extends pulumi.CustomResource {

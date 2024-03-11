@@ -16,6 +16,7 @@ namespace Pulumi.Oci.ContainerEngine
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -117,13 +118,14 @@ namespace Pulumi.Oci.ContainerEngine
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// NodePools can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:ContainerEngine/nodePool:NodePool test_node_pool "id"
+    /// $ pulumi import oci:ContainerEngine/nodePool:NodePool test_node_pool "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:ContainerEngine/nodePool:NodePool")]

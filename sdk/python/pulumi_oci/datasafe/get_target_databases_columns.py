@@ -165,6 +165,7 @@ def get_target_databases_columns(column_name_contains: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -178,6 +179,7 @@ def get_target_databases_columns(column_name_contains: Optional[str] = None,
         table_names=oci_nosql_table["test_table"]["name"],
         table_name_contains=var["target_databases_column_table_name_contains"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str column_name_contains: A filter to return only items if column name contains a specific string.
@@ -234,6 +236,7 @@ def get_target_databases_columns_output(column_name_contains: Optional[pulumi.In
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -247,6 +250,7 @@ def get_target_databases_columns_output(column_name_contains: Optional[pulumi.In
         table_names=oci_nosql_table["test_table"]["name"],
         table_name_contains=var["target_databases_column_table_name_contains"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str column_name_contains: A filter to return only items if column name contains a specific string.

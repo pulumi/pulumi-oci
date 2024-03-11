@@ -16,10 +16,9 @@ namespace Pulumi.Oci.CloudMigrations
         /// 
         /// Gets a migration plan by identifier.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,8 +34,7 @@ namespace Pulumi.Oci.CloudMigrations
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetMigrationPlanResult> InvokeAsync(GetMigrationPlanArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetMigrationPlanResult>("oci:CloudMigrations/getMigrationPlan:getMigrationPlan", args ?? new GetMigrationPlanArgs(), options.WithDefaults());
@@ -46,10 +44,9 @@ namespace Pulumi.Oci.CloudMigrations
         /// 
         /// Gets a migration plan by identifier.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -65,8 +62,7 @@ namespace Pulumi.Oci.CloudMigrations
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetMigrationPlanResult> Invoke(GetMigrationPlanInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMigrationPlanResult>("oci:CloudMigrations/getMigrationPlan:getMigrationPlan", args ?? new GetMigrationPlanInvokeArgs(), options.WithDefaults());

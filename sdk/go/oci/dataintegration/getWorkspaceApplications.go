@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -44,6 +45,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetWorkspaceApplications(ctx *pulumi.Context, args *GetWorkspaceApplicationsArgs, opts ...pulumi.InvokeOption) (*GetWorkspaceApplicationsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetWorkspaceApplicationsResult

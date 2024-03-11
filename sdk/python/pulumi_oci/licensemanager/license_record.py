@@ -494,6 +494,7 @@ class LicenseRecord(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -514,13 +515,14 @@ class LicenseRecord(pulumi.CustomResource):
             product_id=oci_license_manager_product["test_product"]["id"],
             support_end_date=var["license_record_support_end_date"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         LicenseRecords can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:LicenseManager/licenseRecord:LicenseRecord test_license_record "id"
+        $ pulumi import oci:LicenseManager/licenseRecord:LicenseRecord test_license_record "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -553,6 +555,7 @@ class LicenseRecord(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -573,13 +576,14 @@ class LicenseRecord(pulumi.CustomResource):
             product_id=oci_license_manager_product["test_product"]["id"],
             support_end_date=var["license_record_support_end_date"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         LicenseRecords can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:LicenseManager/licenseRecord:LicenseRecord test_license_record "id"
+        $ pulumi import oci:LicenseManager/licenseRecord:LicenseRecord test_license_record "id"
         ```
 
         :param str resource_name: The name of the resource.

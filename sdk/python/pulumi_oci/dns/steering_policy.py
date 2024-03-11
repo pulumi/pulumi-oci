@@ -449,6 +449,7 @@ class SteeringPolicy(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -488,13 +489,14 @@ class SteeringPolicy(pulumi.CustomResource):
             )],
             ttl=var["steering_policy_ttl"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         SteeringPolicies can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Dns/steeringPolicy:SteeringPolicy test_steering_policy "id"
+        $ pulumi import oci:Dns/steeringPolicy:SteeringPolicy test_steering_policy "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -539,6 +541,7 @@ class SteeringPolicy(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -578,13 +581,14 @@ class SteeringPolicy(pulumi.CustomResource):
             )],
             ttl=var["steering_policy_ttl"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         SteeringPolicies can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Dns/steeringPolicy:SteeringPolicy test_steering_policy "id"
+        $ pulumi import oci:Dns/steeringPolicy:SteeringPolicy test_steering_policy "id"
         ```
 
         :param str resource_name: The name of the resource.

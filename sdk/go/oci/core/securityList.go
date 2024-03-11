@@ -33,6 +33,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -122,15 +123,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // SecurityLists can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Core/securityList:SecurityList test_security_list "id"
-//
+// $ pulumi import oci:Core/securityList:SecurityList test_security_list "id"
 // ```
 type SecurityList struct {
 	pulumi.CustomResourceState

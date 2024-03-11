@@ -27,7 +27,7 @@ import javax.annotation.Nullable;
  * Addons can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:ContainerEngine/addon:Addon test_addon &#34;clusters/{clusterId}/addons/{addonName}&#34;
+ * $ pulumi import oci:ContainerEngine/addon:Addon test_addon &#34;clusters/{clusterId}/addons/{addonName}&#34;
  * ```
  * 
  */

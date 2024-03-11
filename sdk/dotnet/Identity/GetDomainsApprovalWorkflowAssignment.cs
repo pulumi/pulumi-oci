@@ -16,10 +16,9 @@ namespace Pulumi.Oci.Identity
         /// 
         /// Get an Approval Workflow Assignment
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -43,8 +42,7 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDomainsApprovalWorkflowAssignmentResult> InvokeAsync(GetDomainsApprovalWorkflowAssignmentArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDomainsApprovalWorkflowAssignmentResult>("oci:Identity/getDomainsApprovalWorkflowAssignment:getDomainsApprovalWorkflowAssignment", args ?? new GetDomainsApprovalWorkflowAssignmentArgs(), options.WithDefaults());
@@ -54,10 +52,9 @@ namespace Pulumi.Oci.Identity
         /// 
         /// Get an Approval Workflow Assignment
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -81,8 +78,7 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDomainsApprovalWorkflowAssignmentResult> Invoke(GetDomainsApprovalWorkflowAssignmentInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsApprovalWorkflowAssignmentResult>("oci:Identity/getDomainsApprovalWorkflowAssignment:getDomainsApprovalWorkflowAssignment", args ?? new GetDomainsApprovalWorkflowAssignmentInvokeArgs(), options.WithDefaults());

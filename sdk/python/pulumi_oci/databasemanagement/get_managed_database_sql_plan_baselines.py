@@ -239,7 +239,7 @@ def get_managed_database_sql_plan_baselines(filters: Optional[Sequence[pulumi.In
     :param str origin: A filter to return all the SQL plan baselines that match the origin.
     :param str plan_name: A filter to return only SQL plan baselines that match the plan name.
     :param str sql_handle: A filter to return all the SQL plan baselines for the specified SQL handle.
-    :param str sql_text: A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the '%' symbol as a wildcard.
+    :param str sql_text: A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the '%!'(MISSING) symbol as a wildcard.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -315,6 +315,6 @@ def get_managed_database_sql_plan_baselines_output(filters: Optional[pulumi.Inpu
     :param str origin: A filter to return all the SQL plan baselines that match the origin.
     :param str plan_name: A filter to return only SQL plan baselines that match the plan name.
     :param str sql_handle: A filter to return all the SQL plan baselines for the specified SQL handle.
-    :param str sql_text: A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the '%' symbol as a wildcard.
+    :param str sql_text: A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the '%!'(MISSING) symbol as a wildcard.
     """
     ...

@@ -23,6 +23,8 @@ import javax.annotation.Nullable;
  * Creates a new monitored resource type.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -68,13 +70,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * MonitoredResourceTypes can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:StackMonitoring/monitoredResourceType:MonitoredResourceType test_monitored_resource_type &#34;id&#34;
+ * $ pulumi import oci:StackMonitoring/monitoredResourceType:MonitoredResourceType test_monitored_resource_type &#34;id&#34;
  * ```
  * 
  */

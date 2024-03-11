@@ -30,10 +30,9 @@ namespace Pulumi.Oci.DataSafe
         /// set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -56,8 +55,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetSecurityPolicyDeploymentsResult> InvokeAsync(GetSecurityPolicyDeploymentsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetSecurityPolicyDeploymentsResult>("oci:DataSafe/getSecurityPolicyDeployments:getSecurityPolicyDeployments", args ?? new GetSecurityPolicyDeploymentsArgs(), options.WithDefaults());
@@ -81,10 +79,9 @@ namespace Pulumi.Oci.DataSafe
         /// set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -107,8 +104,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetSecurityPolicyDeploymentsResult> Invoke(GetSecurityPolicyDeploymentsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSecurityPolicyDeploymentsResult>("oci:DataSafe/getSecurityPolicyDeployments:getSecurityPolicyDeployments", args ?? new GetSecurityPolicyDeploymentsInvokeArgs(), options.WithDefaults());

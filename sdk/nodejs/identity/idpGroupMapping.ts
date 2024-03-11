@@ -14,6 +14,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,13 +25,14 @@ import * as utilities from "../utilities";
  *     idpGroupName: _var.idp_group_mapping_idp_group_name,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * IdpGroupMappings can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Identity/idpGroupMapping:IdpGroupMapping test_idp_group_mapping "identityProviders/{identityProviderId}/groupMappings/{mappingId}"
+ * $ pulumi import oci:Identity/idpGroupMapping:IdpGroupMapping test_idp_group_mapping "identityProviders/{identityProviderId}/groupMappings/{mappingId}"
  * ```
  */
 export class IdpGroupMapping extends pulumi.CustomResource {

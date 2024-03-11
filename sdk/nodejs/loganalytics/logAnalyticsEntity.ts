@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -43,13 +44,14 @@ import * as utilities from "../utilities";
  *     timezoneRegion: _var.log_analytics_entity_timezone_region,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * LogAnalyticsEntities can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:LogAnalytics/logAnalyticsEntity:LogAnalyticsEntity test_log_analytics_entity "namespaces/{namespaceName}/logAnalyticsEntities/{logAnalyticsEntityId}"
+ * $ pulumi import oci:LogAnalytics/logAnalyticsEntity:LogAnalyticsEntity test_log_analytics_entity "namespaces/{namespaceName}/logAnalyticsEntities/{logAnalyticsEntityId}"
  * ```
  */
 export class LogAnalyticsEntity extends pulumi.CustomResource {

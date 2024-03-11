@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,6 +23,7 @@ import * as utilities from "../utilities";
  *     exadataInfrastructureId: oci_database_exadata_infrastructure.test_exadata_infrastructure.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDbServer(args: GetDbServerArgs, opts?: pulumi.InvokeOptions): Promise<GetDbServerResult> {
 
@@ -143,6 +145,7 @@ export interface GetDbServerResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -152,6 +155,7 @@ export interface GetDbServerResult {
  *     exadataInfrastructureId: oci_database_exadata_infrastructure.test_exadata_infrastructure.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDbServerOutput(args: GetDbServerOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbServerResult> {
     return pulumi.output(args).apply((a: any) => getDbServer(a, opts))

@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -73,15 +74,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // NamespaceIngestTimeRules can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:LogAnalytics/namespaceIngestTimeRule:NamespaceIngestTimeRule test_namespace_ingest_time_rule "namespaces/{namespaceName}/ingestTimeRules/{ingestTimeRuleId}"
-//
+// $ pulumi import oci:LogAnalytics/namespaceIngestTimeRule:NamespaceIngestTimeRule test_namespace_ingest_time_rule "namespaces/{namespaceName}/ingestTimeRules/{ingestTimeRuleId}"
 // ```
 type NamespaceIngestTimeRule struct {
 	pulumi.CustomResourceState

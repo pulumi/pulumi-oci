@@ -14,6 +14,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -32,13 +33,14 @@ import * as utilities from "../utilities";
  *     },
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * DedicatedVmHosts can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Core/dedicatedVmHost:DedicatedVmHost test_dedicated_vm_host "id"
+ * $ pulumi import oci:Core/dedicatedVmHost:DedicatedVmHost test_dedicated_vm_host "id"
  * ```
  */
 export class DedicatedVmHost extends pulumi.CustomResource {

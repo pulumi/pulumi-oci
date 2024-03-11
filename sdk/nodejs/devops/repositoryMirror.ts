@@ -11,19 +11,21 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
  * const testRepositoryMirror = new oci.devops.RepositoryMirror("testRepositoryMirror", {repositoryId: oci_devops_repository.test_repository.id});
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * RepositoryMirror can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:DevOps/repositoryMirror:RepositoryMirror test_repository_mirror "id"
+ * $ pulumi import oci:DevOps/repositoryMirror:RepositoryMirror test_repository_mirror "id"
  * ```
  */
 export class RepositoryMirror extends pulumi.CustomResource {

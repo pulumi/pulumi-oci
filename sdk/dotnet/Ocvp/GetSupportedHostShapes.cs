@@ -17,10 +17,9 @@ namespace Pulumi.Oci.Ocvp
         /// Lists supported compute shapes for ESXi hosts.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -39,8 +38,7 @@ namespace Pulumi.Oci.Ocvp
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetSupportedHostShapesResult> InvokeAsync(GetSupportedHostShapesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetSupportedHostShapesResult>("oci:Ocvp/getSupportedHostShapes:getSupportedHostShapes", args ?? new GetSupportedHostShapesArgs(), options.WithDefaults());
@@ -51,10 +49,9 @@ namespace Pulumi.Oci.Ocvp
         /// Lists supported compute shapes for ESXi hosts.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -73,8 +70,7 @@ namespace Pulumi.Oci.Ocvp
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetSupportedHostShapesResult> Invoke(GetSupportedHostShapesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSupportedHostShapesResult>("oci:Ocvp/getSupportedHostShapes:getSupportedHostShapes", args ?? new GetSupportedHostShapesInvokeArgs(), options.WithDefaults());

@@ -36,6 +36,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -49,6 +50,7 @@ import * as utilities from "../utilities";
  *     streamName: _var.managed_instance_module_stream_name,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getManagedInstanceStreamProfile(args: GetManagedInstanceStreamProfileArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedInstanceStreamProfileResult> {
 
@@ -158,6 +160,7 @@ export interface GetManagedInstanceStreamProfileResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -171,6 +174,7 @@ export interface GetManagedInstanceStreamProfileResult {
  *     streamName: _var.managed_instance_module_stream_name,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getManagedInstanceStreamProfileOutput(args: GetManagedInstanceStreamProfileOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedInstanceStreamProfileResult> {
     return pulumi.output(args).apply((a: any) => getManagedInstanceStreamProfile(a, opts))

@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,6 +25,7 @@ import * as utilities from "../utilities";
  *     vmClusterId: oci_database_vm_cluster.test_vm_cluster.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ##### Note: You may also need to add `dbServers` and `cpuCoreCount` to the ignoreChanges for the resource `oci.Database.VmCluster` list if you see a diff on a subsequent apply
  *
@@ -32,7 +34,7 @@ import * as utilities from "../utilities";
  * VmClusterAddVirtualMachine can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Database/vmClusterAddVirtualNetwork:VmClusterAddVirtualNetwork test_vm_cluster_add_virtual_machine "id"
+ * $ pulumi import oci:Database/vmClusterAddVirtualNetwork:VmClusterAddVirtualNetwork test_vm_cluster_add_virtual_machine "id"
  * ```
  */
 export class VmClusterAddVirtualNetwork extends pulumi.CustomResource {

@@ -316,6 +316,7 @@ class OnPremConnector(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -331,13 +332,14 @@ class OnPremConnector(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         OnPremConnectors can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataSafe/onPremConnector:OnPremConnector test_on_prem_connector "id"
+        $ pulumi import oci:DataSafe/onPremConnector:OnPremConnector test_on_prem_connector "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -365,6 +367,7 @@ class OnPremConnector(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -380,13 +383,14 @@ class OnPremConnector(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         OnPremConnectors can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataSafe/onPremConnector:OnPremConnector test_on_prem_connector "id"
+        $ pulumi import oci:DataSafe/onPremConnector:OnPremConnector test_on_prem_connector "id"
         ```
 
         :param str resource_name: The name of the resource.

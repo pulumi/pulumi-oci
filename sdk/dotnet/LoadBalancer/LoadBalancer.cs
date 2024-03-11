@@ -43,6 +43,7 @@ namespace Pulumi.Oci.LoadBalancer
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -84,13 +85,14 @@ namespace Pulumi.Oci.LoadBalancer
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// LoadBalancers can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:LoadBalancer/loadBalancer:LoadBalancer test_load_balancer "id"
+    /// $ pulumi import oci:LoadBalancer/loadBalancer:LoadBalancer test_load_balancer "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:LoadBalancer/loadBalancer:LoadBalancer")]

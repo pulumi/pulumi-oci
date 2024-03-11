@@ -14,6 +14,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,6 +23,7 @@ import * as utilities from "../utilities";
  *     vnicId: oci_core_vnic.test_vnic.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getVnic(args: GetVnicArgs, opts?: pulumi.InvokeOptions): Promise<GetVnicResult> {
 
@@ -129,6 +131,7 @@ export interface GetVnicResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -137,6 +140,7 @@ export interface GetVnicResult {
  *     vnicId: oci_core_vnic.test_vnic.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getVnicOutput(args: GetVnicOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVnicResult> {
     return pulumi.output(args).apply((a: any) => getVnic(a, opts))

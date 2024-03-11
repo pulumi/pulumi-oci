@@ -437,6 +437,7 @@ class Listener(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -465,13 +466,14 @@ class Listener(pulumi.CustomResource):
                 verify_peer_certificate=var["listener_ssl_configuration_verify_peer_certificate"],
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Listeners can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:LoadBalancer/listener:Listener test_listener "loadBalancers/{loadBalancerId}/listeners/{listenerName}"
+        $ pulumi import oci:LoadBalancer/listener:Listener test_listener "loadBalancers/{loadBalancerId}/listeners/{listenerName}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -507,6 +509,7 @@ class Listener(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -535,13 +538,14 @@ class Listener(pulumi.CustomResource):
                 verify_peer_certificate=var["listener_ssl_configuration_verify_peer_certificate"],
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Listeners can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:LoadBalancer/listener:Listener test_listener "loadBalancers/{loadBalancerId}/listeners/{listenerName}"
+        $ pulumi import oci:LoadBalancer/listener:Listener test_listener "loadBalancers/{loadBalancerId}/listeners/{listenerName}"
         ```
 
         :param str resource_name: The name of the resource.

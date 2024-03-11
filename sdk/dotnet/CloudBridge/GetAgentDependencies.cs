@@ -17,10 +17,9 @@ namespace Pulumi.Oci.CloudBridge
         /// Returns a list of AgentDependencies such as AgentDependencyCollection.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -40,8 +39,7 @@ namespace Pulumi.Oci.CloudBridge
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetAgentDependenciesResult> InvokeAsync(GetAgentDependenciesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAgentDependenciesResult>("oci:CloudBridge/getAgentDependencies:getAgentDependencies", args ?? new GetAgentDependenciesArgs(), options.WithDefaults());
@@ -52,10 +50,9 @@ namespace Pulumi.Oci.CloudBridge
         /// Returns a list of AgentDependencies such as AgentDependencyCollection.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -75,8 +72,7 @@ namespace Pulumi.Oci.CloudBridge
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetAgentDependenciesResult> Invoke(GetAgentDependenciesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAgentDependenciesResult>("oci:CloudBridge/getAgentDependencies:getAgentDependencies", args ?? new GetAgentDependenciesInvokeArgs(), options.WithDefaults());

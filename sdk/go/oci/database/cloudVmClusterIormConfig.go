@@ -20,6 +20,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -50,15 +51,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // CloudVmClusterIormConfigs can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Database/cloudVmClusterIormConfig:CloudVmClusterIormConfig test_cloud_vm_cluster_iorm_config "cloudVmClusters/{cloudVmClusterId}/CloudVmClusterIormConfig"
-//
+// $ pulumi import oci:Database/cloudVmClusterIormConfig:CloudVmClusterIormConfig test_cloud_vm_cluster_iorm_config "cloudVmClusters/{cloudVmClusterId}/CloudVmClusterIormConfig"
 // ```
 type CloudVmClusterIormConfig struct {
 	pulumi.CustomResourceState

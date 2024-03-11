@@ -86,12 +86,14 @@ def get_backend_sets(filters: Optional[Sequence[pulumi.InputType['GetBackendSets
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_backend_sets = oci.NetworkLoadBalancer.get_backend_sets(network_load_balancer_id=oci_network_load_balancer_network_load_balancer["test_network_load_balancer"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str network_load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
@@ -120,12 +122,14 @@ def get_backend_sets_output(filters: Optional[pulumi.Input[Optional[Sequence[pul
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_backend_sets = oci.NetworkLoadBalancer.get_backend_sets(network_load_balancer_id=oci_network_load_balancer_network_load_balancer["test_network_load_balancer"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str network_load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.

@@ -23,6 +23,8 @@ public final class VbsFunctions {
      * Gets a VbsInstance by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -51,6 +53,7 @@ public final class VbsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetInstVbsInstanceResult> getInstVbsInstance(GetInstVbsInstanceArgs args) {
@@ -62,6 +65,8 @@ public final class VbsFunctions {
      * Gets a VbsInstance by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -90,6 +95,7 @@ public final class VbsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetInstVbsInstanceResult> getInstVbsInstancePlain(GetInstVbsInstancePlainArgs args) {
@@ -101,6 +107,8 @@ public final class VbsFunctions {
      * Gets a VbsInstance by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -129,6 +137,7 @@ public final class VbsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetInstVbsInstanceResult> getInstVbsInstance(GetInstVbsInstanceArgs args, InvokeOptions options) {
@@ -140,6 +149,8 @@ public final class VbsFunctions {
      * Gets a VbsInstance by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -168,6 +179,7 @@ public final class VbsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetInstVbsInstanceResult> getInstVbsInstancePlain(GetInstVbsInstancePlainArgs args, InvokeOptions options) {
@@ -179,6 +191,8 @@ public final class VbsFunctions {
      * Returns a list of VbsInstances.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -210,6 +224,7 @@ public final class VbsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetInstVbsInstancesResult> getInstVbsInstances(GetInstVbsInstancesArgs args) {
@@ -221,6 +236,8 @@ public final class VbsFunctions {
      * Returns a list of VbsInstances.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -252,6 +269,7 @@ public final class VbsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetInstVbsInstancesResult> getInstVbsInstancesPlain(GetInstVbsInstancesPlainArgs args) {
@@ -263,6 +281,8 @@ public final class VbsFunctions {
      * Returns a list of VbsInstances.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -294,6 +314,7 @@ public final class VbsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetInstVbsInstancesResult> getInstVbsInstances(GetInstVbsInstancesArgs args, InvokeOptions options) {
@@ -305,6 +326,8 @@ public final class VbsFunctions {
      * Returns a list of VbsInstances.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -336,6 +359,7 @@ public final class VbsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetInstVbsInstancesResult> getInstVbsInstancesPlain(GetInstVbsInstancesPlainArgs args, InvokeOptions options) {

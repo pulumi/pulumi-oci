@@ -19,10 +19,9 @@ namespace Pulumi.Oci.ManagementDashboard
         /// `$oci management-dashboard dashboard export --query data --export-dashboard-id "{\"dashboardIds\":[\"ocid1.managementdashboard.oc1..dashboardId1\"]}"  &gt; dashboards.json`
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -38,8 +37,7 @@ namespace Pulumi.Oci.ManagementDashboard
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetManagementDashboardsExportResult> InvokeAsync(GetManagementDashboardsExportArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagementDashboardsExportResult>("oci:ManagementDashboard/getManagementDashboardsExport:getManagementDashboardsExport", args ?? new GetManagementDashboardsExportArgs(), options.WithDefaults());
@@ -52,10 +50,9 @@ namespace Pulumi.Oci.ManagementDashboard
         /// `$oci management-dashboard dashboard export --query data --export-dashboard-id "{\"dashboardIds\":[\"ocid1.managementdashboard.oc1..dashboardId1\"]}"  &gt; dashboards.json`
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -71,8 +68,7 @@ namespace Pulumi.Oci.ManagementDashboard
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetManagementDashboardsExportResult> Invoke(GetManagementDashboardsExportInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagementDashboardsExportResult>("oci:ManagementDashboard/getManagementDashboardsExport:getManagementDashboardsExport", args ?? new GetManagementDashboardsExportInvokeArgs(), options.WithDefaults());

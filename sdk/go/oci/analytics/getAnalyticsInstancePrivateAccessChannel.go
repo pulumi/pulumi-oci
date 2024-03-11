@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,6 +42,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupAnalyticsInstancePrivateAccessChannel(ctx *pulumi.Context, args *LookupAnalyticsInstancePrivateAccessChannelArgs, opts ...pulumi.InvokeOption) (*LookupAnalyticsInstancePrivateAccessChannelResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupAnalyticsInstancePrivateAccessChannelResult

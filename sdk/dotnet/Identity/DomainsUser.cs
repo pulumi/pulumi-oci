@@ -19,7 +19,7 @@ namespace Pulumi.Oci.Identity
     /// Users can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Identity/domainsUser:DomainsUser test_user "idcsEndpoint/{idcsEndpoint}/users/{userId}"
+    /// $ pulumi import oci:Identity/domainsUser:DomainsUser test_user "idcsEndpoint/{idcsEndpoint}/users/{userId}"
     /// ```
     /// </summary>
     [OciResourceType("oci:Identity/domainsUser:DomainsUser")]

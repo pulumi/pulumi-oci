@@ -20,6 +20,7 @@ import (
 // # The below policies must be created in compartment before creating OpensearchCluster
 //
 // ##### {Compartment-Name} - Name of  your compartment
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -36,12 +37,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
 // Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -68,6 +71,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetOpensearchClusters(ctx *pulumi.Context, args *GetOpensearchClustersArgs, opts ...pulumi.InvokeOption) (*GetOpensearchClustersResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetOpensearchClustersResult

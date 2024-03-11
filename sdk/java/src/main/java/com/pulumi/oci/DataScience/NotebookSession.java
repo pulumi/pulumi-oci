@@ -26,6 +26,8 @@ import javax.annotation.Nullable;
  * Creates a new notebook session.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -103,13 +105,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * NotebookSessions can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:DataScience/notebookSession:NotebookSession test_notebook_session &#34;id&#34;
+ * $ pulumi import oci:DataScience/notebookSession:NotebookSession test_notebook_session &#34;id&#34;
  * ```
  * 
  */

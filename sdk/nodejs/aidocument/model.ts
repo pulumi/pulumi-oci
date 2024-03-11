@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * Models can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:AiDocument/model:Model test_model "id"
+ * $ pulumi import oci:AiDocument/model:Model test_model "id"
  * ```
  */
 export class Model extends pulumi.CustomResource {

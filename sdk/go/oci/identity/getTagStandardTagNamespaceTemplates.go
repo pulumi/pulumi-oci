@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -40,6 +41,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetTagStandardTagNamespaceTemplates(ctx *pulumi.Context, args *GetTagStandardTagNamespaceTemplatesArgs, opts ...pulumi.InvokeOption) (*GetTagStandardTagNamespaceTemplatesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetTagStandardTagNamespaceTemplatesResult

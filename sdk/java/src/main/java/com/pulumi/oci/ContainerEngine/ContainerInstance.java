@@ -29,6 +29,8 @@ import javax.annotation.Nullable;
  * Creates a container instance and deploys the containers on it.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -161,13 +163,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * ContainerInstances can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:ContainerEngine/containerInstance:ContainerInstance test_container_instance &#34;id&#34;
+ * $ pulumi import oci:ContainerEngine/containerInstance:ContainerInstance test_container_instance &#34;id&#34;
  * ```
  * 
  */

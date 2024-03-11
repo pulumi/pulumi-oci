@@ -16,10 +16,9 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// This API returns the list of customer owned encryption key info.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,8 +34,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetNamespaceStorageEncryptionKeyInfoResult> InvokeAsync(GetNamespaceStorageEncryptionKeyInfoArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetNamespaceStorageEncryptionKeyInfoResult>("oci:LogAnalytics/getNamespaceStorageEncryptionKeyInfo:getNamespaceStorageEncryptionKeyInfo", args ?? new GetNamespaceStorageEncryptionKeyInfoArgs(), options.WithDefaults());
@@ -46,10 +44,9 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// This API returns the list of customer owned encryption key info.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -65,8 +62,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetNamespaceStorageEncryptionKeyInfoResult> Invoke(GetNamespaceStorageEncryptionKeyInfoInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNamespaceStorageEncryptionKeyInfoResult>("oci:LogAnalytics/getNamespaceStorageEncryptionKeyInfo:getNamespaceStorageEncryptionKeyInfo", args ?? new GetNamespaceStorageEncryptionKeyInfoInvokeArgs(), options.WithDefaults());

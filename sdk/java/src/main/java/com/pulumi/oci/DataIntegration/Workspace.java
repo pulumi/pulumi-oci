@@ -24,6 +24,8 @@ import javax.annotation.Nullable;
  * Creates a new Data Integration workspace ready for performing data integration tasks. To retrieve the OCID for the new workspace, use the opc-work-request-id returned by this API and call the [GetWorkRequest](https://docs.cloud.oracle.com/iaas/api/#/en/data-integration/latest/WorkRequest/GetWorkRequest) API.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -67,13 +69,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * Workspaces can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:DataIntegration/workspace:Workspace test_workspace &#34;id&#34;
+ * $ pulumi import oci:DataIntegration/workspace:Workspace test_workspace &#34;id&#34;
  * ```
  * 
  */

@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -19,6 +20,7 @@ import * as utilities from "../utilities";
  *     autonomousDatabaseId: oci_database_autonomous_database.test_autonomous_database.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAutonomousDatabaseInstanceWalletManagement(args: GetAutonomousDatabaseInstanceWalletManagementArgs, opts?: pulumi.InvokeOptions): Promise<GetAutonomousDatabaseInstanceWalletManagementResult> {
 
@@ -68,6 +70,7 @@ export interface GetAutonomousDatabaseInstanceWalletManagementResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -76,6 +79,7 @@ export interface GetAutonomousDatabaseInstanceWalletManagementResult {
  *     autonomousDatabaseId: oci_database_autonomous_database.test_autonomous_database.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAutonomousDatabaseInstanceWalletManagementOutput(args: GetAutonomousDatabaseInstanceWalletManagementOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousDatabaseInstanceWalletManagementResult> {
     return pulumi.output(args).apply((a: any) => getAutonomousDatabaseInstanceWalletManagement(a, opts))

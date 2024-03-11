@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,6 +25,7 @@ import * as utilities from "../utilities";
  *     xOneOriginRegion: _var.computed_usage_x_one_origin_region,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getComputedUsage(args: GetComputedUsageArgs, opts?: pulumi.InvokeOptions): Promise<GetComputedUsageResult> {
 
@@ -174,6 +176,7 @@ export interface GetComputedUsageResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -185,6 +188,7 @@ export interface GetComputedUsageResult {
  *     xOneOriginRegion: _var.computed_usage_x_one_origin_region,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getComputedUsageOutput(args: GetComputedUsageOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetComputedUsageResult> {
     return pulumi.output(args).apply((a: any) => getComputedUsage(a, opts))

@@ -20,6 +20,8 @@ import javax.annotation.Nullable;
  * This resource creates and enables the Autonomous Database administrative user account in Oracle Cloud Infrastructure Database service.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -51,6 +53,7 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 

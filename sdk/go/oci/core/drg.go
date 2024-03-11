@@ -29,6 +29,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -59,15 +60,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Drgs can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Core/drg:Drg test_drg "id"
-//
+// $ pulumi import oci:Core/drg:Drg test_drg "id"
 // ```
 type Drg struct {
 	pulumi.CustomResourceState

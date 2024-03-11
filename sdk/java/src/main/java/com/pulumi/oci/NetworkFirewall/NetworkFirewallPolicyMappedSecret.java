@@ -20,6 +20,8 @@ import javax.annotation.Nullable;
  * Creates a new Mapped Secret for the Network Firewall Policy.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -52,13 +54,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * NetworkFirewallPolicyMappedSecrets can be imported using the `name`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:NetworkFirewall/networkFirewallPolicyMappedSecret:NetworkFirewallPolicyMappedSecret test_network_firewall_policy_mapped_secret &#34;networkFirewallPolicies/{networkFirewallPolicyId}/mappedSecrets/{mappedSecretName}&#34;
+ * $ pulumi import oci:NetworkFirewall/networkFirewallPolicyMappedSecret:NetworkFirewallPolicyMappedSecret test_network_firewall_policy_mapped_secret &#34;networkFirewallPolicies/{networkFirewallPolicyId}/mappedSecrets/{mappedSecretName}&#34;
  * ```
  * 
  */

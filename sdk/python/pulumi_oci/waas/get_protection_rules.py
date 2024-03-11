@@ -110,6 +110,7 @@ def get_protection_rules(actions: Optional[Sequence[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -118,6 +119,7 @@ def get_protection_rules(actions: Optional[Sequence[str]] = None,
         actions=var["protection_rule_action"],
         mod_security_rule_ids=oci_events_rule["test_rule"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param Sequence[str] actions: Filter rules using a list of actions.
@@ -155,6 +157,7 @@ def get_protection_rules_output(actions: Optional[pulumi.Input[Optional[Sequence
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -163,6 +166,7 @@ def get_protection_rules_output(actions: Optional[pulumi.Input[Optional[Sequence
         actions=var["protection_rule_action"],
         mod_security_rule_ids=oci_events_rule["test_rule"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param Sequence[str] actions: Filter rules using a list of actions.

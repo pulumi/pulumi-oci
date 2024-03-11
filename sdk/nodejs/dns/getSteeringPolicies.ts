@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -29,6 +30,7 @@ import * as utilities from "../utilities";
  *     timeCreatedLessThan: _var.steering_policy_time_created_less_than,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getSteeringPolicies(args: GetSteeringPoliciesArgs, opts?: pulumi.InvokeOptions): Promise<GetSteeringPoliciesResult> {
 
@@ -134,6 +136,7 @@ export interface GetSteeringPoliciesResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -150,6 +153,7 @@ export interface GetSteeringPoliciesResult {
  *     timeCreatedLessThan: _var.steering_policy_time_created_less_than,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getSteeringPoliciesOutput(args: GetSteeringPoliciesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSteeringPoliciesResult> {
     return pulumi.output(args).apply((a: any) => getSteeringPolicies(a, opts))

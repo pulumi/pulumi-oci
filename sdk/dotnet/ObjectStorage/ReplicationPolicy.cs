@@ -16,6 +16,7 @@ namespace Pulumi.Oci.ObjectStorage
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -34,13 +35,14 @@ namespace Pulumi.Oci.ObjectStorage
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// ReplicationPolicies can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:ObjectStorage/replicationPolicy:ReplicationPolicy test_replication_policy "n/{namespaceName}/b/{bucketName}/replicationPolicies/{replicationId}"
+    /// $ pulumi import oci:ObjectStorage/replicationPolicy:ReplicationPolicy test_replication_policy "n/{namespaceName}/b/{bucketName}/replicationPolicies/{replicationId}"
     /// ```
     /// </summary>
     [OciResourceType("oci:ObjectStorage/replicationPolicy:ReplicationPolicy")]

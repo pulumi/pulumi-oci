@@ -16,10 +16,9 @@ namespace Pulumi.Oci.Jms
         /// 
         /// List Performance Tuning Analysis results.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -39,8 +38,7 @@ namespace Pulumi.Oci.Jms
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetFleetPerformanceTuningAnalysisResultsResult> InvokeAsync(GetFleetPerformanceTuningAnalysisResultsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetFleetPerformanceTuningAnalysisResultsResult>("oci:Jms/getFleetPerformanceTuningAnalysisResults:getFleetPerformanceTuningAnalysisResults", args ?? new GetFleetPerformanceTuningAnalysisResultsArgs(), options.WithDefaults());
@@ -50,10 +48,9 @@ namespace Pulumi.Oci.Jms
         /// 
         /// List Performance Tuning Analysis results.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -73,8 +70,7 @@ namespace Pulumi.Oci.Jms
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetFleetPerformanceTuningAnalysisResultsResult> Invoke(GetFleetPerformanceTuningAnalysisResultsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFleetPerformanceTuningAnalysisResultsResult>("oci:Jms/getFleetPerformanceTuningAnalysisResults:getFleetPerformanceTuningAnalysisResults", args ?? new GetFleetPerformanceTuningAnalysisResultsInvokeArgs(), options.WithDefaults());

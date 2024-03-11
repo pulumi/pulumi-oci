@@ -279,12 +279,14 @@ def get_virtual_node_pool(virtual_node_pool_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_virtual_node_pool = oci.ContainerEngine.get_virtual_node_pool(virtual_node_pool_id=oci_containerengine_virtual_node_pool["test_virtual_node_pool"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str virtual_node_pool_id: The OCID of the virtual node pool.
@@ -327,12 +329,14 @@ def get_virtual_node_pool_output(virtual_node_pool_id: Optional[pulumi.Input[str
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_virtual_node_pool = oci.ContainerEngine.get_virtual_node_pool(virtual_node_pool_id=oci_containerengine_virtual_node_pool["test_virtual_node_pool"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str virtual_node_pool_id: The OCID of the virtual node pool.

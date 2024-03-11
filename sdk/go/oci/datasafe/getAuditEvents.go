@@ -29,6 +29,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -55,6 +56,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetAuditEvents(ctx *pulumi.Context, args *GetAuditEventsArgs, opts ...pulumi.InvokeOption) (*GetAuditEventsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAuditEventsResult

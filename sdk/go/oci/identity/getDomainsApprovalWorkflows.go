@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -49,6 +50,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetDomainsApprovalWorkflows(ctx *pulumi.Context, args *GetDomainsApprovalWorkflowsArgs, opts ...pulumi.InvokeOption) (*GetDomainsApprovalWorkflowsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDomainsApprovalWorkflowsResult

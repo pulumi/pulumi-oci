@@ -22,6 +22,8 @@ import javax.annotation.Nullable;
  * Creates a new email domain. Avoid entering confidential information.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -53,13 +55,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * EmailDomains can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Email/emailDomain:EmailDomain test_email_domain &#34;id&#34;
+ * $ pulumi import oci:Email/emailDomain:EmailDomain test_email_domain &#34;id&#34;
  * ```
  * 
  */

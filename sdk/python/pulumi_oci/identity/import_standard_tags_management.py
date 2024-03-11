@@ -133,6 +133,7 @@ class ImportStandardTagsManagement(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -141,13 +142,14 @@ class ImportStandardTagsManagement(pulumi.CustomResource):
             compartment_id=var["compartment_id"],
             standard_tag_namespace_name=oci_identity_tag_namespace["test_tag_namespace"]["name"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ImportStandardTagsManagement can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/importStandardTagsManagement:ImportStandardTagsManagement test_import_standard_tags_management "id"
+        $ pulumi import oci:Identity/importStandardTagsManagement:ImportStandardTagsManagement test_import_standard_tags_management "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -173,6 +175,7 @@ class ImportStandardTagsManagement(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -181,13 +184,14 @@ class ImportStandardTagsManagement(pulumi.CustomResource):
             compartment_id=var["compartment_id"],
             standard_tag_namespace_name=oci_identity_tag_namespace["test_tag_namespace"]["name"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ImportStandardTagsManagement can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/importStandardTagsManagement:ImportStandardTagsManagement test_import_standard_tags_management "id"
+        $ pulumi import oci:Identity/importStandardTagsManagement:ImportStandardTagsManagement test_import_standard_tags_management "id"
         ```
 
         :param str resource_name: The name of the resource.

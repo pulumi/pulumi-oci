@@ -102,6 +102,7 @@ def get_java_downloads_java_licenses(display_name: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -109,6 +110,7 @@ def get_java_downloads_java_licenses(display_name: Optional[str] = None,
     test_java_licenses = oci.Jms.get_java_downloads_java_licenses(display_name=var["java_license_display_name"],
         license_type=var["java_license_license_type"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str display_name: A filter to return only resources that match the display name.
@@ -141,6 +143,7 @@ def get_java_downloads_java_licenses_output(display_name: Optional[pulumi.Input[
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -148,6 +151,7 @@ def get_java_downloads_java_licenses_output(display_name: Optional[pulumi.Input[
     test_java_licenses = oci.Jms.get_java_downloads_java_licenses(display_name=var["java_license_display_name"],
         license_type=var["java_license_license_type"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str display_name: A filter to return only resources that match the display name.

@@ -139,6 +139,7 @@ def get_pbf_listing_versions(filters: Optional[Sequence[pulumi.InputType['GetPbf
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -149,6 +150,7 @@ def get_pbf_listing_versions(filters: Optional[Sequence[pulumi.InputType['GetPbf
         pbf_listing_version_id=oci_functions_pbf_listing_version["test_pbf_listing_version"]["id"],
         state=var["pbf_listing_version_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param bool is_current_version: Matches the current version (the most recently added version with an Active  lifecycleState) associated with a PbfListing.
@@ -197,6 +199,7 @@ def get_pbf_listing_versions_output(filters: Optional[pulumi.Input[Optional[Sequ
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -207,6 +210,7 @@ def get_pbf_listing_versions_output(filters: Optional[pulumi.Input[Optional[Sequ
         pbf_listing_version_id=oci_functions_pbf_listing_version["test_pbf_listing_version"]["id"],
         state=var["pbf_listing_version_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param bool is_current_version: Matches the current version (the most recently added version with an Active  lifecycleState) associated with a PbfListing.

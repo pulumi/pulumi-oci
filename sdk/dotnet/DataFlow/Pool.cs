@@ -16,6 +16,7 @@ namespace Pulumi.Oci.DataFlow
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -65,13 +66,14 @@ namespace Pulumi.Oci.DataFlow
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// Pools can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:DataFlow/pool:Pool test_pool "id"
+    /// $ pulumi import oci:DataFlow/pool:Pool test_pool "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:DataFlow/pool:Pool")]

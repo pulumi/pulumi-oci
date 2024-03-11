@@ -368,6 +368,7 @@ class NetworkAddressList(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -389,13 +390,14 @@ class NetworkAddressList(pulumi.CustomResource):
                 vcn_id=oci_core_vcn["test_vcn"]["id"],
             )])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         NetworkAddressLists can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Waf/networkAddressList:NetworkAddressList test_network_address_list "id"
+        $ pulumi import oci:Waf/networkAddressList:NetworkAddressList test_network_address_list "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -422,6 +424,7 @@ class NetworkAddressList(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -443,13 +446,14 @@ class NetworkAddressList(pulumi.CustomResource):
                 vcn_id=oci_core_vcn["test_vcn"]["id"],
             )])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         NetworkAddressLists can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Waf/networkAddressList:NetworkAddressList test_network_address_list "id"
+        $ pulumi import oci:Waf/networkAddressList:NetworkAddressList test_network_address_list "id"
         ```
 
         :param str resource_name: The name of the resource.

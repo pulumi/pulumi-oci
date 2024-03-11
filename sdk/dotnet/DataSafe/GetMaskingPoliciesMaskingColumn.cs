@@ -16,10 +16,9 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// Gets the details of the specified masking column.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,8 +35,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetMaskingPoliciesMaskingColumnResult> InvokeAsync(GetMaskingPoliciesMaskingColumnArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetMaskingPoliciesMaskingColumnResult>("oci:DataSafe/getMaskingPoliciesMaskingColumn:getMaskingPoliciesMaskingColumn", args ?? new GetMaskingPoliciesMaskingColumnArgs(), options.WithDefaults());
@@ -47,10 +45,9 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// Gets the details of the specified masking column.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -67,8 +64,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetMaskingPoliciesMaskingColumnResult> Invoke(GetMaskingPoliciesMaskingColumnInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMaskingPoliciesMaskingColumnResult>("oci:DataSafe/getMaskingPoliciesMaskingColumn:getMaskingPoliciesMaskingColumn", args ?? new GetMaskingPoliciesMaskingColumnInvokeArgs(), options.WithDefaults());

@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -28,13 +29,14 @@ import * as utilities from "../utilities";
  *     ipv6subnetCidr: _var.ipv6_ipv6subnet_cidr,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * Ipv6 can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Core/ipv6:Ipv6 test_ipv6 "id"
+ * $ pulumi import oci:Core/ipv6:Ipv6 test_ipv6 "id"
  * ```
  */
 export class Ipv6 extends pulumi.CustomResource {

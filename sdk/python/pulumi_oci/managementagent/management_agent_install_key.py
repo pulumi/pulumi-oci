@@ -331,6 +331,7 @@ class ManagementAgentInstallKey(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -342,13 +343,14 @@ class ManagementAgentInstallKey(pulumi.CustomResource):
             is_unlimited=var["management_agent_install_key_is_unlimited"],
             time_expires=var["management_agent_install_key_time_expires"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ManagementAgentInstallKeys can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:ManagementAgent/managementAgentInstallKey:ManagementAgentInstallKey test_management_agent_install_key "id"
+        $ pulumi import oci:ManagementAgent/managementAgentInstallKey:ManagementAgentInstallKey test_management_agent_install_key "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -376,6 +378,7 @@ class ManagementAgentInstallKey(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -387,13 +390,14 @@ class ManagementAgentInstallKey(pulumi.CustomResource):
             is_unlimited=var["management_agent_install_key_is_unlimited"],
             time_expires=var["management_agent_install_key_time_expires"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ManagementAgentInstallKeys can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:ManagementAgent/managementAgentInstallKey:ManagementAgentInstallKey test_management_agent_install_key "id"
+        $ pulumi import oci:ManagementAgent/managementAgentInstallKey:ManagementAgentInstallKey test_management_agent_install_key "id"
         ```
 
         :param str resource_name: The name of the resource.

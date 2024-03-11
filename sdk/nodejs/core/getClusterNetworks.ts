@@ -14,6 +14,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,6 +25,7 @@ import * as utilities from "../utilities";
  *     state: _var.cluster_network_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getClusterNetworks(args: GetClusterNetworksArgs, opts?: pulumi.InvokeOptions): Promise<GetClusterNetworksResult> {
 
@@ -89,6 +91,7 @@ export interface GetClusterNetworksResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -99,6 +102,7 @@ export interface GetClusterNetworksResult {
  *     state: _var.cluster_network_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getClusterNetworksOutput(args: GetClusterNetworksOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetClusterNetworksResult> {
     return pulumi.output(args).apply((a: any) => getClusterNetworks(a, opts))

@@ -74,6 +74,8 @@ public final class MediaServicesFunctions {
      * Gets a MediaAsset by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -102,6 +104,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMediaAssetResult> getMediaAsset(GetMediaAssetArgs args) {
@@ -113,6 +116,8 @@ public final class MediaServicesFunctions {
      * Gets a MediaAsset by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -141,6 +146,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMediaAssetResult> getMediaAssetPlain(GetMediaAssetPlainArgs args) {
@@ -152,6 +158,8 @@ public final class MediaServicesFunctions {
      * Gets a MediaAsset by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -180,6 +188,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMediaAssetResult> getMediaAsset(GetMediaAssetArgs args, InvokeOptions options) {
@@ -191,6 +200,8 @@ public final class MediaServicesFunctions {
      * Gets a MediaAsset by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -219,6 +230,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMediaAssetResult> getMediaAssetPlain(GetMediaAssetPlainArgs args, InvokeOptions options) {
@@ -231,6 +243,7 @@ public final class MediaServicesFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -261,6 +274,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMediaAssetDistributionChannelAttachmentResult> getMediaAssetDistributionChannelAttachment(GetMediaAssetDistributionChannelAttachmentArgs args) {
@@ -273,6 +287,7 @@ public final class MediaServicesFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -303,6 +318,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMediaAssetDistributionChannelAttachmentResult> getMediaAssetDistributionChannelAttachmentPlain(GetMediaAssetDistributionChannelAttachmentPlainArgs args) {
@@ -315,6 +331,7 @@ public final class MediaServicesFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -345,6 +362,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMediaAssetDistributionChannelAttachmentResult> getMediaAssetDistributionChannelAttachment(GetMediaAssetDistributionChannelAttachmentArgs args, InvokeOptions options) {
@@ -357,6 +375,7 @@ public final class MediaServicesFunctions {
      * 
      * ## Example Usage
      * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -387,6 +406,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMediaAssetDistributionChannelAttachmentResult> getMediaAssetDistributionChannelAttachmentPlain(GetMediaAssetDistributionChannelAttachmentPlainArgs args, InvokeOptions options) {
@@ -398,6 +418,8 @@ public final class MediaServicesFunctions {
      * Returns a list of MediaAssetSummary.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -437,6 +459,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMediaAssetsResult> getMediaAssets() {
@@ -448,6 +471,8 @@ public final class MediaServicesFunctions {
      * Returns a list of MediaAssetSummary.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -487,6 +512,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMediaAssetsResult> getMediaAssetsPlain() {
@@ -498,6 +524,8 @@ public final class MediaServicesFunctions {
      * Returns a list of MediaAssetSummary.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -537,6 +565,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMediaAssetsResult> getMediaAssets(GetMediaAssetsArgs args) {
@@ -548,6 +577,8 @@ public final class MediaServicesFunctions {
      * Returns a list of MediaAssetSummary.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -587,6 +618,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMediaAssetsResult> getMediaAssetsPlain(GetMediaAssetsPlainArgs args) {
@@ -598,6 +630,8 @@ public final class MediaServicesFunctions {
      * Returns a list of MediaAssetSummary.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -637,6 +671,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMediaAssetsResult> getMediaAssets(GetMediaAssetsArgs args, InvokeOptions options) {
@@ -648,6 +683,8 @@ public final class MediaServicesFunctions {
      * Returns a list of MediaAssetSummary.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -687,6 +724,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMediaAssetsResult> getMediaAssetsPlain(GetMediaAssetsPlainArgs args, InvokeOptions options) {
@@ -698,6 +736,8 @@ public final class MediaServicesFunctions {
      * Gets a MediaWorkflow by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -726,6 +766,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMediaWorkflowResult> getMediaWorkflow(GetMediaWorkflowArgs args) {
@@ -737,6 +778,8 @@ public final class MediaServicesFunctions {
      * Gets a MediaWorkflow by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -765,6 +808,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMediaWorkflowResult> getMediaWorkflowPlain(GetMediaWorkflowPlainArgs args) {
@@ -776,6 +820,8 @@ public final class MediaServicesFunctions {
      * Gets a MediaWorkflow by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -804,6 +850,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMediaWorkflowResult> getMediaWorkflow(GetMediaWorkflowArgs args, InvokeOptions options) {
@@ -815,6 +862,8 @@ public final class MediaServicesFunctions {
      * Gets a MediaWorkflow by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -843,6 +892,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMediaWorkflowResult> getMediaWorkflowPlain(GetMediaWorkflowPlainArgs args, InvokeOptions options) {
@@ -854,6 +904,8 @@ public final class MediaServicesFunctions {
      * Gets a MediaWorkflowConfiguration by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -882,6 +934,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMediaWorkflowConfigurationResult> getMediaWorkflowConfiguration(GetMediaWorkflowConfigurationArgs args) {
@@ -893,6 +946,8 @@ public final class MediaServicesFunctions {
      * Gets a MediaWorkflowConfiguration by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -921,6 +976,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMediaWorkflowConfigurationResult> getMediaWorkflowConfigurationPlain(GetMediaWorkflowConfigurationPlainArgs args) {
@@ -932,6 +988,8 @@ public final class MediaServicesFunctions {
      * Gets a MediaWorkflowConfiguration by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -960,6 +1018,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMediaWorkflowConfigurationResult> getMediaWorkflowConfiguration(GetMediaWorkflowConfigurationArgs args, InvokeOptions options) {
@@ -971,6 +1030,8 @@ public final class MediaServicesFunctions {
      * Gets a MediaWorkflowConfiguration by identifier
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -999,6 +1060,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMediaWorkflowConfigurationResult> getMediaWorkflowConfigurationPlain(GetMediaWorkflowConfigurationPlainArgs args, InvokeOptions options) {
@@ -1010,6 +1072,8 @@ public final class MediaServicesFunctions {
      * Returns a list of MediaWorkflowConfigurations.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1041,6 +1105,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMediaWorkflowConfigurationsResult> getMediaWorkflowConfigurations() {
@@ -1052,6 +1117,8 @@ public final class MediaServicesFunctions {
      * Returns a list of MediaWorkflowConfigurations.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1083,6 +1150,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMediaWorkflowConfigurationsResult> getMediaWorkflowConfigurationsPlain() {
@@ -1094,6 +1162,8 @@ public final class MediaServicesFunctions {
      * Returns a list of MediaWorkflowConfigurations.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1125,6 +1195,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMediaWorkflowConfigurationsResult> getMediaWorkflowConfigurations(GetMediaWorkflowConfigurationsArgs args) {
@@ -1136,6 +1207,8 @@ public final class MediaServicesFunctions {
      * Returns a list of MediaWorkflowConfigurations.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1167,6 +1240,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMediaWorkflowConfigurationsResult> getMediaWorkflowConfigurationsPlain(GetMediaWorkflowConfigurationsPlainArgs args) {
@@ -1178,6 +1252,8 @@ public final class MediaServicesFunctions {
      * Returns a list of MediaWorkflowConfigurations.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1209,6 +1285,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMediaWorkflowConfigurationsResult> getMediaWorkflowConfigurations(GetMediaWorkflowConfigurationsArgs args, InvokeOptions options) {
@@ -1220,6 +1297,8 @@ public final class MediaServicesFunctions {
      * Returns a list of MediaWorkflowConfigurations.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1251,6 +1330,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMediaWorkflowConfigurationsResult> getMediaWorkflowConfigurationsPlain(GetMediaWorkflowConfigurationsPlainArgs args, InvokeOptions options) {
@@ -1262,6 +1342,8 @@ public final class MediaServicesFunctions {
      * Gets the MediaWorkflowJob.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1290,6 +1372,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMediaWorkflowJobResult> getMediaWorkflowJob(GetMediaWorkflowJobArgs args) {
@@ -1301,6 +1384,8 @@ public final class MediaServicesFunctions {
      * Gets the MediaWorkflowJob.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1329,6 +1414,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMediaWorkflowJobResult> getMediaWorkflowJobPlain(GetMediaWorkflowJobPlainArgs args) {
@@ -1340,6 +1426,8 @@ public final class MediaServicesFunctions {
      * Gets the MediaWorkflowJob.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1368,6 +1456,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMediaWorkflowJobResult> getMediaWorkflowJob(GetMediaWorkflowJobArgs args, InvokeOptions options) {
@@ -1379,6 +1468,8 @@ public final class MediaServicesFunctions {
      * Gets the MediaWorkflowJob.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1407,6 +1498,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMediaWorkflowJobResult> getMediaWorkflowJobPlain(GetMediaWorkflowJobPlainArgs args, InvokeOptions options) {
@@ -1419,6 +1511,8 @@ public final class MediaServicesFunctions {
      * Get the MediaWorkflowJobFact identified by the mediaWorkflowJobId and Fact ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1448,6 +1542,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMediaWorkflowJobFactResult> getMediaWorkflowJobFact(GetMediaWorkflowJobFactArgs args) {
@@ -1460,6 +1555,8 @@ public final class MediaServicesFunctions {
      * Get the MediaWorkflowJobFact identified by the mediaWorkflowJobId and Fact ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1489,6 +1586,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMediaWorkflowJobFactResult> getMediaWorkflowJobFactPlain(GetMediaWorkflowJobFactPlainArgs args) {
@@ -1501,6 +1599,8 @@ public final class MediaServicesFunctions {
      * Get the MediaWorkflowJobFact identified by the mediaWorkflowJobId and Fact ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1530,6 +1630,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMediaWorkflowJobFactResult> getMediaWorkflowJobFact(GetMediaWorkflowJobFactArgs args, InvokeOptions options) {
@@ -1542,6 +1643,8 @@ public final class MediaServicesFunctions {
      * Get the MediaWorkflowJobFact identified by the mediaWorkflowJobId and Fact ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1571,6 +1674,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMediaWorkflowJobFactResult> getMediaWorkflowJobFactPlain(GetMediaWorkflowJobFactPlainArgs args, InvokeOptions options) {
@@ -1583,6 +1687,8 @@ public final class MediaServicesFunctions {
      * Internal API to get a point-in-time snapshot of a MediaWorkflowJob.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1613,6 +1719,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMediaWorkflowJobFactsResult> getMediaWorkflowJobFacts(GetMediaWorkflowJobFactsArgs args) {
@@ -1625,6 +1732,8 @@ public final class MediaServicesFunctions {
      * Internal API to get a point-in-time snapshot of a MediaWorkflowJob.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1655,6 +1764,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMediaWorkflowJobFactsResult> getMediaWorkflowJobFactsPlain(GetMediaWorkflowJobFactsPlainArgs args) {
@@ -1667,6 +1777,8 @@ public final class MediaServicesFunctions {
      * Internal API to get a point-in-time snapshot of a MediaWorkflowJob.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1697,6 +1809,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMediaWorkflowJobFactsResult> getMediaWorkflowJobFacts(GetMediaWorkflowJobFactsArgs args, InvokeOptions options) {
@@ -1709,6 +1822,8 @@ public final class MediaServicesFunctions {
      * Internal API to get a point-in-time snapshot of a MediaWorkflowJob.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1739,6 +1854,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMediaWorkflowJobFactsResult> getMediaWorkflowJobFactsPlain(GetMediaWorkflowJobFactsPlainArgs args, InvokeOptions options) {
@@ -1750,6 +1866,8 @@ public final class MediaServicesFunctions {
      * Lists the MediaWorkflowJobs.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1782,6 +1900,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMediaWorkflowJobsResult> getMediaWorkflowJobs() {
@@ -1793,6 +1912,8 @@ public final class MediaServicesFunctions {
      * Lists the MediaWorkflowJobs.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1825,6 +1946,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMediaWorkflowJobsResult> getMediaWorkflowJobsPlain() {
@@ -1836,6 +1958,8 @@ public final class MediaServicesFunctions {
      * Lists the MediaWorkflowJobs.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1868,6 +1992,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMediaWorkflowJobsResult> getMediaWorkflowJobs(GetMediaWorkflowJobsArgs args) {
@@ -1879,6 +2004,8 @@ public final class MediaServicesFunctions {
      * Lists the MediaWorkflowJobs.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1911,6 +2038,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMediaWorkflowJobsResult> getMediaWorkflowJobsPlain(GetMediaWorkflowJobsPlainArgs args) {
@@ -1922,6 +2050,8 @@ public final class MediaServicesFunctions {
      * Lists the MediaWorkflowJobs.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1954,6 +2084,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMediaWorkflowJobsResult> getMediaWorkflowJobs(GetMediaWorkflowJobsArgs args, InvokeOptions options) {
@@ -1965,6 +2096,8 @@ public final class MediaServicesFunctions {
      * Lists the MediaWorkflowJobs.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1997,6 +2130,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMediaWorkflowJobsResult> getMediaWorkflowJobsPlain(GetMediaWorkflowJobsPlainArgs args, InvokeOptions options) {
@@ -2008,6 +2142,8 @@ public final class MediaServicesFunctions {
      * Returns a list of MediaWorkflowTaskDeclarations.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2039,6 +2175,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMediaWorkflowTaskDeclarationResult> getMediaWorkflowTaskDeclaration() {
@@ -2050,6 +2187,8 @@ public final class MediaServicesFunctions {
      * Returns a list of MediaWorkflowTaskDeclarations.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2081,6 +2220,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMediaWorkflowTaskDeclarationResult> getMediaWorkflowTaskDeclarationPlain() {
@@ -2092,6 +2232,8 @@ public final class MediaServicesFunctions {
      * Returns a list of MediaWorkflowTaskDeclarations.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2123,6 +2265,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMediaWorkflowTaskDeclarationResult> getMediaWorkflowTaskDeclaration(GetMediaWorkflowTaskDeclarationArgs args) {
@@ -2134,6 +2277,8 @@ public final class MediaServicesFunctions {
      * Returns a list of MediaWorkflowTaskDeclarations.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2165,6 +2310,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMediaWorkflowTaskDeclarationResult> getMediaWorkflowTaskDeclarationPlain(GetMediaWorkflowTaskDeclarationPlainArgs args) {
@@ -2176,6 +2322,8 @@ public final class MediaServicesFunctions {
      * Returns a list of MediaWorkflowTaskDeclarations.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2207,6 +2355,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMediaWorkflowTaskDeclarationResult> getMediaWorkflowTaskDeclaration(GetMediaWorkflowTaskDeclarationArgs args, InvokeOptions options) {
@@ -2218,6 +2367,8 @@ public final class MediaServicesFunctions {
      * Returns a list of MediaWorkflowTaskDeclarations.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2249,6 +2400,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMediaWorkflowTaskDeclarationResult> getMediaWorkflowTaskDeclarationPlain(GetMediaWorkflowTaskDeclarationPlainArgs args, InvokeOptions options) {
@@ -2260,6 +2412,8 @@ public final class MediaServicesFunctions {
      * Lists the MediaWorkflows.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2291,6 +2445,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMediaWorkflowsResult> getMediaWorkflows() {
@@ -2302,6 +2457,8 @@ public final class MediaServicesFunctions {
      * Lists the MediaWorkflows.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2333,6 +2490,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMediaWorkflowsResult> getMediaWorkflowsPlain() {
@@ -2344,6 +2502,8 @@ public final class MediaServicesFunctions {
      * Lists the MediaWorkflows.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2375,6 +2535,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMediaWorkflowsResult> getMediaWorkflows(GetMediaWorkflowsArgs args) {
@@ -2386,6 +2547,8 @@ public final class MediaServicesFunctions {
      * Lists the MediaWorkflows.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2417,6 +2580,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMediaWorkflowsResult> getMediaWorkflowsPlain(GetMediaWorkflowsPlainArgs args) {
@@ -2428,6 +2592,8 @@ public final class MediaServicesFunctions {
      * Lists the MediaWorkflows.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2459,6 +2625,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMediaWorkflowsResult> getMediaWorkflows(GetMediaWorkflowsArgs args, InvokeOptions options) {
@@ -2470,6 +2637,8 @@ public final class MediaServicesFunctions {
      * Lists the MediaWorkflows.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2501,6 +2670,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMediaWorkflowsResult> getMediaWorkflowsPlain(GetMediaWorkflowsPlainArgs args, InvokeOptions options) {
@@ -2512,6 +2682,8 @@ public final class MediaServicesFunctions {
      * Gets a StreamCdnConfig by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2540,6 +2712,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetStreamCdnConfigResult> getStreamCdnConfig(GetStreamCdnConfigArgs args) {
@@ -2551,6 +2724,8 @@ public final class MediaServicesFunctions {
      * Gets a StreamCdnConfig by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2579,6 +2754,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetStreamCdnConfigResult> getStreamCdnConfigPlain(GetStreamCdnConfigPlainArgs args) {
@@ -2590,6 +2766,8 @@ public final class MediaServicesFunctions {
      * Gets a StreamCdnConfig by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2618,6 +2796,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetStreamCdnConfigResult> getStreamCdnConfig(GetStreamCdnConfigArgs args, InvokeOptions options) {
@@ -2629,6 +2808,8 @@ public final class MediaServicesFunctions {
      * Gets a StreamCdnConfig by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2657,6 +2838,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetStreamCdnConfigResult> getStreamCdnConfigPlain(GetStreamCdnConfigPlainArgs args, InvokeOptions options) {
@@ -2668,6 +2850,8 @@ public final class MediaServicesFunctions {
      * Lists the StreamCdnConfig.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2699,6 +2883,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetStreamCdnConfigsResult> getStreamCdnConfigs(GetStreamCdnConfigsArgs args) {
@@ -2710,6 +2895,8 @@ public final class MediaServicesFunctions {
      * Lists the StreamCdnConfig.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2741,6 +2928,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetStreamCdnConfigsResult> getStreamCdnConfigsPlain(GetStreamCdnConfigsPlainArgs args) {
@@ -2752,6 +2940,8 @@ public final class MediaServicesFunctions {
      * Lists the StreamCdnConfig.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2783,6 +2973,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetStreamCdnConfigsResult> getStreamCdnConfigs(GetStreamCdnConfigsArgs args, InvokeOptions options) {
@@ -2794,6 +2985,8 @@ public final class MediaServicesFunctions {
      * Lists the StreamCdnConfig.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2825,6 +3018,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetStreamCdnConfigsResult> getStreamCdnConfigsPlain(GetStreamCdnConfigsPlainArgs args, InvokeOptions options) {
@@ -2836,6 +3030,8 @@ public final class MediaServicesFunctions {
      * Gets a Stream Distribution Channel by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2864,6 +3060,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetStreamDistributionChannelResult> getStreamDistributionChannel(GetStreamDistributionChannelArgs args) {
@@ -2875,6 +3072,8 @@ public final class MediaServicesFunctions {
      * Gets a Stream Distribution Channel by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2903,6 +3102,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetStreamDistributionChannelResult> getStreamDistributionChannelPlain(GetStreamDistributionChannelPlainArgs args) {
@@ -2914,6 +3114,8 @@ public final class MediaServicesFunctions {
      * Gets a Stream Distribution Channel by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2942,6 +3144,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetStreamDistributionChannelResult> getStreamDistributionChannel(GetStreamDistributionChannelArgs args, InvokeOptions options) {
@@ -2953,6 +3156,8 @@ public final class MediaServicesFunctions {
      * Gets a Stream Distribution Channel by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2981,6 +3186,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetStreamDistributionChannelResult> getStreamDistributionChannelPlain(GetStreamDistributionChannelPlainArgs args, InvokeOptions options) {
@@ -2992,6 +3198,8 @@ public final class MediaServicesFunctions {
      * Lists the Stream Distribution Channels.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3023,6 +3231,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetStreamDistributionChannelsResult> getStreamDistributionChannels() {
@@ -3034,6 +3243,8 @@ public final class MediaServicesFunctions {
      * Lists the Stream Distribution Channels.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3065,6 +3276,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetStreamDistributionChannelsResult> getStreamDistributionChannelsPlain() {
@@ -3076,6 +3288,8 @@ public final class MediaServicesFunctions {
      * Lists the Stream Distribution Channels.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3107,6 +3321,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetStreamDistributionChannelsResult> getStreamDistributionChannels(GetStreamDistributionChannelsArgs args) {
@@ -3118,6 +3333,8 @@ public final class MediaServicesFunctions {
      * Lists the Stream Distribution Channels.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3149,6 +3366,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetStreamDistributionChannelsResult> getStreamDistributionChannelsPlain(GetStreamDistributionChannelsPlainArgs args) {
@@ -3160,6 +3378,8 @@ public final class MediaServicesFunctions {
      * Lists the Stream Distribution Channels.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3191,6 +3411,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetStreamDistributionChannelsResult> getStreamDistributionChannels(GetStreamDistributionChannelsArgs args, InvokeOptions options) {
@@ -3202,6 +3423,8 @@ public final class MediaServicesFunctions {
      * Lists the Stream Distribution Channels.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3233,6 +3456,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetStreamDistributionChannelsResult> getStreamDistributionChannelsPlain(GetStreamDistributionChannelsPlainArgs args, InvokeOptions options) {
@@ -3244,6 +3468,8 @@ public final class MediaServicesFunctions {
      * Gets a Stream Packaging Configuration by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3272,6 +3498,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetStreamPackagingConfigResult> getStreamPackagingConfig(GetStreamPackagingConfigArgs args) {
@@ -3283,6 +3510,8 @@ public final class MediaServicesFunctions {
      * Gets a Stream Packaging Configuration by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3311,6 +3540,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetStreamPackagingConfigResult> getStreamPackagingConfigPlain(GetStreamPackagingConfigPlainArgs args) {
@@ -3322,6 +3552,8 @@ public final class MediaServicesFunctions {
      * Gets a Stream Packaging Configuration by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3350,6 +3582,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetStreamPackagingConfigResult> getStreamPackagingConfig(GetStreamPackagingConfigArgs args, InvokeOptions options) {
@@ -3361,6 +3594,8 @@ public final class MediaServicesFunctions {
      * Gets a Stream Packaging Configuration by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3389,6 +3624,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetStreamPackagingConfigResult> getStreamPackagingConfigPlain(GetStreamPackagingConfigPlainArgs args, InvokeOptions options) {
@@ -3400,6 +3636,8 @@ public final class MediaServicesFunctions {
      * Lists the Stream Packaging Configurations.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3431,6 +3669,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetStreamPackagingConfigsResult> getStreamPackagingConfigs(GetStreamPackagingConfigsArgs args) {
@@ -3442,6 +3681,8 @@ public final class MediaServicesFunctions {
      * Lists the Stream Packaging Configurations.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3473,6 +3714,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetStreamPackagingConfigsResult> getStreamPackagingConfigsPlain(GetStreamPackagingConfigsPlainArgs args) {
@@ -3484,6 +3726,8 @@ public final class MediaServicesFunctions {
      * Lists the Stream Packaging Configurations.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3515,6 +3759,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetStreamPackagingConfigsResult> getStreamPackagingConfigs(GetStreamPackagingConfigsArgs args, InvokeOptions options) {
@@ -3526,6 +3771,8 @@ public final class MediaServicesFunctions {
      * Lists the Stream Packaging Configurations.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3557,6 +3804,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetStreamPackagingConfigsResult> getStreamPackagingConfigsPlain(GetStreamPackagingConfigsPlainArgs args, InvokeOptions options) {
@@ -3568,6 +3816,8 @@ public final class MediaServicesFunctions {
      * Lists the SystemMediaWorkflows that can be used to run a job by name or as a template to create a MediaWorkflow.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3597,6 +3847,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSystemMediaWorkflowResult> getSystemMediaWorkflow() {
@@ -3608,6 +3859,8 @@ public final class MediaServicesFunctions {
      * Lists the SystemMediaWorkflows that can be used to run a job by name or as a template to create a MediaWorkflow.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3637,6 +3890,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSystemMediaWorkflowResult> getSystemMediaWorkflowPlain() {
@@ -3648,6 +3902,8 @@ public final class MediaServicesFunctions {
      * Lists the SystemMediaWorkflows that can be used to run a job by name or as a template to create a MediaWorkflow.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3677,6 +3933,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSystemMediaWorkflowResult> getSystemMediaWorkflow(GetSystemMediaWorkflowArgs args) {
@@ -3688,6 +3945,8 @@ public final class MediaServicesFunctions {
      * Lists the SystemMediaWorkflows that can be used to run a job by name or as a template to create a MediaWorkflow.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3717,6 +3976,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSystemMediaWorkflowResult> getSystemMediaWorkflowPlain(GetSystemMediaWorkflowPlainArgs args) {
@@ -3728,6 +3988,8 @@ public final class MediaServicesFunctions {
      * Lists the SystemMediaWorkflows that can be used to run a job by name or as a template to create a MediaWorkflow.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3757,6 +4019,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSystemMediaWorkflowResult> getSystemMediaWorkflow(GetSystemMediaWorkflowArgs args, InvokeOptions options) {
@@ -3768,6 +4031,8 @@ public final class MediaServicesFunctions {
      * Lists the SystemMediaWorkflows that can be used to run a job by name or as a template to create a MediaWorkflow.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3797,6 +4062,7 @@ public final class MediaServicesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSystemMediaWorkflowResult> getSystemMediaWorkflowPlain(GetSystemMediaWorkflowPlainArgs args, InvokeOptions options) {

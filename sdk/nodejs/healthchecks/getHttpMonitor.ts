@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -19,6 +20,7 @@ import * as utilities from "../utilities";
  *     monitorId: oci_apm_synthetics_monitor.test_monitor.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getHttpMonitor(args: GetHttpMonitorArgs, opts?: pulumi.InvokeOptions): Promise<GetHttpMonitorResult> {
 
@@ -123,6 +125,7 @@ export interface GetHttpMonitorResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -131,6 +134,7 @@ export interface GetHttpMonitorResult {
  *     monitorId: oci_apm_synthetics_monitor.test_monitor.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getHttpMonitorOutput(args: GetHttpMonitorOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetHttpMonitorResult> {
     return pulumi.output(args).apply((a: any) => getHttpMonitor(a, opts))

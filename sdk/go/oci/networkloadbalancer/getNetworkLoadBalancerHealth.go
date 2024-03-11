@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -40,6 +41,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetNetworkLoadBalancerHealth(ctx *pulumi.Context, args *GetNetworkLoadBalancerHealthArgs, opts ...pulumi.InvokeOption) (*GetNetworkLoadBalancerHealthResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetNetworkLoadBalancerHealthResult

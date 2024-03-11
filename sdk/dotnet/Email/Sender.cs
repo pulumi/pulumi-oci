@@ -16,6 +16,7 @@ namespace Pulumi.Oci.Email
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -40,13 +41,14 @@ namespace Pulumi.Oci.Email
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// Senders can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Email/sender:Sender test_sender "id"
+    /// $ pulumi import oci:Email/sender:Sender test_sender "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Email/sender:Sender")]

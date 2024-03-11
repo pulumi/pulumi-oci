@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -65,15 +66,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // VmClusters can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Database/vmCluster:VmCluster test_vm_cluster "id"
-//
+// $ pulumi import oci:Database/vmCluster:VmCluster test_vm_cluster "id"
 // ```
 type VmCluster struct {
 	pulumi.CustomResourceState

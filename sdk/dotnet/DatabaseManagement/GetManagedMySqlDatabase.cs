@@ -17,10 +17,9 @@ namespace Pulumi.Oci.DatabaseManagement
         /// Retrieves General Information for given MySQL Instance.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,8 +35,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetManagedMySqlDatabaseResult> InvokeAsync(GetManagedMySqlDatabaseArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagedMySqlDatabaseResult>("oci:DatabaseManagement/getManagedMySqlDatabase:getManagedMySqlDatabase", args ?? new GetManagedMySqlDatabaseArgs(), options.WithDefaults());
@@ -48,10 +46,9 @@ namespace Pulumi.Oci.DatabaseManagement
         /// Retrieves General Information for given MySQL Instance.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -67,8 +64,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetManagedMySqlDatabaseResult> Invoke(GetManagedMySqlDatabaseInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedMySqlDatabaseResult>("oci:DatabaseManagement/getManagedMySqlDatabase:getManagedMySqlDatabase", args ?? new GetManagedMySqlDatabaseInvokeArgs(), options.WithDefaults());

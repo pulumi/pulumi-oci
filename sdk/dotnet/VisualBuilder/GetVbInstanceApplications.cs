@@ -17,10 +17,9 @@ namespace Pulumi.Oci.VisualBuilder
         /// Returns a list of published and staged applications of a Visual Builder instance.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -37,8 +36,7 @@ namespace Pulumi.Oci.VisualBuilder
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetVbInstanceApplicationsResult> InvokeAsync(GetVbInstanceApplicationsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetVbInstanceApplicationsResult>("oci:VisualBuilder/getVbInstanceApplications:getVbInstanceApplications", args ?? new GetVbInstanceApplicationsArgs(), options.WithDefaults());
@@ -49,10 +47,9 @@ namespace Pulumi.Oci.VisualBuilder
         /// Returns a list of published and staged applications of a Visual Builder instance.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -69,8 +66,7 @@ namespace Pulumi.Oci.VisualBuilder
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetVbInstanceApplicationsResult> Invoke(GetVbInstanceApplicationsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVbInstanceApplicationsResult>("oci:VisualBuilder/getVbInstanceApplications:getVbInstanceApplications", args ?? new GetVbInstanceApplicationsInvokeArgs(), options.WithDefaults());

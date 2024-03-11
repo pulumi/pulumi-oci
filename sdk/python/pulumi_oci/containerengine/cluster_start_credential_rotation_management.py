@@ -120,6 +120,7 @@ class ClusterStartCredentialRotationManagement(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -128,6 +129,7 @@ class ClusterStartCredentialRotationManagement(pulumi.CustomResource):
             auto_completion_delay_duration=var["cluster_start_credential_rotation_management_auto_completion_delay_duration"],
             cluster_id=oci_containerengine_cluster["test_cluster"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -155,6 +157,7 @@ class ClusterStartCredentialRotationManagement(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -163,6 +166,7 @@ class ClusterStartCredentialRotationManagement(pulumi.CustomResource):
             auto_completion_delay_duration=var["cluster_start_credential_rotation_management_auto_completion_delay_duration"],
             cluster_id=oci_containerengine_cluster["test_cluster"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 

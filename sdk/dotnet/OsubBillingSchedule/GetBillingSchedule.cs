@@ -18,10 +18,9 @@ namespace Pulumi.Oci.OsubBillingSchedule
         /// for a particular Subscribed Service if provided
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -40,8 +39,7 @@ namespace Pulumi.Oci.OsubBillingSchedule
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetBillingScheduleResult> InvokeAsync(GetBillingScheduleArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetBillingScheduleResult>("oci:OsubBillingSchedule/getBillingSchedule:getBillingSchedule", args ?? new GetBillingScheduleArgs(), options.WithDefaults());
@@ -53,10 +51,9 @@ namespace Pulumi.Oci.OsubBillingSchedule
         /// for a particular Subscribed Service if provided
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -75,8 +72,7 @@ namespace Pulumi.Oci.OsubBillingSchedule
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetBillingScheduleResult> Invoke(GetBillingScheduleInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetBillingScheduleResult>("oci:OsubBillingSchedule/getBillingSchedule:getBillingSchedule", args ?? new GetBillingScheduleInvokeArgs(), options.WithDefaults());

@@ -19,6 +19,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -42,6 +43,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupAnnouncementSubscription(ctx *pulumi.Context, args *LookupAnnouncementSubscriptionArgs, opts ...pulumi.InvokeOption) (*LookupAnnouncementSubscriptionResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupAnnouncementSubscriptionResult

@@ -18,10 +18,9 @@ namespace Pulumi.Oci.OsManagementHub
         /// criteria including but not limited to its name.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -40,8 +39,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetManagedInstanceGroupAvailableSoftwareSourcesResult> InvokeAsync(GetManagedInstanceGroupAvailableSoftwareSourcesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagedInstanceGroupAvailableSoftwareSourcesResult>("oci:OsManagementHub/getManagedInstanceGroupAvailableSoftwareSources:getManagedInstanceGroupAvailableSoftwareSources", args ?? new GetManagedInstanceGroupAvailableSoftwareSourcesArgs(), options.WithDefaults());
@@ -53,10 +51,9 @@ namespace Pulumi.Oci.OsManagementHub
         /// criteria including but not limited to its name.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -75,8 +72,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetManagedInstanceGroupAvailableSoftwareSourcesResult> Invoke(GetManagedInstanceGroupAvailableSoftwareSourcesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedInstanceGroupAvailableSoftwareSourcesResult>("oci:OsManagementHub/getManagedInstanceGroupAvailableSoftwareSources:getManagedInstanceGroupAvailableSoftwareSources", args ?? new GetManagedInstanceGroupAvailableSoftwareSourcesInvokeArgs(), options.WithDefaults());

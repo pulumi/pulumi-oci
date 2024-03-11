@@ -17,10 +17,9 @@ namespace Pulumi.Oci.Database
         /// Lists the console histories for the specified database node.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -38,8 +37,7 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDbNodeConsoleHistoriesResult> InvokeAsync(GetDbNodeConsoleHistoriesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDbNodeConsoleHistoriesResult>("oci:Database/getDbNodeConsoleHistories:getDbNodeConsoleHistories", args ?? new GetDbNodeConsoleHistoriesArgs(), options.WithDefaults());
@@ -50,10 +48,9 @@ namespace Pulumi.Oci.Database
         /// Lists the console histories for the specified database node.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -71,8 +68,7 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDbNodeConsoleHistoriesResult> Invoke(GetDbNodeConsoleHistoriesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDbNodeConsoleHistoriesResult>("oci:Database/getDbNodeConsoleHistories:getDbNodeConsoleHistories", args ?? new GetDbNodeConsoleHistoriesInvokeArgs(), options.WithDefaults());

@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,6 +22,7 @@ import * as utilities from "../utilities";
  *     accessPolicyId: oci_service_mesh_access_policy.test_access_policy.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAccessPolicy(args: GetAccessPolicyArgs, opts?: pulumi.InvokeOptions): Promise<GetAccessPolicyResult> {
 
@@ -105,6 +107,7 @@ export interface GetAccessPolicyResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -113,6 +116,7 @@ export interface GetAccessPolicyResult {
  *     accessPolicyId: oci_service_mesh_access_policy.test_access_policy.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAccessPolicyOutput(args: GetAccessPolicyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAccessPolicyResult> {
     return pulumi.output(args).apply((a: any) => getAccessPolicy(a, opts))

@@ -16,7 +16,7 @@ import * as utilities from "../utilities";
  * Grants can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Identity/domainsGrant:DomainsGrant test_grant "idcsEndpoint/{idcsEndpoint}/grants/{grantId}"
+ * $ pulumi import oci:Identity/domainsGrant:DomainsGrant test_grant "idcsEndpoint/{idcsEndpoint}/grants/{grantId}"
  * ```
  */
 export class DomainsGrant extends pulumi.CustomResource {

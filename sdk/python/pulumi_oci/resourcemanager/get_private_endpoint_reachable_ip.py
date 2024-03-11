@@ -84,6 +84,7 @@ def get_private_endpoint_reachable_ip(private_endpoint_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -91,6 +92,7 @@ def get_private_endpoint_reachable_ip(private_endpoint_id: Optional[str] = None,
     test_private_endpoint_reachable_ip = oci.ResourceManager.get_private_endpoint_reachable_ip(private_endpoint_id=oci_resourcemanager_private_endpoint["test_private_endpoint"]["id"],
         private_ip=var["private_endpoint_reachable_ip_private_ip"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
@@ -120,6 +122,7 @@ def get_private_endpoint_reachable_ip_output(private_endpoint_id: Optional[pulum
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -127,6 +130,7 @@ def get_private_endpoint_reachable_ip_output(private_endpoint_id: Optional[pulum
     test_private_endpoint_reachable_ip = oci.ResourceManager.get_private_endpoint_reachable_ip(private_endpoint_id=oci_resourcemanager_private_endpoint["test_private_endpoint"]["id"],
         private_ip=var["private_endpoint_reachable_ip_private_ip"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.

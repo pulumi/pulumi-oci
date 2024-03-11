@@ -170,12 +170,14 @@ def get_monitored_instance(monitored_instance_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_monitored_instance = oci.AppMgmtControl.get_monitored_instance(monitored_instance_id=oci_appmgmt_control_monitored_instance["test_monitored_instance"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str monitored_instance_id: OCID of monitored instance.
@@ -209,12 +211,14 @@ def get_monitored_instance_output(monitored_instance_id: Optional[pulumi.Input[s
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_monitored_instance = oci.AppMgmtControl.get_monitored_instance(monitored_instance_id=oci_appmgmt_control_monitored_instance["test_monitored_instance"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str monitored_instance_id: OCID of monitored instance.

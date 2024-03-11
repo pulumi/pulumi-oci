@@ -16,10 +16,9 @@ namespace Pulumi.Oci.Blockchain
         /// 
         /// Gets information about an OSN identified by the specific id
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,8 +35,7 @@ namespace Pulumi.Oci.Blockchain
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetOsnResult> InvokeAsync(GetOsnArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetOsnResult>("oci:Blockchain/getOsn:getOsn", args ?? new GetOsnArgs(), options.WithDefaults());
@@ -47,10 +45,9 @@ namespace Pulumi.Oci.Blockchain
         /// 
         /// Gets information about an OSN identified by the specific id
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -67,8 +64,7 @@ namespace Pulumi.Oci.Blockchain
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetOsnResult> Invoke(GetOsnInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetOsnResult>("oci:Blockchain/getOsn:getOsn", args ?? new GetOsnInvokeArgs(), options.WithDefaults());

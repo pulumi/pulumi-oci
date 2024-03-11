@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,6 +42,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetAlertPolicyRule(ctx *pulumi.Context, args *GetAlertPolicyRuleArgs, opts ...pulumi.InvokeOption) (*GetAlertPolicyRuleResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAlertPolicyRuleResult

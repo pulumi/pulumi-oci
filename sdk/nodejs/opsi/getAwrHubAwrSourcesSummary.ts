@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,6 +24,7 @@ import * as utilities from "../utilities";
  *     name: _var.awr_hub_awr_sources_summary_name,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAwrHubAwrSourcesSummary(args: GetAwrHubAwrSourcesSummaryArgs, opts?: pulumi.InvokeOptions): Promise<GetAwrHubAwrSourcesSummaryResult> {
 
@@ -81,6 +83,7 @@ export interface GetAwrHubAwrSourcesSummaryResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -91,6 +94,7 @@ export interface GetAwrHubAwrSourcesSummaryResult {
  *     name: _var.awr_hub_awr_sources_summary_name,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAwrHubAwrSourcesSummaryOutput(args: GetAwrHubAwrSourcesSummaryOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAwrHubAwrSourcesSummaryResult> {
     return pulumi.output(args).apply((a: any) => getAwrHubAwrSourcesSummary(a, opts))

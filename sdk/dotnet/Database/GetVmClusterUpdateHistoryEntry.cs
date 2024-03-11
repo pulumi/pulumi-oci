@@ -17,10 +17,9 @@ namespace Pulumi.Oci.Database
         /// Gets the maintenance update history details for the specified update history entry. Applies to Exadata Cloud@Customer instances only.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -37,8 +36,7 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetVmClusterUpdateHistoryEntryResult> InvokeAsync(GetVmClusterUpdateHistoryEntryArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetVmClusterUpdateHistoryEntryResult>("oci:Database/getVmClusterUpdateHistoryEntry:getVmClusterUpdateHistoryEntry", args ?? new GetVmClusterUpdateHistoryEntryArgs(), options.WithDefaults());
@@ -49,10 +47,9 @@ namespace Pulumi.Oci.Database
         /// Gets the maintenance update history details for the specified update history entry. Applies to Exadata Cloud@Customer instances only.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -69,8 +66,7 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetVmClusterUpdateHistoryEntryResult> Invoke(GetVmClusterUpdateHistoryEntryInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVmClusterUpdateHistoryEntryResult>("oci:Database/getVmClusterUpdateHistoryEntry:getVmClusterUpdateHistoryEntry", args ?? new GetVmClusterUpdateHistoryEntryInvokeArgs(), options.WithDefaults());

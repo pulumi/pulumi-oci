@@ -16,10 +16,9 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// Lists all the peer target databases under the primary target database identified by the OCID passed as path parameter.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,8 +34,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetTargetDatabasePeerTargetDatabasesResult> InvokeAsync(GetTargetDatabasePeerTargetDatabasesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetTargetDatabasePeerTargetDatabasesResult>("oci:DataSafe/getTargetDatabasePeerTargetDatabases:getTargetDatabasePeerTargetDatabases", args ?? new GetTargetDatabasePeerTargetDatabasesArgs(), options.WithDefaults());
@@ -46,10 +44,9 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// Lists all the peer target databases under the primary target database identified by the OCID passed as path parameter.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -65,8 +62,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetTargetDatabasePeerTargetDatabasesResult> Invoke(GetTargetDatabasePeerTargetDatabasesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetTargetDatabasePeerTargetDatabasesResult>("oci:DataSafe/getTargetDatabasePeerTargetDatabases:getTargetDatabasePeerTargetDatabases", args ?? new GetTargetDatabasePeerTargetDatabasesInvokeArgs(), options.WithDefaults());

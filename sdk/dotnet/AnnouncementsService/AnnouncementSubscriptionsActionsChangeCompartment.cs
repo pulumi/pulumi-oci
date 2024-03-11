@@ -18,6 +18,7 @@ namespace Pulumi.Oci.AnnouncementsService
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -34,13 +35,14 @@ namespace Pulumi.Oci.AnnouncementsService
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// AnnouncementSubscriptionsActionsChangeCompartment can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:AnnouncementsService/announcementSubscriptionsActionsChangeCompartment:AnnouncementSubscriptionsActionsChangeCompartment test_announcement_subscriptions_actions_change_compartment "id"
+    /// $ pulumi import oci:AnnouncementsService/announcementSubscriptionsActionsChangeCompartment:AnnouncementSubscriptionsActionsChangeCompartment test_announcement_subscriptions_actions_change_compartment "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:AnnouncementsService/announcementSubscriptionsActionsChangeCompartment:AnnouncementSubscriptionsActionsChangeCompartment")]

@@ -380,6 +380,7 @@ class ClusterNetwork(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -427,13 +428,14 @@ class ClusterNetwork(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ClusterNetworks can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/clusterNetwork:ClusterNetwork test_cluster_network "id"
+        $ pulumi import oci:Core/clusterNetwork:ClusterNetwork test_cluster_network "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -477,6 +479,7 @@ class ClusterNetwork(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -524,13 +527,14 @@ class ClusterNetwork(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ClusterNetworks can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/clusterNetwork:ClusterNetwork test_cluster_network "id"
+        $ pulumi import oci:Core/clusterNetwork:ClusterNetwork test_cluster_network "id"
         ```
 
         :param str resource_name: The name of the resource.

@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -50,15 +51,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Metastores can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:DataCatalog/metastore:Metastore test_metastore "id"
-//
+// $ pulumi import oci:DataCatalog/metastore:Metastore test_metastore "id"
 // ```
 type Metastore struct {
 	pulumi.CustomResourceState

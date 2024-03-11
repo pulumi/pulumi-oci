@@ -16,10 +16,9 @@ namespace Pulumi.Oci.Mysql
         /// 
         /// Gets information about the HeatWave cluster.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,8 +34,7 @@ namespace Pulumi.Oci.Mysql
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetHeatWaveClusterResult> InvokeAsync(GetHeatWaveClusterArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetHeatWaveClusterResult>("oci:Mysql/getHeatWaveCluster:getHeatWaveCluster", args ?? new GetHeatWaveClusterArgs(), options.WithDefaults());
@@ -46,10 +44,9 @@ namespace Pulumi.Oci.Mysql
         /// 
         /// Gets information about the HeatWave cluster.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -65,8 +62,7 @@ namespace Pulumi.Oci.Mysql
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetHeatWaveClusterResult> Invoke(GetHeatWaveClusterInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetHeatWaveClusterResult>("oci:Mysql/getHeatWaveCluster:getHeatWaveCluster", args ?? new GetHeatWaveClusterInvokeArgs(), options.WithDefaults());

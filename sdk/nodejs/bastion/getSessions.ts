@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,6 +25,7 @@ import * as utilities from "../utilities";
  *     sessionLifecycleState: _var.session_session_lifecycle_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getSessions(args: GetSessionsArgs, opts?: pulumi.InvokeOptions): Promise<GetSessionsResult> {
 
@@ -91,6 +93,7 @@ export interface GetSessionsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -102,6 +105,7 @@ export interface GetSessionsResult {
  *     sessionLifecycleState: _var.session_session_lifecycle_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getSessionsOutput(args: GetSessionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSessionsResult> {
     return pulumi.output(args).apply((a: any) => getSessions(a, opts))

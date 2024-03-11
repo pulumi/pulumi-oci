@@ -20,6 +20,8 @@ import javax.annotation.Nullable;
  * Create an API key on behalf of the specified user.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -52,13 +54,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * BdsInstanceApiKeys can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:BigDataService/bdsInstanceApiKey:BdsInstanceApiKey test_bds_instance_api_key &#34;bdsInstances/{bdsInstanceId}/apiKeys/{apiKeyId}&#34;
+ * $ pulumi import oci:BigDataService/bdsInstanceApiKey:BdsInstanceApiKey test_bds_instance_api_key &#34;bdsInstances/{bdsInstanceId}/apiKeys/{apiKeyId}&#34;
  * ```
  * 
  */

@@ -183,12 +183,14 @@ def get_pbf_listing(pbf_listing_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_pbf_listing = oci.Functions.get_pbf_listing(pbf_listing_id=oci_functions_pbf_listing["test_pbf_listing"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str pbf_listing_id: unique PbfListing identifier
@@ -223,12 +225,14 @@ def get_pbf_listing_output(pbf_listing_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_pbf_listing = oci.Functions.get_pbf_listing(pbf_listing_id=oci_functions_pbf_listing["test_pbf_listing"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str pbf_listing_id: unique PbfListing identifier

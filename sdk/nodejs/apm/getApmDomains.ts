@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,6 +24,7 @@ import * as utilities from "../utilities";
  *     state: _var.apm_domain_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getApmDomains(args: GetApmDomainsArgs, opts?: pulumi.InvokeOptions): Promise<GetApmDomainsResult> {
 
@@ -87,6 +89,7 @@ export interface GetApmDomainsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -97,6 +100,7 @@ export interface GetApmDomainsResult {
  *     state: _var.apm_domain_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getApmDomainsOutput(args: GetApmDomainsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetApmDomainsResult> {
     return pulumi.output(args).apply((a: any) => getApmDomains(a, opts))

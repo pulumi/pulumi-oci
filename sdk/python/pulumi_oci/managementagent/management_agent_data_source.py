@@ -608,6 +608,7 @@ class ManagementAgentDataSource(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -630,13 +631,14 @@ class ManagementAgentDataSource(pulumi.CustomResource):
             resource_group=var["management_agent_data_source_resource_group"],
             schedule_mins=var["management_agent_data_source_schedule_mins"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ManagementAgentDataSources can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:ManagementAgent/managementAgentDataSource:ManagementAgentDataSource test_management_agent_data_source "managementAgents/{managementAgentId}/dataSources/{key}"
+        $ pulumi import oci:ManagementAgent/managementAgentDataSource:ManagementAgentDataSource test_management_agent_data_source "managementAgents/{managementAgentId}/dataSources/{key}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -673,6 +675,7 @@ class ManagementAgentDataSource(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -695,13 +698,14 @@ class ManagementAgentDataSource(pulumi.CustomResource):
             resource_group=var["management_agent_data_source_resource_group"],
             schedule_mins=var["management_agent_data_source_schedule_mins"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ManagementAgentDataSources can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:ManagementAgent/managementAgentDataSource:ManagementAgentDataSource test_management_agent_data_source "managementAgents/{managementAgentId}/dataSources/{key}"
+        $ pulumi import oci:ManagementAgent/managementAgentDataSource:ManagementAgentDataSource test_management_agent_data_source "managementAgents/{managementAgentId}/dataSources/{key}"
         ```
 
         :param str resource_name: The name of the resource.

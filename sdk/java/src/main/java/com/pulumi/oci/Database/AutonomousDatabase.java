@@ -45,7 +45,7 @@ import javax.annotation.Nullable;
  * AutonomousDatabases can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Database/autonomousDatabase:AutonomousDatabase test_autonomous_database &#34;id&#34;
+ * $ pulumi import oci:Database/autonomousDatabase:AutonomousDatabase test_autonomous_database &#34;id&#34;
  * ```
  * 
  */

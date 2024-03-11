@@ -18,10 +18,9 @@ namespace Pulumi.Oci.OsManagementHub
         /// against a variety of criteria including but not limited to its name, status, architecture, and OS family.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -43,8 +42,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetLifecycleEnvironmentsResult> InvokeAsync(GetLifecycleEnvironmentsArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetLifecycleEnvironmentsResult>("oci:OsManagementHub/getLifecycleEnvironments:getLifecycleEnvironments", args ?? new GetLifecycleEnvironmentsArgs(), options.WithDefaults());
@@ -56,10 +54,9 @@ namespace Pulumi.Oci.OsManagementHub
         /// against a variety of criteria including but not limited to its name, status, architecture, and OS family.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -81,8 +78,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetLifecycleEnvironmentsResult> Invoke(GetLifecycleEnvironmentsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetLifecycleEnvironmentsResult>("oci:OsManagementHub/getLifecycleEnvironments:getLifecycleEnvironments", args ?? new GetLifecycleEnvironmentsInvokeArgs(), options.WithDefaults());

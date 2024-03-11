@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -53,15 +54,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Tables can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Nosql/table:Table test_table "id"
-//
+// $ pulumi import oci:Nosql/table:Table test_table "id"
 // ```
 type Table struct {
 	pulumi.CustomResourceState

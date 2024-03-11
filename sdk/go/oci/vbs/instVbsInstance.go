@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -51,15 +52,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // VbsInstances can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Vbs/instVbsInstance:InstVbsInstance test_vbs_instance "id"
-//
+// $ pulumi import oci:Vbs/instVbsInstance:InstVbsInstance test_vbs_instance "id"
 // ```
 type InstVbsInstance struct {
 	pulumi.CustomResourceState

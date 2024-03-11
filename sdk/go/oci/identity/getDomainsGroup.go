@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -45,6 +46,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupDomainsGroup(ctx *pulumi.Context, args *LookupDomainsGroupArgs, opts ...pulumi.InvokeOption) (*LookupDomainsGroupResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupDomainsGroupResult
@@ -98,7 +100,7 @@ type LookupDomainsGroupResult struct {
 	IdcsLastUpgradedInRelease string `pulumi:"idcsLastUpgradedInRelease"`
 	// Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
 	IdcsPreventedOperations []string `pulumi:"idcsPreventedOperations"`
-	// The group members. <b>Important:</b> When requesting group members, a maximum of 10,000 members can be returned in a single request. If the response contains more than 10,000 members, the request will fail. Use 'startIndex' and 'count' to return members in pages instead of in a single response, for example: #attributes=members[startIndex=1%26count=10]. This REST API is SCIM compliant.
+	// The group members. <b>Important:</b> When requesting group members, a maximum of 10,000 members can be returned in a single request. If the response contains more than 10,000 members, the request will fail. Use 'startIndex' and 'count' to return members in pages instead of in a single response, for example: #attributes=members[startIndex=1%!c(MISSING)ount=10]. This REST API is SCIM compliant.
 	Members []GetDomainsGroupMember `pulumi:"members"`
 	// A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
 	Metas []GetDomainsGroupMeta `pulumi:"metas"`
@@ -245,7 +247,7 @@ func (o LookupDomainsGroupResultOutput) IdcsPreventedOperations() pulumi.StringA
 	return o.ApplyT(func(v LookupDomainsGroupResult) []string { return v.IdcsPreventedOperations }).(pulumi.StringArrayOutput)
 }
 
-// The group members. <b>Important:</b> When requesting group members, a maximum of 10,000 members can be returned in a single request. If the response contains more than 10,000 members, the request will fail. Use 'startIndex' and 'count' to return members in pages instead of in a single response, for example: #attributes=members[startIndex=1%26count=10]. This REST API is SCIM compliant.
+// The group members. <b>Important:</b> When requesting group members, a maximum of 10,000 members can be returned in a single request. If the response contains more than 10,000 members, the request will fail. Use 'startIndex' and 'count' to return members in pages instead of in a single response, for example: #attributes=members[startIndex=1%!c(MISSING)ount=10]. This REST API is SCIM compliant.
 func (o LookupDomainsGroupResultOutput) Members() GetDomainsGroupMemberArrayOutput {
 	return o.ApplyT(func(v LookupDomainsGroupResult) []GetDomainsGroupMember { return v.Members }).(GetDomainsGroupMemberArrayOutput)
 }

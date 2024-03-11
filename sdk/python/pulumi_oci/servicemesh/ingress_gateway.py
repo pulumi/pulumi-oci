@@ -432,6 +432,7 @@ class IngressGateway(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -477,13 +478,14 @@ class IngressGateway(pulumi.CustomResource):
                 maximum_validity=var["ingress_gateway_mtls_maximum_validity"],
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         IngressGateways can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:ServiceMesh/ingressGateway:IngressGateway test_ingress_gateway "id"
+        $ pulumi import oci:ServiceMesh/ingressGateway:IngressGateway test_ingress_gateway "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -515,6 +517,7 @@ class IngressGateway(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -560,13 +563,14 @@ class IngressGateway(pulumi.CustomResource):
                 maximum_validity=var["ingress_gateway_mtls_maximum_validity"],
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         IngressGateways can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:ServiceMesh/ingressGateway:IngressGateway test_ingress_gateway "id"
+        $ pulumi import oci:ServiceMesh/ingressGateway:IngressGateway test_ingress_gateway "id"
         ```
 
         :param str resource_name: The name of the resource.

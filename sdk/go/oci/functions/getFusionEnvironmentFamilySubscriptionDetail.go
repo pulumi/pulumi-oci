@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -40,6 +41,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetFusionEnvironmentFamilySubscriptionDetail(ctx *pulumi.Context, args *GetFusionEnvironmentFamilySubscriptionDetailArgs, opts ...pulumi.InvokeOption) (*GetFusionEnvironmentFamilySubscriptionDetailResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetFusionEnvironmentFamilySubscriptionDetailResult

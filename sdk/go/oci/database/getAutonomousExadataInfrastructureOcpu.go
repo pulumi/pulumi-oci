@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -40,6 +41,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetAutonomousExadataInfrastructureOcpu(ctx *pulumi.Context, args *GetAutonomousExadataInfrastructureOcpuArgs, opts ...pulumi.InvokeOption) (*GetAutonomousExadataInfrastructureOcpuResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAutonomousExadataInfrastructureOcpuResult

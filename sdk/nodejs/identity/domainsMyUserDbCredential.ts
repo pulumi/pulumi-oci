@@ -16,7 +16,7 @@ import * as utilities from "../utilities";
  * MyUserDbCredentials can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Identity/domainsMyUserDbCredential:DomainsMyUserDbCredential test_my_user_db_credential "idcsEndpoint/{idcsEndpoint}/myUserDbCredentials/{myUserDbCredentialId}"
+ * $ pulumi import oci:Identity/domainsMyUserDbCredential:DomainsMyUserDbCredential test_my_user_db_credential "idcsEndpoint/{idcsEndpoint}/myUserDbCredentials/{myUserDbCredentialId}"
  * ```
  */
 export class DomainsMyUserDbCredential extends pulumi.CustomResource {

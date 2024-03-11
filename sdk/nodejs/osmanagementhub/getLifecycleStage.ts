@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,6 +22,7 @@ import * as utilities from "../utilities";
  *     lifecycleStageId: oci_os_management_hub_lifecycle_stage.test_lifecycle_stage.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getLifecycleStage(args: GetLifecycleStageArgs, opts?: pulumi.InvokeOptions): Promise<GetLifecycleStageResult> {
 
@@ -117,6 +119,7 @@ export interface GetLifecycleStageResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -125,6 +128,7 @@ export interface GetLifecycleStageResult {
  *     lifecycleStageId: oci_os_management_hub_lifecycle_stage.test_lifecycle_stage.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getLifecycleStageOutput(args: GetLifecycleStageOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLifecycleStageResult> {
     return pulumi.output(args).apply((a: any) => getLifecycleStage(a, opts))

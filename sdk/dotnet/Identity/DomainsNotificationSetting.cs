@@ -19,7 +19,7 @@ namespace Pulumi.Oci.Identity
     /// NotificationSettings can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Identity/domainsNotificationSetting:DomainsNotificationSetting test_notification_setting "idcsEndpoint/{idcsEndpoint}/notificationSettings/{notificationSettingId}"
+    /// $ pulumi import oci:Identity/domainsNotificationSetting:DomainsNotificationSetting test_notification_setting "idcsEndpoint/{idcsEndpoint}/notificationSettings/{notificationSettingId}"
     /// ```
     /// </summary>
     [OciResourceType("oci:Identity/domainsNotificationSetting:DomainsNotificationSetting")]

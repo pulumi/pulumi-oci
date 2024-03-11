@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,6 +23,7 @@ import * as utilities from "../utilities";
  *     includeResourceMetadata: _var.resource_action_include_resource_metadata,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getResourceAction(args: GetResourceActionArgs, opts?: pulumi.InvokeOptions): Promise<GetResourceActionResult> {
 
@@ -132,6 +134,7 @@ export interface GetResourceActionResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -141,6 +144,7 @@ export interface GetResourceActionResult {
  *     includeResourceMetadata: _var.resource_action_include_resource_metadata,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getResourceActionOutput(args: GetResourceActionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetResourceActionResult> {
     return pulumi.output(args).apply((a: any) => getResourceAction(a, opts))

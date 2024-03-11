@@ -593,6 +593,8 @@ class DbHome(pulumi.CustomResource):
                  vm_cluster_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
+        ## Example Usage
+
         ## Import
 
         DbHomes can be imported using the `id`, e.g.
@@ -601,17 +603,17 @@ class DbHome(pulumi.CustomResource):
         $ pulumi import oci:Database/dbHome:DbHome test_db_home "id"
         ```
 
-         Import is only supported for source=NONE
+        Import is only supported for source=NONE
 
-         database.0.admin_password is not returned by the service for security reasons. Add the following to the resource:
+        database.0.admin_password is not returned by the service for security reasons. Add the following to the resource:
 
-         lifecycle {
+            lifecycle {
+            
+                ignore_changes = ["database.0.admin_password"]
+            
+            }
 
-         ignore_changes = ["database.0.admin_password"]
-
-         }
-
-         The creation of an oci_database_db_system requires that it be created with exactly one oci_database_db_home. Therefore the first db home will have to be a property of the db system resource and any further db homes to be added to the db system will have to be added as first class resources using "oci_database_db_home".
+        The creation of an oci_database_db_system requires that it be created with exactly one oci_database_db_home. Therefore the first db home will have to be a property of the db system resource and any further db homes to be added to the db system will have to be added as first class resources using "oci_database_db_home".
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -644,6 +646,8 @@ class DbHome(pulumi.CustomResource):
                  args: Optional[DbHomeArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        ## Example Usage
+
         ## Import
 
         DbHomes can be imported using the `id`, e.g.
@@ -652,17 +656,17 @@ class DbHome(pulumi.CustomResource):
         $ pulumi import oci:Database/dbHome:DbHome test_db_home "id"
         ```
 
-         Import is only supported for source=NONE
+        Import is only supported for source=NONE
 
-         database.0.admin_password is not returned by the service for security reasons. Add the following to the resource:
+        database.0.admin_password is not returned by the service for security reasons. Add the following to the resource:
 
-         lifecycle {
+            lifecycle {
+            
+                ignore_changes = ["database.0.admin_password"]
+            
+            }
 
-         ignore_changes = ["database.0.admin_password"]
-
-         }
-
-         The creation of an oci_database_db_system requires that it be created with exactly one oci_database_db_home. Therefore the first db home will have to be a property of the db system resource and any further db homes to be added to the db system will have to be added as first class resources using "oci_database_db_home".
+        The creation of an oci_database_db_system requires that it be created with exactly one oci_database_db_home. Therefore the first db home will have to be a property of the db system resource and any further db homes to be added to the db system will have to be added as first class resources using "oci_database_db_home".
 
         :param str resource_name: The name of the resource.
         :param DbHomeArgs args: The arguments to use to populate this resource's properties.

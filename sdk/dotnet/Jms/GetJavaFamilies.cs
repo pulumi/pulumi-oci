@@ -18,10 +18,9 @@ namespace Pulumi.Oci.Jms
         /// A Java release family is typically a major version in the Java version identifier.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -39,8 +38,7 @@ namespace Pulumi.Oci.Jms
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetJavaFamiliesResult> InvokeAsync(GetJavaFamiliesArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetJavaFamiliesResult>("oci:Jms/getJavaFamilies:getJavaFamilies", args ?? new GetJavaFamiliesArgs(), options.WithDefaults());
@@ -52,10 +50,9 @@ namespace Pulumi.Oci.Jms
         /// A Java release family is typically a major version in the Java version identifier.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -73,8 +70,7 @@ namespace Pulumi.Oci.Jms
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetJavaFamiliesResult> Invoke(GetJavaFamiliesInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetJavaFamiliesResult>("oci:Jms/getJavaFamilies:getJavaFamilies", args ?? new GetJavaFamiliesInvokeArgs(), options.WithDefaults());

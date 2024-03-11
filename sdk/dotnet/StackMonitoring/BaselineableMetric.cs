@@ -16,6 +16,7 @@ namespace Pulumi.Oci.StackMonitoring
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -34,13 +35,14 @@ namespace Pulumi.Oci.StackMonitoring
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// BaselineableMetrics can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:StackMonitoring/baselineableMetric:BaselineableMetric test_baselineable_metric "id"
+    /// $ pulumi import oci:StackMonitoring/baselineableMetric:BaselineableMetric test_baselineable_metric "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:StackMonitoring/baselineableMetric:BaselineableMetric")]

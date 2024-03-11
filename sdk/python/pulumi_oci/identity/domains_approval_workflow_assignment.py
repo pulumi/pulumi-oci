@@ -965,7 +965,7 @@ class DomainsApprovalWorkflowAssignment(pulumi.CustomResource):
         ApprovalWorkflowAssignments can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/domainsApprovalWorkflowAssignment:DomainsApprovalWorkflowAssignment test_approval_workflow_assignment "idcsEndpoint/{idcsEndpoint}/approvalWorkflowAssignments/{approvalWorkflowAssignmentId}"
+        $ pulumi import oci:Identity/domainsApprovalWorkflowAssignment:DomainsApprovalWorkflowAssignment test_approval_workflow_assignment "idcsEndpoint/{idcsEndpoint}/approvalWorkflowAssignments/{approvalWorkflowAssignmentId}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -1058,7 +1058,7 @@ class DomainsApprovalWorkflowAssignment(pulumi.CustomResource):
         ApprovalWorkflowAssignments can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/domainsApprovalWorkflowAssignment:DomainsApprovalWorkflowAssignment test_approval_workflow_assignment "idcsEndpoint/{idcsEndpoint}/approvalWorkflowAssignments/{approvalWorkflowAssignmentId}"
+        $ pulumi import oci:Identity/domainsApprovalWorkflowAssignment:DomainsApprovalWorkflowAssignment test_approval_workflow_assignment "idcsEndpoint/{idcsEndpoint}/approvalWorkflowAssignments/{approvalWorkflowAssignmentId}"
         ```
 
         :param str resource_name: The name of the resource.

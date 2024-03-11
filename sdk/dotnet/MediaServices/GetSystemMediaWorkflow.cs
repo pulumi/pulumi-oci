@@ -17,10 +17,9 @@ namespace Pulumi.Oci.MediaServices
         /// Lists the SystemMediaWorkflows that can be used to run a job by name or as a template to create a MediaWorkflow.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -37,8 +36,7 @@ namespace Pulumi.Oci.MediaServices
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetSystemMediaWorkflowResult> InvokeAsync(GetSystemMediaWorkflowArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetSystemMediaWorkflowResult>("oci:MediaServices/getSystemMediaWorkflow:getSystemMediaWorkflow", args ?? new GetSystemMediaWorkflowArgs(), options.WithDefaults());
@@ -49,10 +47,9 @@ namespace Pulumi.Oci.MediaServices
         /// Lists the SystemMediaWorkflows that can be used to run a job by name or as a template to create a MediaWorkflow.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -69,8 +66,7 @@ namespace Pulumi.Oci.MediaServices
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetSystemMediaWorkflowResult> Invoke(GetSystemMediaWorkflowInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSystemMediaWorkflowResult>("oci:MediaServices/getSystemMediaWorkflow:getSystemMediaWorkflow", args ?? new GetSystemMediaWorkflowInvokeArgs(), options.WithDefaults());

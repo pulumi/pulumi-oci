@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -75,15 +76,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Gateways can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:ApiGateway/gateway:Gateway test_gateway "id"
-//
+// $ pulumi import oci:ApiGateway/gateway:Gateway test_gateway "id"
 // ```
 type Gateway struct {
 	pulumi.CustomResourceState

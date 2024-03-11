@@ -28,6 +28,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -98,13 +99,14 @@ import * as utilities from "../utilities";
  *     }],
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * SecurityLists can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Core/securityList:SecurityList test_security_list "id"
+ * $ pulumi import oci:Core/securityList:SecurityList test_security_list "id"
  * ```
  */
 export class SecurityList extends pulumi.CustomResource {

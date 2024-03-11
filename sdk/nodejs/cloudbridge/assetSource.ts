@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -45,13 +46,14 @@ import * as utilities from "../utilities";
  *     systemTags: _var.asset_source_system_tags,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * AssetSources can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:CloudBridge/assetSource:AssetSource test_asset_source "id"
+ * $ pulumi import oci:CloudBridge/assetSource:AssetSource test_asset_source "id"
  * ```
  */
 export class AssetSource extends pulumi.CustomResource {

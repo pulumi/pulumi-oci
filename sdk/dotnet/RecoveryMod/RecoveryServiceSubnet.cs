@@ -16,6 +16,7 @@ namespace Pulumi.Oci.RecoveryMod
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -42,13 +43,14 @@ namespace Pulumi.Oci.RecoveryMod
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// RecoveryServiceSubnets can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:RecoveryMod/recoveryServiceSubnet:RecoveryServiceSubnet test_recovery_service_subnet "id"
+    /// $ pulumi import oci:RecoveryMod/recoveryServiceSubnet:RecoveryServiceSubnet test_recovery_service_subnet "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:RecoveryMod/recoveryServiceSubnet:RecoveryServiceSubnet")]

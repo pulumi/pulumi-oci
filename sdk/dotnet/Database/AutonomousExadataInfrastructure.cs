@@ -16,6 +16,7 @@ namespace Pulumi.Oci.Database
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -71,13 +72,14 @@ namespace Pulumi.Oci.Database
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// AutonomousExadataInfrastructures can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Database/autonomousExadataInfrastructure:AutonomousExadataInfrastructure test_autonomous_exadata_infrastructure "id"
+    /// $ pulumi import oci:Database/autonomousExadataInfrastructure:AutonomousExadataInfrastructure test_autonomous_exadata_infrastructure "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Database/autonomousExadataInfrastructure:AutonomousExadataInfrastructure")]

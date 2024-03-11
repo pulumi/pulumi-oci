@@ -19,7 +19,7 @@ namespace Pulumi.Oci.DatabaseMigration
     /// Jobs can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:DatabaseMigration/job:Job test_job "id"
+    /// $ pulumi import oci:DatabaseMigration/job:Job test_job "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:DatabaseMigration/job:Job")]

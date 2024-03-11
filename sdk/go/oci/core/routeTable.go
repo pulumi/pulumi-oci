@@ -34,6 +34,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -74,15 +75,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // RouteTables can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Core/routeTable:RouteTable test_route_table "id"
-//
+// $ pulumi import oci:Core/routeTable:RouteTable test_route_table "id"
 // ```
 type RouteTable struct {
 	pulumi.CustomResourceState

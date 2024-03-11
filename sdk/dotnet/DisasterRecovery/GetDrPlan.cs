@@ -16,10 +16,9 @@ namespace Pulumi.Oci.DisasterRecovery
         /// 
         /// Get details for the DR plan identified by *drPlanId*.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,8 +34,7 @@ namespace Pulumi.Oci.DisasterRecovery
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDrPlanResult> InvokeAsync(GetDrPlanArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDrPlanResult>("oci:DisasterRecovery/getDrPlan:getDrPlan", args ?? new GetDrPlanArgs(), options.WithDefaults());
@@ -46,10 +44,9 @@ namespace Pulumi.Oci.DisasterRecovery
         /// 
         /// Get details for the DR plan identified by *drPlanId*.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -65,8 +62,7 @@ namespace Pulumi.Oci.DisasterRecovery
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDrPlanResult> Invoke(GetDrPlanInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDrPlanResult>("oci:DisasterRecovery/getDrPlan:getDrPlan", args ?? new GetDrPlanInvokeArgs(), options.WithDefaults());

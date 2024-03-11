@@ -217,6 +217,7 @@ class NetworkFirewallPolicyAddressList(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -226,13 +227,14 @@ class NetworkFirewallPolicyAddressList(pulumi.CustomResource):
             type=var["network_firewall_policy_address_list_type"],
             addresses=var["network_firewall_policy_address_list_addresses"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         NetworkFirewallPolicyAddressLists can be imported using the `name`, e.g.
 
         ```sh
-         $ pulumi import oci:NetworkFirewall/networkFirewallPolicyAddressList:NetworkFirewallPolicyAddressList test_network_firewall_policy_address_list "networkFirewallPolicies/{networkFirewallPolicyId}/addressLists/{addressListName}"
+        $ pulumi import oci:NetworkFirewall/networkFirewallPolicyAddressList:NetworkFirewallPolicyAddressList test_network_firewall_policy_address_list "networkFirewallPolicies/{networkFirewallPolicyId}/addressLists/{addressListName}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -259,6 +261,7 @@ class NetworkFirewallPolicyAddressList(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -268,13 +271,14 @@ class NetworkFirewallPolicyAddressList(pulumi.CustomResource):
             type=var["network_firewall_policy_address_list_type"],
             addresses=var["network_firewall_policy_address_list_addresses"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         NetworkFirewallPolicyAddressLists can be imported using the `name`, e.g.
 
         ```sh
-         $ pulumi import oci:NetworkFirewall/networkFirewallPolicyAddressList:NetworkFirewallPolicyAddressList test_network_firewall_policy_address_list "networkFirewallPolicies/{networkFirewallPolicyId}/addressLists/{addressListName}"
+        $ pulumi import oci:NetworkFirewall/networkFirewallPolicyAddressList:NetworkFirewallPolicyAddressList test_network_firewall_policy_address_list "networkFirewallPolicies/{networkFirewallPolicyId}/addressLists/{addressListName}"
         ```
 
         :param str resource_name: The name of the resource.

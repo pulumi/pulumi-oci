@@ -18,10 +18,9 @@ namespace Pulumi.Oci.Identity
         /// the token itself. The actual token is returned only upon creation.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -37,8 +36,7 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetAuthTokensResult> InvokeAsync(GetAuthTokensArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAuthTokensResult>("oci:Identity/getAuthTokens:getAuthTokens", args ?? new GetAuthTokensArgs(), options.WithDefaults());
@@ -50,10 +48,9 @@ namespace Pulumi.Oci.Identity
         /// the token itself. The actual token is returned only upon creation.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -69,8 +66,7 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetAuthTokensResult> Invoke(GetAuthTokensInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAuthTokensResult>("oci:Identity/getAuthTokens:getAuthTokens", args ?? new GetAuthTokensInvokeArgs(), options.WithDefaults());

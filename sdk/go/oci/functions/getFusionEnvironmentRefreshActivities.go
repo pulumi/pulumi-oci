@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -44,6 +45,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetFusionEnvironmentRefreshActivities(ctx *pulumi.Context, args *GetFusionEnvironmentRefreshActivitiesArgs, opts ...pulumi.InvokeOption) (*GetFusionEnvironmentRefreshActivitiesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetFusionEnvironmentRefreshActivitiesResult

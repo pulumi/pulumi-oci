@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -19,6 +20,7 @@ import * as utilities from "../utilities";
  *     budgetId: oci_budget_budget.test_budget.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getBudget(args: GetBudgetArgs, opts?: pulumi.InvokeOptions): Promise<GetBudgetResult> {
 
@@ -145,6 +147,7 @@ export interface GetBudgetResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -153,6 +156,7 @@ export interface GetBudgetResult {
  *     budgetId: oci_budget_budget.test_budget.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getBudgetOutput(args: GetBudgetOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBudgetResult> {
     return pulumi.output(args).apply((a: any) => getBudget(a, opts))

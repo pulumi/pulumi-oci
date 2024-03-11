@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -20,6 +21,7 @@ import * as utilities from "../utilities";
  *     loadBalancerId: oci_load_balancer_load_balancer.test_load_balancer.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getBackendSetHealth(args: GetBackendSetHealthArgs, opts?: pulumi.InvokeOptions): Promise<GetBackendSetHealthResult> {
 
@@ -86,6 +88,7 @@ export interface GetBackendSetHealthResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -95,6 +98,7 @@ export interface GetBackendSetHealthResult {
  *     loadBalancerId: oci_load_balancer_load_balancer.test_load_balancer.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getBackendSetHealthOutput(args: GetBackendSetHealthOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBackendSetHealthResult> {
     return pulumi.output(args).apply((a: any) => getBackendSetHealth(a, opts))

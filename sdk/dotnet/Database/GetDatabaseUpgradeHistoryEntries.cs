@@ -17,10 +17,9 @@ namespace Pulumi.Oci.Database
         /// Gets the upgrade history for a specified database in a bare metal or virtual machine DB system.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -38,8 +37,7 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDatabaseUpgradeHistoryEntriesResult> InvokeAsync(GetDatabaseUpgradeHistoryEntriesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDatabaseUpgradeHistoryEntriesResult>("oci:Database/getDatabaseUpgradeHistoryEntries:getDatabaseUpgradeHistoryEntries", args ?? new GetDatabaseUpgradeHistoryEntriesArgs(), options.WithDefaults());
@@ -50,10 +48,9 @@ namespace Pulumi.Oci.Database
         /// Gets the upgrade history for a specified database in a bare metal or virtual machine DB system.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -71,8 +68,7 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDatabaseUpgradeHistoryEntriesResult> Invoke(GetDatabaseUpgradeHistoryEntriesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDatabaseUpgradeHistoryEntriesResult>("oci:Database/getDatabaseUpgradeHistoryEntries:getDatabaseUpgradeHistoryEntries", args ?? new GetDatabaseUpgradeHistoryEntriesInvokeArgs(), options.WithDefaults());

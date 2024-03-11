@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,6 +42,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupAtCustomerCccUpgradeSchedule(ctx *pulumi.Context, args *LookupAtCustomerCccUpgradeScheduleArgs, opts ...pulumi.InvokeOption) (*LookupAtCustomerCccUpgradeScheduleResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupAtCustomerCccUpgradeScheduleResult

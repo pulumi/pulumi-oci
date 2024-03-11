@@ -21,6 +21,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -54,15 +55,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // DedicatedVmHosts can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Core/dedicatedVmHost:DedicatedVmHost test_dedicated_vm_host "id"
-//
+// $ pulumi import oci:Core/dedicatedVmHost:DedicatedVmHost test_dedicated_vm_host "id"
 // ```
 type DedicatedVmHost struct {
 	pulumi.CustomResourceState

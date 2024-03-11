@@ -21,9 +21,7 @@ import (
 // ExternalExadataStorageGrids can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:DatabaseManagement/externalExadataStorageGrid:ExternalExadataStorageGrid test_external_exadata_storage_grid "id"
-//
+// $ pulumi import oci:DatabaseManagement/externalExadataStorageGrid:ExternalExadataStorageGrid test_external_exadata_storage_grid "id"
 // ```
 type ExternalExadataStorageGrid struct {
 	pulumi.CustomResourceState

@@ -50,33 +50,33 @@ import javax.annotation.Nullable;
  * $ pulumi import oci:Database/dbSystem:DbSystem test_db_system &#34;id&#34;
  * ```
  * 
- *  Import is only supported for source=NONE
+ * Import is only supported for source=NONE
  * 
- *  `db_home.0.database.0.admin_password` is not returned by the service for security reasons. To avoid a force new of the db_home on the next apply, add the following to the resource:
+ * `db_home.0.database.0.admin_password` is not returned by the service for security reasons. To avoid a force new of the db_home on the next apply, add the following to the resource:
  * 
- *  lifecycle {
+ *     lifecycle {
+ *     
+ *         ignore_changes = [&#34;db_home.0.database.0.admin_password&#34;]
+ *     
+ *     }
  * 
- *  ignore_changes = [&#34;db_home.0.database.0.admin_password&#34;]
+ * You may also need to add `hostname` to the ignore_changes list if you see a diff on a subsequent apply
  * 
- *  }
+ * If the oci_database_db_system being imported is missing a primary db_home, an empty placeholder for `db_home` will be set in the Terraform state.
  * 
- *  You may also need to add `hostname` to the ignore_changes list if you see a diff on a subsequent apply
- * 
- *  If the oci_database_db_system being imported is missing a primary db_home, an empty placeholder for `db_home` will be set in the Terraform state.
- * 
- *  To keep configurations consistent with the imported state, add an empty placeholder for `db_home` to your configuration like this:
+ * To keep configurations consistent with the imported state, add an empty placeholder for `db_home` to your configuration like this:
  * 
  * # Add this placeholder into your oci_database_db_system configuration to indicate that the primary db home is empty.
  * 
- *  db_home {
+ *   db_home {
  * 
- *  database {
+ *     database {
+ *     
+ *       admin_password = &#34;&#34;
+ *     
+ *     }
  * 
- *  admin_password = &#34;&#34;
- * 
- *  }
- * 
- *  }
+ *   }
  * 
  */
 @ResourceType(type="oci:Database/dbSystem:DbSystem")

@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -26,6 +27,7 @@ import * as utilities from "../utilities";
  *     timeStart: _var.access_request_time_start,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAccessRequests(args: GetAccessRequestsArgs, opts?: pulumi.InvokeOptions): Promise<GetAccessRequestsResult> {
 
@@ -111,6 +113,7 @@ export interface GetAccessRequestsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -124,6 +127,7 @@ export interface GetAccessRequestsResult {
  *     timeStart: _var.access_request_time_start,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAccessRequestsOutput(args: GetAccessRequestsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAccessRequestsResult> {
     return pulumi.output(args).apply((a: any) => getAccessRequests(a, opts))

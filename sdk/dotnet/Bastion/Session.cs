@@ -16,6 +16,7 @@ namespace Pulumi.Oci.Bastion
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -47,13 +48,14 @@ namespace Pulumi.Oci.Bastion
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// Sessions can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Bastion/session:Session test_session "id"
+    /// $ pulumi import oci:Bastion/session:Session test_session "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Bastion/session:Session")]

@@ -17,10 +17,9 @@ namespace Pulumi.Oci.Database
         /// Gets a list of the Autonomous Container Databases in the specified compartment.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -44,8 +43,7 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetAutonomousContainerDatabasesResult> InvokeAsync(GetAutonomousContainerDatabasesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAutonomousContainerDatabasesResult>("oci:Database/getAutonomousContainerDatabases:getAutonomousContainerDatabases", args ?? new GetAutonomousContainerDatabasesArgs(), options.WithDefaults());
@@ -56,10 +54,9 @@ namespace Pulumi.Oci.Database
         /// Gets a list of the Autonomous Container Databases in the specified compartment.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -83,8 +80,7 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetAutonomousContainerDatabasesResult> Invoke(GetAutonomousContainerDatabasesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousContainerDatabasesResult>("oci:Database/getAutonomousContainerDatabases:getAutonomousContainerDatabases", args ?? new GetAutonomousContainerDatabasesInvokeArgs(), options.WithDefaults());

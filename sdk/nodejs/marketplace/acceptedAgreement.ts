@@ -12,6 +12,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -31,13 +32,14 @@ import * as utilities from "../utilities";
  *     },
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * AcceptedAgreements can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Marketplace/acceptedAgreement:AcceptedAgreement test_accepted_agreement "id"
+ * $ pulumi import oci:Marketplace/acceptedAgreement:AcceptedAgreement test_accepted_agreement "id"
  * ```
  */
 export class AcceptedAgreement extends pulumi.CustomResource {

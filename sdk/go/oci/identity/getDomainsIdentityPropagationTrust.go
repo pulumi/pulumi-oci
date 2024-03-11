@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -47,6 +48,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupDomainsIdentityPropagationTrust(ctx *pulumi.Context, args *LookupDomainsIdentityPropagationTrustArgs, opts ...pulumi.InvokeOption) (*LookupDomainsIdentityPropagationTrustResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupDomainsIdentityPropagationTrustResult

@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -57,15 +58,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // ProductLicenses can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:LicenseManager/productLicense:ProductLicense test_product_license "id"
-//
+// $ pulumi import oci:LicenseManager/productLicense:ProductLicense test_product_license "id"
 // ```
 type ProductLicense struct {
 	pulumi.CustomResourceState

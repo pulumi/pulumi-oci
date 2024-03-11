@@ -16,6 +16,7 @@ namespace Pulumi.Oci.LicenseManager
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -51,13 +52,14 @@ namespace Pulumi.Oci.LicenseManager
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// ProductLicenses can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:LicenseManager/productLicense:ProductLicense test_product_license "id"
+    /// $ pulumi import oci:LicenseManager/productLicense:ProductLicense test_product_license "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:LicenseManager/productLicense:ProductLicense")]

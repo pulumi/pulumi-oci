@@ -18,10 +18,9 @@ namespace Pulumi.Oci.Ocvp
         /// VMware Solution.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -39,8 +38,7 @@ namespace Pulumi.Oci.Ocvp
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetSupportedVmwareSoftwareVersionsResult> InvokeAsync(GetSupportedVmwareSoftwareVersionsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetSupportedVmwareSoftwareVersionsResult>("oci:Ocvp/getSupportedVmwareSoftwareVersions:getSupportedVmwareSoftwareVersions", args ?? new GetSupportedVmwareSoftwareVersionsArgs(), options.WithDefaults());
@@ -52,10 +50,9 @@ namespace Pulumi.Oci.Ocvp
         /// VMware Solution.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -73,8 +70,7 @@ namespace Pulumi.Oci.Ocvp
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetSupportedVmwareSoftwareVersionsResult> Invoke(GetSupportedVmwareSoftwareVersionsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSupportedVmwareSoftwareVersionsResult>("oci:Ocvp/getSupportedVmwareSoftwareVersions:getSupportedVmwareSoftwareVersions", args ?? new GetSupportedVmwareSoftwareVersionsInvokeArgs(), options.WithDefaults());

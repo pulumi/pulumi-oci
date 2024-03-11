@@ -395,6 +395,7 @@ class EmWarehouse(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -411,13 +412,14 @@ class EmWarehouse(pulumi.CustomResource):
                 "bar-key": "value",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         EmWarehouses can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:EmWarehouse/emWarehouse:EmWarehouse test_em_warehouse "id"
+        $ pulumi import oci:EmWarehouse/emWarehouse:EmWarehouse test_em_warehouse "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -446,6 +448,7 @@ class EmWarehouse(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -462,13 +465,14 @@ class EmWarehouse(pulumi.CustomResource):
                 "bar-key": "value",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         EmWarehouses can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:EmWarehouse/emWarehouse:EmWarehouse test_em_warehouse "id"
+        $ pulumi import oci:EmWarehouse/emWarehouse:EmWarehouse test_em_warehouse "id"
         ```
 
         :param str resource_name: The name of the resource.

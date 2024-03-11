@@ -120,6 +120,7 @@ def get_fusion_environment_data_masking_activity(data_masking_activity_id: Optio
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -127,6 +128,7 @@ def get_fusion_environment_data_masking_activity(data_masking_activity_id: Optio
     test_fusion_environment_data_masking_activity = oci.Functions.get_fusion_environment_data_masking_activity(data_masking_activity_id=oci_fusion_apps_data_masking_activity["test_data_masking_activity"]["id"],
         fusion_environment_id=oci_fusion_apps_fusion_environment["test_fusion_environment"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str data_masking_activity_id: Unique DataMasking run identifier.
@@ -159,6 +161,7 @@ def get_fusion_environment_data_masking_activity_output(data_masking_activity_id
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -166,6 +169,7 @@ def get_fusion_environment_data_masking_activity_output(data_masking_activity_id
     test_fusion_environment_data_masking_activity = oci.Functions.get_fusion_environment_data_masking_activity(data_masking_activity_id=oci_fusion_apps_data_masking_activity["test_data_masking_activity"]["id"],
         fusion_environment_id=oci_fusion_apps_fusion_environment["test_fusion_environment"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str data_masking_activity_id: Unique DataMasking run identifier.

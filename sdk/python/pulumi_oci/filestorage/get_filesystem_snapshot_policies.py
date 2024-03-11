@@ -129,6 +129,7 @@ def get_filesystem_snapshot_policies(availability_domain: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -139,6 +140,7 @@ def get_filesystem_snapshot_policies(availability_domain: Optional[str] = None,
         id=var["filesystem_snapshot_policy_id"],
         state=var["filesystem_snapshot_policy_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
@@ -182,6 +184,7 @@ def get_filesystem_snapshot_policies_output(availability_domain: Optional[pulumi
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -192,6 +195,7 @@ def get_filesystem_snapshot_policies_output(availability_domain: Optional[pulumi
         id=var["filesystem_snapshot_policy_id"],
         state=var["filesystem_snapshot_policy_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`

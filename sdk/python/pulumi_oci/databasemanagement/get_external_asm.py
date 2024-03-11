@@ -267,12 +267,14 @@ def get_external_asm(external_asm_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_external_asm = oci.DatabaseManagement.get_external_asm(external_asm_id=oci_database_management_external_asm["test_external_asm"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str external_asm_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM.
@@ -314,12 +316,14 @@ def get_external_asm_output(external_asm_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_external_asm = oci.DatabaseManagement.get_external_asm(external_asm_id=oci_database_management_external_asm["test_external_asm"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str external_asm_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM.

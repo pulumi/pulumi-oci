@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -49,15 +50,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Apis can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:ApiGateway/api:Api test_api "id"
-//
+// $ pulumi import oci:ApiGateway/api:Api test_api "id"
 // ```
 type Api struct {
 	pulumi.CustomResourceState

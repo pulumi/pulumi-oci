@@ -21,6 +21,7 @@ namespace Pulumi.Oci.ManagementDashboard
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -37,13 +38,14 @@ namespace Pulumi.Oci.ManagementDashboard
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// ManagementDashboardsImport can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:ManagementDashboard/managementDashboardsImport:ManagementDashboardsImport test_management_dashboards_import "id"
+    /// $ pulumi import oci:ManagementDashboard/managementDashboardsImport:ManagementDashboardsImport test_management_dashboards_import "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:ManagementDashboard/managementDashboardsImport:ManagementDashboardsImport")]

@@ -16,10 +16,9 @@ namespace Pulumi.Oci.Functions
         /// 
         /// List all FusionEnvironment admin users
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,8 +34,7 @@ namespace Pulumi.Oci.Functions
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetFusionEnvironmentAdminUserResult> InvokeAsync(GetFusionEnvironmentAdminUserArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetFusionEnvironmentAdminUserResult>("oci:Functions/getFusionEnvironmentAdminUser:getFusionEnvironmentAdminUser", args ?? new GetFusionEnvironmentAdminUserArgs(), options.WithDefaults());
@@ -46,10 +44,9 @@ namespace Pulumi.Oci.Functions
         /// 
         /// List all FusionEnvironment admin users
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -65,8 +62,7 @@ namespace Pulumi.Oci.Functions
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetFusionEnvironmentAdminUserResult> Invoke(GetFusionEnvironmentAdminUserInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFusionEnvironmentAdminUserResult>("oci:Functions/getFusionEnvironmentAdminUser:getFusionEnvironmentAdminUser", args ?? new GetFusionEnvironmentAdminUserInvokeArgs(), options.WithDefaults());

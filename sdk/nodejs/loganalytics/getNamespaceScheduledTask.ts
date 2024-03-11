@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,6 +23,7 @@ import * as utilities from "../utilities";
  *     scheduledTaskId: oci_log_analytics_scheduled_task.test_scheduled_task.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getNamespaceScheduledTask(args: GetNamespaceScheduledTaskArgs, opts?: pulumi.InvokeOptions): Promise<GetNamespaceScheduledTaskResult> {
 
@@ -127,6 +129,7 @@ export interface GetNamespaceScheduledTaskResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -136,6 +139,7 @@ export interface GetNamespaceScheduledTaskResult {
  *     scheduledTaskId: oci_log_analytics_scheduled_task.test_scheduled_task.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getNamespaceScheduledTaskOutput(args: GetNamespaceScheduledTaskOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNamespaceScheduledTaskResult> {
     return pulumi.output(args).apply((a: any) => getNamespaceScheduledTask(a, opts))

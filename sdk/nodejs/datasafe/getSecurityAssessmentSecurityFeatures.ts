@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -35,6 +36,7 @@ import * as utilities from "../utilities";
  *     targetsWithUnifiedAudit: _var.security_assessment_security_feature_targets_with_unified_audit,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getSecurityAssessmentSecurityFeatures(args: GetSecurityAssessmentSecurityFeaturesArgs, opts?: pulumi.InvokeOptions): Promise<GetSecurityAssessmentSecurityFeaturesResult> {
 
@@ -168,6 +170,7 @@ export interface GetSecurityAssessmentSecurityFeaturesResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -190,6 +193,7 @@ export interface GetSecurityAssessmentSecurityFeaturesResult {
  *     targetsWithUnifiedAudit: _var.security_assessment_security_feature_targets_with_unified_audit,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getSecurityAssessmentSecurityFeaturesOutput(args: GetSecurityAssessmentSecurityFeaturesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecurityAssessmentSecurityFeaturesResult> {
     return pulumi.output(args).apply((a: any) => getSecurityAssessmentSecurityFeatures(a, opts))

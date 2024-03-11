@@ -1374,7 +1374,7 @@ class DomainsNotificationSetting(pulumi.CustomResource):
         NotificationSettings can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/domainsNotificationSetting:DomainsNotificationSetting test_notification_setting "idcsEndpoint/{idcsEndpoint}/notificationSettings/{notificationSettingId}"
+        $ pulumi import oci:Identity/domainsNotificationSetting:DomainsNotificationSetting test_notification_setting "idcsEndpoint/{idcsEndpoint}/notificationSettings/{notificationSettingId}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -1528,7 +1528,7 @@ class DomainsNotificationSetting(pulumi.CustomResource):
         NotificationSettings can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/domainsNotificationSetting:DomainsNotificationSetting test_notification_setting "idcsEndpoint/{idcsEndpoint}/notificationSettings/{notificationSettingId}"
+        $ pulumi import oci:Identity/domainsNotificationSetting:DomainsNotificationSetting test_notification_setting "idcsEndpoint/{idcsEndpoint}/notificationSettings/{notificationSettingId}"
         ```
 
         :param str resource_name: The name of the resource.

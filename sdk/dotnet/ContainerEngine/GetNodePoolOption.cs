@@ -16,10 +16,9 @@ namespace Pulumi.Oci.ContainerEngine
         /// 
         /// Get options available for node pools.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,8 +35,7 @@ namespace Pulumi.Oci.ContainerEngine
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetNodePoolOptionResult> InvokeAsync(GetNodePoolOptionArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetNodePoolOptionResult>("oci:ContainerEngine/getNodePoolOption:getNodePoolOption", args ?? new GetNodePoolOptionArgs(), options.WithDefaults());
@@ -47,10 +45,9 @@ namespace Pulumi.Oci.ContainerEngine
         /// 
         /// Get options available for node pools.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -67,8 +64,7 @@ namespace Pulumi.Oci.ContainerEngine
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetNodePoolOptionResult> Invoke(GetNodePoolOptionInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNodePoolOptionResult>("oci:ContainerEngine/getNodePoolOption:getNodePoolOption", args ?? new GetNodePoolOptionInvokeArgs(), options.WithDefaults());

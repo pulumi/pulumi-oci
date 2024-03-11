@@ -16,10 +16,9 @@ namespace Pulumi.Oci.ContainerEngine
         /// 
         /// Get options available for clusters.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,8 +35,7 @@ namespace Pulumi.Oci.ContainerEngine
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetClusterOptionResult> InvokeAsync(GetClusterOptionArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetClusterOptionResult>("oci:ContainerEngine/getClusterOption:getClusterOption", args ?? new GetClusterOptionArgs(), options.WithDefaults());
@@ -47,10 +45,9 @@ namespace Pulumi.Oci.ContainerEngine
         /// 
         /// Get options available for clusters.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -67,8 +64,7 @@ namespace Pulumi.Oci.ContainerEngine
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetClusterOptionResult> Invoke(GetClusterOptionInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetClusterOptionResult>("oci:ContainerEngine/getClusterOption:getClusterOption", args ?? new GetClusterOptionInvokeArgs(), options.WithDefaults());

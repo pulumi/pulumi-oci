@@ -430,6 +430,7 @@ class PrivateEndpoint(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -450,13 +451,14 @@ class PrivateEndpoint(pulumi.CustomResource):
             is_used_with_configuration_source_provider=var["private_endpoint_is_used_with_configuration_source_provider"],
             nsg_id_lists=var["private_endpoint_nsg_id_list"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         PrivateEndpoints can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:ResourceManager/privateEndpoint:PrivateEndpoint test_private_endpoint "id"
+        $ pulumi import oci:ResourceManager/privateEndpoint:PrivateEndpoint test_private_endpoint "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -489,6 +491,7 @@ class PrivateEndpoint(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -509,13 +512,14 @@ class PrivateEndpoint(pulumi.CustomResource):
             is_used_with_configuration_source_provider=var["private_endpoint_is_used_with_configuration_source_provider"],
             nsg_id_lists=var["private_endpoint_nsg_id_list"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         PrivateEndpoints can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:ResourceManager/privateEndpoint:PrivateEndpoint test_private_endpoint "id"
+        $ pulumi import oci:ResourceManager/privateEndpoint:PrivateEndpoint test_private_endpoint "id"
         ```
 
         :param str resource_name: The name of the resource.

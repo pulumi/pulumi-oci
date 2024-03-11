@@ -17,9 +17,7 @@ import (
 // PrivateEndpoints can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:DataFlow/privateEndpoint:PrivateEndpoint test_private_endpoint "id"
-//
+// $ pulumi import oci:DataFlow/privateEndpoint:PrivateEndpoint test_private_endpoint "id"
 // ```
 type PrivateEndpoint struct {
 	pulumi.CustomResourceState

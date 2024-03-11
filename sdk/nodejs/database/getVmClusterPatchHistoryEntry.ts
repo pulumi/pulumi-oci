@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -20,6 +21,7 @@ import * as utilities from "../utilities";
  *     vmClusterId: oci_database_vm_cluster.test_vm_cluster.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getVmClusterPatchHistoryEntry(args: GetVmClusterPatchHistoryEntryArgs, opts?: pulumi.InvokeOptions): Promise<GetVmClusterPatchHistoryEntryResult> {
 
@@ -86,6 +88,7 @@ export interface GetVmClusterPatchHistoryEntryResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -95,6 +98,7 @@ export interface GetVmClusterPatchHistoryEntryResult {
  *     vmClusterId: oci_database_vm_cluster.test_vm_cluster.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getVmClusterPatchHistoryEntryOutput(args: GetVmClusterPatchHistoryEntryOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVmClusterPatchHistoryEntryResult> {
     return pulumi.output(args).apply((a: any) => getVmClusterPatchHistoryEntry(a, opts))

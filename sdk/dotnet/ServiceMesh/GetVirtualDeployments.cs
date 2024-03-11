@@ -17,10 +17,9 @@ namespace Pulumi.Oci.ServiceMesh
         /// Returns a list of VirtualDeployments.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -40,8 +39,7 @@ namespace Pulumi.Oci.ServiceMesh
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetVirtualDeploymentsResult> InvokeAsync(GetVirtualDeploymentsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetVirtualDeploymentsResult>("oci:ServiceMesh/getVirtualDeployments:getVirtualDeployments", args ?? new GetVirtualDeploymentsArgs(), options.WithDefaults());
@@ -52,10 +50,9 @@ namespace Pulumi.Oci.ServiceMesh
         /// Returns a list of VirtualDeployments.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -75,8 +72,7 @@ namespace Pulumi.Oci.ServiceMesh
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetVirtualDeploymentsResult> Invoke(GetVirtualDeploymentsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVirtualDeploymentsResult>("oci:ServiceMesh/getVirtualDeployments:getVirtualDeployments", args ?? new GetVirtualDeploymentsInvokeArgs(), options.WithDefaults());

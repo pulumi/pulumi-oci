@@ -214,12 +214,14 @@ def get_alarm_suppression(alarm_suppression_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_alarm_suppression = oci.Monitoring.get_alarm_suppression(alarm_suppression_id=oci_monitoring_alarm_suppression["test_alarm_suppression"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str alarm_suppression_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm suppression.
@@ -263,12 +265,14 @@ def get_alarm_suppression_output(alarm_suppression_id: Optional[pulumi.Input[str
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_alarm_suppression = oci.Monitoring.get_alarm_suppression(alarm_suppression_id=oci_monitoring_alarm_suppression["test_alarm_suppression"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str alarm_suppression_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm suppression.

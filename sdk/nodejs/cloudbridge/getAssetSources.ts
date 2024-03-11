@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,6 +25,7 @@ import * as utilities from "../utilities";
  *     state: _var.asset_source_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAssetSources(args: GetAssetSourcesArgs, opts?: pulumi.InvokeOptions): Promise<GetAssetSourcesResult> {
 
@@ -94,6 +96,7 @@ export interface GetAssetSourcesResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -105,6 +108,7 @@ export interface GetAssetSourcesResult {
  *     state: _var.asset_source_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAssetSourcesOutput(args: GetAssetSourcesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAssetSourcesResult> {
     return pulumi.output(args).apply((a: any) => getAssetSources(a, opts))

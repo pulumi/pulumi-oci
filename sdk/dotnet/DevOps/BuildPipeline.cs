@@ -16,6 +16,7 @@ namespace Pulumi.Oci.DevOps
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -53,13 +54,14 @@ namespace Pulumi.Oci.DevOps
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// BuildPipelines can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:DevOps/buildPipeline:BuildPipeline test_build_pipeline "id"
+    /// $ pulumi import oci:DevOps/buildPipeline:BuildPipeline test_build_pipeline "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:DevOps/buildPipeline:BuildPipeline")]

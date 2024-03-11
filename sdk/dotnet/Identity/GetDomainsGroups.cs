@@ -16,10 +16,9 @@ namespace Pulumi.Oci.Identity
         /// 
         /// Search for groups. &lt;b&gt;Important:&lt;/b&gt; The Group SEARCH and GET operations on users and members will throw an exception if the response has more than 10,000 members. To avoid the exception, use the pagination filter to GET or SEARCH group members.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -42,8 +41,7 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDomainsGroupsResult> InvokeAsync(GetDomainsGroupsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDomainsGroupsResult>("oci:Identity/getDomainsGroups:getDomainsGroups", args ?? new GetDomainsGroupsArgs(), options.WithDefaults());
@@ -53,10 +51,9 @@ namespace Pulumi.Oci.Identity
         /// 
         /// Search for groups. &lt;b&gt;Important:&lt;/b&gt; The Group SEARCH and GET operations on users and members will throw an exception if the response has more than 10,000 members. To avoid the exception, use the pagination filter to GET or SEARCH group members.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -79,8 +76,7 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDomainsGroupsResult> Invoke(GetDomainsGroupsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsGroupsResult>("oci:Identity/getDomainsGroups:getDomainsGroups", args ?? new GetDomainsGroupsInvokeArgs(), options.WithDefaults());

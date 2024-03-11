@@ -185,6 +185,7 @@ class CloudGuardConfiguration(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -195,6 +196,7 @@ class CloudGuardConfiguration(pulumi.CustomResource):
             status=var["cloud_guard_configuration_status"],
             self_manage_resources=var["cloud_guard_configuration_self_manage_resources"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -224,6 +226,7 @@ class CloudGuardConfiguration(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -234,6 +237,7 @@ class CloudGuardConfiguration(pulumi.CustomResource):
             status=var["cloud_guard_configuration_status"],
             self_manage_resources=var["cloud_guard_configuration_self_manage_resources"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 

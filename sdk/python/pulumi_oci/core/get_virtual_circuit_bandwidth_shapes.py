@@ -89,12 +89,14 @@ def get_virtual_circuit_bandwidth_shapes(filters: Optional[Sequence[pulumi.Input
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_virtual_circuit_bandwidth_shapes = oci.Core.get_virtual_circuit_bandwidth_shapes(provider_service_id=data["oci_core_fast_connect_provider_services"]["test_fast_connect_provider_services"]["fast_connect_provider_services"][0]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str provider_service_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the provider service.
@@ -126,12 +128,14 @@ def get_virtual_circuit_bandwidth_shapes_output(filters: Optional[pulumi.Input[O
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_virtual_circuit_bandwidth_shapes = oci.Core.get_virtual_circuit_bandwidth_shapes(provider_service_id=data["oci_core_fast_connect_provider_services"]["test_fast_connect_provider_services"]["fast_connect_provider_services"][0]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str provider_service_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the provider service.

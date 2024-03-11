@@ -16,6 +16,7 @@ namespace Pulumi.Oci.LogAnalytics
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -33,13 +34,14 @@ namespace Pulumi.Oci.LogAnalytics
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// Namespace can be imported using the `namespace`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:LogAnalytics/namespace:Namespace test_namespace "namespace"
+    /// $ pulumi import oci:LogAnalytics/namespace:Namespace test_namespace "namespace"
     /// ```
     /// </summary>
     [OciResourceType("oci:LogAnalytics/namespace:Namespace")]

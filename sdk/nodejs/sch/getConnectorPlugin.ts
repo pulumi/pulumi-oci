@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -19,6 +20,7 @@ import * as utilities from "../utilities";
  *     connectorPluginName: oci_sch_connector_plugin.test_connector_plugin.name,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getConnectorPlugin(args: GetConnectorPluginArgs, opts?: pulumi.InvokeOptions): Promise<GetConnectorPluginResult> {
 
@@ -87,6 +89,7 @@ export interface GetConnectorPluginResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -95,6 +98,7 @@ export interface GetConnectorPluginResult {
  *     connectorPluginName: oci_sch_connector_plugin.test_connector_plugin.name,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getConnectorPluginOutput(args: GetConnectorPluginOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetConnectorPluginResult> {
     return pulumi.output(args).apply((a: any) => getConnectorPlugin(a, opts))

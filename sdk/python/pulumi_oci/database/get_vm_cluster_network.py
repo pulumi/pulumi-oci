@@ -251,6 +251,7 @@ def get_vm_cluster_network(exadata_infrastructure_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -258,6 +259,7 @@ def get_vm_cluster_network(exadata_infrastructure_id: Optional[str] = None,
     test_vm_cluster_network = oci.Database.get_vm_cluster_network(exadata_infrastructure_id=oci_database_exadata_infrastructure["test_exadata_infrastructure"]["id"],
         vm_cluster_network_id=oci_database_vm_cluster_network["test_vm_cluster_network"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str exadata_infrastructure_id: The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -302,6 +304,7 @@ def get_vm_cluster_network_output(exadata_infrastructure_id: Optional[pulumi.Inp
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -309,6 +312,7 @@ def get_vm_cluster_network_output(exadata_infrastructure_id: Optional[pulumi.Inp
     test_vm_cluster_network = oci.Database.get_vm_cluster_network(exadata_infrastructure_id=oci_database_exadata_infrastructure["test_exadata_infrastructure"]["id"],
         vm_cluster_network_id=oci_database_vm_cluster_network["test_vm_cluster_network"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str exadata_infrastructure_id: The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

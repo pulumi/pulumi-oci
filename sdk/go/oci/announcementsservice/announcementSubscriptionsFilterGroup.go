@@ -20,6 +20,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -49,15 +50,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // AnnouncementSubscriptionsFilterGroups can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:AnnouncementsService/announcementSubscriptionsFilterGroup:AnnouncementSubscriptionsFilterGroup test_announcement_subscriptions_filter_group "id"
-//
+// $ pulumi import oci:AnnouncementsService/announcementSubscriptionsFilterGroup:AnnouncementSubscriptionsFilterGroup test_announcement_subscriptions_filter_group "id"
 // ```
 type AnnouncementSubscriptionsFilterGroup struct {
 	pulumi.CustomResourceState

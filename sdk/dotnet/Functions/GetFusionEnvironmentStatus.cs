@@ -16,10 +16,9 @@ namespace Pulumi.Oci.Functions
         /// 
         /// Gets the status of a Fusion environment identified by its OCID.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,8 +34,7 @@ namespace Pulumi.Oci.Functions
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetFusionEnvironmentStatusResult> InvokeAsync(GetFusionEnvironmentStatusArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetFusionEnvironmentStatusResult>("oci:Functions/getFusionEnvironmentStatus:getFusionEnvironmentStatus", args ?? new GetFusionEnvironmentStatusArgs(), options.WithDefaults());
@@ -46,10 +44,9 @@ namespace Pulumi.Oci.Functions
         /// 
         /// Gets the status of a Fusion environment identified by its OCID.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -65,8 +62,7 @@ namespace Pulumi.Oci.Functions
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetFusionEnvironmentStatusResult> Invoke(GetFusionEnvironmentStatusInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFusionEnvironmentStatusResult>("oci:Functions/getFusionEnvironmentStatus:getFusionEnvironmentStatus", args ?? new GetFusionEnvironmentStatusInvokeArgs(), options.WithDefaults());

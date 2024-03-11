@@ -200,6 +200,7 @@ class LoadBalancerRoutingPolicy(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -216,13 +217,14 @@ class LoadBalancerRoutingPolicy(pulumi.CustomResource):
                 name=var["load_balancer_routing_policy_rules_name"],
             )])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         LoadBalancerRoutingPolicies can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:LoadBalancer/loadBalancerRoutingPolicy:LoadBalancerRoutingPolicy test_load_balancer_routing_policy "loadBalancers/{loadBalancerId}/routingPolicies/{routingPolicyName}"
+        $ pulumi import oci:LoadBalancer/loadBalancerRoutingPolicy:LoadBalancerRoutingPolicy test_load_balancer_routing_policy "loadBalancers/{loadBalancerId}/routingPolicies/{routingPolicyName}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -250,6 +252,7 @@ class LoadBalancerRoutingPolicy(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -266,13 +269,14 @@ class LoadBalancerRoutingPolicy(pulumi.CustomResource):
                 name=var["load_balancer_routing_policy_rules_name"],
             )])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         LoadBalancerRoutingPolicies can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:LoadBalancer/loadBalancerRoutingPolicy:LoadBalancerRoutingPolicy test_load_balancer_routing_policy "loadBalancers/{loadBalancerId}/routingPolicies/{routingPolicyName}"
+        $ pulumi import oci:LoadBalancer/loadBalancerRoutingPolicy:LoadBalancerRoutingPolicy test_load_balancer_routing_policy "loadBalancers/{loadBalancerId}/routingPolicies/{routingPolicyName}"
         ```
 
         :param str resource_name: The name of the resource.

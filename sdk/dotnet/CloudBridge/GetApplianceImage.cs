@@ -17,10 +17,9 @@ namespace Pulumi.Oci.CloudBridge
         /// Returns a list of Appliance Images.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -37,8 +36,7 @@ namespace Pulumi.Oci.CloudBridge
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetApplianceImageResult> InvokeAsync(GetApplianceImageArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetApplianceImageResult>("oci:CloudBridge/getApplianceImage:getApplianceImage", args ?? new GetApplianceImageArgs(), options.WithDefaults());
@@ -49,10 +47,9 @@ namespace Pulumi.Oci.CloudBridge
         /// Returns a list of Appliance Images.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -69,8 +66,7 @@ namespace Pulumi.Oci.CloudBridge
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetApplianceImageResult> Invoke(GetApplianceImageInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetApplianceImageResult>("oci:CloudBridge/getApplianceImage:getApplianceImage", args ?? new GetApplianceImageInvokeArgs(), options.WithDefaults());

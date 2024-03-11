@@ -284,6 +284,7 @@ class DbNodeConsoleConnection(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -296,13 +297,14 @@ class DbNodeConsoleConnection(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         DbNodeConsoleConnections can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Database/dbNodeConsoleConnection:DbNodeConsoleConnection test_db_node_console_connection "dbNodes/{dbNodeId}/consoleConnections/{consoleConnectionId}"
+        $ pulumi import oci:Database/dbNodeConsoleConnection:DbNodeConsoleConnection test_db_node_console_connection "dbNodes/{dbNodeId}/consoleConnections/{consoleConnectionId}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -331,6 +333,7 @@ class DbNodeConsoleConnection(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -343,13 +346,14 @@ class DbNodeConsoleConnection(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         DbNodeConsoleConnections can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Database/dbNodeConsoleConnection:DbNodeConsoleConnection test_db_node_console_connection "dbNodes/{dbNodeId}/consoleConnections/{consoleConnectionId}"
+        $ pulumi import oci:Database/dbNodeConsoleConnection:DbNodeConsoleConnection test_db_node_console_connection "dbNodes/{dbNodeId}/consoleConnections/{consoleConnectionId}"
         ```
 
         :param str resource_name: The name of the resource.

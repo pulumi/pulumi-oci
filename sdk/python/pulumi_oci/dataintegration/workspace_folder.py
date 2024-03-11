@@ -458,6 +458,7 @@ class WorkspaceFolder(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -478,13 +479,14 @@ class WorkspaceFolder(pulumi.CustomResource):
             model_version=var["workspace_folder_model_version"],
             object_status=var["workspace_folder_object_status"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         WorkspaceFolders can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataIntegration/workspaceFolder:WorkspaceFolder test_workspace_folder "workspaces/{workspaceId}/folders/{folderKey}"
+        $ pulumi import oci:DataIntegration/workspaceFolder:WorkspaceFolder test_workspace_folder "workspaces/{workspaceId}/folders/{folderKey}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -517,6 +519,7 @@ class WorkspaceFolder(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -537,13 +540,14 @@ class WorkspaceFolder(pulumi.CustomResource):
             model_version=var["workspace_folder_model_version"],
             object_status=var["workspace_folder_object_status"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         WorkspaceFolders can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataIntegration/workspaceFolder:WorkspaceFolder test_workspace_folder "workspaces/{workspaceId}/folders/{folderKey}"
+        $ pulumi import oci:DataIntegration/workspaceFolder:WorkspaceFolder test_workspace_folder "workspaces/{workspaceId}/folders/{folderKey}"
         ```
 
         :param str resource_name: The name of the resource.

@@ -18,10 +18,9 @@ namespace Pulumi.Oci.Mysql
         /// The default sort order is by timeUpdated, descending.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -44,8 +43,7 @@ namespace Pulumi.Oci.Mysql
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetMysqlDbSystemsResult> InvokeAsync(GetMysqlDbSystemsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetMysqlDbSystemsResult>("oci:Mysql/getMysqlDbSystems:getMysqlDbSystems", args ?? new GetMysqlDbSystemsArgs(), options.WithDefaults());
@@ -57,10 +55,9 @@ namespace Pulumi.Oci.Mysql
         /// The default sort order is by timeUpdated, descending.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -83,8 +80,7 @@ namespace Pulumi.Oci.Mysql
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetMysqlDbSystemsResult> Invoke(GetMysqlDbSystemsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMysqlDbSystemsResult>("oci:Mysql/getMysqlDbSystems:getMysqlDbSystems", args ?? new GetMysqlDbSystemsInvokeArgs(), options.WithDefaults());

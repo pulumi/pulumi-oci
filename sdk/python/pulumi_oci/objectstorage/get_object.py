@@ -295,6 +295,7 @@ def get_object(base64_encode_content: Optional[bool] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -310,6 +311,7 @@ def get_object(base64_encode_content: Optional[bool] = None,
         http_response_expires=var["object_http_response_expires"],
         version_id=oci_objectstorage_version["test_version"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str bucket: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
@@ -387,6 +389,7 @@ def get_object_output(base64_encode_content: Optional[pulumi.Input[Optional[bool
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -402,6 +405,7 @@ def get_object_output(base64_encode_content: Optional[pulumi.Input[Optional[bool
         http_response_expires=var["object_http_response_expires"],
         version_id=oci_objectstorage_version["test_version"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str bucket: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`

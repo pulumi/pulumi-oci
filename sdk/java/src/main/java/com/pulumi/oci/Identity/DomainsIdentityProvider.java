@@ -33,6 +33,7 @@ import javax.annotation.Nullable;
  * 
  * ## Example Usage
  * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -169,13 +170,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * IdentityProviders can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Identity/domainsIdentityProvider:DomainsIdentityProvider test_identity_provider &#34;idcsEndpoint/{idcsEndpoint}/identityProviders/{identityProviderId}&#34;
+ * $ pulumi import oci:Identity/domainsIdentityProvider:DomainsIdentityProvider test_identity_provider &#34;idcsEndpoint/{idcsEndpoint}/identityProviders/{identityProviderId}&#34;
  * ```
  * 
  */

@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -45,6 +46,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetNamespaceRules(ctx *pulumi.Context, args *GetNamespaceRulesArgs, opts ...pulumi.InvokeOption) (*GetNamespaceRulesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetNamespaceRulesResult

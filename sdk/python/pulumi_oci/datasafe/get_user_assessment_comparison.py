@@ -109,6 +109,7 @@ def get_user_assessment_comparison(comparison_user_assessment_id: Optional[str] 
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -116,6 +117,7 @@ def get_user_assessment_comparison(comparison_user_assessment_id: Optional[str] 
     test_user_assessment_comparison = oci.DataSafe.get_user_assessment_comparison(comparison_user_assessment_id=oci_data_safe_user_assessment["test_user_assessment"]["id"],
         user_assessment_id=oci_data_safe_user_assessment["test_user_assessment"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str comparison_user_assessment_id: The OCID of the baseline user assessment.
@@ -147,6 +149,7 @@ def get_user_assessment_comparison_output(comparison_user_assessment_id: Optiona
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -154,6 +157,7 @@ def get_user_assessment_comparison_output(comparison_user_assessment_id: Optiona
     test_user_assessment_comparison = oci.DataSafe.get_user_assessment_comparison(comparison_user_assessment_id=oci_data_safe_user_assessment["test_user_assessment"]["id"],
         user_assessment_id=oci_data_safe_user_assessment["test_user_assessment"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str comparison_user_assessment_id: The OCID of the baseline user assessment.

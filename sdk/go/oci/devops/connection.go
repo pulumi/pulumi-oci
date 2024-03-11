@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -58,15 +59,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Connections can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:DevOps/connection:Connection test_connection "id"
-//
+// $ pulumi import oci:DevOps/connection:Connection test_connection "id"
 // ```
 type Connection struct {
 	pulumi.CustomResourceState

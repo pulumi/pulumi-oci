@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,6 +24,7 @@ import * as utilities from "../utilities";
  *     name: _var.instance_available_plugin_name,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getInstanceAvailablePlugin(args: GetInstanceAvailablePluginArgs, opts?: pulumi.InvokeOptions): Promise<GetInstanceAvailablePluginResult> {
 
@@ -84,6 +86,7 @@ export interface GetInstanceAvailablePluginResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -94,6 +97,7 @@ export interface GetInstanceAvailablePluginResult {
  *     name: _var.instance_available_plugin_name,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getInstanceAvailablePluginOutput(args: GetInstanceAvailablePluginOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInstanceAvailablePluginResult> {
     return pulumi.output(args).apply((a: any) => getInstanceAvailablePlugin(a, opts))

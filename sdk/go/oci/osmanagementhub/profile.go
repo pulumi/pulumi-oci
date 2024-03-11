@@ -20,6 +20,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -59,15 +60,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Profiles can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:OsManagementHub/profile:Profile test_profile "id"
-//
+// $ pulumi import oci:OsManagementHub/profile:Profile test_profile "id"
 // ```
 type Profile struct {
 	pulumi.CustomResourceState

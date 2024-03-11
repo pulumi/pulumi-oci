@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -67,13 +68,14 @@ import * as utilities from "../utilities";
  *     }],
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * ExadataInsights can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Opsi/exadataInsight:ExadataInsight test_exadata_insight "id"
+ * $ pulumi import oci:Opsi/exadataInsight:ExadataInsight test_exadata_insight "id"
  * ```
  */
 export class ExadataInsight extends pulumi.CustomResource {

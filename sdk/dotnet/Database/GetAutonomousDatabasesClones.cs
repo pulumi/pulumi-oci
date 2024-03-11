@@ -17,10 +17,9 @@ namespace Pulumi.Oci.Database
         /// Lists the Autonomous Database clones for the specified Autonomous Database.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -40,8 +39,7 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetAutonomousDatabasesClonesResult> InvokeAsync(GetAutonomousDatabasesClonesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAutonomousDatabasesClonesResult>("oci:Database/getAutonomousDatabasesClones:getAutonomousDatabasesClones", args ?? new GetAutonomousDatabasesClonesArgs(), options.WithDefaults());
@@ -52,10 +50,9 @@ namespace Pulumi.Oci.Database
         /// Lists the Autonomous Database clones for the specified Autonomous Database.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -75,8 +72,7 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetAutonomousDatabasesClonesResult> Invoke(GetAutonomousDatabasesClonesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousDatabasesClonesResult>("oci:Database/getAutonomousDatabasesClones:getAutonomousDatabasesClones", args ?? new GetAutonomousDatabasesClonesInvokeArgs(), options.WithDefaults());

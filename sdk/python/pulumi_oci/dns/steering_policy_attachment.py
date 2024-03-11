@@ -270,6 +270,7 @@ class SteeringPolicyAttachment(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -280,13 +281,14 @@ class SteeringPolicyAttachment(pulumi.CustomResource):
             zone_id=oci_dns_zone["test_zone"]["id"],
             display_name=var["steering_policy_attachment_display_name"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         SteeringPolicyAttachments can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Dns/steeringPolicyAttachment:SteeringPolicyAttachment test_steering_policy_attachment "id"
+        $ pulumi import oci:Dns/steeringPolicyAttachment:SteeringPolicyAttachment test_steering_policy_attachment "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -318,6 +320,7 @@ class SteeringPolicyAttachment(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -328,13 +331,14 @@ class SteeringPolicyAttachment(pulumi.CustomResource):
             zone_id=oci_dns_zone["test_zone"]["id"],
             display_name=var["steering_policy_attachment_display_name"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         SteeringPolicyAttachments can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Dns/steeringPolicyAttachment:SteeringPolicyAttachment test_steering_policy_attachment "id"
+        $ pulumi import oci:Dns/steeringPolicyAttachment:SteeringPolicyAttachment test_steering_policy_attachment "id"
         ```
 
         :param str resource_name: The name of the resource.

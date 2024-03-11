@@ -17,10 +17,9 @@ namespace Pulumi.Oci.DataSafe
         /// Returns list of schema.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -39,8 +38,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetTargetDatabasesSchemasResult> InvokeAsync(GetTargetDatabasesSchemasArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetTargetDatabasesSchemasResult>("oci:DataSafe/getTargetDatabasesSchemas:getTargetDatabasesSchemas", args ?? new GetTargetDatabasesSchemasArgs(), options.WithDefaults());
@@ -51,10 +49,9 @@ namespace Pulumi.Oci.DataSafe
         /// Returns list of schema.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -73,8 +70,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetTargetDatabasesSchemasResult> Invoke(GetTargetDatabasesSchemasInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetTargetDatabasesSchemasResult>("oci:DataSafe/getTargetDatabasesSchemas:getTargetDatabasesSchemas", args ?? new GetTargetDatabasesSchemasInvokeArgs(), options.WithDefaults());

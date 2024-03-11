@@ -16,10 +16,9 @@ namespace Pulumi.Oci.ContainerInstances
         /// 
         /// Lists the shapes that can be used to create container instances.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,8 +35,7 @@ namespace Pulumi.Oci.ContainerInstances
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetContainerInstanceShapesResult> InvokeAsync(GetContainerInstanceShapesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetContainerInstanceShapesResult>("oci:ContainerInstances/getContainerInstanceShapes:getContainerInstanceShapes", args ?? new GetContainerInstanceShapesArgs(), options.WithDefaults());
@@ -47,10 +45,9 @@ namespace Pulumi.Oci.ContainerInstances
         /// 
         /// Lists the shapes that can be used to create container instances.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -67,8 +64,7 @@ namespace Pulumi.Oci.ContainerInstances
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetContainerInstanceShapesResult> Invoke(GetContainerInstanceShapesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetContainerInstanceShapesResult>("oci:ContainerInstances/getContainerInstanceShapes:getContainerInstanceShapes", args ?? new GetContainerInstanceShapesInvokeArgs(), options.WithDefaults());

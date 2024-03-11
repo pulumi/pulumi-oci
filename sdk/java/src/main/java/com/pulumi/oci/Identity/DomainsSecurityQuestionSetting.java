@@ -31,7 +31,7 @@ import javax.annotation.Nullable;
  * SecurityQuestionSettings can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Identity/domainsSecurityQuestionSetting:DomainsSecurityQuestionSetting test_security_question_setting &#34;idcsEndpoint/{idcsEndpoint}/securityQuestionSettings/{securityQuestionSettingId}&#34;
+ * $ pulumi import oci:Identity/domainsSecurityQuestionSetting:DomainsSecurityQuestionSetting test_security_question_setting &#34;idcsEndpoint/{idcsEndpoint}/securityQuestionSettings/{securityQuestionSettingId}&#34;
  * ```
  * 
  */

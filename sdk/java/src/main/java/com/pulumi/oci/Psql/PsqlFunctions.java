@@ -50,6 +50,8 @@ public final class PsqlFunctions {
      * Gets a backup by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -78,6 +80,7 @@ public final class PsqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBackupResult> getBackup(GetBackupArgs args) {
@@ -89,6 +92,8 @@ public final class PsqlFunctions {
      * Gets a backup by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -117,6 +122,7 @@ public final class PsqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBackupResult> getBackupPlain(GetBackupPlainArgs args) {
@@ -128,6 +134,8 @@ public final class PsqlFunctions {
      * Gets a backup by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -156,6 +164,7 @@ public final class PsqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBackupResult> getBackup(GetBackupArgs args, InvokeOptions options) {
@@ -167,6 +176,8 @@ public final class PsqlFunctions {
      * Gets a backup by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -195,6 +206,7 @@ public final class PsqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBackupResult> getBackupPlain(GetBackupPlainArgs args, InvokeOptions options) {
@@ -206,6 +218,8 @@ public final class PsqlFunctions {
      * Returns a list of backups.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -240,6 +254,7 @@ public final class PsqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBackupsResult> getBackups() {
@@ -251,6 +266,8 @@ public final class PsqlFunctions {
      * Returns a list of backups.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -285,6 +302,7 @@ public final class PsqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBackupsResult> getBackupsPlain() {
@@ -296,6 +314,8 @@ public final class PsqlFunctions {
      * Returns a list of backups.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -330,6 +350,7 @@ public final class PsqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBackupsResult> getBackups(GetBackupsArgs args) {
@@ -341,6 +362,8 @@ public final class PsqlFunctions {
      * Returns a list of backups.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -375,6 +398,7 @@ public final class PsqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBackupsResult> getBackupsPlain(GetBackupsPlainArgs args) {
@@ -386,6 +410,8 @@ public final class PsqlFunctions {
      * Returns a list of backups.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -420,6 +446,7 @@ public final class PsqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBackupsResult> getBackups(GetBackupsArgs args, InvokeOptions options) {
@@ -431,6 +458,8 @@ public final class PsqlFunctions {
      * Returns a list of backups.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -465,6 +494,7 @@ public final class PsqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBackupsResult> getBackupsPlain(GetBackupsPlainArgs args, InvokeOptions options) {
@@ -476,6 +506,8 @@ public final class PsqlFunctions {
      * Gets a configuration by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -504,6 +536,7 @@ public final class PsqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetConfigurationResult> getConfiguration(GetConfigurationArgs args) {
@@ -515,6 +548,8 @@ public final class PsqlFunctions {
      * Gets a configuration by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -543,6 +578,7 @@ public final class PsqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetConfigurationResult> getConfigurationPlain(GetConfigurationPlainArgs args) {
@@ -554,6 +590,8 @@ public final class PsqlFunctions {
      * Gets a configuration by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -582,6 +620,7 @@ public final class PsqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetConfigurationResult> getConfiguration(GetConfigurationArgs args, InvokeOptions options) {
@@ -593,6 +632,8 @@ public final class PsqlFunctions {
      * Gets a configuration by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -621,6 +662,7 @@ public final class PsqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetConfigurationResult> getConfigurationPlain(GetConfigurationPlainArgs args, InvokeOptions options) {
@@ -632,6 +674,8 @@ public final class PsqlFunctions {
      * Returns a list of configurations.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -665,6 +709,7 @@ public final class PsqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetConfigurationsResult> getConfigurations() {
@@ -676,6 +721,8 @@ public final class PsqlFunctions {
      * Returns a list of configurations.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -709,6 +756,7 @@ public final class PsqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetConfigurationsResult> getConfigurationsPlain() {
@@ -720,6 +768,8 @@ public final class PsqlFunctions {
      * Returns a list of configurations.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -753,6 +803,7 @@ public final class PsqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetConfigurationsResult> getConfigurations(GetConfigurationsArgs args) {
@@ -764,6 +815,8 @@ public final class PsqlFunctions {
      * Returns a list of configurations.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -797,6 +850,7 @@ public final class PsqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetConfigurationsResult> getConfigurationsPlain(GetConfigurationsPlainArgs args) {
@@ -808,6 +862,8 @@ public final class PsqlFunctions {
      * Returns a list of configurations.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -841,6 +897,7 @@ public final class PsqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetConfigurationsResult> getConfigurations(GetConfigurationsArgs args, InvokeOptions options) {
@@ -852,6 +909,8 @@ public final class PsqlFunctions {
      * Returns a list of configurations.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -885,6 +944,7 @@ public final class PsqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetConfigurationsResult> getConfigurationsPlain(GetConfigurationsPlainArgs args, InvokeOptions options) {
@@ -896,6 +956,8 @@ public final class PsqlFunctions {
      * Gets a database system by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -925,6 +987,7 @@ public final class PsqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDbSystemResult> getDbSystem(GetDbSystemArgs args) {
@@ -936,6 +999,8 @@ public final class PsqlFunctions {
      * Gets a database system by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -965,6 +1030,7 @@ public final class PsqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDbSystemResult> getDbSystemPlain(GetDbSystemPlainArgs args) {
@@ -976,6 +1042,8 @@ public final class PsqlFunctions {
      * Gets a database system by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1005,6 +1073,7 @@ public final class PsqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDbSystemResult> getDbSystem(GetDbSystemArgs args, InvokeOptions options) {
@@ -1016,6 +1085,8 @@ public final class PsqlFunctions {
      * Gets a database system by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1045,6 +1116,7 @@ public final class PsqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDbSystemResult> getDbSystemPlain(GetDbSystemPlainArgs args, InvokeOptions options) {
@@ -1056,6 +1128,8 @@ public final class PsqlFunctions {
      * Gets the database system connection details.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1084,6 +1158,7 @@ public final class PsqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDbSystemConnectionDetailResult> getDbSystemConnectionDetail(GetDbSystemConnectionDetailArgs args) {
@@ -1095,6 +1170,8 @@ public final class PsqlFunctions {
      * Gets the database system connection details.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1123,6 +1200,7 @@ public final class PsqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDbSystemConnectionDetailResult> getDbSystemConnectionDetailPlain(GetDbSystemConnectionDetailPlainArgs args) {
@@ -1134,6 +1212,8 @@ public final class PsqlFunctions {
      * Gets the database system connection details.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1162,6 +1242,7 @@ public final class PsqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDbSystemConnectionDetailResult> getDbSystemConnectionDetail(GetDbSystemConnectionDetailArgs args, InvokeOptions options) {
@@ -1173,6 +1254,8 @@ public final class PsqlFunctions {
      * Gets the database system connection details.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1201,6 +1284,7 @@ public final class PsqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDbSystemConnectionDetailResult> getDbSystemConnectionDetailPlain(GetDbSystemConnectionDetailPlainArgs args, InvokeOptions options) {
@@ -1212,6 +1296,8 @@ public final class PsqlFunctions {
      * Gets the primary database instance node details.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1240,6 +1326,7 @@ public final class PsqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDbSystemPrimaryDbInstanceResult> getDbSystemPrimaryDbInstance(GetDbSystemPrimaryDbInstanceArgs args) {
@@ -1251,6 +1338,8 @@ public final class PsqlFunctions {
      * Gets the primary database instance node details.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1279,6 +1368,7 @@ public final class PsqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDbSystemPrimaryDbInstanceResult> getDbSystemPrimaryDbInstancePlain(GetDbSystemPrimaryDbInstancePlainArgs args) {
@@ -1290,6 +1380,8 @@ public final class PsqlFunctions {
      * Gets the primary database instance node details.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1318,6 +1410,7 @@ public final class PsqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDbSystemPrimaryDbInstanceResult> getDbSystemPrimaryDbInstance(GetDbSystemPrimaryDbInstanceArgs args, InvokeOptions options) {
@@ -1329,6 +1422,8 @@ public final class PsqlFunctions {
      * Gets the primary database instance node details.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1357,6 +1452,7 @@ public final class PsqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDbSystemPrimaryDbInstanceResult> getDbSystemPrimaryDbInstancePlain(GetDbSystemPrimaryDbInstancePlainArgs args, InvokeOptions options) {
@@ -1368,6 +1464,8 @@ public final class PsqlFunctions {
      * Returns a list of database systems.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1399,6 +1497,7 @@ public final class PsqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDbSystemsResult> getDbSystems() {
@@ -1410,6 +1509,8 @@ public final class PsqlFunctions {
      * Returns a list of database systems.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1441,6 +1542,7 @@ public final class PsqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDbSystemsResult> getDbSystemsPlain() {
@@ -1452,6 +1554,8 @@ public final class PsqlFunctions {
      * Returns a list of database systems.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1483,6 +1587,7 @@ public final class PsqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDbSystemsResult> getDbSystems(GetDbSystemsArgs args) {
@@ -1494,6 +1599,8 @@ public final class PsqlFunctions {
      * Returns a list of database systems.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1525,6 +1632,7 @@ public final class PsqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDbSystemsResult> getDbSystemsPlain(GetDbSystemsPlainArgs args) {
@@ -1536,6 +1644,8 @@ public final class PsqlFunctions {
      * Returns a list of database systems.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1567,6 +1677,7 @@ public final class PsqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDbSystemsResult> getDbSystems(GetDbSystemsArgs args, InvokeOptions options) {
@@ -1578,6 +1689,8 @@ public final class PsqlFunctions {
      * Returns a list of database systems.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1609,6 +1722,7 @@ public final class PsqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDbSystemsResult> getDbSystemsPlain(GetDbSystemsPlainArgs args, InvokeOptions options) {
@@ -1620,6 +1734,8 @@ public final class PsqlFunctions {
      * Gets a default configuration by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1648,6 +1764,7 @@ public final class PsqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDefaultConfigurationResult> getDefaultConfiguration(GetDefaultConfigurationArgs args) {
@@ -1659,6 +1776,8 @@ public final class PsqlFunctions {
      * Gets a default configuration by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1687,6 +1806,7 @@ public final class PsqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDefaultConfigurationResult> getDefaultConfigurationPlain(GetDefaultConfigurationPlainArgs args) {
@@ -1698,6 +1818,8 @@ public final class PsqlFunctions {
      * Gets a default configuration by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1726,6 +1848,7 @@ public final class PsqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDefaultConfigurationResult> getDefaultConfiguration(GetDefaultConfigurationArgs args, InvokeOptions options) {
@@ -1737,6 +1860,8 @@ public final class PsqlFunctions {
      * Gets a default configuration by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1765,6 +1890,7 @@ public final class PsqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDefaultConfigurationResult> getDefaultConfigurationPlain(GetDefaultConfigurationPlainArgs args, InvokeOptions options) {
@@ -1776,6 +1902,8 @@ public final class PsqlFunctions {
      * Returns a list of default configurations.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1808,6 +1936,7 @@ public final class PsqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDefaultConfigurationsResult> getDefaultConfigurations() {
@@ -1819,6 +1948,8 @@ public final class PsqlFunctions {
      * Returns a list of default configurations.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1851,6 +1982,7 @@ public final class PsqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDefaultConfigurationsResult> getDefaultConfigurationsPlain() {
@@ -1862,6 +1994,8 @@ public final class PsqlFunctions {
      * Returns a list of default configurations.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1894,6 +2028,7 @@ public final class PsqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDefaultConfigurationsResult> getDefaultConfigurations(GetDefaultConfigurationsArgs args) {
@@ -1905,6 +2040,8 @@ public final class PsqlFunctions {
      * Returns a list of default configurations.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1937,6 +2074,7 @@ public final class PsqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDefaultConfigurationsResult> getDefaultConfigurationsPlain(GetDefaultConfigurationsPlainArgs args) {
@@ -1948,6 +2086,8 @@ public final class PsqlFunctions {
      * Returns a list of default configurations.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1980,6 +2120,7 @@ public final class PsqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDefaultConfigurationsResult> getDefaultConfigurations(GetDefaultConfigurationsArgs args, InvokeOptions options) {
@@ -1991,6 +2132,8 @@ public final class PsqlFunctions {
      * Returns a list of default configurations.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2023,6 +2166,7 @@ public final class PsqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDefaultConfigurationsResult> getDefaultConfigurationsPlain(GetDefaultConfigurationsPlainArgs args, InvokeOptions options) {
@@ -2034,6 +2178,8 @@ public final class PsqlFunctions {
      * Returns the list of shapes allowed in the region.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2063,6 +2209,7 @@ public final class PsqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetShapesResult> getShapes() {
@@ -2074,6 +2221,8 @@ public final class PsqlFunctions {
      * Returns the list of shapes allowed in the region.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2103,6 +2252,7 @@ public final class PsqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetShapesResult> getShapesPlain() {
@@ -2114,6 +2264,8 @@ public final class PsqlFunctions {
      * Returns the list of shapes allowed in the region.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2143,6 +2295,7 @@ public final class PsqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetShapesResult> getShapes(GetShapesArgs args) {
@@ -2154,6 +2307,8 @@ public final class PsqlFunctions {
      * Returns the list of shapes allowed in the region.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2183,6 +2338,7 @@ public final class PsqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetShapesResult> getShapesPlain(GetShapesPlainArgs args) {
@@ -2194,6 +2350,8 @@ public final class PsqlFunctions {
      * Returns the list of shapes allowed in the region.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2223,6 +2381,7 @@ public final class PsqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetShapesResult> getShapes(GetShapesArgs args, InvokeOptions options) {
@@ -2234,6 +2393,8 @@ public final class PsqlFunctions {
      * Returns the list of shapes allowed in the region.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2263,6 +2424,7 @@ public final class PsqlFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetShapesResult> getShapesPlain(GetShapesPlainArgs args, InvokeOptions options) {

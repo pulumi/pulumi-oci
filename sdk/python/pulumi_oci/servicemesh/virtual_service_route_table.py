@@ -399,6 +399,7 @@ class VirtualServiceRouteTable(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -427,13 +428,14 @@ class VirtualServiceRouteTable(pulumi.CustomResource):
             },
             priority=var["virtual_service_route_table_priority"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         VirtualServiceRouteTables can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:ServiceMesh/virtualServiceRouteTable:VirtualServiceRouteTable test_virtual_service_route_table "id"
+        $ pulumi import oci:ServiceMesh/virtualServiceRouteTable:VirtualServiceRouteTable test_virtual_service_route_table "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -464,6 +466,7 @@ class VirtualServiceRouteTable(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -492,13 +495,14 @@ class VirtualServiceRouteTable(pulumi.CustomResource):
             },
             priority=var["virtual_service_route_table_priority"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         VirtualServiceRouteTables can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:ServiceMesh/virtualServiceRouteTable:VirtualServiceRouteTable test_virtual_service_route_table "id"
+        $ pulumi import oci:ServiceMesh/virtualServiceRouteTable:VirtualServiceRouteTable test_virtual_service_route_table "id"
         ```
 
         :param str resource_name: The name of the resource.

@@ -775,7 +775,7 @@ class MediaAsset(pulumi.CustomResource):
         MediaAssets can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:MediaServices/mediaAsset:MediaAsset test_media_asset "id"
+        $ pulumi import oci:MediaServices/mediaAsset:MediaAsset test_media_asset "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -820,7 +820,7 @@ class MediaAsset(pulumi.CustomResource):
         MediaAssets can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:MediaServices/mediaAsset:MediaAsset test_media_asset "id"
+        $ pulumi import oci:MediaServices/mediaAsset:MediaAsset test_media_asset "id"
         ```
 
         :param str resource_name: The name of the resource.

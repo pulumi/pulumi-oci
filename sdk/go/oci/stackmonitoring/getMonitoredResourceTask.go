@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -40,6 +41,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupMonitoredResourceTask(ctx *pulumi.Context, args *LookupMonitoredResourceTaskArgs, opts ...pulumi.InvokeOption) (*LookupMonitoredResourceTaskResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupMonitoredResourceTaskResult

@@ -16,6 +16,7 @@ namespace Pulumi.Oci.Identity
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -44,13 +45,14 @@ namespace Pulumi.Oci.Identity
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// AuthenticationPolicies can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Identity/authenticationPolicy:AuthenticationPolicy test_authentication_policy "authenticationPolicies/{compartmentId}"
+    /// $ pulumi import oci:Identity/authenticationPolicy:AuthenticationPolicy test_authentication_policy "authenticationPolicies/{compartmentId}"
     /// ```
     /// </summary>
     [OciResourceType("oci:Identity/authenticationPolicy:AuthenticationPolicy")]

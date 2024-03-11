@@ -17,6 +17,7 @@ namespace Pulumi.Oci.FileStorage
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -41,13 +42,14 @@ namespace Pulumi.Oci.FileStorage
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// Snapshots can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:FileStorage/snapshot:Snapshot test_snapshot "id"
+    /// $ pulumi import oci:FileStorage/snapshot:Snapshot test_snapshot "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:FileStorage/snapshot:Snapshot")]

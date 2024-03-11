@@ -3127,7 +3127,7 @@ class DomainsUser(pulumi.CustomResource):
         Users can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/domainsUser:DomainsUser test_user "idcsEndpoint/{idcsEndpoint}/users/{userId}"
+        $ pulumi import oci:Identity/domainsUser:DomainsUser test_user "idcsEndpoint/{idcsEndpoint}/users/{userId}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -3480,7 +3480,7 @@ class DomainsUser(pulumi.CustomResource):
         Users can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/domainsUser:DomainsUser test_user "idcsEndpoint/{idcsEndpoint}/users/{userId}"
+        $ pulumi import oci:Identity/domainsUser:DomainsUser test_user "idcsEndpoint/{idcsEndpoint}/users/{userId}"
         ```
 
         :param str resource_name: The name of the resource.

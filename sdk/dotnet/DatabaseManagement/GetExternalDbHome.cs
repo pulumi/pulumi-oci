@@ -17,10 +17,9 @@ namespace Pulumi.Oci.DatabaseManagement
         /// Gets the details for the external DB home specified by `externalDbHomeId`.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,8 +35,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetExternalDbHomeResult> InvokeAsync(GetExternalDbHomeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetExternalDbHomeResult>("oci:DatabaseManagement/getExternalDbHome:getExternalDbHome", args ?? new GetExternalDbHomeArgs(), options.WithDefaults());
@@ -48,10 +46,9 @@ namespace Pulumi.Oci.DatabaseManagement
         /// Gets the details for the external DB home specified by `externalDbHomeId`.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -67,8 +64,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetExternalDbHomeResult> Invoke(GetExternalDbHomeInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetExternalDbHomeResult>("oci:DatabaseManagement/getExternalDbHome:getExternalDbHome", args ?? new GetExternalDbHomeInvokeArgs(), options.WithDefaults());

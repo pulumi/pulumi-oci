@@ -86,6 +86,8 @@ public final class GoldenGateFunctions {
      * Retrieves a Connection.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -114,6 +116,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetConnectionResult> getConnection(GetConnectionArgs args) {
@@ -125,6 +128,8 @@ public final class GoldenGateFunctions {
      * Retrieves a Connection.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -153,6 +158,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetConnectionResult> getConnectionPlain(GetConnectionPlainArgs args) {
@@ -164,6 +170,8 @@ public final class GoldenGateFunctions {
      * Retrieves a Connection.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -192,6 +200,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetConnectionResult> getConnection(GetConnectionArgs args, InvokeOptions options) {
@@ -203,6 +212,8 @@ public final class GoldenGateFunctions {
      * Retrieves a Connection.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -231,6 +242,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetConnectionResult> getConnectionPlain(GetConnectionPlainArgs args, InvokeOptions options) {
@@ -242,6 +254,8 @@ public final class GoldenGateFunctions {
      * Retrieves a Connection Assignment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -270,6 +284,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetConnectionAssignmentResult> getConnectionAssignment(GetConnectionAssignmentArgs args) {
@@ -281,6 +296,8 @@ public final class GoldenGateFunctions {
      * Retrieves a Connection Assignment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -309,6 +326,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetConnectionAssignmentResult> getConnectionAssignmentPlain(GetConnectionAssignmentPlainArgs args) {
@@ -320,6 +338,8 @@ public final class GoldenGateFunctions {
      * Retrieves a Connection Assignment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -348,6 +368,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetConnectionAssignmentResult> getConnectionAssignment(GetConnectionAssignmentArgs args, InvokeOptions options) {
@@ -359,6 +380,8 @@ public final class GoldenGateFunctions {
      * Retrieves a Connection Assignment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -387,6 +410,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetConnectionAssignmentResult> getConnectionAssignmentPlain(GetConnectionAssignmentPlainArgs args, InvokeOptions options) {
@@ -398,6 +422,8 @@ public final class GoldenGateFunctions {
      * Lists the Connection Assignments in the compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -430,6 +456,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetConnectionAssignmentsResult> getConnectionAssignments(GetConnectionAssignmentsArgs args) {
@@ -441,6 +468,8 @@ public final class GoldenGateFunctions {
      * Lists the Connection Assignments in the compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -473,6 +502,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetConnectionAssignmentsResult> getConnectionAssignmentsPlain(GetConnectionAssignmentsPlainArgs args) {
@@ -484,6 +514,8 @@ public final class GoldenGateFunctions {
      * Lists the Connection Assignments in the compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -516,6 +548,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetConnectionAssignmentsResult> getConnectionAssignments(GetConnectionAssignmentsArgs args, InvokeOptions options) {
@@ -527,6 +560,8 @@ public final class GoldenGateFunctions {
      * Lists the Connection Assignments in the compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -559,6 +594,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetConnectionAssignmentsResult> getConnectionAssignmentsPlain(GetConnectionAssignmentsPlainArgs args, InvokeOptions options) {
@@ -570,6 +606,8 @@ public final class GoldenGateFunctions {
      * Lists the Connections in the compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -605,6 +643,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetConnectionsResult> getConnections(GetConnectionsArgs args) {
@@ -616,6 +655,8 @@ public final class GoldenGateFunctions {
      * Lists the Connections in the compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -651,6 +692,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetConnectionsResult> getConnectionsPlain(GetConnectionsPlainArgs args) {
@@ -662,6 +704,8 @@ public final class GoldenGateFunctions {
      * Lists the Connections in the compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -697,6 +741,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetConnectionsResult> getConnections(GetConnectionsArgs args, InvokeOptions options) {
@@ -708,6 +753,8 @@ public final class GoldenGateFunctions {
      * Lists the Connections in the compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -743,6 +790,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetConnectionsResult> getConnectionsPlain(GetConnectionsPlainArgs args, InvokeOptions options) {
@@ -755,6 +803,8 @@ public final class GoldenGateFunctions {
      * Retrieves a DatabaseRegistration.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -783,6 +833,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDatabaseRegistrationResult> getDatabaseRegistration(GetDatabaseRegistrationArgs args) {
@@ -795,6 +846,8 @@ public final class GoldenGateFunctions {
      * Retrieves a DatabaseRegistration.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -823,6 +876,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDatabaseRegistrationResult> getDatabaseRegistrationPlain(GetDatabaseRegistrationPlainArgs args) {
@@ -835,6 +889,8 @@ public final class GoldenGateFunctions {
      * Retrieves a DatabaseRegistration.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -863,6 +919,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDatabaseRegistrationResult> getDatabaseRegistration(GetDatabaseRegistrationArgs args, InvokeOptions options) {
@@ -875,6 +932,8 @@ public final class GoldenGateFunctions {
      * Retrieves a DatabaseRegistration.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -903,6 +962,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDatabaseRegistrationResult> getDatabaseRegistrationPlain(GetDatabaseRegistrationPlainArgs args, InvokeOptions options) {
@@ -915,6 +975,8 @@ public final class GoldenGateFunctions {
      * Lists the DatabaseRegistrations in the compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -945,6 +1007,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDatabaseRegistrationsResult> getDatabaseRegistrations(GetDatabaseRegistrationsArgs args) {
@@ -957,6 +1020,8 @@ public final class GoldenGateFunctions {
      * Lists the DatabaseRegistrations in the compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -987,6 +1052,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDatabaseRegistrationsResult> getDatabaseRegistrationsPlain(GetDatabaseRegistrationsPlainArgs args) {
@@ -999,6 +1065,8 @@ public final class GoldenGateFunctions {
      * Lists the DatabaseRegistrations in the compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1029,6 +1097,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDatabaseRegistrationsResult> getDatabaseRegistrations(GetDatabaseRegistrationsArgs args, InvokeOptions options) {
@@ -1041,6 +1110,8 @@ public final class GoldenGateFunctions {
      * Lists the DatabaseRegistrations in the compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1071,6 +1142,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDatabaseRegistrationsResult> getDatabaseRegistrationsPlain(GetDatabaseRegistrationsPlainArgs args, InvokeOptions options) {
@@ -1082,6 +1154,8 @@ public final class GoldenGateFunctions {
      * Retrieves a deployment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1110,6 +1184,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDeploymentResult> getDeployment(GetDeploymentArgs args) {
@@ -1121,6 +1196,8 @@ public final class GoldenGateFunctions {
      * Retrieves a deployment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1149,6 +1226,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDeploymentResult> getDeploymentPlain(GetDeploymentPlainArgs args) {
@@ -1160,6 +1238,8 @@ public final class GoldenGateFunctions {
      * Retrieves a deployment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1188,6 +1268,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDeploymentResult> getDeployment(GetDeploymentArgs args, InvokeOptions options) {
@@ -1199,6 +1280,8 @@ public final class GoldenGateFunctions {
      * Retrieves a deployment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1227,6 +1310,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDeploymentResult> getDeploymentPlain(GetDeploymentPlainArgs args, InvokeOptions options) {
@@ -1238,6 +1322,8 @@ public final class GoldenGateFunctions {
      * Retrieves a DeploymentBackup.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1266,6 +1352,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDeploymentBackupResult> getDeploymentBackup(GetDeploymentBackupArgs args) {
@@ -1277,6 +1364,8 @@ public final class GoldenGateFunctions {
      * Retrieves a DeploymentBackup.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1305,6 +1394,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDeploymentBackupResult> getDeploymentBackupPlain(GetDeploymentBackupPlainArgs args) {
@@ -1316,6 +1406,8 @@ public final class GoldenGateFunctions {
      * Retrieves a DeploymentBackup.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1344,6 +1436,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDeploymentBackupResult> getDeploymentBackup(GetDeploymentBackupArgs args, InvokeOptions options) {
@@ -1355,6 +1448,8 @@ public final class GoldenGateFunctions {
      * Retrieves a DeploymentBackup.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1383,6 +1478,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDeploymentBackupResult> getDeploymentBackupPlain(GetDeploymentBackupPlainArgs args, InvokeOptions options) {
@@ -1394,6 +1490,8 @@ public final class GoldenGateFunctions {
      * Lists the Backups in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1425,6 +1523,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDeploymentBackupsResult> getDeploymentBackups(GetDeploymentBackupsArgs args) {
@@ -1436,6 +1535,8 @@ public final class GoldenGateFunctions {
      * Lists the Backups in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1467,6 +1568,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDeploymentBackupsResult> getDeploymentBackupsPlain(GetDeploymentBackupsPlainArgs args) {
@@ -1478,6 +1580,8 @@ public final class GoldenGateFunctions {
      * Lists the Backups in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1509,6 +1613,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDeploymentBackupsResult> getDeploymentBackups(GetDeploymentBackupsArgs args, InvokeOptions options) {
@@ -1520,6 +1625,8 @@ public final class GoldenGateFunctions {
      * Lists the Backups in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1551,6 +1658,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDeploymentBackupsResult> getDeploymentBackupsPlain(GetDeploymentBackupsPlainArgs args, InvokeOptions options) {
@@ -1562,6 +1670,8 @@ public final class GoldenGateFunctions {
      * Retrieves a Certificate.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1591,6 +1701,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDeploymentCertificateResult> getDeploymentCertificate(GetDeploymentCertificateArgs args) {
@@ -1602,6 +1713,8 @@ public final class GoldenGateFunctions {
      * Retrieves a Certificate.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1631,6 +1744,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDeploymentCertificateResult> getDeploymentCertificatePlain(GetDeploymentCertificatePlainArgs args) {
@@ -1642,6 +1756,8 @@ public final class GoldenGateFunctions {
      * Retrieves a Certificate.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1671,6 +1787,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDeploymentCertificateResult> getDeploymentCertificate(GetDeploymentCertificateArgs args, InvokeOptions options) {
@@ -1682,6 +1799,8 @@ public final class GoldenGateFunctions {
      * Retrieves a Certificate.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1711,6 +1830,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDeploymentCertificateResult> getDeploymentCertificatePlain(GetDeploymentCertificatePlainArgs args, InvokeOptions options) {
@@ -1722,6 +1842,8 @@ public final class GoldenGateFunctions {
      * Returns a list of certificates from truststore.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1751,6 +1873,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDeploymentCertificatesResult> getDeploymentCertificates(GetDeploymentCertificatesArgs args) {
@@ -1762,6 +1885,8 @@ public final class GoldenGateFunctions {
      * Returns a list of certificates from truststore.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1791,6 +1916,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDeploymentCertificatesResult> getDeploymentCertificatesPlain(GetDeploymentCertificatesPlainArgs args) {
@@ -1802,6 +1928,8 @@ public final class GoldenGateFunctions {
      * Returns a list of certificates from truststore.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1831,6 +1959,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDeploymentCertificatesResult> getDeploymentCertificates(GetDeploymentCertificatesArgs args, InvokeOptions options) {
@@ -1842,6 +1971,8 @@ public final class GoldenGateFunctions {
      * Returns a list of certificates from truststore.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1871,6 +2002,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDeploymentCertificatesResult> getDeploymentCertificatesPlain(GetDeploymentCertificatesPlainArgs args, InvokeOptions options) {
@@ -1882,6 +2014,8 @@ public final class GoldenGateFunctions {
      * Returns an array of DeploymentTypeDescriptor
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1911,6 +2045,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDeploymentTypeResult> getDeploymentType(GetDeploymentTypeArgs args) {
@@ -1922,6 +2057,8 @@ public final class GoldenGateFunctions {
      * Returns an array of DeploymentTypeDescriptor
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1951,6 +2088,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDeploymentTypeResult> getDeploymentTypePlain(GetDeploymentTypePlainArgs args) {
@@ -1962,6 +2100,8 @@ public final class GoldenGateFunctions {
      * Returns an array of DeploymentTypeDescriptor
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1991,6 +2131,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDeploymentTypeResult> getDeploymentType(GetDeploymentTypeArgs args, InvokeOptions options) {
@@ -2002,6 +2143,8 @@ public final class GoldenGateFunctions {
      * Returns an array of DeploymentTypeDescriptor
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2031,6 +2174,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDeploymentTypeResult> getDeploymentTypePlain(GetDeploymentTypePlainArgs args, InvokeOptions options) {
@@ -2042,6 +2186,8 @@ public final class GoldenGateFunctions {
      * Returns an array of DeploymentTypeDescriptor
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2073,6 +2219,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDeploymentTypesResult> getDeploymentTypes(GetDeploymentTypesArgs args) {
@@ -2084,6 +2231,8 @@ public final class GoldenGateFunctions {
      * Returns an array of DeploymentTypeDescriptor
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2115,6 +2264,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDeploymentTypesResult> getDeploymentTypesPlain(GetDeploymentTypesPlainArgs args) {
@@ -2126,6 +2276,8 @@ public final class GoldenGateFunctions {
      * Returns an array of DeploymentTypeDescriptor
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2157,6 +2309,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDeploymentTypesResult> getDeploymentTypes(GetDeploymentTypesArgs args, InvokeOptions options) {
@@ -2168,6 +2321,8 @@ public final class GoldenGateFunctions {
      * Returns an array of DeploymentTypeDescriptor
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2199,6 +2354,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDeploymentTypesResult> getDeploymentTypesPlain(GetDeploymentTypesPlainArgs args, InvokeOptions options) {
@@ -2210,6 +2366,8 @@ public final class GoldenGateFunctions {
      * Retrieves a deployment upgrade.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2238,6 +2396,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDeploymentUpgradeResult> getDeploymentUpgrade(GetDeploymentUpgradeArgs args) {
@@ -2249,6 +2408,8 @@ public final class GoldenGateFunctions {
      * Retrieves a deployment upgrade.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2277,6 +2438,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDeploymentUpgradeResult> getDeploymentUpgradePlain(GetDeploymentUpgradePlainArgs args) {
@@ -2288,6 +2450,8 @@ public final class GoldenGateFunctions {
      * Retrieves a deployment upgrade.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2316,6 +2480,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDeploymentUpgradeResult> getDeploymentUpgrade(GetDeploymentUpgradeArgs args, InvokeOptions options) {
@@ -2327,6 +2492,8 @@ public final class GoldenGateFunctions {
      * Retrieves a deployment upgrade.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2355,6 +2522,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDeploymentUpgradeResult> getDeploymentUpgradePlain(GetDeploymentUpgradePlainArgs args, InvokeOptions options) {
@@ -2366,6 +2534,8 @@ public final class GoldenGateFunctions {
      * Lists the Deployment Upgrades in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2397,6 +2567,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDeploymentUpgradesResult> getDeploymentUpgrades(GetDeploymentUpgradesArgs args) {
@@ -2408,6 +2579,8 @@ public final class GoldenGateFunctions {
      * Lists the Deployment Upgrades in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2439,6 +2612,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDeploymentUpgradesResult> getDeploymentUpgradesPlain(GetDeploymentUpgradesPlainArgs args) {
@@ -2450,6 +2624,8 @@ public final class GoldenGateFunctions {
      * Lists the Deployment Upgrades in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2481,6 +2657,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDeploymentUpgradesResult> getDeploymentUpgrades(GetDeploymentUpgradesArgs args, InvokeOptions options) {
@@ -2492,6 +2669,8 @@ public final class GoldenGateFunctions {
      * Lists the Deployment Upgrades in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2523,6 +2702,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDeploymentUpgradesResult> getDeploymentUpgradesPlain(GetDeploymentUpgradesPlainArgs args, InvokeOptions options) {
@@ -2534,6 +2714,8 @@ public final class GoldenGateFunctions {
      * Returns the list of available deployment versions.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2564,6 +2746,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDeploymentVersionsResult> getDeploymentVersions(GetDeploymentVersionsArgs args) {
@@ -2575,6 +2758,8 @@ public final class GoldenGateFunctions {
      * Returns the list of available deployment versions.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2605,6 +2790,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDeploymentVersionsResult> getDeploymentVersionsPlain(GetDeploymentVersionsPlainArgs args) {
@@ -2616,6 +2802,8 @@ public final class GoldenGateFunctions {
      * Returns the list of available deployment versions.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2646,6 +2834,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDeploymentVersionsResult> getDeploymentVersions(GetDeploymentVersionsArgs args, InvokeOptions options) {
@@ -2657,6 +2846,8 @@ public final class GoldenGateFunctions {
      * Returns the list of available deployment versions.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2687,6 +2878,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDeploymentVersionsResult> getDeploymentVersionsPlain(GetDeploymentVersionsPlainArgs args, InvokeOptions options) {
@@ -2698,6 +2890,8 @@ public final class GoldenGateFunctions {
      * Lists the Deployments in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2733,6 +2927,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDeploymentsResult> getDeployments(GetDeploymentsArgs args) {
@@ -2744,6 +2939,8 @@ public final class GoldenGateFunctions {
      * Lists the Deployments in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2779,6 +2976,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDeploymentsResult> getDeploymentsPlain(GetDeploymentsPlainArgs args) {
@@ -2790,6 +2988,8 @@ public final class GoldenGateFunctions {
      * Lists the Deployments in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2825,6 +3025,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDeploymentsResult> getDeployments(GetDeploymentsArgs args, InvokeOptions options) {
@@ -2836,6 +3037,8 @@ public final class GoldenGateFunctions {
      * Lists the Deployments in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2871,6 +3074,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDeploymentsResult> getDeploymentsPlain(GetDeploymentsPlainArgs args, InvokeOptions options) {
@@ -2882,6 +3086,8 @@ public final class GoldenGateFunctions {
      * Lists the DeploymentMessages for a deployment. The sorting order is not important. By default first will be Upgrade message, next Exception message and then Storage Utilization message.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2910,6 +3116,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMessageResult> getMessage(GetMessageArgs args) {
@@ -2921,6 +3128,8 @@ public final class GoldenGateFunctions {
      * Lists the DeploymentMessages for a deployment. The sorting order is not important. By default first will be Upgrade message, next Exception message and then Storage Utilization message.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2949,6 +3158,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMessageResult> getMessagePlain(GetMessagePlainArgs args) {
@@ -2960,6 +3170,8 @@ public final class GoldenGateFunctions {
      * Lists the DeploymentMessages for a deployment. The sorting order is not important. By default first will be Upgrade message, next Exception message and then Storage Utilization message.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2988,6 +3200,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMessageResult> getMessage(GetMessageArgs args, InvokeOptions options) {
@@ -2999,6 +3212,8 @@ public final class GoldenGateFunctions {
      * Lists the DeploymentMessages for a deployment. The sorting order is not important. By default first will be Upgrade message, next Exception message and then Storage Utilization message.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3027,6 +3242,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMessageResult> getMessagePlain(GetMessagePlainArgs args, InvokeOptions options) {
@@ -3038,6 +3254,8 @@ public final class GoldenGateFunctions {
      * Lists the DeploymentMessages for a deployment. The sorting order is not important. By default first will be Upgrade message, next Exception message and then Storage Utilization message.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3066,6 +3284,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMessagesResult> getMessages(GetMessagesArgs args) {
@@ -3077,6 +3296,8 @@ public final class GoldenGateFunctions {
      * Lists the DeploymentMessages for a deployment. The sorting order is not important. By default first will be Upgrade message, next Exception message and then Storage Utilization message.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3105,6 +3326,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMessagesResult> getMessagesPlain(GetMessagesPlainArgs args) {
@@ -3116,6 +3338,8 @@ public final class GoldenGateFunctions {
      * Lists the DeploymentMessages for a deployment. The sorting order is not important. By default first will be Upgrade message, next Exception message and then Storage Utilization message.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3144,6 +3368,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMessagesResult> getMessages(GetMessagesArgs args, InvokeOptions options) {
@@ -3155,6 +3380,8 @@ public final class GoldenGateFunctions {
      * Lists the DeploymentMessages for a deployment. The sorting order is not important. By default first will be Upgrade message, next Exception message and then Storage Utilization message.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3183,6 +3410,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMessagesResult> getMessagesPlain(GetMessagesPlainArgs args, InvokeOptions options) {
@@ -3194,6 +3422,8 @@ public final class GoldenGateFunctions {
      * Lists the TrailFiles for a deployment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3224,6 +3454,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetTrailFileResult> getTrailFile(GetTrailFileArgs args) {
@@ -3235,6 +3466,8 @@ public final class GoldenGateFunctions {
      * Lists the TrailFiles for a deployment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3265,6 +3498,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetTrailFileResult> getTrailFilePlain(GetTrailFilePlainArgs args) {
@@ -3276,6 +3510,8 @@ public final class GoldenGateFunctions {
      * Lists the TrailFiles for a deployment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3306,6 +3542,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetTrailFileResult> getTrailFile(GetTrailFileArgs args, InvokeOptions options) {
@@ -3317,6 +3554,8 @@ public final class GoldenGateFunctions {
      * Lists the TrailFiles for a deployment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3347,6 +3586,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetTrailFileResult> getTrailFilePlain(GetTrailFilePlainArgs args, InvokeOptions options) {
@@ -3358,6 +3598,8 @@ public final class GoldenGateFunctions {
      * Lists the TrailFiles for a deployment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3388,6 +3630,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetTrailFilesResult> getTrailFiles(GetTrailFilesArgs args) {
@@ -3399,6 +3642,8 @@ public final class GoldenGateFunctions {
      * Lists the TrailFiles for a deployment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3429,6 +3674,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetTrailFilesResult> getTrailFilesPlain(GetTrailFilesPlainArgs args) {
@@ -3440,6 +3686,8 @@ public final class GoldenGateFunctions {
      * Lists the TrailFiles for a deployment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3470,6 +3718,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetTrailFilesResult> getTrailFiles(GetTrailFilesArgs args, InvokeOptions options) {
@@ -3481,6 +3730,8 @@ public final class GoldenGateFunctions {
      * Lists the TrailFiles for a deployment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3511,6 +3762,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetTrailFilesResult> getTrailFilesPlain(GetTrailFilesPlainArgs args, InvokeOptions options) {
@@ -3522,6 +3774,8 @@ public final class GoldenGateFunctions {
      * Lists the Trail Sequences for a TrailFile in a given deployment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3553,6 +3807,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetTrailSequenceResult> getTrailSequence(GetTrailSequenceArgs args) {
@@ -3564,6 +3819,8 @@ public final class GoldenGateFunctions {
      * Lists the Trail Sequences for a TrailFile in a given deployment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3595,6 +3852,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetTrailSequenceResult> getTrailSequencePlain(GetTrailSequencePlainArgs args) {
@@ -3606,6 +3864,8 @@ public final class GoldenGateFunctions {
      * Lists the Trail Sequences for a TrailFile in a given deployment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3637,6 +3897,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetTrailSequenceResult> getTrailSequence(GetTrailSequenceArgs args, InvokeOptions options) {
@@ -3648,6 +3909,8 @@ public final class GoldenGateFunctions {
      * Lists the Trail Sequences for a TrailFile in a given deployment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3679,6 +3942,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetTrailSequenceResult> getTrailSequencePlain(GetTrailSequencePlainArgs args, InvokeOptions options) {
@@ -3690,6 +3954,8 @@ public final class GoldenGateFunctions {
      * Lists the Trail Sequences for a TrailFile in a given deployment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3721,6 +3987,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetTrailSequencesResult> getTrailSequences(GetTrailSequencesArgs args) {
@@ -3732,6 +3999,8 @@ public final class GoldenGateFunctions {
      * Lists the Trail Sequences for a TrailFile in a given deployment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3763,6 +4032,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetTrailSequencesResult> getTrailSequencesPlain(GetTrailSequencesPlainArgs args) {
@@ -3774,6 +4044,8 @@ public final class GoldenGateFunctions {
      * Lists the Trail Sequences for a TrailFile in a given deployment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3805,6 +4077,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetTrailSequencesResult> getTrailSequences(GetTrailSequencesArgs args, InvokeOptions options) {
@@ -3816,6 +4089,8 @@ public final class GoldenGateFunctions {
      * Lists the Trail Sequences for a TrailFile in a given deployment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3847,6 +4122,7 @@ public final class GoldenGateFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetTrailSequencesResult> getTrailSequencesPlain(GetTrailSequencesPlainArgs args, InvokeOptions options) {

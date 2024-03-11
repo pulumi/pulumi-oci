@@ -16,10 +16,9 @@ namespace Pulumi.Oci.CloudBridge
         /// 
         /// Gets a plugin by identifier.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,8 +35,7 @@ namespace Pulumi.Oci.CloudBridge
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetAgentPluginResult> InvokeAsync(GetAgentPluginArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAgentPluginResult>("oci:CloudBridge/getAgentPlugin:getAgentPlugin", args ?? new GetAgentPluginArgs(), options.WithDefaults());
@@ -47,10 +45,9 @@ namespace Pulumi.Oci.CloudBridge
         /// 
         /// Gets a plugin by identifier.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -67,8 +64,7 @@ namespace Pulumi.Oci.CloudBridge
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetAgentPluginResult> Invoke(GetAgentPluginInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAgentPluginResult>("oci:CloudBridge/getAgentPlugin:getAgentPlugin", args ?? new GetAgentPluginInvokeArgs(), options.WithDefaults());

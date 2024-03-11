@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,6 +22,7 @@ import * as utilities from "../utilities";
  *     releaseVersion: _var.java_release_release_version,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getJavaRelease(args: GetJavaReleaseArgs, opts?: pulumi.InvokeOptions): Promise<GetJavaReleaseResult> {
 
@@ -112,6 +114,7 @@ export interface GetJavaReleaseResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -120,6 +123,7 @@ export interface GetJavaReleaseResult {
  *     releaseVersion: _var.java_release_release_version,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getJavaReleaseOutput(args: GetJavaReleaseOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetJavaReleaseResult> {
     return pulumi.output(args).apply((a: any) => getJavaRelease(a, opts))

@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,6 +22,7 @@ import * as utilities from "../utilities";
  *     imageId: oci_core_image.test_image.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getImageShapes(args: GetImageShapesArgs, opts?: pulumi.InvokeOptions): Promise<GetImageShapesResult> {
 
@@ -67,6 +69,7 @@ export interface GetImageShapesResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -75,6 +78,7 @@ export interface GetImageShapesResult {
  *     imageId: oci_core_image.test_image.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getImageShapesOutput(args: GetImageShapesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetImageShapesResult> {
     return pulumi.output(args).apply((a: any) => getImageShapes(a, opts))

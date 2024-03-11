@@ -297,6 +297,7 @@ class BdsInstanceApiKey(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -308,13 +309,14 @@ class BdsInstanceApiKey(pulumi.CustomResource):
             user_id=oci_identity_user["test_user"]["id"],
             default_region=var["bds_instance_api_key_default_region"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         BdsInstanceApiKeys can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:BigDataService/bdsInstanceApiKey:BdsInstanceApiKey test_bds_instance_api_key "bdsInstances/{bdsInstanceId}/apiKeys/{apiKeyId}"
+        $ pulumi import oci:BigDataService/bdsInstanceApiKey:BdsInstanceApiKey test_bds_instance_api_key "bdsInstances/{bdsInstanceId}/apiKeys/{apiKeyId}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -342,6 +344,7 @@ class BdsInstanceApiKey(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -353,13 +356,14 @@ class BdsInstanceApiKey(pulumi.CustomResource):
             user_id=oci_identity_user["test_user"]["id"],
             default_region=var["bds_instance_api_key_default_region"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         BdsInstanceApiKeys can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:BigDataService/bdsInstanceApiKey:BdsInstanceApiKey test_bds_instance_api_key "bdsInstances/{bdsInstanceId}/apiKeys/{apiKeyId}"
+        $ pulumi import oci:BigDataService/bdsInstanceApiKey:BdsInstanceApiKey test_bds_instance_api_key "bdsInstances/{bdsInstanceId}/apiKeys/{apiKeyId}"
         ```
 
         :param str resource_name: The name of the resource.

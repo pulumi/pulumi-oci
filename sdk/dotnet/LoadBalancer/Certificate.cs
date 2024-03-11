@@ -12,6 +12,7 @@ namespace Pulumi.Oci.LoadBalancer
     /// <summary>
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -32,13 +33,14 @@ namespace Pulumi.Oci.LoadBalancer
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// Certificates can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:LoadBalancer/certificate:Certificate test_certificate "loadBalancers/{loadBalancerId}/certificates/{certificateName}"
+    /// $ pulumi import oci:LoadBalancer/certificate:Certificate test_certificate "loadBalancers/{loadBalancerId}/certificates/{certificateName}"
     /// ```
     /// </summary>
     [OciResourceType("oci:LoadBalancer/certificate:Certificate")]

@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -50,6 +51,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetResourceActions(ctx *pulumi.Context, args *GetResourceActionsArgs, opts ...pulumi.InvokeOption) (*GetResourceActionsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetResourceActionsResult

@@ -16,10 +16,9 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// Gets the list of ASM properties for the specified managedDatabaseId.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,8 +35,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetManagedDatabasesAsmPropertiesResult> InvokeAsync(GetManagedDatabasesAsmPropertiesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagedDatabasesAsmPropertiesResult>("oci:DatabaseManagement/getManagedDatabasesAsmProperties:getManagedDatabasesAsmProperties", args ?? new GetManagedDatabasesAsmPropertiesArgs(), options.WithDefaults());
@@ -47,10 +45,9 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// Gets the list of ASM properties for the specified managedDatabaseId.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -67,8 +64,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetManagedDatabasesAsmPropertiesResult> Invoke(GetManagedDatabasesAsmPropertiesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabasesAsmPropertiesResult>("oci:DatabaseManagement/getManagedDatabasesAsmProperties:getManagedDatabasesAsmProperties", args ?? new GetManagedDatabasesAsmPropertiesInvokeArgs(), options.WithDefaults());

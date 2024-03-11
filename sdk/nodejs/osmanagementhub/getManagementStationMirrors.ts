@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,6 +25,7 @@ import * as utilities from "../utilities";
  *     mirrorStates: _var.management_station_mirror_mirror_states,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getManagementStationMirrors(args: GetManagementStationMirrorsArgs, opts?: pulumi.InvokeOptions): Promise<GetManagementStationMirrorsResult> {
 
@@ -88,6 +90,7 @@ export interface GetManagementStationMirrorsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -99,6 +102,7 @@ export interface GetManagementStationMirrorsResult {
  *     mirrorStates: _var.management_station_mirror_mirror_states,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getManagementStationMirrorsOutput(args: GetManagementStationMirrorsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagementStationMirrorsResult> {
     return pulumi.output(args).apply((a: any) => getManagementStationMirrors(a, opts))

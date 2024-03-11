@@ -285,6 +285,7 @@ class UsagePlan(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -316,13 +317,14 @@ class UsagePlan(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         UsagePlans can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:ApiGateway/usagePlan:UsagePlan test_usage_plan "id"
+        $ pulumi import oci:ApiGateway/usagePlan:UsagePlan test_usage_plan "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -350,6 +352,7 @@ class UsagePlan(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -381,13 +384,14 @@ class UsagePlan(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         UsagePlans can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:ApiGateway/usagePlan:UsagePlan test_usage_plan "id"
+        $ pulumi import oci:ApiGateway/usagePlan:UsagePlan test_usage_plan "id"
         ```
 
         :param str resource_name: The name of the resource.

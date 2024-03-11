@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -44,13 +45,14 @@ import * as utilities from "../utilities";
  *     },
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * UsageCarbonEmissionsQueries can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:MeteringComputation/usageCarbonEmissionsQuery:UsageCarbonEmissionsQuery test_usage_carbon_emissions_query "id"
+ * $ pulumi import oci:MeteringComputation/usageCarbonEmissionsQuery:UsageCarbonEmissionsQuery test_usage_carbon_emissions_query "id"
  * ```
  */
 export class UsageCarbonEmissionsQuery extends pulumi.CustomResource {

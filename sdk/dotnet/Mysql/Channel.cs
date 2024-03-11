@@ -19,7 +19,7 @@ namespace Pulumi.Oci.Mysql
     /// Channels can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Mysql/channel:Channel test_channel "id"
+    /// $ pulumi import oci:Mysql/channel:Channel test_channel "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Mysql/channel:Channel")]

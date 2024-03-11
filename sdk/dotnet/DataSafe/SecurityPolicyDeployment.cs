@@ -19,7 +19,7 @@ namespace Pulumi.Oci.DataSafe
     /// SecurityPolicyDeployments can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:DataSafe/securityPolicyDeployment:SecurityPolicyDeployment test_security_policy_deployment "id"
+    /// $ pulumi import oci:DataSafe/securityPolicyDeployment:SecurityPolicyDeployment test_security_policy_deployment "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:DataSafe/securityPolicyDeployment:SecurityPolicyDeployment")]

@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -45,6 +46,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupDomainsDynamicResourceGroup(ctx *pulumi.Context, args *LookupDomainsDynamicResourceGroupArgs, opts ...pulumi.InvokeOption) (*LookupDomainsDynamicResourceGroupResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupDomainsDynamicResourceGroupResult

@@ -19,6 +19,7 @@ namespace Pulumi.Oci.Core
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -46,13 +47,14 @@ namespace Pulumi.Oci.Core
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// DedicatedVmHosts can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Core/dedicatedVmHost:DedicatedVmHost test_dedicated_vm_host "id"
+    /// $ pulumi import oci:Core/dedicatedVmHost:DedicatedVmHost test_dedicated_vm_host "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Core/dedicatedVmHost:DedicatedVmHost")]

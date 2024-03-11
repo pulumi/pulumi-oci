@@ -16,6 +16,7 @@ namespace Pulumi.Oci.StackMonitoring
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -58,13 +59,14 @@ namespace Pulumi.Oci.StackMonitoring
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// MonitoredResourceTypes can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:StackMonitoring/monitoredResourceType:MonitoredResourceType test_monitored_resource_type "id"
+    /// $ pulumi import oci:StackMonitoring/monitoredResourceType:MonitoredResourceType test_monitored_resource_type "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:StackMonitoring/monitoredResourceType:MonitoredResourceType")]

@@ -164,6 +164,7 @@ def get_sdm_masking_policy_difference_difference_columns(column_names: Optional[
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -176,6 +177,7 @@ def get_sdm_masking_policy_difference_difference_columns(column_names: Optional[
         schema_names=var["sdm_masking_policy_difference_difference_column_schema_name"],
         sync_status=var["sdm_masking_policy_difference_difference_column_sync_status"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param Sequence[str] column_names: A filter to return only a specific column based on column name.
@@ -228,6 +230,7 @@ def get_sdm_masking_policy_difference_difference_columns_output(column_names: Op
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -240,6 +243,7 @@ def get_sdm_masking_policy_difference_difference_columns_output(column_names: Op
         schema_names=var["sdm_masking_policy_difference_difference_column_schema_name"],
         sync_status=var["sdm_masking_policy_difference_difference_column_sync_status"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param Sequence[str] column_names: A filter to return only a specific column based on column name.

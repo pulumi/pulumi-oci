@@ -122,12 +122,14 @@ def get_scheduled_run(scheduled_run_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_scheduled_run = oci.MeteringComputation.get_scheduled_run(scheduled_run_id=oci_metering_computation_scheduled_run["test_scheduled_run"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str scheduled_run_id: The scheduledRun unique OCID.
@@ -157,12 +159,14 @@ def get_scheduled_run_output(scheduled_run_id: Optional[pulumi.Input[str]] = Non
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_scheduled_run = oci.MeteringComputation.get_scheduled_run(scheduled_run_id=oci_metering_computation_scheduled_run["test_scheduled_run"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str scheduled_run_id: The scheduledRun unique OCID.

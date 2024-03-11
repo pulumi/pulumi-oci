@@ -102,6 +102,7 @@ def get_external_exadata_infrastructures(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -109,6 +110,7 @@ def get_external_exadata_infrastructures(compartment_id: Optional[str] = None,
     test_external_exadata_infrastructures = oci.DatabaseManagement.get_external_exadata_infrastructures(compartment_id=var["compartment_id"],
         display_name=var["external_exadata_infrastructure_display_name"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -141,6 +143,7 @@ def get_external_exadata_infrastructures_output(compartment_id: Optional[pulumi.
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -148,6 +151,7 @@ def get_external_exadata_infrastructures_output(compartment_id: Optional[pulumi.
     test_external_exadata_infrastructures = oci.DatabaseManagement.get_external_exadata_infrastructures(compartment_id=var["compartment_id"],
         display_name=var["external_exadata_infrastructure_display_name"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

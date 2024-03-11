@@ -16,6 +16,7 @@ namespace Pulumi.Oci.LoadBalancer
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -38,13 +39,14 @@ namespace Pulumi.Oci.LoadBalancer
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// Backends can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:LoadBalancer/backend:Backend test_backend "loadBalancers/{loadBalancerId}/backendSets/{backendSetName}/backends/{backendName}"
+    /// $ pulumi import oci:LoadBalancer/backend:Backend test_backend "loadBalancers/{loadBalancerId}/backendSets/{backendSetName}/backends/{backendName}"
     /// ```
     /// </summary>
     [OciResourceType("oci:LoadBalancer/backend:Backend")]

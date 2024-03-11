@@ -23,6 +23,8 @@ import javax.annotation.Nullable;
  * Create a DR plan of the specified DR plan type.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -55,13 +57,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * DrPlans can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:DisasterRecovery/drPlan:DrPlan test_dr_plan &#34;id&#34;
+ * $ pulumi import oci:DisasterRecovery/drPlan:DrPlan test_dr_plan &#34;id&#34;
  * ```
  * 
  */

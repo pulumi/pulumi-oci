@@ -17,10 +17,9 @@ namespace Pulumi.Oci.Core
         /// Lists the instances launched under a capacity reservation. You can filter results by specifying criteria.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -38,8 +37,7 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetComputeCapacityReservationInstancesResult> InvokeAsync(GetComputeCapacityReservationInstancesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetComputeCapacityReservationInstancesResult>("oci:Core/getComputeCapacityReservationInstances:getComputeCapacityReservationInstances", args ?? new GetComputeCapacityReservationInstancesArgs(), options.WithDefaults());
@@ -50,10 +48,9 @@ namespace Pulumi.Oci.Core
         /// Lists the instances launched under a capacity reservation. You can filter results by specifying criteria.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -71,8 +68,7 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetComputeCapacityReservationInstancesResult> Invoke(GetComputeCapacityReservationInstancesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetComputeCapacityReservationInstancesResult>("oci:Core/getComputeCapacityReservationInstances:getComputeCapacityReservationInstances", args ?? new GetComputeCapacityReservationInstancesInvokeArgs(), options.WithDefaults());

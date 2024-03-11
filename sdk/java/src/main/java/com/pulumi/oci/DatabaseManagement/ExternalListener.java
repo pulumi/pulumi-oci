@@ -29,7 +29,7 @@ import javax.annotation.Nullable;
  * ExternalListeners can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:DatabaseManagement/externalListener:ExternalListener test_external_listener &#34;id&#34;
+ * $ pulumi import oci:DatabaseManagement/externalListener:ExternalListener test_external_listener &#34;id&#34;
  * ```
  * 
  */

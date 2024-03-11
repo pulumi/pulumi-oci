@@ -19,6 +19,7 @@ namespace Pulumi.Oci.Core
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -60,13 +61,14 @@ namespace Pulumi.Oci.Core
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// VolumeBackupPolicies can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Core/volumeBackupPolicy:VolumeBackupPolicy test_volume_backup_policy "id"
+    /// $ pulumi import oci:Core/volumeBackupPolicy:VolumeBackupPolicy test_volume_backup_policy "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Core/volumeBackupPolicy:VolumeBackupPolicy")]

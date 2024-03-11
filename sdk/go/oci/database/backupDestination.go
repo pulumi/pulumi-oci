@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -56,15 +57,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // BackupDestinations can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Database/backupDestination:BackupDestination test_backup_destination "id"
-//
+// $ pulumi import oci:Database/backupDestination:BackupDestination test_backup_destination "id"
 // ```
 type BackupDestination struct {
 	pulumi.CustomResourceState

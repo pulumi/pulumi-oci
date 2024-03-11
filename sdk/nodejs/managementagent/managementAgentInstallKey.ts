@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,13 +24,14 @@ import * as utilities from "../utilities";
  *     timeExpires: _var.management_agent_install_key_time_expires,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * ManagementAgentInstallKeys can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:ManagementAgent/managementAgentInstallKey:ManagementAgentInstallKey test_management_agent_install_key "id"
+ * $ pulumi import oci:ManagementAgent/managementAgentInstallKey:ManagementAgentInstallKey test_management_agent_install_key "id"
  * ```
  */
 export class ManagementAgentInstallKey extends pulumi.CustomResource {

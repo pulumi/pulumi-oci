@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,6 +42,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetRepositoryMirrorRecord(ctx *pulumi.Context, args *GetRepositoryMirrorRecordArgs, opts ...pulumi.InvokeOption) (*GetRepositoryMirrorRecordResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetRepositoryMirrorRecordResult

@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,6 +42,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetQueryQuickPicks(ctx *pulumi.Context, args *GetQueryQuickPicksArgs, opts ...pulumi.InvokeOption) (*GetQueryQuickPicksResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetQueryQuickPicksResult

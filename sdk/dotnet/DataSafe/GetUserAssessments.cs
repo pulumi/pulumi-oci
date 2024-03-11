@@ -31,10 +31,9 @@ namespace Pulumi.Oci.DataSafe
         /// set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -62,8 +61,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetUserAssessmentsResult> InvokeAsync(GetUserAssessmentsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetUserAssessmentsResult>("oci:DataSafe/getUserAssessments:getUserAssessments", args ?? new GetUserAssessmentsArgs(), options.WithDefaults());
@@ -88,10 +86,9 @@ namespace Pulumi.Oci.DataSafe
         /// set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -119,8 +116,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetUserAssessmentsResult> Invoke(GetUserAssessmentsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetUserAssessmentsResult>("oci:DataSafe/getUserAssessments:getUserAssessments", args ?? new GetUserAssessmentsInvokeArgs(), options.WithDefaults());

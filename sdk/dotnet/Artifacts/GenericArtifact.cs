@@ -14,6 +14,7 @@ namespace Pulumi.Oci.Artifacts
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -37,13 +38,14 @@ namespace Pulumi.Oci.Artifacts
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// GenericArtifacts can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Artifacts/genericArtifact:GenericArtifact test_generic_artifact "generic/artifacts/{artifactId}"
+    /// $ pulumi import oci:Artifacts/genericArtifact:GenericArtifact test_generic_artifact "generic/artifacts/{artifactId}"
     /// ```
     /// </summary>
     [OciResourceType("oci:Artifacts/genericArtifact:GenericArtifact")]

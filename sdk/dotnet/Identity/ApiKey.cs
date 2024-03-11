@@ -27,6 +27,7 @@ namespace Pulumi.Oci.Identity
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -43,13 +44,14 @@ namespace Pulumi.Oci.Identity
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// ApiKeys can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Identity/apiKey:ApiKey test_api_key "users/{userId}/apiKeys/{fingerprint}"
+    /// $ pulumi import oci:Identity/apiKey:ApiKey test_api_key "users/{userId}/apiKeys/{fingerprint}"
     /// ```
     /// </summary>
     [OciResourceType("oci:Identity/apiKey:ApiKey")]

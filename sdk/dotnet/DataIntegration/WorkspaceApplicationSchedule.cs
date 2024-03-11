@@ -16,6 +16,7 @@ namespace Pulumi.Oci.DataIntegration
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -64,13 +65,14 @@ namespace Pulumi.Oci.DataIntegration
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// WorkspaceApplicationSchedules can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:DataIntegration/workspaceApplicationSchedule:WorkspaceApplicationSchedule test_workspace_application_schedule "workspaces/{workspaceId}/applications/{applicationKey}/schedules/{scheduleKey}"
+    /// $ pulumi import oci:DataIntegration/workspaceApplicationSchedule:WorkspaceApplicationSchedule test_workspace_application_schedule "workspaces/{workspaceId}/applications/{applicationKey}/schedules/{scheduleKey}"
     /// ```
     /// </summary>
     [OciResourceType("oci:DataIntegration/workspaceApplicationSchedule:WorkspaceApplicationSchedule")]

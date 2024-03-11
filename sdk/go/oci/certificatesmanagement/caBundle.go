@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -49,15 +50,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // CaBundles can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:CertificatesManagement/caBundle:CaBundle test_ca_bundle "id"
-//
+// $ pulumi import oci:CertificatesManagement/caBundle:CaBundle test_ca_bundle "id"
 // ```
 type CaBundle struct {
 	pulumi.CustomResourceState

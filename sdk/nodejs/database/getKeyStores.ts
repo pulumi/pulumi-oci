@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,6 +22,7 @@ import * as utilities from "../utilities";
  *     compartmentId: _var.compartment_id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getKeyStores(args: GetKeyStoresArgs, opts?: pulumi.InvokeOptions): Promise<GetKeyStoresResult> {
 
@@ -67,6 +69,7 @@ export interface GetKeyStoresResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -75,6 +78,7 @@ export interface GetKeyStoresResult {
  *     compartmentId: _var.compartment_id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getKeyStoresOutput(args: GetKeyStoresOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetKeyStoresResult> {
     return pulumi.output(args).apply((a: any) => getKeyStores(a, opts))

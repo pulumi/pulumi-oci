@@ -32,6 +32,8 @@ public final class AiDocumentFunctions {
      * Get a model by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -60,6 +62,7 @@ public final class AiDocumentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetModelResult> getModel(GetModelArgs args) {
@@ -71,6 +74,8 @@ public final class AiDocumentFunctions {
      * Get a model by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -99,6 +104,7 @@ public final class AiDocumentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetModelResult> getModelPlain(GetModelPlainArgs args) {
@@ -110,6 +116,8 @@ public final class AiDocumentFunctions {
      * Get a model by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -138,6 +146,7 @@ public final class AiDocumentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetModelResult> getModel(GetModelArgs args, InvokeOptions options) {
@@ -149,6 +158,8 @@ public final class AiDocumentFunctions {
      * Get a model by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -177,6 +188,7 @@ public final class AiDocumentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetModelResult> getModelPlain(GetModelPlainArgs args, InvokeOptions options) {
@@ -188,6 +200,8 @@ public final class AiDocumentFunctions {
      * Returns a list of models in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -220,6 +234,7 @@ public final class AiDocumentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetModelsResult> getModels() {
@@ -231,6 +246,8 @@ public final class AiDocumentFunctions {
      * Returns a list of models in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -263,6 +280,7 @@ public final class AiDocumentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetModelsResult> getModelsPlain() {
@@ -274,6 +292,8 @@ public final class AiDocumentFunctions {
      * Returns a list of models in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -306,6 +326,7 @@ public final class AiDocumentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetModelsResult> getModels(GetModelsArgs args) {
@@ -317,6 +338,8 @@ public final class AiDocumentFunctions {
      * Returns a list of models in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -349,6 +372,7 @@ public final class AiDocumentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetModelsResult> getModelsPlain(GetModelsPlainArgs args) {
@@ -360,6 +384,8 @@ public final class AiDocumentFunctions {
      * Returns a list of models in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -392,6 +418,7 @@ public final class AiDocumentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetModelsResult> getModels(GetModelsArgs args, InvokeOptions options) {
@@ -403,6 +430,8 @@ public final class AiDocumentFunctions {
      * Returns a list of models in a compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -435,6 +464,7 @@ public final class AiDocumentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetModelsResult> getModelsPlain(GetModelsPlainArgs args, InvokeOptions options) {
@@ -446,6 +476,8 @@ public final class AiDocumentFunctions {
      * Get the details of a processor job.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -474,6 +506,7 @@ public final class AiDocumentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetProcessorJobResult> getProcessorJob(GetProcessorJobArgs args) {
@@ -485,6 +518,8 @@ public final class AiDocumentFunctions {
      * Get the details of a processor job.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -513,6 +548,7 @@ public final class AiDocumentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetProcessorJobResult> getProcessorJobPlain(GetProcessorJobPlainArgs args) {
@@ -524,6 +560,8 @@ public final class AiDocumentFunctions {
      * Get the details of a processor job.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -552,6 +590,7 @@ public final class AiDocumentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetProcessorJobResult> getProcessorJob(GetProcessorJobArgs args, InvokeOptions options) {
@@ -563,6 +602,8 @@ public final class AiDocumentFunctions {
      * Get the details of a processor job.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -591,6 +632,7 @@ public final class AiDocumentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetProcessorJobResult> getProcessorJobPlain(GetProcessorJobPlainArgs args, InvokeOptions options) {
@@ -602,6 +644,8 @@ public final class AiDocumentFunctions {
      * Get a project by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -630,6 +674,7 @@ public final class AiDocumentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetProjectResult> getProject(GetProjectArgs args) {
@@ -641,6 +686,8 @@ public final class AiDocumentFunctions {
      * Get a project by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -669,6 +716,7 @@ public final class AiDocumentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetProjectResult> getProjectPlain(GetProjectPlainArgs args) {
@@ -680,6 +728,8 @@ public final class AiDocumentFunctions {
      * Get a project by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -708,6 +758,7 @@ public final class AiDocumentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetProjectResult> getProject(GetProjectArgs args, InvokeOptions options) {
@@ -719,6 +770,8 @@ public final class AiDocumentFunctions {
      * Get a project by identifier.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -747,6 +800,7 @@ public final class AiDocumentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetProjectResult> getProjectPlain(GetProjectPlainArgs args, InvokeOptions options) {
@@ -758,6 +812,8 @@ public final class AiDocumentFunctions {
      * Returns a list of projects.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -789,6 +845,7 @@ public final class AiDocumentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetProjectsResult> getProjects() {
@@ -800,6 +857,8 @@ public final class AiDocumentFunctions {
      * Returns a list of projects.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -831,6 +890,7 @@ public final class AiDocumentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetProjectsResult> getProjectsPlain() {
@@ -842,6 +902,8 @@ public final class AiDocumentFunctions {
      * Returns a list of projects.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -873,6 +935,7 @@ public final class AiDocumentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetProjectsResult> getProjects(GetProjectsArgs args) {
@@ -884,6 +947,8 @@ public final class AiDocumentFunctions {
      * Returns a list of projects.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -915,6 +980,7 @@ public final class AiDocumentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetProjectsResult> getProjectsPlain(GetProjectsPlainArgs args) {
@@ -926,6 +992,8 @@ public final class AiDocumentFunctions {
      * Returns a list of projects.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -957,6 +1025,7 @@ public final class AiDocumentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetProjectsResult> getProjects(GetProjectsArgs args, InvokeOptions options) {
@@ -968,6 +1037,8 @@ public final class AiDocumentFunctions {
      * Returns a list of projects.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -999,6 +1070,7 @@ public final class AiDocumentFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetProjectsResult> getProjectsPlain(GetProjectsPlainArgs args, InvokeOptions options) {

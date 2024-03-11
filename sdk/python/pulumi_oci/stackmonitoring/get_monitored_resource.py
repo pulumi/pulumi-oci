@@ -330,12 +330,14 @@ def get_monitored_resource(monitored_resource_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_monitored_resource = oci.StackMonitoring.get_monitored_resource(monitored_resource_id=oci_stack_monitoring_monitored_resource["test_monitored_resource"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str monitored_resource_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource.
@@ -383,12 +385,14 @@ def get_monitored_resource_output(monitored_resource_id: Optional[pulumi.Input[s
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_monitored_resource = oci.StackMonitoring.get_monitored_resource(monitored_resource_id=oci_stack_monitoring_monitored_resource["test_monitored_resource"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str monitored_resource_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource.

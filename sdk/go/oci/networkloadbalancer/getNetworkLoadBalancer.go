@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -40,6 +41,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupNetworkLoadBalancer(ctx *pulumi.Context, args *LookupNetworkLoadBalancerArgs, opts ...pulumi.InvokeOption) (*LookupNetworkLoadBalancerResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupNetworkLoadBalancerResult

@@ -476,6 +476,7 @@ class RedisCluster(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -494,13 +495,14 @@ class RedisCluster(pulumi.CustomResource):
                 "bar-key": "value",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         RedisClusters can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Redis/redisCluster:RedisCluster test_redis_cluster "id"
+        $ pulumi import oci:Redis/redisCluster:RedisCluster test_redis_cluster "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -531,6 +533,7 @@ class RedisCluster(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -549,13 +552,14 @@ class RedisCluster(pulumi.CustomResource):
                 "bar-key": "value",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         RedisClusters can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Redis/redisCluster:RedisCluster test_redis_cluster "id"
+        $ pulumi import oci:Redis/redisCluster:RedisCluster test_redis_cluster "id"
         ```
 
         :param str resource_name: The name of the resource.

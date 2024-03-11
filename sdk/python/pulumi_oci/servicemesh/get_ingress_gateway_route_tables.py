@@ -129,6 +129,7 @@ def get_ingress_gateway_route_tables(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -139,6 +140,7 @@ def get_ingress_gateway_route_tables(compartment_id: Optional[str] = None,
         name=var["ingress_gateway_route_table_name"],
         state=var["ingress_gateway_route_table_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID of the compartment in which to list resources.
@@ -182,6 +184,7 @@ def get_ingress_gateway_route_tables_output(compartment_id: Optional[pulumi.Inpu
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -192,6 +195,7 @@ def get_ingress_gateway_route_tables_output(compartment_id: Optional[pulumi.Inpu
         name=var["ingress_gateway_route_table_name"],
         state=var["ingress_gateway_route_table_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID of the compartment in which to list resources.

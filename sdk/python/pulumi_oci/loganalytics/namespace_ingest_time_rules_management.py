@@ -152,6 +152,7 @@ class NamespaceIngestTimeRulesManagement(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -161,6 +162,7 @@ class NamespaceIngestTimeRulesManagement(pulumi.CustomResource):
             namespace=var["namespace_ingest_time_rules_management_namespace"],
             enable_ingest_time_rule=var["enable_ingest_time_rule"])
         ```
+        <!--End PulumiCodeChooser -->
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -185,6 +187,7 @@ class NamespaceIngestTimeRulesManagement(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -194,6 +197,7 @@ class NamespaceIngestTimeRulesManagement(pulumi.CustomResource):
             namespace=var["namespace_ingest_time_rules_management_namespace"],
             enable_ingest_time_rule=var["enable_ingest_time_rule"])
         ```
+        <!--End PulumiCodeChooser -->
 
         :param str resource_name: The name of the resource.
         :param NamespaceIngestTimeRulesManagementArgs args: The arguments to use to populate this resource's properties.

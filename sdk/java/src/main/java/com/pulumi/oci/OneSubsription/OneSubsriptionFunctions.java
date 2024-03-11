@@ -93,6 +93,8 @@ public final class OneSubsriptionFunctions {
      * for a particular Subscribed Service if provided
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -123,6 +125,7 @@ public final class OneSubsriptionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBillingSchedulesResult> getBillingSchedules(GetBillingSchedulesArgs args) {
@@ -135,6 +138,8 @@ public final class OneSubsriptionFunctions {
      * for a particular Subscribed Service if provided
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -165,6 +170,7 @@ public final class OneSubsriptionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBillingSchedulesResult> getBillingSchedulesPlain(GetBillingSchedulesPlainArgs args) {
@@ -177,6 +183,8 @@ public final class OneSubsriptionFunctions {
      * for a particular Subscribed Service if provided
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -207,6 +215,7 @@ public final class OneSubsriptionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBillingSchedulesResult> getBillingSchedules(GetBillingSchedulesArgs args, InvokeOptions options) {
@@ -219,6 +228,8 @@ public final class OneSubsriptionFunctions {
      * for a particular Subscribed Service if provided
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -249,6 +260,7 @@ public final class OneSubsriptionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBillingSchedulesResult> getBillingSchedulesPlain(GetBillingSchedulesPlainArgs args, InvokeOptions options) {
@@ -260,6 +272,8 @@ public final class OneSubsriptionFunctions {
      * This API returns the commitment details corresponding to the id provided
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -288,6 +302,7 @@ public final class OneSubsriptionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCommitmentResult> getCommitment(GetCommitmentArgs args) {
@@ -299,6 +314,8 @@ public final class OneSubsriptionFunctions {
      * This API returns the commitment details corresponding to the id provided
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -327,6 +344,7 @@ public final class OneSubsriptionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCommitmentResult> getCommitmentPlain(GetCommitmentPlainArgs args) {
@@ -338,6 +356,8 @@ public final class OneSubsriptionFunctions {
      * This API returns the commitment details corresponding to the id provided
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -366,6 +386,7 @@ public final class OneSubsriptionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCommitmentResult> getCommitment(GetCommitmentArgs args, InvokeOptions options) {
@@ -377,6 +398,8 @@ public final class OneSubsriptionFunctions {
      * This API returns the commitment details corresponding to the id provided
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -405,6 +428,7 @@ public final class OneSubsriptionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCommitmentResult> getCommitmentPlain(GetCommitmentPlainArgs args, InvokeOptions options) {
@@ -416,6 +440,8 @@ public final class OneSubsriptionFunctions {
      * This list API returns all commitments for a particular Subscribed Service
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -445,6 +471,7 @@ public final class OneSubsriptionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCommitmentsResult> getCommitments(GetCommitmentsArgs args) {
@@ -456,6 +483,8 @@ public final class OneSubsriptionFunctions {
      * This list API returns all commitments for a particular Subscribed Service
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -485,6 +514,7 @@ public final class OneSubsriptionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCommitmentsResult> getCommitmentsPlain(GetCommitmentsPlainArgs args) {
@@ -496,6 +526,8 @@ public final class OneSubsriptionFunctions {
      * This list API returns all commitments for a particular Subscribed Service
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -525,6 +557,7 @@ public final class OneSubsriptionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCommitmentsResult> getCommitments(GetCommitmentsArgs args, InvokeOptions options) {
@@ -536,6 +569,8 @@ public final class OneSubsriptionFunctions {
      * This list API returns all commitments for a particular Subscribed Service
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -565,6 +600,7 @@ public final class OneSubsriptionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCommitmentsResult> getCommitmentsPlain(GetCommitmentsPlainArgs args, InvokeOptions options) {
@@ -576,6 +612,8 @@ public final class OneSubsriptionFunctions {
      * This is an API which returns Computed Usage corresponding to the id passed
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -606,6 +644,7 @@ public final class OneSubsriptionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetComputedUsageResult> getComputedUsage(GetComputedUsageArgs args) {
@@ -617,6 +656,8 @@ public final class OneSubsriptionFunctions {
      * This is an API which returns Computed Usage corresponding to the id passed
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -647,6 +688,7 @@ public final class OneSubsriptionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetComputedUsageResult> getComputedUsagePlain(GetComputedUsagePlainArgs args) {
@@ -658,6 +700,8 @@ public final class OneSubsriptionFunctions {
      * This is an API which returns Computed Usage corresponding to the id passed
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -688,6 +732,7 @@ public final class OneSubsriptionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetComputedUsageResult> getComputedUsage(GetComputedUsageArgs args, InvokeOptions options) {
@@ -699,6 +744,8 @@ public final class OneSubsriptionFunctions {
      * This is an API which returns Computed Usage corresponding to the id passed
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -729,6 +776,7 @@ public final class OneSubsriptionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetComputedUsageResult> getComputedUsagePlain(GetComputedUsagePlainArgs args, InvokeOptions options) {
@@ -776,6 +824,8 @@ public final class OneSubsriptionFunctions {
      * This is a collection API which returns a list of Invoiced Computed Usages for given Invoiceline id.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -806,6 +856,7 @@ public final class OneSubsriptionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetInvoiceLineComputedUsagesResult> getInvoiceLineComputedUsages(GetInvoiceLineComputedUsagesArgs args) {
@@ -817,6 +868,8 @@ public final class OneSubsriptionFunctions {
      * This is a collection API which returns a list of Invoiced Computed Usages for given Invoiceline id.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -847,6 +900,7 @@ public final class OneSubsriptionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetInvoiceLineComputedUsagesResult> getInvoiceLineComputedUsagesPlain(GetInvoiceLineComputedUsagesPlainArgs args) {
@@ -858,6 +912,8 @@ public final class OneSubsriptionFunctions {
      * This is a collection API which returns a list of Invoiced Computed Usages for given Invoiceline id.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -888,6 +944,7 @@ public final class OneSubsriptionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetInvoiceLineComputedUsagesResult> getInvoiceLineComputedUsages(GetInvoiceLineComputedUsagesArgs args, InvokeOptions options) {
@@ -899,6 +956,8 @@ public final class OneSubsriptionFunctions {
      * This is a collection API which returns a list of Invoiced Computed Usages for given Invoiceline id.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -929,6 +988,7 @@ public final class OneSubsriptionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetInvoiceLineComputedUsagesResult> getInvoiceLineComputedUsagesPlain(GetInvoiceLineComputedUsagesPlainArgs args, InvokeOptions options) {
@@ -940,6 +1000,8 @@ public final class OneSubsriptionFunctions {
      * This is a collection API which returns a list of Invoices for given filters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -972,6 +1034,7 @@ public final class OneSubsriptionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetInvoicesResult> getInvoices(GetInvoicesArgs args) {
@@ -983,6 +1046,8 @@ public final class OneSubsriptionFunctions {
      * This is a collection API which returns a list of Invoices for given filters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1015,6 +1080,7 @@ public final class OneSubsriptionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetInvoicesResult> getInvoicesPlain(GetInvoicesPlainArgs args) {
@@ -1026,6 +1092,8 @@ public final class OneSubsriptionFunctions {
      * This is a collection API which returns a list of Invoices for given filters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1058,6 +1126,7 @@ public final class OneSubsriptionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetInvoicesResult> getInvoices(GetInvoicesArgs args, InvokeOptions options) {
@@ -1069,6 +1138,8 @@ public final class OneSubsriptionFunctions {
      * This is a collection API which returns a list of Invoices for given filters.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1101,6 +1172,7 @@ public final class OneSubsriptionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetInvoicesResult> getInvoicesPlain(GetInvoicesPlainArgs args, InvokeOptions options) {
@@ -1112,6 +1184,8 @@ public final class OneSubsriptionFunctions {
      * API that returns data for the list of subscription ids returned from Organizations API
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1140,6 +1214,7 @@ public final class OneSubsriptionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOrganizationSubscriptionsResult> getOrganizationSubscriptions(GetOrganizationSubscriptionsArgs args) {
@@ -1151,6 +1226,8 @@ public final class OneSubsriptionFunctions {
      * API that returns data for the list of subscription ids returned from Organizations API
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1179,6 +1256,7 @@ public final class OneSubsriptionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOrganizationSubscriptionsResult> getOrganizationSubscriptionsPlain(GetOrganizationSubscriptionsPlainArgs args) {
@@ -1190,6 +1268,8 @@ public final class OneSubsriptionFunctions {
      * API that returns data for the list of subscription ids returned from Organizations API
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1218,6 +1298,7 @@ public final class OneSubsriptionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetOrganizationSubscriptionsResult> getOrganizationSubscriptions(GetOrganizationSubscriptionsArgs args, InvokeOptions options) {
@@ -1229,6 +1310,8 @@ public final class OneSubsriptionFunctions {
      * API that returns data for the list of subscription ids returned from Organizations API
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1257,6 +1340,7 @@ public final class OneSubsriptionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetOrganizationSubscriptionsResult> getOrganizationSubscriptionsPlain(GetOrganizationSubscriptionsPlainArgs args, InvokeOptions options) {
@@ -1269,6 +1353,8 @@ public final class OneSubsriptionFunctions {
      * for a particular date range
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1301,6 +1387,7 @@ public final class OneSubsriptionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRatecardsResult> getRatecards(GetRatecardsArgs args) {
@@ -1313,6 +1400,8 @@ public final class OneSubsriptionFunctions {
      * for a particular date range
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1345,6 +1434,7 @@ public final class OneSubsriptionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRatecardsResult> getRatecardsPlain(GetRatecardsPlainArgs args) {
@@ -1357,6 +1447,8 @@ public final class OneSubsriptionFunctions {
      * for a particular date range
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1389,6 +1481,7 @@ public final class OneSubsriptionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRatecardsResult> getRatecards(GetRatecardsArgs args, InvokeOptions options) {
@@ -1401,6 +1494,8 @@ public final class OneSubsriptionFunctions {
      * for a particular date range
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1433,6 +1528,7 @@ public final class OneSubsriptionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRatecardsResult> getRatecardsPlain(GetRatecardsPlainArgs args, InvokeOptions options) {
@@ -1444,6 +1540,8 @@ public final class OneSubsriptionFunctions {
      * This API returns the subscribed service details corresponding to the id provided
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1473,6 +1571,7 @@ public final class OneSubsriptionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSubscribedServiceResult> getSubscribedService(GetSubscribedServiceArgs args) {
@@ -1484,6 +1583,8 @@ public final class OneSubsriptionFunctions {
      * This API returns the subscribed service details corresponding to the id provided
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1513,6 +1614,7 @@ public final class OneSubsriptionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSubscribedServiceResult> getSubscribedServicePlain(GetSubscribedServicePlainArgs args) {
@@ -1524,6 +1626,8 @@ public final class OneSubsriptionFunctions {
      * This API returns the subscribed service details corresponding to the id provided
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1553,6 +1657,7 @@ public final class OneSubsriptionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSubscribedServiceResult> getSubscribedService(GetSubscribedServiceArgs args, InvokeOptions options) {
@@ -1564,6 +1669,8 @@ public final class OneSubsriptionFunctions {
      * This API returns the subscribed service details corresponding to the id provided
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1593,6 +1700,7 @@ public final class OneSubsriptionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSubscribedServiceResult> getSubscribedServicePlain(GetSubscribedServicePlainArgs args, InvokeOptions options) {
@@ -1604,6 +1712,8 @@ public final class OneSubsriptionFunctions {
      * This list API returns all subscribed services for given Subscription ID
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1635,6 +1745,7 @@ public final class OneSubsriptionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSubscribedServicesResult> getSubscribedServices(GetSubscribedServicesArgs args) {
@@ -1646,6 +1757,8 @@ public final class OneSubsriptionFunctions {
      * This list API returns all subscribed services for given Subscription ID
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1677,6 +1790,7 @@ public final class OneSubsriptionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSubscribedServicesResult> getSubscribedServicesPlain(GetSubscribedServicesPlainArgs args) {
@@ -1688,6 +1802,8 @@ public final class OneSubsriptionFunctions {
      * This list API returns all subscribed services for given Subscription ID
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1719,6 +1835,7 @@ public final class OneSubsriptionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSubscribedServicesResult> getSubscribedServices(GetSubscribedServicesArgs args, InvokeOptions options) {
@@ -1730,6 +1847,8 @@ public final class OneSubsriptionFunctions {
      * This list API returns all subscribed services for given Subscription ID
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1761,6 +1880,7 @@ public final class OneSubsriptionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSubscribedServicesResult> getSubscribedServicesPlain(GetSubscribedServicesPlainArgs args, InvokeOptions options) {
@@ -1775,6 +1895,8 @@ public final class OneSubsriptionFunctions {
      * a 400 - invalid parameters exception and if no parameters are provided it will throw a 400 - missing parameter exception
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1807,6 +1929,7 @@ public final class OneSubsriptionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSubscriptionsResult> getSubscriptions(GetSubscriptionsArgs args) {
@@ -1821,6 +1944,8 @@ public final class OneSubsriptionFunctions {
      * a 400 - invalid parameters exception and if no parameters are provided it will throw a 400 - missing parameter exception
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1853,6 +1978,7 @@ public final class OneSubsriptionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSubscriptionsResult> getSubscriptionsPlain(GetSubscriptionsPlainArgs args) {
@@ -1867,6 +1993,8 @@ public final class OneSubsriptionFunctions {
      * a 400 - invalid parameters exception and if no parameters are provided it will throw a 400 - missing parameter exception
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1899,6 +2027,7 @@ public final class OneSubsriptionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSubscriptionsResult> getSubscriptions(GetSubscriptionsArgs args, InvokeOptions options) {
@@ -1913,6 +2042,8 @@ public final class OneSubsriptionFunctions {
      * a 400 - invalid parameters exception and if no parameters are provided it will throw a 400 - missing parameter exception
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1945,6 +2076,7 @@ public final class OneSubsriptionFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSubscriptionsResult> getSubscriptionsPlain(GetSubscriptionsPlainArgs args, InvokeOptions options) {

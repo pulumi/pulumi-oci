@@ -96,6 +96,7 @@ def get_console_history_data(console_history_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -104,6 +105,7 @@ def get_console_history_data(console_history_id: Optional[str] = None,
         length=var["console_history_content_length"],
         offset=var["console_history_content_offset"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str console_history_id: The OCID of the console history.
@@ -139,6 +141,7 @@ def get_console_history_data_output(console_history_id: Optional[pulumi.Input[st
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -147,6 +150,7 @@ def get_console_history_data_output(console_history_id: Optional[pulumi.Input[st
         length=var["console_history_content_length"],
         offset=var["console_history_content_offset"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str console_history_id: The OCID of the console history.

@@ -102,6 +102,7 @@ def get_run_statements(filters: Optional[Sequence[pulumi.InputType['GetRunStatem
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -109,6 +110,7 @@ def get_run_statements(filters: Optional[Sequence[pulumi.InputType['GetRunStatem
     test_run_statements = oci.DataFlow.get_run_statements(run_id=oci_dataflow_run["test_run"]["id"],
         state=var["run_statement_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str run_id: The unique ID for the run
@@ -141,6 +143,7 @@ def get_run_statements_output(filters: Optional[pulumi.Input[Optional[Sequence[p
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -148,6 +151,7 @@ def get_run_statements_output(filters: Optional[pulumi.Input[Optional[Sequence[p
     test_run_statements = oci.DataFlow.get_run_statements(run_id=oci_dataflow_run["test_run"]["id"],
         state=var["run_statement_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str run_id: The unique ID for the run

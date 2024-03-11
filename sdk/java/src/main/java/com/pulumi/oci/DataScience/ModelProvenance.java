@@ -19,6 +19,8 @@ import javax.annotation.Nullable;
  * Creates provenance information for the specified model.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -53,13 +55,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * ModelProvenances can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:DataScience/modelProvenance:ModelProvenance test_model_provenance &#34;models/{modelId}/provenance&#34;
+ * $ pulumi import oci:DataScience/modelProvenance:ModelProvenance test_model_provenance &#34;models/{modelId}/provenance&#34;
  * ```
  * 
  */

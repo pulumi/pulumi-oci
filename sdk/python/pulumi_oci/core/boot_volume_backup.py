@@ -471,6 +471,7 @@ class BootVolumeBackup(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -487,13 +488,14 @@ class BootVolumeBackup(pulumi.CustomResource):
             kms_key_id=oci_kms_key["test_key"]["id"],
             type=var["boot_volume_backup_type"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         BootVolumeBackups can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/bootVolumeBackup:BootVolumeBackup test_boot_volume_backup "id"
+        $ pulumi import oci:Core/bootVolumeBackup:BootVolumeBackup test_boot_volume_backup "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -525,6 +527,7 @@ class BootVolumeBackup(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -541,13 +544,14 @@ class BootVolumeBackup(pulumi.CustomResource):
             kms_key_id=oci_kms_key["test_key"]["id"],
             type=var["boot_volume_backup_type"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         BootVolumeBackups can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/bootVolumeBackup:BootVolumeBackup test_boot_volume_backup "id"
+        $ pulumi import oci:Core/bootVolumeBackup:BootVolumeBackup test_boot_volume_backup "id"
         ```
 
         :param str resource_name: The name of the resource.

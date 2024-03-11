@@ -429,6 +429,7 @@ class LifecycleEnvironment(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -457,13 +458,14 @@ class LifecycleEnvironment(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         LifecycleEnvironments can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:OsManagementHub/lifecycleEnvironment:LifecycleEnvironment test_lifecycle_environment "id"
+        $ pulumi import oci:OsManagementHub/lifecycleEnvironment:LifecycleEnvironment test_lifecycle_environment "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -495,6 +497,7 @@ class LifecycleEnvironment(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -523,13 +526,14 @@ class LifecycleEnvironment(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         LifecycleEnvironments can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:OsManagementHub/lifecycleEnvironment:LifecycleEnvironment test_lifecycle_environment "id"
+        $ pulumi import oci:OsManagementHub/lifecycleEnvironment:LifecycleEnvironment test_lifecycle_environment "id"
         ```
 
         :param str resource_name: The name of the resource.

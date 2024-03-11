@@ -17,10 +17,9 @@ namespace Pulumi.Oci.LogAnalytics
         /// Returns a list of categories, containing detailed information about them. You may limit the number of results, provide sorting order, and filter by information such as category name or description.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -39,8 +38,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetLogAnalyticsCategoriesListResult> InvokeAsync(GetLogAnalyticsCategoriesListArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetLogAnalyticsCategoriesListResult>("oci:LogAnalytics/getLogAnalyticsCategoriesList:getLogAnalyticsCategoriesList", args ?? new GetLogAnalyticsCategoriesListArgs(), options.WithDefaults());
@@ -51,10 +49,9 @@ namespace Pulumi.Oci.LogAnalytics
         /// Returns a list of categories, containing detailed information about them. You may limit the number of results, provide sorting order, and filter by information such as category name or description.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -73,8 +70,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetLogAnalyticsCategoriesListResult> Invoke(GetLogAnalyticsCategoriesListInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetLogAnalyticsCategoriesListResult>("oci:LogAnalytics/getLogAnalyticsCategoriesList:getLogAnalyticsCategoriesList", args ?? new GetLogAnalyticsCategoriesListInvokeArgs(), options.WithDefaults());

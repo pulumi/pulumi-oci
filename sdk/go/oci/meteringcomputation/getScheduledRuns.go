@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -40,6 +41,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetScheduledRuns(ctx *pulumi.Context, args *GetScheduledRunsArgs, opts ...pulumi.InvokeOption) (*GetScheduledRunsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetScheduledRunsResult

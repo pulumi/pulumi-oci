@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,6 +22,7 @@ import * as utilities from "../utilities";
  *     secretId: oci_vault_secret.test_secret.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getSecretbundleVersions(args: GetSecretbundleVersionsArgs, opts?: pulumi.InvokeOptions): Promise<GetSecretbundleVersionsResult> {
 
@@ -67,6 +69,7 @@ export interface GetSecretbundleVersionsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -75,6 +78,7 @@ export interface GetSecretbundleVersionsResult {
  *     secretId: oci_vault_secret.test_secret.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getSecretbundleVersionsOutput(args: GetSecretbundleVersionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecretbundleVersionsResult> {
     return pulumi.output(args).apply((a: any) => getSecretbundleVersions(a, opts))

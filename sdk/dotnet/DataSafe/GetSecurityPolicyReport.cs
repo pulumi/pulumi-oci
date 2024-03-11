@@ -16,10 +16,9 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// Gets a security policy report by the specified OCID of the security policy report resource.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,8 +34,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetSecurityPolicyReportResult> InvokeAsync(GetSecurityPolicyReportArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetSecurityPolicyReportResult>("oci:DataSafe/getSecurityPolicyReport:getSecurityPolicyReport", args ?? new GetSecurityPolicyReportArgs(), options.WithDefaults());
@@ -46,10 +44,9 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// Gets a security policy report by the specified OCID of the security policy report resource.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -65,8 +62,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetSecurityPolicyReportResult> Invoke(GetSecurityPolicyReportInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSecurityPolicyReportResult>("oci:DataSafe/getSecurityPolicyReport:getSecurityPolicyReport", args ?? new GetSecurityPolicyReportInvokeArgs(), options.WithDefaults());

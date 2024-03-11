@@ -16,6 +16,7 @@ namespace Pulumi.Oci.DataFlow
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -79,6 +80,8 @@ namespace Pulumi.Oci.DataFlow
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
+    /// 
     /// ## Note
     /// 
     /// At a time service allows only one run to succeed if user is trying to invoke runs on multiple applications which have Private Endpoints and service will proceed invoking only one run and put the rest of them in failed state.
@@ -88,7 +91,7 @@ namespace Pulumi.Oci.DataFlow
     /// InvokeRuns can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:DataFlow/invokeRun:InvokeRun test_invoke_run "id"
+    /// $ pulumi import oci:DataFlow/invokeRun:InvokeRun test_invoke_run "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:DataFlow/invokeRun:InvokeRun")]

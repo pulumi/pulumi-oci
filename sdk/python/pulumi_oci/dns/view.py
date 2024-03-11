@@ -316,6 +316,7 @@ class View(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -327,13 +328,14 @@ class View(pulumi.CustomResource):
             display_name=var["view_display_name"],
             freeform_tags=var["view_freeform_tags"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Views can be imported using their OCID, e.g.
 
         ```sh
-         $ pulumi import oci:Dns/view:View test_view "id"
+        $ pulumi import oci:Dns/view:View test_view "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -365,6 +367,7 @@ class View(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -376,13 +379,14 @@ class View(pulumi.CustomResource):
             display_name=var["view_display_name"],
             freeform_tags=var["view_freeform_tags"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Views can be imported using their OCID, e.g.
 
         ```sh
-         $ pulumi import oci:Dns/view:View test_view "id"
+        $ pulumi import oci:Dns/view:View test_view "id"
         ```
 
         :param str resource_name: The name of the resource.

@@ -1211,7 +1211,7 @@ class DomainsMyUserDbCredential(pulumi.CustomResource):
         MyUserDbCredentials can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/domainsMyUserDbCredential:DomainsMyUserDbCredential test_my_user_db_credential "idcsEndpoint/{idcsEndpoint}/myUserDbCredentials/{myUserDbCredentialId}"
+        $ pulumi import oci:Identity/domainsMyUserDbCredential:DomainsMyUserDbCredential test_my_user_db_credential "idcsEndpoint/{idcsEndpoint}/myUserDbCredentials/{myUserDbCredentialId}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -1324,7 +1324,7 @@ class DomainsMyUserDbCredential(pulumi.CustomResource):
         MyUserDbCredentials can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/domainsMyUserDbCredential:DomainsMyUserDbCredential test_my_user_db_credential "idcsEndpoint/{idcsEndpoint}/myUserDbCredentials/{myUserDbCredentialId}"
+        $ pulumi import oci:Identity/domainsMyUserDbCredential:DomainsMyUserDbCredential test_my_user_db_credential "idcsEndpoint/{idcsEndpoint}/myUserDbCredentials/{myUserDbCredentialId}"
         ```
 
         :param str resource_name: The name of the resource.

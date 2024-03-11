@@ -462,6 +462,7 @@ class Publication(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -497,13 +498,14 @@ class Publication(pulumi.CustomResource):
             },
             long_description=var["publication_long_description"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Publications can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Marketplace/publication:Publication test_publication "id"
+        $ pulumi import oci:Marketplace/publication:Publication test_publication "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -532,6 +534,7 @@ class Publication(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -567,13 +570,14 @@ class Publication(pulumi.CustomResource):
             },
             long_description=var["publication_long_description"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Publications can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Marketplace/publication:Publication test_publication "id"
+        $ pulumi import oci:Marketplace/publication:Publication test_publication "id"
         ```
 
         :param str resource_name: The name of the resource.

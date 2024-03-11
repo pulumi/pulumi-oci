@@ -128,6 +128,7 @@ def get_clusters(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -137,6 +138,7 @@ def get_clusters(compartment_id: Optional[str] = None,
         sddc_id=oci_ocvp_sddc["test_sddc"]["id"],
         state=var["cluster_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
@@ -177,6 +179,7 @@ def get_clusters_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = 
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -186,6 +189,7 @@ def get_clusters_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = 
         sddc_id=oci_ocvp_sddc["test_sddc"]["id"],
         state=var["cluster_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.

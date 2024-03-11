@@ -17,10 +17,9 @@ namespace Pulumi.Oci.ServiceMesh
         /// Returns a list of AccessPolicy objects.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -40,8 +39,7 @@ namespace Pulumi.Oci.ServiceMesh
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetAccessPoliciesResult> InvokeAsync(GetAccessPoliciesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAccessPoliciesResult>("oci:ServiceMesh/getAccessPolicies:getAccessPolicies", args ?? new GetAccessPoliciesArgs(), options.WithDefaults());
@@ -52,10 +50,9 @@ namespace Pulumi.Oci.ServiceMesh
         /// Returns a list of AccessPolicy objects.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -75,8 +72,7 @@ namespace Pulumi.Oci.ServiceMesh
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetAccessPoliciesResult> Invoke(GetAccessPoliciesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAccessPoliciesResult>("oci:ServiceMesh/getAccessPolicies:getAccessPolicies", args ?? new GetAccessPoliciesInvokeArgs(), options.WithDefaults());

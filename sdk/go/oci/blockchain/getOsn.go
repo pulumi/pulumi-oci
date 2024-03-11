@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,6 +42,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupOsn(ctx *pulumi.Context, args *LookupOsnArgs, opts ...pulumi.InvokeOption) (*LookupOsnResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupOsnResult

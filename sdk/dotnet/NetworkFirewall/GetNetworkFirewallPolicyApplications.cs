@@ -17,10 +17,9 @@ namespace Pulumi.Oci.NetworkFirewall
         /// Returns a list of Applications for the policy.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -37,8 +36,7 @@ namespace Pulumi.Oci.NetworkFirewall
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetNetworkFirewallPolicyApplicationsResult> InvokeAsync(GetNetworkFirewallPolicyApplicationsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetNetworkFirewallPolicyApplicationsResult>("oci:NetworkFirewall/getNetworkFirewallPolicyApplications:getNetworkFirewallPolicyApplications", args ?? new GetNetworkFirewallPolicyApplicationsArgs(), options.WithDefaults());
@@ -49,10 +47,9 @@ namespace Pulumi.Oci.NetworkFirewall
         /// Returns a list of Applications for the policy.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -69,8 +66,7 @@ namespace Pulumi.Oci.NetworkFirewall
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetNetworkFirewallPolicyApplicationsResult> Invoke(GetNetworkFirewallPolicyApplicationsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNetworkFirewallPolicyApplicationsResult>("oci:NetworkFirewall/getNetworkFirewallPolicyApplications:getNetworkFirewallPolicyApplications", args ?? new GetNetworkFirewallPolicyApplicationsInvokeArgs(), options.WithDefaults());

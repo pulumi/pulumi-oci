@@ -31,6 +31,8 @@ import javax.annotation.Nullable;
  * **Important:** When `auto_backup_enabled` is not present in the configuration or set to true, the `auto_backup_window` and `auto_full_backup_window` will be ignored
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -99,13 +101,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * Databases can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Database/database:Database test_database &#34;id&#34;
+ * $ pulumi import oci:Database/database:Database test_database &#34;id&#34;
  * ```
  * 
  */

@@ -17,10 +17,9 @@ namespace Pulumi.Oci.Database
         /// Gets the wallet details for the specified Autonomous Database.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,8 +35,7 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetAutonomousDatabaseInstanceWalletManagementResult> InvokeAsync(GetAutonomousDatabaseInstanceWalletManagementArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAutonomousDatabaseInstanceWalletManagementResult>("oci:Database/getAutonomousDatabaseInstanceWalletManagement:getAutonomousDatabaseInstanceWalletManagement", args ?? new GetAutonomousDatabaseInstanceWalletManagementArgs(), options.WithDefaults());
@@ -48,10 +46,9 @@ namespace Pulumi.Oci.Database
         /// Gets the wallet details for the specified Autonomous Database.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -67,8 +64,7 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetAutonomousDatabaseInstanceWalletManagementResult> Invoke(GetAutonomousDatabaseInstanceWalletManagementInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousDatabaseInstanceWalletManagementResult>("oci:Database/getAutonomousDatabaseInstanceWalletManagement:getAutonomousDatabaseInstanceWalletManagement", args ?? new GetAutonomousDatabaseInstanceWalletManagementInvokeArgs(), options.WithDefaults());

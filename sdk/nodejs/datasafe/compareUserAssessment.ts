@@ -12,6 +12,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,13 +22,14 @@ import * as utilities from "../utilities";
  *     userAssessmentId: oci_data_safe_user_assessment.test_user_assessment.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * CompareUserAssessment can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:DataSafe/compareUserAssessment:CompareUserAssessment test_compare_user_assessment "id"
+ * $ pulumi import oci:DataSafe/compareUserAssessment:CompareUserAssessment test_compare_user_assessment "id"
  * ```
  */
 export class CompareUserAssessment extends pulumi.CustomResource {

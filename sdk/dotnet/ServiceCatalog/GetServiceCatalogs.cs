@@ -16,10 +16,9 @@ namespace Pulumi.Oci.ServiceCatalog
         /// 
         /// Lists all the service catalogs in the given compartment.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -37,8 +36,7 @@ namespace Pulumi.Oci.ServiceCatalog
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetServiceCatalogsResult> InvokeAsync(GetServiceCatalogsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetServiceCatalogsResult>("oci:ServiceCatalog/getServiceCatalogs:getServiceCatalogs", args ?? new GetServiceCatalogsArgs(), options.WithDefaults());
@@ -48,10 +46,9 @@ namespace Pulumi.Oci.ServiceCatalog
         /// 
         /// Lists all the service catalogs in the given compartment.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -69,8 +66,7 @@ namespace Pulumi.Oci.ServiceCatalog
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetServiceCatalogsResult> Invoke(GetServiceCatalogsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetServiceCatalogsResult>("oci:ServiceCatalog/getServiceCatalogs:getServiceCatalogs", args ?? new GetServiceCatalogsInvokeArgs(), options.WithDefaults());

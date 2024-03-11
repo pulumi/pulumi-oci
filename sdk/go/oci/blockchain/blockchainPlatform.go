@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -56,15 +57,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // BlockchainPlatforms can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Blockchain/blockchainPlatform:BlockchainPlatform test_blockchain_platform "id"
-//
+// $ pulumi import oci:Blockchain/blockchainPlatform:BlockchainPlatform test_blockchain_platform "id"
 // ```
 type BlockchainPlatform struct {
 	pulumi.CustomResourceState

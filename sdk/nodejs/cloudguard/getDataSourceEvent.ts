@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,6 +23,7 @@ import * as utilities from "../utilities";
  *     region: _var.data_source_event_region,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDataSourceEvent(args: GetDataSourceEventArgs, opts?: pulumi.InvokeOptions): Promise<GetDataSourceEventResult> {
 
@@ -74,6 +76,7 @@ export interface GetDataSourceEventResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -83,6 +86,7 @@ export interface GetDataSourceEventResult {
  *     region: _var.data_source_event_region,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDataSourceEventOutput(args: GetDataSourceEventOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDataSourceEventResult> {
     return pulumi.output(args).apply((a: any) => getDataSourceEvent(a, opts))

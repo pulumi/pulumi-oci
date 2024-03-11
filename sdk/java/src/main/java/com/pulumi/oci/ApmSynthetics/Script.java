@@ -25,6 +25,8 @@ import javax.annotation.Nullable;
  * Creates a new script.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -65,13 +67,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * Scripts can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:ApmSynthetics/script:Script test_script &#34;scripts/{scriptId}/apmDomainId/{apmDomainId}&#34;
+ * $ pulumi import oci:ApmSynthetics/script:Script test_script &#34;scripts/{scriptId}/apmDomainId/{apmDomainId}&#34;
  * ```
  * 
  */

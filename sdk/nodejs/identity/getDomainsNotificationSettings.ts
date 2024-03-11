@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -25,6 +26,7 @@ import * as utilities from "../utilities";
  *     resourceTypeSchemaVersion: _var.notification_setting_resource_type_schema_version,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDomainsNotificationSettings(args: GetDomainsNotificationSettingsArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsNotificationSettingsResult> {
 
@@ -99,6 +101,7 @@ export interface GetDomainsNotificationSettingsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -111,6 +114,7 @@ export interface GetDomainsNotificationSettingsResult {
  *     resourceTypeSchemaVersion: _var.notification_setting_resource_type_schema_version,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDomainsNotificationSettingsOutput(args: GetDomainsNotificationSettingsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsNotificationSettingsResult> {
     return pulumi.output(args).apply((a: any) => getDomainsNotificationSettings(a, opts))

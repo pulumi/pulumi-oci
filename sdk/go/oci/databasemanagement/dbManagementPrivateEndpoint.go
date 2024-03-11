@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -51,15 +52,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // DbManagementPrivateEndpoints can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:DatabaseManagement/dbManagementPrivateEndpoint:DbManagementPrivateEndpoint test_db_management_private_endpoint "id"
-//
+// $ pulumi import oci:DatabaseManagement/dbManagementPrivateEndpoint:DbManagementPrivateEndpoint test_db_management_private_endpoint "id"
 // ```
 type DbManagementPrivateEndpoint struct {
 	pulumi.CustomResourceState

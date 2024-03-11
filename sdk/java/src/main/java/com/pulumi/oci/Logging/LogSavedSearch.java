@@ -21,6 +21,8 @@ import javax.annotation.Nullable;
  * Creates a new LogSavedSearch.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -53,13 +55,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * LogSavedSearches can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Logging/logSavedSearch:LogSavedSearch test_log_saved_search &#34;id&#34;
+ * $ pulumi import oci:Logging/logSavedSearch:LogSavedSearch test_log_saved_search &#34;id&#34;
  * ```
  * 
  */

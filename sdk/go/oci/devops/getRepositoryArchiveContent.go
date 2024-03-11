@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -42,6 +43,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetRepositoryArchiveContent(ctx *pulumi.Context, args *GetRepositoryArchiveContentArgs, opts ...pulumi.InvokeOption) (*GetRepositoryArchiveContentResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetRepositoryArchiveContentResult

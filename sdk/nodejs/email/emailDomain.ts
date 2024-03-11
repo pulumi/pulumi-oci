@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -26,13 +27,14 @@ import * as utilities from "../utilities";
  *     },
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * EmailDomains can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Email/emailDomain:EmailDomain test_email_domain "id"
+ * $ pulumi import oci:Email/emailDomain:EmailDomain test_email_domain "id"
  * ```
  */
 export class EmailDomain extends pulumi.CustomResource {

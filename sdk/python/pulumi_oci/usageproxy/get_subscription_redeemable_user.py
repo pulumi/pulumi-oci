@@ -91,6 +91,7 @@ def get_subscription_redeemable_user(subscription_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -98,6 +99,7 @@ def get_subscription_redeemable_user(subscription_id: Optional[str] = None,
     test_subscription_redeemable_user = oci.UsageProxy.get_subscription_redeemable_user(subscription_id=oci_ons_subscription["test_subscription"]["id"],
         tenancy_id=oci_identity_tenancy["test_tenancy"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str subscription_id: The subscription ID for which rewards information is requested for.
@@ -128,6 +130,7 @@ def get_subscription_redeemable_user_output(subscription_id: Optional[pulumi.Inp
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -135,6 +138,7 @@ def get_subscription_redeemable_user_output(subscription_id: Optional[pulumi.Inp
     test_subscription_redeemable_user = oci.UsageProxy.get_subscription_redeemable_user(subscription_id=oci_ons_subscription["test_subscription"]["id"],
         tenancy_id=oci_identity_tenancy["test_tenancy"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str subscription_id: The subscription ID for which rewards information is requested for.

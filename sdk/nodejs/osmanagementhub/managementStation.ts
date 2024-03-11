@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -42,13 +43,14 @@ import * as utilities from "../utilities";
  *     },
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * ManagementStations can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:OsManagementHub/managementStation:ManagementStation test_management_station "id"
+ * $ pulumi import oci:OsManagementHub/managementStation:ManagementStation test_management_station "id"
  * ```
  */
 export class ManagementStation extends pulumi.CustomResource {

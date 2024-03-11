@@ -335,6 +335,7 @@ class UsageCarbonEmission(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -353,13 +354,14 @@ class UsageCarbonEmission(pulumi.CustomResource):
             is_aggregate_by_time=var["usage_carbon_emission_is_aggregate_by_time"],
             usage_carbon_emission_filter=var["usage_carbon_emission_usage_carbon_emission_filter"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         UsageCarbonEmissions can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:MeteringComputation/usageCarbonEmission:UsageCarbonEmission test_usage_carbon_emission "id"
+        $ pulumi import oci:MeteringComputation/usageCarbonEmission:UsageCarbonEmission test_usage_carbon_emission "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -390,6 +392,7 @@ class UsageCarbonEmission(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -408,13 +411,14 @@ class UsageCarbonEmission(pulumi.CustomResource):
             is_aggregate_by_time=var["usage_carbon_emission_is_aggregate_by_time"],
             usage_carbon_emission_filter=var["usage_carbon_emission_usage_carbon_emission_filter"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         UsageCarbonEmissions can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:MeteringComputation/usageCarbonEmission:UsageCarbonEmission test_usage_carbon_emission "id"
+        $ pulumi import oci:MeteringComputation/usageCarbonEmission:UsageCarbonEmission test_usage_carbon_emission "id"
         ```
 
         :param str resource_name: The name of the resource.

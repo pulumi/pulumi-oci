@@ -35,6 +35,8 @@ public final class StreamingFunctions {
      * Gets detailed information about a connect harness.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -63,6 +65,7 @@ public final class StreamingFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetConnectHarnessResult> getConnectHarness(GetConnectHarnessArgs args) {
@@ -74,6 +77,8 @@ public final class StreamingFunctions {
      * Gets detailed information about a connect harness.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -102,6 +107,7 @@ public final class StreamingFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetConnectHarnessResult> getConnectHarnessPlain(GetConnectHarnessPlainArgs args) {
@@ -113,6 +119,8 @@ public final class StreamingFunctions {
      * Gets detailed information about a connect harness.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -141,6 +149,7 @@ public final class StreamingFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetConnectHarnessResult> getConnectHarness(GetConnectHarnessArgs args, InvokeOptions options) {
@@ -152,6 +161,8 @@ public final class StreamingFunctions {
      * Gets detailed information about a connect harness.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -180,6 +191,7 @@ public final class StreamingFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetConnectHarnessResult> getConnectHarnessPlain(GetConnectHarnessPlainArgs args, InvokeOptions options) {
@@ -191,6 +203,8 @@ public final class StreamingFunctions {
      * Lists the connectharness.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -222,6 +236,7 @@ public final class StreamingFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetConnectHarnessesResult> getConnectHarnesses(GetConnectHarnessesArgs args) {
@@ -233,6 +248,8 @@ public final class StreamingFunctions {
      * Lists the connectharness.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -264,6 +281,7 @@ public final class StreamingFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetConnectHarnessesResult> getConnectHarnessesPlain(GetConnectHarnessesPlainArgs args) {
@@ -275,6 +293,8 @@ public final class StreamingFunctions {
      * Lists the connectharness.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -306,6 +326,7 @@ public final class StreamingFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetConnectHarnessesResult> getConnectHarnesses(GetConnectHarnessesArgs args, InvokeOptions options) {
@@ -317,6 +338,8 @@ public final class StreamingFunctions {
      * Lists the connectharness.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -348,6 +371,7 @@ public final class StreamingFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetConnectHarnessesResult> getConnectHarnessesPlain(GetConnectHarnessesPlainArgs args, InvokeOptions options) {
@@ -359,6 +383,8 @@ public final class StreamingFunctions {
      * Gets detailed information about a stream, including the number of partitions.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -387,6 +413,7 @@ public final class StreamingFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetStreamResult> getStream(GetStreamArgs args) {
@@ -398,6 +425,8 @@ public final class StreamingFunctions {
      * Gets detailed information about a stream, including the number of partitions.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -426,6 +455,7 @@ public final class StreamingFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetStreamResult> getStreamPlain(GetStreamPlainArgs args) {
@@ -437,6 +467,8 @@ public final class StreamingFunctions {
      * Gets detailed information about a stream, including the number of partitions.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -465,6 +497,7 @@ public final class StreamingFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetStreamResult> getStream(GetStreamArgs args, InvokeOptions options) {
@@ -476,6 +509,8 @@ public final class StreamingFunctions {
      * Gets detailed information about a stream, including the number of partitions.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -504,6 +539,7 @@ public final class StreamingFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetStreamResult> getStreamPlain(GetStreamPlainArgs args, InvokeOptions options) {
@@ -515,6 +551,8 @@ public final class StreamingFunctions {
      * Gets detailed information about the stream pool, such as Kafka settings.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -543,6 +581,7 @@ public final class StreamingFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetStreamPoolResult> getStreamPool(GetStreamPoolArgs args) {
@@ -554,6 +593,8 @@ public final class StreamingFunctions {
      * Gets detailed information about the stream pool, such as Kafka settings.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -582,6 +623,7 @@ public final class StreamingFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetStreamPoolResult> getStreamPoolPlain(GetStreamPoolPlainArgs args) {
@@ -593,6 +635,8 @@ public final class StreamingFunctions {
      * Gets detailed information about the stream pool, such as Kafka settings.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -621,6 +665,7 @@ public final class StreamingFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetStreamPoolResult> getStreamPool(GetStreamPoolArgs args, InvokeOptions options) {
@@ -632,6 +677,8 @@ public final class StreamingFunctions {
      * Gets detailed information about the stream pool, such as Kafka settings.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -660,6 +707,7 @@ public final class StreamingFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetStreamPoolResult> getStreamPoolPlain(GetStreamPoolPlainArgs args, InvokeOptions options) {
@@ -671,6 +719,8 @@ public final class StreamingFunctions {
      * List the stream pools for a given compartment ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -702,6 +752,7 @@ public final class StreamingFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetStreamPoolsResult> getStreamPools(GetStreamPoolsArgs args) {
@@ -713,6 +764,8 @@ public final class StreamingFunctions {
      * List the stream pools for a given compartment ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -744,6 +797,7 @@ public final class StreamingFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetStreamPoolsResult> getStreamPoolsPlain(GetStreamPoolsPlainArgs args) {
@@ -755,6 +809,8 @@ public final class StreamingFunctions {
      * List the stream pools for a given compartment ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -786,6 +842,7 @@ public final class StreamingFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetStreamPoolsResult> getStreamPools(GetStreamPoolsArgs args, InvokeOptions options) {
@@ -797,6 +854,8 @@ public final class StreamingFunctions {
      * List the stream pools for a given compartment ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -828,6 +887,7 @@ public final class StreamingFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetStreamPoolsResult> getStreamPoolsPlain(GetStreamPoolsPlainArgs args, InvokeOptions options) {
@@ -842,6 +902,8 @@ public final class StreamingFunctions {
      * The compartment id and stream pool id cannot be specified at the same time.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -874,6 +936,7 @@ public final class StreamingFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetStreamsResult> getStreams() {
@@ -888,6 +951,8 @@ public final class StreamingFunctions {
      * The compartment id and stream pool id cannot be specified at the same time.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -920,6 +985,7 @@ public final class StreamingFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetStreamsResult> getStreamsPlain() {
@@ -934,6 +1000,8 @@ public final class StreamingFunctions {
      * The compartment id and stream pool id cannot be specified at the same time.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -966,6 +1034,7 @@ public final class StreamingFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetStreamsResult> getStreams(GetStreamsArgs args) {
@@ -980,6 +1049,8 @@ public final class StreamingFunctions {
      * The compartment id and stream pool id cannot be specified at the same time.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1012,6 +1083,7 @@ public final class StreamingFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetStreamsResult> getStreamsPlain(GetStreamsPlainArgs args) {
@@ -1026,6 +1098,8 @@ public final class StreamingFunctions {
      * The compartment id and stream pool id cannot be specified at the same time.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1058,6 +1132,7 @@ public final class StreamingFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetStreamsResult> getStreams(GetStreamsArgs args, InvokeOptions options) {
@@ -1072,6 +1147,8 @@ public final class StreamingFunctions {
      * The compartment id and stream pool id cannot be specified at the same time.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1104,6 +1181,7 @@ public final class StreamingFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetStreamsResult> getStreamsPlain(GetStreamsPlainArgs args, InvokeOptions options) {

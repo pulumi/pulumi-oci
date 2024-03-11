@@ -109,6 +109,7 @@ def get_db_systems_upgrade_history_entries(db_system_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -117,6 +118,7 @@ def get_db_systems_upgrade_history_entries(db_system_id: Optional[str] = None,
         state=var["db_systems_upgrade_history_entry_state"],
         upgrade_action=var["db_systems_upgrade_history_entry_upgrade_action"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str db_system_id: The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -153,6 +155,7 @@ def get_db_systems_upgrade_history_entries_output(db_system_id: Optional[pulumi.
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -161,6 +164,7 @@ def get_db_systems_upgrade_history_entries_output(db_system_id: Optional[pulumi.
         state=var["db_systems_upgrade_history_entry_state"],
         upgrade_action=var["db_systems_upgrade_history_entry_upgrade_action"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str db_system_id: The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

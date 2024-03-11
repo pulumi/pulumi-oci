@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -43,6 +44,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetDomainsMyPendingApproval(ctx *pulumi.Context, args *GetDomainsMyPendingApprovalArgs, opts ...pulumi.InvokeOption) (*GetDomainsMyPendingApprovalResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDomainsMyPendingApprovalResult

@@ -29,6 +29,8 @@ import javax.annotation.Nullable;
  * operation.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -93,13 +95,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * InstancePools can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Core/instancePool:InstancePool test_instance_pool &#34;id&#34;
+ * $ pulumi import oci:Core/instancePool:InstancePool test_instance_pool &#34;id&#34;
  * ```
  * 
  */

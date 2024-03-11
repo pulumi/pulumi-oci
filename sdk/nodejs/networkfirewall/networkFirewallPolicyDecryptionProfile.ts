@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -29,13 +30,14 @@ import * as utilities from "../utilities";
  *     isUntrustedIssuerBlocked: _var.network_firewall_policy_decryption_profile_is_untrusted_issuer_blocked,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * NetworkFirewallPolicyDecryptionProfiles can be imported using the `name`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:NetworkFirewall/networkFirewallPolicyDecryptionProfile:NetworkFirewallPolicyDecryptionProfile test_network_firewall_policy_decryption_profile "networkFirewallPolicies/{networkFirewallPolicyId}/decryptionProfiles/{decryptionProfileName}"
+ * $ pulumi import oci:NetworkFirewall/networkFirewallPolicyDecryptionProfile:NetworkFirewallPolicyDecryptionProfile test_network_firewall_policy_decryption_profile "networkFirewallPolicies/{networkFirewallPolicyId}/decryptionProfiles/{decryptionProfileName}"
  * ```
  */
 export class NetworkFirewallPolicyDecryptionProfile extends pulumi.CustomResource {

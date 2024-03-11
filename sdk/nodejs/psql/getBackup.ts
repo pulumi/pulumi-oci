@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,6 +22,7 @@ import * as utilities from "../utilities";
  *     backupId: oci_psql_backup.test_backup.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getBackup(args: GetBackupArgs, opts?: pulumi.InvokeOptions): Promise<GetBackupResult> {
 
@@ -125,6 +127,7 @@ export interface GetBackupResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -133,6 +136,7 @@ export interface GetBackupResult {
  *     backupId: oci_psql_backup.test_backup.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getBackupOutput(args: GetBackupOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBackupResult> {
     return pulumi.output(args).apply((a: any) => getBackup(a, opts))

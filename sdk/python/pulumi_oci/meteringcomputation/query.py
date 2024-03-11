@@ -106,6 +106,7 @@ class Query(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -143,13 +144,14 @@ class Query(pulumi.CustomResource):
                 version=var["query_query_definition_version"],
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Queries can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:MeteringComputation/query:Query test_query "id"
+        $ pulumi import oci:MeteringComputation/query:Query test_query "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -170,6 +172,7 @@ class Query(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -207,13 +210,14 @@ class Query(pulumi.CustomResource):
                 version=var["query_query_definition_version"],
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Queries can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:MeteringComputation/query:Query test_query "id"
+        $ pulumi import oci:MeteringComputation/query:Query test_query "id"
         ```
 
         :param str resource_name: The name of the resource.

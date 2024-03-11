@@ -17,10 +17,9 @@ namespace Pulumi.Oci.Core
         /// Lists the VNICs in the specified network security group.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,8 +35,7 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetNetworkSecurityGroupVnicsResult> InvokeAsync(GetNetworkSecurityGroupVnicsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetNetworkSecurityGroupVnicsResult>("oci:Core/getNetworkSecurityGroupVnics:getNetworkSecurityGroupVnics", args ?? new GetNetworkSecurityGroupVnicsArgs(), options.WithDefaults());
@@ -48,10 +46,9 @@ namespace Pulumi.Oci.Core
         /// Lists the VNICs in the specified network security group.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -67,8 +64,7 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetNetworkSecurityGroupVnicsResult> Invoke(GetNetworkSecurityGroupVnicsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNetworkSecurityGroupVnicsResult>("oci:Core/getNetworkSecurityGroupVnics:getNetworkSecurityGroupVnics", args ?? new GetNetworkSecurityGroupVnicsInvokeArgs(), options.WithDefaults());

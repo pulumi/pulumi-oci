@@ -20,6 +20,8 @@ import javax.annotation.Nullable;
  * Returns the created query.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -82,13 +84,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * Queries can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:MeteringComputation/query:Query test_query &#34;id&#34;
+ * $ pulumi import oci:MeteringComputation/query:Query test_query &#34;id&#34;
  * ```
  * 
  */

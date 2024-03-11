@@ -86,12 +86,14 @@ def get_model_type(model_type: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_model_type = oci.AiLanguage.get_model_type(model_type=var["model_type_model_type"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str model_type: Results like version and model supported info by specifying model type
@@ -118,12 +120,14 @@ def get_model_type_output(model_type: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_model_type = oci.AiLanguage.get_model_type(model_type=var["model_type_model_type"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str model_type: Results like version and model supported info by specifying model type

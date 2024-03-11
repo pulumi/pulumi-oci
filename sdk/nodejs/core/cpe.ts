@@ -25,6 +25,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -43,13 +44,14 @@ import * as utilities from "../utilities";
  *     isPrivate: _var.cpe_is_private,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * Cpes can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Core/cpe:Cpe test_cpe "id"
+ * $ pulumi import oci:Core/cpe:Cpe test_cpe "id"
  * ```
  */
 export class Cpe extends pulumi.CustomResource {

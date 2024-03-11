@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,6 +23,7 @@ import * as utilities from "../utilities";
  *     workspaceId: oci_dataintegration_workspace.test_workspace.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getWorkspaceProject(args: GetWorkspaceProjectArgs, opts?: pulumi.InvokeOptions): Promise<GetWorkspaceProjectResult> {
 
@@ -106,6 +108,7 @@ export interface GetWorkspaceProjectResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -115,6 +118,7 @@ export interface GetWorkspaceProjectResult {
  *     workspaceId: oci_dataintegration_workspace.test_workspace.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getWorkspaceProjectOutput(args: GetWorkspaceProjectOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetWorkspaceProjectResult> {
     return pulumi.output(args).apply((a: any) => getWorkspaceProject(a, opts))

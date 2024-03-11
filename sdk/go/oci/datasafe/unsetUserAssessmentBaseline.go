@@ -19,6 +19,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -42,15 +43,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // UnsetUserAssessmentBaseline can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:DataSafe/unsetUserAssessmentBaseline:UnsetUserAssessmentBaseline test_unset_user_assessment_baseline "id"
-//
+// $ pulumi import oci:DataSafe/unsetUserAssessmentBaseline:UnsetUserAssessmentBaseline test_unset_user_assessment_baseline "id"
 // ```
 type UnsetUserAssessmentBaseline struct {
 	pulumi.CustomResourceState

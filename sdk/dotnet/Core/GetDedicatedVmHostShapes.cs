@@ -17,10 +17,9 @@ namespace Pulumi.Oci.Core
         /// Lists the shapes that can be used to launch a dedicated virtual machine host within the specified compartment.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -38,8 +37,7 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDedicatedVmHostShapesResult> InvokeAsync(GetDedicatedVmHostShapesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDedicatedVmHostShapesResult>("oci:Core/getDedicatedVmHostShapes:getDedicatedVmHostShapes", args ?? new GetDedicatedVmHostShapesArgs(), options.WithDefaults());
@@ -50,10 +48,9 @@ namespace Pulumi.Oci.Core
         /// Lists the shapes that can be used to launch a dedicated virtual machine host within the specified compartment.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -71,8 +68,7 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDedicatedVmHostShapesResult> Invoke(GetDedicatedVmHostShapesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDedicatedVmHostShapesResult>("oci:Core/getDedicatedVmHostShapes:getDedicatedVmHostShapes", args ?? new GetDedicatedVmHostShapesInvokeArgs(), options.WithDefaults());

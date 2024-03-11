@@ -15,6 +15,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,6 +25,7 @@ import * as utilities from "../utilities";
  *     replicaRegion: _var.replica_region,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export class VaultVerification extends pulumi.CustomResource {
     /**

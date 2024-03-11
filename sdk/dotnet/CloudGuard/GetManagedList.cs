@@ -16,10 +16,9 @@ namespace Pulumi.Oci.CloudGuard
         /// 
         /// Returns a managed list identified by managedListId
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,8 +34,7 @@ namespace Pulumi.Oci.CloudGuard
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetManagedListResult> InvokeAsync(GetManagedListArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagedListResult>("oci:CloudGuard/getManagedList:getManagedList", args ?? new GetManagedListArgs(), options.WithDefaults());
@@ -46,10 +44,9 @@ namespace Pulumi.Oci.CloudGuard
         /// 
         /// Returns a managed list identified by managedListId
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -65,8 +62,7 @@ namespace Pulumi.Oci.CloudGuard
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetManagedListResult> Invoke(GetManagedListInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedListResult>("oci:CloudGuard/getManagedList:getManagedList", args ?? new GetManagedListInvokeArgs(), options.WithDefaults());

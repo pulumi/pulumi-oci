@@ -648,7 +648,7 @@ class DatabaseToolsConnection(pulumi.CustomResource):
         DatabaseToolsConnections can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DatabaseTools/databaseToolsConnection:DatabaseToolsConnection test_database_tools_connection "id"
+        $ pulumi import oci:DatabaseTools/databaseToolsConnection:DatabaseToolsConnection test_database_tools_connection "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -686,7 +686,7 @@ class DatabaseToolsConnection(pulumi.CustomResource):
         DatabaseToolsConnections can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DatabaseTools/databaseToolsConnection:DatabaseToolsConnection test_database_tools_connection "id"
+        $ pulumi import oci:DatabaseTools/databaseToolsConnection:DatabaseToolsConnection test_database_tools_connection "id"
         ```
 
         :param str resource_name: The name of the resource.

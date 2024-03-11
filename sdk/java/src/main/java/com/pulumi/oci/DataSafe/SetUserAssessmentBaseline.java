@@ -20,6 +20,8 @@ import javax.annotation.Nullable;
  * Sets the saved user assessment as the baseline in the compartment where the specified assessment resides. The user assessment needs to be of type &#39;SAVED&#39;.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -49,13 +51,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * SetUserAssessmentBaseline can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:DataSafe/setUserAssessmentBaseline:SetUserAssessmentBaseline test_set_user_assessment_baseline &#34;id&#34;
+ * $ pulumi import oci:DataSafe/setUserAssessmentBaseline:SetUserAssessmentBaseline test_set_user_assessment_baseline &#34;id&#34;
  * ```
  * 
  */

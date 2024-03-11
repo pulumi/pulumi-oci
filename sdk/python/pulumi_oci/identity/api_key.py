@@ -195,6 +195,7 @@ class ApiKey(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -203,13 +204,14 @@ class ApiKey(pulumi.CustomResource):
             key_value=var["api_key_key_value"],
             user_id=oci_identity_user["test_user"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ApiKeys can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/apiKey:ApiKey test_api_key "users/{userId}/apiKeys/{fingerprint}"
+        $ pulumi import oci:Identity/apiKey:ApiKey test_api_key "users/{userId}/apiKeys/{fingerprint}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -245,6 +247,7 @@ class ApiKey(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -253,13 +256,14 @@ class ApiKey(pulumi.CustomResource):
             key_value=var["api_key_key_value"],
             user_id=oci_identity_user["test_user"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ApiKeys can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/apiKey:ApiKey test_api_key "users/{userId}/apiKeys/{fingerprint}"
+        $ pulumi import oci:Identity/apiKey:ApiKey test_api_key "users/{userId}/apiKeys/{fingerprint}"
         ```
 
         :param str resource_name: The name of the resource.

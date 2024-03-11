@@ -956,6 +956,7 @@ class DbSystemsUpgrade(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -967,6 +968,7 @@ class DbSystemsUpgrade(pulumi.CustomResource):
             new_gi_version=var["db_systems_upgrade_new_gi_version"],
             snapshot_retention_period_in_days=var["db_systems_upgrade_snapshot_retention_period_in_days"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -997,6 +999,7 @@ class DbSystemsUpgrade(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -1008,6 +1011,7 @@ class DbSystemsUpgrade(pulumi.CustomResource):
             new_gi_version=var["db_systems_upgrade_new_gi_version"],
             snapshot_retention_period_in_days=var["db_systems_upgrade_snapshot_retention_period_in_days"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 

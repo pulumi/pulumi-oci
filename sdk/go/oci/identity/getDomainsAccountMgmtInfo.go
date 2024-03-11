@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -47,6 +48,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetDomainsAccountMgmtInfo(ctx *pulumi.Context, args *GetDomainsAccountMgmtInfoArgs, opts ...pulumi.InvokeOption) (*GetDomainsAccountMgmtInfoResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDomainsAccountMgmtInfoResult

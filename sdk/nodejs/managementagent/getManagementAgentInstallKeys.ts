@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -25,6 +26,7 @@ import * as utilities from "../utilities";
  *     state: _var.management_agent_install_key_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getManagementAgentInstallKeys(args: GetManagementAgentInstallKeysArgs, opts?: pulumi.InvokeOptions): Promise<GetManagementAgentInstallKeysResult> {
 
@@ -101,6 +103,7 @@ export interface GetManagementAgentInstallKeysResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -113,6 +116,7 @@ export interface GetManagementAgentInstallKeysResult {
  *     state: _var.management_agent_install_key_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getManagementAgentInstallKeysOutput(args: GetManagementAgentInstallKeysOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagementAgentInstallKeysResult> {
     return pulumi.output(args).apply((a: any) => getManagementAgentInstallKeys(a, opts))

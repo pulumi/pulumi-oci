@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -40,6 +41,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupStreamDistributionChannel(ctx *pulumi.Context, args *LookupStreamDistributionChannelArgs, opts ...pulumi.InvokeOption) (*LookupStreamDistributionChannelResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupStreamDistributionChannelResult

@@ -14,6 +14,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -27,6 +28,7 @@ import * as utilities from "../utilities";
  *     name: _var.association_name,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAssociations(args?: GetAssociationsArgs, opts?: pulumi.InvokeOptions): Promise<GetAssociationsResult> {
     args = args || {};
@@ -117,6 +119,7 @@ export interface GetAssociationsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -130,6 +133,7 @@ export interface GetAssociationsResult {
  *     name: _var.association_name,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAssociationsOutput(args?: GetAssociationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAssociationsResult> {
     return pulumi.output(args).apply((a: any) => getAssociations(a, opts))

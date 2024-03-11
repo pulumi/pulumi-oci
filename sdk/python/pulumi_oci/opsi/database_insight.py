@@ -913,12 +913,14 @@ class DatabaseInsight(pulumi.CustomResource):
                  status: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
+        ## Example Usage
+
         ## Import
 
         DatabaseInsights can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Opsi/databaseInsight:DatabaseInsight test_database_insight "id"
+        $ pulumi import oci:Opsi/databaseInsight:DatabaseInsight test_database_insight "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -953,12 +955,14 @@ class DatabaseInsight(pulumi.CustomResource):
                  args: DatabaseInsightArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        ## Example Usage
+
         ## Import
 
         DatabaseInsights can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Opsi/databaseInsight:DatabaseInsight test_database_insight "id"
+        $ pulumi import oci:Opsi/databaseInsight:DatabaseInsight test_database_insight "id"
         ```
 
         :param str resource_name: The name of the resource.

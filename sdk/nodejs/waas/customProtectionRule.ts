@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -30,13 +31,14 @@ import * as utilities from "../utilities";
  *     },
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * CustomProtectionRules can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Waas/customProtectionRule:CustomProtectionRule test_custom_protection_rule "id"
+ * $ pulumi import oci:Waas/customProtectionRule:CustomProtectionRule test_custom_protection_rule "id"
  * ```
  */
 export class CustomProtectionRule extends pulumi.CustomResource {

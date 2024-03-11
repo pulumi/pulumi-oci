@@ -16,6 +16,7 @@ namespace Pulumi.Oci.DatabaseManagement
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -33,13 +34,14 @@ namespace Pulumi.Oci.DatabaseManagement
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// ExternalDbSystemConnectors can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:DatabaseManagement/externalDbSystemConnector:ExternalDbSystemConnector test_external_db_system_connector "id"
+    /// $ pulumi import oci:DatabaseManagement/externalDbSystemConnector:ExternalDbSystemConnector test_external_db_system_connector "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:DatabaseManagement/externalDbSystemConnector:ExternalDbSystemConnector")]

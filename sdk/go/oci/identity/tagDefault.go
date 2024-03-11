@@ -25,6 +25,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -51,15 +52,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // TagDefaults can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Identity/tagDefault:TagDefault test_tag_default "id"
-//
+// $ pulumi import oci:Identity/tagDefault:TagDefault test_tag_default "id"
 // ```
 type TagDefault struct {
 	pulumi.CustomResourceState

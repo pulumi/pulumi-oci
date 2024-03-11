@@ -26,6 +26,8 @@ import javax.annotation.Nullable;
  * Create an OAuth Partner Certificate
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -70,13 +72,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * OAuthPartnerCertificates can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Identity/domainsOauthPartnerCertificate:DomainsOauthPartnerCertificate test_oauth_partner_certificate &#34;idcsEndpoint/{idcsEndpoint}/oAuthPartnerCertificates/{oAuthPartnerCertificateId}&#34;
+ * $ pulumi import oci:Identity/domainsOauthPartnerCertificate:DomainsOauthPartnerCertificate test_oauth_partner_certificate &#34;idcsEndpoint/{idcsEndpoint}/oAuthPartnerCertificates/{oAuthPartnerCertificateId}&#34;
  * ```
  * 
  */

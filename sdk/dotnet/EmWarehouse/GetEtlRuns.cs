@@ -16,10 +16,9 @@ namespace Pulumi.Oci.EmWarehouse
         /// 
         /// Gets a list of runs of an EmWarehouseResource by identifier
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -37,8 +36,7 @@ namespace Pulumi.Oci.EmWarehouse
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetEtlRunsResult> InvokeAsync(GetEtlRunsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetEtlRunsResult>("oci:EmWarehouse/getEtlRuns:getEtlRuns", args ?? new GetEtlRunsArgs(), options.WithDefaults());
@@ -48,10 +46,9 @@ namespace Pulumi.Oci.EmWarehouse
         /// 
         /// Gets a list of runs of an EmWarehouseResource by identifier
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -69,8 +66,7 @@ namespace Pulumi.Oci.EmWarehouse
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetEtlRunsResult> Invoke(GetEtlRunsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetEtlRunsResult>("oci:EmWarehouse/getEtlRuns:getEtlRuns", args ?? new GetEtlRunsInvokeArgs(), options.WithDefaults());

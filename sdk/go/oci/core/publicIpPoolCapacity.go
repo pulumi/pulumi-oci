@@ -14,6 +14,7 @@ import (
 
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -39,15 +40,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // PublicIpPoolCapacity can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Core/publicIpPoolCapacity:PublicIpPoolCapacity test_public_ip_pool_capacity "publicIpPoolId/{publicIpPoolId}/byoipId/{byoipId}/cidrBlock/{cidrBlock}"
-//
+// $ pulumi import oci:Core/publicIpPoolCapacity:PublicIpPoolCapacity test_public_ip_pool_capacity "publicIpPoolId/{publicIpPoolId}/byoipId/{byoipId}/cidrBlock/{cidrBlock}"
 // ```
 type PublicIpPoolCapacity struct {
 	pulumi.CustomResourceState

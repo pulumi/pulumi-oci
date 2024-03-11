@@ -12,6 +12,7 @@ namespace Pulumi.Oci.FileStorage
     /// <summary>
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -30,13 +31,14 @@ namespace Pulumi.Oci.FileStorage
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// ExportSets can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:FileStorage/exportSet:ExportSet test_export_set "id"
+    /// $ pulumi import oci:FileStorage/exportSet:ExportSet test_export_set "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:FileStorage/exportSet:ExportSet")]

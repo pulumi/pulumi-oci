@@ -14,6 +14,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,6 +24,7 @@ import * as utilities from "../utilities";
  *     vcnId: oci_core_vcn.test_vcn.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getLocalPeeringGateways(args: GetLocalPeeringGatewaysArgs, opts?: pulumi.InvokeOptions): Promise<GetLocalPeeringGatewaysResult> {
 
@@ -79,6 +81,7 @@ export interface GetLocalPeeringGatewaysResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -88,6 +91,7 @@ export interface GetLocalPeeringGatewaysResult {
  *     vcnId: oci_core_vcn.test_vcn.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getLocalPeeringGatewaysOutput(args: GetLocalPeeringGatewaysOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLocalPeeringGatewaysResult> {
     return pulumi.output(args).apply((a: any) => getLocalPeeringGateways(a, opts))

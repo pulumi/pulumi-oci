@@ -116,6 +116,7 @@ def get_tsig_keys(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -125,6 +126,7 @@ def get_tsig_keys(compartment_id: Optional[str] = None,
         name=var["tsig_key_name"],
         state=var["tsig_key_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment the resource belongs to.
@@ -164,6 +166,7 @@ def get_tsig_keys_output(compartment_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -173,6 +176,7 @@ def get_tsig_keys_output(compartment_id: Optional[pulumi.Input[str]] = None,
         name=var["tsig_key_name"],
         state=var["tsig_key_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment the resource belongs to.

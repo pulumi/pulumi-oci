@@ -22,6 +22,7 @@ namespace Pulumi.Oci.StackMonitoring
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -50,13 +51,14 @@ namespace Pulumi.Oci.StackMonitoring
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// Configs can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:StackMonitoring/config:Config test_config "id"
+    /// $ pulumi import oci:StackMonitoring/config:Config test_config "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:StackMonitoring/config:Config")]

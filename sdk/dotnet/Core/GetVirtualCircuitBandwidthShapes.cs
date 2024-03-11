@@ -20,10 +20,9 @@ namespace Pulumi.Oci.Core
         /// For more information about virtual circuits, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -39,8 +38,7 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetVirtualCircuitBandwidthShapesResult> InvokeAsync(GetVirtualCircuitBandwidthShapesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetVirtualCircuitBandwidthShapesResult>("oci:Core/getVirtualCircuitBandwidthShapes:getVirtualCircuitBandwidthShapes", args ?? new GetVirtualCircuitBandwidthShapesArgs(), options.WithDefaults());
@@ -54,10 +52,9 @@ namespace Pulumi.Oci.Core
         /// For more information about virtual circuits, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -73,8 +70,7 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetVirtualCircuitBandwidthShapesResult> Invoke(GetVirtualCircuitBandwidthShapesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVirtualCircuitBandwidthShapesResult>("oci:Core/getVirtualCircuitBandwidthShapes:getVirtualCircuitBandwidthShapes", args ?? new GetVirtualCircuitBandwidthShapesInvokeArgs(), options.WithDefaults());

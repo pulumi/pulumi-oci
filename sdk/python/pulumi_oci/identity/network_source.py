@@ -384,6 +384,7 @@ class NetworkSource(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -401,13 +402,14 @@ class NetworkSource(pulumi.CustomResource):
             services=var["network_source_services"],
             virtual_source_lists=var["network_source_virtual_source_list"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         NetworkSources can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/networkSource:NetworkSource test_network_source "id"
+        $ pulumi import oci:Identity/networkSource:NetworkSource test_network_source "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -454,6 +456,7 @@ class NetworkSource(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -471,13 +474,14 @@ class NetworkSource(pulumi.CustomResource):
             services=var["network_source_services"],
             virtual_source_lists=var["network_source_virtual_source_list"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         NetworkSources can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/networkSource:NetworkSource test_network_source "id"
+        $ pulumi import oci:Identity/networkSource:NetworkSource test_network_source "id"
         ```
 
         :param str resource_name: The name of the resource.

@@ -16,10 +16,9 @@ namespace Pulumi.Oci.Functions
         /// 
         /// Gets a Service Attachment by identifier
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,8 +35,7 @@ namespace Pulumi.Oci.Functions
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetFusionEnvironmentServiceAttachmentResult> InvokeAsync(GetFusionEnvironmentServiceAttachmentArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetFusionEnvironmentServiceAttachmentResult>("oci:Functions/getFusionEnvironmentServiceAttachment:getFusionEnvironmentServiceAttachment", args ?? new GetFusionEnvironmentServiceAttachmentArgs(), options.WithDefaults());
@@ -47,10 +45,9 @@ namespace Pulumi.Oci.Functions
         /// 
         /// Gets a Service Attachment by identifier
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -67,8 +64,7 @@ namespace Pulumi.Oci.Functions
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetFusionEnvironmentServiceAttachmentResult> Invoke(GetFusionEnvironmentServiceAttachmentInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFusionEnvironmentServiceAttachmentResult>("oci:Functions/getFusionEnvironmentServiceAttachment:getFusionEnvironmentServiceAttachment", args ?? new GetFusionEnvironmentServiceAttachmentInvokeArgs(), options.WithDefaults());

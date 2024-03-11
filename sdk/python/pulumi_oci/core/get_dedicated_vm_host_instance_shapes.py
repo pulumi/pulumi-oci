@@ -110,6 +110,7 @@ def get_dedicated_vm_host_instance_shapes(availability_domain: Optional[str] = N
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -118,6 +119,7 @@ def get_dedicated_vm_host_instance_shapes(availability_domain: Optional[str] = N
         availability_domain=var["dedicated_vm_host_instance_shape_availability_domain"],
         dedicated_vm_host_shape=var["dedicated_vm_host_instance_shape_dedicated_vm_host_shape"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
@@ -155,6 +157,7 @@ def get_dedicated_vm_host_instance_shapes_output(availability_domain: Optional[p
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -163,6 +166,7 @@ def get_dedicated_vm_host_instance_shapes_output(availability_domain: Optional[p
         availability_domain=var["dedicated_vm_host_instance_shape_availability_domain"],
         dedicated_vm_host_shape=var["dedicated_vm_host_instance_shape_dedicated_vm_host_shape"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`

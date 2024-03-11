@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,6 +22,7 @@ import * as utilities from "../utilities";
  *     configurationId: _var.mysql_configuration_id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getMysqlConfiguration(args: GetMysqlConfigurationArgs, opts?: pulumi.InvokeOptions): Promise<GetMysqlConfigurationResult> {
 
@@ -109,6 +111,7 @@ export interface GetMysqlConfigurationResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -117,6 +120,7 @@ export interface GetMysqlConfigurationResult {
  *     configurationId: _var.mysql_configuration_id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getMysqlConfigurationOutput(args: GetMysqlConfigurationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMysqlConfigurationResult> {
     return pulumi.output(args).apply((a: any) => getMysqlConfiguration(a, opts))

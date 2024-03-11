@@ -20,6 +20,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -54,15 +55,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // AuditArchiveRetrievals can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:DataSafe/auditArchiveRetrieval:AuditArchiveRetrieval test_audit_archive_retrieval "id"
-//
+// $ pulumi import oci:DataSafe/auditArchiveRetrieval:AuditArchiveRetrieval test_audit_archive_retrieval "id"
 // ```
 type AuditArchiveRetrieval struct {
 	pulumi.CustomResourceState

@@ -10,12 +10,14 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Opsi
 {
     /// <summary>
+    /// ## Example Usage
+    /// 
     /// ## Import
     /// 
     /// DatabaseInsights can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Opsi/databaseInsight:DatabaseInsight test_database_insight "id"
+    /// $ pulumi import oci:Opsi/databaseInsight:DatabaseInsight test_database_insight "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Opsi/databaseInsight:DatabaseInsight")]

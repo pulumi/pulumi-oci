@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -27,13 +28,14 @@ import * as utilities from "../utilities";
  *     oneOffPatches: _var.oneoff_patch_one_off_patches,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * OneoffPatches can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Database/oneoffPatch:OneoffPatch test_oneoff_patch "id"
+ * $ pulumi import oci:Database/oneoffPatch:OneoffPatch test_oneoff_patch "id"
  * ```
  */
 export class OneoffPatch extends pulumi.CustomResource {

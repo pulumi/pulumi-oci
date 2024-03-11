@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,13 +22,14 @@ import * as utilities from "../utilities";
  *     desiredState: _var.agent_plugin_desired_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * AgentPlugins can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:CloudBridge/agentPlugin:AgentPlugin test_agent_plugin "agents/{agentId}/plugins/{pluginName}"
+ * $ pulumi import oci:CloudBridge/agentPlugin:AgentPlugin test_agent_plugin "agents/{agentId}/plugins/{pluginName}"
  * ```
  */
 export class AgentPlugin extends pulumi.CustomResource {

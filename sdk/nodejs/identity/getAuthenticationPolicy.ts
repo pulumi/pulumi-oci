@@ -14,6 +14,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,6 +23,7 @@ import * as utilities from "../utilities";
  *     compartmentId: _var.tenancy_ocid,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAuthenticationPolicy(args: GetAuthenticationPolicyArgs, opts?: pulumi.InvokeOptions): Promise<GetAuthenticationPolicyResult> {
 
@@ -67,6 +69,7 @@ export interface GetAuthenticationPolicyResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -75,6 +78,7 @@ export interface GetAuthenticationPolicyResult {
  *     compartmentId: _var.tenancy_ocid,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAuthenticationPolicyOutput(args: GetAuthenticationPolicyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAuthenticationPolicyResult> {
     return pulumi.output(args).apply((a: any) => getAuthenticationPolicy(a, opts))

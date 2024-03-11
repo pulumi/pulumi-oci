@@ -17,10 +17,9 @@ namespace Pulumi.Oci.OsManagementHub
         /// Gets information about the specified module stream profile in a software source.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -39,8 +38,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetSoftwareSourceModuleStreamProfileResult> InvokeAsync(GetSoftwareSourceModuleStreamProfileArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetSoftwareSourceModuleStreamProfileResult>("oci:OsManagementHub/getSoftwareSourceModuleStreamProfile:getSoftwareSourceModuleStreamProfile", args ?? new GetSoftwareSourceModuleStreamProfileArgs(), options.WithDefaults());
@@ -51,10 +49,9 @@ namespace Pulumi.Oci.OsManagementHub
         /// Gets information about the specified module stream profile in a software source.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -73,8 +70,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetSoftwareSourceModuleStreamProfileResult> Invoke(GetSoftwareSourceModuleStreamProfileInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSoftwareSourceModuleStreamProfileResult>("oci:OsManagementHub/getSoftwareSourceModuleStreamProfile:getSoftwareSourceModuleStreamProfile", args ?? new GetSoftwareSourceModuleStreamProfileInvokeArgs(), options.WithDefaults());

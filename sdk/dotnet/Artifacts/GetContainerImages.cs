@@ -16,10 +16,9 @@ namespace Pulumi.Oci.Artifacts
         /// 
         /// List container images in a compartment.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -43,8 +42,7 @@ namespace Pulumi.Oci.Artifacts
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetContainerImagesResult> InvokeAsync(GetContainerImagesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetContainerImagesResult>("oci:Artifacts/getContainerImages:getContainerImages", args ?? new GetContainerImagesArgs(), options.WithDefaults());
@@ -54,10 +52,9 @@ namespace Pulumi.Oci.Artifacts
         /// 
         /// List container images in a compartment.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -81,8 +78,7 @@ namespace Pulumi.Oci.Artifacts
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetContainerImagesResult> Invoke(GetContainerImagesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetContainerImagesResult>("oci:Artifacts/getContainerImages:getContainerImages", args ?? new GetContainerImagesInvokeArgs(), options.WithDefaults());

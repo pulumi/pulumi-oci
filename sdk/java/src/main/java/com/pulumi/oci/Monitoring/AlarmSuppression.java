@@ -29,6 +29,8 @@ import javax.annotation.Nullable;
  * or transactions, per second (TPS) for a given tenancy.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -68,13 +70,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * AlarmSuppressions can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Monitoring/alarmSuppression:AlarmSuppression test_alarm_suppression &#34;id&#34;
+ * $ pulumi import oci:Monitoring/alarmSuppression:AlarmSuppression test_alarm_suppression &#34;id&#34;
  * ```
  * 
  */

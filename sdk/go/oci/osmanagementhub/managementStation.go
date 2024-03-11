@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -62,15 +63,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // ManagementStations can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:OsManagementHub/managementStation:ManagementStation test_management_station "id"
-//
+// $ pulumi import oci:OsManagementHub/managementStation:ManagementStation test_management_station "id"
 // ```
 type ManagementStation struct {
 	pulumi.CustomResourceState

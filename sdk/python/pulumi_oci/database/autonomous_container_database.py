@@ -1450,7 +1450,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         AutonomousContainerDatabases can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Database/autonomousContainerDatabase:AutonomousContainerDatabase test_autonomous_container_database "id"
+        $ pulumi import oci:Database/autonomousContainerDatabase:AutonomousContainerDatabase test_autonomous_container_database "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -1504,7 +1504,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         AutonomousContainerDatabases can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Database/autonomousContainerDatabase:AutonomousContainerDatabase test_autonomous_container_database "id"
+        $ pulumi import oci:Database/autonomousContainerDatabase:AutonomousContainerDatabase test_autonomous_container_database "id"
         ```
 
         :param str resource_name: The name of the resource.

@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -44,15 +45,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // AutonomousDatabaseBackups can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Database/autonomousDatabaseBackup:AutonomousDatabaseBackup test_autonomous_database_backup "id"
-//
+// $ pulumi import oci:Database/autonomousDatabaseBackup:AutonomousDatabaseBackup test_autonomous_database_backup "id"
 // ```
 type AutonomousDatabaseBackup struct {
 	pulumi.CustomResourceState

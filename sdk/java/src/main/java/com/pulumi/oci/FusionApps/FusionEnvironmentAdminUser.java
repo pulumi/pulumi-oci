@@ -21,6 +21,8 @@ import javax.annotation.Nullable;
  * Create a FusionEnvironment admin user
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -54,13 +56,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * FusionEnvironmentAdminUsers can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:FusionApps/fusionEnvironmentAdminUser:FusionEnvironmentAdminUser test_fusion_environment_admin_user &#34;fusionEnvironments/{fusionEnvironmentId}/adminUsers/{adminUsername}&#34;
+ * $ pulumi import oci:FusionApps/fusionEnvironmentAdminUser:FusionEnvironmentAdminUser test_fusion_environment_admin_user &#34;fusionEnvironments/{fusionEnvironmentId}/adminUsers/{adminUsername}&#34;
  * ```
  * 
  */

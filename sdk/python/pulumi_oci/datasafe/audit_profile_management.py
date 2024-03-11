@@ -495,6 +495,7 @@ class AuditProfileManagement(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -515,6 +516,7 @@ class AuditProfileManagement(pulumi.CustomResource):
             offline_months=10,
             online_months=7)
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -550,6 +552,7 @@ class AuditProfileManagement(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -570,6 +573,7 @@ class AuditProfileManagement(pulumi.CustomResource):
             offline_months=10,
             online_months=7)
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 

@@ -20,6 +20,8 @@ import javax.annotation.Nullable;
  * Updates the configuration for the compartment.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -49,13 +51,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * Configurations can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:LicenseManager/configuration:Configuration test_configuration &#34;configuration/compartmentId/{compartmentId}&#34;
+ * $ pulumi import oci:LicenseManager/configuration:Configuration test_configuration &#34;configuration/compartmentId/{compartmentId}&#34;
  * ```
  * 
  */

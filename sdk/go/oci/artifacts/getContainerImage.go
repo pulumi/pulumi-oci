@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -40,6 +41,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetContainerImage(ctx *pulumi.Context, args *GetContainerImageArgs, opts ...pulumi.InvokeOption) (*GetContainerImageResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetContainerImageResult

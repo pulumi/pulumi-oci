@@ -42,6 +42,7 @@ namespace Pulumi.Oci.FileStorage
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -69,13 +70,14 @@ namespace Pulumi.Oci.FileStorage
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// Replications can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:FileStorage/replication:Replication test_replication "id"
+    /// $ pulumi import oci:FileStorage/replication:Replication test_replication "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:FileStorage/replication:Replication")]

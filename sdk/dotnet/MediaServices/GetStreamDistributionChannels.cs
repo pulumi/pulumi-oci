@@ -16,10 +16,9 @@ namespace Pulumi.Oci.MediaServices
         /// 
         /// Lists the Stream Distribution Channels.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -38,8 +37,7 @@ namespace Pulumi.Oci.MediaServices
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetStreamDistributionChannelsResult> InvokeAsync(GetStreamDistributionChannelsArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetStreamDistributionChannelsResult>("oci:MediaServices/getStreamDistributionChannels:getStreamDistributionChannels", args ?? new GetStreamDistributionChannelsArgs(), options.WithDefaults());
@@ -49,10 +47,9 @@ namespace Pulumi.Oci.MediaServices
         /// 
         /// Lists the Stream Distribution Channels.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -71,8 +68,7 @@ namespace Pulumi.Oci.MediaServices
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetStreamDistributionChannelsResult> Invoke(GetStreamDistributionChannelsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetStreamDistributionChannelsResult>("oci:MediaServices/getStreamDistributionChannels:getStreamDistributionChannels", args ?? new GetStreamDistributionChannelsInvokeArgs(), options.WithDefaults());

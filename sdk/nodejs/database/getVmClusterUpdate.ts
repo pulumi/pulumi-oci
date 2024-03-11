@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -20,6 +21,7 @@ import * as utilities from "../utilities";
  *     vmClusterId: oci_database_vm_cluster.test_vm_cluster.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getVmClusterUpdate(args: GetVmClusterUpdateArgs, opts?: pulumi.InvokeOptions): Promise<GetVmClusterUpdateResult> {
 
@@ -94,6 +96,7 @@ export interface GetVmClusterUpdateResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -103,6 +106,7 @@ export interface GetVmClusterUpdateResult {
  *     vmClusterId: oci_database_vm_cluster.test_vm_cluster.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getVmClusterUpdateOutput(args: GetVmClusterUpdateOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVmClusterUpdateResult> {
     return pulumi.output(args).apply((a: any) => getVmClusterUpdate(a, opts))

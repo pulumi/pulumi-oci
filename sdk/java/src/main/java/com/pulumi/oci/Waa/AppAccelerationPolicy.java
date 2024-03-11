@@ -23,6 +23,8 @@ import javax.annotation.Nullable;
  * Creates a new WebAppAccelerationPolicy.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -66,13 +68,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * WebAppAccelerationPolicies can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Waa/appAccelerationPolicy:AppAccelerationPolicy test_web_app_acceleration_policy &#34;id&#34;
+ * $ pulumi import oci:Waa/appAccelerationPolicy:AppAccelerationPolicy test_web_app_acceleration_policy &#34;id&#34;
  * ```
  * 
  */

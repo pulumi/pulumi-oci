@@ -17,10 +17,9 @@ namespace Pulumi.Oci.DevOps
         /// Returns a list of build run summary.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -41,8 +40,7 @@ namespace Pulumi.Oci.DevOps
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetBuildRunsResult> InvokeAsync(GetBuildRunsArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetBuildRunsResult>("oci:DevOps/getBuildRuns:getBuildRuns", args ?? new GetBuildRunsArgs(), options.WithDefaults());
@@ -53,10 +51,9 @@ namespace Pulumi.Oci.DevOps
         /// Returns a list of build run summary.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -77,8 +74,7 @@ namespace Pulumi.Oci.DevOps
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetBuildRunsResult> Invoke(GetBuildRunsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetBuildRunsResult>("oci:DevOps/getBuildRuns:getBuildRuns", args ?? new GetBuildRunsInvokeArgs(), options.WithDefaults());

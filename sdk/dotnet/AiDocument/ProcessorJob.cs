@@ -16,6 +16,7 @@ namespace Pulumi.Oci.AiDocument
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -70,13 +71,14 @@ namespace Pulumi.Oci.AiDocument
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// ProcessorJobs can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:AiDocument/processorJob:ProcessorJob test_processor_job "id"
+    /// $ pulumi import oci:AiDocument/processorJob:ProcessorJob test_processor_job "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:AiDocument/processorJob:ProcessorJob")]

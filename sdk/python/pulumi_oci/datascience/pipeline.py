@@ -515,6 +515,7 @@ class Pipeline(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -572,13 +573,14 @@ class Pipeline(pulumi.CustomResource):
                 log_id=oci_logging_log["test_log"]["id"],
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Pipelines can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataScience/pipeline:Pipeline test_pipeline "id"
+        $ pulumi import oci:DataScience/pipeline:Pipeline test_pipeline "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -607,6 +609,7 @@ class Pipeline(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -664,13 +667,14 @@ class Pipeline(pulumi.CustomResource):
                 log_id=oci_logging_log["test_log"]["id"],
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Pipelines can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataScience/pipeline:Pipeline test_pipeline "id"
+        $ pulumi import oci:DataScience/pipeline:Pipeline test_pipeline "id"
         ```
 
         :param str resource_name: The name of the resource.

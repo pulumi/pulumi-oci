@@ -447,6 +447,7 @@ class DataMaskRule(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -470,13 +471,14 @@ class DataMaskRule(pulumi.CustomResource):
             },
             state=var["data_mask_rule_state"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         DataMaskRules can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:CloudGuard/dataMaskRule:DataMaskRule test_data_mask_rule "id"
+        $ pulumi import oci:CloudGuard/dataMaskRule:DataMaskRule test_data_mask_rule "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -509,6 +511,7 @@ class DataMaskRule(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -532,13 +535,14 @@ class DataMaskRule(pulumi.CustomResource):
             },
             state=var["data_mask_rule_state"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         DataMaskRules can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:CloudGuard/dataMaskRule:DataMaskRule test_data_mask_rule "id"
+        $ pulumi import oci:CloudGuard/dataMaskRule:DataMaskRule test_data_mask_rule "id"
         ```
 
         :param str resource_name: The name of the resource.

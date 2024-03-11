@@ -28,6 +28,8 @@ import javax.annotation.Nullable;
  * Creates a new report definition with parameters specified in the body. The report definition is stored in the specified compartment.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -92,13 +94,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * ReportDefinitions can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:DataSafe/reportDefinition:ReportDefinition test_report_definition &#34;id&#34;
+ * $ pulumi import oci:DataSafe/reportDefinition:ReportDefinition test_report_definition &#34;id&#34;
  * ```
  * 
  */

@@ -16,7 +16,7 @@ import * as utilities from "../utilities";
  * BdsInstances can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:BigDataService/bdsInstance:BdsInstance test_bds_instance "id"
+ * $ pulumi import oci:BigDataService/bdsInstance:BdsInstance test_bds_instance "id"
  * ```
  */
 export class BdsInstance extends pulumi.CustomResource {

@@ -17,10 +17,9 @@ namespace Pulumi.Oci.Core
         /// The routes advertised to the on-premises network and the routes received from the on-premises network.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -38,8 +37,7 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetIpsecConnectionTunnelRoutesResult> InvokeAsync(GetIpsecConnectionTunnelRoutesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetIpsecConnectionTunnelRoutesResult>("oci:Core/getIpsecConnectionTunnelRoutes:getIpsecConnectionTunnelRoutes", args ?? new GetIpsecConnectionTunnelRoutesArgs(), options.WithDefaults());
@@ -50,10 +48,9 @@ namespace Pulumi.Oci.Core
         /// The routes advertised to the on-premises network and the routes received from the on-premises network.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -71,8 +68,7 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetIpsecConnectionTunnelRoutesResult> Invoke(GetIpsecConnectionTunnelRoutesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetIpsecConnectionTunnelRoutesResult>("oci:Core/getIpsecConnectionTunnelRoutes:getIpsecConnectionTunnelRoutes", args ?? new GetIpsecConnectionTunnelRoutesInvokeArgs(), options.WithDefaults());

@@ -21,6 +21,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -74,15 +75,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // BootVolumes can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Core/bootVolume:BootVolume test_boot_volume "id"
-//
+// $ pulumi import oci:Core/bootVolume:BootVolume test_boot_volume "id"
 // ```
 type BootVolume struct {
 	pulumi.CustomResourceState

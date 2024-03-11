@@ -643,6 +643,7 @@ class Vcn(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -667,13 +668,14 @@ class Vcn(pulumi.CustomResource):
             is_ipv6enabled=var["vcn_is_ipv6enabled"],
             is_oracle_gua_allocation_enabled=var["vcn_is_oracle_gua_allocation_enabled"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Vcns can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/vcn:Vcn test_vcn "id"
+        $ pulumi import oci:Core/vcn:Vcn test_vcn "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -760,6 +762,7 @@ class Vcn(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -784,13 +787,14 @@ class Vcn(pulumi.CustomResource):
             is_ipv6enabled=var["vcn_is_ipv6enabled"],
             is_oracle_gua_allocation_enabled=var["vcn_is_oracle_gua_allocation_enabled"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Vcns can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/vcn:Vcn test_vcn "id"
+        $ pulumi import oci:Core/vcn:Vcn test_vcn "id"
         ```
 
         :param str resource_name: The name of the resource.

@@ -16,10 +16,9 @@ namespace Pulumi.Oci.Database
         /// 
         /// Gets a list of supported Autonomous Container Database versions.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,8 +35,7 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetAutonomousContainerDatabaseVersionsResult> InvokeAsync(GetAutonomousContainerDatabaseVersionsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAutonomousContainerDatabaseVersionsResult>("oci:Database/getAutonomousContainerDatabaseVersions:getAutonomousContainerDatabaseVersions", args ?? new GetAutonomousContainerDatabaseVersionsArgs(), options.WithDefaults());
@@ -47,10 +45,9 @@ namespace Pulumi.Oci.Database
         /// 
         /// Gets a list of supported Autonomous Container Database versions.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -67,8 +64,7 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetAutonomousContainerDatabaseVersionsResult> Invoke(GetAutonomousContainerDatabaseVersionsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousContainerDatabaseVersionsResult>("oci:Database/getAutonomousContainerDatabaseVersions:getAutonomousContainerDatabaseVersions", args ?? new GetAutonomousContainerDatabaseVersionsInvokeArgs(), options.WithDefaults());

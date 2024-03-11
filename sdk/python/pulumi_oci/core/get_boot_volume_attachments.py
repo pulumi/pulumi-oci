@@ -129,6 +129,7 @@ def get_boot_volume_attachments(availability_domain: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -138,6 +139,7 @@ def get_boot_volume_attachments(availability_domain: Optional[str] = None,
         boot_volume_id=oci_core_boot_volume["test_boot_volume"]["id"],
         instance_id=oci_core_instance["test_instance"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
     For more detailed implementation refer the instance example
 
 
@@ -180,6 +182,7 @@ def get_boot_volume_attachments_output(availability_domain: Optional[pulumi.Inpu
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -189,6 +192,7 @@ def get_boot_volume_attachments_output(availability_domain: Optional[pulumi.Inpu
         boot_volume_id=oci_core_boot_volume["test_boot_volume"]["id"],
         instance_id=oci_core_instance["test_instance"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
     For more detailed implementation refer the instance example
 
 

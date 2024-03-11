@@ -16,7 +16,7 @@ import * as utilities from "../utilities";
  * ExternalListeners can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:DatabaseManagement/externalListener:ExternalListener test_external_listener "id"
+ * $ pulumi import oci:DatabaseManagement/externalListener:ExternalListener test_external_listener "id"
  * ```
  */
 export class ExternalListener extends pulumi.CustomResource {

@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -29,6 +30,7 @@ import * as utilities from "../utilities";
  *     version: _var.container_image_version,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getContainerImages(args: GetContainerImagesArgs, opts?: pulumi.InvokeOptions): Promise<GetContainerImagesResult> {
 
@@ -138,6 +140,7 @@ export interface GetContainerImagesResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -154,6 +157,7 @@ export interface GetContainerImagesResult {
  *     version: _var.container_image_version,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getContainerImagesOutput(args: GetContainerImagesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetContainerImagesResult> {
     return pulumi.output(args).apply((a: any) => getContainerImages(a, opts))

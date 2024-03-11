@@ -20,6 +20,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -53,15 +54,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // UserAssessments can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:DataSafe/userAssessment:UserAssessment test_user_assessment "id"
-//
+// $ pulumi import oci:DataSafe/userAssessment:UserAssessment test_user_assessment "id"
 // ```
 type UserAssessment struct {
 	pulumi.CustomResourceState

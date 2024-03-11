@@ -16,10 +16,9 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// Gets the list of proxy users for the current user.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -37,8 +36,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetManagedDatabasesUserProxyUserResult> InvokeAsync(GetManagedDatabasesUserProxyUserArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagedDatabasesUserProxyUserResult>("oci:DatabaseManagement/getManagedDatabasesUserProxyUser:getManagedDatabasesUserProxyUser", args ?? new GetManagedDatabasesUserProxyUserArgs(), options.WithDefaults());
@@ -48,10 +46,9 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// Gets the list of proxy users for the current user.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -69,8 +66,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetManagedDatabasesUserProxyUserResult> Invoke(GetManagedDatabasesUserProxyUserInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabasesUserProxyUserResult>("oci:DatabaseManagement/getManagedDatabasesUserProxyUser:getManagedDatabasesUserProxyUser", args ?? new GetManagedDatabasesUserProxyUserInvokeArgs(), options.WithDefaults());

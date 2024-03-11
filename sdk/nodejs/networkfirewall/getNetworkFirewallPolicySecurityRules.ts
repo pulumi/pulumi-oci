@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,6 +24,7 @@ import * as utilities from "../utilities";
  *     securityRulePriorityOrder: _var.network_firewall_policy_security_rule_security_rule_priority_order,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getNetworkFirewallPolicySecurityRules(args: GetNetworkFirewallPolicySecurityRulesArgs, opts?: pulumi.InvokeOptions): Promise<GetNetworkFirewallPolicySecurityRulesResult> {
 
@@ -78,6 +80,7 @@ export interface GetNetworkFirewallPolicySecurityRulesResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -88,6 +91,7 @@ export interface GetNetworkFirewallPolicySecurityRulesResult {
  *     securityRulePriorityOrder: _var.network_firewall_policy_security_rule_security_rule_priority_order,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getNetworkFirewallPolicySecurityRulesOutput(args: GetNetworkFirewallPolicySecurityRulesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNetworkFirewallPolicySecurityRulesResult> {
     return pulumi.output(args).apply((a: any) => getNetworkFirewallPolicySecurityRules(a, opts))

@@ -126,6 +126,7 @@ def get_software_source_module_stream_profiles(filters: Optional[Sequence[pulumi
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -135,6 +136,7 @@ def get_software_source_module_stream_profiles(filters: Optional[Sequence[pulumi
         name=var["software_source_module_stream_profile_name"],
         stream_name=oci_streaming_stream["test_stream"]["name"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str module_name: The name of a module. This parameter is required if a streamName is specified.
@@ -176,6 +178,7 @@ def get_software_source_module_stream_profiles_output(filters: Optional[pulumi.I
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -185,6 +188,7 @@ def get_software_source_module_stream_profiles_output(filters: Optional[pulumi.I
         name=var["software_source_module_stream_profile_name"],
         stream_name=oci_streaming_stream["test_stream"]["name"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str module_name: The name of a module. This parameter is required if a streamName is specified.

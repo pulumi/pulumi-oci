@@ -27,6 +27,8 @@ import javax.annotation.Nullable;
  * Compute capacity topologies report the health status of your bare metal hosts.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -64,13 +66,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * ComputeCapacityTopologies can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Core/computeCapacityTopology:ComputeCapacityTopology test_compute_capacity_topology &#34;id&#34;
+ * $ pulumi import oci:Core/computeCapacityTopology:ComputeCapacityTopology test_compute_capacity_topology &#34;id&#34;
  * ```
  * 
  */

@@ -21,6 +21,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -45,15 +46,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // OdaPrivateEndpointAttachments can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Oda/odaPrivateEndpointAttachment:OdaPrivateEndpointAttachment test_oda_private_endpoint_attachment "id"
-//
+// $ pulumi import oci:Oda/odaPrivateEndpointAttachment:OdaPrivateEndpointAttachment test_oda_private_endpoint_attachment "id"
 // ```
 type OdaPrivateEndpointAttachment struct {
 	pulumi.CustomResourceState

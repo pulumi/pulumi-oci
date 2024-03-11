@@ -206,12 +206,14 @@ def get_target_alert_policy_association(target_alert_policy_association_id: Opti
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_target_alert_policy_association = oci.DataSafe.get_target_alert_policy_association(target_alert_policy_association_id=oci_data_safe_target_alert_policy_association["test_target_alert_policy_association"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str target_alert_policy_association_id: The OCID of the target-alert policy association.
@@ -248,12 +250,14 @@ def get_target_alert_policy_association_output(target_alert_policy_association_i
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_target_alert_policy_association = oci.DataSafe.get_target_alert_policy_association(target_alert_policy_association_id=oci_data_safe_target_alert_policy_association["test_target_alert_policy_association"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str target_alert_policy_association_id: The OCID of the target-alert policy association.

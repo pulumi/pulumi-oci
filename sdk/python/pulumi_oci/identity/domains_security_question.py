@@ -1046,7 +1046,7 @@ class DomainsSecurityQuestion(pulumi.CustomResource):
         SecurityQuestions can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/domainsSecurityQuestion:DomainsSecurityQuestion test_security_question "idcsEndpoint/{idcsEndpoint}/securityQuestions/{securityQuestionId}"
+        $ pulumi import oci:Identity/domainsSecurityQuestion:DomainsSecurityQuestion test_security_question "idcsEndpoint/{idcsEndpoint}/securityQuestions/{securityQuestionId}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -1154,7 +1154,7 @@ class DomainsSecurityQuestion(pulumi.CustomResource):
         SecurityQuestions can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/domainsSecurityQuestion:DomainsSecurityQuestion test_security_question "idcsEndpoint/{idcsEndpoint}/securityQuestions/{securityQuestionId}"
+        $ pulumi import oci:Identity/domainsSecurityQuestion:DomainsSecurityQuestion test_security_question "idcsEndpoint/{idcsEndpoint}/securityQuestions/{securityQuestionId}"
         ```
 
         :param str resource_name: The name of the resource.

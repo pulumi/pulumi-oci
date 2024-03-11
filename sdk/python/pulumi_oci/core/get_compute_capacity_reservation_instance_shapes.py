@@ -109,6 +109,7 @@ def get_compute_capacity_reservation_instance_shapes(availability_domain: Option
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -117,6 +118,7 @@ def get_compute_capacity_reservation_instance_shapes(availability_domain: Option
         availability_domain=var["compute_capacity_reservation_instance_shape_availability_domain"],
         display_name=var["compute_capacity_reservation_instance_shape_display_name"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
@@ -153,6 +155,7 @@ def get_compute_capacity_reservation_instance_shapes_output(availability_domain:
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -161,6 +164,7 @@ def get_compute_capacity_reservation_instance_shapes_output(availability_domain:
         availability_domain=var["compute_capacity_reservation_instance_shape_availability_domain"],
         display_name=var["compute_capacity_reservation_instance_shape_display_name"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`

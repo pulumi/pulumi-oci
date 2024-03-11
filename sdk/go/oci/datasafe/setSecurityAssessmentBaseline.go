@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -42,15 +43,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // SetSecurityAssessmentBaseline can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:DataSafe/setSecurityAssessmentBaseline:SetSecurityAssessmentBaseline test_set_security_assessment_baseline "id"
-//
+// $ pulumi import oci:DataSafe/setSecurityAssessmentBaseline:SetSecurityAssessmentBaseline test_set_security_assessment_baseline "id"
 // ```
 type SetSecurityAssessmentBaseline struct {
 	pulumi.CustomResourceState

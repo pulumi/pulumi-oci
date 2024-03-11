@@ -156,6 +156,7 @@ def get_log_analytics_log_group(log_analytics_log_group_id: Optional[str] = None
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -163,6 +164,7 @@ def get_log_analytics_log_group(log_analytics_log_group_id: Optional[str] = None
     test_log_analytics_log_group = oci.LogAnalytics.get_log_analytics_log_group(log_analytics_log_group_id=oci_log_analytics_log_analytics_log_group["test_log_analytics_log_group"]["id"],
         namespace=var["log_analytics_log_group_namespace"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str log_analytics_log_group_id: unique logAnalytics log group identifier
@@ -198,6 +200,7 @@ def get_log_analytics_log_group_output(log_analytics_log_group_id: Optional[pulu
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -205,6 +208,7 @@ def get_log_analytics_log_group_output(log_analytics_log_group_id: Optional[pulu
     test_log_analytics_log_group = oci.LogAnalytics.get_log_analytics_log_group(log_analytics_log_group_id=oci_log_analytics_log_analytics_log_group["test_log_analytics_log_group"]["id"],
         namespace=var["log_analytics_log_group_namespace"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str log_analytics_log_group_id: unique logAnalytics log group identifier

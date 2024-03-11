@@ -21,6 +21,8 @@ import javax.annotation.Nullable;
  * Creates a new WebAppAcceleration.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -56,13 +58,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * WebAppAccelerations can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Waa/appAcceleration:AppAcceleration test_web_app_acceleration &#34;id&#34;
+ * $ pulumi import oci:Waa/appAcceleration:AppAcceleration test_web_app_acceleration &#34;id&#34;
  * ```
  * 
  */

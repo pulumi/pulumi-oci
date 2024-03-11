@@ -424,6 +424,7 @@ class DeploymentCertificate(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -433,13 +434,14 @@ class DeploymentCertificate(pulumi.CustomResource):
             deployment_id=oci_golden_gate_deployment["test_deployment"]["id"],
             key=var["deployment_certificate_key"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         DeploymentCertificates can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:GoldenGate/deploymentCertificate:DeploymentCertificate test_deployment_certificate "deployments/{deploymentId}/certificates/{certificateKey}"
+        $ pulumi import oci:GoldenGate/deploymentCertificate:DeploymentCertificate test_deployment_certificate "deployments/{deploymentId}/certificates/{certificateKey}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -465,6 +467,7 @@ class DeploymentCertificate(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -474,13 +477,14 @@ class DeploymentCertificate(pulumi.CustomResource):
             deployment_id=oci_golden_gate_deployment["test_deployment"]["id"],
             key=var["deployment_certificate_key"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         DeploymentCertificates can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:GoldenGate/deploymentCertificate:DeploymentCertificate test_deployment_certificate "deployments/{deploymentId}/certificates/{certificateKey}"
+        $ pulumi import oci:GoldenGate/deploymentCertificate:DeploymentCertificate test_deployment_certificate "deployments/{deploymentId}/certificates/{certificateKey}"
         ```
 
         :param str resource_name: The name of the resource.

@@ -17,6 +17,7 @@ namespace Pulumi.Oci.Database
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -40,13 +41,14 @@ namespace Pulumi.Oci.Database
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// ExternalPluggableDatabases can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Database/externalPluggableDatabase:ExternalPluggableDatabase test_external_pluggable_database "id"
+    /// $ pulumi import oci:Database/externalPluggableDatabase:ExternalPluggableDatabase test_external_pluggable_database "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Database/externalPluggableDatabase:ExternalPluggableDatabase")]

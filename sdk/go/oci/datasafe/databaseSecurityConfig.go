@@ -21,9 +21,7 @@ import (
 // DatabaseSecurityConfigs can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:DataSafe/databaseSecurityConfig:DatabaseSecurityConfig test_database_security_config "id"
-//
+// $ pulumi import oci:DataSafe/databaseSecurityConfig:DatabaseSecurityConfig test_database_security_config "id"
 // ```
 type DatabaseSecurityConfig struct {
 	pulumi.CustomResourceState

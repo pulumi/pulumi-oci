@@ -29,6 +29,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -53,15 +54,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // ApiKeys can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Identity/apiKey:ApiKey test_api_key "users/{userId}/apiKeys/{fingerprint}"
-//
+// $ pulumi import oci:Identity/apiKey:ApiKey test_api_key "users/{userId}/apiKeys/{fingerprint}"
 // ```
 type ApiKey struct {
 	pulumi.CustomResourceState

@@ -16,6 +16,7 @@ namespace Pulumi.Oci.FusionApps
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -36,13 +37,14 @@ namespace Pulumi.Oci.FusionApps
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// FusionEnvironmentAdminUsers can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:FusionApps/fusionEnvironmentAdminUser:FusionEnvironmentAdminUser test_fusion_environment_admin_user "fusionEnvironments/{fusionEnvironmentId}/adminUsers/{adminUsername}"
+    /// $ pulumi import oci:FusionApps/fusionEnvironmentAdminUser:FusionEnvironmentAdminUser test_fusion_environment_admin_user "fusionEnvironments/{fusionEnvironmentId}/adminUsers/{adminUsername}"
     /// ```
     /// </summary>
     [OciResourceType("oci:FusionApps/fusionEnvironmentAdminUser:FusionEnvironmentAdminUser")]

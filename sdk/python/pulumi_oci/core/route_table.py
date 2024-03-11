@@ -302,6 +302,7 @@ class RouteTable(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -324,13 +325,14 @@ class RouteTable(pulumi.CustomResource):
                 destination_type=var["route_table_route_rules_destination_type"],
             )])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         RouteTables can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/routeTable:RouteTable test_route_table "id"
+        $ pulumi import oci:Core/routeTable:RouteTable test_route_table "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -375,6 +377,7 @@ class RouteTable(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -397,13 +400,14 @@ class RouteTable(pulumi.CustomResource):
                 destination_type=var["route_table_route_rules_destination_type"],
             )])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         RouteTables can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/routeTable:RouteTable test_route_table "id"
+        $ pulumi import oci:Core/routeTable:RouteTable test_route_table "id"
         ```
 
         :param str resource_name: The name of the resource.

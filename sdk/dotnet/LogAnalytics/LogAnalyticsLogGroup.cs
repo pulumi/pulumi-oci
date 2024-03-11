@@ -16,6 +16,7 @@ namespace Pulumi.Oci.LogAnalytics
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -42,13 +43,14 @@ namespace Pulumi.Oci.LogAnalytics
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// LogAnalyticsLogGroups can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:LogAnalytics/logAnalyticsLogGroup:LogAnalyticsLogGroup test_log_analytics_log_group "namespaces/{namespaceName}/logAnalyticsLogGroups/{logAnalyticsLogGroupId}"
+    /// $ pulumi import oci:LogAnalytics/logAnalyticsLogGroup:LogAnalyticsLogGroup test_log_analytics_log_group "namespaces/{namespaceName}/logAnalyticsLogGroups/{logAnalyticsLogGroupId}"
     /// ```
     /// </summary>
     [OciResourceType("oci:LogAnalytics/logAnalyticsLogGroup:LogAnalyticsLogGroup")]

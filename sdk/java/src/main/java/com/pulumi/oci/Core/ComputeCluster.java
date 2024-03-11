@@ -33,6 +33,8 @@ import javax.annotation.Nullable;
  * [CreateClusterNetwork](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ClusterNetwork/CreateClusterNetwork) operation.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -65,13 +67,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * ComputeClusters can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Core/computeCluster:ComputeCluster test_compute_cluster &#34;id&#34;
+ * $ pulumi import oci:Core/computeCluster:ComputeCluster test_compute_cluster &#34;id&#34;
  * ```
  * 
  */

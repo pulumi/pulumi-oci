@@ -655,6 +655,7 @@ class Budget(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -679,13 +680,14 @@ class Budget(pulumi.CustomResource):
             target_type=var["budget_target_type"],
             targets=var["budget_targets"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Budgets can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Budget/budget:Budget test_budget "id"
+        $ pulumi import oci:Budget/budget:Budget test_budget "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -722,6 +724,7 @@ class Budget(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -746,13 +749,14 @@ class Budget(pulumi.CustomResource):
             target_type=var["budget_target_type"],
             targets=var["budget_targets"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Budgets can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Budget/budget:Budget test_budget "id"
+        $ pulumi import oci:Budget/budget:Budget test_budget "id"
         ```
 
         :param str resource_name: The name of the resource.

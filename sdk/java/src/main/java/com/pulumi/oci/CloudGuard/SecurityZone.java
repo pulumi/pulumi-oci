@@ -22,6 +22,8 @@ import javax.annotation.Nullable;
  * Creates a security zone for a compartment. A security zone enforces all security zone policies in a given security zone recipe. Any actions that violate a policy are denied. By default, any subcompartments are also in the same security zone.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -55,13 +57,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * SecurityZones can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:CloudGuard/securityZone:SecurityZone test_security_zone &#34;id&#34;
+ * $ pulumi import oci:CloudGuard/securityZone:SecurityZone test_security_zone &#34;id&#34;
  * ```
  * 
  */

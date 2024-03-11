@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -47,15 +48,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // MigrationAssets can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:CloudMigrations/migrationAsset:MigrationAsset test_migration_asset "id"
-//
+// $ pulumi import oci:CloudMigrations/migrationAsset:MigrationAsset test_migration_asset "id"
 // ```
 type MigrationAsset struct {
 	pulumi.CustomResourceState

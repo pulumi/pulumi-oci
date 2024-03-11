@@ -1062,7 +1062,7 @@ class DomainsMyCustomerSecretKey(pulumi.CustomResource):
         MyCustomerSecretKeys can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/domainsMyCustomerSecretKey:DomainsMyCustomerSecretKey test_my_customer_secret_key "idcsEndpoint/{idcsEndpoint}/myCustomerSecretKeys/{myCustomerSecretKeyId}"
+        $ pulumi import oci:Identity/domainsMyCustomerSecretKey:DomainsMyCustomerSecretKey test_my_customer_secret_key "idcsEndpoint/{idcsEndpoint}/myCustomerSecretKeys/{myCustomerSecretKeyId}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -1173,7 +1173,7 @@ class DomainsMyCustomerSecretKey(pulumi.CustomResource):
         MyCustomerSecretKeys can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/domainsMyCustomerSecretKey:DomainsMyCustomerSecretKey test_my_customer_secret_key "idcsEndpoint/{idcsEndpoint}/myCustomerSecretKeys/{myCustomerSecretKeyId}"
+        $ pulumi import oci:Identity/domainsMyCustomerSecretKey:DomainsMyCustomerSecretKey test_my_customer_secret_key "idcsEndpoint/{idcsEndpoint}/myCustomerSecretKeys/{myCustomerSecretKeyId}"
         ```
 
         :param str resource_name: The name of the resource.

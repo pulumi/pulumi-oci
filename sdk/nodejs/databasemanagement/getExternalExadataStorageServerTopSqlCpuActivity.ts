@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,6 +22,7 @@ import * as utilities from "../utilities";
  *     externalExadataStorageServerId: oci_database_management_external_exadata_storage_server.test_external_exadata_storage_server.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getExternalExadataStorageServerTopSqlCpuActivity(args: GetExternalExadataStorageServerTopSqlCpuActivityArgs, opts?: pulumi.InvokeOptions): Promise<GetExternalExadataStorageServerTopSqlCpuActivityResult> {
 
@@ -61,6 +63,7 @@ export interface GetExternalExadataStorageServerTopSqlCpuActivityResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -69,6 +72,7 @@ export interface GetExternalExadataStorageServerTopSqlCpuActivityResult {
  *     externalExadataStorageServerId: oci_database_management_external_exadata_storage_server.test_external_exadata_storage_server.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getExternalExadataStorageServerTopSqlCpuActivityOutput(args: GetExternalExadataStorageServerTopSqlCpuActivityOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalExadataStorageServerTopSqlCpuActivityResult> {
     return pulumi.output(args).apply((a: any) => getExternalExadataStorageServerTopSqlCpuActivity(a, opts))

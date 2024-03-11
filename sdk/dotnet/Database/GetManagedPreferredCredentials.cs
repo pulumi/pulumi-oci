@@ -17,10 +17,9 @@ namespace Pulumi.Oci.Database
         /// Gets the list of preferred credentials for a given Managed Database.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,8 +35,7 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetManagedPreferredCredentialsResult> InvokeAsync(GetManagedPreferredCredentialsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagedPreferredCredentialsResult>("oci:Database/getManagedPreferredCredentials:getManagedPreferredCredentials", args ?? new GetManagedPreferredCredentialsArgs(), options.WithDefaults());
@@ -48,10 +46,9 @@ namespace Pulumi.Oci.Database
         /// Gets the list of preferred credentials for a given Managed Database.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -67,8 +64,7 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetManagedPreferredCredentialsResult> Invoke(GetManagedPreferredCredentialsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedPreferredCredentialsResult>("oci:Database/getManagedPreferredCredentials:getManagedPreferredCredentials", args ?? new GetManagedPreferredCredentialsInvokeArgs(), options.WithDefaults());

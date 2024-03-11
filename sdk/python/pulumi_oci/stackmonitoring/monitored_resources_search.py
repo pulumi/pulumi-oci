@@ -699,6 +699,7 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -722,13 +723,14 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
             time_updated_less_than=var["monitored_resources_search_time_updated_less_than"],
             type=var["monitored_resources_search_type"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         MonitoredResourcesSearch can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:StackMonitoring/monitoredResourcesSearch:MonitoredResourcesSearch test_monitored_resources_search "id"
+        $ pulumi import oci:StackMonitoring/monitoredResourcesSearch:MonitoredResourcesSearch test_monitored_resources_search "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -777,6 +779,7 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -800,13 +803,14 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
             time_updated_less_than=var["monitored_resources_search_time_updated_less_than"],
             type=var["monitored_resources_search_type"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         MonitoredResourcesSearch can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:StackMonitoring/monitoredResourcesSearch:MonitoredResourcesSearch test_monitored_resources_search "id"
+        $ pulumi import oci:StackMonitoring/monitoredResourcesSearch:MonitoredResourcesSearch test_monitored_resources_search "id"
         ```
 
         :param str resource_name: The name of the resource.

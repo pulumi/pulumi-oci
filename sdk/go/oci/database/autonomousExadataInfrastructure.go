@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -74,15 +75,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // AutonomousExadataInfrastructures can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Database/autonomousExadataInfrastructure:AutonomousExadataInfrastructure test_autonomous_exadata_infrastructure "id"
-//
+// $ pulumi import oci:Database/autonomousExadataInfrastructure:AutonomousExadataInfrastructure test_autonomous_exadata_infrastructure "id"
 // ```
 type AutonomousExadataInfrastructure struct {
 	pulumi.CustomResourceState

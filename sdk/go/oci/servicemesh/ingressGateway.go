@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -83,15 +84,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // IngressGateways can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:ServiceMesh/ingressGateway:IngressGateway test_ingress_gateway "id"
-//
+// $ pulumi import oci:ServiceMesh/ingressGateway:IngressGateway test_ingress_gateway "id"
 // ```
 type IngressGateway struct {
 	pulumi.CustomResourceState

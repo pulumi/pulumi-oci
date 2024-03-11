@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -44,15 +45,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // HeatWaveCluster can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Mysql/heatWaveCluster:HeatWaveCluster test_heat_wave_cluster "dbSystem/{dbSystemId}/heatWaveCluster"
-//
+// $ pulumi import oci:Mysql/heatWaveCluster:HeatWaveCluster test_heat_wave_cluster "dbSystem/{dbSystemId}/heatWaveCluster"
 // ```
 type HeatWaveCluster struct {
 	pulumi.CustomResourceState

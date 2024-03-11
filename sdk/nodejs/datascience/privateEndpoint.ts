@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -31,13 +32,14 @@ import * as utilities from "../utilities";
  *     subDomain: _var.data_science_private_endpoint_sub_domain,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * DataSciencePrivateEndpoints can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:DataScience/privateEndpoint:PrivateEndpoint test_data_science_private_endpoint "id"
+ * $ pulumi import oci:DataScience/privateEndpoint:PrivateEndpoint test_data_science_private_endpoint "id"
  * ```
  */
 export class PrivateEndpoint extends pulumi.CustomResource {

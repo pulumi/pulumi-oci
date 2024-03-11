@@ -26,6 +26,8 @@ import javax.annotation.Nullable;
  * Creates a network load balancer.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -66,13 +68,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * NetworkLoadBalancers can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:NetworkLoadBalancer/networkLoadBalancer:NetworkLoadBalancer test_network_load_balancer &#34;id&#34;
+ * $ pulumi import oci:NetworkLoadBalancer/networkLoadBalancer:NetworkLoadBalancer test_network_load_balancer &#34;id&#34;
  * ```
  * 
  */

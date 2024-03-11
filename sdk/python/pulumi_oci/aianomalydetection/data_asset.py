@@ -383,6 +383,7 @@ class DataAsset(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -428,13 +429,14 @@ class DataAsset(pulumi.CustomResource):
             },
             private_endpoint_id=oci_dataflow_private_endpoint["test_private_endpoint"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         DataAssets can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:AiAnomalyDetection/dataAsset:DataAsset test_data_asset "id"
+        $ pulumi import oci:AiAnomalyDetection/dataAsset:DataAsset test_data_asset "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -465,6 +467,7 @@ class DataAsset(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -510,13 +513,14 @@ class DataAsset(pulumi.CustomResource):
             },
             private_endpoint_id=oci_dataflow_private_endpoint["test_private_endpoint"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         DataAssets can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:AiAnomalyDetection/dataAsset:DataAsset test_data_asset "id"
+        $ pulumi import oci:AiAnomalyDetection/dataAsset:DataAsset test_data_asset "id"
         ```
 
         :param str resource_name: The name of the resource.

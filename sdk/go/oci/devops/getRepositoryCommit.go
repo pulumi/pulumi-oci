@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,6 +42,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetRepositoryCommit(ctx *pulumi.Context, args *GetRepositoryCommitArgs, opts ...pulumi.InvokeOption) (*GetRepositoryCommitResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetRepositoryCommitResult

@@ -649,6 +649,7 @@ class Job(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -705,13 +706,14 @@ class Job(pulumi.CustomResource):
                 prefix=var["job_job_storage_mount_configuration_details_list_prefix"],
             )])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Jobs can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataScience/job:Job test_job "id"
+        $ pulumi import oci:DataScience/job:Job test_job "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -749,6 +751,7 @@ class Job(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -805,13 +808,14 @@ class Job(pulumi.CustomResource):
                 prefix=var["job_job_storage_mount_configuration_details_list_prefix"],
             )])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Jobs can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DataScience/job:Job test_job "id"
+        $ pulumi import oci:DataScience/job:Job test_job "id"
         ```
 
         :param str resource_name: The name of the resource.

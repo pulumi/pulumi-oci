@@ -16,6 +16,7 @@ namespace Pulumi.Oci.BigDataService
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -35,13 +36,14 @@ namespace Pulumi.Oci.BigDataService
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// BdsInstanceApiKeys can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:BigDataService/bdsInstanceApiKey:BdsInstanceApiKey test_bds_instance_api_key "bdsInstances/{bdsInstanceId}/apiKeys/{apiKeyId}"
+    /// $ pulumi import oci:BigDataService/bdsInstanceApiKey:BdsInstanceApiKey test_bds_instance_api_key "bdsInstances/{bdsInstanceId}/apiKeys/{apiKeyId}"
     /// ```
     /// </summary>
     [OciResourceType("oci:BigDataService/bdsInstanceApiKey:BdsInstanceApiKey")]

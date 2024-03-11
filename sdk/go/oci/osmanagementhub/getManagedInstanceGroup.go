@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -40,6 +41,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupManagedInstanceGroup(ctx *pulumi.Context, args *LookupManagedInstanceGroupArgs, opts ...pulumi.InvokeOption) (*LookupManagedInstanceGroupResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupManagedInstanceGroupResult

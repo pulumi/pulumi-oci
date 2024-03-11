@@ -35,6 +35,8 @@ public final class GenerativeAiFunctions {
      * Gets information about a dedicated AI cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -63,6 +65,7 @@ public final class GenerativeAiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDedicatedAiClusterResult> getDedicatedAiCluster(GetDedicatedAiClusterArgs args) {
@@ -74,6 +77,8 @@ public final class GenerativeAiFunctions {
      * Gets information about a dedicated AI cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -102,6 +107,7 @@ public final class GenerativeAiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDedicatedAiClusterResult> getDedicatedAiClusterPlain(GetDedicatedAiClusterPlainArgs args) {
@@ -113,6 +119,8 @@ public final class GenerativeAiFunctions {
      * Gets information about a dedicated AI cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -141,6 +149,7 @@ public final class GenerativeAiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDedicatedAiClusterResult> getDedicatedAiCluster(GetDedicatedAiClusterArgs args, InvokeOptions options) {
@@ -152,6 +161,8 @@ public final class GenerativeAiFunctions {
      * Gets information about a dedicated AI cluster.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -180,6 +191,7 @@ public final class GenerativeAiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDedicatedAiClusterResult> getDedicatedAiClusterPlain(GetDedicatedAiClusterPlainArgs args, InvokeOptions options) {
@@ -191,6 +203,8 @@ public final class GenerativeAiFunctions {
      * Lists the dedicated AI clusters in a specific compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -222,6 +236,7 @@ public final class GenerativeAiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDedicatedAiClustersResult> getDedicatedAiClusters(GetDedicatedAiClustersArgs args) {
@@ -233,6 +248,8 @@ public final class GenerativeAiFunctions {
      * Lists the dedicated AI clusters in a specific compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -264,6 +281,7 @@ public final class GenerativeAiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDedicatedAiClustersResult> getDedicatedAiClustersPlain(GetDedicatedAiClustersPlainArgs args) {
@@ -275,6 +293,8 @@ public final class GenerativeAiFunctions {
      * Lists the dedicated AI clusters in a specific compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -306,6 +326,7 @@ public final class GenerativeAiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDedicatedAiClustersResult> getDedicatedAiClusters(GetDedicatedAiClustersArgs args, InvokeOptions options) {
@@ -317,6 +338,8 @@ public final class GenerativeAiFunctions {
      * Lists the dedicated AI clusters in a specific compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -348,6 +371,7 @@ public final class GenerativeAiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDedicatedAiClustersResult> getDedicatedAiClustersPlain(GetDedicatedAiClustersPlainArgs args, InvokeOptions options) {
@@ -359,6 +383,8 @@ public final class GenerativeAiFunctions {
      * Gets information about an endpoint.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -387,6 +413,7 @@ public final class GenerativeAiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetEndpointResult> getEndpoint(GetEndpointArgs args) {
@@ -398,6 +425,8 @@ public final class GenerativeAiFunctions {
      * Gets information about an endpoint.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -426,6 +455,7 @@ public final class GenerativeAiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetEndpointResult> getEndpointPlain(GetEndpointPlainArgs args) {
@@ -437,6 +467,8 @@ public final class GenerativeAiFunctions {
      * Gets information about an endpoint.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -465,6 +497,7 @@ public final class GenerativeAiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetEndpointResult> getEndpoint(GetEndpointArgs args, InvokeOptions options) {
@@ -476,6 +509,8 @@ public final class GenerativeAiFunctions {
      * Gets information about an endpoint.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -504,6 +539,7 @@ public final class GenerativeAiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetEndpointResult> getEndpointPlain(GetEndpointPlainArgs args, InvokeOptions options) {
@@ -515,6 +551,8 @@ public final class GenerativeAiFunctions {
      * Lists the endpoints of a specific compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -546,6 +584,7 @@ public final class GenerativeAiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetEndpointsResult> getEndpoints(GetEndpointsArgs args) {
@@ -557,6 +596,8 @@ public final class GenerativeAiFunctions {
      * Lists the endpoints of a specific compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -588,6 +629,7 @@ public final class GenerativeAiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetEndpointsResult> getEndpointsPlain(GetEndpointsPlainArgs args) {
@@ -599,6 +641,8 @@ public final class GenerativeAiFunctions {
      * Lists the endpoints of a specific compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -630,6 +674,7 @@ public final class GenerativeAiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetEndpointsResult> getEndpoints(GetEndpointsArgs args, InvokeOptions options) {
@@ -641,6 +686,8 @@ public final class GenerativeAiFunctions {
      * Lists the endpoints of a specific compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -672,6 +719,7 @@ public final class GenerativeAiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetEndpointsResult> getEndpointsPlain(GetEndpointsPlainArgs args, InvokeOptions options) {
@@ -683,6 +731,8 @@ public final class GenerativeAiFunctions {
      * Gets information about a custom model.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -711,6 +761,7 @@ public final class GenerativeAiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetModelResult> getModel(GetModelArgs args) {
@@ -722,6 +773,8 @@ public final class GenerativeAiFunctions {
      * Gets information about a custom model.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -750,6 +803,7 @@ public final class GenerativeAiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetModelResult> getModelPlain(GetModelPlainArgs args) {
@@ -761,6 +815,8 @@ public final class GenerativeAiFunctions {
      * Gets information about a custom model.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -789,6 +845,7 @@ public final class GenerativeAiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetModelResult> getModel(GetModelArgs args, InvokeOptions options) {
@@ -800,6 +857,8 @@ public final class GenerativeAiFunctions {
      * Gets information about a custom model.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -828,6 +887,7 @@ public final class GenerativeAiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetModelResult> getModelPlain(GetModelPlainArgs args, InvokeOptions options) {
@@ -839,6 +899,8 @@ public final class GenerativeAiFunctions {
      * Lists the models in a specific compartment. Includes pretrained base models and fine-tuned custom models.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -872,6 +934,7 @@ public final class GenerativeAiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetModelsResult> getModels(GetModelsArgs args) {
@@ -883,6 +946,8 @@ public final class GenerativeAiFunctions {
      * Lists the models in a specific compartment. Includes pretrained base models and fine-tuned custom models.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -916,6 +981,7 @@ public final class GenerativeAiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetModelsResult> getModelsPlain(GetModelsPlainArgs args) {
@@ -927,6 +993,8 @@ public final class GenerativeAiFunctions {
      * Lists the models in a specific compartment. Includes pretrained base models and fine-tuned custom models.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -960,6 +1028,7 @@ public final class GenerativeAiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetModelsResult> getModels(GetModelsArgs args, InvokeOptions options) {
@@ -971,6 +1040,8 @@ public final class GenerativeAiFunctions {
      * Lists the models in a specific compartment. Includes pretrained base models and fine-tuned custom models.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1004,6 +1075,7 @@ public final class GenerativeAiFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetModelsResult> getModelsPlain(GetModelsPlainArgs args, InvokeOptions options) {

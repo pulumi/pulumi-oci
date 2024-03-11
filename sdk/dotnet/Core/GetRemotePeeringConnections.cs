@@ -18,10 +18,9 @@ namespace Pulumi.Oci.Core
         /// (the RPC's compartment).
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -38,8 +37,7 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetRemotePeeringConnectionsResult> InvokeAsync(GetRemotePeeringConnectionsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetRemotePeeringConnectionsResult>("oci:Core/getRemotePeeringConnections:getRemotePeeringConnections", args ?? new GetRemotePeeringConnectionsArgs(), options.WithDefaults());
@@ -51,10 +49,9 @@ namespace Pulumi.Oci.Core
         /// (the RPC's compartment).
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -71,8 +68,7 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetRemotePeeringConnectionsResult> Invoke(GetRemotePeeringConnectionsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetRemotePeeringConnectionsResult>("oci:Core/getRemotePeeringConnections:getRemotePeeringConnections", args ?? new GetRemotePeeringConnectionsInvokeArgs(), options.WithDefaults());

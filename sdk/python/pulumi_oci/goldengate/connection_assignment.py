@@ -200,6 +200,7 @@ class ConnectionAssignment(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -208,13 +209,14 @@ class ConnectionAssignment(pulumi.CustomResource):
             connection_id=oci_golden_gate_connection["test_connection"]["id"],
             deployment_id=oci_golden_gate_deployment["test_deployment"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ConnectionAssignments can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:GoldenGate/connectionAssignment:ConnectionAssignment test_connection_assignment "id"
+        $ pulumi import oci:GoldenGate/connectionAssignment:ConnectionAssignment test_connection_assignment "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -239,6 +241,7 @@ class ConnectionAssignment(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -247,13 +250,14 @@ class ConnectionAssignment(pulumi.CustomResource):
             connection_id=oci_golden_gate_connection["test_connection"]["id"],
             deployment_id=oci_golden_gate_deployment["test_deployment"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ConnectionAssignments can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:GoldenGate/connectionAssignment:ConnectionAssignment test_connection_assignment "id"
+        $ pulumi import oci:GoldenGate/connectionAssignment:ConnectionAssignment test_connection_assignment "id"
         ```
 
         :param str resource_name: The name of the resource.

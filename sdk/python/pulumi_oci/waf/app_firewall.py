@@ -380,6 +380,7 @@ class AppFirewall(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -398,13 +399,14 @@ class AppFirewall(pulumi.CustomResource):
             },
             system_tags=var["web_app_firewall_system_tags"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         WebAppFirewalls can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Waf/appFirewall:AppFirewall test_web_app_firewall "id"
+        $ pulumi import oci:Waf/appFirewall:AppFirewall test_web_app_firewall "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -435,6 +437,7 @@ class AppFirewall(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -453,13 +456,14 @@ class AppFirewall(pulumi.CustomResource):
             },
             system_tags=var["web_app_firewall_system_tags"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         WebAppFirewalls can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Waf/appFirewall:AppFirewall test_web_app_firewall "id"
+        $ pulumi import oci:Waf/appFirewall:AppFirewall test_web_app_firewall "id"
         ```
 
         :param str resource_name: The name of the resource.

@@ -22,6 +22,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -48,6 +49,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetIdentityProviders(ctx *pulumi.Context, args *GetIdentityProvidersArgs, opts ...pulumi.InvokeOption) (*GetIdentityProvidersResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetIdentityProvidersResult

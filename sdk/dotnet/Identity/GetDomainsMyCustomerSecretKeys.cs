@@ -16,10 +16,9 @@ namespace Pulumi.Oci.Identity
         /// 
         /// Search for a user's own customer secret key.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -40,8 +39,7 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDomainsMyCustomerSecretKeysResult> InvokeAsync(GetDomainsMyCustomerSecretKeysArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDomainsMyCustomerSecretKeysResult>("oci:Identity/getDomainsMyCustomerSecretKeys:getDomainsMyCustomerSecretKeys", args ?? new GetDomainsMyCustomerSecretKeysArgs(), options.WithDefaults());
@@ -51,10 +49,9 @@ namespace Pulumi.Oci.Identity
         /// 
         /// Search for a user's own customer secret key.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -75,8 +72,7 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDomainsMyCustomerSecretKeysResult> Invoke(GetDomainsMyCustomerSecretKeysInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsMyCustomerSecretKeysResult>("oci:Identity/getDomainsMyCustomerSecretKeys:getDomainsMyCustomerSecretKeys", args ?? new GetDomainsMyCustomerSecretKeysInvokeArgs(), options.WithDefaults());

@@ -16,10 +16,9 @@ namespace Pulumi.Oci.Identity
         /// 
         /// Search for Dynamic Resource Groups.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -42,8 +41,7 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDomainsDynamicResourceGroupsResult> InvokeAsync(GetDomainsDynamicResourceGroupsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDomainsDynamicResourceGroupsResult>("oci:Identity/getDomainsDynamicResourceGroups:getDomainsDynamicResourceGroups", args ?? new GetDomainsDynamicResourceGroupsArgs(), options.WithDefaults());
@@ -53,10 +51,9 @@ namespace Pulumi.Oci.Identity
         /// 
         /// Search for Dynamic Resource Groups.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -79,8 +76,7 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDomainsDynamicResourceGroupsResult> Invoke(GetDomainsDynamicResourceGroupsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsDynamicResourceGroupsResult>("oci:Identity/getDomainsDynamicResourceGroups:getDomainsDynamicResourceGroups", args ?? new GetDomainsDynamicResourceGroupsInvokeArgs(), options.WithDefaults());

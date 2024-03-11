@@ -17,10 +17,9 @@ namespace Pulumi.Oci.ApmTraces
         /// Gets the trace snapshots data identified by trace ID.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -40,8 +39,7 @@ namespace Pulumi.Oci.ApmTraces
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetTraceSnapshotDataResult> InvokeAsync(GetTraceSnapshotDataArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetTraceSnapshotDataResult>("oci:ApmTraces/getTraceSnapshotData:getTraceSnapshotData", args ?? new GetTraceSnapshotDataArgs(), options.WithDefaults());
@@ -52,10 +50,9 @@ namespace Pulumi.Oci.ApmTraces
         /// Gets the trace snapshots data identified by trace ID.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -75,8 +72,7 @@ namespace Pulumi.Oci.ApmTraces
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetTraceSnapshotDataResult> Invoke(GetTraceSnapshotDataInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetTraceSnapshotDataResult>("oci:ApmTraces/getTraceSnapshotData:getTraceSnapshotData", args ?? new GetTraceSnapshotDataInvokeArgs(), options.WithDefaults());

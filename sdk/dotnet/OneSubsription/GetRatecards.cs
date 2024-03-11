@@ -18,10 +18,9 @@ namespace Pulumi.Oci.OneSubsription
         /// for a particular date range
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -41,8 +40,7 @@ namespace Pulumi.Oci.OneSubsription
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetRatecardsResult> InvokeAsync(GetRatecardsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetRatecardsResult>("oci:OneSubsription/getRatecards:getRatecards", args ?? new GetRatecardsArgs(), options.WithDefaults());
@@ -54,10 +52,9 @@ namespace Pulumi.Oci.OneSubsription
         /// for a particular date range
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -77,8 +74,7 @@ namespace Pulumi.Oci.OneSubsription
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetRatecardsResult> Invoke(GetRatecardsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetRatecardsResult>("oci:OneSubsription/getRatecards:getRatecards", args ?? new GetRatecardsInvokeArgs(), options.WithDefaults());

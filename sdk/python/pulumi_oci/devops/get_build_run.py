@@ -255,12 +255,14 @@ def get_build_run(build_run_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_build_run = oci.DevOps.get_build_run(build_run_id=oci_devops_build_run["test_build_run"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str build_run_id: Unique build run identifier.
@@ -301,12 +303,14 @@ def get_build_run_output(build_run_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_build_run = oci.DevOps.get_build_run(build_run_id=oci_devops_build_run["test_build_run"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str build_run_id: Unique build run identifier.

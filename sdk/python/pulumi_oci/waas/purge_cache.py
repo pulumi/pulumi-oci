@@ -122,6 +122,7 @@ class PurgeCache(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -130,6 +131,7 @@ class PurgeCache(pulumi.CustomResource):
             waas_policy_id=oci_waas_waas_policy["test_waas_policy"]["id"],
             resources=var["purge_cache_resources"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -158,6 +160,7 @@ class PurgeCache(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -166,6 +169,7 @@ class PurgeCache(pulumi.CustomResource):
             waas_policy_id=oci_waas_waas_policy["test_waas_policy"]["id"],
             resources=var["purge_cache_resources"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 

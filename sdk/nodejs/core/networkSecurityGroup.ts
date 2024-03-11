@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -27,13 +28,14 @@ import * as utilities from "../utilities";
  *     },
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * NetworkSecurityGroups can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Core/networkSecurityGroup:NetworkSecurityGroup test_network_security_group "id"
+ * $ pulumi import oci:Core/networkSecurityGroup:NetworkSecurityGroup test_network_security_group "id"
  * ```
  */
 export class NetworkSecurityGroup extends pulumi.CustomResource {

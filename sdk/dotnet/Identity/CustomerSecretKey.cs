@@ -26,6 +26,7 @@ namespace Pulumi.Oci.Identity
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -42,13 +43,14 @@ namespace Pulumi.Oci.Identity
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// CustomerSecretKeys can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Identity/customerSecretKey:CustomerSecretKey test_customer_secret_key "users/{userId}/customerSecretKeys/{customerSecretKeyId}"
+    /// $ pulumi import oci:Identity/customerSecretKey:CustomerSecretKey test_customer_secret_key "users/{userId}/customerSecretKeys/{customerSecretKeyId}"
     /// ```
     /// </summary>
     [OciResourceType("oci:Identity/customerSecretKey:CustomerSecretKey")]

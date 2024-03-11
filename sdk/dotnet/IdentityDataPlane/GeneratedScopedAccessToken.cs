@@ -16,6 +16,7 @@ namespace Pulumi.Oci.IdentityDataPlane
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -32,13 +33,14 @@ namespace Pulumi.Oci.IdentityDataPlane
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// GenerateScopedAccessToken can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:IdentityDataPlane/generatedScopedAccessToken:GeneratedScopedAccessToken test_generate_scoped_access_token "id"
+    /// $ pulumi import oci:IdentityDataPlane/generatedScopedAccessToken:GeneratedScopedAccessToken test_generate_scoped_access_token "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:IdentityDataPlane/generatedScopedAccessToken:GeneratedScopedAccessToken")]

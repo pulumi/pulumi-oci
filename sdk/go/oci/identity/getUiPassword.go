@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,6 +42,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupUiPassword(ctx *pulumi.Context, args *LookupUiPasswordArgs, opts ...pulumi.InvokeOption) (*LookupUiPasswordResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupUiPasswordResult

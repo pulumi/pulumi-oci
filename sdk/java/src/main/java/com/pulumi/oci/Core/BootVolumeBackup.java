@@ -28,6 +28,8 @@ import javax.annotation.Nullable;
  * After the backup is fully uploaded to the cloud, it goes into an AVAILABLE state.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -61,13 +63,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * BootVolumeBackups can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Core/bootVolumeBackup:BootVolumeBackup test_boot_volume_backup &#34;id&#34;
+ * $ pulumi import oci:Core/bootVolumeBackup:BootVolumeBackup test_boot_volume_backup &#34;id&#34;
  * ```
  * 
  */

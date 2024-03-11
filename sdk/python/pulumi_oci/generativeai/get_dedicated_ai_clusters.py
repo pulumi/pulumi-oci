@@ -116,6 +116,7 @@ def get_dedicated_ai_clusters(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -125,6 +126,7 @@ def get_dedicated_ai_clusters(compartment_id: Optional[str] = None,
         id=var["dedicated_ai_cluster_id"],
         state=var["dedicated_ai_cluster_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
@@ -164,6 +166,7 @@ def get_dedicated_ai_clusters_output(compartment_id: Optional[pulumi.Input[str]]
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -173,6 +176,7 @@ def get_dedicated_ai_clusters_output(compartment_id: Optional[pulumi.Input[str]]
         id=var["dedicated_ai_cluster_id"],
         state=var["dedicated_ai_cluster_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.

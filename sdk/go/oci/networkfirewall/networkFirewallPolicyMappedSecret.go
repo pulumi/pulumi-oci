@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -45,15 +46,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // NetworkFirewallPolicyMappedSecrets can be imported using the `name`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:NetworkFirewall/networkFirewallPolicyMappedSecret:NetworkFirewallPolicyMappedSecret test_network_firewall_policy_mapped_secret "networkFirewallPolicies/{networkFirewallPolicyId}/mappedSecrets/{mappedSecretName}"
-//
+// $ pulumi import oci:NetworkFirewall/networkFirewallPolicyMappedSecret:NetworkFirewallPolicyMappedSecret test_network_firewall_policy_mapped_secret "networkFirewallPolicies/{networkFirewallPolicyId}/mappedSecrets/{mappedSecretName}"
 // ```
 type NetworkFirewallPolicyMappedSecret struct {
 	pulumi.CustomResourceState

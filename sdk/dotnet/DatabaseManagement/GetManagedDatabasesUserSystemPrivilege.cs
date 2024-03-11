@@ -16,10 +16,9 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// Gets the list of system privileges granted to a specific user.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -37,8 +36,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetManagedDatabasesUserSystemPrivilegeResult> InvokeAsync(GetManagedDatabasesUserSystemPrivilegeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagedDatabasesUserSystemPrivilegeResult>("oci:DatabaseManagement/getManagedDatabasesUserSystemPrivilege:getManagedDatabasesUserSystemPrivilege", args ?? new GetManagedDatabasesUserSystemPrivilegeArgs(), options.WithDefaults());
@@ -48,10 +46,9 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// Gets the list of system privileges granted to a specific user.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -69,8 +66,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetManagedDatabasesUserSystemPrivilegeResult> Invoke(GetManagedDatabasesUserSystemPrivilegeInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabasesUserSystemPrivilegeResult>("oci:DatabaseManagement/getManagedDatabasesUserSystemPrivilege:getManagedDatabasesUserSystemPrivilege", args ?? new GetManagedDatabasesUserSystemPrivilegeInvokeArgs(), options.WithDefaults());

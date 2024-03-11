@@ -20,6 +20,7 @@ namespace Pulumi.Oci.LoadBalancer
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -74,17 +75,17 @@ namespace Pulumi.Oci.LoadBalancer
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// **Note:** The `sessionPersistenceConfiguration` (application cookie stickiness) and `lbCookieSessionPersistenceConfiguration`
     ///       (LB cookie stickiness) attributes are mutually exclusive. To avoid returning an error, configure only one of these two
     ///       attributes per backend set.
-    /// {{% /example %}}
     /// 
     /// ## Import
     /// 
     /// BackendSets can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:LoadBalancer/backendSet:BackendSet test_backend_set "loadBalancers/{loadBalancerId}/backendSets/{backendSetName}"
+    /// $ pulumi import oci:LoadBalancer/backendSet:BackendSet test_backend_set "loadBalancers/{loadBalancerId}/backendSets/{backendSetName}"
     /// ```
     /// </summary>
     [OciResourceType("oci:LoadBalancer/backendSet:BackendSet")]

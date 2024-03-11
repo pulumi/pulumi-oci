@@ -17,10 +17,9 @@ namespace Pulumi.Oci.ResourceManager
         /// Gets the alternative IP address of the private resource. This IP will be used by Resource Manager Service to connect to the private resource.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -37,8 +36,7 @@ namespace Pulumi.Oci.ResourceManager
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetPrivateEndpointReachableIpResult> InvokeAsync(GetPrivateEndpointReachableIpArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetPrivateEndpointReachableIpResult>("oci:ResourceManager/getPrivateEndpointReachableIp:getPrivateEndpointReachableIp", args ?? new GetPrivateEndpointReachableIpArgs(), options.WithDefaults());
@@ -49,10 +47,9 @@ namespace Pulumi.Oci.ResourceManager
         /// Gets the alternative IP address of the private resource. This IP will be used by Resource Manager Service to connect to the private resource.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -69,8 +66,7 @@ namespace Pulumi.Oci.ResourceManager
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetPrivateEndpointReachableIpResult> Invoke(GetPrivateEndpointReachableIpInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPrivateEndpointReachableIpResult>("oci:ResourceManager/getPrivateEndpointReachableIp:getPrivateEndpointReachableIp", args ?? new GetPrivateEndpointReachableIpInvokeArgs(), options.WithDefaults());

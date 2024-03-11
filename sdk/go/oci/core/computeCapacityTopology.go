@@ -23,6 +23,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -58,15 +59,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // ComputeCapacityTopologies can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Core/computeCapacityTopology:ComputeCapacityTopology test_compute_capacity_topology "id"
-//
+// $ pulumi import oci:Core/computeCapacityTopology:ComputeCapacityTopology test_compute_capacity_topology "id"
 // ```
 type ComputeCapacityTopology struct {
 	pulumi.CustomResourceState

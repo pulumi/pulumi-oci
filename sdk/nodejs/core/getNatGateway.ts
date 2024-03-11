@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -19,6 +20,7 @@ import * as utilities from "../utilities";
  *     natGatewayId: oci_core_nat_gateway.test_nat_gateway.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getNatGateway(args: GetNatGatewayArgs, opts?: pulumi.InvokeOptions): Promise<GetNatGatewayResult> {
 
@@ -99,6 +101,7 @@ export interface GetNatGatewayResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -107,6 +110,7 @@ export interface GetNatGatewayResult {
  *     natGatewayId: oci_core_nat_gateway.test_nat_gateway.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getNatGatewayOutput(args: GetNatGatewayOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNatGatewayResult> {
     return pulumi.output(args).apply((a: any) => getNatGateway(a, opts))

@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -49,15 +50,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // NetworkSecurityGroups can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Core/networkSecurityGroup:NetworkSecurityGroup test_network_security_group "id"
-//
+// $ pulumi import oci:Core/networkSecurityGroup:NetworkSecurityGroup test_network_security_group "id"
 // ```
 type NetworkSecurityGroup struct {
 	pulumi.CustomResourceState

@@ -30,6 +30,8 @@ public final class ApmTracesFunctions {
      * to choose a query to run.  There is no sorting applied on the results.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -58,6 +60,7 @@ public final class ApmTracesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetQueryQuickPicksResult> getQueryQuickPicks(GetQueryQuickPicksArgs args) {
@@ -70,6 +73,8 @@ public final class ApmTracesFunctions {
      * to choose a query to run.  There is no sorting applied on the results.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -98,6 +103,7 @@ public final class ApmTracesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetQueryQuickPicksResult> getQueryQuickPicksPlain(GetQueryQuickPicksPlainArgs args) {
@@ -110,6 +116,8 @@ public final class ApmTracesFunctions {
      * to choose a query to run.  There is no sorting applied on the results.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -138,6 +146,7 @@ public final class ApmTracesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetQueryQuickPicksResult> getQueryQuickPicks(GetQueryQuickPicksArgs args, InvokeOptions options) {
@@ -150,6 +159,8 @@ public final class ApmTracesFunctions {
      * to choose a query to run.  There is no sorting applied on the results.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -178,6 +189,7 @@ public final class ApmTracesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetQueryQuickPicksResult> getQueryQuickPicksPlain(GetQueryQuickPicksPlainArgs args, InvokeOptions options) {
@@ -189,6 +201,8 @@ public final class ApmTracesFunctions {
      * Gets the trace details identified by traceId.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -218,6 +232,7 @@ public final class ApmTracesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetTraceResult> getTrace(GetTraceArgs args) {
@@ -229,6 +244,8 @@ public final class ApmTracesFunctions {
      * Gets the trace details identified by traceId.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -258,6 +275,7 @@ public final class ApmTracesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetTraceResult> getTracePlain(GetTracePlainArgs args) {
@@ -269,6 +287,8 @@ public final class ApmTracesFunctions {
      * Gets the trace details identified by traceId.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -298,6 +318,7 @@ public final class ApmTracesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetTraceResult> getTrace(GetTraceArgs args, InvokeOptions options) {
@@ -309,6 +330,8 @@ public final class ApmTracesFunctions {
      * Gets the trace details identified by traceId.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -338,6 +361,7 @@ public final class ApmTracesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetTraceResult> getTracePlain(GetTracePlainArgs args, InvokeOptions options) {
@@ -349,6 +373,8 @@ public final class ApmTracesFunctions {
      * Gets the aggregated snapshot identified by trace ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -378,6 +404,7 @@ public final class ApmTracesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetTraceAggregatedSnapshotDataResult> getTraceAggregatedSnapshotData(GetTraceAggregatedSnapshotDataArgs args) {
@@ -389,6 +416,8 @@ public final class ApmTracesFunctions {
      * Gets the aggregated snapshot identified by trace ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -418,6 +447,7 @@ public final class ApmTracesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetTraceAggregatedSnapshotDataResult> getTraceAggregatedSnapshotDataPlain(GetTraceAggregatedSnapshotDataPlainArgs args) {
@@ -429,6 +459,8 @@ public final class ApmTracesFunctions {
      * Gets the aggregated snapshot identified by trace ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -458,6 +490,7 @@ public final class ApmTracesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetTraceAggregatedSnapshotDataResult> getTraceAggregatedSnapshotData(GetTraceAggregatedSnapshotDataArgs args, InvokeOptions options) {
@@ -469,6 +502,8 @@ public final class ApmTracesFunctions {
      * Gets the aggregated snapshot identified by trace ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -498,6 +533,7 @@ public final class ApmTracesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetTraceAggregatedSnapshotDataResult> getTraceAggregatedSnapshotDataPlain(GetTraceAggregatedSnapshotDataPlainArgs args, InvokeOptions options) {
@@ -509,6 +545,8 @@ public final class ApmTracesFunctions {
      * Gets the trace snapshots data identified by trace ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -541,6 +579,7 @@ public final class ApmTracesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetTraceSnapshotDataResult> getTraceSnapshotData(GetTraceSnapshotDataArgs args) {
@@ -552,6 +591,8 @@ public final class ApmTracesFunctions {
      * Gets the trace snapshots data identified by trace ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -584,6 +625,7 @@ public final class ApmTracesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetTraceSnapshotDataResult> getTraceSnapshotDataPlain(GetTraceSnapshotDataPlainArgs args) {
@@ -595,6 +637,8 @@ public final class ApmTracesFunctions {
      * Gets the trace snapshots data identified by trace ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -627,6 +671,7 @@ public final class ApmTracesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetTraceSnapshotDataResult> getTraceSnapshotData(GetTraceSnapshotDataArgs args, InvokeOptions options) {
@@ -638,6 +683,8 @@ public final class ApmTracesFunctions {
      * Gets the trace snapshots data identified by trace ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -670,6 +717,7 @@ public final class ApmTracesFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetTraceSnapshotDataResult> getTraceSnapshotDataPlain(GetTraceSnapshotDataPlainArgs args, InvokeOptions options) {

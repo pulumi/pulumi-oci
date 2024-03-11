@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,6 +22,7 @@ import * as utilities from "../utilities";
  *     loadBalancerId: oci_load_balancer_load_balancer.test_load_balancer.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getHostnames(args: GetHostnamesArgs, opts?: pulumi.InvokeOptions): Promise<GetHostnamesResult> {
 
@@ -64,6 +66,7 @@ export interface GetHostnamesResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -72,6 +75,7 @@ export interface GetHostnamesResult {
  *     loadBalancerId: oci_load_balancer_load_balancer.test_load_balancer.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getHostnamesOutput(args: GetHostnamesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetHostnamesResult> {
     return pulumi.output(args).apply((a: any) => getHostnames(a, opts))

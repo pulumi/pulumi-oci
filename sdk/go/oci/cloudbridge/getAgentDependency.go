@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -40,6 +41,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupAgentDependency(ctx *pulumi.Context, args *LookupAgentDependencyArgs, opts ...pulumi.InvokeOption) (*LookupAgentDependencyResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupAgentDependencyResult

@@ -91,12 +91,14 @@ def get_autonomous_database_regional_wallet_management(opts: Optional[pulumi.Inv
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_autonomous_database_regional_wallet_management = oci.Database.get_autonomous_database_regional_wallet_management()
     ```
+    <!--End PulumiCodeChooser -->
     """
     __args__ = dict()
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -119,11 +121,13 @@ def get_autonomous_database_regional_wallet_management_output(opts: Optional[pul
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_autonomous_database_regional_wallet_management = oci.Database.get_autonomous_database_regional_wallet_management()
     ```
+    <!--End PulumiCodeChooser -->
     """
     ...

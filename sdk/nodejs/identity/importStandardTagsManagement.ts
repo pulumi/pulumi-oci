@@ -12,6 +12,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,13 +22,14 @@ import * as utilities from "../utilities";
  *     standardTagNamespaceName: oci_identity_tag_namespace.test_tag_namespace.name,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * ImportStandardTagsManagement can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Identity/importStandardTagsManagement:ImportStandardTagsManagement test_import_standard_tags_management "id"
+ * $ pulumi import oci:Identity/importStandardTagsManagement:ImportStandardTagsManagement test_import_standard_tags_management "id"
  * ```
  */
 export class ImportStandardTagsManagement extends pulumi.CustomResource {

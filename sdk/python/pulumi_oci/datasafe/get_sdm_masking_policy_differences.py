@@ -161,6 +161,7 @@ def get_sdm_masking_policy_differences(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -173,6 +174,7 @@ def get_sdm_masking_policy_differences(compartment_id: Optional[str] = None,
         sensitive_data_model_id=oci_data_safe_sensitive_data_model["test_sensitive_data_model"]["id"],
         state=var["sdm_masking_policy_difference_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
@@ -225,6 +227,7 @@ def get_sdm_masking_policy_differences_output(compartment_id: Optional[pulumi.In
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -237,6 +240,7 @@ def get_sdm_masking_policy_differences_output(compartment_id: Optional[pulumi.In
         sensitive_data_model_id=oci_data_safe_sensitive_data_model["test_sensitive_data_model"]["id"],
         state=var["sdm_masking_policy_difference_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: A filter to return only resources that match the specified compartment OCID.

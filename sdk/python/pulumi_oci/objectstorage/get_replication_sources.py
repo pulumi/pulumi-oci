@@ -96,6 +96,7 @@ def get_replication_sources(bucket: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -103,6 +104,7 @@ def get_replication_sources(bucket: Optional[str] = None,
     test_replication_sources = oci.ObjectStorage.get_replication_sources(bucket=var["replication_source_bucket"],
         namespace=var["replication_source_namespace"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str bucket: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
@@ -135,6 +137,7 @@ def get_replication_sources_output(bucket: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -142,6 +145,7 @@ def get_replication_sources_output(bucket: Optional[pulumi.Input[str]] = None,
     test_replication_sources = oci.ObjectStorage.get_replication_sources(bucket=var["replication_source_bucket"],
         namespace=var["replication_source_namespace"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str bucket: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`

@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,6 +25,7 @@ import * as utilities from "../utilities";
  *     timeRedeemedLessThan: _var.subscription_redemption_time_redeemed_less_than,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getSubscriptionRedemptions(args: GetSubscriptionRedemptionsArgs, opts?: pulumi.InvokeOptions): Promise<GetSubscriptionRedemptionsResult> {
 
@@ -85,6 +87,7 @@ export interface GetSubscriptionRedemptionsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -96,6 +99,7 @@ export interface GetSubscriptionRedemptionsResult {
  *     timeRedeemedLessThan: _var.subscription_redemption_time_redeemed_less_than,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getSubscriptionRedemptionsOutput(args: GetSubscriptionRedemptionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSubscriptionRedemptionsResult> {
     return pulumi.output(args).apply((a: any) => getSubscriptionRedemptions(a, opts))

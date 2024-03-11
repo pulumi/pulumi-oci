@@ -383,6 +383,7 @@ class DeployPipeline(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -405,13 +406,14 @@ class DeployPipeline(pulumi.CustomResource):
                 "bar-key": "value",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         DeployPipelines can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DevOps/deployPipeline:DeployPipeline test_deploy_pipeline "id"
+        $ pulumi import oci:DevOps/deployPipeline:DeployPipeline test_deploy_pipeline "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -440,6 +442,7 @@ class DeployPipeline(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -462,13 +465,14 @@ class DeployPipeline(pulumi.CustomResource):
                 "bar-key": "value",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         DeployPipelines can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DevOps/deployPipeline:DeployPipeline test_deploy_pipeline "id"
+        $ pulumi import oci:DevOps/deployPipeline:DeployPipeline test_deploy_pipeline "id"
         ```
 
         :param str resource_name: The name of the resource.

@@ -9,6 +9,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -18,6 +19,7 @@ import * as utilities from "../utilities";
  *     type: _var.password_type,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getRetrievePassword(args: GetRetrievePasswordArgs, opts?: pulumi.InvokeOptions): Promise<GetRetrievePasswordResult> {
 
@@ -62,6 +64,7 @@ export interface GetRetrievePasswordResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -71,6 +74,7 @@ export interface GetRetrievePasswordResult {
  *     type: _var.password_type,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getRetrievePasswordOutput(args: GetRetrievePasswordOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRetrievePasswordResult> {
     return pulumi.output(args).apply((a: any) => getRetrievePassword(a, opts))

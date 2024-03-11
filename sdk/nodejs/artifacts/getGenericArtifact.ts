@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -19,6 +20,7 @@ import * as utilities from "../utilities";
  *     artifactId: oci_artifacts_artifact.test_artifact.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getGenericArtifact(args: GetGenericArtifactArgs, opts?: pulumi.InvokeOptions): Promise<GetGenericArtifactResult> {
 
@@ -99,6 +101,7 @@ export interface GetGenericArtifactResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -107,6 +110,7 @@ export interface GetGenericArtifactResult {
  *     artifactId: oci_artifacts_artifact.test_artifact.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getGenericArtifactOutput(args: GetGenericArtifactOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetGenericArtifactResult> {
     return pulumi.output(args).apply((a: any) => getGenericArtifact(a, opts))

@@ -135,6 +135,7 @@ def get_target_database_roles(authentication_type: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -145,6 +146,7 @@ def get_target_database_roles(authentication_type: Optional[str] = None,
         role_names=var["target_database_role_role_name"],
         role_name_contains=var["target_database_role_role_name_contains"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str authentication_type: A filter to return roles based on authentication type.
@@ -189,6 +191,7 @@ def get_target_database_roles_output(authentication_type: Optional[pulumi.Input[
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -199,6 +202,7 @@ def get_target_database_roles_output(authentication_type: Optional[pulumi.Input[
         role_names=var["target_database_role_role_name"],
         role_name_contains=var["target_database_role_role_name_contains"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str authentication_type: A filter to return roles based on authentication type.

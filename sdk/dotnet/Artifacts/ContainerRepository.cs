@@ -16,6 +16,7 @@ namespace Pulumi.Oci.Artifacts
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -47,13 +48,14 @@ namespace Pulumi.Oci.Artifacts
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// ContainerRepositories can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Artifacts/containerRepository:ContainerRepository test_container_repository "container/repositories/{repositoryId}"
+    /// $ pulumi import oci:Artifacts/containerRepository:ContainerRepository test_container_repository "container/repositories/{repositoryId}"
     /// ```
     /// </summary>
     [OciResourceType("oci:Artifacts/containerRepository:ContainerRepository")]

@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -20,6 +21,7 @@ import * as utilities from "../utilities";
  *     workloadMappingId: oci_containerengine_workload_mapping.test_workload_mapping.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getClusterWorkloadMapping(args: GetClusterWorkloadMappingArgs, opts?: pulumi.InvokeOptions): Promise<GetClusterWorkloadMappingResult> {
 
@@ -93,6 +95,7 @@ export interface GetClusterWorkloadMappingResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -102,6 +105,7 @@ export interface GetClusterWorkloadMappingResult {
  *     workloadMappingId: oci_containerengine_workload_mapping.test_workload_mapping.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getClusterWorkloadMappingOutput(args: GetClusterWorkloadMappingOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetClusterWorkloadMappingResult> {
     return pulumi.output(args).apply((a: any) => getClusterWorkloadMapping(a, opts))

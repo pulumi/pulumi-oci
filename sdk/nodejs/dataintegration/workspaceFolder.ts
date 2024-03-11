@@ -14,6 +14,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -35,13 +36,14 @@ import * as utilities from "../utilities";
  *     objectStatus: _var.workspace_folder_object_status,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * WorkspaceFolders can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:DataIntegration/workspaceFolder:WorkspaceFolder test_workspace_folder "workspaces/{workspaceId}/folders/{folderKey}"
+ * $ pulumi import oci:DataIntegration/workspaceFolder:WorkspaceFolder test_workspace_folder "workspaces/{workspaceId}/folders/{folderKey}"
  * ```
  */
 export class WorkspaceFolder extends pulumi.CustomResource {

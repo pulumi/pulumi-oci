@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -92,15 +93,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Jobs can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:DataScience/job:Job test_job "id"
-//
+// $ pulumi import oci:DataScience/job:Job test_job "id"
 // ```
 type Job struct {
 	pulumi.CustomResourceState

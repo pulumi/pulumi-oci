@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -51,15 +52,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // AwrHubSources can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Opsi/awrHubSource:AwrHubSource test_awr_hub_source "id"
-//
+// $ pulumi import oci:Opsi/awrHubSource:AwrHubSource test_awr_hub_source "id"
 // ```
 type AwrHubSource struct {
 	pulumi.CustomResourceState

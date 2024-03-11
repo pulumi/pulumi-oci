@@ -16,6 +16,7 @@ namespace Pulumi.Oci.ManagementAgent
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -35,13 +36,14 @@ namespace Pulumi.Oci.ManagementAgent
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// ManagementAgentInstallKeys can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:ManagementAgent/managementAgentInstallKey:ManagementAgentInstallKey test_management_agent_install_key "id"
+    /// $ pulumi import oci:ManagementAgent/managementAgentInstallKey:ManagementAgentInstallKey test_management_agent_install_key "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:ManagementAgent/managementAgentInstallKey:ManagementAgentInstallKey")]

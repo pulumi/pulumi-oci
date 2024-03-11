@@ -16,10 +16,9 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// Gets the list of consumer group privileges granted to a specific user.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -37,8 +36,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetManagedDatabaseUserConsumerGroupPrivilegeResult> InvokeAsync(GetManagedDatabaseUserConsumerGroupPrivilegeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagedDatabaseUserConsumerGroupPrivilegeResult>("oci:DatabaseManagement/getManagedDatabaseUserConsumerGroupPrivilege:getManagedDatabaseUserConsumerGroupPrivilege", args ?? new GetManagedDatabaseUserConsumerGroupPrivilegeArgs(), options.WithDefaults());
@@ -48,10 +46,9 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// Gets the list of consumer group privileges granted to a specific user.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -69,8 +66,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetManagedDatabaseUserConsumerGroupPrivilegeResult> Invoke(GetManagedDatabaseUserConsumerGroupPrivilegeInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseUserConsumerGroupPrivilegeResult>("oci:DatabaseManagement/getManagedDatabaseUserConsumerGroupPrivilege:getManagedDatabaseUserConsumerGroupPrivilege", args ?? new GetManagedDatabaseUserConsumerGroupPrivilegeInvokeArgs(), options.WithDefaults());

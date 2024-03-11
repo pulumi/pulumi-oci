@@ -14,6 +14,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -31,13 +32,14 @@ import * as utilities from "../utilities";
  *     type: _var.volume_group_backup_type,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * VolumeGroupBackups can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Core/volumeGroupBackup:VolumeGroupBackup test_volume_group_backup "id"
+ * $ pulumi import oci:Core/volumeGroupBackup:VolumeGroupBackup test_volume_group_backup "id"
  * ```
  */
 export class VolumeGroupBackup extends pulumi.CustomResource {

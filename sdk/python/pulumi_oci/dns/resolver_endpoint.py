@@ -462,6 +462,7 @@ class ResolverEndpoint(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -477,18 +478,19 @@ class ResolverEndpoint(pulumi.CustomResource):
             listening_address=var["resolver_endpoint_listening_address"],
             nsg_ids=var["resolver_endpoint_nsg_ids"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         For legacy ResolverEndpoints created without `scope`, these ResolverEndpoints can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Dns/resolverEndpoint:ResolverEndpoint test_resolver_endpoint "resolverId/{resolverId}/name/{resolverEndpointName}"
+        $ pulumi import oci:Dns/resolverEndpoint:ResolverEndpoint test_resolver_endpoint "resolverId/{resolverId}/name/{resolverEndpointName}"
         ```
-         For ResolverEndpoints created using `scope`, these ResolverEndpoints can be imported using the `id`, e.g.
+        For ResolverEndpoints created using `scope`, these ResolverEndpoints can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Dns/resolverEndpoint:ResolverEndpoint test_resolver_endpoint "resolverId/{resolverId}/name/{name}/scope/{scope}"
+        $ pulumi import oci:Dns/resolverEndpoint:ResolverEndpoint test_resolver_endpoint "resolverId/{resolverId}/name/{name}/scope/{scope}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -521,6 +523,7 @@ class ResolverEndpoint(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -536,18 +539,19 @@ class ResolverEndpoint(pulumi.CustomResource):
             listening_address=var["resolver_endpoint_listening_address"],
             nsg_ids=var["resolver_endpoint_nsg_ids"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         For legacy ResolverEndpoints created without `scope`, these ResolverEndpoints can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Dns/resolverEndpoint:ResolverEndpoint test_resolver_endpoint "resolverId/{resolverId}/name/{resolverEndpointName}"
+        $ pulumi import oci:Dns/resolverEndpoint:ResolverEndpoint test_resolver_endpoint "resolverId/{resolverId}/name/{resolverEndpointName}"
         ```
-         For ResolverEndpoints created using `scope`, these ResolverEndpoints can be imported using the `id`, e.g.
+        For ResolverEndpoints created using `scope`, these ResolverEndpoints can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Dns/resolverEndpoint:ResolverEndpoint test_resolver_endpoint "resolverId/{resolverId}/name/{name}/scope/{scope}"
+        $ pulumi import oci:Dns/resolverEndpoint:ResolverEndpoint test_resolver_endpoint "resolverId/{resolverId}/name/{name}/scope/{scope}"
         ```
 
         :param str resource_name: The name of the resource.

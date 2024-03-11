@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,6 +22,7 @@ import * as utilities from "../utilities";
  *     integrationInstanceId: oci_integration_integration_instance.test_integration_instance.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getIntegrationInstance(args: GetIntegrationInstanceArgs, opts?: pulumi.InvokeOptions): Promise<GetIntegrationInstanceResult> {
 
@@ -144,6 +146,7 @@ export interface GetIntegrationInstanceResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -152,6 +155,7 @@ export interface GetIntegrationInstanceResult {
  *     integrationInstanceId: oci_integration_integration_instance.test_integration_instance.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getIntegrationInstanceOutput(args: GetIntegrationInstanceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIntegrationInstanceResult> {
     return pulumi.output(args).apply((a: any) => getIntegrationInstance(a, opts))

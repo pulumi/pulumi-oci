@@ -23,6 +23,7 @@ namespace Pulumi.Oci.ObjectStorage
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -50,13 +51,14 @@ namespace Pulumi.Oci.ObjectStorage
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// Objects can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:ObjectStorage/storageObject:StorageObject test_object "n/{namespaceName}/b/{bucketName}/o/{objectName}"
+    /// $ pulumi import oci:ObjectStorage/storageObject:StorageObject test_object "n/{namespaceName}/b/{bucketName}/o/{objectName}"
     /// ```
     /// </summary>
     [OciResourceType("oci:ObjectStorage/storageObject:StorageObject")]

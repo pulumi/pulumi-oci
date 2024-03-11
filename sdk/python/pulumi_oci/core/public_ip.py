@@ -433,6 +433,7 @@ class PublicIp(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -450,13 +451,14 @@ class PublicIp(pulumi.CustomResource):
             private_ip_id=oci_core_private_ip["test_private_ip"]["id"],
             public_ip_pool_id=oci_core_public_ip_pool["test_public_ip_pool"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         PublicIps can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/publicIp:PublicIp test_public_ip "id"
+        $ pulumi import oci:Core/publicIp:PublicIp test_public_ip "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -510,6 +512,7 @@ class PublicIp(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -527,13 +530,14 @@ class PublicIp(pulumi.CustomResource):
             private_ip_id=oci_core_private_ip["test_private_ip"]["id"],
             public_ip_pool_id=oci_core_public_ip_pool["test_public_ip_pool"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         PublicIps can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/publicIp:PublicIp test_public_ip "id"
+        $ pulumi import oci:Core/publicIp:PublicIp test_public_ip "id"
         ```
 
         :param str resource_name: The name of the resource.

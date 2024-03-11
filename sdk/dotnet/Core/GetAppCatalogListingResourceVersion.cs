@@ -16,10 +16,9 @@ namespace Pulumi.Oci.Core
         /// 
         /// Gets the specified listing resource version.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,8 +35,7 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetAppCatalogListingResourceVersionResult> InvokeAsync(GetAppCatalogListingResourceVersionArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAppCatalogListingResourceVersionResult>("oci:Core/getAppCatalogListingResourceVersion:getAppCatalogListingResourceVersion", args ?? new GetAppCatalogListingResourceVersionArgs(), options.WithDefaults());
@@ -47,10 +45,9 @@ namespace Pulumi.Oci.Core
         /// 
         /// Gets the specified listing resource version.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -67,8 +64,7 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetAppCatalogListingResourceVersionResult> Invoke(GetAppCatalogListingResourceVersionInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAppCatalogListingResourceVersionResult>("oci:Core/getAppCatalogListingResourceVersion:getAppCatalogListingResourceVersion", args ?? new GetAppCatalogListingResourceVersionInvokeArgs(), options.WithDefaults());

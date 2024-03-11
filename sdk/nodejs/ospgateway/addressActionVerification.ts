@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -48,13 +49,14 @@ import * as utilities from "../utilities";
  *     streetNumber: _var.address_action_verification_street_number,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * AddressActionVerifications can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:OspGateway/addressActionVerification:AddressActionVerification test_address_action_verification "id"
+ * $ pulumi import oci:OspGateway/addressActionVerification:AddressActionVerification test_address_action_verification "id"
  * ```
  */
 export class AddressActionVerification extends pulumi.CustomResource {

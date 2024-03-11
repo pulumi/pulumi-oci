@@ -30,6 +30,7 @@ namespace Pulumi.Oci.Core
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -66,13 +67,14 @@ namespace Pulumi.Oci.Core
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// CrossConnectGroups can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Core/crossConnectGroup:CrossConnectGroup test_cross_connect_group "id"
+    /// $ pulumi import oci:Core/crossConnectGroup:CrossConnectGroup test_cross_connect_group "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Core/crossConnectGroup:CrossConnectGroup")]

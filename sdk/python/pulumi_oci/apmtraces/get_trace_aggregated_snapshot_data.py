@@ -85,6 +85,7 @@ def get_trace_aggregated_snapshot_data(apm_domain_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -92,6 +93,7 @@ def get_trace_aggregated_snapshot_data(apm_domain_id: Optional[str] = None,
     test_trace_aggregated_snapshot_data = oci.ApmTraces.get_trace_aggregated_snapshot_data(apm_domain_id=oci_apm_apm_domain["test_apm_domain"]["id"],
         trace_key=var["trace_aggregated_snapshot_data_trace_key"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str apm_domain_id: The APM Domain ID the request is intended for.
@@ -121,6 +123,7 @@ def get_trace_aggregated_snapshot_data_output(apm_domain_id: Optional[pulumi.Inp
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -128,6 +131,7 @@ def get_trace_aggregated_snapshot_data_output(apm_domain_id: Optional[pulumi.Inp
     test_trace_aggregated_snapshot_data = oci.ApmTraces.get_trace_aggregated_snapshot_data(apm_domain_id=oci_apm_apm_domain["test_apm_domain"]["id"],
         trace_key=var["trace_aggregated_snapshot_data_trace_key"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str apm_domain_id: The APM Domain ID the request is intended for.

@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -53,15 +54,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // DrPlanExecutions can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:DisasterRecovery/drPlanExecution:DrPlanExecution test_dr_plan_execution "id"
-//
+// $ pulumi import oci:DisasterRecovery/drPlanExecution:DrPlanExecution test_dr_plan_execution "id"
 // ```
 type DrPlanExecution struct {
 	pulumi.CustomResourceState

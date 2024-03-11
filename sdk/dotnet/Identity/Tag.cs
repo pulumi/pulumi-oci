@@ -37,6 +37,7 @@ namespace Pulumi.Oci.Identity
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -68,13 +69,14 @@ namespace Pulumi.Oci.Identity
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// Tags can be imported using the `tagNamespaceId` and `tagName`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Identity/tag:Tag test_tag "tagNamespaces/{tagNamespaceId}/tags/{tagName}"
+    /// $ pulumi import oci:Identity/tag:Tag test_tag "tagNamespaces/{tagNamespaceId}/tags/{tagName}"
     /// ```
     /// </summary>
     [OciResourceType("oci:Identity/tag:Tag")]

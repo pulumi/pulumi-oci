@@ -24,6 +24,8 @@ import javax.annotation.Nullable;
  * Creates a new Database Tools private endpoint.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -67,13 +69,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * DatabaseToolsPrivateEndpoints can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:DatabaseTools/databaseToolsPrivateEndpoint:DatabaseToolsPrivateEndpoint test_database_tools_private_endpoint &#34;id&#34;
+ * $ pulumi import oci:DatabaseTools/databaseToolsPrivateEndpoint:DatabaseToolsPrivateEndpoint test_database_tools_private_endpoint &#34;id&#34;
  * ```
  * 
  */

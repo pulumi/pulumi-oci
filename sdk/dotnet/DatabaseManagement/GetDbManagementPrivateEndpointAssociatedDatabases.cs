@@ -16,10 +16,9 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// Gets the list of databases using a specific Database Management private endpoint.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,8 +35,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDbManagementPrivateEndpointAssociatedDatabasesResult> InvokeAsync(GetDbManagementPrivateEndpointAssociatedDatabasesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDbManagementPrivateEndpointAssociatedDatabasesResult>("oci:DatabaseManagement/getDbManagementPrivateEndpointAssociatedDatabases:getDbManagementPrivateEndpointAssociatedDatabases", args ?? new GetDbManagementPrivateEndpointAssociatedDatabasesArgs(), options.WithDefaults());
@@ -47,10 +45,9 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// Gets the list of databases using a specific Database Management private endpoint.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -67,8 +64,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDbManagementPrivateEndpointAssociatedDatabasesResult> Invoke(GetDbManagementPrivateEndpointAssociatedDatabasesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDbManagementPrivateEndpointAssociatedDatabasesResult>("oci:DatabaseManagement/getDbManagementPrivateEndpointAssociatedDatabases:getDbManagementPrivateEndpointAssociatedDatabases", args ?? new GetDbManagementPrivateEndpointAssociatedDatabasesInvokeArgs(), options.WithDefaults());

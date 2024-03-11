@@ -21,6 +21,8 @@ import javax.annotation.Nullable;
  * User creates a new install key as part of this API.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -53,13 +55,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * ManagementAgentInstallKeys can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:ManagementAgent/managementAgentInstallKey:ManagementAgentInstallKey test_management_agent_install_key &#34;id&#34;
+ * $ pulumi import oci:ManagementAgent/managementAgentInstallKey:ManagementAgentInstallKey test_management_agent_install_key &#34;id&#34;
  * ```
  * 
  */

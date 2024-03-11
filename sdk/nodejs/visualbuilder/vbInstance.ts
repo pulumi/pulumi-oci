@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -40,13 +41,14 @@ import * as utilities from "../utilities";
  *     isVisualBuilderEnabled: _var.vb_instance_is_visual_builder_enabled,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * VbInstances can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:VisualBuilder/vbInstance:VbInstance test_vb_instance "id"
+ * $ pulumi import oci:VisualBuilder/vbInstance:VbInstance test_vb_instance "id"
  * ```
  */
 export class VbInstance extends pulumi.CustomResource {

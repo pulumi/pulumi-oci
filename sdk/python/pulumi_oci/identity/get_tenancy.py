@@ -134,12 +134,14 @@ def get_tenancy(tenancy_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_tenancy = oci.Identity.get_tenancy(tenancy_id=var["tenancy_ocid"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str tenancy_id: The OCID of the tenancy.
@@ -170,12 +172,14 @@ def get_tenancy_output(tenancy_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_tenancy = oci.Identity.get_tenancy(tenancy_id=var["tenancy_ocid"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str tenancy_id: The OCID of the tenancy.

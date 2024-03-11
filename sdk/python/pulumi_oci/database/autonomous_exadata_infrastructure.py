@@ -622,6 +622,7 @@ class AutonomousExadataInfrastructure(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -658,13 +659,14 @@ class AutonomousExadataInfrastructure(pulumi.CustomResource):
             ),
             nsg_ids=var["autonomous_exadata_infrastructure_nsg_ids"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         AutonomousExadataInfrastructures can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Database/autonomousExadataInfrastructure:AutonomousExadataInfrastructure test_autonomous_exadata_infrastructure "id"
+        $ pulumi import oci:Database/autonomousExadataInfrastructure:AutonomousExadataInfrastructure test_autonomous_exadata_infrastructure "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -704,6 +706,7 @@ class AutonomousExadataInfrastructure(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -740,13 +743,14 @@ class AutonomousExadataInfrastructure(pulumi.CustomResource):
             ),
             nsg_ids=var["autonomous_exadata_infrastructure_nsg_ids"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         AutonomousExadataInfrastructures can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Database/autonomousExadataInfrastructure:AutonomousExadataInfrastructure test_autonomous_exadata_infrastructure "id"
+        $ pulumi import oci:Database/autonomousExadataInfrastructure:AutonomousExadataInfrastructure test_autonomous_exadata_infrastructure "id"
         ```
 
         :param str resource_name: The name of the resource.

@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -76,15 +77,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // CloudExadataInfrastructures can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Database/cloudExadataInfrastructure:CloudExadataInfrastructure test_cloud_exadata_infrastructure "id"
-//
+// $ pulumi import oci:Database/cloudExadataInfrastructure:CloudExadataInfrastructure test_cloud_exadata_infrastructure "id"
 // ```
 type CloudExadataInfrastructure struct {
 	pulumi.CustomResourceState

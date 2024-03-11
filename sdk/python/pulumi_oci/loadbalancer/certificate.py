@@ -384,6 +384,7 @@ class Certificate(pulumi.CustomResource):
         """
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -396,13 +397,14 @@ class Certificate(pulumi.CustomResource):
             private_key=var["certificate_private_key"],
             public_certificate=var["certificate_public_certificate"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Certificates can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:LoadBalancer/certificate:Certificate test_certificate "loadBalancers/{loadBalancerId}/certificates/{certificateName}"
+        $ pulumi import oci:LoadBalancer/certificate:Certificate test_certificate "loadBalancers/{loadBalancerId}/certificates/{certificateName}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -458,6 +460,7 @@ class Certificate(pulumi.CustomResource):
         """
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -470,13 +473,14 @@ class Certificate(pulumi.CustomResource):
             private_key=var["certificate_private_key"],
             public_certificate=var["certificate_public_certificate"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Certificates can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:LoadBalancer/certificate:Certificate test_certificate "loadBalancers/{loadBalancerId}/certificates/{certificateName}"
+        $ pulumi import oci:LoadBalancer/certificate:Certificate test_certificate "loadBalancers/{loadBalancerId}/certificates/{certificateName}"
         ```
 
         :param str resource_name: The name of the resource.

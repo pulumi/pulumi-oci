@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -20,6 +21,7 @@ import * as utilities from "../utilities";
  *     tunnelId: oci_core_tunnel.test_tunnel.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getIpsecConnectionTunnelError(args: GetIpsecConnectionTunnelErrorArgs, opts?: pulumi.InvokeOptions): Promise<GetIpsecConnectionTunnelErrorResult> {
 
@@ -82,6 +84,7 @@ export interface GetIpsecConnectionTunnelErrorResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -91,6 +94,7 @@ export interface GetIpsecConnectionTunnelErrorResult {
  *     tunnelId: oci_core_tunnel.test_tunnel.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getIpsecConnectionTunnelErrorOutput(args: GetIpsecConnectionTunnelErrorOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIpsecConnectionTunnelErrorResult> {
     return pulumi.output(args).apply((a: any) => getIpsecConnectionTunnelError(a, opts))

@@ -16,10 +16,9 @@ namespace Pulumi.Oci.Identity
         /// 
         /// Search Account Mgmt Info
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -45,8 +44,7 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDomainsAccountMgmtInfosResult> InvokeAsync(GetDomainsAccountMgmtInfosArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDomainsAccountMgmtInfosResult>("oci:Identity/getDomainsAccountMgmtInfos:getDomainsAccountMgmtInfos", args ?? new GetDomainsAccountMgmtInfosArgs(), options.WithDefaults());
@@ -56,10 +54,9 @@ namespace Pulumi.Oci.Identity
         /// 
         /// Search Account Mgmt Info
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -85,8 +82,7 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDomainsAccountMgmtInfosResult> Invoke(GetDomainsAccountMgmtInfosInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsAccountMgmtInfosResult>("oci:Identity/getDomainsAccountMgmtInfos:getDomainsAccountMgmtInfos", args ?? new GetDomainsAccountMgmtInfosInvokeArgs(), options.WithDefaults());

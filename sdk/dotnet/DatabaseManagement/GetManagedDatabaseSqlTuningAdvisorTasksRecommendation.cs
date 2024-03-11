@@ -18,10 +18,9 @@ namespace Pulumi.Oci.DatabaseManagement
         /// The task ID and object ID are used to retrieve the findings and recommendations.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -40,8 +39,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetManagedDatabaseSqlTuningAdvisorTasksRecommendationResult> InvokeAsync(GetManagedDatabaseSqlTuningAdvisorTasksRecommendationArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagedDatabaseSqlTuningAdvisorTasksRecommendationResult>("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksRecommendation:getManagedDatabaseSqlTuningAdvisorTasksRecommendation", args ?? new GetManagedDatabaseSqlTuningAdvisorTasksRecommendationArgs(), options.WithDefaults());
@@ -53,10 +51,9 @@ namespace Pulumi.Oci.DatabaseManagement
         /// The task ID and object ID are used to retrieve the findings and recommendations.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -75,8 +72,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetManagedDatabaseSqlTuningAdvisorTasksRecommendationResult> Invoke(GetManagedDatabaseSqlTuningAdvisorTasksRecommendationInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseSqlTuningAdvisorTasksRecommendationResult>("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksRecommendation:getManagedDatabaseSqlTuningAdvisorTasksRecommendation", args ?? new GetManagedDatabaseSqlTuningAdvisorTasksRecommendationInvokeArgs(), options.WithDefaults());

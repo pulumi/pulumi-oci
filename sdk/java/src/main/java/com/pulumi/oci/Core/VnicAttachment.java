@@ -23,6 +23,8 @@ import javax.annotation.Nullable;
  * [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -69,13 +71,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * VnicAttachments can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Core/vnicAttachment:VnicAttachment test_vnic_attachment &#34;id&#34;
+ * $ pulumi import oci:Core/vnicAttachment:VnicAttachment test_vnic_attachment &#34;id&#34;
  * ```
  * 
  */

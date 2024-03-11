@@ -19,6 +19,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -52,15 +53,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // PrivateIps can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Core/privateIp:PrivateIp test_private_ip "id"
-//
+// $ pulumi import oci:Core/privateIp:PrivateIp test_private_ip "id"
 // ```
 type PrivateIp struct {
 	pulumi.CustomResourceState

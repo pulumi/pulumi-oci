@@ -37,6 +37,8 @@ public final class LimitsFunctions {
      * compartment level.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -67,6 +69,7 @@ public final class LimitsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetLimitDefinitionsResult> getLimitDefinitions(GetLimitDefinitionsArgs args) {
@@ -80,6 +83,8 @@ public final class LimitsFunctions {
      * compartment level.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -110,6 +115,7 @@ public final class LimitsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetLimitDefinitionsResult> getLimitDefinitionsPlain(GetLimitDefinitionsPlainArgs args) {
@@ -123,6 +129,8 @@ public final class LimitsFunctions {
      * compartment level.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -153,6 +161,7 @@ public final class LimitsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetLimitDefinitionsResult> getLimitDefinitions(GetLimitDefinitionsArgs args, InvokeOptions options) {
@@ -166,6 +175,8 @@ public final class LimitsFunctions {
      * compartment level.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -196,6 +207,7 @@ public final class LimitsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetLimitDefinitionsResult> getLimitDefinitionsPlain(GetLimitDefinitionsPlainArgs args, InvokeOptions options) {
@@ -207,6 +219,8 @@ public final class LimitsFunctions {
      * Includes a full list of resource limits belonging to a given service.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -239,6 +253,7 @@ public final class LimitsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetLimitValuesResult> getLimitValues(GetLimitValuesArgs args) {
@@ -250,6 +265,8 @@ public final class LimitsFunctions {
      * Includes a full list of resource limits belonging to a given service.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -282,6 +299,7 @@ public final class LimitsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetLimitValuesResult> getLimitValuesPlain(GetLimitValuesPlainArgs args) {
@@ -293,6 +311,8 @@ public final class LimitsFunctions {
      * Includes a full list of resource limits belonging to a given service.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -325,6 +345,7 @@ public final class LimitsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetLimitValuesResult> getLimitValues(GetLimitValuesArgs args, InvokeOptions options) {
@@ -336,6 +357,8 @@ public final class LimitsFunctions {
      * Includes a full list of resource limits belonging to a given service.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -368,6 +391,7 @@ public final class LimitsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetLimitValuesResult> getLimitValuesPlain(GetLimitValuesPlainArgs args, InvokeOptions options) {
@@ -379,6 +403,8 @@ public final class LimitsFunctions {
      * Gets the quota for the OCID specified.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -407,6 +433,7 @@ public final class LimitsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetQuotaResult> getQuota(GetQuotaArgs args) {
@@ -418,6 +445,8 @@ public final class LimitsFunctions {
      * Gets the quota for the OCID specified.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -446,6 +475,7 @@ public final class LimitsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetQuotaResult> getQuotaPlain(GetQuotaPlainArgs args) {
@@ -457,6 +487,8 @@ public final class LimitsFunctions {
      * Gets the quota for the OCID specified.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -485,6 +517,7 @@ public final class LimitsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetQuotaResult> getQuota(GetQuotaArgs args, InvokeOptions options) {
@@ -496,6 +529,8 @@ public final class LimitsFunctions {
      * Gets the quota for the OCID specified.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -524,6 +559,7 @@ public final class LimitsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetQuotaResult> getQuotaPlain(GetQuotaPlainArgs args, InvokeOptions options) {
@@ -535,6 +571,8 @@ public final class LimitsFunctions {
      * Lists all quotas on resources from the given compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -565,6 +603,7 @@ public final class LimitsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetQuotasResult> getQuotas(GetQuotasArgs args) {
@@ -576,6 +615,8 @@ public final class LimitsFunctions {
      * Lists all quotas on resources from the given compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -606,6 +647,7 @@ public final class LimitsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetQuotasResult> getQuotasPlain(GetQuotasPlainArgs args) {
@@ -617,6 +659,8 @@ public final class LimitsFunctions {
      * Lists all quotas on resources from the given compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -647,6 +691,7 @@ public final class LimitsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetQuotasResult> getQuotas(GetQuotasArgs args, InvokeOptions options) {
@@ -658,6 +703,8 @@ public final class LimitsFunctions {
      * Lists all quotas on resources from the given compartment.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -688,6 +735,7 @@ public final class LimitsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetQuotasResult> getQuotasPlain(GetQuotasPlainArgs args, InvokeOptions options) {
@@ -702,6 +750,8 @@ public final class LimitsFunctions {
      *       Note that not all resource limits support this API. If the value is not available, the API returns a 404 response.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -733,6 +783,7 @@ public final class LimitsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetResourceAvailabilityResult> getResourceAvailability(GetResourceAvailabilityArgs args) {
@@ -747,6 +798,8 @@ public final class LimitsFunctions {
      *       Note that not all resource limits support this API. If the value is not available, the API returns a 404 response.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -778,6 +831,7 @@ public final class LimitsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetResourceAvailabilityResult> getResourceAvailabilityPlain(GetResourceAvailabilityPlainArgs args) {
@@ -792,6 +846,8 @@ public final class LimitsFunctions {
      *       Note that not all resource limits support this API. If the value is not available, the API returns a 404 response.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -823,6 +879,7 @@ public final class LimitsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetResourceAvailabilityResult> getResourceAvailability(GetResourceAvailabilityArgs args, InvokeOptions options) {
@@ -837,6 +894,8 @@ public final class LimitsFunctions {
      *       Note that not all resource limits support this API. If the value is not available, the API returns a 404 response.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -868,6 +927,7 @@ public final class LimitsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetResourceAvailabilityResult> getResourceAvailabilityPlain(GetResourceAvailabilityPlainArgs args, InvokeOptions options) {
@@ -880,6 +940,8 @@ public final class LimitsFunctions {
      * This includes the programmatic service name, along with the friendly service name.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -908,6 +970,7 @@ public final class LimitsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetServicesResult> getServices(GetServicesArgs args) {
@@ -920,6 +983,8 @@ public final class LimitsFunctions {
      * This includes the programmatic service name, along with the friendly service name.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -948,6 +1013,7 @@ public final class LimitsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetServicesResult> getServicesPlain(GetServicesPlainArgs args) {
@@ -960,6 +1026,8 @@ public final class LimitsFunctions {
      * This includes the programmatic service name, along with the friendly service name.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -988,6 +1056,7 @@ public final class LimitsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetServicesResult> getServices(GetServicesArgs args, InvokeOptions options) {
@@ -1000,6 +1069,8 @@ public final class LimitsFunctions {
      * This includes the programmatic service name, along with the friendly service name.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1028,6 +1099,7 @@ public final class LimitsFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetServicesResult> getServicesPlain(GetServicesPlainArgs args, InvokeOptions options) {

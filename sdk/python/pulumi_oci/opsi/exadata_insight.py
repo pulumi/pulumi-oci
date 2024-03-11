@@ -631,6 +631,7 @@ class ExadataInsight(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -684,13 +685,14 @@ class ExadataInsight(pulumi.CustomResource):
                 vmcluster_id=oci_opsi_vmcluster["test_vmcluster"]["id"],
             )])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ExadataInsights can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Opsi/exadataInsight:ExadataInsight test_exadata_insight "id"
+        $ pulumi import oci:Opsi/exadataInsight:ExadataInsight test_exadata_insight "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -721,6 +723,7 @@ class ExadataInsight(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -774,13 +777,14 @@ class ExadataInsight(pulumi.CustomResource):
                 vmcluster_id=oci_opsi_vmcluster["test_vmcluster"]["id"],
             )])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ExadataInsights can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Opsi/exadataInsight:ExadataInsight test_exadata_insight "id"
+        $ pulumi import oci:Opsi/exadataInsight:ExadataInsight test_exadata_insight "id"
         ```
 
         :param str resource_name: The name of the resource.

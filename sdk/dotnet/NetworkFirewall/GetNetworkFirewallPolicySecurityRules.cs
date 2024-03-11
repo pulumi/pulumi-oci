@@ -17,10 +17,9 @@ namespace Pulumi.Oci.NetworkFirewall
         /// Returns a list of Security Rule for the Network Firewall Policy.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -38,8 +37,7 @@ namespace Pulumi.Oci.NetworkFirewall
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetNetworkFirewallPolicySecurityRulesResult> InvokeAsync(GetNetworkFirewallPolicySecurityRulesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetNetworkFirewallPolicySecurityRulesResult>("oci:NetworkFirewall/getNetworkFirewallPolicySecurityRules:getNetworkFirewallPolicySecurityRules", args ?? new GetNetworkFirewallPolicySecurityRulesArgs(), options.WithDefaults());
@@ -50,10 +48,9 @@ namespace Pulumi.Oci.NetworkFirewall
         /// Returns a list of Security Rule for the Network Firewall Policy.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -71,8 +68,7 @@ namespace Pulumi.Oci.NetworkFirewall
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetNetworkFirewallPolicySecurityRulesResult> Invoke(GetNetworkFirewallPolicySecurityRulesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNetworkFirewallPolicySecurityRulesResult>("oci:NetworkFirewall/getNetworkFirewallPolicySecurityRules:getNetworkFirewallPolicySecurityRules", args ?? new GetNetworkFirewallPolicySecurityRulesInvokeArgs(), options.WithDefaults());

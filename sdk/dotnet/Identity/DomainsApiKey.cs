@@ -19,7 +19,7 @@ namespace Pulumi.Oci.Identity
     /// ApiKeys can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Identity/domainsApiKey:DomainsApiKey test_api_key "idcsEndpoint/{idcsEndpoint}/apiKeys/{apiKeyId}"
+    /// $ pulumi import oci:Identity/domainsApiKey:DomainsApiKey test_api_key "idcsEndpoint/{idcsEndpoint}/apiKeys/{apiKeyId}"
     /// ```
     /// </summary>
     [OciResourceType("oci:Identity/domainsApiKey:DomainsApiKey")]

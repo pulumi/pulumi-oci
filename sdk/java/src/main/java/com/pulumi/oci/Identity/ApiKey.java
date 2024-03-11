@@ -30,6 +30,8 @@ import javax.annotation.Nullable;
  * you have. Also confirm you&#39;re working in the correct compartment.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -59,13 +61,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * ApiKeys can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Identity/apiKey:ApiKey test_api_key &#34;users/{userId}/apiKeys/{fingerprint}&#34;
+ * $ pulumi import oci:Identity/apiKey:ApiKey test_api_key &#34;users/{userId}/apiKeys/{fingerprint}&#34;
  * ```
  * 
  */

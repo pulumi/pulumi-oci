@@ -16,6 +16,7 @@ namespace Pulumi.Oci.DevOps
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -35,13 +36,14 @@ namespace Pulumi.Oci.DevOps
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// RepositoryRefs can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:DevOps/repositoryRef:RepositoryRef test_repository_ref "repositories/{repositoryId}/refs/{refName}"
+    /// $ pulumi import oci:DevOps/repositoryRef:RepositoryRef test_repository_ref "repositories/{repositoryId}/refs/{refName}"
     /// ```
     /// </summary>
     [OciResourceType("oci:DevOps/repositoryRef:RepositoryRef")]

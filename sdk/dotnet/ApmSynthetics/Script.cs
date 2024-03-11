@@ -16,6 +16,7 @@ namespace Pulumi.Oci.ApmSynthetics
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -52,13 +53,14 @@ namespace Pulumi.Oci.ApmSynthetics
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// Scripts can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:ApmSynthetics/script:Script test_script "scripts/{scriptId}/apmDomainId/{apmDomainId}"
+    /// $ pulumi import oci:ApmSynthetics/script:Script test_script "scripts/{scriptId}/apmDomainId/{apmDomainId}"
     /// ```
     /// </summary>
     [OciResourceType("oci:ApmSynthetics/script:Script")]

@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,6 +22,7 @@ import * as utilities from "../utilities";
  *     externalExadataStorageServerId: oci_database_management_external_exadata_storage_server.test_external_exadata_storage_server.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getExternalExadataStorageServer(args: GetExternalExadataStorageServerArgs, opts?: pulumi.InvokeOptions): Promise<GetExternalExadataStorageServerResult> {
 
@@ -149,6 +151,7 @@ export interface GetExternalExadataStorageServerResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -157,6 +160,7 @@ export interface GetExternalExadataStorageServerResult {
  *     externalExadataStorageServerId: oci_database_management_external_exadata_storage_server.test_external_exadata_storage_server.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getExternalExadataStorageServerOutput(args: GetExternalExadataStorageServerOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalExadataStorageServerResult> {
     return pulumi.output(args).apply((a: any) => getExternalExadataStorageServer(a, opts))

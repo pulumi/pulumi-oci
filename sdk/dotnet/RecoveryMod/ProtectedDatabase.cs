@@ -16,6 +16,7 @@ namespace Pulumi.Oci.RecoveryMod
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -53,13 +54,14 @@ namespace Pulumi.Oci.RecoveryMod
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// ProtectedDatabases can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:RecoveryMod/protectedDatabase:ProtectedDatabase test_protected_database "id"
+    /// $ pulumi import oci:RecoveryMod/protectedDatabase:ProtectedDatabase test_protected_database "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:RecoveryMod/protectedDatabase:ProtectedDatabase")]

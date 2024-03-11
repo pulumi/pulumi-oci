@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,6 +42,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetReplicationPolicies(ctx *pulumi.Context, args *GetReplicationPoliciesArgs, opts ...pulumi.InvokeOption) (*GetReplicationPoliciesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetReplicationPoliciesResult

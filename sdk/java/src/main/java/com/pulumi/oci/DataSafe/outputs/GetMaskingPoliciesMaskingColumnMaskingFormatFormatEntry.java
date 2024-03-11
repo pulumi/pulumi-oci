@@ -94,7 +94,7 @@ public final class GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntry {
      */
     private String schemaName;
     /**
-     * @return The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%)  symbols.
+     * @return The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%!)(MISSING)  symbols.
      * 
      */
     private String sqlExpression;
@@ -248,7 +248,7 @@ public final class GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntry {
         return this.schemaName;
     }
     /**
-     * @return The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%)  symbols.
+     * @return The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%!)(MISSING)  symbols.
      * 
      */
     public String sqlExpression() {

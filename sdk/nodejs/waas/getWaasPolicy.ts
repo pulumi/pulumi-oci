@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,6 +22,7 @@ import * as utilities from "../utilities";
  *     waasPolicyId: oci_waas_waas_policy.test_waas_policy.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getWaasPolicy(args: GetWaasPolicyArgs, opts?: pulumi.InvokeOptions): Promise<GetWaasPolicyResult> {
 
@@ -109,6 +111,7 @@ export interface GetWaasPolicyResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -117,6 +120,7 @@ export interface GetWaasPolicyResult {
  *     waasPolicyId: oci_waas_waas_policy.test_waas_policy.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getWaasPolicyOutput(args: GetWaasPolicyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetWaasPolicyResult> {
     return pulumi.output(args).apply((a: any) => getWaasPolicy(a, opts))

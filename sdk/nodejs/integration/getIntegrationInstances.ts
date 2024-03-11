@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,6 +24,7 @@ import * as utilities from "../utilities";
  *     state: _var.integration_instance_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getIntegrationInstances(args: GetIntegrationInstancesArgs, opts?: pulumi.InvokeOptions): Promise<GetIntegrationInstancesResult> {
 
@@ -87,6 +89,7 @@ export interface GetIntegrationInstancesResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -97,6 +100,7 @@ export interface GetIntegrationInstancesResult {
  *     state: _var.integration_instance_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getIntegrationInstancesOutput(args: GetIntegrationInstancesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIntegrationInstancesResult> {
     return pulumi.output(args).apply((a: any) => getIntegrationInstances(a, opts))

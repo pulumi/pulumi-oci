@@ -16,6 +16,7 @@ namespace Pulumi.Oci.DataSafe
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -41,13 +42,14 @@ namespace Pulumi.Oci.DataSafe
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// OnPremConnectors can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:DataSafe/onPremConnector:OnPremConnector test_on_prem_connector "id"
+    /// $ pulumi import oci:DataSafe/onPremConnector:OnPremConnector test_on_prem_connector "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:DataSafe/onPremConnector:OnPremConnector")]

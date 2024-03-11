@@ -20,10 +20,9 @@ namespace Pulumi.Oci.DatabaseManagement
         /// all the Managed Database Groups in the compartment are listed.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -42,8 +41,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetManagedDatabaseGroupsResult> InvokeAsync(GetManagedDatabaseGroupsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagedDatabaseGroupsResult>("oci:DatabaseManagement/getManagedDatabaseGroups:getManagedDatabaseGroups", args ?? new GetManagedDatabaseGroupsArgs(), options.WithDefaults());
@@ -57,10 +55,9 @@ namespace Pulumi.Oci.DatabaseManagement
         /// all the Managed Database Groups in the compartment are listed.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -79,8 +76,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetManagedDatabaseGroupsResult> Invoke(GetManagedDatabaseGroupsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseGroupsResult>("oci:DatabaseManagement/getManagedDatabaseGroups:getManagedDatabaseGroups", args ?? new GetManagedDatabaseGroupsInvokeArgs(), options.WithDefaults());

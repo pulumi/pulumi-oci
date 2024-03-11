@@ -16,6 +16,7 @@ namespace Pulumi.Oci.DevOps
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -51,13 +52,14 @@ namespace Pulumi.Oci.DevOps
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// Connections can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:DevOps/connection:Connection test_connection "id"
+    /// $ pulumi import oci:DevOps/connection:Connection test_connection "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:DevOps/connection:Connection")]

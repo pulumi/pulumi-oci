@@ -22,6 +22,8 @@ import javax.annotation.Nullable;
  * Creates a new Data Safe private endpoint.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -58,13 +60,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * DataSafePrivateEndpoints can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:DataSafe/dataSafePrivateEndpoint:DataSafePrivateEndpoint test_data_safe_private_endpoint &#34;id&#34;
+ * $ pulumi import oci:DataSafe/dataSafePrivateEndpoint:DataSafePrivateEndpoint test_data_safe_private_endpoint &#34;id&#34;
  * ```
  * 
  */

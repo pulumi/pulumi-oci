@@ -16,10 +16,9 @@ namespace Pulumi.Oci.DataLabellingService
         /// 
         /// These are a static list in a given region.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,8 +34,7 @@ namespace Pulumi.Oci.DataLabellingService
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetAnnotationFormatResult> InvokeAsync(GetAnnotationFormatArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAnnotationFormatResult>("oci:DataLabellingService/getAnnotationFormat:getAnnotationFormat", args ?? new GetAnnotationFormatArgs(), options.WithDefaults());
@@ -46,10 +44,9 @@ namespace Pulumi.Oci.DataLabellingService
         /// 
         /// These are a static list in a given region.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -65,8 +62,7 @@ namespace Pulumi.Oci.DataLabellingService
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetAnnotationFormatResult> Invoke(GetAnnotationFormatInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAnnotationFormatResult>("oci:DataLabellingService/getAnnotationFormat:getAnnotationFormat", args ?? new GetAnnotationFormatInvokeArgs(), options.WithDefaults());

@@ -102,6 +102,7 @@ def get_baselineable_metrics_evaluate(baselineable_metric_id: Optional[str] = No
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -120,6 +121,7 @@ def get_baselineable_metrics_evaluate(baselineable_metric_id: Optional[str] = No
         )],
         resource_id=oci_usage_proxy_resource["test_resource"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str baselineable_metric_id: Identifier for the metric
@@ -153,6 +155,7 @@ def get_baselineable_metrics_evaluate_output(baselineable_metric_id: Optional[pu
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -171,6 +174,7 @@ def get_baselineable_metrics_evaluate_output(baselineable_metric_id: Optional[pu
         )],
         resource_id=oci_usage_proxy_resource["test_resource"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str baselineable_metric_id: Identifier for the metric

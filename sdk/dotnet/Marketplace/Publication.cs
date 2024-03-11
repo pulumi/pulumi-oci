@@ -16,6 +16,7 @@ namespace Pulumi.Oci.Marketplace
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -71,13 +72,14 @@ namespace Pulumi.Oci.Marketplace
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// Publications can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Marketplace/publication:Publication test_publication "id"
+    /// $ pulumi import oci:Marketplace/publication:Publication test_publication "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Marketplace/publication:Publication")]

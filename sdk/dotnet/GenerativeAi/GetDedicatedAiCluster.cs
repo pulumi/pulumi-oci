@@ -16,10 +16,9 @@ namespace Pulumi.Oci.GenerativeAi
         /// 
         /// Gets information about a dedicated AI cluster.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,8 +34,7 @@ namespace Pulumi.Oci.GenerativeAi
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDedicatedAiClusterResult> InvokeAsync(GetDedicatedAiClusterArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDedicatedAiClusterResult>("oci:GenerativeAi/getDedicatedAiCluster:getDedicatedAiCluster", args ?? new GetDedicatedAiClusterArgs(), options.WithDefaults());
@@ -46,10 +44,9 @@ namespace Pulumi.Oci.GenerativeAi
         /// 
         /// Gets information about a dedicated AI cluster.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -65,8 +62,7 @@ namespace Pulumi.Oci.GenerativeAi
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDedicatedAiClusterResult> Invoke(GetDedicatedAiClusterInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDedicatedAiClusterResult>("oci:GenerativeAi/getDedicatedAiCluster:getDedicatedAiCluster", args ?? new GetDedicatedAiClusterInvokeArgs(), options.WithDefaults());

@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -46,15 +47,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // FusionEnvironmentAdminUsers can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:FusionApps/fusionEnvironmentAdminUser:FusionEnvironmentAdminUser test_fusion_environment_admin_user "fusionEnvironments/{fusionEnvironmentId}/adminUsers/{adminUsername}"
-//
+// $ pulumi import oci:FusionApps/fusionEnvironmentAdminUser:FusionEnvironmentAdminUser test_fusion_environment_admin_user "fusionEnvironments/{fusionEnvironmentId}/adminUsers/{adminUsername}"
 // ```
 type FusionEnvironmentAdminUser struct {
 	pulumi.CustomResourceState

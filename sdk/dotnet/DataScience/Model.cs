@@ -16,6 +16,7 @@ namespace Pulumi.Oci.DataScience
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -64,13 +65,14 @@ namespace Pulumi.Oci.DataScience
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// Models can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:DataScience/model:Model test_model "id"
+    /// $ pulumi import oci:DataScience/model:Model test_model "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:DataScience/model:Model")]

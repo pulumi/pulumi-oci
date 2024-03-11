@@ -19,6 +19,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -56,6 +57,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetManagementAgents(ctx *pulumi.Context, args *GetManagementAgentsArgs, opts ...pulumi.InvokeOption) (*GetManagementAgentsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetManagementAgentsResult

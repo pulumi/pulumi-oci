@@ -126,6 +126,7 @@ def get_invoices(ar_customer_transaction_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -136,6 +137,7 @@ def get_invoices(ar_customer_transaction_id: Optional[str] = None,
         time_from=var["invoice_time_from"],
         time_to=var["invoice_time_to"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str ar_customer_transaction_id: AR Unique identifier for an invoice .
@@ -180,6 +182,7 @@ def get_invoices_output(ar_customer_transaction_id: Optional[pulumi.Input[str]] 
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -190,6 +193,7 @@ def get_invoices_output(ar_customer_transaction_id: Optional[pulumi.Input[str]] 
         time_from=var["invoice_time_from"],
         time_to=var["invoice_time_to"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str ar_customer_transaction_id: AR Unique identifier for an invoice .

@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * AutonomousDatabases can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Database/autonomousDatabase:AutonomousDatabase test_autonomous_database "id"
+ * $ pulumi import oci:Database/autonomousDatabase:AutonomousDatabase test_autonomous_database "id"
  * ```
  */
 export class AutonomousDatabase extends pulumi.CustomResource {

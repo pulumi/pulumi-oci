@@ -206,12 +206,14 @@ def get_autonomous_virtual_machine(autonomous_virtual_machine_id: Optional[str] 
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_autonomous_virtual_machine = oci.Database.get_autonomous_virtual_machine(autonomous_virtual_machine_id=oci_database_autonomous_virtual_machine["test_autonomous_virtual_machine"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str autonomous_virtual_machine_id: The Autonomous Virtual machine [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -248,12 +250,14 @@ def get_autonomous_virtual_machine_output(autonomous_virtual_machine_id: Optiona
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_autonomous_virtual_machine = oci.Database.get_autonomous_virtual_machine(autonomous_virtual_machine_id=oci_database_autonomous_virtual_machine["test_autonomous_virtual_machine"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str autonomous_virtual_machine_id: The Autonomous Virtual machine [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

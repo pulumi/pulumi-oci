@@ -19,6 +19,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -28,6 +29,7 @@ import * as utilities from "../utilities";
  *     managementEndpoint: _var.key_version_management_endpoint,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getKeyVersions(args: GetKeyVersionsArgs, opts?: pulumi.InvokeOptions): Promise<GetKeyVersionsResult> {
 
@@ -86,6 +88,7 @@ export interface GetKeyVersionsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -95,6 +98,7 @@ export interface GetKeyVersionsResult {
  *     managementEndpoint: _var.key_version_management_endpoint,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getKeyVersionsOutput(args: GetKeyVersionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetKeyVersionsResult> {
     return pulumi.output(args).apply((a: any) => getKeyVersions(a, opts))

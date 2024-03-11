@@ -25,7 +25,7 @@ import javax.annotation.Nullable;
  * SecurityPolicyDeployments can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:DataSafe/securityPolicyDeployment:SecurityPolicyDeployment test_security_policy_deployment &#34;id&#34;
+ * $ pulumi import oci:DataSafe/securityPolicyDeployment:SecurityPolicyDeployment test_security_policy_deployment &#34;id&#34;
  * ```
  * 
  */

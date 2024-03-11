@@ -14,6 +14,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -367,13 +368,14 @@ import * as utilities from "../utilities";
  *     source: _var.instance_configuration_source,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * InstanceConfigurations can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Core/instanceConfiguration:InstanceConfiguration test_instance_configuration "id"
+ * $ pulumi import oci:Core/instanceConfiguration:InstanceConfiguration test_instance_configuration "id"
  * ```
  */
 export class InstanceConfiguration extends pulumi.CustomResource {

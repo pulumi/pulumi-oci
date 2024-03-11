@@ -267,6 +267,7 @@ class Environment(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -281,13 +282,14 @@ class Environment(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Environments can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:CloudBridge/environment:Environment test_environment "id"
+        $ pulumi import oci:CloudBridge/environment:Environment test_environment "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -314,6 +316,7 @@ class Environment(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -328,13 +331,14 @@ class Environment(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Environments can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:CloudBridge/environment:Environment test_environment "id"
+        $ pulumi import oci:CloudBridge/environment:Environment test_environment "id"
         ```
 
         :param str resource_name: The name of the resource.

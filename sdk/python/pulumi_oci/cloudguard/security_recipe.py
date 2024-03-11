@@ -339,6 +339,7 @@ class SecurityRecipe(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -355,13 +356,14 @@ class SecurityRecipe(pulumi.CustomResource):
                 "bar-key": "value",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         SecurityRecipes can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:CloudGuard/securityRecipe:SecurityRecipe test_security_recipe "id"
+        $ pulumi import oci:CloudGuard/securityRecipe:SecurityRecipe test_security_recipe "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -392,6 +394,7 @@ class SecurityRecipe(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -408,13 +411,14 @@ class SecurityRecipe(pulumi.CustomResource):
                 "bar-key": "value",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         SecurityRecipes can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:CloudGuard/securityRecipe:SecurityRecipe test_security_recipe "id"
+        $ pulumi import oci:CloudGuard/securityRecipe:SecurityRecipe test_security_recipe "id"
         ```
 
         :param str resource_name: The name of the resource.

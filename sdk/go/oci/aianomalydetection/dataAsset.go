@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -79,15 +80,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // DataAssets can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:AiAnomalyDetection/dataAsset:DataAsset test_data_asset "id"
-//
+// $ pulumi import oci:AiAnomalyDetection/dataAsset:DataAsset test_data_asset "id"
 // ```
 type DataAsset struct {
 	pulumi.CustomResourceState

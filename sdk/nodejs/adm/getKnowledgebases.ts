@@ -14,6 +14,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -25,6 +26,7 @@ import * as utilities from "../utilities";
  *     state: _var.knowledge_base_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getKnowledgebases(args?: GetKnowledgebasesArgs, opts?: pulumi.InvokeOptions): Promise<GetKnowledgebasesResult> {
     args = args || {};
@@ -96,6 +98,7 @@ export interface GetKnowledgebasesResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -107,6 +110,7 @@ export interface GetKnowledgebasesResult {
  *     state: _var.knowledge_base_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getKnowledgebasesOutput(args?: GetKnowledgebasesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetKnowledgebasesResult> {
     return pulumi.output(args).apply((a: any) => getKnowledgebases(a, opts))

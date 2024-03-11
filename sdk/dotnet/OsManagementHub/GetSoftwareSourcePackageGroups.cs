@@ -18,10 +18,9 @@ namespace Pulumi.Oci.OsManagementHub
         /// variety of criteria including but not limited to its name, and package group type.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -41,8 +40,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetSoftwareSourcePackageGroupsResult> InvokeAsync(GetSoftwareSourcePackageGroupsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetSoftwareSourcePackageGroupsResult>("oci:OsManagementHub/getSoftwareSourcePackageGroups:getSoftwareSourcePackageGroups", args ?? new GetSoftwareSourcePackageGroupsArgs(), options.WithDefaults());
@@ -54,10 +52,9 @@ namespace Pulumi.Oci.OsManagementHub
         /// variety of criteria including but not limited to its name, and package group type.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -77,8 +74,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetSoftwareSourcePackageGroupsResult> Invoke(GetSoftwareSourcePackageGroupsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSoftwareSourcePackageGroupsResult>("oci:OsManagementHub/getSoftwareSourcePackageGroups:getSoftwareSourcePackageGroups", args ?? new GetSoftwareSourcePackageGroupsInvokeArgs(), options.WithDefaults());

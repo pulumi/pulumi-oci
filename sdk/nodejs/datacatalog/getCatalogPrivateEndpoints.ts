@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,6 +24,7 @@ import * as utilities from "../utilities";
  *     state: _var.catalog_private_endpoint_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getCatalogPrivateEndpoints(args: GetCatalogPrivateEndpointsArgs, opts?: pulumi.InvokeOptions): Promise<GetCatalogPrivateEndpointsResult> {
 
@@ -87,6 +89,7 @@ export interface GetCatalogPrivateEndpointsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -97,6 +100,7 @@ export interface GetCatalogPrivateEndpointsResult {
  *     state: _var.catalog_private_endpoint_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getCatalogPrivateEndpointsOutput(args: GetCatalogPrivateEndpointsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCatalogPrivateEndpointsResult> {
     return pulumi.output(args).apply((a: any) => getCatalogPrivateEndpoints(a, opts))

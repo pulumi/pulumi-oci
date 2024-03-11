@@ -17,10 +17,9 @@ namespace Pulumi.Oci.MeteringComputation
         /// Returns the saved query list.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,8 +35,7 @@ namespace Pulumi.Oci.MeteringComputation
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetQueriesResult> InvokeAsync(GetQueriesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetQueriesResult>("oci:MeteringComputation/getQueries:getQueries", args ?? new GetQueriesArgs(), options.WithDefaults());
@@ -48,10 +46,9 @@ namespace Pulumi.Oci.MeteringComputation
         /// Returns the saved query list.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -67,8 +64,7 @@ namespace Pulumi.Oci.MeteringComputation
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetQueriesResult> Invoke(GetQueriesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetQueriesResult>("oci:MeteringComputation/getQueries:getQueries", args ?? new GetQueriesInvokeArgs(), options.WithDefaults());

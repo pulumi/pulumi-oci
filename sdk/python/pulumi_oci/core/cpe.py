@@ -339,6 +339,7 @@ class Cpe(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -356,13 +357,14 @@ class Cpe(pulumi.CustomResource):
             },
             is_private=var["cpe_is_private"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Cpes can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/cpe:Cpe test_cpe "id"
+        $ pulumi import oci:Core/cpe:Cpe test_cpe "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -412,6 +414,7 @@ class Cpe(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -429,13 +432,14 @@ class Cpe(pulumi.CustomResource):
             },
             is_private=var["cpe_is_private"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Cpes can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/cpe:Cpe test_cpe "id"
+        $ pulumi import oci:Core/cpe:Cpe test_cpe "id"
         ```
 
         :param str resource_name: The name of the resource.

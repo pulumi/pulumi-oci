@@ -349,7 +349,7 @@ class ExternalAsmInstance(pulumi.CustomResource):
         ExternalAsmInstances can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DatabaseManagement/externalAsmInstance:ExternalAsmInstance test_external_asm_instance "id"
+        $ pulumi import oci:DatabaseManagement/externalAsmInstance:ExternalAsmInstance test_external_asm_instance "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -378,7 +378,7 @@ class ExternalAsmInstance(pulumi.CustomResource):
         ExternalAsmInstances can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DatabaseManagement/externalAsmInstance:ExternalAsmInstance test_external_asm_instance "id"
+        $ pulumi import oci:DatabaseManagement/externalAsmInstance:ExternalAsmInstance test_external_asm_instance "id"
         ```
 
         :param str resource_name: The name of the resource.

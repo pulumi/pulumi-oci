@@ -219,6 +219,7 @@ class SmtpCredential(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -227,13 +228,14 @@ class SmtpCredential(pulumi.CustomResource):
             description=var["smtp_credential_description"],
             user_id=oci_identity_user["test_user"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         SmtpCredentials can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/smtpCredential:SmtpCredential test_smtp_credential "users/{userId}/smtpCredentials/{smtpCredentialId}"
+        $ pulumi import oci:Identity/smtpCredential:SmtpCredential test_smtp_credential "users/{userId}/smtpCredentials/{smtpCredentialId}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -261,6 +263,7 @@ class SmtpCredential(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -269,13 +272,14 @@ class SmtpCredential(pulumi.CustomResource):
             description=var["smtp_credential_description"],
             user_id=oci_identity_user["test_user"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         SmtpCredentials can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/smtpCredential:SmtpCredential test_smtp_credential "users/{userId}/smtpCredentials/{smtpCredentialId}"
+        $ pulumi import oci:Identity/smtpCredential:SmtpCredential test_smtp_credential "users/{userId}/smtpCredentials/{smtpCredentialId}"
         ```
 
         :param str resource_name: The name of the resource.

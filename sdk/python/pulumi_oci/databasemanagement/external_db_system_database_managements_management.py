@@ -154,6 +154,7 @@ class ExternalDbSystemDatabaseManagementsManagement(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -163,6 +164,7 @@ class ExternalDbSystemDatabaseManagementsManagement(pulumi.CustomResource):
             enable_database_management=var["enable_database_management"],
             license_model=var["external_db_system_database_managements_management_license_model"])
         ```
+        <!--End PulumiCodeChooser -->
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -188,6 +190,7 @@ class ExternalDbSystemDatabaseManagementsManagement(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -197,6 +200,7 @@ class ExternalDbSystemDatabaseManagementsManagement(pulumi.CustomResource):
             enable_database_management=var["enable_database_management"],
             license_model=var["external_db_system_database_managements_management_license_model"])
         ```
+        <!--End PulumiCodeChooser -->
 
         :param str resource_name: The name of the resource.
         :param ExternalDbSystemDatabaseManagementsManagementArgs args: The arguments to use to populate this resource's properties.

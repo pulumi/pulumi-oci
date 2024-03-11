@@ -20,6 +20,8 @@ import javax.annotation.Nullable;
  * Creates a new sensitive column in the specified sensitive data model.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -60,13 +62,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * SensitiveDataModelsSensitiveColumns can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:DataSafe/sensitiveDataModelsSensitiveColumn:SensitiveDataModelsSensitiveColumn test_sensitive_data_models_sensitive_column &#34;sensitiveDataModels/{sensitiveDataModelId}/sensitiveColumns/{sensitiveColumnKey}&#34;
+ * $ pulumi import oci:DataSafe/sensitiveDataModelsSensitiveColumn:SensitiveDataModelsSensitiveColumn test_sensitive_data_models_sensitive_column &#34;sensitiveDataModels/{sensitiveDataModelId}/sensitiveColumns/{sensitiveColumnKey}&#34;
  * ```
  * 
  */

@@ -16,15 +16,18 @@ import * as utilities from "../utilities";
  * The below policies must be created in compartment before creating OpensearchCluster
  *
  * ##### {Compartment-Name} - Name of  your compartment
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
  * Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -33,6 +36,7 @@ import * as utilities from "../utilities";
  *     compartmentId: _var.compartment_id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getOpensearchVersions(args: GetOpensearchVersionsArgs, opts?: pulumi.InvokeOptions): Promise<GetOpensearchVersionsResult> {
 
@@ -79,15 +83,18 @@ export interface GetOpensearchVersionsResult {
  * The below policies must be created in compartment before creating OpensearchCluster
  *
  * ##### {Compartment-Name} - Name of  your compartment
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
  * Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -96,6 +103,7 @@ export interface GetOpensearchVersionsResult {
  *     compartmentId: _var.compartment_id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getOpensearchVersionsOutput(args: GetOpensearchVersionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOpensearchVersionsResult> {
     return pulumi.output(args).apply((a: any) => getOpensearchVersions(a, opts))

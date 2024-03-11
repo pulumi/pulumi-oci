@@ -16,10 +16,9 @@ namespace Pulumi.Oci.Secrets
         /// 
         /// Lists all secret bundle versions for the specified secret.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,8 +34,7 @@ namespace Pulumi.Oci.Secrets
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetSecretbundleVersionsResult> InvokeAsync(GetSecretbundleVersionsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetSecretbundleVersionsResult>("oci:Secrets/getSecretbundleVersions:getSecretbundleVersions", args ?? new GetSecretbundleVersionsArgs(), options.WithDefaults());
@@ -46,10 +44,9 @@ namespace Pulumi.Oci.Secrets
         /// 
         /// Lists all secret bundle versions for the specified secret.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -65,8 +62,7 @@ namespace Pulumi.Oci.Secrets
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetSecretbundleVersionsResult> Invoke(GetSecretbundleVersionsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSecretbundleVersionsResult>("oci:Secrets/getSecretbundleVersions:getSecretbundleVersions", args ?? new GetSecretbundleVersionsInvokeArgs(), options.WithDefaults());

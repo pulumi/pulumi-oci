@@ -16,6 +16,7 @@ namespace Pulumi.Oci.NetworkFirewall
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -46,13 +47,14 @@ namespace Pulumi.Oci.NetworkFirewall
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// NetworkFirewalls can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:NetworkFirewall/networkFirewall:NetworkFirewall test_network_firewall "id"
+    /// $ pulumi import oci:NetworkFirewall/networkFirewall:NetworkFirewall test_network_firewall "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:NetworkFirewall/networkFirewall:NetworkFirewall")]

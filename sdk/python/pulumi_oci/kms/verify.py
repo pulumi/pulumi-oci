@@ -300,6 +300,7 @@ class Verify(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -313,13 +314,14 @@ class Verify(pulumi.CustomResource):
             signing_algorithm=var["verify_signing_algorithm"],
             message_type=var["verify_message_type"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Verify can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Kms/verify:Verify test_verify "id"
+        $ pulumi import oci:Kms/verify:Verify test_verify "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -352,6 +354,7 @@ class Verify(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -365,13 +368,14 @@ class Verify(pulumi.CustomResource):
             signing_algorithm=var["verify_signing_algorithm"],
             message_type=var["verify_message_type"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Verify can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Kms/verify:Verify test_verify "id"
+        $ pulumi import oci:Kms/verify:Verify test_verify "id"
         ```
 
         :param str resource_name: The name of the resource.

@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,6 +22,7 @@ import * as utilities from "../utilities";
  *     externalDbSystemConnectorId: oci_database_management_external_db_system_connector.test_external_db_system_connector.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getExternalDbSystemConnector(args: GetExternalDbSystemConnectorArgs, opts?: pulumi.InvokeOptions): Promise<GetExternalDbSystemConnectorResult> {
 
@@ -117,6 +119,7 @@ export interface GetExternalDbSystemConnectorResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -125,6 +128,7 @@ export interface GetExternalDbSystemConnectorResult {
  *     externalDbSystemConnectorId: oci_database_management_external_db_system_connector.test_external_db_system_connector.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getExternalDbSystemConnectorOutput(args: GetExternalDbSystemConnectorOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalDbSystemConnectorResult> {
     return pulumi.output(args).apply((a: any) => getExternalDbSystemConnector(a, opts))

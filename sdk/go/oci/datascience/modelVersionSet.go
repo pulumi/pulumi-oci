@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -49,15 +50,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // ModelVersionSets can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:DataScience/modelVersionSet:ModelVersionSet test_model_version_set "id"
-//
+// $ pulumi import oci:DataScience/modelVersionSet:ModelVersionSet test_model_version_set "id"
 // ```
 type ModelVersionSet struct {
 	pulumi.CustomResourceState

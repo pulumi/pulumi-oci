@@ -23,6 +23,8 @@ import javax.annotation.Nullable;
  * Creates a new external database connector.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -72,13 +74,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * ExternalDatabaseConnectors can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Database/externalDatabaseConnector:ExternalDatabaseConnector test_external_database_connector &#34;id&#34;
+ * $ pulumi import oci:Database/externalDatabaseConnector:ExternalDatabaseConnector test_external_database_connector &#34;id&#34;
  * ```
  * 
  */

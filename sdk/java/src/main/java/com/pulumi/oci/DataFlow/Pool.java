@@ -26,6 +26,8 @@ import javax.annotation.Nullable;
  * Create a pool to be used by dataflow runs or applications.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -76,13 +78,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * Pools can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:DataFlow/pool:Pool test_pool &#34;id&#34;
+ * $ pulumi import oci:DataFlow/pool:Pool test_pool &#34;id&#34;
  * ```
  * 
  */

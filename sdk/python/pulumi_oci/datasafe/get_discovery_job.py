@@ -338,12 +338,14 @@ def get_discovery_job(discovery_job_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_discovery_job = oci.DataSafe.get_discovery_job(discovery_job_id=oci_data_safe_discovery_job["test_discovery_job"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str discovery_job_id: The OCID of the discovery job.
@@ -391,12 +393,14 @@ def get_discovery_job_output(discovery_job_id: Optional[pulumi.Input[str]] = Non
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_discovery_job = oci.DataSafe.get_discovery_job(discovery_job_id=oci_data_safe_discovery_job["test_discovery_job"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str discovery_job_id: The OCID of the discovery job.

@@ -23,6 +23,8 @@ import javax.annotation.Nullable;
  * This supports only one replica in a region for a vault. Multiple replica will be supported in the future.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -52,6 +54,7 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  */
 @ResourceType(type="oci:Kms/vaultVerification:VaultVerification")

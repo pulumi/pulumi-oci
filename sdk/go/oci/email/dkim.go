@@ -22,6 +22,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -52,15 +53,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Dkims can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Email/dkim:Dkim test_dkim "id"
-//
+// $ pulumi import oci:Email/dkim:Dkim test_dkim "id"
 // ```
 type Dkim struct {
 	pulumi.CustomResourceState

@@ -19,7 +19,7 @@ namespace Pulumi.Oci.Identity
     /// IdentitySettings can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Identity/domainsIdentitySetting:DomainsIdentitySetting test_identity_setting "idcsEndpoint/{idcsEndpoint}/identitySettings/{identitySettingId}"
+    /// $ pulumi import oci:Identity/domainsIdentitySetting:DomainsIdentitySetting test_identity_setting "idcsEndpoint/{idcsEndpoint}/identitySettings/{identitySettingId}"
     /// ```
     /// </summary>
     [OciResourceType("oci:Identity/domainsIdentitySetting:DomainsIdentitySetting")]

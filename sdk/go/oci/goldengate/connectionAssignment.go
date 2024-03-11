@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -42,15 +43,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // ConnectionAssignments can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:GoldenGate/connectionAssignment:ConnectionAssignment test_connection_assignment "id"
-//
+// $ pulumi import oci:GoldenGate/connectionAssignment:ConnectionAssignment test_connection_assignment "id"
 // ```
 type ConnectionAssignment struct {
 	pulumi.CustomResourceState

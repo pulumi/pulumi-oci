@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,6 +22,7 @@ import * as utilities from "../utilities";
  *     namespace: _var.namespace_storage_encryption_key_info_namespace,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getNamespaceStorageEncryptionKeyInfo(args: GetNamespaceStorageEncryptionKeyInfoArgs, opts?: pulumi.InvokeOptions): Promise<GetNamespaceStorageEncryptionKeyInfoResult> {
 
@@ -61,6 +63,7 @@ export interface GetNamespaceStorageEncryptionKeyInfoResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -69,6 +72,7 @@ export interface GetNamespaceStorageEncryptionKeyInfoResult {
  *     namespace: _var.namespace_storage_encryption_key_info_namespace,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getNamespaceStorageEncryptionKeyInfoOutput(args: GetNamespaceStorageEncryptionKeyInfoOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNamespaceStorageEncryptionKeyInfoResult> {
     return pulumi.output(args).apply((a: any) => getNamespaceStorageEncryptionKeyInfo(a, opts))

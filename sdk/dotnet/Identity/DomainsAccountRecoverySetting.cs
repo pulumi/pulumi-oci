@@ -19,7 +19,7 @@ namespace Pulumi.Oci.Identity
     /// AccountRecoverySettings can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Identity/domainsAccountRecoverySetting:DomainsAccountRecoverySetting test_account_recovery_setting "idcsEndpoint/{idcsEndpoint}/accountRecoverySettings/{accountRecoverySettingId}"
+    /// $ pulumi import oci:Identity/domainsAccountRecoverySetting:DomainsAccountRecoverySetting test_account_recovery_setting "idcsEndpoint/{idcsEndpoint}/accountRecoverySettings/{accountRecoverySettingId}"
     /// ```
     /// </summary>
     [OciResourceType("oci:Identity/domainsAccountRecoverySetting:DomainsAccountRecoverySetting")]

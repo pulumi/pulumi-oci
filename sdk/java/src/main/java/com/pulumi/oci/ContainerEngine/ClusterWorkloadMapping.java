@@ -21,6 +21,8 @@ import javax.annotation.Nullable;
  * Create the specified workloadMapping for a cluster.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -53,13 +55,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * ClusterWorkloadMappings can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:ContainerEngine/clusterWorkloadMapping:ClusterWorkloadMapping test_cluster_workload_mapping &#34;clusters/{clusterId}/workloadMappings/{workloadMappingId}&#34;
+ * $ pulumi import oci:ContainerEngine/clusterWorkloadMapping:ClusterWorkloadMapping test_cluster_workload_mapping &#34;clusters/{clusterId}/workloadMappings/{workloadMappingId}&#34;
  * ```
  * 
  */

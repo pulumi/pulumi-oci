@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -25,6 +26,7 @@ import * as utilities from "../utilities";
  *     name: _var.workspace_application_patch_name,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getWorkspaceApplicationPatches(args: GetWorkspaceApplicationPatchesArgs, opts?: pulumi.InvokeOptions): Promise<GetWorkspaceApplicationPatchesResult> {
 
@@ -98,6 +100,7 @@ export interface GetWorkspaceApplicationPatchesResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -110,6 +113,7 @@ export interface GetWorkspaceApplicationPatchesResult {
  *     name: _var.workspace_application_patch_name,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getWorkspaceApplicationPatchesOutput(args: GetWorkspaceApplicationPatchesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetWorkspaceApplicationPatchesResult> {
     return pulumi.output(args).apply((a: any) => getWorkspaceApplicationPatches(a, opts))

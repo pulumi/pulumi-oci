@@ -22,6 +22,8 @@ import javax.annotation.Nullable;
  * Creates the specified Baseline-able metric
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -53,13 +55,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * BaselineableMetrics can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:StackMonitoring/baselineableMetric:BaselineableMetric test_baselineable_metric &#34;id&#34;
+ * $ pulumi import oci:StackMonitoring/baselineableMetric:BaselineableMetric test_baselineable_metric &#34;id&#34;
  * ```
  * 
  */

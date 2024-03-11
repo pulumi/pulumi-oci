@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -45,6 +46,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetDataSafePrivateEndpoints(ctx *pulumi.Context, args *GetDataSafePrivateEndpointsArgs, opts ...pulumi.InvokeOption) (*GetDataSafePrivateEndpointsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDataSafePrivateEndpointsResult

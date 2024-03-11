@@ -297,6 +297,7 @@ class AgentPlugin(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -306,13 +307,14 @@ class AgentPlugin(pulumi.CustomResource):
             plugin_name=var["agent_plugin_plugin_name"],
             desired_state=var["agent_plugin_desired_state"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         AgentPlugins can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:CloudBridge/agentPlugin:AgentPlugin test_agent_plugin "agents/{agentId}/plugins/{pluginName}"
+        $ pulumi import oci:CloudBridge/agentPlugin:AgentPlugin test_agent_plugin "agents/{agentId}/plugins/{pluginName}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -338,6 +340,7 @@ class AgentPlugin(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -347,13 +350,14 @@ class AgentPlugin(pulumi.CustomResource):
             plugin_name=var["agent_plugin_plugin_name"],
             desired_state=var["agent_plugin_desired_state"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         AgentPlugins can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:CloudBridge/agentPlugin:AgentPlugin test_agent_plugin "agents/{agentId}/plugins/{pluginName}"
+        $ pulumi import oci:CloudBridge/agentPlugin:AgentPlugin test_agent_plugin "agents/{agentId}/plugins/{pluginName}"
         ```
 
         :param str resource_name: The name of the resource.

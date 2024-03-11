@@ -309,6 +309,7 @@ def get_domains_my_customer_secret_key(authorization: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -318,6 +319,7 @@ def get_domains_my_customer_secret_key(authorization: Optional[str] = None,
         authorization=var["my_customer_secret_key_authorization"],
         resource_type_schema_version=var["my_customer_secret_key_resource_type_schema_version"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str authorization: The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
@@ -372,6 +374,7 @@ def get_domains_my_customer_secret_key_output(authorization: Optional[pulumi.Inp
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -381,6 +384,7 @@ def get_domains_my_customer_secret_key_output(authorization: Optional[pulumi.Inp
         authorization=var["my_customer_secret_key_authorization"],
         resource_type_schema_version=var["my_customer_secret_key_resource_type_schema_version"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str authorization: The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.

@@ -582,7 +582,7 @@ class Deployment(pulumi.CustomResource):
         Deployments can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DevOps/deployment:Deployment test_deployment "id"
+        $ pulumi import oci:DevOps/deployment:Deployment test_deployment "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -619,7 +619,7 @@ class Deployment(pulumi.CustomResource):
         Deployments can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DevOps/deployment:Deployment test_deployment "id"
+        $ pulumi import oci:DevOps/deployment:Deployment test_deployment "id"
         ```
 
         :param str resource_name: The name of the resource.

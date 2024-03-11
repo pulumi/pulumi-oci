@@ -115,6 +115,7 @@ def get_path_analyzer_tests(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -123,6 +124,7 @@ def get_path_analyzer_tests(compartment_id: Optional[str] = None,
         display_name=var["path_analyzer_test_display_name"],
         state=var["path_analyzer_test_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -159,6 +161,7 @@ def get_path_analyzer_tests_output(compartment_id: Optional[pulumi.Input[str]] =
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -167,6 +170,7 @@ def get_path_analyzer_tests_output(compartment_id: Optional[pulumi.Input[str]] =
         display_name=var["path_analyzer_test_display_name"],
         state=var["path_analyzer_test_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

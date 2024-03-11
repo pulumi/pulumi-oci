@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,6 +42,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupAtCustomerCccInfrastructure(ctx *pulumi.Context, args *LookupAtCustomerCccInfrastructureArgs, opts ...pulumi.InvokeOption) (*LookupAtCustomerCccInfrastructureResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupAtCustomerCccInfrastructureResult

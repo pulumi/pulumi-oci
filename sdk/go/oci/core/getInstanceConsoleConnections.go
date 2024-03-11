@@ -19,6 +19,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -43,6 +44,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetInstanceConsoleConnections(ctx *pulumi.Context, args *GetInstanceConsoleConnectionsArgs, opts ...pulumi.InvokeOption) (*GetInstanceConsoleConnectionsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetInstanceConsoleConnectionsResult

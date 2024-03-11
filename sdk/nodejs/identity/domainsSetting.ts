@@ -16,7 +16,7 @@ import * as utilities from "../utilities";
  * Settings can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Identity/domainsSetting:DomainsSetting test_setting "idcsEndpoint/{idcsEndpoint}/settings/{settingId}"
+ * $ pulumi import oci:Identity/domainsSetting:DomainsSetting test_setting "idcsEndpoint/{idcsEndpoint}/settings/{settingId}"
  * ```
  */
 export class DomainsSetting extends pulumi.CustomResource {

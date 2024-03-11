@@ -24,6 +24,8 @@ import javax.annotation.Nullable;
  * Creates an Operator Control Assignment resource. In effect, this brings the target resource under the governance of the Operator Control for specified time duration.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -69,13 +71,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * OperatorControlAssignments can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:OperatorAccessControl/operatorControlAssignment:OperatorControlAssignment test_operator_control_assignment &#34;id&#34;
+ * $ pulumi import oci:OperatorAccessControl/operatorControlAssignment:OperatorControlAssignment test_operator_control_assignment &#34;id&#34;
  * ```
  * 
  */

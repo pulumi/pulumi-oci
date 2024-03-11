@@ -16,6 +16,7 @@ namespace Pulumi.Oci.CloudGuard
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -42,13 +43,14 @@ namespace Pulumi.Oci.CloudGuard
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// SecurityRecipes can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:CloudGuard/securityRecipe:SecurityRecipe test_security_recipe "id"
+    /// $ pulumi import oci:CloudGuard/securityRecipe:SecurityRecipe test_security_recipe "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:CloudGuard/securityRecipe:SecurityRecipe")]

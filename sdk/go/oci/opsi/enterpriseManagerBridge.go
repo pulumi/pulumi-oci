@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -50,15 +51,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // EnterpriseManagerBridges can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Opsi/enterpriseManagerBridge:EnterpriseManagerBridge test_enterprise_manager_bridge "id"
-//
+// $ pulumi import oci:Opsi/enterpriseManagerBridge:EnterpriseManagerBridge test_enterprise_manager_bridge "id"
 // ```
 type EnterpriseManagerBridge struct {
 	pulumi.CustomResourceState

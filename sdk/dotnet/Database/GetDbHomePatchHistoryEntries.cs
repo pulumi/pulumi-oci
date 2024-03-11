@@ -17,10 +17,9 @@ namespace Pulumi.Oci.Database
         /// Lists the history of patch operations on the specified Database Home.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,8 +35,7 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDbHomePatchHistoryEntriesResult> InvokeAsync(GetDbHomePatchHistoryEntriesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDbHomePatchHistoryEntriesResult>("oci:Database/getDbHomePatchHistoryEntries:getDbHomePatchHistoryEntries", args ?? new GetDbHomePatchHistoryEntriesArgs(), options.WithDefaults());
@@ -48,10 +46,9 @@ namespace Pulumi.Oci.Database
         /// Lists the history of patch operations on the specified Database Home.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -67,8 +64,7 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDbHomePatchHistoryEntriesResult> Invoke(GetDbHomePatchHistoryEntriesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDbHomePatchHistoryEntriesResult>("oci:Database/getDbHomePatchHistoryEntries:getDbHomePatchHistoryEntries", args ?? new GetDbHomePatchHistoryEntriesInvokeArgs(), options.WithDefaults());

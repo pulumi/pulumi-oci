@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -26,6 +27,7 @@ import * as utilities from "../utilities";
  *     timeStartedInMillis: _var.workspace_export_request_time_started_in_millis,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getWorkspaceExportRequests(args: GetWorkspaceExportRequestsArgs, opts?: pulumi.InvokeOptions): Promise<GetWorkspaceExportRequestsResult> {
 
@@ -108,6 +110,7 @@ export interface GetWorkspaceExportRequestsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -121,6 +124,7 @@ export interface GetWorkspaceExportRequestsResult {
  *     timeStartedInMillis: _var.workspace_export_request_time_started_in_millis,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getWorkspaceExportRequestsOutput(args: GetWorkspaceExportRequestsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetWorkspaceExportRequestsResult> {
     return pulumi.output(args).apply((a: any) => getWorkspaceExportRequests(a, opts))

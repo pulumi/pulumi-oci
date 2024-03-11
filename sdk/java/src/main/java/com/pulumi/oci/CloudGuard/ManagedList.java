@@ -27,7 +27,7 @@ import javax.annotation.Nullable;
  * ManagedLists can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:CloudGuard/managedList:ManagedList test_managed_list &#34;id&#34;
+ * $ pulumi import oci:CloudGuard/managedList:ManagedList test_managed_list &#34;id&#34;
  * ```
  * 
  */

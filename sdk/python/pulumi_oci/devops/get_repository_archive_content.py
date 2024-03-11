@@ -82,6 +82,7 @@ def get_repository_archive_content(format: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -90,6 +91,7 @@ def get_repository_archive_content(format: Optional[str] = None,
         format=var["repository_archive_content_format"],
         ref_name=var["repository_archive_content_ref_name"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str format: The archive format query parameter for downloading repository endpoint.
@@ -122,6 +124,7 @@ def get_repository_archive_content_output(format: Optional[pulumi.Input[Optional
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -130,6 +133,7 @@ def get_repository_archive_content_output(format: Optional[pulumi.Input[Optional
         format=var["repository_archive_content_format"],
         ref_name=var["repository_archive_content_ref_name"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str format: The archive format query parameter for downloading repository endpoint.

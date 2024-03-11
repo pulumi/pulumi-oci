@@ -22,6 +22,8 @@ import javax.annotation.Nullable;
  * Create a new private reverse connection endpoint.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -55,13 +57,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * AiPrivateEndpoints can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:AiAnomalyDetection/aiPrivateEndpoint:AiPrivateEndpoint test_ai_private_endpoint &#34;id&#34;
+ * $ pulumi import oci:AiAnomalyDetection/aiPrivateEndpoint:AiPrivateEndpoint test_ai_private_endpoint &#34;id&#34;
  * ```
  * 
  */

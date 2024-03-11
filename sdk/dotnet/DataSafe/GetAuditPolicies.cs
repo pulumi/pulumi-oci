@@ -31,10 +31,9 @@ namespace Pulumi.Oci.DataSafe
         /// set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -56,8 +55,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetAuditPoliciesResult> InvokeAsync(GetAuditPoliciesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAuditPoliciesResult>("oci:DataSafe/getAuditPolicies:getAuditPolicies", args ?? new GetAuditPoliciesArgs(), options.WithDefaults());
@@ -82,10 +80,9 @@ namespace Pulumi.Oci.DataSafe
         /// set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -107,8 +104,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetAuditPoliciesResult> Invoke(GetAuditPoliciesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAuditPoliciesResult>("oci:DataSafe/getAuditPolicies:getAuditPolicies", args ?? new GetAuditPoliciesInvokeArgs(), options.WithDefaults());

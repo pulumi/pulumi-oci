@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -44,6 +45,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetExternalPluggableDatabases(ctx *pulumi.Context, args *GetExternalPluggableDatabasesArgs, opts ...pulumi.InvokeOption) (*GetExternalPluggableDatabasesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetExternalPluggableDatabasesResult

@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -25,6 +26,7 @@ import * as utilities from "../utilities";
  *     volumeGroupId: oci_core_volume_group.test_volume_group.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getVolumes(args?: GetVolumesArgs, opts?: pulumi.InvokeOptions): Promise<GetVolumesResult> {
     args = args || {};
@@ -108,6 +110,7 @@ export interface GetVolumesResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -120,6 +123,7 @@ export interface GetVolumesResult {
  *     volumeGroupId: oci_core_volume_group.test_volume_group.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getVolumesOutput(args?: GetVolumesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVolumesResult> {
     return pulumi.output(args).apply((a: any) => getVolumes(a, opts))

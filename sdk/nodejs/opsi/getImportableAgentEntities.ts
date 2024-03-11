@@ -17,6 +17,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -25,6 +26,7 @@ import * as utilities from "../utilities";
  *     compartmentId: _var.compartment_id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getImportableAgentEntities(args: GetImportableAgentEntitiesArgs, opts?: pulumi.InvokeOptions): Promise<GetImportableAgentEntitiesResult> {
 
@@ -69,6 +71,7 @@ export interface GetImportableAgentEntitiesResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -77,6 +80,7 @@ export interface GetImportableAgentEntitiesResult {
  *     compartmentId: _var.compartment_id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getImportableAgentEntitiesOutput(args: GetImportableAgentEntitiesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetImportableAgentEntitiesResult> {
     return pulumi.output(args).apply((a: any) => getImportableAgentEntities(a, opts))

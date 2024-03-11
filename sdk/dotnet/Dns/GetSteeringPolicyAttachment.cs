@@ -17,10 +17,9 @@ namespace Pulumi.Oci.Dns
         /// Gets information about the specified steering policy attachment.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,8 +35,7 @@ namespace Pulumi.Oci.Dns
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetSteeringPolicyAttachmentResult> InvokeAsync(GetSteeringPolicyAttachmentArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetSteeringPolicyAttachmentResult>("oci:Dns/getSteeringPolicyAttachment:getSteeringPolicyAttachment", args ?? new GetSteeringPolicyAttachmentArgs(), options.WithDefaults());
@@ -48,10 +46,9 @@ namespace Pulumi.Oci.Dns
         /// Gets information about the specified steering policy attachment.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -67,8 +64,7 @@ namespace Pulumi.Oci.Dns
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetSteeringPolicyAttachmentResult> Invoke(GetSteeringPolicyAttachmentInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSteeringPolicyAttachmentResult>("oci:Dns/getSteeringPolicyAttachment:getSteeringPolicyAttachment", args ?? new GetSteeringPolicyAttachmentInvokeArgs(), options.WithDefaults());

@@ -16,6 +16,7 @@ namespace Pulumi.Oci.DataSafe
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -43,13 +44,14 @@ namespace Pulumi.Oci.DataSafe
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// SensitiveDataModelsSensitiveColumns can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:DataSafe/sensitiveDataModelsSensitiveColumn:SensitiveDataModelsSensitiveColumn test_sensitive_data_models_sensitive_column "sensitiveDataModels/{sensitiveDataModelId}/sensitiveColumns/{sensitiveColumnKey}"
+    /// $ pulumi import oci:DataSafe/sensitiveDataModelsSensitiveColumn:SensitiveDataModelsSensitiveColumn test_sensitive_data_models_sensitive_column "sensitiveDataModels/{sensitiveDataModelId}/sensitiveColumns/{sensitiveColumnKey}"
     /// ```
     /// </summary>
     [OciResourceType("oci:DataSafe/sensitiveDataModelsSensitiveColumn:SensitiveDataModelsSensitiveColumn")]

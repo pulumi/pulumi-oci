@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -26,13 +27,14 @@ import * as utilities from "../utilities";
  *     canUseSmtpCredentials: true,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * Users can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Identity/userCapabilitiesManagement:UserCapabilitiesManagement test_user_capabilities_management "capabilities/{userId}"
+ * $ pulumi import oci:Identity/userCapabilitiesManagement:UserCapabilitiesManagement test_user_capabilities_management "capabilities/{userId}"
  * ```
  */
 export class UserCapabilitiesManagement extends pulumi.CustomResource {

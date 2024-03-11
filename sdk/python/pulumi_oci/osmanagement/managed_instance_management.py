@@ -344,6 +344,7 @@ class ManagedInstanceManagement(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -363,6 +364,7 @@ class ManagedInstanceManagement(pulumi.CustomResource):
                 name=oci_osmanagement_software_source["test_software_source_child"]["display_name"],
             )])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -399,6 +401,7 @@ class ManagedInstanceManagement(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -418,6 +421,7 @@ class ManagedInstanceManagement(pulumi.CustomResource):
                 name=oci_osmanagement_software_source["test_software_source_child"]["display_name"],
             )])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 

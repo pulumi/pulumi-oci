@@ -29,6 +29,8 @@ public final class SchFunctions {
      * Gets the specified connector plugin configuration information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -57,6 +59,7 @@ public final class SchFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetConnectorPluginResult> getConnectorPlugin(GetConnectorPluginArgs args) {
@@ -68,6 +71,8 @@ public final class SchFunctions {
      * Gets the specified connector plugin configuration information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -96,6 +101,7 @@ public final class SchFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetConnectorPluginResult> getConnectorPluginPlain(GetConnectorPluginPlainArgs args) {
@@ -107,6 +113,8 @@ public final class SchFunctions {
      * Gets the specified connector plugin configuration information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -135,6 +143,7 @@ public final class SchFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetConnectorPluginResult> getConnectorPlugin(GetConnectorPluginArgs args, InvokeOptions options) {
@@ -146,6 +155,8 @@ public final class SchFunctions {
      * Gets the specified connector plugin configuration information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -174,6 +185,7 @@ public final class SchFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetConnectorPluginResult> getConnectorPluginPlain(GetConnectorPluginPlainArgs args, InvokeOptions options) {
@@ -185,6 +197,8 @@ public final class SchFunctions {
      * Lists connector plugins according to the specified filter.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -215,6 +229,7 @@ public final class SchFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetConnectorPluginsResult> getConnectorPlugins() {
@@ -226,6 +241,8 @@ public final class SchFunctions {
      * Lists connector plugins according to the specified filter.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -256,6 +273,7 @@ public final class SchFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetConnectorPluginsResult> getConnectorPluginsPlain() {
@@ -267,6 +285,8 @@ public final class SchFunctions {
      * Lists connector plugins according to the specified filter.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -297,6 +317,7 @@ public final class SchFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetConnectorPluginsResult> getConnectorPlugins(GetConnectorPluginsArgs args) {
@@ -308,6 +329,8 @@ public final class SchFunctions {
      * Lists connector plugins according to the specified filter.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -338,6 +361,7 @@ public final class SchFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetConnectorPluginsResult> getConnectorPluginsPlain(GetConnectorPluginsPlainArgs args) {
@@ -349,6 +373,8 @@ public final class SchFunctions {
      * Lists connector plugins according to the specified filter.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -379,6 +405,7 @@ public final class SchFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetConnectorPluginsResult> getConnectorPlugins(GetConnectorPluginsArgs args, InvokeOptions options) {
@@ -390,6 +417,8 @@ public final class SchFunctions {
      * Lists connector plugins according to the specified filter.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -420,6 +449,7 @@ public final class SchFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetConnectorPluginsResult> getConnectorPluginsPlain(GetConnectorPluginsPlainArgs args, InvokeOptions options) {
@@ -433,6 +463,8 @@ public final class SchFunctions {
      * [Getting a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/get-service-connector.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -461,6 +493,7 @@ public final class SchFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetServiceConnectorResult> getServiceConnector(GetServiceConnectorArgs args) {
@@ -474,6 +507,8 @@ public final class SchFunctions {
      * [Getting a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/get-service-connector.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -502,6 +537,7 @@ public final class SchFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetServiceConnectorResult> getServiceConnectorPlain(GetServiceConnectorPlainArgs args) {
@@ -515,6 +551,8 @@ public final class SchFunctions {
      * [Getting a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/get-service-connector.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -543,6 +581,7 @@ public final class SchFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetServiceConnectorResult> getServiceConnector(GetServiceConnectorArgs args, InvokeOptions options) {
@@ -556,6 +595,8 @@ public final class SchFunctions {
      * [Getting a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/get-service-connector.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -584,6 +625,7 @@ public final class SchFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetServiceConnectorResult> getServiceConnectorPlain(GetServiceConnectorPlainArgs args, InvokeOptions options) {
@@ -597,6 +639,8 @@ public final class SchFunctions {
      * [Listing Connectors](https://docs.cloud.oracle.com/iaas/Content/connector-hub/list-service-connector.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -627,6 +671,7 @@ public final class SchFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetServiceConnectorsResult> getServiceConnectors(GetServiceConnectorsArgs args) {
@@ -640,6 +685,8 @@ public final class SchFunctions {
      * [Listing Connectors](https://docs.cloud.oracle.com/iaas/Content/connector-hub/list-service-connector.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -670,6 +717,7 @@ public final class SchFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetServiceConnectorsResult> getServiceConnectorsPlain(GetServiceConnectorsPlainArgs args) {
@@ -683,6 +731,8 @@ public final class SchFunctions {
      * [Listing Connectors](https://docs.cloud.oracle.com/iaas/Content/connector-hub/list-service-connector.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -713,6 +763,7 @@ public final class SchFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetServiceConnectorsResult> getServiceConnectors(GetServiceConnectorsArgs args, InvokeOptions options) {
@@ -726,6 +777,8 @@ public final class SchFunctions {
      * [Listing Connectors](https://docs.cloud.oracle.com/iaas/Content/connector-hub/list-service-connector.htm).
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -756,6 +809,7 @@ public final class SchFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetServiceConnectorsResult> getServiceConnectorsPlain(GetServiceConnectorsPlainArgs args, InvokeOptions options) {

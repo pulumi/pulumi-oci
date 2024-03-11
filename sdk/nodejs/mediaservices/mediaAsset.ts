@@ -16,7 +16,7 @@ import * as utilities from "../utilities";
  * MediaAssets can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:MediaServices/mediaAsset:MediaAsset test_media_asset "id"
+ * $ pulumi import oci:MediaServices/mediaAsset:MediaAsset test_media_asset "id"
  * ```
  */
 export class MediaAsset extends pulumi.CustomResource {

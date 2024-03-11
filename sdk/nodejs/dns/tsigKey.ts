@@ -12,6 +12,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,13 +25,14 @@ import * as utilities from "../utilities";
  *     freeformTags: _var.tsig_key_freeform_tags,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * TsigKeys can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Dns/tsigKey:TsigKey test_tsig_key "id"
+ * $ pulumi import oci:Dns/tsigKey:TsigKey test_tsig_key "id"
  * ```
  */
 export class TsigKey extends pulumi.CustomResource {

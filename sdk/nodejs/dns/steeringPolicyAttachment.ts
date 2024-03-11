@@ -16,6 +16,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -27,13 +28,14 @@ import * as utilities from "../utilities";
  *     displayName: _var.steering_policy_attachment_display_name,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * SteeringPolicyAttachments can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Dns/steeringPolicyAttachment:SteeringPolicyAttachment test_steering_policy_attachment "id"
+ * $ pulumi import oci:Dns/steeringPolicyAttachment:SteeringPolicyAttachment test_steering_policy_attachment "id"
  * ```
  */
 export class SteeringPolicyAttachment extends pulumi.CustomResource {

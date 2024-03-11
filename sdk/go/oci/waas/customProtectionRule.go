@@ -20,6 +20,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -52,15 +53,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // CustomProtectionRules can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Waas/customProtectionRule:CustomProtectionRule test_custom_protection_rule "id"
-//
+// $ pulumi import oci:Waas/customProtectionRule:CustomProtectionRule test_custom_protection_rule "id"
 // ```
 type CustomProtectionRule struct {
 	pulumi.CustomResourceState

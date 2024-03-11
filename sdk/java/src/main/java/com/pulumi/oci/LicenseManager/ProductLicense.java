@@ -26,6 +26,8 @@ import javax.annotation.Nullable;
  * Creates a new product license.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -65,13 +67,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * ProductLicenses can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:LicenseManager/productLicense:ProductLicense test_product_license &#34;id&#34;
+ * $ pulumi import oci:LicenseManager/productLicense:ProductLicense test_product_license &#34;id&#34;
  * ```
  * 
  */

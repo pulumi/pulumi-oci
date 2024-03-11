@@ -16,7 +16,7 @@ import * as utilities from "../utilities";
  * ManagedInstances can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:OsManagement/managedInstance:ManagedInstance test_managed_instance "id"
+ * $ pulumi import oci:OsManagement/managedInstance:ManagedInstance test_managed_instance "id"
  * ```
  */
 export class ManagedInstance extends pulumi.CustomResource {

@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,13 +24,14 @@ import * as utilities from "../utilities";
  *     ipVersion: _var.listener_ip_version,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * Listeners can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:NetworkLoadBalancer/listener:Listener test_listener "networkLoadBalancers/{networkLoadBalancerId}/listeners/{listenerName}"
+ * $ pulumi import oci:NetworkLoadBalancer/listener:Listener test_listener "networkLoadBalancers/{networkLoadBalancerId}/listeners/{listenerName}"
  * ```
  */
 export class Listener extends pulumi.CustomResource {

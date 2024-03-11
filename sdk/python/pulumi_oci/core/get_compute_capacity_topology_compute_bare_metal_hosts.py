@@ -148,6 +148,7 @@ def get_compute_capacity_topology_compute_bare_metal_hosts(availability_domain: 
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -159,6 +160,7 @@ def get_compute_capacity_topology_compute_bare_metal_hosts(availability_domain: 
         compute_local_block_id=oci_core_compute_local_block["test_compute_local_block"]["id"],
         compute_network_block_id=oci_core_compute_network_block["test_compute_network_block"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
@@ -207,6 +209,7 @@ def get_compute_capacity_topology_compute_bare_metal_hosts_output(availability_d
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -218,6 +221,7 @@ def get_compute_capacity_topology_compute_bare_metal_hosts_output(availability_d
         compute_local_block_id=oci_core_compute_local_block["test_compute_local_block"]["id"],
         compute_network_block_id=oci_core_compute_network_block["test_compute_network_block"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`

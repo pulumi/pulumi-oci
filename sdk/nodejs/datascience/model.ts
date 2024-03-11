@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -44,13 +45,14 @@ import * as utilities from "../utilities";
  *     outputSchema: _var.model_output_schema,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * Models can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:DataScience/model:Model test_model "id"
+ * $ pulumi import oci:DataScience/model:Model test_model "id"
  * ```
  */
 export class Model extends pulumi.CustomResource {

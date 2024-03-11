@@ -19,6 +19,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -49,15 +50,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Catalogs can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:DataCatalog/catalog:Catalog test_catalog "id"
-//
+// $ pulumi import oci:DataCatalog/catalog:Catalog test_catalog "id"
 // ```
 type Catalog struct {
 	pulumi.CustomResourceState

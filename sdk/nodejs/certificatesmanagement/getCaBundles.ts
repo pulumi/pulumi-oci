@@ -14,6 +14,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -25,6 +26,7 @@ import * as utilities from "../utilities";
  *     state: _var.ca_bundle_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getCaBundles(args?: GetCaBundlesArgs, opts?: pulumi.InvokeOptions): Promise<GetCaBundlesResult> {
     args = args || {};
@@ -97,6 +99,7 @@ export interface GetCaBundlesResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -108,6 +111,7 @@ export interface GetCaBundlesResult {
  *     state: _var.ca_bundle_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getCaBundlesOutput(args?: GetCaBundlesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCaBundlesResult> {
     return pulumi.output(args).apply((a: any) => getCaBundles(a, opts))

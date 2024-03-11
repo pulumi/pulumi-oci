@@ -21,6 +21,8 @@ import javax.annotation.Nullable;
  * Creates or replaces the object lifecycle policy for the bucket.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -65,13 +67,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * ObjectLifecyclePolicies can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:ObjectStorage/objectLifecyclePolicy:ObjectLifecyclePolicy test_object_lifecycle_policy &#34;n/{namespaceName}/b/{bucketName}/l&#34;
+ * $ pulumi import oci:ObjectStorage/objectLifecyclePolicy:ObjectLifecyclePolicy test_object_lifecycle_policy &#34;n/{namespaceName}/b/{bucketName}/l&#34;
  * ```
  * 
  */

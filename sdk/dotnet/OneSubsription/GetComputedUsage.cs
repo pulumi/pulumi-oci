@@ -17,10 +17,9 @@ namespace Pulumi.Oci.OneSubsription
         /// This is an API which returns Computed Usage corresponding to the id passed
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -38,8 +37,7 @@ namespace Pulumi.Oci.OneSubsription
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetComputedUsageResult> InvokeAsync(GetComputedUsageArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetComputedUsageResult>("oci:OneSubsription/getComputedUsage:getComputedUsage", args ?? new GetComputedUsageArgs(), options.WithDefaults());
@@ -50,10 +48,9 @@ namespace Pulumi.Oci.OneSubsription
         /// This is an API which returns Computed Usage corresponding to the id passed
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -71,8 +68,7 @@ namespace Pulumi.Oci.OneSubsription
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetComputedUsageResult> Invoke(GetComputedUsageInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetComputedUsageResult>("oci:OneSubsription/getComputedUsage:getComputedUsage", args ?? new GetComputedUsageInvokeArgs(), options.WithDefaults());

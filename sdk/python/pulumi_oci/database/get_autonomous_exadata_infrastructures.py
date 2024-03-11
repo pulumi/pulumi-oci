@@ -128,6 +128,7 @@ def get_autonomous_exadata_infrastructures(availability_domain: Optional[str] = 
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -137,6 +138,7 @@ def get_autonomous_exadata_infrastructures(availability_domain: Optional[str] = 
         display_name=var["autonomous_exadata_infrastructure_display_name"],
         state=var["autonomous_exadata_infrastructure_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str availability_domain: A filter to return only resources that match the given availability domain exactly.
@@ -177,6 +179,7 @@ def get_autonomous_exadata_infrastructures_output(availability_domain: Optional[
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -186,6 +189,7 @@ def get_autonomous_exadata_infrastructures_output(availability_domain: Optional[
         display_name=var["autonomous_exadata_infrastructure_display_name"],
         state=var["autonomous_exadata_infrastructure_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str availability_domain: A filter to return only resources that match the given availability domain exactly.

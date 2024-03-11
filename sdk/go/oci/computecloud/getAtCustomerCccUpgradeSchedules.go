@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -46,6 +47,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetAtCustomerCccUpgradeSchedules(ctx *pulumi.Context, args *GetAtCustomerCccUpgradeSchedulesArgs, opts ...pulumi.InvokeOption) (*GetAtCustomerCccUpgradeSchedulesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAtCustomerCccUpgradeSchedulesResult

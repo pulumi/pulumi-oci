@@ -16,10 +16,9 @@ namespace Pulumi.Oci.ObjectStorage
         /// 
         /// Gets the metadata of an object.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -37,8 +36,7 @@ namespace Pulumi.Oci.ObjectStorage
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetObjectHeadResult> InvokeAsync(GetObjectHeadArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetObjectHeadResult>("oci:ObjectStorage/getObjectHead:getObjectHead", args ?? new GetObjectHeadArgs(), options.WithDefaults());
@@ -48,10 +46,9 @@ namespace Pulumi.Oci.ObjectStorage
         /// 
         /// Gets the metadata of an object.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -69,8 +66,7 @@ namespace Pulumi.Oci.ObjectStorage
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetObjectHeadResult> Invoke(GetObjectHeadInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetObjectHeadResult>("oci:ObjectStorage/getObjectHead:getObjectHead", args ?? new GetObjectHeadInvokeArgs(), options.WithDefaults());

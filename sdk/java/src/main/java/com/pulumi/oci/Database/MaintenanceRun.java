@@ -26,6 +26,8 @@ import javax.annotation.Nullable;
  * Creates a maintenance run to update the DST TZ file for the Autonomous Container Database.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -59,13 +61,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * MaintenanceRuns can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Database/maintenanceRun:MaintenanceRun test_maintenance_run &#34;id&#34;
+ * $ pulumi import oci:Database/maintenanceRun:MaintenanceRun test_maintenance_run &#34;id&#34;
  * ```
  * 
  */

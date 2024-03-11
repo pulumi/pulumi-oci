@@ -96,6 +96,7 @@ def get_osns(blockchain_platform_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -103,6 +104,7 @@ def get_osns(blockchain_platform_id: Optional[str] = None,
     test_osns = oci.Blockchain.get_osns(blockchain_platform_id=oci_blockchain_blockchain_platform["test_blockchain_platform"]["id"],
         display_name=var["osn_display_name"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str blockchain_platform_id: Unique service identifier.
@@ -135,6 +137,7 @@ def get_osns_output(blockchain_platform_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -142,6 +145,7 @@ def get_osns_output(blockchain_platform_id: Optional[pulumi.Input[str]] = None,
     test_osns = oci.Blockchain.get_osns(blockchain_platform_id=oci_blockchain_blockchain_platform["test_blockchain_platform"]["id"],
         display_name=var["osn_display_name"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str blockchain_platform_id: Unique service identifier.

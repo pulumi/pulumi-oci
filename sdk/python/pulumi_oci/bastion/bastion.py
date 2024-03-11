@@ -544,6 +544,7 @@ class Bastion(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -564,13 +565,14 @@ class Bastion(pulumi.CustomResource):
             phone_book_entry=var["bastion_phone_book_entry"],
             static_jump_host_ip_addresses=var["bastion_static_jump_host_ip_addresses"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Bastions can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Bastion/bastion:Bastion test_bastion "id"
+        $ pulumi import oci:Bastion/bastion:Bastion test_bastion "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -604,6 +606,7 @@ class Bastion(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -624,13 +627,14 @@ class Bastion(pulumi.CustomResource):
             phone_book_entry=var["bastion_phone_book_entry"],
             static_jump_host_ip_addresses=var["bastion_static_jump_host_ip_addresses"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Bastions can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Bastion/bastion:Bastion test_bastion "id"
+        $ pulumi import oci:Bastion/bastion:Bastion test_bastion "id"
         ```
 
         :param str resource_name: The name of the resource.

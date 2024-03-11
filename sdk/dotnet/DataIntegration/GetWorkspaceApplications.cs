@@ -16,10 +16,9 @@ namespace Pulumi.Oci.DataIntegration
         /// 
         /// Retrieves a list of applications and provides options to filter the list.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -39,8 +38,7 @@ namespace Pulumi.Oci.DataIntegration
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetWorkspaceApplicationsResult> InvokeAsync(GetWorkspaceApplicationsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetWorkspaceApplicationsResult>("oci:DataIntegration/getWorkspaceApplications:getWorkspaceApplications", args ?? new GetWorkspaceApplicationsArgs(), options.WithDefaults());
@@ -50,10 +48,9 @@ namespace Pulumi.Oci.DataIntegration
         /// 
         /// Retrieves a list of applications and provides options to filter the list.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -73,8 +70,7 @@ namespace Pulumi.Oci.DataIntegration
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetWorkspaceApplicationsResult> Invoke(GetWorkspaceApplicationsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetWorkspaceApplicationsResult>("oci:DataIntegration/getWorkspaceApplications:getWorkspaceApplications", args ?? new GetWorkspaceApplicationsInvokeArgs(), options.WithDefaults());

@@ -21,6 +21,8 @@ import javax.annotation.Nullable;
  * Creates a new CA bundle according to the details of the request.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -53,13 +55,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * CaBundles can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:CertificatesManagement/caBundle:CaBundle test_ca_bundle &#34;id&#34;
+ * $ pulumi import oci:CertificatesManagement/caBundle:CaBundle test_ca_bundle &#34;id&#34;
  * ```
  * 
  */

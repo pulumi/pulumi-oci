@@ -426,6 +426,7 @@ class ContainerImageSignature(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -445,13 +446,14 @@ class ContainerImageSignature(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ContainerImageSignatures can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Artifacts/containerImageSignature:ContainerImageSignature test_container_image_signature "container/imageSignatures/{imageSignatureId}"
+        $ pulumi import oci:Artifacts/containerImageSignature:ContainerImageSignature test_container_image_signature "container/imageSignatures/{imageSignatureId}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -483,6 +485,7 @@ class ContainerImageSignature(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -502,13 +505,14 @@ class ContainerImageSignature(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ContainerImageSignatures can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Artifacts/containerImageSignature:ContainerImageSignature test_container_image_signature "container/imageSignatures/{imageSignatureId}"
+        $ pulumi import oci:Artifacts/containerImageSignature:ContainerImageSignature test_container_image_signature "container/imageSignatures/{imageSignatureId}"
         ```
 
         :param str resource_name: The name of the resource.

@@ -77,12 +77,14 @@ def get_services(filters: Optional[Sequence[pulumi.InputType['GetServicesFilterA
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_services = oci.Core.get_services()
     ```
+    <!--End PulumiCodeChooser -->
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -106,11 +108,13 @@ def get_services_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_services = oci.Core.get_services()
     ```
+    <!--End PulumiCodeChooser -->
     """
     ...

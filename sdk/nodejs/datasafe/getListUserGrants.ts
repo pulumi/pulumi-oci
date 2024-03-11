@@ -16,6 +16,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -32,6 +33,7 @@ import * as utilities from "../utilities";
  *     privilegeType: _var.list_user_grant_privilege_type,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getListUserGrants(args: GetListUserGrantsArgs, opts?: pulumi.InvokeOptions): Promise<GetListUserGrantsResult> {
 
@@ -138,6 +140,7 @@ export interface GetListUserGrantsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -154,6 +157,7 @@ export interface GetListUserGrantsResult {
  *     privilegeType: _var.list_user_grant_privilege_type,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getListUserGrantsOutput(args: GetListUserGrantsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetListUserGrantsResult> {
     return pulumi.output(args).apply((a: any) => getListUserGrants(a, opts))

@@ -17,10 +17,9 @@ namespace Pulumi.Oci.Database
         /// Downloads the configuration file for the specified VM cluster network. Applies to Exadata Cloud@Customer instances only.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -38,8 +37,7 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetVmClusterNetworkDownloadConfigFileResult> InvokeAsync(GetVmClusterNetworkDownloadConfigFileArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetVmClusterNetworkDownloadConfigFileResult>("oci:Database/getVmClusterNetworkDownloadConfigFile:getVmClusterNetworkDownloadConfigFile", args ?? new GetVmClusterNetworkDownloadConfigFileArgs(), options.WithDefaults());
@@ -50,10 +48,9 @@ namespace Pulumi.Oci.Database
         /// Downloads the configuration file for the specified VM cluster network. Applies to Exadata Cloud@Customer instances only.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -71,8 +68,7 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetVmClusterNetworkDownloadConfigFileResult> Invoke(GetVmClusterNetworkDownloadConfigFileInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVmClusterNetworkDownloadConfigFileResult>("oci:Database/getVmClusterNetworkDownloadConfigFile:getVmClusterNetworkDownloadConfigFile", args ?? new GetVmClusterNetworkDownloadConfigFileInvokeArgs(), options.WithDefaults());

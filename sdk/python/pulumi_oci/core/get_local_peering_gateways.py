@@ -103,6 +103,7 @@ def get_local_peering_gateways(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -110,6 +111,7 @@ def get_local_peering_gateways(compartment_id: Optional[str] = None,
     test_local_peering_gateways = oci.Core.get_local_peering_gateways(compartment_id=var["compartment_id"],
         vcn_id=oci_core_vcn["test_vcn"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -143,6 +145,7 @@ def get_local_peering_gateways_output(compartment_id: Optional[pulumi.Input[str]
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -150,6 +153,7 @@ def get_local_peering_gateways_output(compartment_id: Optional[pulumi.Input[str]
     test_local_peering_gateways = oci.Core.get_local_peering_gateways(compartment_id=var["compartment_id"],
         vcn_id=oci_core_vcn["test_vcn"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

@@ -16,10 +16,9 @@ namespace Pulumi.Oci.Waas
         /// 
         /// Gets a list of custom protection rules for the specified Web Application Firewall.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -40,8 +39,7 @@ namespace Pulumi.Oci.Waas
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetCustomProtectionRulesResult> InvokeAsync(GetCustomProtectionRulesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetCustomProtectionRulesResult>("oci:Waas/getCustomProtectionRules:getCustomProtectionRules", args ?? new GetCustomProtectionRulesArgs(), options.WithDefaults());
@@ -51,10 +49,9 @@ namespace Pulumi.Oci.Waas
         /// 
         /// Gets a list of custom protection rules for the specified Web Application Firewall.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -75,8 +72,7 @@ namespace Pulumi.Oci.Waas
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetCustomProtectionRulesResult> Invoke(GetCustomProtectionRulesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCustomProtectionRulesResult>("oci:Waas/getCustomProtectionRules:getCustomProtectionRules", args ?? new GetCustomProtectionRulesInvokeArgs(), options.WithDefaults());

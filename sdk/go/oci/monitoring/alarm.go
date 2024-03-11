@@ -26,6 +26,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -77,15 +78,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Alarms can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Monitoring/alarm:Alarm test_alarm "id"
-//
+// $ pulumi import oci:Monitoring/alarm:Alarm test_alarm "id"
 // ```
 type Alarm struct {
 	pulumi.CustomResourceState

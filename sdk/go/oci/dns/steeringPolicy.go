@@ -19,6 +19,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -84,15 +85,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // SteeringPolicies can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Dns/steeringPolicy:SteeringPolicy test_steering_policy "id"
-//
+// $ pulumi import oci:Dns/steeringPolicy:SteeringPolicy test_steering_policy "id"
 // ```
 type SteeringPolicy struct {
 	pulumi.CustomResourceState

@@ -30,10 +30,9 @@ namespace Pulumi.Oci.DataSafe
         /// set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -55,8 +54,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetSecurityPolicyReportsResult> InvokeAsync(GetSecurityPolicyReportsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetSecurityPolicyReportsResult>("oci:DataSafe/getSecurityPolicyReports:getSecurityPolicyReports", args ?? new GetSecurityPolicyReportsArgs(), options.WithDefaults());
@@ -80,10 +78,9 @@ namespace Pulumi.Oci.DataSafe
         /// set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -105,8 +102,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetSecurityPolicyReportsResult> Invoke(GetSecurityPolicyReportsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSecurityPolicyReportsResult>("oci:DataSafe/getSecurityPolicyReports:getSecurityPolicyReports", args ?? new GetSecurityPolicyReportsInvokeArgs(), options.WithDefaults());

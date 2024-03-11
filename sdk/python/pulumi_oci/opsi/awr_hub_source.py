@@ -541,6 +541,7 @@ class AwrHubSource(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -558,13 +559,14 @@ class AwrHubSource(pulumi.CustomResource):
                 "bar-key": "value",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         AwrHubSources can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Opsi/awrHubSource:AwrHubSource test_awr_hub_source "id"
+        $ pulumi import oci:Opsi/awrHubSource:AwrHubSource test_awr_hub_source "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -595,6 +597,7 @@ class AwrHubSource(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -612,13 +615,14 @@ class AwrHubSource(pulumi.CustomResource):
                 "bar-key": "value",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         AwrHubSources can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Opsi/awrHubSource:AwrHubSource test_awr_hub_source "id"
+        $ pulumi import oci:Opsi/awrHubSource:AwrHubSource test_awr_hub_source "id"
         ```
 
         :param str resource_name: The name of the resource.

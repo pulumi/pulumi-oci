@@ -17,10 +17,9 @@ namespace Pulumi.Oci.Functions
         /// Returns a list of RefreshActivities.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -40,8 +39,7 @@ namespace Pulumi.Oci.Functions
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetFusionEnvironmentRefreshActivitiesResult> InvokeAsync(GetFusionEnvironmentRefreshActivitiesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetFusionEnvironmentRefreshActivitiesResult>("oci:Functions/getFusionEnvironmentRefreshActivities:getFusionEnvironmentRefreshActivities", args ?? new GetFusionEnvironmentRefreshActivitiesArgs(), options.WithDefaults());
@@ -52,10 +50,9 @@ namespace Pulumi.Oci.Functions
         /// Returns a list of RefreshActivities.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -75,8 +72,7 @@ namespace Pulumi.Oci.Functions
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetFusionEnvironmentRefreshActivitiesResult> Invoke(GetFusionEnvironmentRefreshActivitiesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFusionEnvironmentRefreshActivitiesResult>("oci:Functions/getFusionEnvironmentRefreshActivities:getFusionEnvironmentRefreshActivities", args ?? new GetFusionEnvironmentRefreshActivitiesInvokeArgs(), options.WithDefaults());

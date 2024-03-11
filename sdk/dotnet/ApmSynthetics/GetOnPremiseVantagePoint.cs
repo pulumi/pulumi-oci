@@ -16,10 +16,9 @@ namespace Pulumi.Oci.ApmSynthetics
         /// 
         /// Gets the details of the On-premise vantage point identified by the OCID.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,8 +35,7 @@ namespace Pulumi.Oci.ApmSynthetics
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetOnPremiseVantagePointResult> InvokeAsync(GetOnPremiseVantagePointArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetOnPremiseVantagePointResult>("oci:ApmSynthetics/getOnPremiseVantagePoint:getOnPremiseVantagePoint", args ?? new GetOnPremiseVantagePointArgs(), options.WithDefaults());
@@ -47,10 +45,9 @@ namespace Pulumi.Oci.ApmSynthetics
         /// 
         /// Gets the details of the On-premise vantage point identified by the OCID.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -67,8 +64,7 @@ namespace Pulumi.Oci.ApmSynthetics
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetOnPremiseVantagePointResult> Invoke(GetOnPremiseVantagePointInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetOnPremiseVantagePointResult>("oci:ApmSynthetics/getOnPremiseVantagePoint:getOnPremiseVantagePoint", args ?? new GetOnPremiseVantagePointInvokeArgs(), options.WithDefaults());

@@ -33,6 +33,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -73,13 +74,14 @@ import * as utilities from "../utilities";
  *     routingPolicies: _var.virtual_circuit_routing_policy,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * VirtualCircuits can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Core/virtualCircuit:VirtualCircuit test_virtual_circuit "id"
+ * $ pulumi import oci:Core/virtualCircuit:VirtualCircuit test_virtual_circuit "id"
  * ```
  */
 export class VirtualCircuit extends pulumi.CustomResource {

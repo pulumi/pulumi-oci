@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -44,6 +45,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetAgentDependencies(ctx *pulumi.Context, args *GetAgentDependenciesArgs, opts ...pulumi.InvokeOption) (*GetAgentDependenciesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAgentDependenciesResult

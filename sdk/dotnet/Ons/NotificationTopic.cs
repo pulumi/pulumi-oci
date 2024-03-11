@@ -29,6 +29,7 @@ namespace Pulumi.Oci.Ons
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -53,13 +54,14 @@ namespace Pulumi.Oci.Ons
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// NotificationTopics can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Ons/notificationTopic:NotificationTopic test_notification_topic "id"
+    /// $ pulumi import oci:Ons/notificationTopic:NotificationTopic test_notification_topic "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Ons/notificationTopic:NotificationTopic")]

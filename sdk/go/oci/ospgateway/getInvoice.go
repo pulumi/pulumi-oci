@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -42,6 +43,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetInvoice(ctx *pulumi.Context, args *GetInvoiceArgs, opts ...pulumi.InvokeOption) (*GetInvoiceResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetInvoiceResult

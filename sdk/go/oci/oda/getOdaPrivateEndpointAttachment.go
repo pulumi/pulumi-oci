@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -40,6 +41,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupOdaPrivateEndpointAttachment(ctx *pulumi.Context, args *LookupOdaPrivateEndpointAttachmentArgs, opts ...pulumi.InvokeOption) (*LookupOdaPrivateEndpointAttachmentResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupOdaPrivateEndpointAttachmentResult

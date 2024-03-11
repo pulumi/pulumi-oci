@@ -16,10 +16,9 @@ namespace Pulumi.Oci.ServiceMesh
         /// 
         /// Gets a VirtualService by identifier.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,8 +34,7 @@ namespace Pulumi.Oci.ServiceMesh
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetVirtualServiceResult> InvokeAsync(GetVirtualServiceArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetVirtualServiceResult>("oci:ServiceMesh/getVirtualService:getVirtualService", args ?? new GetVirtualServiceArgs(), options.WithDefaults());
@@ -46,10 +44,9 @@ namespace Pulumi.Oci.ServiceMesh
         /// 
         /// Gets a VirtualService by identifier.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -65,8 +62,7 @@ namespace Pulumi.Oci.ServiceMesh
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetVirtualServiceResult> Invoke(GetVirtualServiceInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVirtualServiceResult>("oci:ServiceMesh/getVirtualService:getVirtualService", args ?? new GetVirtualServiceInvokeArgs(), options.WithDefaults());

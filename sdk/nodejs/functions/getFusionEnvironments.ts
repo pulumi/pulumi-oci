@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,6 +25,7 @@ import * as utilities from "../utilities";
  *     state: _var.fusion_environment_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getFusionEnvironments(args: GetFusionEnvironmentsArgs, opts?: pulumi.InvokeOptions): Promise<GetFusionEnvironmentsResult> {
 
@@ -97,6 +99,7 @@ export interface GetFusionEnvironmentsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -108,6 +111,7 @@ export interface GetFusionEnvironmentsResult {
  *     state: _var.fusion_environment_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getFusionEnvironmentsOutput(args: GetFusionEnvironmentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFusionEnvironmentsResult> {
     return pulumi.output(args).apply((a: any) => getFusionEnvironments(a, opts))

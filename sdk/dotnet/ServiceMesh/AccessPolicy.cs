@@ -16,6 +16,7 @@ namespace Pulumi.Oci.ServiceMesh
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -68,13 +69,14 @@ namespace Pulumi.Oci.ServiceMesh
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// AccessPolicies can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:ServiceMesh/accessPolicy:AccessPolicy test_access_policy "id"
+    /// $ pulumi import oci:ServiceMesh/accessPolicy:AccessPolicy test_access_policy "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:ServiceMesh/accessPolicy:AccessPolicy")]

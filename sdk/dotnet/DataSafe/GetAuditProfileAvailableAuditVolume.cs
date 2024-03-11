@@ -16,10 +16,9 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// Retrieves a list of audit trails, and associated audit event volume for each trail up to defined start date.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -39,8 +38,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetAuditProfileAvailableAuditVolumeResult> InvokeAsync(GetAuditProfileAvailableAuditVolumeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAuditProfileAvailableAuditVolumeResult>("oci:DataSafe/getAuditProfileAvailableAuditVolume:getAuditProfileAvailableAuditVolume", args ?? new GetAuditProfileAvailableAuditVolumeArgs(), options.WithDefaults());
@@ -50,10 +48,9 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// Retrieves a list of audit trails, and associated audit event volume for each trail up to defined start date.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -73,8 +70,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetAuditProfileAvailableAuditVolumeResult> Invoke(GetAuditProfileAvailableAuditVolumeInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAuditProfileAvailableAuditVolumeResult>("oci:DataSafe/getAuditProfileAvailableAuditVolume:getAuditProfileAvailableAuditVolume", args ?? new GetAuditProfileAvailableAuditVolumeInvokeArgs(), options.WithDefaults());

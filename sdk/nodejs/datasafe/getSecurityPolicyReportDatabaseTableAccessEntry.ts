@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -20,6 +21,7 @@ import * as utilities from "../utilities";
  *     securityPolicyReportId: oci_data_safe_security_policy_report.test_security_policy_report.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getSecurityPolicyReportDatabaseTableAccessEntry(args: GetSecurityPolicyReportDatabaseTableAccessEntryArgs, opts?: pulumi.InvokeOptions): Promise<GetSecurityPolicyReportDatabaseTableAccessEntryResult> {
 
@@ -150,6 +152,7 @@ export interface GetSecurityPolicyReportDatabaseTableAccessEntryResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -159,6 +162,7 @@ export interface GetSecurityPolicyReportDatabaseTableAccessEntryResult {
  *     securityPolicyReportId: oci_data_safe_security_policy_report.test_security_policy_report.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getSecurityPolicyReportDatabaseTableAccessEntryOutput(args: GetSecurityPolicyReportDatabaseTableAccessEntryOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecurityPolicyReportDatabaseTableAccessEntryResult> {
     return pulumi.output(args).apply((a: any) => getSecurityPolicyReportDatabaseTableAccessEntry(a, opts))

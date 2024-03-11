@@ -16,10 +16,9 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// Gets the list of users on whose behalf the current user acts as proxy.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -37,8 +36,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetManagedDatabaseUserProxiedForUserResult> InvokeAsync(GetManagedDatabaseUserProxiedForUserArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagedDatabaseUserProxiedForUserResult>("oci:DatabaseManagement/getManagedDatabaseUserProxiedForUser:getManagedDatabaseUserProxiedForUser", args ?? new GetManagedDatabaseUserProxiedForUserArgs(), options.WithDefaults());
@@ -48,10 +46,9 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// Gets the list of users on whose behalf the current user acts as proxy.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -69,8 +66,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetManagedDatabaseUserProxiedForUserResult> Invoke(GetManagedDatabaseUserProxiedForUserInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseUserProxiedForUserResult>("oci:DatabaseManagement/getManagedDatabaseUserProxiedForUser:getManagedDatabaseUserProxiedForUser", args ?? new GetManagedDatabaseUserProxiedForUserInvokeArgs(), options.WithDefaults());

@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -27,13 +28,14 @@ import * as utilities from "../utilities";
  *     dependsOn: _var.migration_asset_depends_on,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * MigrationAssets can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:CloudMigrations/migrationAsset:MigrationAsset test_migration_asset "id"
+ * $ pulumi import oci:CloudMigrations/migrationAsset:MigrationAsset test_migration_asset "id"
  * ```
  */
 export class MigrationAsset extends pulumi.CustomResource {

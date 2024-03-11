@@ -19,7 +19,7 @@ namespace Pulumi.Oci.DatabaseManagement
     /// ExternalDbHomes can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:DatabaseManagement/externalDbHome:ExternalDbHome test_external_db_home "id"
+    /// $ pulumi import oci:DatabaseManagement/externalDbHome:ExternalDbHome test_external_db_home "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:DatabaseManagement/externalDbHome:ExternalDbHome")]

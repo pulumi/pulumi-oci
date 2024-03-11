@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -63,15 +64,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // NewsReports can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Opsi/newsReport:NewsReport test_news_report "id"
-//
+// $ pulumi import oci:Opsi/newsReport:NewsReport test_news_report "id"
 // ```
 type NewsReport struct {
 	pulumi.CustomResourceState

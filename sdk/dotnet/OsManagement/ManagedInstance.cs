@@ -19,7 +19,7 @@ namespace Pulumi.Oci.OsManagement
     /// ManagedInstances can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:OsManagement/managedInstance:ManagedInstance test_managed_instance "id"
+    /// $ pulumi import oci:OsManagement/managedInstance:ManagedInstance test_managed_instance "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:OsManagement/managedInstance:ManagedInstance")]

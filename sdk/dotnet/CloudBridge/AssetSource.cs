@@ -16,6 +16,7 @@ namespace Pulumi.Oci.CloudBridge
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -59,13 +60,14 @@ namespace Pulumi.Oci.CloudBridge
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// AssetSources can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:CloudBridge/assetSource:AssetSource test_asset_source "id"
+    /// $ pulumi import oci:CloudBridge/assetSource:AssetSource test_asset_source "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:CloudBridge/assetSource:AssetSource")]

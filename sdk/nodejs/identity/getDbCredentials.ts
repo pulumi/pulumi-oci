@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,6 +24,7 @@ import * as utilities from "../utilities";
  *     state: _var.db_credential_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDbCredentials(args: GetDbCredentialsArgs, opts?: pulumi.InvokeOptions): Promise<GetDbCredentialsResult> {
 
@@ -84,6 +86,7 @@ export interface GetDbCredentialsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -94,6 +97,7 @@ export interface GetDbCredentialsResult {
  *     state: _var.db_credential_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDbCredentialsOutput(args: GetDbCredentialsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbCredentialsResult> {
     return pulumi.output(args).apply((a: any) => getDbCredentials(a, opts))

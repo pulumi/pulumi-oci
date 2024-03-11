@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -47,6 +48,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetManagedDatabaseAlertLogCount(ctx *pulumi.Context, args *GetManagedDatabaseAlertLogCountArgs, opts ...pulumi.InvokeOption) (*GetManagedDatabaseAlertLogCountResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetManagedDatabaseAlertLogCountResult

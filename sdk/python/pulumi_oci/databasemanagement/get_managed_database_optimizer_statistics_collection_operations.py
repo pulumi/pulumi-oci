@@ -142,6 +142,7 @@ def get_managed_database_optimizer_statistics_collection_operations(end_time_les
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -152,6 +153,7 @@ def get_managed_database_optimizer_statistics_collection_operations(end_time_les
         start_time_greater_than_or_equal_to=var["managed_database_optimizer_statistics_collection_operation_start_time_greater_than_or_equal_to"],
         task_type=var["managed_database_optimizer_statistics_collection_operation_task_type"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str end_time_less_than_or_equal_to: The end time of the time range to retrieve the optimizer statistics of a Managed Database in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
@@ -205,6 +207,7 @@ def get_managed_database_optimizer_statistics_collection_operations_output(end_t
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -215,6 +218,7 @@ def get_managed_database_optimizer_statistics_collection_operations_output(end_t
         start_time_greater_than_or_equal_to=var["managed_database_optimizer_statistics_collection_operation_start_time_greater_than_or_equal_to"],
         task_type=var["managed_database_optimizer_statistics_collection_operation_task_type"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str end_time_less_than_or_equal_to: The end time of the time range to retrieve the optimizer statistics of a Managed Database in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".

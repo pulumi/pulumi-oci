@@ -16,7 +16,7 @@ import * as utilities from "../utilities";
  * Secrets can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Vault/secret:Secret test_secret "id"
+ * $ pulumi import oci:Vault/secret:Secret test_secret "id"
  * ```
  */
 export class Secret extends pulumi.CustomResource {

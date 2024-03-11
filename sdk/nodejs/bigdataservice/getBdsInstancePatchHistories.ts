@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,6 +25,7 @@ import * as utilities from "../utilities";
  *     state: _var.bds_instance_patch_history_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getBdsInstancePatchHistories(args: GetBdsInstancePatchHistoriesArgs, opts?: pulumi.InvokeOptions): Promise<GetBdsInstancePatchHistoriesResult> {
 
@@ -91,6 +93,7 @@ export interface GetBdsInstancePatchHistoriesResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -102,6 +105,7 @@ export interface GetBdsInstancePatchHistoriesResult {
  *     state: _var.bds_instance_patch_history_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getBdsInstancePatchHistoriesOutput(args: GetBdsInstancePatchHistoriesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBdsInstancePatchHistoriesResult> {
     return pulumi.output(args).apply((a: any) => getBdsInstancePatchHistories(a, opts))

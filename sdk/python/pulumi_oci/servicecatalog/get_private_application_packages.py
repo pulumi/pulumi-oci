@@ -125,6 +125,7 @@ def get_private_application_packages(display_name: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -134,6 +135,7 @@ def get_private_application_packages(display_name: Optional[str] = None,
         package_types=var["private_application_package_package_type"],
         private_application_package_id=oci_service_catalog_private_application_package["test_private_application_package"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str display_name: Exact match name filter.
@@ -174,6 +176,7 @@ def get_private_application_packages_output(display_name: Optional[pulumi.Input[
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -183,6 +186,7 @@ def get_private_application_packages_output(display_name: Optional[pulumi.Input[
         package_types=var["private_application_package_package_type"],
         private_application_package_id=oci_service_catalog_private_application_package["test_private_application_package"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str display_name: Exact match name filter.

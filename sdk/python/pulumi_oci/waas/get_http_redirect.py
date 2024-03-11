@@ -171,12 +171,14 @@ def get_http_redirect(http_redirect_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_http_redirect = oci.Waas.get_http_redirect(http_redirect_id=oci_waas_http_redirect["test_http_redirect"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str http_redirect_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HTTP Redirect.
@@ -210,12 +212,14 @@ def get_http_redirect_output(http_redirect_id: Optional[pulumi.Input[str]] = Non
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_http_redirect = oci.Waas.get_http_redirect(http_redirect_id=oci_waas_http_redirect["test_http_redirect"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str http_redirect_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HTTP Redirect.

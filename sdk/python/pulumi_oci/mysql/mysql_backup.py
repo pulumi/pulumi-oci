@@ -481,6 +481,7 @@ class MysqlBackup(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -498,13 +499,14 @@ class MysqlBackup(pulumi.CustomResource):
             },
             retention_in_days=var["mysql_backup_retention_in_days"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         MysqlBackups can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Mysql/mysqlBackup:MysqlBackup test_mysql_backup "id"
+        $ pulumi import oci:Mysql/mysqlBackup:MysqlBackup test_mysql_backup "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -535,6 +537,7 @@ class MysqlBackup(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -552,13 +555,14 @@ class MysqlBackup(pulumi.CustomResource):
             },
             retention_in_days=var["mysql_backup_retention_in_days"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         MysqlBackups can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Mysql/mysqlBackup:MysqlBackup test_mysql_backup "id"
+        $ pulumi import oci:Mysql/mysqlBackup:MysqlBackup test_mysql_backup "id"
         ```
 
         :param str resource_name: The name of the resource.

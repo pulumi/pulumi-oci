@@ -151,6 +151,7 @@ def get_trace_snapshot_data(apm_domain_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -161,6 +162,7 @@ def get_trace_snapshot_data(apm_domain_id: Optional[str] = None,
         snapshot_time=var["trace_snapshot_data_snapshot_time"],
         thread_id=oci_apm_traces_thread["test_thread"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str apm_domain_id: The APM Domain ID the request is intended for.
@@ -205,6 +207,7 @@ def get_trace_snapshot_data_output(apm_domain_id: Optional[pulumi.Input[str]] = 
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -215,6 +218,7 @@ def get_trace_snapshot_data_output(apm_domain_id: Optional[pulumi.Input[str]] = 
         snapshot_time=var["trace_snapshot_data_snapshot_time"],
         thread_id=oci_apm_traces_thread["test_thread"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str apm_domain_id: The APM Domain ID the request is intended for.

@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -28,6 +29,7 @@ import * as utilities from "../utilities";
  *     startIndex: _var.password_policy_start_index,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDomainsPasswordPolicies(args: GetDomainsPasswordPoliciesArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsPasswordPoliciesResult> {
 
@@ -125,6 +127,7 @@ export interface GetDomainsPasswordPoliciesResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -140,6 +143,7 @@ export interface GetDomainsPasswordPoliciesResult {
  *     startIndex: _var.password_policy_start_index,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDomainsPasswordPoliciesOutput(args: GetDomainsPasswordPoliciesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsPasswordPoliciesResult> {
     return pulumi.output(args).apply((a: any) => getDomainsPasswordPolicies(a, opts))

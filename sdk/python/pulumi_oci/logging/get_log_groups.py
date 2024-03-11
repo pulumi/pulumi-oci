@@ -112,6 +112,7 @@ def get_log_groups(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -120,6 +121,7 @@ def get_log_groups(compartment_id: Optional[str] = None,
         display_name=var["log_group_display_name"],
         is_compartment_id_in_subtree=var["log_group_is_compartment_id_in_subtree"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: Compartment OCID to list resources in. See compartmentIdInSubtree for nested compartments traversal.
@@ -156,6 +158,7 @@ def get_log_groups_output(compartment_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -164,6 +167,7 @@ def get_log_groups_output(compartment_id: Optional[pulumi.Input[str]] = None,
         display_name=var["log_group_display_name"],
         is_compartment_id_in_subtree=var["log_group_is_compartment_id_in_subtree"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: Compartment OCID to list resources in. See compartmentIdInSubtree for nested compartments traversal.

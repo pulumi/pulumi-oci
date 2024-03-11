@@ -21,6 +21,8 @@ import javax.annotation.Nullable;
  * Adds a backend server to a backend set.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -57,13 +59,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * Backends can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:NetworkLoadBalancer/backend:Backend test_backend &#34;networkLoadBalancers/{networkLoadBalancerId}/backendSets/{backendSetName}/backends/{backendName}&#34;
+ * $ pulumi import oci:NetworkLoadBalancer/backend:Backend test_backend &#34;networkLoadBalancers/{networkLoadBalancerId}/backendSets/{backendSetName}/backends/{backendName}&#34;
  * ```
  * 
  */

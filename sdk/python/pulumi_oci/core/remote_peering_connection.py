@@ -365,6 +365,7 @@ class RemotePeeringConnection(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -382,13 +383,14 @@ class RemotePeeringConnection(pulumi.CustomResource):
             peer_id=oci_core_remote_peering_connection["test_remote_peering_connection2"]["id"],
             peer_region_name=var["remote_peering_connection_peer_region_name"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         RemotePeeringConnections can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/remotePeeringConnection:RemotePeeringConnection test_remote_peering_connection "id"
+        $ pulumi import oci:Core/remotePeeringConnection:RemotePeeringConnection test_remote_peering_connection "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -418,6 +420,7 @@ class RemotePeeringConnection(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -435,13 +438,14 @@ class RemotePeeringConnection(pulumi.CustomResource):
             peer_id=oci_core_remote_peering_connection["test_remote_peering_connection2"]["id"],
             peer_region_name=var["remote_peering_connection_peer_region_name"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         RemotePeeringConnections can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/remotePeeringConnection:RemotePeeringConnection test_remote_peering_connection "id"
+        $ pulumi import oci:Core/remotePeeringConnection:RemotePeeringConnection test_remote_peering_connection "id"
         ```
 
         :param str resource_name: The name of the resource.

@@ -19,7 +19,7 @@ namespace Pulumi.Oci.CloudGuard
     /// ResponderRecipes can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:CloudGuard/responderRecipe:ResponderRecipe test_responder_recipe "id"
+    /// $ pulumi import oci:CloudGuard/responderRecipe:ResponderRecipe test_responder_recipe "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:CloudGuard/responderRecipe:ResponderRecipe")]

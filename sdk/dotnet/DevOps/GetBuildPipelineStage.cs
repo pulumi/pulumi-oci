@@ -16,10 +16,9 @@ namespace Pulumi.Oci.DevOps
         /// 
         /// Retrieves a stage based on the stage ID provided in the request.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,8 +34,7 @@ namespace Pulumi.Oci.DevOps
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetBuildPipelineStageResult> InvokeAsync(GetBuildPipelineStageArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetBuildPipelineStageResult>("oci:DevOps/getBuildPipelineStage:getBuildPipelineStage", args ?? new GetBuildPipelineStageArgs(), options.WithDefaults());
@@ -46,10 +44,9 @@ namespace Pulumi.Oci.DevOps
         /// 
         /// Retrieves a stage based on the stage ID provided in the request.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -65,8 +62,7 @@ namespace Pulumi.Oci.DevOps
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetBuildPipelineStageResult> Invoke(GetBuildPipelineStageInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetBuildPipelineStageResult>("oci:DevOps/getBuildPipelineStage:getBuildPipelineStage", args ?? new GetBuildPipelineStageInvokeArgs(), options.WithDefaults());

@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,6 +22,7 @@ import * as utilities from "../utilities";
  *     pbfListingId: oci_functions_pbf_listing.test_pbf_listing.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getPbfListing(args: GetPbfListingArgs, opts?: pulumi.InvokeOptions): Promise<GetPbfListingResult> {
 
@@ -97,6 +99,7 @@ export interface GetPbfListingResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -105,6 +108,7 @@ export interface GetPbfListingResult {
  *     pbfListingId: oci_functions_pbf_listing.test_pbf_listing.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getPbfListingOutput(args: GetPbfListingOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPbfListingResult> {
     return pulumi.output(args).apply((a: any) => getPbfListing(a, opts))

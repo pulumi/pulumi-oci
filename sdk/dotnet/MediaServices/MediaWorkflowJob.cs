@@ -16,6 +16,7 @@ namespace Pulumi.Oci.MediaServices
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -56,13 +57,14 @@ namespace Pulumi.Oci.MediaServices
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// MediaWorkflowJobs can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:MediaServices/mediaWorkflowJob:MediaWorkflowJob test_media_workflow_job "id"
+    /// $ pulumi import oci:MediaServices/mediaWorkflowJob:MediaWorkflowJob test_media_workflow_job "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:MediaServices/mediaWorkflowJob:MediaWorkflowJob")]

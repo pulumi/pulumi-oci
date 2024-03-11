@@ -580,6 +580,7 @@ class SoftwareSource(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -601,13 +602,14 @@ class SoftwareSource(pulumi.CustomResource):
             maintainer_phone=var["software_source_maintainer_phone"],
             parent_id=oci_osmanagement_parent["test_parent"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         SoftwareSources can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:OsManagement/softwareSource:SoftwareSource test_software_source "id"
+        $ pulumi import oci:OsManagement/softwareSource:SoftwareSource test_software_source "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -643,6 +645,7 @@ class SoftwareSource(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -664,13 +667,14 @@ class SoftwareSource(pulumi.CustomResource):
             maintainer_phone=var["software_source_maintainer_phone"],
             parent_id=oci_osmanagement_parent["test_parent"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         SoftwareSources can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:OsManagement/softwareSource:SoftwareSource test_software_source "id"
+        $ pulumi import oci:OsManagement/softwareSource:SoftwareSource test_software_source "id"
         ```
 
         :param str resource_name: The name of the resource.

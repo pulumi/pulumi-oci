@@ -20,6 +20,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -48,15 +49,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Users can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Identity/userCapabilitiesManagement:UserCapabilitiesManagement test_user_capabilities_management "capabilities/{userId}"
-//
+// $ pulumi import oci:Identity/userCapabilitiesManagement:UserCapabilitiesManagement test_user_capabilities_management "capabilities/{userId}"
 // ```
 type UserCapabilitiesManagement struct {
 	pulumi.CustomResourceState

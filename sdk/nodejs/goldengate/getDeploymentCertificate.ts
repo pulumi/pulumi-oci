@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -20,6 +21,7 @@ import * as utilities from "../utilities";
  *     deploymentId: oci_golden_gate_deployment.test_deployment.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDeploymentCertificate(args: GetDeploymentCertificateArgs, opts?: pulumi.InvokeOptions): Promise<GetDeploymentCertificateResult> {
 
@@ -138,6 +140,7 @@ export interface GetDeploymentCertificateResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -147,6 +150,7 @@ export interface GetDeploymentCertificateResult {
  *     deploymentId: oci_golden_gate_deployment.test_deployment.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDeploymentCertificateOutput(args: GetDeploymentCertificateOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDeploymentCertificateResult> {
     return pulumi.output(args).apply((a: any) => getDeploymentCertificate(a, opts))

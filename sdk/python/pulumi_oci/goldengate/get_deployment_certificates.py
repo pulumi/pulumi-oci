@@ -99,6 +99,7 @@ def get_deployment_certificates(deployment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -106,6 +107,7 @@ def get_deployment_certificates(deployment_id: Optional[str] = None,
     test_deployment_certificates = oci.GoldenGate.get_deployment_certificates(deployment_id=oci_golden_gate_deployment["test_deployment"]["id"],
         state=var["deployment_certificate_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str deployment_id: A unique Deployment identifier.
@@ -138,6 +140,7 @@ def get_deployment_certificates_output(deployment_id: Optional[pulumi.Input[str]
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -145,6 +148,7 @@ def get_deployment_certificates_output(deployment_id: Optional[pulumi.Input[str]
     test_deployment_certificates = oci.GoldenGate.get_deployment_certificates(deployment_id=oci_golden_gate_deployment["test_deployment"]["id"],
         state=var["deployment_certificate_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str deployment_id: A unique Deployment identifier.

@@ -645,6 +645,7 @@ class LogAnalyticsEntity(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -674,13 +675,14 @@ class LogAnalyticsEntity(pulumi.CustomResource):
             time_last_discovered=var["log_analytics_entity_time_last_discovered"],
             timezone_region=var["log_analytics_entity_timezone_region"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         LogAnalyticsEntities can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:LogAnalytics/logAnalyticsEntity:LogAnalyticsEntity test_log_analytics_entity "namespaces/{namespaceName}/logAnalyticsEntities/{logAnalyticsEntityId}"
+        $ pulumi import oci:LogAnalytics/logAnalyticsEntity:LogAnalyticsEntity test_log_analytics_entity "namespaces/{namespaceName}/logAnalyticsEntities/{logAnalyticsEntityId}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -717,6 +719,7 @@ class LogAnalyticsEntity(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -746,13 +749,14 @@ class LogAnalyticsEntity(pulumi.CustomResource):
             time_last_discovered=var["log_analytics_entity_time_last_discovered"],
             timezone_region=var["log_analytics_entity_timezone_region"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         LogAnalyticsEntities can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:LogAnalytics/logAnalyticsEntity:LogAnalyticsEntity test_log_analytics_entity "namespaces/{namespaceName}/logAnalyticsEntities/{logAnalyticsEntityId}"
+        $ pulumi import oci:LogAnalytics/logAnalyticsEntity:LogAnalyticsEntity test_log_analytics_entity "namespaces/{namespaceName}/logAnalyticsEntities/{logAnalyticsEntityId}"
         ```
 
         :param str resource_name: The name of the resource.

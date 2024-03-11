@@ -30,6 +30,8 @@ import javax.annotation.Nullable;
  * To create an Exadata Cloud Service infrastructure resource, use the  [CreateCloudExadataInfrastructure](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/CreateCloudExadataInfrastructure) operation.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -109,13 +111,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * ExadataInfrastructures can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Database/exadataInfrastructure:ExadataInfrastructure test_exadata_infrastructure &#34;id&#34;
+ * $ pulumi import oci:Database/exadataInfrastructure:ExadataInfrastructure test_exadata_infrastructure &#34;id&#34;
  * ```
  * 
  */

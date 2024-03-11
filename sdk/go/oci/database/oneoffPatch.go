@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -49,15 +50,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // OneoffPatches can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Database/oneoffPatch:OneoffPatch test_oneoff_patch "id"
-//
+// $ pulumi import oci:Database/oneoffPatch:OneoffPatch test_oneoff_patch "id"
 // ```
 type OneoffPatch struct {
 	pulumi.CustomResourceState

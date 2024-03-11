@@ -36,7 +36,7 @@ import javax.annotation.Nullable;
  * PluggableDatabases can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Database/pluggableDatabase:PluggableDatabase test_pluggable_database &#34;id&#34;
+ * $ pulumi import oci:Database/pluggableDatabase:PluggableDatabase test_pluggable_database &#34;id&#34;
  * ```
  * 
  */

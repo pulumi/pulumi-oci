@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -34,13 +35,14 @@ import * as utilities from "../utilities";
  *     workerType: _var.on_premise_vantage_point_worker_worker_type,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * OnPremiseVantagePointWorkers can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:ApmSynthetics/onPremiseVantagePointWorker:OnPremiseVantagePointWorker test_on_premise_vantage_point_worker "onPremiseVantagePoints/{onPremiseVantagePointId}/workers/{workerId}/apmDomainId/{apmDomainId}"
+ * $ pulumi import oci:ApmSynthetics/onPremiseVantagePointWorker:OnPremiseVantagePointWorker test_on_premise_vantage_point_worker "onPremiseVantagePoints/{onPremiseVantagePointId}/workers/{workerId}/apmDomainId/{apmDomainId}"
  * ```
  */
 export class OnPremiseVantagePointWorker extends pulumi.CustomResource {

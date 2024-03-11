@@ -31,6 +31,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -62,15 +63,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // TagNamespaces can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Identity/tagNamespace:TagNamespace test_tag_namespace "id"
-//
+// $ pulumi import oci:Identity/tagNamespace:TagNamespace test_tag_namespace "id"
 // ```
 type TagNamespace struct {
 	pulumi.CustomResourceState

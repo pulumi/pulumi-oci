@@ -15,6 +15,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -25,6 +26,7 @@ import * as utilities from "../utilities";
  *     state: _var.service_connector_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getServiceConnectors(args: GetServiceConnectorsArgs, opts?: pulumi.InvokeOptions): Promise<GetServiceConnectorsResult> {
 
@@ -91,6 +93,7 @@ export interface GetServiceConnectorsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -101,6 +104,7 @@ export interface GetServiceConnectorsResult {
  *     state: _var.service_connector_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getServiceConnectorsOutput(args: GetServiceConnectorsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetServiceConnectorsResult> {
     return pulumi.output(args).apply((a: any) => getServiceConnectors(a, opts))

@@ -24,6 +24,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -64,15 +65,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Fleets can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Jms/fleet:Fleet test_fleet "id"
-//
+// $ pulumi import oci:Jms/fleet:Fleet test_fleet "id"
 // ```
 type Fleet struct {
 	pulumi.CustomResourceState

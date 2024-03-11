@@ -22,6 +22,8 @@ import javax.annotation.Nullable;
  * Creates a migration asset.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -59,13 +61,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * MigrationAssets can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:CloudMigrations/migrationAsset:MigrationAsset test_migration_asset &#34;id&#34;
+ * $ pulumi import oci:CloudMigrations/migrationAsset:MigrationAsset test_migration_asset &#34;id&#34;
  * ```
  * 
  */

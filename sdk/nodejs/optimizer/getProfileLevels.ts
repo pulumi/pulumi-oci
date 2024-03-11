@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,6 +25,7 @@ import * as utilities from "../utilities";
  *     recommendationName: oci_optimizer_recommendation.test_recommendation.name,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getProfileLevels(args: GetProfileLevelsArgs, opts?: pulumi.InvokeOptions): Promise<GetProfileLevelsResult> {
 
@@ -93,6 +95,7 @@ export interface GetProfileLevelsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -104,6 +107,7 @@ export interface GetProfileLevelsResult {
  *     recommendationName: oci_optimizer_recommendation.test_recommendation.name,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getProfileLevelsOutput(args: GetProfileLevelsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetProfileLevelsResult> {
     return pulumi.output(args).apply((a: any) => getProfileLevels(a, opts))

@@ -17,10 +17,9 @@ namespace Pulumi.Oci.Database
         /// Gets a list of expected compute performance parameters for a virtual machine DB system based on system configuration.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,8 +35,7 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDbSystemComputePerformancesResult> InvokeAsync(GetDbSystemComputePerformancesArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDbSystemComputePerformancesResult>("oci:Database/getDbSystemComputePerformances:getDbSystemComputePerformances", args ?? new GetDbSystemComputePerformancesArgs(), options.WithDefaults());
@@ -48,10 +46,9 @@ namespace Pulumi.Oci.Database
         /// Gets a list of expected compute performance parameters for a virtual machine DB system based on system configuration.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -67,8 +64,7 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDbSystemComputePerformancesResult> Invoke(GetDbSystemComputePerformancesInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDbSystemComputePerformancesResult>("oci:Database/getDbSystemComputePerformances:getDbSystemComputePerformances", args ?? new GetDbSystemComputePerformancesInvokeArgs(), options.WithDefaults());

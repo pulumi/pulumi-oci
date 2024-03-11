@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -73,15 +74,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // DiscoveryJobs can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:StackMonitoring/discoveryJob:DiscoveryJob test_discovery_job "id"
-//
+// $ pulumi import oci:StackMonitoring/discoveryJob:DiscoveryJob test_discovery_job "id"
 // ```
 type DiscoveryJob struct {
 	pulumi.CustomResourceState

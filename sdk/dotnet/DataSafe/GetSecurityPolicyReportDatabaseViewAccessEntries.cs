@@ -19,10 +19,9 @@ namespace Pulumi.Oci.DataSafe
         /// The ListDatabaseViewAccessEntries operation returns only the database view access objects for the specified security policy report.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -40,8 +39,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetSecurityPolicyReportDatabaseViewAccessEntriesResult> InvokeAsync(GetSecurityPolicyReportDatabaseViewAccessEntriesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetSecurityPolicyReportDatabaseViewAccessEntriesResult>("oci:DataSafe/getSecurityPolicyReportDatabaseViewAccessEntries:getSecurityPolicyReportDatabaseViewAccessEntries", args ?? new GetSecurityPolicyReportDatabaseViewAccessEntriesArgs(), options.WithDefaults());
@@ -54,10 +52,9 @@ namespace Pulumi.Oci.DataSafe
         /// The ListDatabaseViewAccessEntries operation returns only the database view access objects for the specified security policy report.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -75,8 +72,7 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetSecurityPolicyReportDatabaseViewAccessEntriesResult> Invoke(GetSecurityPolicyReportDatabaseViewAccessEntriesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSecurityPolicyReportDatabaseViewAccessEntriesResult>("oci:DataSafe/getSecurityPolicyReportDatabaseViewAccessEntries:getSecurityPolicyReportDatabaseViewAccessEntries", args ?? new GetSecurityPolicyReportDatabaseViewAccessEntriesInvokeArgs(), options.WithDefaults());

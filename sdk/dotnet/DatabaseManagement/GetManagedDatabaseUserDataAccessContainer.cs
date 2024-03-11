@@ -16,10 +16,9 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// Gets the list of containers for a specific user. This is only applicable if ALL_CONTAINERS !='Y'.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -37,8 +36,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetManagedDatabaseUserDataAccessContainerResult> InvokeAsync(GetManagedDatabaseUserDataAccessContainerArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagedDatabaseUserDataAccessContainerResult>("oci:DatabaseManagement/getManagedDatabaseUserDataAccessContainer:getManagedDatabaseUserDataAccessContainer", args ?? new GetManagedDatabaseUserDataAccessContainerArgs(), options.WithDefaults());
@@ -48,10 +46,9 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// Gets the list of containers for a specific user. This is only applicable if ALL_CONTAINERS !='Y'.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -69,8 +66,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetManagedDatabaseUserDataAccessContainerResult> Invoke(GetManagedDatabaseUserDataAccessContainerInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseUserDataAccessContainerResult>("oci:DatabaseManagement/getManagedDatabaseUserDataAccessContainer:getManagedDatabaseUserDataAccessContainer", args ?? new GetManagedDatabaseUserDataAccessContainerInvokeArgs(), options.WithDefaults());

@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -47,6 +48,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func LookupDomainsIdentitySetting(ctx *pulumi.Context, args *LookupDomainsIdentitySettingArgs, opts ...pulumi.InvokeOption) (*LookupDomainsIdentitySettingResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupDomainsIdentitySettingResult

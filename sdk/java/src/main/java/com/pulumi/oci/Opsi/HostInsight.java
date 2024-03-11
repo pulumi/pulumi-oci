@@ -22,6 +22,8 @@ import javax.annotation.Nullable;
  * Create a Host Insight resource for a host in Operations Insights. The host will be enabled in Operations Insights. Host metric collection and analysis will be started.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -60,13 +62,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * HostInsights can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Opsi/hostInsight:HostInsight test_host_insight &#34;id&#34;
+ * $ pulumi import oci:Opsi/hostInsight:HostInsight test_host_insight &#34;id&#34;
  * ```
  * 
  */

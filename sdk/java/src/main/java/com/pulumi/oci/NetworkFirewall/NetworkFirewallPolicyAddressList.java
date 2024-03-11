@@ -21,6 +21,8 @@ import javax.annotation.Nullable;
  * Creates a new Address List for the Network Firewall Policy.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -51,13 +53,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * NetworkFirewallPolicyAddressLists can be imported using the `name`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:NetworkFirewall/networkFirewallPolicyAddressList:NetworkFirewallPolicyAddressList test_network_firewall_policy_address_list &#34;networkFirewallPolicies/{networkFirewallPolicyId}/addressLists/{addressListName}&#34;
+ * $ pulumi import oci:NetworkFirewall/networkFirewallPolicyAddressList:NetworkFirewallPolicyAddressList test_network_firewall_policy_address_list &#34;networkFirewallPolicies/{networkFirewallPolicyId}/addressLists/{addressListName}&#34;
  * ```
  * 
  */

@@ -140,6 +140,7 @@ class AuthenticationPolicy(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -158,13 +159,14 @@ class AuthenticationPolicy(pulumi.CustomResource):
                 minimum_password_length=var["authentication_policy_password_policy_minimum_password_length"],
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         AuthenticationPolicies can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/authenticationPolicy:AuthenticationPolicy test_authentication_policy "authenticationPolicies/{compartmentId}"
+        $ pulumi import oci:Identity/authenticationPolicy:AuthenticationPolicy test_authentication_policy "authenticationPolicies/{compartmentId}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -186,6 +188,7 @@ class AuthenticationPolicy(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -204,13 +207,14 @@ class AuthenticationPolicy(pulumi.CustomResource):
                 minimum_password_length=var["authentication_policy_password_policy_minimum_password_length"],
             ))
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         AuthenticationPolicies can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/authenticationPolicy:AuthenticationPolicy test_authentication_policy "authenticationPolicies/{compartmentId}"
+        $ pulumi import oci:Identity/authenticationPolicy:AuthenticationPolicy test_authentication_policy "authenticationPolicies/{compartmentId}"
         ```
 
         :param str resource_name: The name of the resource.

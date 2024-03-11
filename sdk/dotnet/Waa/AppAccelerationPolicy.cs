@@ -16,6 +16,7 @@ namespace Pulumi.Oci.Waa
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -52,13 +53,14 @@ namespace Pulumi.Oci.Waa
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// WebAppAccelerationPolicies can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import oci:Waa/appAccelerationPolicy:AppAccelerationPolicy test_web_app_acceleration_policy "id"
+    /// $ pulumi import oci:Waa/appAccelerationPolicy:AppAccelerationPolicy test_web_app_acceleration_policy "id"
     /// ```
     /// </summary>
     [OciResourceType("oci:Waa/appAccelerationPolicy:AppAccelerationPolicy")]

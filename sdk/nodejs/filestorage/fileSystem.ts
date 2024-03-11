@@ -41,6 +41,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -60,13 +61,14 @@ import * as utilities from "../utilities";
  *     sourceSnapshotId: oci_file_storage_snapshot.test_snapshot.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * FileSystems can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:FileStorage/fileSystem:FileSystem test_file_system "id"
+ * $ pulumi import oci:FileStorage/fileSystem:FileSystem test_file_system "id"
  * ```
  */
 export class FileSystem extends pulumi.CustomResource {

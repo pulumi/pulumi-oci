@@ -112,6 +112,7 @@ def get_db_credentials(filters: Optional[Sequence[pulumi.InputType['GetDbCredent
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -120,6 +121,7 @@ def get_db_credentials(filters: Optional[Sequence[pulumi.InputType['GetDbCredent
         name=var["db_credential_name"],
         state=var["db_credential_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str name: A filter to only return resources that match the given name exactly.
@@ -156,6 +158,7 @@ def get_db_credentials_output(filters: Optional[pulumi.Input[Optional[Sequence[p
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -164,6 +167,7 @@ def get_db_credentials_output(filters: Optional[pulumi.Input[Optional[Sequence[p
         name=var["db_credential_name"],
         state=var["db_credential_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str name: A filter to only return resources that match the given name exactly.

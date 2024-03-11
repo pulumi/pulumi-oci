@@ -75,12 +75,14 @@ def get_access_request_history(access_request_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_access_request_history = oci.OperatorAccessControl.get_access_request_history(access_request_id=oci_operator_access_control_access_request["test_access_request"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str access_request_id: unique AccessRequest identifier
@@ -106,12 +108,14 @@ def get_access_request_history_output(access_request_id: Optional[pulumi.Input[s
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_access_request_history = oci.OperatorAccessControl.get_access_request_history(access_request_id=oci_operator_access_control_access_request["test_access_request"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str access_request_id: unique AccessRequest identifier

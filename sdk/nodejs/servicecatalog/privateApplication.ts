@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -36,13 +37,14 @@ import * as utilities from "../utilities";
  *     longDescription: _var.private_application_long_description,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * PrivateApplications can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:ServiceCatalog/privateApplication:PrivateApplication test_private_application "id"
+ * $ pulumi import oci:ServiceCatalog/privateApplication:PrivateApplication test_private_application "id"
  * ```
  */
 export class PrivateApplication extends pulumi.CustomResource {

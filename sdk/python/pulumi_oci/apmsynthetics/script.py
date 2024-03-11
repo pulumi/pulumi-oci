@@ -382,6 +382,7 @@ class Script(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -404,13 +405,14 @@ class Script(pulumi.CustomResource):
                 param_value=var["script_parameters_param_value"],
             )])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Scripts can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:ApmSynthetics/script:Script test_script "scripts/{scriptId}/apmDomainId/{apmDomainId}"
+        $ pulumi import oci:ApmSynthetics/script:Script test_script "scripts/{scriptId}/apmDomainId/{apmDomainId}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -437,6 +439,7 @@ class Script(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -459,13 +462,14 @@ class Script(pulumi.CustomResource):
                 param_value=var["script_parameters_param_value"],
             )])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Scripts can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:ApmSynthetics/script:Script test_script "scripts/{scriptId}/apmDomainId/{apmDomainId}"
+        $ pulumi import oci:ApmSynthetics/script:Script test_script "scripts/{scriptId}/apmDomainId/{apmDomainId}"
         ```
 
         :param str resource_name: The name of the resource.

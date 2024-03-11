@@ -16,7 +16,7 @@ import * as utilities from "../utilities";
  * IdentityProviders can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Identity/domainsIdentityProvider:DomainsIdentityProvider test_identity_provider "idcsEndpoint/{idcsEndpoint}/identityProviders/{identityProviderId}"
+ * $ pulumi import oci:Identity/domainsIdentityProvider:DomainsIdentityProvider test_identity_provider "idcsEndpoint/{idcsEndpoint}/identityProviders/{identityProviderId}"
  * ```
  */
 export class DomainsIdentityProvider extends pulumi.CustomResource {

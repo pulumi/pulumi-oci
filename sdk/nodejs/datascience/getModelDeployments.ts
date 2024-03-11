@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -26,6 +27,7 @@ import * as utilities from "../utilities";
  *     state: _var.model_deployment_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getModelDeployments(args: GetModelDeploymentsArgs, opts?: pulumi.InvokeOptions): Promise<GetModelDeploymentsResult> {
 
@@ -113,6 +115,7 @@ export interface GetModelDeploymentsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -126,6 +129,7 @@ export interface GetModelDeploymentsResult {
  *     state: _var.model_deployment_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getModelDeploymentsOutput(args: GetModelDeploymentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetModelDeploymentsResult> {
     return pulumi.output(args).apply((a: any) => getModelDeployments(a, opts))

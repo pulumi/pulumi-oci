@@ -1036,7 +1036,7 @@ class DomainsNetworkPerimeter(pulumi.CustomResource):
         NetworkPerimeters can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/domainsNetworkPerimeter:DomainsNetworkPerimeter test_network_perimeter "idcsEndpoint/{idcsEndpoint}/networkPerimeters/{networkPerimeterId}"
+        $ pulumi import oci:Identity/domainsNetworkPerimeter:DomainsNetworkPerimeter test_network_perimeter "idcsEndpoint/{idcsEndpoint}/networkPerimeters/{networkPerimeterId}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -1139,7 +1139,7 @@ class DomainsNetworkPerimeter(pulumi.CustomResource):
         NetworkPerimeters can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Identity/domainsNetworkPerimeter:DomainsNetworkPerimeter test_network_perimeter "idcsEndpoint/{idcsEndpoint}/networkPerimeters/{networkPerimeterId}"
+        $ pulumi import oci:Identity/domainsNetworkPerimeter:DomainsNetworkPerimeter test_network_perimeter "idcsEndpoint/{idcsEndpoint}/networkPerimeters/{networkPerimeterId}"
         ```
 
         :param str resource_name: The name of the resource.

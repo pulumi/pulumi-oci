@@ -38,6 +38,8 @@ public final class HealthChecksFunctions {
      * Gets the configuration for the specified monitor.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -66,6 +68,7 @@ public final class HealthChecksFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetHttpMonitorResult> getHttpMonitor(GetHttpMonitorArgs args) {
@@ -77,6 +80,8 @@ public final class HealthChecksFunctions {
      * Gets the configuration for the specified monitor.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -105,6 +110,7 @@ public final class HealthChecksFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetHttpMonitorResult> getHttpMonitorPlain(GetHttpMonitorPlainArgs args) {
@@ -116,6 +122,8 @@ public final class HealthChecksFunctions {
      * Gets the configuration for the specified monitor.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -144,6 +152,7 @@ public final class HealthChecksFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetHttpMonitorResult> getHttpMonitor(GetHttpMonitorArgs args, InvokeOptions options) {
@@ -155,6 +164,8 @@ public final class HealthChecksFunctions {
      * Gets the configuration for the specified monitor.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -183,6 +194,7 @@ public final class HealthChecksFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetHttpMonitorResult> getHttpMonitorPlain(GetHttpMonitorPlainArgs args, InvokeOptions options) {
@@ -194,6 +206,8 @@ public final class HealthChecksFunctions {
      * Gets a list of HTTP monitors.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -224,6 +238,7 @@ public final class HealthChecksFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetHttpMonitorsResult> getHttpMonitors(GetHttpMonitorsArgs args) {
@@ -235,6 +250,8 @@ public final class HealthChecksFunctions {
      * Gets a list of HTTP monitors.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -265,6 +282,7 @@ public final class HealthChecksFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetHttpMonitorsResult> getHttpMonitorsPlain(GetHttpMonitorsPlainArgs args) {
@@ -276,6 +294,8 @@ public final class HealthChecksFunctions {
      * Gets a list of HTTP monitors.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -306,6 +326,7 @@ public final class HealthChecksFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetHttpMonitorsResult> getHttpMonitors(GetHttpMonitorsArgs args, InvokeOptions options) {
@@ -317,6 +338,8 @@ public final class HealthChecksFunctions {
      * Gets a list of HTTP monitors.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -347,6 +370,7 @@ public final class HealthChecksFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetHttpMonitorsResult> getHttpMonitorsPlain(GetHttpMonitorsPlainArgs args, InvokeOptions options) {
@@ -360,6 +384,8 @@ public final class HealthChecksFunctions {
      * on-demand probe.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -391,6 +417,7 @@ public final class HealthChecksFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetHttpProbeResultsResult> getHttpProbeResults(GetHttpProbeResultsArgs args) {
@@ -404,6 +431,8 @@ public final class HealthChecksFunctions {
      * on-demand probe.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -435,6 +464,7 @@ public final class HealthChecksFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetHttpProbeResultsResult> getHttpProbeResultsPlain(GetHttpProbeResultsPlainArgs args) {
@@ -448,6 +478,8 @@ public final class HealthChecksFunctions {
      * on-demand probe.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -479,6 +511,7 @@ public final class HealthChecksFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetHttpProbeResultsResult> getHttpProbeResults(GetHttpProbeResultsArgs args, InvokeOptions options) {
@@ -492,6 +525,8 @@ public final class HealthChecksFunctions {
      * on-demand probe.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -523,6 +558,7 @@ public final class HealthChecksFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetHttpProbeResultsResult> getHttpProbeResultsPlain(GetHttpProbeResultsPlainArgs args, InvokeOptions options) {
@@ -534,6 +570,8 @@ public final class HealthChecksFunctions {
      * Gets the configuration for the specified ping monitor.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -562,6 +600,7 @@ public final class HealthChecksFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPingMonitorResult> getPingMonitor(GetPingMonitorArgs args) {
@@ -573,6 +612,8 @@ public final class HealthChecksFunctions {
      * Gets the configuration for the specified ping monitor.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -601,6 +642,7 @@ public final class HealthChecksFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPingMonitorResult> getPingMonitorPlain(GetPingMonitorPlainArgs args) {
@@ -612,6 +654,8 @@ public final class HealthChecksFunctions {
      * Gets the configuration for the specified ping monitor.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -640,6 +684,7 @@ public final class HealthChecksFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPingMonitorResult> getPingMonitor(GetPingMonitorArgs args, InvokeOptions options) {
@@ -651,6 +696,8 @@ public final class HealthChecksFunctions {
      * Gets the configuration for the specified ping monitor.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -679,6 +726,7 @@ public final class HealthChecksFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPingMonitorResult> getPingMonitorPlain(GetPingMonitorPlainArgs args, InvokeOptions options) {
@@ -693,6 +741,8 @@ public final class HealthChecksFunctions {
      * a URL for fetching the next page.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -723,6 +773,7 @@ public final class HealthChecksFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPingMonitorsResult> getPingMonitors(GetPingMonitorsArgs args) {
@@ -737,6 +788,8 @@ public final class HealthChecksFunctions {
      * a URL for fetching the next page.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -767,6 +820,7 @@ public final class HealthChecksFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPingMonitorsResult> getPingMonitorsPlain(GetPingMonitorsPlainArgs args) {
@@ -781,6 +835,8 @@ public final class HealthChecksFunctions {
      * a URL for fetching the next page.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -811,6 +867,7 @@ public final class HealthChecksFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPingMonitorsResult> getPingMonitors(GetPingMonitorsArgs args, InvokeOptions options) {
@@ -825,6 +882,8 @@ public final class HealthChecksFunctions {
      * a URL for fetching the next page.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -855,6 +914,7 @@ public final class HealthChecksFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPingMonitorsResult> getPingMonitorsPlain(GetPingMonitorsPlainArgs args, InvokeOptions options) {
@@ -872,6 +932,8 @@ public final class HealthChecksFunctions {
      * `startTime`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -903,6 +965,7 @@ public final class HealthChecksFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPingProbeResultsResult> getPingProbeResults(GetPingProbeResultsArgs args) {
@@ -920,6 +983,8 @@ public final class HealthChecksFunctions {
      * `startTime`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -951,6 +1016,7 @@ public final class HealthChecksFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPingProbeResultsResult> getPingProbeResultsPlain(GetPingProbeResultsPlainArgs args) {
@@ -968,6 +1034,8 @@ public final class HealthChecksFunctions {
      * `startTime`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -999,6 +1067,7 @@ public final class HealthChecksFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPingProbeResultsResult> getPingProbeResults(GetPingProbeResultsArgs args, InvokeOptions options) {
@@ -1016,6 +1085,8 @@ public final class HealthChecksFunctions {
      * `startTime`.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1047,6 +1118,7 @@ public final class HealthChecksFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPingProbeResultsResult> getPingProbeResultsPlain(GetPingProbeResultsPlainArgs args, InvokeOptions options) {
@@ -1058,6 +1130,8 @@ public final class HealthChecksFunctions {
      * Gets information about all vantage points available to the user.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1087,6 +1161,7 @@ public final class HealthChecksFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVantagePointsResult> getVantagePoints() {
@@ -1098,6 +1173,8 @@ public final class HealthChecksFunctions {
      * Gets information about all vantage points available to the user.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1127,6 +1204,7 @@ public final class HealthChecksFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVantagePointsResult> getVantagePointsPlain() {
@@ -1138,6 +1216,8 @@ public final class HealthChecksFunctions {
      * Gets information about all vantage points available to the user.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1167,6 +1247,7 @@ public final class HealthChecksFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVantagePointsResult> getVantagePoints(GetVantagePointsArgs args) {
@@ -1178,6 +1259,8 @@ public final class HealthChecksFunctions {
      * Gets information about all vantage points available to the user.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1207,6 +1290,7 @@ public final class HealthChecksFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVantagePointsResult> getVantagePointsPlain(GetVantagePointsPlainArgs args) {
@@ -1218,6 +1302,8 @@ public final class HealthChecksFunctions {
      * Gets information about all vantage points available to the user.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1247,6 +1333,7 @@ public final class HealthChecksFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetVantagePointsResult> getVantagePoints(GetVantagePointsArgs args, InvokeOptions options) {
@@ -1258,6 +1345,8 @@ public final class HealthChecksFunctions {
      * Gets information about all vantage points available to the user.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1287,6 +1376,7 @@ public final class HealthChecksFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetVantagePointsResult> getVantagePointsPlain(GetVantagePointsPlainArgs args, InvokeOptions options) {

@@ -22,6 +22,8 @@ import javax.annotation.Nullable;
  * Creates the peer target database under the primary target database in Data Safe.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -73,13 +75,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * TargetDatabasePeerTargetDatabases can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:DataSafe/targetDatabasePeerTargetDatabase:TargetDatabasePeerTargetDatabase test_target_database_peer_target_database &#34;targetDatabases/{targetDatabaseId}/peerTargetDatabases/{peerTargetDatabaseId}&#34;
+ * $ pulumi import oci:DataSafe/targetDatabasePeerTargetDatabase:TargetDatabasePeerTargetDatabase test_target_database_peer_target_database &#34;targetDatabases/{targetDatabaseId}/peerTargetDatabases/{peerTargetDatabaseId}&#34;
  * ```
  * 
  */

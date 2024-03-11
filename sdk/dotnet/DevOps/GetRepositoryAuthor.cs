@@ -17,10 +17,9 @@ namespace Pulumi.Oci.DevOps
         /// Retrieve a list of all the authors.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -37,8 +36,7 @@ namespace Pulumi.Oci.DevOps
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetRepositoryAuthorResult> InvokeAsync(GetRepositoryAuthorArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetRepositoryAuthorResult>("oci:DevOps/getRepositoryAuthor:getRepositoryAuthor", args ?? new GetRepositoryAuthorArgs(), options.WithDefaults());
@@ -49,10 +47,9 @@ namespace Pulumi.Oci.DevOps
         /// Retrieve a list of all the authors.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -69,8 +66,7 @@ namespace Pulumi.Oci.DevOps
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetRepositoryAuthorResult> Invoke(GetRepositoryAuthorInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetRepositoryAuthorResult>("oci:DevOps/getRepositoryAuthor:getRepositoryAuthor", args ?? new GetRepositoryAuthorInvokeArgs(), options.WithDefaults());

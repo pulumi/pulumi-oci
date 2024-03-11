@@ -505,6 +505,7 @@ class Zone(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -527,13 +528,14 @@ class Zone(pulumi.CustomResource):
             scope=var["zone_scope"],
             view_id=oci_dns_view["test_view"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Zones can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Dns/zone:Zone test_zone "id"
+        $ pulumi import oci:Dns/zone:Zone test_zone "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -574,6 +576,7 @@ class Zone(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -596,13 +599,14 @@ class Zone(pulumi.CustomResource):
             scope=var["zone_scope"],
             view_id=oci_dns_view["test_view"]["id"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Zones can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Dns/zone:Zone test_zone "id"
+        $ pulumi import oci:Dns/zone:Zone test_zone "id"
         ```
 
         :param str resource_name: The name of the resource.

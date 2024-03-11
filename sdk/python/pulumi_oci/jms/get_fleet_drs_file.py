@@ -147,6 +147,7 @@ def get_fleet_drs_file(drs_file_key: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -154,6 +155,7 @@ def get_fleet_drs_file(drs_file_key: Optional[str] = None,
     test_fleet_drs_file = oci.Jms.get_fleet_drs_file(drs_file_key=var["fleet_drs_file_drs_file_key"],
         fleet_id=oci_jms_fleet["test_fleet"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str drs_file_key: The unique identifier of the DRS File in Object Storage.
@@ -188,6 +190,7 @@ def get_fleet_drs_file_output(drs_file_key: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -195,6 +198,7 @@ def get_fleet_drs_file_output(drs_file_key: Optional[pulumi.Input[str]] = None,
     test_fleet_drs_file = oci.Jms.get_fleet_drs_file(drs_file_key=var["fleet_drs_file_drs_file_key"],
         fleet_id=oci_jms_fleet["test_fleet"]["id"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str drs_file_key: The unique identifier of the DRS File in Object Storage.

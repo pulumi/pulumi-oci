@@ -31,7 +31,7 @@ import javax.annotation.Nullable;
  * DatabaseToolsConnections can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:DatabaseTools/databaseToolsConnection:DatabaseToolsConnection test_database_tools_connection &#34;id&#34;
+ * $ pulumi import oci:DatabaseTools/databaseToolsConnection:DatabaseToolsConnection test_database_tools_connection &#34;id&#34;
  * ```
  * 
  */

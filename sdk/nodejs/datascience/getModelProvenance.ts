@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -19,6 +20,7 @@ import * as utilities from "../utilities";
  *     modelId: oci_datascience_model.test_model.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getModelProvenance(args: GetModelProvenanceArgs, opts?: pulumi.InvokeOptions): Promise<GetModelProvenanceResult> {
 
@@ -76,6 +78,7 @@ export interface GetModelProvenanceResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -84,6 +87,7 @@ export interface GetModelProvenanceResult {
  *     modelId: oci_datascience_model.test_model.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getModelProvenanceOutput(args: GetModelProvenanceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetModelProvenanceResult> {
     return pulumi.output(args).apply((a: any) => getModelProvenance(a, opts))

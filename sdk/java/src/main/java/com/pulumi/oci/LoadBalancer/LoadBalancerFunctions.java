@@ -74,6 +74,8 @@ public final class LoadBalancerFunctions {
      * Gets the current health status of the specified backend server.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -104,6 +106,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBackendHealthResult> getBackendHealth(GetBackendHealthArgs args) {
@@ -115,6 +118,8 @@ public final class LoadBalancerFunctions {
      * Gets the current health status of the specified backend server.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -145,6 +150,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBackendHealthResult> getBackendHealthPlain(GetBackendHealthPlainArgs args) {
@@ -156,6 +162,8 @@ public final class LoadBalancerFunctions {
      * Gets the current health status of the specified backend server.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -186,6 +194,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBackendHealthResult> getBackendHealth(GetBackendHealthArgs args, InvokeOptions options) {
@@ -197,6 +206,8 @@ public final class LoadBalancerFunctions {
      * Gets the current health status of the specified backend server.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -227,6 +238,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBackendHealthResult> getBackendHealthPlain(GetBackendHealthPlainArgs args, InvokeOptions options) {
@@ -238,6 +250,8 @@ public final class LoadBalancerFunctions {
      * Gets the health status for the specified backend set.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -267,6 +281,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBackendSetHealthResult> getBackendSetHealth(GetBackendSetHealthArgs args) {
@@ -278,6 +293,8 @@ public final class LoadBalancerFunctions {
      * Gets the health status for the specified backend set.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -307,6 +324,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBackendSetHealthResult> getBackendSetHealthPlain(GetBackendSetHealthPlainArgs args) {
@@ -318,6 +336,8 @@ public final class LoadBalancerFunctions {
      * Gets the health status for the specified backend set.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -347,6 +367,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBackendSetHealthResult> getBackendSetHealth(GetBackendSetHealthArgs args, InvokeOptions options) {
@@ -358,6 +379,8 @@ public final class LoadBalancerFunctions {
      * Gets the health status for the specified backend set.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -387,6 +410,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBackendSetHealthResult> getBackendSetHealthPlain(GetBackendSetHealthPlainArgs args, InvokeOptions options) {
@@ -402,6 +426,8 @@ public final class LoadBalancerFunctions {
      * * `oci_load_balancer_backendsets`
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -430,6 +456,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBackendSetsResult> getBackendSets(GetBackendSetsArgs args) {
@@ -445,6 +472,8 @@ public final class LoadBalancerFunctions {
      * * `oci_load_balancer_backendsets`
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -473,6 +502,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBackendSetsResult> getBackendSetsPlain(GetBackendSetsPlainArgs args) {
@@ -488,6 +518,8 @@ public final class LoadBalancerFunctions {
      * * `oci_load_balancer_backendsets`
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -516,6 +548,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBackendSetsResult> getBackendSets(GetBackendSetsArgs args, InvokeOptions options) {
@@ -531,6 +564,8 @@ public final class LoadBalancerFunctions {
      * * `oci_load_balancer_backendsets`
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -559,6 +594,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBackendSetsResult> getBackendSetsPlain(GetBackendSetsPlainArgs args, InvokeOptions options) {
@@ -570,6 +606,8 @@ public final class LoadBalancerFunctions {
      * Lists the backend servers for a given load balancer and backend set.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -599,6 +637,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBackendsResult> getBackends(GetBackendsArgs args) {
@@ -610,6 +649,8 @@ public final class LoadBalancerFunctions {
      * Lists the backend servers for a given load balancer and backend set.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -639,6 +680,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBackendsResult> getBackendsPlain(GetBackendsPlainArgs args) {
@@ -650,6 +692,8 @@ public final class LoadBalancerFunctions {
      * Lists the backend servers for a given load balancer and backend set.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -679,6 +723,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetBackendsResult> getBackends(GetBackendsArgs args, InvokeOptions options) {
@@ -690,6 +735,8 @@ public final class LoadBalancerFunctions {
      * Lists the backend servers for a given load balancer and backend set.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -719,6 +766,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetBackendsResult> getBackendsPlain(GetBackendsPlainArgs args, InvokeOptions options) {
@@ -730,6 +778,8 @@ public final class LoadBalancerFunctions {
      * Lists all SSL certificates bundles associated with a given load balancer.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -758,6 +808,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCertificatesResult> getCertificates(GetCertificatesArgs args) {
@@ -769,6 +820,8 @@ public final class LoadBalancerFunctions {
      * Lists all SSL certificates bundles associated with a given load balancer.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -797,6 +850,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCertificatesResult> getCertificatesPlain(GetCertificatesPlainArgs args) {
@@ -808,6 +862,8 @@ public final class LoadBalancerFunctions {
      * Lists all SSL certificates bundles associated with a given load balancer.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -836,6 +892,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetCertificatesResult> getCertificates(GetCertificatesArgs args, InvokeOptions options) {
@@ -847,6 +904,8 @@ public final class LoadBalancerFunctions {
      * Lists all SSL certificates bundles associated with a given load balancer.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -875,6 +934,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetCertificatesResult> getCertificatesPlain(GetCertificatesPlainArgs args, InvokeOptions options) {
@@ -886,6 +946,8 @@ public final class LoadBalancerFunctions {
      * Gets the health status for the specified load balancer.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -914,6 +976,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetHealthResult> getHealth(GetHealthArgs args) {
@@ -925,6 +988,8 @@ public final class LoadBalancerFunctions {
      * Gets the health status for the specified load balancer.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -953,6 +1018,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetHealthResult> getHealthPlain(GetHealthPlainArgs args) {
@@ -964,6 +1030,8 @@ public final class LoadBalancerFunctions {
      * Gets the health status for the specified load balancer.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -992,6 +1060,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetHealthResult> getHealth(GetHealthArgs args, InvokeOptions options) {
@@ -1003,6 +1072,8 @@ public final class LoadBalancerFunctions {
      * Gets the health status for the specified load balancer.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1031,6 +1102,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetHealthResult> getHealthPlain(GetHealthPlainArgs args, InvokeOptions options) {
@@ -1042,6 +1114,8 @@ public final class LoadBalancerFunctions {
      * Lists all hostname resources associated with the specified load balancer.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1070,6 +1144,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetHostnamesResult> getHostnames(GetHostnamesArgs args) {
@@ -1081,6 +1156,8 @@ public final class LoadBalancerFunctions {
      * Lists all hostname resources associated with the specified load balancer.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1109,6 +1186,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetHostnamesResult> getHostnamesPlain(GetHostnamesPlainArgs args) {
@@ -1120,6 +1198,8 @@ public final class LoadBalancerFunctions {
      * Lists all hostname resources associated with the specified load balancer.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1148,6 +1228,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetHostnamesResult> getHostnames(GetHostnamesArgs args, InvokeOptions options) {
@@ -1159,6 +1240,8 @@ public final class LoadBalancerFunctions {
      * Lists all hostname resources associated with the specified load balancer.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1187,6 +1270,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetHostnamesResult> getHostnamesPlain(GetHostnamesPlainArgs args, InvokeOptions options) {
@@ -1204,6 +1288,8 @@ public final class LoadBalancerFunctions {
      * *  Response header rules
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1233,6 +1319,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetListenerRulesResult> getListenerRules(GetListenerRulesArgs args) {
@@ -1250,6 +1337,8 @@ public final class LoadBalancerFunctions {
      * *  Response header rules
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1279,6 +1368,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetListenerRulesResult> getListenerRulesPlain(GetListenerRulesPlainArgs args) {
@@ -1296,6 +1386,8 @@ public final class LoadBalancerFunctions {
      * *  Response header rules
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1325,6 +1417,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetListenerRulesResult> getListenerRules(GetListenerRulesArgs args, InvokeOptions options) {
@@ -1342,6 +1435,8 @@ public final class LoadBalancerFunctions {
      * *  Response header rules
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1371,6 +1466,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetListenerRulesResult> getListenerRulesPlain(GetListenerRulesPlainArgs args, InvokeOptions options) {
@@ -1382,6 +1478,8 @@ public final class LoadBalancerFunctions {
      * Lists all routing policies associated with the specified load balancer.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1410,6 +1508,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetLoadBalancerRoutingPoliciesResult> getLoadBalancerRoutingPolicies(GetLoadBalancerRoutingPoliciesArgs args) {
@@ -1421,6 +1520,8 @@ public final class LoadBalancerFunctions {
      * Lists all routing policies associated with the specified load balancer.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1449,6 +1550,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetLoadBalancerRoutingPoliciesResult> getLoadBalancerRoutingPoliciesPlain(GetLoadBalancerRoutingPoliciesPlainArgs args) {
@@ -1460,6 +1562,8 @@ public final class LoadBalancerFunctions {
      * Lists all routing policies associated with the specified load balancer.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1488,6 +1592,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetLoadBalancerRoutingPoliciesResult> getLoadBalancerRoutingPolicies(GetLoadBalancerRoutingPoliciesArgs args, InvokeOptions options) {
@@ -1499,6 +1604,8 @@ public final class LoadBalancerFunctions {
      * Lists all routing policies associated with the specified load balancer.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1527,6 +1634,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetLoadBalancerRoutingPoliciesResult> getLoadBalancerRoutingPoliciesPlain(GetLoadBalancerRoutingPoliciesPlainArgs args, InvokeOptions options) {
@@ -1538,6 +1646,8 @@ public final class LoadBalancerFunctions {
      * Gets the specified routing policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1567,6 +1677,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetLoadBalancerRoutingPolicyResult> getLoadBalancerRoutingPolicy(GetLoadBalancerRoutingPolicyArgs args) {
@@ -1578,6 +1689,8 @@ public final class LoadBalancerFunctions {
      * Gets the specified routing policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1607,6 +1720,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetLoadBalancerRoutingPolicyResult> getLoadBalancerRoutingPolicyPlain(GetLoadBalancerRoutingPolicyPlainArgs args) {
@@ -1618,6 +1732,8 @@ public final class LoadBalancerFunctions {
      * Gets the specified routing policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1647,6 +1763,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetLoadBalancerRoutingPolicyResult> getLoadBalancerRoutingPolicy(GetLoadBalancerRoutingPolicyArgs args, InvokeOptions options) {
@@ -1658,6 +1775,8 @@ public final class LoadBalancerFunctions {
      * Gets the specified routing policy.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1687,6 +1806,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetLoadBalancerRoutingPolicyResult> getLoadBalancerRoutingPolicyPlain(GetLoadBalancerRoutingPolicyPlainArgs args, InvokeOptions options) {
@@ -1702,6 +1822,8 @@ public final class LoadBalancerFunctions {
      * * `oci_load_balancers`
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1733,6 +1855,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetLoadBalancersResult> getLoadBalancers(GetLoadBalancersArgs args) {
@@ -1748,6 +1871,8 @@ public final class LoadBalancerFunctions {
      * * `oci_load_balancers`
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1779,6 +1904,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetLoadBalancersResult> getLoadBalancersPlain(GetLoadBalancersPlainArgs args) {
@@ -1794,6 +1920,8 @@ public final class LoadBalancerFunctions {
      * * `oci_load_balancers`
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1825,6 +1953,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetLoadBalancersResult> getLoadBalancers(GetLoadBalancersArgs args, InvokeOptions options) {
@@ -1840,6 +1969,8 @@ public final class LoadBalancerFunctions {
      * * `oci_load_balancers`
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1871,6 +2002,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetLoadBalancersResult> getLoadBalancersPlain(GetLoadBalancersPlainArgs args, InvokeOptions options) {
@@ -1882,6 +2014,8 @@ public final class LoadBalancerFunctions {
      * Lists all path route sets associated with the specified load balancer.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1910,6 +2044,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPathRouteSetsResult> getPathRouteSets(GetPathRouteSetsArgs args) {
@@ -1921,6 +2056,8 @@ public final class LoadBalancerFunctions {
      * Lists all path route sets associated with the specified load balancer.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1949,6 +2086,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPathRouteSetsResult> getPathRouteSetsPlain(GetPathRouteSetsPlainArgs args) {
@@ -1960,6 +2098,8 @@ public final class LoadBalancerFunctions {
      * Lists all path route sets associated with the specified load balancer.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1988,6 +2128,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPathRouteSetsResult> getPathRouteSets(GetPathRouteSetsArgs args, InvokeOptions options) {
@@ -1999,6 +2140,8 @@ public final class LoadBalancerFunctions {
      * Lists all path route sets associated with the specified load balancer.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2027,6 +2170,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPathRouteSetsResult> getPathRouteSetsPlain(GetPathRouteSetsPlainArgs args, InvokeOptions options) {
@@ -2038,6 +2182,8 @@ public final class LoadBalancerFunctions {
      * Lists the available load balancer policies.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2066,6 +2212,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPoliciesResult> getPolicies(GetPoliciesArgs args) {
@@ -2077,6 +2224,8 @@ public final class LoadBalancerFunctions {
      * Lists the available load balancer policies.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2105,6 +2254,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPoliciesResult> getPoliciesPlain(GetPoliciesPlainArgs args) {
@@ -2116,6 +2266,8 @@ public final class LoadBalancerFunctions {
      * Lists the available load balancer policies.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2144,6 +2296,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetPoliciesResult> getPolicies(GetPoliciesArgs args, InvokeOptions options) {
@@ -2155,6 +2308,8 @@ public final class LoadBalancerFunctions {
      * Lists the available load balancer policies.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2183,6 +2338,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetPoliciesResult> getPoliciesPlain(GetPoliciesPlainArgs args, InvokeOptions options) {
@@ -2194,6 +2350,8 @@ public final class LoadBalancerFunctions {
      * Lists all supported traffic protocols.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2222,6 +2380,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetProtocolsResult> getProtocols(GetProtocolsArgs args) {
@@ -2233,6 +2392,8 @@ public final class LoadBalancerFunctions {
      * Lists all supported traffic protocols.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2261,6 +2422,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetProtocolsResult> getProtocolsPlain(GetProtocolsPlainArgs args) {
@@ -2272,6 +2434,8 @@ public final class LoadBalancerFunctions {
      * Lists all supported traffic protocols.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2300,6 +2464,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetProtocolsResult> getProtocols(GetProtocolsArgs args, InvokeOptions options) {
@@ -2311,6 +2476,8 @@ public final class LoadBalancerFunctions {
      * Lists all supported traffic protocols.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2339,6 +2506,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetProtocolsResult> getProtocolsPlain(GetProtocolsPlainArgs args, InvokeOptions options) {
@@ -2350,6 +2518,8 @@ public final class LoadBalancerFunctions {
      * Gets the specified set of rules.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2379,6 +2549,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRuleSetResult> getRuleSet(GetRuleSetArgs args) {
@@ -2390,6 +2561,8 @@ public final class LoadBalancerFunctions {
      * Gets the specified set of rules.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2419,6 +2592,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRuleSetResult> getRuleSetPlain(GetRuleSetPlainArgs args) {
@@ -2430,6 +2604,8 @@ public final class LoadBalancerFunctions {
      * Gets the specified set of rules.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2459,6 +2635,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRuleSetResult> getRuleSet(GetRuleSetArgs args, InvokeOptions options) {
@@ -2470,6 +2647,8 @@ public final class LoadBalancerFunctions {
      * Gets the specified set of rules.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2499,6 +2678,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRuleSetResult> getRuleSetPlain(GetRuleSetPlainArgs args, InvokeOptions options) {
@@ -2510,6 +2690,8 @@ public final class LoadBalancerFunctions {
      * Lists all rule sets associated with the specified load balancer.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2538,6 +2720,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRuleSetsResult> getRuleSets(GetRuleSetsArgs args) {
@@ -2549,6 +2732,8 @@ public final class LoadBalancerFunctions {
      * Lists all rule sets associated with the specified load balancer.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2577,6 +2762,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRuleSetsResult> getRuleSetsPlain(GetRuleSetsPlainArgs args) {
@@ -2588,6 +2774,8 @@ public final class LoadBalancerFunctions {
      * Lists all rule sets associated with the specified load balancer.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2616,6 +2804,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRuleSetsResult> getRuleSets(GetRuleSetsArgs args, InvokeOptions options) {
@@ -2627,6 +2816,8 @@ public final class LoadBalancerFunctions {
      * Lists all rule sets associated with the specified load balancer.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2655,6 +2846,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRuleSetsResult> getRuleSetsPlain(GetRuleSetsPlainArgs args, InvokeOptions options) {
@@ -2666,6 +2858,8 @@ public final class LoadBalancerFunctions {
      * Lists the valid load balancer shapes.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2694,6 +2888,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetShapesResult> getShapes(GetShapesArgs args) {
@@ -2705,6 +2900,8 @@ public final class LoadBalancerFunctions {
      * Lists the valid load balancer shapes.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2733,6 +2930,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetShapesResult> getShapesPlain(GetShapesPlainArgs args) {
@@ -2744,6 +2942,8 @@ public final class LoadBalancerFunctions {
      * Lists the valid load balancer shapes.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2772,6 +2972,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetShapesResult> getShapes(GetShapesArgs args, InvokeOptions options) {
@@ -2783,6 +2984,8 @@ public final class LoadBalancerFunctions {
      * Lists the valid load balancer shapes.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2811,6 +3014,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetShapesResult> getShapesPlain(GetShapesPlainArgs args, InvokeOptions options) {
@@ -2822,6 +3026,8 @@ public final class LoadBalancerFunctions {
      * Gets the specified SSL cipher suite&#39;s configuration information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2851,6 +3057,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSslCipherSuiteResult> getSslCipherSuite(GetSslCipherSuiteArgs args) {
@@ -2862,6 +3069,8 @@ public final class LoadBalancerFunctions {
      * Gets the specified SSL cipher suite&#39;s configuration information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2891,6 +3100,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSslCipherSuiteResult> getSslCipherSuitePlain(GetSslCipherSuitePlainArgs args) {
@@ -2902,6 +3112,8 @@ public final class LoadBalancerFunctions {
      * Gets the specified SSL cipher suite&#39;s configuration information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2931,6 +3143,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSslCipherSuiteResult> getSslCipherSuite(GetSslCipherSuiteArgs args, InvokeOptions options) {
@@ -2942,6 +3155,8 @@ public final class LoadBalancerFunctions {
      * Gets the specified SSL cipher suite&#39;s configuration information.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2971,6 +3186,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSslCipherSuiteResult> getSslCipherSuitePlain(GetSslCipherSuitePlainArgs args, InvokeOptions options) {
@@ -2982,6 +3198,8 @@ public final class LoadBalancerFunctions {
      * Lists all SSL cipher suites associated with the specified load balancer.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3010,6 +3228,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSslCipherSuitesResult> getSslCipherSuites(GetSslCipherSuitesArgs args) {
@@ -3021,6 +3240,8 @@ public final class LoadBalancerFunctions {
      * Lists all SSL cipher suites associated with the specified load balancer.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3049,6 +3270,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSslCipherSuitesResult> getSslCipherSuitesPlain(GetSslCipherSuitesPlainArgs args) {
@@ -3060,6 +3282,8 @@ public final class LoadBalancerFunctions {
      * Lists all SSL cipher suites associated with the specified load balancer.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3088,6 +3312,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetSslCipherSuitesResult> getSslCipherSuites(GetSslCipherSuitesArgs args, InvokeOptions options) {
@@ -3099,6 +3324,8 @@ public final class LoadBalancerFunctions {
      * Lists all SSL cipher suites associated with the specified load balancer.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3127,6 +3354,7 @@ public final class LoadBalancerFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetSslCipherSuitesResult> getSslCipherSuitesPlain(GetSslCipherSuitesPlainArgs args, InvokeOptions options) {

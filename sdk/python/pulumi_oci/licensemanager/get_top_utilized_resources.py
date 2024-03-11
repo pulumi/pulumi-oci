@@ -95,6 +95,7 @@ def get_top_utilized_resources(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -103,6 +104,7 @@ def get_top_utilized_resources(compartment_id: Optional[str] = None,
         is_compartment_id_in_subtree=var["top_utilized_resource_is_compartment_id_in_subtree"],
         resource_unit_type=var["top_utilized_resource_resource_unit_type"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for the license record, product license, and configuration.
@@ -136,6 +138,7 @@ def get_top_utilized_resources_output(compartment_id: Optional[pulumi.Input[str]
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -144,6 +147,7 @@ def get_top_utilized_resources_output(compartment_id: Optional[pulumi.Input[str]
         is_compartment_id_in_subtree=var["top_utilized_resource_is_compartment_id_in_subtree"],
         resource_unit_type=var["top_utilized_resource_resource_unit_type"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for the license record, product license, and configuration.

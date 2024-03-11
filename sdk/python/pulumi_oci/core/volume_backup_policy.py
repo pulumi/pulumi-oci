@@ -258,6 +258,7 @@ class VolumeBackupPolicy(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -285,13 +286,14 @@ class VolumeBackupPolicy(pulumi.CustomResource):
                 time_zone=var["volume_backup_policy_schedules_time_zone"],
             )])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         VolumeBackupPolicies can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/volumeBackupPolicy:VolumeBackupPolicy test_volume_backup_policy "id"
+        $ pulumi import oci:Core/volumeBackupPolicy:VolumeBackupPolicy test_volume_backup_policy "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -319,6 +321,7 @@ class VolumeBackupPolicy(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -346,13 +349,14 @@ class VolumeBackupPolicy(pulumi.CustomResource):
                 time_zone=var["volume_backup_policy_schedules_time_zone"],
             )])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         VolumeBackupPolicies can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Core/volumeBackupPolicy:VolumeBackupPolicy test_volume_backup_policy "id"
+        $ pulumi import oci:Core/volumeBackupPolicy:VolumeBackupPolicy test_volume_backup_policy "id"
         ```
 
         :param str resource_name: The name of the resource.

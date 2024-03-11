@@ -15,6 +15,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -26,13 +27,14 @@ import * as utilities from "../utilities";
  *     viewId: oci_dns_view.test_view.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * ActionCreateZoneFromZoneFile can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Dns/actionCreateZoneFromZoneFile:ActionCreateZoneFromZoneFile test_action_create_zone_from_zone_file "id"
+ * $ pulumi import oci:Dns/actionCreateZoneFromZoneFile:ActionCreateZoneFromZoneFile test_action_create_zone_from_zone_file "id"
  * ```
  */
 export class ActionCreateZoneFromZoneFile extends pulumi.CustomResource {

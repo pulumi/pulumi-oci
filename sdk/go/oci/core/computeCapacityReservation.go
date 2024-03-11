@@ -22,6 +22,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -69,15 +70,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // ComputeCapacityReservations can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Core/computeCapacityReservation:ComputeCapacityReservation test_compute_capacity_reservation "id"
-//
+// $ pulumi import oci:Core/computeCapacityReservation:ComputeCapacityReservation test_compute_capacity_reservation "id"
 // ```
 type ComputeCapacityReservation struct {
 	pulumi.CustomResourceState

@@ -21,6 +21,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -41,13 +42,14 @@ import * as utilities from "../utilities";
  *     routeTableId: oci_core_route_table.test_route_table.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * ServiceGateways can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import oci:Core/serviceGateway:ServiceGateway test_service_gateway "id"
+ * $ pulumi import oci:Core/serviceGateway:ServiceGateway test_service_gateway "id"
  * ```
  */
 export class ServiceGateway extends pulumi.CustomResource {

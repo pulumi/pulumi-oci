@@ -28,7 +28,7 @@ import javax.annotation.Nullable;
  * OperatorControls can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:OperatorAccessControl/operatorControl:OperatorControl test_operator_control &#34;id&#34;
+ * $ pulumi import oci:OperatorAccessControl/operatorControl:OperatorControl test_operator_control &#34;id&#34;
  * ```
  * 
  */

@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -19,6 +20,7 @@ import * as utilities from "../utilities";
  *     deploymentBackupId: oci_golden_gate_deployment_backup.test_deployment_backup.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDeploymentBackup(args: GetDeploymentBackupArgs, opts?: pulumi.InvokeOptions): Promise<GetDeploymentBackupResult> {
 
@@ -131,6 +133,7 @@ export interface GetDeploymentBackupResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -139,6 +142,7 @@ export interface GetDeploymentBackupResult {
  *     deploymentBackupId: oci_golden_gate_deployment_backup.test_deployment_backup.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDeploymentBackupOutput(args: GetDeploymentBackupOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDeploymentBackupResult> {
     return pulumi.output(args).apply((a: any) => getDeploymentBackup(a, opts))

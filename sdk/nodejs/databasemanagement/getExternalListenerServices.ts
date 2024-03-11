@@ -14,6 +14,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,6 +25,7 @@ import * as utilities from "../utilities";
  *     opcNamedCredentialId: _var.external_listener_service_opc_named_credential_id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getExternalListenerServices(args: GetExternalListenerServicesArgs, opts?: pulumi.InvokeOptions): Promise<GetExternalListenerServicesResult> {
 
@@ -83,6 +85,7 @@ export interface GetExternalListenerServicesResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -93,6 +96,7 @@ export interface GetExternalListenerServicesResult {
  *     opcNamedCredentialId: _var.external_listener_service_opc_named_credential_id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getExternalListenerServicesOutput(args: GetExternalListenerServicesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalListenerServicesResult> {
     return pulumi.output(args).apply((a: any) => getExternalListenerServices(a, opts))

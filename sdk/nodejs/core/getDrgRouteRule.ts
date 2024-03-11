@@ -11,6 +11,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -19,6 +20,7 @@ import * as utilities from "../utilities";
  *     drgRouteTableId: oci_core_drg_route_table.test_drg_route_table.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDrgRouteRule(args: GetDrgRouteRuleArgs, opts?: pulumi.InvokeOptions): Promise<GetDrgRouteRuleResult> {
 
@@ -92,6 +94,7 @@ export interface GetDrgRouteRuleResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -100,6 +103,7 @@ export interface GetDrgRouteRuleResult {
  *     drgRouteTableId: oci_core_drg_route_table.test_drg_route_table.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDrgRouteRuleOutput(args: GetDrgRouteRuleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDrgRouteRuleResult> {
     return pulumi.output(args).apply((a: any) => getDrgRouteRule(a, opts))

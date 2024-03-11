@@ -21,6 +21,8 @@ import javax.annotation.Nullable;
  * Adds one route distribution statement to the specified route distribution.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -57,13 +59,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * DrgRouteDistributionStatement can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Core/drgRouteDistributionStatement:DrgRouteDistributionStatement test_drg_route_distribution_statement &#34;drgRouteDistributions/{drgRouteDistributionId}/statements/{id}&#34;
+ * $ pulumi import oci:Core/drgRouteDistributionStatement:DrgRouteDistributionStatement test_drg_route_distribution_statement &#34;drgRouteDistributions/{drgRouteDistributionId}/statements/{id}&#34;
  * ```
  * 
  */

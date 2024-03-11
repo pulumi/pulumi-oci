@@ -24,6 +24,8 @@ import javax.annotation.Nullable;
  * Creates a new Alert Rule.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -61,13 +63,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * AlertRules can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:Budget/rule:Rule test_alert_rule &#34;budgets/{budgetId}/alertRules/{alertRuleId}&#34;
+ * $ pulumi import oci:Budget/rule:Rule test_alert_rule &#34;budgets/{budgetId}/alertRules/{alertRuleId}&#34;
  * ```
  * 
  */

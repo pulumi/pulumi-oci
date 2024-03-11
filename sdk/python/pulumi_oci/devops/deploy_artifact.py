@@ -414,6 +414,7 @@ class DeployArtifact(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -447,13 +448,14 @@ class DeployArtifact(pulumi.CustomResource):
                 "bar-key": "value",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         DeployArtifacts can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DevOps/deployArtifact:DeployArtifact test_deploy_artifact "id"
+        $ pulumi import oci:DevOps/deployArtifact:DeployArtifact test_deploy_artifact "id"
         ```
 
         :param str resource_name: The name of the resource.
@@ -484,6 +486,7 @@ class DeployArtifact(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -517,13 +520,14 @@ class DeployArtifact(pulumi.CustomResource):
                 "bar-key": "value",
             })
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         DeployArtifacts can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:DevOps/deployArtifact:DeployArtifact test_deploy_artifact "id"
+        $ pulumi import oci:DevOps/deployArtifact:DeployArtifact test_deploy_artifact "id"
         ```
 
         :param str resource_name: The name of the resource.

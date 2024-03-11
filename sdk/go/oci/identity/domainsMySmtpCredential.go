@@ -21,9 +21,7 @@ import (
 // MySmtpCredentials can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Identity/domainsMySmtpCredential:DomainsMySmtpCredential test_my_smtp_credential "idcsEndpoint/{idcsEndpoint}/mySmtpCredentials/{mySmtpCredentialId}"
-//
+// $ pulumi import oci:Identity/domainsMySmtpCredential:DomainsMySmtpCredential test_my_smtp_credential "idcsEndpoint/{idcsEndpoint}/mySmtpCredentials/{mySmtpCredentialId}"
 // ```
 type DomainsMySmtpCredential struct {
 	pulumi.CustomResourceState

@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,6 +24,7 @@ import * as utilities from "../utilities";
  *     state: _var.profile_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getProfiles(args: GetProfilesArgs, opts?: pulumi.InvokeOptions): Promise<GetProfilesResult> {
 
@@ -87,6 +89,7 @@ export interface GetProfilesResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -97,6 +100,7 @@ export interface GetProfilesResult {
  *     state: _var.profile_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getProfilesOutput(args: GetProfilesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetProfilesResult> {
     return pulumi.output(args).apply((a: any) => getProfiles(a, opts))

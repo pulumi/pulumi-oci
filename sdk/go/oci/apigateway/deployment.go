@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -556,15 +557,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Deployments can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:ApiGateway/deployment:Deployment test_deployment "id"
-//
+// $ pulumi import oci:ApiGateway/deployment:Deployment test_deployment "id"
 // ```
 type Deployment struct {
 	pulumi.CustomResourceState

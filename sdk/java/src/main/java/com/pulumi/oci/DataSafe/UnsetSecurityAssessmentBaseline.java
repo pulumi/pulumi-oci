@@ -20,6 +20,8 @@ import javax.annotation.Nullable;
  * Sets the if-match parameter to the value of the etag from a previous GET or POST response for that resource.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -48,13 +50,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * UnsetSecurityAssessmentBaseline can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import oci:DataSafe/unsetSecurityAssessmentBaseline:UnsetSecurityAssessmentBaseline test_unset_security_assessment_baseline &#34;id&#34;
+ * $ pulumi import oci:DataSafe/unsetSecurityAssessmentBaseline:UnsetSecurityAssessmentBaseline test_unset_security_assessment_baseline &#34;id&#34;
  * ```
  * 
  */

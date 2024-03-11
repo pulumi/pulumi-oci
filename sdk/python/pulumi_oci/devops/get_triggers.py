@@ -132,6 +132,7 @@ def get_triggers(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -142,6 +143,7 @@ def get_triggers(compartment_id: Optional[str] = None,
         project_id=oci_devops_project["test_project"]["id"],
         state=var["trigger_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment in which to list resources.
@@ -186,6 +188,7 @@ def get_triggers_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = 
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -196,6 +199,7 @@ def get_triggers_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = 
         project_id=oci_devops_project["test_project"]["id"],
         state=var["trigger_state"])
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment in which to list resources.

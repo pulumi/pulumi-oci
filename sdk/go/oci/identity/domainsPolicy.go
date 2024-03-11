@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -70,15 +71,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Policies can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Identity/domainsPolicy:DomainsPolicy test_policy "idcsEndpoint/{idcsEndpoint}/policies/{policyId}"
-//
+// $ pulumi import oci:Identity/domainsPolicy:DomainsPolicy test_policy "idcsEndpoint/{idcsEndpoint}/policies/{policyId}"
 // ```
 type DomainsPolicy struct {
 	pulumi.CustomResourceState

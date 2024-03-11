@@ -17,10 +17,9 @@ namespace Pulumi.Oci.HealthChecks
         /// Gets the configuration for the specified ping monitor.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,8 +35,7 @@ namespace Pulumi.Oci.HealthChecks
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetPingMonitorResult> InvokeAsync(GetPingMonitorArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetPingMonitorResult>("oci:HealthChecks/getPingMonitor:getPingMonitor", args ?? new GetPingMonitorArgs(), options.WithDefaults());
@@ -48,10 +46,9 @@ namespace Pulumi.Oci.HealthChecks
         /// Gets the configuration for the specified ping monitor.
         /// 
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -67,8 +64,7 @@ namespace Pulumi.Oci.HealthChecks
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetPingMonitorResult> Invoke(GetPingMonitorInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPingMonitorResult>("oci:HealthChecks/getPingMonitor:getPingMonitor", args ?? new GetPingMonitorInvokeArgs(), options.WithDefaults());

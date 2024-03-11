@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,6 +25,7 @@ import * as utilities from "../utilities";
  *     state: _var.mesh_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getMeshes(args: GetMeshesArgs, opts?: pulumi.InvokeOptions): Promise<GetMeshesResult> {
 
@@ -93,6 +95,7 @@ export interface GetMeshesResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -104,6 +107,7 @@ export interface GetMeshesResult {
  *     state: _var.mesh_state,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getMeshesOutput(args: GetMeshesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMeshesResult> {
     return pulumi.output(args).apply((a: any) => getMeshes(a, opts))

@@ -19,6 +19,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -46,15 +47,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // TsigKeys can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import oci:Dns/tsigKey:TsigKey test_tsig_key "id"
-//
+// $ pulumi import oci:Dns/tsigKey:TsigKey test_tsig_key "id"
 // ```
 type TsigKey struct {
 	pulumi.CustomResourceState

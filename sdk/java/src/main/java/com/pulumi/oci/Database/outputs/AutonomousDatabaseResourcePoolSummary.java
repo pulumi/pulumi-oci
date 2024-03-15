@@ -13,20 +13,28 @@ import javax.annotation.Nullable;
 @CustomType
 public final class AutonomousDatabaseResourcePoolSummary {
     /**
-     * @return Indicates if the long-term backup schedule should be deleted. The default value is `FALSE`.
+     * @return (Updatable) Indicates if the resource pool should be deleted for the Autonomous Database.
      * 
      */
     private @Nullable Boolean isDisabled;
+    /**
+     * @return (Updatable) Resource pool size.
+     * 
+     */
     private @Nullable Integer poolSize;
 
     private AutonomousDatabaseResourcePoolSummary() {}
     /**
-     * @return Indicates if the long-term backup schedule should be deleted. The default value is `FALSE`.
+     * @return (Updatable) Indicates if the resource pool should be deleted for the Autonomous Database.
      * 
      */
     public Optional<Boolean> isDisabled() {
         return Optional.ofNullable(this.isDisabled);
     }
+    /**
+     * @return (Updatable) Resource pool size.
+     * 
+     */
     public Optional<Integer> poolSize() {
         return Optional.ofNullable(this.poolSize);
     }

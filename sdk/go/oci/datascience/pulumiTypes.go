@@ -3525,6 +3525,8 @@ type ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails
 	BandwidthMbps *int `pulumi:"bandwidthMbps"`
 	// (Updatable) The model deployment instance configuration
 	InstanceConfiguration ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration `pulumi:"instanceConfiguration"`
+	// (Updatable) The maximum network bandwidth for the model deployment.
+	MaximumBandwidthMbps *int `pulumi:"maximumBandwidthMbps"`
 	// (Updatable) The OCID of the model you want to deploy.
 	ModelId string `pulumi:"modelId"`
 	// (Updatable) The scaling policy to apply to each model of the deployment.
@@ -3547,6 +3549,8 @@ type ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails
 	BandwidthMbps pulumi.IntPtrInput `pulumi:"bandwidthMbps"`
 	// (Updatable) The model deployment instance configuration
 	InstanceConfiguration ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationInput `pulumi:"instanceConfiguration"`
+	// (Updatable) The maximum network bandwidth for the model deployment.
+	MaximumBandwidthMbps pulumi.IntPtrInput `pulumi:"maximumBandwidthMbps"`
 	// (Updatable) The OCID of the model you want to deploy.
 	ModelId pulumi.StringInput `pulumi:"modelId"`
 	// (Updatable) The scaling policy to apply to each model of the deployment.
@@ -3644,6 +3648,13 @@ func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDeta
 	}).(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationOutput)
 }
 
+// (Updatable) The maximum network bandwidth for the model deployment.
+func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsOutput) MaximumBandwidthMbps() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails) *int {
+		return v.MaximumBandwidthMbps
+	}).(pulumi.IntPtrOutput)
+}
+
 // (Updatable) The OCID of the model you want to deploy.
 func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsOutput) ModelId() pulumi.StringOutput {
 	return o.ApplyT(func(v ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails) string {
@@ -3700,6 +3711,16 @@ func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDeta
 		}
 		return &v.InstanceConfiguration
 	}).(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationPtrOutput)
+}
+
+// (Updatable) The maximum network bandwidth for the model deployment.
+func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsPtrOutput) MaximumBandwidthMbps() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails) *int {
+		if v == nil {
+			return nil
+		}
+		return v.MaximumBandwidthMbps
+	}).(pulumi.IntPtrOutput)
 }
 
 // (Updatable) The OCID of the model you want to deploy.
@@ -3883,6 +3904,8 @@ func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDeta
 }
 
 type ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetails struct {
+	// (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+	CpuBaseline *string `pulumi:"cpuBaseline"`
 	// (Updatable) A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
 	MemoryInGbs *float64 `pulumi:"memoryInGbs"`
 	// (Updatable) A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 to 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
@@ -3901,6 +3924,8 @@ type ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails
 }
 
 type ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs struct {
+	// (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+	CpuBaseline pulumi.StringPtrInput `pulumi:"cpuBaseline"`
 	// (Updatable) A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
 	MemoryInGbs pulumi.Float64PtrInput `pulumi:"memoryInGbs"`
 	// (Updatable) A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 to 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
@@ -3984,6 +4009,13 @@ func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDeta
 	}).(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsPtrOutput)
 }
 
+// (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsOutput) CpuBaseline() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetails) *string {
+		return v.CpuBaseline
+	}).(pulumi.StringPtrOutput)
+}
+
 // (Updatable) A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
 func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsOutput) MemoryInGbs() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetails) *float64 {
@@ -4022,6 +4054,16 @@ func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDeta
 	}).(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsOutput)
 }
 
+// (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsPtrOutput) CpuBaseline() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CpuBaseline
+	}).(pulumi.StringPtrOutput)
+}
+
 // (Updatable) A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
 func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsPtrOutput) MemoryInGbs() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v *ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetails) *float64 {
@@ -4043,8 +4085,14 @@ func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDeta
 }
 
 type ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicy struct {
+	// (Updatable) The list of autoscaling policy details.
+	AutoScalingPolicies []ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicy `pulumi:"autoScalingPolicies"`
+	// (Updatable) For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 600 seconds, which is also the default. The cooldown period starts when the model deployment becomes ACTIVE after the scaling operation.
+	CoolDownInSeconds *int `pulumi:"coolDownInSeconds"`
 	// (Updatable) The number of instances for the model deployment.
-	InstanceCount int `pulumi:"instanceCount"`
+	InstanceCount *int `pulumi:"instanceCount"`
+	// (Updatable) Whether the autoscaling policy is enabled.
+	IsEnabled *bool `pulumi:"isEnabled"`
 	// (Updatable) The type of scaling policy.
 	PolicyType string `pulumi:"policyType"`
 }
@@ -4061,8 +4109,14 @@ type ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails
 }
 
 type ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyArgs struct {
+	// (Updatable) The list of autoscaling policy details.
+	AutoScalingPolicies ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyArrayInput `pulumi:"autoScalingPolicies"`
+	// (Updatable) For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 600 seconds, which is also the default. The cooldown period starts when the model deployment becomes ACTIVE after the scaling operation.
+	CoolDownInSeconds pulumi.IntPtrInput `pulumi:"coolDownInSeconds"`
 	// (Updatable) The number of instances for the model deployment.
-	InstanceCount pulumi.IntInput `pulumi:"instanceCount"`
+	InstanceCount pulumi.IntPtrInput `pulumi:"instanceCount"`
+	// (Updatable) Whether the autoscaling policy is enabled.
+	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
 	// (Updatable) The type of scaling policy.
 	PolicyType pulumi.StringInput `pulumi:"policyType"`
 }
@@ -4144,11 +4198,32 @@ func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDeta
 	}).(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyPtrOutput)
 }
 
+// (Updatable) The list of autoscaling policy details.
+func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyOutput) AutoScalingPolicies() ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyArrayOutput {
+	return o.ApplyT(func(v ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicy) []ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicy {
+		return v.AutoScalingPolicies
+	}).(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyArrayOutput)
+}
+
+// (Updatable) For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 600 seconds, which is also the default. The cooldown period starts when the model deployment becomes ACTIVE after the scaling operation.
+func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyOutput) CoolDownInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicy) *int {
+		return v.CoolDownInSeconds
+	}).(pulumi.IntPtrOutput)
+}
+
 // (Updatable) The number of instances for the model deployment.
-func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyOutput) InstanceCount() pulumi.IntOutput {
-	return o.ApplyT(func(v ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicy) int {
+func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyOutput) InstanceCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicy) *int {
 		return v.InstanceCount
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Whether the autoscaling policy is enabled.
+func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicy) *bool {
+		return v.IsEnabled
+	}).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) The type of scaling policy.
@@ -4182,14 +4257,44 @@ func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDeta
 	}).(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyOutput)
 }
 
+// (Updatable) The list of autoscaling policy details.
+func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyPtrOutput) AutoScalingPolicies() ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyArrayOutput {
+	return o.ApplyT(func(v *ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicy) []ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicy {
+		if v == nil {
+			return nil
+		}
+		return v.AutoScalingPolicies
+	}).(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyArrayOutput)
+}
+
+// (Updatable) For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 600 seconds, which is also the default. The cooldown period starts when the model deployment becomes ACTIVE after the scaling operation.
+func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyPtrOutput) CoolDownInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicy) *int {
+		if v == nil {
+			return nil
+		}
+		return v.CoolDownInSeconds
+	}).(pulumi.IntPtrOutput)
+}
+
 // (Updatable) The number of instances for the model deployment.
 func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyPtrOutput) InstanceCount() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicy) *int {
 		if v == nil {
 			return nil
 		}
-		return &v.InstanceCount
+		return v.InstanceCount
 	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Whether the autoscaling policy is enabled.
+func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyPtrOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicy) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsEnabled
+	}).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) The type of scaling policy.
@@ -4200,6 +4305,649 @@ func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDeta
 		}
 		return &v.PolicyType
 	}).(pulumi.StringPtrOutput)
+}
+
+type ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicy struct {
+	// (Updatable) The type of autoscaling policy.
+	AutoScalingPolicyType string `pulumi:"autoScalingPolicyType"`
+	// (Updatable) For a threshold-based autoscaling policy, this value is the initial number of instances to launch in the model deployment immediately after autoscaling is enabled. Note that anytime this value is updated, the number of instances will be reset to this value. After autoscaling retrieves performance metrics, the number of instances is automatically adjusted from this initial number to a number that is based on the limits that you set.
+	InitialInstanceCount int `pulumi:"initialInstanceCount"`
+	// (Updatable) For a threshold-based autoscaling policy, this value is the maximum number of instances the model deployment is allowed to increase to (scale out).
+	MaximumInstanceCount int `pulumi:"maximumInstanceCount"`
+	// (Updatable) For a threshold-based autoscaling policy, this value is the minimum number of instances the model deployment is allowed to decrease to (scale in).
+	MinimumInstanceCount int `pulumi:"minimumInstanceCount"`
+	// (Updatable) The list of autoscaling policy rules.
+	Rules []ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRule `pulumi:"rules"`
+}
+
+// ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyInput is an input type that accepts ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyArgs and ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyOutput values.
+// You can construct a concrete instance of `ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyInput` via:
+//
+//	ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyArgs{...}
+type ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyInput interface {
+	pulumi.Input
+
+	ToModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyOutput() ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyOutput
+	ToModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyOutputWithContext(context.Context) ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyOutput
+}
+
+type ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyArgs struct {
+	// (Updatable) The type of autoscaling policy.
+	AutoScalingPolicyType pulumi.StringInput `pulumi:"autoScalingPolicyType"`
+	// (Updatable) For a threshold-based autoscaling policy, this value is the initial number of instances to launch in the model deployment immediately after autoscaling is enabled. Note that anytime this value is updated, the number of instances will be reset to this value. After autoscaling retrieves performance metrics, the number of instances is automatically adjusted from this initial number to a number that is based on the limits that you set.
+	InitialInstanceCount pulumi.IntInput `pulumi:"initialInstanceCount"`
+	// (Updatable) For a threshold-based autoscaling policy, this value is the maximum number of instances the model deployment is allowed to increase to (scale out).
+	MaximumInstanceCount pulumi.IntInput `pulumi:"maximumInstanceCount"`
+	// (Updatable) For a threshold-based autoscaling policy, this value is the minimum number of instances the model deployment is allowed to decrease to (scale in).
+	MinimumInstanceCount pulumi.IntInput `pulumi:"minimumInstanceCount"`
+	// (Updatable) The list of autoscaling policy rules.
+	Rules ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArrayInput `pulumi:"rules"`
+}
+
+func (ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicy)(nil)).Elem()
+}
+
+func (i ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyArgs) ToModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyOutput() ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyOutput {
+	return i.ToModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyOutputWithContext(context.Background())
+}
+
+func (i ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyArgs) ToModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyOutputWithContext(ctx context.Context) ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyOutput)
+}
+
+// ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyArrayInput is an input type that accepts ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyArray and ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyArrayOutput values.
+// You can construct a concrete instance of `ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyArrayInput` via:
+//
+//	ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyArray{ ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyArgs{...} }
+type ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyArrayInput interface {
+	pulumi.Input
+
+	ToModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyArrayOutput() ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyArrayOutput
+	ToModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyArrayOutputWithContext(context.Context) ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyArrayOutput
+}
+
+type ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyArray []ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyInput
+
+func (ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicy)(nil)).Elem()
+}
+
+func (i ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyArray) ToModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyArrayOutput() ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyArrayOutput {
+	return i.ToModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyArrayOutputWithContext(context.Background())
+}
+
+func (i ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyArray) ToModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyArrayOutputWithContext(ctx context.Context) ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyArrayOutput)
+}
+
+type ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyOutput struct{ *pulumi.OutputState }
+
+func (ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicy)(nil)).Elem()
+}
+
+func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyOutput) ToModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyOutput() ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyOutput {
+	return o
+}
+
+func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyOutput) ToModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyOutputWithContext(ctx context.Context) ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyOutput {
+	return o
+}
+
+// (Updatable) The type of autoscaling policy.
+func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyOutput) AutoScalingPolicyType() pulumi.StringOutput {
+	return o.ApplyT(func(v ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicy) string {
+		return v.AutoScalingPolicyType
+	}).(pulumi.StringOutput)
+}
+
+// (Updatable) For a threshold-based autoscaling policy, this value is the initial number of instances to launch in the model deployment immediately after autoscaling is enabled. Note that anytime this value is updated, the number of instances will be reset to this value. After autoscaling retrieves performance metrics, the number of instances is automatically adjusted from this initial number to a number that is based on the limits that you set.
+func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyOutput) InitialInstanceCount() pulumi.IntOutput {
+	return o.ApplyT(func(v ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicy) int {
+		return v.InitialInstanceCount
+	}).(pulumi.IntOutput)
+}
+
+// (Updatable) For a threshold-based autoscaling policy, this value is the maximum number of instances the model deployment is allowed to increase to (scale out).
+func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyOutput) MaximumInstanceCount() pulumi.IntOutput {
+	return o.ApplyT(func(v ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicy) int {
+		return v.MaximumInstanceCount
+	}).(pulumi.IntOutput)
+}
+
+// (Updatable) For a threshold-based autoscaling policy, this value is the minimum number of instances the model deployment is allowed to decrease to (scale in).
+func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyOutput) MinimumInstanceCount() pulumi.IntOutput {
+	return o.ApplyT(func(v ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicy) int {
+		return v.MinimumInstanceCount
+	}).(pulumi.IntOutput)
+}
+
+// (Updatable) The list of autoscaling policy rules.
+func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyOutput) Rules() ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArrayOutput {
+	return o.ApplyT(func(v ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicy) []ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRule {
+		return v.Rules
+	}).(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArrayOutput)
+}
+
+type ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyArrayOutput struct{ *pulumi.OutputState }
+
+func (ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicy)(nil)).Elem()
+}
+
+func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyArrayOutput) ToModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyArrayOutput() ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyArrayOutput {
+	return o
+}
+
+func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyArrayOutput) ToModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyArrayOutputWithContext(ctx context.Context) ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyArrayOutput {
+	return o
+}
+
+func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyArrayOutput) Index(i pulumi.IntInput) ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicy {
+		return vs[0].([]ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicy)[vs[1].(int)]
+	}).(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyOutput)
+}
+
+type ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRule struct {
+	// (Updatable) The metric expression for creating the alarm used to trigger autoscaling actions on the model deployment.
+	//
+	// The following values are supported:
+	MetricExpressionRuleType string `pulumi:"metricExpressionRuleType"`
+	// (Updatable) Metric type
+	MetricType *string `pulumi:"metricType"`
+	// (Updatable) The scaling configuration for the predefined metric expression rule.
+	ScaleInConfiguration ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfiguration `pulumi:"scaleInConfiguration"`
+	// (Updatable) The scaling configuration for the predefined metric expression rule.
+	ScaleOutConfiguration ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfiguration `pulumi:"scaleOutConfiguration"`
+}
+
+// ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleInput is an input type that accepts ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArgs and ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleOutput values.
+// You can construct a concrete instance of `ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleInput` via:
+//
+//	ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArgs{...}
+type ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleInput interface {
+	pulumi.Input
+
+	ToModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleOutput() ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleOutput
+	ToModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleOutputWithContext(context.Context) ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleOutput
+}
+
+type ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArgs struct {
+	// (Updatable) The metric expression for creating the alarm used to trigger autoscaling actions on the model deployment.
+	//
+	// The following values are supported:
+	MetricExpressionRuleType pulumi.StringInput `pulumi:"metricExpressionRuleType"`
+	// (Updatable) Metric type
+	MetricType pulumi.StringPtrInput `pulumi:"metricType"`
+	// (Updatable) The scaling configuration for the predefined metric expression rule.
+	ScaleInConfiguration ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationInput `pulumi:"scaleInConfiguration"`
+	// (Updatable) The scaling configuration for the predefined metric expression rule.
+	ScaleOutConfiguration ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationInput `pulumi:"scaleOutConfiguration"`
+}
+
+func (ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRule)(nil)).Elem()
+}
+
+func (i ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArgs) ToModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleOutput() ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleOutput {
+	return i.ToModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleOutputWithContext(context.Background())
+}
+
+func (i ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArgs) ToModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleOutputWithContext(ctx context.Context) ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleOutput)
+}
+
+// ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArrayInput is an input type that accepts ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArray and ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArrayOutput values.
+// You can construct a concrete instance of `ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArrayInput` via:
+//
+//	ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArray{ ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArgs{...} }
+type ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArrayInput interface {
+	pulumi.Input
+
+	ToModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArrayOutput() ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArrayOutput
+	ToModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArrayOutputWithContext(context.Context) ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArrayOutput
+}
+
+type ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArray []ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleInput
+
+func (ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRule)(nil)).Elem()
+}
+
+func (i ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArray) ToModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArrayOutput() ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArrayOutput {
+	return i.ToModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArrayOutputWithContext(context.Background())
+}
+
+func (i ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArray) ToModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArrayOutputWithContext(ctx context.Context) ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArrayOutput)
+}
+
+type ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleOutput struct{ *pulumi.OutputState }
+
+func (ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRule)(nil)).Elem()
+}
+
+func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleOutput) ToModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleOutput() ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleOutput {
+	return o
+}
+
+func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleOutput) ToModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleOutputWithContext(ctx context.Context) ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleOutput {
+	return o
+}
+
+// (Updatable) The metric expression for creating the alarm used to trigger autoscaling actions on the model deployment.
+//
+// The following values are supported:
+func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleOutput) MetricExpressionRuleType() pulumi.StringOutput {
+	return o.ApplyT(func(v ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRule) string {
+		return v.MetricExpressionRuleType
+	}).(pulumi.StringOutput)
+}
+
+// (Updatable) Metric type
+func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleOutput) MetricType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRule) *string {
+		return v.MetricType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The scaling configuration for the predefined metric expression rule.
+func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleOutput) ScaleInConfiguration() ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutput {
+	return o.ApplyT(func(v ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRule) ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfiguration {
+		return v.ScaleInConfiguration
+	}).(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutput)
+}
+
+// (Updatable) The scaling configuration for the predefined metric expression rule.
+func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleOutput) ScaleOutConfiguration() ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutput {
+	return o.ApplyT(func(v ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRule) ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfiguration {
+		return v.ScaleOutConfiguration
+	}).(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutput)
+}
+
+type ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRule)(nil)).Elem()
+}
+
+func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArrayOutput) ToModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArrayOutput() ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArrayOutput {
+	return o
+}
+
+func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArrayOutput) ToModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArrayOutputWithContext(ctx context.Context) ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArrayOutput {
+	return o
+}
+
+func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArrayOutput) Index(i pulumi.IntInput) ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRule {
+		return vs[0].([]ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRule)[vs[1].(int)]
+	}).(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleOutput)
+}
+
+type ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfiguration struct {
+	// (Updatable) The value is used for adjusting the count of instances by.
+	InstanceCountAdjustment *int `pulumi:"instanceCountAdjustment"`
+	// (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
+	//
+	// The duration is specified as a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT3M. Maximum: PT1H. Default: PT3M.
+	PendingDuration *string `pulumi:"pendingDuration"`
+	// (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+	//
+	// Example of threshold alarm:
+	//
+	// ***
+	//
+	// CPUUtilization[1m]{resourceId = "MODEL_DEPLOYMENT_OCID"}.grouping().mean() < 25 CPUUtilization[1m]{resourceId = "MODEL_DEPLOYMENT_OCID"}.grouping().mean() > 75
+	//
+	// ***
+	Query *string `pulumi:"query"`
+	// (Updatable) The type of scaling configuration.
+	ScalingConfigurationType *string `pulumi:"scalingConfigurationType"`
+	// (Updatable) A metric value at which the scaling operation will be triggered.
+	Threshold *int `pulumi:"threshold"`
+}
+
+// ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationInput is an input type that accepts ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgs and ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutput values.
+// You can construct a concrete instance of `ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationInput` via:
+//
+//	ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgs{...}
+type ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationInput interface {
+	pulumi.Input
+
+	ToModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutput() ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutput
+	ToModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutputWithContext(context.Context) ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutput
+}
+
+type ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgs struct {
+	// (Updatable) The value is used for adjusting the count of instances by.
+	InstanceCountAdjustment pulumi.IntPtrInput `pulumi:"instanceCountAdjustment"`
+	// (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
+	//
+	// The duration is specified as a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT3M. Maximum: PT1H. Default: PT3M.
+	PendingDuration pulumi.StringPtrInput `pulumi:"pendingDuration"`
+	// (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+	//
+	// Example of threshold alarm:
+	//
+	// ***
+	//
+	// CPUUtilization[1m]{resourceId = "MODEL_DEPLOYMENT_OCID"}.grouping().mean() < 25 CPUUtilization[1m]{resourceId = "MODEL_DEPLOYMENT_OCID"}.grouping().mean() > 75
+	//
+	// ***
+	Query pulumi.StringPtrInput `pulumi:"query"`
+	// (Updatable) The type of scaling configuration.
+	ScalingConfigurationType pulumi.StringPtrInput `pulumi:"scalingConfigurationType"`
+	// (Updatable) A metric value at which the scaling operation will be triggered.
+	Threshold pulumi.IntPtrInput `pulumi:"threshold"`
+}
+
+func (ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfiguration)(nil)).Elem()
+}
+
+func (i ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgs) ToModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutput() ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutput {
+	return i.ToModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutputWithContext(context.Background())
+}
+
+func (i ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgs) ToModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutputWithContext(ctx context.Context) ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutput)
+}
+
+type ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutput struct{ *pulumi.OutputState }
+
+func (ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfiguration)(nil)).Elem()
+}
+
+func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutput) ToModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutput() ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutput {
+	return o
+}
+
+func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutput) ToModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutputWithContext(ctx context.Context) ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutput {
+	return o
+}
+
+// (Updatable) The value is used for adjusting the count of instances by.
+func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutput) InstanceCountAdjustment() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfiguration) *int {
+		return v.InstanceCountAdjustment
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
+//
+// The duration is specified as a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT3M. Maximum: PT1H. Default: PT3M.
+func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutput) PendingDuration() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfiguration) *string {
+		return v.PendingDuration
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+//
+// Example of threshold alarm:
+//
+// ***
+//
+// CPUUtilization[1m]{resourceId = "MODEL_DEPLOYMENT_OCID"}.grouping().mean() < 25 CPUUtilization[1m]{resourceId = "MODEL_DEPLOYMENT_OCID"}.grouping().mean() > 75
+//
+// ***
+func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutput) Query() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfiguration) *string {
+		return v.Query
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The type of scaling configuration.
+func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutput) ScalingConfigurationType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfiguration) *string {
+		return v.ScalingConfigurationType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) A metric value at which the scaling operation will be triggered.
+func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutput) Threshold() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfiguration) *int {
+		return v.Threshold
+	}).(pulumi.IntPtrOutput)
+}
+
+type ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfiguration struct {
+	// (Updatable) The value is used for adjusting the count of instances by.
+	InstanceCountAdjustment *int `pulumi:"instanceCountAdjustment"`
+	// (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
+	//
+	// The duration is specified as a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT3M. Maximum: PT1H. Default: PT3M.
+	PendingDuration *string `pulumi:"pendingDuration"`
+	// (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+	//
+	// Example of threshold alarm:
+	//
+	// ***
+	//
+	// CPUUtilization[1m]{resourceId = "MODEL_DEPLOYMENT_OCID"}.grouping().mean() < 25 CPUUtilization[1m]{resourceId = "MODEL_DEPLOYMENT_OCID"}.grouping().mean() > 75
+	//
+	// ***
+	Query *string `pulumi:"query"`
+	// (Updatable) The type of scaling configuration.
+	ScalingConfigurationType *string `pulumi:"scalingConfigurationType"`
+	// (Updatable) A metric value at which the scaling operation will be triggered.
+	Threshold *int `pulumi:"threshold"`
+}
+
+// ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationInput is an input type that accepts ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgs and ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutput values.
+// You can construct a concrete instance of `ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationInput` via:
+//
+//	ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgs{...}
+type ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationInput interface {
+	pulumi.Input
+
+	ToModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutput() ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutput
+	ToModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutputWithContext(context.Context) ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutput
+}
+
+type ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgs struct {
+	// (Updatable) The value is used for adjusting the count of instances by.
+	InstanceCountAdjustment pulumi.IntPtrInput `pulumi:"instanceCountAdjustment"`
+	// (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
+	//
+	// The duration is specified as a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT3M. Maximum: PT1H. Default: PT3M.
+	PendingDuration pulumi.StringPtrInput `pulumi:"pendingDuration"`
+	// (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+	//
+	// Example of threshold alarm:
+	//
+	// ***
+	//
+	// CPUUtilization[1m]{resourceId = "MODEL_DEPLOYMENT_OCID"}.grouping().mean() < 25 CPUUtilization[1m]{resourceId = "MODEL_DEPLOYMENT_OCID"}.grouping().mean() > 75
+	//
+	// ***
+	Query pulumi.StringPtrInput `pulumi:"query"`
+	// (Updatable) The type of scaling configuration.
+	ScalingConfigurationType pulumi.StringPtrInput `pulumi:"scalingConfigurationType"`
+	// (Updatable) A metric value at which the scaling operation will be triggered.
+	Threshold pulumi.IntPtrInput `pulumi:"threshold"`
+}
+
+func (ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfiguration)(nil)).Elem()
+}
+
+func (i ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgs) ToModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutput() ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutput {
+	return i.ToModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutputWithContext(context.Background())
+}
+
+func (i ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgs) ToModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutputWithContext(ctx context.Context) ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutput)
+}
+
+type ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutput struct{ *pulumi.OutputState }
+
+func (ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfiguration)(nil)).Elem()
+}
+
+func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutput) ToModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutput() ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutput {
+	return o
+}
+
+func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutput) ToModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutputWithContext(ctx context.Context) ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutput {
+	return o
+}
+
+// (Updatable) The value is used for adjusting the count of instances by.
+func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutput) InstanceCountAdjustment() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfiguration) *int {
+		return v.InstanceCountAdjustment
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
+//
+// The duration is specified as a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT3M. Maximum: PT1H. Default: PT3M.
+func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutput) PendingDuration() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfiguration) *string {
+		return v.PendingDuration
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+//
+// Example of threshold alarm:
+//
+// ***
+//
+// CPUUtilization[1m]{resourceId = "MODEL_DEPLOYMENT_OCID"}.grouping().mean() < 25 CPUUtilization[1m]{resourceId = "MODEL_DEPLOYMENT_OCID"}.grouping().mean() > 75
+//
+// ***
+func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutput) Query() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfiguration) *string {
+		return v.Query
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The type of scaling configuration.
+func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutput) ScalingConfigurationType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfiguration) *string {
+		return v.ScalingConfigurationType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) A metric value at which the scaling operation will be triggered.
+func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutput) Threshold() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfiguration) *int {
+		return v.Threshold
+	}).(pulumi.IntPtrOutput)
+}
+
+type ModelDeploymentModelDeploymentSystemData struct {
+	// This value is the current count of the model deployment instances.
+	CurrentInstanceCount *int `pulumi:"currentInstanceCount"`
+	// The infrastructure type of the model deployment.
+	SystemInfraType *string `pulumi:"systemInfraType"`
+}
+
+// ModelDeploymentModelDeploymentSystemDataInput is an input type that accepts ModelDeploymentModelDeploymentSystemDataArgs and ModelDeploymentModelDeploymentSystemDataOutput values.
+// You can construct a concrete instance of `ModelDeploymentModelDeploymentSystemDataInput` via:
+//
+//	ModelDeploymentModelDeploymentSystemDataArgs{...}
+type ModelDeploymentModelDeploymentSystemDataInput interface {
+	pulumi.Input
+
+	ToModelDeploymentModelDeploymentSystemDataOutput() ModelDeploymentModelDeploymentSystemDataOutput
+	ToModelDeploymentModelDeploymentSystemDataOutputWithContext(context.Context) ModelDeploymentModelDeploymentSystemDataOutput
+}
+
+type ModelDeploymentModelDeploymentSystemDataArgs struct {
+	// This value is the current count of the model deployment instances.
+	CurrentInstanceCount pulumi.IntPtrInput `pulumi:"currentInstanceCount"`
+	// The infrastructure type of the model deployment.
+	SystemInfraType pulumi.StringPtrInput `pulumi:"systemInfraType"`
+}
+
+func (ModelDeploymentModelDeploymentSystemDataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ModelDeploymentModelDeploymentSystemData)(nil)).Elem()
+}
+
+func (i ModelDeploymentModelDeploymentSystemDataArgs) ToModelDeploymentModelDeploymentSystemDataOutput() ModelDeploymentModelDeploymentSystemDataOutput {
+	return i.ToModelDeploymentModelDeploymentSystemDataOutputWithContext(context.Background())
+}
+
+func (i ModelDeploymentModelDeploymentSystemDataArgs) ToModelDeploymentModelDeploymentSystemDataOutputWithContext(ctx context.Context) ModelDeploymentModelDeploymentSystemDataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ModelDeploymentModelDeploymentSystemDataOutput)
+}
+
+// ModelDeploymentModelDeploymentSystemDataArrayInput is an input type that accepts ModelDeploymentModelDeploymentSystemDataArray and ModelDeploymentModelDeploymentSystemDataArrayOutput values.
+// You can construct a concrete instance of `ModelDeploymentModelDeploymentSystemDataArrayInput` via:
+//
+//	ModelDeploymentModelDeploymentSystemDataArray{ ModelDeploymentModelDeploymentSystemDataArgs{...} }
+type ModelDeploymentModelDeploymentSystemDataArrayInput interface {
+	pulumi.Input
+
+	ToModelDeploymentModelDeploymentSystemDataArrayOutput() ModelDeploymentModelDeploymentSystemDataArrayOutput
+	ToModelDeploymentModelDeploymentSystemDataArrayOutputWithContext(context.Context) ModelDeploymentModelDeploymentSystemDataArrayOutput
+}
+
+type ModelDeploymentModelDeploymentSystemDataArray []ModelDeploymentModelDeploymentSystemDataInput
+
+func (ModelDeploymentModelDeploymentSystemDataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ModelDeploymentModelDeploymentSystemData)(nil)).Elem()
+}
+
+func (i ModelDeploymentModelDeploymentSystemDataArray) ToModelDeploymentModelDeploymentSystemDataArrayOutput() ModelDeploymentModelDeploymentSystemDataArrayOutput {
+	return i.ToModelDeploymentModelDeploymentSystemDataArrayOutputWithContext(context.Background())
+}
+
+func (i ModelDeploymentModelDeploymentSystemDataArray) ToModelDeploymentModelDeploymentSystemDataArrayOutputWithContext(ctx context.Context) ModelDeploymentModelDeploymentSystemDataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ModelDeploymentModelDeploymentSystemDataArrayOutput)
+}
+
+type ModelDeploymentModelDeploymentSystemDataOutput struct{ *pulumi.OutputState }
+
+func (ModelDeploymentModelDeploymentSystemDataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ModelDeploymentModelDeploymentSystemData)(nil)).Elem()
+}
+
+func (o ModelDeploymentModelDeploymentSystemDataOutput) ToModelDeploymentModelDeploymentSystemDataOutput() ModelDeploymentModelDeploymentSystemDataOutput {
+	return o
+}
+
+func (o ModelDeploymentModelDeploymentSystemDataOutput) ToModelDeploymentModelDeploymentSystemDataOutputWithContext(ctx context.Context) ModelDeploymentModelDeploymentSystemDataOutput {
+	return o
+}
+
+// This value is the current count of the model deployment instances.
+func (o ModelDeploymentModelDeploymentSystemDataOutput) CurrentInstanceCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ModelDeploymentModelDeploymentSystemData) *int { return v.CurrentInstanceCount }).(pulumi.IntPtrOutput)
+}
+
+// The infrastructure type of the model deployment.
+func (o ModelDeploymentModelDeploymentSystemDataOutput) SystemInfraType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ModelDeploymentModelDeploymentSystemData) *string { return v.SystemInfraType }).(pulumi.StringPtrOutput)
+}
+
+type ModelDeploymentModelDeploymentSystemDataArrayOutput struct{ *pulumi.OutputState }
+
+func (ModelDeploymentModelDeploymentSystemDataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ModelDeploymentModelDeploymentSystemData)(nil)).Elem()
+}
+
+func (o ModelDeploymentModelDeploymentSystemDataArrayOutput) ToModelDeploymentModelDeploymentSystemDataArrayOutput() ModelDeploymentModelDeploymentSystemDataArrayOutput {
+	return o
+}
+
+func (o ModelDeploymentModelDeploymentSystemDataArrayOutput) ToModelDeploymentModelDeploymentSystemDataArrayOutputWithContext(ctx context.Context) ModelDeploymentModelDeploymentSystemDataArrayOutput {
+	return o
+}
+
+func (o ModelDeploymentModelDeploymentSystemDataArrayOutput) Index(i pulumi.IntInput) ModelDeploymentModelDeploymentSystemDataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ModelDeploymentModelDeploymentSystemData {
+		return vs[0].([]ModelDeploymentModelDeploymentSystemData)[vs[1].(int)]
+	}).(ModelDeploymentModelDeploymentSystemDataOutput)
 }
 
 type NotebookSessionNotebookSessionConfigDetails struct {
@@ -13634,6 +14382,8 @@ type GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetai
 	BandwidthMbps int `pulumi:"bandwidthMbps"`
 	// The model deployment instance configuration
 	InstanceConfigurations []GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration `pulumi:"instanceConfigurations"`
+	// The maximum network bandwidth for the model deployment.
+	MaximumBandwidthMbps int `pulumi:"maximumBandwidthMbps"`
 	// The OCID of the model you want to deploy.
 	ModelId string `pulumi:"modelId"`
 	// The scaling policy to apply to each model of the deployment.
@@ -13656,6 +14406,8 @@ type GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetai
 	BandwidthMbps pulumi.IntInput `pulumi:"bandwidthMbps"`
 	// The model deployment instance configuration
 	InstanceConfigurations GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationArrayInput `pulumi:"instanceConfigurations"`
+	// The maximum network bandwidth for the model deployment.
+	MaximumBandwidthMbps pulumi.IntInput `pulumi:"maximumBandwidthMbps"`
 	// The OCID of the model you want to deploy.
 	ModelId pulumi.StringInput `pulumi:"modelId"`
 	// The scaling policy to apply to each model of the deployment.
@@ -13725,6 +14477,13 @@ func (o GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDe
 	return o.ApplyT(func(v GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetail) []GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration {
 		return v.InstanceConfigurations
 	}).(GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationArrayOutput)
+}
+
+// The maximum network bandwidth for the model deployment.
+func (o GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailOutput) MaximumBandwidthMbps() pulumi.IntOutput {
+	return o.ApplyT(func(v GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetail) int {
+		return v.MaximumBandwidthMbps
+	}).(pulumi.IntOutput)
 }
 
 // The OCID of the model you want to deploy.
@@ -13872,9 +14631,11 @@ func (o GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDe
 }
 
 type GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetail struct {
-	// A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 and 512 GB and VM.Optimized3.Flex memory range is between 6 and 256 GB.
+	// The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+	CpuBaseline string `pulumi:"cpuBaseline"`
+	// A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
 	MemoryInGbs float64 `pulumi:"memoryInGbs"`
-	// A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 and 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
+	// A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 to 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
 	Ocpus float64 `pulumi:"ocpus"`
 }
 
@@ -13890,9 +14651,11 @@ type GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetai
 }
 
 type GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailArgs struct {
-	// A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 and 512 GB and VM.Optimized3.Flex memory range is between 6 and 256 GB.
+	// The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+	CpuBaseline pulumi.StringInput `pulumi:"cpuBaseline"`
+	// A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
 	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
-	// A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 and 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
+	// A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 to 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
 	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
 }
 
@@ -13947,14 +14710,21 @@ func (o GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDe
 	return o
 }
 
-// A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 and 512 GB and VM.Optimized3.Flex memory range is between 6 and 256 GB.
+// The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+func (o GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailOutput) CpuBaseline() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetail) string {
+		return v.CpuBaseline
+	}).(pulumi.StringOutput)
+}
+
+// A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
 func (o GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailOutput) MemoryInGbs() pulumi.Float64Output {
 	return o.ApplyT(func(v GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetail) float64 {
 		return v.MemoryInGbs
 	}).(pulumi.Float64Output)
 }
 
-// A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 and 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
+// A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 to 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
 func (o GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailOutput) Ocpus() pulumi.Float64Output {
 	return o.ApplyT(func(v GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetail) float64 {
 		return v.Ocpus
@@ -13982,8 +14752,14 @@ func (o GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDe
 }
 
 type GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicy struct {
+	// The list of autoscaling policy details.
+	AutoScalingPolicies []GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicy `pulumi:"autoScalingPolicies"`
+	// For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 600 seconds, which is also the default. The cooldown period starts when the model deployment becomes ACTIVE after the scaling operation.
+	CoolDownInSeconds int `pulumi:"coolDownInSeconds"`
 	// The number of instances for the model deployment.
 	InstanceCount int `pulumi:"instanceCount"`
+	// Whether the autoscaling policy is enabled.
+	IsEnabled bool `pulumi:"isEnabled"`
 	// The type of scaling policy.
 	PolicyType string `pulumi:"policyType"`
 }
@@ -14000,8 +14776,14 @@ type GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetai
 }
 
 type GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyArgs struct {
+	// The list of autoscaling policy details.
+	AutoScalingPolicies GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArrayInput `pulumi:"autoScalingPolicies"`
+	// For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 600 seconds, which is also the default. The cooldown period starts when the model deployment becomes ACTIVE after the scaling operation.
+	CoolDownInSeconds pulumi.IntInput `pulumi:"coolDownInSeconds"`
 	// The number of instances for the model deployment.
 	InstanceCount pulumi.IntInput `pulumi:"instanceCount"`
+	// Whether the autoscaling policy is enabled.
+	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
 	// The type of scaling policy.
 	PolicyType pulumi.StringInput `pulumi:"policyType"`
 }
@@ -14057,11 +14839,32 @@ func (o GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDe
 	return o
 }
 
+// The list of autoscaling policy details.
+func (o GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyOutput) AutoScalingPolicies() GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArrayOutput {
+	return o.ApplyT(func(v GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicy) []GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicy {
+		return v.AutoScalingPolicies
+	}).(GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArrayOutput)
+}
+
+// For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 600 seconds, which is also the default. The cooldown period starts when the model deployment becomes ACTIVE after the scaling operation.
+func (o GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyOutput) CoolDownInSeconds() pulumi.IntOutput {
+	return o.ApplyT(func(v GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicy) int {
+		return v.CoolDownInSeconds
+	}).(pulumi.IntOutput)
+}
+
 // The number of instances for the model deployment.
 func (o GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyOutput) InstanceCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicy) int {
 		return v.InstanceCount
 	}).(pulumi.IntOutput)
+}
+
+// Whether the autoscaling policy is enabled.
+func (o GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyOutput) IsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicy) bool {
+		return v.IsEnabled
+	}).(pulumi.BoolOutput)
 }
 
 // The type of scaling policy.
@@ -14089,6 +14892,673 @@ func (o GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDe
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicy {
 		return vs[0].([]GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicy)[vs[1].(int)]
 	}).(GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyOutput)
+}
+
+type GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicy struct {
+	// The type of autoscaling policy.
+	AutoScalingPolicyType string `pulumi:"autoScalingPolicyType"`
+	// For a threshold-based autoscaling policy, this value is the initial number of instances to launch in the model deployment immediately after autoscaling is enabled. Note that anytime this value is updated, the number of instances will be reset to this value. After autoscaling retrieves performance metrics, the number of instances is automatically adjusted from this initial number to a number that is based on the limits that you set.
+	InitialInstanceCount int `pulumi:"initialInstanceCount"`
+	// For a threshold-based autoscaling policy, this value is the maximum number of instances the model deployment is allowed to increase to (scale out).
+	MaximumInstanceCount int `pulumi:"maximumInstanceCount"`
+	// For a threshold-based autoscaling policy, this value is the minimum number of instances the model deployment is allowed to decrease to (scale in).
+	MinimumInstanceCount int `pulumi:"minimumInstanceCount"`
+	// The list of autoscaling policy rules.
+	Rules []GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRule `pulumi:"rules"`
+}
+
+// GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyInput is an input type that accepts GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArgs and GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyOutput values.
+// You can construct a concrete instance of `GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyInput` via:
+//
+//	GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArgs{...}
+type GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyInput interface {
+	pulumi.Input
+
+	ToGetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyOutput() GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyOutput
+	ToGetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyOutputWithContext(context.Context) GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyOutput
+}
+
+type GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArgs struct {
+	// The type of autoscaling policy.
+	AutoScalingPolicyType pulumi.StringInput `pulumi:"autoScalingPolicyType"`
+	// For a threshold-based autoscaling policy, this value is the initial number of instances to launch in the model deployment immediately after autoscaling is enabled. Note that anytime this value is updated, the number of instances will be reset to this value. After autoscaling retrieves performance metrics, the number of instances is automatically adjusted from this initial number to a number that is based on the limits that you set.
+	InitialInstanceCount pulumi.IntInput `pulumi:"initialInstanceCount"`
+	// For a threshold-based autoscaling policy, this value is the maximum number of instances the model deployment is allowed to increase to (scale out).
+	MaximumInstanceCount pulumi.IntInput `pulumi:"maximumInstanceCount"`
+	// For a threshold-based autoscaling policy, this value is the minimum number of instances the model deployment is allowed to decrease to (scale in).
+	MinimumInstanceCount pulumi.IntInput `pulumi:"minimumInstanceCount"`
+	// The list of autoscaling policy rules.
+	Rules GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArrayInput `pulumi:"rules"`
+}
+
+func (GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicy)(nil)).Elem()
+}
+
+func (i GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArgs) ToGetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyOutput() GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyOutput {
+	return i.ToGetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyOutputWithContext(context.Background())
+}
+
+func (i GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArgs) ToGetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyOutputWithContext(ctx context.Context) GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyOutput)
+}
+
+// GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArrayInput is an input type that accepts GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArray and GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArrayOutput values.
+// You can construct a concrete instance of `GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArrayInput` via:
+//
+//	GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArray{ GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArgs{...} }
+type GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArrayInput interface {
+	pulumi.Input
+
+	ToGetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArrayOutput() GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArrayOutput
+	ToGetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArrayOutputWithContext(context.Context) GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArrayOutput
+}
+
+type GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArray []GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyInput
+
+func (GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicy)(nil)).Elem()
+}
+
+func (i GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArray) ToGetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArrayOutput() GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArrayOutput {
+	return i.ToGetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArrayOutputWithContext(context.Background())
+}
+
+func (i GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArray) ToGetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArrayOutputWithContext(ctx context.Context) GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArrayOutput)
+}
+
+type GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyOutput struct{ *pulumi.OutputState }
+
+func (GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicy)(nil)).Elem()
+}
+
+func (o GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyOutput) ToGetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyOutput() GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyOutput {
+	return o
+}
+
+func (o GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyOutput) ToGetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyOutputWithContext(ctx context.Context) GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyOutput {
+	return o
+}
+
+// The type of autoscaling policy.
+func (o GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyOutput) AutoScalingPolicyType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicy) string {
+		return v.AutoScalingPolicyType
+	}).(pulumi.StringOutput)
+}
+
+// For a threshold-based autoscaling policy, this value is the initial number of instances to launch in the model deployment immediately after autoscaling is enabled. Note that anytime this value is updated, the number of instances will be reset to this value. After autoscaling retrieves performance metrics, the number of instances is automatically adjusted from this initial number to a number that is based on the limits that you set.
+func (o GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyOutput) InitialInstanceCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicy) int {
+		return v.InitialInstanceCount
+	}).(pulumi.IntOutput)
+}
+
+// For a threshold-based autoscaling policy, this value is the maximum number of instances the model deployment is allowed to increase to (scale out).
+func (o GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyOutput) MaximumInstanceCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicy) int {
+		return v.MaximumInstanceCount
+	}).(pulumi.IntOutput)
+}
+
+// For a threshold-based autoscaling policy, this value is the minimum number of instances the model deployment is allowed to decrease to (scale in).
+func (o GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyOutput) MinimumInstanceCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicy) int {
+		return v.MinimumInstanceCount
+	}).(pulumi.IntOutput)
+}
+
+// The list of autoscaling policy rules.
+func (o GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyOutput) Rules() GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArrayOutput {
+	return o.ApplyT(func(v GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicy) []GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRule {
+		return v.Rules
+	}).(GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArrayOutput)
+}
+
+type GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicy)(nil)).Elem()
+}
+
+func (o GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArrayOutput) ToGetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArrayOutput() GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArrayOutput {
+	return o
+}
+
+func (o GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArrayOutput) ToGetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArrayOutputWithContext(ctx context.Context) GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArrayOutput {
+	return o
+}
+
+func (o GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArrayOutput) Index(i pulumi.IntInput) GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicy {
+		return vs[0].([]GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicy)[vs[1].(int)]
+	}).(GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyOutput)
+}
+
+type GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRule struct {
+	// The metric expression for creating the alarm used to trigger autoscaling actions on the model deployment.
+	MetricExpressionRuleType string `pulumi:"metricExpressionRuleType"`
+	// Metric type
+	MetricType string `pulumi:"metricType"`
+	// The scaling configuration for the predefined metric expression rule.
+	ScaleInConfigurations []GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfiguration `pulumi:"scaleInConfigurations"`
+	// The scaling configuration for the predefined metric expression rule.
+	ScaleOutConfigurations []GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfiguration `pulumi:"scaleOutConfigurations"`
+}
+
+// GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleInput is an input type that accepts GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArgs and GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleOutput values.
+// You can construct a concrete instance of `GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleInput` via:
+//
+//	GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArgs{...}
+type GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleInput interface {
+	pulumi.Input
+
+	ToGetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleOutput() GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleOutput
+	ToGetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleOutputWithContext(context.Context) GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleOutput
+}
+
+type GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArgs struct {
+	// The metric expression for creating the alarm used to trigger autoscaling actions on the model deployment.
+	MetricExpressionRuleType pulumi.StringInput `pulumi:"metricExpressionRuleType"`
+	// Metric type
+	MetricType pulumi.StringInput `pulumi:"metricType"`
+	// The scaling configuration for the predefined metric expression rule.
+	ScaleInConfigurations GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArrayInput `pulumi:"scaleInConfigurations"`
+	// The scaling configuration for the predefined metric expression rule.
+	ScaleOutConfigurations GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArrayInput `pulumi:"scaleOutConfigurations"`
+}
+
+func (GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRule)(nil)).Elem()
+}
+
+func (i GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArgs) ToGetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleOutput() GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleOutput {
+	return i.ToGetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleOutputWithContext(context.Background())
+}
+
+func (i GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArgs) ToGetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleOutputWithContext(ctx context.Context) GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleOutput)
+}
+
+// GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArrayInput is an input type that accepts GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArray and GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArrayOutput values.
+// You can construct a concrete instance of `GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArrayInput` via:
+//
+//	GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArray{ GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArgs{...} }
+type GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArrayInput interface {
+	pulumi.Input
+
+	ToGetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArrayOutput() GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArrayOutput
+	ToGetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArrayOutputWithContext(context.Context) GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArrayOutput
+}
+
+type GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArray []GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleInput
+
+func (GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRule)(nil)).Elem()
+}
+
+func (i GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArray) ToGetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArrayOutput() GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArrayOutput {
+	return i.ToGetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArrayOutputWithContext(context.Background())
+}
+
+func (i GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArray) ToGetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArrayOutputWithContext(ctx context.Context) GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArrayOutput)
+}
+
+type GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleOutput struct{ *pulumi.OutputState }
+
+func (GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRule)(nil)).Elem()
+}
+
+func (o GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleOutput) ToGetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleOutput() GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleOutput {
+	return o
+}
+
+func (o GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleOutput) ToGetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleOutputWithContext(ctx context.Context) GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleOutput {
+	return o
+}
+
+// The metric expression for creating the alarm used to trigger autoscaling actions on the model deployment.
+func (o GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleOutput) MetricExpressionRuleType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRule) string {
+		return v.MetricExpressionRuleType
+	}).(pulumi.StringOutput)
+}
+
+// Metric type
+func (o GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleOutput) MetricType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRule) string {
+		return v.MetricType
+	}).(pulumi.StringOutput)
+}
+
+// The scaling configuration for the predefined metric expression rule.
+func (o GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleOutput) ScaleInConfigurations() GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArrayOutput {
+	return o.ApplyT(func(v GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRule) []GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfiguration {
+		return v.ScaleInConfigurations
+	}).(GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArrayOutput)
+}
+
+// The scaling configuration for the predefined metric expression rule.
+func (o GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleOutput) ScaleOutConfigurations() GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArrayOutput {
+	return o.ApplyT(func(v GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRule) []GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfiguration {
+		return v.ScaleOutConfigurations
+	}).(GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArrayOutput)
+}
+
+type GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRule)(nil)).Elem()
+}
+
+func (o GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArrayOutput) ToGetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArrayOutput() GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArrayOutput {
+	return o
+}
+
+func (o GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArrayOutput) ToGetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArrayOutputWithContext(ctx context.Context) GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArrayOutput {
+	return o
+}
+
+func (o GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArrayOutput) Index(i pulumi.IntInput) GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRule {
+		return vs[0].([]GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRule)[vs[1].(int)]
+	}).(GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleOutput)
+}
+
+type GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfiguration struct {
+	// The value is used for adjusting the count of instances by.
+	InstanceCountAdjustment int `pulumi:"instanceCountAdjustment"`
+	// The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
+	PendingDuration string `pulumi:"pendingDuration"`
+	// The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+	Query string `pulumi:"query"`
+	// The type of scaling configuration.
+	ScalingConfigurationType string `pulumi:"scalingConfigurationType"`
+	// A metric value at which the scaling operation will be triggered.
+	Threshold int `pulumi:"threshold"`
+}
+
+// GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationInput is an input type that accepts GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgs and GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutput values.
+// You can construct a concrete instance of `GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationInput` via:
+//
+//	GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgs{...}
+type GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationInput interface {
+	pulumi.Input
+
+	ToGetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutput() GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutput
+	ToGetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutputWithContext(context.Context) GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutput
+}
+
+type GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgs struct {
+	// The value is used for adjusting the count of instances by.
+	InstanceCountAdjustment pulumi.IntInput `pulumi:"instanceCountAdjustment"`
+	// The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
+	PendingDuration pulumi.StringInput `pulumi:"pendingDuration"`
+	// The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+	Query pulumi.StringInput `pulumi:"query"`
+	// The type of scaling configuration.
+	ScalingConfigurationType pulumi.StringInput `pulumi:"scalingConfigurationType"`
+	// A metric value at which the scaling operation will be triggered.
+	Threshold pulumi.IntInput `pulumi:"threshold"`
+}
+
+func (GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfiguration)(nil)).Elem()
+}
+
+func (i GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgs) ToGetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutput() GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutput {
+	return i.ToGetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgs) ToGetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutputWithContext(ctx context.Context) GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutput)
+}
+
+// GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArrayInput is an input type that accepts GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArray and GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArrayInput` via:
+//
+//	GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArray{ GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgs{...} }
+type GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArrayOutput() GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArrayOutput
+	ToGetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArrayOutputWithContext(context.Context) GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArrayOutput
+}
+
+type GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArray []GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationInput
+
+func (GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfiguration)(nil)).Elem()
+}
+
+func (i GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArray) ToGetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArrayOutput() GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArrayOutput {
+	return i.ToGetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArray) ToGetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArrayOutputWithContext(ctx context.Context) GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArrayOutput)
+}
+
+type GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfiguration)(nil)).Elem()
+}
+
+func (o GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutput) ToGetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutput() GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutput {
+	return o
+}
+
+func (o GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutput) ToGetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutputWithContext(ctx context.Context) GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutput {
+	return o
+}
+
+// The value is used for adjusting the count of instances by.
+func (o GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutput) InstanceCountAdjustment() pulumi.IntOutput {
+	return o.ApplyT(func(v GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfiguration) int {
+		return v.InstanceCountAdjustment
+	}).(pulumi.IntOutput)
+}
+
+// The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
+func (o GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutput) PendingDuration() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfiguration) string {
+		return v.PendingDuration
+	}).(pulumi.StringOutput)
+}
+
+// The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+func (o GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutput) Query() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfiguration) string {
+		return v.Query
+	}).(pulumi.StringOutput)
+}
+
+// The type of scaling configuration.
+func (o GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutput) ScalingConfigurationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfiguration) string {
+		return v.ScalingConfigurationType
+	}).(pulumi.StringOutput)
+}
+
+// A metric value at which the scaling operation will be triggered.
+func (o GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutput) Threshold() pulumi.IntOutput {
+	return o.ApplyT(func(v GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfiguration) int {
+		return v.Threshold
+	}).(pulumi.IntOutput)
+}
+
+type GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfiguration)(nil)).Elem()
+}
+
+func (o GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArrayOutput) ToGetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArrayOutput() GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArrayOutput {
+	return o
+}
+
+func (o GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArrayOutput) ToGetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArrayOutputWithContext(ctx context.Context) GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArrayOutput {
+	return o
+}
+
+func (o GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArrayOutput) Index(i pulumi.IntInput) GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfiguration {
+		return vs[0].([]GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfiguration)[vs[1].(int)]
+	}).(GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutput)
+}
+
+type GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfiguration struct {
+	// The value is used for adjusting the count of instances by.
+	InstanceCountAdjustment int `pulumi:"instanceCountAdjustment"`
+	// The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
+	PendingDuration string `pulumi:"pendingDuration"`
+	// The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+	Query string `pulumi:"query"`
+	// The type of scaling configuration.
+	ScalingConfigurationType string `pulumi:"scalingConfigurationType"`
+	// A metric value at which the scaling operation will be triggered.
+	Threshold int `pulumi:"threshold"`
+}
+
+// GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationInput is an input type that accepts GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgs and GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutput values.
+// You can construct a concrete instance of `GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationInput` via:
+//
+//	GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgs{...}
+type GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationInput interface {
+	pulumi.Input
+
+	ToGetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutput() GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutput
+	ToGetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutputWithContext(context.Context) GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutput
+}
+
+type GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgs struct {
+	// The value is used for adjusting the count of instances by.
+	InstanceCountAdjustment pulumi.IntInput `pulumi:"instanceCountAdjustment"`
+	// The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
+	PendingDuration pulumi.StringInput `pulumi:"pendingDuration"`
+	// The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+	Query pulumi.StringInput `pulumi:"query"`
+	// The type of scaling configuration.
+	ScalingConfigurationType pulumi.StringInput `pulumi:"scalingConfigurationType"`
+	// A metric value at which the scaling operation will be triggered.
+	Threshold pulumi.IntInput `pulumi:"threshold"`
+}
+
+func (GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfiguration)(nil)).Elem()
+}
+
+func (i GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgs) ToGetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutput() GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutput {
+	return i.ToGetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgs) ToGetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutputWithContext(ctx context.Context) GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutput)
+}
+
+// GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArrayInput is an input type that accepts GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArray and GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArrayInput` via:
+//
+//	GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArray{ GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgs{...} }
+type GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArrayOutput() GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArrayOutput
+	ToGetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArrayOutputWithContext(context.Context) GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArrayOutput
+}
+
+type GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArray []GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationInput
+
+func (GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfiguration)(nil)).Elem()
+}
+
+func (i GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArray) ToGetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArrayOutput() GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArrayOutput {
+	return i.ToGetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArray) ToGetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArrayOutputWithContext(ctx context.Context) GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArrayOutput)
+}
+
+type GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfiguration)(nil)).Elem()
+}
+
+func (o GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutput) ToGetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutput() GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutput {
+	return o
+}
+
+func (o GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutput) ToGetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutputWithContext(ctx context.Context) GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutput {
+	return o
+}
+
+// The value is used for adjusting the count of instances by.
+func (o GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutput) InstanceCountAdjustment() pulumi.IntOutput {
+	return o.ApplyT(func(v GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfiguration) int {
+		return v.InstanceCountAdjustment
+	}).(pulumi.IntOutput)
+}
+
+// The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
+func (o GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutput) PendingDuration() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfiguration) string {
+		return v.PendingDuration
+	}).(pulumi.StringOutput)
+}
+
+// The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+func (o GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutput) Query() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfiguration) string {
+		return v.Query
+	}).(pulumi.StringOutput)
+}
+
+// The type of scaling configuration.
+func (o GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutput) ScalingConfigurationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfiguration) string {
+		return v.ScalingConfigurationType
+	}).(pulumi.StringOutput)
+}
+
+// A metric value at which the scaling operation will be triggered.
+func (o GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutput) Threshold() pulumi.IntOutput {
+	return o.ApplyT(func(v GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfiguration) int {
+		return v.Threshold
+	}).(pulumi.IntOutput)
+}
+
+type GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfiguration)(nil)).Elem()
+}
+
+func (o GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArrayOutput) ToGetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArrayOutput() GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArrayOutput {
+	return o
+}
+
+func (o GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArrayOutput) ToGetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArrayOutputWithContext(ctx context.Context) GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArrayOutput {
+	return o
+}
+
+func (o GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArrayOutput) Index(i pulumi.IntInput) GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfiguration {
+		return vs[0].([]GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfiguration)[vs[1].(int)]
+	}).(GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutput)
+}
+
+type GetModelDeploymentModelDeploymentSystemData struct {
+	// This value is the current count of the model deployment instances.
+	CurrentInstanceCount int `pulumi:"currentInstanceCount"`
+	// The infrastructure type of the model deployment.
+	SystemInfraType string `pulumi:"systemInfraType"`
+}
+
+// GetModelDeploymentModelDeploymentSystemDataInput is an input type that accepts GetModelDeploymentModelDeploymentSystemDataArgs and GetModelDeploymentModelDeploymentSystemDataOutput values.
+// You can construct a concrete instance of `GetModelDeploymentModelDeploymentSystemDataInput` via:
+//
+//	GetModelDeploymentModelDeploymentSystemDataArgs{...}
+type GetModelDeploymentModelDeploymentSystemDataInput interface {
+	pulumi.Input
+
+	ToGetModelDeploymentModelDeploymentSystemDataOutput() GetModelDeploymentModelDeploymentSystemDataOutput
+	ToGetModelDeploymentModelDeploymentSystemDataOutputWithContext(context.Context) GetModelDeploymentModelDeploymentSystemDataOutput
+}
+
+type GetModelDeploymentModelDeploymentSystemDataArgs struct {
+	// This value is the current count of the model deployment instances.
+	CurrentInstanceCount pulumi.IntInput `pulumi:"currentInstanceCount"`
+	// The infrastructure type of the model deployment.
+	SystemInfraType pulumi.StringInput `pulumi:"systemInfraType"`
+}
+
+func (GetModelDeploymentModelDeploymentSystemDataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelDeploymentModelDeploymentSystemData)(nil)).Elem()
+}
+
+func (i GetModelDeploymentModelDeploymentSystemDataArgs) ToGetModelDeploymentModelDeploymentSystemDataOutput() GetModelDeploymentModelDeploymentSystemDataOutput {
+	return i.ToGetModelDeploymentModelDeploymentSystemDataOutputWithContext(context.Background())
+}
+
+func (i GetModelDeploymentModelDeploymentSystemDataArgs) ToGetModelDeploymentModelDeploymentSystemDataOutputWithContext(ctx context.Context) GetModelDeploymentModelDeploymentSystemDataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelDeploymentModelDeploymentSystemDataOutput)
+}
+
+// GetModelDeploymentModelDeploymentSystemDataArrayInput is an input type that accepts GetModelDeploymentModelDeploymentSystemDataArray and GetModelDeploymentModelDeploymentSystemDataArrayOutput values.
+// You can construct a concrete instance of `GetModelDeploymentModelDeploymentSystemDataArrayInput` via:
+//
+//	GetModelDeploymentModelDeploymentSystemDataArray{ GetModelDeploymentModelDeploymentSystemDataArgs{...} }
+type GetModelDeploymentModelDeploymentSystemDataArrayInput interface {
+	pulumi.Input
+
+	ToGetModelDeploymentModelDeploymentSystemDataArrayOutput() GetModelDeploymentModelDeploymentSystemDataArrayOutput
+	ToGetModelDeploymentModelDeploymentSystemDataArrayOutputWithContext(context.Context) GetModelDeploymentModelDeploymentSystemDataArrayOutput
+}
+
+type GetModelDeploymentModelDeploymentSystemDataArray []GetModelDeploymentModelDeploymentSystemDataInput
+
+func (GetModelDeploymentModelDeploymentSystemDataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelDeploymentModelDeploymentSystemData)(nil)).Elem()
+}
+
+func (i GetModelDeploymentModelDeploymentSystemDataArray) ToGetModelDeploymentModelDeploymentSystemDataArrayOutput() GetModelDeploymentModelDeploymentSystemDataArrayOutput {
+	return i.ToGetModelDeploymentModelDeploymentSystemDataArrayOutputWithContext(context.Background())
+}
+
+func (i GetModelDeploymentModelDeploymentSystemDataArray) ToGetModelDeploymentModelDeploymentSystemDataArrayOutputWithContext(ctx context.Context) GetModelDeploymentModelDeploymentSystemDataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelDeploymentModelDeploymentSystemDataArrayOutput)
+}
+
+type GetModelDeploymentModelDeploymentSystemDataOutput struct{ *pulumi.OutputState }
+
+func (GetModelDeploymentModelDeploymentSystemDataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelDeploymentModelDeploymentSystemData)(nil)).Elem()
+}
+
+func (o GetModelDeploymentModelDeploymentSystemDataOutput) ToGetModelDeploymentModelDeploymentSystemDataOutput() GetModelDeploymentModelDeploymentSystemDataOutput {
+	return o
+}
+
+func (o GetModelDeploymentModelDeploymentSystemDataOutput) ToGetModelDeploymentModelDeploymentSystemDataOutputWithContext(ctx context.Context) GetModelDeploymentModelDeploymentSystemDataOutput {
+	return o
+}
+
+// This value is the current count of the model deployment instances.
+func (o GetModelDeploymentModelDeploymentSystemDataOutput) CurrentInstanceCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetModelDeploymentModelDeploymentSystemData) int { return v.CurrentInstanceCount }).(pulumi.IntOutput)
+}
+
+// The infrastructure type of the model deployment.
+func (o GetModelDeploymentModelDeploymentSystemDataOutput) SystemInfraType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelDeploymentModelDeploymentSystemData) string { return v.SystemInfraType }).(pulumi.StringOutput)
+}
+
+type GetModelDeploymentModelDeploymentSystemDataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetModelDeploymentModelDeploymentSystemDataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelDeploymentModelDeploymentSystemData)(nil)).Elem()
+}
+
+func (o GetModelDeploymentModelDeploymentSystemDataArrayOutput) ToGetModelDeploymentModelDeploymentSystemDataArrayOutput() GetModelDeploymentModelDeploymentSystemDataArrayOutput {
+	return o
+}
+
+func (o GetModelDeploymentModelDeploymentSystemDataArrayOutput) ToGetModelDeploymentModelDeploymentSystemDataArrayOutputWithContext(ctx context.Context) GetModelDeploymentModelDeploymentSystemDataArrayOutput {
+	return o
+}
+
+func (o GetModelDeploymentModelDeploymentSystemDataArrayOutput) Index(i pulumi.IntInput) GetModelDeploymentModelDeploymentSystemDataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetModelDeploymentModelDeploymentSystemData {
+		return vs[0].([]GetModelDeploymentModelDeploymentSystemData)[vs[1].(int)]
+	}).(GetModelDeploymentModelDeploymentSystemDataOutput)
 }
 
 type GetModelDeploymentShapesFilter struct {
@@ -14451,6 +15921,8 @@ type GetModelDeploymentsModelDeployment struct {
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// The model deployment configuration details.
 	ModelDeploymentConfigurationDetails []GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetail `pulumi:"modelDeploymentConfigurationDetails"`
+	// Model deployment system data.
+	ModelDeploymentSystemDatas []GetModelDeploymentsModelDeploymentModelDeploymentSystemData `pulumi:"modelDeploymentSystemDatas"`
 	// The URL to interact with the model deployment.
 	ModelDeploymentUrl string `pulumi:"modelDeploymentUrl"`
 	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
@@ -14493,6 +15965,8 @@ type GetModelDeploymentsModelDeploymentArgs struct {
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// The model deployment configuration details.
 	ModelDeploymentConfigurationDetails GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailArrayInput `pulumi:"modelDeploymentConfigurationDetails"`
+	// Model deployment system data.
+	ModelDeploymentSystemDatas GetModelDeploymentsModelDeploymentModelDeploymentSystemDataArrayInput `pulumi:"modelDeploymentSystemDatas"`
 	// The URL to interact with the model deployment.
 	ModelDeploymentUrl pulumi.StringInput `pulumi:"modelDeploymentUrl"`
 	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
@@ -14606,6 +16080,13 @@ func (o GetModelDeploymentsModelDeploymentOutput) ModelDeploymentConfigurationDe
 	return o.ApplyT(func(v GetModelDeploymentsModelDeployment) []GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetail {
 		return v.ModelDeploymentConfigurationDetails
 	}).(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailArrayOutput)
+}
+
+// Model deployment system data.
+func (o GetModelDeploymentsModelDeploymentOutput) ModelDeploymentSystemDatas() GetModelDeploymentsModelDeploymentModelDeploymentSystemDataArrayOutput {
+	return o.ApplyT(func(v GetModelDeploymentsModelDeployment) []GetModelDeploymentsModelDeploymentModelDeploymentSystemData {
+		return v.ModelDeploymentSystemDatas
+	}).(GetModelDeploymentsModelDeploymentModelDeploymentSystemDataArrayOutput)
 }
 
 // The URL to interact with the model deployment.
@@ -15272,6 +16753,8 @@ type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelCo
 	BandwidthMbps int `pulumi:"bandwidthMbps"`
 	// The model deployment instance configuration
 	InstanceConfigurations []GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration `pulumi:"instanceConfigurations"`
+	// The maximum network bandwidth for the model deployment.
+	MaximumBandwidthMbps int `pulumi:"maximumBandwidthMbps"`
 	// The OCID of the model you want to deploy.
 	ModelId string `pulumi:"modelId"`
 	// The scaling policy to apply to each model of the deployment.
@@ -15294,6 +16777,8 @@ type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelCo
 	BandwidthMbps pulumi.IntInput `pulumi:"bandwidthMbps"`
 	// The model deployment instance configuration
 	InstanceConfigurations GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationArrayInput `pulumi:"instanceConfigurations"`
+	// The maximum network bandwidth for the model deployment.
+	MaximumBandwidthMbps pulumi.IntInput `pulumi:"maximumBandwidthMbps"`
 	// The OCID of the model you want to deploy.
 	ModelId pulumi.StringInput `pulumi:"modelId"`
 	// The scaling policy to apply to each model of the deployment.
@@ -15363,6 +16848,13 @@ func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailMode
 	return o.ApplyT(func(v GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetail) []GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration {
 		return v.InstanceConfigurations
 	}).(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationArrayOutput)
+}
+
+// The maximum network bandwidth for the model deployment.
+func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailOutput) MaximumBandwidthMbps() pulumi.IntOutput {
+	return o.ApplyT(func(v GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetail) int {
+		return v.MaximumBandwidthMbps
+	}).(pulumi.IntOutput)
 }
 
 // The OCID of the model you want to deploy.
@@ -15510,9 +17002,11 @@ func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailMode
 }
 
 type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetail struct {
-	// A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 and 512 GB and VM.Optimized3.Flex memory range is between 6 and 256 GB.
+	// The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+	CpuBaseline string `pulumi:"cpuBaseline"`
+	// A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
 	MemoryInGbs float64 `pulumi:"memoryInGbs"`
-	// A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 and 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
+	// A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 to 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
 	Ocpus float64 `pulumi:"ocpus"`
 }
 
@@ -15528,9 +17022,11 @@ type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelCo
 }
 
 type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailArgs struct {
-	// A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 and 512 GB and VM.Optimized3.Flex memory range is between 6 and 256 GB.
+	// The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+	CpuBaseline pulumi.StringInput `pulumi:"cpuBaseline"`
+	// A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
 	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
-	// A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 and 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
+	// A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 to 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
 	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
 }
 
@@ -15585,14 +17081,21 @@ func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailMode
 	return o
 }
 
-// A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 and 512 GB and VM.Optimized3.Flex memory range is between 6 and 256 GB.
+// The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailOutput) CpuBaseline() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetail) string {
+		return v.CpuBaseline
+	}).(pulumi.StringOutput)
+}
+
+// A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
 func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailOutput) MemoryInGbs() pulumi.Float64Output {
 	return o.ApplyT(func(v GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetail) float64 {
 		return v.MemoryInGbs
 	}).(pulumi.Float64Output)
 }
 
-// A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 and 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
+// A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 to 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
 func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailOutput) Ocpus() pulumi.Float64Output {
 	return o.ApplyT(func(v GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetail) float64 {
 		return v.Ocpus
@@ -15620,8 +17123,14 @@ func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailMode
 }
 
 type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicy struct {
+	// The list of autoscaling policy details.
+	AutoScalingPolicies []GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicy `pulumi:"autoScalingPolicies"`
+	// For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 600 seconds, which is also the default. The cooldown period starts when the model deployment becomes ACTIVE after the scaling operation.
+	CoolDownInSeconds int `pulumi:"coolDownInSeconds"`
 	// The number of instances for the model deployment.
 	InstanceCount int `pulumi:"instanceCount"`
+	// Whether the autoscaling policy is enabled.
+	IsEnabled bool `pulumi:"isEnabled"`
 	// The type of scaling policy.
 	PolicyType string `pulumi:"policyType"`
 }
@@ -15638,8 +17147,14 @@ type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelCo
 }
 
 type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyArgs struct {
+	// The list of autoscaling policy details.
+	AutoScalingPolicies GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArrayInput `pulumi:"autoScalingPolicies"`
+	// For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 600 seconds, which is also the default. The cooldown period starts when the model deployment becomes ACTIVE after the scaling operation.
+	CoolDownInSeconds pulumi.IntInput `pulumi:"coolDownInSeconds"`
 	// The number of instances for the model deployment.
 	InstanceCount pulumi.IntInput `pulumi:"instanceCount"`
+	// Whether the autoscaling policy is enabled.
+	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
 	// The type of scaling policy.
 	PolicyType pulumi.StringInput `pulumi:"policyType"`
 }
@@ -15695,11 +17210,32 @@ func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailMode
 	return o
 }
 
+// The list of autoscaling policy details.
+func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyOutput) AutoScalingPolicies() GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArrayOutput {
+	return o.ApplyT(func(v GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicy) []GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicy {
+		return v.AutoScalingPolicies
+	}).(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArrayOutput)
+}
+
+// For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 600 seconds, which is also the default. The cooldown period starts when the model deployment becomes ACTIVE after the scaling operation.
+func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyOutput) CoolDownInSeconds() pulumi.IntOutput {
+	return o.ApplyT(func(v GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicy) int {
+		return v.CoolDownInSeconds
+	}).(pulumi.IntOutput)
+}
+
 // The number of instances for the model deployment.
 func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyOutput) InstanceCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicy) int {
 		return v.InstanceCount
 	}).(pulumi.IntOutput)
+}
+
+// Whether the autoscaling policy is enabled.
+func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyOutput) IsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicy) bool {
+		return v.IsEnabled
+	}).(pulumi.BoolOutput)
 }
 
 // The type of scaling policy.
@@ -15727,6 +17263,673 @@ func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailMode
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicy {
 		return vs[0].([]GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicy)[vs[1].(int)]
 	}).(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyOutput)
+}
+
+type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicy struct {
+	// The type of autoscaling policy.
+	AutoScalingPolicyType string `pulumi:"autoScalingPolicyType"`
+	// For a threshold-based autoscaling policy, this value is the initial number of instances to launch in the model deployment immediately after autoscaling is enabled. Note that anytime this value is updated, the number of instances will be reset to this value. After autoscaling retrieves performance metrics, the number of instances is automatically adjusted from this initial number to a number that is based on the limits that you set.
+	InitialInstanceCount int `pulumi:"initialInstanceCount"`
+	// For a threshold-based autoscaling policy, this value is the maximum number of instances the model deployment is allowed to increase to (scale out).
+	MaximumInstanceCount int `pulumi:"maximumInstanceCount"`
+	// For a threshold-based autoscaling policy, this value is the minimum number of instances the model deployment is allowed to decrease to (scale in).
+	MinimumInstanceCount int `pulumi:"minimumInstanceCount"`
+	// The list of autoscaling policy rules.
+	Rules []GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRule `pulumi:"rules"`
+}
+
+// GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyInput is an input type that accepts GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArgs and GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyOutput values.
+// You can construct a concrete instance of `GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyInput` via:
+//
+//	GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArgs{...}
+type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyInput interface {
+	pulumi.Input
+
+	ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyOutput() GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyOutput
+	ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyOutputWithContext(context.Context) GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyOutput
+}
+
+type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArgs struct {
+	// The type of autoscaling policy.
+	AutoScalingPolicyType pulumi.StringInput `pulumi:"autoScalingPolicyType"`
+	// For a threshold-based autoscaling policy, this value is the initial number of instances to launch in the model deployment immediately after autoscaling is enabled. Note that anytime this value is updated, the number of instances will be reset to this value. After autoscaling retrieves performance metrics, the number of instances is automatically adjusted from this initial number to a number that is based on the limits that you set.
+	InitialInstanceCount pulumi.IntInput `pulumi:"initialInstanceCount"`
+	// For a threshold-based autoscaling policy, this value is the maximum number of instances the model deployment is allowed to increase to (scale out).
+	MaximumInstanceCount pulumi.IntInput `pulumi:"maximumInstanceCount"`
+	// For a threshold-based autoscaling policy, this value is the minimum number of instances the model deployment is allowed to decrease to (scale in).
+	MinimumInstanceCount pulumi.IntInput `pulumi:"minimumInstanceCount"`
+	// The list of autoscaling policy rules.
+	Rules GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArrayInput `pulumi:"rules"`
+}
+
+func (GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicy)(nil)).Elem()
+}
+
+func (i GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArgs) ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyOutput() GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyOutput {
+	return i.ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyOutputWithContext(context.Background())
+}
+
+func (i GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArgs) ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyOutputWithContext(ctx context.Context) GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyOutput)
+}
+
+// GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArrayInput is an input type that accepts GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArray and GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArrayOutput values.
+// You can construct a concrete instance of `GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArrayInput` via:
+//
+//	GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArray{ GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArgs{...} }
+type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArrayInput interface {
+	pulumi.Input
+
+	ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArrayOutput() GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArrayOutput
+	ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArrayOutputWithContext(context.Context) GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArrayOutput
+}
+
+type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArray []GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyInput
+
+func (GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicy)(nil)).Elem()
+}
+
+func (i GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArray) ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArrayOutput() GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArrayOutput {
+	return i.ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArrayOutputWithContext(context.Background())
+}
+
+func (i GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArray) ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArrayOutputWithContext(ctx context.Context) GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArrayOutput)
+}
+
+type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyOutput struct{ *pulumi.OutputState }
+
+func (GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicy)(nil)).Elem()
+}
+
+func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyOutput) ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyOutput() GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyOutput {
+	return o
+}
+
+func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyOutput) ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyOutputWithContext(ctx context.Context) GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyOutput {
+	return o
+}
+
+// The type of autoscaling policy.
+func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyOutput) AutoScalingPolicyType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicy) string {
+		return v.AutoScalingPolicyType
+	}).(pulumi.StringOutput)
+}
+
+// For a threshold-based autoscaling policy, this value is the initial number of instances to launch in the model deployment immediately after autoscaling is enabled. Note that anytime this value is updated, the number of instances will be reset to this value. After autoscaling retrieves performance metrics, the number of instances is automatically adjusted from this initial number to a number that is based on the limits that you set.
+func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyOutput) InitialInstanceCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicy) int {
+		return v.InitialInstanceCount
+	}).(pulumi.IntOutput)
+}
+
+// For a threshold-based autoscaling policy, this value is the maximum number of instances the model deployment is allowed to increase to (scale out).
+func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyOutput) MaximumInstanceCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicy) int {
+		return v.MaximumInstanceCount
+	}).(pulumi.IntOutput)
+}
+
+// For a threshold-based autoscaling policy, this value is the minimum number of instances the model deployment is allowed to decrease to (scale in).
+func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyOutput) MinimumInstanceCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicy) int {
+		return v.MinimumInstanceCount
+	}).(pulumi.IntOutput)
+}
+
+// The list of autoscaling policy rules.
+func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyOutput) Rules() GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArrayOutput {
+	return o.ApplyT(func(v GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicy) []GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRule {
+		return v.Rules
+	}).(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArrayOutput)
+}
+
+type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicy)(nil)).Elem()
+}
+
+func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArrayOutput) ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArrayOutput() GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArrayOutput {
+	return o
+}
+
+func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArrayOutput) ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArrayOutputWithContext(ctx context.Context) GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArrayOutput {
+	return o
+}
+
+func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArrayOutput) Index(i pulumi.IntInput) GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicy {
+		return vs[0].([]GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicy)[vs[1].(int)]
+	}).(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyOutput)
+}
+
+type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRule struct {
+	// The metric expression for creating the alarm used to trigger autoscaling actions on the model deployment.
+	MetricExpressionRuleType string `pulumi:"metricExpressionRuleType"`
+	// Metric type
+	MetricType string `pulumi:"metricType"`
+	// The scaling configuration for the predefined metric expression rule.
+	ScaleInConfigurations []GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfiguration `pulumi:"scaleInConfigurations"`
+	// The scaling configuration for the predefined metric expression rule.
+	ScaleOutConfigurations []GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfiguration `pulumi:"scaleOutConfigurations"`
+}
+
+// GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleInput is an input type that accepts GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArgs and GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleOutput values.
+// You can construct a concrete instance of `GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleInput` via:
+//
+//	GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArgs{...}
+type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleInput interface {
+	pulumi.Input
+
+	ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleOutput() GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleOutput
+	ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleOutputWithContext(context.Context) GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleOutput
+}
+
+type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArgs struct {
+	// The metric expression for creating the alarm used to trigger autoscaling actions on the model deployment.
+	MetricExpressionRuleType pulumi.StringInput `pulumi:"metricExpressionRuleType"`
+	// Metric type
+	MetricType pulumi.StringInput `pulumi:"metricType"`
+	// The scaling configuration for the predefined metric expression rule.
+	ScaleInConfigurations GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArrayInput `pulumi:"scaleInConfigurations"`
+	// The scaling configuration for the predefined metric expression rule.
+	ScaleOutConfigurations GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArrayInput `pulumi:"scaleOutConfigurations"`
+}
+
+func (GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRule)(nil)).Elem()
+}
+
+func (i GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArgs) ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleOutput() GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleOutput {
+	return i.ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleOutputWithContext(context.Background())
+}
+
+func (i GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArgs) ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleOutputWithContext(ctx context.Context) GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleOutput)
+}
+
+// GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArrayInput is an input type that accepts GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArray and GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArrayOutput values.
+// You can construct a concrete instance of `GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArrayInput` via:
+//
+//	GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArray{ GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArgs{...} }
+type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArrayInput interface {
+	pulumi.Input
+
+	ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArrayOutput() GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArrayOutput
+	ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArrayOutputWithContext(context.Context) GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArrayOutput
+}
+
+type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArray []GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleInput
+
+func (GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRule)(nil)).Elem()
+}
+
+func (i GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArray) ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArrayOutput() GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArrayOutput {
+	return i.ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArrayOutputWithContext(context.Background())
+}
+
+func (i GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArray) ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArrayOutputWithContext(ctx context.Context) GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArrayOutput)
+}
+
+type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleOutput struct{ *pulumi.OutputState }
+
+func (GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRule)(nil)).Elem()
+}
+
+func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleOutput) ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleOutput() GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleOutput {
+	return o
+}
+
+func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleOutput) ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleOutputWithContext(ctx context.Context) GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleOutput {
+	return o
+}
+
+// The metric expression for creating the alarm used to trigger autoscaling actions on the model deployment.
+func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleOutput) MetricExpressionRuleType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRule) string {
+		return v.MetricExpressionRuleType
+	}).(pulumi.StringOutput)
+}
+
+// Metric type
+func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleOutput) MetricType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRule) string {
+		return v.MetricType
+	}).(pulumi.StringOutput)
+}
+
+// The scaling configuration for the predefined metric expression rule.
+func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleOutput) ScaleInConfigurations() GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArrayOutput {
+	return o.ApplyT(func(v GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRule) []GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfiguration {
+		return v.ScaleInConfigurations
+	}).(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArrayOutput)
+}
+
+// The scaling configuration for the predefined metric expression rule.
+func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleOutput) ScaleOutConfigurations() GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArrayOutput {
+	return o.ApplyT(func(v GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRule) []GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfiguration {
+		return v.ScaleOutConfigurations
+	}).(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArrayOutput)
+}
+
+type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRule)(nil)).Elem()
+}
+
+func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArrayOutput) ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArrayOutput() GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArrayOutput {
+	return o
+}
+
+func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArrayOutput) ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArrayOutputWithContext(ctx context.Context) GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArrayOutput {
+	return o
+}
+
+func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArrayOutput) Index(i pulumi.IntInput) GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRule {
+		return vs[0].([]GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRule)[vs[1].(int)]
+	}).(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleOutput)
+}
+
+type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfiguration struct {
+	// The value is used for adjusting the count of instances by.
+	InstanceCountAdjustment int `pulumi:"instanceCountAdjustment"`
+	// The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
+	PendingDuration string `pulumi:"pendingDuration"`
+	// The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+	Query string `pulumi:"query"`
+	// The type of scaling configuration.
+	ScalingConfigurationType string `pulumi:"scalingConfigurationType"`
+	// A metric value at which the scaling operation will be triggered.
+	Threshold int `pulumi:"threshold"`
+}
+
+// GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationInput is an input type that accepts GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgs and GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutput values.
+// You can construct a concrete instance of `GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationInput` via:
+//
+//	GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgs{...}
+type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationInput interface {
+	pulumi.Input
+
+	ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutput() GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutput
+	ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutputWithContext(context.Context) GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutput
+}
+
+type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgs struct {
+	// The value is used for adjusting the count of instances by.
+	InstanceCountAdjustment pulumi.IntInput `pulumi:"instanceCountAdjustment"`
+	// The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
+	PendingDuration pulumi.StringInput `pulumi:"pendingDuration"`
+	// The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+	Query pulumi.StringInput `pulumi:"query"`
+	// The type of scaling configuration.
+	ScalingConfigurationType pulumi.StringInput `pulumi:"scalingConfigurationType"`
+	// A metric value at which the scaling operation will be triggered.
+	Threshold pulumi.IntInput `pulumi:"threshold"`
+}
+
+func (GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfiguration)(nil)).Elem()
+}
+
+func (i GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgs) ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutput() GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutput {
+	return i.ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgs) ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutputWithContext(ctx context.Context) GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutput)
+}
+
+// GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArrayInput is an input type that accepts GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArray and GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArrayInput` via:
+//
+//	GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArray{ GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgs{...} }
+type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArrayOutput() GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArrayOutput
+	ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArrayOutputWithContext(context.Context) GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArrayOutput
+}
+
+type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArray []GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationInput
+
+func (GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfiguration)(nil)).Elem()
+}
+
+func (i GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArray) ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArrayOutput() GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArrayOutput {
+	return i.ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArray) ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArrayOutputWithContext(ctx context.Context) GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArrayOutput)
+}
+
+type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfiguration)(nil)).Elem()
+}
+
+func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutput) ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutput() GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutput {
+	return o
+}
+
+func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutput) ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutputWithContext(ctx context.Context) GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutput {
+	return o
+}
+
+// The value is used for adjusting the count of instances by.
+func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutput) InstanceCountAdjustment() pulumi.IntOutput {
+	return o.ApplyT(func(v GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfiguration) int {
+		return v.InstanceCountAdjustment
+	}).(pulumi.IntOutput)
+}
+
+// The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
+func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutput) PendingDuration() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfiguration) string {
+		return v.PendingDuration
+	}).(pulumi.StringOutput)
+}
+
+// The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutput) Query() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfiguration) string {
+		return v.Query
+	}).(pulumi.StringOutput)
+}
+
+// The type of scaling configuration.
+func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutput) ScalingConfigurationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfiguration) string {
+		return v.ScalingConfigurationType
+	}).(pulumi.StringOutput)
+}
+
+// A metric value at which the scaling operation will be triggered.
+func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutput) Threshold() pulumi.IntOutput {
+	return o.ApplyT(func(v GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfiguration) int {
+		return v.Threshold
+	}).(pulumi.IntOutput)
+}
+
+type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfiguration)(nil)).Elem()
+}
+
+func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArrayOutput) ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArrayOutput() GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArrayOutput {
+	return o
+}
+
+func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArrayOutput) ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArrayOutputWithContext(ctx context.Context) GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArrayOutput {
+	return o
+}
+
+func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArrayOutput) Index(i pulumi.IntInput) GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfiguration {
+		return vs[0].([]GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfiguration)[vs[1].(int)]
+	}).(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutput)
+}
+
+type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfiguration struct {
+	// The value is used for adjusting the count of instances by.
+	InstanceCountAdjustment int `pulumi:"instanceCountAdjustment"`
+	// The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
+	PendingDuration string `pulumi:"pendingDuration"`
+	// The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+	Query string `pulumi:"query"`
+	// The type of scaling configuration.
+	ScalingConfigurationType string `pulumi:"scalingConfigurationType"`
+	// A metric value at which the scaling operation will be triggered.
+	Threshold int `pulumi:"threshold"`
+}
+
+// GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationInput is an input type that accepts GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgs and GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutput values.
+// You can construct a concrete instance of `GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationInput` via:
+//
+//	GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgs{...}
+type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationInput interface {
+	pulumi.Input
+
+	ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutput() GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutput
+	ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutputWithContext(context.Context) GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutput
+}
+
+type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgs struct {
+	// The value is used for adjusting the count of instances by.
+	InstanceCountAdjustment pulumi.IntInput `pulumi:"instanceCountAdjustment"`
+	// The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
+	PendingDuration pulumi.StringInput `pulumi:"pendingDuration"`
+	// The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+	Query pulumi.StringInput `pulumi:"query"`
+	// The type of scaling configuration.
+	ScalingConfigurationType pulumi.StringInput `pulumi:"scalingConfigurationType"`
+	// A metric value at which the scaling operation will be triggered.
+	Threshold pulumi.IntInput `pulumi:"threshold"`
+}
+
+func (GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfiguration)(nil)).Elem()
+}
+
+func (i GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgs) ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutput() GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutput {
+	return i.ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgs) ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutputWithContext(ctx context.Context) GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutput)
+}
+
+// GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArrayInput is an input type that accepts GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArray and GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArrayInput` via:
+//
+//	GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArray{ GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgs{...} }
+type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArrayOutput() GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArrayOutput
+	ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArrayOutputWithContext(context.Context) GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArrayOutput
+}
+
+type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArray []GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationInput
+
+func (GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfiguration)(nil)).Elem()
+}
+
+func (i GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArray) ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArrayOutput() GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArrayOutput {
+	return i.ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArray) ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArrayOutputWithContext(ctx context.Context) GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArrayOutput)
+}
+
+type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfiguration)(nil)).Elem()
+}
+
+func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutput) ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutput() GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutput {
+	return o
+}
+
+func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutput) ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutputWithContext(ctx context.Context) GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutput {
+	return o
+}
+
+// The value is used for adjusting the count of instances by.
+func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutput) InstanceCountAdjustment() pulumi.IntOutput {
+	return o.ApplyT(func(v GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfiguration) int {
+		return v.InstanceCountAdjustment
+	}).(pulumi.IntOutput)
+}
+
+// The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
+func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutput) PendingDuration() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfiguration) string {
+		return v.PendingDuration
+	}).(pulumi.StringOutput)
+}
+
+// The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutput) Query() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfiguration) string {
+		return v.Query
+	}).(pulumi.StringOutput)
+}
+
+// The type of scaling configuration.
+func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutput) ScalingConfigurationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfiguration) string {
+		return v.ScalingConfigurationType
+	}).(pulumi.StringOutput)
+}
+
+// A metric value at which the scaling operation will be triggered.
+func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutput) Threshold() pulumi.IntOutput {
+	return o.ApplyT(func(v GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfiguration) int {
+		return v.Threshold
+	}).(pulumi.IntOutput)
+}
+
+type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfiguration)(nil)).Elem()
+}
+
+func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArrayOutput) ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArrayOutput() GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArrayOutput {
+	return o
+}
+
+func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArrayOutput) ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArrayOutputWithContext(ctx context.Context) GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArrayOutput {
+	return o
+}
+
+func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArrayOutput) Index(i pulumi.IntInput) GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfiguration {
+		return vs[0].([]GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfiguration)[vs[1].(int)]
+	}).(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutput)
+}
+
+type GetModelDeploymentsModelDeploymentModelDeploymentSystemData struct {
+	// This value is the current count of the model deployment instances.
+	CurrentInstanceCount int `pulumi:"currentInstanceCount"`
+	// The infrastructure type of the model deployment.
+	SystemInfraType string `pulumi:"systemInfraType"`
+}
+
+// GetModelDeploymentsModelDeploymentModelDeploymentSystemDataInput is an input type that accepts GetModelDeploymentsModelDeploymentModelDeploymentSystemDataArgs and GetModelDeploymentsModelDeploymentModelDeploymentSystemDataOutput values.
+// You can construct a concrete instance of `GetModelDeploymentsModelDeploymentModelDeploymentSystemDataInput` via:
+//
+//	GetModelDeploymentsModelDeploymentModelDeploymentSystemDataArgs{...}
+type GetModelDeploymentsModelDeploymentModelDeploymentSystemDataInput interface {
+	pulumi.Input
+
+	ToGetModelDeploymentsModelDeploymentModelDeploymentSystemDataOutput() GetModelDeploymentsModelDeploymentModelDeploymentSystemDataOutput
+	ToGetModelDeploymentsModelDeploymentModelDeploymentSystemDataOutputWithContext(context.Context) GetModelDeploymentsModelDeploymentModelDeploymentSystemDataOutput
+}
+
+type GetModelDeploymentsModelDeploymentModelDeploymentSystemDataArgs struct {
+	// This value is the current count of the model deployment instances.
+	CurrentInstanceCount pulumi.IntInput `pulumi:"currentInstanceCount"`
+	// The infrastructure type of the model deployment.
+	SystemInfraType pulumi.StringInput `pulumi:"systemInfraType"`
+}
+
+func (GetModelDeploymentsModelDeploymentModelDeploymentSystemDataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelDeploymentsModelDeploymentModelDeploymentSystemData)(nil)).Elem()
+}
+
+func (i GetModelDeploymentsModelDeploymentModelDeploymentSystemDataArgs) ToGetModelDeploymentsModelDeploymentModelDeploymentSystemDataOutput() GetModelDeploymentsModelDeploymentModelDeploymentSystemDataOutput {
+	return i.ToGetModelDeploymentsModelDeploymentModelDeploymentSystemDataOutputWithContext(context.Background())
+}
+
+func (i GetModelDeploymentsModelDeploymentModelDeploymentSystemDataArgs) ToGetModelDeploymentsModelDeploymentModelDeploymentSystemDataOutputWithContext(ctx context.Context) GetModelDeploymentsModelDeploymentModelDeploymentSystemDataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelDeploymentsModelDeploymentModelDeploymentSystemDataOutput)
+}
+
+// GetModelDeploymentsModelDeploymentModelDeploymentSystemDataArrayInput is an input type that accepts GetModelDeploymentsModelDeploymentModelDeploymentSystemDataArray and GetModelDeploymentsModelDeploymentModelDeploymentSystemDataArrayOutput values.
+// You can construct a concrete instance of `GetModelDeploymentsModelDeploymentModelDeploymentSystemDataArrayInput` via:
+//
+//	GetModelDeploymentsModelDeploymentModelDeploymentSystemDataArray{ GetModelDeploymentsModelDeploymentModelDeploymentSystemDataArgs{...} }
+type GetModelDeploymentsModelDeploymentModelDeploymentSystemDataArrayInput interface {
+	pulumi.Input
+
+	ToGetModelDeploymentsModelDeploymentModelDeploymentSystemDataArrayOutput() GetModelDeploymentsModelDeploymentModelDeploymentSystemDataArrayOutput
+	ToGetModelDeploymentsModelDeploymentModelDeploymentSystemDataArrayOutputWithContext(context.Context) GetModelDeploymentsModelDeploymentModelDeploymentSystemDataArrayOutput
+}
+
+type GetModelDeploymentsModelDeploymentModelDeploymentSystemDataArray []GetModelDeploymentsModelDeploymentModelDeploymentSystemDataInput
+
+func (GetModelDeploymentsModelDeploymentModelDeploymentSystemDataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelDeploymentsModelDeploymentModelDeploymentSystemData)(nil)).Elem()
+}
+
+func (i GetModelDeploymentsModelDeploymentModelDeploymentSystemDataArray) ToGetModelDeploymentsModelDeploymentModelDeploymentSystemDataArrayOutput() GetModelDeploymentsModelDeploymentModelDeploymentSystemDataArrayOutput {
+	return i.ToGetModelDeploymentsModelDeploymentModelDeploymentSystemDataArrayOutputWithContext(context.Background())
+}
+
+func (i GetModelDeploymentsModelDeploymentModelDeploymentSystemDataArray) ToGetModelDeploymentsModelDeploymentModelDeploymentSystemDataArrayOutputWithContext(ctx context.Context) GetModelDeploymentsModelDeploymentModelDeploymentSystemDataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelDeploymentsModelDeploymentModelDeploymentSystemDataArrayOutput)
+}
+
+type GetModelDeploymentsModelDeploymentModelDeploymentSystemDataOutput struct{ *pulumi.OutputState }
+
+func (GetModelDeploymentsModelDeploymentModelDeploymentSystemDataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelDeploymentsModelDeploymentModelDeploymentSystemData)(nil)).Elem()
+}
+
+func (o GetModelDeploymentsModelDeploymentModelDeploymentSystemDataOutput) ToGetModelDeploymentsModelDeploymentModelDeploymentSystemDataOutput() GetModelDeploymentsModelDeploymentModelDeploymentSystemDataOutput {
+	return o
+}
+
+func (o GetModelDeploymentsModelDeploymentModelDeploymentSystemDataOutput) ToGetModelDeploymentsModelDeploymentModelDeploymentSystemDataOutputWithContext(ctx context.Context) GetModelDeploymentsModelDeploymentModelDeploymentSystemDataOutput {
+	return o
+}
+
+// This value is the current count of the model deployment instances.
+func (o GetModelDeploymentsModelDeploymentModelDeploymentSystemDataOutput) CurrentInstanceCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetModelDeploymentsModelDeploymentModelDeploymentSystemData) int { return v.CurrentInstanceCount }).(pulumi.IntOutput)
+}
+
+// The infrastructure type of the model deployment.
+func (o GetModelDeploymentsModelDeploymentModelDeploymentSystemDataOutput) SystemInfraType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelDeploymentsModelDeploymentModelDeploymentSystemData) string { return v.SystemInfraType }).(pulumi.StringOutput)
+}
+
+type GetModelDeploymentsModelDeploymentModelDeploymentSystemDataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetModelDeploymentsModelDeploymentModelDeploymentSystemDataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelDeploymentsModelDeploymentModelDeploymentSystemData)(nil)).Elem()
+}
+
+func (o GetModelDeploymentsModelDeploymentModelDeploymentSystemDataArrayOutput) ToGetModelDeploymentsModelDeploymentModelDeploymentSystemDataArrayOutput() GetModelDeploymentsModelDeploymentModelDeploymentSystemDataArrayOutput {
+	return o
+}
+
+func (o GetModelDeploymentsModelDeploymentModelDeploymentSystemDataArrayOutput) ToGetModelDeploymentsModelDeploymentModelDeploymentSystemDataArrayOutputWithContext(ctx context.Context) GetModelDeploymentsModelDeploymentModelDeploymentSystemDataArrayOutput {
+	return o
+}
+
+func (o GetModelDeploymentsModelDeploymentModelDeploymentSystemDataArrayOutput) Index(i pulumi.IntInput) GetModelDeploymentsModelDeploymentModelDeploymentSystemDataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetModelDeploymentsModelDeploymentModelDeploymentSystemData {
+		return vs[0].([]GetModelDeploymentsModelDeploymentModelDeploymentSystemData)[vs[1].(int)]
+	}).(GetModelDeploymentsModelDeploymentModelDeploymentSystemDataOutput)
 }
 
 type GetModelVersionSetsFilter struct {
@@ -24569,6 +26772,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsPtrInput)(nil)).Elem(), ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyInput)(nil)).Elem(), ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyPtrInput)(nil)).Elem(), ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyInput)(nil)).Elem(), ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyArrayInput)(nil)).Elem(), ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleInput)(nil)).Elem(), ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArrayInput)(nil)).Elem(), ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationInput)(nil)).Elem(), ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationInput)(nil)).Elem(), ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ModelDeploymentModelDeploymentSystemDataInput)(nil)).Elem(), ModelDeploymentModelDeploymentSystemDataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ModelDeploymentModelDeploymentSystemDataArrayInput)(nil)).Elem(), ModelDeploymentModelDeploymentSystemDataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NotebookSessionNotebookSessionConfigDetailsInput)(nil)).Elem(), NotebookSessionNotebookSessionConfigDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NotebookSessionNotebookSessionConfigDetailsPtrInput)(nil)).Elem(), NotebookSessionNotebookSessionConfigDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsInput)(nil)).Elem(), NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsArgs{})
@@ -24706,6 +26917,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailArrayInput)(nil)).Elem(), GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyInput)(nil)).Elem(), GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyArrayInput)(nil)).Elem(), GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyInput)(nil)).Elem(), GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArrayInput)(nil)).Elem(), GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleInput)(nil)).Elem(), GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArrayInput)(nil)).Elem(), GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationInput)(nil)).Elem(), GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArrayInput)(nil)).Elem(), GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationInput)(nil)).Elem(), GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArrayInput)(nil)).Elem(), GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDeploymentModelDeploymentSystemDataInput)(nil)).Elem(), GetModelDeploymentModelDeploymentSystemDataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDeploymentModelDeploymentSystemDataArrayInput)(nil)).Elem(), GetModelDeploymentModelDeploymentSystemDataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDeploymentShapesFilterInput)(nil)).Elem(), GetModelDeploymentShapesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDeploymentShapesFilterArrayInput)(nil)).Elem(), GetModelDeploymentShapesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDeploymentShapesModelDeploymentShapeInput)(nil)).Elem(), GetModelDeploymentShapesModelDeploymentShapeArgs{})
@@ -24732,6 +26953,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailArrayInput)(nil)).Elem(), GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyInput)(nil)).Elem(), GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyArrayInput)(nil)).Elem(), GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyInput)(nil)).Elem(), GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArrayInput)(nil)).Elem(), GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleInput)(nil)).Elem(), GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArrayInput)(nil)).Elem(), GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationInput)(nil)).Elem(), GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArrayInput)(nil)).Elem(), GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationInput)(nil)).Elem(), GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArrayInput)(nil)).Elem(), GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDeploymentsModelDeploymentModelDeploymentSystemDataInput)(nil)).Elem(), GetModelDeploymentsModelDeploymentModelDeploymentSystemDataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDeploymentsModelDeploymentModelDeploymentSystemDataArrayInput)(nil)).Elem(), GetModelDeploymentsModelDeploymentModelDeploymentSystemDataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelVersionSetsFilterInput)(nil)).Elem(), GetModelVersionSetsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelVersionSetsFilterArrayInput)(nil)).Elem(), GetModelVersionSetsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelVersionSetsModelVersionSetInput)(nil)).Elem(), GetModelVersionSetsModelVersionSetArgs{})
@@ -24912,6 +27143,14 @@ func init() {
 	pulumi.RegisterOutputType(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsPtrOutput{})
 	pulumi.RegisterOutputType(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyOutput{})
 	pulumi.RegisterOutputType(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyPtrOutput{})
+	pulumi.RegisterOutputType(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyOutput{})
+	pulumi.RegisterOutputType(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyArrayOutput{})
+	pulumi.RegisterOutputType(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleOutput{})
+	pulumi.RegisterOutputType(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArrayOutput{})
+	pulumi.RegisterOutputType(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutput{})
+	pulumi.RegisterOutputType(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutput{})
+	pulumi.RegisterOutputType(ModelDeploymentModelDeploymentSystemDataOutput{})
+	pulumi.RegisterOutputType(ModelDeploymentModelDeploymentSystemDataArrayOutput{})
 	pulumi.RegisterOutputType(NotebookSessionNotebookSessionConfigDetailsOutput{})
 	pulumi.RegisterOutputType(NotebookSessionNotebookSessionConfigDetailsPtrOutput{})
 	pulumi.RegisterOutputType(NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsOutput{})
@@ -25049,6 +27288,16 @@ func init() {
 	pulumi.RegisterOutputType(GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyOutput{})
 	pulumi.RegisterOutputType(GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyArrayOutput{})
+	pulumi.RegisterOutputType(GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyOutput{})
+	pulumi.RegisterOutputType(GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArrayOutput{})
+	pulumi.RegisterOutputType(GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleOutput{})
+	pulumi.RegisterOutputType(GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArrayOutput{})
+	pulumi.RegisterOutputType(GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutput{})
+	pulumi.RegisterOutputType(GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutput{})
+	pulumi.RegisterOutputType(GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetModelDeploymentModelDeploymentSystemDataOutput{})
+	pulumi.RegisterOutputType(GetModelDeploymentModelDeploymentSystemDataArrayOutput{})
 	pulumi.RegisterOutputType(GetModelDeploymentShapesFilterOutput{})
 	pulumi.RegisterOutputType(GetModelDeploymentShapesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetModelDeploymentShapesModelDeploymentShapeOutput{})
@@ -25075,6 +27324,16 @@ func init() {
 	pulumi.RegisterOutputType(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyOutput{})
 	pulumi.RegisterOutputType(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyArrayOutput{})
+	pulumi.RegisterOutputType(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyOutput{})
+	pulumi.RegisterOutputType(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArrayOutput{})
+	pulumi.RegisterOutputType(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleOutput{})
+	pulumi.RegisterOutputType(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArrayOutput{})
+	pulumi.RegisterOutputType(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationOutput{})
+	pulumi.RegisterOutputType(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutput{})
+	pulumi.RegisterOutputType(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetModelDeploymentsModelDeploymentModelDeploymentSystemDataOutput{})
+	pulumi.RegisterOutputType(GetModelDeploymentsModelDeploymentModelDeploymentSystemDataArrayOutput{})
 	pulumi.RegisterOutputType(GetModelVersionSetsFilterOutput{})
 	pulumi.RegisterOutputType(GetModelVersionSetsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetModelVersionSetsModelVersionSetOutput{})

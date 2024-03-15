@@ -26,6 +26,11 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
      */
     private ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration instanceConfiguration;
     /**
+     * @return (Updatable) The maximum network bandwidth for the model deployment.
+     * 
+     */
+    private @Nullable Integer maximumBandwidthMbps;
+    /**
      * @return (Updatable) The OCID of the model you want to deploy.
      * 
      */
@@ -50,6 +55,13 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
      */
     public ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration instanceConfiguration() {
         return this.instanceConfiguration;
+    }
+    /**
+     * @return (Updatable) The maximum network bandwidth for the model deployment.
+     * 
+     */
+    public Optional<Integer> maximumBandwidthMbps() {
+        return Optional.ofNullable(this.maximumBandwidthMbps);
     }
     /**
      * @return (Updatable) The OCID of the model you want to deploy.
@@ -77,6 +89,7 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
     public static final class Builder {
         private @Nullable Integer bandwidthMbps;
         private ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration instanceConfiguration;
+        private @Nullable Integer maximumBandwidthMbps;
         private String modelId;
         private @Nullable ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicy scalingPolicy;
         public Builder() {}
@@ -84,6 +97,7 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
     	      Objects.requireNonNull(defaults);
     	      this.bandwidthMbps = defaults.bandwidthMbps;
     	      this.instanceConfiguration = defaults.instanceConfiguration;
+    	      this.maximumBandwidthMbps = defaults.maximumBandwidthMbps;
     	      this.modelId = defaults.modelId;
     	      this.scalingPolicy = defaults.scalingPolicy;
         }
@@ -100,6 +114,12 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
               throw new MissingRequiredPropertyException("ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails", "instanceConfiguration");
             }
             this.instanceConfiguration = instanceConfiguration;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder maximumBandwidthMbps(@Nullable Integer maximumBandwidthMbps) {
+
+            this.maximumBandwidthMbps = maximumBandwidthMbps;
             return this;
         }
         @CustomType.Setter
@@ -120,6 +140,7 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
             final var _resultValue = new ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails();
             _resultValue.bandwidthMbps = bandwidthMbps;
             _resultValue.instanceConfiguration = instanceConfiguration;
+            _resultValue.maximumBandwidthMbps = maximumBandwidthMbps;
             _resultValue.modelId = modelId;
             _resultValue.scalingPolicy = scalingPolicy;
             return _resultValue;

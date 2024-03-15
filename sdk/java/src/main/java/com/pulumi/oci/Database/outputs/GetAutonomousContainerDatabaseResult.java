@@ -58,7 +58,7 @@ public final class GetAutonomousContainerDatabaseResult {
      */
     private String compartmentId;
     /**
-     * @return The compute model of the Autonomous VM Cluster.
+     * @return The compute model of the Autonomous Container Database. For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      * 
      */
     private String computeModel;
@@ -67,6 +67,11 @@ public final class GetAutonomousContainerDatabaseResult {
      * 
      */
     private String dbName;
+    /**
+     * @return The value above which an Autonomous Database will be split across multiple nodes. This value defaults to 16 when the &#34;CPU per VM&#34; value on the Autonomous VM Cluster is greater than 16. Otherwise, it defaults to the &#34;CPU per VM&#34; value.
+     * 
+     */
+    private Integer dbSplitThreshold;
     private String dbUniqueName;
     /**
      * @return Oracle Database version of the Autonomous Container Database.
@@ -84,7 +89,12 @@ public final class GetAutonomousContainerDatabaseResult {
      */
     private String displayName;
     /**
-     * @return DST Time Zone File version of the Autonomous Container Database.
+     * @return This option determines whether to open an Autonomous Database across the maximum number of nodes or the least number of nodes. The default will be for the minimum number of VMs.
+     * 
+     */
+    private String distributionAffinity;
+    /**
+     * @return DST Time-zone File version of the Autonomous Container Database.
      * 
      */
     private String dstFileVersion;
@@ -152,10 +162,15 @@ public final class GetAutonomousContainerDatabaseResult {
      */
     private List<GetAutonomousContainerDatabaseMaintenanceWindow> maintenanceWindows;
     /**
-     * @return The amount of memory (in GBs) enabled per OCPU or ECPU in the Autonomous VM Cluster.
+     * @return The amount of memory (in GBs) enabled per ECPU or OCPU in the Autonomous VM Cluster.
      * 
      */
     private Integer memoryPerOracleComputeUnitInGbs;
+    /**
+     * @return Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
+     * 
+     */
+    private String netServicesArchitecture;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      * 
@@ -252,6 +267,11 @@ public final class GetAutonomousContainerDatabaseResult {
      * 
      */
     private String versionPreference;
+    /**
+     * @return The percentage of CPUs to reserve for a single node Autonomous Database, in increments of 25.
+     * 
+     */
+    private Integer vmFailoverReservation;
 
     private GetAutonomousContainerDatabaseResult() {}
     public String autonomousContainerDatabaseId() {
@@ -307,7 +327,7 @@ public final class GetAutonomousContainerDatabaseResult {
         return this.compartmentId;
     }
     /**
-     * @return The compute model of the Autonomous VM Cluster.
+     * @return The compute model of the Autonomous Container Database. For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      * 
      */
     public String computeModel() {
@@ -319,6 +339,13 @@ public final class GetAutonomousContainerDatabaseResult {
      */
     public String dbName() {
         return this.dbName;
+    }
+    /**
+     * @return The value above which an Autonomous Database will be split across multiple nodes. This value defaults to 16 when the &#34;CPU per VM&#34; value on the Autonomous VM Cluster is greater than 16. Otherwise, it defaults to the &#34;CPU per VM&#34; value.
+     * 
+     */
+    public Integer dbSplitThreshold() {
+        return this.dbSplitThreshold;
     }
     public String dbUniqueName() {
         return this.dbUniqueName;
@@ -345,7 +372,14 @@ public final class GetAutonomousContainerDatabaseResult {
         return this.displayName;
     }
     /**
-     * @return DST Time Zone File version of the Autonomous Container Database.
+     * @return This option determines whether to open an Autonomous Database across the maximum number of nodes or the least number of nodes. The default will be for the minimum number of VMs.
+     * 
+     */
+    public String distributionAffinity() {
+        return this.distributionAffinity;
+    }
+    /**
+     * @return DST Time-zone File version of the Autonomous Container Database.
      * 
      */
     public String dstFileVersion() {
@@ -445,11 +479,18 @@ public final class GetAutonomousContainerDatabaseResult {
         return this.maintenanceWindows;
     }
     /**
-     * @return The amount of memory (in GBs) enabled per OCPU or ECPU in the Autonomous VM Cluster.
+     * @return The amount of memory (in GBs) enabled per ECPU or OCPU in the Autonomous VM Cluster.
      * 
      */
     public Integer memoryPerOracleComputeUnitInGbs() {
         return this.memoryPerOracleComputeUnitInGbs;
+    }
+    /**
+     * @return Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
+     * 
+     */
+    public String netServicesArchitecture() {
+        return this.netServicesArchitecture;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
@@ -599,6 +640,13 @@ public final class GetAutonomousContainerDatabaseResult {
     public String versionPreference() {
         return this.versionPreference;
     }
+    /**
+     * @return The percentage of CPUs to reserve for a single node Autonomous Database, in increments of 25.
+     * 
+     */
+    public Integer vmFailoverReservation() {
+        return this.vmFailoverReservation;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -619,10 +667,12 @@ public final class GetAutonomousContainerDatabaseResult {
         private String compartmentId;
         private String computeModel;
         private String dbName;
+        private Integer dbSplitThreshold;
         private String dbUniqueName;
         private String dbVersion;
         private Map<String,Object> definedTags;
         private String displayName;
+        private String distributionAffinity;
         private String dstFileVersion;
         private Integer fastStartFailOverLagLimitInSeconds;
         private Map<String,Object> freeformTags;
@@ -640,6 +690,7 @@ public final class GetAutonomousContainerDatabaseResult {
         private List<GetAutonomousContainerDatabaseMaintenanceWindowDetail> maintenanceWindowDetails;
         private List<GetAutonomousContainerDatabaseMaintenanceWindow> maintenanceWindows;
         private Integer memoryPerOracleComputeUnitInGbs;
+        private String netServicesArchitecture;
         private String nextMaintenanceRunId;
         private String patchId;
         private String patchModel;
@@ -666,6 +717,7 @@ public final class GetAutonomousContainerDatabaseResult {
         private Integer totalCpus;
         private String vaultId;
         private String versionPreference;
+        private Integer vmFailoverReservation;
         public Builder() {}
         public Builder(GetAutonomousContainerDatabaseResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -679,10 +731,12 @@ public final class GetAutonomousContainerDatabaseResult {
     	      this.compartmentId = defaults.compartmentId;
     	      this.computeModel = defaults.computeModel;
     	      this.dbName = defaults.dbName;
+    	      this.dbSplitThreshold = defaults.dbSplitThreshold;
     	      this.dbUniqueName = defaults.dbUniqueName;
     	      this.dbVersion = defaults.dbVersion;
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
+    	      this.distributionAffinity = defaults.distributionAffinity;
     	      this.dstFileVersion = defaults.dstFileVersion;
     	      this.fastStartFailOverLagLimitInSeconds = defaults.fastStartFailOverLagLimitInSeconds;
     	      this.freeformTags = defaults.freeformTags;
@@ -700,6 +754,7 @@ public final class GetAutonomousContainerDatabaseResult {
     	      this.maintenanceWindowDetails = defaults.maintenanceWindowDetails;
     	      this.maintenanceWindows = defaults.maintenanceWindows;
     	      this.memoryPerOracleComputeUnitInGbs = defaults.memoryPerOracleComputeUnitInGbs;
+    	      this.netServicesArchitecture = defaults.netServicesArchitecture;
     	      this.nextMaintenanceRunId = defaults.nextMaintenanceRunId;
     	      this.patchId = defaults.patchId;
     	      this.patchModel = defaults.patchModel;
@@ -726,6 +781,7 @@ public final class GetAutonomousContainerDatabaseResult {
     	      this.totalCpus = defaults.totalCpus;
     	      this.vaultId = defaults.vaultId;
     	      this.versionPreference = defaults.versionPreference;
+    	      this.vmFailoverReservation = defaults.vmFailoverReservation;
         }
 
         @CustomType.Setter
@@ -812,6 +868,14 @@ public final class GetAutonomousContainerDatabaseResult {
             return this;
         }
         @CustomType.Setter
+        public Builder dbSplitThreshold(Integer dbSplitThreshold) {
+            if (dbSplitThreshold == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseResult", "dbSplitThreshold");
+            }
+            this.dbSplitThreshold = dbSplitThreshold;
+            return this;
+        }
+        @CustomType.Setter
         public Builder dbUniqueName(String dbUniqueName) {
             if (dbUniqueName == null) {
               throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseResult", "dbUniqueName");
@@ -841,6 +905,14 @@ public final class GetAutonomousContainerDatabaseResult {
               throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseResult", "displayName");
             }
             this.displayName = displayName;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder distributionAffinity(String distributionAffinity) {
+            if (distributionAffinity == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseResult", "distributionAffinity");
+            }
+            this.distributionAffinity = distributionAffinity;
             return this;
         }
         @CustomType.Setter
@@ -986,6 +1058,14 @@ public final class GetAutonomousContainerDatabaseResult {
               throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseResult", "memoryPerOracleComputeUnitInGbs");
             }
             this.memoryPerOracleComputeUnitInGbs = memoryPerOracleComputeUnitInGbs;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder netServicesArchitecture(String netServicesArchitecture) {
+            if (netServicesArchitecture == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseResult", "netServicesArchitecture");
+            }
+            this.netServicesArchitecture = netServicesArchitecture;
             return this;
         }
         @CustomType.Setter
@@ -1202,6 +1282,14 @@ public final class GetAutonomousContainerDatabaseResult {
             this.versionPreference = versionPreference;
             return this;
         }
+        @CustomType.Setter
+        public Builder vmFailoverReservation(Integer vmFailoverReservation) {
+            if (vmFailoverReservation == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseResult", "vmFailoverReservation");
+            }
+            this.vmFailoverReservation = vmFailoverReservation;
+            return this;
+        }
         public GetAutonomousContainerDatabaseResult build() {
             final var _resultValue = new GetAutonomousContainerDatabaseResult();
             _resultValue.autonomousContainerDatabaseId = autonomousContainerDatabaseId;
@@ -1214,10 +1302,12 @@ public final class GetAutonomousContainerDatabaseResult {
             _resultValue.compartmentId = compartmentId;
             _resultValue.computeModel = computeModel;
             _resultValue.dbName = dbName;
+            _resultValue.dbSplitThreshold = dbSplitThreshold;
             _resultValue.dbUniqueName = dbUniqueName;
             _resultValue.dbVersion = dbVersion;
             _resultValue.definedTags = definedTags;
             _resultValue.displayName = displayName;
+            _resultValue.distributionAffinity = distributionAffinity;
             _resultValue.dstFileVersion = dstFileVersion;
             _resultValue.fastStartFailOverLagLimitInSeconds = fastStartFailOverLagLimitInSeconds;
             _resultValue.freeformTags = freeformTags;
@@ -1235,6 +1325,7 @@ public final class GetAutonomousContainerDatabaseResult {
             _resultValue.maintenanceWindowDetails = maintenanceWindowDetails;
             _resultValue.maintenanceWindows = maintenanceWindows;
             _resultValue.memoryPerOracleComputeUnitInGbs = memoryPerOracleComputeUnitInGbs;
+            _resultValue.netServicesArchitecture = netServicesArchitecture;
             _resultValue.nextMaintenanceRunId = nextMaintenanceRunId;
             _resultValue.patchId = patchId;
             _resultValue.patchModel = patchModel;
@@ -1261,6 +1352,7 @@ public final class GetAutonomousContainerDatabaseResult {
             _resultValue.totalCpus = totalCpus;
             _resultValue.vaultId = vaultId;
             _resultValue.versionPreference = versionPreference;
+            _resultValue.vmFailoverReservation = vmFailoverReservation;
             return _resultValue;
         }
     }

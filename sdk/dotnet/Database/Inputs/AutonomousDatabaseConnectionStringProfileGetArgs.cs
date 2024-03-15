@@ -30,6 +30,9 @@ namespace Pulumi.Oci.Database.Inputs
         [Input("hostFormat")]
         public Input<string>? HostFormat { get; set; }
 
+        /// <summary>
+        /// True for a regional connection string, applicable to cross-region DG only.
+        /// </summary>
         [Input("isRegional")]
         public Input<bool>? IsRegional { get; set; }
 
@@ -46,7 +49,7 @@ namespace Pulumi.Oci.Database.Inputs
         public Input<string>? SessionMode { get; set; }
 
         /// <summary>
-        /// Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous Databases on shared Exadata infrastructure always use the long format.
+        /// Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous Database Serverless instances always use the long format.
         /// </summary>
         [Input("syntaxFormat")]
         public Input<string>? SyntaxFormat { get; set; }

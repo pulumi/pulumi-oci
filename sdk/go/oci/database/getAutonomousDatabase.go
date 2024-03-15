@@ -69,7 +69,7 @@ type LookupAutonomousDatabaseResult struct {
 	ApexDetails []GetAutonomousDatabaseApexDetail `pulumi:"apexDetails"`
 	// This field will be null if the Autonomous Database is not Data Guard enabled or Access Control is disabled. It's value would be `TRUE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses primary IP access control list (ACL) for standby. It's value would be `FALSE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses different IP access control list (ACL) for standby compared to primary.
 	ArePrimaryWhitelistedIpsUsed bool `pulumi:"arePrimaryWhitelistedIpsUsed"`
-	// The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	// The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous Database on Dedicated Exadata Infrastructure.
 	AutonomousContainerDatabaseId string `pulumi:"autonomousContainerDatabaseId"`
 	AutonomousDatabaseBackupId    string `pulumi:"autonomousDatabaseBackupId"`
 	AutonomousDatabaseId          string `pulumi:"autonomousDatabaseId"`
@@ -88,13 +88,13 @@ type LookupAutonomousDatabaseResult struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// Compute used by database tools.
 	ComputeCount float64 `pulumi:"computeCount"`
-	// The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
+	// The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
 	ComputeModel string `pulumi:"computeModel"`
 	// The connection string used to connect to the Autonomous Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous Database for the password value.
 	ConnectionStrings []GetAutonomousDatabaseConnectionString `pulumi:"connectionStrings"`
 	// The URLs for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN. Note that these URLs are provided by the console only for databases on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).  Example: `{"sqlDevWebUrl": "https://<hostname>/ords...", "apexUrl", "https://<hostname>/ords..."}`
 	ConnectionUrls []GetAutonomousDatabaseConnectionUrl `pulumi:"connectionUrls"`
-	// The number of OCPU cores to be made available to the database. When the ECPU is selected, the value for cpuCoreCount is 0. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
+	// The number of CPU cores to be made available to the database. When the ECPU is selected, the value for cpuCoreCount is 0. For Autonomous Database on Dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
 	CpuCoreCount int `pulumi:"cpuCoreCount"`
 	// Customer Contacts.
 	CustomerContacts []GetAutonomousDatabaseCustomerContact `pulumi:"customerContacts"`
@@ -136,13 +136,13 @@ type LookupAutonomousDatabaseResult struct {
 	Id string `pulumi:"id"`
 	// The area assigned to In-Memory tables in Autonomous Database.
 	InMemoryAreaInGbs int `pulumi:"inMemoryAreaInGbs"`
-	// The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database.
+	// The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database. This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer platform.
 	InMemoryPercentage int `pulumi:"inMemoryPercentage"`
 	// The infrastructure type this resource belongs to.
 	InfrastructureType string `pulumi:"infrastructureType"`
 	// Indicates if the database-level access control is enabled. If disabled, database access is defined by the network security rules. If enabled, database access is restricted to the IP addresses defined by the rules specified with the `whitelistedIps` property. While specifying `whitelistedIps` rules is optional, if database-level access control is enabled and no rules are specified, the database will become inaccessible. The rules can be added later using the `UpdateAutonomousDatabase` API operation or edit option in console. When creating a database clone, the desired access control setting should be specified. By default, database-level access control will be disabled for the clone.
 	IsAccessControlEnabled bool `pulumi:"isAccessControlEnabled"`
-	// Indicates if auto scaling is enabled for the Autonomous Database CPU core count.
+	// Indicates if auto scaling is enabled for the Autonomous Database CPU core count. The default value is `TRUE`.
 	IsAutoScalingEnabled bool `pulumi:"isAutoScalingEnabled"`
 	// Indicates if auto scaling is enabled for the Autonomous Database storage. The default value is `FALSE`.
 	IsAutoScalingForStorageEnabled bool `pulumi:"isAutoScalingForStorageEnabled"`
@@ -150,6 +150,8 @@ type LookupAutonomousDatabaseResult struct {
 	IsDataGuardEnabled bool `pulumi:"isDataGuardEnabled"`
 	// True if the database uses [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
 	IsDedicated bool `pulumi:"isDedicated"`
+	// This project introduces Autonomous Database for Developers (ADB-Dev), a free tier on dedicated infrastructure, and Cloud@Customer for database development purposes. ADB-Dev enables ExaDB customers to experiment with ADB for free and incentivizes enterprises to use ADB for new development projects.Note that ADB-Dev have 4 CPU and 20GB of memory. For ADB-Dev , memory and CPU cannot be scaled
+	IsDevTier bool `pulumi:"isDevTier"`
 	// Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
 	IsFreeTier bool `pulumi:"isFreeTier"`
 	// Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
@@ -181,7 +183,7 @@ type LookupAutonomousDatabaseResult struct {
 	KmsKeyLifecycleDetails string `pulumi:"kmsKeyLifecycleDetails"`
 	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
 	KmsKeyVersionId string `pulumi:"kmsKeyVersionId"`
-	// The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`.
+	// The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
 	LicenseModel string `pulumi:"licenseModel"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
@@ -195,10 +197,12 @@ type LookupAutonomousDatabaseResult struct {
 	LongTermBackupSchedules []GetAutonomousDatabaseLongTermBackupSchedule `pulumi:"longTermBackupSchedules"`
 	// The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
 	MaxCpuCoreCount int `pulumi:"maxCpuCoreCount"`
-	// The amount of memory (in GBs) enabled per each CPU in the Autonomous VM Cluster.
+	// The amount of memory (in GBs) enabled per ECPU or OCPU.
 	MemoryPerOracleComputeUnitInGbs int `pulumi:"memoryPerOracleComputeUnitInGbs"`
 	// The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
 	NcharacterSet string `pulumi:"ncharacterSet"`
+	// Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
+	NetServicesArchitecture string `pulumi:"netServicesArchitecture"`
 	// The date and time when the next long-term backup would be created.
 	NextLongTermBackupTimeStamp string `pulumi:"nextLongTermBackupTimeStamp"`
 	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
@@ -236,7 +240,7 @@ type LookupAutonomousDatabaseResult struct {
 	// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
 	Role             string `pulumi:"role"`
 	RotateKeyTrigger bool   `pulumi:"rotateKeyTrigger"`
-	// The list of scheduled operations.
+	// The list of scheduled operations. Consists of values such as dayOfWeek, scheduledStartTime, scheduledStopTime.
 	ScheduledOperations []GetAutonomousDatabaseScheduledOperation `pulumi:"scheduledOperations"`
 	SecretId            string                                    `pulumi:"secretId"`
 	SecretVersionNumber int                                       `pulumi:"secretVersionNumber"`
@@ -248,7 +252,7 @@ type LookupAutonomousDatabaseResult struct {
 	SourceId string `pulumi:"sourceId"`
 	// **Deprecated** Autonomous Data Guard standby database details.
 	StandbyDbs []GetAutonomousDatabaseStandbyDb `pulumi:"standbyDbs"`
-	// The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
+	// The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
 	StandbyWhitelistedIps []string `pulumi:"standbyWhitelistedIps"`
 	// The current state of the Autonomous Database.
 	State string `pulumi:"state"`
@@ -300,7 +304,7 @@ type LookupAutonomousDatabaseResult struct {
 	UsedDataStorageSizeInTbs int `pulumi:"usedDataStorageSizeInTbs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
 	VaultId string `pulumi:"vaultId"`
-	// The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
+	// The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
 	WhitelistedIps []string `pulumi:"whitelistedIps"`
 }
 
@@ -366,7 +370,7 @@ func (o LookupAutonomousDatabaseResultOutput) ArePrimaryWhitelistedIpsUsed() pul
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) bool { return v.ArePrimaryWhitelistedIpsUsed }).(pulumi.BoolOutput)
 }
 
-// The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+// The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous Database on Dedicated Exadata Infrastructure.
 func (o LookupAutonomousDatabaseResultOutput) AutonomousContainerDatabaseId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.AutonomousContainerDatabaseId }).(pulumi.StringOutput)
 }
@@ -418,7 +422,7 @@ func (o LookupAutonomousDatabaseResultOutput) ComputeCount() pulumi.Float64Outpu
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) float64 { return v.ComputeCount }).(pulumi.Float64Output)
 }
 
-// The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
+// The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
 func (o LookupAutonomousDatabaseResultOutput) ComputeModel() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.ComputeModel }).(pulumi.StringOutput)
 }
@@ -435,7 +439,7 @@ func (o LookupAutonomousDatabaseResultOutput) ConnectionUrls() GetAutonomousData
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) []GetAutonomousDatabaseConnectionUrl { return v.ConnectionUrls }).(GetAutonomousDatabaseConnectionUrlArrayOutput)
 }
 
-// The number of OCPU cores to be made available to the database. When the ECPU is selected, the value for cpuCoreCount is 0. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
+// The number of CPU cores to be made available to the database. When the ECPU is selected, the value for cpuCoreCount is 0. For Autonomous Database on Dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
 func (o LookupAutonomousDatabaseResultOutput) CpuCoreCount() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) int { return v.CpuCoreCount }).(pulumi.IntOutput)
 }
@@ -536,7 +540,7 @@ func (o LookupAutonomousDatabaseResultOutput) InMemoryAreaInGbs() pulumi.IntOutp
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) int { return v.InMemoryAreaInGbs }).(pulumi.IntOutput)
 }
 
-// The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database.
+// The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database. This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer platform.
 func (o LookupAutonomousDatabaseResultOutput) InMemoryPercentage() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) int { return v.InMemoryPercentage }).(pulumi.IntOutput)
 }
@@ -551,7 +555,7 @@ func (o LookupAutonomousDatabaseResultOutput) IsAccessControlEnabled() pulumi.Bo
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) bool { return v.IsAccessControlEnabled }).(pulumi.BoolOutput)
 }
 
-// Indicates if auto scaling is enabled for the Autonomous Database CPU core count.
+// Indicates if auto scaling is enabled for the Autonomous Database CPU core count. The default value is `TRUE`.
 func (o LookupAutonomousDatabaseResultOutput) IsAutoScalingEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) bool { return v.IsAutoScalingEnabled }).(pulumi.BoolOutput)
 }
@@ -569,6 +573,11 @@ func (o LookupAutonomousDatabaseResultOutput) IsDataGuardEnabled() pulumi.BoolOu
 // True if the database uses [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
 func (o LookupAutonomousDatabaseResultOutput) IsDedicated() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) bool { return v.IsDedicated }).(pulumi.BoolOutput)
+}
+
+// This project introduces Autonomous Database for Developers (ADB-Dev), a free tier on dedicated infrastructure, and Cloud@Customer for database development purposes. ADB-Dev enables ExaDB customers to experiment with ADB for free and incentivizes enterprises to use ADB for new development projects.Note that ADB-Dev have 4 CPU and 20GB of memory. For ADB-Dev , memory and CPU cannot be scaled
+func (o LookupAutonomousDatabaseResultOutput) IsDevTier() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) bool { return v.IsDevTier }).(pulumi.BoolOutput)
 }
 
 // Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
@@ -652,7 +661,7 @@ func (o LookupAutonomousDatabaseResultOutput) KmsKeyVersionId() pulumi.StringOut
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.KmsKeyVersionId }).(pulumi.StringOutput)
 }
 
-// The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`.
+// The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
 func (o LookupAutonomousDatabaseResultOutput) LicenseModel() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.LicenseModel }).(pulumi.StringOutput)
 }
@@ -689,7 +698,7 @@ func (o LookupAutonomousDatabaseResultOutput) MaxCpuCoreCount() pulumi.IntOutput
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) int { return v.MaxCpuCoreCount }).(pulumi.IntOutput)
 }
 
-// The amount of memory (in GBs) enabled per each CPU in the Autonomous VM Cluster.
+// The amount of memory (in GBs) enabled per ECPU or OCPU.
 func (o LookupAutonomousDatabaseResultOutput) MemoryPerOracleComputeUnitInGbs() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) int { return v.MemoryPerOracleComputeUnitInGbs }).(pulumi.IntOutput)
 }
@@ -697,6 +706,11 @@ func (o LookupAutonomousDatabaseResultOutput) MemoryPerOracleComputeUnitInGbs() 
 // The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
 func (o LookupAutonomousDatabaseResultOutput) NcharacterSet() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.NcharacterSet }).(pulumi.StringOutput)
+}
+
+// Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
+func (o LookupAutonomousDatabaseResultOutput) NetServicesArchitecture() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.NetServicesArchitecture }).(pulumi.StringOutput)
 }
 
 // The date and time when the next long-term backup would be created.
@@ -797,7 +811,7 @@ func (o LookupAutonomousDatabaseResultOutput) RotateKeyTrigger() pulumi.BoolOutp
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) bool { return v.RotateKeyTrigger }).(pulumi.BoolOutput)
 }
 
-// The list of scheduled operations.
+// The list of scheduled operations. Consists of values such as dayOfWeek, scheduledStartTime, scheduledStopTime.
 func (o LookupAutonomousDatabaseResultOutput) ScheduledOperations() GetAutonomousDatabaseScheduledOperationArrayOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) []GetAutonomousDatabaseScheduledOperation {
 		return v.ScheduledOperations
@@ -835,7 +849,7 @@ func (o LookupAutonomousDatabaseResultOutput) StandbyDbs() GetAutonomousDatabase
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) []GetAutonomousDatabaseStandbyDb { return v.StandbyDbs }).(GetAutonomousDatabaseStandbyDbArrayOutput)
 }
 
-// The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
+// The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
 func (o LookupAutonomousDatabaseResultOutput) StandbyWhitelistedIps() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) []string { return v.StandbyWhitelistedIps }).(pulumi.StringArrayOutput)
 }
@@ -971,7 +985,7 @@ func (o LookupAutonomousDatabaseResultOutput) VaultId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.VaultId }).(pulumi.StringOutput)
 }
 
-// The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
+// The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
 func (o LookupAutonomousDatabaseResultOutput) WhitelistedIps() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) []string { return v.WhitelistedIps }).(pulumi.StringArrayOutput)
 }

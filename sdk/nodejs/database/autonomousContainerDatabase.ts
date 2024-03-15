@@ -76,13 +76,17 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
-     * The compute model of the Autonomous VM Cluster.
+     * The compute model of the Autonomous Container Database. For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      */
     public /*out*/ readonly computeModel!: pulumi.Output<string>;
     /**
      * The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
      */
     public readonly dbName!: pulumi.Output<string>;
+    /**
+     * The value above which an Autonomous Database will be split across multiple nodes. This value defaults to 16 when the "CPU per VM" value on the Autonomous VM Cluster is greater than 16. Otherwise, it defaults to the "CPU per VM" value.
+     */
+    public readonly dbSplitThreshold!: pulumi.Output<number>;
     public readonly dbUniqueName!: pulumi.Output<string>;
     /**
      * The base version for the Autonomous Container Database.
@@ -97,7 +101,11 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
-     * DST Time Zone File version of the Autonomous Container Database.
+     * This option determines whether to open an Autonomous Database across the maximum number of nodes or the least number of nodes. The default will be for the minimum number of VMs.
+     */
+    public readonly distributionAffinity!: pulumi.Output<string>;
+    /**
+     * DST Time-zone File version of the Autonomous Container Database.
      */
     public /*out*/ readonly dstFileVersion!: pulumi.Output<string>;
     /**
@@ -157,9 +165,13 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
      */
     public /*out*/ readonly maintenanceWindows!: pulumi.Output<outputs.Database.AutonomousContainerDatabaseMaintenanceWindow[]>;
     /**
-     * The amount of memory (in GBs) enabled per OCPU or ECPU in the Autonomous VM Cluster.
+     * The amount of memory (in GBs) enabled per ECPU or OCPU in the Autonomous VM Cluster.
      */
     public /*out*/ readonly memoryPerOracleComputeUnitInGbs!: pulumi.Output<number>;
+    /**
+     * Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
+     */
+    public readonly netServicesArchitecture!: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      */
@@ -266,6 +278,10 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
      * (Updatable) The next maintenance version preference.
      */
     public readonly versionPreference!: pulumi.Output<string>;
+    /**
+     * The percentage of CPUs to reserve for a single node Autonomous Database, in increments of 25.
+     */
+    public readonly vmFailoverReservation!: pulumi.Output<number>;
 
     /**
      * Create a AutonomousContainerDatabase resource with the given unique name, arguments, and options.
@@ -289,10 +305,12 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["computeModel"] = state ? state.computeModel : undefined;
             resourceInputs["dbName"] = state ? state.dbName : undefined;
+            resourceInputs["dbSplitThreshold"] = state ? state.dbSplitThreshold : undefined;
             resourceInputs["dbUniqueName"] = state ? state.dbUniqueName : undefined;
             resourceInputs["dbVersion"] = state ? state.dbVersion : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
+            resourceInputs["distributionAffinity"] = state ? state.distributionAffinity : undefined;
             resourceInputs["dstFileVersion"] = state ? state.dstFileVersion : undefined;
             resourceInputs["fastStartFailOverLagLimitInSeconds"] = state ? state.fastStartFailOverLagLimitInSeconds : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
@@ -309,6 +327,7 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
             resourceInputs["maintenanceWindowDetails"] = state ? state.maintenanceWindowDetails : undefined;
             resourceInputs["maintenanceWindows"] = state ? state.maintenanceWindows : undefined;
             resourceInputs["memoryPerOracleComputeUnitInGbs"] = state ? state.memoryPerOracleComputeUnitInGbs : undefined;
+            resourceInputs["netServicesArchitecture"] = state ? state.netServicesArchitecture : undefined;
             resourceInputs["nextMaintenanceRunId"] = state ? state.nextMaintenanceRunId : undefined;
             resourceInputs["patchId"] = state ? state.patchId : undefined;
             resourceInputs["patchModel"] = state ? state.patchModel : undefined;
@@ -335,6 +354,7 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
             resourceInputs["totalCpus"] = state ? state.totalCpus : undefined;
             resourceInputs["vaultId"] = state ? state.vaultId : undefined;
             resourceInputs["versionPreference"] = state ? state.versionPreference : undefined;
+            resourceInputs["vmFailoverReservation"] = state ? state.vmFailoverReservation : undefined;
         } else {
             const args = argsOrState as AutonomousContainerDatabaseArgs | undefined;
             if ((!args || args.displayName === undefined) && !opts.urn) {
@@ -349,10 +369,12 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
             resourceInputs["cloudAutonomousVmClusterId"] = args ? args.cloudAutonomousVmClusterId : undefined;
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["dbName"] = args ? args.dbName : undefined;
+            resourceInputs["dbSplitThreshold"] = args ? args.dbSplitThreshold : undefined;
             resourceInputs["dbUniqueName"] = args ? args.dbUniqueName : undefined;
             resourceInputs["dbVersion"] = args ? args.dbVersion : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
+            resourceInputs["distributionAffinity"] = args ? args.distributionAffinity : undefined;
             resourceInputs["fastStartFailOverLagLimitInSeconds"] = args ? args.fastStartFailOverLagLimitInSeconds : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["isAutomaticFailoverEnabled"] = args ? args.isAutomaticFailoverEnabled : undefined;
@@ -360,6 +382,7 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
             resourceInputs["keyStoreId"] = args ? args.keyStoreId : undefined;
             resourceInputs["kmsKeyId"] = args ? args.kmsKeyId : undefined;
             resourceInputs["maintenanceWindowDetails"] = args ? args.maintenanceWindowDetails : undefined;
+            resourceInputs["netServicesArchitecture"] = args ? args.netServicesArchitecture : undefined;
             resourceInputs["patchModel"] = args ? args.patchModel : undefined;
             resourceInputs["peerAutonomousContainerDatabaseBackupConfig"] = args ? args.peerAutonomousContainerDatabaseBackupConfig : undefined;
             resourceInputs["peerAutonomousContainerDatabaseCompartmentId"] = args ? args.peerAutonomousContainerDatabaseCompartmentId : undefined;
@@ -374,6 +397,7 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
             resourceInputs["standbyMaintenanceBufferInDays"] = args ? args.standbyMaintenanceBufferInDays : undefined;
             resourceInputs["vaultId"] = args ? args.vaultId : undefined;
             resourceInputs["versionPreference"] = args ? args.versionPreference : undefined;
+            resourceInputs["vmFailoverReservation"] = args ? args.vmFailoverReservation : undefined;
             resourceInputs["availabilityDomain"] = undefined /*out*/;
             resourceInputs["availableCpus"] = undefined /*out*/;
             resourceInputs["computeModel"] = undefined /*out*/;
@@ -437,13 +461,17 @@ export interface AutonomousContainerDatabaseState {
      */
     compartmentId?: pulumi.Input<string>;
     /**
-     * The compute model of the Autonomous VM Cluster.
+     * The compute model of the Autonomous Container Database. For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      */
     computeModel?: pulumi.Input<string>;
     /**
      * The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
      */
     dbName?: pulumi.Input<string>;
+    /**
+     * The value above which an Autonomous Database will be split across multiple nodes. This value defaults to 16 when the "CPU per VM" value on the Autonomous VM Cluster is greater than 16. Otherwise, it defaults to the "CPU per VM" value.
+     */
+    dbSplitThreshold?: pulumi.Input<number>;
     dbUniqueName?: pulumi.Input<string>;
     /**
      * The base version for the Autonomous Container Database.
@@ -458,7 +486,11 @@ export interface AutonomousContainerDatabaseState {
      */
     displayName?: pulumi.Input<string>;
     /**
-     * DST Time Zone File version of the Autonomous Container Database.
+     * This option determines whether to open an Autonomous Database across the maximum number of nodes or the least number of nodes. The default will be for the minimum number of VMs.
+     */
+    distributionAffinity?: pulumi.Input<string>;
+    /**
+     * DST Time-zone File version of the Autonomous Container Database.
      */
     dstFileVersion?: pulumi.Input<string>;
     /**
@@ -518,9 +550,13 @@ export interface AutonomousContainerDatabaseState {
      */
     maintenanceWindows?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousContainerDatabaseMaintenanceWindow>[]>;
     /**
-     * The amount of memory (in GBs) enabled per OCPU or ECPU in the Autonomous VM Cluster.
+     * The amount of memory (in GBs) enabled per ECPU or OCPU in the Autonomous VM Cluster.
      */
     memoryPerOracleComputeUnitInGbs?: pulumi.Input<number>;
+    /**
+     * Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
+     */
+    netServicesArchitecture?: pulumi.Input<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      */
@@ -627,6 +663,10 @@ export interface AutonomousContainerDatabaseState {
      * (Updatable) The next maintenance version preference.
      */
     versionPreference?: pulumi.Input<string>;
+    /**
+     * The percentage of CPUs to reserve for a single node Autonomous Database, in increments of 25.
+     */
+    vmFailoverReservation?: pulumi.Input<number>;
 }
 
 /**
@@ -657,6 +697,10 @@ export interface AutonomousContainerDatabaseArgs {
      * The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
      */
     dbName?: pulumi.Input<string>;
+    /**
+     * The value above which an Autonomous Database will be split across multiple nodes. This value defaults to 16 when the "CPU per VM" value on the Autonomous VM Cluster is greater than 16. Otherwise, it defaults to the "CPU per VM" value.
+     */
+    dbSplitThreshold?: pulumi.Input<number>;
     dbUniqueName?: pulumi.Input<string>;
     /**
      * The base version for the Autonomous Container Database.
@@ -670,6 +714,10 @@ export interface AutonomousContainerDatabaseArgs {
      * (Updatable) The display name for the Autonomous Container Database.
      */
     displayName: pulumi.Input<string>;
+    /**
+     * This option determines whether to open an Autonomous Database across the maximum number of nodes or the least number of nodes. The default will be for the minimum number of VMs.
+     */
+    distributionAffinity?: pulumi.Input<string>;
     /**
      * The lag time for my preference based on data loss tolerance in seconds.
      */
@@ -698,6 +746,10 @@ export interface AutonomousContainerDatabaseArgs {
      * (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      */
     maintenanceWindowDetails?: pulumi.Input<inputs.Database.AutonomousContainerDatabaseMaintenanceWindowDetails>;
+    /**
+     * Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
+     */
+    netServicesArchitecture?: pulumi.Input<string>;
     /**
      * (Updatable) Database Patch model preference.
      */
@@ -752,4 +804,8 @@ export interface AutonomousContainerDatabaseArgs {
      * (Updatable) The next maintenance version preference.
      */
     versionPreference?: pulumi.Input<string>;
+    /**
+     * The percentage of CPUs to reserve for a single node Autonomous Database, in increments of 25.
+     */
+    vmFailoverReservation?: pulumi.Input<number>;
 }

@@ -108,7 +108,7 @@ type GetAutonomousDatabasesArgs struct {
 
 // A collection of values returned by getAutonomousDatabases.
 type GetAutonomousDatabasesResult struct {
-	// The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	// The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous Database on Dedicated Exadata Infrastructure.
 	AutonomousContainerDatabaseId *string `pulumi:"autonomousContainerDatabaseId"`
 	// The list of autonomous_databases.
 	AutonomousDatabases []GetAutonomousDatabasesAutonomousDatabase `pulumi:"autonomousDatabases"`
@@ -203,7 +203,7 @@ func (o GetAutonomousDatabasesResultOutput) ToGetAutonomousDatabasesResultOutput
 	return o
 }
 
-// The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+// The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous Database on Dedicated Exadata Infrastructure.
 func (o GetAutonomousDatabasesResultOutput) AutonomousContainerDatabaseId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetAutonomousDatabasesResult) *string { return v.AutonomousContainerDatabaseId }).(pulumi.StringPtrOutput)
 }

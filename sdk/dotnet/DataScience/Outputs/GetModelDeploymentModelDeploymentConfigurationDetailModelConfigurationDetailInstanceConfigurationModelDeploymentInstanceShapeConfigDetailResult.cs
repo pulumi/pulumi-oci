@@ -14,20 +14,27 @@ namespace Pulumi.Oci.DataScience.Outputs
     public sealed class GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailResult
     {
         /// <summary>
-        /// A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 and 512 GB and VM.Optimized3.Flex memory range is between 6 and 256 GB.
+        /// The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+        /// </summary>
+        public readonly string CpuBaseline;
+        /// <summary>
+        /// A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
         /// </summary>
         public readonly double MemoryInGbs;
         /// <summary>
-        /// A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 and 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
+        /// A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 to 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
         /// </summary>
         public readonly double Ocpus;
 
         [OutputConstructor]
         private GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailResult(
+            string cpuBaseline,
+
             double memoryInGbs,
 
             double ocpus)
         {
+            CpuBaseline = cpuBaseline;
             MemoryInGbs = memoryInGbs;
             Ocpus = ocpus;
         }

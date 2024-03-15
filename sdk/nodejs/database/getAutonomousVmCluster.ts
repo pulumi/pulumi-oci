@@ -73,7 +73,7 @@ export interface GetAutonomousVmClusterResult {
      */
     readonly compartmentId: string;
     /**
-     * The compute model of the Autonomous VM Cluster.
+     * The compute model of the Autonomous VM Cluster. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata #Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      */
     readonly computeModel: string;
     /**
@@ -118,7 +118,7 @@ export interface GetAutonomousVmClusterResult {
      */
     readonly exadataInfrastructureId: string;
     /**
-     * The lowest value to which exadataStorage in TBs can be scaled down.
+     * The lowest value to which exadataStorage(in TBs) can be scaled down.
      */
     readonly exadataStorageInTbsLowestScaledValue: number;
     /**
@@ -155,7 +155,7 @@ export interface GetAutonomousVmClusterResult {
      */
     readonly maintenanceWindows: outputs.Database.GetAutonomousVmClusterMaintenanceWindow[];
     /**
-     * The lowest value to which ACDs can be scaled down.
+     * The lowest value to which maximum number of ACDs can be scaled down.
      */
     readonly maxAcdsLowestScaledValue: number;
     /**
@@ -179,15 +179,25 @@ export interface GetAutonomousVmClusterResult {
      * The number of enabled OCPU cores.
      */
     readonly ocpusEnabled: number;
+    /**
+     * **Deprecated.** Use field totalContainerDatabases.
+     */
     readonly provisionableAutonomousContainerDatabases: number;
+    /**
+     * The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster.
+     */
     readonly provisionedAutonomousContainerDatabases: number;
+    /**
+     * The number of CPUs provisioned in an Autonomous VM Cluster.
+     */
     readonly provisionedCpus: number;
     /**
-     * For Autonomous Databases on Dedicated Exadata Infrastructure:
-     * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-     * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
+     * CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
      */
     readonly reclaimableCpus: number;
+    /**
+     * The number of CPUs reserved in an Autonomous VM Cluster.
+     */
     readonly reservedCpus: number;
     /**
      * The SCAN Listener Non TLS port number. Default value is 1521.

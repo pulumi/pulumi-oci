@@ -32,6 +32,7 @@ import * as bastion from "./bastion";
 import * as bigdataservice from "./bigdataservice";
 import * as blockchain from "./blockchain";
 import * as budget from "./budget";
+import * as capacitymanagement from "./capacitymanagement";
 import * as certificatesmanagement from "./certificatesmanagement";
 import * as cloudbridge from "./cloudbridge";
 import * as cloudguard from "./cloudguard";
@@ -147,6 +148,7 @@ export {
     bigdataservice,
     blockchain,
     budget,
+    capacitymanagement,
     certificatesmanagement,
     cloudbridge,
     cloudguard,

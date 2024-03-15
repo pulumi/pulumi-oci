@@ -100,7 +100,7 @@ type DataGuardAssociation struct {
 	AvailabilityDomain pulumi.StringOutput `pulumi:"availabilityDomain"`
 	// A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
 	BackupNetworkNsgIds pulumi.StringArrayOutput `pulumi:"backupNetworkNsgIds"`
-	// The number of OCPU cores available for AMD-based virtual machine DB systems.
+	// The number of CPU cores available for AMD-based virtual machine DB systems.
 	CpuCoreCount pulumi.IntOutput     `pulumi:"cpuCoreCount"`
 	CreateAsync  pulumi.BoolPtrOutput `pulumi:"createAsync"`
 	// Specifies whether to create the peer database in an existing DB system or in a new DB system.
@@ -146,7 +146,7 @@ type DataGuardAssociation struct {
 	Hostname pulumi.StringOutput `pulumi:"hostname"`
 	// (Updatable) True if active Data Guard is enabled.
 	IsActiveDataGuardEnabled pulumi.BoolPtrOutput `pulumi:"isActiveDataGuardEnabled"`
-	// The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED.
+	// The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous Database Serverless.
 	LicenseModel pulumi.StringPtrOutput `pulumi:"licenseModel"`
 	// Additional information about the current lifecycleState, if available.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
@@ -273,7 +273,7 @@ type dataGuardAssociationState struct {
 	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
 	BackupNetworkNsgIds []string `pulumi:"backupNetworkNsgIds"`
-	// The number of OCPU cores available for AMD-based virtual machine DB systems.
+	// The number of CPU cores available for AMD-based virtual machine DB systems.
 	CpuCoreCount *int  `pulumi:"cpuCoreCount"`
 	CreateAsync  *bool `pulumi:"createAsync"`
 	// Specifies whether to create the peer database in an existing DB system or in a new DB system.
@@ -319,7 +319,7 @@ type dataGuardAssociationState struct {
 	Hostname *string `pulumi:"hostname"`
 	// (Updatable) True if active Data Guard is enabled.
 	IsActiveDataGuardEnabled *bool `pulumi:"isActiveDataGuardEnabled"`
-	// The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED.
+	// The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous Database Serverless.
 	LicenseModel *string `pulumi:"licenseModel"`
 	// Additional information about the current lifecycleState, if available.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
@@ -392,7 +392,7 @@ type DataGuardAssociationState struct {
 	AvailabilityDomain pulumi.StringPtrInput
 	// A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
 	BackupNetworkNsgIds pulumi.StringArrayInput
-	// The number of OCPU cores available for AMD-based virtual machine DB systems.
+	// The number of CPU cores available for AMD-based virtual machine DB systems.
 	CpuCoreCount pulumi.IntPtrInput
 	CreateAsync  pulumi.BoolPtrInput
 	// Specifies whether to create the peer database in an existing DB system or in a new DB system.
@@ -438,7 +438,7 @@ type DataGuardAssociationState struct {
 	Hostname pulumi.StringPtrInput
 	// (Updatable) True if active Data Guard is enabled.
 	IsActiveDataGuardEnabled pulumi.BoolPtrInput
-	// The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED.
+	// The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous Database Serverless.
 	LicenseModel pulumi.StringPtrInput
 	// Additional information about the current lifecycleState, if available.
 	LifecycleDetails pulumi.StringPtrInput
@@ -511,7 +511,7 @@ type dataGuardAssociationArgs struct {
 	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
 	BackupNetworkNsgIds []string `pulumi:"backupNetworkNsgIds"`
-	// The number of OCPU cores available for AMD-based virtual machine DB systems.
+	// The number of CPU cores available for AMD-based virtual machine DB systems.
 	CpuCoreCount *int  `pulumi:"cpuCoreCount"`
 	CreateAsync  *bool `pulumi:"createAsync"`
 	// Specifies whether to create the peer database in an existing DB system or in a new DB system.
@@ -557,7 +557,7 @@ type dataGuardAssociationArgs struct {
 	Hostname *string `pulumi:"hostname"`
 	// (Updatable) True if active Data Guard is enabled.
 	IsActiveDataGuardEnabled *bool `pulumi:"isActiveDataGuardEnabled"`
-	// The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED.
+	// The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous Database Serverless.
 	LicenseModel *string `pulumi:"licenseModel"`
 	// The number of nodes to launch for the DB system of the standby in the Data Guard association. For a 2-node RAC virtual machine DB system, specify either 1 or 2. If you do not supply this parameter, the default is the node count of the primary DB system.
 	NodeCount *int `pulumi:"nodeCount"`
@@ -613,7 +613,7 @@ type DataGuardAssociationArgs struct {
 	AvailabilityDomain pulumi.StringPtrInput
 	// A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
 	BackupNetworkNsgIds pulumi.StringArrayInput
-	// The number of OCPU cores available for AMD-based virtual machine DB systems.
+	// The number of CPU cores available for AMD-based virtual machine DB systems.
 	CpuCoreCount pulumi.IntPtrInput
 	CreateAsync  pulumi.BoolPtrInput
 	// Specifies whether to create the peer database in an existing DB system or in a new DB system.
@@ -659,7 +659,7 @@ type DataGuardAssociationArgs struct {
 	Hostname pulumi.StringPtrInput
 	// (Updatable) True if active Data Guard is enabled.
 	IsActiveDataGuardEnabled pulumi.BoolPtrInput
-	// The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED.
+	// The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous Database Serverless.
 	LicenseModel pulumi.StringPtrInput
 	// The number of nodes to launch for the DB system of the standby in the Data Guard association. For a 2-node RAC virtual machine DB system, specify either 1 or 2. If you do not supply this parameter, the default is the node count of the primary DB system.
 	NodeCount pulumi.IntPtrInput
@@ -816,7 +816,7 @@ func (o DataGuardAssociationOutput) BackupNetworkNsgIds() pulumi.StringArrayOutp
 	return o.ApplyT(func(v *DataGuardAssociation) pulumi.StringArrayOutput { return v.BackupNetworkNsgIds }).(pulumi.StringArrayOutput)
 }
 
-// The number of OCPU cores available for AMD-based virtual machine DB systems.
+// The number of CPU cores available for AMD-based virtual machine DB systems.
 func (o DataGuardAssociationOutput) CpuCoreCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *DataGuardAssociation) pulumi.IntOutput { return v.CpuCoreCount }).(pulumi.IntOutput)
 }
@@ -912,7 +912,7 @@ func (o DataGuardAssociationOutput) IsActiveDataGuardEnabled() pulumi.BoolPtrOut
 	return o.ApplyT(func(v *DataGuardAssociation) pulumi.BoolPtrOutput { return v.IsActiveDataGuardEnabled }).(pulumi.BoolPtrOutput)
 }
 
-// The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED.
+// The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous Database Serverless.
 func (o DataGuardAssociationOutput) LicenseModel() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DataGuardAssociation) pulumi.StringPtrOutput { return v.LicenseModel }).(pulumi.StringPtrOutput)
 }

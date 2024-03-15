@@ -51,7 +51,7 @@ public final class GetAutonomousVmClusterResult {
      */
     private String compartmentId;
     /**
-     * @return The compute model of the Autonomous VM Cluster.
+     * @return The compute model of the Autonomous VM Cluster. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata #Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      * 
      */
     private String computeModel;
@@ -107,7 +107,7 @@ public final class GetAutonomousVmClusterResult {
      */
     private String exadataInfrastructureId;
     /**
-     * @return The lowest value to which exadataStorage in TBs can be scaled down.
+     * @return The lowest value to which exadataStorage(in TBs) can be scaled down.
      * 
      */
     private Double exadataStorageInTbsLowestScaledValue;
@@ -153,7 +153,7 @@ public final class GetAutonomousVmClusterResult {
      */
     private List<GetAutonomousVmClusterMaintenanceWindow> maintenanceWindows;
     /**
-     * @return The lowest value to which ACDs can be scaled down.
+     * @return The lowest value to which maximum number of ACDs can be scaled down.
      * 
      */
     private Integer maxAcdsLowestScaledValue;
@@ -183,16 +183,30 @@ public final class GetAutonomousVmClusterResult {
      * 
      */
     private Double ocpusEnabled;
+    /**
+     * @return **Deprecated.** Use field totalContainerDatabases.
+     * 
+     */
     private Integer provisionableAutonomousContainerDatabases;
+    /**
+     * @return The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster.
+     * 
+     */
     private Integer provisionedAutonomousContainerDatabases;
+    /**
+     * @return The number of CPUs provisioned in an Autonomous VM Cluster.
+     * 
+     */
     private Double provisionedCpus;
     /**
-     * @return For Autonomous Databases on Dedicated Exadata Infrastructure:
-     * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-     * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
+     * @return CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
      * 
      */
     private Integer reclaimableCpus;
+    /**
+     * @return The number of CPUs reserved in an Autonomous VM Cluster.
+     * 
+     */
     private Double reservedCpus;
     /**
      * @return The SCAN Listener Non TLS port number. Default value is 1521.
@@ -291,7 +305,7 @@ public final class GetAutonomousVmClusterResult {
         return this.compartmentId;
     }
     /**
-     * @return The compute model of the Autonomous VM Cluster.
+     * @return The compute model of the Autonomous VM Cluster. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata #Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      * 
      */
     public String computeModel() {
@@ -371,7 +385,7 @@ public final class GetAutonomousVmClusterResult {
         return this.exadataInfrastructureId;
     }
     /**
-     * @return The lowest value to which exadataStorage in TBs can be scaled down.
+     * @return The lowest value to which exadataStorage(in TBs) can be scaled down.
      * 
      */
     public Double exadataStorageInTbsLowestScaledValue() {
@@ -437,7 +451,7 @@ public final class GetAutonomousVmClusterResult {
         return this.maintenanceWindows;
     }
     /**
-     * @return The lowest value to which ACDs can be scaled down.
+     * @return The lowest value to which maximum number of ACDs can be scaled down.
      * 
      */
     public Integer maxAcdsLowestScaledValue() {
@@ -481,24 +495,38 @@ public final class GetAutonomousVmClusterResult {
     public Double ocpusEnabled() {
         return this.ocpusEnabled;
     }
+    /**
+     * @return **Deprecated.** Use field totalContainerDatabases.
+     * 
+     */
     public Integer provisionableAutonomousContainerDatabases() {
         return this.provisionableAutonomousContainerDatabases;
     }
+    /**
+     * @return The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster.
+     * 
+     */
     public Integer provisionedAutonomousContainerDatabases() {
         return this.provisionedAutonomousContainerDatabases;
     }
+    /**
+     * @return The number of CPUs provisioned in an Autonomous VM Cluster.
+     * 
+     */
     public Double provisionedCpus() {
         return this.provisionedCpus;
     }
     /**
-     * @return For Autonomous Databases on Dedicated Exadata Infrastructure:
-     * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-     * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
+     * @return CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
      * 
      */
     public Integer reclaimableCpus() {
         return this.reclaimableCpus;
     }
+    /**
+     * @return The number of CPUs reserved in an Autonomous VM Cluster.
+     * 
+     */
     public Double reservedCpus() {
         return this.reservedCpus;
     }

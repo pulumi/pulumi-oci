@@ -82,14 +82,14 @@ public final class DataGuardAssociationState extends com.pulumi.resources.Resour
     }
 
     /**
-     * The number of OCPU cores available for AMD-based virtual machine DB systems.
+     * The number of CPU cores available for AMD-based virtual machine DB systems.
      * 
      */
     @Import(name="cpuCoreCount")
     private @Nullable Output<Integer> cpuCoreCount;
 
     /**
-     * @return The number of OCPU cores available for AMD-based virtual machine DB systems.
+     * @return The number of CPU cores available for AMD-based virtual machine DB systems.
      * 
      */
     public Optional<Output<Integer>> cpuCoreCount() {
@@ -338,14 +338,14 @@ public final class DataGuardAssociationState extends com.pulumi.resources.Resour
     }
 
     /**
-     * The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED.
+     * The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous Database Serverless.
      * 
      */
     @Import(name="licenseModel")
     private @Nullable Output<String> licenseModel;
 
     /**
-     * @return The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED.
+     * @return The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous Database Serverless.
      * 
      */
     public Optional<Output<String>> licenseModel() {
@@ -863,7 +863,7 @@ public final class DataGuardAssociationState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param cpuCoreCount The number of OCPU cores available for AMD-based virtual machine DB systems.
+         * @param cpuCoreCount The number of CPU cores available for AMD-based virtual machine DB systems.
          * 
          * @return builder
          * 
@@ -874,7 +874,7 @@ public final class DataGuardAssociationState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param cpuCoreCount The number of OCPU cores available for AMD-based virtual machine DB systems.
+         * @param cpuCoreCount The number of CPU cores available for AMD-based virtual machine DB systems.
          * 
          * @return builder
          * 
@@ -1225,7 +1225,7 @@ public final class DataGuardAssociationState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param licenseModel The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED.
+         * @param licenseModel The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous Database Serverless.
          * 
          * @return builder
          * 
@@ -1236,7 +1236,7 @@ public final class DataGuardAssociationState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param licenseModel The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED.
+         * @param licenseModel The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous Database Serverless.
          * 
          * @return builder
          * 

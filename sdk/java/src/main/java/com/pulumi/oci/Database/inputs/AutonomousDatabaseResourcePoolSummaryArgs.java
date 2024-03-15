@@ -17,23 +17,31 @@ public final class AutonomousDatabaseResourcePoolSummaryArgs extends com.pulumi.
     public static final AutonomousDatabaseResourcePoolSummaryArgs Empty = new AutonomousDatabaseResourcePoolSummaryArgs();
 
     /**
-     * Indicates if the long-term backup schedule should be deleted. The default value is `FALSE`.
+     * (Updatable) Indicates if the resource pool should be deleted for the Autonomous Database.
      * 
      */
     @Import(name="isDisabled")
     private @Nullable Output<Boolean> isDisabled;
 
     /**
-     * @return Indicates if the long-term backup schedule should be deleted. The default value is `FALSE`.
+     * @return (Updatable) Indicates if the resource pool should be deleted for the Autonomous Database.
      * 
      */
     public Optional<Output<Boolean>> isDisabled() {
         return Optional.ofNullable(this.isDisabled);
     }
 
+    /**
+     * (Updatable) Resource pool size.
+     * 
+     */
     @Import(name="poolSize")
     private @Nullable Output<Integer> poolSize;
 
+    /**
+     * @return (Updatable) Resource pool size.
+     * 
+     */
     public Optional<Output<Integer>> poolSize() {
         return Optional.ofNullable(this.poolSize);
     }
@@ -64,7 +72,7 @@ public final class AutonomousDatabaseResourcePoolSummaryArgs extends com.pulumi.
         }
 
         /**
-         * @param isDisabled Indicates if the long-term backup schedule should be deleted. The default value is `FALSE`.
+         * @param isDisabled (Updatable) Indicates if the resource pool should be deleted for the Autonomous Database.
          * 
          * @return builder
          * 
@@ -75,7 +83,7 @@ public final class AutonomousDatabaseResourcePoolSummaryArgs extends com.pulumi.
         }
 
         /**
-         * @param isDisabled Indicates if the long-term backup schedule should be deleted. The default value is `FALSE`.
+         * @param isDisabled (Updatable) Indicates if the resource pool should be deleted for the Autonomous Database.
          * 
          * @return builder
          * 
@@ -84,11 +92,23 @@ public final class AutonomousDatabaseResourcePoolSummaryArgs extends com.pulumi.
             return isDisabled(Output.of(isDisabled));
         }
 
+        /**
+         * @param poolSize (Updatable) Resource pool size.
+         * 
+         * @return builder
+         * 
+         */
         public Builder poolSize(@Nullable Output<Integer> poolSize) {
             $.poolSize = poolSize;
             return this;
         }
 
+        /**
+         * @param poolSize (Updatable) Resource pool size.
+         * 
+         * @return builder
+         * 
+         */
         public Builder poolSize(Integer poolSize) {
             return poolSize(Output.of(poolSize));
         }

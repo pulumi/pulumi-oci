@@ -22,6 +22,10 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationResult> InstanceConfigurations;
         /// <summary>
+        /// The maximum network bandwidth for the model deployment.
+        /// </summary>
+        public readonly int MaximumBandwidthMbps;
+        /// <summary>
         /// The OCID of the model you want to deploy.
         /// </summary>
         public readonly string ModelId;
@@ -36,12 +40,15 @@ namespace Pulumi.Oci.DataScience.Outputs
 
             ImmutableArray<Outputs.GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationResult> instanceConfigurations,
 
+            int maximumBandwidthMbps,
+
             string modelId,
 
             ImmutableArray<Outputs.GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyResult> scalingPolicies)
         {
             BandwidthMbps = bandwidthMbps;
             InstanceConfigurations = instanceConfigurations;
+            MaximumBandwidthMbps = maximumBandwidthMbps;
             ModelId = modelId;
             ScalingPolicies = scalingPolicies;
         }

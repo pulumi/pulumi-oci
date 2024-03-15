@@ -64,7 +64,7 @@ export interface GetAutonomousDatabaseResult {
      */
     readonly arePrimaryWhitelistedIpsUsed: boolean;
     /**
-     * The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous Database on Dedicated Exadata Infrastructure.
      */
     readonly autonomousContainerDatabaseId: string;
     readonly autonomousDatabaseBackupId: string;
@@ -99,7 +99,7 @@ export interface GetAutonomousDatabaseResult {
      */
     readonly computeCount: number;
     /**
-     * The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
+     * The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
      */
     readonly computeModel: string;
     /**
@@ -111,7 +111,7 @@ export interface GetAutonomousDatabaseResult {
      */
     readonly connectionUrls: outputs.Database.GetAutonomousDatabaseConnectionUrl[];
     /**
-     * The number of OCPU cores to be made available to the database. When the ECPU is selected, the value for cpuCoreCount is 0. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
+     * The number of CPU cores to be made available to the database. When the ECPU is selected, the value for cpuCoreCount is 0. For Autonomous Database on Dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
      */
     readonly cpuCoreCount: number;
     /**
@@ -191,7 +191,7 @@ export interface GetAutonomousDatabaseResult {
      */
     readonly inMemoryAreaInGbs: number;
     /**
-     * The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database.
+     * The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database. This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer platform.
      */
     readonly inMemoryPercentage: number;
     /**
@@ -203,7 +203,7 @@ export interface GetAutonomousDatabaseResult {
      */
     readonly isAccessControlEnabled: boolean;
     /**
-     * Indicates if auto scaling is enabled for the Autonomous Database CPU core count.
+     * Indicates if auto scaling is enabled for the Autonomous Database CPU core count. The default value is `TRUE`.
      */
     readonly isAutoScalingEnabled: boolean;
     /**
@@ -218,6 +218,10 @@ export interface GetAutonomousDatabaseResult {
      * True if the database uses [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
      */
     readonly isDedicated: boolean;
+    /**
+     * This project introduces Autonomous Database for Developers (ADB-Dev), a free tier on dedicated infrastructure, and Cloud@Customer for database development purposes. ADB-Dev enables ExaDB customers to experiment with ADB for free and incentivizes enterprises to use ADB for new development projects.Note that ADB-Dev have 4 CPU and 20GB of memory. For ADB-Dev , memory and CPU cannot be scaled
+     */
+    readonly isDevTier: boolean;
     /**
      * Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
      */
@@ -280,7 +284,7 @@ export interface GetAutonomousDatabaseResult {
      */
     readonly kmsKeyVersionId: string;
     /**
-     * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`.
+     * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
      */
     readonly licenseModel: string;
     /**
@@ -308,13 +312,17 @@ export interface GetAutonomousDatabaseResult {
      */
     readonly maxCpuCoreCount: number;
     /**
-     * The amount of memory (in GBs) enabled per each CPU in the Autonomous VM Cluster.
+     * The amount of memory (in GBs) enabled per ECPU or OCPU.
      */
     readonly memoryPerOracleComputeUnitInGbs: number;
     /**
      * The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
      */
     readonly ncharacterSet: string;
+    /**
+     * Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
+     */
+    readonly netServicesArchitecture: string;
     /**
      * The date and time when the next long-term backup would be created.
      */
@@ -387,7 +395,7 @@ export interface GetAutonomousDatabaseResult {
     readonly role: string;
     readonly rotateKeyTrigger: boolean;
     /**
-     * The list of scheduled operations.
+     * The list of scheduled operations. Consists of values such as dayOfWeek, scheduledStartTime, scheduledStopTime.
      */
     readonly scheduledOperations: outputs.Database.GetAutonomousDatabaseScheduledOperation[];
     readonly secretId: string;
@@ -407,7 +415,7 @@ export interface GetAutonomousDatabaseResult {
      */
     readonly standbyDbs: outputs.Database.GetAutonomousDatabaseStandbyDb[];
     /**
-     * The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
+     * The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
      */
     readonly standbyWhitelistedIps: string[];
     /**
@@ -507,7 +515,7 @@ export interface GetAutonomousDatabaseResult {
      */
     readonly vaultId: string;
     /**
-     * The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
+     * The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
      */
     readonly whitelistedIps: string[];
 }

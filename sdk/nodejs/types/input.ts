@@ -5843,6 +5843,176 @@ export namespace Budget {
     }
 }
 
+export namespace CapacityManagement {
+    export interface GetInternalOccAvailabilityCatalogsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetInternalOccAvailabilityCatalogsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetOccAvailabilityCatalogOccAvailabilitiesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetOccAvailabilityCatalogOccAvailabilitiesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetOccAvailabilityCatalogsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetOccAvailabilityCatalogsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetOccCapacityRequestsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetOccCapacityRequestsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetOccCustomerGroupsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetOccCustomerGroupsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface OccAvailabilityCatalogDetail {
+        /**
+         * The quantity of available resource that the customer can request.
+         */
+        availableQuantity?: pulumi.Input<string>;
+        /**
+         * The OCID of the availability catalog.
+         */
+        catalogId?: pulumi.Input<string>;
+        /**
+         * The date by which the capacity requested by customers before dateFinalCustomerOrder needs to be fulfilled.
+         */
+        dateExpectedCapacityHandover?: pulumi.Input<string>;
+        /**
+         * The date by which the customer must place the order to have their capacity requirements met by the customer handover date.
+         */
+        dateFinalCustomerOrder?: pulumi.Input<string>;
+        /**
+         * The name of the Oracle Cloud Infrastructure service in consideration. For example, Compute, Exadata, and so on.
+         */
+        namespace?: pulumi.Input<string>;
+        /**
+         * The name of the resource that the customer can request.
+         */
+        resourceName?: pulumi.Input<string>;
+        /**
+         * The different types of resources against which customers can place capacity requests.
+         */
+        resourceType?: pulumi.Input<string>;
+        /**
+         * The unit in which the resource available is measured.
+         */
+        unit?: pulumi.Input<string>;
+        /**
+         * The type of workload (Generic/ROW).
+         */
+        workloadType?: pulumi.Input<string>;
+    }
+
+    export interface OccAvailabilityCatalogMetadataDetails {
+        /**
+         * The version for the format of the catalog file being uploaded.
+         */
+        formatVersion: pulumi.Input<string>;
+    }
+
+    export interface OccCapacityRequestDetail {
+        /**
+         * The actual handed over quantity of resources at the time of request resolution.
+         */
+        actualHandoverQuantity?: pulumi.Input<string>;
+        /**
+         * The date on which the actual handover quantity of resources is delivered.
+         */
+        dateActualHandover?: pulumi.Input<string>;
+        /**
+         * The date on which the latest increment to supplied quantity of resources was delivered.
+         */
+        dateExpectedHandover?: pulumi.Input<string>;
+        /**
+         * The number of compute server's with name <resourceName> required by the user.
+         */
+        demandQuantity: pulumi.Input<string>;
+        /**
+         * The incremental quantity of resources supplied as the provisioning is underway.
+         */
+        expectedHandoverQuantity?: pulumi.Input<string>;
+        /**
+         * The name of the COMPUTE server shape for which the request is made. Do not use CAPACITY_CONSTRAINT as the resource name.
+         */
+        resourceName: pulumi.Input<string>;
+        /**
+         * The type of the resource against which the user wants to place a capacity request.
+         */
+        resourceType: pulumi.Input<string>;
+        /**
+         * The type of the workload (Generic/ROW).
+         */
+        workloadType: pulumi.Input<string>;
+    }
+
+    export interface OccCapacityRequestPatchOperation {
+        /**
+         * (Updatable)
+         */
+        from: pulumi.Input<string>;
+        /**
+         * (Updatable) The operation can be one of these values: `INSERT`, `INSERT_MULTIPLE`, `MERGE`, `MOVE`, `PROHIBIT`, `REMOVE`, `REPLACE`, `REQUIRE`
+         */
+        operation: pulumi.Input<string>;
+        /**
+         * (Updatable)
+         */
+        position?: pulumi.Input<string>;
+        /**
+         * (Updatable)
+         */
+        selectedItem?: pulumi.Input<string>;
+        /**
+         * (Updatable)
+         */
+        selection: pulumi.Input<string>;
+        /**
+         * (Updatable)
+         */
+        value: pulumi.Input<{[key: string]: any}>;
+    }
+}
+
 export namespace CertificatesManagement {
     export interface CertificateAuthorityCertificateAuthorityConfig {
         /**
@@ -16973,6 +17143,24 @@ export namespace DataIntegration {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetWorkspaceApplicationTaskSchedulesFilter {
+        /**
+         * Used to filter by the name of the object.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetWorkspaceApplicationTaskSchedulesFilterArgs {
+        /**
+         * Used to filter by the name of the object.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetWorkspaceApplicationsFilter {
         /**
          * Used to filter by the name of the object.
@@ -17682,6 +17870,410 @@ export namespace DataIntegration {
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         workspaceId?: pulumi.Input<string>;
+    }
+
+    export interface WorkspaceApplicationTaskScheduleLastRunDetail {
+        /**
+         * (Updatable) The description of the aggregator.
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * (Updatable) The identifier of the aggregator.
+         */
+        identifier?: pulumi.Input<string>;
+        /**
+         * (Updatable) The key of the aggregator object.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * Time in milliseconds for the pervious schedule.
+         */
+        lastRunTimeMillis?: pulumi.Input<string>;
+        /**
+         * (Updatable) The type of the object.
+         */
+        modelType?: pulumi.Input<string>;
+        /**
+         * (Updatable) This is a version number that is used by the service to upgrade objects if needed through releases of the service.
+         */
+        modelVersion?: pulumi.Input<string>;
+        /**
+         * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+         */
+        objectStatus?: pulumi.Input<number>;
+        /**
+         * (Updatable) This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
+         */
+        objectVersion?: pulumi.Input<number>;
+        /**
+         * (Updatable) A reference to the object's parent.
+         */
+        parentReves?: pulumi.Input<pulumi.Input<inputs.DataIntegration.WorkspaceApplicationTaskScheduleLastRunDetailParentRef>[]>;
+    }
+
+    export interface WorkspaceApplicationTaskScheduleLastRunDetailParentRef {
+        /**
+         * (Updatable) Key of the parent object.
+         */
+        parent?: pulumi.Input<string>;
+        /**
+         * (Updatable) Key of the root document object.
+         */
+        rootDocId?: pulumi.Input<string>;
+    }
+
+    export interface WorkspaceApplicationTaskScheduleMetadata {
+        /**
+         * (Updatable) The owning object key for this object.
+         */
+        aggregatorKey?: pulumi.Input<string>;
+        /**
+         * (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+         */
+        aggregators?: pulumi.Input<pulumi.Input<inputs.DataIntegration.WorkspaceApplicationTaskScheduleMetadataAggregator>[]>;
+        /**
+         * (Updatable) A count statistics.
+         */
+        countStatistics?: pulumi.Input<pulumi.Input<inputs.DataIntegration.WorkspaceApplicationTaskScheduleMetadataCountStatistic>[]>;
+        /**
+         * (Updatable) The user that created the object.
+         */
+        createdBy?: pulumi.Input<string>;
+        /**
+         * (Updatable) The user that created the object.
+         */
+        createdByName?: pulumi.Input<string>;
+        /**
+         * (Updatable) The full path to identify this object.
+         */
+        identifierPath?: pulumi.Input<string>;
+        /**
+         * (Updatable) Information property fields.
+         */
+        infoFields?: pulumi.Input<{[key: string]: any}>;
+        /**
+         * (Updatable) Specifies whether this object is a favorite or not.
+         */
+        isFavorite?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+         */
+        labels?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) The registry version of the object.
+         */
+        registryVersion?: pulumi.Input<number>;
+        /**
+         * (Updatable) The date and time that the object was created.
+         */
+        timeCreated?: pulumi.Input<string>;
+        /**
+         * (Updatable) The date and time that the object was updated.
+         */
+        timeUpdated?: pulumi.Input<string>;
+        /**
+         * (Updatable) The user that updated the object.
+         */
+        updatedBy?: pulumi.Input<string>;
+        /**
+         * (Updatable) The user that updated the object.
+         */
+        updatedByName?: pulumi.Input<string>;
+    }
+
+    export interface WorkspaceApplicationTaskScheduleMetadataAggregator {
+        /**
+         * (Updatable) The description of the aggregator.
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * (Updatable) The identifier of the aggregator.
+         */
+        identifier?: pulumi.Input<string>;
+        /**
+         * (Updatable) The key of the aggregator object.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * (Updatable) The type of the aggregator.
+         */
+        type?: pulumi.Input<string>;
+    }
+
+    export interface WorkspaceApplicationTaskScheduleMetadataCountStatistic {
+        /**
+         * (Updatable) The array of statistics.
+         */
+        objectTypeCountLists?: pulumi.Input<pulumi.Input<inputs.DataIntegration.WorkspaceApplicationTaskScheduleMetadataCountStatisticObjectTypeCountList>[]>;
+    }
+
+    export interface WorkspaceApplicationTaskScheduleMetadataCountStatisticObjectTypeCountList {
+        /**
+         * (Updatable) The value for the count statistic object.
+         */
+        objectCount?: pulumi.Input<string>;
+        /**
+         * (Updatable) The type of object for the count statistic object.
+         */
+        objectType?: pulumi.Input<string>;
+    }
+
+    export interface WorkspaceApplicationTaskScheduleParentRef {
+        /**
+         * (Updatable) Key of the parent object.
+         */
+        parent?: pulumi.Input<string>;
+        /**
+         * (Updatable) Key of the root document object.
+         */
+        rootDocId?: pulumi.Input<string>;
+    }
+
+    export interface WorkspaceApplicationTaskScheduleRegistryMetadata {
+        /**
+         * (Updatable) The owning object key for this object.
+         */
+        aggregatorKey?: pulumi.Input<string>;
+        /**
+         * (Updatable) Specifies whether this object is a favorite or not.
+         */
+        isFavorite?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) The key of the aggregator object.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * (Updatable) Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+         */
+        labels?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) The registry version of the object.
+         */
+        registryVersion?: pulumi.Input<number>;
+    }
+
+    export interface WorkspaceApplicationTaskScheduleScheduleRef {
+        /**
+         * (Updatable) The description of the aggregator.
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * (Updatable) The model that holds the frequency details.
+         */
+        frequencyDetails?: pulumi.Input<inputs.DataIntegration.WorkspaceApplicationTaskScheduleScheduleRefFrequencyDetails>;
+        /**
+         * (Updatable) The identifier of the aggregator.
+         */
+        identifier?: pulumi.Input<string>;
+        /**
+         * (Updatable) A flag to indicate daylight saving.
+         */
+        isDaylightAdjustmentEnabled?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) The key of the aggregator object.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+         */
+        metadata?: pulumi.Input<inputs.DataIntegration.WorkspaceApplicationTaskScheduleScheduleRefMetadata>;
+        /**
+         * (Updatable) The type of the object.
+         */
+        modelType?: pulumi.Input<string>;
+        /**
+         * (Updatable) This is a version number that is used by the service to upgrade objects if needed through releases of the service.
+         */
+        modelVersion?: pulumi.Input<string>;
+        /**
+         * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+         */
+        objectStatus?: pulumi.Input<number>;
+        /**
+         * (Updatable) This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
+         */
+        objectVersion?: pulumi.Input<number>;
+        /**
+         * (Updatable) A reference to the object's parent.
+         */
+        parentRef?: pulumi.Input<inputs.DataIntegration.WorkspaceApplicationTaskScheduleScheduleRefParentRef>;
+        /**
+         * (Updatable) The timezone for the schedule.
+         */
+        timezone?: pulumi.Input<string>;
+    }
+
+    export interface WorkspaceApplicationTaskScheduleScheduleRefFrequencyDetails {
+        /**
+         * (Updatable) This holds the complete cron expression for this schedule, for example, 10 0/5 * * * ? that fires every 5 minutes, at 10 seconds after the minute (i.e. 10:00:10 am, 10:05:10 am, etc.)
+         */
+        customExpression?: pulumi.Input<string>;
+        /**
+         * (Updatable) This holds the day of the week on which the schedule should be triggered.
+         */
+        dayOfWeek?: pulumi.Input<string>;
+        /**
+         * (Updatable) A list of days of the month to be scheduled. i.e. excute every 2nd,3rd, 10th of the month.
+         */
+        days?: pulumi.Input<pulumi.Input<number>[]>;
+        /**
+         * (Updatable) the frequency of the schedule.
+         */
+        frequency?: pulumi.Input<string>;
+        /**
+         * (Updatable) This hold the repeatability aspect of a schedule. i.e. in a monhtly frequency, a task can be scheduled for every month, once in two months, once in tree months etc.
+         */
+        interval?: pulumi.Input<number>;
+        /**
+         * (Updatable) The type of the object.
+         */
+        modelType: pulumi.Input<string>;
+        /**
+         * (Updatable) A model to hold time in hour:minute:second format.
+         */
+        time?: pulumi.Input<inputs.DataIntegration.WorkspaceApplicationTaskScheduleScheduleRefFrequencyDetailsTime>;
+        /**
+         * (Updatable) This holds the week of the month in which the schedule should be triggered.
+         */
+        weekOfMonth?: pulumi.Input<string>;
+    }
+
+    export interface WorkspaceApplicationTaskScheduleScheduleRefFrequencyDetailsTime {
+        /**
+         * (Updatable) The hour value.
+         */
+        hour?: pulumi.Input<number>;
+        /**
+         * (Updatable) The minute value.
+         */
+        minute?: pulumi.Input<number>;
+        /**
+         * (Updatable) The second value.
+         */
+        second?: pulumi.Input<number>;
+    }
+
+    export interface WorkspaceApplicationTaskScheduleScheduleRefMetadata {
+        /**
+         * (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+         */
+        aggregator?: pulumi.Input<inputs.DataIntegration.WorkspaceApplicationTaskScheduleScheduleRefMetadataAggregator>;
+        /**
+         * (Updatable) The owning object key for this object.
+         */
+        aggregatorKey?: pulumi.Input<string>;
+        /**
+         * (Updatable) A count statistics.
+         */
+        countStatistics?: pulumi.Input<inputs.DataIntegration.WorkspaceApplicationTaskScheduleScheduleRefMetadataCountStatistics>;
+        /**
+         * (Updatable) The user that created the object.
+         */
+        createdBy?: pulumi.Input<string>;
+        /**
+         * (Updatable) The user that created the object.
+         */
+        createdByName?: pulumi.Input<string>;
+        /**
+         * (Updatable) The full path to identify this object.
+         */
+        identifierPath?: pulumi.Input<string>;
+        /**
+         * (Updatable) Information property fields.
+         */
+        infoFields?: pulumi.Input<{[key: string]: any}>;
+        /**
+         * (Updatable) Specifies whether this object is a favorite or not.
+         */
+        isFavorite?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+         */
+        labels?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) The registry version of the object.
+         */
+        registryVersion?: pulumi.Input<number>;
+        /**
+         * (Updatable) The date and time that the object was created.
+         */
+        timeCreated?: pulumi.Input<string>;
+        /**
+         * (Updatable) The date and time that the object was updated.
+         */
+        timeUpdated?: pulumi.Input<string>;
+        /**
+         * (Updatable) The user that updated the object.
+         */
+        updatedBy?: pulumi.Input<string>;
+        /**
+         * (Updatable) The user that updated the object.
+         */
+        updatedByName?: pulumi.Input<string>;
+    }
+
+    export interface WorkspaceApplicationTaskScheduleScheduleRefMetadataAggregator {
+        /**
+         * (Updatable) The description of the aggregator.
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * (Updatable) The identifier of the aggregator.
+         */
+        identifier?: pulumi.Input<string>;
+        /**
+         * (Updatable) The key of the aggregator object.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * (Updatable) The type of the aggregator.
+         */
+        type?: pulumi.Input<string>;
+    }
+
+    export interface WorkspaceApplicationTaskScheduleScheduleRefMetadataCountStatistics {
+        /**
+         * (Updatable) The array of statistics.
+         */
+        objectTypeCountLists: pulumi.Input<pulumi.Input<inputs.DataIntegration.WorkspaceApplicationTaskScheduleScheduleRefMetadataCountStatisticsObjectTypeCountList>[]>;
+    }
+
+    export interface WorkspaceApplicationTaskScheduleScheduleRefMetadataCountStatisticsObjectTypeCountList {
+        /**
+         * (Updatable) The value for the count statistic object.
+         */
+        objectCount?: pulumi.Input<string>;
+        /**
+         * (Updatable) The type of object for the count statistic object.
+         */
+        objectType?: pulumi.Input<string>;
+    }
+
+    export interface WorkspaceApplicationTaskScheduleScheduleRefParentRef {
+        /**
+         * (Updatable) Key of the parent object.
+         */
+        parent?: pulumi.Input<string>;
+        /**
+         * (Updatable) Key of the root document object.
+         */
+        rootDocId?: pulumi.Input<string>;
     }
 
     export interface WorkspaceExportRequestExportedItem {
@@ -20834,6 +21426,10 @@ export namespace DataScience {
          */
         instanceConfiguration: pulumi.Input<inputs.DataScience.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration>;
         /**
+         * (Updatable) The maximum network bandwidth for the model deployment.
+         */
+        maximumBandwidthMbps?: pulumi.Input<number>;
+        /**
          * (Updatable) The OCID of the model you want to deploy.
          */
         modelId: pulumi.Input<string>;
@@ -20856,6 +21452,10 @@ export namespace DataScience {
 
     export interface ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetails {
         /**
+         * (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+         */
+        cpuBaseline?: pulumi.Input<string>;
+        /**
          * (Updatable) A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
          */
         memoryInGbs?: pulumi.Input<number>;
@@ -20867,13 +21467,146 @@ export namespace DataScience {
 
     export interface ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicy {
         /**
+         * (Updatable) The list of autoscaling policy details.
+         */
+        autoScalingPolicies?: pulumi.Input<pulumi.Input<inputs.DataScience.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicy>[]>;
+        /**
+         * (Updatable) For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 600 seconds, which is also the default. The cooldown period starts when the model deployment becomes ACTIVE after the scaling operation.
+         */
+        coolDownInSeconds?: pulumi.Input<number>;
+        /**
          * (Updatable) The number of instances for the model deployment.
          */
-        instanceCount: pulumi.Input<number>;
+        instanceCount?: pulumi.Input<number>;
+        /**
+         * (Updatable) Whether the autoscaling policy is enabled.
+         */
+        isEnabled?: pulumi.Input<boolean>;
         /**
          * (Updatable) The type of scaling policy.
          */
         policyType: pulumi.Input<string>;
+    }
+
+    export interface ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicy {
+        /**
+         * (Updatable) The type of autoscaling policy.
+         */
+        autoScalingPolicyType: pulumi.Input<string>;
+        /**
+         * (Updatable) For a threshold-based autoscaling policy, this value is the initial number of instances to launch in the model deployment immediately after autoscaling is enabled. Note that anytime this value is updated, the number of instances will be reset to this value. After autoscaling retrieves performance metrics, the number of instances is automatically adjusted from this initial number to a number that is based on the limits that you set.
+         */
+        initialInstanceCount: pulumi.Input<number>;
+        /**
+         * (Updatable) For a threshold-based autoscaling policy, this value is the maximum number of instances the model deployment is allowed to increase to (scale out).
+         */
+        maximumInstanceCount: pulumi.Input<number>;
+        /**
+         * (Updatable) For a threshold-based autoscaling policy, this value is the minimum number of instances the model deployment is allowed to decrease to (scale in).
+         */
+        minimumInstanceCount: pulumi.Input<number>;
+        /**
+         * (Updatable) The list of autoscaling policy rules.
+         */
+        rules: pulumi.Input<pulumi.Input<inputs.DataScience.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRule>[]>;
+    }
+
+    export interface ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRule {
+        /**
+         * (Updatable) The metric expression for creating the alarm used to trigger autoscaling actions on the model deployment.
+         *
+         * The following values are supported:
+         */
+        metricExpressionRuleType: pulumi.Input<string>;
+        /**
+         * (Updatable) Metric type
+         */
+        metricType?: pulumi.Input<string>;
+        /**
+         * (Updatable) The scaling configuration for the predefined metric expression rule.
+         */
+        scaleInConfiguration: pulumi.Input<inputs.DataScience.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfiguration>;
+        /**
+         * (Updatable) The scaling configuration for the predefined metric expression rule.
+         */
+        scaleOutConfiguration: pulumi.Input<inputs.DataScience.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfiguration>;
+    }
+
+    export interface ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfiguration {
+        /**
+         * (Updatable) The value is used for adjusting the count of instances by.
+         */
+        instanceCountAdjustment?: pulumi.Input<number>;
+        /**
+         * (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
+         *
+         * The duration is specified as a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT3M. Maximum: PT1H. Default: PT3M.
+         */
+        pendingDuration?: pulumi.Input<string>;
+        /**
+         * (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+         *
+         * Example of threshold alarm:
+         *
+         * -----
+         *
+         * CPUUtilization[1m]{resourceId = "MODEL_DEPLOYMENT_OCID"}.grouping().mean() < 25 CPUUtilization[1m]{resourceId = "MODEL_DEPLOYMENT_OCID"}.grouping().mean() > 75
+         *
+         * -----
+         */
+        query?: pulumi.Input<string>;
+        /**
+         * (Updatable) The type of scaling configuration.
+         */
+        scalingConfigurationType?: pulumi.Input<string>;
+        /**
+         * (Updatable) A metric value at which the scaling operation will be triggered.
+         */
+        threshold?: pulumi.Input<number>;
+    }
+
+    export interface ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfiguration {
+        /**
+         * (Updatable) The value is used for adjusting the count of instances by.
+         */
+        instanceCountAdjustment?: pulumi.Input<number>;
+        /**
+         * (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
+         *
+         * The duration is specified as a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT3M. Maximum: PT1H. Default: PT3M.
+         */
+        pendingDuration?: pulumi.Input<string>;
+        /**
+         * (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+         *
+         * Example of threshold alarm:
+         *
+         * -----
+         *
+         * CPUUtilization[1m]{resourceId = "MODEL_DEPLOYMENT_OCID"}.grouping().mean() < 25 CPUUtilization[1m]{resourceId = "MODEL_DEPLOYMENT_OCID"}.grouping().mean() > 75
+         *
+         * -----
+         */
+        query?: pulumi.Input<string>;
+        /**
+         * (Updatable) The type of scaling configuration.
+         */
+        scalingConfigurationType?: pulumi.Input<string>;
+        /**
+         * (Updatable) A metric value at which the scaling operation will be triggered.
+         */
+        threshold?: pulumi.Input<number>;
+    }
+
+    export interface ModelDeploymentModelDeploymentSystemData {
+        /**
+         * This value is the current count of the model deployment instances.
+         */
+        currentInstanceCount?: pulumi.Input<number>;
+        /**
+         * The infrastructure type of the model deployment.
+         */
+        systemInfraType?: pulumi.Input<string>;
     }
 
     export interface NotebookSessionNotebookSessionConfigDetails {
@@ -21617,6 +22350,9 @@ export namespace Database {
          * Host format used in connection string.
          */
         hostFormat?: pulumi.Input<string>;
+        /**
+         * True for a regional connection string, applicable to cross-region DG only.
+         */
         isRegional?: pulumi.Input<boolean>;
         /**
          * Protocol used by the connection.
@@ -21627,7 +22363,7 @@ export namespace Database {
          */
         sessionMode?: pulumi.Input<string>;
         /**
-         * Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous Databases on shared Exadata infrastructure always use the long format.
+         * Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous Database Serverless instances always use the long format.
          */
         syntaxFormat?: pulumi.Input<string>;
         /**
@@ -21745,7 +22481,7 @@ export namespace Database {
 
     export interface AutonomousDatabaseLongTermBackupSchedule {
         /**
-         * Indicates if the long-term backup schedule should be deleted. The default value is `FALSE`.
+         * (Updatable) Indicates if the resource pool should be deleted for the Autonomous Database.
          */
         isDisabled?: pulumi.Input<boolean>;
         /**
@@ -21783,9 +22519,12 @@ export namespace Database {
 
     export interface AutonomousDatabaseResourcePoolSummary {
         /**
-         * Indicates if the long-term backup schedule should be deleted. The default value is `FALSE`.
+         * (Updatable) Indicates if the resource pool should be deleted for the Autonomous Database.
          */
         isDisabled?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Resource pool size.
+         */
         poolSize?: pulumi.Input<number>;
     }
 

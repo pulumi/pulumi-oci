@@ -1784,9 +1784,10 @@ class AutonomousDatabaseConnectionStringProfile(dict):
         :param str consumer_group: Consumer group used by the connection.
         :param str display_name: (Updatable) The user-friendly name for the Autonomous Database. The name does not have to be unique.
         :param str host_format: Host format used in connection string.
+        :param bool is_regional: True for a regional connection string, applicable to cross-region DG only.
         :param str protocol: Protocol used by the connection.
         :param str session_mode: Specifies whether the listener performs a direct hand-off of the session, or redirects the session. In RAC deployments where SCAN is used, sessions are redirected to a Node VIP. Use `DIRECT` for direct hand-offs. Use `REDIRECT` to redirect the session.
-        :param str syntax_format: Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous Databases on shared Exadata infrastructure always use the long format.
+        :param str syntax_format: Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous Database Serverless instances always use the long format.
         :param str tls_authentication: Specifies whether the TLS handshake is using one-way (`SERVER`) or mutual (`MUTUAL`) authentication.
         :param str value: Connection string value.
         """
@@ -1836,6 +1837,9 @@ class AutonomousDatabaseConnectionStringProfile(dict):
     @property
     @pulumi.getter(name="isRegional")
     def is_regional(self) -> Optional[bool]:
+        """
+        True for a regional connection string, applicable to cross-region DG only.
+        """
         return pulumi.get(self, "is_regional")
 
     @property
@@ -1858,7 +1862,7 @@ class AutonomousDatabaseConnectionStringProfile(dict):
     @pulumi.getter(name="syntaxFormat")
     def syntax_format(self) -> Optional[str]:
         """
-        Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous Databases on shared Exadata infrastructure always use the long format.
+        Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous Database Serverless instances always use the long format.
         """
         return pulumi.get(self, "syntax_format")
 
@@ -2304,7 +2308,7 @@ class AutonomousDatabaseLongTermBackupSchedule(dict):
                  retention_period_in_days: Optional[int] = None,
                  time_of_backup: Optional[str] = None):
         """
-        :param bool is_disabled: Indicates if the long-term backup schedule should be deleted. The default value is `FALSE`.
+        :param bool is_disabled: (Updatable) Indicates if the resource pool should be deleted for the Autonomous Database.
         :param str repeat_cadence: The frequency of the long-term backup schedule
         :param int retention_period_in_days: Retention period, in days, for long-term backups
         :param str time_of_backup: The timestamp for the long-term backup schedule. For a MONTHLY cadence, months having fewer days than the provided date will have the backup taken on the last day of that month.
@@ -2322,7 +2326,7 @@ class AutonomousDatabaseLongTermBackupSchedule(dict):
     @pulumi.getter(name="isDisabled")
     def is_disabled(self) -> Optional[bool]:
         """
-        Indicates if the long-term backup schedule should be deleted. The default value is `FALSE`.
+        (Updatable) Indicates if the resource pool should be deleted for the Autonomous Database.
         """
         return pulumi.get(self, "is_disabled")
 
@@ -2454,7 +2458,8 @@ class AutonomousDatabaseResourcePoolSummary(dict):
                  is_disabled: Optional[bool] = None,
                  pool_size: Optional[int] = None):
         """
-        :param bool is_disabled: Indicates if the long-term backup schedule should be deleted. The default value is `FALSE`.
+        :param bool is_disabled: (Updatable) Indicates if the resource pool should be deleted for the Autonomous Database.
+        :param int pool_size: (Updatable) Resource pool size.
         """
         if is_disabled is not None:
             pulumi.set(__self__, "is_disabled", is_disabled)
@@ -2465,13 +2470,16 @@ class AutonomousDatabaseResourcePoolSummary(dict):
     @pulumi.getter(name="isDisabled")
     def is_disabled(self) -> Optional[bool]:
         """
-        Indicates if the long-term backup schedule should be deleted. The default value is `FALSE`.
+        (Updatable) Indicates if the resource pool should be deleted for the Autonomous Database.
         """
         return pulumi.get(self, "is_disabled")
 
     @property
     @pulumi.getter(name="poolSize")
     def pool_size(self) -> Optional[int]:
+        """
+        (Updatable) Resource pool size.
+        """
         return pulumi.get(self, "pool_size")
 
 
@@ -12732,10 +12740,12 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
                  compartment_id: str,
                  compute_model: str,
                  db_name: str,
+                 db_split_threshold: int,
                  db_unique_name: str,
                  db_version: str,
                  defined_tags: Mapping[str, Any],
                  display_name: str,
+                 distribution_affinity: str,
                  dst_file_version: str,
                  fast_start_fail_over_lag_limit_in_seconds: int,
                  freeform_tags: Mapping[str, Any],
@@ -12753,6 +12763,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
                  maintenance_window_details: Sequence['outputs.GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailResult'],
                  maintenance_windows: Sequence['outputs.GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowResult'],
                  memory_per_oracle_compute_unit_in_gbs: int,
+                 net_services_architecture: str,
                  next_maintenance_run_id: str,
                  patch_id: str,
                  patch_model: str,
@@ -12778,7 +12789,8 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
                  time_snapshot_standby_revert: str,
                  total_cpus: int,
                  vault_id: str,
-                 version_preference: str):
+                 version_preference: str,
+                 vm_failover_reservation: int):
         """
         :param str autonomous_exadata_infrastructure_id: The Autonomous Exadata Infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param str autonomous_vm_cluster_id: The Autonomous VM Cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -12787,12 +12799,14 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
         :param Sequence['GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfigArgs'] backup_configs: Backup options for the Autonomous Container Database.
         :param str cloud_autonomous_vm_cluster_id: The cloud Autonomous VM Cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param str compute_model: The compute model of the Autonomous VM Cluster.
+        :param str compute_model: The compute model of the Autonomous Container Database. For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         :param str db_name: The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
+        :param int db_split_threshold: The value above which an Autonomous Database will be split across multiple nodes. This value defaults to 16 when the "CPU per VM" value on the Autonomous VM Cluster is greater than 16. Otherwise, it defaults to the "CPU per VM" value.
         :param str db_version: Oracle Database version of the Autonomous Container Database.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
-        :param str dst_file_version: DST Time Zone File version of the Autonomous Container Database.
+        :param str distribution_affinity: This option determines whether to open an Autonomous Database across the maximum number of nodes or the least number of nodes. The default will be for the minimum number of VMs.
+        :param str dst_file_version: DST Time-zone File version of the Autonomous Container Database.
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
         :param str infrastructure_type: A filter to return only resources that match the given Infrastructure Type.
@@ -12805,7 +12819,8 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
         :param str last_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
         :param str lifecycle_details: Additional information about the current lifecycle state.
         :param Sequence['GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowArgs'] maintenance_windows: The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
-        :param int memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) enabled per OCPU or ECPU in the Autonomous VM Cluster.
+        :param int memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) enabled per ECPU or OCPU in the Autonomous VM Cluster.
+        :param str net_services_architecture: Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
         :param str next_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         :param str patch_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch applied on the system.
         :param str patch_model: Database patch model preference.
@@ -12825,6 +12840,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
         :param int total_cpus: The number of CPUs allocated to the Autonomous VM cluster.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
         :param str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         :param str version_preference: The next maintenance version preference.
+        :param int vm_failover_reservation: The percentage of CPUs to reserve for a single node Autonomous Database, in increments of 25.
         """
         pulumi.set(__self__, "autonomous_exadata_infrastructure_id", autonomous_exadata_infrastructure_id)
         pulumi.set(__self__, "autonomous_vm_cluster_id", autonomous_vm_cluster_id)
@@ -12835,10 +12851,12 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "compute_model", compute_model)
         pulumi.set(__self__, "db_name", db_name)
+        pulumi.set(__self__, "db_split_threshold", db_split_threshold)
         pulumi.set(__self__, "db_unique_name", db_unique_name)
         pulumi.set(__self__, "db_version", db_version)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "distribution_affinity", distribution_affinity)
         pulumi.set(__self__, "dst_file_version", dst_file_version)
         pulumi.set(__self__, "fast_start_fail_over_lag_limit_in_seconds", fast_start_fail_over_lag_limit_in_seconds)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
@@ -12856,6 +12874,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
         pulumi.set(__self__, "maintenance_window_details", maintenance_window_details)
         pulumi.set(__self__, "maintenance_windows", maintenance_windows)
         pulumi.set(__self__, "memory_per_oracle_compute_unit_in_gbs", memory_per_oracle_compute_unit_in_gbs)
+        pulumi.set(__self__, "net_services_architecture", net_services_architecture)
         pulumi.set(__self__, "next_maintenance_run_id", next_maintenance_run_id)
         pulumi.set(__self__, "patch_id", patch_id)
         pulumi.set(__self__, "patch_model", patch_model)
@@ -12882,6 +12901,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
         pulumi.set(__self__, "total_cpus", total_cpus)
         pulumi.set(__self__, "vault_id", vault_id)
         pulumi.set(__self__, "version_preference", version_preference)
+        pulumi.set(__self__, "vm_failover_reservation", vm_failover_reservation)
 
     @property
     @pulumi.getter(name="autonomousExadataInfrastructureId")
@@ -12943,7 +12963,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
     @pulumi.getter(name="computeModel")
     def compute_model(self) -> str:
         """
-        The compute model of the Autonomous VM Cluster.
+        The compute model of the Autonomous Container Database. For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         """
         return pulumi.get(self, "compute_model")
 
@@ -12954,6 +12974,14 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
         The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
         """
         return pulumi.get(self, "db_name")
+
+    @property
+    @pulumi.getter(name="dbSplitThreshold")
+    def db_split_threshold(self) -> int:
+        """
+        The value above which an Autonomous Database will be split across multiple nodes. This value defaults to 16 when the "CPU per VM" value on the Autonomous VM Cluster is greater than 16. Otherwise, it defaults to the "CPU per VM" value.
+        """
+        return pulumi.get(self, "db_split_threshold")
 
     @property
     @pulumi.getter(name="dbUniqueName")
@@ -12985,10 +13013,18 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
         return pulumi.get(self, "display_name")
 
     @property
+    @pulumi.getter(name="distributionAffinity")
+    def distribution_affinity(self) -> str:
+        """
+        This option determines whether to open an Autonomous Database across the maximum number of nodes or the least number of nodes. The default will be for the minimum number of VMs.
+        """
+        return pulumi.get(self, "distribution_affinity")
+
+    @property
     @pulumi.getter(name="dstFileVersion")
     def dst_file_version(self) -> str:
         """
-        DST Time Zone File version of the Autonomous Container Database.
+        DST Time-zone File version of the Autonomous Container Database.
         """
         return pulumi.get(self, "dst_file_version")
 
@@ -13107,9 +13143,17 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
     @pulumi.getter(name="memoryPerOracleComputeUnitInGbs")
     def memory_per_oracle_compute_unit_in_gbs(self) -> int:
         """
-        The amount of memory (in GBs) enabled per OCPU or ECPU in the Autonomous VM Cluster.
+        The amount of memory (in GBs) enabled per ECPU or OCPU in the Autonomous VM Cluster.
         """
         return pulumi.get(self, "memory_per_oracle_compute_unit_in_gbs")
+
+    @property
+    @pulumi.getter(name="netServicesArchitecture")
+    def net_services_architecture(self) -> str:
+        """
+        Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
+        """
+        return pulumi.get(self, "net_services_architecture")
 
     @property
     @pulumi.getter(name="nextMaintenanceRunId")
@@ -13293,6 +13337,14 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
         The next maintenance version preference.
         """
         return pulumi.get(self, "version_preference")
+
+    @property
+    @pulumi.getter(name="vmFailoverReservation")
+    def vm_failover_reservation(self) -> int:
+        """
+        The percentage of CPUs to reserve for a single node Autonomous Database, in increments of 25.
+        """
+        return pulumi.get(self, "vm_failover_reservation")
 
 
 @pulumi.output_type
@@ -15512,6 +15564,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
                  is_auto_scaling_for_storage_enabled: bool,
                  is_data_guard_enabled: bool,
                  is_dedicated: bool,
+                 is_dev_tier: bool,
                  is_free_tier: bool,
                  is_local_data_guard_enabled: bool,
                  is_mtls_connection_required: bool,
@@ -15537,6 +15590,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
                  max_cpu_core_count: int,
                  memory_per_oracle_compute_unit_in_gbs: int,
                  ncharacter_set: str,
+                 net_services_architecture: str,
                  next_long_term_backup_time_stamp: str,
                  nsg_ids: Sequence[str],
                  ocpu_count: float,
@@ -15606,10 +15660,10 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         :param str character_set: The character set for the autonomous database.  The default is AL32UTF8. Allowed values are:
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param float compute_count: Compute used by database tools.
-        :param str compute_model: The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
+        :param str compute_model: The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseConnectionStringArgs'] connection_strings: The connection string used to connect to the Autonomous Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous Database for the password value.
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseConnectionUrlArgs'] connection_urls: The URLs for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN. Note that these URLs are provided by the console only for databases on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).  Example: `{"sqlDevWebUrl": "https://<hostname>/ords...", "apexUrl", "https://<hostname>/ords..."}`
-        :param int cpu_core_count: The number of OCPU cores to be made available to the database. When the ECPU is selected, the value for cpuCoreCount is 0. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
+        :param int cpu_core_count: The number of CPU cores to be made available to the database. When the ECPU is selected, the value for cpuCoreCount is 0. For Autonomous Database on Dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseCustomerContactArgs'] customer_contacts: Customer Contacts.
         :param str data_safe_status: Status of the Data Safe registration for this Autonomous Database. Could be REGISTERED or NOT_REGISTERED.
         :param int data_storage_size_in_gb: The quantity of data in the database, in gigabytes.
@@ -15628,13 +15682,14 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
         :param int in_memory_area_in_gbs: The area assigned to In-Memory tables in Autonomous Database.
-        :param int in_memory_percentage: The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database.
+        :param int in_memory_percentage: The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database. This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer platform.
         :param str infrastructure_type: A filter to return only resources that match the given Infrastructure Type.
         :param bool is_access_control_enabled: Indicates if the database-level access control is enabled. If disabled, database access is defined by the network security rules. If enabled, database access is restricted to the IP addresses defined by the rules specified with the `whitelistedIps` property. While specifying `whitelistedIps` rules is optional, if database-level access control is enabled and no rules are specified, the database will become inaccessible. The rules can be added later using the `UpdateAutonomousDatabase` API operation or edit option in console. When creating a database clone, the desired access control setting should be specified. By default, database-level access control will be disabled for the clone.
-        :param bool is_auto_scaling_enabled: Indicates if auto scaling is enabled for the Autonomous Database CPU core count.
+        :param bool is_auto_scaling_enabled: Indicates if auto scaling is enabled for the Autonomous Database CPU core count. The default value is `TRUE`.
         :param bool is_auto_scaling_for_storage_enabled: Indicates if auto scaling is enabled for the Autonomous Database storage. The default value is `FALSE`.
         :param bool is_data_guard_enabled: A filter to return only resources that have Data Guard enabled.
         :param bool is_dedicated: True if the database uses [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
+        :param bool is_dev_tier: This project introduces Autonomous Database for Developers (ADB-Dev), a free tier on dedicated infrastructure, and Cloud@Customer for database development purposes. ADB-Dev enables ExaDB customers to experiment with ADB for free and incentivizes enterprises to use ADB for new development projects.Note that ADB-Dev have 4 CPU and 20GB of memory. For ADB-Dev , memory and CPU cannot be scaled
         :param bool is_free_tier: Filter on the value of the resource's 'isFreeTier' property. A value of `true` returns only Always Free resources. A value of `false` excludes Always Free resources from the returned results. Omitting this parameter returns both Always Free and paid resources.
         :param bool is_local_data_guard_enabled: Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
         :param bool is_mtls_connection_required: Specifies if the Autonomous Database requires mTLS connections.
@@ -15649,7 +15704,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         :param str kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param str kms_key_lifecycle_details: KMS key lifecycle details.
         :param str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
-        :param str license_model: The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`.
+        :param str license_model: The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
         :param str lifecycle_details: Additional information about the current lifecycle state.
         :param int local_adg_auto_failover_max_data_loss_limit: Parameter that allows users to select an acceptable maximum data loss limit in seconds, up to which Automatic Failover will be triggered when necessary for a Local Autonomous Data Guard
         :param str local_disaster_recovery_type: Indicates the local disaster recovery (DR) type of the Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
@@ -15658,6 +15713,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         :param int max_cpu_core_count: The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
         :param int memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) enabled per OCPU or ECPU.
         :param str ncharacter_set: The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
+        :param str net_services_architecture: Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
         :param str next_long_term_backup_time_stamp: The date and time when the next long-term backup would be created.
         :param Sequence[str] nsg_ids: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
                * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
@@ -15676,11 +15732,11 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         :param str resource_pool_leader_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous Database.
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseResourcePoolSummaryArgs'] resource_pool_summaries: The configuration details for resource pool
         :param str role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
-        :param Sequence['GetAutonomousDatabasesAutonomousDatabaseScheduledOperationArgs'] scheduled_operations: The list of scheduled operations.
+        :param Sequence['GetAutonomousDatabasesAutonomousDatabaseScheduledOperationArgs'] scheduled_operations: The list of scheduled operations. Consists of values such as dayOfWeek, scheduledStartTime, scheduledStopTime.
         :param str service_console_url: The URL of the Service Console for the Autonomous Database.
         :param str source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that was cloned to create the current Autonomous Database.
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseStandbyDbArgs'] standby_dbs: **Deprecated** Autonomous Data Guard standby database details.
-        :param Sequence[str] standby_whitelisted_ips: The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
+        :param Sequence[str] standby_whitelisted_ips: The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
         :param str state: A filter to return only resources that match the given lifecycle state exactly.
         :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
         :param Sequence[str] supported_regions_to_clone_tos: The list of regions that support the creation of an Autonomous Database clone or an Autonomous Data Guard standby database.
@@ -15704,7 +15760,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         :param int used_data_storage_size_in_gbs: The storage space consumed by Autonomous Database in GBs.
         :param int used_data_storage_size_in_tbs: The amount of storage that has been used, in terabytes.
         :param str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-        :param Sequence[str] whitelisted_ips: The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
+        :param Sequence[str] whitelisted_ips: The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
         """
         pulumi.set(__self__, "actual_used_data_storage_size_in_tbs", actual_used_data_storage_size_in_tbs)
         pulumi.set(__self__, "admin_password", admin_password)
@@ -15751,6 +15807,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         pulumi.set(__self__, "is_auto_scaling_for_storage_enabled", is_auto_scaling_for_storage_enabled)
         pulumi.set(__self__, "is_data_guard_enabled", is_data_guard_enabled)
         pulumi.set(__self__, "is_dedicated", is_dedicated)
+        pulumi.set(__self__, "is_dev_tier", is_dev_tier)
         pulumi.set(__self__, "is_free_tier", is_free_tier)
         pulumi.set(__self__, "is_local_data_guard_enabled", is_local_data_guard_enabled)
         pulumi.set(__self__, "is_mtls_connection_required", is_mtls_connection_required)
@@ -15776,6 +15833,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         pulumi.set(__self__, "max_cpu_core_count", max_cpu_core_count)
         pulumi.set(__self__, "memory_per_oracle_compute_unit_in_gbs", memory_per_oracle_compute_unit_in_gbs)
         pulumi.set(__self__, "ncharacter_set", ncharacter_set)
+        pulumi.set(__self__, "net_services_architecture", net_services_architecture)
         pulumi.set(__self__, "next_long_term_backup_time_stamp", next_long_term_backup_time_stamp)
         pulumi.set(__self__, "nsg_ids", nsg_ids)
         pulumi.set(__self__, "ocpu_count", ocpu_count)
@@ -15953,7 +16011,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="computeModel")
     def compute_model(self) -> str:
         """
-        The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
+        The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
         """
         return pulumi.get(self, "compute_model")
 
@@ -15977,7 +16035,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="cpuCoreCount")
     def cpu_core_count(self) -> int:
         """
-        The number of OCPU cores to be made available to the database. When the ECPU is selected, the value for cpuCoreCount is 0. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
+        The number of CPU cores to be made available to the database. When the ECPU is selected, the value for cpuCoreCount is 0. For Autonomous Database on Dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
         """
         return pulumi.get(self, "cpu_core_count")
 
@@ -16129,7 +16187,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="inMemoryPercentage")
     def in_memory_percentage(self) -> int:
         """
-        The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database.
+        The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database. This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer platform.
         """
         return pulumi.get(self, "in_memory_percentage")
 
@@ -16153,7 +16211,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="isAutoScalingEnabled")
     def is_auto_scaling_enabled(self) -> bool:
         """
-        Indicates if auto scaling is enabled for the Autonomous Database CPU core count.
+        Indicates if auto scaling is enabled for the Autonomous Database CPU core count. The default value is `TRUE`.
         """
         return pulumi.get(self, "is_auto_scaling_enabled")
 
@@ -16180,6 +16238,14 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         True if the database uses [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
         """
         return pulumi.get(self, "is_dedicated")
+
+    @property
+    @pulumi.getter(name="isDevTier")
+    def is_dev_tier(self) -> bool:
+        """
+        This project introduces Autonomous Database for Developers (ADB-Dev), a free tier on dedicated infrastructure, and Cloud@Customer for database development purposes. ADB-Dev enables ExaDB customers to experiment with ADB for free and incentivizes enterprises to use ADB for new development projects.Note that ADB-Dev have 4 CPU and 20GB of memory. For ADB-Dev , memory and CPU cannot be scaled
+        """
+        return pulumi.get(self, "is_dev_tier")
 
     @property
     @pulumi.getter(name="isFreeTier")
@@ -16310,7 +16376,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="licenseModel")
     def license_model(self) -> str:
         """
-        The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`.
+        The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
         """
         return pulumi.get(self, "license_model")
 
@@ -16377,6 +16443,14 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
         """
         return pulumi.get(self, "ncharacter_set")
+
+    @property
+    @pulumi.getter(name="netServicesArchitecture")
+    def net_services_architecture(self) -> str:
+        """
+        Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
+        """
+        return pulumi.get(self, "net_services_architecture")
 
     @property
     @pulumi.getter(name="nextLongTermBackupTimeStamp")
@@ -16529,7 +16603,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="scheduledOperations")
     def scheduled_operations(self) -> Sequence['outputs.GetAutonomousDatabasesAutonomousDatabaseScheduledOperationResult']:
         """
-        The list of scheduled operations.
+        The list of scheduled operations. Consists of values such as dayOfWeek, scheduledStartTime, scheduledStopTime.
         """
         return pulumi.get(self, "scheduled_operations")
 
@@ -16581,7 +16655,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="standbyWhitelistedIps")
     def standby_whitelisted_ips(self) -> Sequence[str]:
         """
-        The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
+        The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
         """
         return pulumi.get(self, "standby_whitelisted_ips")
 
@@ -16793,7 +16867,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="whitelistedIps")
     def whitelisted_ips(self) -> Sequence[str]:
         """
-        The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
+        The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
         """
         return pulumi.get(self, "whitelisted_ips")
 
@@ -17599,6 +17673,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
                  is_auto_scaling_for_storage_enabled: bool,
                  is_data_guard_enabled: bool,
                  is_dedicated: bool,
+                 is_dev_tier: bool,
                  is_free_tier: bool,
                  is_local_data_guard_enabled: bool,
                  is_mtls_connection_required: bool,
@@ -17621,6 +17696,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
                  max_cpu_core_count: int,
                  memory_per_oracle_compute_unit_in_gbs: int,
                  ncharacter_set: str,
+                 net_services_architecture: str,
                  next_long_term_backup_time_stamp: str,
                  nsg_ids: Sequence[str],
                  ocpu_count: float,
@@ -17670,7 +17746,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         :param float allocated_storage_size_in_tbs: The amount of storage currently allocated for the database tables and billed for, rounded up. When auto-scaling is not enabled, this value is equal to the `dataStorageSizeInTBs` value. You can compare this value to the `actualUsedDataStorageSizeInTBs` value to determine if a manual shrink operation is appropriate for your allocated storage.
         :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseApexDetailArgs'] apex_details: Information about Oracle APEX Application Development.
         :param bool are_primary_whitelisted_ips_used: This field will be null if the Autonomous Database is not Data Guard enabled or Access Control is disabled. It's value would be `TRUE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses primary IP access control list (ACL) for standby. It's value would be `FALSE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses different IP access control list (ACL) for standby compared to primary.
-        :param str autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param str autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous Database on Dedicated Exadata Infrastructure.
         :param str autonomous_maintenance_schedule_type: The maintenance schedule type of the Autonomous Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
         :param Sequence[str] available_upgrade_versions: List of Oracle Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
         :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseBackupConfigArgs'] backup_configs: Autonomous Database configuration details for storing [manual backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809) in the [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) service.
@@ -17678,10 +17754,10 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         :param str character_set: The character set for the autonomous database.  The default is AL32UTF8. Allowed values are:
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param float compute_count: Compute used by database tools.
-        :param str compute_model: The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
+        :param str compute_model: The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
         :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringArgs'] connection_strings: The connection string used to connect to the Autonomous Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous Database for the password value.
         :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrlArgs'] connection_urls: The URLs for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN. Note that these URLs are provided by the console only for databases on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).  Example: `{"sqlDevWebUrl": "https://<hostname>/ords...", "apexUrl", "https://<hostname>/ords..."}`
-        :param int cpu_core_count: The number of OCPU cores to be made available to the database. When the ECPU is selected, the value for cpuCoreCount is 0. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
+        :param int cpu_core_count: The number of CPU cores to be made available to the database. When the ECPU is selected, the value for cpuCoreCount is 0. For Autonomous Database on Dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
         :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseCustomerContactArgs'] customer_contacts: Customer Contacts.
         :param str data_safe_status: Status of the Data Safe registration for this Autonomous Database.
         :param int data_storage_size_in_gb: The quantity of data in the database, in gigabytes.
@@ -17704,13 +17780,14 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
         :param int in_memory_area_in_gbs: The area assigned to In-Memory tables in Autonomous Database.
-        :param int in_memory_percentage: The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database.
+        :param int in_memory_percentage: The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database. This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer platform.
         :param str infrastructure_type: The infrastructure type this resource belongs to.
         :param bool is_access_control_enabled: Indicates if the database-level access control is enabled. If disabled, database access is defined by the network security rules. If enabled, database access is restricted to the IP addresses defined by the rules specified with the `whitelistedIps` property. While specifying `whitelistedIps` rules is optional, if database-level access control is enabled and no rules are specified, the database will become inaccessible. The rules can be added later using the `UpdateAutonomousDatabase` API operation or edit option in console. When creating a database clone, the desired access control setting should be specified. By default, database-level access control will be disabled for the clone.
-        :param bool is_auto_scaling_enabled: Indicates if auto scaling is enabled for the Autonomous Database CPU core count.
+        :param bool is_auto_scaling_enabled: Indicates if auto scaling is enabled for the Autonomous Database CPU core count. The default value is `TRUE`.
         :param bool is_auto_scaling_for_storage_enabled: Indicates if auto scaling is enabled for the Autonomous Database storage. The default value is `FALSE`.
         :param bool is_data_guard_enabled: **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
         :param bool is_dedicated: True if the database uses [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
+        :param bool is_dev_tier: This project introduces Autonomous Database for Developers (ADB-Dev), a free tier on dedicated infrastructure, and Cloud@Customer for database development purposes. ADB-Dev enables ExaDB customers to experiment with ADB for free and incentivizes enterprises to use ADB for new development projects.Note that ADB-Dev have 4 CPU and 20GB of memory. For ADB-Dev , memory and CPU cannot be scaled
         :param bool is_free_tier: Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
         :param bool is_local_data_guard_enabled: Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
         :param bool is_mtls_connection_required: Specifies if the Autonomous Database requires mTLS connections.
@@ -17724,7 +17801,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         :param str kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param str kms_key_lifecycle_details: KMS key lifecycle details.
         :param str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
-        :param str license_model: The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`.
+        :param str license_model: The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
         :param str lifecycle_details: Additional information about the current lifecycle state.
         :param int local_adg_auto_failover_max_data_loss_limit: Parameter that allows users to select an acceptable maximum data loss limit in seconds, up to which Automatic Failover will be triggered when necessary for a Local Autonomous Data Guard
         :param str local_disaster_recovery_type: Indicates the local disaster recovery (DR) type of the Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
@@ -17733,6 +17810,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         :param int max_cpu_core_count: The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
         :param int memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         :param str ncharacter_set: The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
+        :param str net_services_architecture: Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
         :param str next_long_term_backup_time_stamp: The date and time when the next long-term backup would be created.
         :param Sequence[str] nsg_ids: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
                * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
@@ -17749,11 +17827,11 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         :param str resource_pool_leader_id: The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseResourcePoolSummaryArgs'] resource_pool_summaries: The configuration details for resource pool
         :param str role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
-        :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationArgs'] scheduled_operations: The list of scheduled operations.
+        :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationArgs'] scheduled_operations: The list of scheduled operations. Consists of values such as dayOfWeek, scheduledStartTime, scheduledStopTime.
         :param str service_console_url: The URL of the Service Console for the Autonomous Database.
         :param str source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that was cloned to create the current Autonomous Database.
         :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDbArgs'] standby_dbs: **Deprecated** Autonomous Data Guard standby database details.
-        :param Sequence[str] standby_whitelisted_ips: The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
+        :param Sequence[str] standby_whitelisted_ips: The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
         :param str state: A filter to return only resources that match the given lifecycle state exactly.
         :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
         :param Sequence[str] supported_regions_to_clone_tos: The list of regions that support the creation of an Autonomous Database clone or an Autonomous Data Guard standby database.
@@ -17776,7 +17854,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         :param int used_data_storage_size_in_gbs: The storage space consumed by Autonomous Database in GBs.
         :param int used_data_storage_size_in_tbs: The amount of storage that has been used, in terabytes.
         :param str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-        :param Sequence[str] whitelisted_ips: The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
+        :param Sequence[str] whitelisted_ips: The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
         """
         pulumi.set(__self__, "actual_used_data_storage_size_in_tbs", actual_used_data_storage_size_in_tbs)
         pulumi.set(__self__, "allocated_storage_size_in_tbs", allocated_storage_size_in_tbs)
@@ -17819,6 +17897,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         pulumi.set(__self__, "is_auto_scaling_for_storage_enabled", is_auto_scaling_for_storage_enabled)
         pulumi.set(__self__, "is_data_guard_enabled", is_data_guard_enabled)
         pulumi.set(__self__, "is_dedicated", is_dedicated)
+        pulumi.set(__self__, "is_dev_tier", is_dev_tier)
         pulumi.set(__self__, "is_free_tier", is_free_tier)
         pulumi.set(__self__, "is_local_data_guard_enabled", is_local_data_guard_enabled)
         pulumi.set(__self__, "is_mtls_connection_required", is_mtls_connection_required)
@@ -17841,6 +17920,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         pulumi.set(__self__, "max_cpu_core_count", max_cpu_core_count)
         pulumi.set(__self__, "memory_per_oracle_compute_unit_in_gbs", memory_per_oracle_compute_unit_in_gbs)
         pulumi.set(__self__, "ncharacter_set", ncharacter_set)
+        pulumi.set(__self__, "net_services_architecture", net_services_architecture)
         pulumi.set(__self__, "next_long_term_backup_time_stamp", next_long_term_backup_time_stamp)
         pulumi.set(__self__, "nsg_ids", nsg_ids)
         pulumi.set(__self__, "ocpu_count", ocpu_count)
@@ -17922,7 +18002,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="autonomousContainerDatabaseId")
     def autonomous_container_database_id(self) -> str:
         """
-        The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous Database on Dedicated Exadata Infrastructure.
         """
         return pulumi.get(self, "autonomous_container_database_id")
 
@@ -17986,7 +18066,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="computeModel")
     def compute_model(self) -> str:
         """
-        The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
+        The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
         """
         return pulumi.get(self, "compute_model")
 
@@ -18010,7 +18090,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="cpuCoreCount")
     def cpu_core_count(self) -> int:
         """
-        The number of OCPU cores to be made available to the database. When the ECPU is selected, the value for cpuCoreCount is 0. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
+        The number of CPU cores to be made available to the database. When the ECPU is selected, the value for cpuCoreCount is 0. For Autonomous Database on Dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
         """
         return pulumi.get(self, "cpu_core_count")
 
@@ -18166,7 +18246,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="inMemoryPercentage")
     def in_memory_percentage(self) -> int:
         """
-        The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database.
+        The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database. This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer platform.
         """
         return pulumi.get(self, "in_memory_percentage")
 
@@ -18190,7 +18270,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="isAutoScalingEnabled")
     def is_auto_scaling_enabled(self) -> bool:
         """
-        Indicates if auto scaling is enabled for the Autonomous Database CPU core count.
+        Indicates if auto scaling is enabled for the Autonomous Database CPU core count. The default value is `TRUE`.
         """
         return pulumi.get(self, "is_auto_scaling_enabled")
 
@@ -18217,6 +18297,14 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         True if the database uses [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
         """
         return pulumi.get(self, "is_dedicated")
+
+    @property
+    @pulumi.getter(name="isDevTier")
+    def is_dev_tier(self) -> bool:
+        """
+        This project introduces Autonomous Database for Developers (ADB-Dev), a free tier on dedicated infrastructure, and Cloud@Customer for database development purposes. ADB-Dev enables ExaDB customers to experiment with ADB for free and incentivizes enterprises to use ADB for new development projects.Note that ADB-Dev have 4 CPU and 20GB of memory. For ADB-Dev , memory and CPU cannot be scaled
+        """
+        return pulumi.get(self, "is_dev_tier")
 
     @property
     @pulumi.getter(name="isFreeTier")
@@ -18326,7 +18414,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="licenseModel")
     def license_model(self) -> str:
         """
-        The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`.
+        The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
         """
         return pulumi.get(self, "license_model")
 
@@ -18393,6 +18481,14 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
         """
         return pulumi.get(self, "ncharacter_set")
+
+    @property
+    @pulumi.getter(name="netServicesArchitecture")
+    def net_services_architecture(self) -> str:
+        """
+        Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
+        """
+        return pulumi.get(self, "net_services_architecture")
 
     @property
     @pulumi.getter(name="nextLongTermBackupTimeStamp")
@@ -18519,7 +18615,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="scheduledOperations")
     def scheduled_operations(self) -> Sequence['outputs.GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationResult']:
         """
-        The list of scheduled operations.
+        The list of scheduled operations. Consists of values such as dayOfWeek, scheduledStartTime, scheduledStopTime.
         """
         return pulumi.get(self, "scheduled_operations")
 
@@ -18551,7 +18647,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="standbyWhitelistedIps")
     def standby_whitelisted_ips(self) -> Sequence[str]:
         """
-        The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
+        The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
         """
         return pulumi.get(self, "standby_whitelisted_ips")
 
@@ -18740,7 +18836,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="whitelistedIps")
     def whitelisted_ips(self) -> Sequence[str]:
         """
-        The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
+        The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
         """
         return pulumi.get(self, "whitelisted_ips")
 
@@ -21751,7 +21847,7 @@ class GetAutonomousVmClustersAutonomousVmClusterResult(dict):
         :param int available_cpus: The numnber of CPU cores available.
         :param float available_data_storage_size_in_tbs: **Deprecated.** Use `availableAutonomousDataStorageSizeInTBs` for Autonomous Databases' data storage availability in TBs.
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param str compute_model: The compute model of the Autonomous VM Cluster.
+        :param str compute_model: The compute model of the Autonomous VM Cluster. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata #Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         :param int cpu_core_count_per_node: The number of CPU cores enabled per VM cluster node.
         :param int cpus_enabled: The number of enabled CPU cores.
         :param int cpus_lowest_scaled_value: The lowest value to which cpus can be scaled down.
@@ -21762,7 +21858,7 @@ class GetAutonomousVmClustersAutonomousVmClusterResult(dict):
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
         :param str exadata_infrastructure_id: If provided, filters the results for the given Exadata Infrastructure.
-        :param float exadata_storage_in_tbs_lowest_scaled_value: The lowest value to which exadataStorage in TBs can be scaled down.
+        :param float exadata_storage_in_tbs_lowest_scaled_value: The lowest value to which exadataStorage(in TBs) can be scaled down.
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous VM cluster.
         :param bool is_local_backup_enabled: If true, database backup on local Exadata storage is configured for the Autonomous VM cluster. If false, database backup on local Exadata storage is not available in the Autonomous VM cluster.
@@ -21771,15 +21867,17 @@ class GetAutonomousVmClustersAutonomousVmClusterResult(dict):
         :param str license_model: The Oracle license model that applies to the Autonomous VM cluster. The default is LICENSE_INCLUDED.
         :param str lifecycle_details: Additional information about the current lifecycle state.
         :param Sequence['GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowArgs'] maintenance_windows: The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
-        :param int max_acds_lowest_scaled_value: The lowest value to which ACDs can be scaled down.
+        :param int max_acds_lowest_scaled_value: The lowest value to which maximum number of ACDs can be scaled down.
         :param int memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) to be enabled per OCPU or ECPU.
         :param int memory_size_in_gbs: The memory allocated in GBs.
         :param str next_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         :param int node_count: The number of nodes in the Autonomous VM Cluster.
         :param float ocpus_enabled: The number of enabled OCPU cores.
-        :param int reclaimable_cpus: For Autonomous Databases on Dedicated Exadata Infrastructure:
-               * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-               * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
+        :param int provisionable_autonomous_container_databases: **Deprecated.** Use field totalContainerDatabases.
+        :param int provisioned_autonomous_container_databases: The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster.
+        :param float provisioned_cpus: The number of CPUs provisioned in an Autonomous VM Cluster.
+        :param int reclaimable_cpus: CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+        :param float reserved_cpus: The number of CPUs reserved in an Autonomous VM Cluster.
         :param int scan_listener_port_non_tls: The SCAN Listener Non TLS port number. Default value is 1521.
         :param int scan_listener_port_tls: The SCAN Listener TLS port number. Default value is 2484.
         :param str state: A filter to return only resources that match the given lifecycle state exactly.
@@ -21899,7 +21997,7 @@ class GetAutonomousVmClustersAutonomousVmClusterResult(dict):
     @pulumi.getter(name="computeModel")
     def compute_model(self) -> str:
         """
-        The compute model of the Autonomous VM Cluster.
+        The compute model of the Autonomous VM Cluster. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata #Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         """
         return pulumi.get(self, "compute_model")
 
@@ -21992,7 +22090,7 @@ class GetAutonomousVmClustersAutonomousVmClusterResult(dict):
     @pulumi.getter(name="exadataStorageInTbsLowestScaledValue")
     def exadata_storage_in_tbs_lowest_scaled_value(self) -> float:
         """
-        The lowest value to which exadataStorage in TBs can be scaled down.
+        The lowest value to which exadataStorage(in TBs) can be scaled down.
         """
         return pulumi.get(self, "exadata_storage_in_tbs_lowest_scaled_value")
 
@@ -22069,7 +22167,7 @@ class GetAutonomousVmClustersAutonomousVmClusterResult(dict):
     @pulumi.getter(name="maxAcdsLowestScaledValue")
     def max_acds_lowest_scaled_value(self) -> int:
         """
-        The lowest value to which ACDs can be scaled down.
+        The lowest value to which maximum number of ACDs can be scaled down.
         """
         return pulumi.get(self, "max_acds_lowest_scaled_value")
 
@@ -22121,31 +22219,41 @@ class GetAutonomousVmClustersAutonomousVmClusterResult(dict):
     @property
     @pulumi.getter(name="provisionableAutonomousContainerDatabases")
     def provisionable_autonomous_container_databases(self) -> int:
+        """
+        **Deprecated.** Use field totalContainerDatabases.
+        """
         return pulumi.get(self, "provisionable_autonomous_container_databases")
 
     @property
     @pulumi.getter(name="provisionedAutonomousContainerDatabases")
     def provisioned_autonomous_container_databases(self) -> int:
+        """
+        The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster.
+        """
         return pulumi.get(self, "provisioned_autonomous_container_databases")
 
     @property
     @pulumi.getter(name="provisionedCpus")
     def provisioned_cpus(self) -> float:
+        """
+        The number of CPUs provisioned in an Autonomous VM Cluster.
+        """
         return pulumi.get(self, "provisioned_cpus")
 
     @property
     @pulumi.getter(name="reclaimableCpus")
     def reclaimable_cpus(self) -> int:
         """
-        For Autonomous Databases on Dedicated Exadata Infrastructure:
-        * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-        * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
+        CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
         """
         return pulumi.get(self, "reclaimable_cpus")
 
     @property
     @pulumi.getter(name="reservedCpus")
     def reserved_cpus(self) -> float:
+        """
+        The number of CPUs reserved in an Autonomous VM Cluster.
+        """
         return pulumi.get(self, "reserved_cpus")
 
     @property
@@ -23949,7 +24057,7 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
         :param str cloud_exadata_infrastructure_id: If provided, filters the results for the specified cloud Exadata infrastructure.
         :param str cluster_time_zone: The time zone of the Cloud Autonomous VM Cluster.
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param str compute_model: The compute model of the Cloud Autonomous VM Cluster.
+        :param str compute_model: The compute model of the Cloud Autonomous VM Cluster. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata #Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         :param int cpu_core_count: The number of CPU cores on the cloud Autonomous VM cluster.
         :param int cpu_core_count_per_node: The number of CPU cores enabled per VM cluster node.
         :param float cpu_percentage: The percentage of total number of CPUs used in an Autonomous VM Cluster.
@@ -23961,17 +24069,17 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
         :param str description: User defined description of the cloud Autonomous VM cluster.
         :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
         :param str domain: The domain name for the cloud Autonomous VM cluster.
-        :param float exadata_storage_in_tbs_lowest_scaled_value: The lowest value to which exadataStorage in TBs can be scaled down.
+        :param float exadata_storage_in_tbs_lowest_scaled_value: The lowest value to which exadataStorage (in TBs) can be scaled down.
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str hostname: The hostname for the cloud Autonomous VM cluster.
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud Autonomous VM cluster.
         :param bool is_mtls_enabled_vm_cluster: Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
         :param str last_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
         :param str last_update_history_entry_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history. This value is updated when a maintenance update starts.
-        :param str license_model: The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`.
+        :param str license_model: The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
         :param str lifecycle_details: Additional information about the current lifecycle state.
         :param Sequence['GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowArgs'] maintenance_windows: The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
-        :param int max_acds_lowest_scaled_value: The lowest value to which ACDs can be scaled down.
+        :param int max_acds_lowest_scaled_value: The lowest value to which maximum number of ACDs can be scaled down.
         :param int memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) enabled per OCPU or ECPU.
         :param int memory_size_in_gbs: The memory allocated in GBs.
         :param str next_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
@@ -24132,7 +24240,7 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
     @pulumi.getter(name="computeModel")
     def compute_model(self) -> str:
         """
-        The compute model of the Cloud Autonomous VM Cluster.
+        The compute model of the Cloud Autonomous VM Cluster. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata #Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         """
         return pulumi.get(self, "compute_model")
 
@@ -24228,7 +24336,7 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
     @pulumi.getter(name="exadataStorageInTbsLowestScaledValue")
     def exadata_storage_in_tbs_lowest_scaled_value(self) -> float:
         """
-        The lowest value to which exadataStorage in TBs can be scaled down.
+        The lowest value to which exadataStorage (in TBs) can be scaled down.
         """
         return pulumi.get(self, "exadata_storage_in_tbs_lowest_scaled_value")
 
@@ -24284,7 +24392,7 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
     @pulumi.getter(name="licenseModel")
     def license_model(self) -> str:
         """
-        The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`.
+        The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
         """
         return pulumi.get(self, "license_model")
 
@@ -24313,7 +24421,7 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
     @pulumi.getter(name="maxAcdsLowestScaledValue")
     def max_acds_lowest_scaled_value(self) -> int:
         """
-        The lowest value to which ACDs can be scaled down.
+        The lowest value to which maximum number of ACDs can be scaled down.
         """
         return pulumi.get(self, "max_acds_lowest_scaled_value")
 

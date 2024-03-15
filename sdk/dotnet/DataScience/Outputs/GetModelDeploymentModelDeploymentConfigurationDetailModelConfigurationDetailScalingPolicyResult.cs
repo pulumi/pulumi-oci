@@ -14,9 +14,21 @@ namespace Pulumi.Oci.DataScience.Outputs
     public sealed class GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyResult
     {
         /// <summary>
+        /// The list of autoscaling policy details.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyResult> AutoScalingPolicies;
+        /// <summary>
+        /// For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 600 seconds, which is also the default. The cooldown period starts when the model deployment becomes ACTIVE after the scaling operation.
+        /// </summary>
+        public readonly int CoolDownInSeconds;
+        /// <summary>
         /// The number of instances for the model deployment.
         /// </summary>
         public readonly int InstanceCount;
+        /// <summary>
+        /// Whether the autoscaling policy is enabled.
+        /// </summary>
+        public readonly bool IsEnabled;
         /// <summary>
         /// The type of scaling policy.
         /// </summary>
@@ -24,11 +36,20 @@ namespace Pulumi.Oci.DataScience.Outputs
 
         [OutputConstructor]
         private GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyResult(
+            ImmutableArray<Outputs.GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyResult> autoScalingPolicies,
+
+            int coolDownInSeconds,
+
             int instanceCount,
+
+            bool isEnabled,
 
             string policyType)
         {
+            AutoScalingPolicies = autoScalingPolicies;
+            CoolDownInSeconds = coolDownInSeconds;
             InstanceCount = instanceCount;
+            IsEnabled = isEnabled;
             PolicyType = policyType;
         }
     }

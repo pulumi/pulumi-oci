@@ -6,31 +6,44 @@ package com.pulumi.oci.DataScience.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
+import java.lang.String;
 import java.util.Objects;
 
 @CustomType
 public final class GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetail {
     /**
-     * @return A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 and 512 GB and VM.Optimized3.Flex memory range is between 6 and 256 GB.
+     * @return The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+     * 
+     */
+    private String cpuBaseline;
+    /**
+     * @return A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
      * 
      */
     private Double memoryInGbs;
     /**
-     * @return A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 and 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
+     * @return A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 to 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
      * 
      */
     private Double ocpus;
 
     private GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetail() {}
     /**
-     * @return A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 and 512 GB and VM.Optimized3.Flex memory range is between 6 and 256 GB.
+     * @return The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+     * 
+     */
+    public String cpuBaseline() {
+        return this.cpuBaseline;
+    }
+    /**
+     * @return A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
      * 
      */
     public Double memoryInGbs() {
         return this.memoryInGbs;
     }
     /**
-     * @return A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 and 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
+     * @return A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 to 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
      * 
      */
     public Double ocpus() {
@@ -46,15 +59,25 @@ public final class GetModelDeploymentModelDeploymentConfigurationDetailModelConf
     }
     @CustomType.Builder
     public static final class Builder {
+        private String cpuBaseline;
         private Double memoryInGbs;
         private Double ocpus;
         public Builder() {}
         public Builder(GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetail defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.cpuBaseline = defaults.cpuBaseline;
     	      this.memoryInGbs = defaults.memoryInGbs;
     	      this.ocpus = defaults.ocpus;
         }
 
+        @CustomType.Setter
+        public Builder cpuBaseline(String cpuBaseline) {
+            if (cpuBaseline == null) {
+              throw new MissingRequiredPropertyException("GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetail", "cpuBaseline");
+            }
+            this.cpuBaseline = cpuBaseline;
+            return this;
+        }
         @CustomType.Setter
         public Builder memoryInGbs(Double memoryInGbs) {
             if (memoryInGbs == null) {
@@ -73,6 +96,7 @@ public final class GetModelDeploymentModelDeploymentConfigurationDetailModelConf
         }
         public GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetail build() {
             final var _resultValue = new GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetail();
+            _resultValue.cpuBaseline = cpuBaseline;
             _resultValue.memoryInGbs = memoryInGbs;
             _resultValue.ocpus = ocpus;
             return _resultValue;

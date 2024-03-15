@@ -38,16 +38,54 @@ namespace Pulumi.Oci.DataScience
     ///                     InstanceShapeName = oci_core_shape.Test_shape.Name,
     ///                     ModelDeploymentInstanceShapeConfigDetails = new Oci.DataScience.Inputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs
     ///                     {
+    ///                         CpuBaseline = @var.Model_deployment_model_deployment_configuration_details_model_configuration_details_instance_configuration_model_deployment_instance_shape_config_details_cpu_baseline,
     ///                         MemoryInGbs = @var.Model_deployment_model_deployment_configuration_details_model_configuration_details_instance_configuration_model_deployment_instance_shape_config_details_memory_in_gbs,
     ///                         Ocpus = @var.Model_deployment_model_deployment_configuration_details_model_configuration_details_instance_configuration_model_deployment_instance_shape_config_details_ocpus,
     ///                     },
     ///                 },
     ///                 ModelId = oci_datascience_model.Test_model.Id,
     ///                 BandwidthMbps = @var.Model_deployment_model_deployment_configuration_details_model_configuration_details_bandwidth_mbps,
+    ///                 MaximumBandwidthMbps = @var.Model_deployment_model_deployment_configuration_details_model_configuration_details_maximum_bandwidth_mbps,
     ///                 ScalingPolicy = new Oci.DataScience.Inputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyArgs
     ///                 {
-    ///                     InstanceCount = @var.Model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_instance_count,
     ///                     PolicyType = @var.Model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_policy_type,
+    ///                     AutoScalingPolicies = new[]
+    ///                     {
+    ///                         new Oci.DataScience.Inputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyArgs
+    ///                         {
+    ///                             AutoScalingPolicyType = @var.Model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_auto_scaling_policy_type,
+    ///                             InitialInstanceCount = @var.Model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_initial_instance_count,
+    ///                             MaximumInstanceCount = @var.Model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_maximum_instance_count,
+    ///                             MinimumInstanceCount = @var.Model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_minimum_instance_count,
+    ///                             Rules = new[]
+    ///                             {
+    ///                                 new Oci.DataScience.Inputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArgs
+    ///                                 {
+    ///                                     MetricExpressionRuleType = @var.Model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_rules_metric_expression_rule_type,
+    ///                                     ScaleInConfiguration = new Oci.DataScience.Inputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgs
+    ///                                     {
+    ///                                         InstanceCountAdjustment = @var.Model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_rules_scale_in_configuration_instance_count_adjustment,
+    ///                                         PendingDuration = @var.Model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_rules_scale_in_configuration_pending_duration,
+    ///                                         Query = @var.Model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_rules_scale_in_configuration_query,
+    ///                                         ScalingConfigurationType = @var.Model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_rules_scale_in_configuration_scaling_configuration_type,
+    ///                                         Threshold = @var.Model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_rules_scale_in_configuration_threshold,
+    ///                                     },
+    ///                                     ScaleOutConfiguration = new Oci.DataScience.Inputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgs
+    ///                                     {
+    ///                                         InstanceCountAdjustment = @var.Model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_rules_scale_out_configuration_instance_count_adjustment,
+    ///                                         PendingDuration = @var.Model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_rules_scale_out_configuration_pending_duration,
+    ///                                         Query = @var.Model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_rules_scale_out_configuration_query,
+    ///                                         ScalingConfigurationType = @var.Model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_rules_scale_out_configuration_scaling_configuration_type,
+    ///                                         Threshold = @var.Model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_rules_scale_out_configuration_threshold,
+    ///                                     },
+    ///                                     MetricType = @var.Model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_rules_metric_type,
+    ///                                 },
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                     CoolDownInSeconds = @var.Model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_cool_down_in_seconds,
+    ///                     InstanceCount = @var.Model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_instance_count,
+    ///                     IsEnabled = @var.Model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_is_enabled,
     ///                 },
     ///             },
     ///             EnvironmentConfigurationDetails = new Oci.DataScience.Inputs.ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsArgs
@@ -156,6 +194,12 @@ namespace Pulumi.Oci.DataScience
         /// </summary>
         [Output("modelDeploymentConfigurationDetails")]
         public Output<Outputs.ModelDeploymentModelDeploymentConfigurationDetails> ModelDeploymentConfigurationDetails { get; private set; } = null!;
+
+        /// <summary>
+        /// Model deployment system data.
+        /// </summary>
+        [Output("modelDeploymentSystemDatas")]
+        public Output<ImmutableArray<Outputs.ModelDeploymentModelDeploymentSystemData>> ModelDeploymentSystemDatas { get; private set; } = null!;
 
         /// <summary>
         /// The URL to interact with the model deployment.
@@ -374,6 +418,18 @@ namespace Pulumi.Oci.DataScience
         /// </summary>
         [Input("modelDeploymentConfigurationDetails")]
         public Input<Inputs.ModelDeploymentModelDeploymentConfigurationDetailsGetArgs>? ModelDeploymentConfigurationDetails { get; set; }
+
+        [Input("modelDeploymentSystemDatas")]
+        private InputList<Inputs.ModelDeploymentModelDeploymentSystemDataGetArgs>? _modelDeploymentSystemDatas;
+
+        /// <summary>
+        /// Model deployment system data.
+        /// </summary>
+        public InputList<Inputs.ModelDeploymentModelDeploymentSystemDataGetArgs> ModelDeploymentSystemDatas
+        {
+            get => _modelDeploymentSystemDatas ?? (_modelDeploymentSystemDatas = new InputList<Inputs.ModelDeploymentModelDeploymentSystemDataGetArgs>());
+            set => _modelDeploymentSystemDatas = value;
+        }
 
         /// <summary>
         /// The URL to interact with the model deployment.

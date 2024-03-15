@@ -39,7 +39,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// The compute model of the Autonomous VM Cluster.
+        /// The compute model of the Autonomous VM Cluster. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata #Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         /// </summary>
         public readonly string ComputeModel;
         /// <summary>
@@ -84,7 +84,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string ExadataInfrastructureId;
         /// <summary>
-        /// The lowest value to which exadataStorage in TBs can be scaled down.
+        /// The lowest value to which exadataStorage(in TBs) can be scaled down.
         /// </summary>
         public readonly double ExadataStorageInTbsLowestScaledValue;
         /// <summary>
@@ -121,7 +121,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowResult> MaintenanceWindows;
         /// <summary>
-        /// The lowest value to which ACDs can be scaled down.
+        /// The lowest value to which maximum number of ACDs can be scaled down.
         /// </summary>
         public readonly int MaxAcdsLowestScaledValue;
         /// <summary>
@@ -145,15 +145,25 @@ namespace Pulumi.Oci.Database.Outputs
         /// The number of enabled OCPU cores.
         /// </summary>
         public readonly double OcpusEnabled;
+        /// <summary>
+        /// **Deprecated.** Use field totalContainerDatabases.
+        /// </summary>
         public readonly int ProvisionableAutonomousContainerDatabases;
+        /// <summary>
+        /// The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster.
+        /// </summary>
         public readonly int ProvisionedAutonomousContainerDatabases;
+        /// <summary>
+        /// The number of CPUs provisioned in an Autonomous VM Cluster.
+        /// </summary>
         public readonly double ProvisionedCpus;
         /// <summary>
-        /// For Autonomous Databases on Dedicated Exadata Infrastructure:
-        /// * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-        /// * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
+        /// CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
         /// </summary>
         public readonly int ReclaimableCpus;
+        /// <summary>
+        /// The number of CPUs reserved in an Autonomous VM Cluster.
+        /// </summary>
         public readonly double ReservedCpus;
         /// <summary>
         /// The SCAN Listener Non TLS port number. Default value is 1521.

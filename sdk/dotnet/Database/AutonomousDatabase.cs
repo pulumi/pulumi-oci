@@ -58,7 +58,7 @@ namespace Pulumi.Oci.Database
         public Output<bool> ArePrimaryWhitelistedIpsUsed { get; private set; } = null!;
 
         /// <summary>
-        /// The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous Database on Dedicated Exadata Infrastructure.
         /// </summary>
         [Output("autonomousContainerDatabaseId")]
         public Output<string> AutonomousContainerDatabaseId { get; private set; } = null!;
@@ -128,7 +128,7 @@ namespace Pulumi.Oci.Database
         public Output<double> ComputeCount { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
+        /// (Updatable) The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
         /// </summary>
         [Output("computeModel")]
         public Output<string> ComputeModel { get; private set; } = null!;
@@ -146,13 +146,9 @@ namespace Pulumi.Oci.Database
         public Output<ImmutableArray<Outputs.AutonomousDatabaseConnectionUrl>> ConnectionUrls { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The number of OCPU cores to be made available to the database. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&amp;id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
+        /// (Updatable) The number of CPU cores to be made available to the database. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&amp;id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
+        /// 
         /// **Note:** This parameter cannot be used with the `ocpuCount` parameter. This input is ignored for Always Free resources.
-        /// * The data type must be an *integer*.
-        /// * The minimum number of cores for all types of autonomous database is *1*
-        /// * The maximum number of cores is as follows:
-        /// * Autonomous Databases on shared Exadata infrastructure: The maximum number of cores is *128*.
-        /// * Autonomous Databases on dedicated Exadata infrastructure: The maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&amp;id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
         /// </summary>
         [Output("cpuCoreCount")]
         public Output<int> CpuCoreCount { get; private set; } = null!;
@@ -274,7 +270,7 @@ namespace Pulumi.Oci.Database
         public Output<int> InMemoryAreaInGbs { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database.
+        /// (Updatable) The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database. This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer platform.
         /// </summary>
         [Output("inMemoryPercentage")]
         public Output<int> InMemoryPercentage { get; private set; } = null!;
@@ -288,13 +284,13 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// (Updatable) Indicates if the database-level access control is enabled. If disabled, database access is defined by the network security rules. If enabled, database access is restricted to the IP addresses defined by the rules specified with the `whitelistedIps` property. While specifying `whitelistedIps` rules is optional, if database-level access control is enabled and no rules are specified, the database will become inaccessible. The rules can be added later using the `UpdateAutonomousDatabase` API operation or edit option in console. When creating a database clone, the desired access control setting should be specified. By default, database-level access control will be disabled for the clone.
         /// 
-        /// This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer platform.
+        /// This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer platform. For Autonomous Database Serverless instances, `whitelistedIps` is used.
         /// </summary>
         [Output("isAccessControlEnabled")]
         public Output<bool> IsAccessControlEnabled { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Indicates if auto scaling is enabled for the Autonomous Database OCPU core count. The default value is `FALSE`.
+        /// (Updatable) Indicates if auto scaling is enabled for the Autonomous Database CPU core count. The default value is `TRUE`.
         /// </summary>
         [Output("isAutoScalingEnabled")]
         public Output<bool> IsAutoScalingEnabled { get; private set; } = null!;
@@ -316,6 +312,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("isDedicated")]
         public Output<bool> IsDedicated { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) This project introduces Autonomous Database for Developers (ADB-Dev), a free tier on dedicated infrastructure, and Cloud@Customer for database development purposes. ADB-Dev enables ExaDB customers to experiment with ADB for free and incentivizes enterprises to use ADB for new development projects.Note that ADB-Dev have 4 CPU and 20GB of memory. For ADB-Dev , memory and CPU cannot be scaled
+        /// </summary>
+        [Output("isDevTier")]
+        public Output<bool> IsDevTier { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled. When `db_workload` is `AJD` or `APEX` it cannot be `true`.
@@ -471,6 +473,12 @@ namespace Pulumi.Oci.Database
         public Output<string> NcharacterSet { get; private set; } = null!;
 
         /// <summary>
+        /// Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
+        /// </summary>
+        [Output("netServicesArchitecture")]
+        public Output<string> NetServicesArchitecture { get; private set; } = null!;
+
+        /// <summary>
         /// The date and time when the next long-term backup would be created.
         /// </summary>
         [Output("nextLongTermBackupTimeStamp")]
@@ -487,8 +495,9 @@ namespace Pulumi.Oci.Database
         /// (Updatable) The number of OCPU cores to be made available to the database.
         /// 
         /// The following points apply:
-        /// * For Autonomous Databases on dedicated Exadata infrastructure, to provision less than 1 core, enter a fractional value in an increment of 0.1. For example, you can provision 0.3 or 0.4 cores, but not 0.35 cores. (Note that fractional OCPU values are not supported for Autonomous Databasese on shared Exadata infrastructure.)
-        /// * To provision 1 or more cores, you must enter an integer between 1 and the maximum number of cores available for the infrastructure shape. For example, you can provision 2 cores or 3 cores, but not 2.5 cores. This applies to Autonomous Databases on both shared and dedicated Exadata infrastructure.
+        /// * For Autonomous Databases on Dedicated Exadata infrastructure, to provision less than 1 core, enter a fractional value in an increment of 0.1. For example, you can provision 0.3 or 0.4 cores, but not 0.35 cores. (Note that fractional OCPU values are not supported for Autonomous Database Serverless instances.)
+        /// * To provision 1 or more cores, you must enter an integer between 1 and the maximum number of cores available for the infrastructure shape. For example, you can provision 2 cores or 3 cores, but not 2.5 cores. This applies to an Autonomous Database Serverless instance or an Autonomous Database on Dedicated Exadata Infrastructure.
+        /// * For Autonomous Database Serverless instances, this parameter is not used.
         /// 
         /// For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&amp;id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
         /// 
@@ -564,14 +573,20 @@ namespace Pulumi.Oci.Database
         public Output<ImmutableArray<Outputs.AutonomousDatabaseRemoteDisasterRecoveryConfiguration>> RemoteDisasterRecoveryConfigurations { get; private set; } = null!;
 
         /// <summary>
-        /// Indicates the cross-region disaster recovery (DR) type of the standby Shared Autonomous Database. Autonomous Data Guard (`ADG`) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based (`BACKUP_BASED`) DR type provides lower cost DR with a slower RTO during failover or switchover.
+        /// Indicates the cross-region disaster recovery (DR) type of the standby Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         /// </summary>
         [Output("remoteDisasterRecoveryType")]
         public Output<string> RemoteDisasterRecoveryType { get; private set; } = null!;
 
+        /// <summary>
+        /// (Updatable) The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// </summary>
         [Output("resourcePoolLeaderId")]
         public Output<string> ResourcePoolLeaderId { get; private set; } = null!;
 
+        /// <summary>
+        /// (Updatable) The configuration details for resource pool
+        /// </summary>
         [Output("resourcePoolSummary")]
         public Output<Outputs.AutonomousDatabaseResourcePoolSummary> ResourcePoolSummary { get; private set; } = null!;
 
@@ -588,7 +603,7 @@ namespace Pulumi.Oci.Database
         public Output<bool?> RotateKeyTrigger { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The list of scheduled operations.
+        /// (Updatable) The list of scheduled operations. Consists of values such as dayOfWeek, scheduledStartTime, scheduledStopTime.
         /// 
         /// This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
         /// </summary>
@@ -639,7 +654,7 @@ namespace Pulumi.Oci.Database
         public Output<ImmutableArray<Outputs.AutonomousDatabaseStandbyDb>> StandbyDbs { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
+        /// (Updatable) The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
         /// 
         /// For shared Exadata infrastructure, this is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet or VCN OCID. Use a semicolon (;) as a deliminator between the VCN-specific subnets or IPs. Example: `["1.1.1.1","1.1.1.0/24","ocid1.vcn.oc1.sea.&lt;unique_id&gt;","ocid1.vcn.oc1.sea.&lt;unique_id1&gt;;1.1.1.1","ocid1.vcn.oc1.sea.&lt;unique_id2&gt;;1.1.0.0/16"]` For Exadata Cloud@Customer, this is an array of IP addresses or CIDR (Classless Inter-Domain Routing) notations. Example: `["1.1.1.1","1.1.1.0/24","1.1.2.25"]`
         /// 
@@ -817,7 +832,7 @@ namespace Pulumi.Oci.Database
         public Output<string> VaultId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
+        /// (Updatable) The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
         /// 
         /// For shared Exadata infrastructure, this is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet or VCN OCID. Use a semicolon (;) as a deliminator between the VCN-specific subnets or IPs. Example: `["1.1.1.1","1.1.1.0/24","ocid1.vcn.oc1.sea.&lt;unique_id&gt;","ocid1.vcn.oc1.sea.&lt;unique_id1&gt;;1.1.1.1","ocid1.vcn.oc1.sea.&lt;unique_id2&gt;;1.1.0.0/16"]` For Exadata Cloud@Customer, this is an array of IP addresses or CIDR (Classless Inter-Domain Routing) notations. Example: `["1.1.1.1","1.1.1.0/24","1.1.2.25"]`
         /// 
@@ -903,7 +918,7 @@ namespace Pulumi.Oci.Database
         public Input<bool>? ArePrimaryWhitelistedIpsUsed { get; set; }
 
         /// <summary>
-        /// The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous Database on Dedicated Exadata Infrastructure.
         /// </summary>
         [Input("autonomousContainerDatabaseId")]
         public Input<string>? AutonomousContainerDatabaseId { get; set; }
@@ -961,19 +976,15 @@ namespace Pulumi.Oci.Database
         public Input<double>? ComputeCount { get; set; }
 
         /// <summary>
-        /// (Updatable) The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
+        /// (Updatable) The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
         /// </summary>
         [Input("computeModel")]
         public Input<string>? ComputeModel { get; set; }
 
         /// <summary>
-        /// (Updatable) The number of OCPU cores to be made available to the database. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&amp;id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
+        /// (Updatable) The number of CPU cores to be made available to the database. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&amp;id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
+        /// 
         /// **Note:** This parameter cannot be used with the `ocpuCount` parameter. This input is ignored for Always Free resources.
-        /// * The data type must be an *integer*.
-        /// * The minimum number of cores for all types of autonomous database is *1*
-        /// * The maximum number of cores is as follows:
-        /// * Autonomous Databases on shared Exadata infrastructure: The maximum number of cores is *128*.
-        /// * Autonomous Databases on dedicated Exadata infrastructure: The maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&amp;id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
         /// </summary>
         [Input("cpuCoreCount")]
         public Input<int>? CpuCoreCount { get; set; }
@@ -1095,7 +1106,7 @@ namespace Pulumi.Oci.Database
         }
 
         /// <summary>
-        /// (Updatable) The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database.
+        /// (Updatable) The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database. This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer platform.
         /// </summary>
         [Input("inMemoryPercentage")]
         public Input<int>? InMemoryPercentage { get; set; }
@@ -1103,13 +1114,13 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// (Updatable) Indicates if the database-level access control is enabled. If disabled, database access is defined by the network security rules. If enabled, database access is restricted to the IP addresses defined by the rules specified with the `whitelistedIps` property. While specifying `whitelistedIps` rules is optional, if database-level access control is enabled and no rules are specified, the database will become inaccessible. The rules can be added later using the `UpdateAutonomousDatabase` API operation or edit option in console. When creating a database clone, the desired access control setting should be specified. By default, database-level access control will be disabled for the clone.
         /// 
-        /// This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer platform.
+        /// This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer platform. For Autonomous Database Serverless instances, `whitelistedIps` is used.
         /// </summary>
         [Input("isAccessControlEnabled")]
         public Input<bool>? IsAccessControlEnabled { get; set; }
 
         /// <summary>
-        /// (Updatable) Indicates if auto scaling is enabled for the Autonomous Database OCPU core count. The default value is `FALSE`.
+        /// (Updatable) Indicates if auto scaling is enabled for the Autonomous Database CPU core count. The default value is `TRUE`.
         /// </summary>
         [Input("isAutoScalingEnabled")]
         public Input<bool>? IsAutoScalingEnabled { get; set; }
@@ -1131,6 +1142,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("isDedicated")]
         public Input<bool>? IsDedicated { get; set; }
+
+        /// <summary>
+        /// (Updatable) This project introduces Autonomous Database for Developers (ADB-Dev), a free tier on dedicated infrastructure, and Cloud@Customer for database development purposes. ADB-Dev enables ExaDB customers to experiment with ADB for free and incentivizes enterprises to use ADB for new development projects.Note that ADB-Dev have 4 CPU and 20GB of memory. For ADB-Dev , memory and CPU cannot be scaled
+        /// </summary>
+        [Input("isDevTier")]
+        public Input<bool>? IsDevTier { get; set; }
 
         /// <summary>
         /// (Updatable) Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled. When `db_workload` is `AJD` or `APEX` it cannot be `true`.
@@ -1236,8 +1253,9 @@ namespace Pulumi.Oci.Database
         /// (Updatable) The number of OCPU cores to be made available to the database.
         /// 
         /// The following points apply:
-        /// * For Autonomous Databases on dedicated Exadata infrastructure, to provision less than 1 core, enter a fractional value in an increment of 0.1. For example, you can provision 0.3 or 0.4 cores, but not 0.35 cores. (Note that fractional OCPU values are not supported for Autonomous Databasese on shared Exadata infrastructure.)
-        /// * To provision 1 or more cores, you must enter an integer between 1 and the maximum number of cores available for the infrastructure shape. For example, you can provision 2 cores or 3 cores, but not 2.5 cores. This applies to Autonomous Databases on both shared and dedicated Exadata infrastructure.
+        /// * For Autonomous Databases on Dedicated Exadata infrastructure, to provision less than 1 core, enter a fractional value in an increment of 0.1. For example, you can provision 0.3 or 0.4 cores, but not 0.35 cores. (Note that fractional OCPU values are not supported for Autonomous Database Serverless instances.)
+        /// * To provision 1 or more cores, you must enter an integer between 1 and the maximum number of cores available for the infrastructure shape. For example, you can provision 2 cores or 3 cores, but not 2.5 cores. This applies to an Autonomous Database Serverless instance or an Autonomous Database on Dedicated Exadata Infrastructure.
+        /// * For Autonomous Database Serverless instances, this parameter is not used.
         /// 
         /// For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&amp;id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
         /// 
@@ -1283,14 +1301,20 @@ namespace Pulumi.Oci.Database
         public Input<string>? RefreshableMode { get; set; }
 
         /// <summary>
-        /// Indicates the cross-region disaster recovery (DR) type of the standby Shared Autonomous Database. Autonomous Data Guard (`ADG`) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based (`BACKUP_BASED`) DR type provides lower cost DR with a slower RTO during failover or switchover.
+        /// Indicates the cross-region disaster recovery (DR) type of the standby Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         /// </summary>
         [Input("remoteDisasterRecoveryType")]
         public Input<string>? RemoteDisasterRecoveryType { get; set; }
 
+        /// <summary>
+        /// (Updatable) The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// </summary>
         [Input("resourcePoolLeaderId")]
         public Input<string>? ResourcePoolLeaderId { get; set; }
 
+        /// <summary>
+        /// (Updatable) The configuration details for resource pool
+        /// </summary>
         [Input("resourcePoolSummary")]
         public Input<Inputs.AutonomousDatabaseResourcePoolSummaryArgs>? ResourcePoolSummary { get; set; }
 
@@ -1304,7 +1328,7 @@ namespace Pulumi.Oci.Database
         private InputList<Inputs.AutonomousDatabaseScheduledOperationArgs>? _scheduledOperations;
 
         /// <summary>
-        /// (Updatable) The list of scheduled operations.
+        /// (Updatable) The list of scheduled operations. Consists of values such as dayOfWeek, scheduledStartTime, scheduledStopTime.
         /// 
         /// This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
         /// </summary>
@@ -1349,7 +1373,7 @@ namespace Pulumi.Oci.Database
         private InputList<string>? _standbyWhitelistedIps;
 
         /// <summary>
-        /// (Updatable) The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
+        /// (Updatable) The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
         /// 
         /// For shared Exadata infrastructure, this is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet or VCN OCID. Use a semicolon (;) as a deliminator between the VCN-specific subnets or IPs. Example: `["1.1.1.1","1.1.1.0/24","ocid1.vcn.oc1.sea.&lt;unique_id&gt;","ocid1.vcn.oc1.sea.&lt;unique_id1&gt;;1.1.1.1","ocid1.vcn.oc1.sea.&lt;unique_id2&gt;;1.1.0.0/16"]` For Exadata Cloud@Customer, this is an array of IP addresses or CIDR (Classless Inter-Domain Routing) notations. Example: `["1.1.1.1","1.1.1.0/24","1.1.2.25"]`
         /// 
@@ -1416,7 +1440,7 @@ namespace Pulumi.Oci.Database
         private InputList<string>? _whitelistedIps;
 
         /// <summary>
-        /// (Updatable) The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
+        /// (Updatable) The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
         /// 
         /// For shared Exadata infrastructure, this is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet or VCN OCID. Use a semicolon (;) as a deliminator between the VCN-specific subnets or IPs. Example: `["1.1.1.1","1.1.1.0/24","ocid1.vcn.oc1.sea.&lt;unique_id&gt;","ocid1.vcn.oc1.sea.&lt;unique_id1&gt;;1.1.1.1","ocid1.vcn.oc1.sea.&lt;unique_id2&gt;;1.1.0.0/16"]` For Exadata Cloud@Customer, this is an array of IP addresses or CIDR (Classless Inter-Domain Routing) notations. Example: `["1.1.1.1","1.1.1.0/24","1.1.2.25"]`
         /// 
@@ -1487,7 +1511,7 @@ namespace Pulumi.Oci.Database
         public Input<bool>? ArePrimaryWhitelistedIpsUsed { get; set; }
 
         /// <summary>
-        /// The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous Database on Dedicated Exadata Infrastructure.
         /// </summary>
         [Input("autonomousContainerDatabaseId")]
         public Input<string>? AutonomousContainerDatabaseId { get; set; }
@@ -1569,7 +1593,7 @@ namespace Pulumi.Oci.Database
         public Input<double>? ComputeCount { get; set; }
 
         /// <summary>
-        /// (Updatable) The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
+        /// (Updatable) The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
         /// </summary>
         [Input("computeModel")]
         public Input<string>? ComputeModel { get; set; }
@@ -1599,13 +1623,9 @@ namespace Pulumi.Oci.Database
         }
 
         /// <summary>
-        /// (Updatable) The number of OCPU cores to be made available to the database. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&amp;id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
+        /// (Updatable) The number of CPU cores to be made available to the database. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&amp;id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
+        /// 
         /// **Note:** This parameter cannot be used with the `ocpuCount` parameter. This input is ignored for Always Free resources.
-        /// * The data type must be an *integer*.
-        /// * The minimum number of cores for all types of autonomous database is *1*
-        /// * The maximum number of cores is as follows:
-        /// * Autonomous Databases on shared Exadata infrastructure: The maximum number of cores is *128*.
-        /// * Autonomous Databases on dedicated Exadata infrastructure: The maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&amp;id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
         /// </summary>
         [Input("cpuCoreCount")]
         public Input<int>? CpuCoreCount { get; set; }
@@ -1751,7 +1771,7 @@ namespace Pulumi.Oci.Database
         public Input<int>? InMemoryAreaInGbs { get; set; }
 
         /// <summary>
-        /// (Updatable) The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database.
+        /// (Updatable) The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database. This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer platform.
         /// </summary>
         [Input("inMemoryPercentage")]
         public Input<int>? InMemoryPercentage { get; set; }
@@ -1765,13 +1785,13 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// (Updatable) Indicates if the database-level access control is enabled. If disabled, database access is defined by the network security rules. If enabled, database access is restricted to the IP addresses defined by the rules specified with the `whitelistedIps` property. While specifying `whitelistedIps` rules is optional, if database-level access control is enabled and no rules are specified, the database will become inaccessible. The rules can be added later using the `UpdateAutonomousDatabase` API operation or edit option in console. When creating a database clone, the desired access control setting should be specified. By default, database-level access control will be disabled for the clone.
         /// 
-        /// This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer platform.
+        /// This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer platform. For Autonomous Database Serverless instances, `whitelistedIps` is used.
         /// </summary>
         [Input("isAccessControlEnabled")]
         public Input<bool>? IsAccessControlEnabled { get; set; }
 
         /// <summary>
-        /// (Updatable) Indicates if auto scaling is enabled for the Autonomous Database OCPU core count. The default value is `FALSE`.
+        /// (Updatable) Indicates if auto scaling is enabled for the Autonomous Database CPU core count. The default value is `TRUE`.
         /// </summary>
         [Input("isAutoScalingEnabled")]
         public Input<bool>? IsAutoScalingEnabled { get; set; }
@@ -1793,6 +1813,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("isDedicated")]
         public Input<bool>? IsDedicated { get; set; }
+
+        /// <summary>
+        /// (Updatable) This project introduces Autonomous Database for Developers (ADB-Dev), a free tier on dedicated infrastructure, and Cloud@Customer for database development purposes. ADB-Dev enables ExaDB customers to experiment with ADB for free and incentivizes enterprises to use ADB for new development projects.Note that ADB-Dev have 4 CPU and 20GB of memory. For ADB-Dev , memory and CPU cannot be scaled
+        /// </summary>
+        [Input("isDevTier")]
+        public Input<bool>? IsDevTier { get; set; }
 
         /// <summary>
         /// (Updatable) Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled. When `db_workload` is `AJD` or `APEX` it cannot be `true`.
@@ -1966,6 +1992,12 @@ namespace Pulumi.Oci.Database
         public Input<string>? NcharacterSet { get; set; }
 
         /// <summary>
+        /// Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
+        /// </summary>
+        [Input("netServicesArchitecture")]
+        public Input<string>? NetServicesArchitecture { get; set; }
+
+        /// <summary>
         /// The date and time when the next long-term backup would be created.
         /// </summary>
         [Input("nextLongTermBackupTimeStamp")]
@@ -1988,8 +2020,9 @@ namespace Pulumi.Oci.Database
         /// (Updatable) The number of OCPU cores to be made available to the database.
         /// 
         /// The following points apply:
-        /// * For Autonomous Databases on dedicated Exadata infrastructure, to provision less than 1 core, enter a fractional value in an increment of 0.1. For example, you can provision 0.3 or 0.4 cores, but not 0.35 cores. (Note that fractional OCPU values are not supported for Autonomous Databasese on shared Exadata infrastructure.)
-        /// * To provision 1 or more cores, you must enter an integer between 1 and the maximum number of cores available for the infrastructure shape. For example, you can provision 2 cores or 3 cores, but not 2.5 cores. This applies to Autonomous Databases on both shared and dedicated Exadata infrastructure.
+        /// * For Autonomous Databases on Dedicated Exadata infrastructure, to provision less than 1 core, enter a fractional value in an increment of 0.1. For example, you can provision 0.3 or 0.4 cores, but not 0.35 cores. (Note that fractional OCPU values are not supported for Autonomous Database Serverless instances.)
+        /// * To provision 1 or more cores, you must enter an integer between 1 and the maximum number of cores available for the infrastructure shape. For example, you can provision 2 cores or 3 cores, but not 2.5 cores. This applies to an Autonomous Database Serverless instance or an Autonomous Database on Dedicated Exadata Infrastructure.
+        /// * For Autonomous Database Serverless instances, this parameter is not used.
         /// 
         /// For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&amp;id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
         /// 
@@ -2083,14 +2116,20 @@ namespace Pulumi.Oci.Database
         }
 
         /// <summary>
-        /// Indicates the cross-region disaster recovery (DR) type of the standby Shared Autonomous Database. Autonomous Data Guard (`ADG`) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based (`BACKUP_BASED`) DR type provides lower cost DR with a slower RTO during failover or switchover.
+        /// Indicates the cross-region disaster recovery (DR) type of the standby Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         /// </summary>
         [Input("remoteDisasterRecoveryType")]
         public Input<string>? RemoteDisasterRecoveryType { get; set; }
 
+        /// <summary>
+        /// (Updatable) The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// </summary>
         [Input("resourcePoolLeaderId")]
         public Input<string>? ResourcePoolLeaderId { get; set; }
 
+        /// <summary>
+        /// (Updatable) The configuration details for resource pool
+        /// </summary>
         [Input("resourcePoolSummary")]
         public Input<Inputs.AutonomousDatabaseResourcePoolSummaryGetArgs>? ResourcePoolSummary { get; set; }
 
@@ -2110,7 +2149,7 @@ namespace Pulumi.Oci.Database
         private InputList<Inputs.AutonomousDatabaseScheduledOperationGetArgs>? _scheduledOperations;
 
         /// <summary>
-        /// (Updatable) The list of scheduled operations.
+        /// (Updatable) The list of scheduled operations. Consists of values such as dayOfWeek, scheduledStartTime, scheduledStopTime.
         /// 
         /// This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
         /// </summary>
@@ -2173,7 +2212,7 @@ namespace Pulumi.Oci.Database
         private InputList<string>? _standbyWhitelistedIps;
 
         /// <summary>
-        /// (Updatable) The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
+        /// (Updatable) The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
         /// 
         /// For shared Exadata infrastructure, this is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet or VCN OCID. Use a semicolon (;) as a deliminator between the VCN-specific subnets or IPs. Example: `["1.1.1.1","1.1.1.0/24","ocid1.vcn.oc1.sea.&lt;unique_id&gt;","ocid1.vcn.oc1.sea.&lt;unique_id1&gt;;1.1.1.1","ocid1.vcn.oc1.sea.&lt;unique_id2&gt;;1.1.0.0/16"]` For Exadata Cloud@Customer, this is an array of IP addresses or CIDR (Classless Inter-Domain Routing) notations. Example: `["1.1.1.1","1.1.1.0/24","1.1.2.25"]`
         /// 
@@ -2369,7 +2408,7 @@ namespace Pulumi.Oci.Database
         private InputList<string>? _whitelistedIps;
 
         /// <summary>
-        /// (Updatable) The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
+        /// (Updatable) The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
         /// 
         /// For shared Exadata infrastructure, this is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet or VCN OCID. Use a semicolon (;) as a deliminator between the VCN-specific subnets or IPs. Example: `["1.1.1.1","1.1.1.0/24","ocid1.vcn.oc1.sea.&lt;unique_id&gt;","ocid1.vcn.oc1.sea.&lt;unique_id1&gt;;1.1.1.1","ocid1.vcn.oc1.sea.&lt;unique_id2&gt;;1.1.0.0/16"]` For Exadata Cloud@Customer, this is an array of IP addresses or CIDR (Classless Inter-Domain Routing) notations. Example: `["1.1.1.1","1.1.1.0/24","1.1.2.25"]`
         /// 

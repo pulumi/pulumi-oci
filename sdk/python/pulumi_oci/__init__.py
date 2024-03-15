@@ -49,6 +49,8 @@ if typing.TYPE_CHECKING:
     blockchain = __blockchain
     import pulumi_oci.budget as __budget
     budget = __budget
+    import pulumi_oci.capacitymanagement as __capacitymanagement
+    capacitymanagement = __capacitymanagement
     import pulumi_oci.certificatesmanagement as __certificatesmanagement
     certificatesmanagement = __certificatesmanagement
     import pulumi_oci.cloudbridge as __cloudbridge
@@ -254,6 +256,7 @@ else:
     bigdataservice = _utilities.lazy_import('pulumi_oci.bigdataservice')
     blockchain = _utilities.lazy_import('pulumi_oci.blockchain')
     budget = _utilities.lazy_import('pulumi_oci.budget')
+    capacitymanagement = _utilities.lazy_import('pulumi_oci.capacitymanagement')
     certificatesmanagement = _utilities.lazy_import('pulumi_oci.certificatesmanagement')
     cloudbridge = _utilities.lazy_import('pulumi_oci.cloudbridge')
     cloudguard = _utilities.lazy_import('pulumi_oci.cloudguard')
@@ -804,6 +807,22 @@ _utilities.register(
   "fqn": "pulumi_oci.budget",
   "classes": {
    "oci:Budget/rule:Rule": "Rule"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "CapacityManagement/occAvailabilityCatalog",
+  "fqn": "pulumi_oci.capacitymanagement",
+  "classes": {
+   "oci:CapacityManagement/occAvailabilityCatalog:OccAvailabilityCatalog": "OccAvailabilityCatalog"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "CapacityManagement/occCapacityRequest",
+  "fqn": "pulumi_oci.capacitymanagement",
+  "classes": {
+   "oci:CapacityManagement/occCapacityRequest:OccCapacityRequest": "OccCapacityRequest"
   }
  },
  {
@@ -1740,6 +1759,14 @@ _utilities.register(
   "fqn": "pulumi_oci.dataintegration",
   "classes": {
    "oci:DataIntegration/workspaceApplicationSchedule:WorkspaceApplicationSchedule": "WorkspaceApplicationSchedule"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DataIntegration/workspaceApplicationTaskSchedule",
+  "fqn": "pulumi_oci.dataintegration",
+  "classes": {
+   "oci:DataIntegration/workspaceApplicationTaskSchedule:WorkspaceApplicationTaskSchedule": "WorkspaceApplicationTaskSchedule"
   }
  },
  {

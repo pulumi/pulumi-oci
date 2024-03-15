@@ -29,6 +29,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &WorkspaceApplicationPatch{}
 	case "oci:DataIntegration/workspaceApplicationSchedule:WorkspaceApplicationSchedule":
 		r = &WorkspaceApplicationSchedule{}
+	case "oci:DataIntegration/workspaceApplicationTaskSchedule:WorkspaceApplicationTaskSchedule":
+		r = &WorkspaceApplicationTaskSchedule{}
 	case "oci:DataIntegration/workspaceExportRequest:WorkspaceExportRequest":
 		r = &WorkspaceExportRequest{}
 	case "oci:DataIntegration/workspaceFolder:WorkspaceFolder":
@@ -68,6 +70,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"DataIntegration/workspaceApplicationSchedule",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DataIntegration/workspaceApplicationTaskSchedule",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

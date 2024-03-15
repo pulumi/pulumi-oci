@@ -17,6 +17,10 @@ import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationScheduleArgs
 import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationSchedulePlainArgs;
 import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationSchedulesArgs;
 import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationSchedulesPlainArgs;
+import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationTaskScheduleArgs;
+import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationTaskSchedulePlainArgs;
+import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationTaskSchedulesArgs;
+import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationTaskSchedulesPlainArgs;
 import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationsArgs;
 import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationsPlainArgs;
 import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceArgs;
@@ -44,6 +48,8 @@ import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceApplicationPatchesResu
 import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceApplicationResult;
 import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceApplicationScheduleResult;
 import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceApplicationSchedulesResult;
+import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceApplicationTaskScheduleResult;
+import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceApplicationTaskSchedulesResult;
 import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceApplicationsResult;
 import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceExportRequestResult;
 import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceExportRequestsResult;
@@ -1122,6 +1128,374 @@ public final class DataIntegrationFunctions {
      */
     public static CompletableFuture<GetWorkspaceApplicationSchedulesResult> getWorkspaceApplicationSchedulesPlain(GetWorkspaceApplicationSchedulesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DataIntegration/getWorkspaceApplicationSchedules:getWorkspaceApplicationSchedules", TypeShape.of(GetWorkspaceApplicationSchedulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Workspace Application Task Schedule resource in Oracle Cloud Infrastructure Data Integration service.
+     * 
+     * Endpoint used to get taskSchedule by its key
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
+     * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationTaskScheduleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWorkspaceApplicationTaskSchedule = DataIntegrationFunctions.getWorkspaceApplicationTaskSchedule(GetWorkspaceApplicationTaskScheduleArgs.builder()
+     *             .applicationKey(var_.workspace_application_task_schedule_application_key())
+     *             .taskScheduleKey(var_.workspace_application_task_schedule_task_schedule_key())
+     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetWorkspaceApplicationTaskScheduleResult> getWorkspaceApplicationTaskSchedule(GetWorkspaceApplicationTaskScheduleArgs args) {
+        return getWorkspaceApplicationTaskSchedule(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Workspace Application Task Schedule resource in Oracle Cloud Infrastructure Data Integration service.
+     * 
+     * Endpoint used to get taskSchedule by its key
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
+     * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationTaskScheduleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWorkspaceApplicationTaskSchedule = DataIntegrationFunctions.getWorkspaceApplicationTaskSchedule(GetWorkspaceApplicationTaskScheduleArgs.builder()
+     *             .applicationKey(var_.workspace_application_task_schedule_application_key())
+     *             .taskScheduleKey(var_.workspace_application_task_schedule_task_schedule_key())
+     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetWorkspaceApplicationTaskScheduleResult> getWorkspaceApplicationTaskSchedulePlain(GetWorkspaceApplicationTaskSchedulePlainArgs args) {
+        return getWorkspaceApplicationTaskSchedulePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Workspace Application Task Schedule resource in Oracle Cloud Infrastructure Data Integration service.
+     * 
+     * Endpoint used to get taskSchedule by its key
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
+     * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationTaskScheduleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWorkspaceApplicationTaskSchedule = DataIntegrationFunctions.getWorkspaceApplicationTaskSchedule(GetWorkspaceApplicationTaskScheduleArgs.builder()
+     *             .applicationKey(var_.workspace_application_task_schedule_application_key())
+     *             .taskScheduleKey(var_.workspace_application_task_schedule_task_schedule_key())
+     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetWorkspaceApplicationTaskScheduleResult> getWorkspaceApplicationTaskSchedule(GetWorkspaceApplicationTaskScheduleArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataIntegration/getWorkspaceApplicationTaskSchedule:getWorkspaceApplicationTaskSchedule", TypeShape.of(GetWorkspaceApplicationTaskScheduleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Workspace Application Task Schedule resource in Oracle Cloud Infrastructure Data Integration service.
+     * 
+     * Endpoint used to get taskSchedule by its key
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
+     * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationTaskScheduleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWorkspaceApplicationTaskSchedule = DataIntegrationFunctions.getWorkspaceApplicationTaskSchedule(GetWorkspaceApplicationTaskScheduleArgs.builder()
+     *             .applicationKey(var_.workspace_application_task_schedule_application_key())
+     *             .taskScheduleKey(var_.workspace_application_task_schedule_task_schedule_key())
+     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetWorkspaceApplicationTaskScheduleResult> getWorkspaceApplicationTaskSchedulePlain(GetWorkspaceApplicationTaskSchedulePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataIntegration/getWorkspaceApplicationTaskSchedule:getWorkspaceApplicationTaskSchedule", TypeShape.of(GetWorkspaceApplicationTaskScheduleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Workspace Application Task Schedules in Oracle Cloud Infrastructure Data Integration service.
+     * 
+     * This endpoint can be used to get the list of all the TaskSchedule objects.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
+     * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationTaskSchedulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWorkspaceApplicationTaskSchedules = DataIntegrationFunctions.getWorkspaceApplicationTaskSchedules(GetWorkspaceApplicationTaskSchedulesArgs.builder()
+     *             .applicationKey(var_.workspace_application_task_schedule_application_key())
+     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
+     *             .identifiers(var_.workspace_application_task_schedule_identifier())
+     *             .isEnabled(var_.workspace_application_task_schedule_is_enabled())
+     *             .keys(var_.workspace_application_task_schedule_key())
+     *             .name(var_.workspace_application_task_schedule_name())
+     *             .types(var_.workspace_application_task_schedule_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetWorkspaceApplicationTaskSchedulesResult> getWorkspaceApplicationTaskSchedules(GetWorkspaceApplicationTaskSchedulesArgs args) {
+        return getWorkspaceApplicationTaskSchedules(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Workspace Application Task Schedules in Oracle Cloud Infrastructure Data Integration service.
+     * 
+     * This endpoint can be used to get the list of all the TaskSchedule objects.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
+     * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationTaskSchedulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWorkspaceApplicationTaskSchedules = DataIntegrationFunctions.getWorkspaceApplicationTaskSchedules(GetWorkspaceApplicationTaskSchedulesArgs.builder()
+     *             .applicationKey(var_.workspace_application_task_schedule_application_key())
+     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
+     *             .identifiers(var_.workspace_application_task_schedule_identifier())
+     *             .isEnabled(var_.workspace_application_task_schedule_is_enabled())
+     *             .keys(var_.workspace_application_task_schedule_key())
+     *             .name(var_.workspace_application_task_schedule_name())
+     *             .types(var_.workspace_application_task_schedule_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetWorkspaceApplicationTaskSchedulesResult> getWorkspaceApplicationTaskSchedulesPlain(GetWorkspaceApplicationTaskSchedulesPlainArgs args) {
+        return getWorkspaceApplicationTaskSchedulesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Workspace Application Task Schedules in Oracle Cloud Infrastructure Data Integration service.
+     * 
+     * This endpoint can be used to get the list of all the TaskSchedule objects.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
+     * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationTaskSchedulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWorkspaceApplicationTaskSchedules = DataIntegrationFunctions.getWorkspaceApplicationTaskSchedules(GetWorkspaceApplicationTaskSchedulesArgs.builder()
+     *             .applicationKey(var_.workspace_application_task_schedule_application_key())
+     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
+     *             .identifiers(var_.workspace_application_task_schedule_identifier())
+     *             .isEnabled(var_.workspace_application_task_schedule_is_enabled())
+     *             .keys(var_.workspace_application_task_schedule_key())
+     *             .name(var_.workspace_application_task_schedule_name())
+     *             .types(var_.workspace_application_task_schedule_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetWorkspaceApplicationTaskSchedulesResult> getWorkspaceApplicationTaskSchedules(GetWorkspaceApplicationTaskSchedulesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataIntegration/getWorkspaceApplicationTaskSchedules:getWorkspaceApplicationTaskSchedules", TypeShape.of(GetWorkspaceApplicationTaskSchedulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Workspace Application Task Schedules in Oracle Cloud Infrastructure Data Integration service.
+     * 
+     * This endpoint can be used to get the list of all the TaskSchedule objects.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
+     * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationTaskSchedulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWorkspaceApplicationTaskSchedules = DataIntegrationFunctions.getWorkspaceApplicationTaskSchedules(GetWorkspaceApplicationTaskSchedulesArgs.builder()
+     *             .applicationKey(var_.workspace_application_task_schedule_application_key())
+     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
+     *             .identifiers(var_.workspace_application_task_schedule_identifier())
+     *             .isEnabled(var_.workspace_application_task_schedule_is_enabled())
+     *             .keys(var_.workspace_application_task_schedule_key())
+     *             .name(var_.workspace_application_task_schedule_name())
+     *             .types(var_.workspace_application_task_schedule_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetWorkspaceApplicationTaskSchedulesResult> getWorkspaceApplicationTaskSchedulesPlain(GetWorkspaceApplicationTaskSchedulesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataIntegration/getWorkspaceApplicationTaskSchedules:getWorkspaceApplicationTaskSchedules", TypeShape.of(GetWorkspaceApplicationTaskSchedulesResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides the list of Workspace Applications in Oracle Cloud Infrastructure Data Integration service.

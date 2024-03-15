@@ -79,7 +79,7 @@ type LookupCloudAutonomousVmClusterResult struct {
 	ClusterTimeZone string `pulumi:"clusterTimeZone"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
-	// The compute model of the Cloud Autonomous VM Cluster.
+	// The compute model of the Cloud Autonomous VM Cluster. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata #Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
 	ComputeModel string `pulumi:"computeModel"`
 	// The number of CPU cores on the cloud Autonomous VM cluster.
 	CpuCoreCount int `pulumi:"cpuCoreCount"`
@@ -103,7 +103,7 @@ type LookupCloudAutonomousVmClusterResult struct {
 	DisplayName string `pulumi:"displayName"`
 	// The domain name for the cloud Autonomous VM cluster.
 	Domain string `pulumi:"domain"`
-	// The lowest value to which exadataStorage in TBs can be scaled down.
+	// The lowest value to which exadataStorage (in TBs) can be scaled down.
 	ExadataStorageInTbsLowestScaledValue float64 `pulumi:"exadataStorageInTbsLowestScaledValue"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
@@ -117,14 +117,14 @@ type LookupCloudAutonomousVmClusterResult struct {
 	LastMaintenanceRunId string `pulumi:"lastMaintenanceRunId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history. This value is updated when a maintenance update starts.
 	LastUpdateHistoryEntryId string `pulumi:"lastUpdateHistoryEntryId"`
-	// The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`.
+	// The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
 	LicenseModel string `pulumi:"licenseModel"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails         string                                               `pulumi:"lifecycleDetails"`
 	MaintenanceWindowDetails []GetCloudAutonomousVmClusterMaintenanceWindowDetail `pulumi:"maintenanceWindowDetails"`
 	// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
 	MaintenanceWindows []GetCloudAutonomousVmClusterMaintenanceWindow `pulumi:"maintenanceWindows"`
-	// The lowest value to which ACDs can be scaled down.
+	// The lowest value to which maximum number of ACDs can be scaled down.
 	MaxAcdsLowestScaledValue int `pulumi:"maxAcdsLowestScaledValue"`
 	// The amount of memory (in GBs) enabled per OCPU or ECPU.
 	MemoryPerOracleComputeUnitInGbs int `pulumi:"memoryPerOracleComputeUnitInGbs"`
@@ -264,7 +264,7 @@ func (o LookupCloudAutonomousVmClusterResultOutput) CompartmentId() pulumi.Strin
 	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// The compute model of the Cloud Autonomous VM Cluster.
+// The compute model of the Cloud Autonomous VM Cluster. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata #Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
 func (o LookupCloudAutonomousVmClusterResultOutput) ComputeModel() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) string { return v.ComputeModel }).(pulumi.StringOutput)
 }
@@ -324,7 +324,7 @@ func (o LookupCloudAutonomousVmClusterResultOutput) Domain() pulumi.StringOutput
 	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) string { return v.Domain }).(pulumi.StringOutput)
 }
 
-// The lowest value to which exadataStorage in TBs can be scaled down.
+// The lowest value to which exadataStorage (in TBs) can be scaled down.
 func (o LookupCloudAutonomousVmClusterResultOutput) ExadataStorageInTbsLowestScaledValue() pulumi.Float64Output {
 	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) float64 { return v.ExadataStorageInTbsLowestScaledValue }).(pulumi.Float64Output)
 }
@@ -359,7 +359,7 @@ func (o LookupCloudAutonomousVmClusterResultOutput) LastUpdateHistoryEntryId() p
 	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) string { return v.LastUpdateHistoryEntryId }).(pulumi.StringOutput)
 }
 
-// The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`.
+// The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
 func (o LookupCloudAutonomousVmClusterResultOutput) LicenseModel() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) string { return v.LicenseModel }).(pulumi.StringOutput)
 }
@@ -382,7 +382,7 @@ func (o LookupCloudAutonomousVmClusterResultOutput) MaintenanceWindows() GetClou
 	}).(GetCloudAutonomousVmClusterMaintenanceWindowArrayOutput)
 }
 
-// The lowest value to which ACDs can be scaled down.
+// The lowest value to which maximum number of ACDs can be scaled down.
 func (o LookupCloudAutonomousVmClusterResultOutput) MaxAcdsLowestScaledValue() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) int { return v.MaxAcdsLowestScaledValue }).(pulumi.IntOutput)
 }

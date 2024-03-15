@@ -14,6 +14,10 @@ namespace Pulumi.Oci.DataScience.Outputs
     public sealed class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetails
     {
         /// <summary>
+        /// (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+        /// </summary>
+        public readonly string? CpuBaseline;
+        /// <summary>
         /// (Updatable) A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
         /// </summary>
         public readonly double? MemoryInGbs;
@@ -24,10 +28,13 @@ namespace Pulumi.Oci.DataScience.Outputs
 
         [OutputConstructor]
         private ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetails(
+            string? cpuBaseline,
+
             double? memoryInGbs,
 
             double? ocpus)
         {
+            CpuBaseline = cpuBaseline;
             MemoryInGbs = memoryInGbs;
             Ocpus = ocpus;
         }

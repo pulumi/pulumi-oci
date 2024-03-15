@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.outputs.GetModelDeploymentCategoryLogDetail;
 import com.pulumi.oci.DataScience.outputs.GetModelDeploymentModelDeploymentConfigurationDetail;
+import com.pulumi.oci.DataScience.outputs.GetModelDeploymentModelDeploymentSystemData;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -66,6 +67,11 @@ public final class GetModelDeploymentResult {
      */
     private List<GetModelDeploymentModelDeploymentConfigurationDetail> modelDeploymentConfigurationDetails;
     private String modelDeploymentId;
+    /**
+     * @return Model deployment system data.
+     * 
+     */
+    private List<GetModelDeploymentModelDeploymentSystemData> modelDeploymentSystemDatas;
     /**
      * @return The URL to interact with the model deployment.
      * 
@@ -162,6 +168,13 @@ public final class GetModelDeploymentResult {
         return this.modelDeploymentId;
     }
     /**
+     * @return Model deployment system data.
+     * 
+     */
+    public List<GetModelDeploymentModelDeploymentSystemData> modelDeploymentSystemDatas() {
+        return this.modelDeploymentSystemDatas;
+    }
+    /**
      * @return The URL to interact with the model deployment.
      * 
      */
@@ -210,6 +223,7 @@ public final class GetModelDeploymentResult {
         private String lifecycleDetails;
         private List<GetModelDeploymentModelDeploymentConfigurationDetail> modelDeploymentConfigurationDetails;
         private String modelDeploymentId;
+        private List<GetModelDeploymentModelDeploymentSystemData> modelDeploymentSystemDatas;
         private String modelDeploymentUrl;
         private String projectId;
         private String state;
@@ -228,6 +242,7 @@ public final class GetModelDeploymentResult {
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.modelDeploymentConfigurationDetails = defaults.modelDeploymentConfigurationDetails;
     	      this.modelDeploymentId = defaults.modelDeploymentId;
+    	      this.modelDeploymentSystemDatas = defaults.modelDeploymentSystemDatas;
     	      this.modelDeploymentUrl = defaults.modelDeploymentUrl;
     	      this.projectId = defaults.projectId;
     	      this.state = defaults.state;
@@ -329,6 +344,17 @@ public final class GetModelDeploymentResult {
             return this;
         }
         @CustomType.Setter
+        public Builder modelDeploymentSystemDatas(List<GetModelDeploymentModelDeploymentSystemData> modelDeploymentSystemDatas) {
+            if (modelDeploymentSystemDatas == null) {
+              throw new MissingRequiredPropertyException("GetModelDeploymentResult", "modelDeploymentSystemDatas");
+            }
+            this.modelDeploymentSystemDatas = modelDeploymentSystemDatas;
+            return this;
+        }
+        public Builder modelDeploymentSystemDatas(GetModelDeploymentModelDeploymentSystemData... modelDeploymentSystemDatas) {
+            return modelDeploymentSystemDatas(List.of(modelDeploymentSystemDatas));
+        }
+        @CustomType.Setter
         public Builder modelDeploymentUrl(String modelDeploymentUrl) {
             if (modelDeploymentUrl == null) {
               throw new MissingRequiredPropertyException("GetModelDeploymentResult", "modelDeploymentUrl");
@@ -373,6 +399,7 @@ public final class GetModelDeploymentResult {
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.modelDeploymentConfigurationDetails = modelDeploymentConfigurationDetails;
             _resultValue.modelDeploymentId = modelDeploymentId;
+            _resultValue.modelDeploymentSystemDatas = modelDeploymentSystemDatas;
             _resultValue.modelDeploymentUrl = modelDeploymentUrl;
             _resultValue.projectId = projectId;
             _resultValue.state = state;

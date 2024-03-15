@@ -84,7 +84,7 @@ export interface GetCloudAutonomousVmClusterResult {
      */
     readonly compartmentId: string;
     /**
-     * The compute model of the Cloud Autonomous VM Cluster.
+     * The compute model of the Cloud Autonomous VM Cluster. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata #Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      */
     readonly computeModel: string;
     /**
@@ -132,7 +132,7 @@ export interface GetCloudAutonomousVmClusterResult {
      */
     readonly domain: string;
     /**
-     * The lowest value to which exadataStorage in TBs can be scaled down.
+     * The lowest value to which exadataStorage (in TBs) can be scaled down.
      */
     readonly exadataStorageInTbsLowestScaledValue: number;
     /**
@@ -160,7 +160,7 @@ export interface GetCloudAutonomousVmClusterResult {
      */
     readonly lastUpdateHistoryEntryId: string;
     /**
-     * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`.
+     * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
      */
     readonly licenseModel: string;
     /**
@@ -173,7 +173,7 @@ export interface GetCloudAutonomousVmClusterResult {
      */
     readonly maintenanceWindows: outputs.Database.GetCloudAutonomousVmClusterMaintenanceWindow[];
     /**
-     * The lowest value to which ACDs can be scaled down.
+     * The lowest value to which maximum number of ACDs can be scaled down.
      */
     readonly maxAcdsLowestScaledValue: number;
     /**

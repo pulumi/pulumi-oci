@@ -76,13 +76,17 @@ export interface GetAutonomousContainerDatabaseResult {
      */
     readonly compartmentId: string;
     /**
-     * The compute model of the Autonomous VM Cluster.
+     * The compute model of the Autonomous Container Database. For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      */
     readonly computeModel: string;
     /**
      * The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
      */
     readonly dbName: string;
+    /**
+     * The value above which an Autonomous Database will be split across multiple nodes. This value defaults to 16 when the "CPU per VM" value on the Autonomous VM Cluster is greater than 16. Otherwise, it defaults to the "CPU per VM" value.
+     */
+    readonly dbSplitThreshold: number;
     readonly dbUniqueName: string;
     /**
      * Oracle Database version of the Autonomous Container Database.
@@ -97,7 +101,11 @@ export interface GetAutonomousContainerDatabaseResult {
      */
     readonly displayName: string;
     /**
-     * DST Time Zone File version of the Autonomous Container Database.
+     * This option determines whether to open an Autonomous Database across the maximum number of nodes or the least number of nodes. The default will be for the minimum number of VMs.
+     */
+    readonly distributionAffinity: string;
+    /**
+     * DST Time-zone File version of the Autonomous Container Database.
      */
     readonly dstFileVersion: string;
     readonly fastStartFailOverLagLimitInSeconds: number;
@@ -152,9 +160,13 @@ export interface GetAutonomousContainerDatabaseResult {
      */
     readonly maintenanceWindows: outputs.Database.GetAutonomousContainerDatabaseMaintenanceWindow[];
     /**
-     * The amount of memory (in GBs) enabled per OCPU or ECPU in the Autonomous VM Cluster.
+     * The amount of memory (in GBs) enabled per ECPU or OCPU in the Autonomous VM Cluster.
      */
     readonly memoryPerOracleComputeUnitInGbs: number;
+    /**
+     * Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
+     */
+    readonly netServicesArchitecture: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      */
@@ -234,6 +246,10 @@ export interface GetAutonomousContainerDatabaseResult {
      * The next maintenance version preference.
      */
     readonly versionPreference: string;
+    /**
+     * The percentage of CPUs to reserve for a single node Autonomous Database, in increments of 25.
+     */
+    readonly vmFailoverReservation: number;
 }
 /**
  * This data source provides details about a specific Autonomous Container Database resource in Oracle Cloud Infrastructure Database service.

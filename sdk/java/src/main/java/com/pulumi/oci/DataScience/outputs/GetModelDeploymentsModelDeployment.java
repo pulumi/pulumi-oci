@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.outputs.GetModelDeploymentsModelDeploymentCategoryLogDetail;
 import com.pulumi.oci.DataScience.outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetail;
+import com.pulumi.oci.DataScience.outputs.GetModelDeploymentsModelDeploymentModelDeploymentSystemData;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -65,6 +66,11 @@ public final class GetModelDeploymentsModelDeployment {
      * 
      */
     private List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetail> modelDeploymentConfigurationDetails;
+    /**
+     * @return Model deployment system data.
+     * 
+     */
+    private List<GetModelDeploymentsModelDeploymentModelDeploymentSystemData> modelDeploymentSystemDatas;
     /**
      * @return The URL to interact with the model deployment.
      * 
@@ -158,6 +164,13 @@ public final class GetModelDeploymentsModelDeployment {
         return this.modelDeploymentConfigurationDetails;
     }
     /**
+     * @return Model deployment system data.
+     * 
+     */
+    public List<GetModelDeploymentsModelDeploymentModelDeploymentSystemData> modelDeploymentSystemDatas() {
+        return this.modelDeploymentSystemDatas;
+    }
+    /**
      * @return The URL to interact with the model deployment.
      * 
      */
@@ -205,6 +218,7 @@ public final class GetModelDeploymentsModelDeployment {
         private String id;
         private String lifecycleDetails;
         private List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetail> modelDeploymentConfigurationDetails;
+        private List<GetModelDeploymentsModelDeploymentModelDeploymentSystemData> modelDeploymentSystemDatas;
         private String modelDeploymentUrl;
         private String projectId;
         private String state;
@@ -222,6 +236,7 @@ public final class GetModelDeploymentsModelDeployment {
     	      this.id = defaults.id;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.modelDeploymentConfigurationDetails = defaults.modelDeploymentConfigurationDetails;
+    	      this.modelDeploymentSystemDatas = defaults.modelDeploymentSystemDatas;
     	      this.modelDeploymentUrl = defaults.modelDeploymentUrl;
     	      this.projectId = defaults.projectId;
     	      this.state = defaults.state;
@@ -315,6 +330,17 @@ public final class GetModelDeploymentsModelDeployment {
             return modelDeploymentConfigurationDetails(List.of(modelDeploymentConfigurationDetails));
         }
         @CustomType.Setter
+        public Builder modelDeploymentSystemDatas(List<GetModelDeploymentsModelDeploymentModelDeploymentSystemData> modelDeploymentSystemDatas) {
+            if (modelDeploymentSystemDatas == null) {
+              throw new MissingRequiredPropertyException("GetModelDeploymentsModelDeployment", "modelDeploymentSystemDatas");
+            }
+            this.modelDeploymentSystemDatas = modelDeploymentSystemDatas;
+            return this;
+        }
+        public Builder modelDeploymentSystemDatas(GetModelDeploymentsModelDeploymentModelDeploymentSystemData... modelDeploymentSystemDatas) {
+            return modelDeploymentSystemDatas(List.of(modelDeploymentSystemDatas));
+        }
+        @CustomType.Setter
         public Builder modelDeploymentUrl(String modelDeploymentUrl) {
             if (modelDeploymentUrl == null) {
               throw new MissingRequiredPropertyException("GetModelDeploymentsModelDeployment", "modelDeploymentUrl");
@@ -358,6 +384,7 @@ public final class GetModelDeploymentsModelDeployment {
             _resultValue.id = id;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.modelDeploymentConfigurationDetails = modelDeploymentConfigurationDetails;
+            _resultValue.modelDeploymentSystemDatas = modelDeploymentSystemDatas;
             _resultValue.modelDeploymentUrl = modelDeploymentUrl;
             _resultValue.projectId = projectId;
             _resultValue.state = state;

@@ -22,7 +22,7 @@ class GetAutonomousDatabaseResult:
     """
     A collection of values returned by getAutonomousDatabase.
     """
-    def __init__(__self__, actual_used_data_storage_size_in_tbs=None, admin_password=None, allocated_storage_size_in_tbs=None, apex_details=None, are_primary_whitelisted_ips_used=None, autonomous_container_database_id=None, autonomous_database_backup_id=None, autonomous_database_id=None, autonomous_maintenance_schedule_type=None, available_upgrade_versions=None, backup_configs=None, backup_retention_period_in_days=None, character_set=None, clone_type=None, compartment_id=None, compute_count=None, compute_model=None, connection_strings=None, connection_urls=None, cpu_core_count=None, customer_contacts=None, data_safe_status=None, data_storage_size_in_gb=None, data_storage_size_in_tbs=None, database_edition=None, database_management_status=None, dataguard_region_type=None, db_name=None, db_tools_details=None, db_version=None, db_workload=None, defined_tags=None, disaster_recovery_region_type=None, display_name=None, failed_data_recovery_in_seconds=None, freeform_tags=None, id=None, in_memory_area_in_gbs=None, in_memory_percentage=None, infrastructure_type=None, is_access_control_enabled=None, is_auto_scaling_enabled=None, is_auto_scaling_for_storage_enabled=None, is_data_guard_enabled=None, is_dedicated=None, is_free_tier=None, is_local_data_guard_enabled=None, is_mtls_connection_required=None, is_preview=None, is_preview_version_with_service_terms_accepted=None, is_reconnect_clone_enabled=None, is_refreshable_clone=None, is_remote_data_guard_enabled=None, is_replicate_automatic_backups=None, is_shrink_only=None, key_history_entries=None, key_store_id=None, key_store_wallet_name=None, kms_key_id=None, kms_key_lifecycle_details=None, kms_key_version_id=None, license_model=None, lifecycle_details=None, local_adg_auto_failover_max_data_loss_limit=None, local_disaster_recovery_type=None, local_standby_dbs=None, long_term_backup_schedules=None, max_cpu_core_count=None, memory_per_oracle_compute_unit_in_gbs=None, ncharacter_set=None, next_long_term_backup_time_stamp=None, nsg_ids=None, ocpu_count=None, open_mode=None, operations_insights_status=None, peer_db_ids=None, permission_level=None, private_endpoint=None, private_endpoint_ip=None, private_endpoint_label=None, provisionable_cpuses=None, refreshable_mode=None, refreshable_status=None, remote_disaster_recovery_configurations=None, remote_disaster_recovery_type=None, resource_pool_leader_id=None, resource_pool_summaries=None, role=None, rotate_key_trigger=None, scheduled_operations=None, secret_id=None, secret_version_number=None, service_console_url=None, shrink_adb_trigger=None, source=None, source_id=None, standby_dbs=None, standby_whitelisted_ips=None, state=None, subnet_id=None, supported_regions_to_clone_tos=None, switchover_to=None, switchover_to_remote_peer_id=None, system_tags=None, time_created=None, time_data_guard_role_changed=None, time_deletion_of_free_autonomous_database=None, time_disaster_recovery_role_changed=None, time_local_data_guard_enabled=None, time_maintenance_begin=None, time_maintenance_end=None, time_of_joining_resource_pool=None, time_of_last_failover=None, time_of_last_refresh=None, time_of_last_refresh_point=None, time_of_last_switchover=None, time_of_next_refresh=None, time_reclamation_of_free_autonomous_database=None, time_until_reconnect_clone_enabled=None, timestamp=None, total_backup_storage_size_in_gbs=None, use_latest_available_backup_time_stamp=None, used_data_storage_size_in_gbs=None, used_data_storage_size_in_tbs=None, vault_id=None, whitelisted_ips=None):
+    def __init__(__self__, actual_used_data_storage_size_in_tbs=None, admin_password=None, allocated_storage_size_in_tbs=None, apex_details=None, are_primary_whitelisted_ips_used=None, autonomous_container_database_id=None, autonomous_database_backup_id=None, autonomous_database_id=None, autonomous_maintenance_schedule_type=None, available_upgrade_versions=None, backup_configs=None, backup_retention_period_in_days=None, character_set=None, clone_type=None, compartment_id=None, compute_count=None, compute_model=None, connection_strings=None, connection_urls=None, cpu_core_count=None, customer_contacts=None, data_safe_status=None, data_storage_size_in_gb=None, data_storage_size_in_tbs=None, database_edition=None, database_management_status=None, dataguard_region_type=None, db_name=None, db_tools_details=None, db_version=None, db_workload=None, defined_tags=None, disaster_recovery_region_type=None, display_name=None, failed_data_recovery_in_seconds=None, freeform_tags=None, id=None, in_memory_area_in_gbs=None, in_memory_percentage=None, infrastructure_type=None, is_access_control_enabled=None, is_auto_scaling_enabled=None, is_auto_scaling_for_storage_enabled=None, is_data_guard_enabled=None, is_dedicated=None, is_dev_tier=None, is_free_tier=None, is_local_data_guard_enabled=None, is_mtls_connection_required=None, is_preview=None, is_preview_version_with_service_terms_accepted=None, is_reconnect_clone_enabled=None, is_refreshable_clone=None, is_remote_data_guard_enabled=None, is_replicate_automatic_backups=None, is_shrink_only=None, key_history_entries=None, key_store_id=None, key_store_wallet_name=None, kms_key_id=None, kms_key_lifecycle_details=None, kms_key_version_id=None, license_model=None, lifecycle_details=None, local_adg_auto_failover_max_data_loss_limit=None, local_disaster_recovery_type=None, local_standby_dbs=None, long_term_backup_schedules=None, max_cpu_core_count=None, memory_per_oracle_compute_unit_in_gbs=None, ncharacter_set=None, net_services_architecture=None, next_long_term_backup_time_stamp=None, nsg_ids=None, ocpu_count=None, open_mode=None, operations_insights_status=None, peer_db_ids=None, permission_level=None, private_endpoint=None, private_endpoint_ip=None, private_endpoint_label=None, provisionable_cpuses=None, refreshable_mode=None, refreshable_status=None, remote_disaster_recovery_configurations=None, remote_disaster_recovery_type=None, resource_pool_leader_id=None, resource_pool_summaries=None, role=None, rotate_key_trigger=None, scheduled_operations=None, secret_id=None, secret_version_number=None, service_console_url=None, shrink_adb_trigger=None, source=None, source_id=None, standby_dbs=None, standby_whitelisted_ips=None, state=None, subnet_id=None, supported_regions_to_clone_tos=None, switchover_to=None, switchover_to_remote_peer_id=None, system_tags=None, time_created=None, time_data_guard_role_changed=None, time_deletion_of_free_autonomous_database=None, time_disaster_recovery_role_changed=None, time_local_data_guard_enabled=None, time_maintenance_begin=None, time_maintenance_end=None, time_of_joining_resource_pool=None, time_of_last_failover=None, time_of_last_refresh=None, time_of_last_refresh_point=None, time_of_last_switchover=None, time_of_next_refresh=None, time_reclamation_of_free_autonomous_database=None, time_until_reconnect_clone_enabled=None, timestamp=None, total_backup_storage_size_in_gbs=None, use_latest_available_backup_time_stamp=None, used_data_storage_size_in_gbs=None, used_data_storage_size_in_tbs=None, vault_id=None, whitelisted_ips=None):
         if actual_used_data_storage_size_in_tbs and not isinstance(actual_used_data_storage_size_in_tbs, float):
             raise TypeError("Expected argument 'actual_used_data_storage_size_in_tbs' to be a float")
         pulumi.set(__self__, "actual_used_data_storage_size_in_tbs", actual_used_data_storage_size_in_tbs)
@@ -158,6 +158,9 @@ class GetAutonomousDatabaseResult:
         if is_dedicated and not isinstance(is_dedicated, bool):
             raise TypeError("Expected argument 'is_dedicated' to be a bool")
         pulumi.set(__self__, "is_dedicated", is_dedicated)
+        if is_dev_tier and not isinstance(is_dev_tier, bool):
+            raise TypeError("Expected argument 'is_dev_tier' to be a bool")
+        pulumi.set(__self__, "is_dev_tier", is_dev_tier)
         if is_free_tier and not isinstance(is_free_tier, bool):
             raise TypeError("Expected argument 'is_free_tier' to be a bool")
         pulumi.set(__self__, "is_free_tier", is_free_tier)
@@ -233,6 +236,9 @@ class GetAutonomousDatabaseResult:
         if ncharacter_set and not isinstance(ncharacter_set, str):
             raise TypeError("Expected argument 'ncharacter_set' to be a str")
         pulumi.set(__self__, "ncharacter_set", ncharacter_set)
+        if net_services_architecture and not isinstance(net_services_architecture, str):
+            raise TypeError("Expected argument 'net_services_architecture' to be a str")
+        pulumi.set(__self__, "net_services_architecture", net_services_architecture)
         if next_long_term_backup_time_stamp and not isinstance(next_long_term_backup_time_stamp, str):
             raise TypeError("Expected argument 'next_long_term_backup_time_stamp' to be a str")
         pulumi.set(__self__, "next_long_term_backup_time_stamp", next_long_term_backup_time_stamp)
@@ -443,7 +449,7 @@ class GetAutonomousDatabaseResult:
     @pulumi.getter(name="autonomousContainerDatabaseId")
     def autonomous_container_database_id(self) -> str:
         """
-        The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous Database on Dedicated Exadata Infrastructure.
         """
         return pulumi.get(self, "autonomous_container_database_id")
 
@@ -522,7 +528,7 @@ class GetAutonomousDatabaseResult:
     @pulumi.getter(name="computeModel")
     def compute_model(self) -> str:
         """
-        The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
+        The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
         """
         return pulumi.get(self, "compute_model")
 
@@ -546,7 +552,7 @@ class GetAutonomousDatabaseResult:
     @pulumi.getter(name="cpuCoreCount")
     def cpu_core_count(self) -> int:
         """
-        The number of OCPU cores to be made available to the database. When the ECPU is selected, the value for cpuCoreCount is 0. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
+        The number of CPU cores to be made available to the database. When the ECPU is selected, the value for cpuCoreCount is 0. For Autonomous Database on Dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
         """
         return pulumi.get(self, "cpu_core_count")
 
@@ -702,7 +708,7 @@ class GetAutonomousDatabaseResult:
     @pulumi.getter(name="inMemoryPercentage")
     def in_memory_percentage(self) -> int:
         """
-        The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database.
+        The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database. This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer platform.
         """
         return pulumi.get(self, "in_memory_percentage")
 
@@ -726,7 +732,7 @@ class GetAutonomousDatabaseResult:
     @pulumi.getter(name="isAutoScalingEnabled")
     def is_auto_scaling_enabled(self) -> bool:
         """
-        Indicates if auto scaling is enabled for the Autonomous Database CPU core count.
+        Indicates if auto scaling is enabled for the Autonomous Database CPU core count. The default value is `TRUE`.
         """
         return pulumi.get(self, "is_auto_scaling_enabled")
 
@@ -753,6 +759,14 @@ class GetAutonomousDatabaseResult:
         True if the database uses [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
         """
         return pulumi.get(self, "is_dedicated")
+
+    @property
+    @pulumi.getter(name="isDevTier")
+    def is_dev_tier(self) -> bool:
+        """
+        This project introduces Autonomous Database for Developers (ADB-Dev), a free tier on dedicated infrastructure, and Cloud@Customer for database development purposes. ADB-Dev enables ExaDB customers to experiment with ADB for free and incentivizes enterprises to use ADB for new development projects.Note that ADB-Dev have 4 CPU and 20GB of memory. For ADB-Dev , memory and CPU cannot be scaled
+        """
+        return pulumi.get(self, "is_dev_tier")
 
     @property
     @pulumi.getter(name="isFreeTier")
@@ -883,7 +897,7 @@ class GetAutonomousDatabaseResult:
     @pulumi.getter(name="licenseModel")
     def license_model(self) -> str:
         """
-        The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`.
+        The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
         """
         return pulumi.get(self, "license_model")
 
@@ -939,7 +953,7 @@ class GetAutonomousDatabaseResult:
     @pulumi.getter(name="memoryPerOracleComputeUnitInGbs")
     def memory_per_oracle_compute_unit_in_gbs(self) -> int:
         """
-        The amount of memory (in GBs) enabled per each CPU in the Autonomous VM Cluster.
+        The amount of memory (in GBs) enabled per ECPU or OCPU.
         """
         return pulumi.get(self, "memory_per_oracle_compute_unit_in_gbs")
 
@@ -950,6 +964,14 @@ class GetAutonomousDatabaseResult:
         The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
         """
         return pulumi.get(self, "ncharacter_set")
+
+    @property
+    @pulumi.getter(name="netServicesArchitecture")
+    def net_services_architecture(self) -> str:
+        """
+        Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
+        """
+        return pulumi.get(self, "net_services_architecture")
 
     @property
     @pulumi.getter(name="nextLongTermBackupTimeStamp")
@@ -1102,7 +1124,7 @@ class GetAutonomousDatabaseResult:
     @pulumi.getter(name="scheduledOperations")
     def scheduled_operations(self) -> Sequence['outputs.GetAutonomousDatabaseScheduledOperationResult']:
         """
-        The list of scheduled operations.
+        The list of scheduled operations. Consists of values such as dayOfWeek, scheduledStartTime, scheduledStopTime.
         """
         return pulumi.get(self, "scheduled_operations")
 
@@ -1154,7 +1176,7 @@ class GetAutonomousDatabaseResult:
     @pulumi.getter(name="standbyWhitelistedIps")
     def standby_whitelisted_ips(self) -> Sequence[str]:
         """
-        The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
+        The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
         """
         return pulumi.get(self, "standby_whitelisted_ips")
 
@@ -1366,7 +1388,7 @@ class GetAutonomousDatabaseResult:
     @pulumi.getter(name="whitelistedIps")
     def whitelisted_ips(self) -> Sequence[str]:
         """
-        The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
+        The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
         """
         return pulumi.get(self, "whitelisted_ips")
 
@@ -1422,6 +1444,7 @@ class AwaitableGetAutonomousDatabaseResult(GetAutonomousDatabaseResult):
             is_auto_scaling_for_storage_enabled=self.is_auto_scaling_for_storage_enabled,
             is_data_guard_enabled=self.is_data_guard_enabled,
             is_dedicated=self.is_dedicated,
+            is_dev_tier=self.is_dev_tier,
             is_free_tier=self.is_free_tier,
             is_local_data_guard_enabled=self.is_local_data_guard_enabled,
             is_mtls_connection_required=self.is_mtls_connection_required,
@@ -1447,6 +1470,7 @@ class AwaitableGetAutonomousDatabaseResult(GetAutonomousDatabaseResult):
             max_cpu_core_count=self.max_cpu_core_count,
             memory_per_oracle_compute_unit_in_gbs=self.memory_per_oracle_compute_unit_in_gbs,
             ncharacter_set=self.ncharacter_set,
+            net_services_architecture=self.net_services_architecture,
             next_long_term_backup_time_stamp=self.next_long_term_backup_time_stamp,
             nsg_ids=self.nsg_ids,
             ocpu_count=self.ocpu_count,
@@ -1577,6 +1601,7 @@ def get_autonomous_database(autonomous_database_id: Optional[str] = None,
         is_auto_scaling_for_storage_enabled=pulumi.get(__ret__, 'is_auto_scaling_for_storage_enabled'),
         is_data_guard_enabled=pulumi.get(__ret__, 'is_data_guard_enabled'),
         is_dedicated=pulumi.get(__ret__, 'is_dedicated'),
+        is_dev_tier=pulumi.get(__ret__, 'is_dev_tier'),
         is_free_tier=pulumi.get(__ret__, 'is_free_tier'),
         is_local_data_guard_enabled=pulumi.get(__ret__, 'is_local_data_guard_enabled'),
         is_mtls_connection_required=pulumi.get(__ret__, 'is_mtls_connection_required'),
@@ -1602,6 +1627,7 @@ def get_autonomous_database(autonomous_database_id: Optional[str] = None,
         max_cpu_core_count=pulumi.get(__ret__, 'max_cpu_core_count'),
         memory_per_oracle_compute_unit_in_gbs=pulumi.get(__ret__, 'memory_per_oracle_compute_unit_in_gbs'),
         ncharacter_set=pulumi.get(__ret__, 'ncharacter_set'),
+        net_services_architecture=pulumi.get(__ret__, 'net_services_architecture'),
         next_long_term_backup_time_stamp=pulumi.get(__ret__, 'next_long_term_backup_time_stamp'),
         nsg_ids=pulumi.get(__ret__, 'nsg_ids'),
         ocpu_count=pulumi.get(__ret__, 'ocpu_count'),

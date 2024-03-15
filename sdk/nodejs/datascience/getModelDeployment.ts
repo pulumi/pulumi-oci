@@ -88,6 +88,10 @@ export interface GetModelDeploymentResult {
     readonly modelDeploymentConfigurationDetails: outputs.DataScience.GetModelDeploymentModelDeploymentConfigurationDetail[];
     readonly modelDeploymentId: string;
     /**
+     * Model deployment system data.
+     */
+    readonly modelDeploymentSystemDatas: outputs.DataScience.GetModelDeploymentModelDeploymentSystemData[];
+    /**
      * The URL to interact with the model deployment.
      */
     readonly modelDeploymentUrl: string;

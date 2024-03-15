@@ -25,6 +25,12 @@ namespace Pulumi.Oci.DataScience.Inputs
         public Input<Inputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs> InstanceConfiguration { get; set; } = null!;
 
         /// <summary>
+        /// (Updatable) The maximum network bandwidth for the model deployment.
+        /// </summary>
+        [Input("maximumBandwidthMbps")]
+        public Input<int>? MaximumBandwidthMbps { get; set; }
+
+        /// <summary>
         /// (Updatable) The OCID of the model you want to deploy.
         /// </summary>
         [Input("modelId", required: true)]

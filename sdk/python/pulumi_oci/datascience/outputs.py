@@ -35,6 +35,11 @@ __all__ = [
     'ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration',
     'ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetails',
     'ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicy',
+    'ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicy',
+    'ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRule',
+    'ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfiguration',
+    'ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfiguration',
+    'ModelDeploymentModelDeploymentSystemData',
     'NotebookSessionNotebookSessionConfigDetails',
     'NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetails',
     'NotebookSessionNotebookSessionConfigurationDetails',
@@ -104,6 +109,11 @@ __all__ = [
     'GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationResult',
     'GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailResult',
     'GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyResult',
+    'GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyResult',
+    'GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleResult',
+    'GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationResult',
+    'GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationResult',
+    'GetModelDeploymentModelDeploymentSystemDataResult',
     'GetModelDeploymentShapesFilterResult',
     'GetModelDeploymentShapesModelDeploymentShapeResult',
     'GetModelDeploymentsFilterResult',
@@ -117,6 +127,11 @@ __all__ = [
     'GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationResult',
     'GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailResult',
     'GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyResult',
+    'GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyResult',
+    'GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleResult',
+    'GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationResult',
+    'GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationResult',
+    'GetModelDeploymentsModelDeploymentModelDeploymentSystemDataResult',
     'GetModelVersionSetsFilterResult',
     'GetModelVersionSetsModelVersionSetResult',
     'GetModelsFilterResult',
@@ -1741,6 +1756,8 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
             suggest = "model_id"
         elif key == "bandwidthMbps":
             suggest = "bandwidth_mbps"
+        elif key == "maximumBandwidthMbps":
+            suggest = "maximum_bandwidth_mbps"
         elif key == "scalingPolicy":
             suggest = "scaling_policy"
 
@@ -1759,17 +1776,21 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
                  instance_configuration: 'outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration',
                  model_id: str,
                  bandwidth_mbps: Optional[int] = None,
+                 maximum_bandwidth_mbps: Optional[int] = None,
                  scaling_policy: Optional['outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicy'] = None):
         """
         :param 'ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs' instance_configuration: (Updatable) The model deployment instance configuration
         :param str model_id: (Updatable) The OCID of the model you want to deploy.
         :param int bandwidth_mbps: (Updatable) The minimum network bandwidth for the model deployment.
+        :param int maximum_bandwidth_mbps: (Updatable) The maximum network bandwidth for the model deployment.
         :param 'ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyArgs' scaling_policy: (Updatable) The scaling policy to apply to each model of the deployment.
         """
         pulumi.set(__self__, "instance_configuration", instance_configuration)
         pulumi.set(__self__, "model_id", model_id)
         if bandwidth_mbps is not None:
             pulumi.set(__self__, "bandwidth_mbps", bandwidth_mbps)
+        if maximum_bandwidth_mbps is not None:
+            pulumi.set(__self__, "maximum_bandwidth_mbps", maximum_bandwidth_mbps)
         if scaling_policy is not None:
             pulumi.set(__self__, "scaling_policy", scaling_policy)
 
@@ -1796,6 +1817,14 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
         (Updatable) The minimum network bandwidth for the model deployment.
         """
         return pulumi.get(self, "bandwidth_mbps")
+
+    @property
+    @pulumi.getter(name="maximumBandwidthMbps")
+    def maximum_bandwidth_mbps(self) -> Optional[int]:
+        """
+        (Updatable) The maximum network bandwidth for the model deployment.
+        """
+        return pulumi.get(self, "maximum_bandwidth_mbps")
 
     @property
     @pulumi.getter(name="scalingPolicy")
@@ -1860,7 +1889,9 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "memoryInGbs":
+        if key == "cpuBaseline":
+            suggest = "cpu_baseline"
+        elif key == "memoryInGbs":
             suggest = "memory_in_gbs"
 
         if suggest:
@@ -1875,16 +1906,28 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
         return super().get(key, default)
 
     def __init__(__self__, *,
+                 cpu_baseline: Optional[str] = None,
                  memory_in_gbs: Optional[float] = None,
                  ocpus: Optional[float] = None):
         """
+        :param str cpu_baseline: (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
         :param float memory_in_gbs: (Updatable) A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
         :param float ocpus: (Updatable) A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 to 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
         """
+        if cpu_baseline is not None:
+            pulumi.set(__self__, "cpu_baseline", cpu_baseline)
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
             pulumi.set(__self__, "ocpus", ocpus)
+
+    @property
+    @pulumi.getter(name="cpuBaseline")
+    def cpu_baseline(self) -> Optional[str]:
+        """
+        (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+        """
+        return pulumi.get(self, "cpu_baseline")
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -1908,10 +1951,16 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "instanceCount":
-            suggest = "instance_count"
-        elif key == "policyType":
+        if key == "policyType":
             suggest = "policy_type"
+        elif key == "autoScalingPolicies":
+            suggest = "auto_scaling_policies"
+        elif key == "coolDownInSeconds":
+            suggest = "cool_down_in_seconds"
+        elif key == "instanceCount":
+            suggest = "instance_count"
+        elif key == "isEnabled":
+            suggest = "is_enabled"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicy. Access the value via the '{suggest}' property getter instead.")
@@ -1925,22 +1974,27 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 instance_count: int,
-                 policy_type: str):
+                 policy_type: str,
+                 auto_scaling_policies: Optional[Sequence['outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicy']] = None,
+                 cool_down_in_seconds: Optional[int] = None,
+                 instance_count: Optional[int] = None,
+                 is_enabled: Optional[bool] = None):
         """
-        :param int instance_count: (Updatable) The number of instances for the model deployment.
         :param str policy_type: (Updatable) The type of scaling policy.
+        :param Sequence['ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyArgs'] auto_scaling_policies: (Updatable) The list of autoscaling policy details.
+        :param int cool_down_in_seconds: (Updatable) For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 600 seconds, which is also the default. The cooldown period starts when the model deployment becomes ACTIVE after the scaling operation.
+        :param int instance_count: (Updatable) The number of instances for the model deployment.
+        :param bool is_enabled: (Updatable) Whether the autoscaling policy is enabled.
         """
-        pulumi.set(__self__, "instance_count", instance_count)
         pulumi.set(__self__, "policy_type", policy_type)
-
-    @property
-    @pulumi.getter(name="instanceCount")
-    def instance_count(self) -> int:
-        """
-        (Updatable) The number of instances for the model deployment.
-        """
-        return pulumi.get(self, "instance_count")
+        if auto_scaling_policies is not None:
+            pulumi.set(__self__, "auto_scaling_policies", auto_scaling_policies)
+        if cool_down_in_seconds is not None:
+            pulumi.set(__self__, "cool_down_in_seconds", cool_down_in_seconds)
+        if instance_count is not None:
+            pulumi.set(__self__, "instance_count", instance_count)
+        if is_enabled is not None:
+            pulumi.set(__self__, "is_enabled", is_enabled)
 
     @property
     @pulumi.getter(name="policyType")
@@ -1949,6 +2003,468 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
         (Updatable) The type of scaling policy.
         """
         return pulumi.get(self, "policy_type")
+
+    @property
+    @pulumi.getter(name="autoScalingPolicies")
+    def auto_scaling_policies(self) -> Optional[Sequence['outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicy']]:
+        """
+        (Updatable) The list of autoscaling policy details.
+        """
+        return pulumi.get(self, "auto_scaling_policies")
+
+    @property
+    @pulumi.getter(name="coolDownInSeconds")
+    def cool_down_in_seconds(self) -> Optional[int]:
+        """
+        (Updatable) For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 600 seconds, which is also the default. The cooldown period starts when the model deployment becomes ACTIVE after the scaling operation.
+        """
+        return pulumi.get(self, "cool_down_in_seconds")
+
+    @property
+    @pulumi.getter(name="instanceCount")
+    def instance_count(self) -> Optional[int]:
+        """
+        (Updatable) The number of instances for the model deployment.
+        """
+        return pulumi.get(self, "instance_count")
+
+    @property
+    @pulumi.getter(name="isEnabled")
+    def is_enabled(self) -> Optional[bool]:
+        """
+        (Updatable) Whether the autoscaling policy is enabled.
+        """
+        return pulumi.get(self, "is_enabled")
+
+
+@pulumi.output_type
+class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicy(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "autoScalingPolicyType":
+            suggest = "auto_scaling_policy_type"
+        elif key == "initialInstanceCount":
+            suggest = "initial_instance_count"
+        elif key == "maximumInstanceCount":
+            suggest = "maximum_instance_count"
+        elif key == "minimumInstanceCount":
+            suggest = "minimum_instance_count"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicy. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicy.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicy.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 auto_scaling_policy_type: str,
+                 initial_instance_count: int,
+                 maximum_instance_count: int,
+                 minimum_instance_count: int,
+                 rules: Sequence['outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRule']):
+        """
+        :param str auto_scaling_policy_type: (Updatable) The type of autoscaling policy.
+        :param int initial_instance_count: (Updatable) For a threshold-based autoscaling policy, this value is the initial number of instances to launch in the model deployment immediately after autoscaling is enabled. Note that anytime this value is updated, the number of instances will be reset to this value. After autoscaling retrieves performance metrics, the number of instances is automatically adjusted from this initial number to a number that is based on the limits that you set.
+        :param int maximum_instance_count: (Updatable) For a threshold-based autoscaling policy, this value is the maximum number of instances the model deployment is allowed to increase to (scale out).
+        :param int minimum_instance_count: (Updatable) For a threshold-based autoscaling policy, this value is the minimum number of instances the model deployment is allowed to decrease to (scale in).
+        :param Sequence['ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArgs'] rules: (Updatable) The list of autoscaling policy rules.
+        """
+        pulumi.set(__self__, "auto_scaling_policy_type", auto_scaling_policy_type)
+        pulumi.set(__self__, "initial_instance_count", initial_instance_count)
+        pulumi.set(__self__, "maximum_instance_count", maximum_instance_count)
+        pulumi.set(__self__, "minimum_instance_count", minimum_instance_count)
+        pulumi.set(__self__, "rules", rules)
+
+    @property
+    @pulumi.getter(name="autoScalingPolicyType")
+    def auto_scaling_policy_type(self) -> str:
+        """
+        (Updatable) The type of autoscaling policy.
+        """
+        return pulumi.get(self, "auto_scaling_policy_type")
+
+    @property
+    @pulumi.getter(name="initialInstanceCount")
+    def initial_instance_count(self) -> int:
+        """
+        (Updatable) For a threshold-based autoscaling policy, this value is the initial number of instances to launch in the model deployment immediately after autoscaling is enabled. Note that anytime this value is updated, the number of instances will be reset to this value. After autoscaling retrieves performance metrics, the number of instances is automatically adjusted from this initial number to a number that is based on the limits that you set.
+        """
+        return pulumi.get(self, "initial_instance_count")
+
+    @property
+    @pulumi.getter(name="maximumInstanceCount")
+    def maximum_instance_count(self) -> int:
+        """
+        (Updatable) For a threshold-based autoscaling policy, this value is the maximum number of instances the model deployment is allowed to increase to (scale out).
+        """
+        return pulumi.get(self, "maximum_instance_count")
+
+    @property
+    @pulumi.getter(name="minimumInstanceCount")
+    def minimum_instance_count(self) -> int:
+        """
+        (Updatable) For a threshold-based autoscaling policy, this value is the minimum number of instances the model deployment is allowed to decrease to (scale in).
+        """
+        return pulumi.get(self, "minimum_instance_count")
+
+    @property
+    @pulumi.getter
+    def rules(self) -> Sequence['outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRule']:
+        """
+        (Updatable) The list of autoscaling policy rules.
+        """
+        return pulumi.get(self, "rules")
+
+
+@pulumi.output_type
+class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "metricExpressionRuleType":
+            suggest = "metric_expression_rule_type"
+        elif key == "scaleInConfiguration":
+            suggest = "scale_in_configuration"
+        elif key == "scaleOutConfiguration":
+            suggest = "scale_out_configuration"
+        elif key == "metricType":
+            suggest = "metric_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRule.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 metric_expression_rule_type: str,
+                 scale_in_configuration: 'outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfiguration',
+                 scale_out_configuration: 'outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfiguration',
+                 metric_type: Optional[str] = None):
+        """
+        :param str metric_expression_rule_type: (Updatable) The metric expression for creating the alarm used to trigger autoscaling actions on the model deployment.
+               
+               The following values are supported:
+        :param 'ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgs' scale_in_configuration: (Updatable) The scaling configuration for the predefined metric expression rule.
+        :param 'ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgs' scale_out_configuration: (Updatable) The scaling configuration for the predefined metric expression rule.
+        :param str metric_type: (Updatable) Metric type
+        """
+        pulumi.set(__self__, "metric_expression_rule_type", metric_expression_rule_type)
+        pulumi.set(__self__, "scale_in_configuration", scale_in_configuration)
+        pulumi.set(__self__, "scale_out_configuration", scale_out_configuration)
+        if metric_type is not None:
+            pulumi.set(__self__, "metric_type", metric_type)
+
+    @property
+    @pulumi.getter(name="metricExpressionRuleType")
+    def metric_expression_rule_type(self) -> str:
+        """
+        (Updatable) The metric expression for creating the alarm used to trigger autoscaling actions on the model deployment.
+
+        The following values are supported:
+        """
+        return pulumi.get(self, "metric_expression_rule_type")
+
+    @property
+    @pulumi.getter(name="scaleInConfiguration")
+    def scale_in_configuration(self) -> 'outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfiguration':
+        """
+        (Updatable) The scaling configuration for the predefined metric expression rule.
+        """
+        return pulumi.get(self, "scale_in_configuration")
+
+    @property
+    @pulumi.getter(name="scaleOutConfiguration")
+    def scale_out_configuration(self) -> 'outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfiguration':
+        """
+        (Updatable) The scaling configuration for the predefined metric expression rule.
+        """
+        return pulumi.get(self, "scale_out_configuration")
+
+    @property
+    @pulumi.getter(name="metricType")
+    def metric_type(self) -> Optional[str]:
+        """
+        (Updatable) Metric type
+        """
+        return pulumi.get(self, "metric_type")
+
+
+@pulumi.output_type
+class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "instanceCountAdjustment":
+            suggest = "instance_count_adjustment"
+        elif key == "pendingDuration":
+            suggest = "pending_duration"
+        elif key == "scalingConfigurationType":
+            suggest = "scaling_configuration_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 instance_count_adjustment: Optional[int] = None,
+                 pending_duration: Optional[str] = None,
+                 query: Optional[str] = None,
+                 scaling_configuration_type: Optional[str] = None,
+                 threshold: Optional[int] = None):
+        """
+        :param int instance_count_adjustment: (Updatable) The value is used for adjusting the count of instances by.
+        :param str pending_duration: (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
+               
+               The duration is specified as a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT3M. Maximum: PT1H. Default: PT3M.
+        :param str query: (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+               
+               Example of threshold alarm:
+               
+               -----
+               
+               CPUUtilization[1m]{resourceId = "MODEL_DEPLOYMENT_OCID"}.grouping().mean() < 25 CPUUtilization[1m]{resourceId = "MODEL_DEPLOYMENT_OCID"}.grouping().mean() > 75
+               
+               -----
+        :param str scaling_configuration_type: (Updatable) The type of scaling configuration.
+        :param int threshold: (Updatable) A metric value at which the scaling operation will be triggered.
+        """
+        if instance_count_adjustment is not None:
+            pulumi.set(__self__, "instance_count_adjustment", instance_count_adjustment)
+        if pending_duration is not None:
+            pulumi.set(__self__, "pending_duration", pending_duration)
+        if query is not None:
+            pulumi.set(__self__, "query", query)
+        if scaling_configuration_type is not None:
+            pulumi.set(__self__, "scaling_configuration_type", scaling_configuration_type)
+        if threshold is not None:
+            pulumi.set(__self__, "threshold", threshold)
+
+    @property
+    @pulumi.getter(name="instanceCountAdjustment")
+    def instance_count_adjustment(self) -> Optional[int]:
+        """
+        (Updatable) The value is used for adjusting the count of instances by.
+        """
+        return pulumi.get(self, "instance_count_adjustment")
+
+    @property
+    @pulumi.getter(name="pendingDuration")
+    def pending_duration(self) -> Optional[str]:
+        """
+        (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
+
+        The duration is specified as a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT3M. Maximum: PT1H. Default: PT3M.
+        """
+        return pulumi.get(self, "pending_duration")
+
+    @property
+    @pulumi.getter
+    def query(self) -> Optional[str]:
+        """
+        (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+
+        Example of threshold alarm:
+
+        -----
+
+        CPUUtilization[1m]{resourceId = "MODEL_DEPLOYMENT_OCID"}.grouping().mean() < 25 CPUUtilization[1m]{resourceId = "MODEL_DEPLOYMENT_OCID"}.grouping().mean() > 75
+
+        -----
+        """
+        return pulumi.get(self, "query")
+
+    @property
+    @pulumi.getter(name="scalingConfigurationType")
+    def scaling_configuration_type(self) -> Optional[str]:
+        """
+        (Updatable) The type of scaling configuration.
+        """
+        return pulumi.get(self, "scaling_configuration_type")
+
+    @property
+    @pulumi.getter
+    def threshold(self) -> Optional[int]:
+        """
+        (Updatable) A metric value at which the scaling operation will be triggered.
+        """
+        return pulumi.get(self, "threshold")
+
+
+@pulumi.output_type
+class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "instanceCountAdjustment":
+            suggest = "instance_count_adjustment"
+        elif key == "pendingDuration":
+            suggest = "pending_duration"
+        elif key == "scalingConfigurationType":
+            suggest = "scaling_configuration_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 instance_count_adjustment: Optional[int] = None,
+                 pending_duration: Optional[str] = None,
+                 query: Optional[str] = None,
+                 scaling_configuration_type: Optional[str] = None,
+                 threshold: Optional[int] = None):
+        """
+        :param int instance_count_adjustment: (Updatable) The value is used for adjusting the count of instances by.
+        :param str pending_duration: (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
+               
+               The duration is specified as a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT3M. Maximum: PT1H. Default: PT3M.
+        :param str query: (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+               
+               Example of threshold alarm:
+               
+               -----
+               
+               CPUUtilization[1m]{resourceId = "MODEL_DEPLOYMENT_OCID"}.grouping().mean() < 25 CPUUtilization[1m]{resourceId = "MODEL_DEPLOYMENT_OCID"}.grouping().mean() > 75
+               
+               -----
+        :param str scaling_configuration_type: (Updatable) The type of scaling configuration.
+        :param int threshold: (Updatable) A metric value at which the scaling operation will be triggered.
+        """
+        if instance_count_adjustment is not None:
+            pulumi.set(__self__, "instance_count_adjustment", instance_count_adjustment)
+        if pending_duration is not None:
+            pulumi.set(__self__, "pending_duration", pending_duration)
+        if query is not None:
+            pulumi.set(__self__, "query", query)
+        if scaling_configuration_type is not None:
+            pulumi.set(__self__, "scaling_configuration_type", scaling_configuration_type)
+        if threshold is not None:
+            pulumi.set(__self__, "threshold", threshold)
+
+    @property
+    @pulumi.getter(name="instanceCountAdjustment")
+    def instance_count_adjustment(self) -> Optional[int]:
+        """
+        (Updatable) The value is used for adjusting the count of instances by.
+        """
+        return pulumi.get(self, "instance_count_adjustment")
+
+    @property
+    @pulumi.getter(name="pendingDuration")
+    def pending_duration(self) -> Optional[str]:
+        """
+        (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
+
+        The duration is specified as a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT3M. Maximum: PT1H. Default: PT3M.
+        """
+        return pulumi.get(self, "pending_duration")
+
+    @property
+    @pulumi.getter
+    def query(self) -> Optional[str]:
+        """
+        (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+
+        Example of threshold alarm:
+
+        -----
+
+        CPUUtilization[1m]{resourceId = "MODEL_DEPLOYMENT_OCID"}.grouping().mean() < 25 CPUUtilization[1m]{resourceId = "MODEL_DEPLOYMENT_OCID"}.grouping().mean() > 75
+
+        -----
+        """
+        return pulumi.get(self, "query")
+
+    @property
+    @pulumi.getter(name="scalingConfigurationType")
+    def scaling_configuration_type(self) -> Optional[str]:
+        """
+        (Updatable) The type of scaling configuration.
+        """
+        return pulumi.get(self, "scaling_configuration_type")
+
+    @property
+    @pulumi.getter
+    def threshold(self) -> Optional[int]:
+        """
+        (Updatable) A metric value at which the scaling operation will be triggered.
+        """
+        return pulumi.get(self, "threshold")
+
+
+@pulumi.output_type
+class ModelDeploymentModelDeploymentSystemData(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "currentInstanceCount":
+            suggest = "current_instance_count"
+        elif key == "systemInfraType":
+            suggest = "system_infra_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ModelDeploymentModelDeploymentSystemData. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ModelDeploymentModelDeploymentSystemData.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ModelDeploymentModelDeploymentSystemData.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 current_instance_count: Optional[int] = None,
+                 system_infra_type: Optional[str] = None):
+        """
+        :param int current_instance_count: This value is the current count of the model deployment instances.
+        :param str system_infra_type: The infrastructure type of the model deployment.
+        """
+        if current_instance_count is not None:
+            pulumi.set(__self__, "current_instance_count", current_instance_count)
+        if system_infra_type is not None:
+            pulumi.set(__self__, "system_infra_type", system_infra_type)
+
+    @property
+    @pulumi.getter(name="currentInstanceCount")
+    def current_instance_count(self) -> Optional[int]:
+        """
+        This value is the current count of the model deployment instances.
+        """
+        return pulumi.get(self, "current_instance_count")
+
+    @property
+    @pulumi.getter(name="systemInfraType")
+    def system_infra_type(self) -> Optional[str]:
+        """
+        The infrastructure type of the model deployment.
+        """
+        return pulumi.get(self, "system_infra_type")
 
 
 @pulumi.output_type
@@ -6175,16 +6691,19 @@ class GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDeta
     def __init__(__self__, *,
                  bandwidth_mbps: int,
                  instance_configurations: Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationResult'],
+                 maximum_bandwidth_mbps: int,
                  model_id: str,
                  scaling_policies: Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyResult']):
         """
         :param int bandwidth_mbps: The minimum network bandwidth for the model deployment.
         :param Sequence['GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationArgs'] instance_configurations: The model deployment instance configuration
+        :param int maximum_bandwidth_mbps: The maximum network bandwidth for the model deployment.
         :param str model_id: The OCID of the model you want to deploy.
         :param Sequence['GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyArgs'] scaling_policies: The scaling policy to apply to each model of the deployment.
         """
         pulumi.set(__self__, "bandwidth_mbps", bandwidth_mbps)
         pulumi.set(__self__, "instance_configurations", instance_configurations)
+        pulumi.set(__self__, "maximum_bandwidth_mbps", maximum_bandwidth_mbps)
         pulumi.set(__self__, "model_id", model_id)
         pulumi.set(__self__, "scaling_policies", scaling_policies)
 
@@ -6203,6 +6722,14 @@ class GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDeta
         The model deployment instance configuration
         """
         return pulumi.get(self, "instance_configurations")
+
+    @property
+    @pulumi.getter(name="maximumBandwidthMbps")
+    def maximum_bandwidth_mbps(self) -> int:
+        """
+        The maximum network bandwidth for the model deployment.
+        """
+        return pulumi.get(self, "maximum_bandwidth_mbps")
 
     @property
     @pulumi.getter(name="modelId")
@@ -6253,20 +6780,31 @@ class GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDeta
 @pulumi.output_type
 class GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailResult(dict):
     def __init__(__self__, *,
+                 cpu_baseline: str,
                  memory_in_gbs: float,
                  ocpus: float):
         """
-        :param float memory_in_gbs: A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 and 512 GB and VM.Optimized3.Flex memory range is between 6 and 256 GB.
-        :param float ocpus: A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 and 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
+        :param str cpu_baseline: The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+        :param float memory_in_gbs: A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
+        :param float ocpus: A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 to 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
         """
+        pulumi.set(__self__, "cpu_baseline", cpu_baseline)
         pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         pulumi.set(__self__, "ocpus", ocpus)
+
+    @property
+    @pulumi.getter(name="cpuBaseline")
+    def cpu_baseline(self) -> str:
+        """
+        The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+        """
+        return pulumi.get(self, "cpu_baseline")
 
     @property
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> float:
         """
-        A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 and 512 GB and VM.Optimized3.Flex memory range is between 6 and 256 GB.
+        A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
         """
         return pulumi.get(self, "memory_in_gbs")
 
@@ -6274,7 +6812,7 @@ class GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDeta
     @pulumi.getter
     def ocpus(self) -> float:
         """
-        A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 and 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
+        A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 to 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
         """
         return pulumi.get(self, "ocpus")
 
@@ -6282,14 +6820,39 @@ class GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDeta
 @pulumi.output_type
 class GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyResult(dict):
     def __init__(__self__, *,
+                 auto_scaling_policies: Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyResult'],
+                 cool_down_in_seconds: int,
                  instance_count: int,
+                 is_enabled: bool,
                  policy_type: str):
         """
+        :param Sequence['GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArgs'] auto_scaling_policies: The list of autoscaling policy details.
+        :param int cool_down_in_seconds: For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 600 seconds, which is also the default. The cooldown period starts when the model deployment becomes ACTIVE after the scaling operation.
         :param int instance_count: The number of instances for the model deployment.
+        :param bool is_enabled: Whether the autoscaling policy is enabled.
         :param str policy_type: The type of scaling policy.
         """
+        pulumi.set(__self__, "auto_scaling_policies", auto_scaling_policies)
+        pulumi.set(__self__, "cool_down_in_seconds", cool_down_in_seconds)
         pulumi.set(__self__, "instance_count", instance_count)
+        pulumi.set(__self__, "is_enabled", is_enabled)
         pulumi.set(__self__, "policy_type", policy_type)
+
+    @property
+    @pulumi.getter(name="autoScalingPolicies")
+    def auto_scaling_policies(self) -> Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyResult']:
+        """
+        The list of autoscaling policy details.
+        """
+        return pulumi.get(self, "auto_scaling_policies")
+
+    @property
+    @pulumi.getter(name="coolDownInSeconds")
+    def cool_down_in_seconds(self) -> int:
+        """
+        For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 600 seconds, which is also the default. The cooldown period starts when the model deployment becomes ACTIVE after the scaling operation.
+        """
+        return pulumi.get(self, "cool_down_in_seconds")
 
     @property
     @pulumi.getter(name="instanceCount")
@@ -6300,12 +6863,286 @@ class GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDeta
         return pulumi.get(self, "instance_count")
 
     @property
+    @pulumi.getter(name="isEnabled")
+    def is_enabled(self) -> bool:
+        """
+        Whether the autoscaling policy is enabled.
+        """
+        return pulumi.get(self, "is_enabled")
+
+    @property
     @pulumi.getter(name="policyType")
     def policy_type(self) -> str:
         """
         The type of scaling policy.
         """
         return pulumi.get(self, "policy_type")
+
+
+@pulumi.output_type
+class GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyResult(dict):
+    def __init__(__self__, *,
+                 auto_scaling_policy_type: str,
+                 initial_instance_count: int,
+                 maximum_instance_count: int,
+                 minimum_instance_count: int,
+                 rules: Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleResult']):
+        """
+        :param str auto_scaling_policy_type: The type of autoscaling policy.
+        :param int initial_instance_count: For a threshold-based autoscaling policy, this value is the initial number of instances to launch in the model deployment immediately after autoscaling is enabled. Note that anytime this value is updated, the number of instances will be reset to this value. After autoscaling retrieves performance metrics, the number of instances is automatically adjusted from this initial number to a number that is based on the limits that you set.
+        :param int maximum_instance_count: For a threshold-based autoscaling policy, this value is the maximum number of instances the model deployment is allowed to increase to (scale out).
+        :param int minimum_instance_count: For a threshold-based autoscaling policy, this value is the minimum number of instances the model deployment is allowed to decrease to (scale in).
+        :param Sequence['GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArgs'] rules: The list of autoscaling policy rules.
+        """
+        pulumi.set(__self__, "auto_scaling_policy_type", auto_scaling_policy_type)
+        pulumi.set(__self__, "initial_instance_count", initial_instance_count)
+        pulumi.set(__self__, "maximum_instance_count", maximum_instance_count)
+        pulumi.set(__self__, "minimum_instance_count", minimum_instance_count)
+        pulumi.set(__self__, "rules", rules)
+
+    @property
+    @pulumi.getter(name="autoScalingPolicyType")
+    def auto_scaling_policy_type(self) -> str:
+        """
+        The type of autoscaling policy.
+        """
+        return pulumi.get(self, "auto_scaling_policy_type")
+
+    @property
+    @pulumi.getter(name="initialInstanceCount")
+    def initial_instance_count(self) -> int:
+        """
+        For a threshold-based autoscaling policy, this value is the initial number of instances to launch in the model deployment immediately after autoscaling is enabled. Note that anytime this value is updated, the number of instances will be reset to this value. After autoscaling retrieves performance metrics, the number of instances is automatically adjusted from this initial number to a number that is based on the limits that you set.
+        """
+        return pulumi.get(self, "initial_instance_count")
+
+    @property
+    @pulumi.getter(name="maximumInstanceCount")
+    def maximum_instance_count(self) -> int:
+        """
+        For a threshold-based autoscaling policy, this value is the maximum number of instances the model deployment is allowed to increase to (scale out).
+        """
+        return pulumi.get(self, "maximum_instance_count")
+
+    @property
+    @pulumi.getter(name="minimumInstanceCount")
+    def minimum_instance_count(self) -> int:
+        """
+        For a threshold-based autoscaling policy, this value is the minimum number of instances the model deployment is allowed to decrease to (scale in).
+        """
+        return pulumi.get(self, "minimum_instance_count")
+
+    @property
+    @pulumi.getter
+    def rules(self) -> Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleResult']:
+        """
+        The list of autoscaling policy rules.
+        """
+        return pulumi.get(self, "rules")
+
+
+@pulumi.output_type
+class GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleResult(dict):
+    def __init__(__self__, *,
+                 metric_expression_rule_type: str,
+                 metric_type: str,
+                 scale_in_configurations: Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationResult'],
+                 scale_out_configurations: Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationResult']):
+        """
+        :param str metric_expression_rule_type: The metric expression for creating the alarm used to trigger autoscaling actions on the model deployment.
+        :param str metric_type: Metric type
+        :param Sequence['GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgs'] scale_in_configurations: The scaling configuration for the predefined metric expression rule.
+        :param Sequence['GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgs'] scale_out_configurations: The scaling configuration for the predefined metric expression rule.
+        """
+        pulumi.set(__self__, "metric_expression_rule_type", metric_expression_rule_type)
+        pulumi.set(__self__, "metric_type", metric_type)
+        pulumi.set(__self__, "scale_in_configurations", scale_in_configurations)
+        pulumi.set(__self__, "scale_out_configurations", scale_out_configurations)
+
+    @property
+    @pulumi.getter(name="metricExpressionRuleType")
+    def metric_expression_rule_type(self) -> str:
+        """
+        The metric expression for creating the alarm used to trigger autoscaling actions on the model deployment.
+        """
+        return pulumi.get(self, "metric_expression_rule_type")
+
+    @property
+    @pulumi.getter(name="metricType")
+    def metric_type(self) -> str:
+        """
+        Metric type
+        """
+        return pulumi.get(self, "metric_type")
+
+    @property
+    @pulumi.getter(name="scaleInConfigurations")
+    def scale_in_configurations(self) -> Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationResult']:
+        """
+        The scaling configuration for the predefined metric expression rule.
+        """
+        return pulumi.get(self, "scale_in_configurations")
+
+    @property
+    @pulumi.getter(name="scaleOutConfigurations")
+    def scale_out_configurations(self) -> Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationResult']:
+        """
+        The scaling configuration for the predefined metric expression rule.
+        """
+        return pulumi.get(self, "scale_out_configurations")
+
+
+@pulumi.output_type
+class GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationResult(dict):
+    def __init__(__self__, *,
+                 instance_count_adjustment: int,
+                 pending_duration: str,
+                 query: str,
+                 scaling_configuration_type: str,
+                 threshold: int):
+        """
+        :param int instance_count_adjustment: The value is used for adjusting the count of instances by.
+        :param str pending_duration: The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
+        :param str query: The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+        :param str scaling_configuration_type: The type of scaling configuration.
+        :param int threshold: A metric value at which the scaling operation will be triggered.
+        """
+        pulumi.set(__self__, "instance_count_adjustment", instance_count_adjustment)
+        pulumi.set(__self__, "pending_duration", pending_duration)
+        pulumi.set(__self__, "query", query)
+        pulumi.set(__self__, "scaling_configuration_type", scaling_configuration_type)
+        pulumi.set(__self__, "threshold", threshold)
+
+    @property
+    @pulumi.getter(name="instanceCountAdjustment")
+    def instance_count_adjustment(self) -> int:
+        """
+        The value is used for adjusting the count of instances by.
+        """
+        return pulumi.get(self, "instance_count_adjustment")
+
+    @property
+    @pulumi.getter(name="pendingDuration")
+    def pending_duration(self) -> str:
+        """
+        The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
+        """
+        return pulumi.get(self, "pending_duration")
+
+    @property
+    @pulumi.getter
+    def query(self) -> str:
+        """
+        The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+        """
+        return pulumi.get(self, "query")
+
+    @property
+    @pulumi.getter(name="scalingConfigurationType")
+    def scaling_configuration_type(self) -> str:
+        """
+        The type of scaling configuration.
+        """
+        return pulumi.get(self, "scaling_configuration_type")
+
+    @property
+    @pulumi.getter
+    def threshold(self) -> int:
+        """
+        A metric value at which the scaling operation will be triggered.
+        """
+        return pulumi.get(self, "threshold")
+
+
+@pulumi.output_type
+class GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationResult(dict):
+    def __init__(__self__, *,
+                 instance_count_adjustment: int,
+                 pending_duration: str,
+                 query: str,
+                 scaling_configuration_type: str,
+                 threshold: int):
+        """
+        :param int instance_count_adjustment: The value is used for adjusting the count of instances by.
+        :param str pending_duration: The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
+        :param str query: The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+        :param str scaling_configuration_type: The type of scaling configuration.
+        :param int threshold: A metric value at which the scaling operation will be triggered.
+        """
+        pulumi.set(__self__, "instance_count_adjustment", instance_count_adjustment)
+        pulumi.set(__self__, "pending_duration", pending_duration)
+        pulumi.set(__self__, "query", query)
+        pulumi.set(__self__, "scaling_configuration_type", scaling_configuration_type)
+        pulumi.set(__self__, "threshold", threshold)
+
+    @property
+    @pulumi.getter(name="instanceCountAdjustment")
+    def instance_count_adjustment(self) -> int:
+        """
+        The value is used for adjusting the count of instances by.
+        """
+        return pulumi.get(self, "instance_count_adjustment")
+
+    @property
+    @pulumi.getter(name="pendingDuration")
+    def pending_duration(self) -> str:
+        """
+        The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
+        """
+        return pulumi.get(self, "pending_duration")
+
+    @property
+    @pulumi.getter
+    def query(self) -> str:
+        """
+        The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+        """
+        return pulumi.get(self, "query")
+
+    @property
+    @pulumi.getter(name="scalingConfigurationType")
+    def scaling_configuration_type(self) -> str:
+        """
+        The type of scaling configuration.
+        """
+        return pulumi.get(self, "scaling_configuration_type")
+
+    @property
+    @pulumi.getter
+    def threshold(self) -> int:
+        """
+        A metric value at which the scaling operation will be triggered.
+        """
+        return pulumi.get(self, "threshold")
+
+
+@pulumi.output_type
+class GetModelDeploymentModelDeploymentSystemDataResult(dict):
+    def __init__(__self__, *,
+                 current_instance_count: int,
+                 system_infra_type: str):
+        """
+        :param int current_instance_count: This value is the current count of the model deployment instances.
+        :param str system_infra_type: The infrastructure type of the model deployment.
+        """
+        pulumi.set(__self__, "current_instance_count", current_instance_count)
+        pulumi.set(__self__, "system_infra_type", system_infra_type)
+
+    @property
+    @pulumi.getter(name="currentInstanceCount")
+    def current_instance_count(self) -> int:
+        """
+        This value is the current count of the model deployment instances.
+        """
+        return pulumi.get(self, "current_instance_count")
+
+    @property
+    @pulumi.getter(name="systemInfraType")
+    def system_infra_type(self) -> str:
+        """
+        The infrastructure type of the model deployment.
+        """
+        return pulumi.get(self, "system_infra_type")
 
 
 @pulumi.output_type
@@ -6432,6 +7269,7 @@ class GetModelDeploymentsModelDeploymentResult(dict):
                  id: str,
                  lifecycle_details: str,
                  model_deployment_configuration_details: Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailResult'],
+                 model_deployment_system_datas: Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentSystemDataResult'],
                  model_deployment_url: str,
                  project_id: str,
                  state: str,
@@ -6447,6 +7285,7 @@ class GetModelDeploymentsModelDeploymentResult(dict):
         :param str id: <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
         :param str lifecycle_details: Details about the state of the model deployment.
         :param Sequence['GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailArgs'] model_deployment_configuration_details: The model deployment configuration details.
+        :param Sequence['GetModelDeploymentsModelDeploymentModelDeploymentSystemDataArgs'] model_deployment_system_datas: Model deployment system data.
         :param str model_deployment_url: The URL to interact with the model deployment.
         :param str project_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
         :param str state: <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
@@ -6462,6 +7301,7 @@ class GetModelDeploymentsModelDeploymentResult(dict):
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "model_deployment_configuration_details", model_deployment_configuration_details)
+        pulumi.set(__self__, "model_deployment_system_datas", model_deployment_system_datas)
         pulumi.set(__self__, "model_deployment_url", model_deployment_url)
         pulumi.set(__self__, "project_id", project_id)
         pulumi.set(__self__, "state", state)
@@ -6546,6 +7386,14 @@ class GetModelDeploymentsModelDeploymentResult(dict):
         The model deployment configuration details.
         """
         return pulumi.get(self, "model_deployment_configuration_details")
+
+    @property
+    @pulumi.getter(name="modelDeploymentSystemDatas")
+    def model_deployment_system_datas(self) -> Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentSystemDataResult']:
+        """
+        Model deployment system data.
+        """
+        return pulumi.get(self, "model_deployment_system_datas")
 
     @property
     @pulumi.getter(name="modelDeploymentUrl")
@@ -6807,16 +7655,19 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelC
     def __init__(__self__, *,
                  bandwidth_mbps: int,
                  instance_configurations: Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationResult'],
+                 maximum_bandwidth_mbps: int,
                  model_id: str,
                  scaling_policies: Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyResult']):
         """
         :param int bandwidth_mbps: The minimum network bandwidth for the model deployment.
         :param Sequence['GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationArgs'] instance_configurations: The model deployment instance configuration
+        :param int maximum_bandwidth_mbps: The maximum network bandwidth for the model deployment.
         :param str model_id: The OCID of the model you want to deploy.
         :param Sequence['GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyArgs'] scaling_policies: The scaling policy to apply to each model of the deployment.
         """
         pulumi.set(__self__, "bandwidth_mbps", bandwidth_mbps)
         pulumi.set(__self__, "instance_configurations", instance_configurations)
+        pulumi.set(__self__, "maximum_bandwidth_mbps", maximum_bandwidth_mbps)
         pulumi.set(__self__, "model_id", model_id)
         pulumi.set(__self__, "scaling_policies", scaling_policies)
 
@@ -6835,6 +7686,14 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelC
         The model deployment instance configuration
         """
         return pulumi.get(self, "instance_configurations")
+
+    @property
+    @pulumi.getter(name="maximumBandwidthMbps")
+    def maximum_bandwidth_mbps(self) -> int:
+        """
+        The maximum network bandwidth for the model deployment.
+        """
+        return pulumi.get(self, "maximum_bandwidth_mbps")
 
     @property
     @pulumi.getter(name="modelId")
@@ -6885,20 +7744,31 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelC
 @pulumi.output_type
 class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailResult(dict):
     def __init__(__self__, *,
+                 cpu_baseline: str,
                  memory_in_gbs: float,
                  ocpus: float):
         """
-        :param float memory_in_gbs: A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 and 512 GB and VM.Optimized3.Flex memory range is between 6 and 256 GB.
-        :param float ocpus: A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 and 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
+        :param str cpu_baseline: The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+        :param float memory_in_gbs: A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
+        :param float ocpus: A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 to 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
         """
+        pulumi.set(__self__, "cpu_baseline", cpu_baseline)
         pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         pulumi.set(__self__, "ocpus", ocpus)
+
+    @property
+    @pulumi.getter(name="cpuBaseline")
+    def cpu_baseline(self) -> str:
+        """
+        The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+        """
+        return pulumi.get(self, "cpu_baseline")
 
     @property
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> float:
         """
-        A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 and 512 GB and VM.Optimized3.Flex memory range is between 6 and 256 GB.
+        A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
         """
         return pulumi.get(self, "memory_in_gbs")
 
@@ -6906,7 +7776,7 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelC
     @pulumi.getter
     def ocpus(self) -> float:
         """
-        A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 and 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
+        A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 to 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
         """
         return pulumi.get(self, "ocpus")
 
@@ -6914,14 +7784,39 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelC
 @pulumi.output_type
 class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyResult(dict):
     def __init__(__self__, *,
+                 auto_scaling_policies: Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyResult'],
+                 cool_down_in_seconds: int,
                  instance_count: int,
+                 is_enabled: bool,
                  policy_type: str):
         """
+        :param Sequence['GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyArgs'] auto_scaling_policies: The list of autoscaling policy details.
+        :param int cool_down_in_seconds: For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 600 seconds, which is also the default. The cooldown period starts when the model deployment becomes ACTIVE after the scaling operation.
         :param int instance_count: The number of instances for the model deployment.
+        :param bool is_enabled: Whether the autoscaling policy is enabled.
         :param str policy_type: The type of scaling policy.
         """
+        pulumi.set(__self__, "auto_scaling_policies", auto_scaling_policies)
+        pulumi.set(__self__, "cool_down_in_seconds", cool_down_in_seconds)
         pulumi.set(__self__, "instance_count", instance_count)
+        pulumi.set(__self__, "is_enabled", is_enabled)
         pulumi.set(__self__, "policy_type", policy_type)
+
+    @property
+    @pulumi.getter(name="autoScalingPolicies")
+    def auto_scaling_policies(self) -> Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyResult']:
+        """
+        The list of autoscaling policy details.
+        """
+        return pulumi.get(self, "auto_scaling_policies")
+
+    @property
+    @pulumi.getter(name="coolDownInSeconds")
+    def cool_down_in_seconds(self) -> int:
+        """
+        For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 600 seconds, which is also the default. The cooldown period starts when the model deployment becomes ACTIVE after the scaling operation.
+        """
+        return pulumi.get(self, "cool_down_in_seconds")
 
     @property
     @pulumi.getter(name="instanceCount")
@@ -6932,12 +7827,286 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelC
         return pulumi.get(self, "instance_count")
 
     @property
+    @pulumi.getter(name="isEnabled")
+    def is_enabled(self) -> bool:
+        """
+        Whether the autoscaling policy is enabled.
+        """
+        return pulumi.get(self, "is_enabled")
+
+    @property
     @pulumi.getter(name="policyType")
     def policy_type(self) -> str:
         """
         The type of scaling policy.
         """
         return pulumi.get(self, "policy_type")
+
+
+@pulumi.output_type
+class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyResult(dict):
+    def __init__(__self__, *,
+                 auto_scaling_policy_type: str,
+                 initial_instance_count: int,
+                 maximum_instance_count: int,
+                 minimum_instance_count: int,
+                 rules: Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleResult']):
+        """
+        :param str auto_scaling_policy_type: The type of autoscaling policy.
+        :param int initial_instance_count: For a threshold-based autoscaling policy, this value is the initial number of instances to launch in the model deployment immediately after autoscaling is enabled. Note that anytime this value is updated, the number of instances will be reset to this value. After autoscaling retrieves performance metrics, the number of instances is automatically adjusted from this initial number to a number that is based on the limits that you set.
+        :param int maximum_instance_count: For a threshold-based autoscaling policy, this value is the maximum number of instances the model deployment is allowed to increase to (scale out).
+        :param int minimum_instance_count: For a threshold-based autoscaling policy, this value is the minimum number of instances the model deployment is allowed to decrease to (scale in).
+        :param Sequence['GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleArgs'] rules: The list of autoscaling policy rules.
+        """
+        pulumi.set(__self__, "auto_scaling_policy_type", auto_scaling_policy_type)
+        pulumi.set(__self__, "initial_instance_count", initial_instance_count)
+        pulumi.set(__self__, "maximum_instance_count", maximum_instance_count)
+        pulumi.set(__self__, "minimum_instance_count", minimum_instance_count)
+        pulumi.set(__self__, "rules", rules)
+
+    @property
+    @pulumi.getter(name="autoScalingPolicyType")
+    def auto_scaling_policy_type(self) -> str:
+        """
+        The type of autoscaling policy.
+        """
+        return pulumi.get(self, "auto_scaling_policy_type")
+
+    @property
+    @pulumi.getter(name="initialInstanceCount")
+    def initial_instance_count(self) -> int:
+        """
+        For a threshold-based autoscaling policy, this value is the initial number of instances to launch in the model deployment immediately after autoscaling is enabled. Note that anytime this value is updated, the number of instances will be reset to this value. After autoscaling retrieves performance metrics, the number of instances is automatically adjusted from this initial number to a number that is based on the limits that you set.
+        """
+        return pulumi.get(self, "initial_instance_count")
+
+    @property
+    @pulumi.getter(name="maximumInstanceCount")
+    def maximum_instance_count(self) -> int:
+        """
+        For a threshold-based autoscaling policy, this value is the maximum number of instances the model deployment is allowed to increase to (scale out).
+        """
+        return pulumi.get(self, "maximum_instance_count")
+
+    @property
+    @pulumi.getter(name="minimumInstanceCount")
+    def minimum_instance_count(self) -> int:
+        """
+        For a threshold-based autoscaling policy, this value is the minimum number of instances the model deployment is allowed to decrease to (scale in).
+        """
+        return pulumi.get(self, "minimum_instance_count")
+
+    @property
+    @pulumi.getter
+    def rules(self) -> Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleResult']:
+        """
+        The list of autoscaling policy rules.
+        """
+        return pulumi.get(self, "rules")
+
+
+@pulumi.output_type
+class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleResult(dict):
+    def __init__(__self__, *,
+                 metric_expression_rule_type: str,
+                 metric_type: str,
+                 scale_in_configurations: Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationResult'],
+                 scale_out_configurations: Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationResult']):
+        """
+        :param str metric_expression_rule_type: The metric expression for creating the alarm used to trigger autoscaling actions on the model deployment.
+        :param str metric_type: Metric type
+        :param Sequence['GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgs'] scale_in_configurations: The scaling configuration for the predefined metric expression rule.
+        :param Sequence['GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgs'] scale_out_configurations: The scaling configuration for the predefined metric expression rule.
+        """
+        pulumi.set(__self__, "metric_expression_rule_type", metric_expression_rule_type)
+        pulumi.set(__self__, "metric_type", metric_type)
+        pulumi.set(__self__, "scale_in_configurations", scale_in_configurations)
+        pulumi.set(__self__, "scale_out_configurations", scale_out_configurations)
+
+    @property
+    @pulumi.getter(name="metricExpressionRuleType")
+    def metric_expression_rule_type(self) -> str:
+        """
+        The metric expression for creating the alarm used to trigger autoscaling actions on the model deployment.
+        """
+        return pulumi.get(self, "metric_expression_rule_type")
+
+    @property
+    @pulumi.getter(name="metricType")
+    def metric_type(self) -> str:
+        """
+        Metric type
+        """
+        return pulumi.get(self, "metric_type")
+
+    @property
+    @pulumi.getter(name="scaleInConfigurations")
+    def scale_in_configurations(self) -> Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationResult']:
+        """
+        The scaling configuration for the predefined metric expression rule.
+        """
+        return pulumi.get(self, "scale_in_configurations")
+
+    @property
+    @pulumi.getter(name="scaleOutConfigurations")
+    def scale_out_configurations(self) -> Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationResult']:
+        """
+        The scaling configuration for the predefined metric expression rule.
+        """
+        return pulumi.get(self, "scale_out_configurations")
+
+
+@pulumi.output_type
+class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationResult(dict):
+    def __init__(__self__, *,
+                 instance_count_adjustment: int,
+                 pending_duration: str,
+                 query: str,
+                 scaling_configuration_type: str,
+                 threshold: int):
+        """
+        :param int instance_count_adjustment: The value is used for adjusting the count of instances by.
+        :param str pending_duration: The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
+        :param str query: The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+        :param str scaling_configuration_type: The type of scaling configuration.
+        :param int threshold: A metric value at which the scaling operation will be triggered.
+        """
+        pulumi.set(__self__, "instance_count_adjustment", instance_count_adjustment)
+        pulumi.set(__self__, "pending_duration", pending_duration)
+        pulumi.set(__self__, "query", query)
+        pulumi.set(__self__, "scaling_configuration_type", scaling_configuration_type)
+        pulumi.set(__self__, "threshold", threshold)
+
+    @property
+    @pulumi.getter(name="instanceCountAdjustment")
+    def instance_count_adjustment(self) -> int:
+        """
+        The value is used for adjusting the count of instances by.
+        """
+        return pulumi.get(self, "instance_count_adjustment")
+
+    @property
+    @pulumi.getter(name="pendingDuration")
+    def pending_duration(self) -> str:
+        """
+        The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
+        """
+        return pulumi.get(self, "pending_duration")
+
+    @property
+    @pulumi.getter
+    def query(self) -> str:
+        """
+        The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+        """
+        return pulumi.get(self, "query")
+
+    @property
+    @pulumi.getter(name="scalingConfigurationType")
+    def scaling_configuration_type(self) -> str:
+        """
+        The type of scaling configuration.
+        """
+        return pulumi.get(self, "scaling_configuration_type")
+
+    @property
+    @pulumi.getter
+    def threshold(self) -> int:
+        """
+        A metric value at which the scaling operation will be triggered.
+        """
+        return pulumi.get(self, "threshold")
+
+
+@pulumi.output_type
+class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationResult(dict):
+    def __init__(__self__, *,
+                 instance_count_adjustment: int,
+                 pending_duration: str,
+                 query: str,
+                 scaling_configuration_type: str,
+                 threshold: int):
+        """
+        :param int instance_count_adjustment: The value is used for adjusting the count of instances by.
+        :param str pending_duration: The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
+        :param str query: The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+        :param str scaling_configuration_type: The type of scaling configuration.
+        :param int threshold: A metric value at which the scaling operation will be triggered.
+        """
+        pulumi.set(__self__, "instance_count_adjustment", instance_count_adjustment)
+        pulumi.set(__self__, "pending_duration", pending_duration)
+        pulumi.set(__self__, "query", query)
+        pulumi.set(__self__, "scaling_configuration_type", scaling_configuration_type)
+        pulumi.set(__self__, "threshold", threshold)
+
+    @property
+    @pulumi.getter(name="instanceCountAdjustment")
+    def instance_count_adjustment(self) -> int:
+        """
+        The value is used for adjusting the count of instances by.
+        """
+        return pulumi.get(self, "instance_count_adjustment")
+
+    @property
+    @pulumi.getter(name="pendingDuration")
+    def pending_duration(self) -> str:
+        """
+        The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
+        """
+        return pulumi.get(self, "pending_duration")
+
+    @property
+    @pulumi.getter
+    def query(self) -> str:
+        """
+        The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+        """
+        return pulumi.get(self, "query")
+
+    @property
+    @pulumi.getter(name="scalingConfigurationType")
+    def scaling_configuration_type(self) -> str:
+        """
+        The type of scaling configuration.
+        """
+        return pulumi.get(self, "scaling_configuration_type")
+
+    @property
+    @pulumi.getter
+    def threshold(self) -> int:
+        """
+        A metric value at which the scaling operation will be triggered.
+        """
+        return pulumi.get(self, "threshold")
+
+
+@pulumi.output_type
+class GetModelDeploymentsModelDeploymentModelDeploymentSystemDataResult(dict):
+    def __init__(__self__, *,
+                 current_instance_count: int,
+                 system_infra_type: str):
+        """
+        :param int current_instance_count: This value is the current count of the model deployment instances.
+        :param str system_infra_type: The infrastructure type of the model deployment.
+        """
+        pulumi.set(__self__, "current_instance_count", current_instance_count)
+        pulumi.set(__self__, "system_infra_type", system_infra_type)
+
+    @property
+    @pulumi.getter(name="currentInstanceCount")
+    def current_instance_count(self) -> int:
+        """
+        This value is the current count of the model deployment instances.
+        """
+        return pulumi.get(self, "current_instance_count")
+
+    @property
+    @pulumi.getter(name="systemInfraType")
+    def system_infra_type(self) -> str:
+        """
+        The infrastructure type of the model deployment.
+        """
+        return pulumi.get(self, "system_infra_type")
 
 
 @pulumi.output_type

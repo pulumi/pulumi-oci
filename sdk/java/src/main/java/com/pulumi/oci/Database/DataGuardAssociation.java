@@ -165,14 +165,14 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.backupNetworkNsgIds);
     }
     /**
-     * The number of OCPU cores available for AMD-based virtual machine DB systems.
+     * The number of CPU cores available for AMD-based virtual machine DB systems.
      * 
      */
     @Export(name="cpuCoreCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> cpuCoreCount;
 
     /**
-     * @return The number of OCPU cores available for AMD-based virtual machine DB systems.
+     * @return The number of CPU cores available for AMD-based virtual machine DB systems.
      * 
      */
     public Output<Integer> cpuCoreCount() {
@@ -405,14 +405,14 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.isActiveDataGuardEnabled);
     }
     /**
-     * The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED.
+     * The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous Database Serverless.
      * 
      */
     @Export(name="licenseModel", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> licenseModel;
 
     /**
-     * @return The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED.
+     * @return The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous Database Serverless.
      * 
      */
     public Output<Optional<String>> licenseModel() {

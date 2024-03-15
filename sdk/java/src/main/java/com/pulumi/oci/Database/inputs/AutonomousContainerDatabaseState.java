@@ -132,14 +132,14 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
     }
 
     /**
-     * The compute model of the Autonomous VM Cluster.
+     * The compute model of the Autonomous Container Database. For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      * 
      */
     @Import(name="computeModel")
     private @Nullable Output<String> computeModel;
 
     /**
-     * @return The compute model of the Autonomous VM Cluster.
+     * @return The compute model of the Autonomous Container Database. For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      * 
      */
     public Optional<Output<String>> computeModel() {
@@ -159,6 +159,21 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
      */
     public Optional<Output<String>> dbName() {
         return Optional.ofNullable(this.dbName);
+    }
+
+    /**
+     * The value above which an Autonomous Database will be split across multiple nodes. This value defaults to 16 when the &#34;CPU per VM&#34; value on the Autonomous VM Cluster is greater than 16. Otherwise, it defaults to the &#34;CPU per VM&#34; value.
+     * 
+     */
+    @Import(name="dbSplitThreshold")
+    private @Nullable Output<Integer> dbSplitThreshold;
+
+    /**
+     * @return The value above which an Autonomous Database will be split across multiple nodes. This value defaults to 16 when the &#34;CPU per VM&#34; value on the Autonomous VM Cluster is greater than 16. Otherwise, it defaults to the &#34;CPU per VM&#34; value.
+     * 
+     */
+    public Optional<Output<Integer>> dbSplitThreshold() {
+        return Optional.ofNullable(this.dbSplitThreshold);
     }
 
     @Import(name="dbUniqueName")
@@ -214,14 +229,29 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
     }
 
     /**
-     * DST Time Zone File version of the Autonomous Container Database.
+     * This option determines whether to open an Autonomous Database across the maximum number of nodes or the least number of nodes. The default will be for the minimum number of VMs.
+     * 
+     */
+    @Import(name="distributionAffinity")
+    private @Nullable Output<String> distributionAffinity;
+
+    /**
+     * @return This option determines whether to open an Autonomous Database across the maximum number of nodes or the least number of nodes. The default will be for the minimum number of VMs.
+     * 
+     */
+    public Optional<Output<String>> distributionAffinity() {
+        return Optional.ofNullable(this.distributionAffinity);
+    }
+
+    /**
+     * DST Time-zone File version of the Autonomous Container Database.
      * 
      */
     @Import(name="dstFileVersion")
     private @Nullable Output<String> dstFileVersion;
 
     /**
-     * @return DST Time Zone File version of the Autonomous Container Database.
+     * @return DST Time-zone File version of the Autonomous Container Database.
      * 
      */
     public Optional<Output<String>> dstFileVersion() {
@@ -439,18 +469,33 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
     }
 
     /**
-     * The amount of memory (in GBs) enabled per OCPU or ECPU in the Autonomous VM Cluster.
+     * The amount of memory (in GBs) enabled per ECPU or OCPU in the Autonomous VM Cluster.
      * 
      */
     @Import(name="memoryPerOracleComputeUnitInGbs")
     private @Nullable Output<Integer> memoryPerOracleComputeUnitInGbs;
 
     /**
-     * @return The amount of memory (in GBs) enabled per OCPU or ECPU in the Autonomous VM Cluster.
+     * @return The amount of memory (in GBs) enabled per ECPU or OCPU in the Autonomous VM Cluster.
      * 
      */
     public Optional<Output<Integer>> memoryPerOracleComputeUnitInGbs() {
         return Optional.ofNullable(this.memoryPerOracleComputeUnitInGbs);
+    }
+
+    /**
+     * Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
+     * 
+     */
+    @Import(name="netServicesArchitecture")
+    private @Nullable Output<String> netServicesArchitecture;
+
+    /**
+     * @return Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
+     * 
+     */
+    public Optional<Output<String>> netServicesArchitecture() {
+        return Optional.ofNullable(this.netServicesArchitecture);
     }
 
     /**
@@ -841,6 +886,21 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
         return Optional.ofNullable(this.versionPreference);
     }
 
+    /**
+     * The percentage of CPUs to reserve for a single node Autonomous Database, in increments of 25.
+     * 
+     */
+    @Import(name="vmFailoverReservation")
+    private @Nullable Output<Integer> vmFailoverReservation;
+
+    /**
+     * @return The percentage of CPUs to reserve for a single node Autonomous Database, in increments of 25.
+     * 
+     */
+    public Optional<Output<Integer>> vmFailoverReservation() {
+        return Optional.ofNullable(this.vmFailoverReservation);
+    }
+
     private AutonomousContainerDatabaseState() {}
 
     private AutonomousContainerDatabaseState(AutonomousContainerDatabaseState $) {
@@ -853,10 +913,12 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
         this.compartmentId = $.compartmentId;
         this.computeModel = $.computeModel;
         this.dbName = $.dbName;
+        this.dbSplitThreshold = $.dbSplitThreshold;
         this.dbUniqueName = $.dbUniqueName;
         this.dbVersion = $.dbVersion;
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
+        this.distributionAffinity = $.distributionAffinity;
         this.dstFileVersion = $.dstFileVersion;
         this.fastStartFailOverLagLimitInSeconds = $.fastStartFailOverLagLimitInSeconds;
         this.freeformTags = $.freeformTags;
@@ -873,6 +935,7 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
         this.maintenanceWindowDetails = $.maintenanceWindowDetails;
         this.maintenanceWindows = $.maintenanceWindows;
         this.memoryPerOracleComputeUnitInGbs = $.memoryPerOracleComputeUnitInGbs;
+        this.netServicesArchitecture = $.netServicesArchitecture;
         this.nextMaintenanceRunId = $.nextMaintenanceRunId;
         this.patchId = $.patchId;
         this.patchModel = $.patchModel;
@@ -899,6 +962,7 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
         this.totalCpus = $.totalCpus;
         this.vaultId = $.vaultId;
         this.versionPreference = $.versionPreference;
+        this.vmFailoverReservation = $.vmFailoverReservation;
     }
 
     public static Builder builder() {
@@ -1067,7 +1131,7 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
         }
 
         /**
-         * @param computeModel The compute model of the Autonomous VM Cluster.
+         * @param computeModel The compute model of the Autonomous Container Database. For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
          * 
          * @return builder
          * 
@@ -1078,7 +1142,7 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
         }
 
         /**
-         * @param computeModel The compute model of the Autonomous VM Cluster.
+         * @param computeModel The compute model of the Autonomous Container Database. For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
          * 
          * @return builder
          * 
@@ -1106,6 +1170,27 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
          */
         public Builder dbName(String dbName) {
             return dbName(Output.of(dbName));
+        }
+
+        /**
+         * @param dbSplitThreshold The value above which an Autonomous Database will be split across multiple nodes. This value defaults to 16 when the &#34;CPU per VM&#34; value on the Autonomous VM Cluster is greater than 16. Otherwise, it defaults to the &#34;CPU per VM&#34; value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dbSplitThreshold(@Nullable Output<Integer> dbSplitThreshold) {
+            $.dbSplitThreshold = dbSplitThreshold;
+            return this;
+        }
+
+        /**
+         * @param dbSplitThreshold The value above which an Autonomous Database will be split across multiple nodes. This value defaults to 16 when the &#34;CPU per VM&#34; value on the Autonomous VM Cluster is greater than 16. Otherwise, it defaults to the &#34;CPU per VM&#34; value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dbSplitThreshold(Integer dbSplitThreshold) {
+            return dbSplitThreshold(Output.of(dbSplitThreshold));
         }
 
         public Builder dbUniqueName(@Nullable Output<String> dbUniqueName) {
@@ -1181,7 +1266,28 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
         }
 
         /**
-         * @param dstFileVersion DST Time Zone File version of the Autonomous Container Database.
+         * @param distributionAffinity This option determines whether to open an Autonomous Database across the maximum number of nodes or the least number of nodes. The default will be for the minimum number of VMs.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder distributionAffinity(@Nullable Output<String> distributionAffinity) {
+            $.distributionAffinity = distributionAffinity;
+            return this;
+        }
+
+        /**
+         * @param distributionAffinity This option determines whether to open an Autonomous Database across the maximum number of nodes or the least number of nodes. The default will be for the minimum number of VMs.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder distributionAffinity(String distributionAffinity) {
+            return distributionAffinity(Output.of(distributionAffinity));
+        }
+
+        /**
+         * @param dstFileVersion DST Time-zone File version of the Autonomous Container Database.
          * 
          * @return builder
          * 
@@ -1192,7 +1298,7 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
         }
 
         /**
-         * @param dstFileVersion DST Time Zone File version of the Autonomous Container Database.
+         * @param dstFileVersion DST Time-zone File version of the Autonomous Container Database.
          * 
          * @return builder
          * 
@@ -1516,7 +1622,7 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
         }
 
         /**
-         * @param memoryPerOracleComputeUnitInGbs The amount of memory (in GBs) enabled per OCPU or ECPU in the Autonomous VM Cluster.
+         * @param memoryPerOracleComputeUnitInGbs The amount of memory (in GBs) enabled per ECPU or OCPU in the Autonomous VM Cluster.
          * 
          * @return builder
          * 
@@ -1527,13 +1633,34 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
         }
 
         /**
-         * @param memoryPerOracleComputeUnitInGbs The amount of memory (in GBs) enabled per OCPU or ECPU in the Autonomous VM Cluster.
+         * @param memoryPerOracleComputeUnitInGbs The amount of memory (in GBs) enabled per ECPU or OCPU in the Autonomous VM Cluster.
          * 
          * @return builder
          * 
          */
         public Builder memoryPerOracleComputeUnitInGbs(Integer memoryPerOracleComputeUnitInGbs) {
             return memoryPerOracleComputeUnitInGbs(Output.of(memoryPerOracleComputeUnitInGbs));
+        }
+
+        /**
+         * @param netServicesArchitecture Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder netServicesArchitecture(@Nullable Output<String> netServicesArchitecture) {
+            $.netServicesArchitecture = netServicesArchitecture;
+            return this;
+        }
+
+        /**
+         * @param netServicesArchitecture Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder netServicesArchitecture(String netServicesArchitecture) {
+            return netServicesArchitecture(Output.of(netServicesArchitecture));
         }
 
         /**
@@ -2080,6 +2207,27 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
          */
         public Builder versionPreference(String versionPreference) {
             return versionPreference(Output.of(versionPreference));
+        }
+
+        /**
+         * @param vmFailoverReservation The percentage of CPUs to reserve for a single node Autonomous Database, in increments of 25.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder vmFailoverReservation(@Nullable Output<Integer> vmFailoverReservation) {
+            $.vmFailoverReservation = vmFailoverReservation;
+            return this;
+        }
+
+        /**
+         * @param vmFailoverReservation The percentage of CPUs to reserve for a single node Autonomous Database, in increments of 25.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder vmFailoverReservation(Integer vmFailoverReservation) {
+            return vmFailoverReservation(Output.of(vmFailoverReservation));
         }
 
         public AutonomousContainerDatabaseState build() {

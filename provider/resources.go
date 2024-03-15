@@ -58,6 +58,7 @@ const (
 	bigDataServiceMod               = "BigDataService"               // Big Data Service
 	blockchainMod                   = "Blockchain"                   // Blockchain
 	budgetMod                       = "Budget"                       // Budget
+	capacityManagementMod           = "CapacityManagement"           // Capacity Management
 	certificatesManagementMod       = "CertificatesManagement"       // Certificates Management
 	cloudBridgeMod                  = "CloudBridge"                  // Cloud Bridge
 	cloudGuardMod                   = "CloudGuard"                   // Cloud Guard
@@ -173,6 +174,7 @@ var mappedMods = map[string]string{
 	"bds":                            bigDataServiceMod,
 	"blockchain":                     blockchainMod,
 	"budget":                         budgetMod,
+	"capacity_management":            capacityManagementMod,
 	"certificates_management":        certificatesManagementMod,
 	"cloud_bridge":                   cloudBridgeMod,
 	"cloud_guard":                    cloudGuardMod,

@@ -76,9 +76,11 @@ import javax.annotation.Nullable;
  *                 .build())
  *             .compartmentId(var_.compartment_id())
  *             .dbName(var_.autonomous_container_database_db_name())
+ *             .dbSplitThreshold(var_.autonomous_container_database_db_split_threshold())
  *             .dbUniqueName(var_.autonomous_container_database_db_unique_name())
  *             .dbVersion(var_.autonomous_container_database_db_version())
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .distributionAffinity(var_.autonomous_container_database_distribution_affinity())
  *             .fastStartFailOverLagLimitInSeconds(var_.autonomous_container_database_fast_start_fail_over_lag_limit_in_seconds())
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .isAutomaticFailoverEnabled(var_.autonomous_container_database_is_automatic_failover_enabled())
@@ -101,6 +103,7 @@ import javax.annotation.Nullable;
  *                 .preference(var_.autonomous_container_database_maintenance_window_details_preference())
  *                 .weeksOfMonths(var_.autonomous_container_database_maintenance_window_details_weeks_of_month())
  *                 .build())
+ *             .netServicesArchitecture(var_.autonomous_container_database_net_services_architecture())
  *             .peerAutonomousContainerDatabaseDisplayName(var_.autonomous_container_database_peer_autonomous_container_database_display_name())
  *             .peerCloudAutonomousVmClusterId(oci_database_cloud_autonomous_vm_cluster.test_cloud_autonomous_vm_cluster().id())
  *             .protectionMode(var_.autonomous_container_database_protection_mode())
@@ -121,6 +124,7 @@ import javax.annotation.Nullable;
  *             .serviceLevelAgreementType(var_.autonomous_container_database_service_level_agreement_type())
  *             .vaultId(oci_kms_vault.test_vault().id())
  *             .versionPreference(var_.autonomous_container_database_version_preference())
+ *             .vmFailoverReservation(var_.autonomous_container_database_vm_failover_reservation())
  *             .standbyMaintenanceBufferInDays(var_.autonomous_container_database_standby_maintenance_buffer_in_days())
  *             .build());
  * 
@@ -239,14 +243,14 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
         return this.compartmentId;
     }
     /**
-     * The compute model of the Autonomous VM Cluster.
+     * The compute model of the Autonomous Container Database. For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      * 
      */
     @Export(name="computeModel", refs={String.class}, tree="[0]")
     private Output<String> computeModel;
 
     /**
-     * @return The compute model of the Autonomous VM Cluster.
+     * @return The compute model of the Autonomous Container Database. For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      * 
      */
     public Output<String> computeModel() {
@@ -265,6 +269,20 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      */
     public Output<String> dbName() {
         return this.dbName;
+    }
+    /**
+     * The value above which an Autonomous Database will be split across multiple nodes. This value defaults to 16 when the &#34;CPU per VM&#34; value on the Autonomous VM Cluster is greater than 16. Otherwise, it defaults to the &#34;CPU per VM&#34; value.
+     * 
+     */
+    @Export(name="dbSplitThreshold", refs={Integer.class}, tree="[0]")
+    private Output<Integer> dbSplitThreshold;
+
+    /**
+     * @return The value above which an Autonomous Database will be split across multiple nodes. This value defaults to 16 when the &#34;CPU per VM&#34; value on the Autonomous VM Cluster is greater than 16. Otherwise, it defaults to the &#34;CPU per VM&#34; value.
+     * 
+     */
+    public Output<Integer> dbSplitThreshold() {
+        return this.dbSplitThreshold;
     }
     @Export(name="dbUniqueName", refs={String.class}, tree="[0]")
     private Output<String> dbUniqueName;
@@ -315,14 +333,28 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
         return this.displayName;
     }
     /**
-     * DST Time Zone File version of the Autonomous Container Database.
+     * This option determines whether to open an Autonomous Database across the maximum number of nodes or the least number of nodes. The default will be for the minimum number of VMs.
+     * 
+     */
+    @Export(name="distributionAffinity", refs={String.class}, tree="[0]")
+    private Output<String> distributionAffinity;
+
+    /**
+     * @return This option determines whether to open an Autonomous Database across the maximum number of nodes or the least number of nodes. The default will be for the minimum number of VMs.
+     * 
+     */
+    public Output<String> distributionAffinity() {
+        return this.distributionAffinity;
+    }
+    /**
+     * DST Time-zone File version of the Autonomous Container Database.
      * 
      */
     @Export(name="dstFileVersion", refs={String.class}, tree="[0]")
     private Output<String> dstFileVersion;
 
     /**
-     * @return DST Time Zone File version of the Autonomous Container Database.
+     * @return DST Time-zone File version of the Autonomous Container Database.
      * 
      */
     public Output<String> dstFileVersion() {
@@ -525,18 +557,32 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
         return this.maintenanceWindows;
     }
     /**
-     * The amount of memory (in GBs) enabled per OCPU or ECPU in the Autonomous VM Cluster.
+     * The amount of memory (in GBs) enabled per ECPU or OCPU in the Autonomous VM Cluster.
      * 
      */
     @Export(name="memoryPerOracleComputeUnitInGbs", refs={Integer.class}, tree="[0]")
     private Output<Integer> memoryPerOracleComputeUnitInGbs;
 
     /**
-     * @return The amount of memory (in GBs) enabled per OCPU or ECPU in the Autonomous VM Cluster.
+     * @return The amount of memory (in GBs) enabled per ECPU or OCPU in the Autonomous VM Cluster.
      * 
      */
     public Output<Integer> memoryPerOracleComputeUnitInGbs() {
         return this.memoryPerOracleComputeUnitInGbs;
+    }
+    /**
+     * Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
+     * 
+     */
+    @Export(name="netServicesArchitecture", refs={String.class}, tree="[0]")
+    private Output<String> netServicesArchitecture;
+
+    /**
+     * @return Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
+     * 
+     */
+    public Output<String> netServicesArchitecture() {
+        return this.netServicesArchitecture;
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
@@ -899,6 +945,20 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      */
     public Output<String> versionPreference() {
         return this.versionPreference;
+    }
+    /**
+     * The percentage of CPUs to reserve for a single node Autonomous Database, in increments of 25.
+     * 
+     */
+    @Export(name="vmFailoverReservation", refs={Integer.class}, tree="[0]")
+    private Output<Integer> vmFailoverReservation;
+
+    /**
+     * @return The percentage of CPUs to reserve for a single node Autonomous Database, in increments of 25.
+     * 
+     */
+    public Output<Integer> vmFailoverReservation() {
+        return this.vmFailoverReservation;
     }
 
     /**

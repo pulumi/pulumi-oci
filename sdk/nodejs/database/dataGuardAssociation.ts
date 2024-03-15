@@ -115,7 +115,7 @@ export class DataGuardAssociation extends pulumi.CustomResource {
      */
     public readonly backupNetworkNsgIds!: pulumi.Output<string[] | undefined>;
     /**
-     * The number of OCPU cores available for AMD-based virtual machine DB systems.
+     * The number of CPU cores available for AMD-based virtual machine DB systems.
      */
     public readonly cpuCoreCount!: pulumi.Output<number>;
     public readonly createAsync!: pulumi.Output<boolean | undefined>;
@@ -189,7 +189,7 @@ export class DataGuardAssociation extends pulumi.CustomResource {
      */
     public readonly isActiveDataGuardEnabled!: pulumi.Output<boolean | undefined>;
     /**
-     * The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED.
+     * The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous Database Serverless.
      */
     public readonly licenseModel!: pulumi.Output<string | undefined>;
     /**
@@ -442,7 +442,7 @@ export interface DataGuardAssociationState {
      */
     backupNetworkNsgIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The number of OCPU cores available for AMD-based virtual machine DB systems.
+     * The number of CPU cores available for AMD-based virtual machine DB systems.
      */
     cpuCoreCount?: pulumi.Input<number>;
     createAsync?: pulumi.Input<boolean>;
@@ -516,7 +516,7 @@ export interface DataGuardAssociationState {
      */
     isActiveDataGuardEnabled?: pulumi.Input<boolean>;
     /**
-     * The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED.
+     * The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous Database Serverless.
      */
     licenseModel?: pulumi.Input<string>;
     /**
@@ -637,7 +637,7 @@ export interface DataGuardAssociationArgs {
      */
     backupNetworkNsgIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The number of OCPU cores available for AMD-based virtual machine DB systems.
+     * The number of CPU cores available for AMD-based virtual machine DB systems.
      */
     cpuCoreCount?: pulumi.Input<number>;
     createAsync?: pulumi.Input<boolean>;
@@ -711,7 +711,7 @@ export interface DataGuardAssociationArgs {
      */
     isActiveDataGuardEnabled?: pulumi.Input<boolean>;
     /**
-     * The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED.
+     * The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous Database Serverless.
      */
     licenseModel?: pulumi.Input<string>;
     /**

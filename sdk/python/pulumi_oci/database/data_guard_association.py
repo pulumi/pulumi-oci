@@ -79,7 +79,7 @@ class DataGuardAssociationArgs:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] availability_domain: The name of the availability domain that the standby database DB system will be located in. For example- "Uocm:PHX-AD-1".
         :param pulumi.Input[Sequence[pulumi.Input[str]]] backup_network_nsg_ids: A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
-        :param pulumi.Input[int] cpu_core_count: The number of OCPU cores available for AMD-based virtual machine DB systems.
+        :param pulumi.Input[int] cpu_core_count: The number of CPU cores available for AMD-based virtual machine DB systems.
         :param pulumi.Input['DataGuardAssociationDataCollectionOptionsArgs'] data_collection_options: Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         :param pulumi.Input[Mapping[str, Any]] database_defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[Mapping[str, Any]] database_freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -98,7 +98,7 @@ class DataGuardAssociationArgs:
                Example: `FAULT-DOMAIN-1`
         :param pulumi.Input[str] hostname: The hostname for the DB node.
         :param pulumi.Input[bool] is_active_data_guard_enabled: (Updatable) True if active Data Guard is enabled.
-        :param pulumi.Input[str] license_model: The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED.
+        :param pulumi.Input[str] license_model: The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous Database Serverless.
         :param pulumi.Input[int] node_count: The number of nodes to launch for the DB system of the standby in the Data Guard association. For a 2-node RAC virtual machine DB system, specify either 1 or 2. If you do not supply this parameter, the default is the node count of the primary DB system.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
                * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
@@ -297,7 +297,7 @@ class DataGuardAssociationArgs:
     @pulumi.getter(name="cpuCoreCount")
     def cpu_core_count(self) -> Optional[pulumi.Input[int]]:
         """
-        The number of OCPU cores available for AMD-based virtual machine DB systems.
+        The number of CPU cores available for AMD-based virtual machine DB systems.
         """
         return pulumi.get(self, "cpu_core_count")
 
@@ -446,7 +446,7 @@ class DataGuardAssociationArgs:
     @pulumi.getter(name="licenseModel")
     def license_model(self) -> Optional[pulumi.Input[str]]:
         """
-        The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED.
+        The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous Database Serverless.
         """
         return pulumi.get(self, "license_model")
 
@@ -656,7 +656,7 @@ class _DataGuardAssociationState:
         :param pulumi.Input[str] apply_rate: The rate at which redo logs are synced between the associated databases.  Example: `180 Mb per second`
         :param pulumi.Input[str] availability_domain: The name of the availability domain that the standby database DB system will be located in. For example- "Uocm:PHX-AD-1".
         :param pulumi.Input[Sequence[pulumi.Input[str]]] backup_network_nsg_ids: A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
-        :param pulumi.Input[int] cpu_core_count: The number of OCPU cores available for AMD-based virtual machine DB systems.
+        :param pulumi.Input[int] cpu_core_count: The number of CPU cores available for AMD-based virtual machine DB systems.
         :param pulumi.Input[str] creation_type: Specifies whether to create the peer database in an existing DB system or in a new DB system.
         :param pulumi.Input['DataGuardAssociationDataCollectionOptionsArgs'] data_collection_options: Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         :param pulumi.Input[str] database_admin_password: (Updatable) A strong password for the `SYS`, `SYSTEM`, and `PDB Admin` users to apply during standby creation.
@@ -686,7 +686,7 @@ class _DataGuardAssociationState:
                Example: `FAULT-DOMAIN-1`
         :param pulumi.Input[str] hostname: The hostname for the DB node.
         :param pulumi.Input[bool] is_active_data_guard_enabled: (Updatable) True if active Data Guard is enabled.
-        :param pulumi.Input[str] license_model: The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED.
+        :param pulumi.Input[str] license_model: The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous Database Serverless.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycleState, if available.
         :param pulumi.Input[int] node_count: The number of nodes to launch for the DB system of the standby in the Data Guard association. For a 2-node RAC virtual machine DB system, specify either 1 or 2. If you do not supply this parameter, the default is the node count of the primary DB system.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
@@ -865,7 +865,7 @@ class _DataGuardAssociationState:
     @pulumi.getter(name="cpuCoreCount")
     def cpu_core_count(self) -> Optional[pulumi.Input[int]]:
         """
-        The number of OCPU cores available for AMD-based virtual machine DB systems.
+        The number of CPU cores available for AMD-based virtual machine DB systems.
         """
         return pulumi.get(self, "cpu_core_count")
 
@@ -1067,7 +1067,7 @@ class _DataGuardAssociationState:
     @pulumi.getter(name="licenseModel")
     def license_model(self) -> Optional[pulumi.Input[str]]:
         """
-        The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED.
+        The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous Database Serverless.
         """
         return pulumi.get(self, "license_model")
 
@@ -1453,7 +1453,7 @@ class DataGuardAssociation(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] availability_domain: The name of the availability domain that the standby database DB system will be located in. For example- "Uocm:PHX-AD-1".
         :param pulumi.Input[Sequence[pulumi.Input[str]]] backup_network_nsg_ids: A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
-        :param pulumi.Input[int] cpu_core_count: The number of OCPU cores available for AMD-based virtual machine DB systems.
+        :param pulumi.Input[int] cpu_core_count: The number of CPU cores available for AMD-based virtual machine DB systems.
         :param pulumi.Input[str] creation_type: Specifies whether to create the peer database in an existing DB system or in a new DB system.
         :param pulumi.Input[pulumi.InputType['DataGuardAssociationDataCollectionOptionsArgs']] data_collection_options: Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         :param pulumi.Input[str] database_admin_password: (Updatable) A strong password for the `SYS`, `SYSTEM`, and `PDB Admin` users to apply during standby creation.
@@ -1483,7 +1483,7 @@ class DataGuardAssociation(pulumi.CustomResource):
                Example: `FAULT-DOMAIN-1`
         :param pulumi.Input[str] hostname: The hostname for the DB node.
         :param pulumi.Input[bool] is_active_data_guard_enabled: (Updatable) True if active Data Guard is enabled.
-        :param pulumi.Input[str] license_model: The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED.
+        :param pulumi.Input[str] license_model: The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous Database Serverless.
         :param pulumi.Input[int] node_count: The number of nodes to launch for the DB system of the standby in the Data Guard association. For a 2-node RAC virtual machine DB system, specify either 1 or 2. If you do not supply this parameter, the default is the node count of the primary DB system.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
                * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
@@ -1763,7 +1763,7 @@ class DataGuardAssociation(pulumi.CustomResource):
         :param pulumi.Input[str] apply_rate: The rate at which redo logs are synced between the associated databases.  Example: `180 Mb per second`
         :param pulumi.Input[str] availability_domain: The name of the availability domain that the standby database DB system will be located in. For example- "Uocm:PHX-AD-1".
         :param pulumi.Input[Sequence[pulumi.Input[str]]] backup_network_nsg_ids: A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
-        :param pulumi.Input[int] cpu_core_count: The number of OCPU cores available for AMD-based virtual machine DB systems.
+        :param pulumi.Input[int] cpu_core_count: The number of CPU cores available for AMD-based virtual machine DB systems.
         :param pulumi.Input[str] creation_type: Specifies whether to create the peer database in an existing DB system or in a new DB system.
         :param pulumi.Input[pulumi.InputType['DataGuardAssociationDataCollectionOptionsArgs']] data_collection_options: Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         :param pulumi.Input[str] database_admin_password: (Updatable) A strong password for the `SYS`, `SYSTEM`, and `PDB Admin` users to apply during standby creation.
@@ -1793,7 +1793,7 @@ class DataGuardAssociation(pulumi.CustomResource):
                Example: `FAULT-DOMAIN-1`
         :param pulumi.Input[str] hostname: The hostname for the DB node.
         :param pulumi.Input[bool] is_active_data_guard_enabled: (Updatable) True if active Data Guard is enabled.
-        :param pulumi.Input[str] license_model: The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED.
+        :param pulumi.Input[str] license_model: The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous Database Serverless.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycleState, if available.
         :param pulumi.Input[int] node_count: The number of nodes to launch for the DB system of the standby in the Data Guard association. For a 2-node RAC virtual machine DB system, specify either 1 or 2. If you do not supply this parameter, the default is the node count of the primary DB system.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
@@ -1919,7 +1919,7 @@ class DataGuardAssociation(pulumi.CustomResource):
     @pulumi.getter(name="cpuCoreCount")
     def cpu_core_count(self) -> pulumi.Output[int]:
         """
-        The number of OCPU cores available for AMD-based virtual machine DB systems.
+        The number of CPU cores available for AMD-based virtual machine DB systems.
         """
         return pulumi.get(self, "cpu_core_count")
 
@@ -2057,7 +2057,7 @@ class DataGuardAssociation(pulumi.CustomResource):
     @pulumi.getter(name="licenseModel")
     def license_model(self) -> pulumi.Output[Optional[str]]:
         """
-        The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED.
+        The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous Database Serverless.
         """
         return pulumi.get(self, "license_model")
 

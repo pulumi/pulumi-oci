@@ -27,6 +27,10 @@ public final class AutonomousDatabaseConnectionStringProfile {
      * 
      */
     private @Nullable String hostFormat;
+    /**
+     * @return True for a regional connection string, applicable to cross-region DG only.
+     * 
+     */
     private @Nullable Boolean isRegional;
     /**
      * @return Protocol used by the connection.
@@ -39,7 +43,7 @@ public final class AutonomousDatabaseConnectionStringProfile {
      */
     private @Nullable String sessionMode;
     /**
-     * @return Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous Databases on shared Exadata infrastructure always use the long format.
+     * @return Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous Database Serverless instances always use the long format.
      * 
      */
     private @Nullable String syntaxFormat;
@@ -76,6 +80,10 @@ public final class AutonomousDatabaseConnectionStringProfile {
     public Optional<String> hostFormat() {
         return Optional.ofNullable(this.hostFormat);
     }
+    /**
+     * @return True for a regional connection string, applicable to cross-region DG only.
+     * 
+     */
     public Optional<Boolean> isRegional() {
         return Optional.ofNullable(this.isRegional);
     }
@@ -94,7 +102,7 @@ public final class AutonomousDatabaseConnectionStringProfile {
         return Optional.ofNullable(this.sessionMode);
     }
     /**
-     * @return Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous Databases on shared Exadata infrastructure always use the long format.
+     * @return Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous Database Serverless instances always use the long format.
      * 
      */
     public Optional<String> syntaxFormat() {

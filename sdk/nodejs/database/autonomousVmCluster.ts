@@ -118,7 +118,7 @@ export class AutonomousVmCluster extends pulumi.CustomResource {
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
-     * The compute model of the Autonomous VM Cluster.
+     * The compute model of the Autonomous VM Cluster. ECPU compute model is the recommended model and OCPU compute model is legacy.
      */
     public readonly computeModel!: pulumi.Output<string>;
     /**
@@ -157,7 +157,7 @@ export class AutonomousVmCluster extends pulumi.CustomResource {
      */
     public readonly exadataInfrastructureId!: pulumi.Output<string>;
     /**
-     * The lowest value to which exadataStorage in TBs can be scaled down.
+     * The lowest value to which exadataStorage(in TBs) can be scaled down.
      */
     public /*out*/ readonly exadataStorageInTbsLowestScaledValue!: pulumi.Output<number>;
     /**
@@ -193,7 +193,7 @@ export class AutonomousVmCluster extends pulumi.CustomResource {
      */
     public /*out*/ readonly maintenanceWindows!: pulumi.Output<outputs.Database.AutonomousVmClusterMaintenanceWindow[]>;
     /**
-     * The lowest value to which ACDs can be scaled down.
+     * The lowest value to which maximum number of ACDs can be scaled down.
      */
     public /*out*/ readonly maxAcdsLowestScaledValue!: pulumi.Output<number>;
     /**
@@ -217,15 +217,25 @@ export class AutonomousVmCluster extends pulumi.CustomResource {
      * The number of enabled OCPU cores.
      */
     public /*out*/ readonly ocpusEnabled!: pulumi.Output<number>;
+    /**
+     * **Deprecated.** Use field totalContainerDatabases.
+     */
     public /*out*/ readonly provisionableAutonomousContainerDatabases!: pulumi.Output<number>;
+    /**
+     * The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster.
+     */
     public /*out*/ readonly provisionedAutonomousContainerDatabases!: pulumi.Output<number>;
+    /**
+     * The number of CPUs provisioned in an Autonomous VM Cluster.
+     */
     public /*out*/ readonly provisionedCpus!: pulumi.Output<number>;
     /**
-     * For Autonomous Databases on Dedicated Exadata Infrastructure:
-     * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-     * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
+     * CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
      */
     public /*out*/ readonly reclaimableCpus!: pulumi.Output<number>;
+    /**
+     * The number of CPUs reserved in an Autonomous VM Cluster.
+     */
     public /*out*/ readonly reservedCpus!: pulumi.Output<number>;
     /**
      * The SCAN Listener Non TLS port number. Default value is 1521.
@@ -432,7 +442,7 @@ export interface AutonomousVmClusterState {
      */
     compartmentId?: pulumi.Input<string>;
     /**
-     * The compute model of the Autonomous VM Cluster.
+     * The compute model of the Autonomous VM Cluster. ECPU compute model is the recommended model and OCPU compute model is legacy.
      */
     computeModel?: pulumi.Input<string>;
     /**
@@ -471,7 +481,7 @@ export interface AutonomousVmClusterState {
      */
     exadataInfrastructureId?: pulumi.Input<string>;
     /**
-     * The lowest value to which exadataStorage in TBs can be scaled down.
+     * The lowest value to which exadataStorage(in TBs) can be scaled down.
      */
     exadataStorageInTbsLowestScaledValue?: pulumi.Input<number>;
     /**
@@ -507,7 +517,7 @@ export interface AutonomousVmClusterState {
      */
     maintenanceWindows?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousVmClusterMaintenanceWindow>[]>;
     /**
-     * The lowest value to which ACDs can be scaled down.
+     * The lowest value to which maximum number of ACDs can be scaled down.
      */
     maxAcdsLowestScaledValue?: pulumi.Input<number>;
     /**
@@ -531,15 +541,25 @@ export interface AutonomousVmClusterState {
      * The number of enabled OCPU cores.
      */
     ocpusEnabled?: pulumi.Input<number>;
+    /**
+     * **Deprecated.** Use field totalContainerDatabases.
+     */
     provisionableAutonomousContainerDatabases?: pulumi.Input<number>;
+    /**
+     * The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster.
+     */
     provisionedAutonomousContainerDatabases?: pulumi.Input<number>;
+    /**
+     * The number of CPUs provisioned in an Autonomous VM Cluster.
+     */
     provisionedCpus?: pulumi.Input<number>;
     /**
-     * For Autonomous Databases on Dedicated Exadata Infrastructure:
-     * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-     * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
+     * CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
      */
     reclaimableCpus?: pulumi.Input<number>;
+    /**
+     * The number of CPUs reserved in an Autonomous VM Cluster.
+     */
     reservedCpus?: pulumi.Input<number>;
     /**
      * The SCAN Listener Non TLS port number. Default value is 1521.
@@ -597,7 +617,7 @@ export interface AutonomousVmClusterArgs {
      */
     compartmentId: pulumi.Input<string>;
     /**
-     * The compute model of the Autonomous VM Cluster.
+     * The compute model of the Autonomous VM Cluster. ECPU compute model is the recommended model and OCPU compute model is legacy.
      */
     computeModel?: pulumi.Input<string>;
     /**

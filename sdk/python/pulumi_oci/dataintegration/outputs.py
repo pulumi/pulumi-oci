@@ -36,6 +36,22 @@ __all__ = [
     'WorkspaceApplicationScheduleParentRef',
     'WorkspaceApplicationScheduleRegistryMetadata',
     'WorkspaceApplicationSourceApplicationInfo',
+    'WorkspaceApplicationTaskScheduleLastRunDetail',
+    'WorkspaceApplicationTaskScheduleLastRunDetailParentRef',
+    'WorkspaceApplicationTaskScheduleMetadata',
+    'WorkspaceApplicationTaskScheduleMetadataAggregator',
+    'WorkspaceApplicationTaskScheduleMetadataCountStatistic',
+    'WorkspaceApplicationTaskScheduleMetadataCountStatisticObjectTypeCountList',
+    'WorkspaceApplicationTaskScheduleParentRef',
+    'WorkspaceApplicationTaskScheduleRegistryMetadata',
+    'WorkspaceApplicationTaskScheduleScheduleRef',
+    'WorkspaceApplicationTaskScheduleScheduleRefFrequencyDetails',
+    'WorkspaceApplicationTaskScheduleScheduleRefFrequencyDetailsTime',
+    'WorkspaceApplicationTaskScheduleScheduleRefMetadata',
+    'WorkspaceApplicationTaskScheduleScheduleRefMetadataAggregator',
+    'WorkspaceApplicationTaskScheduleScheduleRefMetadataCountStatistics',
+    'WorkspaceApplicationTaskScheduleScheduleRefMetadataCountStatisticsObjectTypeCountList',
+    'WorkspaceApplicationTaskScheduleScheduleRefParentRef',
     'WorkspaceExportRequestExportedItem',
     'WorkspaceFolderMetadata',
     'WorkspaceFolderMetadataAggregator',
@@ -98,6 +114,41 @@ __all__ = [
     'GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRefResult',
     'GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemRegistryMetadataResult',
     'GetWorkspaceApplicationSourceApplicationInfoResult',
+    'GetWorkspaceApplicationTaskScheduleLastRunDetailResult',
+    'GetWorkspaceApplicationTaskScheduleLastRunDetailParentRefResult',
+    'GetWorkspaceApplicationTaskScheduleMetadataResult',
+    'GetWorkspaceApplicationTaskScheduleMetadataAggregatorResult',
+    'GetWorkspaceApplicationTaskScheduleMetadataCountStatisticResult',
+    'GetWorkspaceApplicationTaskScheduleMetadataCountStatisticObjectTypeCountListResult',
+    'GetWorkspaceApplicationTaskScheduleParentRefResult',
+    'GetWorkspaceApplicationTaskScheduleRegistryMetadataResult',
+    'GetWorkspaceApplicationTaskScheduleScheduleRefResult',
+    'GetWorkspaceApplicationTaskScheduleScheduleRefFrequencyDetailResult',
+    'GetWorkspaceApplicationTaskScheduleScheduleRefFrequencyDetailTimeResult',
+    'GetWorkspaceApplicationTaskScheduleScheduleRefMetadataResult',
+    'GetWorkspaceApplicationTaskScheduleScheduleRefMetadataAggregatorResult',
+    'GetWorkspaceApplicationTaskScheduleScheduleRefMetadataCountStatisticResult',
+    'GetWorkspaceApplicationTaskScheduleScheduleRefMetadataCountStatisticObjectTypeCountListResult',
+    'GetWorkspaceApplicationTaskScheduleScheduleRefParentRefResult',
+    'GetWorkspaceApplicationTaskSchedulesFilterResult',
+    'GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionResult',
+    'GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemResult',
+    'GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemLastRunDetailResult',
+    'GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemLastRunDetailParentRefResult',
+    'GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemMetadataResult',
+    'GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemMetadataAggregatorResult',
+    'GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemMetadataCountStatisticResult',
+    'GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListResult',
+    'GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemParentRefResult',
+    'GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemRegistryMetadataResult',
+    'GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemScheduleRefResult',
+    'GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemScheduleRefFrequencyDetailsResult',
+    'GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemScheduleRefFrequencyDetailsTimeResult',
+    'GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemScheduleRefMetadataResult',
+    'GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemScheduleRefMetadataAggregatorResult',
+    'GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemScheduleRefMetadataCountStatisticsResult',
+    'GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemScheduleRefMetadataCountStatisticsObjectTypeCountListResult',
+    'GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemScheduleRefParentRefResult',
     'GetWorkspaceApplicationsApplicationSummaryCollectionResult',
     'GetWorkspaceApplicationsApplicationSummaryCollectionItemResult',
     'GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadataResult',
@@ -2371,6 +2422,1485 @@ class WorkspaceApplicationSourceApplicationInfo(dict):
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "workspace_id")
+
+
+@pulumi.output_type
+class WorkspaceApplicationTaskScheduleLastRunDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "lastRunTimeMillis":
+            suggest = "last_run_time_millis"
+        elif key == "modelType":
+            suggest = "model_type"
+        elif key == "modelVersion":
+            suggest = "model_version"
+        elif key == "objectStatus":
+            suggest = "object_status"
+        elif key == "objectVersion":
+            suggest = "object_version"
+        elif key == "parentReves":
+            suggest = "parent_reves"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceApplicationTaskScheduleLastRunDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceApplicationTaskScheduleLastRunDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceApplicationTaskScheduleLastRunDetail.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 description: Optional[str] = None,
+                 identifier: Optional[str] = None,
+                 key: Optional[str] = None,
+                 last_run_time_millis: Optional[str] = None,
+                 model_type: Optional[str] = None,
+                 model_version: Optional[str] = None,
+                 name: Optional[str] = None,
+                 object_status: Optional[int] = None,
+                 object_version: Optional[int] = None,
+                 parent_reves: Optional[Sequence['outputs.WorkspaceApplicationTaskScheduleLastRunDetailParentRef']] = None):
+        """
+        :param str description: (Updatable) The description of the aggregator.
+        :param str identifier: (Updatable) The identifier of the aggregator.
+        :param str key: (Updatable) The key of the aggregator object.
+        :param str last_run_time_millis: Time in milliseconds for the pervious schedule.
+        :param str model_type: (Updatable) The type of the object.
+        :param str model_version: (Updatable) This is a version number that is used by the service to upgrade objects if needed through releases of the service.
+        :param str name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param int object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+        :param int object_version: (Updatable) This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
+        :param Sequence['WorkspaceApplicationTaskScheduleLastRunDetailParentRefArgs'] parent_reves: (Updatable) A reference to the object's parent.
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if identifier is not None:
+            pulumi.set(__self__, "identifier", identifier)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if last_run_time_millis is not None:
+            pulumi.set(__self__, "last_run_time_millis", last_run_time_millis)
+        if model_type is not None:
+            pulumi.set(__self__, "model_type", model_type)
+        if model_version is not None:
+            pulumi.set(__self__, "model_version", model_version)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if object_status is not None:
+            pulumi.set(__self__, "object_status", object_status)
+        if object_version is not None:
+            pulumi.set(__self__, "object_version", object_version)
+        if parent_reves is not None:
+            pulumi.set(__self__, "parent_reves", parent_reves)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[str]:
+        """
+        (Updatable) The description of the aggregator.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def identifier(self) -> Optional[str]:
+        """
+        (Updatable) The identifier of the aggregator.
+        """
+        return pulumi.get(self, "identifier")
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[str]:
+        """
+        (Updatable) The key of the aggregator object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="lastRunTimeMillis")
+    def last_run_time_millis(self) -> Optional[str]:
+        """
+        Time in milliseconds for the pervious schedule.
+        """
+        return pulumi.get(self, "last_run_time_millis")
+
+    @property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> Optional[str]:
+        """
+        (Updatable) The type of the object.
+        """
+        return pulumi.get(self, "model_type")
+
+    @property
+    @pulumi.getter(name="modelVersion")
+    def model_version(self) -> Optional[str]:
+        """
+        (Updatable) This is a version number that is used by the service to upgrade objects if needed through releases of the service.
+        """
+        return pulumi.get(self, "model_version")
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        """
+        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="objectStatus")
+    def object_status(self) -> Optional[int]:
+        """
+        (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+        """
+        return pulumi.get(self, "object_status")
+
+    @property
+    @pulumi.getter(name="objectVersion")
+    def object_version(self) -> Optional[int]:
+        """
+        (Updatable) This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
+        """
+        return pulumi.get(self, "object_version")
+
+    @property
+    @pulumi.getter(name="parentReves")
+    def parent_reves(self) -> Optional[Sequence['outputs.WorkspaceApplicationTaskScheduleLastRunDetailParentRef']]:
+        """
+        (Updatable) A reference to the object's parent.
+        """
+        return pulumi.get(self, "parent_reves")
+
+
+@pulumi.output_type
+class WorkspaceApplicationTaskScheduleLastRunDetailParentRef(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "rootDocId":
+            suggest = "root_doc_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceApplicationTaskScheduleLastRunDetailParentRef. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceApplicationTaskScheduleLastRunDetailParentRef.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceApplicationTaskScheduleLastRunDetailParentRef.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 parent: Optional[str] = None,
+                 root_doc_id: Optional[str] = None):
+        """
+        :param str parent: (Updatable) Key of the parent object.
+        :param str root_doc_id: (Updatable) Key of the root document object.
+        """
+        if parent is not None:
+            pulumi.set(__self__, "parent", parent)
+        if root_doc_id is not None:
+            pulumi.set(__self__, "root_doc_id", root_doc_id)
+
+    @property
+    @pulumi.getter
+    def parent(self) -> Optional[str]:
+        """
+        (Updatable) Key of the parent object.
+        """
+        return pulumi.get(self, "parent")
+
+    @property
+    @pulumi.getter(name="rootDocId")
+    def root_doc_id(self) -> Optional[str]:
+        """
+        (Updatable) Key of the root document object.
+        """
+        return pulumi.get(self, "root_doc_id")
+
+
+@pulumi.output_type
+class WorkspaceApplicationTaskScheduleMetadata(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "aggregatorKey":
+            suggest = "aggregator_key"
+        elif key == "countStatistics":
+            suggest = "count_statistics"
+        elif key == "createdBy":
+            suggest = "created_by"
+        elif key == "createdByName":
+            suggest = "created_by_name"
+        elif key == "identifierPath":
+            suggest = "identifier_path"
+        elif key == "infoFields":
+            suggest = "info_fields"
+        elif key == "isFavorite":
+            suggest = "is_favorite"
+        elif key == "registryVersion":
+            suggest = "registry_version"
+        elif key == "timeCreated":
+            suggest = "time_created"
+        elif key == "timeUpdated":
+            suggest = "time_updated"
+        elif key == "updatedBy":
+            suggest = "updated_by"
+        elif key == "updatedByName":
+            suggest = "updated_by_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceApplicationTaskScheduleMetadata. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceApplicationTaskScheduleMetadata.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceApplicationTaskScheduleMetadata.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 aggregator_key: Optional[str] = None,
+                 aggregators: Optional[Sequence['outputs.WorkspaceApplicationTaskScheduleMetadataAggregator']] = None,
+                 count_statistics: Optional[Sequence['outputs.WorkspaceApplicationTaskScheduleMetadataCountStatistic']] = None,
+                 created_by: Optional[str] = None,
+                 created_by_name: Optional[str] = None,
+                 identifier_path: Optional[str] = None,
+                 info_fields: Optional[Mapping[str, Any]] = None,
+                 is_favorite: Optional[bool] = None,
+                 labels: Optional[Sequence[str]] = None,
+                 registry_version: Optional[int] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None,
+                 updated_by: Optional[str] = None,
+                 updated_by_name: Optional[str] = None):
+        """
+        :param str aggregator_key: (Updatable) The owning object key for this object.
+        :param Sequence['WorkspaceApplicationTaskScheduleMetadataAggregatorArgs'] aggregators: (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+        :param Sequence['WorkspaceApplicationTaskScheduleMetadataCountStatisticArgs'] count_statistics: (Updatable) A count statistics.
+        :param str created_by: (Updatable) The user that created the object.
+        :param str created_by_name: (Updatable) The user that created the object.
+        :param str identifier_path: (Updatable) The full path to identify this object.
+        :param Mapping[str, Any] info_fields: (Updatable) Information property fields.
+        :param bool is_favorite: (Updatable) Specifies whether this object is a favorite or not.
+        :param Sequence[str] labels: (Updatable) Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+        :param int registry_version: (Updatable) The registry version of the object.
+        :param str time_created: (Updatable) The date and time that the object was created.
+        :param str time_updated: (Updatable) The date and time that the object was updated.
+        :param str updated_by: (Updatable) The user that updated the object.
+        :param str updated_by_name: (Updatable) The user that updated the object.
+        """
+        if aggregator_key is not None:
+            pulumi.set(__self__, "aggregator_key", aggregator_key)
+        if aggregators is not None:
+            pulumi.set(__self__, "aggregators", aggregators)
+        if count_statistics is not None:
+            pulumi.set(__self__, "count_statistics", count_statistics)
+        if created_by is not None:
+            pulumi.set(__self__, "created_by", created_by)
+        if created_by_name is not None:
+            pulumi.set(__self__, "created_by_name", created_by_name)
+        if identifier_path is not None:
+            pulumi.set(__self__, "identifier_path", identifier_path)
+        if info_fields is not None:
+            pulumi.set(__self__, "info_fields", info_fields)
+        if is_favorite is not None:
+            pulumi.set(__self__, "is_favorite", is_favorite)
+        if labels is not None:
+            pulumi.set(__self__, "labels", labels)
+        if registry_version is not None:
+            pulumi.set(__self__, "registry_version", registry_version)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+        if updated_by is not None:
+            pulumi.set(__self__, "updated_by", updated_by)
+        if updated_by_name is not None:
+            pulumi.set(__self__, "updated_by_name", updated_by_name)
+
+    @property
+    @pulumi.getter(name="aggregatorKey")
+    def aggregator_key(self) -> Optional[str]:
+        """
+        (Updatable) The owning object key for this object.
+        """
+        return pulumi.get(self, "aggregator_key")
+
+    @property
+    @pulumi.getter
+    def aggregators(self) -> Optional[Sequence['outputs.WorkspaceApplicationTaskScheduleMetadataAggregator']]:
+        """
+        (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+        """
+        return pulumi.get(self, "aggregators")
+
+    @property
+    @pulumi.getter(name="countStatistics")
+    def count_statistics(self) -> Optional[Sequence['outputs.WorkspaceApplicationTaskScheduleMetadataCountStatistic']]:
+        """
+        (Updatable) A count statistics.
+        """
+        return pulumi.get(self, "count_statistics")
+
+    @property
+    @pulumi.getter(name="createdBy")
+    def created_by(self) -> Optional[str]:
+        """
+        (Updatable) The user that created the object.
+        """
+        return pulumi.get(self, "created_by")
+
+    @property
+    @pulumi.getter(name="createdByName")
+    def created_by_name(self) -> Optional[str]:
+        """
+        (Updatable) The user that created the object.
+        """
+        return pulumi.get(self, "created_by_name")
+
+    @property
+    @pulumi.getter(name="identifierPath")
+    def identifier_path(self) -> Optional[str]:
+        """
+        (Updatable) The full path to identify this object.
+        """
+        return pulumi.get(self, "identifier_path")
+
+    @property
+    @pulumi.getter(name="infoFields")
+    def info_fields(self) -> Optional[Mapping[str, Any]]:
+        """
+        (Updatable) Information property fields.
+        """
+        return pulumi.get(self, "info_fields")
+
+    @property
+    @pulumi.getter(name="isFavorite")
+    def is_favorite(self) -> Optional[bool]:
+        """
+        (Updatable) Specifies whether this object is a favorite or not.
+        """
+        return pulumi.get(self, "is_favorite")
+
+    @property
+    @pulumi.getter
+    def labels(self) -> Optional[Sequence[str]]:
+        """
+        (Updatable) Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+        """
+        return pulumi.get(self, "labels")
+
+    @property
+    @pulumi.getter(name="registryVersion")
+    def registry_version(self) -> Optional[int]:
+        """
+        (Updatable) The registry version of the object.
+        """
+        return pulumi.get(self, "registry_version")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[str]:
+        """
+        (Updatable) The date and time that the object was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> Optional[str]:
+        """
+        (Updatable) The date and time that the object was updated.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter(name="updatedBy")
+    def updated_by(self) -> Optional[str]:
+        """
+        (Updatable) The user that updated the object.
+        """
+        return pulumi.get(self, "updated_by")
+
+    @property
+    @pulumi.getter(name="updatedByName")
+    def updated_by_name(self) -> Optional[str]:
+        """
+        (Updatable) The user that updated the object.
+        """
+        return pulumi.get(self, "updated_by_name")
+
+
+@pulumi.output_type
+class WorkspaceApplicationTaskScheduleMetadataAggregator(dict):
+    def __init__(__self__, *,
+                 description: Optional[str] = None,
+                 identifier: Optional[str] = None,
+                 key: Optional[str] = None,
+                 name: Optional[str] = None,
+                 type: Optional[str] = None):
+        """
+        :param str description: (Updatable) The description of the aggregator.
+        :param str identifier: (Updatable) The identifier of the aggregator.
+        :param str key: (Updatable) The key of the aggregator object.
+        :param str name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param str type: (Updatable) The type of the aggregator.
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if identifier is not None:
+            pulumi.set(__self__, "identifier", identifier)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[str]:
+        """
+        (Updatable) The description of the aggregator.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def identifier(self) -> Optional[str]:
+        """
+        (Updatable) The identifier of the aggregator.
+        """
+        return pulumi.get(self, "identifier")
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[str]:
+        """
+        (Updatable) The key of the aggregator object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        """
+        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[str]:
+        """
+        (Updatable) The type of the aggregator.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class WorkspaceApplicationTaskScheduleMetadataCountStatistic(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "objectTypeCountLists":
+            suggest = "object_type_count_lists"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceApplicationTaskScheduleMetadataCountStatistic. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceApplicationTaskScheduleMetadataCountStatistic.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceApplicationTaskScheduleMetadataCountStatistic.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 object_type_count_lists: Optional[Sequence['outputs.WorkspaceApplicationTaskScheduleMetadataCountStatisticObjectTypeCountList']] = None):
+        """
+        :param Sequence['WorkspaceApplicationTaskScheduleMetadataCountStatisticObjectTypeCountListArgs'] object_type_count_lists: (Updatable) The array of statistics.
+        """
+        if object_type_count_lists is not None:
+            pulumi.set(__self__, "object_type_count_lists", object_type_count_lists)
+
+    @property
+    @pulumi.getter(name="objectTypeCountLists")
+    def object_type_count_lists(self) -> Optional[Sequence['outputs.WorkspaceApplicationTaskScheduleMetadataCountStatisticObjectTypeCountList']]:
+        """
+        (Updatable) The array of statistics.
+        """
+        return pulumi.get(self, "object_type_count_lists")
+
+
+@pulumi.output_type
+class WorkspaceApplicationTaskScheduleMetadataCountStatisticObjectTypeCountList(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "objectCount":
+            suggest = "object_count"
+        elif key == "objectType":
+            suggest = "object_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceApplicationTaskScheduleMetadataCountStatisticObjectTypeCountList. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceApplicationTaskScheduleMetadataCountStatisticObjectTypeCountList.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceApplicationTaskScheduleMetadataCountStatisticObjectTypeCountList.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 object_count: Optional[str] = None,
+                 object_type: Optional[str] = None):
+        """
+        :param str object_count: (Updatable) The value for the count statistic object.
+        :param str object_type: (Updatable) The type of object for the count statistic object.
+        """
+        if object_count is not None:
+            pulumi.set(__self__, "object_count", object_count)
+        if object_type is not None:
+            pulumi.set(__self__, "object_type", object_type)
+
+    @property
+    @pulumi.getter(name="objectCount")
+    def object_count(self) -> Optional[str]:
+        """
+        (Updatable) The value for the count statistic object.
+        """
+        return pulumi.get(self, "object_count")
+
+    @property
+    @pulumi.getter(name="objectType")
+    def object_type(self) -> Optional[str]:
+        """
+        (Updatable) The type of object for the count statistic object.
+        """
+        return pulumi.get(self, "object_type")
+
+
+@pulumi.output_type
+class WorkspaceApplicationTaskScheduleParentRef(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "rootDocId":
+            suggest = "root_doc_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceApplicationTaskScheduleParentRef. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceApplicationTaskScheduleParentRef.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceApplicationTaskScheduleParentRef.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 parent: Optional[str] = None,
+                 root_doc_id: Optional[str] = None):
+        """
+        :param str parent: (Updatable) Key of the parent object.
+        :param str root_doc_id: (Updatable) Key of the root document object.
+        """
+        if parent is not None:
+            pulumi.set(__self__, "parent", parent)
+        if root_doc_id is not None:
+            pulumi.set(__self__, "root_doc_id", root_doc_id)
+
+    @property
+    @pulumi.getter
+    def parent(self) -> Optional[str]:
+        """
+        (Updatable) Key of the parent object.
+        """
+        return pulumi.get(self, "parent")
+
+    @property
+    @pulumi.getter(name="rootDocId")
+    def root_doc_id(self) -> Optional[str]:
+        """
+        (Updatable) Key of the root document object.
+        """
+        return pulumi.get(self, "root_doc_id")
+
+
+@pulumi.output_type
+class WorkspaceApplicationTaskScheduleRegistryMetadata(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "aggregatorKey":
+            suggest = "aggregator_key"
+        elif key == "isFavorite":
+            suggest = "is_favorite"
+        elif key == "registryVersion":
+            suggest = "registry_version"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceApplicationTaskScheduleRegistryMetadata. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceApplicationTaskScheduleRegistryMetadata.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceApplicationTaskScheduleRegistryMetadata.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 aggregator_key: Optional[str] = None,
+                 is_favorite: Optional[bool] = None,
+                 key: Optional[str] = None,
+                 labels: Optional[Sequence[str]] = None,
+                 registry_version: Optional[int] = None):
+        """
+        :param str aggregator_key: (Updatable) The owning object key for this object.
+        :param bool is_favorite: (Updatable) Specifies whether this object is a favorite or not.
+        :param str key: (Updatable) The key of the aggregator object.
+        :param Sequence[str] labels: (Updatable) Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+        :param int registry_version: (Updatable) The registry version of the object.
+        """
+        if aggregator_key is not None:
+            pulumi.set(__self__, "aggregator_key", aggregator_key)
+        if is_favorite is not None:
+            pulumi.set(__self__, "is_favorite", is_favorite)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if labels is not None:
+            pulumi.set(__self__, "labels", labels)
+        if registry_version is not None:
+            pulumi.set(__self__, "registry_version", registry_version)
+
+    @property
+    @pulumi.getter(name="aggregatorKey")
+    def aggregator_key(self) -> Optional[str]:
+        """
+        (Updatable) The owning object key for this object.
+        """
+        return pulumi.get(self, "aggregator_key")
+
+    @property
+    @pulumi.getter(name="isFavorite")
+    def is_favorite(self) -> Optional[bool]:
+        """
+        (Updatable) Specifies whether this object is a favorite or not.
+        """
+        return pulumi.get(self, "is_favorite")
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[str]:
+        """
+        (Updatable) The key of the aggregator object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def labels(self) -> Optional[Sequence[str]]:
+        """
+        (Updatable) Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+        """
+        return pulumi.get(self, "labels")
+
+    @property
+    @pulumi.getter(name="registryVersion")
+    def registry_version(self) -> Optional[int]:
+        """
+        (Updatable) The registry version of the object.
+        """
+        return pulumi.get(self, "registry_version")
+
+
+@pulumi.output_type
+class WorkspaceApplicationTaskScheduleScheduleRef(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "frequencyDetails":
+            suggest = "frequency_details"
+        elif key == "isDaylightAdjustmentEnabled":
+            suggest = "is_daylight_adjustment_enabled"
+        elif key == "modelType":
+            suggest = "model_type"
+        elif key == "modelVersion":
+            suggest = "model_version"
+        elif key == "objectStatus":
+            suggest = "object_status"
+        elif key == "objectVersion":
+            suggest = "object_version"
+        elif key == "parentRef":
+            suggest = "parent_ref"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceApplicationTaskScheduleScheduleRef. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceApplicationTaskScheduleScheduleRef.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceApplicationTaskScheduleScheduleRef.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 description: Optional[str] = None,
+                 frequency_details: Optional['outputs.WorkspaceApplicationTaskScheduleScheduleRefFrequencyDetails'] = None,
+                 identifier: Optional[str] = None,
+                 is_daylight_adjustment_enabled: Optional[bool] = None,
+                 key: Optional[str] = None,
+                 metadata: Optional['outputs.WorkspaceApplicationTaskScheduleScheduleRefMetadata'] = None,
+                 model_type: Optional[str] = None,
+                 model_version: Optional[str] = None,
+                 name: Optional[str] = None,
+                 object_status: Optional[int] = None,
+                 object_version: Optional[int] = None,
+                 parent_ref: Optional['outputs.WorkspaceApplicationTaskScheduleScheduleRefParentRef'] = None,
+                 timezone: Optional[str] = None):
+        """
+        :param str description: (Updatable) The description of the aggregator.
+        :param 'WorkspaceApplicationTaskScheduleScheduleRefFrequencyDetailsArgs' frequency_details: (Updatable) The model that holds the frequency details.
+        :param str identifier: (Updatable) The identifier of the aggregator.
+        :param bool is_daylight_adjustment_enabled: (Updatable) A flag to indicate daylight saving.
+        :param str key: (Updatable) The key of the aggregator object.
+        :param 'WorkspaceApplicationTaskScheduleScheduleRefMetadataArgs' metadata: (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+        :param str model_type: (Updatable) The type of the object.
+        :param str model_version: (Updatable) This is a version number that is used by the service to upgrade objects if needed through releases of the service.
+        :param str name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param int object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+        :param int object_version: (Updatable) This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
+        :param 'WorkspaceApplicationTaskScheduleScheduleRefParentRefArgs' parent_ref: (Updatable) A reference to the object's parent.
+        :param str timezone: (Updatable) The timezone for the schedule.
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if frequency_details is not None:
+            pulumi.set(__self__, "frequency_details", frequency_details)
+        if identifier is not None:
+            pulumi.set(__self__, "identifier", identifier)
+        if is_daylight_adjustment_enabled is not None:
+            pulumi.set(__self__, "is_daylight_adjustment_enabled", is_daylight_adjustment_enabled)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if metadata is not None:
+            pulumi.set(__self__, "metadata", metadata)
+        if model_type is not None:
+            pulumi.set(__self__, "model_type", model_type)
+        if model_version is not None:
+            pulumi.set(__self__, "model_version", model_version)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if object_status is not None:
+            pulumi.set(__self__, "object_status", object_status)
+        if object_version is not None:
+            pulumi.set(__self__, "object_version", object_version)
+        if parent_ref is not None:
+            pulumi.set(__self__, "parent_ref", parent_ref)
+        if timezone is not None:
+            pulumi.set(__self__, "timezone", timezone)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[str]:
+        """
+        (Updatable) The description of the aggregator.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="frequencyDetails")
+    def frequency_details(self) -> Optional['outputs.WorkspaceApplicationTaskScheduleScheduleRefFrequencyDetails']:
+        """
+        (Updatable) The model that holds the frequency details.
+        """
+        return pulumi.get(self, "frequency_details")
+
+    @property
+    @pulumi.getter
+    def identifier(self) -> Optional[str]:
+        """
+        (Updatable) The identifier of the aggregator.
+        """
+        return pulumi.get(self, "identifier")
+
+    @property
+    @pulumi.getter(name="isDaylightAdjustmentEnabled")
+    def is_daylight_adjustment_enabled(self) -> Optional[bool]:
+        """
+        (Updatable) A flag to indicate daylight saving.
+        """
+        return pulumi.get(self, "is_daylight_adjustment_enabled")
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[str]:
+        """
+        (Updatable) The key of the aggregator object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def metadata(self) -> Optional['outputs.WorkspaceApplicationTaskScheduleScheduleRefMetadata']:
+        """
+        (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+        """
+        return pulumi.get(self, "metadata")
+
+    @property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> Optional[str]:
+        """
+        (Updatable) The type of the object.
+        """
+        return pulumi.get(self, "model_type")
+
+    @property
+    @pulumi.getter(name="modelVersion")
+    def model_version(self) -> Optional[str]:
+        """
+        (Updatable) This is a version number that is used by the service to upgrade objects if needed through releases of the service.
+        """
+        return pulumi.get(self, "model_version")
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        """
+        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="objectStatus")
+    def object_status(self) -> Optional[int]:
+        """
+        (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+        """
+        return pulumi.get(self, "object_status")
+
+    @property
+    @pulumi.getter(name="objectVersion")
+    def object_version(self) -> Optional[int]:
+        """
+        (Updatable) This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
+        """
+        return pulumi.get(self, "object_version")
+
+    @property
+    @pulumi.getter(name="parentRef")
+    def parent_ref(self) -> Optional['outputs.WorkspaceApplicationTaskScheduleScheduleRefParentRef']:
+        """
+        (Updatable) A reference to the object's parent.
+        """
+        return pulumi.get(self, "parent_ref")
+
+    @property
+    @pulumi.getter
+    def timezone(self) -> Optional[str]:
+        """
+        (Updatable) The timezone for the schedule.
+        """
+        return pulumi.get(self, "timezone")
+
+
+@pulumi.output_type
+class WorkspaceApplicationTaskScheduleScheduleRefFrequencyDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "modelType":
+            suggest = "model_type"
+        elif key == "customExpression":
+            suggest = "custom_expression"
+        elif key == "dayOfWeek":
+            suggest = "day_of_week"
+        elif key == "weekOfMonth":
+            suggest = "week_of_month"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceApplicationTaskScheduleScheduleRefFrequencyDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceApplicationTaskScheduleScheduleRefFrequencyDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceApplicationTaskScheduleScheduleRefFrequencyDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 model_type: str,
+                 custom_expression: Optional[str] = None,
+                 day_of_week: Optional[str] = None,
+                 days: Optional[Sequence[int]] = None,
+                 frequency: Optional[str] = None,
+                 interval: Optional[int] = None,
+                 time: Optional['outputs.WorkspaceApplicationTaskScheduleScheduleRefFrequencyDetailsTime'] = None,
+                 week_of_month: Optional[str] = None):
+        """
+        :param str model_type: (Updatable) The type of the object.
+        :param str custom_expression: (Updatable) This holds the complete cron expression for this schedule, for example, 10 0/5 * * * ? that fires every 5 minutes, at 10 seconds after the minute (i.e. 10:00:10 am, 10:05:10 am, etc.)
+        :param str day_of_week: (Updatable) This holds the day of the week on which the schedule should be triggered.
+        :param Sequence[int] days: (Updatable) A list of days of the month to be scheduled. i.e. excute every 2nd,3rd, 10th of the month.
+        :param str frequency: (Updatable) the frequency of the schedule.
+        :param int interval: (Updatable) This hold the repeatability aspect of a schedule. i.e. in a monhtly frequency, a task can be scheduled for every month, once in two months, once in tree months etc.
+        :param 'WorkspaceApplicationTaskScheduleScheduleRefFrequencyDetailsTimeArgs' time: (Updatable) A model to hold time in hour:minute:second format.
+        :param str week_of_month: (Updatable) This holds the week of the month in which the schedule should be triggered.
+        """
+        pulumi.set(__self__, "model_type", model_type)
+        if custom_expression is not None:
+            pulumi.set(__self__, "custom_expression", custom_expression)
+        if day_of_week is not None:
+            pulumi.set(__self__, "day_of_week", day_of_week)
+        if days is not None:
+            pulumi.set(__self__, "days", days)
+        if frequency is not None:
+            pulumi.set(__self__, "frequency", frequency)
+        if interval is not None:
+            pulumi.set(__self__, "interval", interval)
+        if time is not None:
+            pulumi.set(__self__, "time", time)
+        if week_of_month is not None:
+            pulumi.set(__self__, "week_of_month", week_of_month)
+
+    @property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> str:
+        """
+        (Updatable) The type of the object.
+        """
+        return pulumi.get(self, "model_type")
+
+    @property
+    @pulumi.getter(name="customExpression")
+    def custom_expression(self) -> Optional[str]:
+        """
+        (Updatable) This holds the complete cron expression for this schedule, for example, 10 0/5 * * * ? that fires every 5 minutes, at 10 seconds after the minute (i.e. 10:00:10 am, 10:05:10 am, etc.)
+        """
+        return pulumi.get(self, "custom_expression")
+
+    @property
+    @pulumi.getter(name="dayOfWeek")
+    def day_of_week(self) -> Optional[str]:
+        """
+        (Updatable) This holds the day of the week on which the schedule should be triggered.
+        """
+        return pulumi.get(self, "day_of_week")
+
+    @property
+    @pulumi.getter
+    def days(self) -> Optional[Sequence[int]]:
+        """
+        (Updatable) A list of days of the month to be scheduled. i.e. excute every 2nd,3rd, 10th of the month.
+        """
+        return pulumi.get(self, "days")
+
+    @property
+    @pulumi.getter
+    def frequency(self) -> Optional[str]:
+        """
+        (Updatable) the frequency of the schedule.
+        """
+        return pulumi.get(self, "frequency")
+
+    @property
+    @pulumi.getter
+    def interval(self) -> Optional[int]:
+        """
+        (Updatable) This hold the repeatability aspect of a schedule. i.e. in a monhtly frequency, a task can be scheduled for every month, once in two months, once in tree months etc.
+        """
+        return pulumi.get(self, "interval")
+
+    @property
+    @pulumi.getter
+    def time(self) -> Optional['outputs.WorkspaceApplicationTaskScheduleScheduleRefFrequencyDetailsTime']:
+        """
+        (Updatable) A model to hold time in hour:minute:second format.
+        """
+        return pulumi.get(self, "time")
+
+    @property
+    @pulumi.getter(name="weekOfMonth")
+    def week_of_month(self) -> Optional[str]:
+        """
+        (Updatable) This holds the week of the month in which the schedule should be triggered.
+        """
+        return pulumi.get(self, "week_of_month")
+
+
+@pulumi.output_type
+class WorkspaceApplicationTaskScheduleScheduleRefFrequencyDetailsTime(dict):
+    def __init__(__self__, *,
+                 hour: Optional[int] = None,
+                 minute: Optional[int] = None,
+                 second: Optional[int] = None):
+        """
+        :param int hour: (Updatable) The hour value.
+        :param int minute: (Updatable) The minute value.
+        :param int second: (Updatable) The second value.
+        """
+        if hour is not None:
+            pulumi.set(__self__, "hour", hour)
+        if minute is not None:
+            pulumi.set(__self__, "minute", minute)
+        if second is not None:
+            pulumi.set(__self__, "second", second)
+
+    @property
+    @pulumi.getter
+    def hour(self) -> Optional[int]:
+        """
+        (Updatable) The hour value.
+        """
+        return pulumi.get(self, "hour")
+
+    @property
+    @pulumi.getter
+    def minute(self) -> Optional[int]:
+        """
+        (Updatable) The minute value.
+        """
+        return pulumi.get(self, "minute")
+
+    @property
+    @pulumi.getter
+    def second(self) -> Optional[int]:
+        """
+        (Updatable) The second value.
+        """
+        return pulumi.get(self, "second")
+
+
+@pulumi.output_type
+class WorkspaceApplicationTaskScheduleScheduleRefMetadata(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "aggregatorKey":
+            suggest = "aggregator_key"
+        elif key == "countStatistics":
+            suggest = "count_statistics"
+        elif key == "createdBy":
+            suggest = "created_by"
+        elif key == "createdByName":
+            suggest = "created_by_name"
+        elif key == "identifierPath":
+            suggest = "identifier_path"
+        elif key == "infoFields":
+            suggest = "info_fields"
+        elif key == "isFavorite":
+            suggest = "is_favorite"
+        elif key == "registryVersion":
+            suggest = "registry_version"
+        elif key == "timeCreated":
+            suggest = "time_created"
+        elif key == "timeUpdated":
+            suggest = "time_updated"
+        elif key == "updatedBy":
+            suggest = "updated_by"
+        elif key == "updatedByName":
+            suggest = "updated_by_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceApplicationTaskScheduleScheduleRefMetadata. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceApplicationTaskScheduleScheduleRefMetadata.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceApplicationTaskScheduleScheduleRefMetadata.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 aggregator: Optional['outputs.WorkspaceApplicationTaskScheduleScheduleRefMetadataAggregator'] = None,
+                 aggregator_key: Optional[str] = None,
+                 count_statistics: Optional['outputs.WorkspaceApplicationTaskScheduleScheduleRefMetadataCountStatistics'] = None,
+                 created_by: Optional[str] = None,
+                 created_by_name: Optional[str] = None,
+                 identifier_path: Optional[str] = None,
+                 info_fields: Optional[Mapping[str, Any]] = None,
+                 is_favorite: Optional[bool] = None,
+                 labels: Optional[Sequence[str]] = None,
+                 registry_version: Optional[int] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None,
+                 updated_by: Optional[str] = None,
+                 updated_by_name: Optional[str] = None):
+        """
+        :param 'WorkspaceApplicationTaskScheduleScheduleRefMetadataAggregatorArgs' aggregator: (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+        :param str aggregator_key: (Updatable) The owning object key for this object.
+        :param 'WorkspaceApplicationTaskScheduleScheduleRefMetadataCountStatisticsArgs' count_statistics: (Updatable) A count statistics.
+        :param str created_by: (Updatable) The user that created the object.
+        :param str created_by_name: (Updatable) The user that created the object.
+        :param str identifier_path: (Updatable) The full path to identify this object.
+        :param Mapping[str, Any] info_fields: (Updatable) Information property fields.
+        :param bool is_favorite: (Updatable) Specifies whether this object is a favorite or not.
+        :param Sequence[str] labels: (Updatable) Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+        :param int registry_version: (Updatable) The registry version of the object.
+        :param str time_created: (Updatable) The date and time that the object was created.
+        :param str time_updated: (Updatable) The date and time that the object was updated.
+        :param str updated_by: (Updatable) The user that updated the object.
+        :param str updated_by_name: (Updatable) The user that updated the object.
+        """
+        if aggregator is not None:
+            pulumi.set(__self__, "aggregator", aggregator)
+        if aggregator_key is not None:
+            pulumi.set(__self__, "aggregator_key", aggregator_key)
+        if count_statistics is not None:
+            pulumi.set(__self__, "count_statistics", count_statistics)
+        if created_by is not None:
+            pulumi.set(__self__, "created_by", created_by)
+        if created_by_name is not None:
+            pulumi.set(__self__, "created_by_name", created_by_name)
+        if identifier_path is not None:
+            pulumi.set(__self__, "identifier_path", identifier_path)
+        if info_fields is not None:
+            pulumi.set(__self__, "info_fields", info_fields)
+        if is_favorite is not None:
+            pulumi.set(__self__, "is_favorite", is_favorite)
+        if labels is not None:
+            pulumi.set(__self__, "labels", labels)
+        if registry_version is not None:
+            pulumi.set(__self__, "registry_version", registry_version)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+        if updated_by is not None:
+            pulumi.set(__self__, "updated_by", updated_by)
+        if updated_by_name is not None:
+            pulumi.set(__self__, "updated_by_name", updated_by_name)
+
+    @property
+    @pulumi.getter
+    def aggregator(self) -> Optional['outputs.WorkspaceApplicationTaskScheduleScheduleRefMetadataAggregator']:
+        """
+        (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+        """
+        return pulumi.get(self, "aggregator")
+
+    @property
+    @pulumi.getter(name="aggregatorKey")
+    def aggregator_key(self) -> Optional[str]:
+        """
+        (Updatable) The owning object key for this object.
+        """
+        return pulumi.get(self, "aggregator_key")
+
+    @property
+    @pulumi.getter(name="countStatistics")
+    def count_statistics(self) -> Optional['outputs.WorkspaceApplicationTaskScheduleScheduleRefMetadataCountStatistics']:
+        """
+        (Updatable) A count statistics.
+        """
+        return pulumi.get(self, "count_statistics")
+
+    @property
+    @pulumi.getter(name="createdBy")
+    def created_by(self) -> Optional[str]:
+        """
+        (Updatable) The user that created the object.
+        """
+        return pulumi.get(self, "created_by")
+
+    @property
+    @pulumi.getter(name="createdByName")
+    def created_by_name(self) -> Optional[str]:
+        """
+        (Updatable) The user that created the object.
+        """
+        return pulumi.get(self, "created_by_name")
+
+    @property
+    @pulumi.getter(name="identifierPath")
+    def identifier_path(self) -> Optional[str]:
+        """
+        (Updatable) The full path to identify this object.
+        """
+        return pulumi.get(self, "identifier_path")
+
+    @property
+    @pulumi.getter(name="infoFields")
+    def info_fields(self) -> Optional[Mapping[str, Any]]:
+        """
+        (Updatable) Information property fields.
+        """
+        return pulumi.get(self, "info_fields")
+
+    @property
+    @pulumi.getter(name="isFavorite")
+    def is_favorite(self) -> Optional[bool]:
+        """
+        (Updatable) Specifies whether this object is a favorite or not.
+        """
+        return pulumi.get(self, "is_favorite")
+
+    @property
+    @pulumi.getter
+    def labels(self) -> Optional[Sequence[str]]:
+        """
+        (Updatable) Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+        """
+        return pulumi.get(self, "labels")
+
+    @property
+    @pulumi.getter(name="registryVersion")
+    def registry_version(self) -> Optional[int]:
+        """
+        (Updatable) The registry version of the object.
+        """
+        return pulumi.get(self, "registry_version")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[str]:
+        """
+        (Updatable) The date and time that the object was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> Optional[str]:
+        """
+        (Updatable) The date and time that the object was updated.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter(name="updatedBy")
+    def updated_by(self) -> Optional[str]:
+        """
+        (Updatable) The user that updated the object.
+        """
+        return pulumi.get(self, "updated_by")
+
+    @property
+    @pulumi.getter(name="updatedByName")
+    def updated_by_name(self) -> Optional[str]:
+        """
+        (Updatable) The user that updated the object.
+        """
+        return pulumi.get(self, "updated_by_name")
+
+
+@pulumi.output_type
+class WorkspaceApplicationTaskScheduleScheduleRefMetadataAggregator(dict):
+    def __init__(__self__, *,
+                 description: Optional[str] = None,
+                 identifier: Optional[str] = None,
+                 key: Optional[str] = None,
+                 name: Optional[str] = None,
+                 type: Optional[str] = None):
+        """
+        :param str description: (Updatable) The description of the aggregator.
+        :param str identifier: (Updatable) The identifier of the aggregator.
+        :param str key: (Updatable) The key of the aggregator object.
+        :param str name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param str type: (Updatable) The type of the aggregator.
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if identifier is not None:
+            pulumi.set(__self__, "identifier", identifier)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[str]:
+        """
+        (Updatable) The description of the aggregator.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def identifier(self) -> Optional[str]:
+        """
+        (Updatable) The identifier of the aggregator.
+        """
+        return pulumi.get(self, "identifier")
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[str]:
+        """
+        (Updatable) The key of the aggregator object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        """
+        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[str]:
+        """
+        (Updatable) The type of the aggregator.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class WorkspaceApplicationTaskScheduleScheduleRefMetadataCountStatistics(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "objectTypeCountLists":
+            suggest = "object_type_count_lists"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceApplicationTaskScheduleScheduleRefMetadataCountStatistics. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceApplicationTaskScheduleScheduleRefMetadataCountStatistics.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceApplicationTaskScheduleScheduleRefMetadataCountStatistics.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 object_type_count_lists: Sequence['outputs.WorkspaceApplicationTaskScheduleScheduleRefMetadataCountStatisticsObjectTypeCountList']):
+        """
+        :param Sequence['WorkspaceApplicationTaskScheduleScheduleRefMetadataCountStatisticsObjectTypeCountListArgs'] object_type_count_lists: (Updatable) The array of statistics.
+        """
+        pulumi.set(__self__, "object_type_count_lists", object_type_count_lists)
+
+    @property
+    @pulumi.getter(name="objectTypeCountLists")
+    def object_type_count_lists(self) -> Sequence['outputs.WorkspaceApplicationTaskScheduleScheduleRefMetadataCountStatisticsObjectTypeCountList']:
+        """
+        (Updatable) The array of statistics.
+        """
+        return pulumi.get(self, "object_type_count_lists")
+
+
+@pulumi.output_type
+class WorkspaceApplicationTaskScheduleScheduleRefMetadataCountStatisticsObjectTypeCountList(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "objectCount":
+            suggest = "object_count"
+        elif key == "objectType":
+            suggest = "object_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceApplicationTaskScheduleScheduleRefMetadataCountStatisticsObjectTypeCountList. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceApplicationTaskScheduleScheduleRefMetadataCountStatisticsObjectTypeCountList.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceApplicationTaskScheduleScheduleRefMetadataCountStatisticsObjectTypeCountList.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 object_count: Optional[str] = None,
+                 object_type: Optional[str] = None):
+        """
+        :param str object_count: (Updatable) The value for the count statistic object.
+        :param str object_type: (Updatable) The type of object for the count statistic object.
+        """
+        if object_count is not None:
+            pulumi.set(__self__, "object_count", object_count)
+        if object_type is not None:
+            pulumi.set(__self__, "object_type", object_type)
+
+    @property
+    @pulumi.getter(name="objectCount")
+    def object_count(self) -> Optional[str]:
+        """
+        (Updatable) The value for the count statistic object.
+        """
+        return pulumi.get(self, "object_count")
+
+    @property
+    @pulumi.getter(name="objectType")
+    def object_type(self) -> Optional[str]:
+        """
+        (Updatable) The type of object for the count statistic object.
+        """
+        return pulumi.get(self, "object_type")
+
+
+@pulumi.output_type
+class WorkspaceApplicationTaskScheduleScheduleRefParentRef(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "rootDocId":
+            suggest = "root_doc_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceApplicationTaskScheduleScheduleRefParentRef. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceApplicationTaskScheduleScheduleRefParentRef.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceApplicationTaskScheduleScheduleRefParentRef.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 parent: Optional[str] = None,
+                 root_doc_id: Optional[str] = None):
+        """
+        :param str parent: (Updatable) Key of the parent object.
+        :param str root_doc_id: (Updatable) Key of the root document object.
+        """
+        if parent is not None:
+            pulumi.set(__self__, "parent", parent)
+        if root_doc_id is not None:
+            pulumi.set(__self__, "root_doc_id", root_doc_id)
+
+    @property
+    @pulumi.getter
+    def parent(self) -> Optional[str]:
+        """
+        (Updatable) Key of the parent object.
+        """
+        return pulumi.get(self, "parent")
+
+    @property
+    @pulumi.getter(name="rootDocId")
+    def root_doc_id(self) -> Optional[str]:
+        """
+        (Updatable) Key of the root document object.
+        """
+        return pulumi.get(self, "root_doc_id")
 
 
 @pulumi.output_type
@@ -6873,6 +8403,2535 @@ class GetWorkspaceApplicationSourceApplicationInfoResult(dict):
         The workspace ID.
         """
         return pulumi.get(self, "workspace_id")
+
+
+@pulumi.output_type
+class GetWorkspaceApplicationTaskScheduleLastRunDetailResult(dict):
+    def __init__(__self__, *,
+                 description: str,
+                 identifier: str,
+                 key: str,
+                 last_run_time_millis: str,
+                 model_type: str,
+                 model_version: str,
+                 name: str,
+                 object_status: int,
+                 object_version: int,
+                 parent_reves: Sequence['outputs.GetWorkspaceApplicationTaskScheduleLastRunDetailParentRefResult']):
+        """
+        :param str description: The description of the aggregator.
+        :param str identifier: The identifier of the aggregator.
+        :param str key: The key of the aggregator object.
+        :param str last_run_time_millis: Time in milliseconds for the pervious schedule.
+        :param str model_type: The type of the object.
+        :param str model_version: This is a version number that is used by the service to upgrade objects if needed through releases of the service.
+        :param str name: Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param int object_status: The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+        :param int object_version: This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
+        :param Sequence['GetWorkspaceApplicationTaskScheduleLastRunDetailParentRefArgs'] parent_reves: A reference to the object's parent.
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "identifier", identifier)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "last_run_time_millis", last_run_time_millis)
+        pulumi.set(__self__, "model_type", model_type)
+        pulumi.set(__self__, "model_version", model_version)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "object_status", object_status)
+        pulumi.set(__self__, "object_version", object_version)
+        pulumi.set(__self__, "parent_reves", parent_reves)
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        The description of the aggregator.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def identifier(self) -> str:
+        """
+        The identifier of the aggregator.
+        """
+        return pulumi.get(self, "identifier")
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        The key of the aggregator object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="lastRunTimeMillis")
+    def last_run_time_millis(self) -> str:
+        """
+        Time in milliseconds for the pervious schedule.
+        """
+        return pulumi.get(self, "last_run_time_millis")
+
+    @property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> str:
+        """
+        The type of the object.
+        """
+        return pulumi.get(self, "model_type")
+
+    @property
+    @pulumi.getter(name="modelVersion")
+    def model_version(self) -> str:
+        """
+        This is a version number that is used by the service to upgrade objects if needed through releases of the service.
+        """
+        return pulumi.get(self, "model_version")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="objectStatus")
+    def object_status(self) -> int:
+        """
+        The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+        """
+        return pulumi.get(self, "object_status")
+
+    @property
+    @pulumi.getter(name="objectVersion")
+    def object_version(self) -> int:
+        """
+        This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
+        """
+        return pulumi.get(self, "object_version")
+
+    @property
+    @pulumi.getter(name="parentReves")
+    def parent_reves(self) -> Sequence['outputs.GetWorkspaceApplicationTaskScheduleLastRunDetailParentRefResult']:
+        """
+        A reference to the object's parent.
+        """
+        return pulumi.get(self, "parent_reves")
+
+
+@pulumi.output_type
+class GetWorkspaceApplicationTaskScheduleLastRunDetailParentRefResult(dict):
+    def __init__(__self__, *,
+                 parent: str,
+                 root_doc_id: str):
+        """
+        :param str parent: Key of the parent object.
+        :param str root_doc_id: Key of the root document object.
+        """
+        pulumi.set(__self__, "parent", parent)
+        pulumi.set(__self__, "root_doc_id", root_doc_id)
+
+    @property
+    @pulumi.getter
+    def parent(self) -> str:
+        """
+        Key of the parent object.
+        """
+        return pulumi.get(self, "parent")
+
+    @property
+    @pulumi.getter(name="rootDocId")
+    def root_doc_id(self) -> str:
+        """
+        Key of the root document object.
+        """
+        return pulumi.get(self, "root_doc_id")
+
+
+@pulumi.output_type
+class GetWorkspaceApplicationTaskScheduleMetadataResult(dict):
+    def __init__(__self__, *,
+                 aggregator_key: str,
+                 aggregators: Sequence['outputs.GetWorkspaceApplicationTaskScheduleMetadataAggregatorResult'],
+                 count_statistics: Sequence['outputs.GetWorkspaceApplicationTaskScheduleMetadataCountStatisticResult'],
+                 created_by: str,
+                 created_by_name: str,
+                 identifier_path: str,
+                 info_fields: Mapping[str, Any],
+                 is_favorite: bool,
+                 labels: Sequence[str],
+                 registry_version: int,
+                 time_created: str,
+                 time_updated: str,
+                 updated_by: str,
+                 updated_by_name: str):
+        """
+        :param str aggregator_key: The owning object key for this object.
+        :param Sequence['GetWorkspaceApplicationTaskScheduleMetadataAggregatorArgs'] aggregators: A summary type containing information about the object's aggregator including its type, key, name and description.
+        :param Sequence['GetWorkspaceApplicationTaskScheduleMetadataCountStatisticArgs'] count_statistics: A count statistics.
+        :param str created_by: The user that created the object.
+        :param str created_by_name: The user that created the object.
+        :param str identifier_path: The full path to identify this object.
+        :param Mapping[str, Any] info_fields: Information property fields.
+        :param bool is_favorite: Specifies whether this object is a favorite or not.
+        :param Sequence[str] labels: Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+        :param int registry_version: The registry version of the object.
+        :param str time_created: The date and time that the object was created.
+        :param str time_updated: The date and time that the object was updated.
+        :param str updated_by: The user that updated the object.
+        :param str updated_by_name: The user that updated the object.
+        """
+        pulumi.set(__self__, "aggregator_key", aggregator_key)
+        pulumi.set(__self__, "aggregators", aggregators)
+        pulumi.set(__self__, "count_statistics", count_statistics)
+        pulumi.set(__self__, "created_by", created_by)
+        pulumi.set(__self__, "created_by_name", created_by_name)
+        pulumi.set(__self__, "identifier_path", identifier_path)
+        pulumi.set(__self__, "info_fields", info_fields)
+        pulumi.set(__self__, "is_favorite", is_favorite)
+        pulumi.set(__self__, "labels", labels)
+        pulumi.set(__self__, "registry_version", registry_version)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "updated_by", updated_by)
+        pulumi.set(__self__, "updated_by_name", updated_by_name)
+
+    @property
+    @pulumi.getter(name="aggregatorKey")
+    def aggregator_key(self) -> str:
+        """
+        The owning object key for this object.
+        """
+        return pulumi.get(self, "aggregator_key")
+
+    @property
+    @pulumi.getter
+    def aggregators(self) -> Sequence['outputs.GetWorkspaceApplicationTaskScheduleMetadataAggregatorResult']:
+        """
+        A summary type containing information about the object's aggregator including its type, key, name and description.
+        """
+        return pulumi.get(self, "aggregators")
+
+    @property
+    @pulumi.getter(name="countStatistics")
+    def count_statistics(self) -> Sequence['outputs.GetWorkspaceApplicationTaskScheduleMetadataCountStatisticResult']:
+        """
+        A count statistics.
+        """
+        return pulumi.get(self, "count_statistics")
+
+    @property
+    @pulumi.getter(name="createdBy")
+    def created_by(self) -> str:
+        """
+        The user that created the object.
+        """
+        return pulumi.get(self, "created_by")
+
+    @property
+    @pulumi.getter(name="createdByName")
+    def created_by_name(self) -> str:
+        """
+        The user that created the object.
+        """
+        return pulumi.get(self, "created_by_name")
+
+    @property
+    @pulumi.getter(name="identifierPath")
+    def identifier_path(self) -> str:
+        """
+        The full path to identify this object.
+        """
+        return pulumi.get(self, "identifier_path")
+
+    @property
+    @pulumi.getter(name="infoFields")
+    def info_fields(self) -> Mapping[str, Any]:
+        """
+        Information property fields.
+        """
+        return pulumi.get(self, "info_fields")
+
+    @property
+    @pulumi.getter(name="isFavorite")
+    def is_favorite(self) -> bool:
+        """
+        Specifies whether this object is a favorite or not.
+        """
+        return pulumi.get(self, "is_favorite")
+
+    @property
+    @pulumi.getter
+    def labels(self) -> Sequence[str]:
+        """
+        Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+        """
+        return pulumi.get(self, "labels")
+
+    @property
+    @pulumi.getter(name="registryVersion")
+    def registry_version(self) -> int:
+        """
+        The registry version of the object.
+        """
+        return pulumi.get(self, "registry_version")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time that the object was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The date and time that the object was updated.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter(name="updatedBy")
+    def updated_by(self) -> str:
+        """
+        The user that updated the object.
+        """
+        return pulumi.get(self, "updated_by")
+
+    @property
+    @pulumi.getter(name="updatedByName")
+    def updated_by_name(self) -> str:
+        """
+        The user that updated the object.
+        """
+        return pulumi.get(self, "updated_by_name")
+
+
+@pulumi.output_type
+class GetWorkspaceApplicationTaskScheduleMetadataAggregatorResult(dict):
+    def __init__(__self__, *,
+                 description: str,
+                 identifier: str,
+                 key: str,
+                 name: str,
+                 type: str):
+        """
+        :param str description: The description of the aggregator.
+        :param str identifier: The identifier of the aggregator.
+        :param str key: The key of the aggregator object.
+        :param str name: Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param str type: The type of the aggregator.
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "identifier", identifier)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        The description of the aggregator.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def identifier(self) -> str:
+        """
+        The identifier of the aggregator.
+        """
+        return pulumi.get(self, "identifier")
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        The key of the aggregator object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        The type of the aggregator.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetWorkspaceApplicationTaskScheduleMetadataCountStatisticResult(dict):
+    def __init__(__self__, *,
+                 object_type_count_lists: Sequence['outputs.GetWorkspaceApplicationTaskScheduleMetadataCountStatisticObjectTypeCountListResult']):
+        """
+        :param Sequence['GetWorkspaceApplicationTaskScheduleMetadataCountStatisticObjectTypeCountListArgs'] object_type_count_lists: The array of statistics.
+        """
+        pulumi.set(__self__, "object_type_count_lists", object_type_count_lists)
+
+    @property
+    @pulumi.getter(name="objectTypeCountLists")
+    def object_type_count_lists(self) -> Sequence['outputs.GetWorkspaceApplicationTaskScheduleMetadataCountStatisticObjectTypeCountListResult']:
+        """
+        The array of statistics.
+        """
+        return pulumi.get(self, "object_type_count_lists")
+
+
+@pulumi.output_type
+class GetWorkspaceApplicationTaskScheduleMetadataCountStatisticObjectTypeCountListResult(dict):
+    def __init__(__self__, *,
+                 object_count: str,
+                 object_type: str):
+        """
+        :param str object_count: The value for the count statistic object.
+        :param str object_type: The type of object for the count statistic object.
+        """
+        pulumi.set(__self__, "object_count", object_count)
+        pulumi.set(__self__, "object_type", object_type)
+
+    @property
+    @pulumi.getter(name="objectCount")
+    def object_count(self) -> str:
+        """
+        The value for the count statistic object.
+        """
+        return pulumi.get(self, "object_count")
+
+    @property
+    @pulumi.getter(name="objectType")
+    def object_type(self) -> str:
+        """
+        The type of object for the count statistic object.
+        """
+        return pulumi.get(self, "object_type")
+
+
+@pulumi.output_type
+class GetWorkspaceApplicationTaskScheduleParentRefResult(dict):
+    def __init__(__self__, *,
+                 parent: str,
+                 root_doc_id: str):
+        """
+        :param str parent: Key of the parent object.
+        :param str root_doc_id: Key of the root document object.
+        """
+        pulumi.set(__self__, "parent", parent)
+        pulumi.set(__self__, "root_doc_id", root_doc_id)
+
+    @property
+    @pulumi.getter
+    def parent(self) -> str:
+        """
+        Key of the parent object.
+        """
+        return pulumi.get(self, "parent")
+
+    @property
+    @pulumi.getter(name="rootDocId")
+    def root_doc_id(self) -> str:
+        """
+        Key of the root document object.
+        """
+        return pulumi.get(self, "root_doc_id")
+
+
+@pulumi.output_type
+class GetWorkspaceApplicationTaskScheduleRegistryMetadataResult(dict):
+    def __init__(__self__, *,
+                 aggregator_key: str,
+                 is_favorite: bool,
+                 key: str,
+                 labels: Sequence[str],
+                 registry_version: int):
+        """
+        :param str aggregator_key: The owning object key for this object.
+        :param bool is_favorite: Specifies whether this object is a favorite or not.
+        :param str key: The key of the aggregator object.
+        :param Sequence[str] labels: Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+        :param int registry_version: The registry version of the object.
+        """
+        pulumi.set(__self__, "aggregator_key", aggregator_key)
+        pulumi.set(__self__, "is_favorite", is_favorite)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "labels", labels)
+        pulumi.set(__self__, "registry_version", registry_version)
+
+    @property
+    @pulumi.getter(name="aggregatorKey")
+    def aggregator_key(self) -> str:
+        """
+        The owning object key for this object.
+        """
+        return pulumi.get(self, "aggregator_key")
+
+    @property
+    @pulumi.getter(name="isFavorite")
+    def is_favorite(self) -> bool:
+        """
+        Specifies whether this object is a favorite or not.
+        """
+        return pulumi.get(self, "is_favorite")
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        The key of the aggregator object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def labels(self) -> Sequence[str]:
+        """
+        Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+        """
+        return pulumi.get(self, "labels")
+
+    @property
+    @pulumi.getter(name="registryVersion")
+    def registry_version(self) -> int:
+        """
+        The registry version of the object.
+        """
+        return pulumi.get(self, "registry_version")
+
+
+@pulumi.output_type
+class GetWorkspaceApplicationTaskScheduleScheduleRefResult(dict):
+    def __init__(__self__, *,
+                 description: str,
+                 frequency_details: Sequence['outputs.GetWorkspaceApplicationTaskScheduleScheduleRefFrequencyDetailResult'],
+                 identifier: str,
+                 is_daylight_adjustment_enabled: bool,
+                 key: str,
+                 metadatas: Sequence['outputs.GetWorkspaceApplicationTaskScheduleScheduleRefMetadataResult'],
+                 model_type: str,
+                 model_version: str,
+                 name: str,
+                 object_status: int,
+                 object_version: int,
+                 parent_reves: Sequence['outputs.GetWorkspaceApplicationTaskScheduleScheduleRefParentRefResult'],
+                 timezone: str):
+        """
+        :param str description: The description of the aggregator.
+        :param Sequence['GetWorkspaceApplicationTaskScheduleScheduleRefFrequencyDetailArgs'] frequency_details: The model that holds the frequency details.
+        :param str identifier: The identifier of the aggregator.
+        :param str key: The key of the aggregator object.
+        :param Sequence['GetWorkspaceApplicationTaskScheduleScheduleRefMetadataArgs'] metadatas: A summary type containing information about the object including its key, name and when/who created/updated it.
+        :param str model_type: The type of the object.
+        :param str model_version: This is a version number that is used by the service to upgrade objects if needed through releases of the service.
+        :param str name: Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param int object_status: The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+        :param int object_version: This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
+        :param Sequence['GetWorkspaceApplicationTaskScheduleScheduleRefParentRefArgs'] parent_reves: A reference to the object's parent.
+        :param str timezone: The timezone for the schedule.
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "frequency_details", frequency_details)
+        pulumi.set(__self__, "identifier", identifier)
+        pulumi.set(__self__, "is_daylight_adjustment_enabled", is_daylight_adjustment_enabled)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "metadatas", metadatas)
+        pulumi.set(__self__, "model_type", model_type)
+        pulumi.set(__self__, "model_version", model_version)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "object_status", object_status)
+        pulumi.set(__self__, "object_version", object_version)
+        pulumi.set(__self__, "parent_reves", parent_reves)
+        pulumi.set(__self__, "timezone", timezone)
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        The description of the aggregator.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="frequencyDetails")
+    def frequency_details(self) -> Sequence['outputs.GetWorkspaceApplicationTaskScheduleScheduleRefFrequencyDetailResult']:
+        """
+        The model that holds the frequency details.
+        """
+        return pulumi.get(self, "frequency_details")
+
+    @property
+    @pulumi.getter
+    def identifier(self) -> str:
+        """
+        The identifier of the aggregator.
+        """
+        return pulumi.get(self, "identifier")
+
+    @property
+    @pulumi.getter(name="isDaylightAdjustmentEnabled")
+    def is_daylight_adjustment_enabled(self) -> bool:
+        return pulumi.get(self, "is_daylight_adjustment_enabled")
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        The key of the aggregator object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def metadatas(self) -> Sequence['outputs.GetWorkspaceApplicationTaskScheduleScheduleRefMetadataResult']:
+        """
+        A summary type containing information about the object including its key, name and when/who created/updated it.
+        """
+        return pulumi.get(self, "metadatas")
+
+    @property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> str:
+        """
+        The type of the object.
+        """
+        return pulumi.get(self, "model_type")
+
+    @property
+    @pulumi.getter(name="modelVersion")
+    def model_version(self) -> str:
+        """
+        This is a version number that is used by the service to upgrade objects if needed through releases of the service.
+        """
+        return pulumi.get(self, "model_version")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="objectStatus")
+    def object_status(self) -> int:
+        """
+        The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+        """
+        return pulumi.get(self, "object_status")
+
+    @property
+    @pulumi.getter(name="objectVersion")
+    def object_version(self) -> int:
+        """
+        This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
+        """
+        return pulumi.get(self, "object_version")
+
+    @property
+    @pulumi.getter(name="parentReves")
+    def parent_reves(self) -> Sequence['outputs.GetWorkspaceApplicationTaskScheduleScheduleRefParentRefResult']:
+        """
+        A reference to the object's parent.
+        """
+        return pulumi.get(self, "parent_reves")
+
+    @property
+    @pulumi.getter
+    def timezone(self) -> str:
+        """
+        The timezone for the schedule.
+        """
+        return pulumi.get(self, "timezone")
+
+
+@pulumi.output_type
+class GetWorkspaceApplicationTaskScheduleScheduleRefFrequencyDetailResult(dict):
+    def __init__(__self__, *,
+                 custom_expression: str,
+                 day_of_week: str,
+                 days: Sequence[int],
+                 frequency: str,
+                 interval: int,
+                 model_type: str,
+                 times: Sequence['outputs.GetWorkspaceApplicationTaskScheduleScheduleRefFrequencyDetailTimeResult'],
+                 week_of_month: str):
+        """
+        :param str custom_expression: This holds the complete cron expression for this schedule, for example, 10 0/5 * * * ? that fires every 5 minutes, at 10 seconds after the minute (i.e. 10:00:10 am, 10:05:10 am, etc.)
+        :param str day_of_week: This holds the day of the week on which the schedule should be triggered.
+        :param Sequence[int] days: A list of days of the month to be scheduled. i.e. excute every 2nd,3rd, 10th of the month.
+        :param str frequency: the frequency of the schedule.
+        :param int interval: This hold the repeatability aspect of a schedule. i.e. in a monhtly frequency, a task can be scheduled for every month, once in two months, once in tree months etc.
+        :param str model_type: The type of the object.
+        :param Sequence['GetWorkspaceApplicationTaskScheduleScheduleRefFrequencyDetailTimeArgs'] times: A model to hold time in hour:minute:second format.
+        :param str week_of_month: This holds the week of the month in which the schedule should be triggered.
+        """
+        pulumi.set(__self__, "custom_expression", custom_expression)
+        pulumi.set(__self__, "day_of_week", day_of_week)
+        pulumi.set(__self__, "days", days)
+        pulumi.set(__self__, "frequency", frequency)
+        pulumi.set(__self__, "interval", interval)
+        pulumi.set(__self__, "model_type", model_type)
+        pulumi.set(__self__, "times", times)
+        pulumi.set(__self__, "week_of_month", week_of_month)
+
+    @property
+    @pulumi.getter(name="customExpression")
+    def custom_expression(self) -> str:
+        """
+        This holds the complete cron expression for this schedule, for example, 10 0/5 * * * ? that fires every 5 minutes, at 10 seconds after the minute (i.e. 10:00:10 am, 10:05:10 am, etc.)
+        """
+        return pulumi.get(self, "custom_expression")
+
+    @property
+    @pulumi.getter(name="dayOfWeek")
+    def day_of_week(self) -> str:
+        """
+        This holds the day of the week on which the schedule should be triggered.
+        """
+        return pulumi.get(self, "day_of_week")
+
+    @property
+    @pulumi.getter
+    def days(self) -> Sequence[int]:
+        """
+        A list of days of the month to be scheduled. i.e. excute every 2nd,3rd, 10th of the month.
+        """
+        return pulumi.get(self, "days")
+
+    @property
+    @pulumi.getter
+    def frequency(self) -> str:
+        """
+        the frequency of the schedule.
+        """
+        return pulumi.get(self, "frequency")
+
+    @property
+    @pulumi.getter
+    def interval(self) -> int:
+        """
+        This hold the repeatability aspect of a schedule. i.e. in a monhtly frequency, a task can be scheduled for every month, once in two months, once in tree months etc.
+        """
+        return pulumi.get(self, "interval")
+
+    @property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> str:
+        """
+        The type of the object.
+        """
+        return pulumi.get(self, "model_type")
+
+    @property
+    @pulumi.getter
+    def times(self) -> Sequence['outputs.GetWorkspaceApplicationTaskScheduleScheduleRefFrequencyDetailTimeResult']:
+        """
+        A model to hold time in hour:minute:second format.
+        """
+        return pulumi.get(self, "times")
+
+    @property
+    @pulumi.getter(name="weekOfMonth")
+    def week_of_month(self) -> str:
+        """
+        This holds the week of the month in which the schedule should be triggered.
+        """
+        return pulumi.get(self, "week_of_month")
+
+
+@pulumi.output_type
+class GetWorkspaceApplicationTaskScheduleScheduleRefFrequencyDetailTimeResult(dict):
+    def __init__(__self__, *,
+                 hour: int,
+                 minute: int,
+                 second: int):
+        """
+        :param int hour: The hour value.
+        :param int minute: The minute value.
+        :param int second: The second value.
+        """
+        pulumi.set(__self__, "hour", hour)
+        pulumi.set(__self__, "minute", minute)
+        pulumi.set(__self__, "second", second)
+
+    @property
+    @pulumi.getter
+    def hour(self) -> int:
+        """
+        The hour value.
+        """
+        return pulumi.get(self, "hour")
+
+    @property
+    @pulumi.getter
+    def minute(self) -> int:
+        """
+        The minute value.
+        """
+        return pulumi.get(self, "minute")
+
+    @property
+    @pulumi.getter
+    def second(self) -> int:
+        """
+        The second value.
+        """
+        return pulumi.get(self, "second")
+
+
+@pulumi.output_type
+class GetWorkspaceApplicationTaskScheduleScheduleRefMetadataResult(dict):
+    def __init__(__self__, *,
+                 aggregator_key: str,
+                 aggregators: Sequence['outputs.GetWorkspaceApplicationTaskScheduleScheduleRefMetadataAggregatorResult'],
+                 count_statistics: Sequence['outputs.GetWorkspaceApplicationTaskScheduleScheduleRefMetadataCountStatisticResult'],
+                 created_by: str,
+                 created_by_name: str,
+                 identifier_path: str,
+                 info_fields: Mapping[str, Any],
+                 is_favorite: bool,
+                 labels: Sequence[str],
+                 registry_version: int,
+                 time_created: str,
+                 time_updated: str,
+                 updated_by: str,
+                 updated_by_name: str):
+        """
+        :param str aggregator_key: The owning object key for this object.
+        :param Sequence['GetWorkspaceApplicationTaskScheduleScheduleRefMetadataAggregatorArgs'] aggregators: A summary type containing information about the object's aggregator including its type, key, name and description.
+        :param Sequence['GetWorkspaceApplicationTaskScheduleScheduleRefMetadataCountStatisticArgs'] count_statistics: A count statistics.
+        :param str created_by: The user that created the object.
+        :param str created_by_name: The user that created the object.
+        :param str identifier_path: The full path to identify this object.
+        :param Mapping[str, Any] info_fields: Information property fields.
+        :param bool is_favorite: Specifies whether this object is a favorite or not.
+        :param Sequence[str] labels: Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+        :param int registry_version: The registry version of the object.
+        :param str time_created: The date and time that the object was created.
+        :param str time_updated: The date and time that the object was updated.
+        :param str updated_by: The user that updated the object.
+        :param str updated_by_name: The user that updated the object.
+        """
+        pulumi.set(__self__, "aggregator_key", aggregator_key)
+        pulumi.set(__self__, "aggregators", aggregators)
+        pulumi.set(__self__, "count_statistics", count_statistics)
+        pulumi.set(__self__, "created_by", created_by)
+        pulumi.set(__self__, "created_by_name", created_by_name)
+        pulumi.set(__self__, "identifier_path", identifier_path)
+        pulumi.set(__self__, "info_fields", info_fields)
+        pulumi.set(__self__, "is_favorite", is_favorite)
+        pulumi.set(__self__, "labels", labels)
+        pulumi.set(__self__, "registry_version", registry_version)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "updated_by", updated_by)
+        pulumi.set(__self__, "updated_by_name", updated_by_name)
+
+    @property
+    @pulumi.getter(name="aggregatorKey")
+    def aggregator_key(self) -> str:
+        """
+        The owning object key for this object.
+        """
+        return pulumi.get(self, "aggregator_key")
+
+    @property
+    @pulumi.getter
+    def aggregators(self) -> Sequence['outputs.GetWorkspaceApplicationTaskScheduleScheduleRefMetadataAggregatorResult']:
+        """
+        A summary type containing information about the object's aggregator including its type, key, name and description.
+        """
+        return pulumi.get(self, "aggregators")
+
+    @property
+    @pulumi.getter(name="countStatistics")
+    def count_statistics(self) -> Sequence['outputs.GetWorkspaceApplicationTaskScheduleScheduleRefMetadataCountStatisticResult']:
+        """
+        A count statistics.
+        """
+        return pulumi.get(self, "count_statistics")
+
+    @property
+    @pulumi.getter(name="createdBy")
+    def created_by(self) -> str:
+        """
+        The user that created the object.
+        """
+        return pulumi.get(self, "created_by")
+
+    @property
+    @pulumi.getter(name="createdByName")
+    def created_by_name(self) -> str:
+        """
+        The user that created the object.
+        """
+        return pulumi.get(self, "created_by_name")
+
+    @property
+    @pulumi.getter(name="identifierPath")
+    def identifier_path(self) -> str:
+        """
+        The full path to identify this object.
+        """
+        return pulumi.get(self, "identifier_path")
+
+    @property
+    @pulumi.getter(name="infoFields")
+    def info_fields(self) -> Mapping[str, Any]:
+        """
+        Information property fields.
+        """
+        return pulumi.get(self, "info_fields")
+
+    @property
+    @pulumi.getter(name="isFavorite")
+    def is_favorite(self) -> bool:
+        """
+        Specifies whether this object is a favorite or not.
+        """
+        return pulumi.get(self, "is_favorite")
+
+    @property
+    @pulumi.getter
+    def labels(self) -> Sequence[str]:
+        """
+        Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+        """
+        return pulumi.get(self, "labels")
+
+    @property
+    @pulumi.getter(name="registryVersion")
+    def registry_version(self) -> int:
+        """
+        The registry version of the object.
+        """
+        return pulumi.get(self, "registry_version")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time that the object was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The date and time that the object was updated.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter(name="updatedBy")
+    def updated_by(self) -> str:
+        """
+        The user that updated the object.
+        """
+        return pulumi.get(self, "updated_by")
+
+    @property
+    @pulumi.getter(name="updatedByName")
+    def updated_by_name(self) -> str:
+        """
+        The user that updated the object.
+        """
+        return pulumi.get(self, "updated_by_name")
+
+
+@pulumi.output_type
+class GetWorkspaceApplicationTaskScheduleScheduleRefMetadataAggregatorResult(dict):
+    def __init__(__self__, *,
+                 description: str,
+                 identifier: str,
+                 key: str,
+                 name: str,
+                 type: str):
+        """
+        :param str description: The description of the aggregator.
+        :param str identifier: The identifier of the aggregator.
+        :param str key: The key of the aggregator object.
+        :param str name: Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param str type: The type of the aggregator.
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "identifier", identifier)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        The description of the aggregator.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def identifier(self) -> str:
+        """
+        The identifier of the aggregator.
+        """
+        return pulumi.get(self, "identifier")
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        The key of the aggregator object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        The type of the aggregator.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetWorkspaceApplicationTaskScheduleScheduleRefMetadataCountStatisticResult(dict):
+    def __init__(__self__, *,
+                 object_type_count_lists: Sequence['outputs.GetWorkspaceApplicationTaskScheduleScheduleRefMetadataCountStatisticObjectTypeCountListResult']):
+        """
+        :param Sequence['GetWorkspaceApplicationTaskScheduleScheduleRefMetadataCountStatisticObjectTypeCountListArgs'] object_type_count_lists: The array of statistics.
+        """
+        pulumi.set(__self__, "object_type_count_lists", object_type_count_lists)
+
+    @property
+    @pulumi.getter(name="objectTypeCountLists")
+    def object_type_count_lists(self) -> Sequence['outputs.GetWorkspaceApplicationTaskScheduleScheduleRefMetadataCountStatisticObjectTypeCountListResult']:
+        """
+        The array of statistics.
+        """
+        return pulumi.get(self, "object_type_count_lists")
+
+
+@pulumi.output_type
+class GetWorkspaceApplicationTaskScheduleScheduleRefMetadataCountStatisticObjectTypeCountListResult(dict):
+    def __init__(__self__, *,
+                 object_count: str,
+                 object_type: str):
+        """
+        :param str object_count: The value for the count statistic object.
+        :param str object_type: The type of object for the count statistic object.
+        """
+        pulumi.set(__self__, "object_count", object_count)
+        pulumi.set(__self__, "object_type", object_type)
+
+    @property
+    @pulumi.getter(name="objectCount")
+    def object_count(self) -> str:
+        """
+        The value for the count statistic object.
+        """
+        return pulumi.get(self, "object_count")
+
+    @property
+    @pulumi.getter(name="objectType")
+    def object_type(self) -> str:
+        """
+        The type of object for the count statistic object.
+        """
+        return pulumi.get(self, "object_type")
+
+
+@pulumi.output_type
+class GetWorkspaceApplicationTaskScheduleScheduleRefParentRefResult(dict):
+    def __init__(__self__, *,
+                 parent: str,
+                 root_doc_id: str):
+        """
+        :param str parent: Key of the parent object.
+        :param str root_doc_id: Key of the root document object.
+        """
+        pulumi.set(__self__, "parent", parent)
+        pulumi.set(__self__, "root_doc_id", root_doc_id)
+
+    @property
+    @pulumi.getter
+    def parent(self) -> str:
+        """
+        Key of the parent object.
+        """
+        return pulumi.get(self, "parent")
+
+    @property
+    @pulumi.getter(name="rootDocId")
+    def root_doc_id(self) -> str:
+        """
+        Key of the root document object.
+        """
+        return pulumi.get(self, "root_doc_id")
+
+
+@pulumi.output_type
+class GetWorkspaceApplicationTaskSchedulesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: Used to filter by the name of the object.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Used to filter by the name of the object.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 application_key: str,
+                 auth_mode: str,
+                 config_provider_delegate: str,
+                 description: str,
+                 end_time_millis: str,
+                 expected_duration: float,
+                 expected_duration_unit: str,
+                 identifier: str,
+                 is_backfill_enabled: bool,
+                 is_concurrent_allowed: bool,
+                 is_enabled: bool,
+                 key: str,
+                 last_run_details: Sequence['outputs.GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemLastRunDetailResult'],
+                 metadatas: Sequence['outputs.GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemMetadataResult'],
+                 model_type: str,
+                 model_version: str,
+                 name: str,
+                 next_run_time_millis: str,
+                 number_of_retries: int,
+                 object_status: int,
+                 object_version: int,
+                 parent_ref: 'outputs.GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemParentRefResult',
+                 registry_metadata: 'outputs.GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemRegistryMetadataResult',
+                 retry_attempts: int,
+                 retry_delay: float,
+                 retry_delay_unit: str,
+                 schedule_ref: 'outputs.GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemScheduleRefResult',
+                 start_time_millis: str,
+                 workspace_id: str):
+        """
+        :param str application_key: The application key.
+        :param str auth_mode: The authorization mode for the task.
+        :param str description: The description of the aggregator.
+        :param str end_time_millis: The end time in milliseconds.
+        :param float expected_duration: The expected duration of the task execution.
+        :param str expected_duration_unit: The expected duration unit of the task execution.
+        :param str identifier: Used to filter by the identifier of the object.
+        :param bool is_backfill_enabled: Whether the backfill is enabled
+        :param bool is_concurrent_allowed: Whether the same task can be executed concurrently.
+        :param bool is_enabled: This filter parameter can be used to filter task schedule by its state.
+        :param str key: Used to filter by the key of the object.
+        :param Sequence['GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemLastRunDetailArgs'] last_run_details: The last run details for the task run.
+        :param Sequence['GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemMetadataArgs'] metadatas: A summary type containing information about the object including its key, name and when/who created/updated it.
+        :param str model_type: The type of the object.
+        :param str model_version: This is a version number that is used by the service to upgrade objects if needed through releases of the service.
+        :param str name: Used to filter by the name of the object.
+        :param int object_status: The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+        :param int object_version: This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
+        :param 'GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemParentRefArgs' parent_ref: A reference to the object's parent.
+        :param int retry_attempts: The number of retry attempts.
+        :param float retry_delay: The retry delay, the unit for measurement is in the property retry delay unit.
+        :param str retry_delay_unit: The unit for the retry delay.
+        :param 'GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemScheduleRefArgs' schedule_ref: The schedule object
+        :param str start_time_millis: The start time in milliseconds.
+        :param str workspace_id: The workspace ID.
+        """
+        pulumi.set(__self__, "application_key", application_key)
+        pulumi.set(__self__, "auth_mode", auth_mode)
+        pulumi.set(__self__, "config_provider_delegate", config_provider_delegate)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "end_time_millis", end_time_millis)
+        pulumi.set(__self__, "expected_duration", expected_duration)
+        pulumi.set(__self__, "expected_duration_unit", expected_duration_unit)
+        pulumi.set(__self__, "identifier", identifier)
+        pulumi.set(__self__, "is_backfill_enabled", is_backfill_enabled)
+        pulumi.set(__self__, "is_concurrent_allowed", is_concurrent_allowed)
+        pulumi.set(__self__, "is_enabled", is_enabled)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "last_run_details", last_run_details)
+        pulumi.set(__self__, "metadatas", metadatas)
+        pulumi.set(__self__, "model_type", model_type)
+        pulumi.set(__self__, "model_version", model_version)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "next_run_time_millis", next_run_time_millis)
+        pulumi.set(__self__, "number_of_retries", number_of_retries)
+        pulumi.set(__self__, "object_status", object_status)
+        pulumi.set(__self__, "object_version", object_version)
+        pulumi.set(__self__, "parent_ref", parent_ref)
+        pulumi.set(__self__, "registry_metadata", registry_metadata)
+        pulumi.set(__self__, "retry_attempts", retry_attempts)
+        pulumi.set(__self__, "retry_delay", retry_delay)
+        pulumi.set(__self__, "retry_delay_unit", retry_delay_unit)
+        pulumi.set(__self__, "schedule_ref", schedule_ref)
+        pulumi.set(__self__, "start_time_millis", start_time_millis)
+        pulumi.set(__self__, "workspace_id", workspace_id)
+
+    @property
+    @pulumi.getter(name="applicationKey")
+    def application_key(self) -> str:
+        """
+        The application key.
+        """
+        return pulumi.get(self, "application_key")
+
+    @property
+    @pulumi.getter(name="authMode")
+    def auth_mode(self) -> str:
+        """
+        The authorization mode for the task.
+        """
+        return pulumi.get(self, "auth_mode")
+
+    @property
+    @pulumi.getter(name="configProviderDelegate")
+    def config_provider_delegate(self) -> str:
+        return pulumi.get(self, "config_provider_delegate")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        The description of the aggregator.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="endTimeMillis")
+    def end_time_millis(self) -> str:
+        """
+        The end time in milliseconds.
+        """
+        return pulumi.get(self, "end_time_millis")
+
+    @property
+    @pulumi.getter(name="expectedDuration")
+    def expected_duration(self) -> float:
+        """
+        The expected duration of the task execution.
+        """
+        return pulumi.get(self, "expected_duration")
+
+    @property
+    @pulumi.getter(name="expectedDurationUnit")
+    def expected_duration_unit(self) -> str:
+        """
+        The expected duration unit of the task execution.
+        """
+        return pulumi.get(self, "expected_duration_unit")
+
+    @property
+    @pulumi.getter
+    def identifier(self) -> str:
+        """
+        Used to filter by the identifier of the object.
+        """
+        return pulumi.get(self, "identifier")
+
+    @property
+    @pulumi.getter(name="isBackfillEnabled")
+    def is_backfill_enabled(self) -> bool:
+        """
+        Whether the backfill is enabled
+        """
+        return pulumi.get(self, "is_backfill_enabled")
+
+    @property
+    @pulumi.getter(name="isConcurrentAllowed")
+    def is_concurrent_allowed(self) -> bool:
+        """
+        Whether the same task can be executed concurrently.
+        """
+        return pulumi.get(self, "is_concurrent_allowed")
+
+    @property
+    @pulumi.getter(name="isEnabled")
+    def is_enabled(self) -> bool:
+        """
+        This filter parameter can be used to filter task schedule by its state.
+        """
+        return pulumi.get(self, "is_enabled")
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        Used to filter by the key of the object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="lastRunDetails")
+    def last_run_details(self) -> Sequence['outputs.GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemLastRunDetailResult']:
+        """
+        The last run details for the task run.
+        """
+        return pulumi.get(self, "last_run_details")
+
+    @property
+    @pulumi.getter
+    def metadatas(self) -> Sequence['outputs.GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemMetadataResult']:
+        """
+        A summary type containing information about the object including its key, name and when/who created/updated it.
+        """
+        return pulumi.get(self, "metadatas")
+
+    @property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> str:
+        """
+        The type of the object.
+        """
+        return pulumi.get(self, "model_type")
+
+    @property
+    @pulumi.getter(name="modelVersion")
+    def model_version(self) -> str:
+        """
+        This is a version number that is used by the service to upgrade objects if needed through releases of the service.
+        """
+        return pulumi.get(self, "model_version")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Used to filter by the name of the object.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="nextRunTimeMillis")
+    def next_run_time_millis(self) -> str:
+        return pulumi.get(self, "next_run_time_millis")
+
+    @property
+    @pulumi.getter(name="numberOfRetries")
+    def number_of_retries(self) -> int:
+        return pulumi.get(self, "number_of_retries")
+
+    @property
+    @pulumi.getter(name="objectStatus")
+    def object_status(self) -> int:
+        """
+        The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+        """
+        return pulumi.get(self, "object_status")
+
+    @property
+    @pulumi.getter(name="objectVersion")
+    def object_version(self) -> int:
+        """
+        This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
+        """
+        return pulumi.get(self, "object_version")
+
+    @property
+    @pulumi.getter(name="parentRef")
+    def parent_ref(self) -> 'outputs.GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemParentRefResult':
+        """
+        A reference to the object's parent.
+        """
+        return pulumi.get(self, "parent_ref")
+
+    @property
+    @pulumi.getter(name="registryMetadata")
+    def registry_metadata(self) -> 'outputs.GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemRegistryMetadataResult':
+        return pulumi.get(self, "registry_metadata")
+
+    @property
+    @pulumi.getter(name="retryAttempts")
+    def retry_attempts(self) -> int:
+        """
+        The number of retry attempts.
+        """
+        return pulumi.get(self, "retry_attempts")
+
+    @property
+    @pulumi.getter(name="retryDelay")
+    def retry_delay(self) -> float:
+        """
+        The retry delay, the unit for measurement is in the property retry delay unit.
+        """
+        return pulumi.get(self, "retry_delay")
+
+    @property
+    @pulumi.getter(name="retryDelayUnit")
+    def retry_delay_unit(self) -> str:
+        """
+        The unit for the retry delay.
+        """
+        return pulumi.get(self, "retry_delay_unit")
+
+    @property
+    @pulumi.getter(name="scheduleRef")
+    def schedule_ref(self) -> 'outputs.GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemScheduleRefResult':
+        """
+        The schedule object
+        """
+        return pulumi.get(self, "schedule_ref")
+
+    @property
+    @pulumi.getter(name="startTimeMillis")
+    def start_time_millis(self) -> str:
+        """
+        The start time in milliseconds.
+        """
+        return pulumi.get(self, "start_time_millis")
+
+    @property
+    @pulumi.getter(name="workspaceId")
+    def workspace_id(self) -> str:
+        """
+        The workspace ID.
+        """
+        return pulumi.get(self, "workspace_id")
+
+
+@pulumi.output_type
+class GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemLastRunDetailResult(dict):
+    def __init__(__self__, *,
+                 description: str,
+                 identifier: str,
+                 key: str,
+                 last_run_time_millis: str,
+                 model_type: str,
+                 model_version: str,
+                 name: str,
+                 object_status: int,
+                 object_version: int,
+                 parent_reves: Sequence['outputs.GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemLastRunDetailParentRefResult']):
+        """
+        :param str description: The description of the aggregator.
+        :param str identifier: Used to filter by the identifier of the object.
+        :param str key: Used to filter by the key of the object.
+        :param str last_run_time_millis: Time in milliseconds for the pervious schedule.
+        :param str model_type: The type of the object.
+        :param str model_version: This is a version number that is used by the service to upgrade objects if needed through releases of the service.
+        :param str name: Used to filter by the name of the object.
+        :param int object_status: The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+        :param int object_version: This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
+        :param Sequence['GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemLastRunDetailParentRefArgs'] parent_reves: A reference to the object's parent.
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "identifier", identifier)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "last_run_time_millis", last_run_time_millis)
+        pulumi.set(__self__, "model_type", model_type)
+        pulumi.set(__self__, "model_version", model_version)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "object_status", object_status)
+        pulumi.set(__self__, "object_version", object_version)
+        pulumi.set(__self__, "parent_reves", parent_reves)
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        The description of the aggregator.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def identifier(self) -> str:
+        """
+        Used to filter by the identifier of the object.
+        """
+        return pulumi.get(self, "identifier")
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        Used to filter by the key of the object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="lastRunTimeMillis")
+    def last_run_time_millis(self) -> str:
+        """
+        Time in milliseconds for the pervious schedule.
+        """
+        return pulumi.get(self, "last_run_time_millis")
+
+    @property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> str:
+        """
+        The type of the object.
+        """
+        return pulumi.get(self, "model_type")
+
+    @property
+    @pulumi.getter(name="modelVersion")
+    def model_version(self) -> str:
+        """
+        This is a version number that is used by the service to upgrade objects if needed through releases of the service.
+        """
+        return pulumi.get(self, "model_version")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Used to filter by the name of the object.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="objectStatus")
+    def object_status(self) -> int:
+        """
+        The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+        """
+        return pulumi.get(self, "object_status")
+
+    @property
+    @pulumi.getter(name="objectVersion")
+    def object_version(self) -> int:
+        """
+        This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
+        """
+        return pulumi.get(self, "object_version")
+
+    @property
+    @pulumi.getter(name="parentReves")
+    def parent_reves(self) -> Sequence['outputs.GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemLastRunDetailParentRefResult']:
+        """
+        A reference to the object's parent.
+        """
+        return pulumi.get(self, "parent_reves")
+
+
+@pulumi.output_type
+class GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemLastRunDetailParentRefResult(dict):
+    def __init__(__self__, *,
+                 parent: str,
+                 root_doc_id: str):
+        """
+        :param str parent: Key of the parent object.
+        :param str root_doc_id: Key of the root document object.
+        """
+        pulumi.set(__self__, "parent", parent)
+        pulumi.set(__self__, "root_doc_id", root_doc_id)
+
+    @property
+    @pulumi.getter
+    def parent(self) -> str:
+        """
+        Key of the parent object.
+        """
+        return pulumi.get(self, "parent")
+
+    @property
+    @pulumi.getter(name="rootDocId")
+    def root_doc_id(self) -> str:
+        """
+        Key of the root document object.
+        """
+        return pulumi.get(self, "root_doc_id")
+
+
+@pulumi.output_type
+class GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemMetadataResult(dict):
+    def __init__(__self__, *,
+                 aggregator_key: str,
+                 aggregators: Sequence['outputs.GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemMetadataAggregatorResult'],
+                 count_statistics: Sequence['outputs.GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemMetadataCountStatisticResult'],
+                 created_by: str,
+                 created_by_name: str,
+                 identifier_path: str,
+                 info_fields: Mapping[str, Any],
+                 is_favorite: bool,
+                 labels: Sequence[str],
+                 registry_version: int,
+                 time_created: str,
+                 time_updated: str,
+                 updated_by: str,
+                 updated_by_name: str):
+        """
+        :param str aggregator_key: The owning object key for this object.
+        :param Sequence['GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemMetadataAggregatorArgs'] aggregators: A summary type containing information about the object's aggregator including its type, key, name and description.
+        :param Sequence['GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemMetadataCountStatisticArgs'] count_statistics: A count statistics.
+        :param str created_by: The user that created the object.
+        :param str created_by_name: The user that created the object.
+        :param str identifier_path: The full path to identify this object.
+        :param Mapping[str, Any] info_fields: Information property fields.
+        :param bool is_favorite: Specifies whether this object is a favorite or not.
+        :param Sequence[str] labels: Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+        :param int registry_version: The registry version of the object.
+        :param str time_created: The date and time that the object was created.
+        :param str time_updated: The date and time that the object was updated.
+        :param str updated_by: The user that updated the object.
+        :param str updated_by_name: The user that updated the object.
+        """
+        pulumi.set(__self__, "aggregator_key", aggregator_key)
+        pulumi.set(__self__, "aggregators", aggregators)
+        pulumi.set(__self__, "count_statistics", count_statistics)
+        pulumi.set(__self__, "created_by", created_by)
+        pulumi.set(__self__, "created_by_name", created_by_name)
+        pulumi.set(__self__, "identifier_path", identifier_path)
+        pulumi.set(__self__, "info_fields", info_fields)
+        pulumi.set(__self__, "is_favorite", is_favorite)
+        pulumi.set(__self__, "labels", labels)
+        pulumi.set(__self__, "registry_version", registry_version)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "updated_by", updated_by)
+        pulumi.set(__self__, "updated_by_name", updated_by_name)
+
+    @property
+    @pulumi.getter(name="aggregatorKey")
+    def aggregator_key(self) -> str:
+        """
+        The owning object key for this object.
+        """
+        return pulumi.get(self, "aggregator_key")
+
+    @property
+    @pulumi.getter
+    def aggregators(self) -> Sequence['outputs.GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemMetadataAggregatorResult']:
+        """
+        A summary type containing information about the object's aggregator including its type, key, name and description.
+        """
+        return pulumi.get(self, "aggregators")
+
+    @property
+    @pulumi.getter(name="countStatistics")
+    def count_statistics(self) -> Sequence['outputs.GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemMetadataCountStatisticResult']:
+        """
+        A count statistics.
+        """
+        return pulumi.get(self, "count_statistics")
+
+    @property
+    @pulumi.getter(name="createdBy")
+    def created_by(self) -> str:
+        """
+        The user that created the object.
+        """
+        return pulumi.get(self, "created_by")
+
+    @property
+    @pulumi.getter(name="createdByName")
+    def created_by_name(self) -> str:
+        """
+        The user that created the object.
+        """
+        return pulumi.get(self, "created_by_name")
+
+    @property
+    @pulumi.getter(name="identifierPath")
+    def identifier_path(self) -> str:
+        """
+        The full path to identify this object.
+        """
+        return pulumi.get(self, "identifier_path")
+
+    @property
+    @pulumi.getter(name="infoFields")
+    def info_fields(self) -> Mapping[str, Any]:
+        """
+        Information property fields.
+        """
+        return pulumi.get(self, "info_fields")
+
+    @property
+    @pulumi.getter(name="isFavorite")
+    def is_favorite(self) -> bool:
+        """
+        Specifies whether this object is a favorite or not.
+        """
+        return pulumi.get(self, "is_favorite")
+
+    @property
+    @pulumi.getter
+    def labels(self) -> Sequence[str]:
+        """
+        Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+        """
+        return pulumi.get(self, "labels")
+
+    @property
+    @pulumi.getter(name="registryVersion")
+    def registry_version(self) -> int:
+        """
+        The registry version of the object.
+        """
+        return pulumi.get(self, "registry_version")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time that the object was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The date and time that the object was updated.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter(name="updatedBy")
+    def updated_by(self) -> str:
+        """
+        The user that updated the object.
+        """
+        return pulumi.get(self, "updated_by")
+
+    @property
+    @pulumi.getter(name="updatedByName")
+    def updated_by_name(self) -> str:
+        """
+        The user that updated the object.
+        """
+        return pulumi.get(self, "updated_by_name")
+
+
+@pulumi.output_type
+class GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemMetadataAggregatorResult(dict):
+    def __init__(__self__, *,
+                 description: str,
+                 identifier: str,
+                 key: str,
+                 name: str,
+                 type: str):
+        """
+        :param str description: The description of the aggregator.
+        :param str identifier: Used to filter by the identifier of the object.
+        :param str key: Used to filter by the key of the object.
+        :param str name: Used to filter by the name of the object.
+        :param str type: Used to filter by the object type of the object. It can be suffixed with an optional filter operator InSubtree. If this operator is not specified, then exact match is considered. <br><br><B>Examples:</B><br> <ul> <li><B>?type=DATA_LOADER_TASK&typeInSubtree=false</B> returns all objects of type data loader task</li> <li><B>?type=DATA_LOADER_TASK</B> returns all objects of type data loader task</li> <li><B>?type=DATA_LOADER_TASK&typeInSubtree=true</B> returns all objects of type data loader task</li> </ul>
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "identifier", identifier)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        The description of the aggregator.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def identifier(self) -> str:
+        """
+        Used to filter by the identifier of the object.
+        """
+        return pulumi.get(self, "identifier")
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        Used to filter by the key of the object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Used to filter by the name of the object.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Used to filter by the object type of the object. It can be suffixed with an optional filter operator InSubtree. If this operator is not specified, then exact match is considered. <br><br><B>Examples:</B><br> <ul> <li><B>?type=DATA_LOADER_TASK&typeInSubtree=false</B> returns all objects of type data loader task</li> <li><B>?type=DATA_LOADER_TASK</B> returns all objects of type data loader task</li> <li><B>?type=DATA_LOADER_TASK&typeInSubtree=true</B> returns all objects of type data loader task</li> </ul>
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemMetadataCountStatisticResult(dict):
+    def __init__(__self__, *,
+                 object_type_count_lists: Sequence['outputs.GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListResult']):
+        """
+        :param Sequence['GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArgs'] object_type_count_lists: The array of statistics.
+        """
+        pulumi.set(__self__, "object_type_count_lists", object_type_count_lists)
+
+    @property
+    @pulumi.getter(name="objectTypeCountLists")
+    def object_type_count_lists(self) -> Sequence['outputs.GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListResult']:
+        """
+        The array of statistics.
+        """
+        return pulumi.get(self, "object_type_count_lists")
+
+
+@pulumi.output_type
+class GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListResult(dict):
+    def __init__(__self__, *,
+                 object_count: str,
+                 object_type: str):
+        """
+        :param str object_count: The value for the count statistic object.
+        :param str object_type: The type of object for the count statistic object.
+        """
+        pulumi.set(__self__, "object_count", object_count)
+        pulumi.set(__self__, "object_type", object_type)
+
+    @property
+    @pulumi.getter(name="objectCount")
+    def object_count(self) -> str:
+        """
+        The value for the count statistic object.
+        """
+        return pulumi.get(self, "object_count")
+
+    @property
+    @pulumi.getter(name="objectType")
+    def object_type(self) -> str:
+        """
+        The type of object for the count statistic object.
+        """
+        return pulumi.get(self, "object_type")
+
+
+@pulumi.output_type
+class GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemParentRefResult(dict):
+    def __init__(__self__, *,
+                 parent: str,
+                 root_doc_id: str):
+        """
+        :param str parent: Key of the parent object.
+        :param str root_doc_id: Key of the root document object.
+        """
+        pulumi.set(__self__, "parent", parent)
+        pulumi.set(__self__, "root_doc_id", root_doc_id)
+
+    @property
+    @pulumi.getter
+    def parent(self) -> str:
+        """
+        Key of the parent object.
+        """
+        return pulumi.get(self, "parent")
+
+    @property
+    @pulumi.getter(name="rootDocId")
+    def root_doc_id(self) -> str:
+        """
+        Key of the root document object.
+        """
+        return pulumi.get(self, "root_doc_id")
+
+
+@pulumi.output_type
+class GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemRegistryMetadataResult(dict):
+    def __init__(__self__, *,
+                 aggregator_key: str,
+                 is_favorite: bool,
+                 key: str,
+                 labels: Sequence[str],
+                 registry_version: int):
+        """
+        :param str aggregator_key: The owning object key for this object.
+        :param bool is_favorite: Specifies whether this object is a favorite or not.
+        :param str key: Used to filter by the key of the object.
+        :param Sequence[str] labels: Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+        :param int registry_version: The registry version of the object.
+        """
+        pulumi.set(__self__, "aggregator_key", aggregator_key)
+        pulumi.set(__self__, "is_favorite", is_favorite)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "labels", labels)
+        pulumi.set(__self__, "registry_version", registry_version)
+
+    @property
+    @pulumi.getter(name="aggregatorKey")
+    def aggregator_key(self) -> str:
+        """
+        The owning object key for this object.
+        """
+        return pulumi.get(self, "aggregator_key")
+
+    @property
+    @pulumi.getter(name="isFavorite")
+    def is_favorite(self) -> bool:
+        """
+        Specifies whether this object is a favorite or not.
+        """
+        return pulumi.get(self, "is_favorite")
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        Used to filter by the key of the object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def labels(self) -> Sequence[str]:
+        """
+        Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+        """
+        return pulumi.get(self, "labels")
+
+    @property
+    @pulumi.getter(name="registryVersion")
+    def registry_version(self) -> int:
+        """
+        The registry version of the object.
+        """
+        return pulumi.get(self, "registry_version")
+
+
+@pulumi.output_type
+class GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemScheduleRefResult(dict):
+    def __init__(__self__, *,
+                 description: str,
+                 frequency_details: 'outputs.GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemScheduleRefFrequencyDetailsResult',
+                 identifier: str,
+                 is_daylight_adjustment_enabled: bool,
+                 key: str,
+                 metadata: 'outputs.GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemScheduleRefMetadataResult',
+                 model_type: str,
+                 model_version: str,
+                 name: str,
+                 object_status: int,
+                 object_version: int,
+                 parent_ref: 'outputs.GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemScheduleRefParentRefResult',
+                 timezone: str):
+        """
+        :param str description: The description of the aggregator.
+        :param 'GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemScheduleRefFrequencyDetailsArgs' frequency_details: The model that holds the frequency details.
+        :param str identifier: Used to filter by the identifier of the object.
+        :param str key: Used to filter by the key of the object.
+        :param 'GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemScheduleRefMetadataArgs' metadata: A summary type containing information about the object including its key, name and when/who created/updated it.
+        :param str model_type: The type of the object.
+        :param str model_version: This is a version number that is used by the service to upgrade objects if needed through releases of the service.
+        :param str name: Used to filter by the name of the object.
+        :param int object_status: The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+        :param int object_version: This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
+        :param 'GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemScheduleRefParentRefArgs' parent_ref: A reference to the object's parent.
+        :param str timezone: The timezone for the schedule.
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "frequency_details", frequency_details)
+        pulumi.set(__self__, "identifier", identifier)
+        pulumi.set(__self__, "is_daylight_adjustment_enabled", is_daylight_adjustment_enabled)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "metadata", metadata)
+        pulumi.set(__self__, "model_type", model_type)
+        pulumi.set(__self__, "model_version", model_version)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "object_status", object_status)
+        pulumi.set(__self__, "object_version", object_version)
+        pulumi.set(__self__, "parent_ref", parent_ref)
+        pulumi.set(__self__, "timezone", timezone)
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        The description of the aggregator.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="frequencyDetails")
+    def frequency_details(self) -> 'outputs.GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemScheduleRefFrequencyDetailsResult':
+        """
+        The model that holds the frequency details.
+        """
+        return pulumi.get(self, "frequency_details")
+
+    @property
+    @pulumi.getter
+    def identifier(self) -> str:
+        """
+        Used to filter by the identifier of the object.
+        """
+        return pulumi.get(self, "identifier")
+
+    @property
+    @pulumi.getter(name="isDaylightAdjustmentEnabled")
+    def is_daylight_adjustment_enabled(self) -> bool:
+        return pulumi.get(self, "is_daylight_adjustment_enabled")
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        Used to filter by the key of the object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def metadata(self) -> 'outputs.GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemScheduleRefMetadataResult':
+        """
+        A summary type containing information about the object including its key, name and when/who created/updated it.
+        """
+        return pulumi.get(self, "metadata")
+
+    @property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> str:
+        """
+        The type of the object.
+        """
+        return pulumi.get(self, "model_type")
+
+    @property
+    @pulumi.getter(name="modelVersion")
+    def model_version(self) -> str:
+        """
+        This is a version number that is used by the service to upgrade objects if needed through releases of the service.
+        """
+        return pulumi.get(self, "model_version")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Used to filter by the name of the object.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="objectStatus")
+    def object_status(self) -> int:
+        """
+        The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+        """
+        return pulumi.get(self, "object_status")
+
+    @property
+    @pulumi.getter(name="objectVersion")
+    def object_version(self) -> int:
+        """
+        This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
+        """
+        return pulumi.get(self, "object_version")
+
+    @property
+    @pulumi.getter(name="parentRef")
+    def parent_ref(self) -> 'outputs.GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemScheduleRefParentRefResult':
+        """
+        A reference to the object's parent.
+        """
+        return pulumi.get(self, "parent_ref")
+
+    @property
+    @pulumi.getter
+    def timezone(self) -> str:
+        """
+        The timezone for the schedule.
+        """
+        return pulumi.get(self, "timezone")
+
+
+@pulumi.output_type
+class GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemScheduleRefFrequencyDetailsResult(dict):
+    def __init__(__self__, *,
+                 custom_expression: str,
+                 day_of_week: str,
+                 days: Sequence[int],
+                 frequency: str,
+                 interval: int,
+                 model_type: str,
+                 time: 'outputs.GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemScheduleRefFrequencyDetailsTimeResult',
+                 week_of_month: str):
+        """
+        :param str custom_expression: This holds the complete cron expression for this schedule, for example, 10 0/5 * * * ? that fires every 5 minutes, at 10 seconds after the minute (i.e. 10:00:10 am, 10:05:10 am, etc.)
+        :param str day_of_week: This holds the day of the week on which the schedule should be triggered.
+        :param Sequence[int] days: A list of days of the month to be scheduled. i.e. excute every 2nd,3rd, 10th of the month.
+        :param str frequency: the frequency of the schedule.
+        :param int interval: This hold the repeatability aspect of a schedule. i.e. in a monhtly frequency, a task can be scheduled for every month, once in two months, once in tree months etc.
+        :param str model_type: The type of the object.
+        :param 'GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemScheduleRefFrequencyDetailsTimeArgs' time: A model to hold time in hour:minute:second format.
+        :param str week_of_month: This holds the week of the month in which the schedule should be triggered.
+        """
+        pulumi.set(__self__, "custom_expression", custom_expression)
+        pulumi.set(__self__, "day_of_week", day_of_week)
+        pulumi.set(__self__, "days", days)
+        pulumi.set(__self__, "frequency", frequency)
+        pulumi.set(__self__, "interval", interval)
+        pulumi.set(__self__, "model_type", model_type)
+        pulumi.set(__self__, "time", time)
+        pulumi.set(__self__, "week_of_month", week_of_month)
+
+    @property
+    @pulumi.getter(name="customExpression")
+    def custom_expression(self) -> str:
+        """
+        This holds the complete cron expression for this schedule, for example, 10 0/5 * * * ? that fires every 5 minutes, at 10 seconds after the minute (i.e. 10:00:10 am, 10:05:10 am, etc.)
+        """
+        return pulumi.get(self, "custom_expression")
+
+    @property
+    @pulumi.getter(name="dayOfWeek")
+    def day_of_week(self) -> str:
+        """
+        This holds the day of the week on which the schedule should be triggered.
+        """
+        return pulumi.get(self, "day_of_week")
+
+    @property
+    @pulumi.getter
+    def days(self) -> Sequence[int]:
+        """
+        A list of days of the month to be scheduled. i.e. excute every 2nd,3rd, 10th of the month.
+        """
+        return pulumi.get(self, "days")
+
+    @property
+    @pulumi.getter
+    def frequency(self) -> str:
+        """
+        the frequency of the schedule.
+        """
+        return pulumi.get(self, "frequency")
+
+    @property
+    @pulumi.getter
+    def interval(self) -> int:
+        """
+        This hold the repeatability aspect of a schedule. i.e. in a monhtly frequency, a task can be scheduled for every month, once in two months, once in tree months etc.
+        """
+        return pulumi.get(self, "interval")
+
+    @property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> str:
+        """
+        The type of the object.
+        """
+        return pulumi.get(self, "model_type")
+
+    @property
+    @pulumi.getter
+    def time(self) -> 'outputs.GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemScheduleRefFrequencyDetailsTimeResult':
+        """
+        A model to hold time in hour:minute:second format.
+        """
+        return pulumi.get(self, "time")
+
+    @property
+    @pulumi.getter(name="weekOfMonth")
+    def week_of_month(self) -> str:
+        """
+        This holds the week of the month in which the schedule should be triggered.
+        """
+        return pulumi.get(self, "week_of_month")
+
+
+@pulumi.output_type
+class GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemScheduleRefFrequencyDetailsTimeResult(dict):
+    def __init__(__self__, *,
+                 hour: int,
+                 minute: int,
+                 second: int):
+        """
+        :param int hour: The hour value.
+        :param int minute: The minute value.
+        :param int second: The second value.
+        """
+        pulumi.set(__self__, "hour", hour)
+        pulumi.set(__self__, "minute", minute)
+        pulumi.set(__self__, "second", second)
+
+    @property
+    @pulumi.getter
+    def hour(self) -> int:
+        """
+        The hour value.
+        """
+        return pulumi.get(self, "hour")
+
+    @property
+    @pulumi.getter
+    def minute(self) -> int:
+        """
+        The minute value.
+        """
+        return pulumi.get(self, "minute")
+
+    @property
+    @pulumi.getter
+    def second(self) -> int:
+        """
+        The second value.
+        """
+        return pulumi.get(self, "second")
+
+
+@pulumi.output_type
+class GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemScheduleRefMetadataResult(dict):
+    def __init__(__self__, *,
+                 aggregator: 'outputs.GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemScheduleRefMetadataAggregatorResult',
+                 aggregator_key: str,
+                 count_statistics: 'outputs.GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemScheduleRefMetadataCountStatisticsResult',
+                 created_by: str,
+                 created_by_name: str,
+                 identifier_path: str,
+                 info_fields: Mapping[str, Any],
+                 is_favorite: bool,
+                 labels: Sequence[str],
+                 registry_version: int,
+                 time_created: str,
+                 time_updated: str,
+                 updated_by: str,
+                 updated_by_name: str):
+        """
+        :param 'GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemScheduleRefMetadataAggregatorArgs' aggregator: A summary type containing information about the object's aggregator including its type, key, name and description.
+        :param str aggregator_key: The owning object key for this object.
+        :param 'GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemScheduleRefMetadataCountStatisticsArgs' count_statistics: A count statistics.
+        :param str created_by: The user that created the object.
+        :param str created_by_name: The user that created the object.
+        :param str identifier_path: The full path to identify this object.
+        :param Mapping[str, Any] info_fields: Information property fields.
+        :param bool is_favorite: Specifies whether this object is a favorite or not.
+        :param Sequence[str] labels: Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+        :param int registry_version: The registry version of the object.
+        :param str time_created: The date and time that the object was created.
+        :param str time_updated: The date and time that the object was updated.
+        :param str updated_by: The user that updated the object.
+        :param str updated_by_name: The user that updated the object.
+        """
+        pulumi.set(__self__, "aggregator", aggregator)
+        pulumi.set(__self__, "aggregator_key", aggregator_key)
+        pulumi.set(__self__, "count_statistics", count_statistics)
+        pulumi.set(__self__, "created_by", created_by)
+        pulumi.set(__self__, "created_by_name", created_by_name)
+        pulumi.set(__self__, "identifier_path", identifier_path)
+        pulumi.set(__self__, "info_fields", info_fields)
+        pulumi.set(__self__, "is_favorite", is_favorite)
+        pulumi.set(__self__, "labels", labels)
+        pulumi.set(__self__, "registry_version", registry_version)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "updated_by", updated_by)
+        pulumi.set(__self__, "updated_by_name", updated_by_name)
+
+    @property
+    @pulumi.getter
+    def aggregator(self) -> 'outputs.GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemScheduleRefMetadataAggregatorResult':
+        """
+        A summary type containing information about the object's aggregator including its type, key, name and description.
+        """
+        return pulumi.get(self, "aggregator")
+
+    @property
+    @pulumi.getter(name="aggregatorKey")
+    def aggregator_key(self) -> str:
+        """
+        The owning object key for this object.
+        """
+        return pulumi.get(self, "aggregator_key")
+
+    @property
+    @pulumi.getter(name="countStatistics")
+    def count_statistics(self) -> 'outputs.GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemScheduleRefMetadataCountStatisticsResult':
+        """
+        A count statistics.
+        """
+        return pulumi.get(self, "count_statistics")
+
+    @property
+    @pulumi.getter(name="createdBy")
+    def created_by(self) -> str:
+        """
+        The user that created the object.
+        """
+        return pulumi.get(self, "created_by")
+
+    @property
+    @pulumi.getter(name="createdByName")
+    def created_by_name(self) -> str:
+        """
+        The user that created the object.
+        """
+        return pulumi.get(self, "created_by_name")
+
+    @property
+    @pulumi.getter(name="identifierPath")
+    def identifier_path(self) -> str:
+        """
+        The full path to identify this object.
+        """
+        return pulumi.get(self, "identifier_path")
+
+    @property
+    @pulumi.getter(name="infoFields")
+    def info_fields(self) -> Mapping[str, Any]:
+        """
+        Information property fields.
+        """
+        return pulumi.get(self, "info_fields")
+
+    @property
+    @pulumi.getter(name="isFavorite")
+    def is_favorite(self) -> bool:
+        """
+        Specifies whether this object is a favorite or not.
+        """
+        return pulumi.get(self, "is_favorite")
+
+    @property
+    @pulumi.getter
+    def labels(self) -> Sequence[str]:
+        """
+        Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+        """
+        return pulumi.get(self, "labels")
+
+    @property
+    @pulumi.getter(name="registryVersion")
+    def registry_version(self) -> int:
+        """
+        The registry version of the object.
+        """
+        return pulumi.get(self, "registry_version")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time that the object was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The date and time that the object was updated.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter(name="updatedBy")
+    def updated_by(self) -> str:
+        """
+        The user that updated the object.
+        """
+        return pulumi.get(self, "updated_by")
+
+    @property
+    @pulumi.getter(name="updatedByName")
+    def updated_by_name(self) -> str:
+        """
+        The user that updated the object.
+        """
+        return pulumi.get(self, "updated_by_name")
+
+
+@pulumi.output_type
+class GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemScheduleRefMetadataAggregatorResult(dict):
+    def __init__(__self__, *,
+                 description: str,
+                 identifier: str,
+                 key: str,
+                 name: str,
+                 type: str):
+        """
+        :param str description: The description of the aggregator.
+        :param str identifier: Used to filter by the identifier of the object.
+        :param str key: Used to filter by the key of the object.
+        :param str name: Used to filter by the name of the object.
+        :param str type: Used to filter by the object type of the object. It can be suffixed with an optional filter operator InSubtree. If this operator is not specified, then exact match is considered. <br><br><B>Examples:</B><br> <ul> <li><B>?type=DATA_LOADER_TASK&typeInSubtree=false</B> returns all objects of type data loader task</li> <li><B>?type=DATA_LOADER_TASK</B> returns all objects of type data loader task</li> <li><B>?type=DATA_LOADER_TASK&typeInSubtree=true</B> returns all objects of type data loader task</li> </ul>
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "identifier", identifier)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        The description of the aggregator.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def identifier(self) -> str:
+        """
+        Used to filter by the identifier of the object.
+        """
+        return pulumi.get(self, "identifier")
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        Used to filter by the key of the object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Used to filter by the name of the object.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Used to filter by the object type of the object. It can be suffixed with an optional filter operator InSubtree. If this operator is not specified, then exact match is considered. <br><br><B>Examples:</B><br> <ul> <li><B>?type=DATA_LOADER_TASK&typeInSubtree=false</B> returns all objects of type data loader task</li> <li><B>?type=DATA_LOADER_TASK</B> returns all objects of type data loader task</li> <li><B>?type=DATA_LOADER_TASK&typeInSubtree=true</B> returns all objects of type data loader task</li> </ul>
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemScheduleRefMetadataCountStatisticsResult(dict):
+    def __init__(__self__, *,
+                 object_type_count_lists: Sequence['outputs.GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemScheduleRefMetadataCountStatisticsObjectTypeCountListResult']):
+        """
+        :param Sequence['GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemScheduleRefMetadataCountStatisticsObjectTypeCountListArgs'] object_type_count_lists: The array of statistics.
+        """
+        pulumi.set(__self__, "object_type_count_lists", object_type_count_lists)
+
+    @property
+    @pulumi.getter(name="objectTypeCountLists")
+    def object_type_count_lists(self) -> Sequence['outputs.GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemScheduleRefMetadataCountStatisticsObjectTypeCountListResult']:
+        """
+        The array of statistics.
+        """
+        return pulumi.get(self, "object_type_count_lists")
+
+
+@pulumi.output_type
+class GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemScheduleRefMetadataCountStatisticsObjectTypeCountListResult(dict):
+    def __init__(__self__, *,
+                 object_count: str,
+                 object_type: str):
+        """
+        :param str object_count: The value for the count statistic object.
+        :param str object_type: The type of object for the count statistic object.
+        """
+        pulumi.set(__self__, "object_count", object_count)
+        pulumi.set(__self__, "object_type", object_type)
+
+    @property
+    @pulumi.getter(name="objectCount")
+    def object_count(self) -> str:
+        """
+        The value for the count statistic object.
+        """
+        return pulumi.get(self, "object_count")
+
+    @property
+    @pulumi.getter(name="objectType")
+    def object_type(self) -> str:
+        """
+        The type of object for the count statistic object.
+        """
+        return pulumi.get(self, "object_type")
+
+
+@pulumi.output_type
+class GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemScheduleRefParentRefResult(dict):
+    def __init__(__self__, *,
+                 parent: str,
+                 root_doc_id: str):
+        """
+        :param str parent: Key of the parent object.
+        :param str root_doc_id: Key of the root document object.
+        """
+        pulumi.set(__self__, "parent", parent)
+        pulumi.set(__self__, "root_doc_id", root_doc_id)
+
+    @property
+    @pulumi.getter
+    def parent(self) -> str:
+        """
+        Key of the parent object.
+        """
+        return pulumi.get(self, "parent")
+
+    @property
+    @pulumi.getter(name="rootDocId")
+    def root_doc_id(self) -> str:
+        """
+        Key of the root document object.
+        """
+        return pulumi.get(self, "root_doc_id")
 
 
 @pulumi.output_type

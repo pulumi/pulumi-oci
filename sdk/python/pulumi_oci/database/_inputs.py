@@ -1406,9 +1406,10 @@ class AutonomousDatabaseConnectionStringProfileArgs:
         :param pulumi.Input[str] consumer_group: Consumer group used by the connection.
         :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the Autonomous Database. The name does not have to be unique.
         :param pulumi.Input[str] host_format: Host format used in connection string.
+        :param pulumi.Input[bool] is_regional: True for a regional connection string, applicable to cross-region DG only.
         :param pulumi.Input[str] protocol: Protocol used by the connection.
         :param pulumi.Input[str] session_mode: Specifies whether the listener performs a direct hand-off of the session, or redirects the session. In RAC deployments where SCAN is used, sessions are redirected to a Node VIP. Use `DIRECT` for direct hand-offs. Use `REDIRECT` to redirect the session.
-        :param pulumi.Input[str] syntax_format: Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous Databases on shared Exadata infrastructure always use the long format.
+        :param pulumi.Input[str] syntax_format: Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous Database Serverless instances always use the long format.
         :param pulumi.Input[str] tls_authentication: Specifies whether the TLS handshake is using one-way (`SERVER`) or mutual (`MUTUAL`) authentication.
         :param pulumi.Input[str] value: Connection string value.
         """
@@ -1470,6 +1471,9 @@ class AutonomousDatabaseConnectionStringProfileArgs:
     @property
     @pulumi.getter(name="isRegional")
     def is_regional(self) -> Optional[pulumi.Input[bool]]:
+        """
+        True for a regional connection string, applicable to cross-region DG only.
+        """
         return pulumi.get(self, "is_regional")
 
     @is_regional.setter
@@ -1504,7 +1508,7 @@ class AutonomousDatabaseConnectionStringProfileArgs:
     @pulumi.getter(name="syntaxFormat")
     def syntax_format(self) -> Optional[pulumi.Input[str]]:
         """
-        Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous Databases on shared Exadata infrastructure always use the long format.
+        Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous Database Serverless instances always use the long format.
         """
         return pulumi.get(self, "syntax_format")
 
@@ -1931,7 +1935,7 @@ class AutonomousDatabaseLongTermBackupScheduleArgs:
                  retention_period_in_days: Optional[pulumi.Input[int]] = None,
                  time_of_backup: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[bool] is_disabled: Indicates if the long-term backup schedule should be deleted. The default value is `FALSE`.
+        :param pulumi.Input[bool] is_disabled: (Updatable) Indicates if the resource pool should be deleted for the Autonomous Database.
         :param pulumi.Input[str] repeat_cadence: The frequency of the long-term backup schedule
         :param pulumi.Input[int] retention_period_in_days: Retention period, in days, for long-term backups
         :param pulumi.Input[str] time_of_backup: The timestamp for the long-term backup schedule. For a MONTHLY cadence, months having fewer days than the provided date will have the backup taken on the last day of that month.
@@ -1949,7 +1953,7 @@ class AutonomousDatabaseLongTermBackupScheduleArgs:
     @pulumi.getter(name="isDisabled")
     def is_disabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        Indicates if the long-term backup schedule should be deleted. The default value is `FALSE`.
+        (Updatable) Indicates if the resource pool should be deleted for the Autonomous Database.
         """
         return pulumi.get(self, "is_disabled")
 
@@ -2071,7 +2075,8 @@ class AutonomousDatabaseResourcePoolSummaryArgs:
                  is_disabled: Optional[pulumi.Input[bool]] = None,
                  pool_size: Optional[pulumi.Input[int]] = None):
         """
-        :param pulumi.Input[bool] is_disabled: Indicates if the long-term backup schedule should be deleted. The default value is `FALSE`.
+        :param pulumi.Input[bool] is_disabled: (Updatable) Indicates if the resource pool should be deleted for the Autonomous Database.
+        :param pulumi.Input[int] pool_size: (Updatable) Resource pool size.
         """
         if is_disabled is not None:
             pulumi.set(__self__, "is_disabled", is_disabled)
@@ -2082,7 +2087,7 @@ class AutonomousDatabaseResourcePoolSummaryArgs:
     @pulumi.getter(name="isDisabled")
     def is_disabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        Indicates if the long-term backup schedule should be deleted. The default value is `FALSE`.
+        (Updatable) Indicates if the resource pool should be deleted for the Autonomous Database.
         """
         return pulumi.get(self, "is_disabled")
 
@@ -2093,6 +2098,9 @@ class AutonomousDatabaseResourcePoolSummaryArgs:
     @property
     @pulumi.getter(name="poolSize")
     def pool_size(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Resource pool size.
+        """
         return pulumi.get(self, "pool_size")
 
     @pool_size.setter

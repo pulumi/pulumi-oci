@@ -35,6 +35,16 @@ export const getWorkspaceApplicationSchedules: typeof import("./getWorkspaceAppl
 export const getWorkspaceApplicationSchedulesOutput: typeof import("./getWorkspaceApplicationSchedules").getWorkspaceApplicationSchedulesOutput = null as any;
 utilities.lazyLoad(exports, ["getWorkspaceApplicationSchedules","getWorkspaceApplicationSchedulesOutput"], () => require("./getWorkspaceApplicationSchedules"));
 
+export { GetWorkspaceApplicationTaskScheduleArgs, GetWorkspaceApplicationTaskScheduleResult, GetWorkspaceApplicationTaskScheduleOutputArgs } from "./getWorkspaceApplicationTaskSchedule";
+export const getWorkspaceApplicationTaskSchedule: typeof import("./getWorkspaceApplicationTaskSchedule").getWorkspaceApplicationTaskSchedule = null as any;
+export const getWorkspaceApplicationTaskScheduleOutput: typeof import("./getWorkspaceApplicationTaskSchedule").getWorkspaceApplicationTaskScheduleOutput = null as any;
+utilities.lazyLoad(exports, ["getWorkspaceApplicationTaskSchedule","getWorkspaceApplicationTaskScheduleOutput"], () => require("./getWorkspaceApplicationTaskSchedule"));
+
+export { GetWorkspaceApplicationTaskSchedulesArgs, GetWorkspaceApplicationTaskSchedulesResult, GetWorkspaceApplicationTaskSchedulesOutputArgs } from "./getWorkspaceApplicationTaskSchedules";
+export const getWorkspaceApplicationTaskSchedules: typeof import("./getWorkspaceApplicationTaskSchedules").getWorkspaceApplicationTaskSchedules = null as any;
+export const getWorkspaceApplicationTaskSchedulesOutput: typeof import("./getWorkspaceApplicationTaskSchedules").getWorkspaceApplicationTaskSchedulesOutput = null as any;
+utilities.lazyLoad(exports, ["getWorkspaceApplicationTaskSchedules","getWorkspaceApplicationTaskSchedulesOutput"], () => require("./getWorkspaceApplicationTaskSchedules"));
+
 export { GetWorkspaceApplicationsArgs, GetWorkspaceApplicationsResult, GetWorkspaceApplicationsOutputArgs } from "./getWorkspaceApplications";
 export const getWorkspaceApplications: typeof import("./getWorkspaceApplications").getWorkspaceApplications = null as any;
 export const getWorkspaceApplicationsOutput: typeof import("./getWorkspaceApplications").getWorkspaceApplicationsOutput = null as any;
@@ -105,6 +115,11 @@ export type WorkspaceApplicationSchedule = import("./workspaceApplicationSchedul
 export const WorkspaceApplicationSchedule: typeof import("./workspaceApplicationSchedule").WorkspaceApplicationSchedule = null as any;
 utilities.lazyLoad(exports, ["WorkspaceApplicationSchedule"], () => require("./workspaceApplicationSchedule"));
 
+export { WorkspaceApplicationTaskScheduleArgs, WorkspaceApplicationTaskScheduleState } from "./workspaceApplicationTaskSchedule";
+export type WorkspaceApplicationTaskSchedule = import("./workspaceApplicationTaskSchedule").WorkspaceApplicationTaskSchedule;
+export const WorkspaceApplicationTaskSchedule: typeof import("./workspaceApplicationTaskSchedule").WorkspaceApplicationTaskSchedule = null as any;
+utilities.lazyLoad(exports, ["WorkspaceApplicationTaskSchedule"], () => require("./workspaceApplicationTaskSchedule"));
+
 export { WorkspaceExportRequestArgs, WorkspaceExportRequestState } from "./workspaceExportRequest";
 export type WorkspaceExportRequest = import("./workspaceExportRequest").WorkspaceExportRequest;
 export const WorkspaceExportRequest: typeof import("./workspaceExportRequest").WorkspaceExportRequest = null as any;
@@ -138,6 +153,8 @@ const _module = {
                 return new WorkspaceApplicationPatch(name, <any>undefined, { urn })
             case "oci:DataIntegration/workspaceApplicationSchedule:WorkspaceApplicationSchedule":
                 return new WorkspaceApplicationSchedule(name, <any>undefined, { urn })
+            case "oci:DataIntegration/workspaceApplicationTaskSchedule:WorkspaceApplicationTaskSchedule":
+                return new WorkspaceApplicationTaskSchedule(name, <any>undefined, { urn })
             case "oci:DataIntegration/workspaceExportRequest:WorkspaceExportRequest":
                 return new WorkspaceExportRequest(name, <any>undefined, { urn })
             case "oci:DataIntegration/workspaceFolder:WorkspaceFolder":
@@ -155,6 +172,7 @@ pulumi.runtime.registerResourceModule("oci", "DataIntegration/workspace", _modul
 pulumi.runtime.registerResourceModule("oci", "DataIntegration/workspaceApplication", _module)
 pulumi.runtime.registerResourceModule("oci", "DataIntegration/workspaceApplicationPatch", _module)
 pulumi.runtime.registerResourceModule("oci", "DataIntegration/workspaceApplicationSchedule", _module)
+pulumi.runtime.registerResourceModule("oci", "DataIntegration/workspaceApplicationTaskSchedule", _module)
 pulumi.runtime.registerResourceModule("oci", "DataIntegration/workspaceExportRequest", _module)
 pulumi.runtime.registerResourceModule("oci", "DataIntegration/workspaceFolder", _module)
 pulumi.runtime.registerResourceModule("oci", "DataIntegration/workspaceImportRequest", _module)

@@ -22,7 +22,7 @@ class GetModelDeploymentResult:
     """
     A collection of values returned by getModelDeployment.
     """
-    def __init__(__self__, category_log_details=None, compartment_id=None, created_by=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, model_deployment_configuration_details=None, model_deployment_id=None, model_deployment_url=None, project_id=None, state=None, time_created=None):
+    def __init__(__self__, category_log_details=None, compartment_id=None, created_by=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, model_deployment_configuration_details=None, model_deployment_id=None, model_deployment_system_datas=None, model_deployment_url=None, project_id=None, state=None, time_created=None):
         if category_log_details and not isinstance(category_log_details, list):
             raise TypeError("Expected argument 'category_log_details' to be a list")
         pulumi.set(__self__, "category_log_details", category_log_details)
@@ -56,6 +56,9 @@ class GetModelDeploymentResult:
         if model_deployment_id and not isinstance(model_deployment_id, str):
             raise TypeError("Expected argument 'model_deployment_id' to be a str")
         pulumi.set(__self__, "model_deployment_id", model_deployment_id)
+        if model_deployment_system_datas and not isinstance(model_deployment_system_datas, list):
+            raise TypeError("Expected argument 'model_deployment_system_datas' to be a list")
+        pulumi.set(__self__, "model_deployment_system_datas", model_deployment_system_datas)
         if model_deployment_url and not isinstance(model_deployment_url, str):
             raise TypeError("Expected argument 'model_deployment_url' to be a str")
         pulumi.set(__self__, "model_deployment_url", model_deployment_url)
@@ -155,6 +158,14 @@ class GetModelDeploymentResult:
         return pulumi.get(self, "model_deployment_id")
 
     @property
+    @pulumi.getter(name="modelDeploymentSystemDatas")
+    def model_deployment_system_datas(self) -> Sequence['outputs.GetModelDeploymentModelDeploymentSystemDataResult']:
+        """
+        Model deployment system data.
+        """
+        return pulumi.get(self, "model_deployment_system_datas")
+
+    @property
     @pulumi.getter(name="modelDeploymentUrl")
     def model_deployment_url(self) -> str:
         """
@@ -204,6 +215,7 @@ class AwaitableGetModelDeploymentResult(GetModelDeploymentResult):
             lifecycle_details=self.lifecycle_details,
             model_deployment_configuration_details=self.model_deployment_configuration_details,
             model_deployment_id=self.model_deployment_id,
+            model_deployment_system_datas=self.model_deployment_system_datas,
             model_deployment_url=self.model_deployment_url,
             project_id=self.project_id,
             state=self.state,
@@ -248,6 +260,7 @@ def get_model_deployment(model_deployment_id: Optional[str] = None,
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         model_deployment_configuration_details=pulumi.get(__ret__, 'model_deployment_configuration_details'),
         model_deployment_id=pulumi.get(__ret__, 'model_deployment_id'),
+        model_deployment_system_datas=pulumi.get(__ret__, 'model_deployment_system_datas'),
         model_deployment_url=pulumi.get(__ret__, 'model_deployment_url'),
         project_id=pulumi.get(__ret__, 'project_id'),
         state=pulumi.get(__ret__, 'state'),

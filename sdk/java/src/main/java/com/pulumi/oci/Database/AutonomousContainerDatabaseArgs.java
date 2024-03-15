@@ -113,6 +113,21 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
         return Optional.ofNullable(this.dbName);
     }
 
+    /**
+     * The value above which an Autonomous Database will be split across multiple nodes. This value defaults to 16 when the &#34;CPU per VM&#34; value on the Autonomous VM Cluster is greater than 16. Otherwise, it defaults to the &#34;CPU per VM&#34; value.
+     * 
+     */
+    @Import(name="dbSplitThreshold")
+    private @Nullable Output<Integer> dbSplitThreshold;
+
+    /**
+     * @return The value above which an Autonomous Database will be split across multiple nodes. This value defaults to 16 when the &#34;CPU per VM&#34; value on the Autonomous VM Cluster is greater than 16. Otherwise, it defaults to the &#34;CPU per VM&#34; value.
+     * 
+     */
+    public Optional<Output<Integer>> dbSplitThreshold() {
+        return Optional.ofNullable(this.dbSplitThreshold);
+    }
+
     @Import(name="dbUniqueName")
     private @Nullable Output<String> dbUniqueName;
 
@@ -163,6 +178,21 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
      */
     public Output<String> displayName() {
         return this.displayName;
+    }
+
+    /**
+     * This option determines whether to open an Autonomous Database across the maximum number of nodes or the least number of nodes. The default will be for the minimum number of VMs.
+     * 
+     */
+    @Import(name="distributionAffinity")
+    private @Nullable Output<String> distributionAffinity;
+
+    /**
+     * @return This option determines whether to open an Autonomous Database across the maximum number of nodes or the least number of nodes. The default will be for the minimum number of VMs.
+     * 
+     */
+    public Optional<Output<String>> distributionAffinity() {
+        return Optional.ofNullable(this.distributionAffinity);
     }
 
     /**
@@ -268,6 +298,21 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
      */
     public Optional<Output<AutonomousContainerDatabaseMaintenanceWindowDetailsArgs>> maintenanceWindowDetails() {
         return Optional.ofNullable(this.maintenanceWindowDetails);
+    }
+
+    /**
+     * Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
+     * 
+     */
+    @Import(name="netServicesArchitecture")
+    private @Nullable Output<String> netServicesArchitecture;
+
+    /**
+     * @return Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
+     * 
+     */
+    public Optional<Output<String>> netServicesArchitecture() {
+        return Optional.ofNullable(this.netServicesArchitecture);
     }
 
     /**
@@ -470,6 +515,21 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
         return Optional.ofNullable(this.versionPreference);
     }
 
+    /**
+     * The percentage of CPUs to reserve for a single node Autonomous Database, in increments of 25.
+     * 
+     */
+    @Import(name="vmFailoverReservation")
+    private @Nullable Output<Integer> vmFailoverReservation;
+
+    /**
+     * @return The percentage of CPUs to reserve for a single node Autonomous Database, in increments of 25.
+     * 
+     */
+    public Optional<Output<Integer>> vmFailoverReservation() {
+        return Optional.ofNullable(this.vmFailoverReservation);
+    }
+
     private AutonomousContainerDatabaseArgs() {}
 
     private AutonomousContainerDatabaseArgs(AutonomousContainerDatabaseArgs $) {
@@ -479,10 +539,12 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
         this.cloudAutonomousVmClusterId = $.cloudAutonomousVmClusterId;
         this.compartmentId = $.compartmentId;
         this.dbName = $.dbName;
+        this.dbSplitThreshold = $.dbSplitThreshold;
         this.dbUniqueName = $.dbUniqueName;
         this.dbVersion = $.dbVersion;
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
+        this.distributionAffinity = $.distributionAffinity;
         this.fastStartFailOverLagLimitInSeconds = $.fastStartFailOverLagLimitInSeconds;
         this.freeformTags = $.freeformTags;
         this.isAutomaticFailoverEnabled = $.isAutomaticFailoverEnabled;
@@ -490,6 +552,7 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
         this.keyStoreId = $.keyStoreId;
         this.kmsKeyId = $.kmsKeyId;
         this.maintenanceWindowDetails = $.maintenanceWindowDetails;
+        this.netServicesArchitecture = $.netServicesArchitecture;
         this.patchModel = $.patchModel;
         this.peerAutonomousContainerDatabaseBackupConfig = $.peerAutonomousContainerDatabaseBackupConfig;
         this.peerAutonomousContainerDatabaseCompartmentId = $.peerAutonomousContainerDatabaseCompartmentId;
@@ -504,6 +567,7 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
         this.standbyMaintenanceBufferInDays = $.standbyMaintenanceBufferInDays;
         this.vaultId = $.vaultId;
         this.versionPreference = $.versionPreference;
+        this.vmFailoverReservation = $.vmFailoverReservation;
     }
 
     public static Builder builder() {
@@ -650,6 +714,27 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
             return dbName(Output.of(dbName));
         }
 
+        /**
+         * @param dbSplitThreshold The value above which an Autonomous Database will be split across multiple nodes. This value defaults to 16 when the &#34;CPU per VM&#34; value on the Autonomous VM Cluster is greater than 16. Otherwise, it defaults to the &#34;CPU per VM&#34; value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dbSplitThreshold(@Nullable Output<Integer> dbSplitThreshold) {
+            $.dbSplitThreshold = dbSplitThreshold;
+            return this;
+        }
+
+        /**
+         * @param dbSplitThreshold The value above which an Autonomous Database will be split across multiple nodes. This value defaults to 16 when the &#34;CPU per VM&#34; value on the Autonomous VM Cluster is greater than 16. Otherwise, it defaults to the &#34;CPU per VM&#34; value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dbSplitThreshold(Integer dbSplitThreshold) {
+            return dbSplitThreshold(Output.of(dbSplitThreshold));
+        }
+
         public Builder dbUniqueName(@Nullable Output<String> dbUniqueName) {
             $.dbUniqueName = dbUniqueName;
             return this;
@@ -720,6 +805,27 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
          */
         public Builder displayName(String displayName) {
             return displayName(Output.of(displayName));
+        }
+
+        /**
+         * @param distributionAffinity This option determines whether to open an Autonomous Database across the maximum number of nodes or the least number of nodes. The default will be for the minimum number of VMs.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder distributionAffinity(@Nullable Output<String> distributionAffinity) {
+            $.distributionAffinity = distributionAffinity;
+            return this;
+        }
+
+        /**
+         * @param distributionAffinity This option determines whether to open an Autonomous Database across the maximum number of nodes or the least number of nodes. The default will be for the minimum number of VMs.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder distributionAffinity(String distributionAffinity) {
+            return distributionAffinity(Output.of(distributionAffinity));
         }
 
         /**
@@ -867,6 +973,27 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
          */
         public Builder maintenanceWindowDetails(AutonomousContainerDatabaseMaintenanceWindowDetailsArgs maintenanceWindowDetails) {
             return maintenanceWindowDetails(Output.of(maintenanceWindowDetails));
+        }
+
+        /**
+         * @param netServicesArchitecture Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder netServicesArchitecture(@Nullable Output<String> netServicesArchitecture) {
+            $.netServicesArchitecture = netServicesArchitecture;
+            return this;
+        }
+
+        /**
+         * @param netServicesArchitecture Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder netServicesArchitecture(String netServicesArchitecture) {
+            return netServicesArchitecture(Output.of(netServicesArchitecture));
         }
 
         /**
@@ -1143,6 +1270,27 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
          */
         public Builder versionPreference(String versionPreference) {
             return versionPreference(Output.of(versionPreference));
+        }
+
+        /**
+         * @param vmFailoverReservation The percentage of CPUs to reserve for a single node Autonomous Database, in increments of 25.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder vmFailoverReservation(@Nullable Output<Integer> vmFailoverReservation) {
+            $.vmFailoverReservation = vmFailoverReservation;
+            return this;
+        }
+
+        /**
+         * @param vmFailoverReservation The percentage of CPUs to reserve for a single node Autonomous Database, in increments of 25.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder vmFailoverReservation(Integer vmFailoverReservation) {
+            return vmFailoverReservation(Output.of(vmFailoverReservation));
         }
 
         public AutonomousContainerDatabaseArgs build() {

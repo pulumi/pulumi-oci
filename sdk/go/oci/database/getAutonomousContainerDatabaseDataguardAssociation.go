@@ -68,7 +68,7 @@ type LookupAutonomousContainerDatabaseDataguardAssociationResult struct {
 	// The rate at which redo logs are synchronized between the associated Autonomous Container Databases.  Example: `180 Mb per second`
 	ApplyRate                                         string `pulumi:"applyRate"`
 	AutonomousContainerDatabaseDataguardAssociationId string `pulumi:"autonomousContainerDatabaseDataguardAssociationId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous Database on Dedicated Exadata Infrastructure.
 	AutonomousContainerDatabaseId string `pulumi:"autonomousContainerDatabaseId"`
 	// The lag time for my preference based on data loss tolerance in seconds.
 	FastStartFailOverLagLimitInSeconds int `pulumi:"fastStartFailOverLagLimitInSeconds"`
@@ -165,7 +165,7 @@ func (o LookupAutonomousContainerDatabaseDataguardAssociationResultOutput) Auton
 	}).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous Database on Dedicated Exadata Infrastructure.
 func (o LookupAutonomousContainerDatabaseDataguardAssociationResultOutput) AutonomousContainerDatabaseId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousContainerDatabaseDataguardAssociationResult) string {
 		return v.AutonomousContainerDatabaseId

@@ -50,7 +50,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     private Boolean arePrimaryWhitelistedIpsUsed;
     /**
-     * @return The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * @return The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous Database on Dedicated Exadata Infrastructure.
      * 
      */
     private String autonomousContainerDatabaseId;
@@ -90,7 +90,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     private Double computeCount;
     /**
-     * @return The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
+     * @return The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
      * 
      */
     private String computeModel;
@@ -105,7 +105,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     private List<GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrl> connectionUrls;
     /**
-     * @return The number of OCPU cores to be made available to the database. When the ECPU is selected, the value for cpuCoreCount is 0. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&amp;id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
+     * @return The number of CPU cores to be made available to the database. When the ECPU is selected, the value for cpuCoreCount is 0. For Autonomous Database on Dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&amp;id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
      * 
      */
     private Integer cpuCoreCount;
@@ -204,7 +204,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     private Integer inMemoryAreaInGbs;
     /**
-     * @return The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database.
+     * @return The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database. This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer platform.
      * 
      */
     private Integer inMemoryPercentage;
@@ -219,7 +219,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     private Boolean isAccessControlEnabled;
     /**
-     * @return Indicates if auto scaling is enabled for the Autonomous Database CPU core count.
+     * @return Indicates if auto scaling is enabled for the Autonomous Database CPU core count. The default value is `TRUE`.
      * 
      */
     private Boolean isAutoScalingEnabled;
@@ -238,6 +238,11 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      * 
      */
     private Boolean isDedicated;
+    /**
+     * @return This project introduces Autonomous Database for Developers (ADB-Dev), a free tier on dedicated infrastructure, and Cloud@Customer for database development purposes. ADB-Dev enables ExaDB customers to experiment with ADB for free and incentivizes enterprises to use ADB for new development projects.Note that ADB-Dev have 4 CPU and 20GB of memory. For ADB-Dev , memory and CPU cannot be scaled
+     * 
+     */
+    private Boolean isDevTier;
     /**
      * @return Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
      * 
@@ -304,7 +309,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     private String kmsKeyVersionId;
     /**
-     * @return The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`.
+     * @return The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
      * 
      */
     private String licenseModel;
@@ -348,6 +353,11 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      * 
      */
     private String ncharacterSet;
+    /**
+     * @return Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
+     * 
+     */
+    private String netServicesArchitecture;
     /**
      * @return The date and time when the next long-term backup would be created.
      * 
@@ -425,7 +435,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     private String role;
     /**
-     * @return The list of scheduled operations.
+     * @return The list of scheduled operations. Consists of values such as dayOfWeek, scheduledStartTime, scheduledStopTime.
      * 
      */
     private List<GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperation> scheduledOperations;
@@ -445,7 +455,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     private List<GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDb> standbyDbs;
     /**
-     * @return The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
+     * @return The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is &#39;TRUE&#39; then Autonomous Database uses this primary&#39;s IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
      * 
      */
     private List<String> standbyWhitelistedIps;
@@ -561,7 +571,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     private String vaultId;
     /**
-     * @return The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
+     * @return The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is &#39;TRUE&#39; then Autonomous Database uses this primary&#39;s IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
      * 
      */
     private List<String> whitelistedIps;
@@ -596,7 +606,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         return this.arePrimaryWhitelistedIpsUsed;
     }
     /**
-     * @return The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * @return The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous Database on Dedicated Exadata Infrastructure.
      * 
      */
     public String autonomousContainerDatabaseId() {
@@ -652,7 +662,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         return this.computeCount;
     }
     /**
-     * @return The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
+     * @return The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
      * 
      */
     public String computeModel() {
@@ -673,7 +683,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         return this.connectionUrls;
     }
     /**
-     * @return The number of OCPU cores to be made available to the database. When the ECPU is selected, the value for cpuCoreCount is 0. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&amp;id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
+     * @return The number of CPU cores to be made available to the database. When the ECPU is selected, the value for cpuCoreCount is 0. For Autonomous Database on Dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&amp;id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
      * 
      */
     public Integer cpuCoreCount() {
@@ -810,7 +820,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         return this.inMemoryAreaInGbs;
     }
     /**
-     * @return The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database.
+     * @return The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database. This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer platform.
      * 
      */
     public Integer inMemoryPercentage() {
@@ -831,7 +841,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         return this.isAccessControlEnabled;
     }
     /**
-     * @return Indicates if auto scaling is enabled for the Autonomous Database CPU core count.
+     * @return Indicates if auto scaling is enabled for the Autonomous Database CPU core count. The default value is `TRUE`.
      * 
      */
     public Boolean isAutoScalingEnabled() {
@@ -857,6 +867,13 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     public Boolean isDedicated() {
         return this.isDedicated;
+    }
+    /**
+     * @return This project introduces Autonomous Database for Developers (ADB-Dev), a free tier on dedicated infrastructure, and Cloud@Customer for database development purposes. ADB-Dev enables ExaDB customers to experiment with ADB for free and incentivizes enterprises to use ADB for new development projects.Note that ADB-Dev have 4 CPU and 20GB of memory. For ADB-Dev , memory and CPU cannot be scaled
+     * 
+     */
+    public Boolean isDevTier() {
+        return this.isDevTier;
     }
     /**
      * @return Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
@@ -950,7 +967,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         return this.kmsKeyVersionId;
     }
     /**
-     * @return The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`.
+     * @return The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
      * 
      */
     public String licenseModel() {
@@ -1011,6 +1028,13 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     public String ncharacterSet() {
         return this.ncharacterSet;
+    }
+    /**
+     * @return Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
+     * 
+     */
+    public String netServicesArchitecture() {
+        return this.netServicesArchitecture;
     }
     /**
      * @return The date and time when the next long-term backup would be created.
@@ -1119,7 +1143,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         return this.role;
     }
     /**
-     * @return The list of scheduled operations.
+     * @return The list of scheduled operations. Consists of values such as dayOfWeek, scheduledStartTime, scheduledStopTime.
      * 
      */
     public List<GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperation> scheduledOperations() {
@@ -1147,7 +1171,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         return this.standbyDbs;
     }
     /**
-     * @return The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
+     * @return The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is &#39;TRUE&#39; then Autonomous Database uses this primary&#39;s IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
      * 
      */
     public List<String> standbyWhitelistedIps() {
@@ -1311,7 +1335,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         return this.vaultId;
     }
     /**
-     * @return The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
+     * @return The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is &#39;TRUE&#39; then Autonomous Database uses this primary&#39;s IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
      * 
      */
     public List<String> whitelistedIps() {
@@ -1368,6 +1392,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         private Boolean isAutoScalingForStorageEnabled;
         private Boolean isDataGuardEnabled;
         private Boolean isDedicated;
+        private Boolean isDevTier;
         private Boolean isFreeTier;
         private Boolean isLocalDataGuardEnabled;
         private Boolean isMtlsConnectionRequired;
@@ -1390,6 +1415,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         private Integer maxCpuCoreCount;
         private Integer memoryPerOracleComputeUnitInGbs;
         private String ncharacterSet;
+        private String netServicesArchitecture;
         private String nextLongTermBackupTimeStamp;
         private List<String> nsgIds;
         private Double ocpuCount;
@@ -1478,6 +1504,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
     	      this.isAutoScalingForStorageEnabled = defaults.isAutoScalingForStorageEnabled;
     	      this.isDataGuardEnabled = defaults.isDataGuardEnabled;
     	      this.isDedicated = defaults.isDedicated;
+    	      this.isDevTier = defaults.isDevTier;
     	      this.isFreeTier = defaults.isFreeTier;
     	      this.isLocalDataGuardEnabled = defaults.isLocalDataGuardEnabled;
     	      this.isMtlsConnectionRequired = defaults.isMtlsConnectionRequired;
@@ -1500,6 +1527,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
     	      this.maxCpuCoreCount = defaults.maxCpuCoreCount;
     	      this.memoryPerOracleComputeUnitInGbs = defaults.memoryPerOracleComputeUnitInGbs;
     	      this.ncharacterSet = defaults.ncharacterSet;
+    	      this.netServicesArchitecture = defaults.netServicesArchitecture;
     	      this.nextLongTermBackupTimeStamp = defaults.nextLongTermBackupTimeStamp;
     	      this.nsgIds = defaults.nsgIds;
     	      this.ocpuCount = defaults.ocpuCount;
@@ -1896,6 +1924,14 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder isDevTier(Boolean isDevTier) {
+            if (isDevTier == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesClonesAutonomousDatabase", "isDevTier");
+            }
+            this.isDevTier = isDevTier;
+            return this;
+        }
+        @CustomType.Setter
         public Builder isFreeTier(Boolean isFreeTier) {
             if (isFreeTier == null) {
               throw new MissingRequiredPropertyException("GetAutonomousDatabasesClonesAutonomousDatabase", "isFreeTier");
@@ -2078,6 +2114,14 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
               throw new MissingRequiredPropertyException("GetAutonomousDatabasesClonesAutonomousDatabase", "ncharacterSet");
             }
             this.ncharacterSet = ncharacterSet;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder netServicesArchitecture(String netServicesArchitecture) {
+            if (netServicesArchitecture == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesClonesAutonomousDatabase", "netServicesArchitecture");
+            }
+            this.netServicesArchitecture = netServicesArchitecture;
             return this;
         }
         @CustomType.Setter
@@ -2505,6 +2549,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
             _resultValue.isAutoScalingForStorageEnabled = isAutoScalingForStorageEnabled;
             _resultValue.isDataGuardEnabled = isDataGuardEnabled;
             _resultValue.isDedicated = isDedicated;
+            _resultValue.isDevTier = isDevTier;
             _resultValue.isFreeTier = isFreeTier;
             _resultValue.isLocalDataGuardEnabled = isLocalDataGuardEnabled;
             _resultValue.isMtlsConnectionRequired = isMtlsConnectionRequired;
@@ -2527,6 +2572,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
             _resultValue.maxCpuCoreCount = maxCpuCoreCount;
             _resultValue.memoryPerOracleComputeUnitInGbs = memoryPerOracleComputeUnitInGbs;
             _resultValue.ncharacterSet = ncharacterSet;
+            _resultValue.netServicesArchitecture = netServicesArchitecture;
             _resultValue.nextLongTermBackupTimeStamp = nextLongTermBackupTimeStamp;
             _resultValue.nsgIds = nsgIds;
             _resultValue.ocpuCount = ocpuCount;

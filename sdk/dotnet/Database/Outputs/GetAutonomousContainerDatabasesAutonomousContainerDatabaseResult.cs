@@ -42,13 +42,17 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// The compute model of the Autonomous VM Cluster.
+        /// The compute model of the Autonomous Container Database. For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         /// </summary>
         public readonly string ComputeModel;
         /// <summary>
         /// The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
         /// </summary>
         public readonly string DbName;
+        /// <summary>
+        /// The value above which an Autonomous Database will be split across multiple nodes. This value defaults to 16 when the "CPU per VM" value on the Autonomous VM Cluster is greater than 16. Otherwise, it defaults to the "CPU per VM" value.
+        /// </summary>
+        public readonly int DbSplitThreshold;
         public readonly string DbUniqueName;
         /// <summary>
         /// Oracle Database version of the Autonomous Container Database.
@@ -63,7 +67,11 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
-        /// DST Time Zone File version of the Autonomous Container Database.
+        /// This option determines whether to open an Autonomous Database across the maximum number of nodes or the least number of nodes. The default will be for the minimum number of VMs.
+        /// </summary>
+        public readonly string DistributionAffinity;
+        /// <summary>
+        /// DST Time-zone File version of the Autonomous Container Database.
         /// </summary>
         public readonly string DstFileVersion;
         public readonly int FastStartFailOverLagLimitInSeconds;
@@ -118,9 +126,13 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowResult> MaintenanceWindows;
         /// <summary>
-        /// The amount of memory (in GBs) enabled per OCPU or ECPU in the Autonomous VM Cluster.
+        /// The amount of memory (in GBs) enabled per ECPU or OCPU in the Autonomous VM Cluster.
         /// </summary>
         public readonly int MemoryPerOracleComputeUnitInGbs;
+        /// <summary>
+        /// Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
+        /// </summary>
+        public readonly string NetServicesArchitecture;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         /// </summary>
@@ -200,6 +212,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// The next maintenance version preference.
         /// </summary>
         public readonly string VersionPreference;
+        /// <summary>
+        /// The percentage of CPUs to reserve for a single node Autonomous Database, in increments of 25.
+        /// </summary>
+        public readonly int VmFailoverReservation;
 
         [OutputConstructor]
         private GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(
@@ -221,6 +237,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             string dbName,
 
+            int dbSplitThreshold,
+
             string dbUniqueName,
 
             string dbVersion,
@@ -228,6 +246,8 @@ namespace Pulumi.Oci.Database.Outputs
             ImmutableDictionary<string, object> definedTags,
 
             string displayName,
+
+            string distributionAffinity,
 
             string dstFileVersion,
 
@@ -262,6 +282,8 @@ namespace Pulumi.Oci.Database.Outputs
             ImmutableArray<Outputs.GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowResult> maintenanceWindows,
 
             int memoryPerOracleComputeUnitInGbs,
+
+            string netServicesArchitecture,
 
             string nextMaintenanceRunId,
 
@@ -313,7 +335,9 @@ namespace Pulumi.Oci.Database.Outputs
 
             string vaultId,
 
-            string versionPreference)
+            string versionPreference,
+
+            int vmFailoverReservation)
         {
             AutonomousExadataInfrastructureId = autonomousExadataInfrastructureId;
             AutonomousVmClusterId = autonomousVmClusterId;
@@ -324,10 +348,12 @@ namespace Pulumi.Oci.Database.Outputs
             CompartmentId = compartmentId;
             ComputeModel = computeModel;
             DbName = dbName;
+            DbSplitThreshold = dbSplitThreshold;
             DbUniqueName = dbUniqueName;
             DbVersion = dbVersion;
             DefinedTags = definedTags;
             DisplayName = displayName;
+            DistributionAffinity = distributionAffinity;
             DstFileVersion = dstFileVersion;
             FastStartFailOverLagLimitInSeconds = fastStartFailOverLagLimitInSeconds;
             FreeformTags = freeformTags;
@@ -345,6 +371,7 @@ namespace Pulumi.Oci.Database.Outputs
             MaintenanceWindowDetails = maintenanceWindowDetails;
             MaintenanceWindows = maintenanceWindows;
             MemoryPerOracleComputeUnitInGbs = memoryPerOracleComputeUnitInGbs;
+            NetServicesArchitecture = netServicesArchitecture;
             NextMaintenanceRunId = nextMaintenanceRunId;
             PatchId = patchId;
             PatchModel = patchModel;
@@ -371,6 +398,7 @@ namespace Pulumi.Oci.Database.Outputs
             TotalCpus = totalCpus;
             VaultId = vaultId;
             VersionPreference = versionPreference;
+            VmFailoverReservation = vmFailoverReservation;
         }
     }
 }

@@ -192,14 +192,14 @@ public class AutonomousVmCluster extends com.pulumi.resources.CustomResource {
         return this.compartmentId;
     }
     /**
-     * The compute model of the Autonomous VM Cluster.
+     * The compute model of the Autonomous VM Cluster. ECPU compute model is the recommended model and OCPU compute model is legacy.
      * 
      */
     @Export(name="computeModel", refs={String.class}, tree="[0]")
     private Output<String> computeModel;
 
     /**
-     * @return The compute model of the Autonomous VM Cluster.
+     * @return The compute model of the Autonomous VM Cluster. ECPU compute model is the recommended model and OCPU compute model is legacy.
      * 
      */
     public Output<String> computeModel() {
@@ -336,14 +336,14 @@ public class AutonomousVmCluster extends com.pulumi.resources.CustomResource {
         return this.exadataInfrastructureId;
     }
     /**
-     * The lowest value to which exadataStorage in TBs can be scaled down.
+     * The lowest value to which exadataStorage(in TBs) can be scaled down.
      * 
      */
     @Export(name="exadataStorageInTbsLowestScaledValue", refs={Double.class}, tree="[0]")
     private Output<Double> exadataStorageInTbsLowestScaledValue;
 
     /**
-     * @return The lowest value to which exadataStorage in TBs can be scaled down.
+     * @return The lowest value to which exadataStorage(in TBs) can be scaled down.
      * 
      */
     public Output<Double> exadataStorageInTbsLowestScaledValue() {
@@ -462,14 +462,14 @@ public class AutonomousVmCluster extends com.pulumi.resources.CustomResource {
         return this.maintenanceWindows;
     }
     /**
-     * The lowest value to which ACDs can be scaled down.
+     * The lowest value to which maximum number of ACDs can be scaled down.
      * 
      */
     @Export(name="maxAcdsLowestScaledValue", refs={Integer.class}, tree="[0]")
     private Output<Integer> maxAcdsLowestScaledValue;
 
     /**
-     * @return The lowest value to which ACDs can be scaled down.
+     * @return The lowest value to which maximum number of ACDs can be scaled down.
      * 
      */
     public Output<Integer> maxAcdsLowestScaledValue() {
@@ -551,45 +551,73 @@ public class AutonomousVmCluster extends com.pulumi.resources.CustomResource {
     public Output<Double> ocpusEnabled() {
         return this.ocpusEnabled;
     }
+    /**
+     * **Deprecated.** Use field totalContainerDatabases.
+     * 
+     */
     @Export(name="provisionableAutonomousContainerDatabases", refs={Integer.class}, tree="[0]")
     private Output<Integer> provisionableAutonomousContainerDatabases;
 
+    /**
+     * @return **Deprecated.** Use field totalContainerDatabases.
+     * 
+     */
     public Output<Integer> provisionableAutonomousContainerDatabases() {
         return this.provisionableAutonomousContainerDatabases;
     }
+    /**
+     * The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster.
+     * 
+     */
     @Export(name="provisionedAutonomousContainerDatabases", refs={Integer.class}, tree="[0]")
     private Output<Integer> provisionedAutonomousContainerDatabases;
 
+    /**
+     * @return The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster.
+     * 
+     */
     public Output<Integer> provisionedAutonomousContainerDatabases() {
         return this.provisionedAutonomousContainerDatabases;
     }
+    /**
+     * The number of CPUs provisioned in an Autonomous VM Cluster.
+     * 
+     */
     @Export(name="provisionedCpus", refs={Double.class}, tree="[0]")
     private Output<Double> provisionedCpus;
 
+    /**
+     * @return The number of CPUs provisioned in an Autonomous VM Cluster.
+     * 
+     */
     public Output<Double> provisionedCpus() {
         return this.provisionedCpus;
     }
     /**
-     * For Autonomous Databases on Dedicated Exadata Infrastructure:
-     * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-     * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
+     * CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
      * 
      */
     @Export(name="reclaimableCpus", refs={Integer.class}, tree="[0]")
     private Output<Integer> reclaimableCpus;
 
     /**
-     * @return For Autonomous Databases on Dedicated Exadata Infrastructure:
-     * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-     * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
+     * @return CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
      * 
      */
     public Output<Integer> reclaimableCpus() {
         return this.reclaimableCpus;
     }
+    /**
+     * The number of CPUs reserved in an Autonomous VM Cluster.
+     * 
+     */
     @Export(name="reservedCpus", refs={Double.class}, tree="[0]")
     private Output<Double> reservedCpus;
 
+    /**
+     * @return The number of CPUs reserved in an Autonomous VM Cluster.
+     * 
+     */
     public Output<Double> reservedCpus() {
         return this.reservedCpus;
     }

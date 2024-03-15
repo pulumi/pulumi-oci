@@ -68,7 +68,7 @@ namespace Pulumi.Oci.Database
         public Output<string> CompartmentId { get; private set; } = null!;
 
         /// <summary>
-        /// The compute model of the Autonomous VM Cluster.
+        /// The compute model of the Autonomous Container Database. For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         /// </summary>
         [Output("computeModel")]
         public Output<string> ComputeModel { get; private set; } = null!;
@@ -78,6 +78,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("dbName")]
         public Output<string> DbName { get; private set; } = null!;
+
+        /// <summary>
+        /// The value above which an Autonomous Database will be split across multiple nodes. This value defaults to 16 when the "CPU per VM" value on the Autonomous VM Cluster is greater than 16. Otherwise, it defaults to the "CPU per VM" value.
+        /// </summary>
+        [Output("dbSplitThreshold")]
+        public Output<int> DbSplitThreshold { get; private set; } = null!;
 
         [Output("dbUniqueName")]
         public Output<string> DbUniqueName { get; private set; } = null!;
@@ -101,7 +107,13 @@ namespace Pulumi.Oci.Database
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
-        /// DST Time Zone File version of the Autonomous Container Database.
+        /// This option determines whether to open an Autonomous Database across the maximum number of nodes or the least number of nodes. The default will be for the minimum number of VMs.
+        /// </summary>
+        [Output("distributionAffinity")]
+        public Output<string> DistributionAffinity { get; private set; } = null!;
+
+        /// <summary>
+        /// DST Time-zone File version of the Autonomous Container Database.
         /// </summary>
         [Output("dstFileVersion")]
         public Output<string> DstFileVersion { get; private set; } = null!;
@@ -191,10 +203,16 @@ namespace Pulumi.Oci.Database
         public Output<ImmutableArray<Outputs.AutonomousContainerDatabaseMaintenanceWindow>> MaintenanceWindows { get; private set; } = null!;
 
         /// <summary>
-        /// The amount of memory (in GBs) enabled per OCPU or ECPU in the Autonomous VM Cluster.
+        /// The amount of memory (in GBs) enabled per ECPU or OCPU in the Autonomous VM Cluster.
         /// </summary>
         [Output("memoryPerOracleComputeUnitInGbs")]
         public Output<int> MemoryPerOracleComputeUnitInGbs { get; private set; } = null!;
+
+        /// <summary>
+        /// Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
+        /// </summary>
+        [Output("netServicesArchitecture")]
+        public Output<string> NetServicesArchitecture { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
@@ -354,6 +372,12 @@ namespace Pulumi.Oci.Database
         [Output("versionPreference")]
         public Output<string> VersionPreference { get; private set; } = null!;
 
+        /// <summary>
+        /// The percentage of CPUs to reserve for a single node Autonomous Database, in increments of 25.
+        /// </summary>
+        [Output("vmFailoverReservation")]
+        public Output<int> VmFailoverReservation { get; private set; } = null!;
+
 
         /// <summary>
         /// Create a AutonomousContainerDatabase resource with the given unique name, arguments, and options.
@@ -436,6 +460,12 @@ namespace Pulumi.Oci.Database
         [Input("dbName")]
         public Input<string>? DbName { get; set; }
 
+        /// <summary>
+        /// The value above which an Autonomous Database will be split across multiple nodes. This value defaults to 16 when the "CPU per VM" value on the Autonomous VM Cluster is greater than 16. Otherwise, it defaults to the "CPU per VM" value.
+        /// </summary>
+        [Input("dbSplitThreshold")]
+        public Input<int>? DbSplitThreshold { get; set; }
+
         [Input("dbUniqueName")]
         public Input<string>? DbUniqueName { get; set; }
 
@@ -462,6 +492,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("displayName", required: true)]
         public Input<string> DisplayName { get; set; } = null!;
+
+        /// <summary>
+        /// This option determines whether to open an Autonomous Database across the maximum number of nodes or the least number of nodes. The default will be for the minimum number of VMs.
+        /// </summary>
+        [Input("distributionAffinity")]
+        public Input<string>? DistributionAffinity { get; set; }
 
         /// <summary>
         /// The lag time for my preference based on data loss tolerance in seconds.
@@ -510,6 +546,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("maintenanceWindowDetails")]
         public Input<Inputs.AutonomousContainerDatabaseMaintenanceWindowDetailsArgs>? MaintenanceWindowDetails { get; set; }
+
+        /// <summary>
+        /// Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
+        /// </summary>
+        [Input("netServicesArchitecture")]
+        public Input<string>? NetServicesArchitecture { get; set; }
 
         /// <summary>
         /// (Updatable) Database Patch model preference.
@@ -593,6 +635,12 @@ namespace Pulumi.Oci.Database
         [Input("versionPreference")]
         public Input<string>? VersionPreference { get; set; }
 
+        /// <summary>
+        /// The percentage of CPUs to reserve for a single node Autonomous Database, in increments of 25.
+        /// </summary>
+        [Input("vmFailoverReservation")]
+        public Input<int>? VmFailoverReservation { get; set; }
+
         public AutonomousContainerDatabaseArgs()
         {
         }
@@ -644,7 +692,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? CompartmentId { get; set; }
 
         /// <summary>
-        /// The compute model of the Autonomous VM Cluster.
+        /// The compute model of the Autonomous Container Database. For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         /// </summary>
         [Input("computeModel")]
         public Input<string>? ComputeModel { get; set; }
@@ -654,6 +702,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("dbName")]
         public Input<string>? DbName { get; set; }
+
+        /// <summary>
+        /// The value above which an Autonomous Database will be split across multiple nodes. This value defaults to 16 when the "CPU per VM" value on the Autonomous VM Cluster is greater than 16. Otherwise, it defaults to the "CPU per VM" value.
+        /// </summary>
+        [Input("dbSplitThreshold")]
+        public Input<int>? DbSplitThreshold { get; set; }
 
         [Input("dbUniqueName")]
         public Input<string>? DbUniqueName { get; set; }
@@ -683,7 +737,13 @@ namespace Pulumi.Oci.Database
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// DST Time Zone File version of the Autonomous Container Database.
+        /// This option determines whether to open an Autonomous Database across the maximum number of nodes or the least number of nodes. The default will be for the minimum number of VMs.
+        /// </summary>
+        [Input("distributionAffinity")]
+        public Input<string>? DistributionAffinity { get; set; }
+
+        /// <summary>
+        /// DST Time-zone File version of the Autonomous Container Database.
         /// </summary>
         [Input("dstFileVersion")]
         public Input<string>? DstFileVersion { get; set; }
@@ -791,10 +851,16 @@ namespace Pulumi.Oci.Database
         }
 
         /// <summary>
-        /// The amount of memory (in GBs) enabled per OCPU or ECPU in the Autonomous VM Cluster.
+        /// The amount of memory (in GBs) enabled per ECPU or OCPU in the Autonomous VM Cluster.
         /// </summary>
         [Input("memoryPerOracleComputeUnitInGbs")]
         public Input<int>? MemoryPerOracleComputeUnitInGbs { get; set; }
+
+        /// <summary>
+        /// Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
+        /// </summary>
+        [Input("netServicesArchitecture")]
+        public Input<string>? NetServicesArchitecture { get; set; }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
@@ -959,6 +1025,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("versionPreference")]
         public Input<string>? VersionPreference { get; set; }
+
+        /// <summary>
+        /// The percentage of CPUs to reserve for a single node Autonomous Database, in increments of 25.
+        /// </summary>
+        [Input("vmFailoverReservation")]
+        public Input<int>? VmFailoverReservation { get; set; }
 
         public AutonomousContainerDatabaseState()
         {

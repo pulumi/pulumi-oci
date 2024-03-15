@@ -50,6 +50,21 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
     }
 
     /**
+     * (Updatable) The maximum network bandwidth for the model deployment.
+     * 
+     */
+    @Import(name="maximumBandwidthMbps")
+    private @Nullable Output<Integer> maximumBandwidthMbps;
+
+    /**
+     * @return (Updatable) The maximum network bandwidth for the model deployment.
+     * 
+     */
+    public Optional<Output<Integer>> maximumBandwidthMbps() {
+        return Optional.ofNullable(this.maximumBandwidthMbps);
+    }
+
+    /**
      * (Updatable) The OCID of the model you want to deploy.
      * 
      */
@@ -84,6 +99,7 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
     private ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsArgs(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsArgs $) {
         this.bandwidthMbps = $.bandwidthMbps;
         this.instanceConfiguration = $.instanceConfiguration;
+        this.maximumBandwidthMbps = $.maximumBandwidthMbps;
         this.modelId = $.modelId;
         this.scalingPolicy = $.scalingPolicy;
     }
@@ -146,6 +162,27 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
          */
         public Builder instanceConfiguration(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs instanceConfiguration) {
             return instanceConfiguration(Output.of(instanceConfiguration));
+        }
+
+        /**
+         * @param maximumBandwidthMbps (Updatable) The maximum network bandwidth for the model deployment.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder maximumBandwidthMbps(@Nullable Output<Integer> maximumBandwidthMbps) {
+            $.maximumBandwidthMbps = maximumBandwidthMbps;
+            return this;
+        }
+
+        /**
+         * @param maximumBandwidthMbps (Updatable) The maximum network bandwidth for the model deployment.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder maximumBandwidthMbps(Integer maximumBandwidthMbps) {
+            return maximumBandwidthMbps(Output.of(maximumBandwidthMbps));
         }
 
         /**

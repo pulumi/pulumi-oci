@@ -26,15 +26,43 @@ import * as utilities from "../utilities";
  *             instanceConfiguration: {
  *                 instanceShapeName: oci_core_shape.test_shape.name,
  *                 modelDeploymentInstanceShapeConfigDetails: {
+ *                     cpuBaseline: _var.model_deployment_model_deployment_configuration_details_model_configuration_details_instance_configuration_model_deployment_instance_shape_config_details_cpu_baseline,
  *                     memoryInGbs: _var.model_deployment_model_deployment_configuration_details_model_configuration_details_instance_configuration_model_deployment_instance_shape_config_details_memory_in_gbs,
  *                     ocpus: _var.model_deployment_model_deployment_configuration_details_model_configuration_details_instance_configuration_model_deployment_instance_shape_config_details_ocpus,
  *                 },
  *             },
  *             modelId: oci_datascience_model.test_model.id,
  *             bandwidthMbps: _var.model_deployment_model_deployment_configuration_details_model_configuration_details_bandwidth_mbps,
+ *             maximumBandwidthMbps: _var.model_deployment_model_deployment_configuration_details_model_configuration_details_maximum_bandwidth_mbps,
  *             scalingPolicy: {
- *                 instanceCount: _var.model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_instance_count,
  *                 policyType: _var.model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_policy_type,
+ *                 autoScalingPolicies: [{
+ *                     autoScalingPolicyType: _var.model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_auto_scaling_policy_type,
+ *                     initialInstanceCount: _var.model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_initial_instance_count,
+ *                     maximumInstanceCount: _var.model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_maximum_instance_count,
+ *                     minimumInstanceCount: _var.model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_minimum_instance_count,
+ *                     rules: [{
+ *                         metricExpressionRuleType: _var.model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_rules_metric_expression_rule_type,
+ *                         scaleInConfiguration: {
+ *                             instanceCountAdjustment: _var.model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_rules_scale_in_configuration_instance_count_adjustment,
+ *                             pendingDuration: _var.model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_rules_scale_in_configuration_pending_duration,
+ *                             query: _var.model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_rules_scale_in_configuration_query,
+ *                             scalingConfigurationType: _var.model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_rules_scale_in_configuration_scaling_configuration_type,
+ *                             threshold: _var.model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_rules_scale_in_configuration_threshold,
+ *                         },
+ *                         scaleOutConfiguration: {
+ *                             instanceCountAdjustment: _var.model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_rules_scale_out_configuration_instance_count_adjustment,
+ *                             pendingDuration: _var.model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_rules_scale_out_configuration_pending_duration,
+ *                             query: _var.model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_rules_scale_out_configuration_query,
+ *                             scalingConfigurationType: _var.model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_rules_scale_out_configuration_scaling_configuration_type,
+ *                             threshold: _var.model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_rules_scale_out_configuration_threshold,
+ *                         },
+ *                         metricType: _var.model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_rules_metric_type,
+ *                     }],
+ *                 }],
+ *                 coolDownInSeconds: _var.model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_cool_down_in_seconds,
+ *                 instanceCount: _var.model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_instance_count,
+ *                 isEnabled: _var.model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_is_enabled,
  *             },
  *         },
  *         environmentConfigurationDetails: {
@@ -144,6 +172,10 @@ export class ModelDeployment extends pulumi.CustomResource {
      */
     public readonly modelDeploymentConfigurationDetails!: pulumi.Output<outputs.DataScience.ModelDeploymentModelDeploymentConfigurationDetails>;
     /**
+     * Model deployment system data.
+     */
+    public /*out*/ readonly modelDeploymentSystemDatas!: pulumi.Output<outputs.DataScience.ModelDeploymentModelDeploymentSystemData[]>;
+    /**
      * The URL to interact with the model deployment.
      */
     public /*out*/ readonly modelDeploymentUrl!: pulumi.Output<string>;
@@ -186,6 +218,7 @@ export class ModelDeployment extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["modelDeploymentConfigurationDetails"] = state ? state.modelDeploymentConfigurationDetails : undefined;
+            resourceInputs["modelDeploymentSystemDatas"] = state ? state.modelDeploymentSystemDatas : undefined;
             resourceInputs["modelDeploymentUrl"] = state ? state.modelDeploymentUrl : undefined;
             resourceInputs["projectId"] = state ? state.projectId : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
@@ -212,6 +245,7 @@ export class ModelDeployment extends pulumi.CustomResource {
             resourceInputs["state"] = args ? args.state : undefined;
             resourceInputs["createdBy"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
+            resourceInputs["modelDeploymentSystemDatas"] = undefined /*out*/;
             resourceInputs["modelDeploymentUrl"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
         }
@@ -260,6 +294,10 @@ export interface ModelDeploymentState {
      * (Updatable) The model deployment configuration details.
      */
     modelDeploymentConfigurationDetails?: pulumi.Input<inputs.DataScience.ModelDeploymentModelDeploymentConfigurationDetails>;
+    /**
+     * Model deployment system data.
+     */
+    modelDeploymentSystemDatas?: pulumi.Input<pulumi.Input<inputs.DataScience.ModelDeploymentModelDeploymentSystemData>[]>;
     /**
      * The URL to interact with the model deployment.
      */

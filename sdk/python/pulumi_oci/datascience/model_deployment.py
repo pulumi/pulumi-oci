@@ -182,6 +182,7 @@ class _ModelDeploymentState:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  model_deployment_configuration_details: Optional[pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsArgs']] = None,
+                 model_deployment_system_datas: Optional[pulumi.Input[Sequence[pulumi.Input['ModelDeploymentModelDeploymentSystemDataArgs']]]] = None,
                  model_deployment_url: Optional[pulumi.Input[str]] = None,
                  project_id: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
@@ -197,6 +198,7 @@ class _ModelDeploymentState:
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] lifecycle_details: Details about the state of the model deployment.
         :param pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsArgs'] model_deployment_configuration_details: (Updatable) The model deployment configuration details.
+        :param pulumi.Input[Sequence[pulumi.Input['ModelDeploymentModelDeploymentSystemDataArgs']]] model_deployment_system_datas: Model deployment system data.
         :param pulumi.Input[str] model_deployment_url: The URL to interact with the model deployment.
         :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model deployment.
         :param pulumi.Input[str] state: (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`. 
@@ -224,6 +226,8 @@ class _ModelDeploymentState:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if model_deployment_configuration_details is not None:
             pulumi.set(__self__, "model_deployment_configuration_details", model_deployment_configuration_details)
+        if model_deployment_system_datas is not None:
+            pulumi.set(__self__, "model_deployment_system_datas", model_deployment_system_datas)
         if model_deployment_url is not None:
             pulumi.set(__self__, "model_deployment_url", model_deployment_url)
         if project_id is not None:
@@ -342,6 +346,18 @@ class _ModelDeploymentState:
         pulumi.set(self, "model_deployment_configuration_details", value)
 
     @property
+    @pulumi.getter(name="modelDeploymentSystemDatas")
+    def model_deployment_system_datas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ModelDeploymentModelDeploymentSystemDataArgs']]]]:
+        """
+        Model deployment system data.
+        """
+        return pulumi.get(self, "model_deployment_system_datas")
+
+    @model_deployment_system_datas.setter
+    def model_deployment_system_datas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ModelDeploymentModelDeploymentSystemDataArgs']]]]):
+        pulumi.set(self, "model_deployment_system_datas", value)
+
+    @property
     @pulumi.getter(name="modelDeploymentUrl")
     def model_deployment_url(self) -> Optional[pulumi.Input[str]]:
         """
@@ -429,15 +445,43 @@ class ModelDeployment(pulumi.CustomResource):
                     instance_configuration=oci.data_science.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs(
                         instance_shape_name=oci_core_shape["test_shape"]["name"],
                         model_deployment_instance_shape_config_details=oci.data_science.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs(
+                            cpu_baseline=var["model_deployment_model_deployment_configuration_details_model_configuration_details_instance_configuration_model_deployment_instance_shape_config_details_cpu_baseline"],
                             memory_in_gbs=var["model_deployment_model_deployment_configuration_details_model_configuration_details_instance_configuration_model_deployment_instance_shape_config_details_memory_in_gbs"],
                             ocpus=var["model_deployment_model_deployment_configuration_details_model_configuration_details_instance_configuration_model_deployment_instance_shape_config_details_ocpus"],
                         ),
                     ),
                     model_id=oci_datascience_model["test_model"]["id"],
                     bandwidth_mbps=var["model_deployment_model_deployment_configuration_details_model_configuration_details_bandwidth_mbps"],
+                    maximum_bandwidth_mbps=var["model_deployment_model_deployment_configuration_details_model_configuration_details_maximum_bandwidth_mbps"],
                     scaling_policy=oci.data_science.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyArgs(
-                        instance_count=var["model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_instance_count"],
                         policy_type=var["model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_policy_type"],
+                        auto_scaling_policies=[oci.data_science.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyArgs(
+                            auto_scaling_policy_type=var["model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_auto_scaling_policy_type"],
+                            initial_instance_count=var["model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_initial_instance_count"],
+                            maximum_instance_count=var["model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_maximum_instance_count"],
+                            minimum_instance_count=var["model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_minimum_instance_count"],
+                            rules=[oci.data_science.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArgs(
+                                metric_expression_rule_type=var["model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_rules_metric_expression_rule_type"],
+                                scale_in_configuration=oci.data_science.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgs(
+                                    instance_count_adjustment=var["model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_rules_scale_in_configuration_instance_count_adjustment"],
+                                    pending_duration=var["model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_rules_scale_in_configuration_pending_duration"],
+                                    query=var["model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_rules_scale_in_configuration_query"],
+                                    scaling_configuration_type=var["model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_rules_scale_in_configuration_scaling_configuration_type"],
+                                    threshold=var["model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_rules_scale_in_configuration_threshold"],
+                                ),
+                                scale_out_configuration=oci.data_science.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgs(
+                                    instance_count_adjustment=var["model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_rules_scale_out_configuration_instance_count_adjustment"],
+                                    pending_duration=var["model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_rules_scale_out_configuration_pending_duration"],
+                                    query=var["model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_rules_scale_out_configuration_query"],
+                                    scaling_configuration_type=var["model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_rules_scale_out_configuration_scaling_configuration_type"],
+                                    threshold=var["model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_rules_scale_out_configuration_threshold"],
+                                ),
+                                metric_type=var["model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_rules_metric_type"],
+                            )],
+                        )],
+                        cool_down_in_seconds=var["model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_cool_down_in_seconds"],
+                        instance_count=var["model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_instance_count"],
+                        is_enabled=var["model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_is_enabled"],
                     ),
                 ),
                 environment_configuration_details=oci.data_science.ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsArgs(
@@ -523,15 +567,43 @@ class ModelDeployment(pulumi.CustomResource):
                     instance_configuration=oci.data_science.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs(
                         instance_shape_name=oci_core_shape["test_shape"]["name"],
                         model_deployment_instance_shape_config_details=oci.data_science.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs(
+                            cpu_baseline=var["model_deployment_model_deployment_configuration_details_model_configuration_details_instance_configuration_model_deployment_instance_shape_config_details_cpu_baseline"],
                             memory_in_gbs=var["model_deployment_model_deployment_configuration_details_model_configuration_details_instance_configuration_model_deployment_instance_shape_config_details_memory_in_gbs"],
                             ocpus=var["model_deployment_model_deployment_configuration_details_model_configuration_details_instance_configuration_model_deployment_instance_shape_config_details_ocpus"],
                         ),
                     ),
                     model_id=oci_datascience_model["test_model"]["id"],
                     bandwidth_mbps=var["model_deployment_model_deployment_configuration_details_model_configuration_details_bandwidth_mbps"],
+                    maximum_bandwidth_mbps=var["model_deployment_model_deployment_configuration_details_model_configuration_details_maximum_bandwidth_mbps"],
                     scaling_policy=oci.data_science.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyArgs(
-                        instance_count=var["model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_instance_count"],
                         policy_type=var["model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_policy_type"],
+                        auto_scaling_policies=[oci.data_science.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyArgs(
+                            auto_scaling_policy_type=var["model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_auto_scaling_policy_type"],
+                            initial_instance_count=var["model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_initial_instance_count"],
+                            maximum_instance_count=var["model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_maximum_instance_count"],
+                            minimum_instance_count=var["model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_minimum_instance_count"],
+                            rules=[oci.data_science.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArgs(
+                                metric_expression_rule_type=var["model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_rules_metric_expression_rule_type"],
+                                scale_in_configuration=oci.data_science.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgs(
+                                    instance_count_adjustment=var["model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_rules_scale_in_configuration_instance_count_adjustment"],
+                                    pending_duration=var["model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_rules_scale_in_configuration_pending_duration"],
+                                    query=var["model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_rules_scale_in_configuration_query"],
+                                    scaling_configuration_type=var["model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_rules_scale_in_configuration_scaling_configuration_type"],
+                                    threshold=var["model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_rules_scale_in_configuration_threshold"],
+                                ),
+                                scale_out_configuration=oci.data_science.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgs(
+                                    instance_count_adjustment=var["model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_rules_scale_out_configuration_instance_count_adjustment"],
+                                    pending_duration=var["model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_rules_scale_out_configuration_pending_duration"],
+                                    query=var["model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_rules_scale_out_configuration_query"],
+                                    scaling_configuration_type=var["model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_rules_scale_out_configuration_scaling_configuration_type"],
+                                    threshold=var["model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_rules_scale_out_configuration_threshold"],
+                                ),
+                                metric_type=var["model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_rules_metric_type"],
+                            )],
+                        )],
+                        cool_down_in_seconds=var["model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_cool_down_in_seconds"],
+                        instance_count=var["model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_instance_count"],
+                        is_enabled=var["model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_is_enabled"],
                     ),
                 ),
                 environment_configuration_details=oci.data_science.ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsArgs(
@@ -625,6 +697,7 @@ class ModelDeployment(pulumi.CustomResource):
             __props__.__dict__["state"] = state
             __props__.__dict__["created_by"] = None
             __props__.__dict__["lifecycle_details"] = None
+            __props__.__dict__["model_deployment_system_datas"] = None
             __props__.__dict__["model_deployment_url"] = None
             __props__.__dict__["time_created"] = None
         super(ModelDeployment, __self__).__init__(
@@ -646,6 +719,7 @@ class ModelDeployment(pulumi.CustomResource):
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             model_deployment_configuration_details: Optional[pulumi.Input[pulumi.InputType['ModelDeploymentModelDeploymentConfigurationDetailsArgs']]] = None,
+            model_deployment_system_datas: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ModelDeploymentModelDeploymentSystemDataArgs']]]]] = None,
             model_deployment_url: Optional[pulumi.Input[str]] = None,
             project_id: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
@@ -666,6 +740,7 @@ class ModelDeployment(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] lifecycle_details: Details about the state of the model deployment.
         :param pulumi.Input[pulumi.InputType['ModelDeploymentModelDeploymentConfigurationDetailsArgs']] model_deployment_configuration_details: (Updatable) The model deployment configuration details.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ModelDeploymentModelDeploymentSystemDataArgs']]]] model_deployment_system_datas: Model deployment system data.
         :param pulumi.Input[str] model_deployment_url: The URL to interact with the model deployment.
         :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model deployment.
         :param pulumi.Input[str] state: (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`. 
@@ -688,6 +763,7 @@ class ModelDeployment(pulumi.CustomResource):
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["model_deployment_configuration_details"] = model_deployment_configuration_details
+        __props__.__dict__["model_deployment_system_datas"] = model_deployment_system_datas
         __props__.__dict__["model_deployment_url"] = model_deployment_url
         __props__.__dict__["project_id"] = project_id
         __props__.__dict__["state"] = state
@@ -765,6 +841,14 @@ class ModelDeployment(pulumi.CustomResource):
         (Updatable) The model deployment configuration details.
         """
         return pulumi.get(self, "model_deployment_configuration_details")
+
+    @property
+    @pulumi.getter(name="modelDeploymentSystemDatas")
+    def model_deployment_system_datas(self) -> pulumi.Output[Sequence['outputs.ModelDeploymentModelDeploymentSystemData']]:
+        """
+        Model deployment system data.
+        """
+        return pulumi.get(self, "model_deployment_system_datas")
 
     @property
     @pulumi.getter(name="modelDeploymentUrl")

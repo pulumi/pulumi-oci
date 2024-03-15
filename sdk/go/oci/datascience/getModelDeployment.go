@@ -81,6 +81,8 @@ type LookupModelDeploymentResult struct {
 	// The model deployment configuration details.
 	ModelDeploymentConfigurationDetails []GetModelDeploymentModelDeploymentConfigurationDetail `pulumi:"modelDeploymentConfigurationDetails"`
 	ModelDeploymentId                   string                                                 `pulumi:"modelDeploymentId"`
+	// Model deployment system data.
+	ModelDeploymentSystemDatas []GetModelDeploymentModelDeploymentSystemData `pulumi:"modelDeploymentSystemDatas"`
 	// The URL to interact with the model deployment.
 	ModelDeploymentUrl string `pulumi:"modelDeploymentUrl"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project associated with the model deployment.
@@ -183,6 +185,13 @@ func (o LookupModelDeploymentResultOutput) ModelDeploymentConfigurationDetails()
 
 func (o LookupModelDeploymentResultOutput) ModelDeploymentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupModelDeploymentResult) string { return v.ModelDeploymentId }).(pulumi.StringOutput)
+}
+
+// Model deployment system data.
+func (o LookupModelDeploymentResultOutput) ModelDeploymentSystemDatas() GetModelDeploymentModelDeploymentSystemDataArrayOutput {
+	return o.ApplyT(func(v LookupModelDeploymentResult) []GetModelDeploymentModelDeploymentSystemData {
+		return v.ModelDeploymentSystemDatas
+	}).(GetModelDeploymentModelDeploymentSystemDataArrayOutput)
 }
 
 // The URL to interact with the model deployment.

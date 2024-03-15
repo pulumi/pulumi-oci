@@ -54,14 +54,14 @@ public final class AutonomousVmClusterArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * The compute model of the Autonomous VM Cluster.
+     * The compute model of the Autonomous VM Cluster. ECPU compute model is the recommended model and OCPU compute model is legacy.
      * 
      */
     @Import(name="computeModel")
     private @Nullable Output<String> computeModel;
 
     /**
-     * @return The compute model of the Autonomous VM Cluster.
+     * @return The compute model of the Autonomous VM Cluster. ECPU compute model is the recommended model and OCPU compute model is legacy.
      * 
      */
     public Optional<Output<String>> computeModel() {
@@ -399,7 +399,7 @@ public final class AutonomousVmClusterArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param computeModel The compute model of the Autonomous VM Cluster.
+         * @param computeModel The compute model of the Autonomous VM Cluster. ECPU compute model is the recommended model and OCPU compute model is legacy.
          * 
          * @return builder
          * 
@@ -410,7 +410,7 @@ public final class AutonomousVmClusterArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param computeModel The compute model of the Autonomous VM Cluster.
+         * @param computeModel The compute model of the Autonomous VM Cluster. ECPU compute model is the recommended model and OCPU compute model is legacy.
          * 
          * @return builder
          * 

@@ -40,18 +40,22 @@ type AutonomousContainerDatabase struct {
 	CloudAutonomousVmClusterId pulumi.StringOutput `pulumi:"cloudAutonomousVmClusterId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
-	// The compute model of the Autonomous VM Cluster.
+	// The compute model of the Autonomous Container Database. For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
 	ComputeModel pulumi.StringOutput `pulumi:"computeModel"`
 	// The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
-	DbName       pulumi.StringOutput `pulumi:"dbName"`
-	DbUniqueName pulumi.StringOutput `pulumi:"dbUniqueName"`
+	DbName pulumi.StringOutput `pulumi:"dbName"`
+	// The value above which an Autonomous Database will be split across multiple nodes. This value defaults to 16 when the "CPU per VM" value on the Autonomous VM Cluster is greater than 16. Otherwise, it defaults to the "CPU per VM" value.
+	DbSplitThreshold pulumi.IntOutput    `pulumi:"dbSplitThreshold"`
+	DbUniqueName     pulumi.StringOutput `pulumi:"dbUniqueName"`
 	// The base version for the Autonomous Container Database.
 	DbVersion pulumi.StringOutput `pulumi:"dbVersion"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) The display name for the Autonomous Container Database.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
-	// DST Time Zone File version of the Autonomous Container Database.
+	// This option determines whether to open an Autonomous Database across the maximum number of nodes or the least number of nodes. The default will be for the minimum number of VMs.
+	DistributionAffinity pulumi.StringOutput `pulumi:"distributionAffinity"`
+	// DST Time-zone File version of the Autonomous Container Database.
 	DstFileVersion pulumi.StringOutput `pulumi:"dstFileVersion"`
 	// The lag time for my preference based on data loss tolerance in seconds.
 	FastStartFailOverLagLimitInSeconds pulumi.IntOutput `pulumi:"fastStartFailOverLagLimitInSeconds"`
@@ -81,8 +85,10 @@ type AutonomousContainerDatabase struct {
 	MaintenanceWindowDetails AutonomousContainerDatabaseMaintenanceWindowDetailsPtrOutput `pulumi:"maintenanceWindowDetails"`
 	// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
 	MaintenanceWindows AutonomousContainerDatabaseMaintenanceWindowArrayOutput `pulumi:"maintenanceWindows"`
-	// The amount of memory (in GBs) enabled per OCPU or ECPU in the Autonomous VM Cluster.
+	// The amount of memory (in GBs) enabled per ECPU or OCPU in the Autonomous VM Cluster.
 	MemoryPerOracleComputeUnitInGbs pulumi.IntOutput `pulumi:"memoryPerOracleComputeUnitInGbs"`
+	// Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
+	NetServicesArchitecture pulumi.StringOutput `pulumi:"netServicesArchitecture"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
 	NextMaintenanceRunId pulumi.StringOutput `pulumi:"nextMaintenanceRunId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch applied on the system.
@@ -140,6 +146,8 @@ type AutonomousContainerDatabase struct {
 	VaultId pulumi.StringOutput `pulumi:"vaultId"`
 	// (Updatable) The next maintenance version preference.
 	VersionPreference pulumi.StringOutput `pulumi:"versionPreference"`
+	// The percentage of CPUs to reserve for a single node Autonomous Database, in increments of 25.
+	VmFailoverReservation pulumi.IntOutput `pulumi:"vmFailoverReservation"`
 }
 
 // NewAutonomousContainerDatabase registers a new resource with the given unique name, arguments, and options.
@@ -192,18 +200,22 @@ type autonomousContainerDatabaseState struct {
 	CloudAutonomousVmClusterId *string `pulumi:"cloudAutonomousVmClusterId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
 	CompartmentId *string `pulumi:"compartmentId"`
-	// The compute model of the Autonomous VM Cluster.
+	// The compute model of the Autonomous Container Database. For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
 	ComputeModel *string `pulumi:"computeModel"`
 	// The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
-	DbName       *string `pulumi:"dbName"`
-	DbUniqueName *string `pulumi:"dbUniqueName"`
+	DbName *string `pulumi:"dbName"`
+	// The value above which an Autonomous Database will be split across multiple nodes. This value defaults to 16 when the "CPU per VM" value on the Autonomous VM Cluster is greater than 16. Otherwise, it defaults to the "CPU per VM" value.
+	DbSplitThreshold *int    `pulumi:"dbSplitThreshold"`
+	DbUniqueName     *string `pulumi:"dbUniqueName"`
 	// The base version for the Autonomous Container Database.
 	DbVersion *string `pulumi:"dbVersion"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) The display name for the Autonomous Container Database.
 	DisplayName *string `pulumi:"displayName"`
-	// DST Time Zone File version of the Autonomous Container Database.
+	// This option determines whether to open an Autonomous Database across the maximum number of nodes or the least number of nodes. The default will be for the minimum number of VMs.
+	DistributionAffinity *string `pulumi:"distributionAffinity"`
+	// DST Time-zone File version of the Autonomous Container Database.
 	DstFileVersion *string `pulumi:"dstFileVersion"`
 	// The lag time for my preference based on data loss tolerance in seconds.
 	FastStartFailOverLagLimitInSeconds *int `pulumi:"fastStartFailOverLagLimitInSeconds"`
@@ -233,8 +245,10 @@ type autonomousContainerDatabaseState struct {
 	MaintenanceWindowDetails *AutonomousContainerDatabaseMaintenanceWindowDetails `pulumi:"maintenanceWindowDetails"`
 	// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
 	MaintenanceWindows []AutonomousContainerDatabaseMaintenanceWindow `pulumi:"maintenanceWindows"`
-	// The amount of memory (in GBs) enabled per OCPU or ECPU in the Autonomous VM Cluster.
+	// The amount of memory (in GBs) enabled per ECPU or OCPU in the Autonomous VM Cluster.
 	MemoryPerOracleComputeUnitInGbs *int `pulumi:"memoryPerOracleComputeUnitInGbs"`
+	// Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
+	NetServicesArchitecture *string `pulumi:"netServicesArchitecture"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
 	NextMaintenanceRunId *string `pulumi:"nextMaintenanceRunId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch applied on the system.
@@ -292,6 +306,8 @@ type autonomousContainerDatabaseState struct {
 	VaultId *string `pulumi:"vaultId"`
 	// (Updatable) The next maintenance version preference.
 	VersionPreference *string `pulumi:"versionPreference"`
+	// The percentage of CPUs to reserve for a single node Autonomous Database, in increments of 25.
+	VmFailoverReservation *int `pulumi:"vmFailoverReservation"`
 }
 
 type AutonomousContainerDatabaseState struct {
@@ -309,18 +325,22 @@ type AutonomousContainerDatabaseState struct {
 	CloudAutonomousVmClusterId pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
 	CompartmentId pulumi.StringPtrInput
-	// The compute model of the Autonomous VM Cluster.
+	// The compute model of the Autonomous Container Database. For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
 	ComputeModel pulumi.StringPtrInput
 	// The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
-	DbName       pulumi.StringPtrInput
-	DbUniqueName pulumi.StringPtrInput
+	DbName pulumi.StringPtrInput
+	// The value above which an Autonomous Database will be split across multiple nodes. This value defaults to 16 when the "CPU per VM" value on the Autonomous VM Cluster is greater than 16. Otherwise, it defaults to the "CPU per VM" value.
+	DbSplitThreshold pulumi.IntPtrInput
+	DbUniqueName     pulumi.StringPtrInput
 	// The base version for the Autonomous Container Database.
 	DbVersion pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags pulumi.MapInput
 	// (Updatable) The display name for the Autonomous Container Database.
 	DisplayName pulumi.StringPtrInput
-	// DST Time Zone File version of the Autonomous Container Database.
+	// This option determines whether to open an Autonomous Database across the maximum number of nodes or the least number of nodes. The default will be for the minimum number of VMs.
+	DistributionAffinity pulumi.StringPtrInput
+	// DST Time-zone File version of the Autonomous Container Database.
 	DstFileVersion pulumi.StringPtrInput
 	// The lag time for my preference based on data loss tolerance in seconds.
 	FastStartFailOverLagLimitInSeconds pulumi.IntPtrInput
@@ -350,8 +370,10 @@ type AutonomousContainerDatabaseState struct {
 	MaintenanceWindowDetails AutonomousContainerDatabaseMaintenanceWindowDetailsPtrInput
 	// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
 	MaintenanceWindows AutonomousContainerDatabaseMaintenanceWindowArrayInput
-	// The amount of memory (in GBs) enabled per OCPU or ECPU in the Autonomous VM Cluster.
+	// The amount of memory (in GBs) enabled per ECPU or OCPU in the Autonomous VM Cluster.
 	MemoryPerOracleComputeUnitInGbs pulumi.IntPtrInput
+	// Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
+	NetServicesArchitecture pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
 	NextMaintenanceRunId pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch applied on the system.
@@ -409,6 +431,8 @@ type AutonomousContainerDatabaseState struct {
 	VaultId pulumi.StringPtrInput
 	// (Updatable) The next maintenance version preference.
 	VersionPreference pulumi.StringPtrInput
+	// The percentage of CPUs to reserve for a single node Autonomous Database, in increments of 25.
+	VmFailoverReservation pulumi.IntPtrInput
 }
 
 func (AutonomousContainerDatabaseState) ElementType() reflect.Type {
@@ -427,14 +451,18 @@ type autonomousContainerDatabaseArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
-	DbName       *string `pulumi:"dbName"`
-	DbUniqueName *string `pulumi:"dbUniqueName"`
+	DbName *string `pulumi:"dbName"`
+	// The value above which an Autonomous Database will be split across multiple nodes. This value defaults to 16 when the "CPU per VM" value on the Autonomous VM Cluster is greater than 16. Otherwise, it defaults to the "CPU per VM" value.
+	DbSplitThreshold *int    `pulumi:"dbSplitThreshold"`
+	DbUniqueName     *string `pulumi:"dbUniqueName"`
 	// The base version for the Autonomous Container Database.
 	DbVersion *string `pulumi:"dbVersion"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) The display name for the Autonomous Container Database.
 	DisplayName string `pulumi:"displayName"`
+	// This option determines whether to open an Autonomous Database across the maximum number of nodes or the least number of nodes. The default will be for the minimum number of VMs.
+	DistributionAffinity *string `pulumi:"distributionAffinity"`
 	// The lag time for my preference based on data loss tolerance in seconds.
 	FastStartFailOverLagLimitInSeconds *int `pulumi:"fastStartFailOverLagLimitInSeconds"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -449,6 +477,8 @@ type autonomousContainerDatabaseArgs struct {
 	KmsKeyId *string `pulumi:"kmsKeyId"`
 	// (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
 	MaintenanceWindowDetails *AutonomousContainerDatabaseMaintenanceWindowDetails `pulumi:"maintenanceWindowDetails"`
+	// Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
+	NetServicesArchitecture *string `pulumi:"netServicesArchitecture"`
 	// (Updatable) Database Patch model preference.
 	PatchModel                                  string                                                                  `pulumi:"patchModel"`
 	PeerAutonomousContainerDatabaseBackupConfig *AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfig `pulumi:"peerAutonomousContainerDatabaseBackupConfig"`
@@ -478,6 +508,8 @@ type autonomousContainerDatabaseArgs struct {
 	VaultId *string `pulumi:"vaultId"`
 	// (Updatable) The next maintenance version preference.
 	VersionPreference *string `pulumi:"versionPreference"`
+	// The percentage of CPUs to reserve for a single node Autonomous Database, in increments of 25.
+	VmFailoverReservation *int `pulumi:"vmFailoverReservation"`
 }
 
 // The set of arguments for constructing a AutonomousContainerDatabase resource.
@@ -493,14 +525,18 @@ type AutonomousContainerDatabaseArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
 	CompartmentId pulumi.StringPtrInput
 	// The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
-	DbName       pulumi.StringPtrInput
-	DbUniqueName pulumi.StringPtrInput
+	DbName pulumi.StringPtrInput
+	// The value above which an Autonomous Database will be split across multiple nodes. This value defaults to 16 when the "CPU per VM" value on the Autonomous VM Cluster is greater than 16. Otherwise, it defaults to the "CPU per VM" value.
+	DbSplitThreshold pulumi.IntPtrInput
+	DbUniqueName     pulumi.StringPtrInput
 	// The base version for the Autonomous Container Database.
 	DbVersion pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags pulumi.MapInput
 	// (Updatable) The display name for the Autonomous Container Database.
 	DisplayName pulumi.StringInput
+	// This option determines whether to open an Autonomous Database across the maximum number of nodes or the least number of nodes. The default will be for the minimum number of VMs.
+	DistributionAffinity pulumi.StringPtrInput
 	// The lag time for my preference based on data loss tolerance in seconds.
 	FastStartFailOverLagLimitInSeconds pulumi.IntPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -515,6 +551,8 @@ type AutonomousContainerDatabaseArgs struct {
 	KmsKeyId pulumi.StringPtrInput
 	// (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
 	MaintenanceWindowDetails AutonomousContainerDatabaseMaintenanceWindowDetailsPtrInput
+	// Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
+	NetServicesArchitecture pulumi.StringPtrInput
 	// (Updatable) Database Patch model preference.
 	PatchModel                                  pulumi.StringInput
 	PeerAutonomousContainerDatabaseBackupConfig AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigPtrInput
@@ -544,6 +582,8 @@ type AutonomousContainerDatabaseArgs struct {
 	VaultId pulumi.StringPtrInput
 	// (Updatable) The next maintenance version preference.
 	VersionPreference pulumi.StringPtrInput
+	// The percentage of CPUs to reserve for a single node Autonomous Database, in increments of 25.
+	VmFailoverReservation pulumi.IntPtrInput
 }
 
 func (AutonomousContainerDatabaseArgs) ElementType() reflect.Type {
@@ -670,7 +710,7 @@ func (o AutonomousContainerDatabaseOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// The compute model of the Autonomous VM Cluster.
+// The compute model of the Autonomous Container Database. For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
 func (o AutonomousContainerDatabaseOutput) ComputeModel() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.StringOutput { return v.ComputeModel }).(pulumi.StringOutput)
 }
@@ -678,6 +718,11 @@ func (o AutonomousContainerDatabaseOutput) ComputeModel() pulumi.StringOutput {
 // The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
 func (o AutonomousContainerDatabaseOutput) DbName() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.StringOutput { return v.DbName }).(pulumi.StringOutput)
+}
+
+// The value above which an Autonomous Database will be split across multiple nodes. This value defaults to 16 when the "CPU per VM" value on the Autonomous VM Cluster is greater than 16. Otherwise, it defaults to the "CPU per VM" value.
+func (o AutonomousContainerDatabaseOutput) DbSplitThreshold() pulumi.IntOutput {
+	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.IntOutput { return v.DbSplitThreshold }).(pulumi.IntOutput)
 }
 
 func (o AutonomousContainerDatabaseOutput) DbUniqueName() pulumi.StringOutput {
@@ -699,7 +744,12 @@ func (o AutonomousContainerDatabaseOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// DST Time Zone File version of the Autonomous Container Database.
+// This option determines whether to open an Autonomous Database across the maximum number of nodes or the least number of nodes. The default will be for the minimum number of VMs.
+func (o AutonomousContainerDatabaseOutput) DistributionAffinity() pulumi.StringOutput {
+	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.StringOutput { return v.DistributionAffinity }).(pulumi.StringOutput)
+}
+
+// DST Time-zone File version of the Autonomous Container Database.
 func (o AutonomousContainerDatabaseOutput) DstFileVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.StringOutput { return v.DstFileVersion }).(pulumi.StringOutput)
 }
@@ -782,9 +832,14 @@ func (o AutonomousContainerDatabaseOutput) MaintenanceWindows() AutonomousContai
 	}).(AutonomousContainerDatabaseMaintenanceWindowArrayOutput)
 }
 
-// The amount of memory (in GBs) enabled per OCPU or ECPU in the Autonomous VM Cluster.
+// The amount of memory (in GBs) enabled per ECPU or OCPU in the Autonomous VM Cluster.
 func (o AutonomousContainerDatabaseOutput) MemoryPerOracleComputeUnitInGbs() pulumi.IntOutput {
 	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.IntOutput { return v.MemoryPerOracleComputeUnitInGbs }).(pulumi.IntOutput)
+}
+
+// Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
+func (o AutonomousContainerDatabaseOutput) NetServicesArchitecture() pulumi.StringOutput {
+	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.StringOutput { return v.NetServicesArchitecture }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
@@ -928,6 +983,11 @@ func (o AutonomousContainerDatabaseOutput) VaultId() pulumi.StringOutput {
 // (Updatable) The next maintenance version preference.
 func (o AutonomousContainerDatabaseOutput) VersionPreference() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.StringOutput { return v.VersionPreference }).(pulumi.StringOutput)
+}
+
+// The percentage of CPUs to reserve for a single node Autonomous Database, in increments of 25.
+func (o AutonomousContainerDatabaseOutput) VmFailoverReservation() pulumi.IntOutput {
+	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.IntOutput { return v.VmFailoverReservation }).(pulumi.IntOutput)
 }
 
 type AutonomousContainerDatabaseArrayOutput struct{ *pulumi.OutputState }

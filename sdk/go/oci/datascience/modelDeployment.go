@@ -39,15 +39,47 @@ import (
 //						InstanceConfiguration: &datascience.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs{
 //							InstanceShapeName: pulumi.Any(oci_core_shape.Test_shape.Name),
 //							ModelDeploymentInstanceShapeConfigDetails: &datascience.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs{
+//								CpuBaseline: pulumi.Any(_var.Model_deployment_model_deployment_configuration_details_model_configuration_details_instance_configuration_model_deployment_instance_shape_config_details_cpu_baseline),
 //								MemoryInGbs: pulumi.Any(_var.Model_deployment_model_deployment_configuration_details_model_configuration_details_instance_configuration_model_deployment_instance_shape_config_details_memory_in_gbs),
 //								Ocpus:       pulumi.Any(_var.Model_deployment_model_deployment_configuration_details_model_configuration_details_instance_configuration_model_deployment_instance_shape_config_details_ocpus),
 //							},
 //						},
-//						ModelId:       pulumi.Any(oci_datascience_model.Test_model.Id),
-//						BandwidthMbps: pulumi.Any(_var.Model_deployment_model_deployment_configuration_details_model_configuration_details_bandwidth_mbps),
+//						ModelId:              pulumi.Any(oci_datascience_model.Test_model.Id),
+//						BandwidthMbps:        pulumi.Any(_var.Model_deployment_model_deployment_configuration_details_model_configuration_details_bandwidth_mbps),
+//						MaximumBandwidthMbps: pulumi.Any(_var.Model_deployment_model_deployment_configuration_details_model_configuration_details_maximum_bandwidth_mbps),
 //						ScalingPolicy: &datascience.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyArgs{
-//							InstanceCount: pulumi.Any(_var.Model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_instance_count),
-//							PolicyType:    pulumi.Any(_var.Model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_policy_type),
+//							PolicyType: pulumi.Any(_var.Model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_policy_type),
+//							AutoScalingPolicies: datascience.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyArray{
+//								&datascience.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyArgs{
+//									AutoScalingPolicyType: pulumi.Any(_var.Model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_auto_scaling_policy_type),
+//									InitialInstanceCount:  pulumi.Any(_var.Model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_initial_instance_count),
+//									MaximumInstanceCount:  pulumi.Any(_var.Model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_maximum_instance_count),
+//									MinimumInstanceCount:  pulumi.Any(_var.Model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_minimum_instance_count),
+//									Rules: datascience.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArray{
+//										&datascience.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArgs{
+//											MetricExpressionRuleType: pulumi.Any(_var.Model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_rules_metric_expression_rule_type),
+//											ScaleInConfiguration: &datascience.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgs{
+//												InstanceCountAdjustment:  pulumi.Any(_var.Model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_rules_scale_in_configuration_instance_count_adjustment),
+//												PendingDuration:          pulumi.Any(_var.Model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_rules_scale_in_configuration_pending_duration),
+//												Query:                    pulumi.Any(_var.Model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_rules_scale_in_configuration_query),
+//												ScalingConfigurationType: pulumi.Any(_var.Model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_rules_scale_in_configuration_scaling_configuration_type),
+//												Threshold:                pulumi.Any(_var.Model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_rules_scale_in_configuration_threshold),
+//											},
+//											ScaleOutConfiguration: &datascience.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgs{
+//												InstanceCountAdjustment:  pulumi.Any(_var.Model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_rules_scale_out_configuration_instance_count_adjustment),
+//												PendingDuration:          pulumi.Any(_var.Model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_rules_scale_out_configuration_pending_duration),
+//												Query:                    pulumi.Any(_var.Model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_rules_scale_out_configuration_query),
+//												ScalingConfigurationType: pulumi.Any(_var.Model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_rules_scale_out_configuration_scaling_configuration_type),
+//												Threshold:                pulumi.Any(_var.Model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_rules_scale_out_configuration_threshold),
+//											},
+//											MetricType: pulumi.Any(_var.Model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_rules_metric_type),
+//										},
+//									},
+//								},
+//							},
+//							CoolDownInSeconds: pulumi.Any(_var.Model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_cool_down_in_seconds),
+//							InstanceCount:     pulumi.Any(_var.Model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_instance_count),
+//							IsEnabled:         pulumi.Any(_var.Model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_is_enabled),
 //						},
 //					},
 //					EnvironmentConfigurationDetails: &datascience.ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsArgs{
@@ -119,6 +151,8 @@ type ModelDeployment struct {
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) The model deployment configuration details.
 	ModelDeploymentConfigurationDetails ModelDeploymentModelDeploymentConfigurationDetailsOutput `pulumi:"modelDeploymentConfigurationDetails"`
+	// Model deployment system data.
+	ModelDeploymentSystemDatas ModelDeploymentModelDeploymentSystemDataArrayOutput `pulumi:"modelDeploymentSystemDatas"`
 	// The URL to interact with the model deployment.
 	ModelDeploymentUrl pulumi.StringOutput `pulumi:"modelDeploymentUrl"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model deployment.
@@ -189,6 +223,8 @@ type modelDeploymentState struct {
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// (Updatable) The model deployment configuration details.
 	ModelDeploymentConfigurationDetails *ModelDeploymentModelDeploymentConfigurationDetails `pulumi:"modelDeploymentConfigurationDetails"`
+	// Model deployment system data.
+	ModelDeploymentSystemDatas []ModelDeploymentModelDeploymentSystemData `pulumi:"modelDeploymentSystemDatas"`
 	// The URL to interact with the model deployment.
 	ModelDeploymentUrl *string `pulumi:"modelDeploymentUrl"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model deployment.
@@ -221,6 +257,8 @@ type ModelDeploymentState struct {
 	LifecycleDetails pulumi.StringPtrInput
 	// (Updatable) The model deployment configuration details.
 	ModelDeploymentConfigurationDetails ModelDeploymentModelDeploymentConfigurationDetailsPtrInput
+	// Model deployment system data.
+	ModelDeploymentSystemDatas ModelDeploymentModelDeploymentSystemDataArrayInput
 	// The URL to interact with the model deployment.
 	ModelDeploymentUrl pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model deployment.
@@ -419,6 +457,13 @@ func (o ModelDeploymentOutput) ModelDeploymentConfigurationDetails() ModelDeploy
 	return o.ApplyT(func(v *ModelDeployment) ModelDeploymentModelDeploymentConfigurationDetailsOutput {
 		return v.ModelDeploymentConfigurationDetails
 	}).(ModelDeploymentModelDeploymentConfigurationDetailsOutput)
+}
+
+// Model deployment system data.
+func (o ModelDeploymentOutput) ModelDeploymentSystemDatas() ModelDeploymentModelDeploymentSystemDataArrayOutput {
+	return o.ApplyT(func(v *ModelDeployment) ModelDeploymentModelDeploymentSystemDataArrayOutput {
+		return v.ModelDeploymentSystemDatas
+	}).(ModelDeploymentModelDeploymentSystemDataArrayOutput)
 }
 
 // The URL to interact with the model deployment.

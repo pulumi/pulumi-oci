@@ -20,7 +20,7 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationsResult {
      */
     private List<GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociation> autonomousContainerDatabaseDataguardAssociations;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous Database on Dedicated Exadata Infrastructure.
      * 
      */
     private String autonomousContainerDatabaseId;
@@ -40,7 +40,7 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationsResult {
         return this.autonomousContainerDatabaseDataguardAssociations;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous Database on Dedicated Exadata Infrastructure.
      * 
      */
     public String autonomousContainerDatabaseId() {

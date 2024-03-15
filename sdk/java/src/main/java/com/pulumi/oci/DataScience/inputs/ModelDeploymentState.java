@@ -7,8 +7,10 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.DataScience.inputs.ModelDeploymentCategoryLogDetailsArgs;
 import com.pulumi.oci.DataScience.inputs.ModelDeploymentModelDeploymentConfigurationDetailsArgs;
+import com.pulumi.oci.DataScience.inputs.ModelDeploymentModelDeploymentSystemDataArgs;
 import java.lang.Object;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -155,6 +157,21 @@ public final class ModelDeploymentState extends com.pulumi.resources.ResourceArg
     }
 
     /**
+     * Model deployment system data.
+     * 
+     */
+    @Import(name="modelDeploymentSystemDatas")
+    private @Nullable Output<List<ModelDeploymentModelDeploymentSystemDataArgs>> modelDeploymentSystemDatas;
+
+    /**
+     * @return Model deployment system data.
+     * 
+     */
+    public Optional<Output<List<ModelDeploymentModelDeploymentSystemDataArgs>>> modelDeploymentSystemDatas() {
+        return Optional.ofNullable(this.modelDeploymentSystemDatas);
+    }
+
+    /**
      * The URL to interact with the model deployment.
      * 
      */
@@ -232,6 +249,7 @@ public final class ModelDeploymentState extends com.pulumi.resources.ResourceArg
         this.freeformTags = $.freeformTags;
         this.lifecycleDetails = $.lifecycleDetails;
         this.modelDeploymentConfigurationDetails = $.modelDeploymentConfigurationDetails;
+        this.modelDeploymentSystemDatas = $.modelDeploymentSystemDatas;
         this.modelDeploymentUrl = $.modelDeploymentUrl;
         this.projectId = $.projectId;
         this.state = $.state;
@@ -443,6 +461,37 @@ public final class ModelDeploymentState extends com.pulumi.resources.ResourceArg
          */
         public Builder modelDeploymentConfigurationDetails(ModelDeploymentModelDeploymentConfigurationDetailsArgs modelDeploymentConfigurationDetails) {
             return modelDeploymentConfigurationDetails(Output.of(modelDeploymentConfigurationDetails));
+        }
+
+        /**
+         * @param modelDeploymentSystemDatas Model deployment system data.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder modelDeploymentSystemDatas(@Nullable Output<List<ModelDeploymentModelDeploymentSystemDataArgs>> modelDeploymentSystemDatas) {
+            $.modelDeploymentSystemDatas = modelDeploymentSystemDatas;
+            return this;
+        }
+
+        /**
+         * @param modelDeploymentSystemDatas Model deployment system data.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder modelDeploymentSystemDatas(List<ModelDeploymentModelDeploymentSystemDataArgs> modelDeploymentSystemDatas) {
+            return modelDeploymentSystemDatas(Output.of(modelDeploymentSystemDatas));
+        }
+
+        /**
+         * @param modelDeploymentSystemDatas Model deployment system data.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder modelDeploymentSystemDatas(ModelDeploymentModelDeploymentSystemDataArgs... modelDeploymentSystemDatas) {
+            return modelDeploymentSystemDatas(List.of(modelDeploymentSystemDatas));
         }
 
         /**

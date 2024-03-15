@@ -121,14 +121,14 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
     }
 
     /**
-     * The compute model of the Autonomous VM Cluster.
+     * The compute model of the Autonomous VM Cluster. ECPU compute model is the recommended model and OCPU compute model is legacy.
      * 
      */
     @Import(name="computeModel")
     private @Nullable Output<String> computeModel;
 
     /**
-     * @return The compute model of the Autonomous VM Cluster.
+     * @return The compute model of the Autonomous VM Cluster. ECPU compute model is the recommended model and OCPU compute model is legacy.
      * 
      */
     public Optional<Output<String>> computeModel() {
@@ -277,14 +277,14 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
     }
 
     /**
-     * The lowest value to which exadataStorage in TBs can be scaled down.
+     * The lowest value to which exadataStorage(in TBs) can be scaled down.
      * 
      */
     @Import(name="exadataStorageInTbsLowestScaledValue")
     private @Nullable Output<Double> exadataStorageInTbsLowestScaledValue;
 
     /**
-     * @return The lowest value to which exadataStorage in TBs can be scaled down.
+     * @return The lowest value to which exadataStorage(in TBs) can be scaled down.
      * 
      */
     public Optional<Output<Double>> exadataStorageInTbsLowestScaledValue() {
@@ -412,14 +412,14 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
     }
 
     /**
-     * The lowest value to which ACDs can be scaled down.
+     * The lowest value to which maximum number of ACDs can be scaled down.
      * 
      */
     @Import(name="maxAcdsLowestScaledValue")
     private @Nullable Output<Integer> maxAcdsLowestScaledValue;
 
     /**
-     * @return The lowest value to which ACDs can be scaled down.
+     * @return The lowest value to which maximum number of ACDs can be scaled down.
      * 
      */
     public Optional<Output<Integer>> maxAcdsLowestScaledValue() {
@@ -508,49 +508,77 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
         return Optional.ofNullable(this.ocpusEnabled);
     }
 
+    /**
+     * **Deprecated.** Use field totalContainerDatabases.
+     * 
+     */
     @Import(name="provisionableAutonomousContainerDatabases")
     private @Nullable Output<Integer> provisionableAutonomousContainerDatabases;
 
+    /**
+     * @return **Deprecated.** Use field totalContainerDatabases.
+     * 
+     */
     public Optional<Output<Integer>> provisionableAutonomousContainerDatabases() {
         return Optional.ofNullable(this.provisionableAutonomousContainerDatabases);
     }
 
+    /**
+     * The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster.
+     * 
+     */
     @Import(name="provisionedAutonomousContainerDatabases")
     private @Nullable Output<Integer> provisionedAutonomousContainerDatabases;
 
+    /**
+     * @return The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster.
+     * 
+     */
     public Optional<Output<Integer>> provisionedAutonomousContainerDatabases() {
         return Optional.ofNullable(this.provisionedAutonomousContainerDatabases);
     }
 
+    /**
+     * The number of CPUs provisioned in an Autonomous VM Cluster.
+     * 
+     */
     @Import(name="provisionedCpus")
     private @Nullable Output<Double> provisionedCpus;
 
+    /**
+     * @return The number of CPUs provisioned in an Autonomous VM Cluster.
+     * 
+     */
     public Optional<Output<Double>> provisionedCpus() {
         return Optional.ofNullable(this.provisionedCpus);
     }
 
     /**
-     * For Autonomous Databases on Dedicated Exadata Infrastructure:
-     * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-     * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
+     * CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
      * 
      */
     @Import(name="reclaimableCpus")
     private @Nullable Output<Integer> reclaimableCpus;
 
     /**
-     * @return For Autonomous Databases on Dedicated Exadata Infrastructure:
-     * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-     * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
+     * @return CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
      * 
      */
     public Optional<Output<Integer>> reclaimableCpus() {
         return Optional.ofNullable(this.reclaimableCpus);
     }
 
+    /**
+     * The number of CPUs reserved in an Autonomous VM Cluster.
+     * 
+     */
     @Import(name="reservedCpus")
     private @Nullable Output<Double> reservedCpus;
 
+    /**
+     * @return The number of CPUs reserved in an Autonomous VM Cluster.
+     * 
+     */
     public Optional<Output<Double>> reservedCpus() {
         return Optional.ofNullable(this.reservedCpus);
     }
@@ -912,7 +940,7 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param computeModel The compute model of the Autonomous VM Cluster.
+         * @param computeModel The compute model of the Autonomous VM Cluster. ECPU compute model is the recommended model and OCPU compute model is legacy.
          * 
          * @return builder
          * 
@@ -923,7 +951,7 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param computeModel The compute model of the Autonomous VM Cluster.
+         * @param computeModel The compute model of the Autonomous VM Cluster. ECPU compute model is the recommended model and OCPU compute model is legacy.
          * 
          * @return builder
          * 
@@ -1138,7 +1166,7 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param exadataStorageInTbsLowestScaledValue The lowest value to which exadataStorage in TBs can be scaled down.
+         * @param exadataStorageInTbsLowestScaledValue The lowest value to which exadataStorage(in TBs) can be scaled down.
          * 
          * @return builder
          * 
@@ -1149,7 +1177,7 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param exadataStorageInTbsLowestScaledValue The lowest value to which exadataStorage in TBs can be scaled down.
+         * @param exadataStorageInTbsLowestScaledValue The lowest value to which exadataStorage(in TBs) can be scaled down.
          * 
          * @return builder
          * 
@@ -1347,7 +1375,7 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param maxAcdsLowestScaledValue The lowest value to which ACDs can be scaled down.
+         * @param maxAcdsLowestScaledValue The lowest value to which maximum number of ACDs can be scaled down.
          * 
          * @return builder
          * 
@@ -1358,7 +1386,7 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param maxAcdsLowestScaledValue The lowest value to which ACDs can be scaled down.
+         * @param maxAcdsLowestScaledValue The lowest value to which maximum number of ACDs can be scaled down.
          * 
          * @return builder
          * 
@@ -1481,37 +1509,71 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
             return ocpusEnabled(Output.of(ocpusEnabled));
         }
 
+        /**
+         * @param provisionableAutonomousContainerDatabases **Deprecated.** Use field totalContainerDatabases.
+         * 
+         * @return builder
+         * 
+         */
         public Builder provisionableAutonomousContainerDatabases(@Nullable Output<Integer> provisionableAutonomousContainerDatabases) {
             $.provisionableAutonomousContainerDatabases = provisionableAutonomousContainerDatabases;
             return this;
         }
 
+        /**
+         * @param provisionableAutonomousContainerDatabases **Deprecated.** Use field totalContainerDatabases.
+         * 
+         * @return builder
+         * 
+         */
         public Builder provisionableAutonomousContainerDatabases(Integer provisionableAutonomousContainerDatabases) {
             return provisionableAutonomousContainerDatabases(Output.of(provisionableAutonomousContainerDatabases));
         }
 
+        /**
+         * @param provisionedAutonomousContainerDatabases The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster.
+         * 
+         * @return builder
+         * 
+         */
         public Builder provisionedAutonomousContainerDatabases(@Nullable Output<Integer> provisionedAutonomousContainerDatabases) {
             $.provisionedAutonomousContainerDatabases = provisionedAutonomousContainerDatabases;
             return this;
         }
 
+        /**
+         * @param provisionedAutonomousContainerDatabases The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster.
+         * 
+         * @return builder
+         * 
+         */
         public Builder provisionedAutonomousContainerDatabases(Integer provisionedAutonomousContainerDatabases) {
             return provisionedAutonomousContainerDatabases(Output.of(provisionedAutonomousContainerDatabases));
         }
 
+        /**
+         * @param provisionedCpus The number of CPUs provisioned in an Autonomous VM Cluster.
+         * 
+         * @return builder
+         * 
+         */
         public Builder provisionedCpus(@Nullable Output<Double> provisionedCpus) {
             $.provisionedCpus = provisionedCpus;
             return this;
         }
 
+        /**
+         * @param provisionedCpus The number of CPUs provisioned in an Autonomous VM Cluster.
+         * 
+         * @return builder
+         * 
+         */
         public Builder provisionedCpus(Double provisionedCpus) {
             return provisionedCpus(Output.of(provisionedCpus));
         }
 
         /**
-         * @param reclaimableCpus For Autonomous Databases on Dedicated Exadata Infrastructure:
-         * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-         * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
+         * @param reclaimableCpus CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
          * 
          * @return builder
          * 
@@ -1522,9 +1584,7 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param reclaimableCpus For Autonomous Databases on Dedicated Exadata Infrastructure:
-         * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-         * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
+         * @param reclaimableCpus CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
          * 
          * @return builder
          * 
@@ -1533,11 +1593,23 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
             return reclaimableCpus(Output.of(reclaimableCpus));
         }
 
+        /**
+         * @param reservedCpus The number of CPUs reserved in an Autonomous VM Cluster.
+         * 
+         * @return builder
+         * 
+         */
         public Builder reservedCpus(@Nullable Output<Double> reservedCpus) {
             $.reservedCpus = reservedCpus;
             return this;
         }
 
+        /**
+         * @param reservedCpus The number of CPUs reserved in an Autonomous VM Cluster.
+         * 
+         * @return builder
+         * 
+         */
         public Builder reservedCpus(Double reservedCpus) {
             return reservedCpus(Output.of(reservedCpus));
         }

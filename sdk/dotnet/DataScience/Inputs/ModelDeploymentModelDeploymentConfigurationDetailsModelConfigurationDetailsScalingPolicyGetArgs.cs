@@ -12,11 +12,35 @@ namespace Pulumi.Oci.DataScience.Inputs
 
     public sealed class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyGetArgs : global::Pulumi.ResourceArgs
     {
+        [Input("autoScalingPolicies")]
+        private InputList<Inputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyGetArgs>? _autoScalingPolicies;
+
+        /// <summary>
+        /// (Updatable) The list of autoscaling policy details.
+        /// </summary>
+        public InputList<Inputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyGetArgs> AutoScalingPolicies
+        {
+            get => _autoScalingPolicies ?? (_autoScalingPolicies = new InputList<Inputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyGetArgs>());
+            set => _autoScalingPolicies = value;
+        }
+
+        /// <summary>
+        /// (Updatable) For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 600 seconds, which is also the default. The cooldown period starts when the model deployment becomes ACTIVE after the scaling operation.
+        /// </summary>
+        [Input("coolDownInSeconds")]
+        public Input<int>? CoolDownInSeconds { get; set; }
+
         /// <summary>
         /// (Updatable) The number of instances for the model deployment.
         /// </summary>
-        [Input("instanceCount", required: true)]
-        public Input<int> InstanceCount { get; set; } = null!;
+        [Input("instanceCount")]
+        public Input<int>? InstanceCount { get; set; }
+
+        /// <summary>
+        /// (Updatable) Whether the autoscaling policy is enabled.
+        /// </summary>
+        [Input("isEnabled")]
+        public Input<bool>? IsEnabled { get; set; }
 
         /// <summary>
         /// (Updatable) The type of scaling policy.

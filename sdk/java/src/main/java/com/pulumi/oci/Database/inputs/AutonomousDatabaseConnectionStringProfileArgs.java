@@ -61,9 +61,17 @@ public final class AutonomousDatabaseConnectionStringProfileArgs extends com.pul
         return Optional.ofNullable(this.hostFormat);
     }
 
+    /**
+     * True for a regional connection string, applicable to cross-region DG only.
+     * 
+     */
     @Import(name="isRegional")
     private @Nullable Output<Boolean> isRegional;
 
+    /**
+     * @return True for a regional connection string, applicable to cross-region DG only.
+     * 
+     */
     public Optional<Output<Boolean>> isRegional() {
         return Optional.ofNullable(this.isRegional);
     }
@@ -99,14 +107,14 @@ public final class AutonomousDatabaseConnectionStringProfileArgs extends com.pul
     }
 
     /**
-     * Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous Databases on shared Exadata infrastructure always use the long format.
+     * Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous Database Serverless instances always use the long format.
      * 
      */
     @Import(name="syntaxFormat")
     private @Nullable Output<String> syntaxFormat;
 
     /**
-     * @return Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous Databases on shared Exadata infrastructure always use the long format.
+     * @return Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous Database Serverless instances always use the long format.
      * 
      */
     public Optional<Output<String>> syntaxFormat() {
@@ -238,11 +246,23 @@ public final class AutonomousDatabaseConnectionStringProfileArgs extends com.pul
             return hostFormat(Output.of(hostFormat));
         }
 
+        /**
+         * @param isRegional True for a regional connection string, applicable to cross-region DG only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder isRegional(@Nullable Output<Boolean> isRegional) {
             $.isRegional = isRegional;
             return this;
         }
 
+        /**
+         * @param isRegional True for a regional connection string, applicable to cross-region DG only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder isRegional(Boolean isRegional) {
             return isRegional(Output.of(isRegional));
         }
@@ -290,7 +310,7 @@ public final class AutonomousDatabaseConnectionStringProfileArgs extends com.pul
         }
 
         /**
-         * @param syntaxFormat Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous Databases on shared Exadata infrastructure always use the long format.
+         * @param syntaxFormat Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous Database Serverless instances always use the long format.
          * 
          * @return builder
          * 
@@ -301,7 +321,7 @@ public final class AutonomousDatabaseConnectionStringProfileArgs extends com.pul
         }
 
         /**
-         * @param syntaxFormat Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous Databases on shared Exadata infrastructure always use the long format.
+         * @param syntaxFormat Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous Database Serverless instances always use the long format.
          * 
          * @return builder
          * 

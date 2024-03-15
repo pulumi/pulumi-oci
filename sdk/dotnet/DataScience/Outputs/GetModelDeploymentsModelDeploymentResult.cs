@@ -54,6 +54,10 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailResult> ModelDeploymentConfigurationDetails;
         /// <summary>
+        /// Model deployment system data.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetModelDeploymentsModelDeploymentModelDeploymentSystemDataResult> ModelDeploymentSystemDatas;
+        /// <summary>
         /// The URL to interact with the model deployment.
         /// </summary>
         public readonly string ModelDeploymentUrl;
@@ -92,6 +96,8 @@ namespace Pulumi.Oci.DataScience.Outputs
 
             ImmutableArray<Outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailResult> modelDeploymentConfigurationDetails,
 
+            ImmutableArray<Outputs.GetModelDeploymentsModelDeploymentModelDeploymentSystemDataResult> modelDeploymentSystemDatas,
+
             string modelDeploymentUrl,
 
             string projectId,
@@ -110,6 +116,7 @@ namespace Pulumi.Oci.DataScience.Outputs
             Id = id;
             LifecycleDetails = lifecycleDetails;
             ModelDeploymentConfigurationDetails = modelDeploymentConfigurationDetails;
+            ModelDeploymentSystemDatas = modelDeploymentSystemDatas;
             ModelDeploymentUrl = modelDeploymentUrl;
             ProjectId = projectId;
             State = state;

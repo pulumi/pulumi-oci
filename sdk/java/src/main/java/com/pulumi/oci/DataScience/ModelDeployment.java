@@ -11,9 +11,11 @@ import com.pulumi.oci.DataScience.ModelDeploymentArgs;
 import com.pulumi.oci.DataScience.inputs.ModelDeploymentState;
 import com.pulumi.oci.DataScience.outputs.ModelDeploymentCategoryLogDetails;
 import com.pulumi.oci.DataScience.outputs.ModelDeploymentModelDeploymentConfigurationDetails;
+import com.pulumi.oci.DataScience.outputs.ModelDeploymentModelDeploymentSystemData;
 import com.pulumi.oci.Utilities;
 import java.lang.Object;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import javax.annotation.Nullable;
 
@@ -63,15 +65,43 @@ import javax.annotation.Nullable;
  *                     .instanceConfiguration(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs.builder()
  *                         .instanceShapeName(oci_core_shape.test_shape().name())
  *                         .modelDeploymentInstanceShapeConfigDetails(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs.builder()
+ *                             .cpuBaseline(var_.model_deployment_model_deployment_configuration_details_model_configuration_details_instance_configuration_model_deployment_instance_shape_config_details_cpu_baseline())
  *                             .memoryInGbs(var_.model_deployment_model_deployment_configuration_details_model_configuration_details_instance_configuration_model_deployment_instance_shape_config_details_memory_in_gbs())
  *                             .ocpus(var_.model_deployment_model_deployment_configuration_details_model_configuration_details_instance_configuration_model_deployment_instance_shape_config_details_ocpus())
  *                             .build())
  *                         .build())
  *                     .modelId(oci_datascience_model.test_model().id())
  *                     .bandwidthMbps(var_.model_deployment_model_deployment_configuration_details_model_configuration_details_bandwidth_mbps())
+ *                     .maximumBandwidthMbps(var_.model_deployment_model_deployment_configuration_details_model_configuration_details_maximum_bandwidth_mbps())
  *                     .scalingPolicy(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyArgs.builder()
- *                         .instanceCount(var_.model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_instance_count())
  *                         .policyType(var_.model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_policy_type())
+ *                         .autoScalingPolicies(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyArgs.builder()
+ *                             .autoScalingPolicyType(var_.model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_auto_scaling_policy_type())
+ *                             .initialInstanceCount(var_.model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_initial_instance_count())
+ *                             .maximumInstanceCount(var_.model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_maximum_instance_count())
+ *                             .minimumInstanceCount(var_.model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_minimum_instance_count())
+ *                             .rules(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArgs.builder()
+ *                                 .metricExpressionRuleType(var_.model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_rules_metric_expression_rule_type())
+ *                                 .scaleInConfiguration(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgs.builder()
+ *                                     .instanceCountAdjustment(var_.model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_rules_scale_in_configuration_instance_count_adjustment())
+ *                                     .pendingDuration(var_.model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_rules_scale_in_configuration_pending_duration())
+ *                                     .query(var_.model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_rules_scale_in_configuration_query())
+ *                                     .scalingConfigurationType(var_.model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_rules_scale_in_configuration_scaling_configuration_type())
+ *                                     .threshold(var_.model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_rules_scale_in_configuration_threshold())
+ *                                     .build())
+ *                                 .scaleOutConfiguration(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgs.builder()
+ *                                     .instanceCountAdjustment(var_.model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_rules_scale_out_configuration_instance_count_adjustment())
+ *                                     .pendingDuration(var_.model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_rules_scale_out_configuration_pending_duration())
+ *                                     .query(var_.model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_rules_scale_out_configuration_query())
+ *                                     .scalingConfigurationType(var_.model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_rules_scale_out_configuration_scaling_configuration_type())
+ *                                     .threshold(var_.model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_rules_scale_out_configuration_threshold())
+ *                                     .build())
+ *                                 .metricType(var_.model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_auto_scaling_policies_rules_metric_type())
+ *                                 .build())
+ *                             .build())
+ *                         .coolDownInSeconds(var_.model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_cool_down_in_seconds())
+ *                         .instanceCount(var_.model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_instance_count())
+ *                         .isEnabled(var_.model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_is_enabled())
  *                         .build())
  *                     .build())
  *                 .environmentConfigurationDetails(ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsArgs.builder()
@@ -243,6 +273,20 @@ public class ModelDeployment extends com.pulumi.resources.CustomResource {
      */
     public Output<ModelDeploymentModelDeploymentConfigurationDetails> modelDeploymentConfigurationDetails() {
         return this.modelDeploymentConfigurationDetails;
+    }
+    /**
+     * Model deployment system data.
+     * 
+     */
+    @Export(name="modelDeploymentSystemDatas", refs={List.class,ModelDeploymentModelDeploymentSystemData.class}, tree="[0,1]")
+    private Output<List<ModelDeploymentModelDeploymentSystemData>> modelDeploymentSystemDatas;
+
+    /**
+     * @return Model deployment system data.
+     * 
+     */
+    public Output<List<ModelDeploymentModelDeploymentSystemData>> modelDeploymentSystemDatas() {
+        return this.modelDeploymentSystemDatas;
     }
     /**
      * The URL to interact with the model deployment.

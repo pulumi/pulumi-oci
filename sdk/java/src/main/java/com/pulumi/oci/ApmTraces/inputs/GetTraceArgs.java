@@ -8,6 +8,8 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class GetTraceArgs extends com.pulumi.resources.InvokeArgs {
@@ -15,18 +17,48 @@ public final class GetTraceArgs extends com.pulumi.resources.InvokeArgs {
     public static final GetTraceArgs Empty = new GetTraceArgs();
 
     /**
-     * The APM Domain ID the request is intended for.
+     * The APM Domain ID for the intended request.
      * 
      */
     @Import(name="apmDomainId", required=true)
     private Output<String> apmDomainId;
 
     /**
-     * @return The APM Domain ID the request is intended for.
+     * @return The APM Domain ID for the intended request.
      * 
      */
     public Output<String> apmDomainId() {
         return this.apmDomainId;
+    }
+
+    /**
+     * Include traces that have a `minTraceStartTime` equal to or greater than this value.
+     * 
+     */
+    @Import(name="timeTraceStartedGreaterThanOrEqualTo")
+    private @Nullable Output<String> timeTraceStartedGreaterThanOrEqualTo;
+
+    /**
+     * @return Include traces that have a `minTraceStartTime` equal to or greater than this value.
+     * 
+     */
+    public Optional<Output<String>> timeTraceStartedGreaterThanOrEqualTo() {
+        return Optional.ofNullable(this.timeTraceStartedGreaterThanOrEqualTo);
+    }
+
+    /**
+     * Include traces that have a `minTraceStartTime` less than this value.
+     * 
+     */
+    @Import(name="timeTraceStartedLessThan")
+    private @Nullable Output<String> timeTraceStartedLessThan;
+
+    /**
+     * @return Include traces that have a `minTraceStartTime` less than this value.
+     * 
+     */
+    public Optional<Output<String>> timeTraceStartedLessThan() {
+        return Optional.ofNullable(this.timeTraceStartedLessThan);
     }
 
     /**
@@ -44,11 +76,29 @@ public final class GetTraceArgs extends com.pulumi.resources.InvokeArgs {
         return this.traceKey;
     }
 
+    /**
+     * Name space from which the trace details need to be retrieved.
+     * 
+     */
+    @Import(name="traceNamespace")
+    private @Nullable Output<String> traceNamespace;
+
+    /**
+     * @return Name space from which the trace details need to be retrieved.
+     * 
+     */
+    public Optional<Output<String>> traceNamespace() {
+        return Optional.ofNullable(this.traceNamespace);
+    }
+
     private GetTraceArgs() {}
 
     private GetTraceArgs(GetTraceArgs $) {
         this.apmDomainId = $.apmDomainId;
+        this.timeTraceStartedGreaterThanOrEqualTo = $.timeTraceStartedGreaterThanOrEqualTo;
+        this.timeTraceStartedLessThan = $.timeTraceStartedLessThan;
         this.traceKey = $.traceKey;
+        this.traceNamespace = $.traceNamespace;
     }
 
     public static Builder builder() {
@@ -70,7 +120,7 @@ public final class GetTraceArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param apmDomainId The APM Domain ID the request is intended for.
+         * @param apmDomainId The APM Domain ID for the intended request.
          * 
          * @return builder
          * 
@@ -81,13 +131,55 @@ public final class GetTraceArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param apmDomainId The APM Domain ID the request is intended for.
+         * @param apmDomainId The APM Domain ID for the intended request.
          * 
          * @return builder
          * 
          */
         public Builder apmDomainId(String apmDomainId) {
             return apmDomainId(Output.of(apmDomainId));
+        }
+
+        /**
+         * @param timeTraceStartedGreaterThanOrEqualTo Include traces that have a `minTraceStartTime` equal to or greater than this value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeTraceStartedGreaterThanOrEqualTo(@Nullable Output<String> timeTraceStartedGreaterThanOrEqualTo) {
+            $.timeTraceStartedGreaterThanOrEqualTo = timeTraceStartedGreaterThanOrEqualTo;
+            return this;
+        }
+
+        /**
+         * @param timeTraceStartedGreaterThanOrEqualTo Include traces that have a `minTraceStartTime` equal to or greater than this value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeTraceStartedGreaterThanOrEqualTo(String timeTraceStartedGreaterThanOrEqualTo) {
+            return timeTraceStartedGreaterThanOrEqualTo(Output.of(timeTraceStartedGreaterThanOrEqualTo));
+        }
+
+        /**
+         * @param timeTraceStartedLessThan Include traces that have a `minTraceStartTime` less than this value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeTraceStartedLessThan(@Nullable Output<String> timeTraceStartedLessThan) {
+            $.timeTraceStartedLessThan = timeTraceStartedLessThan;
+            return this;
+        }
+
+        /**
+         * @param timeTraceStartedLessThan Include traces that have a `minTraceStartTime` less than this value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeTraceStartedLessThan(String timeTraceStartedLessThan) {
+            return timeTraceStartedLessThan(Output.of(timeTraceStartedLessThan));
         }
 
         /**
@@ -109,6 +201,27 @@ public final class GetTraceArgs extends com.pulumi.resources.InvokeArgs {
          */
         public Builder traceKey(String traceKey) {
             return traceKey(Output.of(traceKey));
+        }
+
+        /**
+         * @param traceNamespace Name space from which the trace details need to be retrieved.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder traceNamespace(@Nullable Output<String> traceNamespace) {
+            $.traceNamespace = traceNamespace;
+            return this;
+        }
+
+        /**
+         * @param traceNamespace Name space from which the trace details need to be retrieved.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder traceNamespace(String traceNamespace) {
+            return traceNamespace(Output.of(traceNamespace));
         }
 
         public GetTraceArgs build() {

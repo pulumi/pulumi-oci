@@ -1636,6 +1636,7 @@
         "integration/getIntegrationInstances.ts",
         "integration/index.ts",
         "integration/integrationInstance.ts",
+        "integration/privateEndpointOutboundConnection.ts",
         "jms/fleet.ts",
         "jms/getAnnouncements.ts",
         "jms/getFleet.ts",

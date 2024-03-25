@@ -39,7 +39,7 @@ export function getQueryQuickPicks(args: GetQueryQuickPicksArgs, opts?: pulumi.I
  */
 export interface GetQueryQuickPicksArgs {
     /**
-     * The APM Domain ID the request is intended for.
+     * The APM Domain ID for the intended request.
      */
     apmDomainId: string;
     filters?: inputs.ApmTraces.GetQueryQuickPicksFilter[];
@@ -88,7 +88,7 @@ export function getQueryQuickPicksOutput(args: GetQueryQuickPicksOutputArgs, opt
  */
 export interface GetQueryQuickPicksOutputArgs {
     /**
-     * The APM Domain ID the request is intended for.
+     * The APM Domain ID for the intended request.
      */
     apmDomainId: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.ApmTraces.GetQueryQuickPicksFilterArgs>[]>;

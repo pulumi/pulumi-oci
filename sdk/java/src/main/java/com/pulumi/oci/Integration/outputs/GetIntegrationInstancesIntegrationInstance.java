@@ -10,6 +10,7 @@ import com.pulumi.oci.Integration.outputs.GetIntegrationInstancesIntegrationInst
 import com.pulumi.oci.Integration.outputs.GetIntegrationInstancesIntegrationInstanceCustomEndpoint;
 import com.pulumi.oci.Integration.outputs.GetIntegrationInstancesIntegrationInstanceIdcsInfo;
 import com.pulumi.oci.Integration.outputs.GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetail;
+import com.pulumi.oci.Integration.outputs.GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnection;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.Object;
@@ -109,7 +110,13 @@ public final class GetIntegrationInstancesIntegrationInstance {
      */
     private List<GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetail> networkEndpointDetails;
     /**
+     * @return Base representation for Outbound Connection (Reverse Connection).
+     * 
+     */
+    private List<GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnection> privateEndpointOutboundConnections;
+    /**
      * @return Shape
+     * &gt; &gt; &gt; &gt; &gt; &gt; &gt; c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
      * 
      */
     private String shape;
@@ -264,7 +271,15 @@ public final class GetIntegrationInstancesIntegrationInstance {
         return this.networkEndpointDetails;
     }
     /**
+     * @return Base representation for Outbound Connection (Reverse Connection).
+     * 
+     */
+    public List<GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnection> privateEndpointOutboundConnections() {
+        return this.privateEndpointOutboundConnections;
+    }
+    /**
      * @return Shape
+     * &gt; &gt; &gt; &gt; &gt; &gt; &gt; c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
      * 
      */
     public String shape() {
@@ -328,6 +343,7 @@ public final class GetIntegrationInstancesIntegrationInstance {
         private Boolean isVisualBuilderEnabled;
         private Integer messagePacks;
         private List<GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetail> networkEndpointDetails;
+        private List<GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnection> privateEndpointOutboundConnections;
         private String shape;
         private String state;
         private String stateMessage;
@@ -356,6 +372,7 @@ public final class GetIntegrationInstancesIntegrationInstance {
     	      this.isVisualBuilderEnabled = defaults.isVisualBuilderEnabled;
     	      this.messagePacks = defaults.messagePacks;
     	      this.networkEndpointDetails = defaults.networkEndpointDetails;
+    	      this.privateEndpointOutboundConnections = defaults.privateEndpointOutboundConnections;
     	      this.shape = defaults.shape;
     	      this.state = defaults.state;
     	      this.stateMessage = defaults.stateMessage;
@@ -539,6 +556,17 @@ public final class GetIntegrationInstancesIntegrationInstance {
             return networkEndpointDetails(List.of(networkEndpointDetails));
         }
         @CustomType.Setter
+        public Builder privateEndpointOutboundConnections(List<GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnection> privateEndpointOutboundConnections) {
+            if (privateEndpointOutboundConnections == null) {
+              throw new MissingRequiredPropertyException("GetIntegrationInstancesIntegrationInstance", "privateEndpointOutboundConnections");
+            }
+            this.privateEndpointOutboundConnections = privateEndpointOutboundConnections;
+            return this;
+        }
+        public Builder privateEndpointOutboundConnections(GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnection... privateEndpointOutboundConnections) {
+            return privateEndpointOutboundConnections(List.of(privateEndpointOutboundConnections));
+        }
+        @CustomType.Setter
         public Builder shape(String shape) {
             if (shape == null) {
               throw new MissingRequiredPropertyException("GetIntegrationInstancesIntegrationInstance", "shape");
@@ -600,6 +628,7 @@ public final class GetIntegrationInstancesIntegrationInstance {
             _resultValue.isVisualBuilderEnabled = isVisualBuilderEnabled;
             _resultValue.messagePacks = messagePacks;
             _resultValue.networkEndpointDetails = networkEndpointDetails;
+            _resultValue.privateEndpointOutboundConnections = privateEndpointOutboundConnections;
             _resultValue.shape = shape;
             _resultValue.state = state;
             _resultValue.stateMessage = stateMessage;

@@ -128,6 +128,7 @@ export class IntegrationInstance extends pulumi.CustomResource {
     public readonly domainId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
+     * ||||||| parent of c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
      */
     public readonly enableProcessAutomationTrigger!: pulumi.Output<number | undefined>;
     /**
@@ -171,7 +172,12 @@ export class IntegrationInstance extends pulumi.CustomResource {
      */
     public readonly networkEndpointDetails!: pulumi.Output<outputs.Integration.IntegrationInstanceNetworkEndpointDetails>;
     /**
+     * Base representation for Outbound Connection (Reverse Connection).
+     */
+    public /*out*/ readonly privateEndpointOutboundConnections!: pulumi.Output<outputs.Integration.IntegrationInstancePrivateEndpointOutboundConnection[]>;
+    /**
      * Shape
+     * >>>>>>> c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
      */
     public readonly shape!: pulumi.Output<string>;
     /**
@@ -227,6 +233,7 @@ export class IntegrationInstance extends pulumi.CustomResource {
             resourceInputs["isVisualBuilderEnabled"] = state ? state.isVisualBuilderEnabled : undefined;
             resourceInputs["messagePacks"] = state ? state.messagePacks : undefined;
             resourceInputs["networkEndpointDetails"] = state ? state.networkEndpointDetails : undefined;
+            resourceInputs["privateEndpointOutboundConnections"] = state ? state.privateEndpointOutboundConnections : undefined;
             resourceInputs["shape"] = state ? state.shape : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["stateMessage"] = state ? state.stateMessage : undefined;
@@ -270,6 +277,7 @@ export class IntegrationInstance extends pulumi.CustomResource {
             resourceInputs["attachments"] = undefined /*out*/;
             resourceInputs["idcsInfos"] = undefined /*out*/;
             resourceInputs["instanceUrl"] = undefined /*out*/;
+            resourceInputs["privateEndpointOutboundConnections"] = undefined /*out*/;
             resourceInputs["stateMessage"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
@@ -319,6 +327,7 @@ export interface IntegrationInstanceState {
     domainId?: pulumi.Input<string>;
     /**
      * (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
+     * ||||||| parent of c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
      */
     enableProcessAutomationTrigger?: pulumi.Input<number>;
     /**
@@ -362,7 +371,12 @@ export interface IntegrationInstanceState {
      */
     networkEndpointDetails?: pulumi.Input<inputs.Integration.IntegrationInstanceNetworkEndpointDetails>;
     /**
+     * Base representation for Outbound Connection (Reverse Connection).
+     */
+    privateEndpointOutboundConnections?: pulumi.Input<pulumi.Input<inputs.Integration.IntegrationInstancePrivateEndpointOutboundConnection>[]>;
+    /**
      * Shape
+     * >>>>>>> c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
      */
     shape?: pulumi.Input<string>;
     /**
@@ -421,6 +435,7 @@ export interface IntegrationInstanceArgs {
     domainId?: pulumi.Input<string>;
     /**
      * (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
+     * ||||||| parent of c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
      */
     enableProcessAutomationTrigger?: pulumi.Input<number>;
     /**
@@ -457,6 +472,7 @@ export interface IntegrationInstanceArgs {
     networkEndpointDetails?: pulumi.Input<inputs.Integration.IntegrationInstanceNetworkEndpointDetails>;
     /**
      * Shape
+     * >>>>>>> c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
      */
     shape?: pulumi.Input<string>;
     /**

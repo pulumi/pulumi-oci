@@ -189,6 +189,7 @@ class GetTraceSpanResult(dict):
                  operation_name: str,
                  parent_span_key: str,
                  service_name: str,
+                 source_name: str,
                  tags: Sequence['outputs.GetTraceSpanTagResult'],
                  time_ended: str,
                  time_started: str,
@@ -202,6 +203,7 @@ class GetTraceSpanResult(dict):
         :param str operation_name: Span name associated with the trace.  This is usually the method or URI of the request.
         :param str parent_span_key: Unique parent identifier for the span if one exists. For root spans this will be null.
         :param str service_name: Service name associated with the span.
+        :param str source_name: Source of span (spans, syn_spans).
         :param Sequence['GetTraceSpanTagArgs'] tags: List of tags associated with the span.
         :param str time_ended: Span end time.  Timestamp when the span was completed.
         :param str time_started: Span start time.  Timestamp when the span was started.
@@ -215,6 +217,7 @@ class GetTraceSpanResult(dict):
         pulumi.set(__self__, "operation_name", operation_name)
         pulumi.set(__self__, "parent_span_key", parent_span_key)
         pulumi.set(__self__, "service_name", service_name)
+        pulumi.set(__self__, "source_name", source_name)
         pulumi.set(__self__, "tags", tags)
         pulumi.set(__self__, "time_ended", time_ended)
         pulumi.set(__self__, "time_started", time_started)
@@ -285,6 +288,14 @@ class GetTraceSpanResult(dict):
         return pulumi.get(self, "service_name")
 
     @property
+    @pulumi.getter(name="sourceName")
+    def source_name(self) -> str:
+        """
+        Source of span (spans, syn_spans).
+        """
+        return pulumi.get(self, "source_name")
+
+    @property
     @pulumi.getter
     def tags(self) -> Sequence['outputs.GetTraceSpanTagResult']:
         """
@@ -320,14 +331,25 @@ class GetTraceSpanResult(dict):
 @pulumi.output_type
 class GetTraceSpanLogResult(dict):
     def __init__(__self__, *,
+                 event_name: str,
                  span_logs: Sequence['outputs.GetTraceSpanLogSpanLogResult'],
                  time_created: str):
         """
+        :param str event_name: Name of the event for which the log is created.
         :param Sequence['GetTraceSpanLogSpanLogArgs'] span_logs: List of logs associated with the span at the given timestamp.
         :param str time_created: Timestamp at which the log is created.
         """
+        pulumi.set(__self__, "event_name", event_name)
         pulumi.set(__self__, "span_logs", span_logs)
         pulumi.set(__self__, "time_created", time_created)
+
+    @property
+    @pulumi.getter(name="eventName")
+    def event_name(self) -> str:
+        """
+        Name of the event for which the log is created.
+        """
+        return pulumi.get(self, "event_name")
 
     @property
     @pulumi.getter(name="spanLogs")

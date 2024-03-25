@@ -38,6 +38,7 @@ namespace Pulumi.Oci.Integration.Inputs
 
         /// <summary>
         /// The Integration service's VCN is allow-listed to allow integrations to call back into other integrations
+        /// &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
         /// </summary>
         [Input("isIntegrationVcnAllowlisted")]
         public Input<bool>? IsIntegrationVcnAllowlisted { get; set; }

@@ -23,6 +23,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 	switch typ {
 	case "oci:Integration/integrationInstance:IntegrationInstance":
 		r = &IntegrationInstance{}
+	case "oci:Integration/privateEndpointOutboundConnection:PrivateEndpointOutboundConnection":
+		r = &PrivateEndpointOutboundConnection{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -39,6 +41,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"Integration/integrationInstance",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Integration/privateEndpointOutboundConnection",
 		&module{version},
 	)
 }

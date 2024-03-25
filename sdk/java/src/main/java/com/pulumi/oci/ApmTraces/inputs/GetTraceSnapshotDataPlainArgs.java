@@ -17,14 +17,14 @@ public final class GetTraceSnapshotDataPlainArgs extends com.pulumi.resources.In
     public static final GetTraceSnapshotDataPlainArgs Empty = new GetTraceSnapshotDataPlainArgs();
 
     /**
-     * The APM Domain ID the request is intended for.
+     * The APM Domain ID for the intended request.
      * 
      */
     @Import(name="apmDomainId", required=true)
     private String apmDomainId;
 
     /**
-     * @return The APM Domain ID the request is intended for.
+     * @return The APM Domain ID for the intended request.
      * 
      */
     public String apmDomainId() {
@@ -32,14 +32,14 @@ public final class GetTraceSnapshotDataPlainArgs extends com.pulumi.resources.In
     }
 
     /**
-     * If enabled, then only span level details will be sent.
+     * If enabled, only span level details are sent.
      * 
      */
     @Import(name="isSummarized")
     private @Nullable Boolean isSummarized;
 
     /**
-     * @return If enabled, then only span level details will be sent.
+     * @return If enabled, only span level details are sent.
      * 
      */
     public Optional<Boolean> isSummarized() {
@@ -62,14 +62,14 @@ public final class GetTraceSnapshotDataPlainArgs extends com.pulumi.resources.In
     }
 
     /**
-     * Thread id for which snapshots needs to be retrieved. This is an identifier of a thread, and is a positive long number generated when when a thread is created.
+     * Thread ID for which snapshots need to be retrieved. This identifier of a thread is a long positive number generated when a thread is created.
      * 
      */
     @Import(name="threadId")
     private @Nullable String threadId;
 
     /**
-     * @return Thread id for which snapshots needs to be retrieved. This is an identifier of a thread, and is a positive long number generated when when a thread is created.
+     * @return Thread ID for which snapshots need to be retrieved. This identifier of a thread is a long positive number generated when a thread is created.
      * 
      */
     public Optional<String> threadId() {
@@ -120,7 +120,7 @@ public final class GetTraceSnapshotDataPlainArgs extends com.pulumi.resources.In
         }
 
         /**
-         * @param apmDomainId The APM Domain ID the request is intended for.
+         * @param apmDomainId The APM Domain ID for the intended request.
          * 
          * @return builder
          * 
@@ -131,7 +131,7 @@ public final class GetTraceSnapshotDataPlainArgs extends com.pulumi.resources.In
         }
 
         /**
-         * @param isSummarized If enabled, then only span level details will be sent.
+         * @param isSummarized If enabled, only span level details are sent.
          * 
          * @return builder
          * 
@@ -153,7 +153,7 @@ public final class GetTraceSnapshotDataPlainArgs extends com.pulumi.resources.In
         }
 
         /**
-         * @param threadId Thread id for which snapshots needs to be retrieved. This is an identifier of a thread, and is a positive long number generated when when a thread is created.
+         * @param threadId Thread ID for which snapshots need to be retrieved. This identifier of a thread is a long positive number generated when a thread is created.
          * 
          * @return builder
          * 

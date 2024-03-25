@@ -85,7 +85,12 @@ namespace Pulumi.Oci.Integration.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailResult> NetworkEndpointDetails;
         /// <summary>
+        /// Base representation for Outbound Connection (Reverse Connection).
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionResult> PrivateEndpointOutboundConnections;
+        /// <summary>
         /// Shape
+        /// &gt;&gt;&gt;&gt;&gt;&gt;&gt; c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
         /// </summary>
         public readonly string Shape;
         /// <summary>
@@ -147,6 +152,8 @@ namespace Pulumi.Oci.Integration.Outputs
 
             ImmutableArray<Outputs.GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailResult> networkEndpointDetails,
 
+            ImmutableArray<Outputs.GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionResult> privateEndpointOutboundConnections,
+
             string shape,
 
             string state,
@@ -177,6 +184,7 @@ namespace Pulumi.Oci.Integration.Outputs
             IsVisualBuilderEnabled = isVisualBuilderEnabled;
             MessagePacks = messagePacks;
             NetworkEndpointDetails = networkEndpointDetails;
+            PrivateEndpointOutboundConnections = privateEndpointOutboundConnections;
             Shape = shape;
             State = state;
             StateMessage = stateMessage;

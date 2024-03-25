@@ -31,8 +31,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ApmTraces.GetTrace(ctx, &apmtraces.GetTraceArgs{
-//				ApmDomainId: oci_apm_apm_domain.Test_apm_domain.Id,
-//				TraceKey:    _var.Trace_trace_key,
+//				ApmDomainId:                          oci_apm_apm_domain.Test_apm_domain.Id,
+//				TraceKey:                             _var.Trace_trace_key,
+//				TimeTraceStartedGreaterThanOrEqualTo: pulumi.StringRef(_var.Trace_time_trace_started_greater_than_or_equal_to),
+//				TimeTraceStartedLessThan:             pulumi.StringRef(_var.Trace_time_trace_started_less_than),
+//				TraceNamespace:                       pulumi.StringRef(_var.Trace_trace_namespace),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -55,10 +58,16 @@ func GetTrace(ctx *pulumi.Context, args *GetTraceArgs, opts ...pulumi.InvokeOpti
 
 // A collection of arguments for invoking getTrace.
 type GetTraceArgs struct {
-	// The APM Domain ID the request is intended for.
+	// The APM Domain ID for the intended request.
 	ApmDomainId string `pulumi:"apmDomainId"`
+	// Include traces that have a `minTraceStartTime` equal to or greater than this value.
+	TimeTraceStartedGreaterThanOrEqualTo *string `pulumi:"timeTraceStartedGreaterThanOrEqualTo"`
+	// Include traces that have a `minTraceStartTime` less than this value.
+	TimeTraceStartedLessThan *string `pulumi:"timeTraceStartedLessThan"`
 	// Unique Application Performance Monitoring trace identifier (traceId).
 	TraceKey string `pulumi:"traceKey"`
+	// Name space from which the trace details need to be retrieved.
+	TraceNamespace *string `pulumi:"traceNamespace"`
 }
 
 // A collection of values returned by getTrace.
@@ -80,6 +89,8 @@ type GetTraceResult struct {
 	RootSpanServiceName string `pulumi:"rootSpanServiceName"`
 	// A summary of the spans by service.
 	ServiceSummaries []GetTraceServiceSummary `pulumi:"serviceSummaries"`
+	// Source of span (spans, syn_spans).
+	SourceName string `pulumi:"sourceName"`
 	// The number of spans that have been processed by the system for the trace.  Note that there could be additional spans that have not been processed or reported yet if the trace is still in progress.
 	SpanCount int `pulumi:"spanCount"`
 	// Summary of the information pertaining to the spans in the trace window that is being queried.
@@ -93,7 +104,9 @@ type GetTraceResult struct {
 	// End time of the root span for the span collection.
 	TimeRootSpanEnded string `pulumi:"timeRootSpanEnded"`
 	// Start time of the root span for the span collection.
-	TimeRootSpanStarted string `pulumi:"timeRootSpanStarted"`
+	TimeRootSpanStarted                  string  `pulumi:"timeRootSpanStarted"`
+	TimeTraceStartedGreaterThanOrEqualTo *string `pulumi:"timeTraceStartedGreaterThanOrEqualTo"`
+	TimeTraceStartedLessThan             *string `pulumi:"timeTraceStartedLessThan"`
 	// Time between the start of the earliest span and the end of the most recent span in milliseconds.
 	TraceDurationInMs int `pulumi:"traceDurationInMs"`
 	// Error code of the trace.
@@ -101,7 +114,8 @@ type GetTraceResult struct {
 	// Error type of the trace.
 	TraceErrorType string `pulumi:"traceErrorType"`
 	// Unique identifier for the trace.
-	TraceKey string `pulumi:"traceKey"`
+	TraceKey       string  `pulumi:"traceKey"`
+	TraceNamespace *string `pulumi:"traceNamespace"`
 	// The status of the trace. The trace statuses are defined as follows: complete - a root span has been recorded, but there is no information on the errors. success - a complete root span is recorded there is a successful error type and error code - HTTP 200. incomplete - the root span has not yet been received. error - the root span returned with an error. There may or may not be an associated error code or error type.
 	TraceStatus string `pulumi:"traceStatus"`
 }
@@ -121,10 +135,16 @@ func GetTraceOutput(ctx *pulumi.Context, args GetTraceOutputArgs, opts ...pulumi
 
 // A collection of arguments for invoking getTrace.
 type GetTraceOutputArgs struct {
-	// The APM Domain ID the request is intended for.
+	// The APM Domain ID for the intended request.
 	ApmDomainId pulumi.StringInput `pulumi:"apmDomainId"`
+	// Include traces that have a `minTraceStartTime` equal to or greater than this value.
+	TimeTraceStartedGreaterThanOrEqualTo pulumi.StringPtrInput `pulumi:"timeTraceStartedGreaterThanOrEqualTo"`
+	// Include traces that have a `minTraceStartTime` less than this value.
+	TimeTraceStartedLessThan pulumi.StringPtrInput `pulumi:"timeTraceStartedLessThan"`
 	// Unique Application Performance Monitoring trace identifier (traceId).
 	TraceKey pulumi.StringInput `pulumi:"traceKey"`
+	// Name space from which the trace details need to be retrieved.
+	TraceNamespace pulumi.StringPtrInput `pulumi:"traceNamespace"`
 }
 
 func (GetTraceOutputArgs) ElementType() reflect.Type {
@@ -190,6 +210,11 @@ func (o GetTraceResultOutput) ServiceSummaries() GetTraceServiceSummaryArrayOutp
 	return o.ApplyT(func(v GetTraceResult) []GetTraceServiceSummary { return v.ServiceSummaries }).(GetTraceServiceSummaryArrayOutput)
 }
 
+// Source of span (spans, syn_spans).
+func (o GetTraceResultOutput) SourceName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTraceResult) string { return v.SourceName }).(pulumi.StringOutput)
+}
+
 // The number of spans that have been processed by the system for the trace.  Note that there could be additional spans that have not been processed or reported yet if the trace is still in progress.
 func (o GetTraceResultOutput) SpanCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetTraceResult) int { return v.SpanCount }).(pulumi.IntOutput)
@@ -225,6 +250,14 @@ func (o GetTraceResultOutput) TimeRootSpanStarted() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTraceResult) string { return v.TimeRootSpanStarted }).(pulumi.StringOutput)
 }
 
+func (o GetTraceResultOutput) TimeTraceStartedGreaterThanOrEqualTo() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTraceResult) *string { return v.TimeTraceStartedGreaterThanOrEqualTo }).(pulumi.StringPtrOutput)
+}
+
+func (o GetTraceResultOutput) TimeTraceStartedLessThan() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTraceResult) *string { return v.TimeTraceStartedLessThan }).(pulumi.StringPtrOutput)
+}
+
 // Time between the start of the earliest span and the end of the most recent span in milliseconds.
 func (o GetTraceResultOutput) TraceDurationInMs() pulumi.IntOutput {
 	return o.ApplyT(func(v GetTraceResult) int { return v.TraceDurationInMs }).(pulumi.IntOutput)
@@ -243,6 +276,10 @@ func (o GetTraceResultOutput) TraceErrorType() pulumi.StringOutput {
 // Unique identifier for the trace.
 func (o GetTraceResultOutput) TraceKey() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTraceResult) string { return v.TraceKey }).(pulumi.StringOutput)
+}
+
+func (o GetTraceResultOutput) TraceNamespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTraceResult) *string { return v.TraceNamespace }).(pulumi.StringPtrOutput)
 }
 
 // The status of the trace. The trace statuses are defined as follows: complete - a root span has been recorded, but there is no information on the errors. success - a complete root span is recorded there is a successful error type and error code - HTTP 200. incomplete - the root span has not yet been received. error - the root span returned with an error. There may or may not be an associated error code or error type.

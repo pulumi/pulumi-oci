@@ -58,13 +58,13 @@ func GetTraceSnapshotData(ctx *pulumi.Context, args *GetTraceSnapshotDataArgs, o
 
 // A collection of arguments for invoking getTraceSnapshotData.
 type GetTraceSnapshotDataArgs struct {
-	// The APM Domain ID the request is intended for.
+	// The APM Domain ID for the intended request.
 	ApmDomainId string `pulumi:"apmDomainId"`
-	// If enabled, then only span level details will be sent.
+	// If enabled, only span level details are sent.
 	IsSummarized *bool `pulumi:"isSummarized"`
 	// Epoch time of snapshot.
 	SnapshotTime *string `pulumi:"snapshotTime"`
-	// Thread id for which snapshots needs to be retrieved. This is an identifier of a thread, and is a positive long number generated when when a thread is created.
+	// Thread ID for which snapshots need to be retrieved. This identifier of a thread is a long positive number generated when a thread is created.
 	ThreadId *string `pulumi:"threadId"`
 	// Unique Application Performance Monitoring trace identifier (traceId).
 	TraceKey string `pulumi:"traceKey"`
@@ -104,13 +104,13 @@ func GetTraceSnapshotDataOutput(ctx *pulumi.Context, args GetTraceSnapshotDataOu
 
 // A collection of arguments for invoking getTraceSnapshotData.
 type GetTraceSnapshotDataOutputArgs struct {
-	// The APM Domain ID the request is intended for.
+	// The APM Domain ID for the intended request.
 	ApmDomainId pulumi.StringInput `pulumi:"apmDomainId"`
-	// If enabled, then only span level details will be sent.
+	// If enabled, only span level details are sent.
 	IsSummarized pulumi.BoolPtrInput `pulumi:"isSummarized"`
 	// Epoch time of snapshot.
 	SnapshotTime pulumi.StringPtrInput `pulumi:"snapshotTime"`
-	// Thread id for which snapshots needs to be retrieved. This is an identifier of a thread, and is a positive long number generated when when a thread is created.
+	// Thread ID for which snapshots need to be retrieved. This identifier of a thread is a long positive number generated when a thread is created.
 	ThreadId pulumi.StringPtrInput `pulumi:"threadId"`
 	// Unique Application Performance Monitoring trace identifier (traceId).
 	TraceKey pulumi.StringInput `pulumi:"traceKey"`

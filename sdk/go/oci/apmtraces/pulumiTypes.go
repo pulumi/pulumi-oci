@@ -569,6 +569,8 @@ type GetTraceSpan struct {
 	ParentSpanKey string `pulumi:"parentSpanKey"`
 	// Service name associated with the span.
 	ServiceName string `pulumi:"serviceName"`
+	// Source of span (spans, syn_spans).
+	SourceName string `pulumi:"sourceName"`
 	// List of tags associated with the span.
 	Tags []GetTraceSpanTag `pulumi:"tags"`
 	// Span end time.  Timestamp when the span was completed.
@@ -607,6 +609,8 @@ type GetTraceSpanArgs struct {
 	ParentSpanKey pulumi.StringInput `pulumi:"parentSpanKey"`
 	// Service name associated with the span.
 	ServiceName pulumi.StringInput `pulumi:"serviceName"`
+	// Source of span (spans, syn_spans).
+	SourceName pulumi.StringInput `pulumi:"sourceName"`
 	// List of tags associated with the span.
 	Tags GetTraceSpanTagArrayInput `pulumi:"tags"`
 	// Span end time.  Timestamp when the span was completed.
@@ -708,6 +712,11 @@ func (o GetTraceSpanOutput) ServiceName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTraceSpan) string { return v.ServiceName }).(pulumi.StringOutput)
 }
 
+// Source of span (spans, syn_spans).
+func (o GetTraceSpanOutput) SourceName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTraceSpan) string { return v.SourceName }).(pulumi.StringOutput)
+}
+
 // List of tags associated with the span.
 func (o GetTraceSpanOutput) Tags() GetTraceSpanTagArrayOutput {
 	return o.ApplyT(func(v GetTraceSpan) []GetTraceSpanTag { return v.Tags }).(GetTraceSpanTagArrayOutput)
@@ -749,6 +758,8 @@ func (o GetTraceSpanArrayOutput) Index(i pulumi.IntInput) GetTraceSpanOutput {
 }
 
 type GetTraceSpanLog struct {
+	// Name of the event for which the log is created.
+	EventName string `pulumi:"eventName"`
 	// List of logs associated with the span at the given timestamp.
 	SpanLogs []GetTraceSpanLogSpanLog `pulumi:"spanLogs"`
 	// Timestamp at which the log is created.
@@ -767,6 +778,8 @@ type GetTraceSpanLogInput interface {
 }
 
 type GetTraceSpanLogArgs struct {
+	// Name of the event for which the log is created.
+	EventName pulumi.StringInput `pulumi:"eventName"`
 	// List of logs associated with the span at the given timestamp.
 	SpanLogs GetTraceSpanLogSpanLogArrayInput `pulumi:"spanLogs"`
 	// Timestamp at which the log is created.
@@ -822,6 +835,11 @@ func (o GetTraceSpanLogOutput) ToGetTraceSpanLogOutput() GetTraceSpanLogOutput {
 
 func (o GetTraceSpanLogOutput) ToGetTraceSpanLogOutputWithContext(ctx context.Context) GetTraceSpanLogOutput {
 	return o
+}
+
+// Name of the event for which the log is created.
+func (o GetTraceSpanLogOutput) EventName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTraceSpanLog) string { return v.EventName }).(pulumi.StringOutput)
 }
 
 // List of logs associated with the span at the given timestamp.

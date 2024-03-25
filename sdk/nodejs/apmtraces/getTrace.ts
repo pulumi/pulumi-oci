@@ -21,6 +21,9 @@ import * as utilities from "../utilities";
  * const testTrace = oci.ApmTraces.getTrace({
  *     apmDomainId: oci_apm_apm_domain.test_apm_domain.id,
  *     traceKey: _var.trace_trace_key,
+ *     timeTraceStartedGreaterThanOrEqualTo: _var.trace_time_trace_started_greater_than_or_equal_to,
+ *     timeTraceStartedLessThan: _var.trace_time_trace_started_less_than,
+ *     traceNamespace: _var.trace_trace_namespace,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -30,7 +33,10 @@ export function getTrace(args: GetTraceArgs, opts?: pulumi.InvokeOptions): Promi
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ApmTraces/getTrace:getTrace", {
         "apmDomainId": args.apmDomainId,
+        "timeTraceStartedGreaterThanOrEqualTo": args.timeTraceStartedGreaterThanOrEqualTo,
+        "timeTraceStartedLessThan": args.timeTraceStartedLessThan,
         "traceKey": args.traceKey,
+        "traceNamespace": args.traceNamespace,
     }, opts);
 }
 
@@ -39,13 +45,25 @@ export function getTrace(args: GetTraceArgs, opts?: pulumi.InvokeOptions): Promi
  */
 export interface GetTraceArgs {
     /**
-     * The APM Domain ID the request is intended for.
+     * The APM Domain ID for the intended request.
      */
     apmDomainId: string;
+    /**
+     * Include traces that have a `minTraceStartTime` equal to or greater than this value.
+     */
+    timeTraceStartedGreaterThanOrEqualTo?: string;
+    /**
+     * Include traces that have a `minTraceStartTime` less than this value.
+     */
+    timeTraceStartedLessThan?: string;
     /**
      * Unique Application Performance Monitoring trace identifier (traceId).
      */
     traceKey: string;
+    /**
+     * Name space from which the trace details need to be retrieved.
+     */
+    traceNamespace?: string;
 }
 
 /**
@@ -86,6 +104,10 @@ export interface GetTraceResult {
      */
     readonly serviceSummaries: outputs.ApmTraces.GetTraceServiceSummary[];
     /**
+     * Source of span (spans, syn_spans).
+     */
+    readonly sourceName: string;
+    /**
      * The number of spans that have been processed by the system for the trace.  Note that there could be additional spans that have not been processed or reported yet if the trace is still in progress.
      */
     readonly spanCount: number;
@@ -113,6 +135,8 @@ export interface GetTraceResult {
      * Start time of the root span for the span collection.
      */
     readonly timeRootSpanStarted: string;
+    readonly timeTraceStartedGreaterThanOrEqualTo?: string;
+    readonly timeTraceStartedLessThan?: string;
     /**
      * Time between the start of the earliest span and the end of the most recent span in milliseconds.
      */
@@ -129,6 +153,7 @@ export interface GetTraceResult {
      * Unique identifier for the trace.
      */
     readonly traceKey: string;
+    readonly traceNamespace?: string;
     /**
      * The status of the trace. The trace statuses are defined as follows: complete - a root span has been recorded, but there is no information on the errors. success - a complete root span is recorded there is a successful error type and error code - HTTP 200. incomplete - the root span has not yet been received. error - the root span returned with an error. There may or may not be an associated error code or error type.
      */
@@ -149,6 +174,9 @@ export interface GetTraceResult {
  * const testTrace = oci.ApmTraces.getTrace({
  *     apmDomainId: oci_apm_apm_domain.test_apm_domain.id,
  *     traceKey: _var.trace_trace_key,
+ *     timeTraceStartedGreaterThanOrEqualTo: _var.trace_time_trace_started_greater_than_or_equal_to,
+ *     timeTraceStartedLessThan: _var.trace_time_trace_started_less_than,
+ *     traceNamespace: _var.trace_trace_namespace,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -162,11 +190,23 @@ export function getTraceOutput(args: GetTraceOutputArgs, opts?: pulumi.InvokeOpt
  */
 export interface GetTraceOutputArgs {
     /**
-     * The APM Domain ID the request is intended for.
+     * The APM Domain ID for the intended request.
      */
     apmDomainId: pulumi.Input<string>;
+    /**
+     * Include traces that have a `minTraceStartTime` equal to or greater than this value.
+     */
+    timeTraceStartedGreaterThanOrEqualTo?: pulumi.Input<string>;
+    /**
+     * Include traces that have a `minTraceStartTime` less than this value.
+     */
+    timeTraceStartedLessThan?: pulumi.Input<string>;
     /**
      * Unique Application Performance Monitoring trace identifier (traceId).
      */
     traceKey: pulumi.Input<string>;
+    /**
+     * Name space from which the trace details need to be retrieved.
+     */
+    traceNamespace?: pulumi.Input<string>;
 }

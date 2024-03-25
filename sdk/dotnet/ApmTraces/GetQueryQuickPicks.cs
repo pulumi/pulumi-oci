@@ -76,7 +76,7 @@ namespace Pulumi.Oci.ApmTraces
     public sealed class GetQueryQuickPicksArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The APM Domain ID the request is intended for.
+        /// The APM Domain ID for the intended request.
         /// </summary>
         [Input("apmDomainId", required: true)]
         public string ApmDomainId { get; set; } = null!;
@@ -98,7 +98,7 @@ namespace Pulumi.Oci.ApmTraces
     public sealed class GetQueryQuickPicksInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The APM Domain ID the request is intended for.
+        /// The APM Domain ID for the intended request.
         /// </summary>
         [Input("apmDomainId", required: true)]
         public Input<string> ApmDomainId { get; set; } = null!;

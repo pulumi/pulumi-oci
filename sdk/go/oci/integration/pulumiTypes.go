@@ -606,6 +606,7 @@ type IntegrationInstanceNetworkEndpointDetails struct {
 	// Virtual Cloud Networks allowed to access this network endpoint.
 	AllowlistedHttpVcns []IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcn `pulumi:"allowlistedHttpVcns"`
 	// The Integration service's VCN is allow-listed to allow integrations to call back into other integrations
+	// <<<<<<< HEAD
 	IsIntegrationVcnAllowlisted *bool `pulumi:"isIntegrationVcnAllowlisted"`
 	// The type of network endpoint.
 	NetworkEndpointType string `pulumi:"networkEndpointType"`
@@ -628,6 +629,7 @@ type IntegrationInstanceNetworkEndpointDetailsArgs struct {
 	// Virtual Cloud Networks allowed to access this network endpoint.
 	AllowlistedHttpVcns IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArrayInput `pulumi:"allowlistedHttpVcns"`
 	// The Integration service's VCN is allow-listed to allow integrations to call back into other integrations
+	// <<<<<<< HEAD
 	IsIntegrationVcnAllowlisted pulumi.BoolPtrInput `pulumi:"isIntegrationVcnAllowlisted"`
 	// The type of network endpoint.
 	NetworkEndpointType pulumi.StringInput `pulumi:"networkEndpointType"`
@@ -723,6 +725,7 @@ func (o IntegrationInstanceNetworkEndpointDetailsOutput) AllowlistedHttpVcns() I
 }
 
 // The Integration service's VCN is allow-listed to allow integrations to call back into other integrations
+// <<<<<<< HEAD
 func (o IntegrationInstanceNetworkEndpointDetailsOutput) IsIntegrationVcnAllowlisted() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v IntegrationInstanceNetworkEndpointDetails) *bool { return v.IsIntegrationVcnAllowlisted }).(pulumi.BoolPtrOutput)
 }
@@ -777,6 +780,7 @@ func (o IntegrationInstanceNetworkEndpointDetailsPtrOutput) AllowlistedHttpVcns(
 }
 
 // The Integration service's VCN is allow-listed to allow integrations to call back into other integrations
+// <<<<<<< HEAD
 func (o IntegrationInstanceNetworkEndpointDetailsPtrOutput) IsIntegrationVcnAllowlisted() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *IntegrationInstanceNetworkEndpointDetails) *bool {
 		if v == nil {
@@ -900,6 +904,121 @@ func (o IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArrayOutput) 
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcn {
 		return vs[0].([]IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcn)[vs[1].(int)]
 	}).(IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnOutput)
+}
+
+type IntegrationInstancePrivateEndpointOutboundConnection struct {
+	// One or more Network security group Ids. This is an optional argument.
+	NsgIds []string `pulumi:"nsgIds"`
+	// The type of Outbound Connection.
+	OutboundConnectionType *string `pulumi:"outboundConnectionType"`
+	// Customer Private Network VCN Subnet OCID. This is a required argument.
+	SubnetId *string `pulumi:"subnetId"`
+}
+
+// IntegrationInstancePrivateEndpointOutboundConnectionInput is an input type that accepts IntegrationInstancePrivateEndpointOutboundConnectionArgs and IntegrationInstancePrivateEndpointOutboundConnectionOutput values.
+// You can construct a concrete instance of `IntegrationInstancePrivateEndpointOutboundConnectionInput` via:
+//
+//	IntegrationInstancePrivateEndpointOutboundConnectionArgs{...}
+type IntegrationInstancePrivateEndpointOutboundConnectionInput interface {
+	pulumi.Input
+
+	ToIntegrationInstancePrivateEndpointOutboundConnectionOutput() IntegrationInstancePrivateEndpointOutboundConnectionOutput
+	ToIntegrationInstancePrivateEndpointOutboundConnectionOutputWithContext(context.Context) IntegrationInstancePrivateEndpointOutboundConnectionOutput
+}
+
+type IntegrationInstancePrivateEndpointOutboundConnectionArgs struct {
+	// One or more Network security group Ids. This is an optional argument.
+	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
+	// The type of Outbound Connection.
+	OutboundConnectionType pulumi.StringPtrInput `pulumi:"outboundConnectionType"`
+	// Customer Private Network VCN Subnet OCID. This is a required argument.
+	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
+}
+
+func (IntegrationInstancePrivateEndpointOutboundConnectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*IntegrationInstancePrivateEndpointOutboundConnection)(nil)).Elem()
+}
+
+func (i IntegrationInstancePrivateEndpointOutboundConnectionArgs) ToIntegrationInstancePrivateEndpointOutboundConnectionOutput() IntegrationInstancePrivateEndpointOutboundConnectionOutput {
+	return i.ToIntegrationInstancePrivateEndpointOutboundConnectionOutputWithContext(context.Background())
+}
+
+func (i IntegrationInstancePrivateEndpointOutboundConnectionArgs) ToIntegrationInstancePrivateEndpointOutboundConnectionOutputWithContext(ctx context.Context) IntegrationInstancePrivateEndpointOutboundConnectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IntegrationInstancePrivateEndpointOutboundConnectionOutput)
+}
+
+// IntegrationInstancePrivateEndpointOutboundConnectionArrayInput is an input type that accepts IntegrationInstancePrivateEndpointOutboundConnectionArray and IntegrationInstancePrivateEndpointOutboundConnectionArrayOutput values.
+// You can construct a concrete instance of `IntegrationInstancePrivateEndpointOutboundConnectionArrayInput` via:
+//
+//	IntegrationInstancePrivateEndpointOutboundConnectionArray{ IntegrationInstancePrivateEndpointOutboundConnectionArgs{...} }
+type IntegrationInstancePrivateEndpointOutboundConnectionArrayInput interface {
+	pulumi.Input
+
+	ToIntegrationInstancePrivateEndpointOutboundConnectionArrayOutput() IntegrationInstancePrivateEndpointOutboundConnectionArrayOutput
+	ToIntegrationInstancePrivateEndpointOutboundConnectionArrayOutputWithContext(context.Context) IntegrationInstancePrivateEndpointOutboundConnectionArrayOutput
+}
+
+type IntegrationInstancePrivateEndpointOutboundConnectionArray []IntegrationInstancePrivateEndpointOutboundConnectionInput
+
+func (IntegrationInstancePrivateEndpointOutboundConnectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IntegrationInstancePrivateEndpointOutboundConnection)(nil)).Elem()
+}
+
+func (i IntegrationInstancePrivateEndpointOutboundConnectionArray) ToIntegrationInstancePrivateEndpointOutboundConnectionArrayOutput() IntegrationInstancePrivateEndpointOutboundConnectionArrayOutput {
+	return i.ToIntegrationInstancePrivateEndpointOutboundConnectionArrayOutputWithContext(context.Background())
+}
+
+func (i IntegrationInstancePrivateEndpointOutboundConnectionArray) ToIntegrationInstancePrivateEndpointOutboundConnectionArrayOutputWithContext(ctx context.Context) IntegrationInstancePrivateEndpointOutboundConnectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IntegrationInstancePrivateEndpointOutboundConnectionArrayOutput)
+}
+
+type IntegrationInstancePrivateEndpointOutboundConnectionOutput struct{ *pulumi.OutputState }
+
+func (IntegrationInstancePrivateEndpointOutboundConnectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*IntegrationInstancePrivateEndpointOutboundConnection)(nil)).Elem()
+}
+
+func (o IntegrationInstancePrivateEndpointOutboundConnectionOutput) ToIntegrationInstancePrivateEndpointOutboundConnectionOutput() IntegrationInstancePrivateEndpointOutboundConnectionOutput {
+	return o
+}
+
+func (o IntegrationInstancePrivateEndpointOutboundConnectionOutput) ToIntegrationInstancePrivateEndpointOutboundConnectionOutputWithContext(ctx context.Context) IntegrationInstancePrivateEndpointOutboundConnectionOutput {
+	return o
+}
+
+// One or more Network security group Ids. This is an optional argument.
+func (o IntegrationInstancePrivateEndpointOutboundConnectionOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v IntegrationInstancePrivateEndpointOutboundConnection) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
+}
+
+// The type of Outbound Connection.
+func (o IntegrationInstancePrivateEndpointOutboundConnectionOutput) OutboundConnectionType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IntegrationInstancePrivateEndpointOutboundConnection) *string { return v.OutboundConnectionType }).(pulumi.StringPtrOutput)
+}
+
+// Customer Private Network VCN Subnet OCID. This is a required argument.
+func (o IntegrationInstancePrivateEndpointOutboundConnectionOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IntegrationInstancePrivateEndpointOutboundConnection) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
+}
+
+type IntegrationInstancePrivateEndpointOutboundConnectionArrayOutput struct{ *pulumi.OutputState }
+
+func (IntegrationInstancePrivateEndpointOutboundConnectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IntegrationInstancePrivateEndpointOutboundConnection)(nil)).Elem()
+}
+
+func (o IntegrationInstancePrivateEndpointOutboundConnectionArrayOutput) ToIntegrationInstancePrivateEndpointOutboundConnectionArrayOutput() IntegrationInstancePrivateEndpointOutboundConnectionArrayOutput {
+	return o
+}
+
+func (o IntegrationInstancePrivateEndpointOutboundConnectionArrayOutput) ToIntegrationInstancePrivateEndpointOutboundConnectionArrayOutputWithContext(ctx context.Context) IntegrationInstancePrivateEndpointOutboundConnectionArrayOutput {
+	return o
+}
+
+func (o IntegrationInstancePrivateEndpointOutboundConnectionArrayOutput) Index(i pulumi.IntInput) IntegrationInstancePrivateEndpointOutboundConnectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IntegrationInstancePrivateEndpointOutboundConnection {
+		return vs[0].([]IntegrationInstancePrivateEndpointOutboundConnection)[vs[1].(int)]
+	}).(IntegrationInstancePrivateEndpointOutboundConnectionOutput)
 }
 
 type GetIntegrationInstanceAlternateCustomEndpoint struct {
@@ -1427,6 +1546,7 @@ type GetIntegrationInstanceNetworkEndpointDetail struct {
 	// The Integration service's VCN is allow-listed to allow integrations to call back into other integrations
 	IsIntegrationVcnAllowlisted bool `pulumi:"isIntegrationVcnAllowlisted"`
 	// The type of network endpoint.
+	// <<<<<<< HEAD
 	NetworkEndpointType string `pulumi:"networkEndpointType"`
 }
 
@@ -1449,6 +1569,7 @@ type GetIntegrationInstanceNetworkEndpointDetailArgs struct {
 	// The Integration service's VCN is allow-listed to allow integrations to call back into other integrations
 	IsIntegrationVcnAllowlisted pulumi.BoolInput `pulumi:"isIntegrationVcnAllowlisted"`
 	// The type of network endpoint.
+	// <<<<<<< HEAD
 	NetworkEndpointType pulumi.StringInput `pulumi:"networkEndpointType"`
 }
 
@@ -1521,6 +1642,7 @@ func (o GetIntegrationInstanceNetworkEndpointDetailOutput) IsIntegrationVcnAllow
 }
 
 // The type of network endpoint.
+// <<<<<<< HEAD
 func (o GetIntegrationInstanceNetworkEndpointDetailOutput) NetworkEndpointType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetIntegrationInstanceNetworkEndpointDetail) string { return v.NetworkEndpointType }).(pulumi.StringOutput)
 }
@@ -1651,6 +1773,123 @@ func (o GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayOutput
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn {
 		return vs[0].([]GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn)[vs[1].(int)]
 	}).(GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnOutput)
+}
+
+type GetIntegrationInstancePrivateEndpointOutboundConnection struct {
+	// One or more Network security group Ids. This is an optional argument.
+	NsgIds []string `pulumi:"nsgIds"`
+	// The type of Outbound Connection.
+	OutboundConnectionType string `pulumi:"outboundConnectionType"`
+	// Customer Private Network VCN Subnet OCID. This is a required argument.
+	SubnetId string `pulumi:"subnetId"`
+}
+
+// GetIntegrationInstancePrivateEndpointOutboundConnectionInput is an input type that accepts GetIntegrationInstancePrivateEndpointOutboundConnectionArgs and GetIntegrationInstancePrivateEndpointOutboundConnectionOutput values.
+// You can construct a concrete instance of `GetIntegrationInstancePrivateEndpointOutboundConnectionInput` via:
+//
+//	GetIntegrationInstancePrivateEndpointOutboundConnectionArgs{...}
+type GetIntegrationInstancePrivateEndpointOutboundConnectionInput interface {
+	pulumi.Input
+
+	ToGetIntegrationInstancePrivateEndpointOutboundConnectionOutput() GetIntegrationInstancePrivateEndpointOutboundConnectionOutput
+	ToGetIntegrationInstancePrivateEndpointOutboundConnectionOutputWithContext(context.Context) GetIntegrationInstancePrivateEndpointOutboundConnectionOutput
+}
+
+type GetIntegrationInstancePrivateEndpointOutboundConnectionArgs struct {
+	// One or more Network security group Ids. This is an optional argument.
+	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
+	// The type of Outbound Connection.
+	OutboundConnectionType pulumi.StringInput `pulumi:"outboundConnectionType"`
+	// Customer Private Network VCN Subnet OCID. This is a required argument.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+}
+
+func (GetIntegrationInstancePrivateEndpointOutboundConnectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIntegrationInstancePrivateEndpointOutboundConnection)(nil)).Elem()
+}
+
+func (i GetIntegrationInstancePrivateEndpointOutboundConnectionArgs) ToGetIntegrationInstancePrivateEndpointOutboundConnectionOutput() GetIntegrationInstancePrivateEndpointOutboundConnectionOutput {
+	return i.ToGetIntegrationInstancePrivateEndpointOutboundConnectionOutputWithContext(context.Background())
+}
+
+func (i GetIntegrationInstancePrivateEndpointOutboundConnectionArgs) ToGetIntegrationInstancePrivateEndpointOutboundConnectionOutputWithContext(ctx context.Context) GetIntegrationInstancePrivateEndpointOutboundConnectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstancePrivateEndpointOutboundConnectionOutput)
+}
+
+// GetIntegrationInstancePrivateEndpointOutboundConnectionArrayInput is an input type that accepts GetIntegrationInstancePrivateEndpointOutboundConnectionArray and GetIntegrationInstancePrivateEndpointOutboundConnectionArrayOutput values.
+// You can construct a concrete instance of `GetIntegrationInstancePrivateEndpointOutboundConnectionArrayInput` via:
+//
+//	GetIntegrationInstancePrivateEndpointOutboundConnectionArray{ GetIntegrationInstancePrivateEndpointOutboundConnectionArgs{...} }
+type GetIntegrationInstancePrivateEndpointOutboundConnectionArrayInput interface {
+	pulumi.Input
+
+	ToGetIntegrationInstancePrivateEndpointOutboundConnectionArrayOutput() GetIntegrationInstancePrivateEndpointOutboundConnectionArrayOutput
+	ToGetIntegrationInstancePrivateEndpointOutboundConnectionArrayOutputWithContext(context.Context) GetIntegrationInstancePrivateEndpointOutboundConnectionArrayOutput
+}
+
+type GetIntegrationInstancePrivateEndpointOutboundConnectionArray []GetIntegrationInstancePrivateEndpointOutboundConnectionInput
+
+func (GetIntegrationInstancePrivateEndpointOutboundConnectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIntegrationInstancePrivateEndpointOutboundConnection)(nil)).Elem()
+}
+
+func (i GetIntegrationInstancePrivateEndpointOutboundConnectionArray) ToGetIntegrationInstancePrivateEndpointOutboundConnectionArrayOutput() GetIntegrationInstancePrivateEndpointOutboundConnectionArrayOutput {
+	return i.ToGetIntegrationInstancePrivateEndpointOutboundConnectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetIntegrationInstancePrivateEndpointOutboundConnectionArray) ToGetIntegrationInstancePrivateEndpointOutboundConnectionArrayOutputWithContext(ctx context.Context) GetIntegrationInstancePrivateEndpointOutboundConnectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstancePrivateEndpointOutboundConnectionArrayOutput)
+}
+
+type GetIntegrationInstancePrivateEndpointOutboundConnectionOutput struct{ *pulumi.OutputState }
+
+func (GetIntegrationInstancePrivateEndpointOutboundConnectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIntegrationInstancePrivateEndpointOutboundConnection)(nil)).Elem()
+}
+
+func (o GetIntegrationInstancePrivateEndpointOutboundConnectionOutput) ToGetIntegrationInstancePrivateEndpointOutboundConnectionOutput() GetIntegrationInstancePrivateEndpointOutboundConnectionOutput {
+	return o
+}
+
+func (o GetIntegrationInstancePrivateEndpointOutboundConnectionOutput) ToGetIntegrationInstancePrivateEndpointOutboundConnectionOutputWithContext(ctx context.Context) GetIntegrationInstancePrivateEndpointOutboundConnectionOutput {
+	return o
+}
+
+// One or more Network security group Ids. This is an optional argument.
+func (o GetIntegrationInstancePrivateEndpointOutboundConnectionOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetIntegrationInstancePrivateEndpointOutboundConnection) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
+}
+
+// The type of Outbound Connection.
+func (o GetIntegrationInstancePrivateEndpointOutboundConnectionOutput) OutboundConnectionType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIntegrationInstancePrivateEndpointOutboundConnection) string {
+		return v.OutboundConnectionType
+	}).(pulumi.StringOutput)
+}
+
+// Customer Private Network VCN Subnet OCID. This is a required argument.
+func (o GetIntegrationInstancePrivateEndpointOutboundConnectionOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIntegrationInstancePrivateEndpointOutboundConnection) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+type GetIntegrationInstancePrivateEndpointOutboundConnectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIntegrationInstancePrivateEndpointOutboundConnectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIntegrationInstancePrivateEndpointOutboundConnection)(nil)).Elem()
+}
+
+func (o GetIntegrationInstancePrivateEndpointOutboundConnectionArrayOutput) ToGetIntegrationInstancePrivateEndpointOutboundConnectionArrayOutput() GetIntegrationInstancePrivateEndpointOutboundConnectionArrayOutput {
+	return o
+}
+
+func (o GetIntegrationInstancePrivateEndpointOutboundConnectionArrayOutput) ToGetIntegrationInstancePrivateEndpointOutboundConnectionArrayOutputWithContext(ctx context.Context) GetIntegrationInstancePrivateEndpointOutboundConnectionArrayOutput {
+	return o
+}
+
+func (o GetIntegrationInstancePrivateEndpointOutboundConnectionArrayOutput) Index(i pulumi.IntInput) GetIntegrationInstancePrivateEndpointOutboundConnectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIntegrationInstancePrivateEndpointOutboundConnection {
+		return vs[0].([]GetIntegrationInstancePrivateEndpointOutboundConnection)[vs[1].(int)]
+	}).(GetIntegrationInstancePrivateEndpointOutboundConnectionOutput)
 }
 
 type GetIntegrationInstancesFilter struct {
@@ -1797,7 +2036,10 @@ type GetIntegrationInstancesIntegrationInstance struct {
 	MessagePacks int `pulumi:"messagePacks"`
 	// Base representation of a network endpoint.
 	NetworkEndpointDetails []GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetail `pulumi:"networkEndpointDetails"`
+	// Base representation for Outbound Connection (Reverse Connection).
+	PrivateEndpointOutboundConnections []GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnection `pulumi:"privateEndpointOutboundConnections"`
 	// Shape
+	// > > > > > > > c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
 	Shape string `pulumi:"shape"`
 	// Life cycle state to query on.
 	State string `pulumi:"state"`
@@ -1858,7 +2100,10 @@ type GetIntegrationInstancesIntegrationInstanceArgs struct {
 	MessagePacks pulumi.IntInput `pulumi:"messagePacks"`
 	// Base representation of a network endpoint.
 	NetworkEndpointDetails GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailArrayInput `pulumi:"networkEndpointDetails"`
+	// Base representation for Outbound Connection (Reverse Connection).
+	PrivateEndpointOutboundConnections GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionArrayInput `pulumi:"privateEndpointOutboundConnections"`
 	// Shape
+	// > > > > > > > c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
 	Shape pulumi.StringInput `pulumi:"shape"`
 	// Life cycle state to query on.
 	State pulumi.StringInput `pulumi:"state"`
@@ -2028,7 +2273,15 @@ func (o GetIntegrationInstancesIntegrationInstanceOutput) NetworkEndpointDetails
 	}).(GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailArrayOutput)
 }
 
+// Base representation for Outbound Connection (Reverse Connection).
+func (o GetIntegrationInstancesIntegrationInstanceOutput) PrivateEndpointOutboundConnections() GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionArrayOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) []GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnection {
+		return v.PrivateEndpointOutboundConnections
+	}).(GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionArrayOutput)
+}
+
 // Shape
+// > > > > > > > c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
 func (o GetIntegrationInstancesIntegrationInstanceOutput) Shape() pulumi.StringOutput {
 	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) string { return v.Shape }).(pulumi.StringOutput)
 }
@@ -2604,6 +2857,7 @@ type GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetail struct {
 	// The Integration service's VCN is allow-listed to allow integrations to call back into other integrations
 	IsIntegrationVcnAllowlisted bool `pulumi:"isIntegrationVcnAllowlisted"`
 	// The type of network endpoint.
+	// <<<<<<< HEAD
 	NetworkEndpointType string `pulumi:"networkEndpointType"`
 }
 
@@ -2626,6 +2880,7 @@ type GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailArgs struct 
 	// The Integration service's VCN is allow-listed to allow integrations to call back into other integrations
 	IsIntegrationVcnAllowlisted pulumi.BoolInput `pulumi:"isIntegrationVcnAllowlisted"`
 	// The type of network endpoint.
+	// <<<<<<< HEAD
 	NetworkEndpointType pulumi.StringInput `pulumi:"networkEndpointType"`
 }
 
@@ -2702,6 +2957,7 @@ func (o GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailOutput) I
 }
 
 // The type of network endpoint.
+// <<<<<<< HEAD
 func (o GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailOutput) NetworkEndpointType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetail) string {
 		return v.NetworkEndpointType
@@ -2838,6 +3094,127 @@ func (o GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlist
 	}).(GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnOutput)
 }
 
+type GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnection struct {
+	// One or more Network security group Ids. This is an optional argument.
+	NsgIds []string `pulumi:"nsgIds"`
+	// The type of Outbound Connection.
+	OutboundConnectionType string `pulumi:"outboundConnectionType"`
+	// Customer Private Network VCN Subnet OCID. This is a required argument.
+	SubnetId string `pulumi:"subnetId"`
+}
+
+// GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionInput is an input type that accepts GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionArgs and GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionOutput values.
+// You can construct a concrete instance of `GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionInput` via:
+//
+//	GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionArgs{...}
+type GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionInput interface {
+	pulumi.Input
+
+	ToGetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionOutput() GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionOutput
+	ToGetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionOutputWithContext(context.Context) GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionOutput
+}
+
+type GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionArgs struct {
+	// One or more Network security group Ids. This is an optional argument.
+	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
+	// The type of Outbound Connection.
+	OutboundConnectionType pulumi.StringInput `pulumi:"outboundConnectionType"`
+	// Customer Private Network VCN Subnet OCID. This is a required argument.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+}
+
+func (GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnection)(nil)).Elem()
+}
+
+func (i GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionArgs) ToGetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionOutput() GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionOutput {
+	return i.ToGetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionOutputWithContext(context.Background())
+}
+
+func (i GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionArgs) ToGetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionOutputWithContext(ctx context.Context) GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionOutput)
+}
+
+// GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionArrayInput is an input type that accepts GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionArray and GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionArrayOutput values.
+// You can construct a concrete instance of `GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionArrayInput` via:
+//
+//	GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionArray{ GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionArgs{...} }
+type GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionArrayInput interface {
+	pulumi.Input
+
+	ToGetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionArrayOutput() GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionArrayOutput
+	ToGetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionArrayOutputWithContext(context.Context) GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionArrayOutput
+}
+
+type GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionArray []GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionInput
+
+func (GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnection)(nil)).Elem()
+}
+
+func (i GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionArray) ToGetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionArrayOutput() GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionArrayOutput {
+	return i.ToGetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionArray) ToGetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionArrayOutputWithContext(ctx context.Context) GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionArrayOutput)
+}
+
+type GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionOutput struct{ *pulumi.OutputState }
+
+func (GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnection)(nil)).Elem()
+}
+
+func (o GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionOutput) ToGetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionOutput() GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionOutput {
+	return o
+}
+
+func (o GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionOutput) ToGetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionOutputWithContext(ctx context.Context) GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionOutput {
+	return o
+}
+
+// One or more Network security group Ids. This is an optional argument.
+func (o GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnection) []string {
+		return v.NsgIds
+	}).(pulumi.StringArrayOutput)
+}
+
+// The type of Outbound Connection.
+func (o GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionOutput) OutboundConnectionType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnection) string {
+		return v.OutboundConnectionType
+	}).(pulumi.StringOutput)
+}
+
+// Customer Private Network VCN Subnet OCID. This is a required argument.
+func (o GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnection) string {
+		return v.SubnetId
+	}).(pulumi.StringOutput)
+}
+
+type GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnection)(nil)).Elem()
+}
+
+func (o GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionArrayOutput) ToGetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionArrayOutput() GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionArrayOutput {
+	return o
+}
+
+func (o GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionArrayOutput) ToGetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionArrayOutputWithContext(ctx context.Context) GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionArrayOutput {
+	return o
+}
+
+func (o GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionArrayOutput) Index(i pulumi.IntInput) GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnection {
+		return vs[0].([]GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnection)[vs[1].(int)]
+	}).(GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IntegrationInstanceAlternateCustomEndpointInput)(nil)).Elem(), IntegrationInstanceAlternateCustomEndpointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*IntegrationInstanceAlternateCustomEndpointArrayInput)(nil)).Elem(), IntegrationInstanceAlternateCustomEndpointArray{})
@@ -2851,6 +3228,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IntegrationInstanceNetworkEndpointDetailsPtrInput)(nil)).Elem(), IntegrationInstanceNetworkEndpointDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnInput)(nil)).Elem(), IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArrayInput)(nil)).Elem(), IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IntegrationInstancePrivateEndpointOutboundConnectionInput)(nil)).Elem(), IntegrationInstancePrivateEndpointOutboundConnectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IntegrationInstancePrivateEndpointOutboundConnectionArrayInput)(nil)).Elem(), IntegrationInstancePrivateEndpointOutboundConnectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIntegrationInstanceAlternateCustomEndpointInput)(nil)).Elem(), GetIntegrationInstanceAlternateCustomEndpointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIntegrationInstanceAlternateCustomEndpointArrayInput)(nil)).Elem(), GetIntegrationInstanceAlternateCustomEndpointArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIntegrationInstanceAttachmentInput)(nil)).Elem(), GetIntegrationInstanceAttachmentArgs{})
@@ -2863,6 +3242,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIntegrationInstanceNetworkEndpointDetailArrayInput)(nil)).Elem(), GetIntegrationInstanceNetworkEndpointDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnInput)(nil)).Elem(), GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayInput)(nil)).Elem(), GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIntegrationInstancePrivateEndpointOutboundConnectionInput)(nil)).Elem(), GetIntegrationInstancePrivateEndpointOutboundConnectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIntegrationInstancePrivateEndpointOutboundConnectionArrayInput)(nil)).Elem(), GetIntegrationInstancePrivateEndpointOutboundConnectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIntegrationInstancesFilterInput)(nil)).Elem(), GetIntegrationInstancesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIntegrationInstancesFilterArrayInput)(nil)).Elem(), GetIntegrationInstancesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIntegrationInstancesIntegrationInstanceInput)(nil)).Elem(), GetIntegrationInstancesIntegrationInstanceArgs{})
@@ -2879,6 +3260,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailArrayInput)(nil)).Elem(), GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnInput)(nil)).Elem(), GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayInput)(nil)).Elem(), GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionInput)(nil)).Elem(), GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionArrayInput)(nil)).Elem(), GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionArray{})
 	pulumi.RegisterOutputType(IntegrationInstanceAlternateCustomEndpointOutput{})
 	pulumi.RegisterOutputType(IntegrationInstanceAlternateCustomEndpointArrayOutput{})
 	pulumi.RegisterOutputType(IntegrationInstanceAttachmentOutput{})
@@ -2891,6 +3274,8 @@ func init() {
 	pulumi.RegisterOutputType(IntegrationInstanceNetworkEndpointDetailsPtrOutput{})
 	pulumi.RegisterOutputType(IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnOutput{})
 	pulumi.RegisterOutputType(IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArrayOutput{})
+	pulumi.RegisterOutputType(IntegrationInstancePrivateEndpointOutboundConnectionOutput{})
+	pulumi.RegisterOutputType(IntegrationInstancePrivateEndpointOutboundConnectionArrayOutput{})
 	pulumi.RegisterOutputType(GetIntegrationInstanceAlternateCustomEndpointOutput{})
 	pulumi.RegisterOutputType(GetIntegrationInstanceAlternateCustomEndpointArrayOutput{})
 	pulumi.RegisterOutputType(GetIntegrationInstanceAttachmentOutput{})
@@ -2903,6 +3288,8 @@ func init() {
 	pulumi.RegisterOutputType(GetIntegrationInstanceNetworkEndpointDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnOutput{})
 	pulumi.RegisterOutputType(GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayOutput{})
+	pulumi.RegisterOutputType(GetIntegrationInstancePrivateEndpointOutboundConnectionOutput{})
+	pulumi.RegisterOutputType(GetIntegrationInstancePrivateEndpointOutboundConnectionArrayOutput{})
 	pulumi.RegisterOutputType(GetIntegrationInstancesFilterOutput{})
 	pulumi.RegisterOutputType(GetIntegrationInstancesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetIntegrationInstancesIntegrationInstanceOutput{})
@@ -2919,4 +3306,6 @@ func init() {
 	pulumi.RegisterOutputType(GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnOutput{})
 	pulumi.RegisterOutputType(GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayOutput{})
+	pulumi.RegisterOutputType(GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionOutput{})
+	pulumi.RegisterOutputType(GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionArrayOutput{})
 }

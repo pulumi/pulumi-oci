@@ -119,7 +119,12 @@ export interface GetIntegrationInstanceResult {
      */
     readonly networkEndpointDetails: outputs.Integration.GetIntegrationInstanceNetworkEndpointDetail[];
     /**
+     * Base representation for Outbound Connection (Reverse Connection).
+     */
+    readonly privateEndpointOutboundConnections: outputs.Integration.GetIntegrationInstancePrivateEndpointOutboundConnection[];
+    /**
      * Shape
+     * >>>>>>> c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
      */
     readonly shape: string;
     /**

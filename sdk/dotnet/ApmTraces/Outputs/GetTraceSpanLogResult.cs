@@ -14,6 +14,10 @@ namespace Pulumi.Oci.ApmTraces.Outputs
     public sealed class GetTraceSpanLogResult
     {
         /// <summary>
+        /// Name of the event for which the log is created.
+        /// </summary>
+        public readonly string EventName;
+        /// <summary>
         /// List of logs associated with the span at the given timestamp.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetTraceSpanLogSpanLogResult> SpanLogs;
@@ -24,10 +28,13 @@ namespace Pulumi.Oci.ApmTraces.Outputs
 
         [OutputConstructor]
         private GetTraceSpanLogResult(
+            string eventName,
+
             ImmutableArray<Outputs.GetTraceSpanLogSpanLogResult> spanLogs,
 
             string timeCreated)
         {
+            EventName = eventName;
             SpanLogs = spanLogs;
             TimeCreated = timeCreated;
         }

@@ -4051,6 +4051,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "Integration/privateEndpointOutboundConnection",
+  "fqn": "pulumi_oci.integration",
+  "classes": {
+   "oci:Integration/privateEndpointOutboundConnection:PrivateEndpointOutboundConnection": "PrivateEndpointOutboundConnection"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "Jms/fleet",
   "fqn": "pulumi_oci.jms",
   "classes": {

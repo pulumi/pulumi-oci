@@ -55,7 +55,7 @@ func GetQueryQuickPicks(ctx *pulumi.Context, args *GetQueryQuickPicksArgs, opts 
 
 // A collection of arguments for invoking getQueryQuickPicks.
 type GetQueryQuickPicksArgs struct {
-	// The APM Domain ID the request is intended for.
+	// The APM Domain ID for the intended request.
 	ApmDomainId string                     `pulumi:"apmDomainId"`
 	Filters     []GetQueryQuickPicksFilter `pulumi:"filters"`
 }
@@ -85,7 +85,7 @@ func GetQueryQuickPicksOutput(ctx *pulumi.Context, args GetQueryQuickPicksOutput
 
 // A collection of arguments for invoking getQueryQuickPicks.
 type GetQueryQuickPicksOutputArgs struct {
-	// The APM Domain ID the request is intended for.
+	// The APM Domain ID for the intended request.
 	ApmDomainId pulumi.StringInput                 `pulumi:"apmDomainId"`
 	Filters     GetQueryQuickPicksFilterArrayInput `pulumi:"filters"`
 }

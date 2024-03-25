@@ -165,10 +165,10 @@ def get_trace_snapshot_data(apm_domain_id: Optional[str] = None,
     <!--End PulumiCodeChooser -->
 
 
-    :param str apm_domain_id: The APM Domain ID the request is intended for.
-    :param bool is_summarized: If enabled, then only span level details will be sent.
+    :param str apm_domain_id: The APM Domain ID for the intended request.
+    :param bool is_summarized: If enabled, only span level details are sent.
     :param str snapshot_time: Epoch time of snapshot.
-    :param str thread_id: Thread id for which snapshots needs to be retrieved. This is an identifier of a thread, and is a positive long number generated when when a thread is created.
+    :param str thread_id: Thread ID for which snapshots need to be retrieved. This identifier of a thread is a long positive number generated when a thread is created.
     :param str trace_key: Unique Application Performance Monitoring trace identifier (traceId).
     """
     __args__ = dict()
@@ -221,10 +221,10 @@ def get_trace_snapshot_data_output(apm_domain_id: Optional[pulumi.Input[str]] = 
     <!--End PulumiCodeChooser -->
 
 
-    :param str apm_domain_id: The APM Domain ID the request is intended for.
-    :param bool is_summarized: If enabled, then only span level details will be sent.
+    :param str apm_domain_id: The APM Domain ID for the intended request.
+    :param bool is_summarized: If enabled, only span level details are sent.
     :param str snapshot_time: Epoch time of snapshot.
-    :param str thread_id: Thread id for which snapshots needs to be retrieved. This is an identifier of a thread, and is a positive long number generated when when a thread is created.
+    :param str thread_id: Thread ID for which snapshots need to be retrieved. This identifier of a thread is a long positive number generated when a thread is created.
     :param str trace_key: Unique Application Performance Monitoring trace identifier (traceId).
     """
     ...

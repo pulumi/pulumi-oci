@@ -22443,7 +22443,7 @@ export namespace Database {
          */
         id?: pulumi.Input<string>;
         /**
-         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
          */
         kmsKeyVersionId?: pulumi.Input<string>;
         /**
@@ -22451,7 +22451,7 @@ export namespace Database {
          */
         timeActivated?: pulumi.Input<string>;
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
          */
         vaultId?: pulumi.Input<string>;
     }
@@ -60769,6 +60769,7 @@ export namespace Integration {
         allowlistedHttpVcns?: pulumi.Input<pulumi.Input<inputs.Integration.IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcn>[]>;
         /**
          * The Integration service's VCN is allow-listed to allow integrations to call back into other integrations
+         * <<<<<<< HEAD
          */
         isIntegrationVcnAllowlisted?: pulumi.Input<boolean>;
         /**
@@ -60786,6 +60787,21 @@ export namespace Integration {
          * The Virtual Cloud Network OCID.
          */
         id: pulumi.Input<string>;
+    }
+
+    export interface IntegrationInstancePrivateEndpointOutboundConnection {
+        /**
+         * One or more Network security group Ids. This is an optional argument.
+         */
+        nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * The type of Outbound Connection.
+         */
+        outboundConnectionType?: pulumi.Input<string>;
+        /**
+         * Customer Private Network VCN Subnet OCID. This is a required argument.
+         */
+        subnetId?: pulumi.Input<string>;
     }
 }
 

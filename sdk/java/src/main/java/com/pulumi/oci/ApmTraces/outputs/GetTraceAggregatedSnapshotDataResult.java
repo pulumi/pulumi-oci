@@ -9,6 +9,8 @@ import com.pulumi.oci.ApmTraces.outputs.GetTraceAggregatedSnapshotDataDetail;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetTraceAggregatedSnapshotDataResult {
@@ -23,6 +25,10 @@ public final class GetTraceAggregatedSnapshotDataResult {
      * 
      */
     private String id;
+    private @Nullable String serverName;
+    private @Nullable String serviceName;
+    private @Nullable String spanKey;
+    private @Nullable String spanName;
     private String traceKey;
 
     private GetTraceAggregatedSnapshotDataResult() {}
@@ -43,6 +49,18 @@ public final class GetTraceAggregatedSnapshotDataResult {
     public String id() {
         return this.id;
     }
+    public Optional<String> serverName() {
+        return Optional.ofNullable(this.serverName);
+    }
+    public Optional<String> serviceName() {
+        return Optional.ofNullable(this.serviceName);
+    }
+    public Optional<String> spanKey() {
+        return Optional.ofNullable(this.spanKey);
+    }
+    public Optional<String> spanName() {
+        return Optional.ofNullable(this.spanName);
+    }
     public String traceKey() {
         return this.traceKey;
     }
@@ -59,6 +77,10 @@ public final class GetTraceAggregatedSnapshotDataResult {
         private String apmDomainId;
         private List<GetTraceAggregatedSnapshotDataDetail> details;
         private String id;
+        private @Nullable String serverName;
+        private @Nullable String serviceName;
+        private @Nullable String spanKey;
+        private @Nullable String spanName;
         private String traceKey;
         public Builder() {}
         public Builder(GetTraceAggregatedSnapshotDataResult defaults) {
@@ -66,6 +88,10 @@ public final class GetTraceAggregatedSnapshotDataResult {
     	      this.apmDomainId = defaults.apmDomainId;
     	      this.details = defaults.details;
     	      this.id = defaults.id;
+    	      this.serverName = defaults.serverName;
+    	      this.serviceName = defaults.serviceName;
+    	      this.spanKey = defaults.spanKey;
+    	      this.spanName = defaults.spanName;
     	      this.traceKey = defaults.traceKey;
         }
 
@@ -97,6 +123,30 @@ public final class GetTraceAggregatedSnapshotDataResult {
             return this;
         }
         @CustomType.Setter
+        public Builder serverName(@Nullable String serverName) {
+
+            this.serverName = serverName;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder serviceName(@Nullable String serviceName) {
+
+            this.serviceName = serviceName;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder spanKey(@Nullable String spanKey) {
+
+            this.spanKey = spanKey;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder spanName(@Nullable String spanName) {
+
+            this.spanName = spanName;
+            return this;
+        }
+        @CustomType.Setter
         public Builder traceKey(String traceKey) {
             if (traceKey == null) {
               throw new MissingRequiredPropertyException("GetTraceAggregatedSnapshotDataResult", "traceKey");
@@ -109,6 +159,10 @@ public final class GetTraceAggregatedSnapshotDataResult {
             _resultValue.apmDomainId = apmDomainId;
             _resultValue.details = details;
             _resultValue.id = id;
+            _resultValue.serverName = serverName;
+            _resultValue.serviceName = serviceName;
+            _resultValue.spanKey = spanKey;
+            _resultValue.spanName = spanName;
             _resultValue.traceKey = traceKey;
             return _resultValue;
         }

@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class GetTracePlainArgs extends com.pulumi.resources.InvokeArgs {
@@ -14,18 +16,48 @@ public final class GetTracePlainArgs extends com.pulumi.resources.InvokeArgs {
     public static final GetTracePlainArgs Empty = new GetTracePlainArgs();
 
     /**
-     * The APM Domain ID the request is intended for.
+     * The APM Domain ID for the intended request.
      * 
      */
     @Import(name="apmDomainId", required=true)
     private String apmDomainId;
 
     /**
-     * @return The APM Domain ID the request is intended for.
+     * @return The APM Domain ID for the intended request.
      * 
      */
     public String apmDomainId() {
         return this.apmDomainId;
+    }
+
+    /**
+     * Include traces that have a `minTraceStartTime` equal to or greater than this value.
+     * 
+     */
+    @Import(name="timeTraceStartedGreaterThanOrEqualTo")
+    private @Nullable String timeTraceStartedGreaterThanOrEqualTo;
+
+    /**
+     * @return Include traces that have a `minTraceStartTime` equal to or greater than this value.
+     * 
+     */
+    public Optional<String> timeTraceStartedGreaterThanOrEqualTo() {
+        return Optional.ofNullable(this.timeTraceStartedGreaterThanOrEqualTo);
+    }
+
+    /**
+     * Include traces that have a `minTraceStartTime` less than this value.
+     * 
+     */
+    @Import(name="timeTraceStartedLessThan")
+    private @Nullable String timeTraceStartedLessThan;
+
+    /**
+     * @return Include traces that have a `minTraceStartTime` less than this value.
+     * 
+     */
+    public Optional<String> timeTraceStartedLessThan() {
+        return Optional.ofNullable(this.timeTraceStartedLessThan);
     }
 
     /**
@@ -43,11 +75,29 @@ public final class GetTracePlainArgs extends com.pulumi.resources.InvokeArgs {
         return this.traceKey;
     }
 
+    /**
+     * Name space from which the trace details need to be retrieved.
+     * 
+     */
+    @Import(name="traceNamespace")
+    private @Nullable String traceNamespace;
+
+    /**
+     * @return Name space from which the trace details need to be retrieved.
+     * 
+     */
+    public Optional<String> traceNamespace() {
+        return Optional.ofNullable(this.traceNamespace);
+    }
+
     private GetTracePlainArgs() {}
 
     private GetTracePlainArgs(GetTracePlainArgs $) {
         this.apmDomainId = $.apmDomainId;
+        this.timeTraceStartedGreaterThanOrEqualTo = $.timeTraceStartedGreaterThanOrEqualTo;
+        this.timeTraceStartedLessThan = $.timeTraceStartedLessThan;
         this.traceKey = $.traceKey;
+        this.traceNamespace = $.traceNamespace;
     }
 
     public static Builder builder() {
@@ -69,13 +119,35 @@ public final class GetTracePlainArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param apmDomainId The APM Domain ID the request is intended for.
+         * @param apmDomainId The APM Domain ID for the intended request.
          * 
          * @return builder
          * 
          */
         public Builder apmDomainId(String apmDomainId) {
             $.apmDomainId = apmDomainId;
+            return this;
+        }
+
+        /**
+         * @param timeTraceStartedGreaterThanOrEqualTo Include traces that have a `minTraceStartTime` equal to or greater than this value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeTraceStartedGreaterThanOrEqualTo(@Nullable String timeTraceStartedGreaterThanOrEqualTo) {
+            $.timeTraceStartedGreaterThanOrEqualTo = timeTraceStartedGreaterThanOrEqualTo;
+            return this;
+        }
+
+        /**
+         * @param timeTraceStartedLessThan Include traces that have a `minTraceStartTime` less than this value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeTraceStartedLessThan(@Nullable String timeTraceStartedLessThan) {
+            $.timeTraceStartedLessThan = timeTraceStartedLessThan;
             return this;
         }
 
@@ -87,6 +159,17 @@ public final class GetTracePlainArgs extends com.pulumi.resources.InvokeArgs {
          */
         public Builder traceKey(String traceKey) {
             $.traceKey = traceKey;
+            return this;
+        }
+
+        /**
+         * @param traceNamespace Name space from which the trace details need to be retrieved.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder traceNamespace(@Nullable String traceNamespace) {
+            $.traceNamespace = traceNamespace;
             return this;
         }
 

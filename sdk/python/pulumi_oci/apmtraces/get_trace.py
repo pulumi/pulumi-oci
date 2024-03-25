@@ -22,7 +22,7 @@ class GetTraceResult:
     """
     A collection of values returned by getTrace.
     """
-    def __init__(__self__, apm_domain_id=None, error_span_count=None, id=None, is_fault=None, key=None, root_span_duration_in_ms=None, root_span_operation_name=None, root_span_service_name=None, service_summaries=None, span_count=None, span_summaries=None, spans=None, time_earliest_span_started=None, time_latest_span_ended=None, time_root_span_ended=None, time_root_span_started=None, trace_duration_in_ms=None, trace_error_code=None, trace_error_type=None, trace_key=None, trace_status=None):
+    def __init__(__self__, apm_domain_id=None, error_span_count=None, id=None, is_fault=None, key=None, root_span_duration_in_ms=None, root_span_operation_name=None, root_span_service_name=None, service_summaries=None, source_name=None, span_count=None, span_summaries=None, spans=None, time_earliest_span_started=None, time_latest_span_ended=None, time_root_span_ended=None, time_root_span_started=None, time_trace_started_greater_than_or_equal_to=None, time_trace_started_less_than=None, trace_duration_in_ms=None, trace_error_code=None, trace_error_type=None, trace_key=None, trace_namespace=None, trace_status=None):
         if apm_domain_id and not isinstance(apm_domain_id, str):
             raise TypeError("Expected argument 'apm_domain_id' to be a str")
         pulumi.set(__self__, "apm_domain_id", apm_domain_id)
@@ -50,6 +50,9 @@ class GetTraceResult:
         if service_summaries and not isinstance(service_summaries, list):
             raise TypeError("Expected argument 'service_summaries' to be a list")
         pulumi.set(__self__, "service_summaries", service_summaries)
+        if source_name and not isinstance(source_name, str):
+            raise TypeError("Expected argument 'source_name' to be a str")
+        pulumi.set(__self__, "source_name", source_name)
         if span_count and not isinstance(span_count, int):
             raise TypeError("Expected argument 'span_count' to be a int")
         pulumi.set(__self__, "span_count", span_count)
@@ -71,6 +74,12 @@ class GetTraceResult:
         if time_root_span_started and not isinstance(time_root_span_started, str):
             raise TypeError("Expected argument 'time_root_span_started' to be a str")
         pulumi.set(__self__, "time_root_span_started", time_root_span_started)
+        if time_trace_started_greater_than_or_equal_to and not isinstance(time_trace_started_greater_than_or_equal_to, str):
+            raise TypeError("Expected argument 'time_trace_started_greater_than_or_equal_to' to be a str")
+        pulumi.set(__self__, "time_trace_started_greater_than_or_equal_to", time_trace_started_greater_than_or_equal_to)
+        if time_trace_started_less_than and not isinstance(time_trace_started_less_than, str):
+            raise TypeError("Expected argument 'time_trace_started_less_than' to be a str")
+        pulumi.set(__self__, "time_trace_started_less_than", time_trace_started_less_than)
         if trace_duration_in_ms and not isinstance(trace_duration_in_ms, int):
             raise TypeError("Expected argument 'trace_duration_in_ms' to be a int")
         pulumi.set(__self__, "trace_duration_in_ms", trace_duration_in_ms)
@@ -83,6 +92,9 @@ class GetTraceResult:
         if trace_key and not isinstance(trace_key, str):
             raise TypeError("Expected argument 'trace_key' to be a str")
         pulumi.set(__self__, "trace_key", trace_key)
+        if trace_namespace and not isinstance(trace_namespace, str):
+            raise TypeError("Expected argument 'trace_namespace' to be a str")
+        pulumi.set(__self__, "trace_namespace", trace_namespace)
         if trace_status and not isinstance(trace_status, str):
             raise TypeError("Expected argument 'trace_status' to be a str")
         pulumi.set(__self__, "trace_status", trace_status)
@@ -157,6 +169,14 @@ class GetTraceResult:
         return pulumi.get(self, "service_summaries")
 
     @property
+    @pulumi.getter(name="sourceName")
+    def source_name(self) -> str:
+        """
+        Source of span (spans, syn_spans).
+        """
+        return pulumi.get(self, "source_name")
+
+    @property
     @pulumi.getter(name="spanCount")
     def span_count(self) -> int:
         """
@@ -213,6 +233,16 @@ class GetTraceResult:
         return pulumi.get(self, "time_root_span_started")
 
     @property
+    @pulumi.getter(name="timeTraceStartedGreaterThanOrEqualTo")
+    def time_trace_started_greater_than_or_equal_to(self) -> Optional[str]:
+        return pulumi.get(self, "time_trace_started_greater_than_or_equal_to")
+
+    @property
+    @pulumi.getter(name="timeTraceStartedLessThan")
+    def time_trace_started_less_than(self) -> Optional[str]:
+        return pulumi.get(self, "time_trace_started_less_than")
+
+    @property
     @pulumi.getter(name="traceDurationInMs")
     def trace_duration_in_ms(self) -> int:
         """
@@ -245,6 +275,11 @@ class GetTraceResult:
         return pulumi.get(self, "trace_key")
 
     @property
+    @pulumi.getter(name="traceNamespace")
+    def trace_namespace(self) -> Optional[str]:
+        return pulumi.get(self, "trace_namespace")
+
+    @property
     @pulumi.getter(name="traceStatus")
     def trace_status(self) -> str:
         """
@@ -268,6 +303,7 @@ class AwaitableGetTraceResult(GetTraceResult):
             root_span_operation_name=self.root_span_operation_name,
             root_span_service_name=self.root_span_service_name,
             service_summaries=self.service_summaries,
+            source_name=self.source_name,
             span_count=self.span_count,
             span_summaries=self.span_summaries,
             spans=self.spans,
@@ -275,15 +311,21 @@ class AwaitableGetTraceResult(GetTraceResult):
             time_latest_span_ended=self.time_latest_span_ended,
             time_root_span_ended=self.time_root_span_ended,
             time_root_span_started=self.time_root_span_started,
+            time_trace_started_greater_than_or_equal_to=self.time_trace_started_greater_than_or_equal_to,
+            time_trace_started_less_than=self.time_trace_started_less_than,
             trace_duration_in_ms=self.trace_duration_in_ms,
             trace_error_code=self.trace_error_code,
             trace_error_type=self.trace_error_type,
             trace_key=self.trace_key,
+            trace_namespace=self.trace_namespace,
             trace_status=self.trace_status)
 
 
 def get_trace(apm_domain_id: Optional[str] = None,
+              time_trace_started_greater_than_or_equal_to: Optional[str] = None,
+              time_trace_started_less_than: Optional[str] = None,
               trace_key: Optional[str] = None,
+              trace_namespace: Optional[str] = None,
               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetTraceResult:
     """
     This data source provides details about a specific Trace resource in Oracle Cloud Infrastructure Apm Traces service.
@@ -298,17 +340,26 @@ def get_trace(apm_domain_id: Optional[str] = None,
     import pulumi_oci as oci
 
     test_trace = oci.ApmTraces.get_trace(apm_domain_id=oci_apm_apm_domain["test_apm_domain"]["id"],
-        trace_key=var["trace_trace_key"])
+        trace_key=var["trace_trace_key"],
+        time_trace_started_greater_than_or_equal_to=var["trace_time_trace_started_greater_than_or_equal_to"],
+        time_trace_started_less_than=var["trace_time_trace_started_less_than"],
+        trace_namespace=var["trace_trace_namespace"])
     ```
     <!--End PulumiCodeChooser -->
 
 
-    :param str apm_domain_id: The APM Domain ID the request is intended for.
+    :param str apm_domain_id: The APM Domain ID for the intended request.
+    :param str time_trace_started_greater_than_or_equal_to: Include traces that have a `minTraceStartTime` equal to or greater than this value.
+    :param str time_trace_started_less_than: Include traces that have a `minTraceStartTime` less than this value.
     :param str trace_key: Unique Application Performance Monitoring trace identifier (traceId).
+    :param str trace_namespace: Name space from which the trace details need to be retrieved.
     """
     __args__ = dict()
     __args__['apmDomainId'] = apm_domain_id
+    __args__['timeTraceStartedGreaterThanOrEqualTo'] = time_trace_started_greater_than_or_equal_to
+    __args__['timeTraceStartedLessThan'] = time_trace_started_less_than
     __args__['traceKey'] = trace_key
+    __args__['traceNamespace'] = trace_namespace
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:ApmTraces/getTrace:getTrace', __args__, opts=opts, typ=GetTraceResult).value
 
@@ -322,6 +373,7 @@ def get_trace(apm_domain_id: Optional[str] = None,
         root_span_operation_name=pulumi.get(__ret__, 'root_span_operation_name'),
         root_span_service_name=pulumi.get(__ret__, 'root_span_service_name'),
         service_summaries=pulumi.get(__ret__, 'service_summaries'),
+        source_name=pulumi.get(__ret__, 'source_name'),
         span_count=pulumi.get(__ret__, 'span_count'),
         span_summaries=pulumi.get(__ret__, 'span_summaries'),
         spans=pulumi.get(__ret__, 'spans'),
@@ -329,16 +381,22 @@ def get_trace(apm_domain_id: Optional[str] = None,
         time_latest_span_ended=pulumi.get(__ret__, 'time_latest_span_ended'),
         time_root_span_ended=pulumi.get(__ret__, 'time_root_span_ended'),
         time_root_span_started=pulumi.get(__ret__, 'time_root_span_started'),
+        time_trace_started_greater_than_or_equal_to=pulumi.get(__ret__, 'time_trace_started_greater_than_or_equal_to'),
+        time_trace_started_less_than=pulumi.get(__ret__, 'time_trace_started_less_than'),
         trace_duration_in_ms=pulumi.get(__ret__, 'trace_duration_in_ms'),
         trace_error_code=pulumi.get(__ret__, 'trace_error_code'),
         trace_error_type=pulumi.get(__ret__, 'trace_error_type'),
         trace_key=pulumi.get(__ret__, 'trace_key'),
+        trace_namespace=pulumi.get(__ret__, 'trace_namespace'),
         trace_status=pulumi.get(__ret__, 'trace_status'))
 
 
 @_utilities.lift_output_func(get_trace)
 def get_trace_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
+                     time_trace_started_greater_than_or_equal_to: Optional[pulumi.Input[Optional[str]]] = None,
+                     time_trace_started_less_than: Optional[pulumi.Input[Optional[str]]] = None,
                      trace_key: Optional[pulumi.Input[str]] = None,
+                     trace_namespace: Optional[pulumi.Input[Optional[str]]] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetTraceResult]:
     """
     This data source provides details about a specific Trace resource in Oracle Cloud Infrastructure Apm Traces service.
@@ -353,12 +411,18 @@ def get_trace_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
     import pulumi_oci as oci
 
     test_trace = oci.ApmTraces.get_trace(apm_domain_id=oci_apm_apm_domain["test_apm_domain"]["id"],
-        trace_key=var["trace_trace_key"])
+        trace_key=var["trace_trace_key"],
+        time_trace_started_greater_than_or_equal_to=var["trace_time_trace_started_greater_than_or_equal_to"],
+        time_trace_started_less_than=var["trace_time_trace_started_less_than"],
+        trace_namespace=var["trace_trace_namespace"])
     ```
     <!--End PulumiCodeChooser -->
 
 
-    :param str apm_domain_id: The APM Domain ID the request is intended for.
+    :param str apm_domain_id: The APM Domain ID for the intended request.
+    :param str time_trace_started_greater_than_or_equal_to: Include traces that have a `minTraceStartTime` equal to or greater than this value.
+    :param str time_trace_started_less_than: Include traces that have a `minTraceStartTime` less than this value.
     :param str trace_key: Unique Application Performance Monitoring trace identifier (traceId).
+    :param str trace_namespace: Name space from which the trace details need to be retrieved.
     """
     ...

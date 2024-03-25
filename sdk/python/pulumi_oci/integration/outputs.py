@@ -17,12 +17,14 @@ __all__ = [
     'IntegrationInstanceIdcsInfo',
     'IntegrationInstanceNetworkEndpointDetails',
     'IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcn',
+    'IntegrationInstancePrivateEndpointOutboundConnection',
     'GetIntegrationInstanceAlternateCustomEndpointResult',
     'GetIntegrationInstanceAttachmentResult',
     'GetIntegrationInstanceCustomEndpointResult',
     'GetIntegrationInstanceIdcsInfoResult',
     'GetIntegrationInstanceNetworkEndpointDetailResult',
     'GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnResult',
+    'GetIntegrationInstancePrivateEndpointOutboundConnectionResult',
     'GetIntegrationInstancesFilterResult',
     'GetIntegrationInstancesIntegrationInstanceResult',
     'GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointResult',
@@ -31,6 +33,7 @@ __all__ = [
     'GetIntegrationInstancesIntegrationInstanceIdcsInfoResult',
     'GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailResult',
     'GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnResult',
+    'GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionResult',
 ]
 
 @pulumi.output_type
@@ -400,6 +403,7 @@ class IntegrationInstanceNetworkEndpointDetails(dict):
         :param Sequence[str] allowlisted_http_ips: Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
         :param Sequence['IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgs'] allowlisted_http_vcns: Virtual Cloud Networks allowed to access this network endpoint.
         :param bool is_integration_vcn_allowlisted: The Integration service's VCN is allow-listed to allow integrations to call back into other integrations
+               <<<<<<< HEAD
         """
         pulumi.set(__self__, "network_endpoint_type", network_endpoint_type)
         if allowlisted_http_ips is not None:
@@ -438,6 +442,7 @@ class IntegrationInstanceNetworkEndpointDetails(dict):
     def is_integration_vcn_allowlisted(self) -> Optional[bool]:
         """
         The Integration service's VCN is allow-listed to allow integrations to call back into other integrations
+        <<<<<<< HEAD
         """
         return pulumi.get(self, "is_integration_vcn_allowlisted")
 
@@ -487,6 +492,70 @@ class IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcn(dict):
         Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
         """
         return pulumi.get(self, "allowlisted_ips")
+
+
+@pulumi.output_type
+class IntegrationInstancePrivateEndpointOutboundConnection(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "nsgIds":
+            suggest = "nsg_ids"
+        elif key == "outboundConnectionType":
+            suggest = "outbound_connection_type"
+        elif key == "subnetId":
+            suggest = "subnet_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in IntegrationInstancePrivateEndpointOutboundConnection. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        IntegrationInstancePrivateEndpointOutboundConnection.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        IntegrationInstancePrivateEndpointOutboundConnection.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 nsg_ids: Optional[Sequence[str]] = None,
+                 outbound_connection_type: Optional[str] = None,
+                 subnet_id: Optional[str] = None):
+        """
+        :param Sequence[str] nsg_ids: One or more Network security group Ids. This is an optional argument.
+        :param str outbound_connection_type: The type of Outbound Connection.
+        :param str subnet_id: Customer Private Network VCN Subnet OCID. This is a required argument.
+        """
+        if nsg_ids is not None:
+            pulumi.set(__self__, "nsg_ids", nsg_ids)
+        if outbound_connection_type is not None:
+            pulumi.set(__self__, "outbound_connection_type", outbound_connection_type)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @property
+    @pulumi.getter(name="nsgIds")
+    def nsg_ids(self) -> Optional[Sequence[str]]:
+        """
+        One or more Network security group Ids. This is an optional argument.
+        """
+        return pulumi.get(self, "nsg_ids")
+
+    @property
+    @pulumi.getter(name="outboundConnectionType")
+    def outbound_connection_type(self) -> Optional[str]:
+        """
+        The type of Outbound Connection.
+        """
+        return pulumi.get(self, "outbound_connection_type")
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> Optional[str]:
+        """
+        Customer Private Network VCN Subnet OCID. This is a required argument.
+        """
+        return pulumi.get(self, "subnet_id")
 
 
 @pulumi.output_type
@@ -728,7 +797,8 @@ class GetIntegrationInstanceNetworkEndpointDetailResult(dict):
         :param Sequence[str] allowlisted_http_ips: Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
         :param Sequence['GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArgs'] allowlisted_http_vcns: Virtual Cloud Networks allowed to access this network endpoint.
         :param bool is_integration_vcn_allowlisted: The Integration service's VCN is allow-listed to allow integrations to call back into other integrations
-        :param str network_endpoint_type: The type of network endpoint.
+        :param str network_endpoint_type: The type of network endpoint. 
+               <<<<<<< HEAD
         """
         pulumi.set(__self__, "allowlisted_http_ips", allowlisted_http_ips)
         pulumi.set(__self__, "allowlisted_http_vcns", allowlisted_http_vcns)
@@ -763,7 +833,8 @@ class GetIntegrationInstanceNetworkEndpointDetailResult(dict):
     @pulumi.getter(name="networkEndpointType")
     def network_endpoint_type(self) -> str:
         """
-        The type of network endpoint.
+        The type of network endpoint. 
+        <<<<<<< HEAD
         """
         return pulumi.get(self, "network_endpoint_type")
 
@@ -795,6 +866,46 @@ class GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnResult(dict):
         The Virtual Cloud Network OCID.
         """
         return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class GetIntegrationInstancePrivateEndpointOutboundConnectionResult(dict):
+    def __init__(__self__, *,
+                 nsg_ids: Sequence[str],
+                 outbound_connection_type: str,
+                 subnet_id: str):
+        """
+        :param Sequence[str] nsg_ids: One or more Network security group Ids. This is an optional argument.
+        :param str outbound_connection_type: The type of Outbound Connection.
+        :param str subnet_id: Customer Private Network VCN Subnet OCID. This is a required argument.
+        """
+        pulumi.set(__self__, "nsg_ids", nsg_ids)
+        pulumi.set(__self__, "outbound_connection_type", outbound_connection_type)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @property
+    @pulumi.getter(name="nsgIds")
+    def nsg_ids(self) -> Sequence[str]:
+        """
+        One or more Network security group Ids. This is an optional argument.
+        """
+        return pulumi.get(self, "nsg_ids")
+
+    @property
+    @pulumi.getter(name="outboundConnectionType")
+    def outbound_connection_type(self) -> str:
+        """
+        The type of Outbound Connection.
+        """
+        return pulumi.get(self, "outbound_connection_type")
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> str:
+        """
+        Customer Private Network VCN Subnet OCID. This is a required argument.
+        """
+        return pulumi.get(self, "subnet_id")
 
 
 @pulumi.output_type
@@ -847,6 +958,7 @@ class GetIntegrationInstancesIntegrationInstanceResult(dict):
                  is_visual_builder_enabled: bool,
                  message_packs: int,
                  network_endpoint_details: Sequence['outputs.GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailResult'],
+                 private_endpoint_outbound_connections: Sequence['outputs.GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionResult'],
                  shape: str,
                  state: str,
                  state_message: str,
@@ -870,7 +982,9 @@ class GetIntegrationInstancesIntegrationInstanceResult(dict):
         :param bool is_visual_builder_enabled: Visual Builder is enabled or not.
         :param int message_packs: The number of configured message packs (if any)
         :param Sequence['GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailArgs'] network_endpoint_details: Base representation of a network endpoint.
+        :param Sequence['GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionArgs'] private_endpoint_outbound_connections: Base representation for Outbound Connection (Reverse Connection).
         :param str shape: Shape
+               >>>>>>> c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
         :param str state: Life cycle state to query on.
         :param str state_message: An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param str time_created: The time the the Integration Instance was created. An RFC3339 formatted datetime string.
@@ -896,6 +1010,7 @@ class GetIntegrationInstancesIntegrationInstanceResult(dict):
         pulumi.set(__self__, "is_visual_builder_enabled", is_visual_builder_enabled)
         pulumi.set(__self__, "message_packs", message_packs)
         pulumi.set(__self__, "network_endpoint_details", network_endpoint_details)
+        pulumi.set(__self__, "private_endpoint_outbound_connections", private_endpoint_outbound_connections)
         pulumi.set(__self__, "shape", shape)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "state_message", state_message)
@@ -1054,10 +1169,19 @@ class GetIntegrationInstancesIntegrationInstanceResult(dict):
         return pulumi.get(self, "network_endpoint_details")
 
     @property
+    @pulumi.getter(name="privateEndpointOutboundConnections")
+    def private_endpoint_outbound_connections(self) -> Sequence['outputs.GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionResult']:
+        """
+        Base representation for Outbound Connection (Reverse Connection).
+        """
+        return pulumi.get(self, "private_endpoint_outbound_connections")
+
+    @property
     @pulumi.getter
     def shape(self) -> str:
         """
         Shape
+        >>>>>>> c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
         """
         return pulumi.get(self, "shape")
 
@@ -1333,7 +1457,8 @@ class GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailResult(dict
         :param Sequence[str] allowlisted_http_ips: Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
         :param Sequence['GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArgs'] allowlisted_http_vcns: Virtual Cloud Networks allowed to access this network endpoint.
         :param bool is_integration_vcn_allowlisted: The Integration service's VCN is allow-listed to allow integrations to call back into other integrations
-        :param str network_endpoint_type: The type of network endpoint.
+        :param str network_endpoint_type: The type of network endpoint. 
+               <<<<<<< HEAD
         """
         pulumi.set(__self__, "allowlisted_http_ips", allowlisted_http_ips)
         pulumi.set(__self__, "allowlisted_http_vcns", allowlisted_http_vcns)
@@ -1368,7 +1493,8 @@ class GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailResult(dict
     @pulumi.getter(name="networkEndpointType")
     def network_endpoint_type(self) -> str:
         """
-        The type of network endpoint.
+        The type of network endpoint. 
+        <<<<<<< HEAD
         """
         return pulumi.get(self, "network_endpoint_type")
 
@@ -1400,5 +1526,45 @@ class GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlisted
         The Virtual Cloud Network OCID.
         """
         return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionResult(dict):
+    def __init__(__self__, *,
+                 nsg_ids: Sequence[str],
+                 outbound_connection_type: str,
+                 subnet_id: str):
+        """
+        :param Sequence[str] nsg_ids: One or more Network security group Ids. This is an optional argument.
+        :param str outbound_connection_type: The type of Outbound Connection.
+        :param str subnet_id: Customer Private Network VCN Subnet OCID. This is a required argument.
+        """
+        pulumi.set(__self__, "nsg_ids", nsg_ids)
+        pulumi.set(__self__, "outbound_connection_type", outbound_connection_type)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @property
+    @pulumi.getter(name="nsgIds")
+    def nsg_ids(self) -> Sequence[str]:
+        """
+        One or more Network security group Ids. This is an optional argument.
+        """
+        return pulumi.get(self, "nsg_ids")
+
+    @property
+    @pulumi.getter(name="outboundConnectionType")
+    def outbound_connection_type(self) -> str:
+        """
+        The type of Outbound Connection.
+        """
+        return pulumi.get(self, "outbound_connection_type")
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> str:
+        """
+        Customer Private Network VCN Subnet OCID. This is a required argument.
+        """
+        return pulumi.get(self, "subnet_id")
 
 

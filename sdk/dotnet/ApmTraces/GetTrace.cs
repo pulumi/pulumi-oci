@@ -32,6 +32,9 @@ namespace Pulumi.Oci.ApmTraces
         ///     {
         ///         ApmDomainId = oci_apm_apm_domain.Test_apm_domain.Id,
         ///         TraceKey = @var.Trace_trace_key,
+        ///         TimeTraceStartedGreaterThanOrEqualTo = @var.Trace_time_trace_started_greater_than_or_equal_to,
+        ///         TimeTraceStartedLessThan = @var.Trace_time_trace_started_less_than,
+        ///         TraceNamespace = @var.Trace_trace_namespace,
         ///     });
         /// 
         /// });
@@ -62,6 +65,9 @@ namespace Pulumi.Oci.ApmTraces
         ///     {
         ///         ApmDomainId = oci_apm_apm_domain.Test_apm_domain.Id,
         ///         TraceKey = @var.Trace_trace_key,
+        ///         TimeTraceStartedGreaterThanOrEqualTo = @var.Trace_time_trace_started_greater_than_or_equal_to,
+        ///         TimeTraceStartedLessThan = @var.Trace_time_trace_started_less_than,
+        ///         TraceNamespace = @var.Trace_trace_namespace,
         ///     });
         /// 
         /// });
@@ -76,16 +82,34 @@ namespace Pulumi.Oci.ApmTraces
     public sealed class GetTraceArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The APM Domain ID the request is intended for.
+        /// The APM Domain ID for the intended request.
         /// </summary>
         [Input("apmDomainId", required: true)]
         public string ApmDomainId { get; set; } = null!;
+
+        /// <summary>
+        /// Include traces that have a `minTraceStartTime` equal to or greater than this value.
+        /// </summary>
+        [Input("timeTraceStartedGreaterThanOrEqualTo")]
+        public string? TimeTraceStartedGreaterThanOrEqualTo { get; set; }
+
+        /// <summary>
+        /// Include traces that have a `minTraceStartTime` less than this value.
+        /// </summary>
+        [Input("timeTraceStartedLessThan")]
+        public string? TimeTraceStartedLessThan { get; set; }
 
         /// <summary>
         /// Unique Application Performance Monitoring trace identifier (traceId).
         /// </summary>
         [Input("traceKey", required: true)]
         public string TraceKey { get; set; } = null!;
+
+        /// <summary>
+        /// Name space from which the trace details need to be retrieved.
+        /// </summary>
+        [Input("traceNamespace")]
+        public string? TraceNamespace { get; set; }
 
         public GetTraceArgs()
         {
@@ -96,16 +120,34 @@ namespace Pulumi.Oci.ApmTraces
     public sealed class GetTraceInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The APM Domain ID the request is intended for.
+        /// The APM Domain ID for the intended request.
         /// </summary>
         [Input("apmDomainId", required: true)]
         public Input<string> ApmDomainId { get; set; } = null!;
+
+        /// <summary>
+        /// Include traces that have a `minTraceStartTime` equal to or greater than this value.
+        /// </summary>
+        [Input("timeTraceStartedGreaterThanOrEqualTo")]
+        public Input<string>? TimeTraceStartedGreaterThanOrEqualTo { get; set; }
+
+        /// <summary>
+        /// Include traces that have a `minTraceStartTime` less than this value.
+        /// </summary>
+        [Input("timeTraceStartedLessThan")]
+        public Input<string>? TimeTraceStartedLessThan { get; set; }
 
         /// <summary>
         /// Unique Application Performance Monitoring trace identifier (traceId).
         /// </summary>
         [Input("traceKey", required: true)]
         public Input<string> TraceKey { get; set; } = null!;
+
+        /// <summary>
+        /// Name space from which the trace details need to be retrieved.
+        /// </summary>
+        [Input("traceNamespace")]
+        public Input<string>? TraceNamespace { get; set; }
 
         public GetTraceInvokeArgs()
         {
@@ -151,6 +193,10 @@ namespace Pulumi.Oci.ApmTraces
         /// </summary>
         public readonly ImmutableArray<Outputs.GetTraceServiceSummaryResult> ServiceSummaries;
         /// <summary>
+        /// Source of span (spans, syn_spans).
+        /// </summary>
+        public readonly string SourceName;
+        /// <summary>
         /// The number of spans that have been processed by the system for the trace.  Note that there could be additional spans that have not been processed or reported yet if the trace is still in progress.
         /// </summary>
         public readonly int SpanCount;
@@ -178,6 +224,8 @@ namespace Pulumi.Oci.ApmTraces
         /// Start time of the root span for the span collection.
         /// </summary>
         public readonly string TimeRootSpanStarted;
+        public readonly string? TimeTraceStartedGreaterThanOrEqualTo;
+        public readonly string? TimeTraceStartedLessThan;
         /// <summary>
         /// Time between the start of the earliest span and the end of the most recent span in milliseconds.
         /// </summary>
@@ -194,6 +242,7 @@ namespace Pulumi.Oci.ApmTraces
         /// Unique identifier for the trace.
         /// </summary>
         public readonly string TraceKey;
+        public readonly string? TraceNamespace;
         /// <summary>
         /// The status of the trace. The trace statuses are defined as follows: complete - a root span has been recorded, but there is no information on the errors. success - a complete root span is recorded there is a successful error type and error code - HTTP 200. incomplete - the root span has not yet been received. error - the root span returned with an error. There may or may not be an associated error code or error type.
         /// </summary>
@@ -219,6 +268,8 @@ namespace Pulumi.Oci.ApmTraces
 
             ImmutableArray<Outputs.GetTraceServiceSummaryResult> serviceSummaries,
 
+            string sourceName,
+
             int spanCount,
 
             ImmutableArray<Outputs.GetTraceSpanSummaryResult> spanSummaries,
@@ -233,6 +284,10 @@ namespace Pulumi.Oci.ApmTraces
 
             string timeRootSpanStarted,
 
+            string? timeTraceStartedGreaterThanOrEqualTo,
+
+            string? timeTraceStartedLessThan,
+
             int traceDurationInMs,
 
             string traceErrorCode,
@@ -240,6 +295,8 @@ namespace Pulumi.Oci.ApmTraces
             string traceErrorType,
 
             string traceKey,
+
+            string? traceNamespace,
 
             string traceStatus)
         {
@@ -252,6 +309,7 @@ namespace Pulumi.Oci.ApmTraces
             RootSpanOperationName = rootSpanOperationName;
             RootSpanServiceName = rootSpanServiceName;
             ServiceSummaries = serviceSummaries;
+            SourceName = sourceName;
             SpanCount = spanCount;
             SpanSummaries = spanSummaries;
             Spans = spans;
@@ -259,10 +317,13 @@ namespace Pulumi.Oci.ApmTraces
             TimeLatestSpanEnded = timeLatestSpanEnded;
             TimeRootSpanEnded = timeRootSpanEnded;
             TimeRootSpanStarted = timeRootSpanStarted;
+            TimeTraceStartedGreaterThanOrEqualTo = timeTraceStartedGreaterThanOrEqualTo;
+            TimeTraceStartedLessThan = timeTraceStartedLessThan;
             TraceDurationInMs = traceDurationInMs;
             TraceErrorCode = traceErrorCode;
             TraceErrorType = traceErrorType;
             TraceKey = traceKey;
+            TraceNamespace = traceNamespace;
             TraceStatus = traceStatus;
         }
     }

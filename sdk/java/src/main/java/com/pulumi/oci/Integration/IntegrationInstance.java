@@ -14,6 +14,7 @@ import com.pulumi.oci.Integration.outputs.IntegrationInstanceAttachment;
 import com.pulumi.oci.Integration.outputs.IntegrationInstanceCustomEndpoint;
 import com.pulumi.oci.Integration.outputs.IntegrationInstanceIdcsInfo;
 import com.pulumi.oci.Integration.outputs.IntegrationInstanceNetworkEndpointDetails;
+import com.pulumi.oci.Integration.outputs.IntegrationInstancePrivateEndpointOutboundConnection;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -220,6 +221,7 @@ public class IntegrationInstance extends com.pulumi.resources.CustomResource {
     }
     /**
      * (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
+     * ||||||| parent of c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
      * 
      */
     @Export(name="enableProcessAutomationTrigger", refs={Integer.class}, tree="[0]")
@@ -227,6 +229,7 @@ public class IntegrationInstance extends com.pulumi.resources.CustomResource {
 
     /**
      * @return (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
+     * ||||||| parent of c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
      * 
      */
     public Output<Optional<Integer>> enableProcessAutomationTrigger() {
@@ -373,7 +376,22 @@ public class IntegrationInstance extends com.pulumi.resources.CustomResource {
         return this.networkEndpointDetails;
     }
     /**
+     * Base representation for Outbound Connection (Reverse Connection).
+     * 
+     */
+    @Export(name="privateEndpointOutboundConnections", refs={List.class,IntegrationInstancePrivateEndpointOutboundConnection.class}, tree="[0,1]")
+    private Output<List<IntegrationInstancePrivateEndpointOutboundConnection>> privateEndpointOutboundConnections;
+
+    /**
+     * @return Base representation for Outbound Connection (Reverse Connection).
+     * 
+     */
+    public Output<List<IntegrationInstancePrivateEndpointOutboundConnection>> privateEndpointOutboundConnections() {
+        return this.privateEndpointOutboundConnections;
+    }
+    /**
      * Shape
+     * &gt; &gt; &gt; &gt; &gt; &gt; &gt; c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
      * 
      */
     @Export(name="shape", refs={String.class}, tree="[0]")
@@ -381,6 +399,7 @@ public class IntegrationInstance extends com.pulumi.resources.CustomResource {
 
     /**
      * @return Shape
+     * &gt; &gt; &gt; &gt; &gt; &gt; &gt; c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
      * 
      */
     public Output<String> shape() {

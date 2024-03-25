@@ -97,7 +97,7 @@ def get_query_quick_picks(apm_domain_id: Optional[str] = None,
     <!--End PulumiCodeChooser -->
 
 
-    :param str apm_domain_id: The APM Domain ID the request is intended for.
+    :param str apm_domain_id: The APM Domain ID for the intended request.
     """
     __args__ = dict()
     __args__['apmDomainId'] = apm_domain_id
@@ -134,6 +134,6 @@ def get_query_quick_picks_output(apm_domain_id: Optional[pulumi.Input[str]] = No
     <!--End PulumiCodeChooser -->
 
 
-    :param str apm_domain_id: The APM Domain ID the request is intended for.
+    :param str apm_domain_id: The APM Domain ID for the intended request.
     """
     ...

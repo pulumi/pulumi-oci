@@ -55,6 +55,11 @@ public final class GetTraceSpan {
      */
     private String serviceName;
     /**
+     * @return Source of span (spans, syn_spans).
+     * 
+     */
+    private String sourceName;
+    /**
      * @return List of tags associated with the span.
      * 
      */
@@ -133,6 +138,13 @@ public final class GetTraceSpan {
         return this.serviceName;
     }
     /**
+     * @return Source of span (spans, syn_spans).
+     * 
+     */
+    public String sourceName() {
+        return this.sourceName;
+    }
+    /**
      * @return List of tags associated with the span.
      * 
      */
@@ -178,6 +190,7 @@ public final class GetTraceSpan {
         private String operationName;
         private String parentSpanKey;
         private String serviceName;
+        private String sourceName;
         private List<GetTraceSpanTag> tags;
         private String timeEnded;
         private String timeStarted;
@@ -193,6 +206,7 @@ public final class GetTraceSpan {
     	      this.operationName = defaults.operationName;
     	      this.parentSpanKey = defaults.parentSpanKey;
     	      this.serviceName = defaults.serviceName;
+    	      this.sourceName = defaults.sourceName;
     	      this.tags = defaults.tags;
     	      this.timeEnded = defaults.timeEnded;
     	      this.timeStarted = defaults.timeStarted;
@@ -267,6 +281,14 @@ public final class GetTraceSpan {
             return this;
         }
         @CustomType.Setter
+        public Builder sourceName(String sourceName) {
+            if (sourceName == null) {
+              throw new MissingRequiredPropertyException("GetTraceSpan", "sourceName");
+            }
+            this.sourceName = sourceName;
+            return this;
+        }
+        @CustomType.Setter
         public Builder tags(List<GetTraceSpanTag> tags) {
             if (tags == null) {
               throw new MissingRequiredPropertyException("GetTraceSpan", "tags");
@@ -311,6 +333,7 @@ public final class GetTraceSpan {
             _resultValue.operationName = operationName;
             _resultValue.parentSpanKey = parentSpanKey;
             _resultValue.serviceName = serviceName;
+            _resultValue.sourceName = sourceName;
             _resultValue.tags = tags;
             _resultValue.timeEnded = timeEnded;
             _resultValue.timeStarted = timeStarted;

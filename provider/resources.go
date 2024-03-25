@@ -1726,6 +1726,7 @@ func Provider() tfbridge.ProviderInfo {
 		"oci_data_safe_security_policy_deployment_management",
 		"oci_data_safe_security_policy_management",
 		"oci_data_safe_sql_firewall_policy_management",
+		"oci_integration_private_endpoint_outbound_connection",
 	}
 	for _, r := range resourcesMissingDocs {
 		_, ok := prov.Resources[r]

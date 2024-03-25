@@ -30,6 +30,7 @@ public final class GetIntegrationInstancesIntegrationInstanceNetworkEndpointDeta
     private Boolean isIntegrationVcnAllowlisted;
     /**
      * @return The type of network endpoint.
+     * &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
      * 
      */
     private String networkEndpointType;
@@ -58,6 +59,7 @@ public final class GetIntegrationInstancesIntegrationInstanceNetworkEndpointDeta
     }
     /**
      * @return The type of network endpoint.
+     * &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
      * 
      */
     public String networkEndpointType() {

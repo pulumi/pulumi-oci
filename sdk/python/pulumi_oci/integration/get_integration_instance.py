@@ -22,7 +22,7 @@ class GetIntegrationInstanceResult:
     """
     A collection of values returned by getIntegrationInstance.
     """
-    def __init__(__self__, alternate_custom_endpoints=None, attachments=None, compartment_id=None, consumption_model=None, custom_endpoints=None, defined_tags=None, display_name=None, domain_id=None, enable_process_automation_trigger=None, freeform_tags=None, id=None, idcs_at=None, idcs_infos=None, instance_url=None, integration_instance_id=None, integration_instance_type=None, is_byol=None, is_file_server_enabled=None, is_visual_builder_enabled=None, message_packs=None, network_endpoint_details=None, shape=None, state=None, state_message=None, time_created=None, time_updated=None):
+    def __init__(__self__, alternate_custom_endpoints=None, attachments=None, compartment_id=None, consumption_model=None, custom_endpoints=None, defined_tags=None, display_name=None, domain_id=None, enable_process_automation_trigger=None, freeform_tags=None, id=None, idcs_at=None, idcs_infos=None, instance_url=None, integration_instance_id=None, integration_instance_type=None, is_byol=None, is_file_server_enabled=None, is_visual_builder_enabled=None, message_packs=None, network_endpoint_details=None, private_endpoint_outbound_connections=None, shape=None, state=None, state_message=None, time_created=None, time_updated=None):
         if alternate_custom_endpoints and not isinstance(alternate_custom_endpoints, list):
             raise TypeError("Expected argument 'alternate_custom_endpoints' to be a list")
         pulumi.set(__self__, "alternate_custom_endpoints", alternate_custom_endpoints)
@@ -86,6 +86,9 @@ class GetIntegrationInstanceResult:
         if network_endpoint_details and not isinstance(network_endpoint_details, list):
             raise TypeError("Expected argument 'network_endpoint_details' to be a list")
         pulumi.set(__self__, "network_endpoint_details", network_endpoint_details)
+        if private_endpoint_outbound_connections and not isinstance(private_endpoint_outbound_connections, list):
+            raise TypeError("Expected argument 'private_endpoint_outbound_connections' to be a list")
+        pulumi.set(__self__, "private_endpoint_outbound_connections", private_endpoint_outbound_connections)
         if shape and not isinstance(shape, str):
             raise TypeError("Expected argument 'shape' to be a str")
         pulumi.set(__self__, "shape", shape)
@@ -259,10 +262,19 @@ class GetIntegrationInstanceResult:
         return pulumi.get(self, "network_endpoint_details")
 
     @property
+    @pulumi.getter(name="privateEndpointOutboundConnections")
+    def private_endpoint_outbound_connections(self) -> Sequence['outputs.GetIntegrationInstancePrivateEndpointOutboundConnectionResult']:
+        """
+        Base representation for Outbound Connection (Reverse Connection).
+        """
+        return pulumi.get(self, "private_endpoint_outbound_connections")
+
+    @property
     @pulumi.getter
     def shape(self) -> str:
         """
         Shape
+        >>>>>>> c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
         """
         return pulumi.get(self, "shape")
 
@@ -326,6 +338,7 @@ class AwaitableGetIntegrationInstanceResult(GetIntegrationInstanceResult):
             is_visual_builder_enabled=self.is_visual_builder_enabled,
             message_packs=self.message_packs,
             network_endpoint_details=self.network_endpoint_details,
+            private_endpoint_outbound_connections=self.private_endpoint_outbound_connections,
             shape=self.shape,
             state=self.state,
             state_message=self.state_message,
@@ -381,6 +394,7 @@ def get_integration_instance(integration_instance_id: Optional[str] = None,
         is_visual_builder_enabled=pulumi.get(__ret__, 'is_visual_builder_enabled'),
         message_packs=pulumi.get(__ret__, 'message_packs'),
         network_endpoint_details=pulumi.get(__ret__, 'network_endpoint_details'),
+        private_endpoint_outbound_connections=pulumi.get(__ret__, 'private_endpoint_outbound_connections'),
         shape=pulumi.get(__ret__, 'shape'),
         state=pulumi.get(__ret__, 'state'),
         state_message=pulumi.get(__ret__, 'state_message'),

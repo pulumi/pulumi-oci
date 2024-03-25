@@ -141,6 +141,7 @@ namespace Pulumi.Oci.Integration
 
         /// <summary>
         /// (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
+        /// ||||||| parent of c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
         /// </summary>
         [Output("enableProcessAutomationTrigger")]
         public Output<int?> EnableProcessAutomationTrigger { get; private set; } = null!;
@@ -206,7 +207,14 @@ namespace Pulumi.Oci.Integration
         public Output<Outputs.IntegrationInstanceNetworkEndpointDetails> NetworkEndpointDetails { get; private set; } = null!;
 
         /// <summary>
+        /// Base representation for Outbound Connection (Reverse Connection).
+        /// </summary>
+        [Output("privateEndpointOutboundConnections")]
+        public Output<ImmutableArray<Outputs.IntegrationInstancePrivateEndpointOutboundConnection>> PrivateEndpointOutboundConnections { get; private set; } = null!;
+
+        /// <summary>
         /// Shape
+        /// &gt;&gt;&gt;&gt;&gt;&gt;&gt; c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
         /// </summary>
         [Output("shape")]
         public Output<string> Shape { get; private set; } = null!;
@@ -345,6 +353,7 @@ namespace Pulumi.Oci.Integration
 
         /// <summary>
         /// (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
+        /// ||||||| parent of c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
         /// </summary>
         [Input("enableProcessAutomationTrigger")]
         public Input<int>? EnableProcessAutomationTrigger { get; set; }
@@ -415,6 +424,7 @@ namespace Pulumi.Oci.Integration
 
         /// <summary>
         /// Shape
+        /// &gt;&gt;&gt;&gt;&gt;&gt;&gt; c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
         /// </summary>
         [Input("shape")]
         public Input<string>? Shape { get; set; }
@@ -505,6 +515,7 @@ namespace Pulumi.Oci.Integration
 
         /// <summary>
         /// (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
+        /// ||||||| parent of c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
         /// </summary>
         [Input("enableProcessAutomationTrigger")]
         public Input<int>? EnableProcessAutomationTrigger { get; set; }
@@ -591,8 +602,21 @@ namespace Pulumi.Oci.Integration
         [Input("networkEndpointDetails")]
         public Input<Inputs.IntegrationInstanceNetworkEndpointDetailsGetArgs>? NetworkEndpointDetails { get; set; }
 
+        [Input("privateEndpointOutboundConnections")]
+        private InputList<Inputs.IntegrationInstancePrivateEndpointOutboundConnectionGetArgs>? _privateEndpointOutboundConnections;
+
+        /// <summary>
+        /// Base representation for Outbound Connection (Reverse Connection).
+        /// </summary>
+        public InputList<Inputs.IntegrationInstancePrivateEndpointOutboundConnectionGetArgs> PrivateEndpointOutboundConnections
+        {
+            get => _privateEndpointOutboundConnections ?? (_privateEndpointOutboundConnections = new InputList<Inputs.IntegrationInstancePrivateEndpointOutboundConnectionGetArgs>());
+            set => _privateEndpointOutboundConnections = value;
+        }
+
         /// <summary>
         /// Shape
+        /// &gt;&gt;&gt;&gt;&gt;&gt;&gt; c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
         /// </summary>
         [Input("shape")]
         public Input<string>? Shape { get; set; }

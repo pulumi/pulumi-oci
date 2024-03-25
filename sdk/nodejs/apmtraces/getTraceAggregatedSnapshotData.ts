@@ -21,6 +21,10 @@ import * as utilities from "../utilities";
  * const testTraceAggregatedSnapshotData = oci.ApmTraces.getTraceAggregatedSnapshotData({
  *     apmDomainId: oci_apm_apm_domain.test_apm_domain.id,
  *     traceKey: _var.trace_aggregated_snapshot_data_trace_key,
+ *     serverName: _var.trace_aggregated_snapshot_data_server_name,
+ *     serviceName: oci_core_service.test_service.name,
+ *     spanKey: _var.trace_aggregated_snapshot_data_span_key,
+ *     spanName: _var.trace_aggregated_snapshot_data_span_name,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -30,6 +34,10 @@ export function getTraceAggregatedSnapshotData(args: GetTraceAggregatedSnapshotD
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ApmTraces/getTraceAggregatedSnapshotData:getTraceAggregatedSnapshotData", {
         "apmDomainId": args.apmDomainId,
+        "serverName": args.serverName,
+        "serviceName": args.serviceName,
+        "spanKey": args.spanKey,
+        "spanName": args.spanName,
         "traceKey": args.traceKey,
     }, opts);
 }
@@ -39,9 +47,25 @@ export function getTraceAggregatedSnapshotData(args: GetTraceAggregatedSnapshotD
  */
 export interface GetTraceAggregatedSnapshotDataArgs {
     /**
-     * The APM Domain ID the request is intended for.
+     * The APM Domain ID for the intended request.
      */
     apmDomainId: string;
+    /**
+     * Name of the server.
+     */
+    serverName?: string;
+    /**
+     * Name associated with the service.
+     */
+    serviceName?: string;
+    /**
+     * Unique Application Performance Monitoring span identifier (spanId).
+     */
+    spanKey?: string;
+    /**
+     * Name of the span associated with the trace.
+     */
+    spanName?: string;
     /**
      * Unique Application Performance Monitoring trace identifier (traceId).
      */
@@ -61,6 +85,10 @@ export interface GetTraceAggregatedSnapshotDataResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    readonly serverName?: string;
+    readonly serviceName?: string;
+    readonly spanKey?: string;
+    readonly spanName?: string;
     readonly traceKey: string;
 }
 /**
@@ -78,6 +106,10 @@ export interface GetTraceAggregatedSnapshotDataResult {
  * const testTraceAggregatedSnapshotData = oci.ApmTraces.getTraceAggregatedSnapshotData({
  *     apmDomainId: oci_apm_apm_domain.test_apm_domain.id,
  *     traceKey: _var.trace_aggregated_snapshot_data_trace_key,
+ *     serverName: _var.trace_aggregated_snapshot_data_server_name,
+ *     serviceName: oci_core_service.test_service.name,
+ *     spanKey: _var.trace_aggregated_snapshot_data_span_key,
+ *     spanName: _var.trace_aggregated_snapshot_data_span_name,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -91,9 +123,25 @@ export function getTraceAggregatedSnapshotDataOutput(args: GetTraceAggregatedSna
  */
 export interface GetTraceAggregatedSnapshotDataOutputArgs {
     /**
-     * The APM Domain ID the request is intended for.
+     * The APM Domain ID for the intended request.
      */
     apmDomainId: pulumi.Input<string>;
+    /**
+     * Name of the server.
+     */
+    serverName?: pulumi.Input<string>;
+    /**
+     * Name associated with the service.
+     */
+    serviceName?: pulumi.Input<string>;
+    /**
+     * Unique Application Performance Monitoring span identifier (spanId).
+     */
+    spanKey?: pulumi.Input<string>;
+    /**
+     * Name of the span associated with the trace.
+     */
+    spanName?: pulumi.Input<string>;
     /**
      * Unique Application Performance Monitoring trace identifier (traceId).
      */

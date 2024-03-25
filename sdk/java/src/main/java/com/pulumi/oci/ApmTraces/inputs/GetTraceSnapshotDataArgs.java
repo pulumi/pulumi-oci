@@ -18,14 +18,14 @@ public final class GetTraceSnapshotDataArgs extends com.pulumi.resources.InvokeA
     public static final GetTraceSnapshotDataArgs Empty = new GetTraceSnapshotDataArgs();
 
     /**
-     * The APM Domain ID the request is intended for.
+     * The APM Domain ID for the intended request.
      * 
      */
     @Import(name="apmDomainId", required=true)
     private Output<String> apmDomainId;
 
     /**
-     * @return The APM Domain ID the request is intended for.
+     * @return The APM Domain ID for the intended request.
      * 
      */
     public Output<String> apmDomainId() {
@@ -33,14 +33,14 @@ public final class GetTraceSnapshotDataArgs extends com.pulumi.resources.InvokeA
     }
 
     /**
-     * If enabled, then only span level details will be sent.
+     * If enabled, only span level details are sent.
      * 
      */
     @Import(name="isSummarized")
     private @Nullable Output<Boolean> isSummarized;
 
     /**
-     * @return If enabled, then only span level details will be sent.
+     * @return If enabled, only span level details are sent.
      * 
      */
     public Optional<Output<Boolean>> isSummarized() {
@@ -63,14 +63,14 @@ public final class GetTraceSnapshotDataArgs extends com.pulumi.resources.InvokeA
     }
 
     /**
-     * Thread id for which snapshots needs to be retrieved. This is an identifier of a thread, and is a positive long number generated when when a thread is created.
+     * Thread ID for which snapshots need to be retrieved. This identifier of a thread is a long positive number generated when a thread is created.
      * 
      */
     @Import(name="threadId")
     private @Nullable Output<String> threadId;
 
     /**
-     * @return Thread id for which snapshots needs to be retrieved. This is an identifier of a thread, and is a positive long number generated when when a thread is created.
+     * @return Thread ID for which snapshots need to be retrieved. This identifier of a thread is a long positive number generated when a thread is created.
      * 
      */
     public Optional<Output<String>> threadId() {
@@ -121,7 +121,7 @@ public final class GetTraceSnapshotDataArgs extends com.pulumi.resources.InvokeA
         }
 
         /**
-         * @param apmDomainId The APM Domain ID the request is intended for.
+         * @param apmDomainId The APM Domain ID for the intended request.
          * 
          * @return builder
          * 
@@ -132,7 +132,7 @@ public final class GetTraceSnapshotDataArgs extends com.pulumi.resources.InvokeA
         }
 
         /**
-         * @param apmDomainId The APM Domain ID the request is intended for.
+         * @param apmDomainId The APM Domain ID for the intended request.
          * 
          * @return builder
          * 
@@ -142,7 +142,7 @@ public final class GetTraceSnapshotDataArgs extends com.pulumi.resources.InvokeA
         }
 
         /**
-         * @param isSummarized If enabled, then only span level details will be sent.
+         * @param isSummarized If enabled, only span level details are sent.
          * 
          * @return builder
          * 
@@ -153,7 +153,7 @@ public final class GetTraceSnapshotDataArgs extends com.pulumi.resources.InvokeA
         }
 
         /**
-         * @param isSummarized If enabled, then only span level details will be sent.
+         * @param isSummarized If enabled, only span level details are sent.
          * 
          * @return builder
          * 
@@ -184,7 +184,7 @@ public final class GetTraceSnapshotDataArgs extends com.pulumi.resources.InvokeA
         }
 
         /**
-         * @param threadId Thread id for which snapshots needs to be retrieved. This is an identifier of a thread, and is a positive long number generated when when a thread is created.
+         * @param threadId Thread ID for which snapshots need to be retrieved. This identifier of a thread is a long positive number generated when a thread is created.
          * 
          * @return builder
          * 
@@ -195,7 +195,7 @@ public final class GetTraceSnapshotDataArgs extends com.pulumi.resources.InvokeA
         }
 
         /**
-         * @param threadId Thread id for which snapshots needs to be retrieved. This is an identifier of a thread, and is a positive long number generated when when a thread is created.
+         * @param threadId Thread ID for which snapshots need to be retrieved. This identifier of a thread is a long positive number generated when a thread is created.
          * 
          * @return builder
          * 

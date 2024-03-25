@@ -13,6 +13,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetTraceResult {
@@ -58,6 +60,11 @@ public final class GetTraceResult {
      */
     private List<GetTraceServiceSummary> serviceSummaries;
     /**
+     * @return Source of span (spans, syn_spans).
+     * 
+     */
+    private String sourceName;
+    /**
      * @return The number of spans that have been processed by the system for the trace.  Note that there could be additional spans that have not been processed or reported yet if the trace is still in progress.
      * 
      */
@@ -92,6 +99,8 @@ public final class GetTraceResult {
      * 
      */
     private String timeRootSpanStarted;
+    private @Nullable String timeTraceStartedGreaterThanOrEqualTo;
+    private @Nullable String timeTraceStartedLessThan;
     /**
      * @return Time between the start of the earliest span and the end of the most recent span in milliseconds.
      * 
@@ -112,6 +121,7 @@ public final class GetTraceResult {
      * 
      */
     private String traceKey;
+    private @Nullable String traceNamespace;
     /**
      * @return The status of the trace. The trace statuses are defined as follows: complete - a root span has been recorded, but there is no information on the errors. success - a complete root span is recorded there is a successful error type and error code - HTTP 200. incomplete - the root span has not yet been received. error - the root span returned with an error. There may or may not be an associated error code or error type.
      * 
@@ -179,6 +189,13 @@ public final class GetTraceResult {
         return this.serviceSummaries;
     }
     /**
+     * @return Source of span (spans, syn_spans).
+     * 
+     */
+    public String sourceName() {
+        return this.sourceName;
+    }
+    /**
      * @return The number of spans that have been processed by the system for the trace.  Note that there could be additional spans that have not been processed or reported yet if the trace is still in progress.
      * 
      */
@@ -227,6 +244,12 @@ public final class GetTraceResult {
     public String timeRootSpanStarted() {
         return this.timeRootSpanStarted;
     }
+    public Optional<String> timeTraceStartedGreaterThanOrEqualTo() {
+        return Optional.ofNullable(this.timeTraceStartedGreaterThanOrEqualTo);
+    }
+    public Optional<String> timeTraceStartedLessThan() {
+        return Optional.ofNullable(this.timeTraceStartedLessThan);
+    }
     /**
      * @return Time between the start of the earliest span and the end of the most recent span in milliseconds.
      * 
@@ -255,6 +278,9 @@ public final class GetTraceResult {
     public String traceKey() {
         return this.traceKey;
     }
+    public Optional<String> traceNamespace() {
+        return Optional.ofNullable(this.traceNamespace);
+    }
     /**
      * @return The status of the trace. The trace statuses are defined as follows: complete - a root span has been recorded, but there is no information on the errors. success - a complete root span is recorded there is a successful error type and error code - HTTP 200. incomplete - the root span has not yet been received. error - the root span returned with an error. There may or may not be an associated error code or error type.
      * 
@@ -281,6 +307,7 @@ public final class GetTraceResult {
         private String rootSpanOperationName;
         private String rootSpanServiceName;
         private List<GetTraceServiceSummary> serviceSummaries;
+        private String sourceName;
         private Integer spanCount;
         private List<GetTraceSpanSummary> spanSummaries;
         private List<GetTraceSpan> spans;
@@ -288,10 +315,13 @@ public final class GetTraceResult {
         private String timeLatestSpanEnded;
         private String timeRootSpanEnded;
         private String timeRootSpanStarted;
+        private @Nullable String timeTraceStartedGreaterThanOrEqualTo;
+        private @Nullable String timeTraceStartedLessThan;
         private Integer traceDurationInMs;
         private String traceErrorCode;
         private String traceErrorType;
         private String traceKey;
+        private @Nullable String traceNamespace;
         private String traceStatus;
         public Builder() {}
         public Builder(GetTraceResult defaults) {
@@ -305,6 +335,7 @@ public final class GetTraceResult {
     	      this.rootSpanOperationName = defaults.rootSpanOperationName;
     	      this.rootSpanServiceName = defaults.rootSpanServiceName;
     	      this.serviceSummaries = defaults.serviceSummaries;
+    	      this.sourceName = defaults.sourceName;
     	      this.spanCount = defaults.spanCount;
     	      this.spanSummaries = defaults.spanSummaries;
     	      this.spans = defaults.spans;
@@ -312,10 +343,13 @@ public final class GetTraceResult {
     	      this.timeLatestSpanEnded = defaults.timeLatestSpanEnded;
     	      this.timeRootSpanEnded = defaults.timeRootSpanEnded;
     	      this.timeRootSpanStarted = defaults.timeRootSpanStarted;
+    	      this.timeTraceStartedGreaterThanOrEqualTo = defaults.timeTraceStartedGreaterThanOrEqualTo;
+    	      this.timeTraceStartedLessThan = defaults.timeTraceStartedLessThan;
     	      this.traceDurationInMs = defaults.traceDurationInMs;
     	      this.traceErrorCode = defaults.traceErrorCode;
     	      this.traceErrorType = defaults.traceErrorType;
     	      this.traceKey = defaults.traceKey;
+    	      this.traceNamespace = defaults.traceNamespace;
     	      this.traceStatus = defaults.traceStatus;
         }
 
@@ -395,6 +429,14 @@ public final class GetTraceResult {
             return serviceSummaries(List.of(serviceSummaries));
         }
         @CustomType.Setter
+        public Builder sourceName(String sourceName) {
+            if (sourceName == null) {
+              throw new MissingRequiredPropertyException("GetTraceResult", "sourceName");
+            }
+            this.sourceName = sourceName;
+            return this;
+        }
+        @CustomType.Setter
         public Builder spanCount(Integer spanCount) {
             if (spanCount == null) {
               throw new MissingRequiredPropertyException("GetTraceResult", "spanCount");
@@ -457,6 +499,18 @@ public final class GetTraceResult {
             return this;
         }
         @CustomType.Setter
+        public Builder timeTraceStartedGreaterThanOrEqualTo(@Nullable String timeTraceStartedGreaterThanOrEqualTo) {
+
+            this.timeTraceStartedGreaterThanOrEqualTo = timeTraceStartedGreaterThanOrEqualTo;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder timeTraceStartedLessThan(@Nullable String timeTraceStartedLessThan) {
+
+            this.timeTraceStartedLessThan = timeTraceStartedLessThan;
+            return this;
+        }
+        @CustomType.Setter
         public Builder traceDurationInMs(Integer traceDurationInMs) {
             if (traceDurationInMs == null) {
               throw new MissingRequiredPropertyException("GetTraceResult", "traceDurationInMs");
@@ -489,6 +543,12 @@ public final class GetTraceResult {
             return this;
         }
         @CustomType.Setter
+        public Builder traceNamespace(@Nullable String traceNamespace) {
+
+            this.traceNamespace = traceNamespace;
+            return this;
+        }
+        @CustomType.Setter
         public Builder traceStatus(String traceStatus) {
             if (traceStatus == null) {
               throw new MissingRequiredPropertyException("GetTraceResult", "traceStatus");
@@ -507,6 +567,7 @@ public final class GetTraceResult {
             _resultValue.rootSpanOperationName = rootSpanOperationName;
             _resultValue.rootSpanServiceName = rootSpanServiceName;
             _resultValue.serviceSummaries = serviceSummaries;
+            _resultValue.sourceName = sourceName;
             _resultValue.spanCount = spanCount;
             _resultValue.spanSummaries = spanSummaries;
             _resultValue.spans = spans;
@@ -514,10 +575,13 @@ public final class GetTraceResult {
             _resultValue.timeLatestSpanEnded = timeLatestSpanEnded;
             _resultValue.timeRootSpanEnded = timeRootSpanEnded;
             _resultValue.timeRootSpanStarted = timeRootSpanStarted;
+            _resultValue.timeTraceStartedGreaterThanOrEqualTo = timeTraceStartedGreaterThanOrEqualTo;
+            _resultValue.timeTraceStartedLessThan = timeTraceStartedLessThan;
             _resultValue.traceDurationInMs = traceDurationInMs;
             _resultValue.traceErrorCode = traceErrorCode;
             _resultValue.traceErrorType = traceErrorType;
             _resultValue.traceKey = traceKey;
+            _resultValue.traceNamespace = traceNamespace;
             _resultValue.traceStatus = traceStatus;
             return _resultValue;
         }

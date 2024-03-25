@@ -20,6 +20,11 @@ export type IntegrationInstance = import("./integrationInstance").IntegrationIns
 export const IntegrationInstance: typeof import("./integrationInstance").IntegrationInstance = null as any;
 utilities.lazyLoad(exports, ["IntegrationInstance"], () => require("./integrationInstance"));
 
+export { PrivateEndpointOutboundConnectionArgs, PrivateEndpointOutboundConnectionState } from "./privateEndpointOutboundConnection";
+export type PrivateEndpointOutboundConnection = import("./privateEndpointOutboundConnection").PrivateEndpointOutboundConnection;
+export const PrivateEndpointOutboundConnection: typeof import("./privateEndpointOutboundConnection").PrivateEndpointOutboundConnection = null as any;
+utilities.lazyLoad(exports, ["PrivateEndpointOutboundConnection"], () => require("./privateEndpointOutboundConnection"));
+
 
 const _module = {
     version: utilities.getVersion(),
@@ -27,9 +32,12 @@ const _module = {
         switch (type) {
             case "oci:Integration/integrationInstance:IntegrationInstance":
                 return new IntegrationInstance(name, <any>undefined, { urn })
+            case "oci:Integration/privateEndpointOutboundConnection:PrivateEndpointOutboundConnection":
+                return new PrivateEndpointOutboundConnection(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
     },
 };
 pulumi.runtime.registerResourceModule("oci", "Integration/integrationInstance", _module)
+pulumi.runtime.registerResourceModule("oci", "Integration/privateEndpointOutboundConnection", _module)

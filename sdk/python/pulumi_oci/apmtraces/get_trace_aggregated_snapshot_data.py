@@ -22,7 +22,7 @@ class GetTraceAggregatedSnapshotDataResult:
     """
     A collection of values returned by getTraceAggregatedSnapshotData.
     """
-    def __init__(__self__, apm_domain_id=None, details=None, id=None, trace_key=None):
+    def __init__(__self__, apm_domain_id=None, details=None, id=None, server_name=None, service_name=None, span_key=None, span_name=None, trace_key=None):
         if apm_domain_id and not isinstance(apm_domain_id, str):
             raise TypeError("Expected argument 'apm_domain_id' to be a str")
         pulumi.set(__self__, "apm_domain_id", apm_domain_id)
@@ -32,6 +32,18 @@ class GetTraceAggregatedSnapshotDataResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if server_name and not isinstance(server_name, str):
+            raise TypeError("Expected argument 'server_name' to be a str")
+        pulumi.set(__self__, "server_name", server_name)
+        if service_name and not isinstance(service_name, str):
+            raise TypeError("Expected argument 'service_name' to be a str")
+        pulumi.set(__self__, "service_name", service_name)
+        if span_key and not isinstance(span_key, str):
+            raise TypeError("Expected argument 'span_key' to be a str")
+        pulumi.set(__self__, "span_key", span_key)
+        if span_name and not isinstance(span_name, str):
+            raise TypeError("Expected argument 'span_name' to be a str")
+        pulumi.set(__self__, "span_name", span_name)
         if trace_key and not isinstance(trace_key, str):
             raise TypeError("Expected argument 'trace_key' to be a str")
         pulumi.set(__self__, "trace_key", trace_key)
@@ -58,6 +70,26 @@ class GetTraceAggregatedSnapshotDataResult:
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="serverName")
+    def server_name(self) -> Optional[str]:
+        return pulumi.get(self, "server_name")
+
+    @property
+    @pulumi.getter(name="serviceName")
+    def service_name(self) -> Optional[str]:
+        return pulumi.get(self, "service_name")
+
+    @property
+    @pulumi.getter(name="spanKey")
+    def span_key(self) -> Optional[str]:
+        return pulumi.get(self, "span_key")
+
+    @property
+    @pulumi.getter(name="spanName")
+    def span_name(self) -> Optional[str]:
+        return pulumi.get(self, "span_name")
+
+    @property
     @pulumi.getter(name="traceKey")
     def trace_key(self) -> str:
         return pulumi.get(self, "trace_key")
@@ -72,10 +104,18 @@ class AwaitableGetTraceAggregatedSnapshotDataResult(GetTraceAggregatedSnapshotDa
             apm_domain_id=self.apm_domain_id,
             details=self.details,
             id=self.id,
+            server_name=self.server_name,
+            service_name=self.service_name,
+            span_key=self.span_key,
+            span_name=self.span_name,
             trace_key=self.trace_key)
 
 
 def get_trace_aggregated_snapshot_data(apm_domain_id: Optional[str] = None,
+                                       server_name: Optional[str] = None,
+                                       service_name: Optional[str] = None,
+                                       span_key: Optional[str] = None,
+                                       span_name: Optional[str] = None,
                                        trace_key: Optional[str] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetTraceAggregatedSnapshotDataResult:
     """
@@ -91,16 +131,28 @@ def get_trace_aggregated_snapshot_data(apm_domain_id: Optional[str] = None,
     import pulumi_oci as oci
 
     test_trace_aggregated_snapshot_data = oci.ApmTraces.get_trace_aggregated_snapshot_data(apm_domain_id=oci_apm_apm_domain["test_apm_domain"]["id"],
-        trace_key=var["trace_aggregated_snapshot_data_trace_key"])
+        trace_key=var["trace_aggregated_snapshot_data_trace_key"],
+        server_name=var["trace_aggregated_snapshot_data_server_name"],
+        service_name=oci_core_service["test_service"]["name"],
+        span_key=var["trace_aggregated_snapshot_data_span_key"],
+        span_name=var["trace_aggregated_snapshot_data_span_name"])
     ```
     <!--End PulumiCodeChooser -->
 
 
-    :param str apm_domain_id: The APM Domain ID the request is intended for.
+    :param str apm_domain_id: The APM Domain ID for the intended request.
+    :param str server_name: Name of the server.
+    :param str service_name: Name associated with the service.
+    :param str span_key: Unique Application Performance Monitoring span identifier (spanId).
+    :param str span_name: Name of the span associated with the trace.
     :param str trace_key: Unique Application Performance Monitoring trace identifier (traceId).
     """
     __args__ = dict()
     __args__['apmDomainId'] = apm_domain_id
+    __args__['serverName'] = server_name
+    __args__['serviceName'] = service_name
+    __args__['spanKey'] = span_key
+    __args__['spanName'] = span_name
     __args__['traceKey'] = trace_key
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:ApmTraces/getTraceAggregatedSnapshotData:getTraceAggregatedSnapshotData', __args__, opts=opts, typ=GetTraceAggregatedSnapshotDataResult).value
@@ -109,11 +161,19 @@ def get_trace_aggregated_snapshot_data(apm_domain_id: Optional[str] = None,
         apm_domain_id=pulumi.get(__ret__, 'apm_domain_id'),
         details=pulumi.get(__ret__, 'details'),
         id=pulumi.get(__ret__, 'id'),
+        server_name=pulumi.get(__ret__, 'server_name'),
+        service_name=pulumi.get(__ret__, 'service_name'),
+        span_key=pulumi.get(__ret__, 'span_key'),
+        span_name=pulumi.get(__ret__, 'span_name'),
         trace_key=pulumi.get(__ret__, 'trace_key'))
 
 
 @_utilities.lift_output_func(get_trace_aggregated_snapshot_data)
 def get_trace_aggregated_snapshot_data_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
+                                              server_name: Optional[pulumi.Input[Optional[str]]] = None,
+                                              service_name: Optional[pulumi.Input[Optional[str]]] = None,
+                                              span_key: Optional[pulumi.Input[Optional[str]]] = None,
+                                              span_name: Optional[pulumi.Input[Optional[str]]] = None,
                                               trace_key: Optional[pulumi.Input[str]] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetTraceAggregatedSnapshotDataResult]:
     """
@@ -129,12 +189,20 @@ def get_trace_aggregated_snapshot_data_output(apm_domain_id: Optional[pulumi.Inp
     import pulumi_oci as oci
 
     test_trace_aggregated_snapshot_data = oci.ApmTraces.get_trace_aggregated_snapshot_data(apm_domain_id=oci_apm_apm_domain["test_apm_domain"]["id"],
-        trace_key=var["trace_aggregated_snapshot_data_trace_key"])
+        trace_key=var["trace_aggregated_snapshot_data_trace_key"],
+        server_name=var["trace_aggregated_snapshot_data_server_name"],
+        service_name=oci_core_service["test_service"]["name"],
+        span_key=var["trace_aggregated_snapshot_data_span_key"],
+        span_name=var["trace_aggregated_snapshot_data_span_name"])
     ```
     <!--End PulumiCodeChooser -->
 
 
-    :param str apm_domain_id: The APM Domain ID the request is intended for.
+    :param str apm_domain_id: The APM Domain ID for the intended request.
+    :param str server_name: Name of the server.
+    :param str service_name: Name associated with the service.
+    :param str span_key: Unique Application Performance Monitoring span identifier (spanId).
+    :param str span_name: Name of the span associated with the trace.
     :param str trace_key: Unique Application Performance Monitoring trace identifier (traceId).
     """
     ...

@@ -32,6 +32,10 @@ namespace Pulumi.Oci.ApmTraces
         ///     {
         ///         ApmDomainId = oci_apm_apm_domain.Test_apm_domain.Id,
         ///         TraceKey = @var.Trace_aggregated_snapshot_data_trace_key,
+        ///         ServerName = @var.Trace_aggregated_snapshot_data_server_name,
+        ///         ServiceName = oci_core_service.Test_service.Name,
+        ///         SpanKey = @var.Trace_aggregated_snapshot_data_span_key,
+        ///         SpanName = @var.Trace_aggregated_snapshot_data_span_name,
         ///     });
         /// 
         /// });
@@ -62,6 +66,10 @@ namespace Pulumi.Oci.ApmTraces
         ///     {
         ///         ApmDomainId = oci_apm_apm_domain.Test_apm_domain.Id,
         ///         TraceKey = @var.Trace_aggregated_snapshot_data_trace_key,
+        ///         ServerName = @var.Trace_aggregated_snapshot_data_server_name,
+        ///         ServiceName = oci_core_service.Test_service.Name,
+        ///         SpanKey = @var.Trace_aggregated_snapshot_data_span_key,
+        ///         SpanName = @var.Trace_aggregated_snapshot_data_span_name,
         ///     });
         /// 
         /// });
@@ -76,10 +84,34 @@ namespace Pulumi.Oci.ApmTraces
     public sealed class GetTraceAggregatedSnapshotDataArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The APM Domain ID the request is intended for.
+        /// The APM Domain ID for the intended request.
         /// </summary>
         [Input("apmDomainId", required: true)]
         public string ApmDomainId { get; set; } = null!;
+
+        /// <summary>
+        /// Name of the server.
+        /// </summary>
+        [Input("serverName")]
+        public string? ServerName { get; set; }
+
+        /// <summary>
+        /// Name associated with the service.
+        /// </summary>
+        [Input("serviceName")]
+        public string? ServiceName { get; set; }
+
+        /// <summary>
+        /// Unique Application Performance Monitoring span identifier (spanId).
+        /// </summary>
+        [Input("spanKey")]
+        public string? SpanKey { get; set; }
+
+        /// <summary>
+        /// Name of the span associated with the trace.
+        /// </summary>
+        [Input("spanName")]
+        public string? SpanName { get; set; }
 
         /// <summary>
         /// Unique Application Performance Monitoring trace identifier (traceId).
@@ -96,10 +128,34 @@ namespace Pulumi.Oci.ApmTraces
     public sealed class GetTraceAggregatedSnapshotDataInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The APM Domain ID the request is intended for.
+        /// The APM Domain ID for the intended request.
         /// </summary>
         [Input("apmDomainId", required: true)]
         public Input<string> ApmDomainId { get; set; } = null!;
+
+        /// <summary>
+        /// Name of the server.
+        /// </summary>
+        [Input("serverName")]
+        public Input<string>? ServerName { get; set; }
+
+        /// <summary>
+        /// Name associated with the service.
+        /// </summary>
+        [Input("serviceName")]
+        public Input<string>? ServiceName { get; set; }
+
+        /// <summary>
+        /// Unique Application Performance Monitoring span identifier (spanId).
+        /// </summary>
+        [Input("spanKey")]
+        public Input<string>? SpanKey { get; set; }
+
+        /// <summary>
+        /// Name of the span associated with the trace.
+        /// </summary>
+        [Input("spanName")]
+        public Input<string>? SpanName { get; set; }
 
         /// <summary>
         /// Unique Application Performance Monitoring trace identifier (traceId).
@@ -126,6 +182,10 @@ namespace Pulumi.Oci.ApmTraces
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        public readonly string? ServerName;
+        public readonly string? ServiceName;
+        public readonly string? SpanKey;
+        public readonly string? SpanName;
         public readonly string TraceKey;
 
         [OutputConstructor]
@@ -136,11 +196,23 @@ namespace Pulumi.Oci.ApmTraces
 
             string id,
 
+            string? serverName,
+
+            string? serviceName,
+
+            string? spanKey,
+
+            string? spanName,
+
             string traceKey)
         {
             ApmDomainId = apmDomainId;
             Details = details;
             Id = id;
+            ServerName = serverName;
+            ServiceName = serviceName;
+            SpanKey = spanKey;
+            SpanName = spanName;
             TraceKey = traceKey;
         }
     }

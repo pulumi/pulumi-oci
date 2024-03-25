@@ -46,6 +46,10 @@ namespace Pulumi.Oci.ApmTraces.Outputs
         /// </summary>
         public readonly string ServiceName;
         /// <summary>
+        /// Source of span (spans, syn_spans).
+        /// </summary>
+        public readonly string SourceName;
+        /// <summary>
         /// List of tags associated with the span.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetTraceSpanTagResult> Tags;
@@ -80,6 +84,8 @@ namespace Pulumi.Oci.ApmTraces.Outputs
 
             string serviceName,
 
+            string sourceName,
+
             ImmutableArray<Outputs.GetTraceSpanTagResult> tags,
 
             string timeEnded,
@@ -96,6 +102,7 @@ namespace Pulumi.Oci.ApmTraces.Outputs
             OperationName = operationName;
             ParentSpanKey = parentSpanKey;
             ServiceName = serviceName;
+            SourceName = sourceName;
             Tags = tags;
             TimeEnded = timeEnded;
             TimeStarted = timeStarted;

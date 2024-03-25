@@ -8,6 +8,8 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class GetTraceAggregatedSnapshotDataArgs extends com.pulumi.resources.InvokeArgs {
@@ -15,18 +17,78 @@ public final class GetTraceAggregatedSnapshotDataArgs extends com.pulumi.resourc
     public static final GetTraceAggregatedSnapshotDataArgs Empty = new GetTraceAggregatedSnapshotDataArgs();
 
     /**
-     * The APM Domain ID the request is intended for.
+     * The APM Domain ID for the intended request.
      * 
      */
     @Import(name="apmDomainId", required=true)
     private Output<String> apmDomainId;
 
     /**
-     * @return The APM Domain ID the request is intended for.
+     * @return The APM Domain ID for the intended request.
      * 
      */
     public Output<String> apmDomainId() {
         return this.apmDomainId;
+    }
+
+    /**
+     * Name of the server.
+     * 
+     */
+    @Import(name="serverName")
+    private @Nullable Output<String> serverName;
+
+    /**
+     * @return Name of the server.
+     * 
+     */
+    public Optional<Output<String>> serverName() {
+        return Optional.ofNullable(this.serverName);
+    }
+
+    /**
+     * Name associated with the service.
+     * 
+     */
+    @Import(name="serviceName")
+    private @Nullable Output<String> serviceName;
+
+    /**
+     * @return Name associated with the service.
+     * 
+     */
+    public Optional<Output<String>> serviceName() {
+        return Optional.ofNullable(this.serviceName);
+    }
+
+    /**
+     * Unique Application Performance Monitoring span identifier (spanId).
+     * 
+     */
+    @Import(name="spanKey")
+    private @Nullable Output<String> spanKey;
+
+    /**
+     * @return Unique Application Performance Monitoring span identifier (spanId).
+     * 
+     */
+    public Optional<Output<String>> spanKey() {
+        return Optional.ofNullable(this.spanKey);
+    }
+
+    /**
+     * Name of the span associated with the trace.
+     * 
+     */
+    @Import(name="spanName")
+    private @Nullable Output<String> spanName;
+
+    /**
+     * @return Name of the span associated with the trace.
+     * 
+     */
+    public Optional<Output<String>> spanName() {
+        return Optional.ofNullable(this.spanName);
     }
 
     /**
@@ -48,6 +110,10 @@ public final class GetTraceAggregatedSnapshotDataArgs extends com.pulumi.resourc
 
     private GetTraceAggregatedSnapshotDataArgs(GetTraceAggregatedSnapshotDataArgs $) {
         this.apmDomainId = $.apmDomainId;
+        this.serverName = $.serverName;
+        this.serviceName = $.serviceName;
+        this.spanKey = $.spanKey;
+        this.spanName = $.spanName;
         this.traceKey = $.traceKey;
     }
 
@@ -70,7 +136,7 @@ public final class GetTraceAggregatedSnapshotDataArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param apmDomainId The APM Domain ID the request is intended for.
+         * @param apmDomainId The APM Domain ID for the intended request.
          * 
          * @return builder
          * 
@@ -81,13 +147,97 @@ public final class GetTraceAggregatedSnapshotDataArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param apmDomainId The APM Domain ID the request is intended for.
+         * @param apmDomainId The APM Domain ID for the intended request.
          * 
          * @return builder
          * 
          */
         public Builder apmDomainId(String apmDomainId) {
             return apmDomainId(Output.of(apmDomainId));
+        }
+
+        /**
+         * @param serverName Name of the server.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder serverName(@Nullable Output<String> serverName) {
+            $.serverName = serverName;
+            return this;
+        }
+
+        /**
+         * @param serverName Name of the server.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder serverName(String serverName) {
+            return serverName(Output.of(serverName));
+        }
+
+        /**
+         * @param serviceName Name associated with the service.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder serviceName(@Nullable Output<String> serviceName) {
+            $.serviceName = serviceName;
+            return this;
+        }
+
+        /**
+         * @param serviceName Name associated with the service.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder serviceName(String serviceName) {
+            return serviceName(Output.of(serviceName));
+        }
+
+        /**
+         * @param spanKey Unique Application Performance Monitoring span identifier (spanId).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder spanKey(@Nullable Output<String> spanKey) {
+            $.spanKey = spanKey;
+            return this;
+        }
+
+        /**
+         * @param spanKey Unique Application Performance Monitoring span identifier (spanId).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder spanKey(String spanKey) {
+            return spanKey(Output.of(spanKey));
+        }
+
+        /**
+         * @param spanName Name of the span associated with the trace.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder spanName(@Nullable Output<String> spanName) {
+            $.spanName = spanName;
+            return this;
+        }
+
+        /**
+         * @param spanName Name of the span associated with the trace.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder spanName(String spanName) {
+            return spanName(Output.of(spanName));
         }
 
         /**

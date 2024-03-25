@@ -16,6 +16,7 @@ __all__ = [
     'IntegrationInstanceIdcsInfoArgs',
     'IntegrationInstanceNetworkEndpointDetailsArgs',
     'IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgs',
+    'IntegrationInstancePrivateEndpointOutboundConnectionArgs',
     'GetIntegrationInstancesFilterArgs',
 ]
 
@@ -347,6 +348,7 @@ class IntegrationInstanceNetworkEndpointDetailsArgs:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] allowlisted_http_ips: Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
         :param pulumi.Input[Sequence[pulumi.Input['IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgs']]] allowlisted_http_vcns: Virtual Cloud Networks allowed to access this network endpoint.
         :param pulumi.Input[bool] is_integration_vcn_allowlisted: The Integration service's VCN is allow-listed to allow integrations to call back into other integrations
+               <<<<<<< HEAD
         """
         pulumi.set(__self__, "network_endpoint_type", network_endpoint_type)
         if allowlisted_http_ips is not None:
@@ -397,6 +399,7 @@ class IntegrationInstanceNetworkEndpointDetailsArgs:
     def is_integration_vcn_allowlisted(self) -> Optional[pulumi.Input[bool]]:
         """
         The Integration service's VCN is allow-listed to allow integrations to call back into other integrations
+        <<<<<<< HEAD
         """
         return pulumi.get(self, "is_integration_vcn_allowlisted")
 
@@ -441,6 +444,61 @@ class IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgs:
     @allowlisted_ips.setter
     def allowlisted_ips(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "allowlisted_ips", value)
+
+
+@pulumi.input_type
+class IntegrationInstancePrivateEndpointOutboundConnectionArgs:
+    def __init__(__self__, *,
+                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 outbound_connection_type: Optional[pulumi.Input[str]] = None,
+                 subnet_id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: One or more Network security group Ids. This is an optional argument.
+        :param pulumi.Input[str] outbound_connection_type: The type of Outbound Connection.
+        :param pulumi.Input[str] subnet_id: Customer Private Network VCN Subnet OCID. This is a required argument.
+        """
+        if nsg_ids is not None:
+            pulumi.set(__self__, "nsg_ids", nsg_ids)
+        if outbound_connection_type is not None:
+            pulumi.set(__self__, "outbound_connection_type", outbound_connection_type)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @property
+    @pulumi.getter(name="nsgIds")
+    def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        One or more Network security group Ids. This is an optional argument.
+        """
+        return pulumi.get(self, "nsg_ids")
+
+    @nsg_ids.setter
+    def nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "nsg_ids", value)
+
+    @property
+    @pulumi.getter(name="outboundConnectionType")
+    def outbound_connection_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The type of Outbound Connection.
+        """
+        return pulumi.get(self, "outbound_connection_type")
+
+    @outbound_connection_type.setter
+    def outbound_connection_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "outbound_connection_type", value)
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        Customer Private Network VCN Subnet OCID. This is a required argument.
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @subnet_id.setter
+    def subnet_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "subnet_id", value)
 
 
 @pulumi.input_type

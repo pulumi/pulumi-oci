@@ -131,6 +131,7 @@ public final class IntegrationInstanceArgs extends com.pulumi.resources.Resource
 
     /**
      * (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
+     * ||||||| parent of c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
      * 
      */
     @Import(name="enableProcessAutomationTrigger")
@@ -138,6 +139,7 @@ public final class IntegrationInstanceArgs extends com.pulumi.resources.Resource
 
     /**
      * @return (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
+     * ||||||| parent of c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
      * 
      */
     public Optional<Output<Integer>> enableProcessAutomationTrigger() {
@@ -266,6 +268,7 @@ public final class IntegrationInstanceArgs extends com.pulumi.resources.Resource
 
     /**
      * Shape
+     * &gt; &gt; &gt; &gt; &gt; &gt; &gt; c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
      * 
      */
     @Import(name="shape")
@@ -273,6 +276,7 @@ public final class IntegrationInstanceArgs extends com.pulumi.resources.Resource
 
     /**
      * @return Shape
+     * &gt; &gt; &gt; &gt; &gt; &gt; &gt; c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
      * 
      */
     public Optional<Output<String>> shape() {
@@ -500,6 +504,7 @@ public final class IntegrationInstanceArgs extends com.pulumi.resources.Resource
 
         /**
          * @param enableProcessAutomationTrigger (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
+         * ||||||| parent of c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
          * 
          * @return builder
          * 
@@ -511,6 +516,7 @@ public final class IntegrationInstanceArgs extends com.pulumi.resources.Resource
 
         /**
          * @param enableProcessAutomationTrigger (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
+         * ||||||| parent of c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
          * 
          * @return builder
          * 
@@ -689,6 +695,7 @@ public final class IntegrationInstanceArgs extends com.pulumi.resources.Resource
 
         /**
          * @param shape Shape
+         * &gt; &gt; &gt; &gt; &gt; &gt; &gt; c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
          * 
          * @return builder
          * 
@@ -700,6 +707,7 @@ public final class IntegrationInstanceArgs extends com.pulumi.resources.Resource
 
         /**
          * @param shape Shape
+         * &gt; &gt; &gt; &gt; &gt; &gt; &gt; c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
          * 
          * @return builder
          * 

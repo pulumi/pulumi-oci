@@ -18,14 +18,14 @@ public final class GetQueryQuickPicksPlainArgs extends com.pulumi.resources.Invo
     public static final GetQueryQuickPicksPlainArgs Empty = new GetQueryQuickPicksPlainArgs();
 
     /**
-     * The APM Domain ID the request is intended for.
+     * The APM Domain ID for the intended request.
      * 
      */
     @Import(name="apmDomainId", required=true)
     private String apmDomainId;
 
     /**
-     * @return The APM Domain ID the request is intended for.
+     * @return The APM Domain ID for the intended request.
      * 
      */
     public String apmDomainId() {
@@ -65,7 +65,7 @@ public final class GetQueryQuickPicksPlainArgs extends com.pulumi.resources.Invo
         }
 
         /**
-         * @param apmDomainId The APM Domain ID the request is intended for.
+         * @param apmDomainId The APM Domain ID for the intended request.
          * 
          * @return builder
          * 

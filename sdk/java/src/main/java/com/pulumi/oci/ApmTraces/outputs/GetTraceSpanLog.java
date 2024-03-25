@@ -13,6 +13,11 @@ import java.util.Objects;
 @CustomType
 public final class GetTraceSpanLog {
     /**
+     * @return Name of the event for which the log is created.
+     * 
+     */
+    private String eventName;
+    /**
      * @return List of logs associated with the span at the given timestamp.
      * 
      */
@@ -24,6 +29,13 @@ public final class GetTraceSpanLog {
     private String timeCreated;
 
     private GetTraceSpanLog() {}
+    /**
+     * @return Name of the event for which the log is created.
+     * 
+     */
+    public String eventName() {
+        return this.eventName;
+    }
     /**
      * @return List of logs associated with the span at the given timestamp.
      * 
@@ -48,15 +60,25 @@ public final class GetTraceSpanLog {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String eventName;
         private List<GetTraceSpanLogSpanLog> spanLogs;
         private String timeCreated;
         public Builder() {}
         public Builder(GetTraceSpanLog defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.eventName = defaults.eventName;
     	      this.spanLogs = defaults.spanLogs;
     	      this.timeCreated = defaults.timeCreated;
         }
 
+        @CustomType.Setter
+        public Builder eventName(String eventName) {
+            if (eventName == null) {
+              throw new MissingRequiredPropertyException("GetTraceSpanLog", "eventName");
+            }
+            this.eventName = eventName;
+            return this;
+        }
         @CustomType.Setter
         public Builder spanLogs(List<GetTraceSpanLogSpanLog> spanLogs) {
             if (spanLogs == null) {
@@ -78,6 +100,7 @@ public final class GetTraceSpanLog {
         }
         public GetTraceSpanLog build() {
             final var _resultValue = new GetTraceSpanLog();
+            _resultValue.eventName = eventName;
             _resultValue.spanLogs = spanLogs;
             _resultValue.timeCreated = timeCreated;
             return _resultValue;

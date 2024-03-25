@@ -227,6 +227,9 @@ public final class ApmTracesFunctions {
      *         final var testTrace = ApmTracesFunctions.getTrace(GetTraceArgs.builder()
      *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
      *             .traceKey(var_.trace_trace_key())
+     *             .timeTraceStartedGreaterThanOrEqualTo(var_.trace_time_trace_started_greater_than_or_equal_to())
+     *             .timeTraceStartedLessThan(var_.trace_time_trace_started_less_than())
+     *             .traceNamespace(var_.trace_trace_namespace())
      *             .build());
      * 
      *     }
@@ -270,6 +273,9 @@ public final class ApmTracesFunctions {
      *         final var testTrace = ApmTracesFunctions.getTrace(GetTraceArgs.builder()
      *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
      *             .traceKey(var_.trace_trace_key())
+     *             .timeTraceStartedGreaterThanOrEqualTo(var_.trace_time_trace_started_greater_than_or_equal_to())
+     *             .timeTraceStartedLessThan(var_.trace_time_trace_started_less_than())
+     *             .traceNamespace(var_.trace_trace_namespace())
      *             .build());
      * 
      *     }
@@ -313,6 +319,9 @@ public final class ApmTracesFunctions {
      *         final var testTrace = ApmTracesFunctions.getTrace(GetTraceArgs.builder()
      *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
      *             .traceKey(var_.trace_trace_key())
+     *             .timeTraceStartedGreaterThanOrEqualTo(var_.trace_time_trace_started_greater_than_or_equal_to())
+     *             .timeTraceStartedLessThan(var_.trace_time_trace_started_less_than())
+     *             .traceNamespace(var_.trace_trace_namespace())
      *             .build());
      * 
      *     }
@@ -356,6 +365,9 @@ public final class ApmTracesFunctions {
      *         final var testTrace = ApmTracesFunctions.getTrace(GetTraceArgs.builder()
      *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
      *             .traceKey(var_.trace_trace_key())
+     *             .timeTraceStartedGreaterThanOrEqualTo(var_.trace_time_trace_started_greater_than_or_equal_to())
+     *             .timeTraceStartedLessThan(var_.trace_time_trace_started_less_than())
+     *             .traceNamespace(var_.trace_trace_namespace())
      *             .build());
      * 
      *     }
@@ -399,6 +411,10 @@ public final class ApmTracesFunctions {
      *         final var testTraceAggregatedSnapshotData = ApmTracesFunctions.getTraceAggregatedSnapshotData(GetTraceAggregatedSnapshotDataArgs.builder()
      *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
      *             .traceKey(var_.trace_aggregated_snapshot_data_trace_key())
+     *             .serverName(var_.trace_aggregated_snapshot_data_server_name())
+     *             .serviceName(oci_core_service.test_service().name())
+     *             .spanKey(var_.trace_aggregated_snapshot_data_span_key())
+     *             .spanName(var_.trace_aggregated_snapshot_data_span_name())
      *             .build());
      * 
      *     }
@@ -442,6 +458,10 @@ public final class ApmTracesFunctions {
      *         final var testTraceAggregatedSnapshotData = ApmTracesFunctions.getTraceAggregatedSnapshotData(GetTraceAggregatedSnapshotDataArgs.builder()
      *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
      *             .traceKey(var_.trace_aggregated_snapshot_data_trace_key())
+     *             .serverName(var_.trace_aggregated_snapshot_data_server_name())
+     *             .serviceName(oci_core_service.test_service().name())
+     *             .spanKey(var_.trace_aggregated_snapshot_data_span_key())
+     *             .spanName(var_.trace_aggregated_snapshot_data_span_name())
      *             .build());
      * 
      *     }
@@ -485,6 +505,10 @@ public final class ApmTracesFunctions {
      *         final var testTraceAggregatedSnapshotData = ApmTracesFunctions.getTraceAggregatedSnapshotData(GetTraceAggregatedSnapshotDataArgs.builder()
      *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
      *             .traceKey(var_.trace_aggregated_snapshot_data_trace_key())
+     *             .serverName(var_.trace_aggregated_snapshot_data_server_name())
+     *             .serviceName(oci_core_service.test_service().name())
+     *             .spanKey(var_.trace_aggregated_snapshot_data_span_key())
+     *             .spanName(var_.trace_aggregated_snapshot_data_span_name())
      *             .build());
      * 
      *     }
@@ -528,6 +552,10 @@ public final class ApmTracesFunctions {
      *         final var testTraceAggregatedSnapshotData = ApmTracesFunctions.getTraceAggregatedSnapshotData(GetTraceAggregatedSnapshotDataArgs.builder()
      *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
      *             .traceKey(var_.trace_aggregated_snapshot_data_trace_key())
+     *             .serverName(var_.trace_aggregated_snapshot_data_server_name())
+     *             .serviceName(oci_core_service.test_service().name())
+     *             .spanKey(var_.trace_aggregated_snapshot_data_span_key())
+     *             .spanName(var_.trace_aggregated_snapshot_data_span_name())
      *             .build());
      * 
      *     }

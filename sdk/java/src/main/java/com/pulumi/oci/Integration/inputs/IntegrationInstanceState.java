@@ -10,6 +10,7 @@ import com.pulumi.oci.Integration.inputs.IntegrationInstanceAttachmentArgs;
 import com.pulumi.oci.Integration.inputs.IntegrationInstanceCustomEndpointArgs;
 import com.pulumi.oci.Integration.inputs.IntegrationInstanceIdcsInfoArgs;
 import com.pulumi.oci.Integration.inputs.IntegrationInstanceNetworkEndpointDetailsArgs;
+import com.pulumi.oci.Integration.inputs.IntegrationInstancePrivateEndpointOutboundConnectionArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.Object;
@@ -147,6 +148,7 @@ public final class IntegrationInstanceState extends com.pulumi.resources.Resourc
 
     /**
      * (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
+     * ||||||| parent of c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
      * 
      */
     @Import(name="enableProcessAutomationTrigger")
@@ -154,6 +156,7 @@ public final class IntegrationInstanceState extends com.pulumi.resources.Resourc
 
     /**
      * @return (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
+     * ||||||| parent of c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
      * 
      */
     public Optional<Output<Integer>> enableProcessAutomationTrigger() {
@@ -311,7 +314,23 @@ public final class IntegrationInstanceState extends com.pulumi.resources.Resourc
     }
 
     /**
+     * Base representation for Outbound Connection (Reverse Connection).
+     * 
+     */
+    @Import(name="privateEndpointOutboundConnections")
+    private @Nullable Output<List<IntegrationInstancePrivateEndpointOutboundConnectionArgs>> privateEndpointOutboundConnections;
+
+    /**
+     * @return Base representation for Outbound Connection (Reverse Connection).
+     * 
+     */
+    public Optional<Output<List<IntegrationInstancePrivateEndpointOutboundConnectionArgs>>> privateEndpointOutboundConnections() {
+        return Optional.ofNullable(this.privateEndpointOutboundConnections);
+    }
+
+    /**
      * Shape
+     * &gt; &gt; &gt; &gt; &gt; &gt; &gt; c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
      * 
      */
     @Import(name="shape")
@@ -319,6 +338,7 @@ public final class IntegrationInstanceState extends com.pulumi.resources.Resourc
 
     /**
      * @return Shape
+     * &gt; &gt; &gt; &gt; &gt; &gt; &gt; c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
      * 
      */
     public Optional<Output<String>> shape() {
@@ -413,6 +433,7 @@ public final class IntegrationInstanceState extends com.pulumi.resources.Resourc
         this.isVisualBuilderEnabled = $.isVisualBuilderEnabled;
         this.messagePacks = $.messagePacks;
         this.networkEndpointDetails = $.networkEndpointDetails;
+        this.privateEndpointOutboundConnections = $.privateEndpointOutboundConnections;
         this.shape = $.shape;
         this.state = $.state;
         this.stateMessage = $.stateMessage;
@@ -628,6 +649,7 @@ public final class IntegrationInstanceState extends com.pulumi.resources.Resourc
 
         /**
          * @param enableProcessAutomationTrigger (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
+         * ||||||| parent of c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
          * 
          * @return builder
          * 
@@ -639,6 +661,7 @@ public final class IntegrationInstanceState extends com.pulumi.resources.Resourc
 
         /**
          * @param enableProcessAutomationTrigger (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
+         * ||||||| parent of c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
          * 
          * @return builder
          * 
@@ -868,7 +891,39 @@ public final class IntegrationInstanceState extends com.pulumi.resources.Resourc
         }
 
         /**
+         * @param privateEndpointOutboundConnections Base representation for Outbound Connection (Reverse Connection).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder privateEndpointOutboundConnections(@Nullable Output<List<IntegrationInstancePrivateEndpointOutboundConnectionArgs>> privateEndpointOutboundConnections) {
+            $.privateEndpointOutboundConnections = privateEndpointOutboundConnections;
+            return this;
+        }
+
+        /**
+         * @param privateEndpointOutboundConnections Base representation for Outbound Connection (Reverse Connection).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder privateEndpointOutboundConnections(List<IntegrationInstancePrivateEndpointOutboundConnectionArgs> privateEndpointOutboundConnections) {
+            return privateEndpointOutboundConnections(Output.of(privateEndpointOutboundConnections));
+        }
+
+        /**
+         * @param privateEndpointOutboundConnections Base representation for Outbound Connection (Reverse Connection).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder privateEndpointOutboundConnections(IntegrationInstancePrivateEndpointOutboundConnectionArgs... privateEndpointOutboundConnections) {
+            return privateEndpointOutboundConnections(List.of(privateEndpointOutboundConnections));
+        }
+
+        /**
          * @param shape Shape
+         * &gt; &gt; &gt; &gt; &gt; &gt; &gt; c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
          * 
          * @return builder
          * 
@@ -880,6 +935,7 @@ public final class IntegrationInstanceState extends com.pulumi.resources.Resourc
 
         /**
          * @param shape Shape
+         * &gt; &gt; &gt; &gt; &gt; &gt; &gt; c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
          * 
          * @return builder
          * 

@@ -82,13 +82,13 @@ namespace Pulumi.Oci.ApmTraces
     public sealed class GetTraceSnapshotDataArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The APM Domain ID the request is intended for.
+        /// The APM Domain ID for the intended request.
         /// </summary>
         [Input("apmDomainId", required: true)]
         public string ApmDomainId { get; set; } = null!;
 
         /// <summary>
-        /// If enabled, then only span level details will be sent.
+        /// If enabled, only span level details are sent.
         /// </summary>
         [Input("isSummarized")]
         public bool? IsSummarized { get; set; }
@@ -100,7 +100,7 @@ namespace Pulumi.Oci.ApmTraces
         public string? SnapshotTime { get; set; }
 
         /// <summary>
-        /// Thread id for which snapshots needs to be retrieved. This is an identifier of a thread, and is a positive long number generated when when a thread is created.
+        /// Thread ID for which snapshots need to be retrieved. This identifier of a thread is a long positive number generated when a thread is created.
         /// </summary>
         [Input("threadId")]
         public string? ThreadId { get; set; }
@@ -120,13 +120,13 @@ namespace Pulumi.Oci.ApmTraces
     public sealed class GetTraceSnapshotDataInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The APM Domain ID the request is intended for.
+        /// The APM Domain ID for the intended request.
         /// </summary>
         [Input("apmDomainId", required: true)]
         public Input<string> ApmDomainId { get; set; } = null!;
 
         /// <summary>
-        /// If enabled, then only span level details will be sent.
+        /// If enabled, only span level details are sent.
         /// </summary>
         [Input("isSummarized")]
         public Input<bool>? IsSummarized { get; set; }
@@ -138,7 +138,7 @@ namespace Pulumi.Oci.ApmTraces
         public Input<string>? SnapshotTime { get; set; }
 
         /// <summary>
-        /// Thread id for which snapshots needs to be retrieved. This is an identifier of a thread, and is a positive long number generated when when a thread is created.
+        /// Thread ID for which snapshots need to be retrieved. This identifier of a thread is a long positive number generated when a thread is created.
         /// </summary>
         [Input("threadId")]
         public Input<string>? ThreadId { get; set; }

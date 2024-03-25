@@ -33,6 +33,10 @@ import (
 //			_, err := ApmTraces.GetTraceAggregatedSnapshotData(ctx, &apmtraces.GetTraceAggregatedSnapshotDataArgs{
 //				ApmDomainId: oci_apm_apm_domain.Test_apm_domain.Id,
 //				TraceKey:    _var.Trace_aggregated_snapshot_data_trace_key,
+//				ServerName:  pulumi.StringRef(_var.Trace_aggregated_snapshot_data_server_name),
+//				ServiceName: pulumi.StringRef(oci_core_service.Test_service.Name),
+//				SpanKey:     pulumi.StringRef(_var.Trace_aggregated_snapshot_data_span_key),
+//				SpanName:    pulumi.StringRef(_var.Trace_aggregated_snapshot_data_span_name),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -55,8 +59,16 @@ func GetTraceAggregatedSnapshotData(ctx *pulumi.Context, args *GetTraceAggregate
 
 // A collection of arguments for invoking getTraceAggregatedSnapshotData.
 type GetTraceAggregatedSnapshotDataArgs struct {
-	// The APM Domain ID the request is intended for.
+	// The APM Domain ID for the intended request.
 	ApmDomainId string `pulumi:"apmDomainId"`
+	// Name of the server.
+	ServerName *string `pulumi:"serverName"`
+	// Name associated with the service.
+	ServiceName *string `pulumi:"serviceName"`
+	// Unique Application Performance Monitoring span identifier (spanId).
+	SpanKey *string `pulumi:"spanKey"`
+	// Name of the span associated with the trace.
+	SpanName *string `pulumi:"spanName"`
 	// Unique Application Performance Monitoring trace identifier (traceId).
 	TraceKey string `pulumi:"traceKey"`
 }
@@ -67,8 +79,12 @@ type GetTraceAggregatedSnapshotDataResult struct {
 	// Aggregated snapshot details.
 	Details []GetTraceAggregatedSnapshotDataDetail `pulumi:"details"`
 	// The provider-assigned unique ID for this managed resource.
-	Id       string `pulumi:"id"`
-	TraceKey string `pulumi:"traceKey"`
+	Id          string  `pulumi:"id"`
+	ServerName  *string `pulumi:"serverName"`
+	ServiceName *string `pulumi:"serviceName"`
+	SpanKey     *string `pulumi:"spanKey"`
+	SpanName    *string `pulumi:"spanName"`
+	TraceKey    string  `pulumi:"traceKey"`
 }
 
 func GetTraceAggregatedSnapshotDataOutput(ctx *pulumi.Context, args GetTraceAggregatedSnapshotDataOutputArgs, opts ...pulumi.InvokeOption) GetTraceAggregatedSnapshotDataResultOutput {
@@ -86,8 +102,16 @@ func GetTraceAggregatedSnapshotDataOutput(ctx *pulumi.Context, args GetTraceAggr
 
 // A collection of arguments for invoking getTraceAggregatedSnapshotData.
 type GetTraceAggregatedSnapshotDataOutputArgs struct {
-	// The APM Domain ID the request is intended for.
+	// The APM Domain ID for the intended request.
 	ApmDomainId pulumi.StringInput `pulumi:"apmDomainId"`
+	// Name of the server.
+	ServerName pulumi.StringPtrInput `pulumi:"serverName"`
+	// Name associated with the service.
+	ServiceName pulumi.StringPtrInput `pulumi:"serviceName"`
+	// Unique Application Performance Monitoring span identifier (spanId).
+	SpanKey pulumi.StringPtrInput `pulumi:"spanKey"`
+	// Name of the span associated with the trace.
+	SpanName pulumi.StringPtrInput `pulumi:"spanName"`
 	// Unique Application Performance Monitoring trace identifier (traceId).
 	TraceKey pulumi.StringInput `pulumi:"traceKey"`
 }
@@ -123,6 +147,22 @@ func (o GetTraceAggregatedSnapshotDataResultOutput) Details() GetTraceAggregated
 // The provider-assigned unique ID for this managed resource.
 func (o GetTraceAggregatedSnapshotDataResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTraceAggregatedSnapshotDataResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetTraceAggregatedSnapshotDataResultOutput) ServerName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTraceAggregatedSnapshotDataResult) *string { return v.ServerName }).(pulumi.StringPtrOutput)
+}
+
+func (o GetTraceAggregatedSnapshotDataResultOutput) ServiceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTraceAggregatedSnapshotDataResult) *string { return v.ServiceName }).(pulumi.StringPtrOutput)
+}
+
+func (o GetTraceAggregatedSnapshotDataResultOutput) SpanKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTraceAggregatedSnapshotDataResult) *string { return v.SpanKey }).(pulumi.StringPtrOutput)
+}
+
+func (o GetTraceAggregatedSnapshotDataResultOutput) SpanName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTraceAggregatedSnapshotDataResult) *string { return v.SpanName }).(pulumi.StringPtrOutput)
 }
 
 func (o GetTraceAggregatedSnapshotDataResultOutput) TraceKey() pulumi.StringOutput {

@@ -9,6 +9,7 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Monitoring.AlarmArgs;
 import com.pulumi.oci.Monitoring.inputs.AlarmState;
+import com.pulumi.oci.Monitoring.outputs.AlarmOverride;
 import com.pulumi.oci.Monitoring.outputs.AlarmSuppression;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
@@ -42,6 +43,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.core.Output;
  * import com.pulumi.oci.Monitoring.Alarm;
  * import com.pulumi.oci.Monitoring.AlarmArgs;
+ * import com.pulumi.oci.Monitoring.inputs.AlarmOverrideArgs;
  * import com.pulumi.oci.Monitoring.inputs.AlarmSuppressionArgs;
  * import java.util.List;
  * import java.util.ArrayList;
@@ -71,10 +73,19 @@ import javax.annotation.Nullable;
  *             .isNotificationsPerMetricDimensionEnabled(var_.alarm_is_notifications_per_metric_dimension_enabled())
  *             .messageFormat(var_.alarm_message_format())
  *             .metricCompartmentIdInSubtree(var_.alarm_metric_compartment_id_in_subtree())
+ *             .notificationVersion(var_.alarm_notification_version())
+ *             .overrides(AlarmOverrideArgs.builder()
+ *                 .body(var_.alarm_overrides_body())
+ *                 .pendingDuration(var_.alarm_overrides_pending_duration())
+ *                 .query(var_.alarm_overrides_query())
+ *                 .ruleName(oci_events_rule.test_rule().name())
+ *                 .severity(var_.alarm_overrides_severity())
+ *                 .build())
  *             .pendingDuration(var_.alarm_pending_duration())
  *             .repeatNotificationDuration(var_.alarm_repeat_notification_duration())
  *             .resolution(var_.alarm_resolution())
  *             .resourceGroup(var_.alarm_resource_group())
+ *             .ruleName(oci_events_rule.test_rule().name())
  *             .suppression(AlarmSuppressionArgs.builder()
  *                 .timeSuppressFrom(var_.alarm_suppression_time_suppress_from())
  *                 .timeSuppressUntil(var_.alarm_suppression_time_suppress_until())
@@ -275,6 +286,38 @@ public class Alarm extends com.pulumi.resources.CustomResource {
         return this.namespace;
     }
     /**
+     * (Updatable) The version of the alarm notification to be delivered. Allowed value: `1.X` The value must start with a number (up to four digits), followed by a period and an uppercase X.
+     * 
+     */
+    @Export(name="notificationVersion", refs={String.class}, tree="[0]")
+    private Output<String> notificationVersion;
+
+    /**
+     * @return (Updatable) The version of the alarm notification to be delivered. Allowed value: `1.X` The value must start with a number (up to four digits), followed by a period and an uppercase X.
+     * 
+     */
+    public Output<String> notificationVersion() {
+        return this.notificationVersion;
+    }
+    /**
+     * (Updatable) A set of overrides that control evaluations of the alarm.
+     * 
+     * Each override can specify values for query, severity, body, and pending duration. When an alarm contains overrides, the Monitoring service evaluates each override in order, beginning with the first override in the array (index position `0`), and then evaluates the alarm&#39;s base values (`ruleName` value of `BASE`).
+     * 
+     */
+    @Export(name="overrides", refs={List.class,AlarmOverride.class}, tree="[0,1]")
+    private Output<List<AlarmOverride>> overrides;
+
+    /**
+     * @return (Updatable) A set of overrides that control evaluations of the alarm.
+     * 
+     * Each override can specify values for query, severity, body, and pending duration. When an alarm contains overrides, the Monitoring service evaluates each override in order, beginning with the first override in the array (index position `0`), and then evaluates the alarm&#39;s base values (`ruleName` value of `BASE`).
+     * 
+     */
+    public Output<List<AlarmOverride>> overrides() {
+        return this.overrides;
+    }
+    /**
      * (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from &#34;OK&#34; to &#34;FIRING&#34;. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to &#34;FIRING&#34;.
      * 
      * The duration is specified as a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT1M. Maximum: PT1H. Default: PT1M.
@@ -399,6 +442,20 @@ public class Alarm extends com.pulumi.resources.CustomResource {
      */
     public Output<String> resourceGroup() {
         return this.resourceGroup;
+    }
+    /**
+     * (Updatable) Identifier of the alarm&#39;s base values for alarm evaluation, for use when the alarm contains overrides.  A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.  Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
+     * 
+     */
+    @Export(name="ruleName", refs={String.class}, tree="[0]")
+    private Output<String> ruleName;
+
+    /**
+     * @return (Updatable) Identifier of the alarm&#39;s base values for alarm evaluation, for use when the alarm contains overrides.  A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.  Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
+     * 
+     */
+    public Output<String> ruleName() {
+        return this.ruleName;
     }
     /**
      * (Updatable) The perceived type of response required when the alarm is in the &#34;FIRING&#34; state.  Example: `CRITICAL`

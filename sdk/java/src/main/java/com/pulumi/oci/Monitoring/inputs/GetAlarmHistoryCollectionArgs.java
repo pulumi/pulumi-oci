@@ -17,14 +17,14 @@ public final class GetAlarmHistoryCollectionArgs extends com.pulumi.resources.In
     public static final GetAlarmHistoryCollectionArgs Empty = new GetAlarmHistoryCollectionArgs();
 
     /**
-     * The type of history entries to retrieve. State history (STATE_HISTORY) or state transition history (STATE_TRANSITION_HISTORY). If not specified, entries of both types are retrieved.  Example: `STATE_HISTORY`
+     * The type of history entries to retrieve. State history (STATE_HISTORY), state transition history (STATE_TRANSITION_HISTORY), rule history (RULE_HISTORY) or rule transition history (RULE_TRANSITION_HISTORY). If not specified, entries of all types are retrieved.  Example: `STATE_HISTORY`
      * 
      */
     @Import(name="alarmHistorytype")
     private @Nullable Output<String> alarmHistorytype;
 
     /**
-     * @return The type of history entries to retrieve. State history (STATE_HISTORY) or state transition history (STATE_TRANSITION_HISTORY). If not specified, entries of both types are retrieved.  Example: `STATE_HISTORY`
+     * @return The type of history entries to retrieve. State history (STATE_HISTORY), state transition history (STATE_TRANSITION_HISTORY), rule history (RULE_HISTORY) or rule transition history (RULE_TRANSITION_HISTORY). If not specified, entries of all types are retrieved.  Example: `STATE_HISTORY`
      * 
      */
     public Optional<Output<String>> alarmHistorytype() {
@@ -104,7 +104,7 @@ public final class GetAlarmHistoryCollectionArgs extends com.pulumi.resources.In
         }
 
         /**
-         * @param alarmHistorytype The type of history entries to retrieve. State history (STATE_HISTORY) or state transition history (STATE_TRANSITION_HISTORY). If not specified, entries of both types are retrieved.  Example: `STATE_HISTORY`
+         * @param alarmHistorytype The type of history entries to retrieve. State history (STATE_HISTORY), state transition history (STATE_TRANSITION_HISTORY), rule history (RULE_HISTORY) or rule transition history (RULE_TRANSITION_HISTORY). If not specified, entries of all types are retrieved.  Example: `STATE_HISTORY`
          * 
          * @return builder
          * 
@@ -115,7 +115,7 @@ public final class GetAlarmHistoryCollectionArgs extends com.pulumi.resources.In
         }
 
         /**
-         * @param alarmHistorytype The type of history entries to retrieve. State history (STATE_HISTORY) or state transition history (STATE_TRANSITION_HISTORY). If not specified, entries of both types are retrieved.  Example: `STATE_HISTORY`
+         * @param alarmHistorytype The type of history entries to retrieve. State history (STATE_HISTORY), state transition history (STATE_TRANSITION_HISTORY), rule history (RULE_HISTORY) or rule transition history (RULE_TRANSITION_HISTORY). If not specified, entries of all types are retrieved.  Example: `STATE_HISTORY`
          * 
          * @return builder
          * 

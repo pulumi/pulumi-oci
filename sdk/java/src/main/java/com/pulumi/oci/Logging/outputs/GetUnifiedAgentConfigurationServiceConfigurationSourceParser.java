@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Logging.outputs.GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser;
 import com.pulumi.oci.Logging.outputs.GetUnifiedAgentConfigurationServiceConfigurationSourceParserPattern;
+import com.pulumi.oci.Logging.outputs.GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInput;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.Object;
@@ -113,6 +114,11 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParser 
      */
     private String nullValuePattern;
     /**
+     * @return If true, a separator parameter can be further defined.
+     * 
+     */
+    private Boolean parseNested;
+    /**
      * @return Type of fluent parser.
      * 
      */
@@ -123,10 +129,20 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParser 
      */
     private List<GetUnifiedAgentConfigurationServiceConfigurationSourceParserPattern> patterns;
     /**
+     * @return record section of openmetrics parser.
+     * 
+     */
+    private List<GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInput> recordInputs;
+    /**
      * @return RFC 5424 time format.
      * 
      */
     private String rfc5424timeFormat;
+    /**
+     * @return Keys of adjacent levels are joined by the separator.
+     * 
+     */
+    private String separator;
     /**
      * @return Syslog parser type.
      * 
@@ -288,6 +304,13 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParser 
         return this.nullValuePattern;
     }
     /**
+     * @return If true, a separator parameter can be further defined.
+     * 
+     */
+    public Boolean parseNested() {
+        return this.parseNested;
+    }
+    /**
      * @return Type of fluent parser.
      * 
      */
@@ -302,11 +325,25 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParser 
         return this.patterns;
     }
     /**
+     * @return record section of openmetrics parser.
+     * 
+     */
+    public List<GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInput> recordInputs() {
+        return this.recordInputs;
+    }
+    /**
      * @return RFC 5424 time format.
      * 
      */
     public String rfc5424timeFormat() {
         return this.rfc5424timeFormat;
+    }
+    /**
+     * @return Keys of adjacent levels are joined by the separator.
+     * 
+     */
+    public String separator() {
+        return this.separator;
     }
     /**
      * @return Syslog parser type.
@@ -372,9 +409,12 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParser 
         private String multiLineStartRegexp;
         private List<GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser> nestedParsers;
         private String nullValuePattern;
+        private Boolean parseNested;
         private String parserType;
         private List<GetUnifiedAgentConfigurationServiceConfigurationSourceParserPattern> patterns;
+        private List<GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInput> recordInputs;
         private String rfc5424timeFormat;
+        private String separator;
         private String syslogParserType;
         private String timeFormat;
         private String timeType;
@@ -402,9 +442,12 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParser 
     	      this.multiLineStartRegexp = defaults.multiLineStartRegexp;
     	      this.nestedParsers = defaults.nestedParsers;
     	      this.nullValuePattern = defaults.nullValuePattern;
+    	      this.parseNested = defaults.parseNested;
     	      this.parserType = defaults.parserType;
     	      this.patterns = defaults.patterns;
+    	      this.recordInputs = defaults.recordInputs;
     	      this.rfc5424timeFormat = defaults.rfc5424timeFormat;
+    	      this.separator = defaults.separator;
     	      this.syslogParserType = defaults.syslogParserType;
     	      this.timeFormat = defaults.timeFormat;
     	      this.timeType = defaults.timeType;
@@ -574,6 +617,14 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParser 
             return this;
         }
         @CustomType.Setter
+        public Builder parseNested(Boolean parseNested) {
+            if (parseNested == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationServiceConfigurationSourceParser", "parseNested");
+            }
+            this.parseNested = parseNested;
+            return this;
+        }
+        @CustomType.Setter
         public Builder parserType(String parserType) {
             if (parserType == null) {
               throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationServiceConfigurationSourceParser", "parserType");
@@ -593,11 +644,30 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParser 
             return patterns(List.of(patterns));
         }
         @CustomType.Setter
+        public Builder recordInputs(List<GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInput> recordInputs) {
+            if (recordInputs == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationServiceConfigurationSourceParser", "recordInputs");
+            }
+            this.recordInputs = recordInputs;
+            return this;
+        }
+        public Builder recordInputs(GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInput... recordInputs) {
+            return recordInputs(List.of(recordInputs));
+        }
+        @CustomType.Setter
         public Builder rfc5424timeFormat(String rfc5424timeFormat) {
             if (rfc5424timeFormat == null) {
               throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationServiceConfigurationSourceParser", "rfc5424timeFormat");
             }
             this.rfc5424timeFormat = rfc5424timeFormat;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder separator(String separator) {
+            if (separator == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationServiceConfigurationSourceParser", "separator");
+            }
+            this.separator = separator;
             return this;
         }
         @CustomType.Setter
@@ -661,9 +731,12 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParser 
             _resultValue.multiLineStartRegexp = multiLineStartRegexp;
             _resultValue.nestedParsers = nestedParsers;
             _resultValue.nullValuePattern = nullValuePattern;
+            _resultValue.parseNested = parseNested;
             _resultValue.parserType = parserType;
             _resultValue.patterns = patterns;
+            _resultValue.recordInputs = recordInputs;
             _resultValue.rfc5424timeFormat = rfc5424timeFormat;
+            _resultValue.separator = separator;
             _resultValue.syslogParserType = syslogParserType;
             _resultValue.timeFormat = timeFormat;
             _resultValue.timeType = timeType;

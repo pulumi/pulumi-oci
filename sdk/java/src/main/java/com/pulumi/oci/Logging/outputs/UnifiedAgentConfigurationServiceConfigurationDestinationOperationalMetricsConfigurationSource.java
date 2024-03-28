@@ -19,7 +19,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationDestinationOpera
      */
     private @Nullable List<String> metrics;
     /**
-     * @return (Updatable) Record section of OperationalMetricsSource object.
+     * @return (Updatable) record section of openmetrics parser.
      * 
      */
     private UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInput recordInput;
@@ -38,7 +38,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationDestinationOpera
         return this.metrics == null ? List.of() : this.metrics;
     }
     /**
-     * @return (Updatable) Record section of OperationalMetricsSource object.
+     * @return (Updatable) record section of openmetrics parser.
      * 
      */
     public UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInput recordInput() {

@@ -83,7 +83,7 @@ type NetworkLoadBalancersBackendSetsUnified struct {
 
 	// (Updatable) An array of backends to be associated with the backend set.
 	Backends NetworkLoadBalancersBackendSetsUnifiedBackendArrayOutput `pulumi:"backends"`
-	// (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+	// (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
 	HealthChecker NetworkLoadBalancersBackendSetsUnifiedHealthCheckerOutput `pulumi:"healthChecker"`
 	// (Updatable) IP version associated with the backend set.
 	IpVersion pulumi.StringOutput `pulumi:"ipVersion"`
@@ -145,7 +145,7 @@ func GetNetworkLoadBalancersBackendSetsUnified(ctx *pulumi.Context,
 type networkLoadBalancersBackendSetsUnifiedState struct {
 	// (Updatable) An array of backends to be associated with the backend set.
 	Backends []NetworkLoadBalancersBackendSetsUnifiedBackend `pulumi:"backends"`
-	// (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+	// (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
 	HealthChecker *NetworkLoadBalancersBackendSetsUnifiedHealthChecker `pulumi:"healthChecker"`
 	// (Updatable) IP version associated with the backend set.
 	IpVersion *string `pulumi:"ipVersion"`
@@ -169,7 +169,7 @@ type networkLoadBalancersBackendSetsUnifiedState struct {
 type NetworkLoadBalancersBackendSetsUnifiedState struct {
 	// (Updatable) An array of backends to be associated with the backend set.
 	Backends NetworkLoadBalancersBackendSetsUnifiedBackendArrayInput
-	// (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+	// (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
 	HealthChecker NetworkLoadBalancersBackendSetsUnifiedHealthCheckerPtrInput
 	// (Updatable) IP version associated with the backend set.
 	IpVersion pulumi.StringPtrInput
@@ -197,7 +197,7 @@ func (NetworkLoadBalancersBackendSetsUnifiedState) ElementType() reflect.Type {
 type networkLoadBalancersBackendSetsUnifiedArgs struct {
 	// (Updatable) An array of backends to be associated with the backend set.
 	Backends []NetworkLoadBalancersBackendSetsUnifiedBackend `pulumi:"backends"`
-	// (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+	// (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
 	HealthChecker NetworkLoadBalancersBackendSetsUnifiedHealthChecker `pulumi:"healthChecker"`
 	// (Updatable) IP version associated with the backend set.
 	IpVersion *string `pulumi:"ipVersion"`
@@ -222,7 +222,7 @@ type networkLoadBalancersBackendSetsUnifiedArgs struct {
 type NetworkLoadBalancersBackendSetsUnifiedArgs struct {
 	// (Updatable) An array of backends to be associated with the backend set.
 	Backends NetworkLoadBalancersBackendSetsUnifiedBackendArrayInput
-	// (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+	// (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
 	HealthChecker NetworkLoadBalancersBackendSetsUnifiedHealthCheckerInput
 	// (Updatable) IP version associated with the backend set.
 	IpVersion pulumi.StringPtrInput
@@ -337,7 +337,7 @@ func (o NetworkLoadBalancersBackendSetsUnifiedOutput) Backends() NetworkLoadBala
 	}).(NetworkLoadBalancersBackendSetsUnifiedBackendArrayOutput)
 }
 
-// (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+// (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
 func (o NetworkLoadBalancersBackendSetsUnifiedOutput) HealthChecker() NetworkLoadBalancersBackendSetsUnifiedHealthCheckerOutput {
 	return o.ApplyT(func(v *NetworkLoadBalancersBackendSetsUnified) NetworkLoadBalancersBackendSetsUnifiedHealthCheckerOutput {
 		return v.HealthChecker

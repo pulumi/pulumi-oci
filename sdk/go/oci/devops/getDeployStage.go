@@ -123,6 +123,8 @@ type LookupDeployStageResult struct {
 	GreenBackendIps []GetDeployStageGreenBackendIp `pulumi:"greenBackendIps"`
 	// Helm chart artifact OCID.
 	HelmChartDeployArtifactId string `pulumi:"helmChartDeployArtifactId"`
+	// List of Helm command artifact OCIDs.
+	HelmCommandArtifactIds []string `pulumi:"helmCommandArtifactIds"`
 	// Unique identifier that is immutable on creation.
 	Id string `pulumi:"id"`
 	// A boolean flag specifies whether this stage executes asynchronously.
@@ -131,6 +133,8 @@ type LookupDeployStageResult struct {
 	IsDebugEnabled bool `pulumi:"isDebugEnabled"`
 	// Force resource update through delete; or if required, recreate. Set to false by default.
 	IsForceEnabled bool `pulumi:"isForceEnabled"`
+	// Uninstall the Helm chart release on deleting the stage.
+	IsUninstallOnStageDelete bool `pulumi:"isUninstallOnStageDelete"`
 	// A boolean flag specifies whether the invoked function must be validated.
 	IsValidationEnabled bool `pulumi:"isValidationEnabled"`
 	// List of Kubernetes manifest artifact OCIDs.
@@ -157,6 +161,8 @@ type LookupDeployStageResult struct {
 	ProductionLoadBalancerConfigs []GetDeployStageProductionLoadBalancerConfig `pulumi:"productionLoadBalancerConfigs"`
 	// The OCID of a project.
 	ProjectId string `pulumi:"projectId"`
+	// The purpose of running this Helm stage
+	Purpose string `pulumi:"purpose"`
 	// Release name of the Helm chart.
 	ReleaseName string `pulumi:"releaseName"`
 	// Specifies the rollback policy. This is initiated on the failure of certain stage types.
@@ -398,6 +404,11 @@ func (o LookupDeployStageResultOutput) HelmChartDeployArtifactId() pulumi.String
 	return o.ApplyT(func(v LookupDeployStageResult) string { return v.HelmChartDeployArtifactId }).(pulumi.StringOutput)
 }
 
+// List of Helm command artifact OCIDs.
+func (o LookupDeployStageResultOutput) HelmCommandArtifactIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v LookupDeployStageResult) []string { return v.HelmCommandArtifactIds }).(pulumi.StringArrayOutput)
+}
+
 // Unique identifier that is immutable on creation.
 func (o LookupDeployStageResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDeployStageResult) string { return v.Id }).(pulumi.StringOutput)
@@ -416,6 +427,11 @@ func (o LookupDeployStageResultOutput) IsDebugEnabled() pulumi.BoolOutput {
 // Force resource update through delete; or if required, recreate. Set to false by default.
 func (o LookupDeployStageResultOutput) IsForceEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupDeployStageResult) bool { return v.IsForceEnabled }).(pulumi.BoolOutput)
+}
+
+// Uninstall the Helm chart release on deleting the stage.
+func (o LookupDeployStageResultOutput) IsUninstallOnStageDelete() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupDeployStageResult) bool { return v.IsUninstallOnStageDelete }).(pulumi.BoolOutput)
 }
 
 // A boolean flag specifies whether the invoked function must be validated.
@@ -483,6 +499,11 @@ func (o LookupDeployStageResultOutput) ProductionLoadBalancerConfigs() GetDeploy
 // The OCID of a project.
 func (o LookupDeployStageResultOutput) ProjectId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDeployStageResult) string { return v.ProjectId }).(pulumi.StringOutput)
+}
+
+// The purpose of running this Helm stage
+func (o LookupDeployStageResultOutput) Purpose() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupDeployStageResult) string { return v.Purpose }).(pulumi.StringOutput)
 }
 
 // Release name of the Helm chart.

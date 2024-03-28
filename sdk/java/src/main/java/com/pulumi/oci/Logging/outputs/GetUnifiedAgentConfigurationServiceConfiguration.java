@@ -5,14 +5,21 @@ package com.pulumi.oci.Logging.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Logging.outputs.GetUnifiedAgentConfigurationServiceConfigurationApplicationConfiguration;
 import com.pulumi.oci.Logging.outputs.GetUnifiedAgentConfigurationServiceConfigurationDestination;
 import com.pulumi.oci.Logging.outputs.GetUnifiedAgentConfigurationServiceConfigurationSource;
+import com.pulumi.oci.Logging.outputs.GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
 
 @CustomType
 public final class GetUnifiedAgentConfigurationServiceConfiguration {
+    /**
+     * @return Unified Agent monitoring application configuration details.
+     * 
+     */
+    private List<GetUnifiedAgentConfigurationServiceConfigurationApplicationConfiguration> applicationConfigurations;
     /**
      * @return Type of Unified Agent service configuration.
      * 
@@ -28,8 +35,20 @@ public final class GetUnifiedAgentConfigurationServiceConfiguration {
      * 
      */
     private List<GetUnifiedAgentConfigurationServiceConfigurationSource> sources;
+    /**
+     * @return Logging filter object.
+     * 
+     */
+    private List<GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter> unifiedAgentConfigurationFilters;
 
     private GetUnifiedAgentConfigurationServiceConfiguration() {}
+    /**
+     * @return Unified Agent monitoring application configuration details.
+     * 
+     */
+    public List<GetUnifiedAgentConfigurationServiceConfigurationApplicationConfiguration> applicationConfigurations() {
+        return this.applicationConfigurations;
+    }
     /**
      * @return Type of Unified Agent service configuration.
      * 
@@ -51,6 +70,13 @@ public final class GetUnifiedAgentConfigurationServiceConfiguration {
     public List<GetUnifiedAgentConfigurationServiceConfigurationSource> sources() {
         return this.sources;
     }
+    /**
+     * @return Logging filter object.
+     * 
+     */
+    public List<GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter> unifiedAgentConfigurationFilters() {
+        return this.unifiedAgentConfigurationFilters;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -61,17 +87,32 @@ public final class GetUnifiedAgentConfigurationServiceConfiguration {
     }
     @CustomType.Builder
     public static final class Builder {
+        private List<GetUnifiedAgentConfigurationServiceConfigurationApplicationConfiguration> applicationConfigurations;
         private String configurationType;
         private List<GetUnifiedAgentConfigurationServiceConfigurationDestination> destinations;
         private List<GetUnifiedAgentConfigurationServiceConfigurationSource> sources;
+        private List<GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter> unifiedAgentConfigurationFilters;
         public Builder() {}
         public Builder(GetUnifiedAgentConfigurationServiceConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.applicationConfigurations = defaults.applicationConfigurations;
     	      this.configurationType = defaults.configurationType;
     	      this.destinations = defaults.destinations;
     	      this.sources = defaults.sources;
+    	      this.unifiedAgentConfigurationFilters = defaults.unifiedAgentConfigurationFilters;
         }
 
+        @CustomType.Setter
+        public Builder applicationConfigurations(List<GetUnifiedAgentConfigurationServiceConfigurationApplicationConfiguration> applicationConfigurations) {
+            if (applicationConfigurations == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationServiceConfiguration", "applicationConfigurations");
+            }
+            this.applicationConfigurations = applicationConfigurations;
+            return this;
+        }
+        public Builder applicationConfigurations(GetUnifiedAgentConfigurationServiceConfigurationApplicationConfiguration... applicationConfigurations) {
+            return applicationConfigurations(List.of(applicationConfigurations));
+        }
         @CustomType.Setter
         public Builder configurationType(String configurationType) {
             if (configurationType == null) {
@@ -102,11 +143,24 @@ public final class GetUnifiedAgentConfigurationServiceConfiguration {
         public Builder sources(GetUnifiedAgentConfigurationServiceConfigurationSource... sources) {
             return sources(List.of(sources));
         }
+        @CustomType.Setter
+        public Builder unifiedAgentConfigurationFilters(List<GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter> unifiedAgentConfigurationFilters) {
+            if (unifiedAgentConfigurationFilters == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationServiceConfiguration", "unifiedAgentConfigurationFilters");
+            }
+            this.unifiedAgentConfigurationFilters = unifiedAgentConfigurationFilters;
+            return this;
+        }
+        public Builder unifiedAgentConfigurationFilters(GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter... unifiedAgentConfigurationFilters) {
+            return unifiedAgentConfigurationFilters(List.of(unifiedAgentConfigurationFilters));
+        }
         public GetUnifiedAgentConfigurationServiceConfiguration build() {
             final var _resultValue = new GetUnifiedAgentConfigurationServiceConfiguration();
+            _resultValue.applicationConfigurations = applicationConfigurations;
             _resultValue.configurationType = configurationType;
             _resultValue.destinations = destinations;
             _resultValue.sources = sources;
+            _resultValue.unifiedAgentConfigurationFilters = unifiedAgentConfigurationFilters;
             return _resultValue;
         }
     }

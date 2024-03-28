@@ -90,6 +90,16 @@ export const getWorkspaceProjects: typeof import("./getWorkspaceProjects").getWo
 export const getWorkspaceProjectsOutput: typeof import("./getWorkspaceProjects").getWorkspaceProjectsOutput = null as any;
 utilities.lazyLoad(exports, ["getWorkspaceProjects","getWorkspaceProjectsOutput"], () => require("./getWorkspaceProjects"));
 
+export { GetWorkspaceTaskArgs, GetWorkspaceTaskResult, GetWorkspaceTaskOutputArgs } from "./getWorkspaceTask";
+export const getWorkspaceTask: typeof import("./getWorkspaceTask").getWorkspaceTask = null as any;
+export const getWorkspaceTaskOutput: typeof import("./getWorkspaceTask").getWorkspaceTaskOutput = null as any;
+utilities.lazyLoad(exports, ["getWorkspaceTask","getWorkspaceTaskOutput"], () => require("./getWorkspaceTask"));
+
+export { GetWorkspaceTasksArgs, GetWorkspaceTasksResult, GetWorkspaceTasksOutputArgs } from "./getWorkspaceTasks";
+export const getWorkspaceTasks: typeof import("./getWorkspaceTasks").getWorkspaceTasks = null as any;
+export const getWorkspaceTasksOutput: typeof import("./getWorkspaceTasks").getWorkspaceTasksOutput = null as any;
+utilities.lazyLoad(exports, ["getWorkspaceTasks","getWorkspaceTasksOutput"], () => require("./getWorkspaceTasks"));
+
 export { GetWorkspacesArgs, GetWorkspacesResult, GetWorkspacesOutputArgs } from "./getWorkspaces";
 export const getWorkspaces: typeof import("./getWorkspaces").getWorkspaces = null as any;
 export const getWorkspacesOutput: typeof import("./getWorkspaces").getWorkspacesOutput = null as any;
@@ -140,6 +150,11 @@ export type WorkspaceProject = import("./workspaceProject").WorkspaceProject;
 export const WorkspaceProject: typeof import("./workspaceProject").WorkspaceProject = null as any;
 utilities.lazyLoad(exports, ["WorkspaceProject"], () => require("./workspaceProject"));
 
+export { WorkspaceTaskArgs, WorkspaceTaskState } from "./workspaceTask";
+export type WorkspaceTask = import("./workspaceTask").WorkspaceTask;
+export const WorkspaceTask: typeof import("./workspaceTask").WorkspaceTask = null as any;
+utilities.lazyLoad(exports, ["WorkspaceTask"], () => require("./workspaceTask"));
+
 
 const _module = {
     version: utilities.getVersion(),
@@ -163,6 +178,8 @@ const _module = {
                 return new WorkspaceImportRequest(name, <any>undefined, { urn })
             case "oci:DataIntegration/workspaceProject:WorkspaceProject":
                 return new WorkspaceProject(name, <any>undefined, { urn })
+            case "oci:DataIntegration/workspaceTask:WorkspaceTask":
+                return new WorkspaceTask(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
@@ -177,3 +194,4 @@ pulumi.runtime.registerResourceModule("oci", "DataIntegration/workspaceExportReq
 pulumi.runtime.registerResourceModule("oci", "DataIntegration/workspaceFolder", _module)
 pulumi.runtime.registerResourceModule("oci", "DataIntegration/workspaceImportRequest", _module)
 pulumi.runtime.registerResourceModule("oci", "DataIntegration/workspaceProject", _module)
+pulumi.runtime.registerResourceModule("oci", "DataIntegration/workspaceTask", _module)

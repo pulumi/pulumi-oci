@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
     public sealed class GetManagedMySqlDatabaseSqlDataMySqlDataCollectionResult
     {
         /// <summary>
-        /// List of SQLDataSummary.
+        /// The list of SQLDataSummary records.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemResult> Items;
 

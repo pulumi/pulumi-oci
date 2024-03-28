@@ -62,17 +62,33 @@ type GetManagedMySqlDatabaseArgs struct {
 type GetManagedMySqlDatabaseResult struct {
 	// The OCID of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
-	// MySQL Database Name
+	// The name of the MySQL Database.
 	DbName string `pulumi:"dbName"`
-	// MySQL Database Version
+	// The version of the MySQL Database.
 	DbVersion string `pulumi:"dbVersion"`
+	// The name of the HeatWave cluster.
+	HeatWaveClusterDisplayName string `pulumi:"heatWaveClusterDisplayName"`
+	// The total memory belonging to the HeatWave cluster in GBs.
+	HeatWaveMemorySize int `pulumi:"heatWaveMemorySize"`
+	// Shape of the nodes in the HeatWave cluster.
+	HeatWaveNodeShape string `pulumi:"heatWaveNodeShape"`
+	// The information about an individual HeatWave nodes in the cluster.
+	HeatWaveNodes []GetManagedMySqlDatabaseHeatWaveNode `pulumi:"heatWaveNodes"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                     string `pulumi:"id"`
+	Id string `pulumi:"id"`
+	// If the HeatWave cluster is active or not.
+	IsHeatWaveActive bool `pulumi:"isHeatWaveActive"`
+	// If HeatWave is enabled for this db system or not.
+	IsHeatWaveEnabled bool `pulumi:"isHeatWaveEnabled"`
+	// If HeatWave Lakehouse is enabled for the db system or not.
+	IsLakehouseEnabled     bool   `pulumi:"isLakehouseEnabled"`
 	ManagedMySqlDatabaseId string `pulumi:"managedMySqlDatabaseId"`
 	// The name of the Managed MySQL Database.
 	Name string `pulumi:"name"`
-	// The date and time the Managed Database was created.
+	// The date and time the node was created.
 	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the Managed MySQL Database was created.
+	TimeCreatedHeatWave string `pulumi:"timeCreatedHeatWave"`
 }
 
 func GetManagedMySqlDatabaseOutput(ctx *pulumi.Context, args GetManagedMySqlDatabaseOutputArgs, opts ...pulumi.InvokeOption) GetManagedMySqlDatabaseResultOutput {
@@ -118,19 +134,54 @@ func (o GetManagedMySqlDatabaseResultOutput) CompartmentId() pulumi.StringOutput
 	return o.ApplyT(func(v GetManagedMySqlDatabaseResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// MySQL Database Name
+// The name of the MySQL Database.
 func (o GetManagedMySqlDatabaseResultOutput) DbName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagedMySqlDatabaseResult) string { return v.DbName }).(pulumi.StringOutput)
 }
 
-// MySQL Database Version
+// The version of the MySQL Database.
 func (o GetManagedMySqlDatabaseResultOutput) DbVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagedMySqlDatabaseResult) string { return v.DbVersion }).(pulumi.StringOutput)
+}
+
+// The name of the HeatWave cluster.
+func (o GetManagedMySqlDatabaseResultOutput) HeatWaveClusterDisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseResult) string { return v.HeatWaveClusterDisplayName }).(pulumi.StringOutput)
+}
+
+// The total memory belonging to the HeatWave cluster in GBs.
+func (o GetManagedMySqlDatabaseResultOutput) HeatWaveMemorySize() pulumi.IntOutput {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseResult) int { return v.HeatWaveMemorySize }).(pulumi.IntOutput)
+}
+
+// Shape of the nodes in the HeatWave cluster.
+func (o GetManagedMySqlDatabaseResultOutput) HeatWaveNodeShape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseResult) string { return v.HeatWaveNodeShape }).(pulumi.StringOutput)
+}
+
+// The information about an individual HeatWave nodes in the cluster.
+func (o GetManagedMySqlDatabaseResultOutput) HeatWaveNodes() GetManagedMySqlDatabaseHeatWaveNodeArrayOutput {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseResult) []GetManagedMySqlDatabaseHeatWaveNode { return v.HeatWaveNodes }).(GetManagedMySqlDatabaseHeatWaveNodeArrayOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
 func (o GetManagedMySqlDatabaseResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagedMySqlDatabaseResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// If the HeatWave cluster is active or not.
+func (o GetManagedMySqlDatabaseResultOutput) IsHeatWaveActive() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseResult) bool { return v.IsHeatWaveActive }).(pulumi.BoolOutput)
+}
+
+// If HeatWave is enabled for this db system or not.
+func (o GetManagedMySqlDatabaseResultOutput) IsHeatWaveEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseResult) bool { return v.IsHeatWaveEnabled }).(pulumi.BoolOutput)
+}
+
+// If HeatWave Lakehouse is enabled for the db system or not.
+func (o GetManagedMySqlDatabaseResultOutput) IsLakehouseEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseResult) bool { return v.IsLakehouseEnabled }).(pulumi.BoolOutput)
 }
 
 func (o GetManagedMySqlDatabaseResultOutput) ManagedMySqlDatabaseId() pulumi.StringOutput {
@@ -142,9 +193,14 @@ func (o GetManagedMySqlDatabaseResultOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagedMySqlDatabaseResult) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// The date and time the Managed Database was created.
+// The date and time the node was created.
 func (o GetManagedMySqlDatabaseResultOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagedMySqlDatabaseResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time the Managed MySQL Database was created.
+func (o GetManagedMySqlDatabaseResultOutput) TimeCreatedHeatWave() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseResult) string { return v.TimeCreatedHeatWave }).(pulumi.StringOutput)
 }
 
 func init() {

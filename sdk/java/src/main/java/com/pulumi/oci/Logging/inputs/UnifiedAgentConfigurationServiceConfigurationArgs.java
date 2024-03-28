@@ -6,16 +6,35 @@ package com.pulumi.oci.Logging.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Logging.inputs.UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArgs;
 import com.pulumi.oci.Logging.inputs.UnifiedAgentConfigurationServiceConfigurationDestinationArgs;
 import com.pulumi.oci.Logging.inputs.UnifiedAgentConfigurationServiceConfigurationSourceArgs;
+import com.pulumi.oci.Logging.inputs.UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArgs;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class UnifiedAgentConfigurationServiceConfigurationArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final UnifiedAgentConfigurationServiceConfigurationArgs Empty = new UnifiedAgentConfigurationServiceConfigurationArgs();
+
+    /**
+     * (Updatable) Unified Agent monitoring application configuration details.
+     * 
+     */
+    @Import(name="applicationConfigurations")
+    private @Nullable Output<List<UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArgs>> applicationConfigurations;
+
+    /**
+     * @return (Updatable) Unified Agent monitoring application configuration details.
+     * 
+     */
+    public Optional<Output<List<UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArgs>>> applicationConfigurations() {
+        return Optional.ofNullable(this.applicationConfigurations);
+    }
 
     /**
      * (Updatable) Type of Unified Agent service configuration.
@@ -36,38 +55,55 @@ public final class UnifiedAgentConfigurationServiceConfigurationArgs extends com
      * (Updatable) Unified monitoring agent operational metrics destination object.
      * 
      */
-    @Import(name="destination", required=true)
-    private Output<UnifiedAgentConfigurationServiceConfigurationDestinationArgs> destination;
+    @Import(name="destination")
+    private @Nullable Output<UnifiedAgentConfigurationServiceConfigurationDestinationArgs> destination;
 
     /**
      * @return (Updatable) Unified monitoring agent operational metrics destination object.
      * 
      */
-    public Output<UnifiedAgentConfigurationServiceConfigurationDestinationArgs> destination() {
-        return this.destination;
+    public Optional<Output<UnifiedAgentConfigurationServiceConfigurationDestinationArgs>> destination() {
+        return Optional.ofNullable(this.destination);
     }
 
     /**
      * (Updatable) Logging source object.
      * 
      */
-    @Import(name="sources", required=true)
-    private Output<List<UnifiedAgentConfigurationServiceConfigurationSourceArgs>> sources;
+    @Import(name="sources")
+    private @Nullable Output<List<UnifiedAgentConfigurationServiceConfigurationSourceArgs>> sources;
 
     /**
      * @return (Updatable) Logging source object.
      * 
      */
-    public Output<List<UnifiedAgentConfigurationServiceConfigurationSourceArgs>> sources() {
-        return this.sources;
+    public Optional<Output<List<UnifiedAgentConfigurationServiceConfigurationSourceArgs>>> sources() {
+        return Optional.ofNullable(this.sources);
+    }
+
+    /**
+     * (Updatable) Logging filter object.
+     * 
+     */
+    @Import(name="unifiedAgentConfigurationFilters")
+    private @Nullable Output<List<UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArgs>> unifiedAgentConfigurationFilters;
+
+    /**
+     * @return (Updatable) Logging filter object.
+     * 
+     */
+    public Optional<Output<List<UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArgs>>> unifiedAgentConfigurationFilters() {
+        return Optional.ofNullable(this.unifiedAgentConfigurationFilters);
     }
 
     private UnifiedAgentConfigurationServiceConfigurationArgs() {}
 
     private UnifiedAgentConfigurationServiceConfigurationArgs(UnifiedAgentConfigurationServiceConfigurationArgs $) {
+        this.applicationConfigurations = $.applicationConfigurations;
         this.configurationType = $.configurationType;
         this.destination = $.destination;
         this.sources = $.sources;
+        this.unifiedAgentConfigurationFilters = $.unifiedAgentConfigurationFilters;
     }
 
     public static Builder builder() {
@@ -86,6 +122,37 @@ public final class UnifiedAgentConfigurationServiceConfigurationArgs extends com
 
         public Builder(UnifiedAgentConfigurationServiceConfigurationArgs defaults) {
             $ = new UnifiedAgentConfigurationServiceConfigurationArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param applicationConfigurations (Updatable) Unified Agent monitoring application configuration details.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder applicationConfigurations(@Nullable Output<List<UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArgs>> applicationConfigurations) {
+            $.applicationConfigurations = applicationConfigurations;
+            return this;
+        }
+
+        /**
+         * @param applicationConfigurations (Updatable) Unified Agent monitoring application configuration details.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder applicationConfigurations(List<UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArgs> applicationConfigurations) {
+            return applicationConfigurations(Output.of(applicationConfigurations));
+        }
+
+        /**
+         * @param applicationConfigurations (Updatable) Unified Agent monitoring application configuration details.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder applicationConfigurations(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArgs... applicationConfigurations) {
+            return applicationConfigurations(List.of(applicationConfigurations));
         }
 
         /**
@@ -115,7 +182,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationArgs extends com
          * @return builder
          * 
          */
-        public Builder destination(Output<UnifiedAgentConfigurationServiceConfigurationDestinationArgs> destination) {
+        public Builder destination(@Nullable Output<UnifiedAgentConfigurationServiceConfigurationDestinationArgs> destination) {
             $.destination = destination;
             return this;
         }
@@ -136,7 +203,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationArgs extends com
          * @return builder
          * 
          */
-        public Builder sources(Output<List<UnifiedAgentConfigurationServiceConfigurationSourceArgs>> sources) {
+        public Builder sources(@Nullable Output<List<UnifiedAgentConfigurationServiceConfigurationSourceArgs>> sources) {
             $.sources = sources;
             return this;
         }
@@ -161,15 +228,40 @@ public final class UnifiedAgentConfigurationServiceConfigurationArgs extends com
             return sources(List.of(sources));
         }
 
+        /**
+         * @param unifiedAgentConfigurationFilters (Updatable) Logging filter object.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder unifiedAgentConfigurationFilters(@Nullable Output<List<UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArgs>> unifiedAgentConfigurationFilters) {
+            $.unifiedAgentConfigurationFilters = unifiedAgentConfigurationFilters;
+            return this;
+        }
+
+        /**
+         * @param unifiedAgentConfigurationFilters (Updatable) Logging filter object.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder unifiedAgentConfigurationFilters(List<UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArgs> unifiedAgentConfigurationFilters) {
+            return unifiedAgentConfigurationFilters(Output.of(unifiedAgentConfigurationFilters));
+        }
+
+        /**
+         * @param unifiedAgentConfigurationFilters (Updatable) Logging filter object.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder unifiedAgentConfigurationFilters(UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArgs... unifiedAgentConfigurationFilters) {
+            return unifiedAgentConfigurationFilters(List.of(unifiedAgentConfigurationFilters));
+        }
+
         public UnifiedAgentConfigurationServiceConfigurationArgs build() {
             if ($.configurationType == null) {
                 throw new MissingRequiredPropertyException("UnifiedAgentConfigurationServiceConfigurationArgs", "configurationType");
-            }
-            if ($.destination == null) {
-                throw new MissingRequiredPropertyException("UnifiedAgentConfigurationServiceConfigurationArgs", "destination");
-            }
-            if ($.sources == null) {
-                throw new MissingRequiredPropertyException("UnifiedAgentConfigurationServiceConfigurationArgs", "sources");
             }
             return $;
         }

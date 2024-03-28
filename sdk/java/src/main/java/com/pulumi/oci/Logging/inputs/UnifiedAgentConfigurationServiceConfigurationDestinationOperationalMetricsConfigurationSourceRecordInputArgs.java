@@ -17,14 +17,14 @@ public final class UnifiedAgentConfigurationServiceConfigurationDestinationOpera
     public static final UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInputArgs Empty = new UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInputArgs();
 
     /**
-     * (Updatable) Namespace to emit the operational metrics.
+     * (Updatable) Namespace to emit metrics.
      * 
      */
     @Import(name="namespace", required=true)
     private Output<String> namespace;
 
     /**
-     * @return (Updatable) Namespace to emit the operational metrics.
+     * @return (Updatable) Namespace to emit metrics.
      * 
      */
     public Output<String> namespace() {
@@ -32,14 +32,14 @@ public final class UnifiedAgentConfigurationServiceConfigurationDestinationOpera
     }
 
     /**
-     * (Updatable) Resource group to emit the operational metrics.
+     * (Updatable) Resource group to emit metrics.
      * 
      */
     @Import(name="resourceGroup")
     private @Nullable Output<String> resourceGroup;
 
     /**
-     * @return (Updatable) Resource group to emit the operational metrics.
+     * @return (Updatable) Resource group to emit metrics.
      * 
      */
     public Optional<Output<String>> resourceGroup() {
@@ -72,7 +72,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationDestinationOpera
         }
 
         /**
-         * @param namespace (Updatable) Namespace to emit the operational metrics.
+         * @param namespace (Updatable) Namespace to emit metrics.
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationDestinationOpera
         }
 
         /**
-         * @param namespace (Updatable) Namespace to emit the operational metrics.
+         * @param namespace (Updatable) Namespace to emit metrics.
          * 
          * @return builder
          * 
@@ -93,7 +93,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationDestinationOpera
         }
 
         /**
-         * @param resourceGroup (Updatable) Resource group to emit the operational metrics.
+         * @param resourceGroup (Updatable) Resource group to emit metrics.
          * 
          * @return builder
          * 
@@ -104,7 +104,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationDestinationOpera
         }
 
         /**
-         * @param resourceGroup (Updatable) Resource group to emit the operational metrics.
+         * @param resourceGroup (Updatable) Resource group to emit metrics.
          * 
          * @return builder
          * 

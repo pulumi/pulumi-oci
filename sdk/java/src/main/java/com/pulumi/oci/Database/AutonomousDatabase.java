@@ -66,14 +66,14 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.actualUsedDataStorageSizeInTbs;
     }
     /**
-     * (Updatable) The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (&#34;) or the username &#34;admin&#34;, regardless of casing. The password is mandatory if source value is &#34;BACKUP_FROM_ID&#34;, &#34;BACKUP_FROM_TIMESTAMP&#34;, &#34;DATABASE&#34; or &#34;NONE&#34; and for new, full and metadata clone databases. This parameter is optional only if you are cloning or using a secret for the password. Not allowed for ADG and refreshable clones.
+     * (Updatable) The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (&#34;) or the username &#34;admin&#34;, regardless of casing. The password is mandatory if source value is &#34;BACKUP_FROM_ID&#34;, &#34;BACKUP_FROM_TIMESTAMP&#34;, &#34;DATABASE&#34; or &#34;NONE&#34;.
      * 
      */
     @Export(name="adminPassword", refs={String.class}, tree="[0]")
     private Output<String> adminPassword;
 
     /**
-     * @return (Updatable) The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (&#34;) or the username &#34;admin&#34;, regardless of casing. The password is mandatory if source value is &#34;BACKUP_FROM_ID&#34;, &#34;BACKUP_FROM_TIMESTAMP&#34;, &#34;DATABASE&#34; or &#34;NONE&#34; and for new, full and metadata clone databases. This parameter is optional only if you are cloning or using a secret for the password. Not allowed for ADG and refreshable clones.
+     * @return (Updatable) The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (&#34;) or the username &#34;admin&#34;, regardless of casing. The password is mandatory if source value is &#34;BACKUP_FROM_ID&#34;, &#34;BACKUP_FROM_TIMESTAMP&#34;, &#34;DATABASE&#34; or &#34;NONE&#34;.
      * 
      */
     public Output<String> adminPassword() {
@@ -122,14 +122,42 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.arePrimaryWhitelistedIpsUsed;
     }
     /**
-     * The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+     * (Updatable) The frequency a refreshable clone is refreshed after auto-refresh is enabled. The minimum is 1 hour. The maximum is 7 days. The date and time that auto-refresh is enabled is controlled by the `timeOfAutoRefreshStart` parameter.
+     * 
+     */
+    @Export(name="autoRefreshFrequencyInSeconds", refs={Integer.class}, tree="[0]")
+    private Output<Integer> autoRefreshFrequencyInSeconds;
+
+    /**
+     * @return (Updatable) The frequency a refreshable clone is refreshed after auto-refresh is enabled. The minimum is 1 hour. The maximum is 7 days. The date and time that auto-refresh is enabled is controlled by the `timeOfAutoRefreshStart` parameter.
+     * 
+     */
+    public Output<Integer> autoRefreshFrequencyInSeconds() {
+        return this.autoRefreshFrequencyInSeconds;
+    }
+    /**
+     * (Updatable) The time, in seconds, the data of the refreshable clone lags the primary database at the point of refresh. The minimum is 0 minutes (0 mins means refresh to the latest available timestamp). The maximum is 7 days. The lag time increases after refreshing until the next data refresh happens.
+     * 
+     */
+    @Export(name="autoRefreshPointLagInSeconds", refs={Integer.class}, tree="[0]")
+    private Output<Integer> autoRefreshPointLagInSeconds;
+
+    /**
+     * @return (Updatable) The time, in seconds, the data of the refreshable clone lags the primary database at the point of refresh. The minimum is 0 minutes (0 mins means refresh to the latest available timestamp). The maximum is 7 days. The lag time increases after refreshing until the next data refresh happens.
+     * 
+     */
+    public Output<Integer> autoRefreshPointLagInSeconds() {
+        return this.autoRefreshPointLagInSeconds;
+    }
+    /**
+     * The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     @Export(name="autonomousContainerDatabaseId", refs={String.class}, tree="[0]")
     private Output<String> autonomousContainerDatabaseId;
 
     /**
-     * @return The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+     * @return The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     public Output<String> autonomousContainerDatabaseId() {
@@ -1756,6 +1784,20 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      */
     public Output<String> timeMaintenanceEnd() {
         return this.timeMaintenanceEnd;
+    }
+    /**
+     * The the date and time that auto-refreshing will begin for an Autonomous Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
+     * 
+     */
+    @Export(name="timeOfAutoRefreshStart", refs={String.class}, tree="[0]")
+    private Output<String> timeOfAutoRefreshStart;
+
+    /**
+     * @return The the date and time that auto-refreshing will begin for an Autonomous Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
+     * 
+     */
+    public Output<String> timeOfAutoRefreshStart() {
+        return this.timeOfAutoRefreshStart;
     }
     @Export(name="timeOfJoiningResourcePool", refs={String.class}, tree="[0]")
     private Output<String> timeOfJoiningResourcePool;

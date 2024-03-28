@@ -108,14 +108,14 @@ public class NetworkLoadBalancersBackendSetsUnified extends com.pulumi.resources
         return this.backends;
     }
     /**
-     * (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+     * (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
      * 
      */
     @Export(name="healthChecker", refs={NetworkLoadBalancersBackendSetsUnifiedHealthChecker.class}, tree="[0]")
     private Output<NetworkLoadBalancersBackendSetsUnifiedHealthChecker> healthChecker;
 
     /**
-     * @return (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+     * @return (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
      * 
      */
     public Output<NetworkLoadBalancersBackendSetsUnifiedHealthChecker> healthChecker() {

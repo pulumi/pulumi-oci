@@ -25,7 +25,7 @@ namespace Pulumi.Oci.Logging.Inputs
         }
 
         /// <summary>
-        /// (Updatable) Record section of OperationalMetricsSource object.
+        /// (Updatable) record section of openmetrics parser.
         /// </summary>
         [Input("recordInput", required: true)]
         public Input<Inputs.UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInputGetArgs> RecordInput { get; set; } = null!;

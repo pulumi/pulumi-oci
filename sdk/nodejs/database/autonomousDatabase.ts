@@ -54,7 +54,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      */
     public /*out*/ readonly actualUsedDataStorageSizeInTbs!: pulumi.Output<number>;
     /**
-     * (Updatable) The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (") or the username "admin", regardless of casing. The password is mandatory if source value is "BACKUP_FROM_ID", "BACKUP_FROM_TIMESTAMP", "DATABASE" or "NONE" and for new, full and metadata clone databases. This parameter is optional only if you are cloning or using a secret for the password. Not allowed for ADG and refreshable clones.
+     * (Updatable) The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (") or the username "admin", regardless of casing. The password is mandatory if source value is "BACKUP_FROM_ID", "BACKUP_FROM_TIMESTAMP", "DATABASE" or "NONE".
      */
     public readonly adminPassword!: pulumi.Output<string>;
     /**
@@ -70,7 +70,15 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      */
     public readonly arePrimaryWhitelistedIpsUsed!: pulumi.Output<boolean>;
     /**
-     * The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+     * (Updatable) The frequency a refreshable clone is refreshed after auto-refresh is enabled. The minimum is 1 hour. The maximum is 7 days. The date and time that auto-refresh is enabled is controlled by the `timeOfAutoRefreshStart` parameter.
+     */
+    public readonly autoRefreshFrequencyInSeconds!: pulumi.Output<number>;
+    /**
+     * (Updatable) The time, in seconds, the data of the refreshable clone lags the primary database at the point of refresh. The minimum is 0 minutes (0 mins means refresh to the latest available timestamp). The maximum is 7 days. The lag time increases after refreshing until the next data refresh happens.
+     */
+    public readonly autoRefreshPointLagInSeconds!: pulumi.Output<number>;
+    /**
+     * The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public readonly autonomousContainerDatabaseId!: pulumi.Output<string>;
     /**
@@ -567,6 +575,10 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      * The date and time when maintenance will end.
      */
     public /*out*/ readonly timeMaintenanceEnd!: pulumi.Output<string>;
+    /**
+     * The the date and time that auto-refreshing will begin for an Autonomous Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
+     */
+    public readonly timeOfAutoRefreshStart!: pulumi.Output<string>;
     public /*out*/ readonly timeOfJoiningResourcePool!: pulumi.Output<string>;
     /**
      * The timestamp of the last failover operation.
@@ -649,6 +661,8 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["allocatedStorageSizeInTbs"] = state ? state.allocatedStorageSizeInTbs : undefined;
             resourceInputs["apexDetails"] = state ? state.apexDetails : undefined;
             resourceInputs["arePrimaryWhitelistedIpsUsed"] = state ? state.arePrimaryWhitelistedIpsUsed : undefined;
+            resourceInputs["autoRefreshFrequencyInSeconds"] = state ? state.autoRefreshFrequencyInSeconds : undefined;
+            resourceInputs["autoRefreshPointLagInSeconds"] = state ? state.autoRefreshPointLagInSeconds : undefined;
             resourceInputs["autonomousContainerDatabaseId"] = state ? state.autonomousContainerDatabaseId : undefined;
             resourceInputs["autonomousDatabaseBackupId"] = state ? state.autonomousDatabaseBackupId : undefined;
             resourceInputs["autonomousDatabaseId"] = state ? state.autonomousDatabaseId : undefined;
@@ -756,6 +770,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["timeLocalDataGuardEnabled"] = state ? state.timeLocalDataGuardEnabled : undefined;
             resourceInputs["timeMaintenanceBegin"] = state ? state.timeMaintenanceBegin : undefined;
             resourceInputs["timeMaintenanceEnd"] = state ? state.timeMaintenanceEnd : undefined;
+            resourceInputs["timeOfAutoRefreshStart"] = state ? state.timeOfAutoRefreshStart : undefined;
             resourceInputs["timeOfJoiningResourcePool"] = state ? state.timeOfJoiningResourcePool : undefined;
             resourceInputs["timeOfLastFailover"] = state ? state.timeOfLastFailover : undefined;
             resourceInputs["timeOfLastRefresh"] = state ? state.timeOfLastRefresh : undefined;
@@ -781,6 +796,8 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             }
             resourceInputs["adminPassword"] = args?.adminPassword ? pulumi.secret(args.adminPassword) : undefined;
             resourceInputs["arePrimaryWhitelistedIpsUsed"] = args ? args.arePrimaryWhitelistedIpsUsed : undefined;
+            resourceInputs["autoRefreshFrequencyInSeconds"] = args ? args.autoRefreshFrequencyInSeconds : undefined;
+            resourceInputs["autoRefreshPointLagInSeconds"] = args ? args.autoRefreshPointLagInSeconds : undefined;
             resourceInputs["autonomousContainerDatabaseId"] = args ? args.autonomousContainerDatabaseId : undefined;
             resourceInputs["autonomousDatabaseBackupId"] = args ? args.autonomousDatabaseBackupId : undefined;
             resourceInputs["autonomousDatabaseId"] = args ? args.autonomousDatabaseId : undefined;
@@ -848,6 +865,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["subnetId"] = args ? args.subnetId : undefined;
             resourceInputs["switchoverTo"] = args ? args.switchoverTo : undefined;
             resourceInputs["switchoverToRemotePeerId"] = args ? args.switchoverToRemotePeerId : undefined;
+            resourceInputs["timeOfAutoRefreshStart"] = args ? args.timeOfAutoRefreshStart : undefined;
             resourceInputs["timestamp"] = args ? args.timestamp : undefined;
             resourceInputs["useLatestAvailableBackupTimeStamp"] = args ? args.useLatestAvailableBackupTimeStamp : undefined;
             resourceInputs["vaultId"] = args ? args.vaultId : undefined;
@@ -923,7 +941,7 @@ export interface AutonomousDatabaseState {
      */
     actualUsedDataStorageSizeInTbs?: pulumi.Input<number>;
     /**
-     * (Updatable) The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (") or the username "admin", regardless of casing. The password is mandatory if source value is "BACKUP_FROM_ID", "BACKUP_FROM_TIMESTAMP", "DATABASE" or "NONE" and for new, full and metadata clone databases. This parameter is optional only if you are cloning or using a secret for the password. Not allowed for ADG and refreshable clones.
+     * (Updatable) The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (") or the username "admin", regardless of casing. The password is mandatory if source value is "BACKUP_FROM_ID", "BACKUP_FROM_TIMESTAMP", "DATABASE" or "NONE".
      */
     adminPassword?: pulumi.Input<string>;
     /**
@@ -939,7 +957,15 @@ export interface AutonomousDatabaseState {
      */
     arePrimaryWhitelistedIpsUsed?: pulumi.Input<boolean>;
     /**
-     * The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+     * (Updatable) The frequency a refreshable clone is refreshed after auto-refresh is enabled. The minimum is 1 hour. The maximum is 7 days. The date and time that auto-refresh is enabled is controlled by the `timeOfAutoRefreshStart` parameter.
+     */
+    autoRefreshFrequencyInSeconds?: pulumi.Input<number>;
+    /**
+     * (Updatable) The time, in seconds, the data of the refreshable clone lags the primary database at the point of refresh. The minimum is 0 minutes (0 mins means refresh to the latest available timestamp). The maximum is 7 days. The lag time increases after refreshing until the next data refresh happens.
+     */
+    autoRefreshPointLagInSeconds?: pulumi.Input<number>;
+    /**
+     * The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     autonomousContainerDatabaseId?: pulumi.Input<string>;
     /**
@@ -1436,6 +1462,10 @@ export interface AutonomousDatabaseState {
      * The date and time when maintenance will end.
      */
     timeMaintenanceEnd?: pulumi.Input<string>;
+    /**
+     * The the date and time that auto-refreshing will begin for an Autonomous Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
+     */
+    timeOfAutoRefreshStart?: pulumi.Input<string>;
     timeOfJoiningResourcePool?: pulumi.Input<string>;
     /**
      * The timestamp of the last failover operation.
@@ -1506,7 +1536,7 @@ export interface AutonomousDatabaseState {
  */
 export interface AutonomousDatabaseArgs {
     /**
-     * (Updatable) The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (") or the username "admin", regardless of casing. The password is mandatory if source value is "BACKUP_FROM_ID", "BACKUP_FROM_TIMESTAMP", "DATABASE" or "NONE" and for new, full and metadata clone databases. This parameter is optional only if you are cloning or using a secret for the password. Not allowed for ADG and refreshable clones.
+     * (Updatable) The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (") or the username "admin", regardless of casing. The password is mandatory if source value is "BACKUP_FROM_ID", "BACKUP_FROM_TIMESTAMP", "DATABASE" or "NONE".
      */
     adminPassword?: pulumi.Input<string>;
     /**
@@ -1514,7 +1544,15 @@ export interface AutonomousDatabaseArgs {
      */
     arePrimaryWhitelistedIpsUsed?: pulumi.Input<boolean>;
     /**
-     * The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+     * (Updatable) The frequency a refreshable clone is refreshed after auto-refresh is enabled. The minimum is 1 hour. The maximum is 7 days. The date and time that auto-refresh is enabled is controlled by the `timeOfAutoRefreshStart` parameter.
+     */
+    autoRefreshFrequencyInSeconds?: pulumi.Input<number>;
+    /**
+     * (Updatable) The time, in seconds, the data of the refreshable clone lags the primary database at the point of refresh. The minimum is 0 minutes (0 mins means refresh to the latest available timestamp). The maximum is 7 days. The lag time increases after refreshing until the next data refresh happens.
+     */
+    autoRefreshPointLagInSeconds?: pulumi.Input<number>;
+    /**
+     * The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     autonomousContainerDatabaseId?: pulumi.Input<string>;
     /**
@@ -1851,6 +1889,10 @@ export interface AutonomousDatabaseArgs {
      * (Updatable) It is applicable only when `dataguardRegionType` and `role` are set, and `isDedicated` is false. For Autonomous Database Serverless instances, Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. It takes the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the remote peer to switchover to and the API is called from the remote region.
      */
     switchoverToRemotePeerId?: pulumi.Input<string>;
+    /**
+     * The the date and time that auto-refreshing will begin for an Autonomous Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
+     */
+    timeOfAutoRefreshStart?: pulumi.Input<string>;
     /**
      * The timestamp specified for the point-in-time clone of the source Autonomous Database. The timestamp must be in the past.
      */

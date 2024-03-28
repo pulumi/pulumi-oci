@@ -5,6 +5,7 @@ package com.pulumi.oci.Logging.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Logging.outputs.UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptions;
 import com.pulumi.oci.Logging.outputs.UnifiedAgentConfigurationServiceConfigurationSourceParser;
 import java.lang.String;
 import java.util.List;
@@ -15,10 +16,20 @@ import javax.annotation.Nullable;
 @CustomType
 public final class UnifiedAgentConfigurationServiceConfigurationSource {
     /**
+     * @return (Updatable) Advanced options for logging configuration
+     * 
+     */
+    private @Nullable UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptions advancedOptions;
+    /**
      * @return (Updatable) Windows event log channels.
      * 
      */
     private @Nullable List<String> channels;
+    /**
+     * @return (Updatable) User customized source plugin.
+     * 
+     */
+    private @Nullable String customPlugin;
     /**
      * @return (Updatable) The name key to tag this Grok pattern.
      * 
@@ -37,19 +48,30 @@ public final class UnifiedAgentConfigurationServiceConfigurationSource {
     /**
      * @return (Updatable) Unified schema logging source type.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     private String sourceType;
 
     private UnifiedAgentConfigurationServiceConfigurationSource() {}
+    /**
+     * @return (Updatable) Advanced options for logging configuration
+     * 
+     */
+    public Optional<UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptions> advancedOptions() {
+        return Optional.ofNullable(this.advancedOptions);
+    }
     /**
      * @return (Updatable) Windows event log channels.
      * 
      */
     public List<String> channels() {
         return this.channels == null ? List.of() : this.channels;
+    }
+    /**
+     * @return (Updatable) User customized source plugin.
+     * 
+     */
+    public Optional<String> customPlugin() {
+        return Optional.ofNullable(this.customPlugin);
     }
     /**
      * @return (Updatable) The name key to tag this Grok pattern.
@@ -75,9 +97,6 @@ public final class UnifiedAgentConfigurationServiceConfigurationSource {
     /**
      * @return (Updatable) Unified schema logging source type.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     public String sourceType() {
         return this.sourceType;
@@ -92,7 +111,9 @@ public final class UnifiedAgentConfigurationServiceConfigurationSource {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptions advancedOptions;
         private @Nullable List<String> channels;
+        private @Nullable String customPlugin;
         private @Nullable String name;
         private @Nullable UnifiedAgentConfigurationServiceConfigurationSourceParser parser;
         private @Nullable List<String> paths;
@@ -100,13 +121,21 @@ public final class UnifiedAgentConfigurationServiceConfigurationSource {
         public Builder() {}
         public Builder(UnifiedAgentConfigurationServiceConfigurationSource defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.advancedOptions = defaults.advancedOptions;
     	      this.channels = defaults.channels;
+    	      this.customPlugin = defaults.customPlugin;
     	      this.name = defaults.name;
     	      this.parser = defaults.parser;
     	      this.paths = defaults.paths;
     	      this.sourceType = defaults.sourceType;
         }
 
+        @CustomType.Setter
+        public Builder advancedOptions(@Nullable UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptions advancedOptions) {
+
+            this.advancedOptions = advancedOptions;
+            return this;
+        }
         @CustomType.Setter
         public Builder channels(@Nullable List<String> channels) {
 
@@ -115,6 +144,12 @@ public final class UnifiedAgentConfigurationServiceConfigurationSource {
         }
         public Builder channels(String... channels) {
             return channels(List.of(channels));
+        }
+        @CustomType.Setter
+        public Builder customPlugin(@Nullable String customPlugin) {
+
+            this.customPlugin = customPlugin;
+            return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
@@ -147,7 +182,9 @@ public final class UnifiedAgentConfigurationServiceConfigurationSource {
         }
         public UnifiedAgentConfigurationServiceConfigurationSource build() {
             final var _resultValue = new UnifiedAgentConfigurationServiceConfigurationSource();
+            _resultValue.advancedOptions = advancedOptions;
             _resultValue.channels = channels;
+            _resultValue.customPlugin = customPlugin;
             _resultValue.name = name;
             _resultValue.parser = parser;
             _resultValue.paths = paths;

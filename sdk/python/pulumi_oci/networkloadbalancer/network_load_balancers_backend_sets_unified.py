@@ -25,7 +25,7 @@ class NetworkLoadBalancersBackendSetsUnifiedArgs:
                  name: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a NetworkLoadBalancersBackendSetsUnified resource.
-        :param pulumi.Input['NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs'] health_checker: (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+        :param pulumi.Input['NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs'] health_checker: (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
         :param pulumi.Input[str] network_load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
         :param pulumi.Input[str] policy: (Updatable) The network load balancer policy for the backend set.  Example: `FIVE_TUPLE`` 
                
@@ -57,7 +57,7 @@ class NetworkLoadBalancersBackendSetsUnifiedArgs:
     @pulumi.getter(name="healthChecker")
     def health_checker(self) -> pulumi.Input['NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs']:
         """
-        (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+        (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
         """
         return pulumi.get(self, "health_checker")
 
@@ -159,7 +159,7 @@ class _NetworkLoadBalancersBackendSetsUnifiedState:
         """
         Input properties used for looking up and filtering NetworkLoadBalancersBackendSetsUnified resources.
         :param pulumi.Input[Sequence[pulumi.Input['NetworkLoadBalancersBackendSetsUnifiedBackendArgs']]] backends: (Updatable) An array of backends to be associated with the backend set.
-        :param pulumi.Input['NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs'] health_checker: (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+        :param pulumi.Input['NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs'] health_checker: (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
         :param pulumi.Input[str] ip_version: (Updatable) IP version associated with the backend set.
         :param pulumi.Input[bool] is_preserve_source: (Updatable) If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
         :param pulumi.Input[str] name: A user-friendly name for the backend set that must be unique and cannot be changed.
@@ -205,7 +205,7 @@ class _NetworkLoadBalancersBackendSetsUnifiedState:
     @pulumi.getter(name="healthChecker")
     def health_checker(self) -> Optional[pulumi.Input['NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs']]:
         """
-        (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+        (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
         """
         return pulumi.get(self, "health_checker")
 
@@ -348,7 +348,7 @@ class NetworkLoadBalancersBackendSetsUnified(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkLoadBalancersBackendSetsUnifiedBackendArgs']]]] backends: (Updatable) An array of backends to be associated with the backend set.
-        :param pulumi.Input[pulumi.InputType['NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs']] health_checker: (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+        :param pulumi.Input[pulumi.InputType['NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs']] health_checker: (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
         :param pulumi.Input[str] ip_version: (Updatable) IP version associated with the backend set.
         :param pulumi.Input[bool] is_preserve_source: (Updatable) If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
         :param pulumi.Input[str] name: A user-friendly name for the backend set that must be unique and cannot be changed.
@@ -488,7 +488,7 @@ class NetworkLoadBalancersBackendSetsUnified(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkLoadBalancersBackendSetsUnifiedBackendArgs']]]] backends: (Updatable) An array of backends to be associated with the backend set.
-        :param pulumi.Input[pulumi.InputType['NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs']] health_checker: (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+        :param pulumi.Input[pulumi.InputType['NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs']] health_checker: (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
         :param pulumi.Input[str] ip_version: (Updatable) IP version associated with the backend set.
         :param pulumi.Input[bool] is_preserve_source: (Updatable) If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
         :param pulumi.Input[str] name: A user-friendly name for the backend set that must be unique and cannot be changed.
@@ -528,7 +528,7 @@ class NetworkLoadBalancersBackendSetsUnified(pulumi.CustomResource):
     @pulumi.getter(name="healthChecker")
     def health_checker(self) -> pulumi.Output['outputs.NetworkLoadBalancersBackendSetsUnifiedHealthChecker']:
         """
-        (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+        (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
         """
         return pulumi.get(self, "health_checker")
 

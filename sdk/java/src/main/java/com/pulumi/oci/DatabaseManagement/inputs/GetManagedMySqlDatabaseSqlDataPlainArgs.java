@@ -33,14 +33,42 @@ public final class GetManagedMySqlDatabaseSqlDataPlainArgs extends com.pulumi.re
     }
 
     /**
-     * The parameter to filter results by key criteria.
+     * The parameter to filter results by key criteria which include :
+     * * AVG_TIMER_WAIT
+     * * SUM_TIMER_WAIT
+     * * COUNT_STAR
+     * * SUM_ERRORS
+     * * SUM_ROWS_AFFECTED
+     * * SUM_ROWS_SENT
+     * * SUM_ROWS_EXAMINED
+     * * SUM_CREATED_TMP_TABLES
+     * * SUM_NO_INDEX_USED
+     * * SUM_NO_GOOD_INDEX_USED
+     * * FIRST_SEEN
+     * * LAST_SEEN
+     * * HEATWAVE_OFFLOADED
+     * * HEATWAVE_OUT_OF_MEMORY
      * 
      */
     @Import(name="filterColumn")
     private @Nullable String filterColumn;
 
     /**
-     * @return The parameter to filter results by key criteria.
+     * @return The parameter to filter results by key criteria which include :
+     * * AVG_TIMER_WAIT
+     * * SUM_TIMER_WAIT
+     * * COUNT_STAR
+     * * SUM_ERRORS
+     * * SUM_ROWS_AFFECTED
+     * * SUM_ROWS_SENT
+     * * SUM_ROWS_EXAMINED
+     * * SUM_CREATED_TMP_TABLES
+     * * SUM_NO_INDEX_USED
+     * * SUM_NO_GOOD_INDEX_USED
+     * * FIRST_SEEN
+     * * LAST_SEEN
+     * * HEATWAVE_OFFLOADED
+     * * HEATWAVE_OUT_OF_MEMORY
      * 
      */
     public Optional<String> filterColumn() {
@@ -55,14 +83,14 @@ public final class GetManagedMySqlDatabaseSqlDataPlainArgs extends com.pulumi.re
     }
 
     /**
-     * The OCID of ManagedMySqlDatabase.
+     * The OCID of the Managed MySQL Database.
      * 
      */
     @Import(name="managedMySqlDatabaseId", required=true)
     private String managedMySqlDatabaseId;
 
     /**
-     * @return The OCID of ManagedMySqlDatabase.
+     * @return The OCID of the Managed MySQL Database.
      * 
      */
     public String managedMySqlDatabaseId() {
@@ -124,7 +152,21 @@ public final class GetManagedMySqlDatabaseSqlDataPlainArgs extends com.pulumi.re
         }
 
         /**
-         * @param filterColumn The parameter to filter results by key criteria.
+         * @param filterColumn The parameter to filter results by key criteria which include :
+         * * AVG_TIMER_WAIT
+         * * SUM_TIMER_WAIT
+         * * COUNT_STAR
+         * * SUM_ERRORS
+         * * SUM_ROWS_AFFECTED
+         * * SUM_ROWS_SENT
+         * * SUM_ROWS_EXAMINED
+         * * SUM_CREATED_TMP_TABLES
+         * * SUM_NO_INDEX_USED
+         * * SUM_NO_GOOD_INDEX_USED
+         * * FIRST_SEEN
+         * * LAST_SEEN
+         * * HEATWAVE_OFFLOADED
+         * * HEATWAVE_OUT_OF_MEMORY
          * 
          * @return builder
          * 
@@ -144,7 +186,7 @@ public final class GetManagedMySqlDatabaseSqlDataPlainArgs extends com.pulumi.re
         }
 
         /**
-         * @param managedMySqlDatabaseId The OCID of ManagedMySqlDatabase.
+         * @param managedMySqlDatabaseId The OCID of the Managed MySQL Database.
          * 
          * @return builder
          * 

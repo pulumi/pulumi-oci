@@ -48,12 +48,26 @@ export interface GetManagedMySqlDatabaseSqlDataArgs {
      */
     endTime: string;
     /**
-     * The parameter to filter results by key criteria.
+     * The parameter to filter results by key criteria which include :
+     * * AVG_TIMER_WAIT
+     * * SUM_TIMER_WAIT
+     * * COUNT_STAR
+     * * SUM_ERRORS
+     * * SUM_ROWS_AFFECTED
+     * * SUM_ROWS_SENT
+     * * SUM_ROWS_EXAMINED
+     * * SUM_CREATED_TMP_TABLES
+     * * SUM_NO_INDEX_USED
+     * * SUM_NO_GOOD_INDEX_USED
+     * * FIRST_SEEN
+     * * LAST_SEEN
+     * * HEATWAVE_OFFLOADED
+     * * HEATWAVE_OUT_OF_MEMORY
      */
     filterColumn?: string;
     filters?: inputs.DatabaseManagement.GetManagedMySqlDatabaseSqlDataFilter[];
     /**
-     * The OCID of ManagedMySqlDatabase.
+     * The OCID of the Managed MySQL Database.
      */
     managedMySqlDatabaseId: string;
     /**
@@ -114,12 +128,26 @@ export interface GetManagedMySqlDatabaseSqlDataOutputArgs {
      */
     endTime: pulumi.Input<string>;
     /**
-     * The parameter to filter results by key criteria.
+     * The parameter to filter results by key criteria which include :
+     * * AVG_TIMER_WAIT
+     * * SUM_TIMER_WAIT
+     * * COUNT_STAR
+     * * SUM_ERRORS
+     * * SUM_ROWS_AFFECTED
+     * * SUM_ROWS_SENT
+     * * SUM_ROWS_EXAMINED
+     * * SUM_CREATED_TMP_TABLES
+     * * SUM_NO_INDEX_USED
+     * * SUM_NO_GOOD_INDEX_USED
+     * * FIRST_SEEN
+     * * LAST_SEEN
+     * * HEATWAVE_OFFLOADED
+     * * HEATWAVE_OUT_OF_MEMORY
      */
     filterColumn?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetManagedMySqlDatabaseSqlDataFilterArgs>[]>;
     /**
-     * The OCID of ManagedMySqlDatabase.
+     * The OCID of the Managed MySQL Database.
      */
     managedMySqlDatabaseId: pulumi.Input<string>;
     /**

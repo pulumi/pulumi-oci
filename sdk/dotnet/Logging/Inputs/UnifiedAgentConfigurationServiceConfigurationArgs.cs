@@ -12,6 +12,18 @@ namespace Pulumi.Oci.Logging.Inputs
 
     public sealed class UnifiedAgentConfigurationServiceConfigurationArgs : global::Pulumi.ResourceArgs
     {
+        [Input("applicationConfigurations")]
+        private InputList<Inputs.UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArgs>? _applicationConfigurations;
+
+        /// <summary>
+        /// (Updatable) Unified Agent monitoring application configuration details.
+        /// </summary>
+        public InputList<Inputs.UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArgs> ApplicationConfigurations
+        {
+            get => _applicationConfigurations ?? (_applicationConfigurations = new InputList<Inputs.UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArgs>());
+            set => _applicationConfigurations = value;
+        }
+
         /// <summary>
         /// (Updatable) Type of Unified Agent service configuration.
         /// </summary>
@@ -21,10 +33,10 @@ namespace Pulumi.Oci.Logging.Inputs
         /// <summary>
         /// (Updatable) Unified monitoring agent operational metrics destination object.
         /// </summary>
-        [Input("destination", required: true)]
-        public Input<Inputs.UnifiedAgentConfigurationServiceConfigurationDestinationArgs> Destination { get; set; } = null!;
+        [Input("destination")]
+        public Input<Inputs.UnifiedAgentConfigurationServiceConfigurationDestinationArgs>? Destination { get; set; }
 
-        [Input("sources", required: true)]
+        [Input("sources")]
         private InputList<Inputs.UnifiedAgentConfigurationServiceConfigurationSourceArgs>? _sources;
 
         /// <summary>
@@ -34,6 +46,18 @@ namespace Pulumi.Oci.Logging.Inputs
         {
             get => _sources ?? (_sources = new InputList<Inputs.UnifiedAgentConfigurationServiceConfigurationSourceArgs>());
             set => _sources = value;
+        }
+
+        [Input("unifiedAgentConfigurationFilters")]
+        private InputList<Inputs.UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArgs>? _unifiedAgentConfigurationFilters;
+
+        /// <summary>
+        /// (Updatable) Logging filter object.
+        /// </summary>
+        public InputList<Inputs.UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArgs> UnifiedAgentConfigurationFilters
+        {
+            get => _unifiedAgentConfigurationFilters ?? (_unifiedAgentConfigurationFilters = new InputList<Inputs.UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArgs>());
+            set => _unifiedAgentConfigurationFilters = value;
         }
 
         public UnifiedAgentConfigurationServiceConfigurationArgs()

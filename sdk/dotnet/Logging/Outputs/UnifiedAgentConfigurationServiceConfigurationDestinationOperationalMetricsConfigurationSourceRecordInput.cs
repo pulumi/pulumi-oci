@@ -14,11 +14,11 @@ namespace Pulumi.Oci.Logging.Outputs
     public sealed class UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInput
     {
         /// <summary>
-        /// (Updatable) Namespace to emit the operational metrics.
+        /// (Updatable) Namespace to emit metrics.
         /// </summary>
         public readonly string Namespace;
         /// <summary>
-        /// (Updatable) Resource group to emit the operational metrics.
+        /// (Updatable) Resource group to emit metrics.
         /// </summary>
         public readonly string? ResourceGroup;
 

@@ -25,6 +25,18 @@ namespace Pulumi.Oci.Logging.Inputs
         public Input<bool>? IsKeepTimeKey { get; set; }
 
         /// <summary>
+        /// (Updatable) If true, a separator parameter can be further defined.
+        /// </summary>
+        [Input("parseNested")]
+        public Input<bool>? ParseNested { get; set; }
+
+        /// <summary>
+        /// (Updatable) Keys of adjacent levels are joined by the separator.
+        /// </summary>
+        [Input("separator")]
+        public Input<string>? Separator { get; set; }
+
+        /// <summary>
         /// (Updatable) Process time value using the specified format.
         /// </summary>
         [Input("timeFormat")]

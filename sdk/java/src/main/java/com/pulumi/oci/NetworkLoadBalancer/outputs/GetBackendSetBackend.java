@@ -23,7 +23,7 @@ public final class GetBackendSetBackend {
      */
     private Boolean isBackup;
     /**
-     * @return Whether the network load balancer should drain this server. Servers marked &#34;isDrain&#34; receive no  incoming traffic.  Example: `false`
+     * @return Whether the network load balancer should drain this server. Servers marked &#34;isDrain&#34; receive no incoming traffic.  Example: `false`
      * 
      */
     private Boolean isDrain;
@@ -48,7 +48,7 @@ public final class GetBackendSetBackend {
      */
     private String targetId;
     /**
-     * @return The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted &#39;3&#39; receives three times the number of new connections as a server weighted &#39;1&#39;. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
+     * @return The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted &#39;3&#39; receives three times the number of new connections as a server weighted &#39;1&#39;. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/introducton.htm#Policies).  Example: `3`
      * 
      */
     private Integer weight;
@@ -69,7 +69,7 @@ public final class GetBackendSetBackend {
         return this.isBackup;
     }
     /**
-     * @return Whether the network load balancer should drain this server. Servers marked &#34;isDrain&#34; receive no  incoming traffic.  Example: `false`
+     * @return Whether the network load balancer should drain this server. Servers marked &#34;isDrain&#34; receive no incoming traffic.  Example: `false`
      * 
      */
     public Boolean isDrain() {
@@ -104,7 +104,7 @@ public final class GetBackendSetBackend {
         return this.targetId;
     }
     /**
-     * @return The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted &#39;3&#39; receives three times the number of new connections as a server weighted &#39;1&#39;. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
+     * @return The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted &#39;3&#39; receives three times the number of new connections as a server weighted &#39;1&#39;. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/introducton.htm#Policies).  Example: `3`
      * 
      */
     public Integer weight() {

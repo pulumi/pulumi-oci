@@ -57,6 +57,11 @@ public final class GetNetworkLoadBalancerResult {
      */
     private Boolean isPrivate;
     /**
+     * @return This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
+     * 
+     */
+    private Boolean isSymmetricHashEnabled;
+    /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
@@ -157,6 +162,13 @@ public final class GetNetworkLoadBalancerResult {
         return this.isPrivate;
     }
     /**
+     * @return This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
+     * 
+     */
+    public Boolean isSymmetricHashEnabled() {
+        return this.isSymmetricHashEnabled;
+    }
+    /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
@@ -236,6 +248,7 @@ public final class GetNetworkLoadBalancerResult {
         private List<GetNetworkLoadBalancerIpAddress> ipAddresses;
         private Boolean isPreserveSourceDestination;
         private Boolean isPrivate;
+        private Boolean isSymmetricHashEnabled;
         private String lifecycleDetails;
         private String networkLoadBalancerId;
         private List<String> networkSecurityGroupIds;
@@ -257,6 +270,7 @@ public final class GetNetworkLoadBalancerResult {
     	      this.ipAddresses = defaults.ipAddresses;
     	      this.isPreserveSourceDestination = defaults.isPreserveSourceDestination;
     	      this.isPrivate = defaults.isPrivate;
+    	      this.isSymmetricHashEnabled = defaults.isSymmetricHashEnabled;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.networkLoadBalancerId = defaults.networkLoadBalancerId;
     	      this.networkSecurityGroupIds = defaults.networkSecurityGroupIds;
@@ -334,6 +348,14 @@ public final class GetNetworkLoadBalancerResult {
               throw new MissingRequiredPropertyException("GetNetworkLoadBalancerResult", "isPrivate");
             }
             this.isPrivate = isPrivate;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isSymmetricHashEnabled(Boolean isSymmetricHashEnabled) {
+            if (isSymmetricHashEnabled == null) {
+              throw new MissingRequiredPropertyException("GetNetworkLoadBalancerResult", "isSymmetricHashEnabled");
+            }
+            this.isSymmetricHashEnabled = isSymmetricHashEnabled;
             return this;
         }
         @CustomType.Setter
@@ -432,6 +454,7 @@ public final class GetNetworkLoadBalancerResult {
             _resultValue.ipAddresses = ipAddresses;
             _resultValue.isPreserveSourceDestination = isPreserveSourceDestination;
             _resultValue.isPrivate = isPrivate;
+            _resultValue.isSymmetricHashEnabled = isSymmetricHashEnabled;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.networkLoadBalancerId = networkLoadBalancerId;
             _resultValue.networkSecurityGroupIds = networkSecurityGroupIds;

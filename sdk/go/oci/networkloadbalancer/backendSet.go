@@ -69,9 +69,9 @@ import (
 type BackendSet struct {
 	pulumi.CustomResourceState
 
-	// Array of backends.
+	// (Updatable) An array of backends to be associated with the backend set.
 	Backends BackendSetBackendArrayOutput `pulumi:"backends"`
-	// (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+	// (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
 	HealthChecker BackendSetHealthCheckerOutput `pulumi:"healthChecker"`
 	// (Updatable) IP version associated with the backend set.
 	IpVersion pulumi.StringOutput `pulumi:"ipVersion"`
@@ -131,9 +131,9 @@ func GetBackendSet(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering BackendSet resources.
 type backendSetState struct {
-	// Array of backends.
+	// (Updatable) An array of backends to be associated with the backend set.
 	Backends []BackendSetBackend `pulumi:"backends"`
-	// (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+	// (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
 	HealthChecker *BackendSetHealthChecker `pulumi:"healthChecker"`
 	// (Updatable) IP version associated with the backend set.
 	IpVersion *string `pulumi:"ipVersion"`
@@ -155,9 +155,9 @@ type backendSetState struct {
 }
 
 type BackendSetState struct {
-	// Array of backends.
+	// (Updatable) An array of backends to be associated with the backend set.
 	Backends BackendSetBackendArrayInput
-	// (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+	// (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
 	HealthChecker BackendSetHealthCheckerPtrInput
 	// (Updatable) IP version associated with the backend set.
 	IpVersion pulumi.StringPtrInput
@@ -183,7 +183,7 @@ func (BackendSetState) ElementType() reflect.Type {
 }
 
 type backendSetArgs struct {
-	// (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+	// (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
 	HealthChecker BackendSetHealthChecker `pulumi:"healthChecker"`
 	// (Updatable) IP version associated with the backend set.
 	IpVersion *string `pulumi:"ipVersion"`
@@ -206,7 +206,7 @@ type backendSetArgs struct {
 
 // The set of arguments for constructing a BackendSet resource.
 type BackendSetArgs struct {
-	// (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+	// (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
 	HealthChecker BackendSetHealthCheckerInput
 	// (Updatable) IP version associated with the backend set.
 	IpVersion pulumi.StringPtrInput
@@ -314,12 +314,12 @@ func (o BackendSetOutput) ToBackendSetOutputWithContext(ctx context.Context) Bac
 	return o
 }
 
-// Array of backends.
+// (Updatable) An array of backends to be associated with the backend set.
 func (o BackendSetOutput) Backends() BackendSetBackendArrayOutput {
 	return o.ApplyT(func(v *BackendSet) BackendSetBackendArrayOutput { return v.Backends }).(BackendSetBackendArrayOutput)
 }
 
-// (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+// (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
 func (o BackendSetOutput) HealthChecker() BackendSetHealthCheckerOutput {
 	return o.ApplyT(func(v *BackendSet) BackendSetHealthCheckerOutput { return v.HealthChecker }).(BackendSetHealthCheckerOutput)
 }

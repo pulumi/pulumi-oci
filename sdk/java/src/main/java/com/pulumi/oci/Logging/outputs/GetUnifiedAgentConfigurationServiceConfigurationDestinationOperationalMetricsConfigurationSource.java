@@ -18,7 +18,7 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationDestinationOp
      */
     private List<String> metrics;
     /**
-     * @return Record section of OperationalMetricsSource object.
+     * @return record section of openmetrics parser.
      * 
      */
     private List<GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInput> recordInputs;
@@ -37,7 +37,7 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationDestinationOp
         return this.metrics;
     }
     /**
-     * @return Record section of OperationalMetricsSource object.
+     * @return record section of openmetrics parser.
      * 
      */
     public List<GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInput> recordInputs() {

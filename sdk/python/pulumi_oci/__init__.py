@@ -1803,6 +1803,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "DataIntegration/workspaceTask",
+  "fqn": "pulumi_oci.dataintegration",
+  "classes": {
+   "oci:DataIntegration/workspaceTask:WorkspaceTask": "WorkspaceTask"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "DataLabellingService/dataset",
   "fqn": "pulumi_oci.datalabellingservice",
   "classes": {

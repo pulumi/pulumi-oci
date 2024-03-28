@@ -15,22 +15,22 @@ import javax.annotation.Nullable;
 @CustomType
 public final class BackendSetBackend {
     /**
-     * @return The IP address of the backend server. Example: `10.0.0.3`
+     * @return (Updatable) The IP address of the backend server.  Example: `10.0.0.3`
      * 
      */
     private @Nullable String ipAddress;
     /**
-     * @return Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as &#34;isBackup&#34; fail the health check policy.  Example: `false`
+     * @return (Updatable) Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as &#34;isBackup&#34; fail the health check policy.  Example: `false`
      * 
      */
     private @Nullable Boolean isBackup;
     /**
-     * @return Whether the network load balancer should drain this server. Servers marked &#34;isDrain&#34; receive no incoming traffic.  Example: `false`
+     * @return (Updatable) Whether the network load balancer should drain this server. Servers marked &#34;isDrain&#34; receive no incoming traffic.  Example: `false`
      * 
      */
     private @Nullable Boolean isDrain;
     /**
-     * @return Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
+     * @return (Updatable) Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
      * 
      */
     private @Nullable Boolean isOffline;
@@ -49,40 +49,40 @@ public final class BackendSetBackend {
      */
     private Integer port;
     /**
-     * @return The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.&lt;var&gt;&amp;lt;unique_ID&amp;gt;&lt;/var&gt;`
+     * @return (Updatable) The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.&lt;var&gt;&amp;lt;unique_ID&amp;gt;&lt;/var&gt;`
      * 
      */
     private @Nullable String targetId;
     /**
-     * @return The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted &#39;3&#39; receives three times the number of new connections as a server weighted &#39;1&#39;. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
+     * @return (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted &#39;3&#39; receives three times the number of new connections as a server weighted &#39;1&#39;. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/introducton.htm#Policies).  Example: `3`
      * 
      */
     private @Nullable Integer weight;
 
     private BackendSetBackend() {}
     /**
-     * @return The IP address of the backend server. Example: `10.0.0.3`
+     * @return (Updatable) The IP address of the backend server.  Example: `10.0.0.3`
      * 
      */
     public Optional<String> ipAddress() {
         return Optional.ofNullable(this.ipAddress);
     }
     /**
-     * @return Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as &#34;isBackup&#34; fail the health check policy.  Example: `false`
+     * @return (Updatable) Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as &#34;isBackup&#34; fail the health check policy.  Example: `false`
      * 
      */
     public Optional<Boolean> isBackup() {
         return Optional.ofNullable(this.isBackup);
     }
     /**
-     * @return Whether the network load balancer should drain this server. Servers marked &#34;isDrain&#34; receive no incoming traffic.  Example: `false`
+     * @return (Updatable) Whether the network load balancer should drain this server. Servers marked &#34;isDrain&#34; receive no incoming traffic.  Example: `false`
      * 
      */
     public Optional<Boolean> isDrain() {
         return Optional.ofNullable(this.isDrain);
     }
     /**
-     * @return Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
+     * @return (Updatable) Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
      * 
      */
     public Optional<Boolean> isOffline() {
@@ -107,14 +107,14 @@ public final class BackendSetBackend {
         return this.port;
     }
     /**
-     * @return The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.&lt;var&gt;&amp;lt;unique_ID&amp;gt;&lt;/var&gt;`
+     * @return (Updatable) The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.&lt;var&gt;&amp;lt;unique_ID&amp;gt;&lt;/var&gt;`
      * 
      */
     public Optional<String> targetId() {
         return Optional.ofNullable(this.targetId);
     }
     /**
-     * @return The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted &#39;3&#39; receives three times the number of new connections as a server weighted &#39;1&#39;. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
+     * @return (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted &#39;3&#39; receives three times the number of new connections as a server weighted &#39;1&#39;. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/introducton.htm#Policies).  Example: `3`
      * 
      */
     public Optional<Integer> weight() {

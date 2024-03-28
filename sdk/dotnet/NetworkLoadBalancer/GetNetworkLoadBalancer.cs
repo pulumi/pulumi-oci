@@ -134,6 +134,10 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// </summary>
         public readonly bool IsPrivate;
         /// <summary>
+        /// This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
+        /// </summary>
+        public readonly bool IsSymmetricHashEnabled;
+        /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
         public readonly string LifecycleDetails;
@@ -186,6 +190,8 @@ namespace Pulumi.Oci.NetworkLoadBalancer
 
             bool isPrivate,
 
+            bool isSymmetricHashEnabled,
+
             string lifecycleDetails,
 
             string networkLoadBalancerId,
@@ -214,6 +220,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
             IpAddresses = ipAddresses;
             IsPreserveSourceDestination = isPreserveSourceDestination;
             IsPrivate = isPrivate;
+            IsSymmetricHashEnabled = isSymmetricHashEnabled;
             LifecycleDetails = lifecycleDetails;
             NetworkLoadBalancerId = networkLoadBalancerId;
             NetworkSecurityGroupIds = networkSecurityGroupIds;

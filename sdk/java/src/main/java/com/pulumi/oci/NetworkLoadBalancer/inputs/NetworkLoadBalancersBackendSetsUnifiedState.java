@@ -35,14 +35,14 @@ public final class NetworkLoadBalancersBackendSetsUnifiedState extends com.pulum
     }
 
     /**
-     * (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+     * (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
      * 
      */
     @Import(name="healthChecker")
     private @Nullable Output<NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs> healthChecker;
 
     /**
-     * @return (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+     * @return (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
      * 
      */
     public Optional<Output<NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs>> healthChecker() {
@@ -200,7 +200,7 @@ public final class NetworkLoadBalancersBackendSetsUnifiedState extends com.pulum
         }
 
         /**
-         * @param healthChecker (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+         * @param healthChecker (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
          * 
          * @return builder
          * 
@@ -211,7 +211,7 @@ public final class NetworkLoadBalancersBackendSetsUnifiedState extends com.pulum
         }
 
         /**
-         * @param healthChecker (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+         * @param healthChecker (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
          * 
          * @return builder
          * 

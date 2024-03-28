@@ -1661,16 +1661,18 @@ class DeployArtifactDeployArtifactSourceArgs:
                  chart_url: Optional[pulumi.Input[str]] = None,
                  deploy_artifact_path: Optional[pulumi.Input[str]] = None,
                  deploy_artifact_version: Optional[pulumi.Input[str]] = None,
+                 helm_artifact_source_type: Optional[pulumi.Input[str]] = None,
                  helm_verification_key_source: Optional[pulumi.Input['DeployArtifactDeployArtifactSourceHelmVerificationKeySourceArgs']] = None,
                  image_digest: Optional[pulumi.Input[str]] = None,
                  image_uri: Optional[pulumi.Input[str]] = None,
                  repository_id: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] deploy_artifact_source_type: (Updatable) Specifies types of artifact sources.
-        :param pulumi.Input[str] base64encoded_content: (Updatable) Specifies content for the inline artifact.
+        :param pulumi.Input[str] base64encoded_content: (Updatable) The Helm commands to be executed, base 64 encoded
         :param pulumi.Input[str] chart_url: (Updatable) The URL of an OCIR repository.
         :param pulumi.Input[str] deploy_artifact_path: (Updatable) Specifies the artifact path in the repository.
         :param pulumi.Input[str] deploy_artifact_version: (Updatable) Users can set this as a placeholder value that refers to a pipeline parameter, for example, ${appVersion}.
+        :param pulumi.Input[str] helm_artifact_source_type: (Updatable) Specifies types of artifact sources.
         :param pulumi.Input['DeployArtifactDeployArtifactSourceHelmVerificationKeySourceArgs'] helm_verification_key_source: (Updatable) The source of the verification material.
         :param pulumi.Input[str] image_digest: (Updatable) Specifies image digest for the version of the image.
         :param pulumi.Input[str] image_uri: (Updatable) Specifies OCIR Image Path - optionally include tag.
@@ -1685,6 +1687,8 @@ class DeployArtifactDeployArtifactSourceArgs:
             pulumi.set(__self__, "deploy_artifact_path", deploy_artifact_path)
         if deploy_artifact_version is not None:
             pulumi.set(__self__, "deploy_artifact_version", deploy_artifact_version)
+        if helm_artifact_source_type is not None:
+            pulumi.set(__self__, "helm_artifact_source_type", helm_artifact_source_type)
         if helm_verification_key_source is not None:
             pulumi.set(__self__, "helm_verification_key_source", helm_verification_key_source)
         if image_digest is not None:
@@ -1710,7 +1714,7 @@ class DeployArtifactDeployArtifactSourceArgs:
     @pulumi.getter(name="base64encodedContent")
     def base64encoded_content(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Specifies content for the inline artifact.
+        (Updatable) The Helm commands to be executed, base 64 encoded
         """
         return pulumi.get(self, "base64encoded_content")
 
@@ -1753,6 +1757,18 @@ class DeployArtifactDeployArtifactSourceArgs:
     @deploy_artifact_version.setter
     def deploy_artifact_version(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "deploy_artifact_version", value)
+
+    @property
+    @pulumi.getter(name="helmArtifactSourceType")
+    def helm_artifact_source_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Specifies types of artifact sources.
+        """
+        return pulumi.get(self, "helm_artifact_source_type")
+
+    @helm_artifact_source_type.setter
+    def helm_artifact_source_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "helm_artifact_source_type", value)
 
     @property
     @pulumi.getter(name="helmVerificationKeySource")

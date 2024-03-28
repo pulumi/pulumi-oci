@@ -23,6 +23,16 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserNest
      */
     private @Nullable Boolean isKeepTimeKey;
     /**
+     * @return (Updatable) If true, a separator parameter can be further defined.
+     * 
+     */
+    private @Nullable Boolean parseNested;
+    /**
+     * @return (Updatable) Keys of adjacent levels are joined by the separator.
+     * 
+     */
+    private @Nullable String separator;
+    /**
      * @return (Updatable) Process time value using the specified format.
      * 
      */
@@ -47,6 +57,20 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserNest
      */
     public Optional<Boolean> isKeepTimeKey() {
         return Optional.ofNullable(this.isKeepTimeKey);
+    }
+    /**
+     * @return (Updatable) If true, a separator parameter can be further defined.
+     * 
+     */
+    public Optional<Boolean> parseNested() {
+        return Optional.ofNullable(this.parseNested);
+    }
+    /**
+     * @return (Updatable) Keys of adjacent levels are joined by the separator.
+     * 
+     */
+    public Optional<String> separator() {
+        return Optional.ofNullable(this.separator);
     }
     /**
      * @return (Updatable) Process time value using the specified format.
@@ -74,6 +98,8 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserNest
     public static final class Builder {
         private @Nullable String fieldTimeKey;
         private @Nullable Boolean isKeepTimeKey;
+        private @Nullable Boolean parseNested;
+        private @Nullable String separator;
         private @Nullable String timeFormat;
         private @Nullable String timeType;
         public Builder() {}
@@ -81,6 +107,8 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserNest
     	      Objects.requireNonNull(defaults);
     	      this.fieldTimeKey = defaults.fieldTimeKey;
     	      this.isKeepTimeKey = defaults.isKeepTimeKey;
+    	      this.parseNested = defaults.parseNested;
+    	      this.separator = defaults.separator;
     	      this.timeFormat = defaults.timeFormat;
     	      this.timeType = defaults.timeType;
         }
@@ -95,6 +123,18 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserNest
         public Builder isKeepTimeKey(@Nullable Boolean isKeepTimeKey) {
 
             this.isKeepTimeKey = isKeepTimeKey;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder parseNested(@Nullable Boolean parseNested) {
+
+            this.parseNested = parseNested;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder separator(@Nullable String separator) {
+
+            this.separator = separator;
             return this;
         }
         @CustomType.Setter
@@ -113,6 +153,8 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserNest
             final var _resultValue = new UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser();
             _resultValue.fieldTimeKey = fieldTimeKey;
             _resultValue.isKeepTimeKey = isKeepTimeKey;
+            _resultValue.parseNested = parseNested;
+            _resultValue.separator = separator;
             _resultValue.timeFormat = timeFormat;
             _resultValue.timeType = timeType;
             return _resultValue;

@@ -212,6 +212,12 @@ namespace Pulumi.Oci.DevOps
         public Output<string> HelmChartDeployArtifactId { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) List of Helm command artifact OCIDs.
+        /// </summary>
+        [Output("helmCommandArtifactIds")]
+        public Output<ImmutableArray<string>> HelmCommandArtifactIds { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) A boolean flag specifies whether this stage executes asynchronously.
         /// </summary>
         [Output("isAsync")]
@@ -228,6 +234,12 @@ namespace Pulumi.Oci.DevOps
         /// </summary>
         [Output("isForceEnabled")]
         public Output<bool> IsForceEnabled { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Uninstall the Helm chart release on deleting the stage.
+        /// </summary>
+        [Output("isUninstallOnStageDelete")]
+        public Output<bool> IsUninstallOnStageDelete { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A boolean flag specifies whether the invoked function should be validated.
@@ -306,6 +318,12 @@ namespace Pulumi.Oci.DevOps
         /// </summary>
         [Output("projectId")]
         public Output<string> ProjectId { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The purpose of running this Helm stage
+        /// </summary>
+        [Output("purpose")]
+        public Output<string> Purpose { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Default name of the chart instance. Must be unique within a Kubernetes namespace.
@@ -677,6 +695,18 @@ namespace Pulumi.Oci.DevOps
         [Input("helmChartDeployArtifactId")]
         public Input<string>? HelmChartDeployArtifactId { get; set; }
 
+        [Input("helmCommandArtifactIds")]
+        private InputList<string>? _helmCommandArtifactIds;
+
+        /// <summary>
+        /// (Updatable) List of Helm command artifact OCIDs.
+        /// </summary>
+        public InputList<string> HelmCommandArtifactIds
+        {
+            get => _helmCommandArtifactIds ?? (_helmCommandArtifactIds = new InputList<string>());
+            set => _helmCommandArtifactIds = value;
+        }
+
         /// <summary>
         /// (Updatable) A boolean flag specifies whether this stage executes asynchronously.
         /// </summary>
@@ -694,6 +724,12 @@ namespace Pulumi.Oci.DevOps
         /// </summary>
         [Input("isForceEnabled")]
         public Input<bool>? IsForceEnabled { get; set; }
+
+        /// <summary>
+        /// (Updatable) Uninstall the Helm chart release on deleting the stage.
+        /// </summary>
+        [Input("isUninstallOnStageDelete")]
+        public Input<bool>? IsUninstallOnStageDelete { get; set; }
 
         /// <summary>
         /// (Updatable) A boolean flag specifies whether the invoked function should be validated.
@@ -766,6 +802,12 @@ namespace Pulumi.Oci.DevOps
         /// </summary>
         [Input("productionLoadBalancerConfig")]
         public Input<Inputs.DeployStageProductionLoadBalancerConfigArgs>? ProductionLoadBalancerConfig { get; set; }
+
+        /// <summary>
+        /// (Updatable) The purpose of running this Helm stage
+        /// </summary>
+        [Input("purpose")]
+        public Input<string>? Purpose { get; set; }
 
         /// <summary>
         /// (Updatable) Default name of the chart instance. Must be unique within a Kubernetes namespace.
@@ -1087,6 +1129,18 @@ namespace Pulumi.Oci.DevOps
         [Input("helmChartDeployArtifactId")]
         public Input<string>? HelmChartDeployArtifactId { get; set; }
 
+        [Input("helmCommandArtifactIds")]
+        private InputList<string>? _helmCommandArtifactIds;
+
+        /// <summary>
+        /// (Updatable) List of Helm command artifact OCIDs.
+        /// </summary>
+        public InputList<string> HelmCommandArtifactIds
+        {
+            get => _helmCommandArtifactIds ?? (_helmCommandArtifactIds = new InputList<string>());
+            set => _helmCommandArtifactIds = value;
+        }
+
         /// <summary>
         /// (Updatable) A boolean flag specifies whether this stage executes asynchronously.
         /// </summary>
@@ -1104,6 +1158,12 @@ namespace Pulumi.Oci.DevOps
         /// </summary>
         [Input("isForceEnabled")]
         public Input<bool>? IsForceEnabled { get; set; }
+
+        /// <summary>
+        /// (Updatable) Uninstall the Helm chart release on deleting the stage.
+        /// </summary>
+        [Input("isUninstallOnStageDelete")]
+        public Input<bool>? IsUninstallOnStageDelete { get; set; }
 
         /// <summary>
         /// (Updatable) A boolean flag specifies whether the invoked function should be validated.
@@ -1188,6 +1248,12 @@ namespace Pulumi.Oci.DevOps
         /// </summary>
         [Input("projectId")]
         public Input<string>? ProjectId { get; set; }
+
+        /// <summary>
+        /// (Updatable) The purpose of running this Helm stage
+        /// </summary>
+        [Input("purpose")]
+        public Input<string>? Purpose { get; set; }
 
         /// <summary>
         /// (Updatable) Default name of the chart instance. Must be unique within a Kubernetes namespace.

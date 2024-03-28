@@ -22,6 +22,14 @@ namespace Pulumi.Oci.Logging.Outputs
         /// </summary>
         public readonly bool? IsKeepTimeKey;
         /// <summary>
+        /// (Updatable) If true, a separator parameter can be further defined.
+        /// </summary>
+        public readonly bool? ParseNested;
+        /// <summary>
+        /// (Updatable) Keys of adjacent levels are joined by the separator.
+        /// </summary>
+        public readonly string? Separator;
+        /// <summary>
         /// (Updatable) Process time value using the specified format.
         /// </summary>
         public readonly string? TimeFormat;
@@ -36,12 +44,18 @@ namespace Pulumi.Oci.Logging.Outputs
 
             bool? isKeepTimeKey,
 
+            bool? parseNested,
+
+            string? separator,
+
             string? timeFormat,
 
             string? timeType)
         {
             FieldTimeKey = fieldTimeKey;
             IsKeepTimeKey = isKeepTimeKey;
+            ParseNested = parseNested;
+            Separator = separator;
             TimeFormat = timeFormat;
             TimeType = timeType;
         }

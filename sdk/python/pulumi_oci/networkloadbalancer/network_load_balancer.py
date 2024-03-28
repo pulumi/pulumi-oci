@@ -23,6 +23,7 @@ class NetworkLoadBalancerArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_preserve_source_destination: Optional[pulumi.Input[bool]] = None,
                  is_private: Optional[pulumi.Input[bool]] = None,
+                 is_symmetric_hash_enabled: Optional[pulumi.Input[bool]] = None,
                  network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  nlb_ip_version: Optional[pulumi.Input[str]] = None,
                  reserved_ips: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkLoadBalancerReservedIpArgs']]]] = None):
@@ -44,9 +45,10 @@ class NetworkLoadBalancerArgs:
                
                If "false", then the service assigns a public IP address to the network load balancer.
                
-               A public network load balancer is accessible from the internet, depending on the [security list rules](https://docs.cloud.oracle.com/iaas/Content/network/Concepts/securitylists.htm) for your virtual cloud network. For more information about public and private network load balancers, see [How Network Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-network-load-balancing-works). This value is true by default.
+               A public network load balancer is accessible from the internet, depending on the [security list rules](https://docs.cloud.oracle.com/iaas/Content/network/Concepts/securitylists.htm) for your virtual cloud network. For more information about public and private network load balancers, see [How Network Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/overview.htm). This value is true by default.
                
                Example: `true`
+        :param pulumi.Input[bool] is_symmetric_hash_enabled: (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] network_security_group_ids: (Updatable) An array of network security groups [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the network load balancer.
                
                During the creation of the network load balancer, the service adds the new load balancer to the specified network security groups.
@@ -70,6 +72,8 @@ class NetworkLoadBalancerArgs:
             pulumi.set(__self__, "is_preserve_source_destination", is_preserve_source_destination)
         if is_private is not None:
             pulumi.set(__self__, "is_private", is_private)
+        if is_symmetric_hash_enabled is not None:
+            pulumi.set(__self__, "is_symmetric_hash_enabled", is_symmetric_hash_enabled)
         if network_security_group_ids is not None:
             pulumi.set(__self__, "network_security_group_ids", network_security_group_ids)
         if nlb_ip_version is not None:
@@ -163,7 +167,7 @@ class NetworkLoadBalancerArgs:
 
         If "false", then the service assigns a public IP address to the network load balancer.
 
-        A public network load balancer is accessible from the internet, depending on the [security list rules](https://docs.cloud.oracle.com/iaas/Content/network/Concepts/securitylists.htm) for your virtual cloud network. For more information about public and private network load balancers, see [How Network Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-network-load-balancing-works). This value is true by default.
+        A public network load balancer is accessible from the internet, depending on the [security list rules](https://docs.cloud.oracle.com/iaas/Content/network/Concepts/securitylists.htm) for your virtual cloud network. For more information about public and private network load balancers, see [How Network Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/overview.htm). This value is true by default.
 
         Example: `true`
         """
@@ -172,6 +176,18 @@ class NetworkLoadBalancerArgs:
     @is_private.setter
     def is_private(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_private", value)
+
+    @property
+    @pulumi.getter(name="isSymmetricHashEnabled")
+    def is_symmetric_hash_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
+        """
+        return pulumi.get(self, "is_symmetric_hash_enabled")
+
+    @is_symmetric_hash_enabled.setter
+    def is_symmetric_hash_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_symmetric_hash_enabled", value)
 
     @property
     @pulumi.getter(name="networkSecurityGroupIds")
@@ -228,6 +244,7 @@ class _NetworkLoadBalancerState:
                  ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkLoadBalancerIpAddressArgs']]]] = None,
                  is_preserve_source_destination: Optional[pulumi.Input[bool]] = None,
                  is_private: Optional[pulumi.Input[bool]] = None,
+                 is_symmetric_hash_enabled: Optional[pulumi.Input[bool]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  nlb_ip_version: Optional[pulumi.Input[str]] = None,
@@ -251,9 +268,10 @@ class _NetworkLoadBalancerState:
                
                If "false", then the service assigns a public IP address to the network load balancer.
                
-               A public network load balancer is accessible from the internet, depending on the [security list rules](https://docs.cloud.oracle.com/iaas/Content/network/Concepts/securitylists.htm) for your virtual cloud network. For more information about public and private network load balancers, see [How Network Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-network-load-balancing-works). This value is true by default.
+               A public network load balancer is accessible from the internet, depending on the [security list rules](https://docs.cloud.oracle.com/iaas/Content/network/Concepts/securitylists.htm) for your virtual cloud network. For more information about public and private network load balancers, see [How Network Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/overview.htm). This value is true by default.
                
                Example: `true`
+        :param pulumi.Input[bool] is_symmetric_hash_enabled: (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] network_security_group_ids: (Updatable) An array of network security groups [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the network load balancer.
                
@@ -290,6 +308,8 @@ class _NetworkLoadBalancerState:
             pulumi.set(__self__, "is_preserve_source_destination", is_preserve_source_destination)
         if is_private is not None:
             pulumi.set(__self__, "is_private", is_private)
+        if is_symmetric_hash_enabled is not None:
+            pulumi.set(__self__, "is_symmetric_hash_enabled", is_symmetric_hash_enabled)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if network_security_group_ids is not None:
@@ -391,7 +411,7 @@ class _NetworkLoadBalancerState:
 
         If "false", then the service assigns a public IP address to the network load balancer.
 
-        A public network load balancer is accessible from the internet, depending on the [security list rules](https://docs.cloud.oracle.com/iaas/Content/network/Concepts/securitylists.htm) for your virtual cloud network. For more information about public and private network load balancers, see [How Network Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-network-load-balancing-works). This value is true by default.
+        A public network load balancer is accessible from the internet, depending on the [security list rules](https://docs.cloud.oracle.com/iaas/Content/network/Concepts/securitylists.htm) for your virtual cloud network. For more information about public and private network load balancers, see [How Network Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/overview.htm). This value is true by default.
 
         Example: `true`
         """
@@ -400,6 +420,18 @@ class _NetworkLoadBalancerState:
     @is_private.setter
     def is_private(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_private", value)
+
+    @property
+    @pulumi.getter(name="isSymmetricHashEnabled")
+    def is_symmetric_hash_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
+        """
+        return pulumi.get(self, "is_symmetric_hash_enabled")
+
+    @is_symmetric_hash_enabled.setter
+    def is_symmetric_hash_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_symmetric_hash_enabled", value)
 
     @property
     @pulumi.getter(name="lifecycleDetails")
@@ -533,6 +565,7 @@ class NetworkLoadBalancer(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_preserve_source_destination: Optional[pulumi.Input[bool]] = None,
                  is_private: Optional[pulumi.Input[bool]] = None,
+                 is_symmetric_hash_enabled: Optional[pulumi.Input[bool]] = None,
                  network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  nlb_ip_version: Optional[pulumi.Input[str]] = None,
                  reserved_ips: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkLoadBalancerReservedIpArgs']]]]] = None,
@@ -562,6 +595,7 @@ class NetworkLoadBalancer(pulumi.CustomResource):
             },
             is_preserve_source_destination=var["network_load_balancer_is_preserve_source_destination"],
             is_private=var["network_load_balancer_is_private"],
+            is_symmetric_hash_enabled=var["network_load_balancer_is_symmetric_hash_enabled"],
             network_security_group_ids=var["network_load_balancer_network_security_group_ids"],
             nlb_ip_version=var["network_load_balancer_nlb_ip_version"],
             reserved_ips=[oci.network_load_balancer.NetworkLoadBalancerReservedIpArgs(
@@ -591,9 +625,10 @@ class NetworkLoadBalancer(pulumi.CustomResource):
                
                If "false", then the service assigns a public IP address to the network load balancer.
                
-               A public network load balancer is accessible from the internet, depending on the [security list rules](https://docs.cloud.oracle.com/iaas/Content/network/Concepts/securitylists.htm) for your virtual cloud network. For more information about public and private network load balancers, see [How Network Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-network-load-balancing-works). This value is true by default.
+               A public network load balancer is accessible from the internet, depending on the [security list rules](https://docs.cloud.oracle.com/iaas/Content/network/Concepts/securitylists.htm) for your virtual cloud network. For more information about public and private network load balancers, see [How Network Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/overview.htm). This value is true by default.
                
                Example: `true`
+        :param pulumi.Input[bool] is_symmetric_hash_enabled: (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] network_security_group_ids: (Updatable) An array of network security groups [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the network load balancer.
                
                During the creation of the network load balancer, the service adds the new load balancer to the specified network security groups.
@@ -641,6 +676,7 @@ class NetworkLoadBalancer(pulumi.CustomResource):
             },
             is_preserve_source_destination=var["network_load_balancer_is_preserve_source_destination"],
             is_private=var["network_load_balancer_is_private"],
+            is_symmetric_hash_enabled=var["network_load_balancer_is_symmetric_hash_enabled"],
             network_security_group_ids=var["network_load_balancer_network_security_group_ids"],
             nlb_ip_version=var["network_load_balancer_nlb_ip_version"],
             reserved_ips=[oci.network_load_balancer.NetworkLoadBalancerReservedIpArgs(
@@ -678,6 +714,7 @@ class NetworkLoadBalancer(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_preserve_source_destination: Optional[pulumi.Input[bool]] = None,
                  is_private: Optional[pulumi.Input[bool]] = None,
+                 is_symmetric_hash_enabled: Optional[pulumi.Input[bool]] = None,
                  network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  nlb_ip_version: Optional[pulumi.Input[str]] = None,
                  reserved_ips: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkLoadBalancerReservedIpArgs']]]]] = None,
@@ -701,6 +738,7 @@ class NetworkLoadBalancer(pulumi.CustomResource):
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["is_preserve_source_destination"] = is_preserve_source_destination
             __props__.__dict__["is_private"] = is_private
+            __props__.__dict__["is_symmetric_hash_enabled"] = is_symmetric_hash_enabled
             __props__.__dict__["network_security_group_ids"] = network_security_group_ids
             __props__.__dict__["nlb_ip_version"] = nlb_ip_version
             __props__.__dict__["reserved_ips"] = reserved_ips
@@ -730,6 +768,7 @@ class NetworkLoadBalancer(pulumi.CustomResource):
             ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkLoadBalancerIpAddressArgs']]]]] = None,
             is_preserve_source_destination: Optional[pulumi.Input[bool]] = None,
             is_private: Optional[pulumi.Input[bool]] = None,
+            is_symmetric_hash_enabled: Optional[pulumi.Input[bool]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             nlb_ip_version: Optional[pulumi.Input[str]] = None,
@@ -758,9 +797,10 @@ class NetworkLoadBalancer(pulumi.CustomResource):
                
                If "false", then the service assigns a public IP address to the network load balancer.
                
-               A public network load balancer is accessible from the internet, depending on the [security list rules](https://docs.cloud.oracle.com/iaas/Content/network/Concepts/securitylists.htm) for your virtual cloud network. For more information about public and private network load balancers, see [How Network Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-network-load-balancing-works). This value is true by default.
+               A public network load balancer is accessible from the internet, depending on the [security list rules](https://docs.cloud.oracle.com/iaas/Content/network/Concepts/securitylists.htm) for your virtual cloud network. For more information about public and private network load balancers, see [How Network Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/overview.htm). This value is true by default.
                
                Example: `true`
+        :param pulumi.Input[bool] is_symmetric_hash_enabled: (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] network_security_group_ids: (Updatable) An array of network security groups [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the network load balancer.
                
@@ -794,6 +834,7 @@ class NetworkLoadBalancer(pulumi.CustomResource):
         __props__.__dict__["ip_addresses"] = ip_addresses
         __props__.__dict__["is_preserve_source_destination"] = is_preserve_source_destination
         __props__.__dict__["is_private"] = is_private
+        __props__.__dict__["is_symmetric_hash_enabled"] = is_symmetric_hash_enabled
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["network_security_group_ids"] = network_security_group_ids
         __props__.__dict__["nlb_ip_version"] = nlb_ip_version
@@ -863,11 +904,19 @@ class NetworkLoadBalancer(pulumi.CustomResource):
 
         If "false", then the service assigns a public IP address to the network load balancer.
 
-        A public network load balancer is accessible from the internet, depending on the [security list rules](https://docs.cloud.oracle.com/iaas/Content/network/Concepts/securitylists.htm) for your virtual cloud network. For more information about public and private network load balancers, see [How Network Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-network-load-balancing-works). This value is true by default.
+        A public network load balancer is accessible from the internet, depending on the [security list rules](https://docs.cloud.oracle.com/iaas/Content/network/Concepts/securitylists.htm) for your virtual cloud network. For more information about public and private network load balancers, see [How Network Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/overview.htm). This value is true by default.
 
         Example: `true`
         """
         return pulumi.get(self, "is_private")
+
+    @property
+    @pulumi.getter(name="isSymmetricHashEnabled")
+    def is_symmetric_hash_enabled(self) -> pulumi.Output[bool]:
+        """
+        (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
+        """
+        return pulumi.get(self, "is_symmetric_hash_enabled")
 
     @property
     @pulumi.getter(name="lifecycleDetails")

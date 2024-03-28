@@ -14,9 +14,17 @@ namespace Pulumi.Oci.Logging.Outputs
     public sealed class UnifiedAgentConfigurationServiceConfigurationSource
     {
         /// <summary>
+        /// (Updatable) Advanced options for logging configuration
+        /// </summary>
+        public readonly Outputs.UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptions? AdvancedOptions;
+        /// <summary>
         /// (Updatable) Windows event log channels.
         /// </summary>
         public readonly ImmutableArray<string> Channels;
+        /// <summary>
+        /// (Updatable) User customized source plugin.
+        /// </summary>
+        public readonly string? CustomPlugin;
         /// <summary>
         /// (Updatable) The name key to tag this Grok pattern.
         /// </summary>
@@ -31,16 +39,16 @@ namespace Pulumi.Oci.Logging.Outputs
         public readonly ImmutableArray<string> Paths;
         /// <summary>
         /// (Updatable) Unified schema logging source type.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public readonly string SourceType;
 
         [OutputConstructor]
         private UnifiedAgentConfigurationServiceConfigurationSource(
+            Outputs.UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptions? advancedOptions,
+
             ImmutableArray<string> channels,
+
+            string? customPlugin,
 
             string? name,
 
@@ -50,7 +58,9 @@ namespace Pulumi.Oci.Logging.Outputs
 
             string sourceType)
         {
+            AdvancedOptions = advancedOptions;
             Channels = channels;
+            CustomPlugin = customPlugin;
             Name = name;
             Parser = parser;
             Paths = paths;

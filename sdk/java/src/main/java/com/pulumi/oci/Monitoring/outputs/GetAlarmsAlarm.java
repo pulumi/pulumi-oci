@@ -5,6 +5,7 @@ package com.pulumi.oci.Monitoring.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Monitoring.outputs.GetAlarmsAlarmOverride;
 import com.pulumi.oci.Monitoring.outputs.GetAlarmsAlarmSuppression;
 import java.lang.Boolean;
 import java.lang.Object;
@@ -81,6 +82,16 @@ public final class GetAlarmsAlarm {
      */
     private String namespace;
     /**
+     * @return The version of the alarm notification to be delivered. Allowed value: `1.X` The value must start with a number (up to four digits), followed by a period and an uppercase X.
+     * 
+     */
+    private String notificationVersion;
+    /**
+     * @return A set of overrides that control evaluations of the alarm.
+     * 
+     */
+    private List<GetAlarmsAlarmOverride> overrides;
+    /**
      * @return The period of time that the condition defined in the alarm must persist before the alarm state changes from &#34;OK&#34; to &#34;FIRING&#34;. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to &#34;FIRING&#34;.
      * 
      */
@@ -105,6 +116,11 @@ public final class GetAlarmsAlarm {
      * 
      */
     private String resourceGroup;
+    /**
+     * @return Identifier of the alarm&#39;s base values for alarm evaluation, for use when the alarm contains overrides.  A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.  Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
+     * 
+     */
+    private String ruleName;
     /**
      * @return The perceived type of response required when the alarm is in the &#34;FIRING&#34; state.  Example: `CRITICAL`
      * 
@@ -224,6 +240,20 @@ public final class GetAlarmsAlarm {
         return this.namespace;
     }
     /**
+     * @return The version of the alarm notification to be delivered. Allowed value: `1.X` The value must start with a number (up to four digits), followed by a period and an uppercase X.
+     * 
+     */
+    public String notificationVersion() {
+        return this.notificationVersion;
+    }
+    /**
+     * @return A set of overrides that control evaluations of the alarm.
+     * 
+     */
+    public List<GetAlarmsAlarmOverride> overrides() {
+        return this.overrides;
+    }
+    /**
      * @return The period of time that the condition defined in the alarm must persist before the alarm state changes from &#34;OK&#34; to &#34;FIRING&#34;. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to &#34;FIRING&#34;.
      * 
      */
@@ -257,6 +287,13 @@ public final class GetAlarmsAlarm {
      */
     public String resourceGroup() {
         return this.resourceGroup;
+    }
+    /**
+     * @return Identifier of the alarm&#39;s base values for alarm evaluation, for use when the alarm contains overrides.  A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.  Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
+     * 
+     */
+    public String ruleName() {
+        return this.ruleName;
     }
     /**
      * @return The perceived type of response required when the alarm is in the &#34;FIRING&#34; state.  Example: `CRITICAL`
@@ -316,11 +353,14 @@ public final class GetAlarmsAlarm {
         private String metricCompartmentId;
         private Boolean metricCompartmentIdInSubtree;
         private String namespace;
+        private String notificationVersion;
+        private List<GetAlarmsAlarmOverride> overrides;
         private String pendingDuration;
         private String query;
         private String repeatNotificationDuration;
         private String resolution;
         private String resourceGroup;
+        private String ruleName;
         private String severity;
         private String state;
         private List<GetAlarmsAlarmSuppression> suppressions;
@@ -342,11 +382,14 @@ public final class GetAlarmsAlarm {
     	      this.metricCompartmentId = defaults.metricCompartmentId;
     	      this.metricCompartmentIdInSubtree = defaults.metricCompartmentIdInSubtree;
     	      this.namespace = defaults.namespace;
+    	      this.notificationVersion = defaults.notificationVersion;
+    	      this.overrides = defaults.overrides;
     	      this.pendingDuration = defaults.pendingDuration;
     	      this.query = defaults.query;
     	      this.repeatNotificationDuration = defaults.repeatNotificationDuration;
     	      this.resolution = defaults.resolution;
     	      this.resourceGroup = defaults.resourceGroup;
+    	      this.ruleName = defaults.ruleName;
     	      this.severity = defaults.severity;
     	      this.state = defaults.state;
     	      this.suppressions = defaults.suppressions;
@@ -462,6 +505,25 @@ public final class GetAlarmsAlarm {
             return this;
         }
         @CustomType.Setter
+        public Builder notificationVersion(String notificationVersion) {
+            if (notificationVersion == null) {
+              throw new MissingRequiredPropertyException("GetAlarmsAlarm", "notificationVersion");
+            }
+            this.notificationVersion = notificationVersion;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder overrides(List<GetAlarmsAlarmOverride> overrides) {
+            if (overrides == null) {
+              throw new MissingRequiredPropertyException("GetAlarmsAlarm", "overrides");
+            }
+            this.overrides = overrides;
+            return this;
+        }
+        public Builder overrides(GetAlarmsAlarmOverride... overrides) {
+            return overrides(List.of(overrides));
+        }
+        @CustomType.Setter
         public Builder pendingDuration(String pendingDuration) {
             if (pendingDuration == null) {
               throw new MissingRequiredPropertyException("GetAlarmsAlarm", "pendingDuration");
@@ -499,6 +561,14 @@ public final class GetAlarmsAlarm {
               throw new MissingRequiredPropertyException("GetAlarmsAlarm", "resourceGroup");
             }
             this.resourceGroup = resourceGroup;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder ruleName(String ruleName) {
+            if (ruleName == null) {
+              throw new MissingRequiredPropertyException("GetAlarmsAlarm", "ruleName");
+            }
+            this.ruleName = ruleName;
             return this;
         }
         @CustomType.Setter
@@ -559,11 +629,14 @@ public final class GetAlarmsAlarm {
             _resultValue.metricCompartmentId = metricCompartmentId;
             _resultValue.metricCompartmentIdInSubtree = metricCompartmentIdInSubtree;
             _resultValue.namespace = namespace;
+            _resultValue.notificationVersion = notificationVersion;
+            _resultValue.overrides = overrides;
             _resultValue.pendingDuration = pendingDuration;
             _resultValue.query = query;
             _resultValue.repeatNotificationDuration = repeatNotificationDuration;
             _resultValue.resolution = resolution;
             _resultValue.resourceGroup = resourceGroup;
+            _resultValue.ruleName = ruleName;
             _resultValue.severity = severity;
             _resultValue.state = state;
             _resultValue.suppressions = suppressions;

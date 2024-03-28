@@ -6,6 +6,7 @@ package com.pulumi.oci.Logging.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Logging.inputs.UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsArgs;
 import com.pulumi.oci.Logging.inputs.UnifiedAgentConfigurationServiceConfigurationSourceParserArgs;
 import java.lang.String;
 import java.util.List;
@@ -17,6 +18,21 @@ import javax.annotation.Nullable;
 public final class UnifiedAgentConfigurationServiceConfigurationSourceArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final UnifiedAgentConfigurationServiceConfigurationSourceArgs Empty = new UnifiedAgentConfigurationServiceConfigurationSourceArgs();
+
+    /**
+     * (Updatable) Advanced options for logging configuration
+     * 
+     */
+    @Import(name="advancedOptions")
+    private @Nullable Output<UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsArgs> advancedOptions;
+
+    /**
+     * @return (Updatable) Advanced options for logging configuration
+     * 
+     */
+    public Optional<Output<UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsArgs>> advancedOptions() {
+        return Optional.ofNullable(this.advancedOptions);
+    }
 
     /**
      * (Updatable) Windows event log channels.
@@ -31,6 +47,21 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceArgs exten
      */
     public Optional<Output<List<String>>> channels() {
         return Optional.ofNullable(this.channels);
+    }
+
+    /**
+     * (Updatable) User customized source plugin.
+     * 
+     */
+    @Import(name="customPlugin")
+    private @Nullable Output<String> customPlugin;
+
+    /**
+     * @return (Updatable) User customized source plugin.
+     * 
+     */
+    public Optional<Output<String>> customPlugin() {
+        return Optional.ofNullable(this.customPlugin);
     }
 
     /**
@@ -81,18 +112,12 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceArgs exten
     /**
      * (Updatable) Unified schema logging source type.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="sourceType", required=true)
     private Output<String> sourceType;
 
     /**
      * @return (Updatable) Unified schema logging source type.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> sourceType() {
@@ -102,7 +127,9 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceArgs exten
     private UnifiedAgentConfigurationServiceConfigurationSourceArgs() {}
 
     private UnifiedAgentConfigurationServiceConfigurationSourceArgs(UnifiedAgentConfigurationServiceConfigurationSourceArgs $) {
+        this.advancedOptions = $.advancedOptions;
         this.channels = $.channels;
+        this.customPlugin = $.customPlugin;
         this.name = $.name;
         this.parser = $.parser;
         this.paths = $.paths;
@@ -125,6 +152,27 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceArgs exten
 
         public Builder(UnifiedAgentConfigurationServiceConfigurationSourceArgs defaults) {
             $ = new UnifiedAgentConfigurationServiceConfigurationSourceArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param advancedOptions (Updatable) Advanced options for logging configuration
+         * 
+         * @return builder
+         * 
+         */
+        public Builder advancedOptions(@Nullable Output<UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsArgs> advancedOptions) {
+            $.advancedOptions = advancedOptions;
+            return this;
+        }
+
+        /**
+         * @param advancedOptions (Updatable) Advanced options for logging configuration
+         * 
+         * @return builder
+         * 
+         */
+        public Builder advancedOptions(UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsArgs advancedOptions) {
+            return advancedOptions(Output.of(advancedOptions));
         }
 
         /**
@@ -156,6 +204,27 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceArgs exten
          */
         public Builder channels(String... channels) {
             return channels(List.of(channels));
+        }
+
+        /**
+         * @param customPlugin (Updatable) User customized source plugin.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder customPlugin(@Nullable Output<String> customPlugin) {
+            $.customPlugin = customPlugin;
+            return this;
+        }
+
+        /**
+         * @param customPlugin (Updatable) User customized source plugin.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder customPlugin(String customPlugin) {
+            return customPlugin(Output.of(customPlugin));
         }
 
         /**
@@ -234,9 +303,6 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceArgs exten
         /**
          * @param sourceType (Updatable) Unified schema logging source type.
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -247,9 +313,6 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceArgs exten
 
         /**
          * @param sourceType (Updatable) Unified schema logging source type.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

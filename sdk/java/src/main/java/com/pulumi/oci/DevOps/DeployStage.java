@@ -486,6 +486,20 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
         return this.helmChartDeployArtifactId;
     }
     /**
+     * (Updatable) List of Helm command artifact OCIDs.
+     * 
+     */
+    @Export(name="helmCommandArtifactIds", refs={List.class,String.class}, tree="[0,1]")
+    private Output</* @Nullable */ List<String>> helmCommandArtifactIds;
+
+    /**
+     * @return (Updatable) List of Helm command artifact OCIDs.
+     * 
+     */
+    public Output<Optional<List<String>>> helmCommandArtifactIds() {
+        return Codegen.optional(this.helmCommandArtifactIds);
+    }
+    /**
      * (Updatable) A boolean flag specifies whether this stage executes asynchronously.
      * 
      */
@@ -526,6 +540,20 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      */
     public Output<Boolean> isForceEnabled() {
         return this.isForceEnabled;
+    }
+    /**
+     * (Updatable) Uninstall the Helm chart release on deleting the stage.
+     * 
+     */
+    @Export(name="isUninstallOnStageDelete", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isUninstallOnStageDelete;
+
+    /**
+     * @return (Updatable) Uninstall the Helm chart release on deleting the stage.
+     * 
+     */
+    public Output<Boolean> isUninstallOnStageDelete() {
+        return this.isUninstallOnStageDelete;
     }
     /**
      * (Updatable) A boolean flag specifies whether the invoked function should be validated.
@@ -708,6 +736,20 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      */
     public Output<String> projectId() {
         return this.projectId;
+    }
+    /**
+     * (Updatable) The purpose of running this Helm stage
+     * 
+     */
+    @Export(name="purpose", refs={String.class}, tree="[0]")
+    private Output<String> purpose;
+
+    /**
+     * @return (Updatable) The purpose of running this Helm stage
+     * 
+     */
+    public Output<String> purpose() {
+        return this.purpose;
     }
     /**
      * (Updatable) Default name of the chart instance. Must be unique within a Kubernetes namespace.

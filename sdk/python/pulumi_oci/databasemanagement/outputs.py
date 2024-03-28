@@ -371,12 +371,14 @@ __all__ = [
     'GetManagedMySqlDatabaseConfigurationDataFilterResult',
     'GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionResult',
     'GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemResult',
+    'GetManagedMySqlDatabaseHeatWaveNodeResult',
     'GetManagedMySqlDatabaseSqlDataFilterResult',
     'GetManagedMySqlDatabaseSqlDataMySqlDataCollectionResult',
     'GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemResult',
     'GetManagedMySqlDatabasesFilterResult',
     'GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionResult',
     'GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemResult',
+    'GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeResult',
     'GetNamedCredentialContentResult',
     'GetNamedCredentialsFilterResult',
     'GetNamedCredentialsNamedCredentialCollectionResult',
@@ -26077,6 +26079,46 @@ class GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionIt
 
 
 @pulumi.output_type
+class GetManagedMySqlDatabaseHeatWaveNodeResult(dict):
+    def __init__(__self__, *,
+                 id: str,
+                 status: str,
+                 time_created: str):
+        """
+        :param str id: The ID associated with the HeatWave node.
+        :param str status: The status of the HeatWave node. Indicates whether the status of the node is UP, DOWN, or UNKNOWN at the current time.
+        :param str time_created: The date and time the node was created.
+        """
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "time_created", time_created)
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The ID associated with the HeatWave node.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def status(self) -> str:
+        """
+        The status of the HeatWave node. Indicates whether the status of the node is UP, DOWN, or UNKNOWN at the current time.
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time the node was created.
+        """
+        return pulumi.get(self, "time_created")
+
+
+@pulumi.output_type
 class GetManagedMySqlDatabaseSqlDataFilterResult(dict):
     def __init__(__self__, *,
                  name: str,
@@ -26108,7 +26150,7 @@ class GetManagedMySqlDatabaseSqlDataMySqlDataCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemResult']):
         """
-        :param Sequence['GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemArgs'] items: List of SQLDataSummary.
+        :param Sequence['GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemArgs'] items: The list of SQLDataSummary records.
         """
         pulumi.set(__self__, "items", items)
 
@@ -26116,7 +26158,7 @@ class GetManagedMySqlDatabaseSqlDataMySqlDataCollectionResult(dict):
     @pulumi.getter
     def items(self) -> Sequence['outputs.GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemResult']:
         """
-        List of SQLDataSummary.
+        The list of SQLDataSummary records.
         """
         return pulumi.get(self, "items")
 
@@ -26129,6 +26171,8 @@ class GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemResult(dict):
                  digest: str,
                  digest_text: str,
                  first_seen: str,
+                 heat_wave_offloaded: float,
+                 heat_wave_out_of_memory: float,
                  last_seen: str,
                  max_timer_wait: float,
                  min_timer_wait: float,
@@ -26157,44 +26201,48 @@ class GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemResult(dict):
                  sum_timer_wait: float,
                  sum_warnings: float):
         """
-        :param float avg_timer_wait: The Average Execution Time.
-        :param float count_star: The Number Of Times The Query Has Been Executed.
-        :param str digest: The Digest Of The Normalized Query.
-        :param str digest_text: The Normalized Query.
-        :param str first_seen: When The Query Was First Seen. When The Table Is Truncated, The First Seen Value Is Also Reset.
-        :param str last_seen: When The Query Was Seen The Last Time.
-        :param float max_timer_wait: The Slowest The Query Has Been Executed.
-        :param float min_timer_wait: The Fastest The Query Has Been Executed.
-        :param float quantile95: The 95th Percentile Of The Query Latency. That Is, 95%!O(MISSING)f The Queries Complete In The Time Given Or In Less Time.
-        :param float quantile99: The 99th Percentile Of The Query Latency.
-        :param float quantile999: The 99.9th Percentile Of The Query Latency.
-        :param str schema_name: The Schema That Was The Default Schema When Executing The Query. If No Schema Was The Default, The Value Is NULL.
-        :param float sum_created_temp_disk_tables: The Total Number Of On-Disk Internal Temporary Tables That Have Been Created By The Query.
-        :param float sum_created_temp_tables: The Total Number Of Internal Temporary Tables – Whether Created In Memory Or On Disk – That Have Been Created By The Query.
-        :param float sum_errors: The Total Number Of Errors That Have Been Encountered Executing The Query.
-        :param float sum_lock_time: The Total Amount Of Time That Has Been Spent Waiting For Table Locks.
-        :param float sum_no_good_index_used: The Total Number Of Times No Good Index Was Used. This Means That The ExtraColumn In The EXPLAIN Output Includes “Range Checked For Each Record.”
-        :param float sum_no_index_used: The Total Number Of Times No Index Was Used To Execute The Query.
-        :param float sum_rows_affected: The Total Number Of Rows That Have Been Modified By The Query.
-        :param float sum_rows_examined: The Total Number Of Rows That Have Been Examined By The Query.
-        :param float sum_rows_sent: The Total Number Of Rows That Have Been Returned (Sent) To The Client.
-        :param float sum_select_full_join: The Total Number Of Joins That Have Performed Full Table Scans As There Is No Index For The Join Condition Or There Is No Join Condition. This Is The Same That Increments The Select_full_join Status Variable.
-        :param float sum_select_full_range_join: The Total Number Of Joins That Use A Full Range Search. This Is The Same That Increments The Select_full_range_join Status Variable.
-        :param float sum_select_range: The Total Number Of Times The Query Has Used A Range Search. This Is The Same That Increments The Select_range Status Variable.
-        :param float sum_select_range_check: The Total Number Of Joins By The Query Where The Join Does Not Have An Index That Checks For The Index Usage After Each Row. This Is The Same That Increments The Select_range_check Status Variable.
-        :param float sum_select_scan: The Total Number Of Times The Query Has Performed A Full Table Scan On The First Table In The Join. This Is The Same That Increments The Select_scan Status Variable.
-        :param float sum_sort_merge_passes: The Total Number Of Sort Merge Passes That Have Been Done To Sort The Result Of The Query. This Is The Same That Increments The Sort_merge_passes Status Variable.
-        :param float sum_sort_range: The Total Number Of Times A Sort Was Done Using Ranges. This Is The Same That Increments The Sort_range Status Variable.
-        :param float sum_sort_rows: The Total Number Of Rows Sorted. This Is The Same That Increments The Sort_rowsStatus Variable.
-        :param float sum_sort_scan: The Total Number Of Times A Sort Was Done By Scanning The Table. This Is The Same That Increments The Sort_scan Status Variable.
-        :param float sum_timer_wait: The Total Amount Of Time That Has Been Spent Executing The Query.
-        :param float sum_warnings: The Total Number Of Warnings That Have Been Encountered Executing The Query.
+        :param float avg_timer_wait: The average execution time.
+        :param float count_star: The number Of times the query has been executed.
+        :param str digest: The digest information of the normalized query.
+        :param str digest_text: The normalized query.
+        :param str first_seen: The date and time the query was first seen. If the table is truncated, the first seen value is reset.
+        :param float heat_wave_offloaded: The number of query executions offloaded to HeatWave.
+        :param float heat_wave_out_of_memory: The number of query executions with HeatWave out-of-memory errors.
+        :param str last_seen: The date and time the query was last seen.
+        :param float max_timer_wait: The slowest the query has been executed.
+        :param float min_timer_wait: The fastest the query has been executed.
+        :param float quantile95: The 95th percentile of the query latency. That is, 95%!o(MISSING)f the queries complete in the time given or in less time.
+        :param float quantile99: The 99th percentile of the query latency.
+        :param float quantile999: The 99.9th percentile of the query latency.
+        :param str schema_name: The name of the default schema when executing the query. If a schema is not set as the default, then the value is NULL.
+        :param float sum_created_temp_disk_tables: The total number of On-Disk internal temporary tables that have been created by the query.
+        :param float sum_created_temp_tables: The total number of internal temporary tables (in memory or on disk), which have been created by the query.
+        :param float sum_errors: The total number of errors that have been encountered executing the query.
+        :param float sum_lock_time: The total amount of time that has been spent waiting for table locks.
+        :param float sum_no_good_index_used: The total number of times no good index was used. This means that the extra column in The EXPLAIN output includes “Range Checked For Each Record.”
+        :param float sum_no_index_used: The total number of times no index was used to execute the query.
+        :param float sum_rows_affected: The total number of rows that have been modified by the query.
+        :param float sum_rows_examined: The total number of rows that have been examined by the query.
+        :param float sum_rows_sent: The total number of rows that have been returned (sent) to the client.
+        :param float sum_select_full_join: The total number of joins that have performed full table scans as there was no join condition or no index for the join condition. This is the same as the select_full_join status variable.
+        :param float sum_select_full_range_join: The total number of joins that use a full range search. This is the same as the select_full_range_join status variable.
+        :param float sum_select_range: The total number of times the query has used a range search. This is the same as the select_range status variable.
+        :param float sum_select_range_check: The total number of joins by the query where the join does not have an index that checks for the index usage after each row. This is the same as the select_range_check status variable.
+        :param float sum_select_scan: The total number of times the query has performed a full table scan on the first table in the join. This is the same as the select_scan status variable.
+        :param float sum_sort_merge_passes: The total number of sort merge passes that have been done to sort the result of the query. This is the same as the sort_merge_passes status variable.
+        :param float sum_sort_range: The total number of times a sort was done using ranges. This is the same as the sort_range status variable.
+        :param float sum_sort_rows: The total number of rows sorted. This is the same as the sort_rowsStatus variable.
+        :param float sum_sort_scan: The total number of times a sort was done by scanning the table. This is the same as the sort_scan status variable.
+        :param float sum_timer_wait: The total amount of time that has been spent executing the query.
+        :param float sum_warnings: The total number of warnings that have been encountered executing the query.
         """
         pulumi.set(__self__, "avg_timer_wait", avg_timer_wait)
         pulumi.set(__self__, "count_star", count_star)
         pulumi.set(__self__, "digest", digest)
         pulumi.set(__self__, "digest_text", digest_text)
         pulumi.set(__self__, "first_seen", first_seen)
+        pulumi.set(__self__, "heat_wave_offloaded", heat_wave_offloaded)
+        pulumi.set(__self__, "heat_wave_out_of_memory", heat_wave_out_of_memory)
         pulumi.set(__self__, "last_seen", last_seen)
         pulumi.set(__self__, "max_timer_wait", max_timer_wait)
         pulumi.set(__self__, "min_timer_wait", min_timer_wait)
@@ -26227,7 +26275,7 @@ class GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemResult(dict):
     @pulumi.getter(name="avgTimerWait")
     def avg_timer_wait(self) -> float:
         """
-        The Average Execution Time.
+        The average execution time.
         """
         return pulumi.get(self, "avg_timer_wait")
 
@@ -26235,7 +26283,7 @@ class GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemResult(dict):
     @pulumi.getter(name="countStar")
     def count_star(self) -> float:
         """
-        The Number Of Times The Query Has Been Executed.
+        The number Of times the query has been executed.
         """
         return pulumi.get(self, "count_star")
 
@@ -26243,7 +26291,7 @@ class GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemResult(dict):
     @pulumi.getter
     def digest(self) -> str:
         """
-        The Digest Of The Normalized Query.
+        The digest information of the normalized query.
         """
         return pulumi.get(self, "digest")
 
@@ -26251,7 +26299,7 @@ class GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemResult(dict):
     @pulumi.getter(name="digestText")
     def digest_text(self) -> str:
         """
-        The Normalized Query.
+        The normalized query.
         """
         return pulumi.get(self, "digest_text")
 
@@ -26259,15 +26307,31 @@ class GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemResult(dict):
     @pulumi.getter(name="firstSeen")
     def first_seen(self) -> str:
         """
-        When The Query Was First Seen. When The Table Is Truncated, The First Seen Value Is Also Reset.
+        The date and time the query was first seen. If the table is truncated, the first seen value is reset.
         """
         return pulumi.get(self, "first_seen")
+
+    @property
+    @pulumi.getter(name="heatWaveOffloaded")
+    def heat_wave_offloaded(self) -> float:
+        """
+        The number of query executions offloaded to HeatWave.
+        """
+        return pulumi.get(self, "heat_wave_offloaded")
+
+    @property
+    @pulumi.getter(name="heatWaveOutOfMemory")
+    def heat_wave_out_of_memory(self) -> float:
+        """
+        The number of query executions with HeatWave out-of-memory errors.
+        """
+        return pulumi.get(self, "heat_wave_out_of_memory")
 
     @property
     @pulumi.getter(name="lastSeen")
     def last_seen(self) -> str:
         """
-        When The Query Was Seen The Last Time.
+        The date and time the query was last seen.
         """
         return pulumi.get(self, "last_seen")
 
@@ -26275,7 +26339,7 @@ class GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemResult(dict):
     @pulumi.getter(name="maxTimerWait")
     def max_timer_wait(self) -> float:
         """
-        The Slowest The Query Has Been Executed.
+        The slowest the query has been executed.
         """
         return pulumi.get(self, "max_timer_wait")
 
@@ -26283,7 +26347,7 @@ class GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemResult(dict):
     @pulumi.getter(name="minTimerWait")
     def min_timer_wait(self) -> float:
         """
-        The Fastest The Query Has Been Executed.
+        The fastest the query has been executed.
         """
         return pulumi.get(self, "min_timer_wait")
 
@@ -26291,7 +26355,7 @@ class GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemResult(dict):
     @pulumi.getter
     def quantile95(self) -> float:
         """
-        The 95th Percentile Of The Query Latency. That Is, 95%!O(MISSING)f The Queries Complete In The Time Given Or In Less Time.
+        The 95th percentile of the query latency. That is, 95%!o(MISSING)f the queries complete in the time given or in less time.
         """
         return pulumi.get(self, "quantile95")
 
@@ -26299,7 +26363,7 @@ class GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemResult(dict):
     @pulumi.getter
     def quantile99(self) -> float:
         """
-        The 99th Percentile Of The Query Latency.
+        The 99th percentile of the query latency.
         """
         return pulumi.get(self, "quantile99")
 
@@ -26307,7 +26371,7 @@ class GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemResult(dict):
     @pulumi.getter
     def quantile999(self) -> float:
         """
-        The 99.9th Percentile Of The Query Latency.
+        The 99.9th percentile of the query latency.
         """
         return pulumi.get(self, "quantile999")
 
@@ -26315,7 +26379,7 @@ class GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemResult(dict):
     @pulumi.getter(name="schemaName")
     def schema_name(self) -> str:
         """
-        The Schema That Was The Default Schema When Executing The Query. If No Schema Was The Default, The Value Is NULL.
+        The name of the default schema when executing the query. If a schema is not set as the default, then the value is NULL.
         """
         return pulumi.get(self, "schema_name")
 
@@ -26323,7 +26387,7 @@ class GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemResult(dict):
     @pulumi.getter(name="sumCreatedTempDiskTables")
     def sum_created_temp_disk_tables(self) -> float:
         """
-        The Total Number Of On-Disk Internal Temporary Tables That Have Been Created By The Query.
+        The total number of On-Disk internal temporary tables that have been created by the query.
         """
         return pulumi.get(self, "sum_created_temp_disk_tables")
 
@@ -26331,7 +26395,7 @@ class GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemResult(dict):
     @pulumi.getter(name="sumCreatedTempTables")
     def sum_created_temp_tables(self) -> float:
         """
-        The Total Number Of Internal Temporary Tables – Whether Created In Memory Or On Disk – That Have Been Created By The Query.
+        The total number of internal temporary tables (in memory or on disk), which have been created by the query.
         """
         return pulumi.get(self, "sum_created_temp_tables")
 
@@ -26339,7 +26403,7 @@ class GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemResult(dict):
     @pulumi.getter(name="sumErrors")
     def sum_errors(self) -> float:
         """
-        The Total Number Of Errors That Have Been Encountered Executing The Query.
+        The total number of errors that have been encountered executing the query.
         """
         return pulumi.get(self, "sum_errors")
 
@@ -26347,7 +26411,7 @@ class GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemResult(dict):
     @pulumi.getter(name="sumLockTime")
     def sum_lock_time(self) -> float:
         """
-        The Total Amount Of Time That Has Been Spent Waiting For Table Locks.
+        The total amount of time that has been spent waiting for table locks.
         """
         return pulumi.get(self, "sum_lock_time")
 
@@ -26355,7 +26419,7 @@ class GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemResult(dict):
     @pulumi.getter(name="sumNoGoodIndexUsed")
     def sum_no_good_index_used(self) -> float:
         """
-        The Total Number Of Times No Good Index Was Used. This Means That The ExtraColumn In The EXPLAIN Output Includes “Range Checked For Each Record.”
+        The total number of times no good index was used. This means that the extra column in The EXPLAIN output includes “Range Checked For Each Record.”
         """
         return pulumi.get(self, "sum_no_good_index_used")
 
@@ -26363,7 +26427,7 @@ class GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemResult(dict):
     @pulumi.getter(name="sumNoIndexUsed")
     def sum_no_index_used(self) -> float:
         """
-        The Total Number Of Times No Index Was Used To Execute The Query.
+        The total number of times no index was used to execute the query.
         """
         return pulumi.get(self, "sum_no_index_used")
 
@@ -26371,7 +26435,7 @@ class GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemResult(dict):
     @pulumi.getter(name="sumRowsAffected")
     def sum_rows_affected(self) -> float:
         """
-        The Total Number Of Rows That Have Been Modified By The Query.
+        The total number of rows that have been modified by the query.
         """
         return pulumi.get(self, "sum_rows_affected")
 
@@ -26379,7 +26443,7 @@ class GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemResult(dict):
     @pulumi.getter(name="sumRowsExamined")
     def sum_rows_examined(self) -> float:
         """
-        The Total Number Of Rows That Have Been Examined By The Query.
+        The total number of rows that have been examined by the query.
         """
         return pulumi.get(self, "sum_rows_examined")
 
@@ -26387,7 +26451,7 @@ class GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemResult(dict):
     @pulumi.getter(name="sumRowsSent")
     def sum_rows_sent(self) -> float:
         """
-        The Total Number Of Rows That Have Been Returned (Sent) To The Client.
+        The total number of rows that have been returned (sent) to the client.
         """
         return pulumi.get(self, "sum_rows_sent")
 
@@ -26395,7 +26459,7 @@ class GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemResult(dict):
     @pulumi.getter(name="sumSelectFullJoin")
     def sum_select_full_join(self) -> float:
         """
-        The Total Number Of Joins That Have Performed Full Table Scans As There Is No Index For The Join Condition Or There Is No Join Condition. This Is The Same That Increments The Select_full_join Status Variable.
+        The total number of joins that have performed full table scans as there was no join condition or no index for the join condition. This is the same as the select_full_join status variable.
         """
         return pulumi.get(self, "sum_select_full_join")
 
@@ -26403,7 +26467,7 @@ class GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemResult(dict):
     @pulumi.getter(name="sumSelectFullRangeJoin")
     def sum_select_full_range_join(self) -> float:
         """
-        The Total Number Of Joins That Use A Full Range Search. This Is The Same That Increments The Select_full_range_join Status Variable.
+        The total number of joins that use a full range search. This is the same as the select_full_range_join status variable.
         """
         return pulumi.get(self, "sum_select_full_range_join")
 
@@ -26411,7 +26475,7 @@ class GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemResult(dict):
     @pulumi.getter(name="sumSelectRange")
     def sum_select_range(self) -> float:
         """
-        The Total Number Of Times The Query Has Used A Range Search. This Is The Same That Increments The Select_range Status Variable.
+        The total number of times the query has used a range search. This is the same as the select_range status variable.
         """
         return pulumi.get(self, "sum_select_range")
 
@@ -26419,7 +26483,7 @@ class GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemResult(dict):
     @pulumi.getter(name="sumSelectRangeCheck")
     def sum_select_range_check(self) -> float:
         """
-        The Total Number Of Joins By The Query Where The Join Does Not Have An Index That Checks For The Index Usage After Each Row. This Is The Same That Increments The Select_range_check Status Variable.
+        The total number of joins by the query where the join does not have an index that checks for the index usage after each row. This is the same as the select_range_check status variable.
         """
         return pulumi.get(self, "sum_select_range_check")
 
@@ -26427,7 +26491,7 @@ class GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemResult(dict):
     @pulumi.getter(name="sumSelectScan")
     def sum_select_scan(self) -> float:
         """
-        The Total Number Of Times The Query Has Performed A Full Table Scan On The First Table In The Join. This Is The Same That Increments The Select_scan Status Variable.
+        The total number of times the query has performed a full table scan on the first table in the join. This is the same as the select_scan status variable.
         """
         return pulumi.get(self, "sum_select_scan")
 
@@ -26435,7 +26499,7 @@ class GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemResult(dict):
     @pulumi.getter(name="sumSortMergePasses")
     def sum_sort_merge_passes(self) -> float:
         """
-        The Total Number Of Sort Merge Passes That Have Been Done To Sort The Result Of The Query. This Is The Same That Increments The Sort_merge_passes Status Variable.
+        The total number of sort merge passes that have been done to sort the result of the query. This is the same as the sort_merge_passes status variable.
         """
         return pulumi.get(self, "sum_sort_merge_passes")
 
@@ -26443,7 +26507,7 @@ class GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemResult(dict):
     @pulumi.getter(name="sumSortRange")
     def sum_sort_range(self) -> float:
         """
-        The Total Number Of Times A Sort Was Done Using Ranges. This Is The Same That Increments The Sort_range Status Variable.
+        The total number of times a sort was done using ranges. This is the same as the sort_range status variable.
         """
         return pulumi.get(self, "sum_sort_range")
 
@@ -26451,7 +26515,7 @@ class GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemResult(dict):
     @pulumi.getter(name="sumSortRows")
     def sum_sort_rows(self) -> float:
         """
-        The Total Number Of Rows Sorted. This Is The Same That Increments The Sort_rowsStatus Variable.
+        The total number of rows sorted. This is the same as the sort_rowsStatus variable.
         """
         return pulumi.get(self, "sum_sort_rows")
 
@@ -26459,7 +26523,7 @@ class GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemResult(dict):
     @pulumi.getter(name="sumSortScan")
     def sum_sort_scan(self) -> float:
         """
-        The Total Number Of Times A Sort Was Done By Scanning The Table. This Is The Same That Increments The Sort_scan Status Variable.
+        The total number of times a sort was done by scanning the table. This is the same as the sort_scan status variable.
         """
         return pulumi.get(self, "sum_sort_scan")
 
@@ -26467,7 +26531,7 @@ class GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemResult(dict):
     @pulumi.getter(name="sumTimerWait")
     def sum_timer_wait(self) -> float:
         """
-        The Total Amount Of Time That Has Been Spent Executing The Query.
+        The total amount of time that has been spent executing the query.
         """
         return pulumi.get(self, "sum_timer_wait")
 
@@ -26475,7 +26539,7 @@ class GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemResult(dict):
     @pulumi.getter(name="sumWarnings")
     def sum_warnings(self) -> float:
         """
-        The Total Number Of Warnings That Have Been Encountered Executing The Query.
+        The total number of warnings that have been encountered executing the query.
         """
         return pulumi.get(self, "sum_warnings")
 
@@ -26531,23 +26595,47 @@ class GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemResult(dict):
                  compartment_id: str,
                  db_name: str,
                  db_version: str,
+                 heat_wave_cluster_display_name: str,
+                 heat_wave_memory_size: int,
+                 heat_wave_node_shape: str,
+                 heat_wave_nodes: Sequence['outputs.GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeResult'],
                  id: str,
+                 is_heat_wave_active: bool,
+                 is_heat_wave_enabled: bool,
+                 is_lakehouse_enabled: bool,
                  name: str,
-                 time_created: str):
+                 time_created: str,
+                 time_created_heat_wave: str):
         """
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param str db_name: MySQL Database Name
-        :param str db_version: MySQL Database Version
-        :param str id: The OCID of the Managed MySql Database.
+        :param str db_name: The name of the MySQL Database.
+        :param str db_version: The version of the MySQL Database.
+        :param str heat_wave_cluster_display_name: The name of the HeatWave cluster.
+        :param int heat_wave_memory_size: The total memory belonging to the HeatWave cluster in GBs.
+        :param str heat_wave_node_shape: Shape of the nodes in the HeatWave cluster.
+        :param Sequence['GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeArgs'] heat_wave_nodes: The information about an individual HeatWave nodes in the cluster.
+        :param str id: The ID associated with the HeatWave node.
+        :param bool is_heat_wave_active: If the HeatWave cluster is active or not.
+        :param bool is_heat_wave_enabled: If HeatWave is enabled for this db system or not.
+        :param bool is_lakehouse_enabled: If HeatWave Lakehouse is enabled for the db system or not.
         :param str name: The name of the Managed MySQL Database.
-        :param str time_created: The date and time the Managed Database was created.
+        :param str time_created: The date and time the node was created.
+        :param str time_created_heat_wave: The date and time the Managed MySQL Database was created.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "db_name", db_name)
         pulumi.set(__self__, "db_version", db_version)
+        pulumi.set(__self__, "heat_wave_cluster_display_name", heat_wave_cluster_display_name)
+        pulumi.set(__self__, "heat_wave_memory_size", heat_wave_memory_size)
+        pulumi.set(__self__, "heat_wave_node_shape", heat_wave_node_shape)
+        pulumi.set(__self__, "heat_wave_nodes", heat_wave_nodes)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_heat_wave_active", is_heat_wave_active)
+        pulumi.set(__self__, "is_heat_wave_enabled", is_heat_wave_enabled)
+        pulumi.set(__self__, "is_lakehouse_enabled", is_lakehouse_enabled)
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_created_heat_wave", time_created_heat_wave)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -26561,7 +26649,7 @@ class GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemResult(dict):
     @pulumi.getter(name="dbName")
     def db_name(self) -> str:
         """
-        MySQL Database Name
+        The name of the MySQL Database.
         """
         return pulumi.get(self, "db_name")
 
@@ -26569,17 +26657,73 @@ class GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemResult(dict):
     @pulumi.getter(name="dbVersion")
     def db_version(self) -> str:
         """
-        MySQL Database Version
+        The version of the MySQL Database.
         """
         return pulumi.get(self, "db_version")
+
+    @property
+    @pulumi.getter(name="heatWaveClusterDisplayName")
+    def heat_wave_cluster_display_name(self) -> str:
+        """
+        The name of the HeatWave cluster.
+        """
+        return pulumi.get(self, "heat_wave_cluster_display_name")
+
+    @property
+    @pulumi.getter(name="heatWaveMemorySize")
+    def heat_wave_memory_size(self) -> int:
+        """
+        The total memory belonging to the HeatWave cluster in GBs.
+        """
+        return pulumi.get(self, "heat_wave_memory_size")
+
+    @property
+    @pulumi.getter(name="heatWaveNodeShape")
+    def heat_wave_node_shape(self) -> str:
+        """
+        Shape of the nodes in the HeatWave cluster.
+        """
+        return pulumi.get(self, "heat_wave_node_shape")
+
+    @property
+    @pulumi.getter(name="heatWaveNodes")
+    def heat_wave_nodes(self) -> Sequence['outputs.GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeResult']:
+        """
+        The information about an individual HeatWave nodes in the cluster.
+        """
+        return pulumi.get(self, "heat_wave_nodes")
 
     @property
     @pulumi.getter
     def id(self) -> str:
         """
-        The OCID of the Managed MySql Database.
+        The ID associated with the HeatWave node.
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isHeatWaveActive")
+    def is_heat_wave_active(self) -> bool:
+        """
+        If the HeatWave cluster is active or not.
+        """
+        return pulumi.get(self, "is_heat_wave_active")
+
+    @property
+    @pulumi.getter(name="isHeatWaveEnabled")
+    def is_heat_wave_enabled(self) -> bool:
+        """
+        If HeatWave is enabled for this db system or not.
+        """
+        return pulumi.get(self, "is_heat_wave_enabled")
+
+    @property
+    @pulumi.getter(name="isLakehouseEnabled")
+    def is_lakehouse_enabled(self) -> bool:
+        """
+        If HeatWave Lakehouse is enabled for the db system or not.
+        """
+        return pulumi.get(self, "is_lakehouse_enabled")
 
     @property
     @pulumi.getter
@@ -26593,7 +26737,55 @@ class GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemResult(dict):
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
-        The date and time the Managed Database was created.
+        The date and time the node was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeCreatedHeatWave")
+    def time_created_heat_wave(self) -> str:
+        """
+        The date and time the Managed MySQL Database was created.
+        """
+        return pulumi.get(self, "time_created_heat_wave")
+
+
+@pulumi.output_type
+class GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeResult(dict):
+    def __init__(__self__, *,
+                 id: str,
+                 status: str,
+                 time_created: str):
+        """
+        :param str id: The ID associated with the HeatWave node.
+        :param str status: The status of the HeatWave node. Indicates whether the status of the node is UP, DOWN, or UNKNOWN at the current time.
+        :param str time_created: The date and time the node was created.
+        """
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "time_created", time_created)
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The ID associated with the HeatWave node.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def status(self) -> str:
+        """
+        The status of the HeatWave node. Indicates whether the status of the node is UP, DOWN, or UNKNOWN at the current time.
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time the node was created.
         """
         return pulumi.get(self, "time_created")
 

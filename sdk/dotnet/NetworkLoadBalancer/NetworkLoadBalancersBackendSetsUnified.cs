@@ -82,7 +82,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         public Output<ImmutableArray<Outputs.NetworkLoadBalancersBackendSetsUnifiedBackend>> Backends { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+        /// (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
         /// </summary>
         [Output("healthChecker")]
         public Output<Outputs.NetworkLoadBalancersBackendSetsUnifiedHealthChecker> HealthChecker { get; private set; } = null!;
@@ -184,7 +184,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         }
 
         /// <summary>
-        /// (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+        /// (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
         /// </summary>
         [Input("healthChecker", required: true)]
         public Input<Inputs.NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs> HealthChecker { get; set; } = null!;
@@ -248,7 +248,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         }
 
         /// <summary>
-        /// (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+        /// (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
         /// </summary>
         [Input("healthChecker")]
         public Input<Inputs.NetworkLoadBalancersBackendSetsUnifiedHealthCheckerGetArgs>? HealthChecker { get; set; }

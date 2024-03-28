@@ -45,10 +45,19 @@ import * as utilities from "../utilities";
  *     isNotificationsPerMetricDimensionEnabled: _var.alarm_is_notifications_per_metric_dimension_enabled,
  *     messageFormat: _var.alarm_message_format,
  *     metricCompartmentIdInSubtree: _var.alarm_metric_compartment_id_in_subtree,
+ *     notificationVersion: _var.alarm_notification_version,
+ *     overrides: [{
+ *         body: _var.alarm_overrides_body,
+ *         pendingDuration: _var.alarm_overrides_pending_duration,
+ *         query: _var.alarm_overrides_query,
+ *         ruleName: oci_events_rule.test_rule.name,
+ *         severity: _var.alarm_overrides_severity,
+ *     }],
  *     pendingDuration: _var.alarm_pending_duration,
  *     repeatNotificationDuration: _var.alarm_repeat_notification_duration,
  *     resolution: _var.alarm_resolution,
  *     resourceGroup: _var.alarm_resource_group,
+ *     ruleName: oci_events_rule.test_rule.name,
  *     suppression: {
  *         timeSuppressFrom: _var.alarm_suppression_time_suppress_from,
  *         timeSuppressUntil: _var.alarm_suppression_time_suppress_until,
@@ -147,6 +156,16 @@ export class Alarm extends pulumi.CustomResource {
      */
     public readonly namespace!: pulumi.Output<string>;
     /**
+     * (Updatable) The version of the alarm notification to be delivered. Allowed value: `1.X` The value must start with a number (up to four digits), followed by a period and an uppercase X.
+     */
+    public readonly notificationVersion!: pulumi.Output<string>;
+    /**
+     * (Updatable) A set of overrides that control evaluations of the alarm. 
+     *
+     * Each override can specify values for query, severity, body, and pending duration. When an alarm contains overrides, the Monitoring service evaluates each override in order, beginning with the first override in the array (index position `0`), and then evaluates the alarm's base values (`ruleName` value of `BASE`).
+     */
+    public readonly overrides!: pulumi.Output<outputs.Monitoring.AlarmOverride[]>;
+    /**
      * (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING". For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING".
      *
      * The duration is specified as a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT1M. Maximum: PT1H. Default: PT1M.
@@ -195,6 +214,10 @@ export class Alarm extends pulumi.CustomResource {
      */
     public readonly resourceGroup!: pulumi.Output<string>;
     /**
+     * (Updatable) Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.  A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.  Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
+     */
+    public readonly ruleName!: pulumi.Output<string>;
+    /**
      * (Updatable) The perceived type of response required when the alarm is in the "FIRING" state.  Example: `CRITICAL`
      */
     public readonly severity!: pulumi.Output<string>;
@@ -240,11 +263,14 @@ export class Alarm extends pulumi.CustomResource {
             resourceInputs["metricCompartmentId"] = state ? state.metricCompartmentId : undefined;
             resourceInputs["metricCompartmentIdInSubtree"] = state ? state.metricCompartmentIdInSubtree : undefined;
             resourceInputs["namespace"] = state ? state.namespace : undefined;
+            resourceInputs["notificationVersion"] = state ? state.notificationVersion : undefined;
+            resourceInputs["overrides"] = state ? state.overrides : undefined;
             resourceInputs["pendingDuration"] = state ? state.pendingDuration : undefined;
             resourceInputs["query"] = state ? state.query : undefined;
             resourceInputs["repeatNotificationDuration"] = state ? state.repeatNotificationDuration : undefined;
             resourceInputs["resolution"] = state ? state.resolution : undefined;
             resourceInputs["resourceGroup"] = state ? state.resourceGroup : undefined;
+            resourceInputs["ruleName"] = state ? state.ruleName : undefined;
             resourceInputs["severity"] = state ? state.severity : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["suppression"] = state ? state.suppression : undefined;
@@ -288,11 +314,14 @@ export class Alarm extends pulumi.CustomResource {
             resourceInputs["metricCompartmentId"] = args ? args.metricCompartmentId : undefined;
             resourceInputs["metricCompartmentIdInSubtree"] = args ? args.metricCompartmentIdInSubtree : undefined;
             resourceInputs["namespace"] = args ? args.namespace : undefined;
+            resourceInputs["notificationVersion"] = args ? args.notificationVersion : undefined;
+            resourceInputs["overrides"] = args ? args.overrides : undefined;
             resourceInputs["pendingDuration"] = args ? args.pendingDuration : undefined;
             resourceInputs["query"] = args ? args.query : undefined;
             resourceInputs["repeatNotificationDuration"] = args ? args.repeatNotificationDuration : undefined;
             resourceInputs["resolution"] = args ? args.resolution : undefined;
             resourceInputs["resourceGroup"] = args ? args.resourceGroup : undefined;
+            resourceInputs["ruleName"] = args ? args.ruleName : undefined;
             resourceInputs["severity"] = args ? args.severity : undefined;
             resourceInputs["suppression"] = args ? args.suppression : undefined;
             resourceInputs["state"] = undefined /*out*/;
@@ -361,6 +390,16 @@ export interface AlarmState {
      */
     namespace?: pulumi.Input<string>;
     /**
+     * (Updatable) The version of the alarm notification to be delivered. Allowed value: `1.X` The value must start with a number (up to four digits), followed by a period and an uppercase X.
+     */
+    notificationVersion?: pulumi.Input<string>;
+    /**
+     * (Updatable) A set of overrides that control evaluations of the alarm. 
+     *
+     * Each override can specify values for query, severity, body, and pending duration. When an alarm contains overrides, the Monitoring service evaluates each override in order, beginning with the first override in the array (index position `0`), and then evaluates the alarm's base values (`ruleName` value of `BASE`).
+     */
+    overrides?: pulumi.Input<pulumi.Input<inputs.Monitoring.AlarmOverride>[]>;
+    /**
      * (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING". For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING".
      *
      * The duration is specified as a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT1M. Maximum: PT1H. Default: PT1M.
@@ -408,6 +447,10 @@ export interface AlarmState {
      * (Updatable) Resource group that you want to match. A null value returns only metric data that has no resource groups. The alarm retrieves metric data associated with the specified resource group only. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($). Avoid entering confidential information.  Example: `frontend-fleet`
      */
     resourceGroup?: pulumi.Input<string>;
+    /**
+     * (Updatable) Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.  A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.  Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
+     */
+    ruleName?: pulumi.Input<string>;
     /**
      * (Updatable) The perceived type of response required when the alarm is in the "FIRING" state.  Example: `CRITICAL`
      */
@@ -487,6 +530,16 @@ export interface AlarmArgs {
      */
     namespace: pulumi.Input<string>;
     /**
+     * (Updatable) The version of the alarm notification to be delivered. Allowed value: `1.X` The value must start with a number (up to four digits), followed by a period and an uppercase X.
+     */
+    notificationVersion?: pulumi.Input<string>;
+    /**
+     * (Updatable) A set of overrides that control evaluations of the alarm. 
+     *
+     * Each override can specify values for query, severity, body, and pending duration. When an alarm contains overrides, the Monitoring service evaluates each override in order, beginning with the first override in the array (index position `0`), and then evaluates the alarm's base values (`ruleName` value of `BASE`).
+     */
+    overrides?: pulumi.Input<pulumi.Input<inputs.Monitoring.AlarmOverride>[]>;
+    /**
      * (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING". For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING".
      *
      * The duration is specified as a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT1M. Maximum: PT1H. Default: PT1M.
@@ -534,6 +587,10 @@ export interface AlarmArgs {
      * (Updatable) Resource group that you want to match. A null value returns only metric data that has no resource groups. The alarm retrieves metric data associated with the specified resource group only. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($). Avoid entering confidential information.  Example: `frontend-fleet`
      */
     resourceGroup?: pulumi.Input<string>;
+    /**
+     * (Updatable) Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.  A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.  Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
+     */
+    ruleName?: pulumi.Input<string>;
     /**
      * (Updatable) The perceived type of response required when the alarm is in the "FIRING" state.  Example: `CRITICAL`
      */

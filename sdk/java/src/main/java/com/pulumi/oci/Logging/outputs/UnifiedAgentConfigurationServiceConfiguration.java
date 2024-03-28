@@ -5,14 +5,23 @@ package com.pulumi.oci.Logging.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Logging.outputs.UnifiedAgentConfigurationServiceConfigurationApplicationConfiguration;
 import com.pulumi.oci.Logging.outputs.UnifiedAgentConfigurationServiceConfigurationDestination;
 import com.pulumi.oci.Logging.outputs.UnifiedAgentConfigurationServiceConfigurationSource;
+import com.pulumi.oci.Logging.outputs.UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class UnifiedAgentConfigurationServiceConfiguration {
+    /**
+     * @return (Updatable) Unified Agent monitoring application configuration details.
+     * 
+     */
+    private @Nullable List<UnifiedAgentConfigurationServiceConfigurationApplicationConfiguration> applicationConfigurations;
     /**
      * @return (Updatable) Type of Unified Agent service configuration.
      * 
@@ -22,14 +31,26 @@ public final class UnifiedAgentConfigurationServiceConfiguration {
      * @return (Updatable) Unified monitoring agent operational metrics destination object.
      * 
      */
-    private UnifiedAgentConfigurationServiceConfigurationDestination destination;
+    private @Nullable UnifiedAgentConfigurationServiceConfigurationDestination destination;
     /**
      * @return (Updatable) Logging source object.
      * 
      */
-    private List<UnifiedAgentConfigurationServiceConfigurationSource> sources;
+    private @Nullable List<UnifiedAgentConfigurationServiceConfigurationSource> sources;
+    /**
+     * @return (Updatable) Logging filter object.
+     * 
+     */
+    private @Nullable List<UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter> unifiedAgentConfigurationFilters;
 
     private UnifiedAgentConfigurationServiceConfiguration() {}
+    /**
+     * @return (Updatable) Unified Agent monitoring application configuration details.
+     * 
+     */
+    public List<UnifiedAgentConfigurationServiceConfigurationApplicationConfiguration> applicationConfigurations() {
+        return this.applicationConfigurations == null ? List.of() : this.applicationConfigurations;
+    }
     /**
      * @return (Updatable) Type of Unified Agent service configuration.
      * 
@@ -41,15 +62,22 @@ public final class UnifiedAgentConfigurationServiceConfiguration {
      * @return (Updatable) Unified monitoring agent operational metrics destination object.
      * 
      */
-    public UnifiedAgentConfigurationServiceConfigurationDestination destination() {
-        return this.destination;
+    public Optional<UnifiedAgentConfigurationServiceConfigurationDestination> destination() {
+        return Optional.ofNullable(this.destination);
     }
     /**
      * @return (Updatable) Logging source object.
      * 
      */
     public List<UnifiedAgentConfigurationServiceConfigurationSource> sources() {
-        return this.sources;
+        return this.sources == null ? List.of() : this.sources;
+    }
+    /**
+     * @return (Updatable) Logging filter object.
+     * 
+     */
+    public List<UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter> unifiedAgentConfigurationFilters() {
+        return this.unifiedAgentConfigurationFilters == null ? List.of() : this.unifiedAgentConfigurationFilters;
     }
 
     public static Builder builder() {
@@ -61,17 +89,30 @@ public final class UnifiedAgentConfigurationServiceConfiguration {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable List<UnifiedAgentConfigurationServiceConfigurationApplicationConfiguration> applicationConfigurations;
         private String configurationType;
-        private UnifiedAgentConfigurationServiceConfigurationDestination destination;
-        private List<UnifiedAgentConfigurationServiceConfigurationSource> sources;
+        private @Nullable UnifiedAgentConfigurationServiceConfigurationDestination destination;
+        private @Nullable List<UnifiedAgentConfigurationServiceConfigurationSource> sources;
+        private @Nullable List<UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter> unifiedAgentConfigurationFilters;
         public Builder() {}
         public Builder(UnifiedAgentConfigurationServiceConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.applicationConfigurations = defaults.applicationConfigurations;
     	      this.configurationType = defaults.configurationType;
     	      this.destination = defaults.destination;
     	      this.sources = defaults.sources;
+    	      this.unifiedAgentConfigurationFilters = defaults.unifiedAgentConfigurationFilters;
         }
 
+        @CustomType.Setter
+        public Builder applicationConfigurations(@Nullable List<UnifiedAgentConfigurationServiceConfigurationApplicationConfiguration> applicationConfigurations) {
+
+            this.applicationConfigurations = applicationConfigurations;
+            return this;
+        }
+        public Builder applicationConfigurations(UnifiedAgentConfigurationServiceConfigurationApplicationConfiguration... applicationConfigurations) {
+            return applicationConfigurations(List.of(applicationConfigurations));
+        }
         @CustomType.Setter
         public Builder configurationType(String configurationType) {
             if (configurationType == null) {
@@ -81,29 +122,36 @@ public final class UnifiedAgentConfigurationServiceConfiguration {
             return this;
         }
         @CustomType.Setter
-        public Builder destination(UnifiedAgentConfigurationServiceConfigurationDestination destination) {
-            if (destination == null) {
-              throw new MissingRequiredPropertyException("UnifiedAgentConfigurationServiceConfiguration", "destination");
-            }
+        public Builder destination(@Nullable UnifiedAgentConfigurationServiceConfigurationDestination destination) {
+
             this.destination = destination;
             return this;
         }
         @CustomType.Setter
-        public Builder sources(List<UnifiedAgentConfigurationServiceConfigurationSource> sources) {
-            if (sources == null) {
-              throw new MissingRequiredPropertyException("UnifiedAgentConfigurationServiceConfiguration", "sources");
-            }
+        public Builder sources(@Nullable List<UnifiedAgentConfigurationServiceConfigurationSource> sources) {
+
             this.sources = sources;
             return this;
         }
         public Builder sources(UnifiedAgentConfigurationServiceConfigurationSource... sources) {
             return sources(List.of(sources));
         }
+        @CustomType.Setter
+        public Builder unifiedAgentConfigurationFilters(@Nullable List<UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter> unifiedAgentConfigurationFilters) {
+
+            this.unifiedAgentConfigurationFilters = unifiedAgentConfigurationFilters;
+            return this;
+        }
+        public Builder unifiedAgentConfigurationFilters(UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter... unifiedAgentConfigurationFilters) {
+            return unifiedAgentConfigurationFilters(List.of(unifiedAgentConfigurationFilters));
+        }
         public UnifiedAgentConfigurationServiceConfiguration build() {
             final var _resultValue = new UnifiedAgentConfigurationServiceConfiguration();
+            _resultValue.applicationConfigurations = applicationConfigurations;
             _resultValue.configurationType = configurationType;
             _resultValue.destination = destination;
             _resultValue.sources = sources;
+            _resultValue.unifiedAgentConfigurationFilters = unifiedAgentConfigurationFilters;
             return _resultValue;
         }
     }

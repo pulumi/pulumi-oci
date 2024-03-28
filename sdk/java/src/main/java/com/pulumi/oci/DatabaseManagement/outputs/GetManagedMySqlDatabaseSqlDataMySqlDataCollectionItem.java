@@ -12,386 +12,410 @@ import java.util.Objects;
 @CustomType
 public final class GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem {
     /**
-     * @return The Average Execution Time.
+     * @return The average execution time.
      * 
      */
     private Double avgTimerWait;
     /**
-     * @return The Number Of Times The Query Has Been Executed.
+     * @return The number Of times the query has been executed.
      * 
      */
     private Double countStar;
     /**
-     * @return The Digest Of The Normalized Query.
+     * @return The digest information of the normalized query.
      * 
      */
     private String digest;
     /**
-     * @return The Normalized Query.
+     * @return The normalized query.
      * 
      */
     private String digestText;
     /**
-     * @return When The Query Was First Seen. When The Table Is Truncated, The First Seen Value Is Also Reset.
+     * @return The date and time the query was first seen. If the table is truncated, the first seen value is reset.
      * 
      */
     private String firstSeen;
     /**
-     * @return When The Query Was Seen The Last Time.
+     * @return The number of query executions offloaded to HeatWave.
+     * 
+     */
+    private Double heatWaveOffloaded;
+    /**
+     * @return The number of query executions with HeatWave out-of-memory errors.
+     * 
+     */
+    private Double heatWaveOutOfMemory;
+    /**
+     * @return The date and time the query was last seen.
      * 
      */
     private String lastSeen;
     /**
-     * @return The Slowest The Query Has Been Executed.
+     * @return The slowest the query has been executed.
      * 
      */
     private Double maxTimerWait;
     /**
-     * @return The Fastest The Query Has Been Executed.
+     * @return The fastest the query has been executed.
      * 
      */
     private Double minTimerWait;
     /**
-     * @return The 95th Percentile Of The Query Latency. That Is, 95%!O(MISSING)f The Queries Complete In The Time Given Or In Less Time.
+     * @return The 95th percentile of the query latency. That is, 95%!o(MISSING)f the queries complete in the time given or in less time.
      * 
      */
     private Double quantile95;
     /**
-     * @return The 99th Percentile Of The Query Latency.
+     * @return The 99th percentile of the query latency.
      * 
      */
     private Double quantile99;
     /**
-     * @return The 99.9th Percentile Of The Query Latency.
+     * @return The 99.9th percentile of the query latency.
      * 
      */
     private Double quantile999;
     /**
-     * @return The Schema That Was The Default Schema When Executing The Query. If No Schema Was The Default, The Value Is NULL.
+     * @return The name of the default schema when executing the query. If a schema is not set as the default, then the value is NULL.
      * 
      */
     private String schemaName;
     /**
-     * @return The Total Number Of On-Disk Internal Temporary Tables That Have Been Created By The Query.
+     * @return The total number of On-Disk internal temporary tables that have been created by the query.
      * 
      */
     private Double sumCreatedTempDiskTables;
     /**
-     * @return The Total Number Of Internal Temporary Tables – Whether Created In Memory Or On Disk – That Have Been Created By The Query.
+     * @return The total number of internal temporary tables (in memory or on disk), which have been created by the query.
      * 
      */
     private Double sumCreatedTempTables;
     /**
-     * @return The Total Number Of Errors That Have Been Encountered Executing The Query.
+     * @return The total number of errors that have been encountered executing the query.
      * 
      */
     private Double sumErrors;
     /**
-     * @return The Total Amount Of Time That Has Been Spent Waiting For Table Locks.
+     * @return The total amount of time that has been spent waiting for table locks.
      * 
      */
     private Double sumLockTime;
     /**
-     * @return The Total Number Of Times No Good Index Was Used. This Means That The ExtraColumn In The EXPLAIN Output Includes “Range Checked For Each Record.”
+     * @return The total number of times no good index was used. This means that the extra column in The EXPLAIN output includes “Range Checked For Each Record.”
      * 
      */
     private Double sumNoGoodIndexUsed;
     /**
-     * @return The Total Number Of Times No Index Was Used To Execute The Query.
+     * @return The total number of times no index was used to execute the query.
      * 
      */
     private Double sumNoIndexUsed;
     /**
-     * @return The Total Number Of Rows That Have Been Modified By The Query.
+     * @return The total number of rows that have been modified by the query.
      * 
      */
     private Double sumRowsAffected;
     /**
-     * @return The Total Number Of Rows That Have Been Examined By The Query.
+     * @return The total number of rows that have been examined by the query.
      * 
      */
     private Double sumRowsExamined;
     /**
-     * @return The Total Number Of Rows That Have Been Returned (Sent) To The Client.
+     * @return The total number of rows that have been returned (sent) to the client.
      * 
      */
     private Double sumRowsSent;
     /**
-     * @return The Total Number Of Joins That Have Performed Full Table Scans As There Is No Index For The Join Condition Or There Is No Join Condition. This Is The Same That Increments The Select_full_join Status Variable.
+     * @return The total number of joins that have performed full table scans as there was no join condition or no index for the join condition. This is the same as the select_full_join status variable.
      * 
      */
     private Double sumSelectFullJoin;
     /**
-     * @return The Total Number Of Joins That Use A Full Range Search. This Is The Same That Increments The Select_full_range_join Status Variable.
+     * @return The total number of joins that use a full range search. This is the same as the select_full_range_join status variable.
      * 
      */
     private Double sumSelectFullRangeJoin;
     /**
-     * @return The Total Number Of Times The Query Has Used A Range Search. This Is The Same That Increments The Select_range Status Variable.
+     * @return The total number of times the query has used a range search. This is the same as the select_range status variable.
      * 
      */
     private Double sumSelectRange;
     /**
-     * @return The Total Number Of Joins By The Query Where The Join Does Not Have An Index That Checks For The Index Usage After Each Row. This Is The Same That Increments The Select_range_check Status Variable.
+     * @return The total number of joins by the query where the join does not have an index that checks for the index usage after each row. This is the same as the select_range_check status variable.
      * 
      */
     private Double sumSelectRangeCheck;
     /**
-     * @return The Total Number Of Times The Query Has Performed A Full Table Scan On The First Table In The Join. This Is The Same That Increments The Select_scan Status Variable.
+     * @return The total number of times the query has performed a full table scan on the first table in the join. This is the same as the select_scan status variable.
      * 
      */
     private Double sumSelectScan;
     /**
-     * @return The Total Number Of Sort Merge Passes That Have Been Done To Sort The Result Of The Query. This Is The Same That Increments The Sort_merge_passes Status Variable.
+     * @return The total number of sort merge passes that have been done to sort the result of the query. This is the same as the sort_merge_passes status variable.
      * 
      */
     private Double sumSortMergePasses;
     /**
-     * @return The Total Number Of Times A Sort Was Done Using Ranges. This Is The Same That Increments The Sort_range Status Variable.
+     * @return The total number of times a sort was done using ranges. This is the same as the sort_range status variable.
      * 
      */
     private Double sumSortRange;
     /**
-     * @return The Total Number Of Rows Sorted. This Is The Same That Increments The Sort_rowsStatus Variable.
+     * @return The total number of rows sorted. This is the same as the sort_rowsStatus variable.
      * 
      */
     private Double sumSortRows;
     /**
-     * @return The Total Number Of Times A Sort Was Done By Scanning The Table. This Is The Same That Increments The Sort_scan Status Variable.
+     * @return The total number of times a sort was done by scanning the table. This is the same as the sort_scan status variable.
      * 
      */
     private Double sumSortScan;
     /**
-     * @return The Total Amount Of Time That Has Been Spent Executing The Query.
+     * @return The total amount of time that has been spent executing the query.
      * 
      */
     private Double sumTimerWait;
     /**
-     * @return The Total Number Of Warnings That Have Been Encountered Executing The Query.
+     * @return The total number of warnings that have been encountered executing the query.
      * 
      */
     private Double sumWarnings;
 
     private GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem() {}
     /**
-     * @return The Average Execution Time.
+     * @return The average execution time.
      * 
      */
     public Double avgTimerWait() {
         return this.avgTimerWait;
     }
     /**
-     * @return The Number Of Times The Query Has Been Executed.
+     * @return The number Of times the query has been executed.
      * 
      */
     public Double countStar() {
         return this.countStar;
     }
     /**
-     * @return The Digest Of The Normalized Query.
+     * @return The digest information of the normalized query.
      * 
      */
     public String digest() {
         return this.digest;
     }
     /**
-     * @return The Normalized Query.
+     * @return The normalized query.
      * 
      */
     public String digestText() {
         return this.digestText;
     }
     /**
-     * @return When The Query Was First Seen. When The Table Is Truncated, The First Seen Value Is Also Reset.
+     * @return The date and time the query was first seen. If the table is truncated, the first seen value is reset.
      * 
      */
     public String firstSeen() {
         return this.firstSeen;
     }
     /**
-     * @return When The Query Was Seen The Last Time.
+     * @return The number of query executions offloaded to HeatWave.
+     * 
+     */
+    public Double heatWaveOffloaded() {
+        return this.heatWaveOffloaded;
+    }
+    /**
+     * @return The number of query executions with HeatWave out-of-memory errors.
+     * 
+     */
+    public Double heatWaveOutOfMemory() {
+        return this.heatWaveOutOfMemory;
+    }
+    /**
+     * @return The date and time the query was last seen.
      * 
      */
     public String lastSeen() {
         return this.lastSeen;
     }
     /**
-     * @return The Slowest The Query Has Been Executed.
+     * @return The slowest the query has been executed.
      * 
      */
     public Double maxTimerWait() {
         return this.maxTimerWait;
     }
     /**
-     * @return The Fastest The Query Has Been Executed.
+     * @return The fastest the query has been executed.
      * 
      */
     public Double minTimerWait() {
         return this.minTimerWait;
     }
     /**
-     * @return The 95th Percentile Of The Query Latency. That Is, 95%!O(MISSING)f The Queries Complete In The Time Given Or In Less Time.
+     * @return The 95th percentile of the query latency. That is, 95%!o(MISSING)f the queries complete in the time given or in less time.
      * 
      */
     public Double quantile95() {
         return this.quantile95;
     }
     /**
-     * @return The 99th Percentile Of The Query Latency.
+     * @return The 99th percentile of the query latency.
      * 
      */
     public Double quantile99() {
         return this.quantile99;
     }
     /**
-     * @return The 99.9th Percentile Of The Query Latency.
+     * @return The 99.9th percentile of the query latency.
      * 
      */
     public Double quantile999() {
         return this.quantile999;
     }
     /**
-     * @return The Schema That Was The Default Schema When Executing The Query. If No Schema Was The Default, The Value Is NULL.
+     * @return The name of the default schema when executing the query. If a schema is not set as the default, then the value is NULL.
      * 
      */
     public String schemaName() {
         return this.schemaName;
     }
     /**
-     * @return The Total Number Of On-Disk Internal Temporary Tables That Have Been Created By The Query.
+     * @return The total number of On-Disk internal temporary tables that have been created by the query.
      * 
      */
     public Double sumCreatedTempDiskTables() {
         return this.sumCreatedTempDiskTables;
     }
     /**
-     * @return The Total Number Of Internal Temporary Tables – Whether Created In Memory Or On Disk – That Have Been Created By The Query.
+     * @return The total number of internal temporary tables (in memory or on disk), which have been created by the query.
      * 
      */
     public Double sumCreatedTempTables() {
         return this.sumCreatedTempTables;
     }
     /**
-     * @return The Total Number Of Errors That Have Been Encountered Executing The Query.
+     * @return The total number of errors that have been encountered executing the query.
      * 
      */
     public Double sumErrors() {
         return this.sumErrors;
     }
     /**
-     * @return The Total Amount Of Time That Has Been Spent Waiting For Table Locks.
+     * @return The total amount of time that has been spent waiting for table locks.
      * 
      */
     public Double sumLockTime() {
         return this.sumLockTime;
     }
     /**
-     * @return The Total Number Of Times No Good Index Was Used. This Means That The ExtraColumn In The EXPLAIN Output Includes “Range Checked For Each Record.”
+     * @return The total number of times no good index was used. This means that the extra column in The EXPLAIN output includes “Range Checked For Each Record.”
      * 
      */
     public Double sumNoGoodIndexUsed() {
         return this.sumNoGoodIndexUsed;
     }
     /**
-     * @return The Total Number Of Times No Index Was Used To Execute The Query.
+     * @return The total number of times no index was used to execute the query.
      * 
      */
     public Double sumNoIndexUsed() {
         return this.sumNoIndexUsed;
     }
     /**
-     * @return The Total Number Of Rows That Have Been Modified By The Query.
+     * @return The total number of rows that have been modified by the query.
      * 
      */
     public Double sumRowsAffected() {
         return this.sumRowsAffected;
     }
     /**
-     * @return The Total Number Of Rows That Have Been Examined By The Query.
+     * @return The total number of rows that have been examined by the query.
      * 
      */
     public Double sumRowsExamined() {
         return this.sumRowsExamined;
     }
     /**
-     * @return The Total Number Of Rows That Have Been Returned (Sent) To The Client.
+     * @return The total number of rows that have been returned (sent) to the client.
      * 
      */
     public Double sumRowsSent() {
         return this.sumRowsSent;
     }
     /**
-     * @return The Total Number Of Joins That Have Performed Full Table Scans As There Is No Index For The Join Condition Or There Is No Join Condition. This Is The Same That Increments The Select_full_join Status Variable.
+     * @return The total number of joins that have performed full table scans as there was no join condition or no index for the join condition. This is the same as the select_full_join status variable.
      * 
      */
     public Double sumSelectFullJoin() {
         return this.sumSelectFullJoin;
     }
     /**
-     * @return The Total Number Of Joins That Use A Full Range Search. This Is The Same That Increments The Select_full_range_join Status Variable.
+     * @return The total number of joins that use a full range search. This is the same as the select_full_range_join status variable.
      * 
      */
     public Double sumSelectFullRangeJoin() {
         return this.sumSelectFullRangeJoin;
     }
     /**
-     * @return The Total Number Of Times The Query Has Used A Range Search. This Is The Same That Increments The Select_range Status Variable.
+     * @return The total number of times the query has used a range search. This is the same as the select_range status variable.
      * 
      */
     public Double sumSelectRange() {
         return this.sumSelectRange;
     }
     /**
-     * @return The Total Number Of Joins By The Query Where The Join Does Not Have An Index That Checks For The Index Usage After Each Row. This Is The Same That Increments The Select_range_check Status Variable.
+     * @return The total number of joins by the query where the join does not have an index that checks for the index usage after each row. This is the same as the select_range_check status variable.
      * 
      */
     public Double sumSelectRangeCheck() {
         return this.sumSelectRangeCheck;
     }
     /**
-     * @return The Total Number Of Times The Query Has Performed A Full Table Scan On The First Table In The Join. This Is The Same That Increments The Select_scan Status Variable.
+     * @return The total number of times the query has performed a full table scan on the first table in the join. This is the same as the select_scan status variable.
      * 
      */
     public Double sumSelectScan() {
         return this.sumSelectScan;
     }
     /**
-     * @return The Total Number Of Sort Merge Passes That Have Been Done To Sort The Result Of The Query. This Is The Same That Increments The Sort_merge_passes Status Variable.
+     * @return The total number of sort merge passes that have been done to sort the result of the query. This is the same as the sort_merge_passes status variable.
      * 
      */
     public Double sumSortMergePasses() {
         return this.sumSortMergePasses;
     }
     /**
-     * @return The Total Number Of Times A Sort Was Done Using Ranges. This Is The Same That Increments The Sort_range Status Variable.
+     * @return The total number of times a sort was done using ranges. This is the same as the sort_range status variable.
      * 
      */
     public Double sumSortRange() {
         return this.sumSortRange;
     }
     /**
-     * @return The Total Number Of Rows Sorted. This Is The Same That Increments The Sort_rowsStatus Variable.
+     * @return The total number of rows sorted. This is the same as the sort_rowsStatus variable.
      * 
      */
     public Double sumSortRows() {
         return this.sumSortRows;
     }
     /**
-     * @return The Total Number Of Times A Sort Was Done By Scanning The Table. This Is The Same That Increments The Sort_scan Status Variable.
+     * @return The total number of times a sort was done by scanning the table. This is the same as the sort_scan status variable.
      * 
      */
     public Double sumSortScan() {
         return this.sumSortScan;
     }
     /**
-     * @return The Total Amount Of Time That Has Been Spent Executing The Query.
+     * @return The total amount of time that has been spent executing the query.
      * 
      */
     public Double sumTimerWait() {
         return this.sumTimerWait;
     }
     /**
-     * @return The Total Number Of Warnings That Have Been Encountered Executing The Query.
+     * @return The total number of warnings that have been encountered executing the query.
      * 
      */
     public Double sumWarnings() {
@@ -412,6 +436,8 @@ public final class GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem {
         private String digest;
         private String digestText;
         private String firstSeen;
+        private Double heatWaveOffloaded;
+        private Double heatWaveOutOfMemory;
         private String lastSeen;
         private Double maxTimerWait;
         private Double minTimerWait;
@@ -447,6 +473,8 @@ public final class GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem {
     	      this.digest = defaults.digest;
     	      this.digestText = defaults.digestText;
     	      this.firstSeen = defaults.firstSeen;
+    	      this.heatWaveOffloaded = defaults.heatWaveOffloaded;
+    	      this.heatWaveOutOfMemory = defaults.heatWaveOutOfMemory;
     	      this.lastSeen = defaults.lastSeen;
     	      this.maxTimerWait = defaults.maxTimerWait;
     	      this.minTimerWait = defaults.minTimerWait;
@@ -514,6 +542,22 @@ public final class GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem {
               throw new MissingRequiredPropertyException("GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem", "firstSeen");
             }
             this.firstSeen = firstSeen;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder heatWaveOffloaded(Double heatWaveOffloaded) {
+            if (heatWaveOffloaded == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem", "heatWaveOffloaded");
+            }
+            this.heatWaveOffloaded = heatWaveOffloaded;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder heatWaveOutOfMemory(Double heatWaveOutOfMemory) {
+            if (heatWaveOutOfMemory == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem", "heatWaveOutOfMemory");
+            }
+            this.heatWaveOutOfMemory = heatWaveOutOfMemory;
             return this;
         }
         @CustomType.Setter
@@ -739,6 +783,8 @@ public final class GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem {
             _resultValue.digest = digest;
             _resultValue.digestText = digestText;
             _resultValue.firstSeen = firstSeen;
+            _resultValue.heatWaveOffloaded = heatWaveOffloaded;
+            _resultValue.heatWaveOutOfMemory = heatWaveOutOfMemory;
             _resultValue.lastSeen = lastSeen;
             _resultValue.maxTimerWait = maxTimerWait;
             _resultValue.minTimerWait = minTimerWait;

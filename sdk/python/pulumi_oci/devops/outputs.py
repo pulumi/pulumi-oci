@@ -1996,6 +1996,8 @@ class DeployArtifactDeployArtifactSource(dict):
             suggest = "deploy_artifact_path"
         elif key == "deployArtifactVersion":
             suggest = "deploy_artifact_version"
+        elif key == "helmArtifactSourceType":
+            suggest = "helm_artifact_source_type"
         elif key == "helmVerificationKeySource":
             suggest = "helm_verification_key_source"
         elif key == "imageDigest":
@@ -2022,16 +2024,18 @@ class DeployArtifactDeployArtifactSource(dict):
                  chart_url: Optional[str] = None,
                  deploy_artifact_path: Optional[str] = None,
                  deploy_artifact_version: Optional[str] = None,
+                 helm_artifact_source_type: Optional[str] = None,
                  helm_verification_key_source: Optional['outputs.DeployArtifactDeployArtifactSourceHelmVerificationKeySource'] = None,
                  image_digest: Optional[str] = None,
                  image_uri: Optional[str] = None,
                  repository_id: Optional[str] = None):
         """
         :param str deploy_artifact_source_type: (Updatable) Specifies types of artifact sources.
-        :param str base64encoded_content: (Updatable) Specifies content for the inline artifact.
+        :param str base64encoded_content: (Updatable) The Helm commands to be executed, base 64 encoded
         :param str chart_url: (Updatable) The URL of an OCIR repository.
         :param str deploy_artifact_path: (Updatable) Specifies the artifact path in the repository.
         :param str deploy_artifact_version: (Updatable) Users can set this as a placeholder value that refers to a pipeline parameter, for example, ${appVersion}.
+        :param str helm_artifact_source_type: (Updatable) Specifies types of artifact sources.
         :param 'DeployArtifactDeployArtifactSourceHelmVerificationKeySourceArgs' helm_verification_key_source: (Updatable) The source of the verification material.
         :param str image_digest: (Updatable) Specifies image digest for the version of the image.
         :param str image_uri: (Updatable) Specifies OCIR Image Path - optionally include tag.
@@ -2046,6 +2050,8 @@ class DeployArtifactDeployArtifactSource(dict):
             pulumi.set(__self__, "deploy_artifact_path", deploy_artifact_path)
         if deploy_artifact_version is not None:
             pulumi.set(__self__, "deploy_artifact_version", deploy_artifact_version)
+        if helm_artifact_source_type is not None:
+            pulumi.set(__self__, "helm_artifact_source_type", helm_artifact_source_type)
         if helm_verification_key_source is not None:
             pulumi.set(__self__, "helm_verification_key_source", helm_verification_key_source)
         if image_digest is not None:
@@ -2067,7 +2073,7 @@ class DeployArtifactDeployArtifactSource(dict):
     @pulumi.getter(name="base64encodedContent")
     def base64encoded_content(self) -> Optional[str]:
         """
-        (Updatable) Specifies content for the inline artifact.
+        (Updatable) The Helm commands to be executed, base 64 encoded
         """
         return pulumi.get(self, "base64encoded_content")
 
@@ -2094,6 +2100,14 @@ class DeployArtifactDeployArtifactSource(dict):
         (Updatable) Users can set this as a placeholder value that refers to a pipeline parameter, for example, ${appVersion}.
         """
         return pulumi.get(self, "deploy_artifact_version")
+
+    @property
+    @pulumi.getter(name="helmArtifactSourceType")
+    def helm_artifact_source_type(self) -> Optional[str]:
+        """
+        (Updatable) Specifies types of artifact sources.
+        """
+        return pulumi.get(self, "helm_artifact_source_type")
 
     @property
     @pulumi.getter(name="helmVerificationKeySource")
@@ -7720,16 +7734,18 @@ class GetDeployArtifactDeployArtifactSourceResult(dict):
                  deploy_artifact_path: str,
                  deploy_artifact_source_type: str,
                  deploy_artifact_version: str,
+                 helm_artifact_source_type: str,
                  helm_verification_key_sources: Sequence['outputs.GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceResult'],
                  image_digest: str,
                  image_uri: str,
                  repository_id: str):
         """
-        :param str base64encoded_content: Specifies content for the inline artifact.
+        :param str base64encoded_content: The Helm commands to be executed, base 64 encoded
         :param str chart_url: The URL of an OCIR repository.
         :param str deploy_artifact_path: Specifies the artifact path in the repository.
         :param str deploy_artifact_source_type: Specifies types of artifact sources.
         :param str deploy_artifact_version: Users can set this as a placeholder value that refers to a pipeline parameter, for example, ${appVersion}.
+        :param str helm_artifact_source_type: Specifies types of artifact sources.
         :param Sequence['GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceArgs'] helm_verification_key_sources: The source of the verification material.
         :param str image_digest: Specifies image digest for the version of the image.
         :param str image_uri: Specifies OCIR Image Path - optionally include tag.
@@ -7740,6 +7756,7 @@ class GetDeployArtifactDeployArtifactSourceResult(dict):
         pulumi.set(__self__, "deploy_artifact_path", deploy_artifact_path)
         pulumi.set(__self__, "deploy_artifact_source_type", deploy_artifact_source_type)
         pulumi.set(__self__, "deploy_artifact_version", deploy_artifact_version)
+        pulumi.set(__self__, "helm_artifact_source_type", helm_artifact_source_type)
         pulumi.set(__self__, "helm_verification_key_sources", helm_verification_key_sources)
         pulumi.set(__self__, "image_digest", image_digest)
         pulumi.set(__self__, "image_uri", image_uri)
@@ -7749,7 +7766,7 @@ class GetDeployArtifactDeployArtifactSourceResult(dict):
     @pulumi.getter(name="base64encodedContent")
     def base64encoded_content(self) -> str:
         """
-        Specifies content for the inline artifact.
+        The Helm commands to be executed, base 64 encoded
         """
         return pulumi.get(self, "base64encoded_content")
 
@@ -7784,6 +7801,14 @@ class GetDeployArtifactDeployArtifactSourceResult(dict):
         Users can set this as a placeholder value that refers to a pipeline parameter, for example, ${appVersion}.
         """
         return pulumi.get(self, "deploy_artifact_version")
+
+    @property
+    @pulumi.getter(name="helmArtifactSourceType")
+    def helm_artifact_source_type(self) -> str:
+        """
+        Specifies types of artifact sources.
+        """
+        return pulumi.get(self, "helm_artifact_source_type")
 
     @property
     @pulumi.getter(name="helmVerificationKeySources")
@@ -8061,16 +8086,18 @@ class GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceResult(d
                  deploy_artifact_path: str,
                  deploy_artifact_source_type: str,
                  deploy_artifact_version: str,
+                 helm_artifact_source_type: str,
                  helm_verification_key_sources: Sequence['outputs.GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceResult'],
                  image_digest: str,
                  image_uri: str,
                  repository_id: str):
         """
-        :param str base64encoded_content: Specifies content for the inline artifact.
+        :param str base64encoded_content: The Helm commands to be executed, base 64 encoded
         :param str chart_url: The URL of an OCIR repository.
         :param str deploy_artifact_path: Specifies the artifact path in the repository.
         :param str deploy_artifact_source_type: Specifies types of artifact sources.
         :param str deploy_artifact_version: Users can set this as a placeholder value that refers to a pipeline parameter, for example, ${appVersion}.
+        :param str helm_artifact_source_type: Specifies types of artifact sources.
         :param Sequence['GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceArgs'] helm_verification_key_sources: The source of the verification material.
         :param str image_digest: Specifies image digest for the version of the image.
         :param str image_uri: Specifies OCIR Image Path - optionally include tag.
@@ -8081,6 +8108,7 @@ class GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceResult(d
         pulumi.set(__self__, "deploy_artifact_path", deploy_artifact_path)
         pulumi.set(__self__, "deploy_artifact_source_type", deploy_artifact_source_type)
         pulumi.set(__self__, "deploy_artifact_version", deploy_artifact_version)
+        pulumi.set(__self__, "helm_artifact_source_type", helm_artifact_source_type)
         pulumi.set(__self__, "helm_verification_key_sources", helm_verification_key_sources)
         pulumi.set(__self__, "image_digest", image_digest)
         pulumi.set(__self__, "image_uri", image_uri)
@@ -8090,7 +8118,7 @@ class GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceResult(d
     @pulumi.getter(name="base64encodedContent")
     def base64encoded_content(self) -> str:
         """
-        Specifies content for the inline artifact.
+        The Helm commands to be executed, base 64 encoded
         """
         return pulumi.get(self, "base64encoded_content")
 
@@ -8125,6 +8153,14 @@ class GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceResult(d
         Users can set this as a placeholder value that refers to a pipeline parameter, for example, ${appVersion}.
         """
         return pulumi.get(self, "deploy_artifact_version")
+
+    @property
+    @pulumi.getter(name="helmArtifactSourceType")
+    def helm_artifact_source_type(self) -> str:
+        """
+        Specifies types of artifact sources.
+        """
+        return pulumi.get(self, "helm_artifact_source_type")
 
     @property
     @pulumi.getter(name="helmVerificationKeySources")
@@ -10235,10 +10271,12 @@ class GetDeployStagesDeployStageCollectionItemResult(dict):
                  function_timeout_in_seconds: int,
                  green_backend_ips: Sequence['outputs.GetDeployStagesDeployStageCollectionItemGreenBackendIpResult'],
                  helm_chart_deploy_artifact_id: str,
+                 helm_command_artifact_ids: Sequence[str],
                  id: str,
                  is_async: bool,
                  is_debug_enabled: bool,
                  is_force_enabled: bool,
+                 is_uninstall_on_stage_delete: bool,
                  is_validation_enabled: bool,
                  kubernetes_manifest_deploy_artifact_ids: Sequence[str],
                  lifecycle_details: str,
@@ -10252,6 +10290,7 @@ class GetDeployStagesDeployStageCollectionItemResult(dict):
                  oke_cluster_deploy_environment_id: str,
                  production_load_balancer_configs: Sequence['outputs.GetDeployStagesDeployStageCollectionItemProductionLoadBalancerConfigResult'],
                  project_id: str,
+                 purpose: str,
                  release_name: str,
                  rollback_policies: Sequence['outputs.GetDeployStagesDeployStageCollectionItemRollbackPolicyResult'],
                  rollout_policies: Sequence['outputs.GetDeployStagesDeployStageCollectionItemRolloutPolicyResult'],
@@ -10304,10 +10343,12 @@ class GetDeployStagesDeployStageCollectionItemResult(dict):
         :param int function_timeout_in_seconds: Timeout for execution of the Function. Value in seconds.
         :param Sequence['GetDeployStagesDeployStageCollectionItemGreenBackendIpArgs'] green_backend_ips: Collection of backend environment IP addresses.
         :param str helm_chart_deploy_artifact_id: Helm chart artifact OCID.
+        :param Sequence[str] helm_command_artifact_ids: List of Helm command artifact OCIDs.
         :param str id: Unique identifier or OCID for listing a single resource by ID.
         :param bool is_async: A boolean flag specifies whether this stage executes asynchronously.
         :param bool is_debug_enabled: Enables helm --debug option to stream output to tf stdout. Set to false by default.
         :param bool is_force_enabled: Force resource update through delete; or if required, recreate. Set to false by default.
+        :param bool is_uninstall_on_stage_delete: Uninstall the Helm chart release on deleting the stage.
         :param bool is_validation_enabled: A boolean flag specifies whether the invoked function must be validated.
         :param Sequence[str] kubernetes_manifest_deploy_artifact_ids: List of Kubernetes manifest artifact OCIDs.
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -10321,6 +10362,7 @@ class GetDeployStagesDeployStageCollectionItemResult(dict):
         :param str oke_cluster_deploy_environment_id: Kubernetes cluster environment OCID for deployment.
         :param Sequence['GetDeployStagesDeployStageCollectionItemProductionLoadBalancerConfigArgs'] production_load_balancer_configs: Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
         :param str project_id: The OCID of a project.
+        :param str purpose: The purpose of running this Helm stage
         :param str release_name: Release name of the Helm chart.
         :param Sequence['GetDeployStagesDeployStageCollectionItemRollbackPolicyArgs'] rollback_policies: Specifies the rollback policy. This is initiated on the failure of certain stage types.
         :param Sequence['GetDeployStagesDeployStageCollectionItemRolloutPolicyArgs'] rollout_policies: Description of rollout policy for load balancer traffic shift stage.
@@ -10373,10 +10415,12 @@ class GetDeployStagesDeployStageCollectionItemResult(dict):
         pulumi.set(__self__, "function_timeout_in_seconds", function_timeout_in_seconds)
         pulumi.set(__self__, "green_backend_ips", green_backend_ips)
         pulumi.set(__self__, "helm_chart_deploy_artifact_id", helm_chart_deploy_artifact_id)
+        pulumi.set(__self__, "helm_command_artifact_ids", helm_command_artifact_ids)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_async", is_async)
         pulumi.set(__self__, "is_debug_enabled", is_debug_enabled)
         pulumi.set(__self__, "is_force_enabled", is_force_enabled)
+        pulumi.set(__self__, "is_uninstall_on_stage_delete", is_uninstall_on_stage_delete)
         pulumi.set(__self__, "is_validation_enabled", is_validation_enabled)
         pulumi.set(__self__, "kubernetes_manifest_deploy_artifact_ids", kubernetes_manifest_deploy_artifact_ids)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
@@ -10390,6 +10434,7 @@ class GetDeployStagesDeployStageCollectionItemResult(dict):
         pulumi.set(__self__, "oke_cluster_deploy_environment_id", oke_cluster_deploy_environment_id)
         pulumi.set(__self__, "production_load_balancer_configs", production_load_balancer_configs)
         pulumi.set(__self__, "project_id", project_id)
+        pulumi.set(__self__, "purpose", purpose)
         pulumi.set(__self__, "release_name", release_name)
         pulumi.set(__self__, "rollback_policies", rollback_policies)
         pulumi.set(__self__, "rollout_policies", rollout_policies)
@@ -10660,6 +10705,14 @@ class GetDeployStagesDeployStageCollectionItemResult(dict):
         return pulumi.get(self, "helm_chart_deploy_artifact_id")
 
     @property
+    @pulumi.getter(name="helmCommandArtifactIds")
+    def helm_command_artifact_ids(self) -> Sequence[str]:
+        """
+        List of Helm command artifact OCIDs.
+        """
+        return pulumi.get(self, "helm_command_artifact_ids")
+
+    @property
     @pulumi.getter
     def id(self) -> str:
         """
@@ -10690,6 +10743,14 @@ class GetDeployStagesDeployStageCollectionItemResult(dict):
         Force resource update through delete; or if required, recreate. Set to false by default.
         """
         return pulumi.get(self, "is_force_enabled")
+
+    @property
+    @pulumi.getter(name="isUninstallOnStageDelete")
+    def is_uninstall_on_stage_delete(self) -> bool:
+        """
+        Uninstall the Helm chart release on deleting the stage.
+        """
+        return pulumi.get(self, "is_uninstall_on_stage_delete")
 
     @property
     @pulumi.getter(name="isValidationEnabled")
@@ -10794,6 +10855,14 @@ class GetDeployStagesDeployStageCollectionItemResult(dict):
         The OCID of a project.
         """
         return pulumi.get(self, "project_id")
+
+    @property
+    @pulumi.getter
+    def purpose(self) -> str:
+        """
+        The purpose of running this Helm stage
+        """
+        return pulumi.get(self, "purpose")
 
     @property
     @pulumi.getter(name="releaseName")

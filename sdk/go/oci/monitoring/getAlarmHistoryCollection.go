@@ -65,7 +65,7 @@ func GetAlarmHistoryCollection(ctx *pulumi.Context, args *GetAlarmHistoryCollect
 
 // A collection of arguments for invoking getAlarmHistoryCollection.
 type GetAlarmHistoryCollectionArgs struct {
-	// The type of history entries to retrieve. State history (STATE_HISTORY) or state transition history (STATE_TRANSITION_HISTORY). If not specified, entries of both types are retrieved.  Example: `STATE_HISTORY`
+	// The type of history entries to retrieve. State history (STATE_HISTORY), state transition history (STATE_TRANSITION_HISTORY), rule history (RULE_HISTORY) or rule transition history (RULE_TRANSITION_HISTORY). If not specified, entries of all types are retrieved.  Example: `STATE_HISTORY`
 	AlarmHistorytype *string `pulumi:"alarmHistorytype"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an alarm.
 	AlarmId string `pulumi:"alarmId"`
@@ -105,7 +105,7 @@ func GetAlarmHistoryCollectionOutput(ctx *pulumi.Context, args GetAlarmHistoryCo
 
 // A collection of arguments for invoking getAlarmHistoryCollection.
 type GetAlarmHistoryCollectionOutputArgs struct {
-	// The type of history entries to retrieve. State history (STATE_HISTORY) or state transition history (STATE_TRANSITION_HISTORY). If not specified, entries of both types are retrieved.  Example: `STATE_HISTORY`
+	// The type of history entries to retrieve. State history (STATE_HISTORY), state transition history (STATE_TRANSITION_HISTORY), rule history (RULE_HISTORY) or rule transition history (RULE_TRANSITION_HISTORY). If not specified, entries of all types are retrieved.  Example: `STATE_HISTORY`
 	AlarmHistorytype pulumi.StringPtrInput `pulumi:"alarmHistorytype"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an alarm.
 	AlarmId pulumi.StringInput `pulumi:"alarmId"`

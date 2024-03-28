@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DeployArtifactDeployArtifactSource {
     /**
-     * @return (Updatable) Specifies content for the inline artifact.
+     * @return (Updatable) The Helm commands to be executed, base 64 encoded
      * 
      */
     private @Nullable String base64encodedContent;
@@ -39,6 +39,11 @@ public final class DeployArtifactDeployArtifactSource {
      */
     private @Nullable String deployArtifactVersion;
     /**
+     * @return (Updatable) Specifies types of artifact sources.
+     * 
+     */
+    private @Nullable String helmArtifactSourceType;
+    /**
      * @return (Updatable) The source of the verification material.
      * 
      */
@@ -61,7 +66,7 @@ public final class DeployArtifactDeployArtifactSource {
 
     private DeployArtifactDeployArtifactSource() {}
     /**
-     * @return (Updatable) Specifies content for the inline artifact.
+     * @return (Updatable) The Helm commands to be executed, base 64 encoded
      * 
      */
     public Optional<String> base64encodedContent() {
@@ -94,6 +99,13 @@ public final class DeployArtifactDeployArtifactSource {
      */
     public Optional<String> deployArtifactVersion() {
         return Optional.ofNullable(this.deployArtifactVersion);
+    }
+    /**
+     * @return (Updatable) Specifies types of artifact sources.
+     * 
+     */
+    public Optional<String> helmArtifactSourceType() {
+        return Optional.ofNullable(this.helmArtifactSourceType);
     }
     /**
      * @return (Updatable) The source of the verification material.
@@ -138,6 +150,7 @@ public final class DeployArtifactDeployArtifactSource {
         private @Nullable String deployArtifactPath;
         private String deployArtifactSourceType;
         private @Nullable String deployArtifactVersion;
+        private @Nullable String helmArtifactSourceType;
         private @Nullable DeployArtifactDeployArtifactSourceHelmVerificationKeySource helmVerificationKeySource;
         private @Nullable String imageDigest;
         private @Nullable String imageUri;
@@ -150,6 +163,7 @@ public final class DeployArtifactDeployArtifactSource {
     	      this.deployArtifactPath = defaults.deployArtifactPath;
     	      this.deployArtifactSourceType = defaults.deployArtifactSourceType;
     	      this.deployArtifactVersion = defaults.deployArtifactVersion;
+    	      this.helmArtifactSourceType = defaults.helmArtifactSourceType;
     	      this.helmVerificationKeySource = defaults.helmVerificationKeySource;
     	      this.imageDigest = defaults.imageDigest;
     	      this.imageUri = defaults.imageUri;
@@ -189,6 +203,12 @@ public final class DeployArtifactDeployArtifactSource {
             return this;
         }
         @CustomType.Setter
+        public Builder helmArtifactSourceType(@Nullable String helmArtifactSourceType) {
+
+            this.helmArtifactSourceType = helmArtifactSourceType;
+            return this;
+        }
+        @CustomType.Setter
         public Builder helmVerificationKeySource(@Nullable DeployArtifactDeployArtifactSourceHelmVerificationKeySource helmVerificationKeySource) {
 
             this.helmVerificationKeySource = helmVerificationKeySource;
@@ -219,6 +239,7 @@ public final class DeployArtifactDeployArtifactSource {
             _resultValue.deployArtifactPath = deployArtifactPath;
             _resultValue.deployArtifactSourceType = deployArtifactSourceType;
             _resultValue.deployArtifactVersion = deployArtifactVersion;
+            _resultValue.helmArtifactSourceType = helmArtifactSourceType;
             _resultValue.helmVerificationKeySource = helmVerificationKeySource;
             _resultValue.imageDigest = imageDigest;
             _resultValue.imageUri = imageUri;

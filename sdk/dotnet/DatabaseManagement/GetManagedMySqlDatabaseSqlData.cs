@@ -86,7 +86,21 @@ namespace Pulumi.Oci.DatabaseManagement
         public string EndTime { get; set; } = null!;
 
         /// <summary>
-        /// The parameter to filter results by key criteria.
+        /// The parameter to filter results by key criteria which include :
+        /// * AVG_TIMER_WAIT
+        /// * SUM_TIMER_WAIT
+        /// * COUNT_STAR
+        /// * SUM_ERRORS
+        /// * SUM_ROWS_AFFECTED
+        /// * SUM_ROWS_SENT
+        /// * SUM_ROWS_EXAMINED
+        /// * SUM_CREATED_TMP_TABLES
+        /// * SUM_NO_INDEX_USED
+        /// * SUM_NO_GOOD_INDEX_USED
+        /// * FIRST_SEEN
+        /// * LAST_SEEN
+        /// * HEATWAVE_OFFLOADED
+        /// * HEATWAVE_OUT_OF_MEMORY
         /// </summary>
         [Input("filterColumn")]
         public string? FilterColumn { get; set; }
@@ -100,7 +114,7 @@ namespace Pulumi.Oci.DatabaseManagement
         }
 
         /// <summary>
-        /// The OCID of ManagedMySqlDatabase.
+        /// The OCID of the Managed MySQL Database.
         /// </summary>
         [Input("managedMySqlDatabaseId", required: true)]
         public string ManagedMySqlDatabaseId { get; set; } = null!;
@@ -126,7 +140,21 @@ namespace Pulumi.Oci.DatabaseManagement
         public Input<string> EndTime { get; set; } = null!;
 
         /// <summary>
-        /// The parameter to filter results by key criteria.
+        /// The parameter to filter results by key criteria which include :
+        /// * AVG_TIMER_WAIT
+        /// * SUM_TIMER_WAIT
+        /// * COUNT_STAR
+        /// * SUM_ERRORS
+        /// * SUM_ROWS_AFFECTED
+        /// * SUM_ROWS_SENT
+        /// * SUM_ROWS_EXAMINED
+        /// * SUM_CREATED_TMP_TABLES
+        /// * SUM_NO_INDEX_USED
+        /// * SUM_NO_GOOD_INDEX_USED
+        /// * FIRST_SEEN
+        /// * LAST_SEEN
+        /// * HEATWAVE_OFFLOADED
+        /// * HEATWAVE_OUT_OF_MEMORY
         /// </summary>
         [Input("filterColumn")]
         public Input<string>? FilterColumn { get; set; }
@@ -140,7 +168,7 @@ namespace Pulumi.Oci.DatabaseManagement
         }
 
         /// <summary>
-        /// The OCID of ManagedMySqlDatabase.
+        /// The OCID of the Managed MySQL Database.
         /// </summary>
         [Input("managedMySqlDatabaseId", required: true)]
         public Input<string> ManagedMySqlDatabaseId { get; set; } = null!;

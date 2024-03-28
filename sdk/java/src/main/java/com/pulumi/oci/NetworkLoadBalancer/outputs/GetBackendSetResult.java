@@ -21,7 +21,7 @@ public final class GetBackendSetResult {
      */
     private List<GetBackendSetBackend> backends;
     /**
-     * @return The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+     * @return The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
      * 
      */
     private List<GetBackendSetHealthChecker> healthCheckers;
@@ -60,7 +60,7 @@ public final class GetBackendSetResult {
         return this.backends;
     }
     /**
-     * @return The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+     * @return The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
      * 
      */
     public List<GetBackendSetHealthChecker> healthCheckers() {

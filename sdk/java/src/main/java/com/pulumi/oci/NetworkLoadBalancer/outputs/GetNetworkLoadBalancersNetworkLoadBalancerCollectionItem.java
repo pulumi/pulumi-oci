@@ -56,6 +56,7 @@ public final class GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem {
      * 
      */
     private Boolean isPrivate;
+    private Boolean isSymmetricHashEnabled;
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
@@ -155,6 +156,9 @@ public final class GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem {
     public Boolean isPrivate() {
         return this.isPrivate;
     }
+    public Boolean isSymmetricHashEnabled() {
+        return this.isSymmetricHashEnabled;
+    }
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
@@ -232,6 +236,7 @@ public final class GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem {
         private List<GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddress> ipAddresses;
         private Boolean isPreserveSourceDestination;
         private Boolean isPrivate;
+        private Boolean isSymmetricHashEnabled;
         private String lifecycleDetails;
         private List<String> networkSecurityGroupIds;
         private String nlbIpVersion;
@@ -252,6 +257,7 @@ public final class GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem {
     	      this.ipAddresses = defaults.ipAddresses;
     	      this.isPreserveSourceDestination = defaults.isPreserveSourceDestination;
     	      this.isPrivate = defaults.isPrivate;
+    	      this.isSymmetricHashEnabled = defaults.isSymmetricHashEnabled;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.networkSecurityGroupIds = defaults.networkSecurityGroupIds;
     	      this.nlbIpVersion = defaults.nlbIpVersion;
@@ -328,6 +334,14 @@ public final class GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem {
               throw new MissingRequiredPropertyException("GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem", "isPrivate");
             }
             this.isPrivate = isPrivate;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isSymmetricHashEnabled(Boolean isSymmetricHashEnabled) {
+            if (isSymmetricHashEnabled == null) {
+              throw new MissingRequiredPropertyException("GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem", "isSymmetricHashEnabled");
+            }
+            this.isSymmetricHashEnabled = isSymmetricHashEnabled;
             return this;
         }
         @CustomType.Setter
@@ -418,6 +432,7 @@ public final class GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem {
             _resultValue.ipAddresses = ipAddresses;
             _resultValue.isPreserveSourceDestination = isPreserveSourceDestination;
             _resultValue.isPrivate = isPrivate;
+            _resultValue.isSymmetricHashEnabled = isSymmetricHashEnabled;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.networkSecurityGroupIds = networkSecurityGroupIds;
             _resultValue.nlbIpVersion = nlbIpVersion;

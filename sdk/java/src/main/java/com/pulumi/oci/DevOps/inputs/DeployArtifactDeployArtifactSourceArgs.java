@@ -18,14 +18,14 @@ public final class DeployArtifactDeployArtifactSourceArgs extends com.pulumi.res
     public static final DeployArtifactDeployArtifactSourceArgs Empty = new DeployArtifactDeployArtifactSourceArgs();
 
     /**
-     * (Updatable) Specifies content for the inline artifact.
+     * (Updatable) The Helm commands to be executed, base 64 encoded
      * 
      */
     @Import(name="base64encodedContent")
     private @Nullable Output<String> base64encodedContent;
 
     /**
-     * @return (Updatable) Specifies content for the inline artifact.
+     * @return (Updatable) The Helm commands to be executed, base 64 encoded
      * 
      */
     public Optional<Output<String>> base64encodedContent() {
@@ -90,6 +90,21 @@ public final class DeployArtifactDeployArtifactSourceArgs extends com.pulumi.res
      */
     public Optional<Output<String>> deployArtifactVersion() {
         return Optional.ofNullable(this.deployArtifactVersion);
+    }
+
+    /**
+     * (Updatable) Specifies types of artifact sources.
+     * 
+     */
+    @Import(name="helmArtifactSourceType")
+    private @Nullable Output<String> helmArtifactSourceType;
+
+    /**
+     * @return (Updatable) Specifies types of artifact sources.
+     * 
+     */
+    public Optional<Output<String>> helmArtifactSourceType() {
+        return Optional.ofNullable(this.helmArtifactSourceType);
     }
 
     /**
@@ -160,6 +175,7 @@ public final class DeployArtifactDeployArtifactSourceArgs extends com.pulumi.res
         this.deployArtifactPath = $.deployArtifactPath;
         this.deployArtifactSourceType = $.deployArtifactSourceType;
         this.deployArtifactVersion = $.deployArtifactVersion;
+        this.helmArtifactSourceType = $.helmArtifactSourceType;
         this.helmVerificationKeySource = $.helmVerificationKeySource;
         this.imageDigest = $.imageDigest;
         this.imageUri = $.imageUri;
@@ -185,7 +201,7 @@ public final class DeployArtifactDeployArtifactSourceArgs extends com.pulumi.res
         }
 
         /**
-         * @param base64encodedContent (Updatable) Specifies content for the inline artifact.
+         * @param base64encodedContent (Updatable) The Helm commands to be executed, base 64 encoded
          * 
          * @return builder
          * 
@@ -196,7 +212,7 @@ public final class DeployArtifactDeployArtifactSourceArgs extends com.pulumi.res
         }
 
         /**
-         * @param base64encodedContent (Updatable) Specifies content for the inline artifact.
+         * @param base64encodedContent (Updatable) The Helm commands to be executed, base 64 encoded
          * 
          * @return builder
          * 
@@ -287,6 +303,27 @@ public final class DeployArtifactDeployArtifactSourceArgs extends com.pulumi.res
          */
         public Builder deployArtifactVersion(String deployArtifactVersion) {
             return deployArtifactVersion(Output.of(deployArtifactVersion));
+        }
+
+        /**
+         * @param helmArtifactSourceType (Updatable) Specifies types of artifact sources.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder helmArtifactSourceType(@Nullable Output<String> helmArtifactSourceType) {
+            $.helmArtifactSourceType = helmArtifactSourceType;
+            return this;
+        }
+
+        /**
+         * @param helmArtifactSourceType (Updatable) Specifies types of artifact sources.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder helmArtifactSourceType(String helmArtifactSourceType) {
+            return helmArtifactSourceType(Output.of(helmArtifactSourceType));
         }
 
         /**

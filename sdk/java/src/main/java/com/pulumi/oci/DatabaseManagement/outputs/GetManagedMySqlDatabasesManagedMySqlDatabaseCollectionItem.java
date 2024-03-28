@@ -5,7 +5,11 @@ package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.DatabaseManagement.outputs.GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNode;
+import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 
 @CustomType
@@ -16,30 +20,70 @@ public final class GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItem {
      */
     private String compartmentId;
     /**
-     * @return MySQL Database Name
+     * @return The name of the MySQL Database.
      * 
      */
     private String dbName;
     /**
-     * @return MySQL Database Version
+     * @return The version of the MySQL Database.
      * 
      */
     private String dbVersion;
     /**
-     * @return The OCID of the Managed MySql Database.
+     * @return The name of the HeatWave cluster.
+     * 
+     */
+    private String heatWaveClusterDisplayName;
+    /**
+     * @return The total memory belonging to the HeatWave cluster in GBs.
+     * 
+     */
+    private Integer heatWaveMemorySize;
+    /**
+     * @return Shape of the nodes in the HeatWave cluster.
+     * 
+     */
+    private String heatWaveNodeShape;
+    /**
+     * @return The information about an individual HeatWave nodes in the cluster.
+     * 
+     */
+    private List<GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNode> heatWaveNodes;
+    /**
+     * @return The ID associated with the HeatWave node.
      * 
      */
     private String id;
+    /**
+     * @return If the HeatWave cluster is active or not.
+     * 
+     */
+    private Boolean isHeatWaveActive;
+    /**
+     * @return If HeatWave is enabled for this db system or not.
+     * 
+     */
+    private Boolean isHeatWaveEnabled;
+    /**
+     * @return If HeatWave Lakehouse is enabled for the db system or not.
+     * 
+     */
+    private Boolean isLakehouseEnabled;
     /**
      * @return The name of the Managed MySQL Database.
      * 
      */
     private String name;
     /**
-     * @return The date and time the Managed Database was created.
+     * @return The date and time the node was created.
      * 
      */
     private String timeCreated;
+    /**
+     * @return The date and time the Managed MySQL Database was created.
+     * 
+     */
+    private String timeCreatedHeatWave;
 
     private GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItem() {}
     /**
@@ -50,25 +94,74 @@ public final class GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItem {
         return this.compartmentId;
     }
     /**
-     * @return MySQL Database Name
+     * @return The name of the MySQL Database.
      * 
      */
     public String dbName() {
         return this.dbName;
     }
     /**
-     * @return MySQL Database Version
+     * @return The version of the MySQL Database.
      * 
      */
     public String dbVersion() {
         return this.dbVersion;
     }
     /**
-     * @return The OCID of the Managed MySql Database.
+     * @return The name of the HeatWave cluster.
+     * 
+     */
+    public String heatWaveClusterDisplayName() {
+        return this.heatWaveClusterDisplayName;
+    }
+    /**
+     * @return The total memory belonging to the HeatWave cluster in GBs.
+     * 
+     */
+    public Integer heatWaveMemorySize() {
+        return this.heatWaveMemorySize;
+    }
+    /**
+     * @return Shape of the nodes in the HeatWave cluster.
+     * 
+     */
+    public String heatWaveNodeShape() {
+        return this.heatWaveNodeShape;
+    }
+    /**
+     * @return The information about an individual HeatWave nodes in the cluster.
+     * 
+     */
+    public List<GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNode> heatWaveNodes() {
+        return this.heatWaveNodes;
+    }
+    /**
+     * @return The ID associated with the HeatWave node.
      * 
      */
     public String id() {
         return this.id;
+    }
+    /**
+     * @return If the HeatWave cluster is active or not.
+     * 
+     */
+    public Boolean isHeatWaveActive() {
+        return this.isHeatWaveActive;
+    }
+    /**
+     * @return If HeatWave is enabled for this db system or not.
+     * 
+     */
+    public Boolean isHeatWaveEnabled() {
+        return this.isHeatWaveEnabled;
+    }
+    /**
+     * @return If HeatWave Lakehouse is enabled for the db system or not.
+     * 
+     */
+    public Boolean isLakehouseEnabled() {
+        return this.isLakehouseEnabled;
     }
     /**
      * @return The name of the Managed MySQL Database.
@@ -78,11 +171,18 @@ public final class GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItem {
         return this.name;
     }
     /**
-     * @return The date and time the Managed Database was created.
+     * @return The date and time the node was created.
      * 
      */
     public String timeCreated() {
         return this.timeCreated;
+    }
+    /**
+     * @return The date and time the Managed MySQL Database was created.
+     * 
+     */
+    public String timeCreatedHeatWave() {
+        return this.timeCreatedHeatWave;
     }
 
     public static Builder builder() {
@@ -97,18 +197,34 @@ public final class GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItem {
         private String compartmentId;
         private String dbName;
         private String dbVersion;
+        private String heatWaveClusterDisplayName;
+        private Integer heatWaveMemorySize;
+        private String heatWaveNodeShape;
+        private List<GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNode> heatWaveNodes;
         private String id;
+        private Boolean isHeatWaveActive;
+        private Boolean isHeatWaveEnabled;
+        private Boolean isLakehouseEnabled;
         private String name;
         private String timeCreated;
+        private String timeCreatedHeatWave;
         public Builder() {}
         public Builder(GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
     	      this.dbName = defaults.dbName;
     	      this.dbVersion = defaults.dbVersion;
+    	      this.heatWaveClusterDisplayName = defaults.heatWaveClusterDisplayName;
+    	      this.heatWaveMemorySize = defaults.heatWaveMemorySize;
+    	      this.heatWaveNodeShape = defaults.heatWaveNodeShape;
+    	      this.heatWaveNodes = defaults.heatWaveNodes;
     	      this.id = defaults.id;
+    	      this.isHeatWaveActive = defaults.isHeatWaveActive;
+    	      this.isHeatWaveEnabled = defaults.isHeatWaveEnabled;
+    	      this.isLakehouseEnabled = defaults.isLakehouseEnabled;
     	      this.name = defaults.name;
     	      this.timeCreated = defaults.timeCreated;
+    	      this.timeCreatedHeatWave = defaults.timeCreatedHeatWave;
         }
 
         @CustomType.Setter
@@ -136,11 +252,70 @@ public final class GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder heatWaveClusterDisplayName(String heatWaveClusterDisplayName) {
+            if (heatWaveClusterDisplayName == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItem", "heatWaveClusterDisplayName");
+            }
+            this.heatWaveClusterDisplayName = heatWaveClusterDisplayName;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder heatWaveMemorySize(Integer heatWaveMemorySize) {
+            if (heatWaveMemorySize == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItem", "heatWaveMemorySize");
+            }
+            this.heatWaveMemorySize = heatWaveMemorySize;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder heatWaveNodeShape(String heatWaveNodeShape) {
+            if (heatWaveNodeShape == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItem", "heatWaveNodeShape");
+            }
+            this.heatWaveNodeShape = heatWaveNodeShape;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder heatWaveNodes(List<GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNode> heatWaveNodes) {
+            if (heatWaveNodes == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItem", "heatWaveNodes");
+            }
+            this.heatWaveNodes = heatWaveNodes;
+            return this;
+        }
+        public Builder heatWaveNodes(GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNode... heatWaveNodes) {
+            return heatWaveNodes(List.of(heatWaveNodes));
+        }
+        @CustomType.Setter
         public Builder id(String id) {
             if (id == null) {
               throw new MissingRequiredPropertyException("GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItem", "id");
             }
             this.id = id;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isHeatWaveActive(Boolean isHeatWaveActive) {
+            if (isHeatWaveActive == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItem", "isHeatWaveActive");
+            }
+            this.isHeatWaveActive = isHeatWaveActive;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isHeatWaveEnabled(Boolean isHeatWaveEnabled) {
+            if (isHeatWaveEnabled == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItem", "isHeatWaveEnabled");
+            }
+            this.isHeatWaveEnabled = isHeatWaveEnabled;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isLakehouseEnabled(Boolean isLakehouseEnabled) {
+            if (isLakehouseEnabled == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItem", "isLakehouseEnabled");
+            }
+            this.isLakehouseEnabled = isLakehouseEnabled;
             return this;
         }
         @CustomType.Setter
@@ -159,14 +334,30 @@ public final class GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItem {
             this.timeCreated = timeCreated;
             return this;
         }
+        @CustomType.Setter
+        public Builder timeCreatedHeatWave(String timeCreatedHeatWave) {
+            if (timeCreatedHeatWave == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItem", "timeCreatedHeatWave");
+            }
+            this.timeCreatedHeatWave = timeCreatedHeatWave;
+            return this;
+        }
         public GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItem build() {
             final var _resultValue = new GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItem();
             _resultValue.compartmentId = compartmentId;
             _resultValue.dbName = dbName;
             _resultValue.dbVersion = dbVersion;
+            _resultValue.heatWaveClusterDisplayName = heatWaveClusterDisplayName;
+            _resultValue.heatWaveMemorySize = heatWaveMemorySize;
+            _resultValue.heatWaveNodeShape = heatWaveNodeShape;
+            _resultValue.heatWaveNodes = heatWaveNodes;
             _resultValue.id = id;
+            _resultValue.isHeatWaveActive = isHeatWaveActive;
+            _resultValue.isHeatWaveEnabled = isHeatWaveEnabled;
+            _resultValue.isLakehouseEnabled = isLakehouseEnabled;
             _resultValue.name = name;
             _resultValue.timeCreated = timeCreated;
+            _resultValue.timeCreatedHeatWave = timeCreatedHeatWave;
             return _resultValue;
         }
     }

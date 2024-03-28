@@ -22,6 +22,16 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParserN
      */
     private Boolean isKeepTimeKey;
     /**
+     * @return If true, a separator parameter can be further defined.
+     * 
+     */
+    private Boolean parseNested;
+    /**
+     * @return Keys of adjacent levels are joined by the separator.
+     * 
+     */
+    private String separator;
+    /**
      * @return Process time value using the specified format.
      * 
      */
@@ -46,6 +56,20 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParserN
      */
     public Boolean isKeepTimeKey() {
         return this.isKeepTimeKey;
+    }
+    /**
+     * @return If true, a separator parameter can be further defined.
+     * 
+     */
+    public Boolean parseNested() {
+        return this.parseNested;
+    }
+    /**
+     * @return Keys of adjacent levels are joined by the separator.
+     * 
+     */
+    public String separator() {
+        return this.separator;
     }
     /**
      * @return Process time value using the specified format.
@@ -73,6 +97,8 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParserN
     public static final class Builder {
         private String fieldTimeKey;
         private Boolean isKeepTimeKey;
+        private Boolean parseNested;
+        private String separator;
         private String timeFormat;
         private String timeType;
         public Builder() {}
@@ -80,6 +106,8 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParserN
     	      Objects.requireNonNull(defaults);
     	      this.fieldTimeKey = defaults.fieldTimeKey;
     	      this.isKeepTimeKey = defaults.isKeepTimeKey;
+    	      this.parseNested = defaults.parseNested;
+    	      this.separator = defaults.separator;
     	      this.timeFormat = defaults.timeFormat;
     	      this.timeType = defaults.timeType;
         }
@@ -98,6 +126,22 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParserN
               throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser", "isKeepTimeKey");
             }
             this.isKeepTimeKey = isKeepTimeKey;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder parseNested(Boolean parseNested) {
+            if (parseNested == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser", "parseNested");
+            }
+            this.parseNested = parseNested;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder separator(String separator) {
+            if (separator == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser", "separator");
+            }
+            this.separator = separator;
             return this;
         }
         @CustomType.Setter
@@ -120,6 +164,8 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParserN
             final var _resultValue = new GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser();
             _resultValue.fieldTimeKey = fieldTimeKey;
             _resultValue.isKeepTimeKey = isKeepTimeKey;
+            _resultValue.parseNested = parseNested;
+            _resultValue.separator = separator;
             _resultValue.timeFormat = timeFormat;
             _resultValue.timeType = timeType;
             return _resultValue;

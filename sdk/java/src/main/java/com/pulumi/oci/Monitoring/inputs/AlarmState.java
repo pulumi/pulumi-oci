@@ -5,6 +5,7 @@ package com.pulumi.oci.Monitoring.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Monitoring.inputs.AlarmOverrideArgs;
 import com.pulumi.oci.Monitoring.inputs.AlarmSuppressionArgs;
 import java.lang.Boolean;
 import java.lang.Object;
@@ -209,6 +210,40 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) The version of the alarm notification to be delivered. Allowed value: `1.X` The value must start with a number (up to four digits), followed by a period and an uppercase X.
+     * 
+     */
+    @Import(name="notificationVersion")
+    private @Nullable Output<String> notificationVersion;
+
+    /**
+     * @return (Updatable) The version of the alarm notification to be delivered. Allowed value: `1.X` The value must start with a number (up to four digits), followed by a period and an uppercase X.
+     * 
+     */
+    public Optional<Output<String>> notificationVersion() {
+        return Optional.ofNullable(this.notificationVersion);
+    }
+
+    /**
+     * (Updatable) A set of overrides that control evaluations of the alarm.
+     * 
+     * Each override can specify values for query, severity, body, and pending duration. When an alarm contains overrides, the Monitoring service evaluates each override in order, beginning with the first override in the array (index position `0`), and then evaluates the alarm&#39;s base values (`ruleName` value of `BASE`).
+     * 
+     */
+    @Import(name="overrides")
+    private @Nullable Output<List<AlarmOverrideArgs>> overrides;
+
+    /**
+     * @return (Updatable) A set of overrides that control evaluations of the alarm.
+     * 
+     * Each override can specify values for query, severity, body, and pending duration. When an alarm contains overrides, the Monitoring service evaluates each override in order, beginning with the first override in the array (index position `0`), and then evaluates the alarm&#39;s base values (`ruleName` value of `BASE`).
+     * 
+     */
+    public Optional<Output<List<AlarmOverrideArgs>>> overrides() {
+        return Optional.ofNullable(this.overrides);
+    }
+
+    /**
      * (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from &#34;OK&#34; to &#34;FIRING&#34;. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to &#34;FIRING&#34;.
      * 
      * The duration is specified as a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT1M. Maximum: PT1H. Default: PT1M.
@@ -340,6 +375,21 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) Identifier of the alarm&#39;s base values for alarm evaluation, for use when the alarm contains overrides.  A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.  Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
+     * 
+     */
+    @Import(name="ruleName")
+    private @Nullable Output<String> ruleName;
+
+    /**
+     * @return (Updatable) Identifier of the alarm&#39;s base values for alarm evaluation, for use when the alarm contains overrides.  A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.  Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
+     * 
+     */
+    public Optional<Output<String>> ruleName() {
+        return Optional.ofNullable(this.ruleName);
+    }
+
+    /**
      * (Updatable) The perceived type of response required when the alarm is in the &#34;FIRING&#34; state.  Example: `CRITICAL`
      * 
      */
@@ -429,11 +479,14 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
         this.metricCompartmentId = $.metricCompartmentId;
         this.metricCompartmentIdInSubtree = $.metricCompartmentIdInSubtree;
         this.namespace = $.namespace;
+        this.notificationVersion = $.notificationVersion;
+        this.overrides = $.overrides;
         this.pendingDuration = $.pendingDuration;
         this.query = $.query;
         this.repeatNotificationDuration = $.repeatNotificationDuration;
         this.resolution = $.resolution;
         this.resourceGroup = $.resourceGroup;
+        this.ruleName = $.ruleName;
         this.severity = $.severity;
         this.state = $.state;
         this.suppression = $.suppression;
@@ -730,6 +783,64 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param notificationVersion (Updatable) The version of the alarm notification to be delivered. Allowed value: `1.X` The value must start with a number (up to four digits), followed by a period and an uppercase X.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder notificationVersion(@Nullable Output<String> notificationVersion) {
+            $.notificationVersion = notificationVersion;
+            return this;
+        }
+
+        /**
+         * @param notificationVersion (Updatable) The version of the alarm notification to be delivered. Allowed value: `1.X` The value must start with a number (up to four digits), followed by a period and an uppercase X.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder notificationVersion(String notificationVersion) {
+            return notificationVersion(Output.of(notificationVersion));
+        }
+
+        /**
+         * @param overrides (Updatable) A set of overrides that control evaluations of the alarm.
+         * 
+         * Each override can specify values for query, severity, body, and pending duration. When an alarm contains overrides, the Monitoring service evaluates each override in order, beginning with the first override in the array (index position `0`), and then evaluates the alarm&#39;s base values (`ruleName` value of `BASE`).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder overrides(@Nullable Output<List<AlarmOverrideArgs>> overrides) {
+            $.overrides = overrides;
+            return this;
+        }
+
+        /**
+         * @param overrides (Updatable) A set of overrides that control evaluations of the alarm.
+         * 
+         * Each override can specify values for query, severity, body, and pending duration. When an alarm contains overrides, the Monitoring service evaluates each override in order, beginning with the first override in the array (index position `0`), and then evaluates the alarm&#39;s base values (`ruleName` value of `BASE`).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder overrides(List<AlarmOverrideArgs> overrides) {
+            return overrides(Output.of(overrides));
+        }
+
+        /**
+         * @param overrides (Updatable) A set of overrides that control evaluations of the alarm.
+         * 
+         * Each override can specify values for query, severity, body, and pending duration. When an alarm contains overrides, the Monitoring service evaluates each override in order, beginning with the first override in the array (index position `0`), and then evaluates the alarm&#39;s base values (`ruleName` value of `BASE`).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder overrides(AlarmOverrideArgs... overrides) {
+            return overrides(List.of(overrides));
+        }
+
+        /**
          * @param pendingDuration (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from &#34;OK&#34; to &#34;FIRING&#34;. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to &#34;FIRING&#34;.
          * 
          * The duration is specified as a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT1M. Maximum: PT1H. Default: PT1M.
@@ -888,6 +999,27 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder resourceGroup(String resourceGroup) {
             return resourceGroup(Output.of(resourceGroup));
+        }
+
+        /**
+         * @param ruleName (Updatable) Identifier of the alarm&#39;s base values for alarm evaluation, for use when the alarm contains overrides.  A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.  Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ruleName(@Nullable Output<String> ruleName) {
+            $.ruleName = ruleName;
+            return this;
+        }
+
+        /**
+         * @param ruleName (Updatable) Identifier of the alarm&#39;s base values for alarm evaluation, for use when the alarm contains overrides.  A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.  Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ruleName(String ruleName) {
+            return ruleName(Output.of(ruleName));
         }
 
         /**
